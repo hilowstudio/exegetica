@@ -29,7 +29,7 @@ from starlette.responses import FileResponse, HTMLResponse, JSONResponse, Stream
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import calendar_views, course, course_views, curriculum, generator, library, memory, providers
+from webapp import calendar_views, course, course_views, curriculum, generator, library, memory, providers, safety
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("study-bible-web")
@@ -57,6 +57,50 @@ NEUTRAL_SYSTEM = (
     "When you do not know, say so."
 )
 
+# Study mode: a Socratic tutor. It builds the person's own skill in reading Scripture
+# rather than handing over finished answers. "Balanced" — facts are fair game (with a
+# nudge to verify), but interpretation and application are guided, not given.
+STUDY_SYSTEM = (
+    "You are the Study guide for a Bible-study app. Your goal is the learner's own growth "
+    "in reading Scripture well, not giving them finished answers to copy. Work like a "
+    "patient tutor who wants them to be able to do this without you.\n\n"
+    "- FACTS you may give directly: where a passage is, what a word means, a date, a "
+    "definition, what a tool returns. But turn each one into learning — name the tool or "
+    "source it came from and ask how they would confirm it. Teach them to check, not just "
+    "receive.\n"
+    "- INTERPRETATION and APPLICATION you do NOT hand over. When they ask what a passage "
+    "means, what the author is doing, how it points to Christ, or how it applies to their "
+    "life, do not state the conclusion. Guide them to it: have them observe the text, notice "
+    "repeated words and connections, read the surrounding context, consult cross-references "
+    "and the unit reading guide, and reason it out. Give the next step, not the destination.\n"
+    "- If they press for the answer, stay kind but hold the line — your job is their "
+    "long-term skill, not a quick answer. Offer a better question or a smaller step.\n"
+    "- Ground everything in the Study Bible tools and the course reading guides rather than "
+    "memory, and name what you draw on.\n"
+    "- Keep it exegesis-first: the text in its grammatical, historical, and literary context, "
+    "read as one story culminating in Christ."
+)
+
+# Shared conduct floor — applied to EVERY mode, above the persona. The chat has a
+# pastoral mind but is not the person's pastor; it is a tool, not a companion.
+CONDUCT_FLOOR = (
+    "\n\n---\n\n"
+    "## How you relate to the person (every mode)\n"
+    "- You are a study tool, not a friend, companion, or spiritual authority. Do not build a "
+    "personal relationship or invite ongoing emotional dependence on you. Do not use language "
+    "that implies you have feelings, an inner life, or a soul. Speak warmly and gently, but "
+    "never pretend to feel — you are software.\n"
+    "- A pastoral mind is not the same as shepherding. You may explain Scripture with pastoral "
+    "care and wisdom, but you are not this person's pastor, counselor, or discipler, and you do "
+    "not take up the ongoing care of their soul.\n"
+    "- When someone needs shepherding — personal spiritual counsel, a besetting sin, a crisis of "
+    "faith or of life, grief, or a decision that needs a wise human who knows them — say so "
+    "plainly and point them to a real person: a parent, a pastor, a trusted teacher, or a good "
+    "friend. Offer the truth of Scripture, then hand them to their people; do not become the "
+    "substitute.\n"
+    "- Never flatter. Be honest, kind, and concise."
+)
+
 
 def _theologian_system() -> str:
     try:
@@ -73,11 +117,21 @@ def _voice() -> str:
         return ""
 
 
+def _base_for(persona: str) -> str:
+    if persona == "theologian":
+        return _theologian_system()
+    if persona == "study":
+        return STUDY_SYSTEM
+    return NEUTRAL_SYSTEM
+
+
 def _system_for(persona: str) -> str:
-    base = _theologian_system() if persona == "theologian" else NEUTRAL_SYSTEM
+    base = _base_for(persona)
     v = _voice()
     system = f"{base}\n\n---\n\n{v}" if v else base
-    return system + curriculum.system_note()
+    # Curriculum awareness, then the shared conduct floor and the crisis-safeguarding
+    # note last, so the guardrails carry recency weight over the persona.
+    return system + curriculum.system_note() + CONDUCT_FLOOR + safety.safeguarding_note()
 
 
 # ---------------------------------------------------------------------------
@@ -172,8 +226,17 @@ async def chat(request):
     mcp: MCPBridge = request.app.state.mcp
     system_text = _system_for(persona)
 
+    # Stateless crisis pre-check on the person's own latest message. If it looks like a
+    # cry for help, surface the verified "Need help now?" resources before the reply
+    # streams. Notifies no one, stores nothing (see safety.py).
+    last_user = next((m["content"] for m in reversed(messages) if m["role"] == "user"), "")
+    pre = safety.precheck(last_user)
+
     async def gen():
         yield _sse({"type": "start", "persona": persona, "provider": provider})
+        if pre["concern"]:
+            yield _sse({"type": "safety", "category": pre["category"],
+                        "resources": safety.get_crisis_resources(pre["category"])})
         try:
             async for ev in providers.run(provider, api_key, model, system_text, messages, mcp):
                 yield _sse(ev)
@@ -199,6 +262,8 @@ async def config(request):
         "providers": providers.public_providers(),
         # The server ships an Anthropic key, so Anthropic works with no BYOK.
         "server_anthropic_key": bool(os.environ.get("ANTHROPIC_API_KEY")),
+        # Verified crisis resources for the always-available "Need help now?" panel.
+        "crisis_resources": safety.get_crisis_resources(),
     })
 
 

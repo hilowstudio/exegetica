@@ -80,6 +80,19 @@
   .toggle{display:flex;border:1px solid var(--rule-strong);border-radius:999px;overflow:hidden;font-size:12px;font-weight:600}
   .toggle button{font-family:var(--sans);font-weight:600;border:0;background:var(--surface);color:var(--ink-soft);padding:5px 12px;cursor:pointer}
   .toggle button[aria-pressed="true"]{background:var(--accent);color:#fff}
+  /* crisis help affordance */
+  .help-link{color:var(--accent-soft);cursor:pointer;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+  .help-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:80;padding:20px}
+  .help-bg.open{display:flex}
+  .help-card{background:var(--surface);border:1px solid var(--rule-strong);border-radius:14px;max-width:460px;width:100%;padding:22px 22px 12px;max-height:85vh;overflow:auto;position:relative}
+  .help-card h3{margin:0 0 8px;font-family:var(--serif,Georgia,serif);font-size:19px;color:var(--ink)}
+  .help-lead{color:var(--ink-soft);font-size:13px;line-height:1.55;margin:0 0 14px}
+  .help-x{position:absolute;top:8px;right:12px;border:0;background:none;color:var(--ink-faint);font-size:24px;cursor:pointer;line-height:1}
+  .help-item{border-top:1px solid var(--rule);padding:11px 2px}
+  .help-item .hn{font-weight:600;font-size:14px;color:var(--ink)}
+  .help-item .hc{font-size:14px;margin-top:2px;color:var(--ink)}
+  .help-item .hnote{color:var(--ink-faint);font-size:12px;margin-top:3px}
+  .help-item a{color:var(--iron)}
   .menu-btn{display:none}
 
   main.scroll{flex:1;overflow-y:auto}
@@ -215,9 +228,10 @@
     <div class="thread-h">
       <button class="menu-btn railbtn" id="menu-btn" type="button" aria-label="Show studies" style="width:34px;height:34px;border-radius:8px"><svg viewBox="0 0 24 24" style="width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.7"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       <span class="ttl" id="thread-title">New study</span>
-      <span class="vlab">Voice</span>
-      <div class="toggle" role="group" aria-label="Voice">
+      <span class="vlab">Mode</span>
+      <div class="toggle" role="group" aria-label="Mode">
         <button id="p-theo" aria-pressed="true" type="button">Theologian</button>
+        <button id="p-study" aria-pressed="false" type="button">Study</button>
         <button id="p-neutral" aria-pressed="false" type="button">Assistant</button>
       </div>
     </div>
@@ -259,7 +273,16 @@
         <textarea id="input" rows="1" placeholder="Ask about a passage, a word, a doctrine…"></textarea>
         <button class="send" id="send" type="button">Send</button>
       </div>
-      <div class="hint">Claude answers using the Exegetica tools and cites sources. Answers can still err, so verify against the text.</div>
+      <div class="hint">Claude answers using the Exegetica tools and cites sources. Answers can still err, so verify against the text. <a href="#" id="help-link" class="help-link">Need help now?</a></div>
+    </div>
+
+    <div id="help-bg" class="help-bg" role="dialog" aria-modal="true" aria-labelledby="help-title">
+      <div class="help-card">
+        <button class="help-x" id="help-close" type="button" aria-label="Close">&times;</button>
+        <h3 id="help-title">Need help now?</h3>
+        <p id="help-lead" class="help-lead"></p>
+        <div id="help-list"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -403,9 +426,27 @@ let history=[]; // [{role, content}]
 
 function setPersona(p){persona=p;
   document.getElementById("p-theo").setAttribute("aria-pressed",p==="theologian");
+  document.getElementById("p-study").setAttribute("aria-pressed",p==="study");
   document.getElementById("p-neutral").setAttribute("aria-pressed",p==="neutral");}
 document.getElementById("p-theo").onclick=()=>setPersona("theologian");
+document.getElementById("p-study").onclick=()=>setPersona("study");
 document.getElementById("p-neutral").onclick=()=>setPersona("neutral");
+
+/* ---------- crisis help affordance (stateless; verified resources from /api/config) ---------- */
+const helpBg=document.getElementById("help-bg"),helpList=document.getElementById("help-list"),helpLead=document.getElementById("help-lead");
+const HELP_LEAD_DEFAULT="If you're going through something hard, you're not alone. These people can help — any time, free and private. You can also tell a parent, pastor, teacher, or friend you trust.";
+function helpEsc(s){return (s||"").replace(/[&<>\"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+function renderResources(list){helpList.innerHTML=(list||[]).map(r=>{
+  const u=r.url?` &middot; <a href="${helpEsc(r.url)}" target="_blank" rel="noopener">${helpEsc(r.url.replace(/^https?:\/\//,""))}</a>`:"";
+  const note=r.note?`<div class="hnote">${helpEsc(r.note)}</div>`:"";
+  return `<div class="help-item"><div class="hn">${helpEsc(r.name)}</div><div class="hc">${helpEsc(r.contact)}${u}</div>${note}</div>`;
+}).join("");}
+function openHelp(list,lead){helpLead.textContent=lead||HELP_LEAD_DEFAULT;renderResources(list&&list.length?list:(CFG.crisis_resources||[]));helpBg.classList.add("open");}
+function closeHelp(){helpBg.classList.remove("open");}
+document.getElementById("help-close").onclick=closeHelp;
+document.getElementById("help-link").onclick=e=>{e.preventDefault();openHelp();};
+helpBg.addEventListener("click",e=>{if(e.target===helpBg)closeHelp();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&helpBg.classList.contains("open"))closeHelp();});
 
 // ---------- conversation persistence (this browser only) ----------
 const CKEY="studybible.chats.v1";
@@ -470,7 +511,7 @@ document.getElementById("menu-btn").onclick=()=>sideEl.classList.toggle("open");
 
 // ---------- BYOK settings (shared with Generator via same key) ----------
 const SKEY="studybible.byok.v1";
-let CFG={providers:[],server_anthropic_key:false,tools:0};
+let CFG={providers:[],server_anthropic_key:false,tools:0,crisis_resources:[]};
 let settings=(()=>{try{return JSON.parse(localStorage.getItem(SKEY))||{}}catch(e){return{}}})();
 if(!settings.provider)settings.provider="anthropic";
 settings.models=settings.models||{};settings.keys=settings.keys||{};
@@ -536,7 +577,7 @@ fetch("/api/config").then(r=>r.json()).then(c=>{CFG=c;populateProviders();update
 function addMsg(role){
   showEmpty(false);
   const m=document.createElement("div");m.className="msg "+role;
-  const who=document.createElement("div");who.className="who";who.textContent=role==="user"?"You":(persona==="theologian"?"The Theologian":"Study Assistant");
+  const who=document.createElement("div");who.className="who";who.textContent=role==="user"?"You":(persona==="theologian"?"The Theologian":persona==="study"?"Study Guide":"Assistant");
   const bubble=document.createElement("div");bubble.className="bubble";
   m.appendChild(who);m.appendChild(bubble);thread.appendChild(m);
   scroll();return bubble;
@@ -587,6 +628,7 @@ async function send(text){
         }
         else if(ev.type==="tool_done"){const t=toolEls[ev.name];if(t){t.className="tool "+(ev.error?"error":"done");}}
         else if(ev.type==="notice"){const n=document.createElement("div");n.className="notice";n.textContent=ev.message;bubble.insertBefore(n,prose);scroll();}
+        else if(ev.type==="safety"){openHelp(ev.resources,"You matter, and you don't have to carry this alone. These people can help right now — free and private. Please also tell a parent, pastor, teacher, or friend you trust.");}
         else if(ev.type==="error"){raw+="\n\n**Error:** "+ev.message;paint();}
         else if(ev.type==="done"){/* finished */}
       }
