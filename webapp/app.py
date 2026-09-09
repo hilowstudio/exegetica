@@ -32,7 +32,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import auth, calendar_views, course, course_views, curriculum, db, generator, library, memory, providers, safety
+from webapp import auth, calendar_views, course, course_views, curriculum, db, generator, library, memory, providers, safety, store
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("study-bible-web")
@@ -520,6 +520,8 @@ app = Starlette(
         Route("/memory", memory.memory_page),
         Route("/api/memory/text", memory.memory_text),
         Route("/api/memory/audio", memory.memory_audio),
+        Route("/api/memory", store.memory_get, methods=["GET"]),
+        Route("/api/memory", store.memory_put, methods=["PUT"]),
         Route("/course", course_overview),
         Route("/course/unit/{key}", course_unit),
         Route("/course/day/{date}", course_day),

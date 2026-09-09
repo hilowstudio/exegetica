@@ -31,38 +31,23 @@ create table if not exists enrollments (
     primary key (class_id, student_id)
 );
 
--- Scripture Memory: mirrors the current localStorage shape, keyed to a user.
-create table if not exists memory_folders (
-    id         uuid primary key default gen_random_uuid(),
-    user_id    uuid not null references users(id) on delete cascade,
-    name       text not null,
-    created_at timestamptz not null default now()
-);
+-- Superseded by the per-user JSON blobs below (Stage 3). These were created
+-- empty in Stage 1 and never populated, so the drops are safe.
+drop table if exists memory_verses;
+drop table if exists memory_folders;
+drop table if exists chats;
 
-create table if not exists memory_verses (
-    id                uuid primary key default gen_random_uuid(),
-    user_id           uuid not null references users(id) on delete cascade,
-    folder_id         uuid references memory_folders(id) on delete set null,
-    reference         text not null,
-    text              text,
-    current_step      int not null default 0,
-    mastered_at       timestamptz,
-    last_practiced_at timestamptz,
-    last_refreshed_at timestamptz,
-    created_at        timestamptz not null default now()
-);
-create index if not exists idx_memory_verses_user  on memory_verses(user_id);
-create index if not exists idx_memory_folders_user on memory_folders(user_id);
-
--- Saved chats. The whole transcript lives in `messages` (jsonb); resending it is
--- how the model keeps context, so this is all that continuation needs.
-create table if not exists chats (
-    id         uuid primary key default gen_random_uuid(),
-    user_id    uuid not null references users(id) on delete cascade,
-    title      text,
-    persona    text,
-    messages   jsonb not null default '[]'::jsonb,
-    created_at timestamptz not null default now(),
+-- Per-user state as a JSON blob. The client owns the data shape and its ids; the
+-- server just stores and returns each user's whole blob. A low-risk swap for
+-- localStorage that migrates to relational later if teacher analytics ever need it.
+create table if not exists memory_state (
+    user_id    uuid primary key references users(id) on delete cascade,
+    state      jsonb not null default '{"verses":[],"folders":[]}'::jsonb,
     updated_at timestamptz not null default now()
 );
-create index if not exists idx_chats_user on chats(user_id);
+
+create table if not exists chat_state (
+    user_id    uuid primary key references users(id) on delete cascade,
+    state      jsonb not null default '{"chats":[]}'::jsonb,
+    updated_at timestamptz not null default now()
+);

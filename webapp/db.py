@@ -14,6 +14,7 @@ CA cert, so default verification works.
 """
 from __future__ import annotations
 
+import json
 import os
 import ssl
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
@@ -21,6 +22,12 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 import asyncpg
 
 _pool: asyncpg.Pool | None = None
+
+
+async def _init_conn(conn: asyncpg.Connection) -> None:
+    """Round-trip json/jsonb columns as Python objects, not raw strings."""
+    await conn.set_type_codec("jsonb", encoder=json.dumps, decoder=json.loads, schema="pg_catalog")
+    await conn.set_type_codec("json", encoder=json.dumps, decoder=json.loads, schema="pg_catalog")
 
 
 def dsn() -> str | None:
@@ -45,7 +52,7 @@ async def init_pool() -> asyncpg.Pool | None:
         return None
     ctx = ssl.create_default_context()
     _pool = await asyncpg.create_pool(
-        _clean_dsn(url), ssl=ctx, min_size=1, max_size=5, command_timeout=30,
+        _clean_dsn(url), ssl=ctx, min_size=1, max_size=5, command_timeout=30, init=_init_conn,
     )
     return _pool
 

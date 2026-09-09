@@ -55,6 +55,9 @@
   .rail button:hover,.rail a.railbtn:hover{background:var(--surface-2);color:var(--ink)}
   .rail a.railbtn.active{background:var(--accent);color:#fff}
   .rail .sp{flex:1}
+  .rail .acct{overflow:hidden}
+  .rail .acct img{width:26px;height:26px;border-radius:50%;object-fit:cover;display:block}
+  .rail .acct .ini{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--sans);font-weight:700;font-size:12px}
   .rail svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
   .rail .glyph{font-size:18px;line-height:1}
 
@@ -222,6 +225,7 @@
     <a class="railbtn" href="/" title="Chat" aria-label="Chat"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg></a>
     <a class="railbtn active" href="/memory" title="Scripture Memory" aria-label="Scripture Memory"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/><path d="M6.5 11h6M6.5 14h4"/></svg></a>
     <span class="sp"></span>
+    <a id="acct" class="railbtn acct" href="/auth/login" title="Sign in" aria-label="Sign in"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg></a>
     <button id="theme-toggle" type="button" title="Toggle light / dark" aria-label="Toggle theme"><span class="glyph">◐</span></button>
   </nav>
 
@@ -286,16 +290,78 @@ var practice = null;
 
 function uid(){ return "v"+Date.now().toString(36)+Math.random().toString(36).slice(2,7); }
 
-function load(){
-  try {
-    var raw = localStorage.getItem(STORE);
-    if(raw){ db = JSON.parse(raw); if(!db.verses)db.verses=[]; if(!db.folders)db.folders=[]; return; }
+// Storage is auth-aware: signed-in users read/write their Neon account; anonymous
+// users use localStorage exactly as before. AUTH is resolved once at init().
+var AUTH = { signed:false, user:null };
+
+function loadLocal(){
+  try { var raw = localStorage.getItem(STORE);
+    if(raw){ var d = JSON.parse(raw); return { verses:d.verses||[], folders:d.folders||[] }; }
   } catch(e){}
-  // First run: seed the John anchors.
-  db = { verses: SEED.map(function(r){ return newVerse(r); }), folders: [] };
-  save();
+  return null;
 }
-function save(){ try{ localStorage.setItem(STORE, JSON.stringify(db)); }catch(e){} }
+function saveLocal(){ try{ localStorage.setItem(STORE, JSON.stringify(db)); }catch(e){} }
+function seedNew(){ return { verses: SEED.map(function(r){ return newVerse(r); }), folders: [] }; }
+
+// Debounced server write; whole-blob PUT. pagehide flushes any pending change.
+var _saveTimer=null, _dirty=false;
+function flushServer(keepalive){
+  if(!_dirty) return;
+  _dirty=false; clearTimeout(_saveTimer);
+  try{
+    fetch("/api/memory", { method:"PUT", credentials:"same-origin", keepalive:!!keepalive,
+      headers:{ "Content-Type":"application/json" },
+      body: JSON.stringify({ verses:db.verses, folders:db.folders }) }).catch(function(){});
+  }catch(e){}
+}
+function save(){
+  if(AUTH.signed){ _dirty=true; clearTimeout(_saveTimer); _saveTimer=setTimeout(function(){ flushServer(false); }, 500); }
+  else { saveLocal(); }
+}
+
+function wireAccount(){
+  var el=document.getElementById("acct"); if(!el) return;
+  var here=location.pathname+location.search;
+  if(AUTH.signed && AUTH.user){
+    var u=AUTH.user, initial=((u.name||u.email||"?").trim()[0]||"?").toUpperCase();
+    el.innerHTML = u.picture ? '<img src="'+u.picture+'" alt="" referrerpolicy="no-referrer">' : '<span class="ini">'+initial+'</span>';
+    el.setAttribute("href","/auth/logout?next="+encodeURIComponent(here));
+    var label=(u.name||u.email||"Account")+" · Sign out";
+    el.setAttribute("title",label); el.setAttribute("aria-label",label);
+  } else {
+    el.setAttribute("href","/auth/login?next="+encodeURIComponent(here));
+    el.setAttribute("title","Sign in"); el.setAttribute("aria-label","Sign in");
+  }
+}
+
+async function init(){
+  try { var r=await fetch("/api/me",{credentials:"same-origin"}); var d=await r.json();
+        AUTH.user=(d&&d.user)||null; AUTH.signed=!!AUTH.user; } catch(e){ AUTH.signed=false; }
+  wireAccount();
+  if(AUTH.signed){
+    var server=null;
+    try { var rr=await fetch("/api/memory",{credentials:"same-origin"}); if(rr.ok){ server=await rr.json(); } } catch(e){}
+    server = server || { verses:[], folders:[] };
+    if((server.verses&&server.verses.length) || (server.folders&&server.folders.length)){
+      db = { verses:server.verses||[], folders:server.folders||[] };
+    } else {
+      // Empty account: offer a one-time import of this browser's verses, else seed.
+      var local = loadLocal();
+      if(local && local.verses && local.verses.length &&
+         confirm("Import your "+local.verses.length+" saved verse"+(local.verses.length===1?"":"s")+" from this browser into your account?")){
+        db = local;
+      } else {
+        db = seedNew();
+      }
+      _dirty=true; flushServer(false);
+    }
+  } else {
+    var l = loadLocal();
+    if(l){ db=l; } else { db=seedNew(); saveLocal(); }
+  }
+  render();
+}
+window.addEventListener("pagehide", function(){ if(AUTH.signed) flushServer(true); });
 
 function newVerse(ref, folderId){
   return { id:uid(), reference:ref, text:null, currentStep:0,
@@ -919,8 +985,7 @@ $("theme-toggle").onclick=function(){
   try{ localStorage.setItem("studybible.theme",next); }catch(e){}
 };
 
-load();
-render();
+init();
 })();
 </script>
 </body>
