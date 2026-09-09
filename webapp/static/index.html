@@ -48,7 +48,8 @@
   /* ---------- app shell ---------- */
   .app{display:grid;grid-template-columns:58px 266px 1fr;height:100%}
   .rail{background:var(--surface);border-right:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;gap:3px;padding:12px 0;z-index:20}
-  .rail .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:10px;text-decoration:none}
+  .rail .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:10px;text-decoration:none;overflow:hidden}
+  .rail .mark img{width:100%;height:100%;object-fit:cover;border-radius:9px;display:block}
   .rail button,.rail a.railbtn{width:42px;height:42px;border-radius:10px;border:1px solid transparent;background:none;color:var(--ink-soft);display:grid;place-items:center;cursor:pointer;text-decoration:none}
   .rail button:hover,.rail a.railbtn:hover{background:var(--surface-2);color:var(--ink)}
   .rail a.railbtn.active{background:var(--accent);color:#fff}
@@ -206,7 +207,7 @@
 
 <div class="app">
   <nav class="rail" aria-label="Primary">
-    <a class="mark" href="/" title="Exegetica">Ex</a>
+    <a class="mark" href="/" title="Exegetica"><img src="/static/icons/icon-192.png" alt="Exegetica"></a>
     <a class="railbtn active" href="/" title="Chat" aria-label="Chat"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg></a>
     <a class="railbtn" href="/memory" title="Scripture Memory" aria-label="Scripture Memory"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/><path d="M6.5 11h6M6.5 14h4"/></svg></a>
     <span class="sp"></span>
