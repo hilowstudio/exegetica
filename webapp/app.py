@@ -19,6 +19,7 @@ import json
 import logging
 import os
 import sys
+import time
 from pathlib import Path
 
 from mcp import ClientSession, StdioServerParameters
@@ -28,7 +29,7 @@ from starlette.responses import FileResponse, HTMLResponse, JSONResponse, Stream
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import calendar_views, course, course_views, generator, library, memory, providers
+from webapp import calendar_views, course, course_views, curriculum, generator, library, memory, providers
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("study-bible-web")
@@ -75,7 +76,8 @@ def _voice() -> str:
 def _system_for(persona: str) -> str:
     base = _theologian_system() if persona == "theologian" else NEUTRAL_SYSTEM
     v = _voice()
-    return f"{base}\n\n---\n\n{v}" if v else base
+    system = f"{base}\n\n---\n\n{v}" if v else base
+    return system + curriculum.system_note()
 
 
 # ---------------------------------------------------------------------------
@@ -107,7 +109,14 @@ class MCPBridge:
             {"name": t.name, "description": t.description or "", "input_schema": t.inputSchema}
             for t in result.tools
         ]
-        logger.info("MCP connected: %d tools", len(self.tools))
+        # Aggregate the local, student-facing John curriculum tools alongside the
+        # study-bible MCP tools. All providers read from self.tools and dispatch
+        # through self.call, so this is the only wiring needed.
+        self.tools += curriculum.TOOLS
+        logger.info(
+            "MCP connected: %d tools (+%d curriculum)",
+            len(self.tools) - len(curriculum.TOOLS), len(curriculum.TOOLS),
+        )
 
     async def stop(self) -> None:
         with contextlib.suppress(Exception):
@@ -119,10 +128,22 @@ class MCPBridge:
 
     async def call(self, name: str, arguments: dict) -> tuple[str, bool]:
         """Call a tool; return (text, is_error)."""
+        t0 = time.perf_counter()
+        # Local curriculum tools are served in-process (no MCP round-trip).
+        if name in curriculum.HANDLER_NAMES:
+            try:
+                text = curriculum.handle(name, arguments or {})
+            except Exception as e:  # noqa: BLE001
+                logger.info("tool %s (curriculum) FAILED in %.0f ms", name, (time.perf_counter() - t0) * 1000)
+                return f"Tool call failed: {e}", True
+            logger.info("tool %s (curriculum) took %.0f ms", name, (time.perf_counter() - t0) * 1000)
+            return text, False
         try:
             result = await self.session.call_tool(name, arguments or {})
         except Exception as e:  # noqa: BLE001
+            logger.info("tool %s FAILED in %.0f ms", name, (time.perf_counter() - t0) * 1000)
             return f"Tool call failed: {e}", True
+        logger.info("tool %s took %.0f ms", name, (time.perf_counter() - t0) * 1000)
         parts = [c.text for c in result.content if getattr(c, "type", None) == "text"]
         text = "\n".join(parts) if parts else "(no textual content returned)"
         return text, bool(getattr(result, "isError", False))
