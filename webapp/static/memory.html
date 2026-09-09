@@ -115,6 +115,38 @@
   .badge{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ok);font-weight:600;margin-bottom:12px}
   .badge svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
 
+  /* ---------- master-detail dashboard ---------- */
+  .mem-layout{display:flex;gap:22px;align-items:flex-start}
+  .mem-list{flex:0 0 300px;min-width:0}
+  .mem-detail{flex:1;min-width:0;position:sticky;top:0;align-self:flex-start}
+  @media(max-width:760px){ .mem-layout{flex-direction:column} .mem-list{flex:none;width:100%} .mem-detail{position:static;width:100%} }
+  .vlist{display:flex;flex-direction:column;gap:8px}
+  .vrow{background:var(--surface);border:1px solid var(--rule);border-radius:11px;padding:11px 13px;position:relative;cursor:pointer;transition:border-color .15s,background .15s}
+  .vrow:hover{background:var(--surface-2)}
+  .vrow.sel{border-color:var(--accent);background:var(--surface-2)}
+  .vrow.drop{border-color:var(--iron);border-style:dashed;background:var(--surface-2)}
+  .vrow .vref{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--ink);margin:0 0 3px;padding-right:26px}
+  .vrow .vmeta{font-size:11.5px;color:var(--ink-faint);margin-bottom:8px}
+  .vrow.mastered .vmeta{color:var(--ok)}
+  .vrow .bar{margin-bottom:0}
+  .vrow .kebab{position:absolute;top:8px;right:7px;width:28px;height:28px}
+  .frow{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--rule);border-radius:11px;padding:11px 13px;cursor:pointer;position:relative}
+  .frow:hover{background:var(--surface-2)}
+  .frow.drop{border-color:var(--iron);border-style:dashed;background:var(--surface-2)}
+  .frow .fico2{color:var(--brass);display:grid;place-items:center;flex:none}
+  .frow .fico2 svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7}
+  .frow .fname2{font-family:var(--serif);font-weight:600;font-size:15px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .frow .fcnt{font-size:12px;color:var(--ink-faint);font-family:var(--mono)}
+  .detail{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:26px 26px 24px}
+  .detail .dref{font-family:var(--serif);font-weight:600;font-size:26px;color:var(--ink);margin:0 0 16px}
+  .detail .dtext{font-family:var(--serif);font-size:19px;line-height:1.62;color:var(--ink);margin:0 0 22px}
+  .detail .dtext.loading{color:var(--ink-faint);font-style:italic;font-size:15px}
+  .detail .dstep{font-size:13px;color:var(--ink-soft);font-weight:600;margin-bottom:9px}
+  .detail .bar{height:9px;margin-bottom:20px}
+  .detail-empty{background:var(--surface);border:1px dashed var(--rule-strong);border-radius:16px;padding:52px 26px;text-align:center;color:var(--ink-soft)}
+  .detail-empty h3{font-family:var(--serif);font-weight:600;font-size:19px;color:var(--ink);margin:0 0 6px}
+  .detail-empty p{margin:0;font-size:14px}
+
   .empty{text-align:center;padding:56px 20px;color:var(--ink-soft)}
   .empty svg{width:44px;height:44px;stroke:var(--rule-strong);fill:none;stroke-width:1.5;margin-bottom:14px}
   .empty h3{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);margin:0 0 6px}
@@ -249,7 +281,7 @@ var LIBRARY = ["Genesis 1:1-2","Genesis 1:27-31","Exodus 33:13-19","Exodus 34:6-
 
 // ---------------------------------------------------------------- state
 var db = { verses:[], folders:[] };
-var ui = { view:"dash", tab:"learning", folderId:null, menuFor:null };
+var ui = { view:"dash", tab:"learning", folderId:null, menuFor:null, selectedId:null };
 var practice = null;
 
 function uid(){ return "v"+Date.now().toString(36)+Math.random().toString(36).slice(2,7); }
@@ -355,65 +387,74 @@ function renderDash(){
   var learning = scoped.filter(function(v){ return v.currentStep<8; });
   var mastered = scoped.filter(function(v){ return v.currentStep>=8; });
   var list = ui.tab==="mastered" ? mastered : learning;
+  var folders = ui.folderId ? [] : db.folders.slice().sort(function(a,b){return a.name.localeCompare(b.name);});
 
-  var html = "";
-
-  // breadcrumb
-  if(inFolder){
-    html += '<div class="crumbs"><a id="crumb-root">All verses</a> <span>›</span> <b>'+esc(inFolder.name)+'</b>'+
-            ' <button class="icobtn" id="fld-rename" title="Rename folder"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>'+
-            '</div>';
+  // full-width empty state when this scope/tab is entirely empty
+  if(list.length===0 && folders.length===0){
+    $("view").innerHTML = (inFolder?crumbHtml(inFolder):"") + toolbarHtml(learning,mastered) + emptyState();
+    wireDash();
+    return;
   }
 
-  // toolbar: tabs + new folder (root only)
-  html += '<div class="toolbar"><div class="tabs" role="tablist">'+
+  // keep a valid selection inside the current list
+  if(!list.some(function(v){return v.id===ui.selectedId;})){
+    ui.selectedId = list.length ? list[0].id : null;
+  }
+  var selected = list.filter(function(v){return v.id===ui.selectedId;})[0] || null;
+
+  var rows = "";
+  folders.forEach(function(f){ rows += folderRow(f); });
+  if(list.length){ list.forEach(function(v){ rows += verseRow(v); }); }
+  else { rows += '<div class="note" style="padding:16px 4px">No verses here yet.</div>'; }
+
+  $("view").innerHTML =
+    (inFolder?crumbHtml(inFolder):"") + toolbarHtml(learning,mastered) +
+    '<div class="mem-layout">'+
+      '<div class="mem-list"><div class="vlist">'+rows+'</div></div>'+
+      '<div class="mem-detail">'+verseDetail(selected)+'</div>'+
+    '</div>';
+
+  wireDash();
+  wireVerseCards();
+  wireRowSelect();
+  hydrateDetail(selected);
+}
+
+function crumbHtml(inFolder){
+  return '<div class="crumbs"><a id="crumb-root">All verses</a> <span>›</span> <b>'+esc(inFolder.name)+'</b>'+
+    ' <button class="icobtn" id="fld-rename" title="Rename folder"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button></div>';
+}
+
+function toolbarHtml(learning, mastered){
+  var h = '<div class="toolbar"><div class="tabs" role="tablist">'+
     '<button role="tab" aria-selected="'+(ui.tab==="learning")+'" id="tab-learn">Learning<span class="cnt">'+learning.length+'</span></button>'+
     '<button role="tab" aria-selected="'+(ui.tab==="mastered")+'" id="tab-master">Mastered<span class="cnt">'+mastered.length+'</span></button>'+
     '</div><span style="flex:1"></span>';
-  if(!ui.folderId){ html += '<button class="btn" id="btn-folder">＋ New folder</button>'; }
-  html += '</div>';
+  if(!ui.folderId){ h += '<button class="btn" id="btn-folder">＋ New folder</button>'; }
+  return h + '</div>';
+}
 
-  // folder cards (root only)
-  var folderCards="";
-  if(!ui.folderId){
-    db.folders.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(f){
-      var cnt = db.verses.filter(function(v){return v.folderId===f.id;}).length;
-      folderCards += '<div class="card folder" data-folder="'+f.id+'">'+
-        '<div class="fico"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>'+
-        '<div class="fname">'+esc(f.name)+'</div>'+
-        '<div class="meta">'+cnt+' verse'+(cnt===1?"":"s")+'</div>'+
-        '<button class="icobtn kebab" data-fmenu="'+f.id+'"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="12" cy="18" r="1.4"/></svg></button>'+
-        '</div>';
-    });
-  }
+function folderRow(f){
+  var cnt = db.verses.filter(function(v){return v.folderId===f.id;}).length;
+  return '<div class="frow" data-folder="'+f.id+'">'+
+    '<div class="fico2"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>'+
+    '<div class="fname2">'+esc(f.name)+'</div>'+
+    '<span class="fcnt">'+cnt+'</span>'+
+    '<button class="icobtn kebab" data-fmenu="'+f.id+'"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="12" cy="18" r="1.4"/></svg></button>'+
+    '</div>';
+}
 
-  // verse cards
-  var verseCards="";
-  list.forEach(function(v){
-    verseCards += verseCard(v);
-  });
-
-  if(folderCards==="" && verseCards===""){
-    html += emptyState();
-  } else {
-    html += '<div class="grid" id="grid">'+folderCards+verseCards+'</div>';
-  }
-
-  $("view").innerHTML = html;
-
-  // wire
+function wireDash(){
   if($("crumb-root")) $("crumb-root").onclick=function(){ ui.folderId=null; ui.menuFor=null; render(); };
   if($("fld-rename")) $("fld-rename").onclick=function(){ renameFolder(ui.folderId); };
-  $("tab-learn").onclick=function(){ ui.tab="learning"; render(); };
-  $("tab-master").onclick=function(){ ui.tab="mastered"; render(); };
+  if($("tab-learn")) $("tab-learn").onclick=function(){ ui.tab="learning"; render(); };
+  if($("tab-master")) $("tab-master").onclick=function(){ ui.tab="mastered"; render(); };
   if($("btn-folder")) $("btn-folder").onclick=function(){ newFolderModal(); };
   if($("empty-add")) $("empty-add").onclick=function(){ addVerseModal(); };
   if($("empty-lib")) $("empty-lib").onclick=function(){ libraryModal(); };
-
-  // folder card clicks + menus + drop targets
-  document.querySelectorAll(".card.folder").forEach(function(el){
+  document.querySelectorAll(".frow").forEach(function(el){
     var fid=el.getAttribute("data-folder");
-    el.onclick=function(e){ if(e.target.closest("[data-fmenu]")||e.target.closest(".menu"))return; ui.folderId=fid; ui.tab="learning"; ui.menuFor=null; render(); };
+    el.onclick=function(e){ if(e.target.closest("[data-fmenu]")||e.target.closest(".menu"))return; ui.folderId=fid; ui.tab="learning"; ui.menuFor=null; ui.selectedId=null; render(); };
     el.addEventListener("dragover",function(e){ e.preventDefault(); el.classList.add("drop"); });
     el.addEventListener("dragleave",function(){ el.classList.remove("drop"); });
     el.addEventListener("drop",function(e){ e.preventDefault(); el.classList.remove("drop");
@@ -422,25 +463,63 @@ function renderDash(){
   document.querySelectorAll("[data-fmenu]").forEach(function(b){
     b.onclick=function(e){ e.stopPropagation(); openFolderMenu(b.getAttribute("data-fmenu"), b); };
   });
-  wireVerseCards();
 }
 
-function verseCard(v){
+function verseRow(v){
   var mastered = v.currentStep>=8;
   var pct = Math.round((v.currentStep/8)*100);
-  var body;
-  if(mastered){
-    body = '<div class="badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Mastered '+esc(fmtDate(v.masteredAt))+'</div>'+
-           '<button class="btn" data-refresh="'+v.id+'"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.9;margin-right:2px"><path d="M3 12a9 9 0 1 1 2.6 6.3M3 20v-5h5"/></svg> Refresh</button>';
-  } else {
-    body = '<div class="meta">Step '+v.currentStep+' of 8 · '+pct+'%</div>'+
-           '<div class="bar"><i style="width:'+pct+'%"></i></div>'+
-           '<button class="btn primary" data-practice="'+v.id+'">'+(v.currentStep>0?"Continue":"Start")+' practice</button>';
-  }
-  return '<div class="card '+(mastered?"mastered":"")+'" draggable="true" data-vcard="'+v.id+'">'+
-    '<div class="ref">'+esc(v.reference)+'</div>'+ body +
+  var meta = mastered
+    ? '<svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;vertical-align:-2px;margin-right:3px"><path d="M20 6L9 17l-5-5"/></svg>Mastered '+esc(fmtDate(v.masteredAt))
+    : 'Step '+v.currentStep+' of 8 · '+pct+'%';
+  return '<div class="vrow'+(mastered?" mastered":"")+(v.id===ui.selectedId?" sel":"")+'" draggable="true" data-vcard="'+v.id+'" data-select="'+v.id+'">'+
+    '<div class="vref">'+esc(v.reference)+'</div>'+
+    '<div class="vmeta">'+meta+'</div>'+
+    '<div class="bar"><i style="width:'+pct+'%"></i></div>'+
     '<button class="icobtn kebab" data-vmenu="'+v.id+'"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="12" cy="18" r="1.4"/></svg></button>'+
     '</div>';
+}
+
+function verseDetail(v){
+  if(!v){
+    return '<div class="detail-empty"><h3>Select a verse</h3><p>Choose a verse from the list to read it and practice.</p></div>';
+  }
+  var mastered = v.currentStep>=8;
+  var pct = Math.round((v.currentStep/8)*100);
+  var tx = v.text ? esc(v.text) : 'Loading verse text…';
+  var txcls = v.text ? '' : ' loading';
+  var actions;
+  if(mastered){
+    actions = '<div class="badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Mastered '+esc(fmtDate(v.masteredAt))+'</div>'+
+      '<button class="btn" data-refresh="'+v.id+'"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.9;margin-right:2px"><path d="M3 12a9 9 0 1 1 2.6 6.3M3 20v-5h5"/></svg> Refresh</button>';
+  } else {
+    actions = '<div class="dstep">Step '+v.currentStep+' of 8 · '+pct+'%</div>'+
+      '<div class="bar"><i style="width:'+pct+'%"></i></div>'+
+      '<button class="btn primary big" data-practice="'+v.id+'">'+(v.currentStep>0?"Continue":"Start")+' practice</button>';
+  }
+  return '<div class="detail">'+
+    '<div class="dref">'+esc(v.reference)+'</div>'+
+    '<div class="dtext'+txcls+'" data-dtext>'+tx+'</div>'+
+    actions + '</div>';
+}
+
+// Lazily fill the detail pane's verse text once fetched, if that verse is still shown.
+function hydrateDetail(v){
+  if(!v || v.text) return;
+  ensureText(v).then(function(t){
+    if(ui.view!=="dash" || ui.selectedId!==v.id) return;
+    var el=document.querySelector("[data-dtext]");
+    if(el){ el.textContent = t || "(text unavailable)"; el.classList.remove("loading"); }
+  });
+}
+
+function wireRowSelect(){
+  document.querySelectorAll("[data-select]").forEach(function(el){
+    el.addEventListener("click",function(e){
+      if(e.target.closest("[data-vmenu]")||e.target.closest(".menu")) return;
+      var id=el.getAttribute("data-select");
+      if(id!==ui.selectedId){ ui.selectedId=id; ui.menuFor=null; render(); }
+    });
+  });
 }
 
 function wireVerseCards(){
@@ -479,7 +558,7 @@ function closeMenus(){ document.querySelectorAll(".menu").forEach(function(m){m.
 function openVerseMenu(vid, anchor){
   closeMenus();
   var v=verseById(vid); if(!v) return;
-  var card=anchor.closest(".card");
+  var card=anchor.closest(".card, .vrow, .frow");
   var m=document.createElement("div"); m.className="menu";
   var folderItems = db.folders.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).map(function(f){
     var cur = v.folderId===f.id;
@@ -499,7 +578,7 @@ function openVerseMenu(vid, anchor){
 }
 function openFolderMenu(fid, anchor){
   closeMenus();
-  var card=anchor.closest(".card");
+  var card=anchor.closest(".card, .vrow, .frow");
   var m=document.createElement("div"); m.className="menu";
   m.innerHTML =
     '<button data-ren="'+fid+'"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Rename</button>'+
