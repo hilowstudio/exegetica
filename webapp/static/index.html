@@ -54,6 +54,9 @@
   .rail button:hover,.rail a.railbtn:hover{background:var(--surface-2);color:var(--ink)}
   .rail a.railbtn.active{background:var(--accent);color:#fff}
   .rail .sp{flex:1}
+  .rail .acct{overflow:hidden}
+  .rail .acct img{width:26px;height:26px;border-radius:50%;object-fit:cover;display:block}
+  .rail .acct .ini{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--sans);font-weight:700;font-size:12px}
   .rail svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
   .rail .glyph{font-size:18px;line-height:1}
 
@@ -211,6 +214,7 @@
     <a class="railbtn active" href="/" title="Chat" aria-label="Chat"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg></a>
     <a class="railbtn" href="/memory" title="Scripture Memory" aria-label="Scripture Memory"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/><path d="M6.5 11h6M6.5 14h4"/></svg></a>
     <span class="sp"></span>
+    <a id="acct" class="railbtn acct" href="/auth/login" title="Sign in" aria-label="Sign in"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg></a>
     <button id="open-about" type="button" title="About" aria-label="About"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button>
     <button id="open-settings" type="button" title="Model &amp; API key" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.2 7l2.6 1.5M17.2 15.5l2.6 1.5M4.2 17l2.6-1.5M17.2 8.5l2.6-1.5"/></svg></button>
     <button id="theme-toggle" type="button" title="Toggle light / dark" aria-label="Toggle theme"><span class="glyph">◐</span></button>
@@ -649,6 +653,21 @@ function auto(){input.style.height="auto";input.style.height=Math.min(input.scro
 input.addEventListener("input",auto);
 document.getElementById("examples").addEventListener("click",e=>{
   const b=e.target.closest("button");if(b){input.value=b.textContent;auto();sendBtn.click();}});
+
+/* account control: reflects /api/me; sign-in is optional and never gates the app */
+(function(){
+  var el=document.getElementById("acct"); if(!el) return;
+  var here=location.pathname+location.search;
+  el.setAttribute("href","/auth/login?next="+encodeURIComponent(here));
+  fetch("/api/me",{credentials:"same-origin"}).then(function(r){return r.json();}).then(function(d){
+    var u=d&&d.user; if(!u) return;
+    var initial=((u.name||u.email||"?").trim()[0]||"?").toUpperCase();
+    el.innerHTML = u.picture ? '<img src="'+u.picture+'" alt="" referrerpolicy="no-referrer">' : '<span class="ini">'+initial+'</span>';
+    el.setAttribute("href","/auth/logout?next="+encodeURIComponent(here));
+    var label=(u.name||u.email||"Account")+" · Sign out";
+    el.setAttribute("title",label); el.setAttribute("aria-label",label);
+  }).catch(function(){});
+})();
 
 renderChatList();
 </script>

@@ -18,6 +18,7 @@ import contextlib
 import json
 import logging
 import os
+import secrets
 import sys
 import time
 from pathlib import Path
@@ -26,10 +27,12 @@ from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 from starlette.applications import Starlette
 from starlette.responses import FileResponse, HTMLResponse, JSONResponse, StreamingResponse
+from starlette.middleware import Middleware
+from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import calendar_views, course, course_views, curriculum, db, generator, library, memory, providers, safety
+from webapp import auth, calendar_views, course, course_views, curriculum, db, generator, library, memory, providers, safety
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("study-bible-web")
@@ -492,6 +495,7 @@ async def lifespan(app: Starlette):
             logger.warning("Database unavailable, continuing without it: %s", e)
     else:
         logger.info("DATABASE_URL not set; database features disabled")
+    logger.info("Google sign-in: %s", "configured" if auth.configured() else "not configured")
     try:
         yield
     finally:
@@ -499,8 +503,16 @@ async def lifespan(app: Starlette):
         await app.state.mcp.stop()
 
 
+SESSION_SECRET = os.environ.get("SESSION_SECRET") or secrets.token_urlsafe(32)
+if not os.environ.get("SESSION_SECRET"):
+    logger.warning("SESSION_SECRET not set; using an ephemeral dev secret (sessions reset on restart)")
+
 app = Starlette(
     lifespan=lifespan,
+    middleware=[
+        Middleware(SessionMiddleware, secret_key=SESSION_SECRET, same_site="lax",
+                   https_only=bool(os.environ.get("FLY_APP_NAME"))),
+    ],
     routes=[
         Route("/", index),
         Route("/generate", generate_page),
@@ -522,6 +534,10 @@ app = Starlette(
         Route("/api/library/video", library_video),
         Route("/api/library/youtube", library_youtube),
         Route("/api/config", config),
+        Route("/auth/login", auth.login, name="auth_login"),
+        Route("/auth/google/callback", auth.auth_callback, name="auth_callback"),
+        Route("/auth/logout", auth.logout, name="auth_logout"),
+        Route("/api/me", auth.me),
         Route("/api/chat", chat, methods=["POST"]),
         Route("/api/standards/tree", standards_tree),
         Route("/api/standards/objectives", standards_objectives),
