@@ -160,9 +160,31 @@ class StudyBibleDB:
         self.conn: aiosqlite.Connection | None = None
 
     async def connect(self):
-        """Open database connection."""
-        self.conn = await aiosqlite.connect(self.db_path)
+        """Open a tuned, read-only connection to the prebuilt database.
+
+        The shipped DB is built once and never written at runtime, so we open it
+        immutable and memory-mapped with a real page cache. Without this, SQLite
+        uses a ~2 MB cache and plain pread() calls against the ~800 MB file, which
+        on a small shared vCPU (e.g. Fly shared-cpu-1x) makes cold queries slow.
+        mmap pages are file-backed and reclaimable, so this is safe on 1 GB RAM.
+        """
+        try:
+            uri = f"file:{self.db_path.resolve().as_posix()}?mode=ro&immutable=1"
+            self.conn = await aiosqlite.connect(uri, uri=True)
+        except Exception:
+            # Fall back to a plain open if the path can't be expressed as a URI.
+            self.conn = await aiosqlite.connect(self.db_path)
         self.conn.row_factory = aiosqlite.Row
+        for pragma in (
+            "PRAGMA query_only=ON",
+            "PRAGMA mmap_size=536870912",   # 512 MB memory-map
+            "PRAGMA cache_size=-65536",     # 64 MB page cache (negative = KiB)
+            "PRAGMA temp_store=MEMORY",
+        ):
+            try:
+                await self.conn.execute(pragma)
+            except Exception:
+                pass
 
     async def close(self):
         """Close database connection."""
