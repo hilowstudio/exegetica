@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.3.2.1",
+    "name": "Body Awareness, Strength & Control",
+    "topic_id": "ART.3.2",
+    "topic_name": "Dance, Movement & Choreography",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.3",
+    "sub_subject_name": "Dramatic Arts & Movement",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Body Awareness, Strength & Control in Dance, Movement & Choreography (Fine Arts)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.1",
+            "sub_topic_name": "Body Awareness, Strength & Control",
+            "objective_id": "ART.3.2.1.1",
+            "objective_text": "Move safely through space, balancing, stretching, and controlling your body when you start and stop",
+            "objective_uuid": "cfaa7b78-632e-4c6e-8ba4-cebd98fec3fd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.1",
+            "sub_topic_name": "Body Awareness, Strength & Control",
+            "objective_id": "ART.3.2.1.2",
+            "objective_text": "Hold a balanced shape and change levels from low to high with control",
+            "objective_uuid": "e325832f-fd92-4d2c-8607-0821f93f2a33",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.1",
+            "sub_topic_name": "Body Awareness, Strength & Control",
+            "objective_id": "ART.3.2.1.3",
+            "objective_text": "Warm up the body to build flexibility, strength, and steady alignment before dancing",
+            "objective_uuid": "2628b139-8881-4be5-8dc6-a617dbdad637",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.1",
+            "sub_topic_name": "Body Awareness, Strength & Control",
+            "objective_id": "ART.3.2.1.4",
+            "objective_text": "Control your core and posture to move with balance, strength, and clear body awareness",
+            "objective_uuid": "bd795d5b-47a5-4b0f-87cf-8f4a8df29dd2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.1",
+            "sub_topic_name": "Body Awareness, Strength & Control",
+            "objective_id": "ART.3.2.1.5",
+            "objective_text": "Refine strength, flexibility, and alignment through conditioning to expand your movement range",
+            "objective_uuid": "29785eed-5ba1-4b37-8bf6-262a9c0bbebd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.1",
+            "sub_topic_name": "Body Awareness, Strength & Control",
+            "objective_id": "ART.3.2.1.6",
+            "objective_text": "Sustain full-body control, stamina, and precise alignment through demanding, extended movement sequences",
+            "objective_uuid": "242520dc-fb07-4c15-8b70-531ef4df7ac7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

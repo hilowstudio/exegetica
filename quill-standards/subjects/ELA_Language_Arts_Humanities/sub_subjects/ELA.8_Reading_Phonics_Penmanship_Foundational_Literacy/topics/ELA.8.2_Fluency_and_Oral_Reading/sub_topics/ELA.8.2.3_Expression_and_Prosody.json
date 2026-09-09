@@ -1,0 +1,135 @@
+{
+  "sub_topic": {
+    "id": "ELA.8.2.3",
+    "name": "Expression and Prosody",
+    "topic_id": "ELA.8.2",
+    "topic_name": "Fluency and Oral Reading",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.8",
+    "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Expression and Prosody in Fluency and Oral Reading (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.2",
+            "topic_name": "Fluency and Oral Reading",
+            "sub_topic_id": "ELA.8.2.3",
+            "sub_topic_name": "Expression and Prosody",
+            "objective_id": "ELA.8.2.3.1",
+            "objective_text": "Read aloud with expression that reflects the meaning of the text",
+            "objective_uuid": "04367547-bf90-4e92-8e4f-f91a019e3b7c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA RF.4.4 — Read with sufficient accuracy and fluency to support comprehension (foundational reading, grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 14.5,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.2",
+            "topic_name": "Fluency and Oral Reading",
+            "sub_topic_id": "ELA.8.2.3",
+            "sub_topic_name": "Expression and Prosody",
+            "objective_id": "ELA.8.2.3.2",
+            "objective_text": "Change tone and volume to match a character's feelings or the mood of a passage",
+            "objective_uuid": "81dda2c8-9483-42c3-807a-2d8874930ad6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA RF.4.4 — Read with sufficient accuracy and fluency to support comprehension (foundational reading, grade 4)"
+              ]
+            }
+          },
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.2",
+            "topic_name": "Fluency and Oral Reading",
+            "sub_topic_id": "ELA.8.2.3",
+            "sub_topic_name": "Expression and Prosody",
+            "objective_id": "ELA.8.2.3.3",
+            "objective_text": "Use appropriate stress and intonation for statements, questions, and exclamations",
+            "objective_uuid": "272176dd-fe7d-478d-868c-e53e48fa8dfe",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA RF.4.4 — Read with sufficient accuracy and fluency to support comprehension (foundational reading, grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.2",
+            "topic_name": "Fluency and Oral Reading",
+            "sub_topic_id": "ELA.8.2.3",
+            "sub_topic_name": "Expression and Prosody",
+            "objective_id": "ELA.8.2.3.4",
+            "objective_text": "Read dialogue and poetry with expression that conveys interpretation",
+            "objective_uuid": "3f627340-237f-4635-8f8b-2f5d218d3a3d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA RF.4.4 — Read with sufficient accuracy and fluency to support comprehension (foundational reading, grade 4)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

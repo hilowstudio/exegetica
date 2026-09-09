@@ -1,0 +1,135 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.1.6",
+    "name": "Skip Counting (2s, 5s, 10s, etc.)",
+    "topic_id": "MAT.4.1",
+    "topic_name": "Counting & Cardinality",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Skip Counting (2s, 5s, 10s, etc.) in Counting & Cardinality (Mathematics)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.1",
+            "topic_name": "Counting & Cardinality",
+            "sub_topic_id": "MAT.4.1.6",
+            "sub_topic_name": "Skip Counting (2s, 5s, 10s, etc.)",
+            "objective_id": "MAT.4.1.6.1",
+            "objective_text": "Count by tens to 100.",
+            "objective_uuid": "ab040281-0bd6-464d-873f-7a736a7ca799",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 2.NBT.A.2 — Count within 1000; skip-count by 5s, 10s, and 100s (grade 2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 10.0,
+        "objectives": [
+          {
+            "complexity": 10,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.1",
+            "topic_name": "Counting & Cardinality",
+            "sub_topic_id": "MAT.4.1.6",
+            "sub_topic_name": "Skip Counting (2s, 5s, 10s, etc.)",
+            "objective_id": "MAT.4.1.6.2",
+            "objective_text": "Skip-count by 2s, 5s, and 10s.",
+            "objective_uuid": "0ebb1478-d7bf-48f2-8de0-c77f1df2b74a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 2.NBT.A.2 — Count within 1000; skip-count by 5s, 10s, and 100s (grade 2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 2,
+        "average_complexity": 20.5,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.1",
+            "topic_name": "Counting & Cardinality",
+            "sub_topic_id": "MAT.4.1.6",
+            "sub_topic_name": "Skip Counting (2s, 5s, 10s, etc.)",
+            "objective_id": "MAT.4.1.6.3",
+            "objective_text": "Skip-count by 5s, 10s, and 100s within 1000.",
+            "objective_uuid": "a0d23cbd-d9d1-456d-8d26-5ee478ac325c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 2.NBT.A.2 — Count within 1000; skip-count by 5s, 10s, and 100s (grade 2)"
+              ]
+            }
+          },
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.1",
+            "topic_name": "Counting & Cardinality",
+            "sub_topic_id": "MAT.4.1.6",
+            "sub_topic_name": "Skip Counting (2s, 5s, 10s, etc.)",
+            "objective_id": "MAT.4.1.6.4",
+            "objective_text": "Use skip counting by 2s to identify even and odd numbers.",
+            "objective_uuid": "84e00017-8de5-4db7-8ffa-b6d68994ff3f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 2.OA.C.3 — Determine whether a group of objects (up to 20) has an odd or even number of members, e.g., by pairing o (grade 2)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

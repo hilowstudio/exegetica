@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "LIF.5.4.3",
+    "name": "Building Simple Projects (birdhouses, shelves, tool boxes)",
+    "topic_id": "LIF.5.4",
+    "topic_name": "Woodworking & Carpentry Basics",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.5",
+    "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Building Simple Projects (birdhouses, shelves, tool boxes) in Woodworking & Carpentry Basics (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.4",
+            "topic_name": "Woodworking & Carpentry Basics",
+            "sub_topic_id": "LIF.5.4.3",
+            "sub_topic_name": "Building Simple Projects (birdhouses, shelves, tool boxes)",
+            "objective_id": "LIF.5.4.3.1",
+            "objective_text": "Help build a very simple wood project, such as gluing and nailing a small box, with adult supervision.",
+            "objective_uuid": "3138603b-28b9-4216-8e4f-e2f1f3d2339b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.4",
+            "topic_name": "Woodworking & Carpentry Basics",
+            "sub_topic_id": "LIF.5.4.3",
+            "sub_topic_name": "Building Simple Projects (birdhouses, shelves, tool boxes)",
+            "objective_id": "LIF.5.4.3.2",
+            "objective_text": "Follow a simple plan to build a birdhouse, measuring and fastening the pieces.",
+            "objective_uuid": "e1135eb0-afe5-419d-85e3-181471c516b7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.4",
+            "topic_name": "Woodworking & Carpentry Basics",
+            "sub_topic_id": "LIF.5.4.3",
+            "sub_topic_name": "Building Simple Projects (birdhouses, shelves, tool boxes)",
+            "objective_id": "LIF.5.4.3.3",
+            "objective_text": "Build a small shelf or toolbox, cutting parts to size and joining them squarely.",
+            "objective_uuid": "1877b6b4-ddbd-4d0d-815f-6ec96fbd8f88",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.4",
+            "topic_name": "Woodworking & Carpentry Basics",
+            "sub_topic_id": "LIF.5.4.3",
+            "sub_topic_name": "Building Simple Projects (birdhouses, shelves, tool boxes)",
+            "objective_id": "LIF.5.4.3.4",
+            "objective_text": "Read or sketch a project plan, create a cut list, and gather the needed materials and tools.",
+            "objective_uuid": "e9996792-397d-4331-8d05-a462ce092d3a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.4",
+            "topic_name": "Woodworking & Carpentry Basics",
+            "sub_topic_id": "LIF.5.4.3",
+            "sub_topic_name": "Building Simple Projects (birdhouses, shelves, tool boxes)",
+            "objective_id": "LIF.5.4.3.5",
+            "objective_text": "Design and build a small woodworking project from plan to finish, applying safe tool use throughout.",
+            "objective_uuid": "bbe5553e-6d7c-419b-81dd-84f8b39b3520",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

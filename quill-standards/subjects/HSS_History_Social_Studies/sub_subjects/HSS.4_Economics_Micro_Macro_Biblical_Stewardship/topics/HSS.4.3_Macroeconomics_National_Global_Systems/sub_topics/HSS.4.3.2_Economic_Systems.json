@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "HSS.4.3.2",
+    "name": "Economic Systems",
+    "topic_id": "HSS.4.3",
+    "topic_name": "Macroeconomics: National & Global Systems",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.4",
+    "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Economic Systems in Macroeconomics: National & Global Systems (History & Social Studies)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.2",
+            "sub_topic_name": "Economic Systems",
+            "objective_id": "HSS.4.3.2.1",
+            "objective_text": "Describe market, command, and mixed economies and how each decides what to produce.",
+            "objective_uuid": "14c1527f-f149-420a-81ce-46d59d2b2ab5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.12.3-5 — Explain the ways in which the government pays for the goods and services it provides (economics, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.2",
+            "sub_topic_name": "Economic Systems",
+            "objective_id": "HSS.4.3.2.2",
+            "objective_text": "Explain the ways in which a government pays for the goods and services it provides.",
+            "objective_uuid": "13b2f2bf-7d51-4fdb-825d-718a3bddca91",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.12.3-5 — Explain the ways in which the government pays for the goods and services it provides (economics, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.2",
+            "sub_topic_name": "Economic Systems",
+            "objective_id": "HSS.4.3.2.3",
+            "objective_text": "Explain how inflation and unemployment appear differently across economic systems.",
+            "objective_uuid": "a4e3df66-6705-468b-81b0-7eb6cec2323f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.11.3-5 — Explain the meaning of inflation, deflation, and unemployment (economics, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.2",
+            "sub_topic_name": "Economic Systems",
+            "objective_id": "HSS.4.3.2.4",
+            "objective_text": "Analyze how economic indicators reveal the health of different economic systems.",
+            "objective_uuid": "41248178-f82e-4c15-8fc6-813e1ae0ae8b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.11.9-12 — Use economic indicators to analyze the current and future state of the economy (economics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.2",
+            "sub_topic_name": "Economic Systems",
+            "objective_id": "HSS.4.3.2.5",
+            "objective_text": "Evaluate the selection of monetary and fiscal policies within a mixed economy.",
+            "objective_uuid": "0fe2c317-f21c-495a-84c2-f6b095975113",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.12.9-12 — Evaluate the selection of monetary and fiscal policies in a variety of economic conditions (economics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.7.3.4",
+    "name": "Databases (SQL vs NoSQL, tables vs documents)",
+    "topic_id": "CPT.7.3",
+    "topic_name": "Big Data & Data Science",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.7",
+    "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Databases (SQL vs NoSQL, tables vs documents) in Big Data & Data Science (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.4",
+            "sub_topic_name": "Databases (SQL vs NoSQL, tables vs documents)",
+            "objective_id": "CPT.7.3.4.1",
+            "objective_text": "Describe how a database organizes information for storage and retrieval",
+            "objective_uuid": "589da77c-5793-487e-8f22-e4be7911a62f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-10 — Evaluate the tradeoffs in how data elements are organized and where data is stored. Clarification: People make (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.4",
+            "sub_topic_name": "Databases (SQL vs NoSQL, tables vs documents)",
+            "objective_id": "CPT.7.3.4.2",
+            "objective_text": "Explain the difference between SQL tables and NoSQL documents",
+            "objective_uuid": "a287cf9a-e576-4a50-8726-b109b030e5de",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-10 — Evaluate the tradeoffs in how data elements are organized and where data is stored. Clarification: People make (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.4",
+            "sub_topic_name": "Databases (SQL vs NoSQL, tables vs documents)",
+            "objective_id": "CPT.7.3.4.3",
+            "objective_text": "Select a data collection technique to build a dataset for a specific purpose",
+            "objective_uuid": "518aa693-9a49-4105-8f97-dd482fe3203d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-DA-06 — Select data collection tools and techniques to generate data sets that support a claim or communicate informat (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.4",
+            "sub_topic_name": "Databases (SQL vs NoSQL, tables vs documents)",
+            "objective_id": "CPT.7.3.4.4",
+            "objective_text": "Evaluate tradeoffs in how data elements are organized and where data is stored",
+            "objective_uuid": "cb759b32-acda-46d7-8e07-6030bddc6c29",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-10 — Evaluate the tradeoffs in how data elements are organized and where data is stored. Clarification: People make (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

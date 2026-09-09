@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "SCI.3.2.2",
+    "name": "Biomes & Habitats",
+    "topic_id": "SCI.3.2",
+    "topic_name": "Botany, Zoology & Ecosystems",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.3",
+    "sub_subject_name": "Life Sciences (Living Systems Designed with Purpose & Order)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Biomes & Habitats in Botany, Zoology & Ecosystems (Science & Nature)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.3",
+            "sub_subject_name": "Life Sciences (Living Systems Designed with Purpose & Order)",
+            "topic_id": "SCI.3.2",
+            "topic_name": "Botany, Zoology & Ecosystems",
+            "sub_topic_id": "SCI.3.2.2",
+            "sub_topic_name": "Biomes & Habitats",
+            "objective_id": "SCI.3.2.2.1",
+            "objective_text": "Observe and compare the plants and animals that live in different habitats.",
+            "objective_uuid": "52d33238-71ba-4282-8bde-cd97d9889e95",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 2-LS4-1 — Make observations of plants and animals to compare the diversity of life in different habitats (grades 2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.3",
+            "sub_subject_name": "Life Sciences (Living Systems Designed with Purpose & Order)",
+            "topic_id": "SCI.3.2",
+            "topic_name": "Botany, Zoology & Ecosystems",
+            "sub_topic_id": "SCI.3.2.2",
+            "sub_topic_name": "Biomes & Habitats",
+            "objective_id": "SCI.3.2.2.2",
+            "objective_text": "Describe how a habitat provides the food, water, and shelter that organisms need.",
+            "objective_uuid": "8109172f-b857-4f31-8ce0-8756f04a326f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 2-LS4-1 — Make observations of plants and animals to compare the diversity of life in different habitats (grades 2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.3",
+            "sub_subject_name": "Life Sciences (Living Systems Designed with Purpose & Order)",
+            "topic_id": "SCI.3.2",
+            "topic_name": "Botany, Zoology & Ecosystems",
+            "sub_topic_id": "SCI.3.2.2",
+            "sub_topic_name": "Biomes & Habitats",
+            "objective_id": "SCI.3.2.2.3",
+            "objective_text": "Construct an argument with evidence that in a particular habitat some organisms survive well, some survive less well, and some cannot survive at all.",
+            "objective_uuid": "0b8b2d7e-ab61-498b-8233-cf9824deb280",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 3-LS4-3 — Construct an argument with evidence that in a particular habitat some organisms can survive well, some s (grades 3)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.3",
+            "sub_subject_name": "Life Sciences (Living Systems Designed with Purpose & Order)",
+            "topic_id": "SCI.3.2",
+            "topic_name": "Botany, Zoology & Ecosystems",
+            "sub_topic_id": "SCI.3.2.2",
+            "sub_topic_name": "Biomes & Habitats",
+            "objective_id": "SCI.3.2.2.4",
+            "objective_text": "Compare the characteristics of major biomes, such as deserts, rainforests, grasslands, and tundra.",
+            "objective_uuid": "b154f26b-a597-448b-8478-59e016f385ba",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-LS2-1 — Organisms, and populations of organisms, are dependent on their environmental interactions both with oth (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.3",
+            "sub_subject_name": "Life Sciences (Living Systems Designed with Purpose & Order)",
+            "topic_id": "SCI.3.2",
+            "topic_name": "Botany, Zoology & Ecosystems",
+            "sub_topic_id": "SCI.3.2.2",
+            "sub_topic_name": "Biomes & Habitats",
+            "objective_id": "SCI.3.2.2.5",
+            "objective_text": "Explain how organisms and populations depend on interactions with other living things and with nonliving factors in their ecosystem.",
+            "objective_uuid": "8ffb1b26-68b7-4c0a-8ed2-575c7d74201c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-LS2-1 — Organisms, and populations of organisms, are dependent on their environmental interactions both with oth (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

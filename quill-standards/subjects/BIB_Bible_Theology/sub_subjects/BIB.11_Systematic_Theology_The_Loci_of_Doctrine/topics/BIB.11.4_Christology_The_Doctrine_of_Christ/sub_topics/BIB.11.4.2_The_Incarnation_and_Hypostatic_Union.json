@@ -1,0 +1,480 @@
+{
+  "sub_topic": {
+    "id": "BIB.11.4.2",
+    "name": "The Incarnation and Hypostatic Union",
+    "topic_id": "BIB.11.4",
+    "topic_name": "Christology: The Doctrine of Christ",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.11",
+    "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+    "total_objectives": 16,
+    "description": "K-12 developmental progression for The Incarnation and Hypostatic Union in Christology: The Doctrine of Christ, anchored in Scripture and the confessions via the Study Bible tools.",
+    "enrichment": {
+      "status": "expanded",
+      "levers": [
+        "structural-expansion",
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture and confession anchors validated against the study-bible MCP tools; original-language tags limited to tool-verified terms."
+    },
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.1",
+            "objective_text": "Identify that God the Son became a real human being.",
+            "objective_uuid": "3600aebf-221c-4df5-b7fb-4f847af146e6",
+            "anchors": {
+              "scripture": [
+                "John 1:14",
+                "Luke 2:7"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.2",
+            "objective_text": "Name Jesus as both God and man.",
+            "objective_uuid": "9d329b78-3119-4da1-b3f4-b361e5ea6b53",
+            "anchors": {
+              "scripture": [
+                "John 1:14",
+                "1 Timothy 2:5"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.3",
+            "objective_text": "Recall that the baby Jesus was born of Mary.",
+            "objective_uuid": "7a6dcc83-fcdd-4d4c-8395-94b0ecb0216c",
+            "anchors": {
+              "scripture": [
+                "Luke 2:7",
+                "Matthew 1:23"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.4",
+            "objective_text": "Observe that Jesus grew, got tired, and got hungry like us.",
+            "objective_uuid": "847be863-11ec-483c-80c8-39438a213345",
+            "anchors": {
+              "scripture": [
+                "Luke 2:52",
+                "John 4:6"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.5",
+            "objective_text": "Summarize 'the Word became flesh.'",
+            "objective_uuid": "953c71a2-b5cd-4d3d-a5f4-cb40219e6e41",
+            "anchors": {
+              "scripture": [
+                "John 1:14"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.6",
+            "objective_text": "Explain 'Immanuel — God with us.'",
+            "objective_uuid": "24978a69-5341-43ce-8d5a-ddaf56426931",
+            "anchors": {
+              "scripture": [
+                "Matthew 1:23",
+                "Isaiah 7:14"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.7",
+            "objective_text": "Compare Jesus' two natures without mixing them together.",
+            "objective_uuid": "305ee315-8a6e-4fef-964c-cd4ca788931c",
+            "anchors": {
+              "scripture": [
+                "John 1:14"
+              ],
+              "confessions": [
+                "Heidelberg Catechism Q35"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.8",
+            "objective_text": "Categorize what belongs to His deity and what to His humanity.",
+            "objective_uuid": "e6d1b745-e9d4-4f08-a15b-a1c9ffda13ad",
+            "anchors": {
+              "scripture": [
+                "Mark 4:38-39",
+                "John 11:35"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.9",
+            "objective_text": "Analyze the virgin conception by the Holy Spirit.",
+            "objective_uuid": "387986f6-a21b-4347-b38d-0fb017cb1eb6",
+            "anchors": {
+              "scripture": [
+                "Luke 1:35",
+                "Matthew 1:20"
+              ],
+              "confessions": [
+                "Heidelberg Catechism Q35"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.10",
+            "objective_text": "Interpret morphe ('form of God' / 'form of a servant') in Philippians 2.",
+            "objective_uuid": "2798610f-a256-4dfe-b21f-b56bfd19395e",
+            "anchors": {
+              "scripture": [
+                "Philippians 2:6-7"
+              ],
+              "confessions": [],
+              "greek": [
+                "G3444 μορφή (morphē) — form"
+              ]
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.11",
+            "objective_text": "Connect the incarnation to why the Mediator had to be both God and man.",
+            "objective_uuid": "98abd823-fb74-436b-ab7d-3ed59cf4211b",
+            "anchors": {
+              "scripture": [
+                "1 Timothy 2:5",
+                "Hebrews 2:17"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q38",
+                "Westminster Larger Catechism Q39"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.12",
+            "objective_text": "Explain the hypostatic union: two natures in one person.",
+            "objective_uuid": "be71d807-15e7-4f16-b84d-04ca75604a85",
+            "anchors": {
+              "scripture": [
+                "John 1:14",
+                "Colossians 2:9"
+              ],
+              "confessions": [
+                "Westminster Confession 8.2"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.13",
+            "objective_text": "Construct the Chalcedonian formula ('without confusion, change, division, or separation').",
+            "objective_uuid": "aec88928-db99-4a3a-8c84-a51ae28971d6",
+            "anchors": {
+              "scripture": [
+                "John 1:14"
+              ],
+              "confessions": [
+                "Chalcedonian Definition"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.14",
+            "objective_text": "Evaluate the heresies it excludes (Nestorianism, Eutychianism, Apollinarianism).",
+            "objective_uuid": "cbeeb947-0fda-4919-b283-3aea07b78338",
+            "anchors": {
+              "scripture": [
+                "John 1:14"
+              ],
+              "confessions": [
+                "Chalcedonian Definition"
+              ],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.15",
+            "objective_text": "Defend the sinlessness and impeccability of Christ.",
+            "objective_uuid": "8ca0433c-367c-414d-b808-24ed0e932684",
+            "anchors": {
+              "scripture": [
+                "Hebrews 4:15",
+                "2 Corinthians 5:21"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.4",
+            "topic_name": "Christology: The Doctrine of Christ",
+            "sub_topic_id": "BIB.11.4.2",
+            "sub_topic_name": "The Incarnation and Hypostatic Union",
+            "objective_id": "BIB.11.4.2.16",
+            "objective_text": "Synthesize the communicatio idiomatum (the properties of both natures ascribed to the one person).",
+            "objective_uuid": "b298e31c-e56c-43ab-b5f3-24f0911bb966",
+            "anchors": {
+              "scripture": [
+                "Acts 20:28",
+                "John 3:13"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q36"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

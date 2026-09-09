@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "HSS.5.3.2",
+    "name": "Biblical Chronology as a Historical Framework (Creation to Consummation)",
+    "topic_id": "HSS.5.3",
+    "topic_name": "What Is History?",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.5",
+    "sub_subject_name": "Foundations of History & Human Civilization",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Biblical Chronology as a Historical Framework (Creation to Consummation) in What Is History? (History & Social Studies)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.3",
+            "topic_name": "What Is History?",
+            "sub_topic_id": "HSS.5.3.2",
+            "sub_topic_name": "Biblical Chronology as a Historical Framework (Creation to Consummation)",
+            "objective_id": "HSS.5.3.2.1",
+            "objective_text": "Sequence major events of biblical history from Creation to the coming of Christ.",
+            "objective_uuid": "21bb7c16-4e5d-48c9-8794-3f936e86e3c3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.3",
+            "topic_name": "What Is History?",
+            "sub_topic_id": "HSS.5.3.2",
+            "sub_topic_name": "Biblical Chronology as a Historical Framework (Creation to Consummation)",
+            "objective_id": "HSS.5.3.2.2",
+            "objective_text": "Describe the main eras of the biblical storyline: Creation, Fall, Flood, Patriarchs, Israel, Christ, and the Church.",
+            "objective_uuid": "5450058c-4036-4b59-8e10-3528d0da384e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.3",
+            "topic_name": "What Is History?",
+            "sub_topic_id": "HSS.5.3.2",
+            "sub_topic_name": "Biblical Chronology as a Historical Framework (Creation to Consummation)",
+            "objective_id": "HSS.5.3.2.3",
+            "objective_text": "Explain how the Bible presents history as a unified story moving from Creation to Consummation.",
+            "objective_uuid": "7dbe91e4-c6cc-4001-8685-e275ff69661d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.3",
+            "topic_name": "What Is History?",
+            "sub_topic_id": "HSS.5.3.2",
+            "sub_topic_name": "Biblical Chronology as a Historical Framework (Creation to Consummation)",
+            "objective_id": "HSS.5.3.2.4",
+            "objective_text": "Analyze how biblical chronology provides a framework for placing other ancient events in time.",
+            "objective_uuid": "ed2f3057-2fdf-4bf0-830f-f6577017060f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.3",
+            "topic_name": "What Is History?",
+            "sub_topic_id": "HSS.5.3.2",
+            "sub_topic_name": "Biblical Chronology as a Historical Framework (Creation to Consummation)",
+            "objective_id": "HSS.5.3.2.5",
+            "objective_text": "Evaluate the strengths and challenges of using biblical chronology as a framework for world history.",
+            "objective_uuid": "0ad71c51-5c3a-45fa-8d46-893ffe3ebe77",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

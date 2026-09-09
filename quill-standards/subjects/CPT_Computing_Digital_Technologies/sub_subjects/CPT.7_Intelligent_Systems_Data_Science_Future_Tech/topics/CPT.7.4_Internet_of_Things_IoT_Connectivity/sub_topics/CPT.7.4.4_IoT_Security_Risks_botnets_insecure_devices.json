@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.7.4.4",
+    "name": "IoT Security Risks (botnets, insecure devices)",
+    "topic_id": "CPT.7.4",
+    "topic_name": "Internet of Things (IoT) & Connectivity",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.7",
+    "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for IoT Security Risks (botnets, insecure devices) in Internet of Things (IoT) & Connectivity (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.4",
+            "topic_name": "Internet of Things (IoT) & Connectivity",
+            "sub_topic_id": "CPT.7.4.4",
+            "sub_topic_name": "IoT Security Risks (botnets, insecure devices)",
+            "objective_id": "CPT.7.4.4.1",
+            "objective_text": "Explain how physical and digital security measures protect connected devices and their data",
+            "objective_uuid": "521da41c-f965-4f2b-8db5-fb669c9c1209",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-NI-05 — Explain how physical and digital security measures protect electronic information. Clarification: Information  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.4",
+            "topic_name": "Internet of Things (IoT) & Connectivity",
+            "sub_topic_id": "CPT.7.4.4",
+            "sub_topic_name": "IoT Security Risks (botnets, insecure devices)",
+            "objective_id": "CPT.7.4.4.2",
+            "objective_text": "Describe why poorly secured IoT devices are vulnerable to attack",
+            "objective_uuid": "bc22c037-b77c-4a02-8286-627c3bd39232",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-05 — Give examples to illustrate how sensitive data can be affected by malware and other attacks. Clarification: Ne (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.4",
+            "topic_name": "Internet of Things (IoT) & Connectivity",
+            "sub_topic_id": "CPT.7.4.4",
+            "sub_topic_name": "IoT Security Risks (botnets, insecure devices)",
+            "objective_id": "CPT.7.4.4.3",
+            "objective_text": "Give examples of how malware can turn insecure IoT devices into a botnet",
+            "objective_uuid": "9dbcc5ca-57b4-4da6-8a77-6fa8cba5a477",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-05 — Give examples to illustrate how sensitive data can be affected by malware and other attacks. Clarification: Ne (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.4",
+            "topic_name": "Internet of Things (IoT) & Connectivity",
+            "sub_topic_id": "CPT.7.4.4",
+            "sub_topic_name": "IoT Security Risks (botnets, insecure devices)",
+            "objective_id": "CPT.7.4.4.4",
+            "objective_text": "Recommend security practices that reduce the risks of IoT devices",
+            "objective_uuid": "cf52975e-ed47-435a-8318-676e91257fb9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-NI-05 — Explain how physical and digital security measures protect electronic information. Clarification: Information  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

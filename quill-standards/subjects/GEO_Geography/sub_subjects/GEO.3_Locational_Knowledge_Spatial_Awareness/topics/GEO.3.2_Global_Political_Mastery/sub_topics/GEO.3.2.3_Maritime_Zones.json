@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "GEO.3.2.3",
+    "name": "Maritime Zones",
+    "topic_id": "GEO.3.2",
+    "topic_name": "Global Political Mastery",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.3",
+    "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Maritime Zones in Global Political Mastery (Geography)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.2",
+            "topic_name": "Global Political Mastery",
+            "sub_topic_id": "GEO.3.2.3",
+            "sub_topic_name": "Maritime Zones",
+            "objective_id": "GEO.3.2.3.1",
+            "objective_text": "Identify the coastline as the boundary between land and sea on a map.",
+            "objective_uuid": "52160f33-f663-4c41-8544-359c6bc92c09",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.3.K-2 — Use maps, globes, and other simple geographic models to identify cultural and environmental characte (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.2",
+            "topic_name": "Global Political Mastery",
+            "sub_topic_id": "GEO.3.2.3",
+            "sub_topic_name": "Maritime Zones",
+            "objective_id": "GEO.3.2.3.2",
+            "objective_text": "Describe maritime zones such as territorial waters and the exclusive economic zone.",
+            "objective_uuid": "8f7d72db-c163-45b7-8da6-0dbbcb4c9dd5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.3.9-12 — Use geographic data to analyze variations in the spatial patterns of cultural and environmental char (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.2",
+            "topic_name": "Global Political Mastery",
+            "sub_topic_id": "GEO.3.2.3",
+            "sub_topic_name": "Maritime Zones",
+            "objective_id": "GEO.3.2.3.3",
+            "objective_text": "Locate and measure maritime boundaries on nautical charts.",
+            "objective_uuid": "c727f749-cd61-42a7-8e4c-9bdedcd163a9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.3.9-12 — Use geographic data to analyze variations in the spatial patterns of cultural and environmental char (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.2",
+            "topic_name": "Global Political Mastery",
+            "sub_topic_id": "GEO.3.2.3",
+            "sub_topic_name": "Maritime Zones",
+            "objective_id": "GEO.3.2.3.4",
+            "objective_text": "Analyze disputes over maritime zones and their economic and political significance.",
+            "objective_uuid": "16089c23-3a06-4760-872f-b061a388c4b7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.3.9-12 — Use geographic data to analyze variations in the spatial patterns of cultural and environmental char (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

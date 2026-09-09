@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "LIF.3.4.5",
+    "name": "Water Stewardship (rain barrels, irrigation efficiency, greywater systems)",
+    "topic_id": "LIF.3.4",
+    "topic_name": "Sustainable Living & Creation Care",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.3",
+    "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Water Stewardship (rain barrels, irrigation efficiency, greywater systems) in Sustainable Living & Creation Care (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.4",
+            "topic_name": "Sustainable Living & Creation Care",
+            "sub_topic_id": "LIF.3.4.5",
+            "sub_topic_name": "Water Stewardship (rain barrels, irrigation efficiency, greywater systems)",
+            "objective_id": "LIF.3.4.5.1",
+            "objective_text": "Turn off the tap and use only the water needed for a task",
+            "objective_uuid": "b3023f0f-dd3e-4fc5-8993-851c7a7085c2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.4",
+            "topic_name": "Sustainable Living & Creation Care",
+            "sub_topic_id": "LIF.3.4.5",
+            "sub_topic_name": "Water Stewardship (rain barrels, irrigation efficiency, greywater systems)",
+            "objective_id": "LIF.3.4.5.2",
+            "objective_text": "Collect rainwater in a barrel to water the garden",
+            "objective_uuid": "25169be5-d411-474c-8754-8e8352aa17cb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.4",
+            "topic_name": "Sustainable Living & Creation Care",
+            "sub_topic_id": "LIF.3.4.5",
+            "sub_topic_name": "Water Stewardship (rain barrels, irrigation efficiency, greywater systems)",
+            "objective_id": "LIF.3.4.5.3",
+            "objective_text": "Explain how drip irrigation delivers water efficiently to plant roots",
+            "objective_uuid": "e9b494c1-8012-4145-875c-bb2ed33c5123",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.4",
+            "topic_name": "Sustainable Living & Creation Care",
+            "sub_topic_id": "LIF.3.4.5",
+            "sub_topic_name": "Water Stewardship (rain barrels, irrigation efficiency, greywater systems)",
+            "objective_id": "LIF.3.4.5.4",
+            "objective_text": "Describe how a greywater system reuses household water for irrigation",
+            "objective_uuid": "e474c979-40a9-441c-8e93-8bba845ad77b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.4",
+            "topic_name": "Sustainable Living & Creation Care",
+            "sub_topic_id": "LIF.3.4.5",
+            "sub_topic_name": "Water Stewardship (rain barrels, irrigation efficiency, greywater systems)",
+            "objective_id": "LIF.3.4.5.5",
+            "objective_text": "Plan a water-wise system for a home or garden that captures and reuses water",
+            "objective_uuid": "dd490e32-e5bb-484d-805e-72ded29fc1ff",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

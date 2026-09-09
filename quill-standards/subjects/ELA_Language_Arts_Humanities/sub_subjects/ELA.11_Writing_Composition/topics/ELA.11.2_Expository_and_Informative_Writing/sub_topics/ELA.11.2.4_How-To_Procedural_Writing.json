@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ELA.11.2.4",
+    "name": "How-To (Procedural) Writing",
+    "topic_id": "ELA.11.2",
+    "topic_name": "Expository and Informative Writing",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.11",
+    "sub_subject_name": "Writing & Composition",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for How-To (Procedural) Writing in Expository and Informative Writing (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.2",
+            "topic_name": "Expository and Informative Writing",
+            "sub_topic_id": "ELA.11.2.4",
+            "sub_topic_name": "How-To (Procedural) Writing",
+            "objective_id": "ELA.11.2.4.1",
+            "objective_text": "Write the steps to do a simple task in the right order using words like first and next",
+            "objective_uuid": "6fda396a-2aed-4b05-8992-a54ac3d52316",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.2 — Write informative/explanatory texts to examine and convey complex ideas and information clearly and accu (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.2",
+            "topic_name": "Expository and Informative Writing",
+            "sub_topic_id": "ELA.11.2.4",
+            "sub_topic_name": "How-To (Procedural) Writing",
+            "objective_id": "ELA.11.2.4.2",
+            "objective_text": "Write clear how-to instructions with ordered steps and any materials needed",
+            "objective_uuid": "d479821d-47a5-4eb6-87dd-4173a2973ec0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.2 — Write informative/explanatory texts to examine and convey complex ideas and information clearly and accu (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.2",
+            "topic_name": "Expository and Informative Writing",
+            "sub_topic_id": "ELA.11.2.4",
+            "sub_topic_name": "How-To (Procedural) Writing",
+            "objective_id": "ELA.11.2.4.3",
+            "objective_text": "Draft a procedure with numbered steps, transitions, and precise, unambiguous wording",
+            "objective_uuid": "2d98513e-98a9-46dd-8e19-0d3c271b8927",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.2 — Write informative/explanatory texts to examine and convey complex ideas and information clearly and accu (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.2",
+            "topic_name": "Expository and Informative Writing",
+            "sub_topic_id": "ELA.11.2.4",
+            "sub_topic_name": "How-To (Procedural) Writing",
+            "objective_id": "ELA.11.2.4.4",
+            "objective_text": "Write how-to instructions organized for a specific audience, adding cautions, tips, or visuals as needed",
+            "objective_uuid": "3d61872e-1a97-43e2-8204-0cc52cf862d3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.4 — Produce clear and coherent writing in which the development, organization, and style are appropriate to  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.2",
+            "topic_name": "Expository and Informative Writing",
+            "sub_topic_id": "ELA.11.2.4",
+            "sub_topic_name": "How-To (Procedural) Writing",
+            "objective_id": "ELA.11.2.4.5",
+            "objective_text": "Produce a clear technical procedure and test it by having a reader follow it, then revise for clarity",
+            "objective_uuid": "e51d7861-85c0-49a2-8076-804b5da4377d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.4 — Produce clear and coherent writing in which the development, organization, and style are appropriate to  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

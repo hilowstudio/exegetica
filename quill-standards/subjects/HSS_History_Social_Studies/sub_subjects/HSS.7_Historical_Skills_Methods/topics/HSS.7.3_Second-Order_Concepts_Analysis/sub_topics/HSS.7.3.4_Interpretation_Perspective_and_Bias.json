@@ -1,0 +1,167 @@
+{
+  "sub_topic": {
+    "id": "HSS.7.3.4",
+    "name": "Interpretation, Perspective, and Bias",
+    "topic_id": "HSS.7.3",
+    "topic_name": "Second-Order Concepts (Analysis)",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.7",
+    "sub_subject_name": "Historical Skills & Methods",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Interpretation, Perspective, and Bias in Second-Order Concepts (Analysis) (History & Social Studies)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.3",
+            "topic_name": "Second-Order Concepts (Analysis)",
+            "sub_topic_id": "HSS.7.3.4",
+            "sub_topic_name": "Interpretation, Perspective, and Bias",
+            "objective_id": "HSS.7.3.4.1",
+            "objective_text": "Recognize that different people can tell the same event in different ways.",
+            "objective_uuid": "ca3fbff5-cb73-4864-873b-eb4021640b53",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.3",
+            "topic_name": "Second-Order Concepts (Analysis)",
+            "sub_topic_id": "HSS.7.3.4",
+            "sub_topic_name": "Interpretation, Perspective, and Bias",
+            "objective_id": "HSS.7.3.4.2",
+            "objective_text": "Ask questions about how a person's group or role shaped the way they saw an event.",
+            "objective_uuid": "6aacb8e0-39a8-4e38-8a86-1a229496ef9b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.K-2 — Generate questions about individuals and groups who have shaped a significant historical change (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.3",
+            "topic_name": "Second-Order Concepts (Analysis)",
+            "sub_topic_id": "HSS.7.3.4",
+            "sub_topic_name": "Interpretation, Perspective, and Bias",
+            "objective_id": "HSS.7.3.4.3",
+            "objective_text": "Compare two accounts of the same event to identify differing perspectives.",
+            "objective_uuid": "1d10c2a9-2e84-4ac8-8296-f26192f3683a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.3",
+            "topic_name": "Second-Order Concepts (Analysis)",
+            "sub_topic_id": "HSS.7.3.4",
+            "sub_topic_name": "Interpretation, Perspective, and Bias",
+            "objective_id": "HSS.7.3.4.4",
+            "objective_text": "Analyze how differing viewpoints offer different explanations of an event's causes.",
+            "objective_uuid": "177c7f4b-3cbd-401c-84eb-ba7d55020755",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.3",
+            "topic_name": "Second-Order Concepts (Analysis)",
+            "sub_topic_id": "HSS.7.3.4",
+            "sub_topic_name": "Interpretation, Perspective, and Bias",
+            "objective_id": "HSS.7.3.4.5",
+            "objective_text": "Evaluate how an author's historical context shaped their interpretation of events.",
+            "objective_uuid": "ac0d0449-43c8-4c1d-88a8-9942eca5542b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

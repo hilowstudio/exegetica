@@ -1,0 +1,122 @@
+{
+  "sub_topic": {
+    "id": "HPE.5.1.3",
+    "name": "Preventing the Spread of Illness",
+    "topic_id": "HPE.5.1",
+    "topic_name": "Germs & Communicable Disease",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.5",
+    "sub_subject_name": "Disease Prevention & Body Defense",
+    "total_objectives": 3,
+    "description": "K-12 progression for Preventing the Spread of Illness in Germs & Communicable Disease (Health & Physical Education)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.1",
+            "topic_name": "Germs & Communicable Disease",
+            "sub_topic_id": "HPE.5.1.3",
+            "sub_topic_name": "Preventing the Spread of Illness",
+            "objective_id": "HPE.5.1.3.1",
+            "objective_text": "Recognize when to stay home to avoid spreading illness.",
+            "objective_uuid": "512d72ad-6b90-4419-8808-20179a2f53e4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.2.1 — Identify that healthy behaviors impact personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.1",
+            "topic_name": "Germs & Communicable Disease",
+            "sub_topic_id": "HPE.5.1.3",
+            "sub_topic_name": "Preventing the Spread of Illness",
+            "objective_id": "HPE.5.1.3.2",
+            "objective_text": "Practice habits that protect oneself and others during illness.",
+            "objective_uuid": "1853373c-756b-4d6c-8e77-bacad0abf3c6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.2.1 — Identify that healthy behaviors impact personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.1",
+            "topic_name": "Germs & Communicable Disease",
+            "sub_topic_id": "HPE.5.1.3",
+            "sub_topic_name": "Preventing the Spread of Illness",
+            "objective_id": "HPE.5.1.3.3",
+            "objective_text": "Explain how community habits affect the spread of disease.",
+            "objective_uuid": "ea1acc2a-8126-4a08-8d6b-c912a112139b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.2.1 — Identify that healthy behaviors impact personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Health Education Standards",
+      "anchor_note": "NHES codes verified against the owned corpus; objectives authored to the standard's real sub-skills at variable depth."
+    }
+  }
+}

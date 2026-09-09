@@ -1,0 +1,122 @@
+{
+  "sub_topic": {
+    "id": "HPE.5.2.3",
+    "name": "Health Screenings & Checkups",
+    "topic_id": "HPE.5.2",
+    "topic_name": "Chronic Disease & Prevention",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.5",
+    "sub_subject_name": "Disease Prevention & Body Defense",
+    "total_objectives": 3,
+    "description": "K-12 progression for Health Screenings & Checkups in Chronic Disease & Prevention (Health & Physical Education)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.2",
+            "topic_name": "Chronic Disease & Prevention",
+            "sub_topic_id": "HPE.5.2.3",
+            "sub_topic_name": "Health Screenings & Checkups",
+            "objective_id": "HPE.5.2.3.1",
+            "objective_text": "Describe the purpose of regular checkups and screenings.",
+            "objective_uuid": "ce008387-bef1-48e7-8a6a-3560b55d2022",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 3.5.1 — Identify characteristics of valid health information, products, and services (National Health Education Standards, grades 3-5)",
+                "Health Ed 3.12.1 — Evaluate the validity of health information, products, and services (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.5.1 — Identify responsible personal health behaviors (National Health Education Standards, grades 3-5)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.2",
+            "topic_name": "Chronic Disease & Prevention",
+            "sub_topic_id": "HPE.5.2.3",
+            "sub_topic_name": "Health Screenings & Checkups",
+            "objective_id": "HPE.5.2.3.2",
+            "objective_text": "Explain how early detection improves health outcomes.",
+            "objective_uuid": "7957cbf9-b82a-4e71-8ac7-24482fc85921",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 3.5.1 — Identify characteristics of valid health information, products, and services (National Health Education Standards, grades 3-5)",
+                "Health Ed 3.12.1 — Evaluate the validity of health information, products, and services (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.5.1 — Identify responsible personal health behaviors (National Health Education Standards, grades 3-5)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.2",
+            "topic_name": "Chronic Disease & Prevention",
+            "sub_topic_id": "HPE.5.2.3",
+            "sub_topic_name": "Health Screenings & Checkups",
+            "objective_id": "HPE.5.2.3.3",
+            "objective_text": "Take age-appropriate responsibility for one's own health monitoring.",
+            "objective_uuid": "91afb05f-23a6-4fe9-88ab-9f30d6ac360a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 3.5.1 — Identify characteristics of valid health information, products, and services (National Health Education Standards, grades 3-5)",
+                "Health Ed 3.12.1 — Evaluate the validity of health information, products, and services (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.5.1 — Identify responsible personal health behaviors (National Health Education Standards, grades 3-5)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Health Education Standards",
+      "anchor_note": "NHES codes verified against the owned corpus; objectives authored to the standard's real sub-skills at variable depth."
+    }
+  }
+}

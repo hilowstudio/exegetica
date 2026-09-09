@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ART.2.3.3",
+    "name": "Ethics of Image Manipulation",
+    "topic_id": "ART.2.3",
+    "topic_name": "Photography (Artistic & Technical)",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.2",
+    "sub_subject_name": "Digital Art, Photography & Media Production",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Ethics of Image Manipulation in Photography (Artistic & Technical) (Fine Arts)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.3",
+            "sub_topic_name": "Ethics of Image Manipulation",
+            "objective_id": "ART.2.3.3.1",
+            "objective_text": "Describe how a photo can be changed to look different from reality.",
+            "objective_uuid": "b4ac6dfe-3f92-4611-8166-0c842a784dde",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr1 — Generate and conceptualize artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.3",
+            "sub_topic_name": "Ethics of Image Manipulation",
+            "objective_id": "ART.2.3.3.2",
+            "objective_text": "Identify examples of honest versus misleading photo edits.",
+            "objective_uuid": "15fc0636-fbec-4324-8af2-73ed4a459c84",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.3",
+            "sub_topic_name": "Ethics of Image Manipulation",
+            "objective_id": "ART.2.3.3.3",
+            "objective_text": "Explain when editing a photo is acceptable and when it becomes deceptive.",
+            "objective_uuid": "a0dfb3d9-4a1c-45c2-84f0-a2463d159f17",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.3",
+            "sub_topic_name": "Ethics of Image Manipulation",
+            "objective_id": "ART.2.3.3.4",
+            "objective_text": "Evaluate the ethical impact of manipulated images in news and advertising.",
+            "objective_uuid": "160679b3-4644-4e92-8223-437cab4ee3d8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.3",
+            "sub_topic_name": "Ethics of Image Manipulation",
+            "objective_id": "ART.2.3.3.5",
+            "objective_text": "Apply honest editing practices and disclose significant changes in your own work for presentation.",
+            "objective_uuid": "b9914444-c727-45d7-847e-41475332221c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Pr5 — Develop and refine artistic techniques and work for presentation (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "CPT.4.1.1",
+    "name": "Attack Methods (Brute force, DDoS, SQL Injection)",
+    "topic_id": "CPT.4.1",
+    "topic_name": "Cyber Security",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.4",
+    "sub_subject_name": "Digital Literacy, Safety & Ethics",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Attack Methods (Brute force, DDoS, SQL Injection) in Cyber Security (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.1",
+            "topic_name": "Cyber Security",
+            "sub_topic_id": "CPT.4.1.1",
+            "sub_topic_name": "Attack Methods (Brute force, DDoS, SQL Injection)",
+            "objective_id": "CPT.4.1.1.1",
+            "objective_text": "Define what a cyberattack is and identify common examples such as brute-force and denial-of-service attacks",
+            "objective_uuid": "e50a6d63-dda3-41d0-805d-d228e37fd142",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-05 — Give examples to illustrate how sensitive data can be affected by malware and other attacks. Clarification: Ne (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.1",
+            "topic_name": "Cyber Security",
+            "sub_topic_id": "CPT.4.1.1",
+            "sub_topic_name": "Attack Methods (Brute force, DDoS, SQL Injection)",
+            "objective_id": "CPT.4.1.1.2",
+            "objective_text": "Explain how a brute-force attack tries to gain access by systematically guessing passwords",
+            "objective_uuid": "61da3804-e8e0-4a19-8c95-ef3164f0b0eb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-05 — Give examples to illustrate how sensitive data can be affected by malware and other attacks. Clarification: Ne (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.1",
+            "topic_name": "Cyber Security",
+            "sub_topic_id": "CPT.4.1.1",
+            "sub_topic_name": "Attack Methods (Brute force, DDoS, SQL Injection)",
+            "objective_id": "CPT.4.1.1.3",
+            "objective_text": "Describe how a distributed denial-of-service (DDoS) attack overwhelms a system to disrupt its availability",
+            "objective_uuid": "a5ec619b-4690-41d2-83b1-6482a5a6c6d3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-05 — Give examples to illustrate how sensitive data can be affected by malware and other attacks. Clarification: Ne (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.1",
+            "topic_name": "Cyber Security",
+            "sub_topic_id": "CPT.4.1.1",
+            "sub_topic_name": "Attack Methods (Brute force, DDoS, SQL Injection)",
+            "objective_id": "CPT.4.1.1.4",
+            "objective_text": "Explain how digital security measures such as firewalls and HTTPS help defend against common attack methods",
+            "objective_uuid": "779ace77-57c4-492a-8a61-7cab982361fe",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-NI-05 — Explain how physical and digital security measures protect electronic information. Clarification: Information  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.1",
+            "topic_name": "Cyber Security",
+            "sub_topic_id": "CPT.4.1.1",
+            "sub_topic_name": "Attack Methods (Brute force, DDoS, SQL Injection)",
+            "objective_id": "CPT.4.1.1.5",
+            "objective_text": "Explain how SQL injection exploits unvalidated user input to read or alter a database",
+            "objective_uuid": "12615d98-6024-4136-88d2-3afca9679d2a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-05 — Give examples to illustrate how sensitive data can be affected by malware and other attacks. Clarification: Ne (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.1",
+            "topic_name": "Cyber Security",
+            "sub_topic_id": "CPT.4.1.1",
+            "sub_topic_name": "Attack Methods (Brute force, DDoS, SQL Injection)",
+            "objective_id": "CPT.4.1.1.6",
+            "objective_text": "Analyze a case study to illustrate how a specific attack method compromised sensitive data",
+            "objective_uuid": "ba2edc20-0dbc-4700-87c4-34e22cc37767",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-05 — Give examples to illustrate how sensitive data can be affected by malware and other attacks. Clarification: Ne (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

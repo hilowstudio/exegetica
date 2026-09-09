@@ -1,0 +1,197 @@
+{
+  "sub_topic": {
+    "id": "CFL.2.3.1",
+    "name": "Exegetical Skills (word studies, grammatical-historical method, theological synthesis)",
+    "topic_id": "CFL.2.3",
+    "topic_name": "Reading & Interpreting the Old Testament",
+    "subject_id": "CFL",
+    "subject_name": "Classical & Foreign Languages",
+    "sub_subject_id": "CFL.2",
+    "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Exegetical Skills (word studies, grammatical-historical method, theological synthesis) in Reading & Interpreting the Old Testament (Classical & Foreign Languages)",
+    "grade_levels": {
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.3",
+            "topic_name": "Reading & Interpreting the Old Testament",
+            "sub_topic_id": "CFL.2.3.1",
+            "sub_topic_name": "Exegetical Skills (word studies, grammatical-historical method, theological synthesis)",
+            "objective_id": "CFL.2.3.1.1",
+            "objective_text": "Look up the meaning of a Hebrew word using a glossary or interlinear tool",
+            "objective_uuid": "7e65c586-8ef2-4df5-8515-417d7941cf50",
+            "anchors": {
+              "scripture": [
+                "2 Timothy 2:15"
+              ],
+              "confessions": [
+                "Westminster Confession 1.9"
+              ],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.3",
+            "topic_name": "Reading & Interpreting the Old Testament",
+            "sub_topic_id": "CFL.2.3.1",
+            "sub_topic_name": "Exegetical Skills (word studies, grammatical-historical method, theological synthesis)",
+            "objective_id": "CFL.2.3.1.2",
+            "objective_text": "Conduct a basic word study by tracing how one Hebrew term is used across several passages",
+            "objective_uuid": "b2ee7ffa-a80e-463b-8cdf-8f28b6f11b18",
+            "anchors": {
+              "scripture": [
+                "2 Timothy 2:15"
+              ],
+              "confessions": [
+                "Westminster Confession 1.9"
+              ],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 14.5,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.3",
+            "topic_name": "Reading & Interpreting the Old Testament",
+            "sub_topic_id": "CFL.2.3.1",
+            "sub_topic_name": "Exegetical Skills (word studies, grammatical-historical method, theological synthesis)",
+            "objective_id": "CFL.2.3.1.3",
+            "objective_text": "Explain the grammatical-historical method as reading a text according to its grammar, its author, and its original setting",
+            "objective_uuid": "2dcaf2b3-aeb8-4635-8981-04d40cfa2911",
+            "anchors": {
+              "scripture": [
+                "2 Timothy 2:15"
+              ],
+              "confessions": [
+                "Westminster Confession 1.9"
+              ],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.3",
+            "topic_name": "Reading & Interpreting the Old Testament",
+            "sub_topic_id": "CFL.2.3.1",
+            "sub_topic_name": "Exegetical Skills (word studies, grammatical-historical method, theological synthesis)",
+            "objective_id": "CFL.2.3.1.4",
+            "objective_text": "Interpret a verse by combining word study, grammatical parsing, and its literary context",
+            "objective_uuid": "808ba86d-ca6c-4f34-8644-2d97d6cdd403",
+            "anchors": {
+              "scripture": [
+                "2 Timothy 2:15"
+              ],
+              "confessions": [
+                "Westminster Confession 1.9"
+              ],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 2,
+        "average_complexity": 23.5,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.3",
+            "topic_name": "Reading & Interpreting the Old Testament",
+            "sub_topic_id": "CFL.2.3.1",
+            "sub_topic_name": "Exegetical Skills (word studies, grammatical-historical method, theological synthesis)",
+            "objective_id": "CFL.2.3.1.5",
+            "objective_text": "Synthesize the exegetical findings of several passages into a careful summary of a biblical theme",
+            "objective_uuid": "3d905340-28c9-4744-885b-6eadc4b976b2",
+            "anchors": {
+              "scripture": [
+                "2 Timothy 2:15"
+              ],
+              "confessions": [
+                "Westminster Confession 1.9"
+              ],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 26,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.3",
+            "topic_name": "Reading & Interpreting the Old Testament",
+            "sub_topic_id": "CFL.2.3.1",
+            "sub_topic_name": "Exegetical Skills (word studies, grammatical-historical method, theological synthesis)",
+            "objective_id": "CFL.2.3.1.6",
+            "objective_text": "Distinguish sound exegesis (drawing meaning out of the text) from eisegesis (reading meaning into it) in a worked example",
+            "objective_uuid": "67a91299-3de1-460d-8258-26d257838e08",
+            "anchors": {
+              "scripture": [
+                "2 Timothy 2:15"
+              ],
+              "confessions": [
+                "Westminster Confession 1.9"
+              ],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

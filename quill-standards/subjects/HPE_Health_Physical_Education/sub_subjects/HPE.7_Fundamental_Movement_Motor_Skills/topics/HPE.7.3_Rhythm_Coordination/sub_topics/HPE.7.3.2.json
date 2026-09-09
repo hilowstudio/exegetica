@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "HPE.7.3.2",
+    "name": "Jumping Rope & Sequences",
+    "topic_id": "HPE.7.3",
+    "topic_name": "Rhythm & Coordination",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.7",
+    "sub_subject_name": "Fundamental Movement & Motor Skills",
+    "total_objectives": 3,
+    "description": "K-12 progression for Jumping Rope & Sequences in Rhythm & Coordination (Health & Physical Education)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.7",
+            "sub_subject_name": "Fundamental Movement & Motor Skills",
+            "topic_id": "HPE.7.3",
+            "topic_name": "Rhythm & Coordination",
+            "sub_topic_id": "HPE.7.3.2",
+            "sub_topic_name": "Jumping Rope & Sequences",
+            "objective_id": "HPE.7.3.2.1",
+            "objective_text": "Jump a self-turned rope repeatedly.",
+            "objective_uuid": "25d53cf2-3e2c-49c5-8dfa-32caa3c68f77",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.7",
+            "sub_subject_name": "Fundamental Movement & Motor Skills",
+            "topic_id": "HPE.7.3",
+            "topic_name": "Rhythm & Coordination",
+            "sub_topic_id": "HPE.7.3.2",
+            "sub_topic_name": "Jumping Rope & Sequences",
+            "objective_id": "HPE.7.3.2.2",
+            "objective_text": "Perform basic jump-rope patterns.",
+            "objective_uuid": "be74036e-aa66-4f92-8bc2-7af22d1683f8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.7",
+            "sub_subject_name": "Fundamental Movement & Motor Skills",
+            "topic_id": "HPE.7.3",
+            "topic_name": "Rhythm & Coordination",
+            "sub_topic_id": "HPE.7.3.2",
+            "sub_topic_name": "Jumping Rope & Sequences",
+            "objective_id": "HPE.7.3.2.3",
+            "objective_text": "Combine skills into a short coordinated routine.",
+            "objective_uuid": "b124ec0a-bbfb-451a-8231-df4f522cb024",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "authored",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Authored at variable depth; physical-education content has no US standard in the owned corpus (honest gap)."
+    }
+  }
+}

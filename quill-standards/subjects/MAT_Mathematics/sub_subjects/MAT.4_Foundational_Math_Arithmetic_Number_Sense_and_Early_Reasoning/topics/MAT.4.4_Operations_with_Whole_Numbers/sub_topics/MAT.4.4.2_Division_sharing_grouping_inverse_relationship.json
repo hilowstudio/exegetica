@@ -1,0 +1,150 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.4.2",
+    "name": "Division (sharing, grouping, inverse relationship)",
+    "topic_id": "MAT.4.4",
+    "topic_name": "Operations with Whole Numbers",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Division (sharing, grouping, inverse relationship) in Operations with Whole Numbers (Mathematics)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 3,
+        "average_complexity": 8.33,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.4",
+            "topic_name": "Operations with Whole Numbers",
+            "sub_topic_id": "MAT.4.4.2",
+            "sub_topic_name": "Division (sharing, grouping, inverse relationship)",
+            "objective_id": "MAT.4.4.2.1",
+            "objective_text": "Understand division as sharing equally and as making equal groups.",
+            "objective_uuid": "355b22a0-e2ce-4042-896a-ae5e817703b1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.OA.A.2 — Interpret whole-number quotients of whole numbers, e.g., interpret 56 ÷ 8 as the number of objects in ea (grade 3)"
+              ]
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.4",
+            "topic_name": "Operations with Whole Numbers",
+            "sub_topic_id": "MAT.4.4.2",
+            "sub_topic_name": "Division (sharing, grouping, inverse relationship)",
+            "objective_id": "MAT.4.4.2.2",
+            "objective_text": "Relate division to multiplication as its inverse operation.",
+            "objective_uuid": "a175db2c-ef30-4910-8f0e-68da8c226673",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.OA.A.2 — Interpret whole-number quotients of whole numbers, e.g., interpret 56 ÷ 8 as the number of objects in ea (grade 3)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.4",
+            "topic_name": "Operations with Whole Numbers",
+            "sub_topic_id": "MAT.4.4.2",
+            "sub_topic_name": "Division (sharing, grouping, inverse relationship)",
+            "objective_id": "MAT.4.4.2.3",
+            "objective_text": "Divide within 100 using strategies and the relationship to multiplication.",
+            "objective_uuid": "2e3b4093-f53f-4db2-80b7-9573e87f9759",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.OA.A.2 — Interpret whole-number quotients of whole numbers, e.g., interpret 56 ÷ 8 as the number of objects in ea (grade 3)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 2,
+        "average_complexity": 21.5,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.4",
+            "topic_name": "Operations with Whole Numbers",
+            "sub_topic_id": "MAT.4.4.2",
+            "sub_topic_name": "Division (sharing, grouping, inverse relationship)",
+            "objective_id": "MAT.4.4.2.4",
+            "objective_text": "Find whole-number quotients with up to four-digit dividends and one-digit divisors.",
+            "objective_uuid": "19c1cf87-f3bb-410b-802e-2db9b433e579",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NBT.B.6 — Find whole-number quotients and remainders with up to four-digit dividends and one-digit divisors, using (grade 4)"
+              ]
+            }
+          },
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.4",
+            "topic_name": "Operations with Whole Numbers",
+            "sub_topic_id": "MAT.4.4.2",
+            "sub_topic_name": "Division (sharing, grouping, inverse relationship)",
+            "objective_id": "MAT.4.4.2.5",
+            "objective_text": "Interpret a remainder in the context of a division word problem.",
+            "objective_uuid": "914686e5-e8e3-452a-8adf-953793249ce3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NBT.B.6 — Find whole-number quotients and remainders with up to four-digit dividends and one-digit divisors, using (grade 4)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

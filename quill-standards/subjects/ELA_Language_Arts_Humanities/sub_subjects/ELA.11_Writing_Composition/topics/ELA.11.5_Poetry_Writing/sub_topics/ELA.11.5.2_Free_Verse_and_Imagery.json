@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ELA.11.5.2",
+    "name": "Free Verse and Imagery",
+    "topic_id": "ELA.11.5",
+    "topic_name": "Poetry Writing",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.11",
+    "sub_subject_name": "Writing & Composition",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Free Verse and Imagery in Poetry Writing (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.5",
+            "topic_name": "Poetry Writing",
+            "sub_topic_id": "ELA.11.5.2",
+            "sub_topic_name": "Free Verse and Imagery",
+            "objective_id": "ELA.11.5.2.1",
+            "objective_text": "Write a short poem that paints a picture with words, without needing to rhyme",
+            "objective_uuid": "3d86b865-2055-4d94-88f2-ad6a4e5c0d05",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.3 — Write narratives to develop real or imagined experiences or events using effective technique, well-chose (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.5",
+            "topic_name": "Poetry Writing",
+            "sub_topic_id": "ELA.11.5.2",
+            "sub_topic_name": "Free Verse and Imagery",
+            "objective_id": "ELA.11.5.2.2",
+            "objective_text": "Write a free-verse poem that uses images from the five senses",
+            "objective_uuid": "c9340563-7fd1-4d8b-802e-2a7eaf0445ff",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.3 — Write narratives to develop real or imagined experiences or events using effective technique, well-chose (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.5",
+            "topic_name": "Poetry Writing",
+            "sub_topic_id": "ELA.11.5.2",
+            "sub_topic_name": "Free Verse and Imagery",
+            "objective_id": "ELA.11.5.2.3",
+            "objective_text": "Draft free verse that shapes meaning through line breaks and vivid imagery",
+            "objective_uuid": "a209cfad-1cfd-4089-8b82-1a7295cdf7e2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.3 — Write narratives to develop real or imagined experiences or events using effective technique, well-chose (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.5",
+            "topic_name": "Poetry Writing",
+            "sub_topic_id": "ELA.11.5.2",
+            "sub_topic_name": "Free Verse and Imagery",
+            "objective_id": "ELA.11.5.2.4",
+            "objective_text": "Craft a free-verse poem that uses imagery, metaphor, and sound to create a unified effect",
+            "objective_uuid": "ee018223-b4a2-4717-8de8-98ed18922db4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.3 — Write narratives to develop real or imagined experiences or events using effective technique, well-chose (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

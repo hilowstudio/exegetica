@@ -1,0 +1,128 @@
+{
+  "sub_topic": {
+    "id": "HPE.2.3.1",
+    "name": "Building a Personal Eating Plan",
+    "topic_id": "HPE.2.3",
+    "topic_name": "Nutrition Across Life",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.2",
+    "sub_subject_name": "Nutrition & Healthy Eating",
+    "total_objectives": 3,
+    "description": "K-12 progression for Building a Personal Eating Plan in Nutrition Across Life (Health & Physical Education)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.2",
+            "sub_subject_name": "Nutrition & Healthy Eating",
+            "topic_id": "HPE.2.3",
+            "topic_name": "Nutrition Across Life",
+            "sub_topic_id": "HPE.2.3.1",
+            "sub_topic_name": "Building a Personal Eating Plan",
+            "objective_id": "HPE.2.3.1.1",
+            "objective_text": "Set a realistic personal nutrition goal.",
+            "objective_uuid": "50bf7404-0dc2-48fb-8916-6cb17e8d7b0b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 5.8.1 — Identify circumstances that can help or hinder healthy decision making (National Health Education Standards, grades 6-8)",
+                "Health Ed 5.12.1 — Examine barriers that can hinder healthy decision making (National Health Education Standards, grades 9-12)",
+                "Health Ed 6.8.1 — Assess personal health practices (National Health Education Standards, grades 6-8)",
+                "Health Ed 6.12.1 — Assess personal health practices and overall health status (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.8.1 — Explain the importance of assuming responsibility for personal health behaviors (National Health Education Standards, grades 6-8)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.2",
+            "sub_subject_name": "Nutrition & Healthy Eating",
+            "topic_id": "HPE.2.3",
+            "topic_name": "Nutrition Across Life",
+            "sub_topic_id": "HPE.2.3.1",
+            "sub_topic_name": "Building a Personal Eating Plan",
+            "objective_id": "HPE.2.3.1.2",
+            "objective_text": "Plan meals and snacks that meet the goal within real constraints.",
+            "objective_uuid": "f396516b-85d9-4010-8b04-a1ebeb395f27",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 5.8.1 — Identify circumstances that can help or hinder healthy decision making (National Health Education Standards, grades 6-8)",
+                "Health Ed 5.12.1 — Examine barriers that can hinder healthy decision making (National Health Education Standards, grades 9-12)",
+                "Health Ed 6.8.1 — Assess personal health practices (National Health Education Standards, grades 6-8)",
+                "Health Ed 6.12.1 — Assess personal health practices and overall health status (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.8.1 — Explain the importance of assuming responsibility for personal health behaviors (National Health Education Standards, grades 6-8)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.2",
+            "sub_subject_name": "Nutrition & Healthy Eating",
+            "topic_id": "HPE.2.3",
+            "topic_name": "Nutrition Across Life",
+            "sub_topic_id": "HPE.2.3.1",
+            "sub_topic_name": "Building a Personal Eating Plan",
+            "objective_id": "HPE.2.3.1.3",
+            "objective_text": "Track progress and adjust the plan over time.",
+            "objective_uuid": "2ee6372f-944f-4f37-8381-171ad17a100d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 5.8.1 — Identify circumstances that can help or hinder healthy decision making (National Health Education Standards, grades 6-8)",
+                "Health Ed 5.12.1 — Examine barriers that can hinder healthy decision making (National Health Education Standards, grades 9-12)",
+                "Health Ed 6.8.1 — Assess personal health practices (National Health Education Standards, grades 6-8)",
+                "Health Ed 6.12.1 — Assess personal health practices and overall health status (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.8.1 — Explain the importance of assuming responsibility for personal health behaviors (National Health Education Standards, grades 6-8)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Health Education Standards",
+      "anchor_note": "NHES codes verified against the owned corpus; objectives authored to the standard's real sub-skills at variable depth."
+    }
+  }
+}

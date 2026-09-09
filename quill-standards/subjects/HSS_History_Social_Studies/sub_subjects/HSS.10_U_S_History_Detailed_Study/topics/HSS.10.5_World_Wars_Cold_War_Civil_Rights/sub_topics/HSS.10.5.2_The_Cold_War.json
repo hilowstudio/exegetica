@@ -1,0 +1,196 @@
+{
+  "sub_topic": {
+    "id": "HSS.10.5.2",
+    "name": "The Cold War",
+    "topic_id": "HSS.10.5",
+    "topic_name": "World Wars, Cold War & Civil Rights",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.10",
+    "sub_subject_name": "U.S. History (Detailed Study)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for The Cold War in World Wars, Cold War & Civil Rights (History & Social Studies)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.2",
+            "sub_topic_name": "The Cold War",
+            "objective_id": "HSS.10.5.2.1",
+            "objective_text": "Describe the rivalry between the United States and the Soviet Union after World War II",
+            "objective_uuid": "00ab3e3b-95b2-4b0e-8677-5b87ea937cb8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.2",
+            "sub_topic_name": "The Cold War",
+            "objective_id": "HSS.10.5.2.2",
+            "objective_text": "Explain the difference between democracy and capitalism on one side and communism on the other",
+            "objective_uuid": "b2d9c58f-de60-4292-8639-59afc9b87dc9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.2",
+            "sub_topic_name": "The Cold War",
+            "objective_id": "HSS.10.5.2.3",
+            "objective_text": "Describe key Cold War events such as the Berlin Wall, the Cuban Missile Crisis, the Space Race, and the wars in Korea and Vietnam",
+            "objective_uuid": "e096c602-1c09-4ba0-8ae6-11b1755e7f10",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.2",
+            "sub_topic_name": "The Cold War",
+            "objective_id": "HSS.10.5.2.4",
+            "objective_text": "Explain the policy of containment and the nuclear arms race",
+            "objective_uuid": "99f9d63d-8929-420a-8120-722144298826",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.2",
+            "sub_topic_name": "The Cold War",
+            "objective_id": "HSS.10.5.2.5",
+            "objective_text": "Analyze how the Cold War shaped American foreign and domestic policy",
+            "objective_uuid": "fffcee42-5c09-4f7d-8bdc-d33ae758a4cd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.2",
+            "sub_topic_name": "The Cold War",
+            "objective_id": "HSS.10.5.2.6",
+            "objective_text": "Evaluate the causes that brought the Cold War to an end",
+            "objective_uuid": "2df75beb-6881-4dfc-89ac-a240c4d07b18",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

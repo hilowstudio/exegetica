@@ -1,0 +1,133 @@
+{
+  "sub_topic": {
+    "id": "SCI.4.3.1",
+    "name": "Building a Long-Term Nature Notebook (A Record of Attention)",
+    "topic_id": "SCI.4.3",
+    "topic_name": "Nature Journaling (Scientific Art & Writing)",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.4",
+    "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Building a Long-Term Nature Notebook (A Record of Attention) in Nature Journaling (Scientific Art & Writing) (Science & Nature)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.1",
+            "sub_topic_name": "Building a Long-Term Nature Notebook (A Record of Attention)",
+            "objective_id": "SCI.4.3.1.1",
+            "objective_text": "Set up a personal nature notebook and begin making regular, dated entries.",
+            "objective_uuid": "3995dffc-2a4d-4c00-81dd-0ad47643cbd1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.1",
+            "sub_topic_name": "Building a Long-Term Nature Notebook (A Record of Attention)",
+            "objective_id": "SCI.4.3.1.2",
+            "objective_text": "Record each observation with its date, place, and weather conditions.",
+            "objective_uuid": "061cfb84-e85e-474c-83d1-de3f75c0207d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.1",
+            "sub_topic_name": "Building a Long-Term Nature Notebook (A Record of Attention)",
+            "objective_id": "SCI.4.3.1.3",
+            "objective_text": "Organize notebook entries so that patterns and changes can be found again later.",
+            "objective_uuid": "0640ac42-1722-4eed-84b7-9bca3ed897a9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.1",
+            "sub_topic_name": "Building a Long-Term Nature Notebook (A Record of Attention)",
+            "objective_id": "SCI.4.3.1.4",
+            "objective_text": "Review a season of notebook entries to identify trends and raise new questions.",
+            "objective_uuid": "1f40862a-fdae-4eb2-8f2a-f74ca3bb978e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

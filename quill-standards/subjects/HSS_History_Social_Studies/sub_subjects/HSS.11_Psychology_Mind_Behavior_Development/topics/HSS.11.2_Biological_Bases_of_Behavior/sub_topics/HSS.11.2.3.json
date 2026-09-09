@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "HSS.11.2.3",
+    "name": "Sensation & Perception",
+    "topic_id": "HSS.11.2",
+    "topic_name": "Biological Bases of Behavior",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.11",
+    "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+    "total_objectives": 3,
+    "description": "Progression for Sensation & Perception in Biological Bases of Behavior (Psychology (Mind, Behavior & Development))",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.2",
+            "topic_name": "Biological Bases of Behavior",
+            "sub_topic_id": "HSS.11.2.3",
+            "sub_topic_name": "Sensation & Perception",
+            "objective_id": "HSS.11.2.3.1",
+            "objective_text": "Distinguish sensation from perception.",
+            "objective_uuid": "dbbbb701-1021-4dc7-82bd-c8b626a28ce3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.8.9-12 — Explain the complexities of human thought and behavior, as well as the factors related to the indivi (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 25.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.2",
+            "topic_name": "Biological Bases of Behavior",
+            "sub_topic_id": "HSS.11.2.3",
+            "sub_topic_name": "Sensation & Perception",
+            "objective_id": "HSS.11.2.3.2",
+            "objective_text": "Explain how the senses gather information.",
+            "objective_uuid": "86a7367b-2993-4027-833a-edb576f2df64",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.8.9-12 — Explain the complexities of human thought and behavior, as well as the factors related to the indivi (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.2",
+            "topic_name": "Biological Bases of Behavior",
+            "sub_topic_id": "HSS.11.2.3",
+            "sub_topic_name": "Sensation & Perception",
+            "objective_id": "HSS.11.2.3.3",
+            "objective_text": "Analyze how the mind organizes and interprets sensory input.",
+            "objective_uuid": "70895ceb-2007-4f85-8046-6bbbaec4e628",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.8.9-12 — Explain the complexities of human thought and behavior, as well as the factors related to the indivi (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework (Psychology)",
+      "anchor_note": "C3 D2.Psy codes verified against the owned corpus. Objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

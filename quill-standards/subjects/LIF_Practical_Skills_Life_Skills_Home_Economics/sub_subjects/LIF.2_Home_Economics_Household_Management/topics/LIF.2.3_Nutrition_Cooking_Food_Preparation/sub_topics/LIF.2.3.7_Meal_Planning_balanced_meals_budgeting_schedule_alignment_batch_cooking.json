@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "LIF.2.3.7",
+    "name": "Meal Planning (balanced meals, budgeting, schedule alignment, batch cooking)",
+    "topic_id": "LIF.2.3",
+    "topic_name": "Nutrition, Cooking & Food Preparation",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.2",
+    "sub_subject_name": "Home Economics & Household Management",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Meal Planning (balanced meals, budgeting, schedule alignment, batch cooking) in Nutrition, Cooking & Food Preparation (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.3",
+            "topic_name": "Nutrition, Cooking & Food Preparation",
+            "sub_topic_id": "LIF.2.3.7",
+            "sub_topic_name": "Meal Planning (balanced meals, budgeting, schedule alignment, batch cooking)",
+            "objective_id": "LIF.2.3.7.1",
+            "objective_text": "Plan a simple balanced meal that includes different food groups",
+            "objective_uuid": "4ff0e549-0d46-419f-8da3-459a12c2bd58",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 14 — Demonstrate nutrition and wellness practices that enhance individual and family well-being (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.3",
+            "topic_name": "Nutrition, Cooking & Food Preparation",
+            "sub_topic_id": "LIF.2.3.7",
+            "sub_topic_name": "Meal Planning (balanced meals, budgeting, schedule alignment, batch cooking)",
+            "objective_id": "LIF.2.3.7.2",
+            "objective_text": "Create a menu for several days that fits the family schedule",
+            "objective_uuid": "9c5dd62c-fed9-4932-85eb-13c9a10f5b81",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 14 — Demonstrate nutrition and wellness practices that enhance individual and family well-being (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.3",
+            "topic_name": "Nutrition, Cooking & Food Preparation",
+            "sub_topic_id": "LIF.2.3.7",
+            "sub_topic_name": "Meal Planning (balanced meals, budgeting, schedule alignment, batch cooking)",
+            "objective_id": "LIF.2.3.7.3",
+            "objective_text": "Plan meals for a week that stay within a food budget",
+            "objective_uuid": "5a6859a7-40d7-4904-8650-1e47b91bee8d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 8 — Integrate knowledge, skills, and practices required for careers in food production and services (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.3",
+            "topic_name": "Nutrition, Cooking & Food Preparation",
+            "sub_topic_id": "LIF.2.3.7",
+            "sub_topic_name": "Meal Planning (balanced meals, budgeting, schedule alignment, batch cooking)",
+            "objective_id": "LIF.2.3.7.4",
+            "objective_text": "Use batch cooking to prepare meals ahead and save time",
+            "objective_uuid": "885a89a2-86ad-434f-86a6-d78cea25ad5d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 8 — Integrate knowledge, skills, and practices required for careers in food production and services (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.3",
+            "topic_name": "Nutrition, Cooking & Food Preparation",
+            "sub_topic_id": "LIF.2.3.7",
+            "sub_topic_name": "Meal Planning (balanced meals, budgeting, schedule alignment, batch cooking)",
+            "objective_id": "LIF.2.3.7.5",
+            "objective_text": "Develop a weekly meal plan that balances nutrition, budget, and schedule",
+            "objective_uuid": "c26e133b-d3a3-471a-8783-3696308b837e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 14 — Demonstrate nutrition and wellness practices that enhance individual and family well-being (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "FCS / Jump$tart national standards",
+      "anchor_note": "Rebuilt from the FCS / Jump$tart national standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

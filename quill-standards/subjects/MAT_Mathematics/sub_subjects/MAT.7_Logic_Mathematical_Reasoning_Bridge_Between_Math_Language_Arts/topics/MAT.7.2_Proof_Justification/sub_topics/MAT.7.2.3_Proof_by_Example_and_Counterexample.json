@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.7.2.3",
+    "name": "Proof by Example and Counterexample",
+    "topic_id": "MAT.7.2",
+    "topic_name": "Proof & Justification",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.7",
+    "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Proof by Example and Counterexample in Proof & Justification (Mathematics)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.2",
+            "topic_name": "Proof & Justification",
+            "sub_topic_id": "MAT.7.2.3",
+            "sub_topic_name": "Proof by Example and Counterexample",
+            "objective_id": "MAT.7.2.3.1",
+            "objective_text": "Test a conjecture with specific examples.",
+            "objective_uuid": "e30a6e3b-b008-4cf5-8ce9-c2095ce10557",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP3 — Construct viable arguments and critique the reasoning of others (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.2",
+            "topic_name": "Proof & Justification",
+            "sub_topic_id": "MAT.7.2.3",
+            "sub_topic_name": "Proof by Example and Counterexample",
+            "objective_id": "MAT.7.2.3.2",
+            "objective_text": "Disprove a general claim with a single counterexample.",
+            "objective_uuid": "b47fbe0b-95be-41a5-858d-4ac28ab08462",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP3 — Construct viable arguments and critique the reasoning of others (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.2",
+            "topic_name": "Proof & Justification",
+            "sub_topic_id": "MAT.7.2.3",
+            "sub_topic_name": "Proof by Example and Counterexample",
+            "objective_id": "MAT.7.2.3.3",
+            "objective_text": "Explain why examples can support but cannot prove a general claim.",
+            "objective_uuid": "ea6de87c-92b5-493f-8542-8c2cdea5940b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP3 — Construct viable arguments and critique the reasoning of others (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

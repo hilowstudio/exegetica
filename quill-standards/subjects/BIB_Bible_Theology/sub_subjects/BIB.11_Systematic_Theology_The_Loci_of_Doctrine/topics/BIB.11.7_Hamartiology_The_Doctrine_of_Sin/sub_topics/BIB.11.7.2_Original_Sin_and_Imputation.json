@@ -1,0 +1,474 @@
+{
+  "sub_topic": {
+    "id": "BIB.11.7.2",
+    "name": "Original Sin and Imputation",
+    "topic_id": "BIB.11.7",
+    "topic_name": "Hamartiology: The Doctrine of Sin",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.11",
+    "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+    "total_objectives": 16,
+    "description": "K-12 developmental progression for Original Sin and Imputation in Hamartiology: The Doctrine of Sin, anchored in Scripture and the confessions via the Study Bible tools.",
+    "enrichment": {
+      "status": "expanded",
+      "levers": [
+        "structural-expansion",
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture and confession anchors validated against the study-bible MCP tools."
+    },
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.1",
+            "objective_text": "Identify that everyone is born with a bent toward sin.",
+            "objective_uuid": "5a34ad81-8d17-43f7-b21a-21fa3fa9799c",
+            "anchors": {
+              "scripture": [
+                "Psalm 51:5"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.2",
+            "objective_text": "Name Adam as the head who represented all people.",
+            "objective_uuid": "87e9c77a-6c0e-4144-a239-f8f39e4e2917",
+            "anchors": {
+              "scripture": [
+                "Romans 5:12"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.3",
+            "objective_text": "Recall that sin spread to the whole human race.",
+            "objective_uuid": "5ff93335-e1c2-4af2-a322-d5085b1e6dc8",
+            "anchors": {
+              "scripture": [
+                "Romans 5:12"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.4",
+            "objective_text": "Observe that even little children need a new heart.",
+            "objective_uuid": "6bfcec89-73f5-461a-85a6-aaf4a89cdde7",
+            "anchors": {
+              "scripture": [
+                "Psalm 51:5",
+                "Psalm 58:3"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.5",
+            "objective_text": "Summarize original sin (guilt, lost righteousness, and a corrupt nature).",
+            "objective_uuid": "03841735-b2a0-443b-b96f-42a66e521d4b",
+            "anchors": {
+              "scripture": [
+                "Romans 5:12"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q18"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.6",
+            "objective_text": "Explain federal headship (Adam stood for all his posterity).",
+            "objective_uuid": "8c414f13-615f-4575-a552-fd0b2316ad26",
+            "anchors": {
+              "scripture": [
+                "Romans 5:18-19"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q22"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.7",
+            "objective_text": "Compare being born in sin with committing actual sins.",
+            "objective_uuid": "90546fa2-e249-48c9-a53d-10960d1b8a96",
+            "anchors": {
+              "scripture": [
+                "Psalm 51:5",
+                "James 1:15"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.8",
+            "objective_text": "Apply why we all need Christ, the second Adam.",
+            "objective_uuid": "71ef260a-682a-4ac2-bd86-18165424e9d2",
+            "anchors": {
+              "scripture": [
+                "1 Corinthians 15:22",
+                "Romans 5:17"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.9",
+            "objective_text": "Analyze the imputation of Adam's guilt to his posterity.",
+            "objective_uuid": "4144d5fa-f002-4e50-a93c-91d427be1f82",
+            "anchors": {
+              "scripture": [
+                "Romans 5:19"
+              ],
+              "confessions": [
+                "Westminster Confession 6.3"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.10",
+            "objective_text": "Interpret the transmission of a corrupt nature 'by ordinary generation.'",
+            "objective_uuid": "63e1b9e6-9bb5-4dde-a879-40200a60038c",
+            "anchors": {
+              "scripture": [
+                "Psalm 51:5",
+                "Job 14:4"
+              ],
+              "confessions": [
+                "Westminster Confession 6.3"
+              ],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.11",
+            "objective_text": "Connect Adam's headship to Christ's representative work.",
+            "objective_uuid": "75ce1b5e-314f-45d7-80eb-07ef9a6efce2",
+            "anchors": {
+              "scripture": [
+                "Romans 5:18-19",
+                "1 Corinthians 15:45"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q31"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.12",
+            "objective_text": "Explain the difference between imputed guilt and inherited corruption.",
+            "objective_uuid": "9ed870f3-1318-4685-8a9d-4fda953d1e16",
+            "anchors": {
+              "scripture": [
+                "Romans 5:12",
+                "Ephesians 2:3"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q18"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.13",
+            "objective_text": "Construct a theology of original sin from Romans 5.",
+            "objective_uuid": "229f8461-eb3d-46c8-a6e2-59f7ceda9a77",
+            "anchors": {
+              "scripture": [
+                "Romans 5:12-21"
+              ],
+              "confessions": [
+                "Westminster Confession 6.3"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.14",
+            "objective_text": "Evaluate Pelagian and semi-Pelagian denials of original sin.",
+            "objective_uuid": "2c4a9891-7ca3-42d1-a87a-f9bad9370920",
+            "anchors": {
+              "scripture": [
+                "Romans 5:12",
+                "Psalm 51:5"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.15",
+            "objective_text": "Defend the justice of Adam's headship over the race.",
+            "objective_uuid": "6263bbd4-e26a-461c-8a8f-ba1ff893fffa",
+            "anchors": {
+              "scripture": [
+                "Romans 5:18-19"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.2",
+            "sub_topic_name": "Original Sin and Imputation",
+            "objective_id": "BIB.11.7.2.16",
+            "objective_text": "Synthesize the two Adams: condemnation in one, righteousness in the other.",
+            "objective_uuid": "e730e83c-e356-409f-9444-1bf04ceaac4e",
+            "anchors": {
+              "scripture": [
+                "Romans 5:18-19",
+                "1 Corinthians 15:22"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

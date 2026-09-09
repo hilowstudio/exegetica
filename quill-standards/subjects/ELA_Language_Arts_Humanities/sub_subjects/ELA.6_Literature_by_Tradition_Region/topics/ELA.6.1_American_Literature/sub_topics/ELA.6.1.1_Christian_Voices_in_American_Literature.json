@@ -1,0 +1,198 @@
+{
+  "sub_topic": {
+    "id": "ELA.6.1.1",
+    "name": "Christian Voices in American Literature",
+    "topic_id": "ELA.6.1",
+    "topic_name": "American Literature",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.6",
+    "sub_subject_name": "Literature by Tradition & Region",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Christian Voices in American Literature in American Literature (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.1",
+            "topic_name": "American Literature",
+            "sub_topic_id": "ELA.6.1.1",
+            "sub_topic_name": "Christian Voices in American Literature",
+            "objective_id": "ELA.6.1.1.1",
+            "objective_text": "Read aloud a short poem or hymn by an early American Christian writer and retell what it praises God for.",
+            "objective_uuid": "9f7a790a-b72f-4ccc-8e4d-9f3006785e73",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.1",
+            "topic_name": "American Literature",
+            "sub_topic_id": "ELA.6.1.1",
+            "sub_topic_name": "Christian Voices in American Literature",
+            "objective_id": "ELA.6.1.1.2",
+            "objective_text": "Identify the biblical images and language a Puritan poet such as Anne Bradstreet uses in a short poem.",
+            "objective_uuid": "908fc761-cb5e-4508-848e-100c9e00bed9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.1",
+            "topic_name": "American Literature",
+            "sub_topic_id": "ELA.6.1.1",
+            "sub_topic_name": "Christian Voices in American Literature",
+            "objective_id": "ELA.6.1.1.3",
+            "objective_text": "Read a spiritual narrative or sermon by a colonial American writer and explain its central Christian claim.",
+            "objective_uuid": "b3156122-1123-4b5c-8e5f-5a5ebfca16ad",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.1",
+            "topic_name": "American Literature",
+            "sub_topic_id": "ELA.6.1.1",
+            "sub_topic_name": "Christian Voices in American Literature",
+            "objective_id": "ELA.6.1.1.4",
+            "objective_text": "Analyze how faith shapes the voice and purpose of an American writer such as Jonathan Edwards or Frederick Douglass.",
+            "objective_uuid": "76ee5004-1168-47c1-8078-ca5cd648eb14",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.1",
+            "topic_name": "American Literature",
+            "sub_topic_id": "ELA.6.1.1",
+            "sub_topic_name": "Christian Voices in American Literature",
+            "objective_id": "ELA.6.1.1.5",
+            "objective_text": "Compare how two American authors draw on Scripture to address the same theme of grace, suffering, or justice.",
+            "objective_uuid": "cf8017da-6719-4b4b-8d31-d60ce7032fe5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.9 — Analyze how two or more texts address similar themes or topics in order to build knowledge or to compare (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.1",
+            "topic_name": "American Literature",
+            "sub_topic_id": "ELA.6.1.1",
+            "sub_topic_name": "Christian Voices in American Literature",
+            "objective_id": "ELA.6.1.1.6",
+            "objective_text": "Evaluate how Christian conviction both shaped and was challenged within the American literary tradition across eras.",
+            "objective_uuid": "e78c6467-f90d-469a-8b3b-4d46e9a1f1ff",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.9 — Analyze how two or more texts address similar themes or topics in order to build knowledge or to compare (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "DST.4.2.3",
+    "name": "Testing against Design Specifications (objective vs. subjective)",
+    "topic_id": "DST.4.2",
+    "topic_name": "Evaluation & Quality Assurance",
+    "subject_id": "DST",
+    "subject_name": "Design & Technology",
+    "sub_subject_id": "DST.4",
+    "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Testing against Design Specifications (objective vs. subjective) in Evaluation & Quality Assurance (Design & Technology)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.2",
+            "topic_name": "Evaluation & Quality Assurance",
+            "sub_topic_id": "DST.4.2.3",
+            "sub_topic_name": "Testing against Design Specifications (objective vs. subjective)",
+            "objective_id": "DST.4.2.3.1",
+            "objective_text": "Check whether a finished model meets each item on a simple list of design requirements",
+            "objective_uuid": "8ff1a9fc-aa99-4567-86ac-4663a7fbddf8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 3-5-ETS1-3 — Plan and carry out fair tests in which variables are controlled and failure points are considered to ide (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.2",
+            "topic_name": "Evaluation & Quality Assurance",
+            "sub_topic_id": "DST.4.2.3",
+            "sub_topic_name": "Testing against Design Specifications (objective vs. subjective)",
+            "objective_id": "DST.4.2.3.2",
+            "objective_text": "Sort success criteria into objective ones you can measure and subjective ones based on opinion",
+            "objective_uuid": "733822c8-a66f-47af-83c3-ee62e37571ce",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 3-5-ETS1-3 — Plan and carry out fair tests in which variables are controlled and failure points are considered to ide (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.2",
+            "topic_name": "Evaluation & Quality Assurance",
+            "sub_topic_id": "DST.4.2.3",
+            "sub_topic_name": "Testing against Design Specifications (objective vs. subjective)",
+            "objective_id": "DST.4.2.3.3",
+            "objective_text": "Plan and carry out a fair test that measures a prototype against a specific numerical specification",
+            "objective_uuid": "ba4fc01b-a554-49b2-8f7a-fddaa754870b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-4 — A solution needs to be tested, and then modified on the basis of the test results, in order to improve i (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.2",
+            "topic_name": "Evaluation & Quality Assurance",
+            "sub_topic_id": "DST.4.2.3",
+            "sub_topic_name": "Testing against Design Specifications (objective vs. subjective)",
+            "objective_id": "DST.4.2.3.4",
+            "objective_text": "Record test results in a table and mark which specifications the design passed or failed",
+            "objective_uuid": "51e60eca-64d2-498d-837f-ab1665657b30",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-4 — A solution needs to be tested, and then modified on the basis of the test results, in order to improve i (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.2",
+            "topic_name": "Evaluation & Quality Assurance",
+            "sub_topic_id": "DST.4.2.3",
+            "sub_topic_name": "Testing against Design Specifications (objective vs. subjective)",
+            "objective_id": "DST.4.2.3.5",
+            "objective_text": "Modify a design to close the gap between test results and the written specification, then retest to confirm compliance",
+            "objective_uuid": "6bd6cbdc-f381-4097-8522-97f2c226c6d6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-4 — A solution needs to be tested, and then modified on the basis of the test results, in order to improve i (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

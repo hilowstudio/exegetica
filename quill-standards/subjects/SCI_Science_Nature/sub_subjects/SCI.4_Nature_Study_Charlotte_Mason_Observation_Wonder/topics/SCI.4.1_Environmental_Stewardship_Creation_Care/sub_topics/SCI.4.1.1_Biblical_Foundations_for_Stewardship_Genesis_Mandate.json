@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "SCI.4.1.1",
+    "name": "Biblical Foundations for Stewardship (Genesis Mandate)",
+    "topic_id": "SCI.4.1",
+    "topic_name": "Environmental Stewardship & Creation Care",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.4",
+    "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Biblical Foundations for Stewardship (Genesis Mandate) in Environmental Stewardship & Creation Care (Science & Nature)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.1",
+            "topic_name": "Environmental Stewardship & Creation Care",
+            "sub_topic_id": "SCI.4.1.1",
+            "sub_topic_name": "Biblical Foundations for Stewardship (Genesis Mandate)",
+            "objective_id": "SCI.4.1.1.1",
+            "objective_text": "Describe how the opening chapters of Genesis call people to tend and care for the creation.",
+            "objective_uuid": "946a06f2-9e92-403c-839c-d894b9a6d06b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.1",
+            "topic_name": "Environmental Stewardship & Creation Care",
+            "sub_topic_id": "SCI.4.1.1",
+            "sub_topic_name": "Biblical Foundations for Stewardship (Genesis Mandate)",
+            "objective_id": "SCI.4.1.1.2",
+            "objective_text": "Identify examples of caring for creation in daily life at home, garden, and neighborhood.",
+            "objective_uuid": "2c9dcad1-d5f1-4677-80b0-1c59289ae276",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.1",
+            "topic_name": "Environmental Stewardship & Creation Care",
+            "sub_topic_id": "SCI.4.1.1",
+            "sub_topic_name": "Biblical Foundations for Stewardship (Genesis Mandate)",
+            "objective_id": "SCI.4.1.1.3",
+            "objective_text": "Explain the difference between exercising dominion as careless domination and as responsible, loving care.",
+            "objective_uuid": "cb763e62-d0e1-47fd-8ea2-8d12162fbc18",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.1",
+            "topic_name": "Environmental Stewardship & Creation Care",
+            "sub_topic_id": "SCI.4.1.1",
+            "sub_topic_name": "Biblical Foundations for Stewardship (Genesis Mandate)",
+            "objective_id": "SCI.4.1.1.4",
+            "objective_text": "Explain how the goodness of creation gives a reason to observe it closely and protect it.",
+            "objective_uuid": "0dc5c877-65f7-435c-8ffe-b40c32397d71",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.1",
+            "topic_name": "Environmental Stewardship & Creation Care",
+            "sub_topic_id": "SCI.4.1.1",
+            "sub_topic_name": "Biblical Foundations for Stewardship (Genesis Mandate)",
+            "objective_id": "SCI.4.1.1.5",
+            "objective_text": "Evaluate a personal or family practice against the biblical mandate to steward creation, and propose an improvement.",
+            "objective_uuid": "5ac49dee-bf2e-463b-8e7e-0bb52c88937c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

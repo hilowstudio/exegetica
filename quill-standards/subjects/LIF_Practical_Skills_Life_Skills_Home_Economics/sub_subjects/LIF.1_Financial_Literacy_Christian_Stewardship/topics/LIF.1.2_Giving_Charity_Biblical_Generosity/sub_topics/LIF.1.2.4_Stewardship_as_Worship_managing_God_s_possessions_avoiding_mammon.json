@@ -1,0 +1,133 @@
+{
+  "sub_topic": {
+    "id": "LIF.1.2.4",
+    "name": "Stewardship as Worship (managing God’s possessions, avoiding mammon)",
+    "topic_id": "LIF.1.2",
+    "topic_name": "Giving, Charity & Biblical Generosity",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.1",
+    "sub_subject_name": "Financial Literacy & Christian Stewardship",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Stewardship as Worship (managing God’s possessions, avoiding mammon) in Giving, Charity & Biblical Generosity (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.2",
+            "topic_name": "Giving, Charity & Biblical Generosity",
+            "sub_topic_id": "LIF.1.2.4",
+            "sub_topic_name": "Stewardship as Worship (managing God’s possessions, avoiding mammon)",
+            "objective_id": "LIF.1.2.4.1",
+            "objective_text": "Explain that everything a person owns ultimately belongs to God, who entrusts it to us to manage.",
+            "objective_uuid": "6067e12e-4d3e-4412-8b33-d88c6c63c66f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.2",
+            "topic_name": "Giving, Charity & Biblical Generosity",
+            "sub_topic_id": "LIF.1.2.4",
+            "sub_topic_name": "Stewardship as Worship (managing God’s possessions, avoiding mammon)",
+            "objective_id": "LIF.1.2.4.2",
+            "objective_text": "Describe what a steward is and how managing money faithfully is a form of worship.",
+            "objective_uuid": "736ab890-ab7d-4694-8503-77d016fb889f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.2",
+            "topic_name": "Giving, Charity & Biblical Generosity",
+            "sub_topic_id": "LIF.1.2.4",
+            "sub_topic_name": "Stewardship as Worship (managing God’s possessions, avoiding mammon)",
+            "objective_id": "LIF.1.2.4.3",
+            "objective_text": "Explain Jesus' warning that no one can serve both God and mammon, using Matthew 6:24.",
+            "objective_uuid": "9e4e0edf-e024-4991-8cae-db1634629ceb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.2",
+            "topic_name": "Giving, Charity & Biblical Generosity",
+            "sub_topic_id": "LIF.1.2.4",
+            "sub_topic_name": "Stewardship as Worship (managing God’s possessions, avoiding mammon)",
+            "objective_id": "LIF.1.2.4.4",
+            "objective_text": "Evaluate personal spending, saving, and giving habits to see whether they treat money as a servant rather than a master.",
+            "objective_uuid": "525458a4-ba8b-4532-87a3-35802cf4460b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

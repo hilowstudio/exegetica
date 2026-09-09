@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.2.3",
+    "name": "Lines, Segments, Rays, and Planes",
+    "topic_id": "MAT.5.2",
+    "topic_name": "Early Geometry Foundations",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Lines, Segments, Rays, and Planes in Early Geometry Foundations (Mathematics)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.2",
+            "topic_name": "Early Geometry Foundations",
+            "sub_topic_id": "MAT.5.2.3",
+            "sub_topic_name": "Lines, Segments, Rays, and Planes",
+            "objective_id": "MAT.5.2.3.1",
+            "objective_text": "Identify and draw points, lines, line segments, and rays.",
+            "objective_uuid": "1a1302cf-6f45-4d5c-8986-5c427cc2195e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.G.A.1 — Draw points, lines, line segments, rays, angles (right, acute, obtuse), and perpendicular and parallel l (grade 4)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.2",
+            "topic_name": "Early Geometry Foundations",
+            "sub_topic_id": "MAT.5.2.3",
+            "sub_topic_name": "Lines, Segments, Rays, and Planes",
+            "objective_id": "MAT.5.2.3.2",
+            "objective_text": "Distinguish a line, ray, and segment by their endpoints.",
+            "objective_uuid": "1d370ad9-3c2c-44bb-81ec-4555297fdb2e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.G.A.1 — Draw points, lines, line segments, rays, angles (right, acute, obtuse), and perpendicular and parallel l (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.2",
+            "topic_name": "Early Geometry Foundations",
+            "sub_topic_id": "MAT.5.2.3",
+            "sub_topic_name": "Lines, Segments, Rays, and Planes",
+            "objective_id": "MAT.5.2.3.3",
+            "objective_text": "Describe a plane and how lines lie within it.",
+            "objective_uuid": "41093ea6-11b2-44ff-8c65-1805b40f6d9a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.G.A.1 — Draw points, lines, line segments, rays, angles (right, acute, obtuse), and perpendicular and parallel l (grade 4)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,471 @@
+{
+  "sub_topic": {
+    "id": "BIB.11.2.6",
+    "name": "The Sanctity and Dignity of Human Life",
+    "topic_id": "BIB.11.2",
+    "topic_name": "Anthropology: The Doctrine of Humanity",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.11",
+    "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+    "total_objectives": 16,
+    "description": "K-12 developmental progression for The Sanctity and Dignity of Human Life in Anthropology: The Doctrine of Humanity, anchored in Scripture and the confessions via the Study Bible tools.",
+    "enrichment": {
+      "status": "expanded",
+      "levers": [
+        "structural-expansion",
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture and confession anchors validated against the study-bible MCP tools."
+    },
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.1",
+            "objective_text": "Identify that every human life is precious to God.",
+            "objective_uuid": "278b335f-7328-4f5e-82a6-3af79f61f82d",
+            "anchors": {
+              "scripture": [
+                "Genesis 9:6"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.2",
+            "objective_text": "Name people as made in God's image, so life is sacred.",
+            "objective_uuid": "baba1389-600b-40f0-9b64-aee18a4bf666",
+            "anchors": {
+              "scripture": [
+                "Genesis 1:27"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.3",
+            "objective_text": "Recall the command 'You shall not murder.'",
+            "objective_uuid": "06b59d5e-4f2a-4750-a35d-7ffb077d600e",
+            "anchors": {
+              "scripture": [
+                "Exodus 20:13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.4",
+            "objective_text": "Observe that God knits us together before birth.",
+            "objective_uuid": "ed7d61a5-1065-4f67-ab8d-4cffddb27f2e",
+            "anchors": {
+              "scripture": [
+                "Psalm 139:13-16"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.5",
+            "objective_text": "Summarize why human life is sacred (the image of God).",
+            "objective_uuid": "aac2436b-89fe-40cf-ad62-bdb5f9ab2528",
+            "anchors": {
+              "scripture": [
+                "Genesis 9:6"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q69"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.6",
+            "objective_text": "Explain the sixth commandment's protection of life.",
+            "objective_uuid": "92261cb0-03b8-4872-98e8-43684505b486",
+            "anchors": {
+              "scripture": [
+                "Exodus 20:13"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q69"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.7",
+            "objective_text": "Compare the biblical value of life with cultures that devalue it.",
+            "objective_uuid": "3bd5592a-d2c9-4c35-af8f-e23167889c79",
+            "anchors": {
+              "scripture": [
+                "Psalm 139:13-16",
+                "Proverbs 24:11-12"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.8",
+            "objective_text": "Apply the sanctity of life to caring for the weak and vulnerable.",
+            "objective_uuid": "6ffd0731-45b2-4f17-9b7c-0696df156b52",
+            "anchors": {
+              "scripture": [
+                "James 1:27",
+                "Proverbs 31:8-9"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.9",
+            "objective_text": "Analyze the personhood of the unborn from Scripture.",
+            "objective_uuid": "064eeaca-4583-44da-9e95-a4e9bc3c4f46",
+            "anchors": {
+              "scripture": [
+                "Psalm 139:13-16",
+                "Luke 1:41-44"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.10",
+            "objective_text": "Interpret the sixth commandment as forbidding hatred, not just killing.",
+            "objective_uuid": "4f214012-abd6-4835-8bb0-f8cff19c7754",
+            "anchors": {
+              "scripture": [
+                "Matthew 5:21-22",
+                "1 John 3:15"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q136"
+              ],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.11",
+            "objective_text": "Connect the image of God to opposition to abortion and euthanasia.",
+            "objective_uuid": "c0b1ff6b-c413-400d-b1e9-469d003775ce",
+            "anchors": {
+              "scripture": [
+                "Genesis 9:6",
+                "Psalm 139:16"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.12",
+            "objective_text": "Explain the duties required in the sixth commandment (preserving life).",
+            "objective_uuid": "52ad2040-3265-486c-b4bf-6f5be2fc1b18",
+            "anchors": {
+              "scripture": [
+                "Matthew 5:21-22"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q135"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.13",
+            "objective_text": "Construct a pro-life ethic rooted in the imago Dei.",
+            "objective_uuid": "b78ab430-8b6b-4070-9201-120e8727aa2e",
+            "anchors": {
+              "scripture": [
+                "Genesis 1:27",
+                "Genesis 9:6"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q136"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.14",
+            "objective_text": "Evaluate arguments for abortion and euthanasia against Scripture.",
+            "objective_uuid": "ed2aeae5-1074-4136-a83a-975582c9c369",
+            "anchors": {
+              "scripture": [
+                "Psalm 139:13-16",
+                "Exodus 20:13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.15",
+            "objective_text": "Defend the dignity of the disabled, aged, and unborn as image-bearers.",
+            "objective_uuid": "b7f39349-5e6f-4aa8-b155-8f31383f5f3a",
+            "anchors": {
+              "scripture": [
+                "Genesis 9:6",
+                "Leviticus 19:14"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.6",
+            "sub_topic_name": "The Sanctity and Dignity of Human Life",
+            "objective_id": "BIB.11.2.6.16",
+            "objective_text": "Synthesize a Christian ethic of life from creation to resurrection.",
+            "objective_uuid": "3f90585f-9447-444b-bfcc-5a475e6fa85b",
+            "anchors": {
+              "scripture": [
+                "Genesis 9:6",
+                "1 Corinthians 6:19-20"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

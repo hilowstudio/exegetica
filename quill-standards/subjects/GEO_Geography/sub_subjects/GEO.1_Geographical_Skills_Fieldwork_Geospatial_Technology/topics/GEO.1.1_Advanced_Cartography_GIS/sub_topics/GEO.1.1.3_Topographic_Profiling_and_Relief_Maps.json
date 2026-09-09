@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "GEO.1.1.3",
+    "name": "Topographic Profiling and Relief Maps",
+    "topic_id": "GEO.1.1",
+    "topic_name": "Advanced Cartography & GIS",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.1",
+    "sub_subject_name": "Geographical Skills, Fieldwork & Geospatial Technology",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Topographic Profiling and Relief Maps in Advanced Cartography & GIS (Geography)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.1",
+            "sub_subject_name": "Geographical Skills, Fieldwork & Geospatial Technology",
+            "topic_id": "GEO.1.1",
+            "topic_name": "Advanced Cartography & GIS",
+            "sub_topic_id": "GEO.1.1.3",
+            "sub_topic_name": "Topographic Profiling and Relief Maps",
+            "objective_id": "GEO.1.1.3.1",
+            "objective_text": "Construct a model or drawing that shows the high and low land in a familiar place.",
+            "objective_uuid": "28e6cb43-5e3f-4183-8794-4c7c57e8744e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.K-2 — Construct maps, graphs, and other representations of familiar places (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.1",
+            "sub_subject_name": "Geographical Skills, Fieldwork & Geospatial Technology",
+            "topic_id": "GEO.1.1",
+            "topic_name": "Advanced Cartography & GIS",
+            "sub_topic_id": "GEO.1.1.3",
+            "sub_topic_name": "Topographic Profiling and Relief Maps",
+            "objective_id": "GEO.1.1.3.2",
+            "objective_text": "Identify hills, valleys, and slopes on a simple relief map using color or shading.",
+            "objective_uuid": "bbd4e205-d160-48f6-8d97-0799ff9183d0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.K-2 — Construct maps, graphs, and other representations of familiar places (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.1",
+            "sub_subject_name": "Geographical Skills, Fieldwork & Geospatial Technology",
+            "topic_id": "GEO.1.1",
+            "topic_name": "Advanced Cartography & GIS",
+            "sub_topic_id": "GEO.1.1.3",
+            "sub_topic_name": "Topographic Profiling and Relief Maps",
+            "objective_id": "GEO.1.1.3.3",
+            "objective_text": "Interpret contour lines to determine the elevation and steepness of terrain.",
+            "objective_uuid": "78889f73-995f-476e-85b9-657eff02d703",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.1",
+            "sub_subject_name": "Geographical Skills, Fieldwork & Geospatial Technology",
+            "topic_id": "GEO.1.1",
+            "topic_name": "Advanced Cartography & GIS",
+            "sub_topic_id": "GEO.1.1.3",
+            "sub_topic_name": "Topographic Profiling and Relief Maps",
+            "objective_id": "GEO.1.1.3.4",
+            "objective_text": "Construct a topographic profile along a chosen line across a contour map.",
+            "objective_uuid": "7c3b5b4c-8ede-4d90-8cfa-977c29c234d4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.1",
+            "sub_subject_name": "Geographical Skills, Fieldwork & Geospatial Technology",
+            "topic_id": "GEO.1.1",
+            "topic_name": "Advanced Cartography & GIS",
+            "sub_topic_id": "GEO.1.1.3",
+            "sub_topic_name": "Topographic Profiling and Relief Maps",
+            "objective_id": "GEO.1.1.3.5",
+            "objective_text": "Use geospatial tools to create relief maps that display and explain landform patterns.",
+            "objective_uuid": "47a83393-5b5a-419f-83d6-01f06332e28f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

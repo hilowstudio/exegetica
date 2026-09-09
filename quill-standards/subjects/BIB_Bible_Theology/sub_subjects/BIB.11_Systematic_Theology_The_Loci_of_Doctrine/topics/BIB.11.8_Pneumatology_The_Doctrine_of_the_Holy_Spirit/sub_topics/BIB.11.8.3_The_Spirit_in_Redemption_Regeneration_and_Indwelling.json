@@ -1,0 +1,473 @@
+{
+  "sub_topic": {
+    "id": "BIB.11.8.3",
+    "name": "The Spirit in Redemption: Regeneration and Indwelling",
+    "topic_id": "BIB.11.8",
+    "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.11",
+    "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+    "total_objectives": 16,
+    "description": "K-12 developmental progression for The Spirit in Redemption: Regeneration and Indwelling in Pneumatology: The Doctrine of the Holy Spirit, anchored in Scripture and the confessions via the Study Bible tools.",
+    "enrichment": {
+      "status": "expanded",
+      "levers": [
+        "structural-expansion",
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture and confession anchors validated against the study-bible MCP tools."
+    },
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.1",
+            "objective_text": "Identify the Spirit as the One who gives new life.",
+            "objective_uuid": "cbf674dd-78cf-4b09-9596-ad0d60db46ef",
+            "anchors": {
+              "scripture": [
+                "John 3:5-6"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.2",
+            "objective_text": "Name the Spirit as the Helper who lives in believers.",
+            "objective_uuid": "d3a2c088-48a9-4fd3-aa0a-6d21198fe583",
+            "anchors": {
+              "scripture": [
+                "John 14:16-17"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.3",
+            "objective_text": "Recall that believers are 'born of the Spirit.'",
+            "objective_uuid": "353ecf3d-e166-496f-81ca-5aa0c78ccdc4",
+            "anchors": {
+              "scripture": [
+                "John 3:6"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.4",
+            "objective_text": "Observe that the Spirit points us to Jesus.",
+            "objective_uuid": "8583cf5e-9588-4dfc-a1e3-ba17126d3909",
+            "anchors": {
+              "scripture": [
+                "John 15:26"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.5",
+            "objective_text": "Summarize regeneration as the new birth by the Spirit.",
+            "objective_uuid": "f50c4d99-9cc1-4bfd-a982-9c252ecc92e6",
+            "anchors": {
+              "scripture": [
+                "John 3:5-8",
+                "Titus 3:5"
+              ],
+              "confessions": [
+                "Westminster Confession 10.2"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.6",
+            "objective_text": "Explain what it means that the Spirit indwells the believer.",
+            "objective_uuid": "6fb583ca-2ae0-412c-8fd8-3aa49475a8c8",
+            "anchors": {
+              "scripture": [
+                "1 Corinthians 6:19",
+                "Romans 8:9"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.7",
+            "objective_text": "Compare the person 'in the flesh' with the person 'in the Spirit.'",
+            "objective_uuid": "11e62939-d0ec-45c9-92bd-4be220353b55",
+            "anchors": {
+              "scripture": [
+                "Romans 8:5-9"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.8",
+            "objective_text": "Apply the truth that your body is a temple of the Holy Spirit.",
+            "objective_uuid": "424b0e0e-e7f7-42cf-8307-f0b600be4c9b",
+            "anchors": {
+              "scripture": [
+                "1 Corinthians 6:19-20"
+              ],
+              "confessions": [
+                "Heidelberg Catechism Q1"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.9",
+            "objective_text": "Analyze the Spirit as the One who unites us to Christ.",
+            "objective_uuid": "bab7253a-9513-45ae-8e9f-20dc3de52793",
+            "anchors": {
+              "scripture": [
+                "Romans 8:9-11",
+                "1 Corinthians 12:13"
+              ],
+              "confessions": [
+                "Westminster Confession 8.8"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.10",
+            "objective_text": "Interpret the Spirit's work of applying Christ's redemption.",
+            "objective_uuid": "be8d91af-bf23-49f5-8705-e517f0f5bdfb",
+            "anchors": {
+              "scripture": [
+                "Titus 3:5",
+                "1 Corinthians 6:11"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q30"
+              ],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.11",
+            "objective_text": "Connect regeneration to effectual calling and faith.",
+            "objective_uuid": "a16740d6-3921-459e-9793-016eea865a12",
+            "anchors": {
+              "scripture": [
+                "John 3:3",
+                "Titus 3:5"
+              ],
+              "confessions": [
+                "Westminster Confession 10.2"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.12",
+            "objective_text": "Explain the Spirit's baptism of believers into the body of Christ.",
+            "objective_uuid": "36411cb9-323c-42fe-9817-3fdea53c812c",
+            "anchors": {
+              "scripture": [
+                "1 Corinthians 12:13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.13",
+            "objective_text": "Construct a theology of the Spirit's indwelling and the assurance it brings.",
+            "objective_uuid": "860a79bf-7480-44e1-a4f8-0d9b01a872c4",
+            "anchors": {
+              "scripture": [
+                "Romans 8:9-11",
+                "Ephesians 1:13-14"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.14",
+            "objective_text": "Evaluate the 'second blessing' view of Spirit-baptism against conversion-baptism.",
+            "objective_uuid": "43eaa095-11b1-47c5-a63c-6ad6363134f8",
+            "anchors": {
+              "scripture": [
+                "1 Corinthians 12:13",
+                "Ephesians 4:5"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.15",
+            "objective_text": "Defend the necessity of the Spirit's regenerating work for salvation.",
+            "objective_uuid": "3920fd50-c15c-4952-9600-d78869e4f110",
+            "anchors": {
+              "scripture": [
+                "John 3:5",
+                "Titus 3:5"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.3",
+            "sub_topic_name": "The Spirit in Redemption: Regeneration and Indwelling",
+            "objective_id": "BIB.11.8.3.16",
+            "objective_text": "Synthesize the Spirit as the One who applies to us the redemption purchased by Christ.",
+            "objective_uuid": "136d9623-628f-4aa1-af62-324399c6721b",
+            "anchors": {
+              "scripture": [
+                "Titus 3:5",
+                "Romans 8:11"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q30"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

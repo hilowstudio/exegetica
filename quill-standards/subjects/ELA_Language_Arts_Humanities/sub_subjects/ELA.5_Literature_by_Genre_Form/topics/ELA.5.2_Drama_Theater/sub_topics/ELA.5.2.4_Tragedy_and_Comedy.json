@@ -1,0 +1,167 @@
+{
+  "sub_topic": {
+    "id": "ELA.5.2.4",
+    "name": "Tragedy and Comedy",
+    "topic_id": "ELA.5.2",
+    "topic_name": "Drama & Theater",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.5",
+    "sub_subject_name": "Literature by Genre & Form",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Tragedy and Comedy in Drama & Theater (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.2",
+            "topic_name": "Drama & Theater",
+            "sub_topic_id": "ELA.5.2.4",
+            "sub_topic_name": "Tragedy and Comedy",
+            "objective_id": "ELA.5.2.4.1",
+            "objective_text": "Tell whether a play ends happily or sorrowfully",
+            "objective_uuid": "18af1da3-90be-41dc-8950-132e8961d038",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.2",
+            "topic_name": "Drama & Theater",
+            "sub_topic_id": "ELA.5.2.4",
+            "sub_topic_name": "Tragedy and Comedy",
+            "objective_id": "ELA.5.2.4.2",
+            "objective_text": "Identify features that mark a play as a comedy or a tragedy",
+            "objective_uuid": "5ba79f8c-9e5f-4441-859e-1843e20e13e1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.2",
+            "topic_name": "Drama & Theater",
+            "sub_topic_id": "ELA.5.2.4",
+            "sub_topic_name": "Tragedy and Comedy",
+            "objective_id": "ELA.5.2.4.3",
+            "objective_text": "Explain how a tragic hero's flaw leads to downfall",
+            "objective_uuid": "ff2f03e7-52b1-461b-8149-d93c26354823",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.2",
+            "topic_name": "Drama & Theater",
+            "sub_topic_id": "ELA.5.2.4",
+            "sub_topic_name": "Tragedy and Comedy",
+            "objective_id": "ELA.5.2.4.4",
+            "objective_text": "Analyze how a tragedy's structure moves from rising action to catastrophe",
+            "objective_uuid": "5b63a049-e5ec-4f58-87d4-4ada066f6079",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.5 — Analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.2",
+            "topic_name": "Drama & Theater",
+            "sub_topic_id": "ELA.5.2.4",
+            "sub_topic_name": "Tragedy and Comedy",
+            "objective_id": "ELA.5.2.4.5",
+            "objective_text": "Compare how comedy and tragedy treat the same human struggles",
+            "objective_uuid": "6e2636de-f160-408a-89d5-a4701f046567",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "LIF.6.2.5",
+    "name": "Using Tools for Productivity (calendars, task apps, project management software)",
+    "topic_id": "LIF.6.2",
+    "topic_name": "Digital Literacy & Technology Competence",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.6",
+    "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Using Tools for Productivity (calendars, task apps, project management software) in Digital Literacy & Technology Competence (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.6",
+            "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+            "topic_id": "LIF.6.2",
+            "topic_name": "Digital Literacy & Technology Competence",
+            "sub_topic_id": "LIF.6.2.5",
+            "sub_topic_name": "Using Tools for Productivity (calendars, task apps, project management software)",
+            "objective_id": "LIF.6.2.5.1",
+            "objective_text": "Use a calendar to mark important days and events.",
+            "objective_uuid": "57ad38c5-63bf-42ab-88d5-1ded5745336b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.6",
+            "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+            "topic_id": "LIF.6.2",
+            "topic_name": "Digital Literacy & Technology Competence",
+            "sub_topic_id": "LIF.6.2.5",
+            "sub_topic_name": "Using Tools for Productivity (calendars, task apps, project management software)",
+            "objective_id": "LIF.6.2.5.2",
+            "objective_text": "Keep a to-do list and check off tasks as you finish them.",
+            "objective_uuid": "22d77075-e04d-4664-8d51-ed1b63e7cde4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.6",
+            "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+            "topic_id": "LIF.6.2",
+            "topic_name": "Digital Literacy & Technology Competence",
+            "sub_topic_id": "LIF.6.2.5",
+            "sub_topic_name": "Using Tools for Productivity (calendars, task apps, project management software)",
+            "objective_id": "LIF.6.2.5.3",
+            "objective_text": "Use a digital calendar and task app to plan a week of assignments.",
+            "objective_uuid": "5db7570a-af13-4d5d-8ea3-4be48f8289d9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.6",
+            "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+            "topic_id": "LIF.6.2",
+            "topic_name": "Digital Literacy & Technology Competence",
+            "sub_topic_id": "LIF.6.2.5",
+            "sub_topic_name": "Using Tools for Productivity (calendars, task apps, project management software)",
+            "objective_id": "LIF.6.2.5.4",
+            "objective_text": "Break a project into tasks with due dates using a project or task app.",
+            "objective_uuid": "795a90a6-685d-4f93-82bd-9f9fb40581d1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.6",
+            "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+            "topic_id": "LIF.6.2",
+            "topic_name": "Digital Literacy & Technology Competence",
+            "sub_topic_id": "LIF.6.2.5",
+            "sub_topic_name": "Using Tools for Productivity (calendars, task apps, project management software)",
+            "objective_id": "LIF.6.2.5.5",
+            "objective_text": "Evaluate which productivity tools fit your workflow and set up a system to manage your commitments.",
+            "objective_uuid": "9e32cb0f-7c43-4f29-8259-dc7c984320bd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

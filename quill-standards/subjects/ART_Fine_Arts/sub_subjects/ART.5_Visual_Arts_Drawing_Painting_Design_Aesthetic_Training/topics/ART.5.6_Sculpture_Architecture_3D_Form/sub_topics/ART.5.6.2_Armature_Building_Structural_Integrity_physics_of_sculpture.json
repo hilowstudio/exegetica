@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ART.5.6.2",
+    "name": "Armature Building & Structural Integrity (physics of sculpture)",
+    "topic_id": "ART.5.6",
+    "topic_name": "Sculpture, Architecture & 3D Form",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.5",
+    "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Armature Building & Structural Integrity (physics of sculpture) in Sculpture, Architecture & 3D Form (Fine Arts)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.6",
+            "topic_name": "Sculpture, Architecture & 3D Form",
+            "sub_topic_id": "ART.5.6.2",
+            "sub_topic_name": "Armature Building & Structural Integrity (physics of sculpture)",
+            "objective_id": "ART.5.6.2.1",
+            "objective_text": "Build a wire or wood armature to support a sculpture's weight",
+            "objective_uuid": "7cbcab87-ef47-4ff4-840c-58775c8a4d37",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.6",
+            "topic_name": "Sculpture, Architecture & 3D Form",
+            "sub_topic_id": "ART.5.6.2",
+            "sub_topic_name": "Armature Building & Structural Integrity (physics of sculpture)",
+            "objective_id": "ART.5.6.2.2",
+            "objective_text": "Balance a sculpture over its base, accounting for the center of gravity",
+            "objective_uuid": "303e76ef-38d5-4877-8e81-d8c018f596b7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.6",
+            "topic_name": "Sculpture, Architecture & 3D Form",
+            "sub_topic_id": "ART.5.6.2",
+            "sub_topic_name": "Armature Building & Structural Integrity (physics of sculpture)",
+            "objective_id": "ART.5.6.2.3",
+            "objective_text": "Engineer an armature so the structure stays stable as material is added",
+            "objective_uuid": "1d49903e-d1bc-4942-8a86-07a90f2eb49e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.6",
+            "topic_name": "Sculpture, Architecture & 3D Form",
+            "sub_topic_id": "ART.5.6.2",
+            "sub_topic_name": "Armature Building & Structural Integrity (physics of sculpture)",
+            "objective_id": "ART.5.6.2.4",
+            "objective_text": "Design and build a load-bearing armature for a large freestanding sculpture",
+            "objective_uuid": "fec34510-a7fc-4443-89e3-7a598a80859d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr1 — Generate and conceptualize artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

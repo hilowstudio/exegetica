@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.10.3.2",
+    "name": "Linear Regression and Line of Best Fit",
+    "topic_id": "MAT.10.3",
+    "topic_name": "Introduction to Inference and Modeling",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.10",
+    "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Linear Regression and Line of Best Fit in Introduction to Inference and Modeling (Mathematics)",
+    "grade_levels": {
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.3",
+            "topic_name": "Introduction to Inference and Modeling",
+            "sub_topic_id": "MAT.10.3.2",
+            "sub_topic_name": "Linear Regression and Line of Best Fit",
+            "objective_id": "MAT.10.3.2.1",
+            "objective_text": "Informally fit a straight line to a scatter plot.",
+            "objective_uuid": "f77372c8-91bf-4699-862b-0db420decc0a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 8.SP.A.2 — Know that straight lines are widely used to model relationships between two quantitative variables. For  (grade 8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.3",
+            "topic_name": "Introduction to Inference and Modeling",
+            "sub_topic_id": "MAT.10.3.2",
+            "sub_topic_name": "Linear Regression and Line of Best Fit",
+            "objective_id": "MAT.10.3.2.2",
+            "objective_text": "Use the equation of a line of best fit to make predictions.",
+            "objective_uuid": "2df83ec8-f982-4b5b-88ff-3888ffb03d16",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-ID.B.6 — Represent data on two quantitative variables on a scatter plot, and describe how the variables are relat (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.3",
+            "topic_name": "Introduction to Inference and Modeling",
+            "sub_topic_id": "MAT.10.3.2",
+            "sub_topic_name": "Linear Regression and Line of Best Fit",
+            "objective_id": "MAT.10.3.2.3",
+            "objective_text": "Interpret the slope and intercept of a regression line in context.",
+            "objective_uuid": "1d8ccf44-7973-4a80-84e7-dbad081c1280",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-ID.B.6 — Represent data on two quantitative variables on a scatter plot, and describe how the variables are relat (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

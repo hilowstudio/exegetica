@@ -1,0 +1,146 @@
+{
+  "sub_topic": {
+    "id": "ELA.8.3.3",
+    "name": "Manuscript (Print) Writing",
+    "topic_id": "ELA.8.3",
+    "topic_name": "Handwriting and Penmanship",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.8",
+    "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Manuscript (Print) Writing in Handwriting and Penmanship (Language Arts & Humanities)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 2,
+        "average_complexity": 6.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.3",
+            "topic_name": "Handwriting and Penmanship",
+            "sub_topic_id": "ELA.8.3.3",
+            "sub_topic_name": "Manuscript (Print) Writing",
+            "objective_id": "ELA.8.3.3.1",
+            "objective_text": "Trace and copy manuscript uppercase and lowercase letters",
+            "objective_uuid": "078c11d5-3749-4eda-8f77-b211b2e764d0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.3",
+            "topic_name": "Handwriting and Penmanship",
+            "sub_topic_id": "ELA.8.3.3",
+            "sub_topic_name": "Manuscript (Print) Writing",
+            "objective_id": "ELA.8.3.3.2",
+            "objective_text": "Print all upper- and lowercase letters from memory",
+            "objective_uuid": "18f9fff0-5360-4da5-8eec-c71a63d0b7a9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 2,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.3",
+            "topic_name": "Handwriting and Penmanship",
+            "sub_topic_id": "ELA.8.3.3",
+            "sub_topic_name": "Manuscript (Print) Writing",
+            "objective_id": "ELA.8.3.3.3",
+            "objective_text": "Write letters with correct size, shape, and starting points",
+            "objective_uuid": "0f24b05f-2676-442b-80d2-52b1e330fffa",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.3",
+            "topic_name": "Handwriting and Penmanship",
+            "sub_topic_id": "ELA.8.3.3",
+            "sub_topic_name": "Manuscript (Print) Writing",
+            "objective_id": "ELA.8.3.3.4",
+            "objective_text": "Space letters and words evenly on and within the lines",
+            "objective_uuid": "69f725a8-b82d-4f85-83a9-2150ef5ceaca",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.3",
+            "topic_name": "Handwriting and Penmanship",
+            "sub_topic_id": "ELA.8.3.3",
+            "sub_topic_name": "Manuscript (Print) Writing",
+            "objective_id": "ELA.8.3.3.5",
+            "objective_text": "Write legibly in manuscript for words, sentences, and short paragraphs",
+            "objective_uuid": "2e9583a0-3250-42f5-80f1-cf32360a9e93",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "ART.4.5.3",
+    "name": "Leading Congregational Worship (Serving the church, musical leadership)",
+    "topic_id": "ART.4.5",
+    "topic_name": "Worship Arts, Hymnody & Theology",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.4",
+    "sub_subject_name": "Music (Theory, Performance, Appreciation & Worship Arts)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Leading Congregational Worship (Serving the church, musical leadership) in Worship Arts, Hymnody & Theology (Fine Arts)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.4",
+            "sub_subject_name": "Music (Theory, Performance, Appreciation & Worship Arts)",
+            "topic_id": "ART.4.5",
+            "topic_name": "Worship Arts, Hymnody & Theology",
+            "sub_topic_id": "ART.4.5.3",
+            "sub_topic_name": "Leading Congregational Worship (Serving the church, musical leadership)",
+            "objective_id": "ART.4.5.3.1",
+            "objective_text": "Help lead others in singing a familiar worship song",
+            "objective_uuid": "1d75c1dd-0ac4-470c-8976-f85b1abd76dd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.4",
+            "sub_subject_name": "Music (Theory, Performance, Appreciation & Worship Arts)",
+            "topic_id": "ART.4.5",
+            "topic_name": "Worship Arts, Hymnody & Theology",
+            "sub_topic_id": "ART.4.5.3",
+            "sub_topic_name": "Leading Congregational Worship (Serving the church, musical leadership)",
+            "objective_id": "ART.4.5.3.2",
+            "objective_text": "Choose songs in a congregation-friendly key and a comfortable singing range",
+            "objective_uuid": "983292da-9f3b-4128-89c1-8bcba437b594",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.4",
+            "sub_subject_name": "Music (Theory, Performance, Appreciation & Worship Arts)",
+            "topic_id": "ART.4.5",
+            "topic_name": "Worship Arts, Hymnody & Theology",
+            "sub_topic_id": "ART.4.5.3",
+            "sub_topic_name": "Leading Congregational Worship (Serving the church, musical leadership)",
+            "objective_id": "ART.4.5.3.3",
+            "objective_text": "Lead a group in worship with clear cues for starting, phrasing, and dynamics",
+            "objective_uuid": "ee57fd50-2b6f-4aff-8c62-404aaad27489",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.4",
+            "sub_subject_name": "Music (Theory, Performance, Appreciation & Worship Arts)",
+            "topic_id": "ART.4.5",
+            "topic_name": "Worship Arts, Hymnody & Theology",
+            "sub_topic_id": "ART.4.5.3",
+            "sub_topic_name": "Leading Congregational Worship (Serving the church, musical leadership)",
+            "objective_id": "ART.4.5.3.4",
+            "objective_text": "Plan a set of worship songs that serves the congregation rather than showcasing the leader",
+            "objective_uuid": "0ceb6ccc-df50-4008-8909-70dd80fe6114",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.4",
+            "sub_subject_name": "Music (Theory, Performance, Appreciation & Worship Arts)",
+            "topic_id": "ART.4.5",
+            "topic_name": "Worship Arts, Hymnody & Theology",
+            "sub_topic_id": "ART.4.5.3",
+            "sub_topic_name": "Leading Congregational Worship (Serving the church, musical leadership)",
+            "objective_id": "ART.4.5.3.5",
+            "objective_text": "Lead congregational worship with a servant heart, guiding the church to sing to God together",
+            "objective_uuid": "4dd0f7fb-a630-453e-880e-749a215fe7cd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

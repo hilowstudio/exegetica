@@ -1,0 +1,475 @@
+{
+  "sub_topic": {
+    "id": "BIB.11.2.5",
+    "name": "The Covenant of Works and Original Righteousness",
+    "topic_id": "BIB.11.2",
+    "topic_name": "Anthropology: The Doctrine of Humanity",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.11",
+    "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+    "total_objectives": 16,
+    "description": "K-12 developmental progression for The Covenant of Works and Original Righteousness in Anthropology: The Doctrine of Humanity, anchored in Scripture and the confessions via the Study Bible tools.",
+    "enrichment": {
+      "status": "expanded",
+      "levers": [
+        "structural-expansion",
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture and confession anchors validated against the study-bible MCP tools."
+    },
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.1",
+            "objective_text": "Identify that Adam and Eve first lived without sin.",
+            "objective_uuid": "ce4f3eed-8c5d-4dbd-b7f8-04d9702567a6",
+            "anchors": {
+              "scripture": [
+                "Genesis 1:31",
+                "Ecclesiastes 7:29"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.2",
+            "objective_text": "Name the one rule God gave in the garden.",
+            "objective_uuid": "369626fe-dfe7-421f-8469-d6a4817db4ee",
+            "anchors": {
+              "scripture": [
+                "Genesis 2:16-17"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.3",
+            "objective_text": "Recall that God warned that disobedience would bring death.",
+            "objective_uuid": "a9d42c7f-1107-4a53-8adf-189f1d756c0f",
+            "anchors": {
+              "scripture": [
+                "Genesis 2:17"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.4",
+            "objective_text": "Observe that Adam and Eve were good and upright at first.",
+            "objective_uuid": "8f6dc1d9-f14c-42da-ac34-19b4ff58b33c",
+            "anchors": {
+              "scripture": [
+                "Ecclesiastes 7:29"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.5",
+            "objective_text": "Summarize the covenant of works (life promised upon perfect obedience).",
+            "objective_uuid": "35ca7fa0-25e2-4753-8887-6bc1959d4646",
+            "anchors": {
+              "scripture": [
+                "Genesis 2:16-17"
+              ],
+              "confessions": [
+                "Westminster Confession 7.2"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.6",
+            "objective_text": "Explain original righteousness (created in true knowledge and holiness).",
+            "objective_uuid": "4d6eaf81-97a7-41ae-8f4a-5674230fc9fa",
+            "anchors": {
+              "scripture": [
+                "Ecclesiastes 7:29"
+              ],
+              "confessions": [
+                "Westminster Confession 4.2"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.7",
+            "objective_text": "Compare the covenant of works with the covenant of grace.",
+            "objective_uuid": "65e301fb-29eb-48b3-824b-70d0b618f156",
+            "anchors": {
+              "scripture": [
+                "Genesis 2:17",
+                "Romans 5:15-19"
+              ],
+              "confessions": [
+                "Westminster Confession 7.3"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.8",
+            "objective_text": "Apply how the broken covenant of works shows our need of Christ.",
+            "objective_uuid": "96fe8b5d-513a-4905-b2bf-d9205be9fa55",
+            "anchors": {
+              "scripture": [
+                "Romans 3:19-20",
+                "Galatians 3:10"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.9",
+            "objective_text": "Analyze Adam as the covenant head of humanity.",
+            "objective_uuid": "ca8740b0-07d5-425e-bf2c-851e71149f9f",
+            "anchors": {
+              "scripture": [
+                "Romans 5:12-19"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q22"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.10",
+            "objective_text": "Interpret the 'tree of life' and 'tree of knowledge' as covenant signs.",
+            "objective_uuid": "369e306d-48cc-4995-a443-106baf5f6625",
+            "anchors": {
+              "scripture": [
+                "Genesis 2:9",
+                "Genesis 3:22"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.11",
+            "objective_text": "Connect the covenant of works to Christ, the last Adam who kept it.",
+            "objective_uuid": "73db2b30-aa0b-421b-81e4-4be7356b8adf",
+            "anchors": {
+              "scripture": [
+                "Romans 5:19",
+                "1 Corinthians 15:45"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.12",
+            "objective_text": "Explain how Christ's active obedience fulfills what Adam failed.",
+            "objective_uuid": "38a4a82e-b7b5-4c9a-a0c2-71379667f3e1",
+            "anchors": {
+              "scripture": [
+                "Romans 5:19",
+                "Matthew 3:15"
+              ],
+              "confessions": [
+                "Westminster Confession 8.4"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.13",
+            "objective_text": "Construct a theology of the covenant of works.",
+            "objective_uuid": "e203ce3a-4142-4f54-9240-466b4387b58b",
+            "anchors": {
+              "scripture": [
+                "Genesis 2:16-17",
+                "Hosea 6:7"
+              ],
+              "confessions": [
+                "Westminster Confession 7.2"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.14",
+            "objective_text": "Evaluate denials of a pre-Fall covenant.",
+            "objective_uuid": "081dc992-4bae-492e-9820-ac1ad31fea4f",
+            "anchors": {
+              "scripture": [
+                "Romans 5:14",
+                "Hosea 6:7"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.15",
+            "objective_text": "Defend the imputation of Adam's guilt as parallel to Christ's righteousness.",
+            "objective_uuid": "3e8ea189-8dc0-4edd-842d-a80e3791114f",
+            "anchors": {
+              "scripture": [
+                "Romans 5:18-19"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.2",
+            "topic_name": "Anthropology: The Doctrine of Humanity",
+            "sub_topic_id": "BIB.11.2.5",
+            "sub_topic_name": "The Covenant of Works and Original Righteousness",
+            "objective_id": "BIB.11.2.5.16",
+            "objective_text": "Synthesize the two covenant heads: ruin in Adam, righteousness in Christ.",
+            "objective_uuid": "d9785166-fc0b-4ba9-844f-6af229fe7779",
+            "anchors": {
+              "scripture": [
+                "Romans 5:18-19",
+                "1 Corinthians 15:22"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q31"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.2.5",
+    "name": "Symmetry (Rotational, Reflectional, Translational)",
+    "topic_id": "MAT.5.2",
+    "topic_name": "Early Geometry Foundations",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Symmetry (Rotational, Reflectional, Translational) in Early Geometry Foundations (Mathematics)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.2",
+            "topic_name": "Early Geometry Foundations",
+            "sub_topic_id": "MAT.5.2.5",
+            "sub_topic_name": "Symmetry (Rotational, Reflectional, Translational)",
+            "objective_id": "MAT.5.2.5.1",
+            "objective_text": "Identify lines of symmetry in a two-dimensional figure.",
+            "objective_uuid": "114b8574-f0b4-4509-802d-a2d9fb94d37b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.G.A.3 — Recognize a line of symmetry for a two-dimensional figure as a line across the figure such that the figu (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.2",
+            "topic_name": "Early Geometry Foundations",
+            "sub_topic_id": "MAT.5.2.5",
+            "sub_topic_name": "Symmetry (Rotational, Reflectional, Translational)",
+            "objective_id": "MAT.5.2.5.2",
+            "objective_text": "Recognize reflectional and rotational symmetry.",
+            "objective_uuid": "123f78f7-5be2-46f3-839f-908856c9e709",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.G.A.3 — Recognize a line of symmetry for a two-dimensional figure as a line across the figure such that the figu (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.2",
+            "topic_name": "Early Geometry Foundations",
+            "sub_topic_id": "MAT.5.2.5",
+            "sub_topic_name": "Symmetry (Rotational, Reflectional, Translational)",
+            "objective_id": "MAT.5.2.5.3",
+            "objective_text": "Describe the symmetry of a figure in terms of transformations.",
+            "objective_uuid": "02452b0c-0a45-45d5-8128-3c8231b269c5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 8.G.A.1 — Verify experimentally the properties of rotations, reflections, and translations: (grade 8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

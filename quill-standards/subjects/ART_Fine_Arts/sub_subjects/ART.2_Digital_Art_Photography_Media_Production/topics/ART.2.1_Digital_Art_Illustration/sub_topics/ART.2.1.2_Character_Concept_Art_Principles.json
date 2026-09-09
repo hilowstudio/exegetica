@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ART.2.1.2",
+    "name": "Character & Concept Art Principles",
+    "topic_id": "ART.2.1",
+    "topic_name": "Digital Art & Illustration",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.2",
+    "sub_subject_name": "Digital Art, Photography & Media Production",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Character & Concept Art Principles in Digital Art & Illustration (Fine Arts)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.2",
+            "sub_topic_name": "Character & Concept Art Principles",
+            "objective_id": "ART.2.1.2.1",
+            "objective_text": "Draw an original character with a distinct silhouette and personality.",
+            "objective_uuid": "3b94a739-d5ce-4fca-852d-a546a20a15cf",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr1 — Generate and conceptualize artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.2",
+            "sub_topic_name": "Character & Concept Art Principles",
+            "objective_id": "ART.2.1.2.2",
+            "objective_text": "Generate several thumbnail sketches to explore different character ideas.",
+            "objective_uuid": "c007b61b-c9a4-4685-8815-31443a774da6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr1 — Generate and conceptualize artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.2",
+            "sub_topic_name": "Character & Concept Art Principles",
+            "objective_id": "ART.2.1.2.3",
+            "objective_text": "Develop a character turnaround showing front, side, and back views.",
+            "objective_uuid": "86280c9e-70cc-4695-8caa-52d69b7f7455",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.2",
+            "sub_topic_name": "Character & Concept Art Principles",
+            "objective_id": "ART.2.1.2.4",
+            "objective_text": "Design a concept art sheet with mood, color, and props to establish a character's world.",
+            "objective_uuid": "bc1bd34f-f104-492d-8084-0657b33a4a0e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.2",
+            "sub_topic_name": "Character & Concept Art Principles",
+            "objective_id": "ART.2.1.2.5",
+            "objective_text": "Refine a final character illustration with consistent proportions and rendering for presentation.",
+            "objective_uuid": "d7488c3f-1803-450f-82d1-35609fcba28e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Pr5 — Develop and refine artistic techniques and work for presentation (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

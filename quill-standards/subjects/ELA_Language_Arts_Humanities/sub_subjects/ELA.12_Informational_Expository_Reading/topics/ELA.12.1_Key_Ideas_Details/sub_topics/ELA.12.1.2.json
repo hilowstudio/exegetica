@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ELA.12.1.2",
+    "name": "Locating & Citing Textual Evidence",
+    "topic_id": "ELA.12.1",
+    "topic_name": "Key Ideas & Details",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.12",
+    "sub_subject_name": "Informational & Expository Reading",
+    "total_objectives": 5,
+    "description": "K-12 progression for Locating & Citing Textual Evidence in Key Ideas & Details (Informational & Expository Reading)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.1",
+            "topic_name": "Key Ideas & Details",
+            "sub_topic_id": "ELA.12.1.2",
+            "sub_topic_name": "Locating & Citing Textual Evidence",
+            "objective_id": "ELA.12.1.2.1",
+            "objective_text": "Point to the part of a text that answers a question.",
+            "objective_uuid": "f5c10d05-1a49-4baa-8dcb-e312d5a342e1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.1",
+            "topic_name": "Key Ideas & Details",
+            "sub_topic_id": "ELA.12.1.2",
+            "sub_topic_name": "Locating & Citing Textual Evidence",
+            "objective_id": "ELA.12.1.2.2",
+            "objective_text": "Answer explicit questions using details from the text.",
+            "objective_uuid": "05703c18-3149-48d2-8829-94d5ba6a3c5d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.1",
+            "topic_name": "Key Ideas & Details",
+            "sub_topic_id": "ELA.12.1.2",
+            "sub_topic_name": "Locating & Citing Textual Evidence",
+            "objective_id": "ELA.12.1.2.3",
+            "objective_text": "Cite specific textual evidence to support an answer or claim.",
+            "objective_uuid": "59cad9c9-3654-4fe9-899a-c662c62b1a54",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.1",
+            "topic_name": "Key Ideas & Details",
+            "sub_topic_id": "ELA.12.1.2",
+            "sub_topic_name": "Locating & Citing Textual Evidence",
+            "objective_id": "ELA.12.1.2.4",
+            "objective_text": "Make a logical inference and cite the evidence that supports it.",
+            "objective_uuid": "b96e379f-3fa4-4ba5-8c33-c73fa06e8cec",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.1",
+            "topic_name": "Key Ideas & Details",
+            "sub_topic_id": "ELA.12.1.2",
+            "sub_topic_name": "Locating & Citing Textual Evidence",
+            "objective_id": "ELA.12.1.2.5",
+            "objective_text": "Cite the strongest evidence and note where the text leaves matters uncertain.",
+            "objective_uuid": "5760629f-17b4-4847-88d9-758d3efe5857",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Authored to CCSS Reading anchors (CCRA.R); objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

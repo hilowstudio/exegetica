@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.4.3.4",
+    "name": "Plagiarism and Academic Integrity",
+    "topic_id": "CPT.4.3",
+    "topic_name": "Information Literacy",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.4",
+    "sub_subject_name": "Digital Literacy, Safety & Ethics",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Plagiarism and Academic Integrity in Information Literacy (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.3",
+            "topic_name": "Information Literacy",
+            "sub_topic_id": "CPT.4.3.4",
+            "sub_topic_name": "Plagiarism and Academic Integrity",
+            "objective_id": "CPT.4.3.4.1",
+            "objective_text": "Explain that copying someone else's work and calling it your own is wrong",
+            "objective_uuid": "e5f6aa30-e677-4b2e-81a6-3bff3aa14ee5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-21 — Use public domain or creative commons media, and refrain from copying or using material created by others with (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.3",
+            "topic_name": "Information Literacy",
+            "sub_topic_id": "CPT.4.3.4",
+            "sub_topic_name": "Plagiarism and Academic Integrity",
+            "objective_id": "CPT.4.3.4.2",
+            "objective_text": "Give credit to sources when using another person's words or ideas",
+            "objective_uuid": "c88494dd-4fcb-48d2-8437-0c6e0be8cec2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-21 — Use public domain or creative commons media, and refrain from copying or using material created by others with (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.3",
+            "topic_name": "Information Literacy",
+            "sub_topic_id": "CPT.4.3.4",
+            "sub_topic_name": "Plagiarism and Academic Integrity",
+            "objective_id": "CPT.4.3.4.3",
+            "objective_text": "Explain what plagiarism is and how to avoid it through proper citation",
+            "objective_uuid": "be520f69-7284-4aed-88f7-f2023eaf25fe",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-21 — Use public domain or creative commons media, and refrain from copying or using material created by others with (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.3",
+            "topic_name": "Information Literacy",
+            "sub_topic_id": "CPT.4.3.4",
+            "sub_topic_name": "Plagiarism and Academic Integrity",
+            "objective_id": "CPT.4.3.4.4",
+            "objective_text": "Describe how academic integrity relates to respecting intellectual property",
+            "objective_uuid": "a6f520e7-7a1d-4828-81a5-b8fe58344c0f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-IC-28 — Explain the beneficial and harmful effects that intellectual property laws can have on innovation. Clarificati (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.3",
+            "topic_name": "Information Literacy",
+            "sub_topic_id": "CPT.4.3.4",
+            "sub_topic_name": "Plagiarism and Academic Integrity",
+            "objective_id": "CPT.4.3.4.5",
+            "objective_text": "Explain how intellectual property laws protect creators and affect innovation",
+            "objective_uuid": "b4d4e65b-1bf4-41e6-82b8-dd2916eb8626",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-IC-28 — Explain the beneficial and harmful effects that intellectual property laws can have on innovation. Clarificati (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

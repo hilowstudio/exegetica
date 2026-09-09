@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "LIF.1.1.6",
+    "name": "Taxes (income tax basics, withholdings, W-2, 1099, filing simple returns)",
+    "topic_id": "LIF.1.1",
+    "topic_name": "Advanced Personal Finance & Legal Awareness",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.1",
+    "sub_subject_name": "Financial Literacy & Christian Stewardship",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Taxes (income tax basics, withholdings, W-2, 1099, filing simple returns) in Advanced Personal Finance & Legal Awareness (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.1",
+            "topic_name": "Advanced Personal Finance & Legal Awareness",
+            "sub_topic_id": "LIF.1.1.6",
+            "sub_topic_name": "Taxes (income tax basics, withholdings, W-2, 1099, filing simple returns)",
+            "objective_id": "LIF.1.1.6.1",
+            "objective_text": "Explain that taxes are money citizens pay to the government to fund shared services like roads and schools.",
+            "objective_uuid": "1fc91d73-a492-4be7-84ad-f54be3745835",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Jump$tart EI — Earning Income (financial-literacy national standards, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.1",
+            "topic_name": "Advanced Personal Finance & Legal Awareness",
+            "sub_topic_id": "LIF.1.1.6",
+            "sub_topic_name": "Taxes (income tax basics, withholdings, W-2, 1099, filing simple returns)",
+            "objective_id": "LIF.1.1.6.2",
+            "objective_text": "Describe what income tax is and why part of a worker's pay is set aside for it.",
+            "objective_uuid": "22070361-ffaa-4613-896c-f45b0c919820",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Jump$tart EI — Earning Income (financial-literacy national standards, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.1",
+            "topic_name": "Advanced Personal Finance & Legal Awareness",
+            "sub_topic_id": "LIF.1.1.6",
+            "sub_topic_name": "Taxes (income tax basics, withholdings, W-2, 1099, filing simple returns)",
+            "objective_id": "LIF.1.1.6.3",
+            "objective_text": "Explain what withholding means and how it appears on a paycheck.",
+            "objective_uuid": "cdb93701-f88e-492b-8195-2bc7ebed494d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Jump$tart EI — Earning Income (financial-literacy national standards, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.1",
+            "topic_name": "Advanced Personal Finance & Legal Awareness",
+            "sub_topic_id": "LIF.1.1.6",
+            "sub_topic_name": "Taxes (income tax basics, withholdings, W-2, 1099, filing simple returns)",
+            "objective_id": "LIF.1.1.6.4",
+            "objective_text": "Identify the purpose of a W-2 and a 1099 and describe who receives each.",
+            "objective_uuid": "b14aebb8-94de-4bdd-8315-9c3054ae709b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Jump$tart EI — Earning Income (financial-literacy national standards, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.1",
+            "topic_name": "Advanced Personal Finance & Legal Awareness",
+            "sub_topic_id": "LIF.1.1.6",
+            "sub_topic_name": "Taxes (income tax basics, withholdings, W-2, 1099, filing simple returns)",
+            "objective_id": "LIF.1.1.6.5",
+            "objective_text": "Complete a simple income tax return using sample W-2 information.",
+            "objective_uuid": "2f4ab034-bd96-4dcc-8048-842b83721673",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Jump$tart EI — Earning Income (financial-literacy national standards, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.1",
+            "topic_name": "Advanced Personal Finance & Legal Awareness",
+            "sub_topic_id": "LIF.1.1.6",
+            "sub_topic_name": "Taxes (income tax basics, withholdings, W-2, 1099, filing simple returns)",
+            "objective_id": "LIF.1.1.6.6",
+            "objective_text": "Evaluate how filing status, deductions, and withholding affect the amount of tax owed or refunded.",
+            "objective_uuid": "232e829c-bc33-49bc-8d24-68f63b3d9737",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Jump$tart EI — Earning Income (financial-literacy national standards, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "FCS / Jump$tart national standards",
+      "anchor_note": "Rebuilt from the FCS / Jump$tart national standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "CFL.4.2.4",
+    "name": "Vocabulary Acquisition (roots, prefixes, suffixes—etymological connections to English)",
+    "topic_id": "CFL.4.2",
+    "topic_name": "Foundations of Latin Literacy",
+    "subject_id": "CFL",
+    "subject_name": "Classical & Foreign Languages",
+    "sub_subject_id": "CFL.4",
+    "sub_subject_name": "Latin (Classical Language for Grammar, Logic & Western Literature)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Vocabulary Acquisition (roots, prefixes, suffixes—etymological connections to English) in Foundations of Latin Literacy (Classical & Foreign Languages)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.4",
+            "sub_subject_name": "Latin (Classical Language for Grammar, Logic & Western Literature)",
+            "topic_id": "CFL.4.2",
+            "topic_name": "Foundations of Latin Literacy",
+            "sub_topic_id": "CFL.4.2.4",
+            "sub_topic_name": "Vocabulary Acquisition (roots, prefixes, suffixes—etymological connections to English)",
+            "objective_id": "CFL.4.2.4.1",
+            "objective_text": "Learn and use a core set of high-frequency Latin words for everyday nouns, verbs, and adjectives",
+            "objective_uuid": "202c3b52-a693-4a06-8dd5-457561eb5abb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.4",
+            "sub_subject_name": "Latin (Classical Language for Grammar, Logic & Western Literature)",
+            "topic_id": "CFL.4.2",
+            "topic_name": "Foundations of Latin Literacy",
+            "sub_topic_id": "CFL.4.2.4",
+            "sub_topic_name": "Vocabulary Acquisition (roots, prefixes, suffixes—etymological connections to English)",
+            "objective_id": "CFL.4.2.4.2",
+            "objective_text": "Identify English words derived from Latin roots and explain their shared meaning",
+            "objective_uuid": "b1cbb4d1-e0db-487b-89c3-3736a1a451fd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.4",
+            "sub_subject_name": "Latin (Classical Language for Grammar, Logic & Western Literature)",
+            "topic_id": "CFL.4.2",
+            "topic_name": "Foundations of Latin Literacy",
+            "sub_topic_id": "CFL.4.2.4",
+            "sub_topic_name": "Vocabulary Acquisition (roots, prefixes, suffixes—etymological connections to English)",
+            "objective_id": "CFL.4.2.4.3",
+            "objective_text": "Analyze how common Latin prefixes, such as ad-, con-, in-, and trans-, change the meaning of a base word",
+            "objective_uuid": "da146e99-4549-4dbd-843e-3dd84cfb13a1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.4",
+            "sub_subject_name": "Latin (Classical Language for Grammar, Logic & Western Literature)",
+            "topic_id": "CFL.4.2",
+            "topic_name": "Foundations of Latin Literacy",
+            "sub_topic_id": "CFL.4.2.4",
+            "sub_topic_name": "Vocabulary Acquisition (roots, prefixes, suffixes—etymological connections to English)",
+            "objective_id": "CFL.4.2.4.4",
+            "objective_text": "Analyze how common Latin suffixes form English derivatives and use them to infer word meanings",
+            "objective_uuid": "b074b33c-901b-4e6b-8e16-e60f9fbcbaed",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.4",
+            "sub_subject_name": "Latin (Classical Language for Grammar, Logic & Western Literature)",
+            "topic_id": "CFL.4.2",
+            "topic_name": "Foundations of Latin Literacy",
+            "sub_topic_id": "CFL.4.2.4",
+            "sub_topic_name": "Vocabulary Acquisition (roots, prefixes, suffixes—etymological connections to English)",
+            "objective_id": "CFL.4.2.4.5",
+            "objective_text": "Determine the meaning of unfamiliar English and Latin words by breaking them into roots, prefixes, and suffixes",
+            "objective_uuid": "91dd8358-deb9-4ebf-8978-6c483aeec89e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

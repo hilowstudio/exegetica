@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "DST.4.2.4",
+    "name": "Tolerances & Quality Control (go/no-go gauges, manufacturing accuracy)",
+    "topic_id": "DST.4.2",
+    "topic_name": "Evaluation & Quality Assurance",
+    "subject_id": "DST",
+    "subject_name": "Design & Technology",
+    "sub_subject_id": "DST.4",
+    "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Tolerances & Quality Control (go/no-go gauges, manufacturing accuracy) in Evaluation & Quality Assurance (Design & Technology)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.2",
+            "topic_name": "Evaluation & Quality Assurance",
+            "sub_topic_id": "DST.4.2.4",
+            "sub_topic_name": "Tolerances & Quality Control (go/no-go gauges, manufacturing accuracy)",
+            "objective_id": "DST.4.2.4.1",
+            "objective_text": "Explain why identical parts must be made to nearly the same size to fit and work together",
+            "objective_uuid": "d6a35a1f-1af4-4e04-8518-b152fe04dc7a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-4 — A solution needs to be tested, and then modified on the basis of the test results, in order to improve i (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.2",
+            "topic_name": "Evaluation & Quality Assurance",
+            "sub_topic_id": "DST.4.2.4",
+            "sub_topic_name": "Tolerances & Quality Control (go/no-go gauges, manufacturing accuracy)",
+            "objective_id": "DST.4.2.4.2",
+            "objective_text": "Read a dimension with a tolerance and state the largest and smallest acceptable size",
+            "objective_uuid": "8d0f73fd-c33e-4baf-8ab8-dc62c51f75b7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-4 — A solution needs to be tested, and then modified on the basis of the test results, in order to improve i (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.2",
+            "topic_name": "Evaluation & Quality Assurance",
+            "sub_topic_id": "DST.4.2.4",
+            "sub_topic_name": "Tolerances & Quality Control (go/no-go gauges, manufacturing accuracy)",
+            "objective_id": "DST.4.2.4.3",
+            "objective_text": "Use a go/no-go gauge to check whether a part falls within its allowed tolerance",
+            "objective_uuid": "405b7c49-fe47-4743-84ba-50cf57268754",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-4 — A solution needs to be tested, and then modified on the basis of the test results, in order to improve i (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.2",
+            "topic_name": "Evaluation & Quality Assurance",
+            "sub_topic_id": "DST.4.2.4",
+            "sub_topic_name": "Tolerances & Quality Control (go/no-go gauges, manufacturing accuracy)",
+            "objective_id": "DST.4.2.4.4",
+            "objective_text": "Analyze quality-control test data to find where parts fall outside tolerance, and adjust the process to improve accuracy",
+            "objective_uuid": "7567a671-98fb-402b-8474-581b5ebc7662",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-4 — A solution needs to be tested, and then modified on the basis of the test results, in order to improve i (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

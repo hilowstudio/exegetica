@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.9.1.2",
+    "name": "Function Transformations and Compositions",
+    "topic_id": "MAT.9.1",
+    "topic_name": "Advanced Functions & Their Behavior",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.9",
+    "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Function Transformations and Compositions in Advanced Functions & Their Behavior (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.1",
+            "topic_name": "Advanced Functions & Their Behavior",
+            "sub_topic_id": "MAT.9.1.2",
+            "sub_topic_name": "Function Transformations and Compositions",
+            "objective_id": "MAT.9.1.2.1",
+            "objective_text": "Describe the effect of transformations (shifts, stretches, reflections) on a graph.",
+            "objective_uuid": "21fa2c87-0a05-4047-8017-bd78caa09b71",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-BF.B.3 — Identify the effect on the graph of replacing f(x) by f(x) + k, k f(x), f(kx), and f(x + k) for specific (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.1",
+            "topic_name": "Advanced Functions & Their Behavior",
+            "sub_topic_id": "MAT.9.1.2",
+            "sub_topic_name": "Function Transformations and Compositions",
+            "objective_id": "MAT.9.1.2.2",
+            "objective_text": "Combine functions using arithmetic operations.",
+            "objective_uuid": "d507b982-02bf-46b1-8e70-ceecd924fc9f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-BF.A.1 — Write a function that describes a relationship between two quantities (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.1",
+            "topic_name": "Advanced Functions & Their Behavior",
+            "sub_topic_id": "MAT.9.1.2",
+            "sub_topic_name": "Function Transformations and Compositions",
+            "objective_id": "MAT.9.1.2.3",
+            "objective_text": "Form and evaluate the composition of two functions.",
+            "objective_uuid": "2a98fee0-3a80-495f-841c-04f3e8358c54",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-BF.A.1 — Write a function that describes a relationship between two quantities (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

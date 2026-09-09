@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "GEO.3.5.3",
+    "name": "Physical Features of Major World Regions",
+    "topic_id": "GEO.3.5",
+    "topic_name": "Regional Knowledge (US & World)",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.3",
+    "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Physical Features of Major World Regions in Regional Knowledge (US & World) (Geography)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.5",
+            "topic_name": "Regional Knowledge (US & World)",
+            "sub_topic_id": "GEO.3.5.3",
+            "sub_topic_name": "Physical Features of Major World Regions",
+            "objective_id": "GEO.3.5.3.1",
+            "objective_text": "Identify major landforms such as mountains, rivers, and deserts on a map.",
+            "objective_uuid": "244004b2-aa53-4eba-8b3b-c4b47e561423",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.3.K-2 — Use maps, globes, and other simple geographic models to identify cultural and environmental characte (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.5",
+            "topic_name": "Regional Knowledge (US & World)",
+            "sub_topic_id": "GEO.3.5.3",
+            "sub_topic_name": "Physical Features of Major World Regions",
+            "objective_id": "GEO.3.5.3.2",
+            "objective_text": "Locate major physical features such as the Himalayas, Amazon River, and Sahara.",
+            "objective_uuid": "c06b372a-4f5e-410b-8876-3dde0d5a49c1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.3.9-12 — Use geographic data to analyze variations in the spatial patterns of cultural and environmental char (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.5",
+            "topic_name": "Regional Knowledge (US & World)",
+            "sub_topic_id": "GEO.3.5.3",
+            "sub_topic_name": "Physical Features of Major World Regions",
+            "objective_id": "GEO.3.5.3.3",
+            "objective_text": "Compare the physical features that characterize different world regions.",
+            "objective_uuid": "3f5cb404-e01c-4b1f-8507-e4812ac46ec0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.3.9-12 — Use geographic data to analyze variations in the spatial patterns of cultural and environmental char (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.5",
+            "topic_name": "Regional Knowledge (US & World)",
+            "sub_topic_id": "GEO.3.5.3",
+            "sub_topic_name": "Physical Features of Major World Regions",
+            "objective_id": "GEO.3.5.3.4",
+            "objective_text": "Analyze how physical features influence climate, settlement, and land use across regions.",
+            "objective_uuid": "962cecfa-0526-4518-8385-b710e4b095ab",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.3.9-12 — Use geographic data to analyze variations in the spatial patterns of cultural and environmental char (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

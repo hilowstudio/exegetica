@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "SCI.1.1.1",
+    "name": "Blueprints & Diagrams (Reading and Creating Schematics)",
+    "topic_id": "SCI.1.1",
+    "topic_name": "Engineering & Design (Practical Application of Physics)",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.1",
+    "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Blueprints & Diagrams (Reading and Creating Schematics) in Engineering & Design (Practical Application of Physics) (Science & Nature)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.1",
+            "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+            "topic_id": "SCI.1.1",
+            "topic_name": "Engineering & Design (Practical Application of Physics)",
+            "sub_topic_id": "SCI.1.1.1",
+            "sub_topic_name": "Blueprints & Diagrams (Reading and Creating Schematics)",
+            "objective_id": "SCI.1.1.1.1",
+            "objective_text": "Interpret common symbols and a legend on a simple schematic or floor plan to identify the parts of an object or structure it represents",
+            "objective_uuid": "f5a4b255-5505-45a9-8e35-d0a44bf43445",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-2 — There are systematic processes for evaluating solutions with respect to how well they meet the criteria  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.1",
+            "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+            "topic_id": "SCI.1.1",
+            "topic_name": "Engineering & Design (Practical Application of Physics)",
+            "sub_topic_id": "SCI.1.1.1",
+            "sub_topic_name": "Blueprints & Diagrams (Reading and Creating Schematics)",
+            "objective_id": "SCI.1.1.1.2",
+            "objective_text": "Create a labeled, to-scale diagram of a device or structure, using consistent symbols, measurements, and a title block so another person could build from it",
+            "objective_uuid": "9e61256d-a097-4f7b-8723-a2eb3d16cb39",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-2 — There are systematic processes for evaluating solutions with respect to how well they meet the criteria  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.1",
+            "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+            "topic_id": "SCI.1.1",
+            "topic_name": "Engineering & Design (Practical Application of Physics)",
+            "sub_topic_id": "SCI.1.1.1",
+            "sub_topic_name": "Blueprints & Diagrams (Reading and Creating Schematics)",
+            "objective_id": "SCI.1.1.1.3",
+            "objective_text": "Read a multi-view engineering drawing (top, front, and side orthographic views) and describe the three-dimensional object it depicts",
+            "objective_uuid": "3a172ed5-cd7c-4587-87bd-227675203afd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS HS-ETS1-2 — Design a solution to a complex real-world problem by breaking it down into smaller, more manageable prob (grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.1",
+            "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+            "topic_id": "SCI.1.1",
+            "topic_name": "Engineering & Design (Practical Application of Physics)",
+            "sub_topic_id": "SCI.1.1.1",
+            "sub_topic_name": "Blueprints & Diagrams (Reading and Creating Schematics)",
+            "objective_id": "SCI.1.1.1.4",
+            "objective_text": "Draft a working schematic or blueprint that breaks a complex system into labeled sub-assemblies, each addressing a smaller part of the overall design problem",
+            "objective_uuid": "ea4c5ebf-e939-45dc-885e-3de7263a8f09",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS HS-ETS1-2 — Design a solution to a complex real-world problem by breaking it down into smaller, more manageable prob (grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.1",
+            "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+            "topic_id": "SCI.1.1",
+            "topic_name": "Engineering & Design (Practical Application of Physics)",
+            "sub_topic_id": "SCI.1.1.1",
+            "sub_topic_name": "Blueprints & Diagrams (Reading and Creating Schematics)",
+            "objective_id": "SCI.1.1.1.5",
+            "objective_text": "Evaluate and revise a set of technical drawings against defined criteria and constraints, checking dimensions, tolerances, and standard conventions for accuracy",
+            "objective_uuid": "5432fb98-95a6-4ba8-8a6a-bff98f1702c5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS HS-ETS1-2 — Design a solution to a complex real-world problem by breaking it down into smaller, more manageable prob (grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "sub_topic": {
+    "id": "MAT.11.2.5",
+    "name": "Verifying Identities (deductive reasoning)",
+    "topic_id": "MAT.11.2",
+    "topic_name": "Identities & Equations",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.11",
+    "sub_subject_name": "Trigonometry (Ratios, Cycles & Mathematical Harmony)",
+    "total_objectives": 2,
+    "description": "13-year academic progression (K-12) for Verifying Identities (deductive reasoning) in Identities & Equations (Mathematics)",
+    "grade_levels": {
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.11",
+            "sub_subject_name": "Trigonometry (Ratios, Cycles & Mathematical Harmony)",
+            "topic_id": "MAT.11.2",
+            "topic_name": "Identities & Equations",
+            "sub_topic_id": "MAT.11.2.5",
+            "sub_topic_name": "Verifying Identities (deductive reasoning)",
+            "objective_id": "MAT.11.2.5.1",
+            "objective_text": "Verify a simple trigonometric identity using algebra and known identities.",
+            "objective_uuid": "3a45b601-c9a0-4f3d-8344-3c8c613f05ec",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-TF.C.8 — Prove the Pythagorean identity sin²(θ) + cos²(θ) = 1 and use it to find sin(θ), cos(θ), or tan(θ) given  (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.11",
+            "sub_subject_name": "Trigonometry (Ratios, Cycles & Mathematical Harmony)",
+            "topic_id": "MAT.11.2",
+            "topic_name": "Identities & Equations",
+            "sub_topic_id": "MAT.11.2.5",
+            "sub_topic_name": "Verifying Identities (deductive reasoning)",
+            "objective_id": "MAT.11.2.5.2",
+            "objective_text": "Choose an effective strategy for verifying a more complex identity.",
+            "objective_uuid": "105179c6-155b-42d4-8b15-0ba04e52c79e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-TF.C.8 — Prove the Pythagorean identity sin²(θ) + cos²(θ) = 1 and use it to find sin(θ), cos(θ), or tan(θ) given  (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ELA.4.4.3",
+    "name": "Plot, Setting, Character, Conflict, and Theme",
+    "topic_id": "ELA.4.4",
+    "topic_name": "Elements of Story & Narrative",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.4",
+    "sub_subject_name": "Literary Analysis & Criticism",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Plot, Setting, Character, Conflict, and Theme in Elements of Story & Narrative (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.4",
+            "topic_name": "Elements of Story & Narrative",
+            "sub_topic_id": "ELA.4.4.3",
+            "sub_topic_name": "Plot, Setting, Character, Conflict, and Theme",
+            "objective_id": "ELA.4.4.3.1",
+            "objective_text": "Retell the beginning, middle, and end of a story.",
+            "objective_uuid": "bb624662-c521-4582-885e-006dea174c24",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.5 — Analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.4",
+            "topic_name": "Elements of Story & Narrative",
+            "sub_topic_id": "ELA.4.4.3",
+            "sub_topic_name": "Plot, Setting, Character, Conflict, and Theme",
+            "objective_id": "ELA.4.4.3.2",
+            "objective_text": "Identify the setting, main characters, and problem in a story.",
+            "objective_uuid": "f25eee1d-42aa-4c83-8cf2-b7030056b0ce",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.4",
+            "topic_name": "Elements of Story & Narrative",
+            "sub_topic_id": "ELA.4.4.3",
+            "sub_topic_name": "Plot, Setting, Character, Conflict, and Theme",
+            "objective_id": "ELA.4.4.3.3",
+            "objective_text": "Describe how the plot moves from conflict to resolution.",
+            "objective_uuid": "58af2711-c7ce-42dd-8763-c3478f06b4b9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.5 — Analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.4",
+            "topic_name": "Elements of Story & Narrative",
+            "sub_topic_id": "ELA.4.4.3",
+            "sub_topic_name": "Plot, Setting, Character, Conflict, and Theme",
+            "objective_id": "ELA.4.4.3.4",
+            "objective_text": "Analyze how setting and character shape the central conflict.",
+            "objective_uuid": "8986f147-3a54-4ecf-8288-8cb4aeb735ec",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.4",
+            "topic_name": "Elements of Story & Narrative",
+            "sub_topic_id": "ELA.4.4.3",
+            "sub_topic_name": "Plot, Setting, Character, Conflict, and Theme",
+            "objective_id": "ELA.4.4.3.5",
+            "objective_text": "Analyze how plot, character, and conflict work together to develop theme.",
+            "objective_uuid": "0d02fa94-c175-4048-8314-b4fa227683b7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.2 — Determine central ideas or themes of a text and analyze their development; summarize the key supporting  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

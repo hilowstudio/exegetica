@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "HSS.5.2.3",
+    "name": "Early Governance (Patriarchal Systems, Clan Rule)",
+    "topic_id": "HSS.5.2",
+    "topic_name": "Origins of Humanity & Early Structures",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.5",
+    "sub_subject_name": "Foundations of History & Human Civilization",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Early Governance (Patriarchal Systems, Clan Rule) in Origins of Humanity & Early Structures (History & Social Studies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.2",
+            "topic_name": "Origins of Humanity & Early Structures",
+            "sub_topic_id": "HSS.5.2.3",
+            "sub_topic_name": "Early Governance (Patriarchal Systems, Clan Rule)",
+            "objective_id": "HSS.5.2.3.1",
+            "objective_text": "Describe how the earliest families were led by fathers and elders.",
+            "objective_uuid": "a1cbbc6e-48a4-46e7-8c4f-89320d3e65cc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.2",
+            "topic_name": "Origins of Humanity & Early Structures",
+            "sub_topic_id": "HSS.5.2.3",
+            "sub_topic_name": "Early Governance (Patriarchal Systems, Clan Rule)",
+            "objective_id": "HSS.5.2.3.2",
+            "objective_text": "Explain how authority in the first societies was organized around households and clans.",
+            "objective_uuid": "fc4f67fa-e549-4e6a-80f0-20ac49cc6b8d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.2",
+            "topic_name": "Origins of Humanity & Early Structures",
+            "sub_topic_id": "HSS.5.2.3",
+            "sub_topic_name": "Early Governance (Patriarchal Systems, Clan Rule)",
+            "objective_id": "HSS.5.2.3.3",
+            "objective_text": "Describe how patriarchs such as Noah and the fathers of Genesis led their families.",
+            "objective_uuid": "bd2a8be5-dcb6-4216-803f-81d73d7518d0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.2",
+            "topic_name": "Origins of Humanity & Early Structures",
+            "sub_topic_id": "HSS.5.2.3",
+            "sub_topic_name": "Early Governance (Patriarchal Systems, Clan Rule)",
+            "objective_id": "HSS.5.2.3.4",
+            "objective_text": "Analyze how clan- and family-based rule provided order before the rise of kings and nations.",
+            "objective_uuid": "1ab1d86d-eeb1-44f5-8230-5645a72f3060",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.2",
+            "topic_name": "Origins of Humanity & Early Structures",
+            "sub_topic_id": "HSS.5.2.3",
+            "sub_topic_name": "Early Governance (Patriarchal Systems, Clan Rule)",
+            "objective_id": "HSS.5.2.3.5",
+            "objective_text": "Evaluate how patriarchal governance reflected a biblical design for authority and responsibility in early human society.",
+            "objective_uuid": "978b7339-435b-49f3-8103-87a93281b249",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

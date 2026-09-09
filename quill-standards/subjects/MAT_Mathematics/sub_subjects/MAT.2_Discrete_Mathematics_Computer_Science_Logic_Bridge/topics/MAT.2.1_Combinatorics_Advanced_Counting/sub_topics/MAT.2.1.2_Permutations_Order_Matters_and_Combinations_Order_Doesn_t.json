@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.2.1.2",
+    "name": "Permutations (Order Matters) and Combinations (Order Doesn't)",
+    "topic_id": "MAT.2.1",
+    "topic_name": "Combinatorics (Advanced Counting)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.2",
+    "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Permutations (Order Matters) and Combinations (Order Doesn't) in Combinatorics (Advanced Counting) (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.2",
+            "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+            "topic_id": "MAT.2.1",
+            "topic_name": "Combinatorics (Advanced Counting)",
+            "sub_topic_id": "MAT.2.1.2",
+            "sub_topic_name": "Permutations (Order Matters) and Combinations (Order Doesn't)",
+            "objective_id": "MAT.2.1.2.1",
+            "objective_text": "Use the fundamental counting principle to count arrangements.",
+            "objective_uuid": "302da42b-0501-466e-8586-6754dcade7b2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-CP.B.9 — (+) Use permutations and combinations to compute probabilities of compound events and solve problems (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 2,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.2",
+            "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+            "topic_id": "MAT.2.1",
+            "topic_name": "Combinatorics (Advanced Counting)",
+            "sub_topic_id": "MAT.2.1.2",
+            "sub_topic_name": "Permutations (Order Matters) and Combinations (Order Doesn't)",
+            "objective_id": "MAT.2.1.2.2",
+            "objective_text": "Count permutations where order matters.",
+            "objective_uuid": "972d0cd3-de66-4c75-8d75-cd5e0b7d2008",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-CP.B.9 — (+) Use permutations and combinations to compute probabilities of compound events and solve problems (HS)"
+              ]
+            }
+          },
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.2",
+            "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+            "topic_id": "MAT.2.1",
+            "topic_name": "Combinatorics (Advanced Counting)",
+            "sub_topic_id": "MAT.2.1.2",
+            "sub_topic_name": "Permutations (Order Matters) and Combinations (Order Doesn't)",
+            "objective_id": "MAT.2.1.2.3",
+            "objective_text": "Count combinations where order does not matter.",
+            "objective_uuid": "e119eb9b-03f7-46f3-8f84-f20cba2461ff",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-CP.B.9 — (+) Use permutations and combinations to compute probabilities of compound events and solve problems (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

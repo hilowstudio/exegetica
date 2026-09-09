@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.4.2",
+    "name": "Block-based Coding (Scratch/MakeCode)",
+    "topic_id": "CPT.1.4",
+    "topic_name": "Programming Fundamentals (Block to Text)",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Block-based Coding (Scratch/MakeCode) in Programming Fundamentals (Block to Text) (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.2",
+            "sub_topic_name": "Block-based Coding (Scratch/MakeCode)",
+            "objective_id": "CPT.1.4.2.1",
+            "objective_text": "Build a program by connecting blocks into a sequence with a simple loop",
+            "objective_uuid": "cabe0444-b29e-483b-852c-889f30fe790a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-AP-10 — Develop programs with sequences and simple loops, to express ideas or address a problem (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.2",
+            "sub_topic_name": "Block-based Coding (Scratch/MakeCode)",
+            "objective_id": "CPT.1.4.2.2",
+            "objective_text": "Assemble a block-based program that uses events, loops, and conditionals",
+            "objective_uuid": "e8d5e653-0af4-4728-8828-888629e9527c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-AP-10 — Create programs that include sequences, events, loops, and conditionals (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.2",
+            "sub_topic_name": "Block-based Coding (Scratch/MakeCode)",
+            "objective_id": "CPT.1.4.2.3",
+            "objective_text": "Create an interactive block-based project such as a game or animation",
+            "objective_uuid": "42e70b02-f406-4292-8b2f-3a205f0215d4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-AP-10 — Create programs that include sequences, events, loops, and conditionals (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

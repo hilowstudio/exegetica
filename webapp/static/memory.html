@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scripture Memory · Exegetica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper:#f2f0e8; --surface:#fbfbf6; --surface-2:#eae8de; --sunk:#e4e1d5; --ink:#1e2026;
+    --ink-soft:#54596a; --ink-faint:#8b8f9b; --rule:#dcd9cd; --rule-strong:#c3bfb0;
+    --accent:#8f2533; --accent-soft:#b1515d;
+    --iron:#2f4d5c; --iron-soft:#557280; --brass:#9a7c3d;
+    --ok:#3f7a52; --warn:#9a6a1a; --err:#c85a1f;
+    --user-bg:#e6eaef; --code-bg:#eae8df;
+    --serif:"Spectral",Georgia,serif; --sans:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#14151a; --surface:#1b1d23; --surface-2:#23252c; --sunk:#101116; --ink:#e9e7e0;
+    --ink-soft:#a9aeb9; --ink-faint:#787d88; --rule:#2c2f37; --rule-strong:#3b3f49;
+    --accent:#dd8089; --accent-soft:#b0555f;
+    --iron:#7fb0c2; --iron-soft:#5c8494; --brass:#c7a45f;
+    --ok:#6bbf86; --warn:#d5a24a; --err:#e8895a;
+    --user-bg:#232630; --code-bg:#22242b;
+  }}
+  :root[data-theme="dark"]{
+    --paper:#14151a; --surface:#1b1d23; --surface-2:#23252c; --sunk:#101116; --ink:#e9e7e0;
+    --ink-soft:#a9aeb9; --ink-faint:#787d88; --rule:#2c2f37; --rule-strong:#3b3f49;
+    --accent:#dd8089; --accent-soft:#b0555f;
+    --iron:#7fb0c2; --iron-soft:#5c8494; --brass:#c7a45f;
+    --ok:#6bbf86; --warn:#d5a24a; --err:#e8895a;
+    --user-bg:#232630; --code-bg:#22242b;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  h1,h2,h3{text-wrap:balance}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+  button{font-family:inherit}
+
+  /* ---------- app shell ---------- */
+  .app{display:grid;grid-template-columns:58px 1fr;height:100%}
+  .rail{background:var(--surface);border-right:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;gap:3px;padding:12px 0;z-index:20}
+  .rail .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:10px;text-decoration:none}
+  .rail button,.rail a.railbtn{width:42px;height:42px;border-radius:10px;border:1px solid transparent;background:none;color:var(--ink-soft);display:grid;place-items:center;cursor:pointer;text-decoration:none}
+  .rail button:hover,.rail a.railbtn:hover{background:var(--surface-2);color:var(--ink)}
+  .rail a.railbtn.active{background:var(--accent);color:#fff}
+  .rail .sp{flex:1}
+  .rail svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .rail .glyph{font-size:18px;line-height:1}
+
+  .col{display:flex;flex-direction:column;min-width:0;height:100%;overflow:hidden}
+  .top{display:flex;align-items:center;gap:12px;padding:15px 26px;border-bottom:1px solid var(--rule);background:var(--paper)}
+  .top h1{font-family:var(--serif);font-weight:600;font-size:20px;margin:0}
+  .top .sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--iron-soft)}
+  .top .sp{flex:1}
+  .scroll{flex:1;overflow-y:auto}
+  .wrap{max-width:940px;margin:0 auto;padding:26px 26px 80px}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-weight:600;font-size:14px;
+    border-radius:9px;padding:9px 15px;cursor:pointer;border:1px solid var(--rule-strong);background:var(--surface);color:var(--ink);text-decoration:none}
+  .btn:hover{background:var(--surface-2)}
+  .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
+  .btn.primary:hover{background:var(--accent-soft)}
+  .btn.ok{background:var(--ok);color:#fff;border-color:transparent}
+  .btn.big{font-size:16px;padding:12px 18px;width:100%}
+  .btn.ghost{background:none;border-color:transparent;color:var(--ink-soft);font-weight:500}
+  .btn.ghost:hover{color:var(--accent);background:none}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .icobtn{width:34px;height:34px;border-radius:8px;border:1px solid transparent;background:none;color:var(--ink-soft);display:grid;place-items:center;cursor:pointer}
+  .icobtn:hover{background:var(--surface-2);color:var(--ink)}
+  .icobtn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+  /* ---------- dashboard ---------- */
+  .toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+  .tabs{display:inline-flex;background:var(--sunk);border-radius:10px;padding:3px}
+  .tabs button{border:0;background:none;color:var(--ink-soft);font-weight:600;font-size:13.5px;padding:7px 15px;border-radius:8px;cursor:pointer}
+  .tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .tabs .cnt{font-family:var(--mono);font-size:11px;opacity:.7;margin-left:5px}
+
+  .crumbs{display:flex;align-items:center;gap:8px;margin-bottom:14px;color:var(--ink-soft);font-size:14px}
+  .crumbs a{color:var(--iron);cursor:pointer;text-decoration:none;font-weight:600}
+  .crumbs a:hover{text-decoration:underline}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .card{background:var(--surface);border:1px solid var(--rule);border-radius:13px;padding:16px 17px;position:relative;transition:border-color .15s,transform .05s}
+  .card.drop{border-color:var(--iron);border-style:dashed;background:var(--surface-2)}
+  .card .ref{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);margin:0 0 3px;padding-right:26px}
+  .card .meta{font-size:12.5px;color:var(--ink-faint);margin-bottom:12px}
+  .bar{height:7px;border-radius:5px;background:var(--sunk);overflow:hidden;margin-bottom:13px}
+  .bar > i{display:block;height:100%;background:var(--iron);border-radius:5px;transition:width .3s}
+  .card .kebab{position:absolute;top:11px;right:10px}
+  .menu{position:absolute;top:38px;right:10px;background:var(--surface);border:1px solid var(--rule-strong);border-radius:10px;box-shadow:0 8px 26px rgba(0,0,0,.14);padding:5px;z-index:15;min-width:172px}
+  .menu button{display:flex;width:100%;align-items:center;gap:8px;border:0;background:none;color:var(--ink);font-size:13.5px;padding:8px 10px;border-radius:7px;cursor:pointer;text-align:left}
+  .menu button:hover{background:var(--surface-2)}
+  .menu button.danger{color:var(--err)}
+  .menu .sep{height:1px;background:var(--rule);margin:4px 2px}
+  .menu .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);padding:6px 10px 3px}
+
+  .folder{cursor:pointer}
+  .folder .fico{color:var(--brass);margin-bottom:8px}
+  .folder .fico svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6}
+  .folder .fname{font-family:var(--serif);font-weight:600;font-size:17px;margin:0 0 2px;padding-right:26px}
+  .mastered .ref{color:var(--ink)}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ok);font-weight:600;margin-bottom:12px}
+  .badge svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+
+  .empty{text-align:center;padding:56px 20px;color:var(--ink-soft)}
+  .empty svg{width:44px;height:44px;stroke:var(--rule-strong);fill:none;stroke-width:1.5;margin-bottom:14px}
+  .empty h3{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);margin:0 0 6px}
+  .empty p{margin:0 0 18px;max-width:400px;margin-left:auto;margin-right:auto}
+
+  .trash{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--surface);border:2px dashed var(--rule-strong);
+    color:var(--ink-soft);border-radius:14px;padding:12px 24px;display:none;align-items:center;gap:10px;font-weight:600;z-index:30;box-shadow:0 8px 26px rgba(0,0,0,.14)}
+  .trash.show{display:flex}
+  .trash.drop{border-color:var(--err);color:var(--err);background:var(--surface-2)}
+  .trash svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+  /* ---------- modal ---------- */
+  .scrim{position:fixed;inset:0;background:rgba(20,20,26,.5);display:none;place-items:center;z-index:50;padding:20px}
+  .scrim.show{display:grid}
+  .modal{background:var(--paper);border:1px solid var(--rule-strong);border-radius:16px;max-width:520px;width:100%;padding:22px 22px 20px;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+  .modal h2{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 4px}
+  .modal p.hint{color:var(--ink-soft);font-size:13.5px;margin:0 0 16px}
+  .field{display:block;margin-bottom:14px}
+  .field span{display:block;font-size:12.5px;font-weight:600;color:var(--ink-soft);margin-bottom:5px}
+  input[type=text],textarea{width:100%;font-family:inherit;font-size:15px;color:var(--ink);background:var(--surface);
+    border:1px solid var(--rule-strong);border-radius:9px;padding:10px 12px}
+  textarea{resize:vertical;line-height:1.5}
+  input[type=text]:focus,textarea:focus{outline:2px solid var(--iron-soft);outline-offset:-1px;border-color:transparent}
+  .modal .row{display:flex;justify-content:flex-end;gap:9px;margin-top:6px}
+  .liblist{display:flex;flex-direction:column;gap:2px;margin:2px 0 16px;max-height:44vh;overflow-y:auto;border:1px solid var(--rule);border-radius:10px;padding:6px}
+  .librow{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px}
+  .librow:hover{background:var(--surface-2)}
+  .librow .lref{font-family:var(--serif);font-size:15.5px;flex:1}
+  .librow .added{font-size:12px;color:var(--ink-faint)}
+
+  /* ---------- practice ---------- */
+  .pr{max-width:720px;margin:0 auto}
+  .pr-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}
+  .pr-head .mid{text-align:center;flex:1}
+  .pr-head .mid h2{font-family:var(--serif);color:var(--accent);font-size:23px;margin:0}
+  .pr-head .mid .step{font-size:13px;color:var(--ink-soft);font-weight:600}
+  .pr-bar{height:8px;border-radius:6px;background:var(--sunk);overflow:hidden;margin-bottom:20px}
+  .pr-bar > i{display:block;height:100%;background:var(--iron);transition:width .35s}
+  .pr-card{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:30px 26px;min-height:340px;
+    display:flex;flex-direction:column;justify-content:center;gap:26px;position:relative}
+  .versebox{min-height:96px;display:flex;align-items:center;justify-content:center}
+  .verse{font-family:var(--serif);font-size:22px;line-height:1.6;text-align:center;color:var(--ink);display:flex;flex-wrap:wrap;gap:.42em;justify-content:center}
+  .verse.hidden{font-style:italic;color:var(--ink-faint)}
+  .act{max-width:460px;width:100%;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+  .mic{width:100%;padding:26px;border:2px dashed var(--rule-strong);border-radius:16px;background:none;cursor:pointer;
+    display:flex;flex-direction:column;align-items:center;gap:11px;color:var(--ink-soft);transition:.2s}
+  .mic:hover{background:var(--surface-2)}
+  .mic.on{border-color:var(--err);background:var(--surface-2)}
+  .mic .disc{width:62px;height:62px;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+  .mic.on .disc{box-shadow:0 0 0 6px color-mix(in srgb,var(--err) 18%,transparent);animation:pulse 1.3s infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 12px color-mix(in srgb,var(--err) 6%,transparent)}}
+  .mic svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.8}
+  .mic.on svg{color:var(--err)}
+  .transcript{min-height:2.2rem;text-align:center;color:var(--ink-soft);font-size:14px}
+  .transcript .said{font-style:italic;color:var(--ink)}
+  .transcript .acc{font-family:var(--mono);font-size:12px;color:var(--ink-faint);margin-top:2px}
+  .audiocard{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:14px 15px}
+  .audiocard .lab{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--iron-soft);margin-bottom:9px}
+  .audiocard audio{width:100%;height:38px}
+  .needs{position:absolute;top:14px;right:16px}
+  .note{font-size:12.5px;color:var(--ink-faint);text-align:center}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);
+    padding:11px 18px;border-radius:10px;font-size:14px;z-index:80;opacity:0;transition:opacity .2s;pointer-events:none;max-width:90vw}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<script>try{var _t=localStorage.getItem("studybible.theme");if(_t)document.documentElement.setAttribute("data-theme",_t);}catch(e){}</script>
+
+<div class="app">
+  <nav class="rail" aria-label="Primary">
+    <a class="mark" href="/" title="Exegetica">Ex</a>
+    <a class="railbtn" href="/" title="Chat" aria-label="Chat"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg></a>
+    <a class="railbtn" href="/generate" title="Generator" aria-label="Generator"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/></svg></a>
+    <a class="railbtn" href="/library" title="Library" aria-label="Living Library"><svg viewBox="0 0 24 24"><rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/><path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/></svg></a>
+    <a class="railbtn active" href="/memory" title="Scripture Memory" aria-label="Scripture Memory"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/><path d="M6.5 11h6M6.5 14h4"/></svg></a>
+    <span class="sp"></span>
+    <button id="theme-toggle" type="button" title="Toggle light / dark" aria-label="Toggle theme"><span class="glyph">◐</span></button>
+  </nav>
+
+  <div class="col">
+    <div class="top">
+      <h1>Scripture Memory</h1>
+      <span class="sub" id="topsub">Hide his word in your heart</span>
+      <span class="sp"></span>
+      <div id="topactions"></div>
+    </div>
+    <div class="scroll"><div class="wrap" id="view"></div></div>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"><div class="modal" id="modal"></div></div>
+<div class="trash" id="trash"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13"/></svg> Drop here to delete</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+"use strict";
+
+// ---------------------------------------------------------------- constants
+var STORE = "studybible.memory.v1";
+var API_TEXT = "/api/memory/text?ref=";
+var API_AUDIO = "/api/memory/audio?ref=";
+
+// The 8-step mastery flow (verbatim from Quill & Compass).
+var STEPS = [
+  { id:1, label:"Read Silently",        type:"read",   mode:"full" },
+  { id:2, label:"Listen Aloud",         type:"listen", mode:"full" },
+  { id:3, label:"Read Aloud",           type:"speak",  mode:"full" },
+  { id:4, label:"Type",                 type:"type",   mode:"full" },
+  { id:5, label:"Speak (First Letter)", type:"speak",  mode:"first-letter" },
+  { id:6, label:"Type (First Letter)",  type:"type",   mode:"first-letter" },
+  { id:7, label:"Speak (Hidden)",       type:"speak",  mode:"hidden" },
+  { id:8, label:"Type (Hidden)",        type:"type",   mode:"hidden" }
+];
+
+// First-run seed: the 16 memory-verse anchors of the John course.
+var SEED = ["John 20:31","John 1:14","John 1:12","John 3:16","John 4:24","John 6:35",
+  "John 8:12","John 10:11","John 11:25","John 13:34-35","John 14:6","John 15:5",
+  "John 16:33","John 17:3","John 19:30","John 21:17"];
+
+// A broader library the user can add from (the Quill & Compass set).
+var LIBRARY = ["Genesis 1:1-2","Genesis 1:27-31","Exodus 33:13-19","Exodus 34:6-9","Deuteronomy 6:4-9",
+  "Deuteronomy 10:14-21","Psalm 23:1-6","Psalm 32:1-5","Psalm 51:17","Isaiah 53:1-12",
+  "Daniel 3:17-18","Habakkuk 1:5","Zephaniah 3:17","Matthew 28:18-20","Mark 1:11",
+  "John 1:1-5","John 3:3-8","John 6:63","John 8:56-58","John 10:14-18",
+  "John 10:24-31","John 11:35","John 13:12-17","John 14:1-9","John 15:3-5",
+  "Romans 5:1-11","Romans 6:1-11","Romans 8:1-39","1 Corinthians 15:3-11",
+  "1 Corinthians 15:50-57","2 Corinthians 1:3-5","2 Corinthians 4:5-7","Galatians 5:1-6",
+  "Ephesians 2:1-10","Philippians 2:1-11","Colossians 1:15-20","Colossians 2:6-14",
+  "2 Thessalonians 2:16-17","1 Timothy 1:15-17","Hebrews 10:19-23","Hebrews 12:1-5",
+  "Hebrews 13:20-21","James 1:2-5","James 4:13-14","James 5:13-16","1 Peter 4:12-14",
+  "1 John 1:5-9","1 John 4:9-19","Jude 1:24-25","Revelation 21:1-6"];
+
+// ---------------------------------------------------------------- state
+var db = { verses:[], folders:[] };
+var ui = { view:"dash", tab:"learning", folderId:null, menuFor:null };
+var practice = null;
+
+function uid(){ return "v"+Date.now().toString(36)+Math.random().toString(36).slice(2,7); }
+
+function load(){
+  try {
+    var raw = localStorage.getItem(STORE);
+    if(raw){ db = JSON.parse(raw); if(!db.verses)db.verses=[]; if(!db.folders)db.folders=[]; return; }
+  } catch(e){}
+  // First run: seed the John anchors.
+  db = { verses: SEED.map(function(r){ return newVerse(r); }), folders: [] };
+  save();
+}
+function save(){ try{ localStorage.setItem(STORE, JSON.stringify(db)); }catch(e){} }
+
+function newVerse(ref, folderId){
+  return { id:uid(), reference:ref, text:null, currentStep:0,
+    masteredAt:null, lastPracticedAt:null, lastRefreshedAt:null, folderId:folderId||null,
+    createdAt:new Date().toISOString() };
+}
+function verseById(id){ return db.verses.find(function(v){ return v.id===id; }); }
+function folderById(id){ return db.folders.find(function(f){ return f.id===id; }); }
+function hasRef(ref){ return db.verses.some(function(v){ return v.reference.toLowerCase()===ref.toLowerCase(); }); }
+
+// ---------------------------------------------------------------- API (ESV via server proxy)
+function fetchText(ref){
+  return fetch(API_TEXT + encodeURIComponent(ref)).then(function(r){
+    if(!r.ok) throw new Error("text "+r.status);
+    return r.json();
+  }).then(function(d){ return (d && d.text) ? d.text : ""; });
+}
+function fetchAudio(ref){
+  return fetch(API_AUDIO + encodeURIComponent(ref)).then(function(r){
+    if(!r.ok) throw new Error("audio "+r.status);
+    return r.json();
+  }).then(function(d){ return d && d.audioUrl ? d.audioUrl : null; });
+}
+// Ensure a verse has its text, fetching + caching once.
+function ensureText(v){
+  if(v.text) return Promise.resolve(v.text);
+  return fetchText(v.reference).then(function(t){ if(t){ v.text=t; save(); } return t; });
+}
+
+// ---------------------------------------------------------------- grading (verbatim logic)
+function cleanText(t){
+  return (t||"")
+    .replace(/[‘’“”–—]/g, "")      // smart quotes / dashes
+    .replace(/[.,/#!$%^&*;:{}=\-_`~()"']/g, "")
+    .toLowerCase().replace(/\s+/g," ").trim();
+}
+function lev(a,b){
+  var m=[]; var i,j;
+  for(i=0;i<=b.length;i++) m[i]=[i];
+  for(j=0;j<=a.length;j++) m[0][j]=j;
+  for(i=1;i<=b.length;i++) for(j=1;j<=a.length;j++){
+    if(b.charAt(i-1)===a.charAt(j-1)) m[i][j]=m[i-1][j-1];
+    else m[i][j]=Math.min(m[i-1][j-1]+1, Math.min(m[i][j-1]+1, m[i-1][j]+1));
+  }
+  return m[b.length][a.length];
+}
+function similarity(s1,s2){
+  if(!s1||!s2) return 0;
+  var longer = s1.length>s2.length ? s1 : s2;
+  if(longer.length===0) return 1;
+  return (longer.length - lev(s1,s2))/longer.length;
+}
+
+// ---------------------------------------------------------------- helpers
+function esc(s){ return (s||"").replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+var toastT;
+function toast(msg){
+  var el=document.getElementById("toast"); el.textContent=msg; el.classList.add("show");
+  clearTimeout(toastT); toastT=setTimeout(function(){ el.classList.remove("show"); }, 2400);
+}
+function fmtDate(iso){
+  if(!iso) return "";
+  try{ return new Date(iso).toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"}); }catch(e){ return ""; }
+}
+function $(id){ return document.getElementById(id); }
+
+// ---------------------------------------------------------------- render dispatch
+function render(){
+  ui.menuFor=null;
+  if(ui.view==="practice" && practice){ renderPractice(); }
+  else { renderDash(); }
+}
+
+// ---------------------------------------------------------------- dashboard
+function renderDash(){
+  $("topsub").textContent="Hide his word in your heart";
+  $("topactions").innerHTML =
+    '<button class="btn" id="btn-lib">＋ From library</button> '+
+    '<button class="btn primary" id="btn-add">＋ Add verse</button>';
+  $("btn-add").onclick=function(){ addVerseModal(); };
+  $("btn-lib").onclick=function(){ libraryModal(); };
+
+  var inFolder = ui.folderId ? folderById(ui.folderId) : null;
+  if(ui.folderId && !inFolder){ ui.folderId=null; } // folder was deleted
+
+  var scoped = db.verses.filter(function(v){
+    return ui.folderId ? v.folderId===ui.folderId : v.folderId==null;
+  });
+  var learning = scoped.filter(function(v){ return v.currentStep<8; });
+  var mastered = scoped.filter(function(v){ return v.currentStep>=8; });
+  var list = ui.tab==="mastered" ? mastered : learning;
+
+  var html = "";
+
+  // breadcrumb
+  if(inFolder){
+    html += '<div class="crumbs"><a id="crumb-root">All verses</a> <span>›</span> <b>'+esc(inFolder.name)+'</b>'+
+            ' <button class="icobtn" id="fld-rename" title="Rename folder"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>'+
+            '</div>';
+  }
+
+  // toolbar: tabs + new folder (root only)
+  html += '<div class="toolbar"><div class="tabs" role="tablist">'+
+    '<button role="tab" aria-selected="'+(ui.tab==="learning")+'" id="tab-learn">Learning<span class="cnt">'+learning.length+'</span></button>'+
+    '<button role="tab" aria-selected="'+(ui.tab==="mastered")+'" id="tab-master">Mastered<span class="cnt">'+mastered.length+'</span></button>'+
+    '</div><span style="flex:1"></span>';
+  if(!ui.folderId){ html += '<button class="btn" id="btn-folder">＋ New folder</button>'; }
+  html += '</div>';
+
+  // folder cards (root only)
+  var folderCards="";
+  if(!ui.folderId){
+    db.folders.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(f){
+      var cnt = db.verses.filter(function(v){return v.folderId===f.id;}).length;
+      folderCards += '<div class="card folder" data-folder="'+f.id+'">'+
+        '<div class="fico"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>'+
+        '<div class="fname">'+esc(f.name)+'</div>'+
+        '<div class="meta">'+cnt+' verse'+(cnt===1?"":"s")+'</div>'+
+        '<button class="icobtn kebab" data-fmenu="'+f.id+'"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="12" cy="18" r="1.4"/></svg></button>'+
+        '</div>';
+    });
+  }
+
+  // verse cards
+  var verseCards="";
+  list.forEach(function(v){
+    verseCards += verseCard(v);
+  });
+
+  if(folderCards==="" && verseCards===""){
+    html += emptyState();
+  } else {
+    html += '<div class="grid" id="grid">'+folderCards+verseCards+'</div>';
+  }
+
+  $("view").innerHTML = html;
+
+  // wire
+  if($("crumb-root")) $("crumb-root").onclick=function(){ ui.folderId=null; ui.menuFor=null; render(); };
+  if($("fld-rename")) $("fld-rename").onclick=function(){ renameFolder(ui.folderId); };
+  $("tab-learn").onclick=function(){ ui.tab="learning"; render(); };
+  $("tab-master").onclick=function(){ ui.tab="mastered"; render(); };
+  if($("btn-folder")) $("btn-folder").onclick=function(){ newFolderModal(); };
+  if($("empty-add")) $("empty-add").onclick=function(){ addVerseModal(); };
+  if($("empty-lib")) $("empty-lib").onclick=function(){ libraryModal(); };
+
+  // folder card clicks + menus + drop targets
+  document.querySelectorAll(".card.folder").forEach(function(el){
+    var fid=el.getAttribute("data-folder");
+    el.onclick=function(e){ if(e.target.closest("[data-fmenu]")||e.target.closest(".menu"))return; ui.folderId=fid; ui.tab="learning"; ui.menuFor=null; render(); };
+    el.addEventListener("dragover",function(e){ e.preventDefault(); el.classList.add("drop"); });
+    el.addEventListener("dragleave",function(){ el.classList.remove("drop"); });
+    el.addEventListener("drop",function(e){ e.preventDefault(); el.classList.remove("drop");
+      var vid=e.dataTransfer.getData("text/plain"); if(vid){ moveVerse(vid, fid); } });
+  });
+  document.querySelectorAll("[data-fmenu]").forEach(function(b){
+    b.onclick=function(e){ e.stopPropagation(); openFolderMenu(b.getAttribute("data-fmenu"), b); };
+  });
+  wireVerseCards();
+}
+
+function verseCard(v){
+  var mastered = v.currentStep>=8;
+  var pct = Math.round((v.currentStep/8)*100);
+  var body;
+  if(mastered){
+    body = '<div class="badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Mastered '+esc(fmtDate(v.masteredAt))+'</div>'+
+           '<button class="btn" data-refresh="'+v.id+'"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.9;margin-right:2px"><path d="M3 12a9 9 0 1 1 2.6 6.3M3 20v-5h5"/></svg> Refresh</button>';
+  } else {
+    body = '<div class="meta">Step '+v.currentStep+' of 8 · '+pct+'%</div>'+
+           '<div class="bar"><i style="width:'+pct+'%"></i></div>'+
+           '<button class="btn primary" data-practice="'+v.id+'">'+(v.currentStep>0?"Continue":"Start")+' practice</button>';
+  }
+  return '<div class="card '+(mastered?"mastered":"")+'" draggable="true" data-vcard="'+v.id+'">'+
+    '<div class="ref">'+esc(v.reference)+'</div>'+ body +
+    '<button class="icobtn kebab" data-vmenu="'+v.id+'"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="12" cy="18" r="1.4"/></svg></button>'+
+    '</div>';
+}
+
+function wireVerseCards(){
+  document.querySelectorAll("[data-practice]").forEach(function(b){
+    b.onclick=function(e){ e.stopPropagation(); startPractice(b.getAttribute("data-practice")); };
+  });
+  document.querySelectorAll("[data-refresh]").forEach(function(b){
+    b.onclick=function(e){ e.stopPropagation(); startPractice(b.getAttribute("data-refresh"), {initialStep:6, isRefresh:true}); };
+  });
+  document.querySelectorAll("[data-vmenu]").forEach(function(b){
+    b.onclick=function(e){ e.stopPropagation(); openVerseMenu(b.getAttribute("data-vmenu"), b); };
+  });
+  document.querySelectorAll("[data-vcard]").forEach(function(el){
+    var vid=el.getAttribute("data-vcard");
+    el.addEventListener("dragstart",function(e){ e.dataTransfer.setData("text/plain",vid); e.dataTransfer.effectAllowed="move"; $("trash").classList.add("show"); });
+    el.addEventListener("dragend",function(){ $("trash").classList.remove("show","drop"); });
+  });
+}
+
+function emptyState(){
+  if(ui.tab==="mastered"){
+    return '<div class="empty"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>'+
+      '<h3>No mastered verses yet</h3><p>Work a verse through all eight steps and it lands here. Keep going.</p></div>';
+  }
+  if(ui.folderId){
+    return '<div class="empty"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>'+
+      '<h3>This folder is empty</h3><p>Drag a verse card onto this folder, or use a verse’s menu to move it here.</p></div>';
+  }
+  return '<div class="empty"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/></svg>'+
+    '<h3>Start memorizing</h3><p>Add a verse by reference, or pick from the library, and work it through the eight steps.</p>'+
+    '<button class="btn primary" id="empty-add">＋ Add a verse</button> <button class="btn" id="empty-lib">Browse library</button></div>';
+}
+
+// ---------------------------------------------------------------- menus
+function closeMenus(){ document.querySelectorAll(".menu").forEach(function(m){m.remove();}); ui.menuFor=null; }
+function openVerseMenu(vid, anchor){
+  closeMenus();
+  var v=verseById(vid); if(!v) return;
+  var card=anchor.closest(".card");
+  var m=document.createElement("div"); m.className="menu";
+  var folderItems = db.folders.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).map(function(f){
+    var cur = v.folderId===f.id;
+    return '<button data-move="'+f.id+'">'+(cur?"✓ ":"")+esc(f.name)+'</button>';
+  }).join("");
+  m.innerHTML =
+    '<div class="lab">Move to folder</div>'+
+    '<button data-move="__none__">'+(v.folderId==null?"✓ ":"")+"None (unfiled)"+'</button>'+
+    folderItems +
+    '<div class="sep"></div>'+
+    '<button class="danger" data-del="'+vid+'"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg> Delete verse</button>';
+  card.appendChild(m);
+  m.querySelectorAll("[data-move]").forEach(function(b){
+    b.onclick=function(e){ e.stopPropagation(); var t=b.getAttribute("data-move"); moveVerse(vid, t==="__none__"?null:t); };
+  });
+  m.querySelector("[data-del]").onclick=function(e){ e.stopPropagation(); deleteVerse(vid); };
+}
+function openFolderMenu(fid, anchor){
+  closeMenus();
+  var card=anchor.closest(".card");
+  var m=document.createElement("div"); m.className="menu";
+  m.innerHTML =
+    '<button data-ren="'+fid+'"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Rename</button>'+
+    '<button class="danger" data-delf="'+fid+'"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg> Delete folder</button>';
+  card.appendChild(m);
+  m.querySelector("[data-ren]").onclick=function(e){ e.stopPropagation(); renameFolder(fid); };
+  m.querySelector("[data-delf]").onclick=function(e){ e.stopPropagation(); deleteFolder(fid); };
+}
+document.addEventListener("click",function(e){
+  if(!e.target.closest(".menu") && !e.target.closest("[data-vmenu]") && !e.target.closest("[data-fmenu]")) closeMenus();
+});
+
+// ---------------------------------------------------------------- verse + folder ops
+function moveVerse(vid, folderId){
+  var v=verseById(vid); if(!v) return;
+  v.folderId=folderId; save(); closeMenus(); render();
+  toast(folderId ? ("Moved to "+(folderById(folderId)||{}).name) : "Moved to unfiled");
+}
+function deleteVerse(vid){
+  var v=verseById(vid); if(!v) return;
+  if(!confirm('Delete "'+v.reference+'"? This removes it and its progress.')) return;
+  db.verses = db.verses.filter(function(x){ return x.id!==vid; });
+  save(); closeMenus(); render();
+}
+function deleteFolder(fid){
+  var f=folderById(fid); if(!f) return;
+  if(!confirm('Delete folder "'+f.name+'"? Verses inside it are kept and become unfiled.')) return;
+  db.verses.forEach(function(v){ if(v.folderId===fid) v.folderId=null; });
+  db.folders = db.folders.filter(function(x){ return x.id!==fid; });
+  if(ui.folderId===fid) ui.folderId=null;
+  save(); closeMenus(); render();
+}
+function renameFolder(fid){
+  var f=folderById(fid); if(!f) return;
+  var name=prompt("Rename folder:", f.name);
+  if(name==null) return;
+  name=name.trim();
+  if(name.length<1||name.length>50){ toast("Name must be 1–50 characters."); return; }
+  f.name=name; save(); closeMenus(); render();
+}
+
+// ---------------------------------------------------------------- modals
+function openModal(html){ $("modal").innerHTML=html; $("scrim").classList.add("show"); }
+function closeModal(){ $("scrim").classList.remove("show"); $("modal").innerHTML=""; }
+$("scrim").addEventListener("click",function(e){ if(e.target===$("scrim")) closeModal(); });
+document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if($("scrim").classList.contains("show")) closeModal(); } });
+
+function newFolderModal(){
+  openModal('<h2>New folder</h2><p class="hint">Group related verses together.</p>'+
+    '<label class="field"><span>Folder name</span><input type="text" id="f-name" maxlength="50" placeholder="e.g. Psalms" autofocus></label>'+
+    '<div class="row"><button class="btn ghost" id="f-cancel">Cancel</button><button class="btn primary" id="f-save">Create</button></div>');
+  $("f-cancel").onclick=closeModal;
+  $("f-name").addEventListener("keydown",function(e){ if(e.key==="Enter") $("f-save").click(); });
+  $("f-save").onclick=function(){
+    var name=$("f-name").value.trim();
+    if(name.length<1||name.length>50){ toast("Name must be 1–50 characters."); return; }
+    db.folders.push({ id:"f"+uid(), name:name }); save(); closeModal(); render();
+  };
+  setTimeout(function(){ $("f-name").focus(); },30);
+}
+
+function addVerseModal(){
+  openModal('<h2>Add a verse</h2><p class="hint">Enter a reference (e.g. <b>John 3:16</b> or <b>Romans 8:1-4</b>). We fetch the ESV text for you.</p>'+
+    '<label class="field"><span>Reference</span><input type="text" id="a-ref" placeholder="John 3:16" autofocus></label>'+
+    '<div class="row"><button class="btn ghost" id="a-cancel">Cancel</button><button class="btn primary" id="a-save">Add verse</button></div>');
+  $("a-cancel").onclick=closeModal;
+  $("a-ref").addEventListener("keydown",function(e){ if(e.key==="Enter") $("a-save").click(); });
+  $("a-save").onclick=function(){
+    var ref=$("a-ref").value.trim();
+    if(ref.length<2){ toast("Enter a reference."); return; }
+    if(hasRef(ref)){ toast("That reference is already in your list."); return; }
+    var btn=$("a-save"); btn.disabled=true; btn.textContent="Adding…";
+    fetchText(ref).then(function(text){
+      var v=newVerse(ref, ui.folderId); v.text=text||null;
+      db.verses.push(v); save(); closeModal(); render();
+      toast(text ? ("Added "+ref) : ("Added "+ref+" (text will load on practice)"));
+    }).catch(function(){
+      // Still add it; text will lazy-load on practice.
+      var v=newVerse(ref, ui.folderId); db.verses.push(v); save(); closeModal(); render();
+      toast("Added "+ref+" (couldn’t reach ESV; text loads later)");
+    });
+  };
+  setTimeout(function(){ $("a-ref").focus(); },30);
+}
+
+function libraryModal(){
+  var rows = LIBRARY.map(function(ref){
+    var added = hasRef(ref);
+    return '<div class="librow"><span class="lref">'+esc(ref)+'</span>'+
+      (added ? '<span class="added">Added</span>'
+             : '<button class="btn" data-libadd="'+esc(ref)+'">Add</button>')+'</div>';
+  }).join("");
+  openModal('<h2>Library</h2><p class="hint">Classic passages to memorize. Adding one fetches its ESV text.</p>'+
+    '<div class="liblist">'+rows+'</div>'+
+    '<div class="row"><button class="btn primary" id="l-done">Done</button></div>');
+  $("l-done").onclick=function(){ closeModal(); render(); };
+  $("modal").querySelectorAll("[data-libadd]").forEach(function(b){
+    b.onclick=function(){
+      var ref=b.getAttribute("data-libadd");
+      if(hasRef(ref)) return;
+      b.disabled=true; b.textContent="…";
+      fetchText(ref).then(function(t){ addFromLib(ref,t,b); }).catch(function(){ addFromLib(ref,null,b); });
+    };
+  });
+}
+function addFromLib(ref, text, btn){
+  var v=newVerse(ref, ui.folderId); v.text=text||null;
+  db.verses.push(v); save();
+  var row=btn.closest(".librow"); if(row){ btn.remove(); var s=document.createElement("span"); s.className="added"; s.textContent="Added"; row.appendChild(s); }
+  toast("Added "+ref);
+}
+
+// ================================================================ PRACTICE
+var recognition=null, recogSupported=false;
+(function setupRecog(){
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if(SR){
+    recogSupported=true;
+    recognition=new SR();
+    recognition.continuous=true; recognition.interimResults=true; recognition.lang="en-US";
+    recognition.onresult=function(ev){
+      var t=""; for(var i=0;i<ev.results.length;i++) t+=ev.results[i][0].transcript;
+      if(practice){ practice.input=t; evaluate(); updateSpeakUI(); }
+    };
+    recognition.onend=function(){ if(practice){ practice.listening=false; updateSpeakUI(); } };
+    recognition.onerror=function(){ if(practice){ practice.listening=false; updateSpeakUI(); } };
+  }
+})();
+
+function startPractice(vid, opts){
+  opts=opts||{};
+  var v=verseById(vid); if(!v) return;
+  var startIdx;
+  if(opts.initialStep){ startIdx=Math.min(Math.max(0, opts.initialStep-1),7); }
+  else { startIdx=Math.min(Math.max(0, v.currentStep||0),7); }
+  practice = { verse:v, idx:startIdx, isRefresh:!!opts.isRefresh, input:"", listening:false,
+    feedback:"neutral", accuracy:0, audioUrl:null };
+  ui.view="practice"; closeMenus();
+  // Ensure text is available.
+  ensureText(v).then(function(){ if(practice) render(); });
+  render();
+}
+function exitPractice(){
+  if(recognition && practice && practice.listening){ try{recognition.stop();}catch(e){} }
+  practice=null; ui.view="dash"; render();
+}
+
+function stepObj(){ return STEPS[practice.idx]; }
+
+function evaluate(){
+  var v=practice.verse, s=stepObj();
+  if(s.type==="read"||s.type==="listen"){ practice.feedback="neutral"; return; }
+  if(!v.text){ return; }
+  var target=cleanText(v.text), inp=cleanText(practice.input);
+  if(!target) return;
+  var acc=Math.round(similarity(inp,target)*100);
+  practice.accuracy=acc;
+  if(acc>=85){ practice.feedback="success"; if(practice.listening && recognition){ try{recognition.stop();}catch(e){} } }
+  else { practice.feedback="neutral"; }
+}
+
+function renderPractice(){
+  var v=practice.verse, s=stepObj();
+  $("topsub").textContent = "";
+  $("topactions").innerHTML = "";
+
+  var pct=(practice.idx/8)*100;
+  var html='<div class="pr">'+
+    '<div class="pr-head">'+
+      '<button class="btn ghost" id="p-exit"><svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.9;margin-right:2px"><path d="M15 18l-6-6 6-6"/></svg>'+(practice.isRefresh?"Done":"Exit")+'</button>'+
+      '<div class="mid"><h2>'+esc(v.reference)+'</h2><div class="step">'+(practice.isRefresh?"Mastery refresh":("Step "+s.id+" of 8: "+esc(s.label)))+'</div></div>'+
+      '<div style="display:flex;gap:4px;justify-content:flex-end;min-width:80px">'+
+        (practice.idx>0?'<button class="icobtn" id="p-back" title="Previous step"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>':'')+
+        '<button class="icobtn" id="p-retry" title="Reset step"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 1 2.6 6.3M3 20v-5h5"/></svg></button>'+
+      '</div>'+
+    '</div>'+
+    '<div class="pr-bar"><i style="width:'+pct+'%"></i></div>'+
+    '<div class="pr-card">'+
+      (practice.isRefresh?'<button class="btn ghost needs" id="p-needs" style="color:var(--warn)">I need practice 😓</button>':'')+
+      '<div class="versebox" id="versebox">'+verseDisplay()+'</div>'+
+      '<div class="act" id="act">'+actArea()+'</div>'+
+    '</div></div>';
+
+  $("view").innerHTML=html;
+  $("p-exit").onclick=exitPractice;
+  if($("p-back")) $("p-back").onclick=stepBack;
+  $("p-retry").onclick=stepRetry;
+  if($("p-needs")) $("p-needs").onclick=needsPractice;
+  wireAct();
+}
+
+function verseDisplay(){
+  var v=practice.verse, s=stepObj();
+  if(!v.text){ return '<div class="note">Fetching verse text…</div>'; }
+  if(s.mode==="hidden"){ return '<div class="verse hidden">(verse hidden)</div>'; }
+  var words=v.text.split(/\s+/);
+  var out=words.map(function(w){
+    if(s.mode==="first-letter" && w.length>1){
+      var fl=(w.match(/[a-zA-Z0-9]/)||[""])[0];
+      var punct=(w.match(/[^a-zA-Z0-9]*$/)||[""])[0];
+      return '<span>'+esc(fl)+'___'+esc(punct)+'</span>';
+    }
+    return '<span>'+esc(w)+'</span>';
+  }).join("");
+  return '<div class="verse">'+out+'</div>';
+}
+
+function actArea(){
+  var v=practice.verse, s=stepObj();
+  var disabled = !v.text;
+  if(s.type==="read"){
+    return '<button class="btn primary big" id="a-next"'+(disabled?" disabled":"")+'>I have read it silently →</button>';
+  }
+  if(s.type==="listen"){
+    return '<div class="audiocard"><div class="lab">ESV audio Bible</div><div id="audioslot">'+
+        (practice.audioUrl ? audioTag(practice.audioUrl) : '<div class="note">Loading audio…</div>')+
+      '</div></div>'+
+      '<button class="btn primary big" id="a-next"'+(disabled?" disabled":"")+'>I have listened →</button>';
+  }
+  if(s.type==="speak"){
+    return '<button class="mic'+(practice.listening?" on":"")+'" id="a-mic"'+((!recogSupported||disabled)?" disabled":"")+'>'+
+        '<span class="disc"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v3"/></svg></span>'+
+        '<span>'+(!recogSupported?"Speech input not supported — use the button below":(practice.listening?"Listening…":"Tap to speak"))+'</span>'+
+      '</button>'+
+      '<div class="transcript" id="a-trans">'+speakTrans()+'</div>'+
+      '<div id="a-adv">'+speakAdvance()+'</div>';
+  }
+  if(s.type==="type"){
+    return '<textarea id="a-input" placeholder="Type the passage here…" '+(disabled?"disabled":"")+'>'+esc(practice.input)+'</textarea>'+
+      '<div id="a-adv">'+typeAdvance()+'</div>';
+  }
+  return "";
+}
+
+function audioTag(url){
+  return '<audio controls preload="none" src="'+esc(url)+'"></audio>';
+}
+function speakTrans(){
+  if(!practice.input) return '<span style="opacity:.6">…</span>';
+  return '<div class="said">&ldquo;'+esc(practice.input)+'&rdquo;</div><div class="acc">Accuracy: '+practice.accuracy+'%</div>';
+}
+function speakAdvance(){
+  if(practice.feedback==="success") return '<button class="btn ok big" id="a-next">Perfect! Next step →</button>';
+  // Speech can't always be auto-verified (no mic, unsupported browser), so never trap the user.
+  return '<button class="btn ghost" id="a-next" style="width:100%">I said it aloud, mark as done</button>';
+}
+function typeAdvance(){
+  if(practice.feedback==="success") return '<button class="btn ok big" id="a-next">Correct! Next step →</button>';
+  if(practice.input.length>5) return '<button class="btn ghost" id="a-next" style="width:100%">I typed it correctly, mark as done</button>';
+  return "";
+}
+
+function wireAct(){
+  var s=stepObj();
+  if($("a-next")) $("a-next").onclick=stepNext;
+  if(s.type==="listen" && !practice.audioUrl){
+    fetchAudio(practice.verse.reference).then(function(url){
+      if(practice && stepObj().type==="listen"){ practice.audioUrl=url;
+        var slot=$("audioslot"); if(slot) slot.innerHTML = url?audioTag(url):'<div class="note">Audio unavailable for this reference.</div>'; }
+    }).catch(function(){ var slot=$("audioslot"); if(slot) slot.innerHTML='<div class="note">Audio unavailable.</div>'; });
+  }
+  if(s.type==="type"){
+    var ta=$("a-input");
+    if(ta){ ta.focus(); ta.oninput=function(){ practice.input=ta.value; evaluate(); updateTypeUI(); }; }
+  }
+  if(s.type==="speak"){
+    var mic=$("a-mic");
+    if(mic) mic.onclick=toggleMic;
+  }
+}
+function updateSpeakUI(){
+  if(ui.view!=="practice") return;
+  var t=$("a-trans"); if(t) t.innerHTML=speakTrans();
+  var adv=$("a-adv"); if(adv){ adv.innerHTML=speakAdvance(); if($("a-next")) $("a-next").onclick=stepNext; }
+  var mic=$("a-mic"); if(mic){ mic.classList.toggle("on",practice.listening);
+    var lbl=mic.querySelector("span:last-child"); if(lbl && recogSupported) lbl.textContent=practice.listening?"Listening…":"Tap to speak"; }
+}
+function updateTypeUI(){
+  var adv=$("a-adv"); if(adv){ adv.innerHTML=typeAdvance(); if($("a-next")) $("a-next").onclick=stepNext; }
+}
+function toggleMic(){
+  if(!recogSupported) return;
+  if(practice.listening){ try{recognition.stop();}catch(e){} practice.listening=false; }
+  else { practice.input=""; evaluate(); try{recognition.start(); practice.listening=true;}catch(e){} }
+  updateSpeakUI();
+}
+
+// step transitions
+function stepNext(){
+  var v=practice.verse;
+  if(!practice.isRefresh){
+    v.currentStep = stepObj().id;      // record the step just completed
+    v.lastPracticedAt = new Date().toISOString();
+    if(v.currentStep>=8){ v.masteredAt = new Date().toISOString(); }
+    save();
+  }
+  if(practice.idx < STEPS.length-1){
+    practice.idx++; practice.input=""; practice.feedback="neutral"; practice.accuracy=0; practice.audioUrl=null;
+    if(practice.listening && recognition){ try{recognition.stop();}catch(e){} practice.listening=false; }
+    renderPractice();
+  } else {
+    // completed step 8
+    if(practice.isRefresh){
+      v.lastRefreshedAt=new Date().toISOString(); v.lastPracticedAt=new Date().toISOString(); save();
+      toast("Refreshed "+v.reference);
+    } else {
+      toast("Mastered "+v.reference+" 🎉");
+    }
+    exitPractice();
+  }
+}
+function stepBack(){
+  if(practice.idx>0){
+    practice.idx--; practice.input=""; practice.feedback="neutral"; practice.accuracy=0; practice.audioUrl=null;
+    if(practice.listening && recognition){ try{recognition.stop();}catch(e){} practice.listening=false; }
+    renderPractice();
+  }
+}
+function stepRetry(){
+  practice.input=""; practice.feedback="neutral"; practice.accuracy=0;
+  if(practice.listening && recognition){ try{recognition.stop();}catch(e){} practice.listening=false; }
+  renderPractice();
+}
+function needsPractice(){
+  if(!confirm("Move this verse back to Learning? This resets its progress to the start.")) return;
+  var v=practice.verse;
+  v.currentStep=0; v.masteredAt=null; v.lastRefreshedAt=null; save();
+  toast("Back to Learning");
+  exitPractice();
+}
+
+// ---------------------------------------------------------------- theme + boot
+$("theme-toggle").onclick=function(){
+  var cur=document.documentElement.getAttribute("data-theme");
+  var next = cur==="dark" ? "light" : (cur==="light" ? "dark" :
+    (window.matchMedia && window.matchMedia("(prefers-color-scheme:dark)").matches ? "light" : "dark"));
+  document.documentElement.setAttribute("data-theme",next);
+  try{ localStorage.setItem("studybible.theme",next); }catch(e){}
+};
+
+load();
+render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/* =============================================================================
+   Gospel of John — PRINT stylesheet (PDF).
+   A dedicated print design, separate from the screen theme, tuned to document
+   typography rather than a web page: serif body, a controlled reading measure,
+   hairline tables, restrained Scripture treatment, and real page furniture via
+   native CSS @page margin boxes (Edge/Chrome 131+). One doc per PDF; the running
+   head's title is injected per-render by course_pdf.py.
+
+   Values follow print-typography practice (Butterick, Bringhurst): measure aimed
+   near 70 characters, leading ~140%, one paragraph-separation method, hairline
+   rules (>=0.5pt), no zebra/box tables, tints replaced by rules + white space.
+   ============================================================================= */
+
+@page {
+  size: letter;
+  /* top / right / bottom / left — sides set the measure (~5.5in ≈ ~72 chars),
+     bottom a touch deeper than top so the block doesn't look like it sags */
+  margin: 0.95in 1.5in 1.15in 1.5in;
+  @top-right {
+    content: "The Gospel of John · Sophomore Bible";
+    font: 8.5pt "Inter", system-ui, sans-serif; color: #9aa3b0; letter-spacing: .02em;
+  }
+  @bottom-center {
+    content: counter(page);
+    font: 9pt "Inter", system-ui, sans-serif; color: #5b6472;
+  }
+  /* @top-left (the document title) is injected per-render by course_pdf.py */
+}
+/* cleaner opening page: no running heads up top on page 1 */
+@page :first {
+  @top-left  { content: ""; }
+  @top-right { content: ""; }
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 11pt; }
+
+body {
+  margin: 0;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 11pt;
+  line-height: 1.4;                         /* ~140% leading */
+  color: #1a1f28;
+  font-variant-numeric: oldstyle-nums proportional-nums;   /* text figures in prose */
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+
+main { margin: 0; padding: 0; }
+.doc { max-width: none; }                    /* the @page margins own the measure */
+
+/* ------------------------------------------------------------------ headings */
+h1, h2, h3, h4 {
+  font-family: "Fraunces", Georgia, serif;
+  color: #131e3a;
+  hyphens: none;
+  break-after: avoid;
+}
+h1 {
+  font-size: 21pt; line-height: 1.1; font-weight: 500; letter-spacing: -.01em;
+  margin: 0 0 .55rem;
+}
+h2 { font-size: 15pt; font-weight: 500; margin: 1.7em 0 .35em; }
+h3 { font-size: 12.5pt; font-weight: 600; margin: 1.35em 0 .3em; }
+h4 { font-size: 11pt; font-weight: 700; margin: 1.15em 0 .2em; }
+/* first block under a heading is not separated further */
+h1 + *, h2 + *, h3 + *, h4 + * { margin-top: 0; }
+
+/* ------------------------------------------------------------------ body */
+p { margin: 0 0 .6em; orphans: 2; widows: 2; }
+ul { margin: 0 0 .65em; padding-left: 1.3em; }
+/* Ordered lists reach two digits (memory verses 1-16, quiz items). Chromium's
+   default outside marker sits left of the list box and clips at the page margin
+   for 10.-16., so draw the number as a fixed-width hanging ::before that stays
+   inside the list's own padding. */
+ol { margin: 0 0 .65em; padding-left: 2.3em; list-style: none; counter-reset: li; }
+ol > li { counter-increment: li; position: relative; }
+ol > li::before {
+  content: counter(li) ".";
+  position: absolute; left: -2em; top: 0; width: 1.7em;
+  text-align: right; font-variant-numeric: tabular-nums;
+}
+li { margin: .16em 0; }
+li > ul, li > ol { margin: .16em 0; }
+strong { font-weight: 650; color: #0e1b33; }
+em { font-style: italic; }
+a { color: inherit; text-decoration: none; }        /* links are inert in print */
+
+hr { border: none; border-top: .5pt solid #c9cdd4; margin: 1.5em 0; }
+
+code {
+  font-family: "SFMono-Regular", Consolas, monospace; font-size: .88em;
+  background: #f4f1ea; padding: .04em .3em; border-radius: 2px;
+}
+
+/* ------------------------------------------------ blockquote = Scripture / callout
+   Restrained: a gold rule and indent, NOT a filled box (tints read cheap in print). */
+blockquote {
+  margin: 1.1em 0;
+  padding: .05em 0 .05em 1em;
+  border-left: 2pt solid #f5b301;
+  color: #26324e;
+}
+blockquote p { margin: 0 0 .4em; }
+blockquote p:last-child { margin: 0; }
+
+/* front-matter masthead: the first blockquote (right after the title) is a quiet
+   key-value panel bounded by rules — distinct from the Scripture treatment above. */
+.doc h1 + blockquote {
+  margin: 0 0 1.7em; padding: .6em 0 .7em;
+  border: 0; border-top: .75pt solid #131e3a; border-bottom: .5pt solid #c9cdd4;
+  font-family: "Inter", system-ui, sans-serif; font-size: 9.5pt; line-height: 1.5;
+  color: #3a4150;
+}
+.doc h1 + blockquote strong { color: #131e3a; font-weight: 600; }
+
+/* --------------------------------------------------------------- tables (hairline)
+   Editorial treatment: horizontal rules only, no vertical borders, no fill, no
+   zebra. Header is bold navy over a rule; the body sits on light hairlines. */
+table {
+  width: 100%; border-collapse: collapse; margin: 1.25em 0;
+  font-family: "Inter", system-ui, sans-serif; font-size: 9.5pt; line-height: 1.35;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+thead th {
+  text-align: left; font-weight: 700; color: #131e3a;
+  padding: .35em .6em .3em; border-bottom: .75pt solid #131e3a;
+}
+tbody td {
+  padding: .34em .6em; vertical-align: top;
+  border-bottom: .4pt solid #dfe2e7;
+}
+tbody tr:last-child td { border-bottom: .75pt solid #131e3a; }
+td:first-child { color: #131e3a; font-weight: 600; }
+
+/* ------------------------------------------------------------- break control */
+blockquote, table, tr, li, img { break-inside: avoid; }
+h1, h2, h3, h4 { break-after: avoid; }
+img { max-width: 100%; }

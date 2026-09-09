@@ -1,0 +1,474 @@
+{
+  "sub_topic": {
+    "id": "BIB.11.5.3",
+    "name": "Church Government and Officers",
+    "topic_id": "BIB.11.5",
+    "topic_name": "Ecclesiology: The Doctrine of the Church",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.11",
+    "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+    "total_objectives": 16,
+    "description": "K-12 developmental progression for Church Government and Officers in Ecclesiology: The Doctrine of the Church, anchored in Scripture and the confessions via the Study Bible tools.",
+    "enrichment": {
+      "status": "expanded",
+      "levers": [
+        "structural-expansion",
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture and confession anchors validated against the study-bible MCP tools."
+    },
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.1",
+            "objective_text": "Identify that Christ is the Head of the church.",
+            "objective_uuid": "b93fbed8-9908-4483-b51a-57a44072cbd0",
+            "anchors": {
+              "scripture": [
+                "Colossians 1:18",
+                "Ephesians 5:23"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.2",
+            "objective_text": "Name pastors and elders who shepherd the church.",
+            "objective_uuid": "90441f23-69d6-4409-bd9b-9d8ef9786cf1",
+            "anchors": {
+              "scripture": [
+                "1 Peter 5:1-2"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.3",
+            "objective_text": "Recall that deacons serve the church's needs.",
+            "objective_uuid": "0616a09a-dd42-4886-b82f-6b6605c8af49",
+            "anchors": {
+              "scripture": [
+                "Acts 6:1-4"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.4",
+            "objective_text": "Observe that leaders are to be godly examples.",
+            "objective_uuid": "b27740db-526f-4cfb-b797-b671bd9d23e8",
+            "anchors": {
+              "scripture": [
+                "1 Timothy 3:2",
+                "1 Peter 5:3"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.5",
+            "objective_text": "Summarize the two offices: elders (oversight) and deacons (service).",
+            "objective_uuid": "c212ae2e-9a09-46b7-bfe1-ba904925185a",
+            "anchors": {
+              "scripture": [
+                "1 Timothy 3:1-13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.6",
+            "objective_text": "Explain the qualifications for elders and deacons.",
+            "objective_uuid": "70afa491-a8d6-46e7-9084-b961fe9f5516",
+            "anchors": {
+              "scripture": [
+                "1 Timothy 3:1-13",
+                "Titus 1:5-9"
+              ],
+              "confessions": [
+                "1689 London Baptist Confession 26.10"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.7",
+            "objective_text": "Compare the roles of elders (teach and lead) and deacons (serve).",
+            "objective_uuid": "92ccbe72-416a-45a2-ae85-01e0f2cdf6b5",
+            "anchors": {
+              "scripture": [
+                "1 Timothy 5:17",
+                "Acts 6:2-4"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.8",
+            "objective_text": "Apply submission to and prayer for church leaders.",
+            "objective_uuid": "29410653-360f-4f37-abb3-18db427ea614",
+            "anchors": {
+              "scripture": [
+                "Hebrews 13:17",
+                "1 Thessalonians 5:12-13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.9",
+            "objective_text": "Analyze Christ's rule through the keys of the kingdom.",
+            "objective_uuid": "744a8af0-6c37-41c4-a8f5-76b6825a2d65",
+            "anchors": {
+              "scripture": [
+                "Matthew 16:19",
+                "Matthew 18:18"
+              ],
+              "confessions": [
+                "Westminster Confession 30.2"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.10",
+            "objective_text": "Interpret the exercise of church discipline.",
+            "objective_uuid": "38cb5e5e-b473-4e0a-bca9-31e3c62bd786",
+            "anchors": {
+              "scripture": [
+                "Matthew 18:15-17",
+                "1 Corinthians 5:4-5"
+              ],
+              "confessions": [
+                "Westminster Confession 30.4"
+              ],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.11",
+            "objective_text": "Connect the ministry of the Word to the calling of qualified men.",
+            "objective_uuid": "4b2fe0e2-4c56-46a1-8d88-0486f9aca31c",
+            "anchors": {
+              "scripture": [
+                "1 Timothy 3:2",
+                "Romans 10:14-15"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q158"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.12",
+            "objective_text": "Explain the purposes of church discipline (restoration, purity, witness).",
+            "objective_uuid": "4658951c-23d2-4417-ac54-dec12f0a4e45",
+            "anchors": {
+              "scripture": [
+                "Matthew 18:15",
+                "Galatians 6:1"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.13",
+            "objective_text": "Construct a case for a particular form of church government.",
+            "objective_uuid": "ab9f137e-17cf-4689-adec-2c19e3ddd055",
+            "anchors": {
+              "scripture": [
+                "Acts 15:1-29",
+                "1 Timothy 4:14"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.14",
+            "objective_text": "Evaluate episcopal, presbyterian, and congregational polities.",
+            "objective_uuid": "a09e8230-a7ac-4b3e-b0b0-3be27fcee97b",
+            "anchors": {
+              "scripture": [
+                "Acts 15:6",
+                "1 Peter 5:1-4"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.15",
+            "objective_text": "Defend biblical eldership and the plurality of elders.",
+            "objective_uuid": "be75f941-fcc2-4e70-89b2-8dd0771c7a74",
+            "anchors": {
+              "scripture": [
+                "Acts 14:23",
+                "Titus 1:5"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.5",
+            "topic_name": "Ecclesiology: The Doctrine of the Church",
+            "sub_topic_id": "BIB.11.5.3",
+            "sub_topic_name": "Church Government and Officers",
+            "objective_id": "BIB.11.5.3.16",
+            "objective_text": "Synthesize Christ's kingly rule through Word, officers, and censures.",
+            "objective_uuid": "f29441e9-9c31-4a72-ba43-d05532610800",
+            "anchors": {
+              "scripture": [
+                "Matthew 18:17"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q45"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

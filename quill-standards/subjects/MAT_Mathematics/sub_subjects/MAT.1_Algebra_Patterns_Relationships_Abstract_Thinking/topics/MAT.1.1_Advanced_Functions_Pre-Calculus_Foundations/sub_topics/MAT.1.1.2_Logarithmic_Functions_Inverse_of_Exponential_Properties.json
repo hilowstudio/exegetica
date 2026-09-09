@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.1.1.2",
+    "name": "Logarithmic Functions (Inverse of Exponential, Properties)",
+    "topic_id": "MAT.1.1",
+    "topic_name": "Advanced Functions (Pre-Calculus Foundations)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.1",
+    "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Logarithmic Functions (Inverse of Exponential, Properties) in Advanced Functions (Pre-Calculus Foundations) (Mathematics)",
+    "grade_levels": {
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.1",
+            "topic_name": "Advanced Functions (Pre-Calculus Foundations)",
+            "sub_topic_id": "MAT.1.1.2",
+            "sub_topic_name": "Logarithmic Functions (Inverse of Exponential, Properties)",
+            "objective_id": "MAT.1.1.2.1",
+            "objective_text": "Understand a logarithm as the inverse of an exponential function.",
+            "objective_uuid": "bc012c7c-17c1-484c-8370-fdf49039085a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-BF.B.5 — (+) Understand the inverse relationship between exponents and logarithms and use this relationship to so (HS)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.1",
+            "topic_name": "Advanced Functions (Pre-Calculus Foundations)",
+            "sub_topic_id": "MAT.1.1.2",
+            "sub_topic_name": "Logarithmic Functions (Inverse of Exponential, Properties)",
+            "objective_id": "MAT.1.1.2.2",
+            "objective_text": "Convert between exponential and logarithmic form.",
+            "objective_uuid": "33666635-239f-4a4c-80c5-cd179901ef42",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-BF.B.5 — (+) Understand the inverse relationship between exponents and logarithms and use this relationship to so (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.1",
+            "topic_name": "Advanced Functions (Pre-Calculus Foundations)",
+            "sub_topic_id": "MAT.1.1.2",
+            "sub_topic_name": "Logarithmic Functions (Inverse of Exponential, Properties)",
+            "objective_id": "MAT.1.1.2.3",
+            "objective_text": "Use logarithms to solve exponential equations.",
+            "objective_uuid": "4f289e7a-180b-441b-800b-826b5f10b5a1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-BF.B.5 — (+) Understand the inverse relationship between exponents and logarithms and use this relationship to so (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

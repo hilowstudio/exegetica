@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "LIF.2.3.4",
+    "name": "Grocery Shopping Skills (unit pricing, budgeting, substitutions, reading labels)",
+    "topic_id": "LIF.2.3",
+    "topic_name": "Nutrition, Cooking & Food Preparation",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.2",
+    "sub_subject_name": "Home Economics & Household Management",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Grocery Shopping Skills (unit pricing, budgeting, substitutions, reading labels) in Nutrition, Cooking & Food Preparation (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.3",
+            "topic_name": "Nutrition, Cooking & Food Preparation",
+            "sub_topic_id": "LIF.2.3.4",
+            "sub_topic_name": "Grocery Shopping Skills (unit pricing, budgeting, substitutions, reading labels)",
+            "objective_id": "LIF.2.3.4.1",
+            "objective_text": "Find items on a grocery list in the store",
+            "objective_uuid": "6218254a-dd5f-4719-8be7-33ee6107110b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 14 — Demonstrate nutrition and wellness practices that enhance individual and family well-being (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.3",
+            "topic_name": "Nutrition, Cooking & Food Preparation",
+            "sub_topic_id": "LIF.2.3.4",
+            "sub_topic_name": "Grocery Shopping Skills (unit pricing, budgeting, substitutions, reading labels)",
+            "objective_id": "LIF.2.3.4.2",
+            "objective_text": "Read a food label to check ingredients and serving size",
+            "objective_uuid": "608dc2b0-6fab-4373-8026-3860575bd681",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 14 — Demonstrate nutrition and wellness practices that enhance individual and family well-being (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.3",
+            "topic_name": "Nutrition, Cooking & Food Preparation",
+            "sub_topic_id": "LIF.2.3.4",
+            "sub_topic_name": "Grocery Shopping Skills (unit pricing, budgeting, substitutions, reading labels)",
+            "objective_id": "LIF.2.3.4.3",
+            "objective_text": "Compare unit prices to find the better value between two products",
+            "objective_uuid": "a927be81-923b-4cb2-80f5-adb411a57c77",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 14 — Demonstrate nutrition and wellness practices that enhance individual and family well-being (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.3",
+            "topic_name": "Nutrition, Cooking & Food Preparation",
+            "sub_topic_id": "LIF.2.3.4",
+            "sub_topic_name": "Grocery Shopping Skills (unit pricing, budgeting, substitutions, reading labels)",
+            "objective_id": "LIF.2.3.4.4",
+            "objective_text": "Choose a suitable substitution when a needed grocery item is unavailable",
+            "objective_uuid": "7f4efc2f-ec65-4f55-81bd-605ec18bd482",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 8 — Integrate knowledge, skills, and practices required for careers in food production and services (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.3",
+            "topic_name": "Nutrition, Cooking & Food Preparation",
+            "sub_topic_id": "LIF.2.3.4",
+            "sub_topic_name": "Grocery Shopping Skills (unit pricing, budgeting, substitutions, reading labels)",
+            "objective_id": "LIF.2.3.4.5",
+            "objective_text": "Plan and carry out a grocery trip that stays within a set budget",
+            "objective_uuid": "2d7a6286-0ab0-4860-86c8-afca29028440",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 14 — Demonstrate nutrition and wellness practices that enhance individual and family well-being (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "FCS / Jump$tart national standards",
+      "anchor_note": "Rebuilt from the FCS / Jump$tart national standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

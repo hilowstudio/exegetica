@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.6.2.2",
+    "name": "Mathematics and the Rationality of God",
+    "topic_id": "MAT.6.2",
+    "topic_name": "Philosophy of Mathematics",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.6",
+    "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Mathematics and the Rationality of God in Philosophy of Mathematics (Mathematics)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.2",
+            "topic_name": "Philosophy of Mathematics",
+            "sub_topic_id": "MAT.6.2.2",
+            "sub_topic_name": "Mathematics and the Rationality of God",
+            "objective_id": "MAT.6.2.2.1",
+            "objective_text": "Reflect on the orderliness of number and pattern in creation.",
+            "objective_uuid": "b8ce6258-953a-4105-8774-f603f5cc76f4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.2",
+            "topic_name": "Philosophy of Mathematics",
+            "sub_topic_id": "MAT.6.2.2",
+            "sub_topic_name": "Mathematics and the Rationality of God",
+            "objective_id": "MAT.6.2.2.2",
+            "objective_text": "Discuss how mathematical order has been seen as reflecting a rational Creator.",
+            "objective_uuid": "0ea0908d-c977-4979-8515-be58d347937c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.2",
+            "topic_name": "Philosophy of Mathematics",
+            "sub_topic_id": "MAT.6.2.2",
+            "sub_topic_name": "Mathematics and the Rationality of God",
+            "objective_id": "MAT.6.2.2.3",
+            "objective_text": "Evaluate the argument that mathematics points to design.",
+            "objective_uuid": "06c6179c-8429-4972-8899-d7e9c8239c2b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content runs beyond Common Core, so no standard anchor (honest gap)."
+    }
+  }
+}

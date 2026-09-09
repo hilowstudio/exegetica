@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.4.6",
+    "name": "Modular Programming (clean structure and organization)",
+    "topic_id": "CPT.1.4",
+    "topic_name": "Programming Fundamentals (Block to Text)",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Modular Programming (clean structure and organization) in Programming Fundamentals (Block to Text) (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.6",
+            "sub_topic_name": "Modular Programming (clean structure and organization)",
+            "objective_id": "CPT.1.4.6.1",
+            "objective_text": "Organize related instructions into reusable procedures",
+            "objective_uuid": "0e3e79c3-2d2c-494d-8cb4-498d8001ffed",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-14 — Create procedures with parameters to organize code and make it easier to reuse. Clarification: Students should (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.6",
+            "sub_topic_name": "Modular Programming (clean structure and organization)",
+            "objective_id": "CPT.1.4.6.2",
+            "objective_text": "Use parameters to make a module general enough to reuse in different situations",
+            "objective_uuid": "1c1a8a05-4d40-494c-885e-3e4a53396443",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-14 — Create procedures with parameters to organize code and make it easier to reuse. Clarification: Students should (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.6",
+            "sub_topic_name": "Modular Programming (clean structure and organization)",
+            "objective_id": "CPT.1.4.6.3",
+            "objective_text": "Structure a program as a system of interacting modules, each with a specific role",
+            "objective_uuid": "ed22b702-10e5-41a8-81ac-f5135525c764",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-18 — Create artifacts by using procedures within a program, combinations of data and procedures, or independent but (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.6",
+            "sub_topic_name": "Modular Programming (clean structure and organization)",
+            "objective_id": "CPT.1.4.6.4",
+            "objective_text": "Combine independent modules into one coherent, well-organized program",
+            "objective_uuid": "5105ab91-d311-47e0-8313-df12f2ac59a7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-18 — Create artifacts by using procedures within a program, combinations of data and procedures, or independent but (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

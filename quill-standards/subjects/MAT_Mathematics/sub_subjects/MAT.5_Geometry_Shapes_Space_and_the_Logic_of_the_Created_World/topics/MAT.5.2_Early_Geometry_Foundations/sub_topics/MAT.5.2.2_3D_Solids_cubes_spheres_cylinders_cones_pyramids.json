@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.2.2",
+    "name": "3D Solids (cubes, spheres, cylinders, cones, pyramids)",
+    "topic_id": "MAT.5.2",
+    "topic_name": "Early Geometry Foundations",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for 3D Solids (cubes, spheres, cylinders, cones, pyramids) in Early Geometry Foundations (Mathematics)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.2",
+            "topic_name": "Early Geometry Foundations",
+            "sub_topic_id": "MAT.5.2.2",
+            "sub_topic_name": "3D Solids (cubes, spheres, cylinders, cones, pyramids)",
+            "objective_id": "MAT.5.2.2.1",
+            "objective_text": "Identify three-dimensional solids (cube, sphere, cylinder, cone).",
+            "objective_uuid": "b10fbd67-ddb4-45f1-887c-14de799ba62c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math K.G.B.4 — Analyze and compare two- and three-dimensional shapes, in different sizes and orientations, using inform (grade K)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.2",
+            "topic_name": "Early Geometry Foundations",
+            "sub_topic_id": "MAT.5.2.2",
+            "sub_topic_name": "3D Solids (cubes, spheres, cylinders, cones, pyramids)",
+            "objective_id": "MAT.5.2.2.2",
+            "objective_text": "Describe solids by their faces, edges, and vertices.",
+            "objective_uuid": "85038e7d-7dd6-4e3d-8824-f7a122607d89",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math K.G.B.4 — Analyze and compare two- and three-dimensional shapes, in different sizes and orientations, using inform (grade K)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.2",
+            "topic_name": "Early Geometry Foundations",
+            "sub_topic_id": "MAT.5.2.2",
+            "sub_topic_name": "3D Solids (cubes, spheres, cylinders, cones, pyramids)",
+            "objective_id": "MAT.5.2.2.3",
+            "objective_text": "Describe the two-dimensional cross-sections of three-dimensional solids.",
+            "objective_uuid": "6e254f04-2eae-43ec-8969-a90fcbda3203",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.G.B.6 — Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dim (grade 7)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

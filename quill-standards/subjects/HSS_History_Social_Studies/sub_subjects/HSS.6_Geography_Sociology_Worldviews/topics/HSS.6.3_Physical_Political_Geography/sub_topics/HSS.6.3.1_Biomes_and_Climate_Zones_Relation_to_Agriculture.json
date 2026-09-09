@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "HSS.6.3.1",
+    "name": "Biomes and Climate Zones (Relation to Agriculture)",
+    "topic_id": "HSS.6.3",
+    "topic_name": "Physical & Political Geography",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.6",
+    "sub_subject_name": "Geography, Sociology & Worldviews",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Biomes and Climate Zones (Relation to Agriculture) in Physical & Political Geography (History & Social Studies)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.6",
+            "sub_subject_name": "Geography, Sociology & Worldviews",
+            "topic_id": "HSS.6.3",
+            "topic_name": "Physical & Political Geography",
+            "sub_topic_id": "HSS.6.3.1",
+            "sub_topic_name": "Biomes and Climate Zones (Relation to Agriculture)",
+            "objective_id": "HSS.6.3.1.1",
+            "objective_text": "Identify different climate zones and the plants and animals that live in them.",
+            "objective_uuid": "ec5dd5ae-8576-4dbf-86c4-efa63ab262e3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.K-2 — Explain how weather, climate, and other environmental characteristics affect people's lives in a pla (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.6",
+            "sub_subject_name": "Geography, Sociology & Worldviews",
+            "topic_id": "HSS.6.3",
+            "topic_name": "Physical & Political Geography",
+            "sub_topic_id": "HSS.6.3.1",
+            "sub_topic_name": "Biomes and Climate Zones (Relation to Agriculture)",
+            "objective_id": "HSS.6.3.1.2",
+            "objective_text": "Describe how weather and climate affect what farmers can grow in a place.",
+            "objective_uuid": "a0f769ae-5426-4170-8a52-13a939ad7028",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.K-2 — Explain how weather, climate, and other environmental characteristics affect people's lives in a pla (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.6",
+            "sub_subject_name": "Geography, Sociology & Worldviews",
+            "topic_id": "HSS.6.3",
+            "topic_name": "Physical & Political Geography",
+            "sub_topic_id": "HSS.6.3.1",
+            "sub_topic_name": "Biomes and Climate Zones (Relation to Agriculture)",
+            "objective_id": "HSS.6.3.1.3",
+            "objective_text": "Explain how major biomes and climate zones relate to the kinds of agriculture practiced in them.",
+            "objective_uuid": "df03c1a2-c70d-4a5c-8b8f-67cf0f32d890",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.9-12 — Analyze relationships and interactions within and between human and physical systems to explain reci (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.6",
+            "sub_subject_name": "Geography, Sociology & Worldviews",
+            "topic_id": "HSS.6.3",
+            "topic_name": "Physical & Political Geography",
+            "sub_topic_id": "HSS.6.3.1",
+            "sub_topic_name": "Biomes and Climate Zones (Relation to Agriculture)",
+            "objective_id": "HSS.6.3.1.4",
+            "objective_text": "Use maps to display the relationship between climate zones and agricultural regions.",
+            "objective_uuid": "7dbe32c8-c3a3-475c-854b-b158eda9d07e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.6",
+            "sub_subject_name": "Geography, Sociology & Worldviews",
+            "topic_id": "HSS.6.3",
+            "topic_name": "Physical & Political Geography",
+            "sub_topic_id": "HSS.6.3.1",
+            "sub_topic_name": "Biomes and Climate Zones (Relation to Agriculture)",
+            "objective_id": "HSS.6.3.1.5",
+            "objective_text": "Analyze how climate and other physical systems shape and limit human agricultural activity.",
+            "objective_uuid": "1946e3ef-29bc-4d60-819f-40cfe5bca49a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.9-12 — Analyze relationships and interactions within and between human and physical systems to explain reci (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

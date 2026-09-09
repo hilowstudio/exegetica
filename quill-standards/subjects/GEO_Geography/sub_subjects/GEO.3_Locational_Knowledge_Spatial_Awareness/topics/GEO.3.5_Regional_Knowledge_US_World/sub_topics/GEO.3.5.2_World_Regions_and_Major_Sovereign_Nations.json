@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "GEO.3.5.2",
+    "name": "World Regions and Major Sovereign Nations",
+    "topic_id": "GEO.3.5",
+    "topic_name": "Regional Knowledge (US & World)",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.3",
+    "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for World Regions and Major Sovereign Nations in Regional Knowledge (US & World) (Geography)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.5",
+            "topic_name": "Regional Knowledge (US & World)",
+            "sub_topic_id": "GEO.3.5.2",
+            "sub_topic_name": "World Regions and Major Sovereign Nations",
+            "objective_id": "GEO.3.5.2.1",
+            "objective_text": "Locate the major world regions, such as Africa, Europe, and Asia, on a map.",
+            "objective_uuid": "5b1c1411-7676-4cf3-85e5-48f674c97e82",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.2.K-2 — Use maps, graphs, photographs, and other representations to describe places and the relationships an (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.5",
+            "topic_name": "Regional Knowledge (US & World)",
+            "sub_topic_id": "GEO.3.5.2",
+            "sub_topic_name": "World Regions and Major Sovereign Nations",
+            "objective_id": "GEO.3.5.2.2",
+            "objective_text": "Identify the major sovereign nations within each world region.",
+            "objective_uuid": "f10893ca-8fe9-4b72-8575-f009d8cbf571",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.2.9-12 — Use maps, satellite images, photographs, and other representations to explain relationships between  (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.5",
+            "topic_name": "Regional Knowledge (US & World)",
+            "sub_topic_id": "GEO.3.5.2",
+            "sub_topic_name": "World Regions and Major Sovereign Nations",
+            "objective_id": "GEO.3.5.2.3",
+            "objective_text": "Locate major world regions and their leading nations on a world map.",
+            "objective_uuid": "ae4c6167-751f-47d5-8f81-ebd6bbe10237",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.2.9-12 — Use maps, satellite images, photographs, and other representations to explain relationships between  (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.5",
+            "topic_name": "Regional Knowledge (US & World)",
+            "sub_topic_id": "GEO.3.5.2",
+            "sub_topic_name": "World Regions and Major Sovereign Nations",
+            "objective_id": "GEO.3.5.2.4",
+            "objective_text": "Analyze how world regions are defined by physical, cultural, and political characteristics.",
+            "objective_uuid": "66eeff1a-098a-41db-8eff-53d93eb6f3d7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.2.9-12 — Use maps, satellite images, photographs, and other representations to explain relationships between  (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

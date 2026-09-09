@@ -1,0 +1,99 @@
+{
+  "sub_topic": {
+    "id": "MAT.6.1.3",
+    "name": "Newton, Leibniz, and the Creation of Calculus",
+    "topic_id": "MAT.6.1",
+    "topic_name": "Historical Development of Concepts",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.6",
+    "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Newton, Leibniz, and the Creation of Calculus in Historical Development of Concepts (Mathematics)",
+    "grade_levels": {
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.1",
+            "topic_name": "Historical Development of Concepts",
+            "sub_topic_id": "MAT.6.1.3",
+            "sub_topic_name": "Newton, Leibniz, and the Creation of Calculus",
+            "objective_id": "MAT.6.1.3.1",
+            "objective_text": "Describe the invention of calculus by Newton and Leibniz.",
+            "objective_uuid": "39766015-cdb6-4f2b-8d86-e654e91ca418",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.1",
+            "topic_name": "Historical Development of Concepts",
+            "sub_topic_id": "MAT.6.1.3",
+            "sub_topic_name": "Newton, Leibniz, and the Creation of Calculus",
+            "objective_id": "MAT.6.1.3.2",
+            "objective_text": "Explain the problems calculus was created to solve.",
+            "objective_uuid": "a82df072-397b-41ac-84f3-ac24784cdca0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.1",
+            "topic_name": "Historical Development of Concepts",
+            "sub_topic_id": "MAT.6.1.3",
+            "sub_topic_name": "Newton, Leibniz, and the Creation of Calculus",
+            "objective_id": "MAT.6.1.3.3",
+            "objective_text": "Discuss the priority dispute and the idea of independent discovery.",
+            "objective_uuid": "481fb3ad-b735-41b8-8101-865d76ec043f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content runs beyond Common Core, so no standard anchor (honest gap)."
+    }
+  }
+}

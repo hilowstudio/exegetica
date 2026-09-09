@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.6.1.5",
+    "name": "The Renaissance and the Birth of Algebra",
+    "topic_id": "MAT.6.1",
+    "topic_name": "Historical Development of Concepts",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.6",
+    "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for The Renaissance and the Birth of Algebra in Historical Development of Concepts (Mathematics)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.1",
+            "topic_name": "Historical Development of Concepts",
+            "sub_topic_id": "MAT.6.1.5",
+            "sub_topic_name": "The Renaissance and the Birth of Algebra",
+            "objective_id": "MAT.6.1.5.1",
+            "objective_text": "Describe how symbolic algebra developed during the Renaissance.",
+            "objective_uuid": "afa767dd-08e3-461b-80ba-a6931d99a96d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.1",
+            "topic_name": "Historical Development of Concepts",
+            "sub_topic_id": "MAT.6.1.5",
+            "sub_topic_name": "The Renaissance and the Birth of Algebra",
+            "objective_id": "MAT.6.1.5.2",
+            "objective_text": "Explain the solving of cubic and quartic equations.",
+            "objective_uuid": "de609e5e-4196-4fcc-8446-e9cd182ecee6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.1",
+            "topic_name": "Historical Development of Concepts",
+            "sub_topic_id": "MAT.6.1.5",
+            "sub_topic_name": "The Renaissance and the Birth of Algebra",
+            "objective_id": "MAT.6.1.5.3",
+            "objective_text": "Analyze how algebraic notation advanced mathematics.",
+            "objective_uuid": "5c14279a-b0f0-425b-843f-e06b6640d820",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content runs beyond Common Core, so no standard anchor (honest gap)."
+    }
+  }
+}

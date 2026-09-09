@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.4.2.4",
+    "name": "Legal Frameworks (GDPR, Computer Misuse Act concepts)",
+    "topic_id": "CPT.4.2",
+    "topic_name": "Ethical, Legal & Environmental Impact",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.4",
+    "sub_subject_name": "Digital Literacy, Safety & Ethics",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Legal Frameworks (GDPR, Computer Misuse Act concepts) in Ethical, Legal & Environmental Impact (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.2",
+            "topic_name": "Ethical, Legal & Environmental Impact",
+            "sub_topic_id": "CPT.4.2.4",
+            "sub_topic_name": "Legal Frameworks (GDPR, Computer Misuse Act concepts)",
+            "objective_id": "CPT.4.2.4.1",
+            "objective_text": "Explain why laws exist to protect people's personal data online",
+            "objective_uuid": "526a0582-6f88-442f-80ea-e5a7798f4d79",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-IC-23 — Describe tradeoffs between allowing information to be public and keeping information private and secure. Clari (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.2",
+            "topic_name": "Ethical, Legal & Environmental Impact",
+            "sub_topic_id": "CPT.4.2.4",
+            "sub_topic_name": "Legal Frameworks (GDPR, Computer Misuse Act concepts)",
+            "objective_id": "CPT.4.2.4.2",
+            "objective_text": "Describe the purpose of data protection laws such as the GDPR in giving people control over their data",
+            "objective_uuid": "e63e7af5-a233-415e-862f-74ba7fa51f39",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-IC-23 — Describe tradeoffs between allowing information to be public and keeping information private and secure. Clari (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.2",
+            "topic_name": "Ethical, Legal & Environmental Impact",
+            "sub_topic_id": "CPT.4.2.4",
+            "sub_topic_name": "Legal Frameworks (GDPR, Computer Misuse Act concepts)",
+            "objective_id": "CPT.4.2.4.3",
+            "objective_text": "Explain the concepts behind computer misuse laws that make unauthorized access illegal",
+            "objective_uuid": "b910627b-f4c0-4832-85c8-39c5b6487b17",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-IC-28 — Debate laws and regulations that impact the development and use of software (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.2",
+            "topic_name": "Ethical, Legal & Environmental Impact",
+            "sub_topic_id": "CPT.4.2.4",
+            "sub_topic_name": "Legal Frameworks (GDPR, Computer Misuse Act concepts)",
+            "objective_id": "CPT.4.2.4.4",
+            "objective_text": "Debate laws and regulations that impact the development and use of software",
+            "objective_uuid": "0a244af4-085f-4695-8f65-9ead7f7c995e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-IC-28 — Debate laws and regulations that impact the development and use of software (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.11.4.4",
+    "name": "Trigonometric Functions on the Unit Circle (Defining Coordinates)",
+    "topic_id": "MAT.11.4",
+    "topic_name": "Unit Circle & Radian Measure",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.11",
+    "sub_subject_name": "Trigonometry (Ratios, Cycles & Mathematical Harmony)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Trigonometric Functions on the Unit Circle (Defining Coordinates) in Unit Circle & Radian Measure (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.11",
+            "sub_subject_name": "Trigonometry (Ratios, Cycles & Mathematical Harmony)",
+            "topic_id": "MAT.11.4",
+            "topic_name": "Unit Circle & Radian Measure",
+            "sub_topic_id": "MAT.11.4.4",
+            "sub_topic_name": "Trigonometric Functions on the Unit Circle (Defining Coordinates)",
+            "objective_id": "MAT.11.4.4.1",
+            "objective_text": "Define sine and cosine as coordinates of a point on the unit circle.",
+            "objective_uuid": "1f297be9-8f2f-4362-875f-861060b3b883",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-TF.A.2 — Explain how the unit circle in the coordinate plane enables the extension of trigonometric functions to  (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.11",
+            "sub_subject_name": "Trigonometry (Ratios, Cycles & Mathematical Harmony)",
+            "topic_id": "MAT.11.4",
+            "topic_name": "Unit Circle & Radian Measure",
+            "sub_topic_id": "MAT.11.4.4",
+            "sub_topic_name": "Trigonometric Functions on the Unit Circle (Defining Coordinates)",
+            "objective_id": "MAT.11.4.4.2",
+            "objective_text": "Extend trigonometric functions to all real numbers using the unit circle.",
+            "objective_uuid": "2c59bc0a-41ca-4f99-8dd5-91a6198d452a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-TF.A.2 — Explain how the unit circle in the coordinate plane enables the extension of trigonometric functions to  (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.11",
+            "sub_subject_name": "Trigonometry (Ratios, Cycles & Mathematical Harmony)",
+            "topic_id": "MAT.11.4",
+            "topic_name": "Unit Circle & Radian Measure",
+            "sub_topic_id": "MAT.11.4.4",
+            "sub_topic_name": "Trigonometric Functions on the Unit Circle (Defining Coordinates)",
+            "objective_id": "MAT.11.4.4.3",
+            "objective_text": "Use the unit circle to find exact trig values of special angles.",
+            "objective_uuid": "c4ab89da-c8e4-4205-84af-212a33a11a56",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-TF.A.3 — (+) Use special triangles to determine geometrically the values of sine, cosine, tangent for π/3, π/4 an (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

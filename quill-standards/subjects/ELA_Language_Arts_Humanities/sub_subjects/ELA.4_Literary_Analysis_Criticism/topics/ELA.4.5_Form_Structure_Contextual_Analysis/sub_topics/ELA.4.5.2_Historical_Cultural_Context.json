@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ELA.4.5.2",
+    "name": "Historical & Cultural Context",
+    "topic_id": "ELA.4.5",
+    "topic_name": "Form, Structure & Contextual Analysis",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.4",
+    "sub_subject_name": "Literary Analysis & Criticism",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Historical & Cultural Context in Form, Structure & Contextual Analysis (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.5",
+            "topic_name": "Form, Structure & Contextual Analysis",
+            "sub_topic_id": "ELA.4.5.2",
+            "sub_topic_name": "Historical & Cultural Context",
+            "objective_id": "ELA.4.5.2.1",
+            "objective_text": "Notice when a story takes place long ago or far away.",
+            "objective_uuid": "6abba310-2b75-4650-8049-83f7678b9d76",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.2 — Determine central ideas or themes of a text and analyze their development; summarize the key supporting  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.5",
+            "topic_name": "Form, Structure & Contextual Analysis",
+            "sub_topic_id": "ELA.4.5.2",
+            "sub_topic_name": "Historical & Cultural Context",
+            "objective_id": "ELA.4.5.2.2",
+            "objective_text": "Explain how the time and place of a story affect its events.",
+            "objective_uuid": "95841d30-cdc2-449a-8ad9-bba412236b4a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.5",
+            "topic_name": "Form, Structure & Contextual Analysis",
+            "sub_topic_id": "ELA.4.5.2",
+            "sub_topic_name": "Historical & Cultural Context",
+            "objective_id": "ELA.4.5.2.3",
+            "objective_text": "Analyze how historical context shapes the meaning of a text.",
+            "objective_uuid": "5b66cbb0-35f5-4000-890d-5038fc56aa54",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.5",
+            "topic_name": "Form, Structure & Contextual Analysis",
+            "sub_topic_id": "ELA.4.5.2",
+            "sub_topic_name": "Historical & Cultural Context",
+            "objective_id": "ELA.4.5.2.4",
+            "objective_text": "Evaluate how a work reflects or challenges the culture that produced it.",
+            "objective_uuid": "374499b5-17be-4ea3-8942-7399d512fae7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.2 — Determine central ideas or themes of a text and analyze their development; summarize the key supporting  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

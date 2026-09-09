@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "GEO.2.4.1",
+    "name": "Agricultural Zones",
+    "topic_id": "GEO.2.4",
+    "topic_name": "Global Resource Distribution",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.2",
+    "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Agricultural Zones in Global Resource Distribution (Geography)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.4",
+            "topic_name": "Global Resource Distribution",
+            "sub_topic_id": "GEO.2.4.1",
+            "sub_topic_name": "Agricultural Zones",
+            "objective_id": "GEO.2.4.1.1",
+            "objective_text": "Describe how climate and land shape what crops are grown in a region.",
+            "objective_uuid": "6cd5c29f-6a37-4787-8b6d-48608ed5eae4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.3-5 — Explain how culture influences the way people modify and adapt to their environments (geography, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.4",
+            "topic_name": "Global Resource Distribution",
+            "sub_topic_id": "GEO.2.4.1",
+            "sub_topic_name": "Agricultural Zones",
+            "objective_id": "GEO.2.4.1.2",
+            "objective_text": "Explain how farmers adapt their methods to fit the environment they live in.",
+            "objective_uuid": "26e1e41a-e051-498f-844f-76cdfdf4b90b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.3-5 — Explain how culture influences the way people modify and adapt to their environments (geography, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.4",
+            "topic_name": "Global Resource Distribution",
+            "sub_topic_id": "GEO.2.4.1",
+            "sub_topic_name": "Agricultural Zones",
+            "objective_id": "GEO.2.4.1.3",
+            "objective_text": "Identify major agricultural zones and the products associated with them.",
+            "objective_uuid": "b3ea6b3e-5a4a-410d-8555-f58aba4cf2eb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.3-5 — Explain how culture influences the way people modify and adapt to their environments (geography, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.4",
+            "topic_name": "Global Resource Distribution",
+            "sub_topic_id": "GEO.2.4.1",
+            "sub_topic_name": "Agricultural Zones",
+            "objective_id": "GEO.2.4.1.4",
+            "objective_text": "Analyze the reciprocal relationship between farming practices and the physical environment.",
+            "objective_uuid": "5486e03c-54f7-45e6-8423-7ecabdc2b787",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.9-12 — Analyze relationships and interactions within and between human and physical systems to explain reci (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.4",
+            "topic_name": "Global Resource Distribution",
+            "sub_topic_id": "GEO.2.4.1",
+            "sub_topic_name": "Agricultural Zones",
+            "objective_id": "GEO.2.4.1.5",
+            "objective_text": "Evaluate how cultural choices and technology change agricultural land use across regions.",
+            "objective_uuid": "058a0900-79ca-4d4d-8074-b2cdc7b6f909",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.9-12 — Analyze relationships and interactions within and between human and physical systems to explain reci (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

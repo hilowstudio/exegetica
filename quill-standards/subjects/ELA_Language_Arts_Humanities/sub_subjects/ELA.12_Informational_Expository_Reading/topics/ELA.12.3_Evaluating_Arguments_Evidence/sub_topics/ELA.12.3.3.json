@@ -1,0 +1,146 @@
+{
+  "sub_topic": {
+    "id": "ELA.12.3.3",
+    "name": "Fact, Opinion & Bias",
+    "topic_id": "ELA.12.3",
+    "topic_name": "Evaluating Arguments & Evidence",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.12",
+    "sub_subject_name": "Informational & Expository Reading",
+    "total_objectives": 4,
+    "description": "K-12 progression for Fact, Opinion & Bias in Evaluating Arguments & Evidence (Informational & Expository Reading)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.3",
+            "sub_topic_name": "Fact, Opinion & Bias",
+            "objective_id": "ELA.12.3.3.1",
+            "objective_text": "Tell the difference between a fact and an opinion in a text.",
+            "objective_uuid": "9d76a5d7-6570-4267-83bc-fade58c6469e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)",
+                "CCSS.ELA CCRA.R.6 — Assess how point of view or purpose shapes the content and style of a text (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.3",
+            "sub_topic_name": "Fact, Opinion & Bias",
+            "objective_id": "ELA.12.3.3.2",
+            "objective_text": "Distinguish fact, reasoned judgment, and speculation.",
+            "objective_uuid": "7dd84399-293c-4cc9-8159-34eee6148dd3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)",
+                "CCSS.ELA CCRA.R.6 — Assess how point of view or purpose shapes the content and style of a text (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.3",
+            "sub_topic_name": "Fact, Opinion & Bias",
+            "objective_id": "ELA.12.3.3.3",
+            "objective_text": "Recognize loaded language and signs of bias.",
+            "objective_uuid": "df861737-b618-49ca-8611-7505b49347dd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)",
+                "CCSS.ELA CCRA.R.6 — Assess how point of view or purpose shapes the content and style of a text (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.3",
+            "sub_topic_name": "Fact, Opinion & Bias",
+            "objective_id": "ELA.12.3.3.4",
+            "objective_text": "Analyze how word choice and framing reveal an author's bias.",
+            "objective_uuid": "03cfbec2-261f-4d48-873d-6e003febe130",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)",
+                "CCSS.ELA CCRA.R.6 — Assess how point of view or purpose shapes the content and style of a text (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Authored to CCSS Reading anchors (CCRA.R); objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

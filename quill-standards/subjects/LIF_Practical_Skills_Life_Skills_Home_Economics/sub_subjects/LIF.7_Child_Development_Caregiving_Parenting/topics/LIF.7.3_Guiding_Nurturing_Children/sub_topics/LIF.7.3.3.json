@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "LIF.7.3.3",
+    "name": "Nurturing Character & Faith",
+    "topic_id": "LIF.7.3",
+    "topic_name": "Guiding & Nurturing Children",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.7",
+    "sub_subject_name": "Child Development, Caregiving & Parenting",
+    "total_objectives": 3,
+    "description": "Progression for Nurturing Character & Faith in Guiding & Nurturing Children (Child Development, Caregiving & Parenting)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.7",
+            "sub_subject_name": "Child Development, Caregiving & Parenting",
+            "topic_id": "LIF.7.3",
+            "topic_name": "Guiding & Nurturing Children",
+            "sub_topic_id": "LIF.7.3.3",
+            "sub_topic_name": "Nurturing Character & Faith",
+            "objective_id": "LIF.7.3.3.1",
+            "objective_text": "Describe how caregivers nurture a child's character and conscience.",
+            "objective_uuid": "175e3619-4b12-4200-8986-e4e4194d2d2a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.7",
+            "sub_subject_name": "Child Development, Caregiving & Parenting",
+            "topic_id": "LIF.7.3",
+            "topic_name": "Guiding & Nurturing Children",
+            "sub_topic_id": "LIF.7.3.3",
+            "sub_topic_name": "Nurturing Character & Faith",
+            "objective_id": "LIF.7.3.3.2",
+            "objective_text": "Discuss the biblical call to nurture children in wisdom and faith.",
+            "objective_uuid": "85783f7b-b9db-4b3e-800f-1b7abea89425",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.7",
+            "sub_subject_name": "Child Development, Caregiving & Parenting",
+            "topic_id": "LIF.7.3",
+            "topic_name": "Guiding & Nurturing Children",
+            "sub_topic_id": "LIF.7.3.3",
+            "sub_topic_name": "Nurturing Character & Faith",
+            "objective_id": "LIF.7.3.3.3",
+            "objective_text": "Reflect on modeling love and patience for children.",
+            "objective_uuid": "9889b6bf-c29a-4262-8438-f3945e82369e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "authored",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Authored at scope-driven depth; worldview content with no secular standard (honest gap)."
+    }
+  }
+}

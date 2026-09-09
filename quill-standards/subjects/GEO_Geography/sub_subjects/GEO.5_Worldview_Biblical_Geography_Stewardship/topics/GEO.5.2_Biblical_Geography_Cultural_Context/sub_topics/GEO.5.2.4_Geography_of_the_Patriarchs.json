@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "GEO.5.2.4",
+    "name": "Geography of the Patriarchs",
+    "topic_id": "GEO.5.2",
+    "topic_name": "Biblical Geography & Cultural Context",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.5",
+    "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Geography of the Patriarchs in Biblical Geography & Cultural Context (Geography)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.4",
+            "sub_topic_name": "Geography of the Patriarchs",
+            "objective_id": "GEO.5.2.4.1",
+            "objective_text": "Locate places connected to Abraham, such as Ur, Haran, and Canaan, on a map",
+            "objective_uuid": "c0d2608d-6a2c-4a76-872a-f4537a4c8f64",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.4",
+            "sub_topic_name": "Geography of the Patriarchs",
+            "objective_id": "GEO.5.2.4.2",
+            "objective_text": "Describe the travels of Abraham, Isaac, and Jacob within and around the land of Canaan",
+            "objective_uuid": "a810dc2e-a99b-48bc-8dc0-cab03c7d8b66",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.4",
+            "sub_topic_name": "Geography of the Patriarchs",
+            "objective_id": "GEO.5.2.4.3",
+            "objective_text": "Explain how the patriarchs lived as herders and travelers moving between wells, altars, and grazing lands",
+            "objective_uuid": "0617a504-4828-43e4-84f3-18835f19519d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.4",
+            "sub_topic_name": "Geography of the Patriarchs",
+            "objective_id": "GEO.5.2.4.4",
+            "objective_text": "Trace the journeys of Jacob and Joseph that carried the family from Canaan into Egypt",
+            "objective_uuid": "1611194f-4520-4898-8889-ec3060710f55",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.4",
+            "sub_topic_name": "Geography of the Patriarchs",
+            "objective_id": "GEO.5.2.4.5",
+            "objective_text": "Analyze how God's promise of land to the patriarchs frames the geography of their journeys",
+            "objective_uuid": "6f2a04ef-4d0f-45f3-848b-1e07683bf1e1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "sub_topic": {
+    "id": "HSS.11.6.3",
+    "name": "Psychology in Everyday Life",
+    "topic_id": "HSS.11.6",
+    "topic_name": "Health, Disorder & Applied Psychology",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.11",
+    "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+    "total_objectives": 3,
+    "description": "Progression for Psychology in Everyday Life in Health, Disorder & Applied Psychology (Psychology (Mind, Behavior & Development))",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.6",
+            "topic_name": "Health, Disorder & Applied Psychology",
+            "sub_topic_id": "HSS.11.6.3",
+            "sub_topic_name": "Psychology in Everyday Life",
+            "objective_id": "HSS.11.6.3.1",
+            "objective_text": "Apply psychological principles to school, work, and relationships.",
+            "objective_uuid": "a7d23b2d-b987-4d5f-810e-0cf47ee88e9b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.18.9-12 — Apply psychological knowledge to their daily lives (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.21.9-12 — Discuss ways in which the applications of psychological science can address domestic and global issu (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.23.9-12 — Apply psychological knowledge to civic engagement (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 25.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.6",
+            "topic_name": "Health, Disorder & Applied Psychology",
+            "sub_topic_id": "HSS.11.6.3",
+            "sub_topic_name": "Psychology in Everyday Life",
+            "objective_id": "HSS.11.6.3.2",
+            "objective_text": "Discuss how psychological science is used and misused in society.",
+            "objective_uuid": "6f6e23f9-dfda-46c6-8bee-4ad8592de78c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.18.9-12 — Apply psychological knowledge to their daily lives (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.21.9-12 — Discuss ways in which the applications of psychological science can address domestic and global issu (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.23.9-12 — Apply psychological knowledge to civic engagement (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.6",
+            "topic_name": "Health, Disorder & Applied Psychology",
+            "sub_topic_id": "HSS.11.6.3",
+            "sub_topic_name": "Psychology in Everyday Life",
+            "objective_id": "HSS.11.6.3.3",
+            "objective_text": "Use psychological knowledge to serve others and the community.",
+            "objective_uuid": "48a3dc75-d4c0-4443-8856-0cf22f005b53",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.18.9-12 — Apply psychological knowledge to their daily lives (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.21.9-12 — Discuss ways in which the applications of psychological science can address domestic and global issu (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.23.9-12 — Apply psychological knowledge to civic engagement (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework (Psychology)",
+      "anchor_note": "C3 D2.Psy codes verified against the owned corpus. Objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

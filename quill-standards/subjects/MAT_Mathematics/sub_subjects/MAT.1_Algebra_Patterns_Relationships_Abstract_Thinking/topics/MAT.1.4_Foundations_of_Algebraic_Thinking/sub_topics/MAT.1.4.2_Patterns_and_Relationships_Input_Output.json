@@ -1,0 +1,135 @@
+{
+  "sub_topic": {
+    "id": "MAT.1.4.2",
+    "name": "Patterns and Relationships (Input/Output)",
+    "topic_id": "MAT.1.4",
+    "topic_name": "Foundations of Algebraic Thinking",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.1",
+    "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Patterns and Relationships (Input/Output) in Foundations of Algebraic Thinking (Mathematics)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.4",
+            "topic_name": "Foundations of Algebraic Thinking",
+            "sub_topic_id": "MAT.1.4.2",
+            "sub_topic_name": "Patterns and Relationships (Input/Output)",
+            "objective_id": "MAT.1.4.2.1",
+            "objective_text": "Generate and describe a number or shape pattern that follows a given rule.",
+            "objective_uuid": "2d903bd4-393a-46d7-85df-541fb9c9107e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.OA.C.5 — Generate a number or shape pattern that follows a given rule. Identify apparent features of the pattern  (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 2,
+        "average_complexity": 14.5,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.4",
+            "topic_name": "Foundations of Algebraic Thinking",
+            "sub_topic_id": "MAT.1.4.2",
+            "sub_topic_name": "Patterns and Relationships (Input/Output)",
+            "objective_id": "MAT.1.4.2.2",
+            "objective_text": "Form ordered pairs from two related patterns and graph them.",
+            "objective_uuid": "18595f92-7e16-4ee4-8957-df4b27a42a31",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 5.OA.B.3 — Generate two numerical patterns using two given rules. Identify apparent relationships between correspon (grade 5)"
+              ]
+            }
+          },
+          {
+            "complexity": 18,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.4",
+            "topic_name": "Foundations of Algebraic Thinking",
+            "sub_topic_id": "MAT.1.4.2",
+            "sub_topic_name": "Patterns and Relationships (Input/Output)",
+            "objective_id": "MAT.1.4.2.3",
+            "objective_text": "Use a rule to complete an input/output table.",
+            "objective_uuid": "95c70653-c26b-4409-8719-80bb6dc7d819",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 5.OA.B.3 — Generate two numerical patterns using two given rules. Identify apparent relationships between correspon (grade 5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.4",
+            "topic_name": "Foundations of Algebraic Thinking",
+            "sub_topic_id": "MAT.1.4.2",
+            "sub_topic_name": "Patterns and Relationships (Input/Output)",
+            "objective_id": "MAT.1.4.2.4",
+            "objective_text": "Write an equation relating a dependent and independent variable from a pattern.",
+            "objective_uuid": "ca3a65f4-0758-4511-80ce-39a9ed491c10",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 6.EE.C.9 — Use variables to represent two quantities in a real-world problem that change in relationship to one ano (grade 6)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

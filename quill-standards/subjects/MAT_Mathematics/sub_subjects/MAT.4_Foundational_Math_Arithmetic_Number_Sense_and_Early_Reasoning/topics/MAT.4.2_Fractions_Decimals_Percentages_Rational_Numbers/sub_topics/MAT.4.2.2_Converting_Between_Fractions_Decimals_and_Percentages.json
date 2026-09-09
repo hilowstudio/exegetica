@@ -1,0 +1,179 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.2.2",
+    "name": "Converting Between Fractions, Decimals, and Percentages",
+    "topic_id": "MAT.4.2",
+    "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Converting Between Fractions, Decimals, and Percentages in Fractions, Decimals, & Percentages (Rational Numbers) (Mathematics)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 3,
+        "average_complexity": 7.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.2",
+            "sub_topic_name": "Converting Between Fractions, Decimals, and Percentages",
+            "objective_id": "MAT.4.2.2.1",
+            "objective_text": "Express a fraction with denominator 10 as an equivalent fraction with denominator 100.",
+            "objective_uuid": "68504dca-27a6-49f5-8805-29a833000a31",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NF.C.5 — Express a fraction with denominator 10 as an equivalent fraction with denominator 100, and use this tech (grade 4)"
+              ]
+            }
+          },
+          {
+            "complexity": 7,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.2",
+            "sub_topic_name": "Converting Between Fractions, Decimals, and Percentages",
+            "objective_id": "MAT.4.2.2.2",
+            "objective_text": "Write fractions with denominators 10 or 100 in decimal notation.",
+            "objective_uuid": "8cdfd98a-4c86-4dcf-80db-2bace4a73cca",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NF.C.6 — Use decimal notation for fractions with denominators 10 or 100 (grade 4)"
+              ]
+            }
+          },
+          {
+            "complexity": 11,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.2",
+            "sub_topic_name": "Converting Between Fractions, Decimals, and Percentages",
+            "objective_id": "MAT.4.2.2.3",
+            "objective_text": "Compare two decimals to hundredths by reasoning about their size.",
+            "objective_uuid": "e48bf4be-b087-49e4-8e38-249858d753a3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NF.C.7 — Compare two decimals to hundredths by reasoning about their size. Recognize that comparisons are valid o (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.2",
+            "sub_topic_name": "Converting Between Fractions, Decimals, and Percentages",
+            "objective_id": "MAT.4.2.2.4",
+            "objective_text": "Convert between fractions and decimals for common benchmark values.",
+            "objective_uuid": "a76e3117-3652-4352-8deb-335cfc4eca72",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NF.C.6 — Use decimal notation for fractions with denominators 10 or 100 (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 2,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.2",
+            "sub_topic_name": "Converting Between Fractions, Decimals, and Percentages",
+            "objective_id": "MAT.4.2.2.5",
+            "objective_text": "Understand percent as a rate per 100 and relate it to fractions and decimals.",
+            "objective_uuid": "a070ab48-c747-43c7-8448-54c6adcf19b9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 6.RP.A.3c — Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means 30/100 times the quantity) (grade 6)"
+              ]
+            }
+          },
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.2",
+            "sub_topic_name": "Converting Between Fractions, Decimals, and Percentages",
+            "objective_id": "MAT.4.2.2.6",
+            "objective_text": "Convert fluently among fractions, decimals, and percents to compare quantities.",
+            "objective_uuid": "91eb0422-879f-481a-815a-81854794169e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 6.RP.A.3c — Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means 30/100 times the quantity) (grade 6)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS fraction sub-skills (NF domain); objective count = the sub-topic's real distinct competencies. Replaces the prior templated 16-objective ladder that drifted off-topic."
+    }
+  }
+}

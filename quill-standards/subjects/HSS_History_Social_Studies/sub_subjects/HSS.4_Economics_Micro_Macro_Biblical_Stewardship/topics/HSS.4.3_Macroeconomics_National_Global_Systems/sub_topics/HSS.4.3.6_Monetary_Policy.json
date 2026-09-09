@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "HSS.4.3.6",
+    "name": "Monetary Policy",
+    "topic_id": "HSS.4.3",
+    "topic_name": "Macroeconomics: National & Global Systems",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.4",
+    "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Monetary Policy in Macroeconomics: National & Global Systems (History & Social Studies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.6",
+            "sub_topic_name": "Monetary Policy",
+            "objective_id": "HSS.4.3.6.1",
+            "objective_text": "Define monetary policy and the role of a central bank in managing money.",
+            "objective_uuid": "77d6c967-e810-473d-86a3-0c349a846c14",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.11.3-5 — Explain the meaning of inflation, deflation, and unemployment (economics, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.6",
+            "sub_topic_name": "Monetary Policy",
+            "objective_id": "HSS.4.3.6.2",
+            "objective_text": "Explain how monetary policy aims to control inflation and unemployment.",
+            "objective_uuid": "e40efecf-d9ea-48fe-8b90-4cee65b109b0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.11.3-5 — Explain the meaning of inflation, deflation, and unemployment (economics, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.6",
+            "sub_topic_name": "Monetary Policy",
+            "objective_id": "HSS.4.3.6.3",
+            "objective_text": "Analyze how economic indicators guide central bank decisions.",
+            "objective_uuid": "03c113be-9786-4db3-820a-97c4ab524d84",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.11.9-12 — Use economic indicators to analyze the current and future state of the economy (economics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.6",
+            "sub_topic_name": "Monetary Policy",
+            "objective_id": "HSS.4.3.6.4",
+            "objective_text": "Evaluate the selection of monetary policies in a variety of economic conditions.",
+            "objective_uuid": "c11758de-c20a-4297-853c-b7c8a935976b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.12.9-12 — Evaluate the selection of monetary and fiscal policies in a variety of economic conditions (economics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

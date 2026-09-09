@@ -1,0 +1,131 @@
+{
+  "sub_topic": {
+    "id": "SCI.5.4.1",
+    "name": "Changes of State",
+    "topic_id": "SCI.5.4",
+    "topic_name": "Matter & Material Properties (Foundations)",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.5",
+    "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Changes of State in Matter & Material Properties (Foundations) (Science & Nature)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 2,
+        "average_complexity": 7.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.4",
+            "topic_name": "Matter & Material Properties (Foundations)",
+            "sub_topic_id": "SCI.5.4.1",
+            "sub_topic_name": "Changes of State",
+            "objective_id": "SCI.5.4.1.1",
+            "objective_text": "Observe and describe how materials such as water and ice change between solid, liquid, and gas when heated or cooled",
+            "objective_uuid": "0cbb6ece-f66d-48aa-8d5a-48a674367d35",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 11,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.4",
+            "topic_name": "Matter & Material Properties (Foundations)",
+            "sub_topic_id": "SCI.5.4.1",
+            "sub_topic_name": "Changes of State",
+            "objective_id": "SCI.5.4.1.2",
+            "objective_text": "Construct an argument with evidence that some changes caused by heating or cooling can be reversed and some cannot",
+            "objective_uuid": "16a1cf9e-7066-48af-895f-44024c34da9f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 2-PS1-4 — Construct an argument with evidence that some changes caused by heating or cooling can be reversed and s (grades 2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.4",
+            "topic_name": "Matter & Material Properties (Foundations)",
+            "sub_topic_id": "SCI.5.4.1",
+            "sub_topic_name": "Changes of State",
+            "objective_id": "SCI.5.4.1.3",
+            "objective_text": "Develop a model to describe that matter is made of particles too small to be seen and use it to explain melting, freezing, and evaporation",
+            "objective_uuid": "3c3d5189-1b89-47ca-8877-f7a980bf8209",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 5-PS1-1 — Develop a model to describe that matter is made of particles too small to be seen (grades 5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.4",
+            "topic_name": "Matter & Material Properties (Foundations)",
+            "sub_topic_id": "SCI.5.4.1",
+            "sub_topic_name": "Changes of State",
+            "objective_id": "SCI.5.4.1.4",
+            "objective_text": "Explain changes of state, including melting, boiling, condensation, and sublimation, in terms of energy added to or removed from the particles of a substance",
+            "objective_uuid": "e3562f7d-27b2-4652-883a-ae9480f4718a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

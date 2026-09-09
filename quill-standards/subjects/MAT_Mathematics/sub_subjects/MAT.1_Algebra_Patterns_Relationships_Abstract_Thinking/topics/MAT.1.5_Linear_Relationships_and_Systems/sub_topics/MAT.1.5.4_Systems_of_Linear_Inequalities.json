@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.1.5.4",
+    "name": "Systems of Linear Inequalities",
+    "topic_id": "MAT.1.5",
+    "topic_name": "Linear Relationships and Systems",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.1",
+    "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Systems of Linear Inequalities in Linear Relationships and Systems (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.5",
+            "topic_name": "Linear Relationships and Systems",
+            "sub_topic_id": "MAT.1.5.4",
+            "sub_topic_name": "Systems of Linear Inequalities",
+            "objective_id": "MAT.1.5.4.1",
+            "objective_text": "Graph a linear inequality in two variables as a half-plane.",
+            "objective_uuid": "eda61d78-3d64-4c80-8121-e9c1562de017",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-REI.D.12 — Graph the solutions to a linear inequality in two variables as a half-plane (excluding the boundary in t (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.5",
+            "topic_name": "Linear Relationships and Systems",
+            "sub_topic_id": "MAT.1.5.4",
+            "sub_topic_name": "Systems of Linear Inequalities",
+            "objective_id": "MAT.1.5.4.2",
+            "objective_text": "Graph a system of linear inequalities and identify the solution region.",
+            "objective_uuid": "1526c19e-e918-46cc-806c-99a739acc04b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-REI.D.12 — Graph the solutions to a linear inequality in two variables as a half-plane (excluding the boundary in t (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.5",
+            "topic_name": "Linear Relationships and Systems",
+            "sub_topic_id": "MAT.1.5.4",
+            "sub_topic_name": "Systems of Linear Inequalities",
+            "objective_id": "MAT.1.5.4.3",
+            "objective_text": "Interpret the solution region of a system of inequalities in context.",
+            "objective_uuid": "781f8c15-d572-41ef-87fa-289230003444",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-REI.D.12 — Graph the solutions to a linear inequality in two variables as a half-plane (excluding the boundary in t (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

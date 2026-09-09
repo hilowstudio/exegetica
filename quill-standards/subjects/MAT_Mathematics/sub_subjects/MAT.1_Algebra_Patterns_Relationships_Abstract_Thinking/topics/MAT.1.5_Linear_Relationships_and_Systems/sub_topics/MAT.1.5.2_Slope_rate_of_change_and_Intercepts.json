@@ -1,0 +1,135 @@
+{
+  "sub_topic": {
+    "id": "MAT.1.5.2",
+    "name": "Slope (rate of change) and Intercepts",
+    "topic_id": "MAT.1.5",
+    "topic_name": "Linear Relationships and Systems",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.1",
+    "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Slope (rate of change) and Intercepts in Linear Relationships and Systems (Mathematics)",
+    "grade_levels": {
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 7.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.5",
+            "topic_name": "Linear Relationships and Systems",
+            "sub_topic_id": "MAT.1.5.2",
+            "sub_topic_name": "Slope (rate of change) and Intercepts",
+            "objective_id": "MAT.1.5.2.1",
+            "objective_text": "Interpret slope as a unit rate of change.",
+            "objective_uuid": "b7c532af-8d5b-4027-86a6-cfeebbfa3743",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 8.EE.B.5 — Graph proportional relationships, interpreting the unit rate as the slope of the graph. Compare two diff (grade 8)"
+              ]
+            }
+          },
+          {
+            "complexity": 11,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.5",
+            "topic_name": "Linear Relationships and Systems",
+            "sub_topic_id": "MAT.1.5.2",
+            "sub_topic_name": "Slope (rate of change) and Intercepts",
+            "objective_id": "MAT.1.5.2.2",
+            "objective_text": "Determine the slope and y-intercept from a graph or table.",
+            "objective_uuid": "1b668b69-401f-419f-8007-1ba03274c71b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 8.F.B.4 — Construct a function to model a linear relationship between two quantities. Determine the rate of change (grade 8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.5",
+            "topic_name": "Linear Relationships and Systems",
+            "sub_topic_id": "MAT.1.5.2",
+            "sub_topic_name": "Slope (rate of change) and Intercepts",
+            "objective_id": "MAT.1.5.2.3",
+            "objective_text": "Calculate the slope between two points.",
+            "objective_uuid": "e76984a0-3863-4f41-88eb-c2dcc0f3c379",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-IF.B.6 — Calculate and interpret the average rate of change of a function (presented symbolically or as a table)  (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.5",
+            "topic_name": "Linear Relationships and Systems",
+            "sub_topic_id": "MAT.1.5.2",
+            "sub_topic_name": "Slope (rate of change) and Intercepts",
+            "objective_id": "MAT.1.5.2.4",
+            "objective_text": "Interpret slope and intercept in the context of a real-world model.",
+            "objective_uuid": "d9964b2d-8f20-42c0-8f6e-dbec005f7665",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-IF.B.6 — Calculate and interpret the average rate of change of a function (presented symbolically or as a table)  (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

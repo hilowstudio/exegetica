@@ -1,0 +1,220 @@
+{
+  "sub_topic": {
+    "id": "HSS.9.4.5",
+    "name": "WWII Global Conflict",
+    "topic_id": "HSS.9.4",
+    "topic_name": "World Wars and Interwar Period (1914–1945)",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.9",
+    "sub_subject_name": "Modern World History (1800–Present)",
+    "total_objectives": 7,
+    "description": "13-year academic progression (K-12) for WWII Global Conflict in World Wars and Interwar Period (1914–1945) (History & Social Studies)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.4",
+            "topic_name": "World Wars and Interwar Period (1914–1945)",
+            "sub_topic_id": "HSS.9.4.5",
+            "sub_topic_name": "WWII Global Conflict",
+            "objective_id": "HSS.9.4.5.1",
+            "objective_text": "Ask questions about the leaders and nations who fought in World War II.",
+            "objective_uuid": "4e02e8f8-b48b-49a5-88ad-21b94bd8b1c5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.K-2 — Generate questions about individuals and groups who have shaped a significant historical change (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 2,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.4",
+            "topic_name": "World Wars and Interwar Period (1914–1945)",
+            "sub_topic_id": "HSS.9.4.5",
+            "sub_topic_name": "WWII Global Conflict",
+            "objective_id": "HSS.9.4.5.2",
+            "objective_text": "Place major events of World War II in order, from the invasion of Poland to the atomic bombings.",
+            "objective_uuid": "ed670700-8c34-4b2b-87b7-101644b3a265",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          },
+          {
+            "complexity": 11,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.4",
+            "topic_name": "World Wars and Interwar Period (1914–1945)",
+            "sub_topic_id": "HSS.9.4.5",
+            "sub_topic_name": "WWII Global Conflict",
+            "objective_id": "HSS.9.4.5.3",
+            "objective_text": "Generate possible reasons why World War II spread across the globe.",
+            "objective_uuid": "6c39c047-d050-4f74-8c86-5d06d5c67ff2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.K-2 — Generate possible reasons for an event or development in the past (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.4",
+            "topic_name": "World Wars and Interwar Period (1914–1945)",
+            "sub_topic_id": "HSS.9.4.5",
+            "sub_topic_name": "WWII Global Conflict",
+            "objective_id": "HSS.9.4.5.4",
+            "objective_text": "Describe the main Allied and Axis powers and the major theaters of the war.",
+            "objective_uuid": "0c29d2e3-e4ba-406f-8a27-d30ebda586d1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.4",
+            "topic_name": "World Wars and Interwar Period (1914–1945)",
+            "sub_topic_id": "HSS.9.4.5",
+            "sub_topic_name": "WWII Global Conflict",
+            "objective_id": "HSS.9.4.5.5",
+            "objective_text": "Explain the causes and turning points of World War II in Europe and the Pacific.",
+            "objective_uuid": "18adc15a-ad52-4670-8581-b05f126570d9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.4",
+            "topic_name": "World Wars and Interwar Period (1914–1945)",
+            "sub_topic_id": "HSS.9.4.5",
+            "sub_topic_name": "WWII Global Conflict",
+            "objective_id": "HSS.9.4.5.6",
+            "objective_text": "Analyze how total war mobilized entire societies and produced unprecedented civilian casualties.",
+            "objective_uuid": "6b6ff4cc-e8bd-4f0a-8ccd-9a2e39b1b4eb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.4",
+            "topic_name": "World Wars and Interwar Period (1914–1945)",
+            "sub_topic_id": "HSS.9.4.5",
+            "sub_topic_name": "WWII Global Conflict",
+            "objective_id": "HSS.9.4.5.7",
+            "objective_text": "Evaluate how the decision to use atomic weapons is understood within the circumstances of 1945.",
+            "objective_uuid": "d36202f7-bf0c-42bb-8e5d-6ec3c61b67c0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

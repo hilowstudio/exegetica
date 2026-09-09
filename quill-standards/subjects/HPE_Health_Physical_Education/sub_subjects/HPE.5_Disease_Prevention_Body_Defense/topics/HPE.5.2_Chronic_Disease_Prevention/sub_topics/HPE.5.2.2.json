@@ -1,0 +1,122 @@
+{
+  "sub_topic": {
+    "id": "HPE.5.2.2",
+    "name": "Sun Safety & Skin Protection",
+    "topic_id": "HPE.5.2",
+    "topic_name": "Chronic Disease & Prevention",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.5",
+    "sub_subject_name": "Disease Prevention & Body Defense",
+    "total_objectives": 3,
+    "description": "K-12 progression for Sun Safety & Skin Protection in Chronic Disease & Prevention (Health & Physical Education)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.2",
+            "topic_name": "Chronic Disease & Prevention",
+            "sub_topic_id": "HPE.5.2.2",
+            "sub_topic_name": "Sun Safety & Skin Protection",
+            "objective_id": "HPE.5.2.2.1",
+            "objective_text": "Explain why the sun can harm skin and eyes.",
+            "objective_uuid": "331c9630-842d-4747-8688-6c433b870060",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.2.1 — Identify that healthy behaviors impact personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.2",
+            "topic_name": "Chronic Disease & Prevention",
+            "sub_topic_id": "HPE.5.2.2",
+            "sub_topic_name": "Sun Safety & Skin Protection",
+            "objective_id": "HPE.5.2.2.2",
+            "objective_text": "Practice sun-safe habits (shade, hats, sunscreen).",
+            "objective_uuid": "5ca9dd36-1d31-4af9-8052-99e0addd71f2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.2.1 — Identify that healthy behaviors impact personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.2",
+            "topic_name": "Chronic Disease & Prevention",
+            "sub_topic_id": "HPE.5.2.2",
+            "sub_topic_name": "Sun Safety & Skin Protection",
+            "objective_id": "HPE.5.2.2.3",
+            "objective_text": "Plan sun protection for outdoor activities.",
+            "objective_uuid": "c3082a36-840c-4e19-869e-c0da7e7f664b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.2.1 — Identify that healthy behaviors impact personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Health Education Standards",
+      "anchor_note": "NHES codes verified against the owned corpus; objectives authored to the standard's real sub-skills at variable depth."
+    }
+  }
+}

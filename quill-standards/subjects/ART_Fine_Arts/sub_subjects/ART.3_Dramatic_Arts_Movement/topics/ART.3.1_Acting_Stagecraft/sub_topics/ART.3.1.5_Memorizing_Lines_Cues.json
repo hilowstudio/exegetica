@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.3.1.5",
+    "name": "Memorizing Lines & Cues",
+    "topic_id": "ART.3.1",
+    "topic_name": "Acting & Stagecraft",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.3",
+    "sub_subject_name": "Dramatic Arts & Movement",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Memorizing Lines & Cues in Acting & Stagecraft (Fine Arts)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.5",
+            "sub_topic_name": "Memorizing Lines & Cues",
+            "objective_id": "ART.3.1.5.1",
+            "objective_text": "Recite a few memorized lines of a short poem or scene on cue",
+            "objective_uuid": "27abb240-ec8c-4126-8271-3fd61f4c3045",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Cr2 — Organize and develop artistic ideas and work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.5",
+            "sub_topic_name": "Memorizing Lines & Cues",
+            "objective_id": "ART.3.1.5.2",
+            "objective_text": "Memorize a short role and enter or speak on the right cue",
+            "objective_uuid": "4ef21c8e-1b6d-49b2-8590-71e244402a45",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Cr2 — Organize and develop artistic ideas and work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.5",
+            "sub_topic_name": "Memorizing Lines & Cues",
+            "objective_id": "ART.3.1.5.3",
+            "objective_text": "Learn your lines together with the cue lines that come before them",
+            "objective_uuid": "a8f6b2bd-391e-480f-8002-d26104da6f7a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.5",
+            "sub_topic_name": "Memorizing Lines & Cues",
+            "objective_id": "ART.3.1.5.4",
+            "objective_text": "Use a memorization strategy, such as chunking or line-running with a partner, to learn a longer role accurately",
+            "objective_uuid": "c79178d2-ab26-4a8d-8f8e-8c15caa9d55a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.5",
+            "sub_topic_name": "Memorizing Lines & Cues",
+            "objective_id": "ART.3.1.5.5",
+            "objective_text": "Memorize a substantial role and hold your lines and cues securely under performance pressure",
+            "objective_uuid": "c35939ae-948e-4006-849d-bf64a89c28b2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.5",
+            "sub_topic_name": "Memorizing Lines & Cues",
+            "objective_id": "ART.3.1.5.6",
+            "objective_text": "Master a demanding role, integrating lines, cues, blocking, and business so memorization frees you to act",
+            "objective_uuid": "629d13c9-6106-4289-83d2-316f1da71aee",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "CPT.6.1.2",
+    "name": "Data Visualization (Bar charts, Pie charts, Line graphs, Scatter plots)",
+    "topic_id": "CPT.6.1",
+    "topic_name": "Data Handling & Spreadsheets",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.6",
+    "sub_subject_name": "Information Technology: Creative & Professional Application",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Data Visualization (Bar charts, Pie charts, Line graphs, Scatter plots) in Data Handling & Spreadsheets (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.2",
+            "sub_topic_name": "Data Visualization (Bar charts, Pie charts, Line graphs, Scatter plots)",
+            "objective_id": "CPT.6.1.2.1",
+            "objective_text": "Present the same collected data in two or more visual formats, such as a bar graph and a pictograph",
+            "objective_uuid": "1d8f42de-6c52-4597-812a-bc73853fafc2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-DA-06 — Collect and present the same data in various visual formats. Clarification: The collection and use of data abo (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.2",
+            "sub_topic_name": "Data Visualization (Bar charts, Pie charts, Line graphs, Scatter plots)",
+            "objective_id": "CPT.6.1.2.2",
+            "objective_text": "Create a bar chart or pie chart from a small data set to show how categories compare",
+            "objective_uuid": "e9642e69-1205-4bed-832d-81cf83629956",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-DA-06 — Collect and present the same data in various visual formats. Clarification: The collection and use of data abo (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.2",
+            "sub_topic_name": "Data Visualization (Bar charts, Pie charts, Line graphs, Scatter plots)",
+            "objective_id": "CPT.6.1.2.3",
+            "objective_text": "Choose the appropriate chart type (bar, pie, line, or scatter) for the kind of data and question being asked",
+            "objective_uuid": "b82df81e-81f2-49c9-8211-eaeeb8b2df06",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-11 — Create interactive data visualizations using software tools to help others better understand real-world phenom (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.2",
+            "sub_topic_name": "Data Visualization (Bar charts, Pie charts, Line graphs, Scatter plots)",
+            "objective_id": "CPT.6.1.2.4",
+            "objective_text": "Build a line graph or scatter plot to reveal a trend or relationship between two variables",
+            "objective_uuid": "58df587c-8a17-4152-8f40-556e175fdcb9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-11 — Create interactive data visualizations using software tools to help others better understand real-world phenom (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.2",
+            "sub_topic_name": "Data Visualization (Bar charts, Pie charts, Line graphs, Scatter plots)",
+            "objective_id": "CPT.6.1.2.5",
+            "objective_text": "Create an interactive data visualization with software tools to help others understand a real-world phenomenon",
+            "objective_uuid": "6cae75fd-48b7-4b9e-8a81-fa94323c8129",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-11 — Create interactive data visualizations using software tools to help others better understand real-world phenom (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.2",
+            "sub_topic_name": "Data Visualization (Bar charts, Pie charts, Line graphs, Scatter plots)",
+            "objective_id": "CPT.6.1.2.6",
+            "objective_text": "Design a clear visualization with accurate titles, labels, and scales that avoids misleading the viewer",
+            "objective_uuid": "870e2e0c-6649-40b6-8d1c-8a43d551a6e6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-11 — Create interactive data visualizations using software tools to help others better understand real-world phenom (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

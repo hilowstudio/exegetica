@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ELA.6.3.3",
+    "name": "Romantic and Victorian Authors",
+    "topic_id": "ELA.6.3",
+    "topic_name": "British Literature",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.6",
+    "sub_subject_name": "Literature by Tradition & Region",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Romantic and Victorian Authors in British Literature (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.3",
+            "topic_name": "British Literature",
+            "sub_topic_id": "ELA.6.3.3",
+            "sub_topic_name": "Romantic and Victorian Authors",
+            "objective_id": "ELA.6.3.3.1",
+            "objective_text": "Read aloud a short Romantic poem about nature and tell what the poet notices.",
+            "objective_uuid": "c4a62776-acd0-4140-816b-40e255f74ff5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.3",
+            "topic_name": "British Literature",
+            "sub_topic_id": "ELA.6.3.3",
+            "sub_topic_name": "Romantic and Victorian Authors",
+            "objective_id": "ELA.6.3.3.2",
+            "objective_text": "Read a Romantic or Victorian poem and describe the feeling it creates.",
+            "objective_uuid": "5bf70e61-2c54-4724-8068-5adb9a6a9f17",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.3",
+            "topic_name": "British Literature",
+            "sub_topic_id": "ELA.6.3.3",
+            "sub_topic_name": "Romantic and Victorian Authors",
+            "objective_id": "ELA.6.3.3.3",
+            "objective_text": "Explain how Romantic poets treat nature, imagination, and emotion in a chosen poem.",
+            "objective_uuid": "c7419cd7-1de5-47f0-8ee4-dba61331ccfc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.3",
+            "topic_name": "British Literature",
+            "sub_topic_id": "ELA.6.3.3",
+            "sub_topic_name": "Romantic and Victorian Authors",
+            "objective_id": "ELA.6.3.3.4",
+            "objective_text": "Analyze how a Victorian author responds to industry, faith, or social change in a chosen work.",
+            "objective_uuid": "d1074a66-834b-49b5-8f83-ec73ace559e3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.3",
+            "topic_name": "British Literature",
+            "sub_topic_id": "ELA.6.3.3",
+            "sub_topic_name": "Romantic and Victorian Authors",
+            "objective_id": "ELA.6.3.3.5",
+            "objective_text": "Compare how a Romantic and a Victorian writer treat the same theme of beauty, doubt, or duty.",
+            "objective_uuid": "62a9a5cb-281d-42b4-8542-9bc0008806aa",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.9 — Analyze how two or more texts address similar themes or topics in order to build knowledge or to compare (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.3",
+            "topic_name": "British Literature",
+            "sub_topic_id": "ELA.6.3.3",
+            "sub_topic_name": "Romantic and Victorian Authors",
+            "objective_id": "ELA.6.3.3.6",
+            "objective_text": "Evaluate how British writing shifted from Romantic idealism to Victorian realism across the century.",
+            "objective_uuid": "730e82db-bb32-43e9-8cfc-7da174fb6e1d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.9 — Analyze how two or more texts address similar themes or topics in order to build knowledge or to compare (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

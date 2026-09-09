@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.4.3",
+    "name": "Fact Fluency (automatic recall of facts)",
+    "topic_id": "MAT.4.4",
+    "topic_name": "Operations with Whole Numbers",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Fact Fluency (automatic recall of facts) in Operations with Whole Numbers (Mathematics)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.4",
+            "topic_name": "Operations with Whole Numbers",
+            "sub_topic_id": "MAT.4.4.3",
+            "sub_topic_name": "Fact Fluency (automatic recall of facts)",
+            "objective_id": "MAT.4.4.3.1",
+            "objective_text": "Fluently add and subtract within 20 from memory.",
+            "objective_uuid": "398f28ad-88e9-46c5-895c-c048676e4865",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 2.OA.B.2 — Fluently add and subtract within 20 using mental strategies. By end of Grade 2, know from memory all sum (grade 2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.4",
+            "topic_name": "Operations with Whole Numbers",
+            "sub_topic_id": "MAT.4.4.3",
+            "sub_topic_name": "Fact Fluency (automatic recall of facts)",
+            "objective_id": "MAT.4.4.3.2",
+            "objective_text": "Fluently multiply and divide within 100 from memory.",
+            "objective_uuid": "c2df0a70-6a96-4c1d-879f-d9acd27f43e3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.OA.C.7 — Fluently multiply and divide within 100, using strategies such as the relationship between multiplicatio (grade 3)"
+              ]
+            }
+          },
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.4",
+            "topic_name": "Operations with Whole Numbers",
+            "sub_topic_id": "MAT.4.4.3",
+            "sub_topic_name": "Fact Fluency (automatic recall of facts)",
+            "objective_id": "MAT.4.4.3.3",
+            "objective_text": "Use known facts to derive related facts.",
+            "objective_uuid": "d8cca478-51ab-4976-8632-84be425a7bd0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.OA.C.7 — Fluently multiply and divide within 100, using strategies such as the relationship between multiplicatio (grade 3)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

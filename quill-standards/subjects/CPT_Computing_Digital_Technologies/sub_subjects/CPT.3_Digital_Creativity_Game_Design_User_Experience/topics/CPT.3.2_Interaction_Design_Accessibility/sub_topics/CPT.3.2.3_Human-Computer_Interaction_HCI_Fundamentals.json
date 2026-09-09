@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.3.2.3",
+    "name": "Human-Computer Interaction (HCI Fundamentals)",
+    "topic_id": "CPT.3.2",
+    "topic_name": "Interaction Design & Accessibility",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.3",
+    "sub_subject_name": "Digital Creativity, Game Design & User Experience",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Human-Computer Interaction (HCI Fundamentals) in Interaction Design & Accessibility (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.3",
+            "sub_subject_name": "Digital Creativity, Game Design & User Experience",
+            "topic_id": "CPT.3.2",
+            "topic_name": "Interaction Design & Accessibility",
+            "sub_topic_id": "CPT.3.2.3",
+            "sub_topic_name": "Human-Computer Interaction (HCI Fundamentals)",
+            "objective_id": "CPT.3.2.3.1",
+            "objective_text": "Select and operate appropriate software for a task and recognize that users have different needs",
+            "objective_uuid": "fba41d51-2d0f-4069-8ab0-49dba3bc596c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-CS-01 — Select and operate appropriate software to perform a variety of tasks, and recognize that users have different (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.3",
+            "sub_subject_name": "Digital Creativity, Game Design & User Experience",
+            "topic_id": "CPT.3.2",
+            "topic_name": "Interaction Design & Accessibility",
+            "sub_topic_id": "CPT.3.2.3",
+            "sub_topic_name": "Human-Computer Interaction (HCI Fundamentals)",
+            "objective_id": "CPT.3.2.3.2",
+            "objective_text": "Describe different ways people interact with computing devices",
+            "objective_uuid": "c4b27c3a-540b-475d-866a-fddd28323952",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-CS-01 — Select and operate appropriate software to perform a variety of tasks, and recognize that users have different (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.3",
+            "sub_subject_name": "Digital Creativity, Game Design & User Experience",
+            "topic_id": "CPT.3.2",
+            "topic_name": "Interaction Design & Accessibility",
+            "sub_topic_id": "CPT.3.2.3",
+            "sub_topic_name": "Human-Computer Interaction (HCI Fundamentals)",
+            "objective_id": "CPT.3.2.3.3",
+            "objective_text": "Explain basic usability principles that make a product easy to use",
+            "objective_uuid": "91b4aa0a-6880-4682-8cc3-62e23e386962",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-21 — Evaluate and refine computational artifacts to make them more usable and accessible. Clarification: Testing an (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.3",
+            "sub_subject_name": "Digital Creativity, Game Design & User Experience",
+            "topic_id": "CPT.3.2",
+            "topic_name": "Interaction Design & Accessibility",
+            "sub_topic_id": "CPT.3.2.3",
+            "sub_topic_name": "Human-Computer Interaction (HCI Fundamentals)",
+            "objective_id": "CPT.3.2.3.4",
+            "objective_text": "Evaluate an interface against human-computer interaction principles",
+            "objective_uuid": "4cd03931-a771-41fd-8823-dfe3e390d31b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-21 — Evaluate and refine computational artifacts to make them more usable and accessible. Clarification: Testing an (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.3",
+            "sub_subject_name": "Digital Creativity, Game Design & User Experience",
+            "topic_id": "CPT.3.2",
+            "topic_name": "Interaction Design & Accessibility",
+            "sub_topic_id": "CPT.3.2.3",
+            "sub_topic_name": "Human-Computer Interaction (HCI Fundamentals)",
+            "objective_id": "CPT.3.2.3.5",
+            "objective_text": "Refine a computational artifact to improve its usability for its intended users",
+            "objective_uuid": "5b98dc67-b358-456b-8c9c-5258dc83da38",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-21 — Evaluate and refine computational artifacts to make them more usable and accessible. Clarification: Testing an (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

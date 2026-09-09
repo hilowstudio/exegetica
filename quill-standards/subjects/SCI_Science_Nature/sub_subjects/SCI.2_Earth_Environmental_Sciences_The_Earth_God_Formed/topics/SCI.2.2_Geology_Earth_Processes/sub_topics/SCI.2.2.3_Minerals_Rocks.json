@@ -1,0 +1,138 @@
+{
+  "sub_topic": {
+    "id": "SCI.2.2.3",
+    "name": "Minerals & Rocks",
+    "topic_id": "SCI.2.2",
+    "topic_name": "Geology & Earth Processes",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.2",
+    "sub_subject_name": "Earth & Environmental Sciences (The Earth God Formed)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Minerals & Rocks in Geology & Earth Processes (Science & Nature)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.2",
+            "sub_subject_name": "Earth & Environmental Sciences (The Earth God Formed)",
+            "topic_id": "SCI.2.2",
+            "topic_name": "Geology & Earth Processes",
+            "sub_topic_id": "SCI.2.2.3",
+            "sub_topic_name": "Minerals & Rocks",
+            "objective_id": "SCI.2.2.3.1",
+            "objective_text": "Observe and describe physical properties of rocks and minerals such as color, hardness, and luster.",
+            "objective_uuid": "7a66f16c-8620-4b13-8467-e50290ffebc9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.2",
+            "sub_subject_name": "Earth & Environmental Sciences (The Earth God Formed)",
+            "topic_id": "SCI.2.2",
+            "topic_name": "Geology & Earth Processes",
+            "sub_topic_id": "SCI.2.2.3",
+            "sub_topic_name": "Minerals & Rocks",
+            "objective_id": "SCI.2.2.3.2",
+            "objective_text": "Make observations and measurements to provide evidence of the effects of weathering or the rate of erosion on rocks.",
+            "objective_uuid": "9c3f7074-4c52-4fad-894c-02b2ba4c40f9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 4-ESS2-1 — Make observations and/or measurements to provide evidence of the effects of weathering or the rate of er (grades 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.2",
+            "sub_subject_name": "Earth & Environmental Sciences (The Earth God Formed)",
+            "topic_id": "SCI.2.2",
+            "topic_name": "Geology & Earth Processes",
+            "sub_topic_id": "SCI.2.2.3",
+            "sub_topic_name": "Minerals & Rocks",
+            "objective_id": "SCI.2.2.3.3",
+            "objective_text": "Classify rocks as igneous, sedimentary, or metamorphic based on how they form.",
+            "objective_uuid": "4c9ad302-665f-40ed-8b10-3e0248d2a796",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.2",
+            "sub_subject_name": "Earth & Environmental Sciences (The Earth God Formed)",
+            "topic_id": "SCI.2.2",
+            "topic_name": "Geology & Earth Processes",
+            "sub_topic_id": "SCI.2.2.3",
+            "sub_topic_name": "Minerals & Rocks",
+            "objective_id": "SCI.2.2.3.4",
+            "objective_text": "Develop a model of the rock cycle to describe the cycling of Earth's materials and the flow of energy that drives this process.",
+            "objective_uuid": "0ae9c21b-1f26-4590-8f3b-52c1f46b26d9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ESS2-1 — Develop a model to describe the cycling of Earth's materials and the flow of energy that drives this pro (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

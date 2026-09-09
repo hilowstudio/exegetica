@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.2.2",
+    "name": "Boolean Logic (AND, OR, NOT gates and truth tables)",
+    "topic_id": "CPT.1.2",
+    "topic_name": "Algorithms & Logic",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Boolean Logic (AND, OR, NOT gates and truth tables) in Algorithms & Logic (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.2",
+            "sub_topic_name": "Boolean Logic (AND, OR, NOT gates and truth tables)",
+            "objective_id": "CPT.1.2.2.1",
+            "objective_text": "Use a conditional that acts on whether a simple true/false test is met",
+            "objective_uuid": "3741e64c-f876-43f5-8a9a-3dcdd7045f98",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-AP-10 — Create programs that include sequences, events, loops, and conditionals (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.2",
+            "sub_topic_name": "Boolean Logic (AND, OR, NOT gates and truth tables)",
+            "objective_id": "CPT.1.2.2.2",
+            "objective_text": "Combine conditions using the AND, OR, and NOT operators",
+            "objective_uuid": "69abad30-3afc-44f7-8509-227cb1e5d1f6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-11 — Create clearly named variables that represent different data types and perform operations on their values. Cla (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.2",
+            "sub_topic_name": "Boolean Logic (AND, OR, NOT gates and truth tables)",
+            "objective_id": "CPT.1.2.2.3",
+            "objective_text": "Construct a truth table that lists every outcome of a Boolean expression",
+            "objective_uuid": "f4ab1608-1d3b-4b3f-8de9-0794554e6eec",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-11 — Create clearly named variables that represent different data types and perform operations on their values. Cla (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.2",
+            "sub_topic_name": "Boolean Logic (AND, OR, NOT gates and truth tables)",
+            "objective_id": "CPT.1.2.2.4",
+            "objective_text": "Evaluate and simplify compound Boolean expressions",
+            "objective_uuid": "0872f1c9-93df-4933-81da-d74bba1de696",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-11 — Create clearly named variables that represent different data types and perform operations on their values. Cla (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.2",
+            "sub_topic_name": "Boolean Logic (AND, OR, NOT gates and truth tables)",
+            "objective_id": "CPT.1.2.2.5",
+            "objective_text": "Relate AND, OR, and NOT logic gates to the Boolean operators used in code",
+            "objective_uuid": "a72ae2c9-c43f-48eb-8937-3779768d7824",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-11 — Create clearly named variables that represent different data types and perform operations on their values. Cla (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

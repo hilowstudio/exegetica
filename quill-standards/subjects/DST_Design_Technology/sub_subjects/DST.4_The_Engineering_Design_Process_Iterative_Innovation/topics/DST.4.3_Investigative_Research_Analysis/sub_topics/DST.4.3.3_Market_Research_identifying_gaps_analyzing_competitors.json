@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "DST.4.3.3",
+    "name": "Market Research (identifying gaps, analyzing competitors)",
+    "topic_id": "DST.4.3",
+    "topic_name": "Investigative Research & Analysis",
+    "subject_id": "DST",
+    "subject_name": "Design & Technology",
+    "sub_subject_id": "DST.4",
+    "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Market Research (identifying gaps, analyzing competitors) in Investigative Research & Analysis (Design & Technology)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.3",
+            "topic_name": "Investigative Research & Analysis",
+            "sub_topic_id": "DST.4.3.3",
+            "sub_topic_name": "Market Research (identifying gaps, analyzing competitors)",
+            "objective_id": "DST.4.3.3.1",
+            "objective_text": "Ask questions and observe shoppers to find a product people wish existed or want improved",
+            "objective_uuid": "065febbd-6fa3-4735-88e8-e374d788e045",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS K-2-ETS1-1 — Ask questions, make observations, and gather information about a situation people want to change to defi (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.3",
+            "topic_name": "Investigative Research & Analysis",
+            "sub_topic_id": "DST.4.3.3",
+            "sub_topic_name": "Market Research (identifying gaps, analyzing competitors)",
+            "objective_id": "DST.4.3.3.2",
+            "objective_text": "Compare two competing products and list what each does well and poorly",
+            "objective_uuid": "6fcb1852-b222-46f8-84be-0cfc924f95ba",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS K-2-ETS1-1 — Ask questions, make observations, and gather information about a situation people want to change to defi (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.3",
+            "topic_name": "Investigative Research & Analysis",
+            "sub_topic_id": "DST.4.3.3",
+            "sub_topic_name": "Market Research (identifying gaps, analyzing competitors)",
+            "objective_id": "DST.4.3.3.3",
+            "objective_text": "Gather information about a market to spot a gap that a new or improved product could fill",
+            "objective_uuid": "82ae5b22-5a62-444c-8072-003395c3f562",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-1 — The more precisely a design task’s criteria and constraints can be defined, the more likely it is that t (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.3",
+            "topic_name": "Investigative Research & Analysis",
+            "sub_topic_id": "DST.4.3.3",
+            "sub_topic_name": "Market Research (identifying gaps, analyzing competitors)",
+            "objective_id": "DST.4.3.3.4",
+            "objective_text": "Analyze competitors' features, prices, and users to define precise criteria and constraints for a new design",
+            "objective_uuid": "0d52ea06-c736-4e72-8f40-d95481e9ad78",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-1 — The more precisely a design task’s criteria and constraints can be defined, the more likely it is that t (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.3",
+            "topic_name": "Investigative Research & Analysis",
+            "sub_topic_id": "DST.4.3.3",
+            "sub_topic_name": "Market Research (identifying gaps, analyzing competitors)",
+            "objective_id": "DST.4.3.3.5",
+            "objective_text": "Use market research findings to sharpen a design task's criteria and constraints so the solution is more likely to succeed",
+            "objective_uuid": "cf467d41-3802-44a3-80da-4cf603f13147",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-1 — The more precisely a design task’s criteria and constraints can be defined, the more likely it is that t (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

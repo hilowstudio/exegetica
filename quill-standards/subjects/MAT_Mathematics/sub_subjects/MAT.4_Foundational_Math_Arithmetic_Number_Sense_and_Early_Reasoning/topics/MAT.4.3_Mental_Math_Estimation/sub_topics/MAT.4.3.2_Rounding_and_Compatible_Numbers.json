@@ -1,0 +1,135 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.3.2",
+    "name": "Rounding and Compatible Numbers",
+    "topic_id": "MAT.4.3",
+    "topic_name": "Mental Math & Estimation",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Rounding and Compatible Numbers in Mental Math & Estimation (Mathematics)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 6.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.3",
+            "topic_name": "Mental Math & Estimation",
+            "sub_topic_id": "MAT.4.3.2",
+            "sub_topic_name": "Rounding and Compatible Numbers",
+            "objective_id": "MAT.4.3.2.1",
+            "objective_text": "Round two- and three-digit numbers to the nearest ten or hundred.",
+            "objective_uuid": "a93f3757-0d80-45d8-8009-d0b05be7e91d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.NBT.A.1 — Use place value understanding to round whole numbers to the nearest 10 or 100 (grade 3)"
+              ]
+            }
+          },
+          {
+            "complexity": 10,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.3",
+            "topic_name": "Mental Math & Estimation",
+            "sub_topic_id": "MAT.4.3.2",
+            "sub_topic_name": "Rounding and Compatible Numbers",
+            "objective_id": "MAT.4.3.2.2",
+            "objective_text": "Use rounding to estimate sums and differences.",
+            "objective_uuid": "a3117c9f-3250-4f58-8f42-cc069039f8ad",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.NBT.A.1 — Use place value understanding to round whole numbers to the nearest 10 or 100 (grade 3)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.3",
+            "topic_name": "Mental Math & Estimation",
+            "sub_topic_id": "MAT.4.3.2",
+            "sub_topic_name": "Rounding and Compatible Numbers",
+            "objective_id": "MAT.4.3.2.3",
+            "objective_text": "Round multi-digit whole numbers to any place.",
+            "objective_uuid": "75e05c77-11b3-4a93-86d0-faa2505ab4eb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NBT.A.3 — Use place value understanding to round multi-digit whole numbers to any place (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 24.0,
+        "objectives": [
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.3",
+            "topic_name": "Mental Math & Estimation",
+            "sub_topic_id": "MAT.4.3.2",
+            "sub_topic_name": "Rounding and Compatible Numbers",
+            "objective_id": "MAT.4.3.2.4",
+            "objective_text": "Use compatible numbers to estimate products and quotients.",
+            "objective_uuid": "c8e5d4e7-6777-42ce-8327-b7fbfce58fc4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NBT.A.3 — Use place value understanding to round multi-digit whole numbers to any place (grade 4)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

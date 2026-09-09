@@ -1,0 +1,214 @@
+{
+  "sub_topic": {
+    "id": "DST.3.1.2",
+    "name": "Components (Resistors, LDRs, Thermistors, Transistors, Capacitors, Diodes)",
+    "topic_id": "DST.3.1",
+    "topic_name": "Electronic Systems & Programmable Components",
+    "subject_id": "DST",
+    "subject_name": "Design & Technology",
+    "sub_subject_id": "DST.3",
+    "sub_subject_name": "Systems, Control & Manufacturing",
+    "total_objectives": 7,
+    "description": "13-year academic progression (K-12) for Components (Resistors, LDRs, Thermistors, Transistors, Capacitors, Diodes) in Electronic Systems & Programmable Components (Design & Technology)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.2",
+            "sub_topic_name": "Components (Resistors, LDRs, Thermistors, Transistors, Capacitors, Diodes)",
+            "objective_id": "DST.3.1.2.1",
+            "objective_text": "Identify a resistor, LED, capacitor, and diode by appearance and describe what each one does in a circuit",
+            "objective_uuid": "18ee896f-9214-432a-8614-8e7230e454b7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 7.0,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.2",
+            "sub_topic_name": "Components (Resistors, LDRs, Thermistors, Transistors, Capacitors, Diodes)",
+            "objective_id": "DST.3.1.2.2",
+            "objective_text": "Build a circuit that uses an LDR or thermistor so a light or heat change controls a lamp or buzzer",
+            "objective_uuid": "b117eff7-8e97-4cac-84f3-2c2da321ed89",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.2",
+            "sub_topic_name": "Components (Resistors, LDRs, Thermistors, Transistors, Capacitors, Diodes)",
+            "objective_id": "DST.3.1.2.3",
+            "objective_text": "Read a resistor's colour bands to work out its resistance value in ohms",
+            "objective_uuid": "c4899451-7ab5-48be-8c22-bc3cc1d542ae",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.2",
+            "sub_topic_name": "Components (Resistors, LDRs, Thermistors, Transistors, Capacitors, Diodes)",
+            "objective_id": "DST.3.1.2.4",
+            "objective_text": "Explain how a transistor is used as an electronic switch to turn on a larger output from a small input signal",
+            "objective_uuid": "8e1681cc-d0ee-49d4-823c-31f563db811b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.2",
+            "sub_topic_name": "Components (Resistors, LDRs, Thermistors, Transistors, Capacitors, Diodes)",
+            "objective_id": "DST.3.1.2.5",
+            "objective_text": "Calculate the correct series resistor value needed to protect an LED for a given supply voltage",
+            "objective_uuid": "2ee098c6-06cf-4ac1-80fe-5caecf64e41a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.2",
+            "sub_topic_name": "Components (Resistors, LDRs, Thermistors, Transistors, Capacitors, Diodes)",
+            "objective_id": "DST.3.1.2.6",
+            "objective_text": "Describe how a capacitor charges and discharges and use it to create a simple time delay in a circuit",
+            "objective_uuid": "e722fc43-c2e7-43a5-87b8-e378b34ca736",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.2",
+            "sub_topic_name": "Components (Resistors, LDRs, Thermistors, Transistors, Capacitors, Diodes)",
+            "objective_id": "DST.3.1.2.7",
+            "objective_text": "Select and justify suitable components for a sensing circuit, considering ratings, tolerance, and cost",
+            "objective_uuid": "e6d6d1e4-075b-49b4-8770-4c6601cb93b6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

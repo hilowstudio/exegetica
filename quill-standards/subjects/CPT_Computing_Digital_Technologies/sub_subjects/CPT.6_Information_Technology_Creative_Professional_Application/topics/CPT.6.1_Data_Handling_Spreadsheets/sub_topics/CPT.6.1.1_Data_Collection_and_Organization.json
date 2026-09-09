@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "CPT.6.1.1",
+    "name": "Data Collection and Organization",
+    "topic_id": "CPT.6.1",
+    "topic_name": "Data Handling & Spreadsheets",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.6",
+    "sub_subject_name": "Information Technology: Creative & Professional Application",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Data Collection and Organization in Data Handling & Spreadsheets (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.1",
+            "sub_topic_name": "Data Collection and Organization",
+            "objective_id": "CPT.6.1.1.1",
+            "objective_text": "Collect information about your surroundings and record it as data a computer can store, such as counting sunny and rainy days",
+            "objective_uuid": "79cd88c0-56bf-4d6b-8b90-9e04fe563d29",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-DA-05 — Store, copy, search, retrieve, modify, and delete information using a computing device and define the informat (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.1",
+            "sub_topic_name": "Data Collection and Organization",
+            "objective_id": "CPT.6.1.1.2",
+            "objective_text": "Store, retrieve, and delete simple data files on a computing device to keep your information organized",
+            "objective_uuid": "9c54c929-9059-499d-8536-05a294778463",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-DA-05 — Store, copy, search, retrieve, modify, and delete information using a computing device and define the informat (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.1",
+            "sub_topic_name": "Data Collection and Organization",
+            "objective_id": "CPT.6.1.1.3",
+            "objective_text": "Organize collected data into rows and columns with clear labels so it can be searched and sorted",
+            "objective_uuid": "4d739f37-3afd-4962-8fa3-5d01055e9bf1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-DA-05 — Store, copy, search, retrieve, modify, and delete information using a computing device and define the informat (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.1",
+            "sub_topic_name": "Data Collection and Organization",
+            "objective_id": "CPT.6.1.1.4",
+            "objective_text": "Clean a raw data set by removing errors, duplicates, and irrelevant entries to make it more reliable",
+            "objective_uuid": "f7a6c246-b09f-4c77-884f-232cf073f0a1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-DA-08 — Collect data using computational tools and transform the data to make it more useful and reliable. Clarificati (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.1",
+            "sub_topic_name": "Data Collection and Organization",
+            "objective_id": "CPT.6.1.1.5",
+            "objective_text": "Collect data using digital tools such as forms or sensors and transform it into a consistent format",
+            "objective_uuid": "359764c4-91bd-4854-8d44-b365917eaa25",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-DA-08 — Collect data using computational tools and transform the data to make it more useful and reliable. Clarificati (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.1",
+            "sub_topic_name": "Data Collection and Organization",
+            "objective_id": "CPT.6.1.1.6",
+            "objective_text": "Structure a larger data set for analysis by choosing consistent categories, units, and field types",
+            "objective_uuid": "d3c47e0d-c4f8-476a-8add-987d60aab3fa",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-DA-08 — Collect data using computational tools and transform the data to make it more useful and reliable. Clarificati (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

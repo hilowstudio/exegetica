@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.3.3.5",
+    "name": "Storytelling Techniques (voice, pacing, listener engagement)",
+    "topic_id": "ART.3.3",
+    "topic_name": "Oral Interpretation & Public Reading",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.3",
+    "sub_subject_name": "Dramatic Arts & Movement",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Storytelling Techniques (voice, pacing, listener engagement) in Oral Interpretation & Public Reading (Fine Arts)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.5",
+            "sub_topic_name": "Storytelling Techniques (voice, pacing, listener engagement)",
+            "objective_id": "ART.3.3.5.1",
+            "objective_text": "Tell a familiar story out loud from beginning to end",
+            "objective_uuid": "799ea867-d6bb-4d31-8d86-cf482c5bea25",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr6 — Convey meaning through the presentation of artistic work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.5",
+            "sub_topic_name": "Storytelling Techniques (voice, pacing, listener engagement)",
+            "objective_id": "ART.3.3.5.2",
+            "objective_text": "Tell a story using different voices and a lively pace to keep listeners interested",
+            "objective_uuid": "21dd1b61-912f-4d64-863e-85fb68da9b96",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.5",
+            "sub_topic_name": "Storytelling Techniques (voice, pacing, listener engagement)",
+            "objective_id": "ART.3.3.5.3",
+            "objective_text": "Select a story and use voice, pacing, and pauses to hold your listeners' attention",
+            "objective_uuid": "881f8bb4-fdf8-4997-8a5a-e821d2a2c592",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr4 — Select, analyze, and interpret artistic work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.5",
+            "sub_topic_name": "Storytelling Techniques (voice, pacing, listener engagement)",
+            "objective_id": "ART.3.3.5.4",
+            "objective_text": "Interpret a story and vary tone, tempo, and expression to match its events",
+            "objective_uuid": "2bca6c5a-8091-4258-81ee-b173d9e171f3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr4 — Select, analyze, and interpret artistic work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.5",
+            "sub_topic_name": "Storytelling Techniques (voice, pacing, listener engagement)",
+            "objective_id": "ART.3.3.5.5",
+            "objective_text": "Craft a storytelling performance that builds suspense and engages the audience throughout",
+            "objective_uuid": "70e434ed-9e7f-456b-8fe4-2741ea035d45",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr6 — Convey meaning through the presentation of artistic work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.5",
+            "sub_topic_name": "Storytelling Techniques (voice, pacing, listener engagement)",
+            "objective_id": "ART.3.3.5.6",
+            "objective_text": "Deliver a polished told story, using vocal variety, timing, and audience awareness to convey meaning fully",
+            "objective_uuid": "b18339f3-c4f0-4ddf-8254-a050bde1498f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr6 — Convey meaning through the presentation of artistic work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

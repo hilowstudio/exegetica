@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "GEO.2.3.2",
+    "name": "Topography and Defense",
+    "topic_id": "GEO.2.3",
+    "topic_name": "Geopolitics & Geographic Influence",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.2",
+    "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Topography and Defense in Geopolitics & Geographic Influence (Geography)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.3",
+            "topic_name": "Geopolitics & Geographic Influence",
+            "sub_topic_id": "GEO.2.3.2",
+            "sub_topic_name": "Topography and Defense",
+            "objective_id": "GEO.2.3.2.1",
+            "objective_text": "Identify how mountains, rivers, and coastlines can act as natural barriers.",
+            "objective_uuid": "b05e2e73-d9d0-4a41-8338-7d467f668841",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.8.3-5 — Explain how human settlements and movements relate to the locations and use of various natural resou (geography, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.3",
+            "topic_name": "Geopolitics & Geographic Influence",
+            "sub_topic_id": "GEO.2.3.2",
+            "sub_topic_name": "Topography and Defense",
+            "objective_id": "GEO.2.3.2.2",
+            "objective_text": "Explain how people have chosen settlement sites that are easier to defend.",
+            "objective_uuid": "6491b5bd-69a0-4e6f-89cc-b69ab0b798e6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.8.3-5 — Explain how human settlements and movements relate to the locations and use of various natural resou (geography, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.3",
+            "topic_name": "Geopolitics & Geographic Influence",
+            "sub_topic_id": "GEO.2.3.2",
+            "sub_topic_name": "Topography and Defense",
+            "objective_id": "GEO.2.3.2.3",
+            "objective_text": "Analyze how a region's topography has shaped its borders and military history.",
+            "objective_uuid": "9c30a415-4ee8-488b-8ea8-bf18be07a6dc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.8.9-12 — Evaluate the impact of economic activities and political decisions on spatial patterns within and am (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.3",
+            "topic_name": "Geopolitics & Geographic Influence",
+            "sub_topic_id": "GEO.2.3.2",
+            "sub_topic_name": "Topography and Defense",
+            "objective_id": "GEO.2.3.2.4",
+            "objective_text": "Evaluate how physical geography influences a country's defense strategy and political decisions.",
+            "objective_uuid": "185b179b-b796-40ae-860e-bb129742ef82",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.8.9-12 — Evaluate the impact of economic activities and political decisions on spatial patterns within and am (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

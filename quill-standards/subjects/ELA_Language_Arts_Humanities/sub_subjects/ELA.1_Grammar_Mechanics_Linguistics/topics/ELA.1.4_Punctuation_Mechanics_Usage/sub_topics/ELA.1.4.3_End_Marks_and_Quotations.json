@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ELA.1.4.3",
+    "name": "End Marks and Quotations",
+    "topic_id": "ELA.1.4",
+    "topic_name": "Punctuation, Mechanics & Usage",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.1",
+    "sub_subject_name": "Grammar, Mechanics & Linguistics",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for End Marks and Quotations in Punctuation, Mechanics & Usage (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.4",
+            "topic_name": "Punctuation, Mechanics & Usage",
+            "sub_topic_id": "ELA.1.4.3",
+            "sub_topic_name": "End Marks and Quotations",
+            "objective_id": "ELA.1.4.3.1",
+            "objective_text": "End sentences with the correct mark: period, question mark, or exclamation point",
+            "objective_uuid": "c619b746-a1d7-471b-821e-2134de7ea35f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.2 — Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling whe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.4",
+            "topic_name": "Punctuation, Mechanics & Usage",
+            "sub_topic_id": "ELA.1.4.3",
+            "sub_topic_name": "End Marks and Quotations",
+            "objective_id": "ELA.1.4.3.2",
+            "objective_text": "Use quotation marks to show the exact words a person speaks in dialogue",
+            "objective_uuid": "920313d0-86bb-46bd-8988-e4bdc21f3c8b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.2 — Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling whe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.4",
+            "topic_name": "Punctuation, Mechanics & Usage",
+            "sub_topic_id": "ELA.1.4.3",
+            "sub_topic_name": "End Marks and Quotations",
+            "objective_id": "ELA.1.4.3.3",
+            "objective_text": "Punctuate dialogue correctly, placing commas and end marks inside quotation marks",
+            "objective_uuid": "b3b55a65-d22f-4bfa-8ef7-f3aead38b70e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.2 — Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling whe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.4",
+            "topic_name": "Punctuation, Mechanics & Usage",
+            "sub_topic_id": "ELA.1.4.3",
+            "sub_topic_name": "End Marks and Quotations",
+            "objective_id": "ELA.1.4.3.4",
+            "objective_text": "Use quotation marks for titles of short works and to set off directly quoted text in writing",
+            "objective_uuid": "ac6ff40d-b58d-479c-84cd-04573d0c981d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.2 — Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling whe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

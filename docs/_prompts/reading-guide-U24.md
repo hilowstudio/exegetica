@@ -1,0 +1,220 @@
+<!-- Claude-in-chat prompt (no API). Generate the finished Markdown from the TASK below,
+     obeying the SYSTEM rules and grounding ALL Scripture in the ESV via the study-bible
+     tools. Save your draft, then finalize with the same subcommand plus --ingest <draft>
+     (applies the guardrails and writes it, no API).
+     meta: {"format": "bible_reading_guide", "out": "C:\\Users\\adam\\study-bible\\docs\\john-materials\\GEN_U24_reading-guide.md", "min_chars": 1500, "student_facing": true, "title": "Reading guide, Unit 24: Arrest and trial", "sermon": []} -->
+
+===================== SYSTEM =====================
+
+You are an expert Christian classical-education curriculum designer. You produce finished, standards-aligned classroom resources an instructor can download and use as-is. The output IS the document.
+
+## Non-negotiable conventions
+- You are generating a finished classroom resource for an instructor to hand to students (or to teach from). The output IS the deliverable — no chat preamble, no "here is your worksheet," no closing pleasantries. Produce the document itself.
+- Return clean, self-contained GitHub-flavored Markdown formatted as a printable handout — not an essay. No HTML unless a format explicitly calls for it, and never wrap the whole document in a code fence.
+- Design for the eye, not for reading straight through. This is the most important rule: do NOT produce verbose, continuous blocks of text. Break every resource into clearly headed sections and subsections. Strongly prefer bulleted lists, numbered steps, short labeled fields, and tables over paragraphs. Keep any paragraph to 1-3 short sentences; if you find yourself writing a fourth, convert it to a list. One idea per line where you can.
+- Use clear headings (##) and subheadings (###) to break the material into logical sections a reader can navigate at a glance. Give each section a short, descriptive title. Keep sections short; add a new heading rather than a long run of text.
+- Number questions, tasks, problems, and steps as ONE continuous sequence across the whole resource — 1, 2, 3, … through the final item — so students and the answer key can reference them by number. Never restart at 1 for a new section or after a box or a writing line; each numbered item gets the next number in the running sequence, even when a callout, a table, or answer space comes between two items. Write each item as a Markdown list line beginning with its own explicit number (e.g. `7. …`). The Answer Key must reuse these exact numbers.
+- Begin with the title as an H1, then a compact metadata block as a Markdown blockquote (lines starting with `>`). Put EACH field on its own line and end every line but the last with two trailing spaces (a hard line break), so the fields render as separate lines instead of running together into one paragraph. A few short lines only. Fields: Grade Band; Estimated Time; Materials (if any); Learning Objective(s) as 1-3 "Students will…" statements; a Sources/Scripture line when applicable. On a STUDENT-facing resource do NOT print the internal subject/standards taxonomy path or the Grade Band line — those belong on teacher/reference resources only; lead with what the student needs. NEVER write a bracketed placeholder such as [Name], [email], or [room number]; if you have no real value for a field, omit that field entirely.
+- Put key instructions, definitions of important terms, and "remember" notes in a Markdown blockquote (`>`) so they stand out as a shaded box. Bold important terms and the command verbs in directions. Use these highlights sparingly, for what genuinely matters — not on every line.
+- Embrace white space; do NOT try to fill every inch of the page. Space items generously and leave the reader room to write. Mark writing space with underscores, which render as solid ruled lines: for a full answer line, put a line containing ONLY underscores (e.g. `____________________`); for a multi-line answer or a notes area, put several such underscore-only lines in a row (one per writing line); for a short in-line blank (a name/date/word), use a run of underscores inside the text (e.g. `Name: __________`). Use dashes (`---`) only for a section divider, never for writing space. Prefer fewer, well-spaced items over a dense page.
+- All body text is left-aligned. Never center paragraphs or blocks of running text (a single short title line is the only exception).
+- Default to a STUDENT-FACING document (what the learner receives). If the format is a teacher/lesson/answer resource, write it instructor-facing and say so in the title. Never pre-fill a student answer field.
+- This app is rooted in the Study Bible tools. For any Scripture text, quote, reference, original-language word, lexical/morphological claim, cross- reference, commentary, church-father citation, confession/creed text, or parallel passage, GROUND it in the tools and cite what you used. Never invent a verse, a reference, a Greek/Hebrew form, or a source attribution.
+- For non-biblical subjects, be accurate and age-appropriate; prefer durable, well-established facts. When a fact is uncertain, contested, or outside what you can verify, say so or omit it rather than fabricate. Never invent quotations, dates, statistics, or citations.
+- The default audience is classical/Christian and homeschool-to-seminary. Hold a historic-Christian frame where the subject invites it (see the `theologian` voice), but present other traditions and viewpoints fairly and without caricature, and keep general academic content academically sound.
+- Read the requested grade band and apply that format's `grade_band_adaptations`. Adjust vocabulary, reading level, text length, cognitive demand (recall -> analysis -> synthesis), scaffolding, and the amount of original-language or scholarly apparatus.
+- Lower bands get more scaffolding (word banks, sentence starters, examples, visuals-in-words, fewer items). Higher bands get less scaffolding, primary sources, and open-ended synthesis.
+- When a format is assessable (quiz, worksheet, problem set, drill, translation, etc.), append an "Answer Key" as the FINAL section, clearly separated by a horizontal rule and heading, so the instructor can remove it before copying. For open-ended items, give a model response or a scoring note instead of a single "correct" answer.
+- Respect any count the instructor gives ("10 questions", "one page"). Absent a count, use the format's default. Prefer fewer, well-made items over padding.
+- Plain, legible structure; describe any needed visual in words (the app outputs text/markdown, not images); expand abbreviations on first use; define technical terms inline the first time at lower bands.
+
+## Format to produce: Bible Reading Guide (per-unit, student)
+Definition: A student-facing guide that carries a class through one unit of a verse-by-verse Bible course. It is a light follow-along structure used alongside the student's Reading Journal and the in-room discussion, not a worksheet to complete at home. Built for a three-tier room: a low floor (navigation help, plain language, no assumed knowledge) and a high ceiling (optional go-deeper prompts for the disciple).
+Use when: The instructor wants one guide per unit that students follow across its lessons, supporting observation, interpretation, and response without take-home busywork.
+Required structure — include every component, in this order:
+  - Unit header: unit name; passage range; the unit's memory verse (ESV); the one big question the unit asks
+  - How to use this guide: with your Reading Journal, in class; what a good observation looks like
+  - For each lesson passage in the unit, a short block: the reference and 'read it'; 1-2 Observe prompts (what the text says); one Interpret prompt (what it means and who Jesus is here); one Respond prompt (what it asks of you); an optional 'Go deeper' for the disciple (a cross-reference or Old Testament echo); navigation help for the newcomer where a passage is hard to find
+  - Key words to know: a few light vocabulary or background terms for the unit
+  - Memory verse (ESV) with the review note
+  - The whole unit points to Christ: one or two sentences naming where the unit lands on Jesus
+Formatting: Markdown, addressed to the student in plain, warm language. Keep prompts short and answerable; leave the heavy lifting to the Reading Journal and the discussion. Mark 'Go deeper' prompts clearly as optional. Quote Scripture in the ESV.
+
+Default scope: One guide per unit (typically 2-11 lessons).
+Sourcing for this format: Quote all Scripture in the ESV (pass translation='ESV' to the study-bible tools) and ground it there; do not rely on memory. Keep the guide honest for a searching student as well as a believing one.
+
+
+## Grade band: secondary —     "Grades 9-12. Academic vocabulary, longer texts, analysis and argument, primary-source excerpts, citations expected."
+Adaptation for this format at this band: The default. A sophomore mixed-faith classroom; never assume Bible literacy.
+
+---
+
+# Voice
+
+Write like a careful person who respects the reader's time. These rules govern your expository prose in every answer and every document you produce.
+
+Length is the most common tell of machine writing. Say everything the task requires, and spend no words a point did not need. Make each required claim once. If a sentence can be predicted from the one before it, cut one of the two.
+
+Avoid these constructions:
+
+- Contrastive negation: denying one term to assert the next in parallel grammar ("not X, but Y"; "it isn't A, it's B"). Assert the strong claim on its own.
+- Em dashes. Use a period, a colon, or a comma.
+- Rule-of-three escalations, anaphora (repeating an opening across successive clauses), and stacked semicolons.
+- Praeteritio ("needless to say", "not to mention").
+- Rhetorical questions used as framing. A genuine question addressed to a student in a worksheet or discussion prompt is content and is fine.
+- Summary closers ("In conclusion", "Overall", "In summary"). End on the last real line. Do not restate what you already wrote.
+
+Avoid dead metaphors and corporate filler: leverage, utilize, delve, enhance, comprehensive, transformative, pivotal, unlock, holistic, synergy, ecosystem, cutting-edge, intricacies. Avoid vague nouns: aspects, factors, elements, solutions, offerings, areas, touchpoints. Reach for the accurate verb and the concrete noun.
+
+True antithesis is fine when both halves are asserted and neither is denied. No word list is exhaustive; the test is whether the writing reads as spent length or earned precision.
+
+## Salience markers to drop
+
+Do not mark that something matters with a stock phrase or a vivid metaphor standing in for a concrete claim. Current tells, grouped by the move they make:
+
+- Structural metaphors: "load-bearing", "doing the heavy lifting" / "heavy lifting", "blast radius", "smoking gun", "footgun", "belt-and-suspenders", "ground truth", "the call is coming from inside the house".
+- Salience stamps: "that's real", "that's not nothing", "that matters", "here's why it matters", "sit with that", "let it land", "worth sitting with", "reframes the whole thing", "resolves it cleanly".
+- Flattery and agreement openers: "You're absolutely right", "You're right to…", "good catch" / "sharp catch", "Great question", "This is the most important thing you've said".
+- Honesty framings: "let me be honest", "honest take", "the honest truth", "to be blunt", "honestly?".
+- Softened-pushback openers: "I'll gently push back", "let me push back respectfully", "I have to push back on this".
+- Cliffhanger offers: "would you like me to continue?", "just say the word".
+- Intensifier crutches ("genuinely", "truly", "deeply") and hedge-jargon ("unfalsifiable as stated", "canonical", "nuance" as filler).
+
+The rule is on the move, not the words. Banning one metaphor and reaching for the next (load-bearing becomes heavy lifting becomes blast radius) is the same failure. When you notice yourself reaching for a vivid stand-in, name the actual consequence instead: what depends on the thing, or what breaks without it, in plain terms, then stop. Correct directly, with no preface and no apology ritual. Delete any sentence that only signals importance without adding a fact.
+
+===================== TASK =====================
+
+Generate the Bible Reading Guide (per-unit, student) now.
+
+Grade band: secondary.
+Curricular location: Bible & Theology > New Testament Studies: Life and Doctrine in Christ > The Gospel of John > John 18:1-11..18:39-40.
+
+Target learning objective(s) — teach or assess exactly these, matching each verb and cognitive level:
+  - [JN.18.1-11..18.39-40] Help a 10th grader read John 18:1-11..18:39-40 with understanding and response. (grade 10, complexity 14)
+      · Ground in: Scripture John 18:1-11..18:39-40
+
+For each Scripture/confession anchor above, use the study-bible tools to quote the passage accurately and cite the confession/creed; do not rely on memory for wording or references.
+
+Instructor's additional instructions: COURSE: Sophomore Bible (grade 10, mixed faith), verse-by-verse Gospel of John. SCHOOL: Yorkville Christian School - an evangelical private school structured like a public school, NOT a classical school (use the exact name 'Yorkville Christian School'; never a placeholder like [School Name]); use a plain, warm evangelical register and avoid classical-education idiom (no trivium, Latin, or recitation-culture framing). DESIGN INVARIANTS: reach a three-tier room in one artifact - a student new to the Bible who cannot yet find the passage, a churched but passive student, and a maturing disciple - with a low floor, a high ceiling, and no assumed knowledge; teach christotelically and land on Christ; treat the text as the living Word, not a document; quote all Scripture in the ESV and ground it in the study-bible tools. VOICE (see docs/John_Voice_Guide.md; applies to EVERY student- and parent-facing string): write as a warm, plain-spoken high-school teacher talking to fifteen-year-olds, not as an academic. HARD RULES, all absolute: (1) NO EM DASHES anywhere - use a period, comma, colon, or parentheses, or split into two sentences; the only exception is a Scripture quotation, which keeps the ESV's exact punctuation. (2) NO contrastive negation ('not X, it's Y' or any variant) - state the claim and stop: never deny one thing to assert another ('God's love isn't a feeling, it's a Son'; 'not just X but Y'; 'this isn't A, it's B'). The denial half is filler that fakes depth; write the real claim as a plain positive and stop. Especially watch big-idea and Christ-connection lines. (3) NO transitions or summary closers (Furthermore, Moreover, Additionally, In conclusion, Overall, It is important to note). (4) Concrete over abstract - name the actual thing; cut vague nouns like aspects, factors, elements, components, solutions, offerings. (5) Use contractions. (6) Sentence case for every heading, button, and label. (7) Concrete numbers and timeframes, not 'several' or 'soon'. (8) Vary sentence length; keep a point of view; cut hedging. (9) NO buzzwords (synergy, holistic, best-in-class, leverage), NO dead metaphors (cutting-edge, unlock, supercharge, the power of, dive in, journey), NO padding to three (tricolon), NO repeated openers (anaphora), NO metronome parallel clauses, NO hype or stacked intensifiers (blazingly, effortlessly, incredibly). Match the warm, plain voice of the course's hand-built exemplar lessons. NEVER output a bracketed placeholder like [email], [room number], [School Name], or [contact]. If you have no real value for a field, OMIT THE ENTIRE FIELD (including any Contact, email, or room line) - do not include it with a placeholder or left blank.
+
+PRODUCE the per-unit STUDENT reading guide for U24 Arrest and trial (John 18:1-11..18:39-40).
+Give a short follow-along block for each of these lesson passages, in order: John 18:1-11; John 18:12-18; John 18:19-24; John 18:25-27; John 18:28-32; John 18:33-37; John 18:38; John 18:39-40.
+MEMORY VERSES: on the 16-verse plan this unit is REVIEW ONLY. It introduces NO new memory verse, and none of its verses are memorized or quizzed. Do NOT plant, assign, plan to quiz, or invent a memory verse from this unit. If memory work comes up, say only that there is no new verse this unit and to keep the assigned verses sharp (John 20:31, John 1:14, John 1:12, John 3:16, John 4:24, John 6:35, John 8:12, John 10:11, John 11:25, John 13:34-35, John 14:6, John 15:5, John 16:33, John 17:3); the next new one comes in John 19:30 (Unit 25).
+
+FRAMING (Adam's theological framing for this passage; keep the student guide consistent with its rulings and emphasis, put in plain student language):
+-----
+# Framing: John 18:1-40, "Arrest and trial" (Unit 24)
+
+Adam's theological framing for this unit, in his Theologian's voice (Reformed, exegesis-first, christotelic, grace-centered). Eight lessons that open the Passion (chapters 18 and 19). The tone shifts to sober, weighty, reverent. Two paired sermons cover the trials: 33 "Tried and Denied" (18:12-27) and 34 "What is Truth?" (18:28-40); the garden arrest (18:1-11) is a sermon-less fresh-build. This unit plants no new memory verse (review-only, 14 anchors), and it offers the optional off-graded stretch verse John 18:37 on L6. An unusual calendar: L1 is a half-day (26 min, light), and spring break falls between L4 and L5. Quote the ESV in the finished materials.
+
+## The christotelic center
+
+The King reigns through his humiliation. From the garden to Barabbas, Jesus is sovereign over his own arrest and trial. He steps forward and speaks the divine name, and armed men fall to the ground (18:5-6). He hands himself over to keep his own safe (18:8). He drinks the cup the Father gives (18:11). He tells the truth in the open while his judges plot in the dark (18:20). He owns a kingdom whose source is God (18:36), and he was born to bear witness to the truth (18:37). Pilate finds no guilt in him three times over (18:38; 19:4, 6), and the guilty man walks free while the innocent one is condemned (18:40). This unit lands on Christ the innocent Lamb who lays down his life, the Truth on trial before men who cannot see him, the King enthroned on the very charge that reads "King of the Jews." The Son is never more in command than in the hour he is bound, and the trial that looks like his defeat is the road to his throne.
+
+- L1 (18:1-11) lands on Christ sovereign over his own arrest, the divine "I am" who lays down his life and keeps his own.
+- L2 (18:12-18) lands on Christ the one man who dies for the people, bound and led away willingly.
+- L3 (18:19-24) lands on Christ the truth-teller in the open, meeting an unjust court and a violent hand with the calm of the innocent.
+- L4 (18:25-27) lands on Christ whose word about Peter comes true, and whose grace waits at another fire.
+- L5 (18:28-32) lands on Christ whose Roman cross was foretold and secured by providence, lifted up exactly as he said.
+- L6 (18:33-37) lands on Christ the King whose kingdom comes from God and whose reign is bound to the truth.
+- L7 (18:38) lands on Christ the Truth, dismissed by the cynic and declared innocent.
+- L8 (18:39-40) lands on Christ the innocent one condemned so the guilty go free.
+
+## The contested points, ruled
+
+**"I am he," and the soldiers falling back (18:5-6).** Rule it the divine name and Jesus' sovereign control. The Greek is ego eimi, the same absolute "I am" students met at 8:58 and on the water at 6:20. He says it, and "they drew back and fell to the ground" (18:6). Chrysostom sees the point: his own single voice, without a weapon, cast them down, so that they could not even see him unless he gave permission. Augustine presses it: what will he do when he comes to judge, who did this when he was going to be judged? Theophylact adds that the Lord cast them down to show his power and that he was going to his suffering voluntarily. Rule the falling-back proof that he could have walked free and goes willingly. This is 10:18 in action, no one takes his life from him. Guard against any reading that Jesus is a cornered victim. He is the one running this scene.
+
+**"Let these men go" (18:8-9).** Rule this the good shepherd keeping his sheep even in his arrest. John reads it as fulfillment: "I have lost not one of those whom you gave me" (18:9), which reaches back to 17:12 and 10:28. At the moment of his own seizure, his concern is that his own are not taken. The shepherd stands between the sheep and the danger, exactly as Unit 14 framed it.
+
+**"The cup that the Father has given me, shall I not drink it?" (18:11).** Rule this John's Gethsemane, and the sword rebuked. John records no agony under the olive trees, and here is his equivalent: Jesus embraces the Father's will in one settled question. The cross-references anchor it, Matthew 26:39 ("let this cup pass"), and John's own near-Gethsemane at 12:27-28 ("now is my soul troubled... Father, glorify your name"), with Hebrews 12:2. The cup is the cup of wrath the sinner deserved, and the Son takes it from the Father's hand as his own choice. On Peter's sword, Calvin is exact: this is the foolish zeal of Peter, who attempted to defend his Master in an unlawful manner. Rule Peter's violence outside the way of the kingdom. The kingdom does not advance by the sword (tie forward to 18:36 and to sermon 34's charge, put down the sword).
+
+**Caiaphas's prophecy recalled (18:14, with 11:49-52).** Rule it the unwitting gospel. John pauses the arrest to remind us that Caiaphas had advised that it would be better if one man died for the people (18:14). The cross-reference is direct to 11:49-52. The high priest arranged a murder and spoke the atonement, one man dying in the place of the people, and for the scattered children of God gathered into one. The Spirit used a wicked mouth and the office of the priest. Teach it as the substitution stated by the man trying to prevent it.
+
+**The night trial before Annas (18:19-24).** Rule it the irregular, unjust trial, and rule Jesus' open teaching against the darkness of secret plotting. Bound in a courtyard before a deposed high priest in the middle of the night, Jesus answers, "I have spoken openly to the world... I said nothing in secret" (18:20). Adam's sermon 33 mines the love in it: Jesus tells Annas that a real charge needs credible witnesses, go gather those who heard me, which exposes the whole proceeding as a sham and hands Annas one more chance to repent. Then the officer's blow (18:22), and Jesus' quiet reply, "If what I said is wrong, bear witness about the wrong; but if what I said is right, why do you strike me?" (18:23). Sermon 33's turn belongs in the Land: in the face of truth with no answer, the wicked resort to violence, and the same reflex lives in us when someone brings a true word we do not want to hear.
+
+**Peter's three denials, and the rooster (18:15-18, 25-27).** Rule the foretold fall (13:38) held tenderly and aimed at restoration. John braids the denials around the trial on purpose: Jesus boldly says "I am he" while Peter says "I am not" (18:17, 25). The contrast is the point. Sermon 33 will not use Peter to shame anyone, and neither should the lesson. Fear drove the denial, and Peter could not even own his discipleship before a servant girl. Point the whole scene forward to the charcoal fire of 21:9-19, where the same word for charcoal fire returns and the man who denied by one fire is restored by another. Rule Peter's fall grace for people who fail, which is everyone in the room. Guard hard against contempt for Peter.
+
+**The leaders refusing to enter the praetorium (18:28).** Rule the irony of ceremonial scruple in the middle of a judicial murder. They did not enter the governor's headquarters, so that they would not be defiled and could eat the Passover (18:28). Entering a Gentile's house would make them ritually unclean and bar them from the feast. Sermon 34's charge is the one to carry: they guard their outward cleanness while their hearts pursue the death of an innocent man, and the same self-deception lives in the religious student whose righteousness is little more than church attendance. Teach this with the anti-Judaism guard fully in place (see below). The sin named here is hypocrisy in every religious heart, and it falls on the churched student first.
+
+**"It is not lawful for us to put anyone to death" (18:31-32).** Rule the providence that fixed the kind of death. John tells us plainly this was to fulfill the word Jesus had spoken to show by what kind of death he was going to die (18:32). The cross-references gather the thread: 3:14 (lifted up like the serpent), 12:32-33 ("lifted up... to show by what kind of death he was going to die"), 8:28, and behind it Deuteronomy 21:23 (the curse on the one hanged on a tree). Stoning was the Jewish penalty. Crucifixion was Roman. So the leaders' own hands were tied precisely so that Jesus would be lifted up on a Roman cross, exactly as he foretold, bearing the curse. Rule it sovereignty running through the machinery of an unjust court.
+
+**"My kingdom is not of this world" (18:36).** Rule a kingdom of a different origin and a different character. Its source is God, and its servants do not fight with swords (18:36). The cross-references frame both halves: Daniel 7:14 (the everlasting kingdom given to the Son of Man), Zechariah 9:9 (the humble king), Luke 17:20-21 (the kingdom in your midst), and John 6:15 (Jesus withdrawing when they tried to make him king by force). Guard two misreadings. Against escapism: his kingdom is present and active in this world and breaks in now, and it does not mean Jesus cares nothing for this world. Against a merely political kingdom: it does not rise or fall on Rome, and it does not spread by force. Sermon 34 states the pastoral edge, the church errs when she weds herself to earthly power and demands prosperity now, and the kingdom advances by faith and the gospel while we wait for the King.
+
+**"To bear witness to the truth" (18:37, the stretch verse).** Rule Jesus the King whose reign is bound to truth. "For this purpose I was born and for this purpose I have come into the world, to bear witness to the truth. Everyone who is of the truth listens to my voice" (18:37). The cross-references are a payoff of the whole course: 8:47 ("whoever is of God hears the words of God"), 10:26-27 ("my sheep hear my voice"), 14:6 (the memorized anchor), and 1 John 4:6. To hear his voice is the mark of his sheep. His throne and the truth are one thing.
+
+**"What is truth?" (18:38).** Rule Pilate's cynical evasion in front of the Truth himself (14:6). Chrysostom notes he asked and did not wait: he knew that this question needed time, and he went out. Sermon 34 rules it exactly right, the pose of treating truth as unknowable while the Truth stands before you wearing flesh and bone. He cared enough to ask, and did not care enough to stay for the answer. Rule it tragic blindness, and refuse to let it read as a cool open question.
+
+**"I find no guilt in him" (18:38, with 19:4, 6).** Rule the innocence motif, the spotless Lamb. Pilate's verdict is that there is no guilt in him (18:38), repeated in 19:4 and 19:6. The judge of the earth declares the accused innocent, and the innocent one is handed over anyway. This is the Lamb without blemish (tie to 1:29, the Lamb of God, and Exodus 12), condemned though guiltless.
+
+**Barabbas (18:39-40).** Rule the substitution picture. "Not this man, but Barabbas" (18:40), and John notes Barabbas was a robber, a violent man and, the other Gospels tell us, a murderer. The cross-references land it: Acts 3:13-14, where Peter later charges that you denied the Holy and Righteous One and asked for a murderer to be granted to you, and Luke 23:25. Chrysostom: they demand those like-mannered with themselves, and let the guilty go, and bid Pilate punish the innocent. Rule the exchange the gospel in miniature, the guilty man set free and the innocent condemned in his place. This is the picture the whole unit has been building toward, and it opens the door to the cross of Unit 25.
+
+## The anti-Judaism guard (essential in the Passion)
+
+This is the big one, and it must be built into the exegesis, the same guard the course carried at 8:44 (Unit 12) and 9:22 (Unit 13). Rule it plainly and out loud.
+
+John's phrase "the Jews" in these chapters names the specific hostile authorities driving the process, the chief priests and their officers. It does not mean the Jewish people as such. Say the obvious in the room: Jesus is a Jew, all twelve disciples are Jews, Mary and the women are Jews, and the whole earliest church is Jewish. The guilt of the cross belongs to all human sin and to God's own saving plan (sermon 34 preaches this directly, the whole story written from beginning to end in the heart of God). It does not belong to the Jewish people. Name for the maturing student that Christians have sinfully weaponized these texts for centuries to justify hatred of Jews, and that this use contradicts the texts, which measure hearts by their response to Christ and never by ancestry. The scruple at 18:28 and the cry for Barabbas indict a particular set of leaders and, through them, every religious heart that guards its outward record while refusing the Truth. Let that indictment fall on the churched student in the room, and never on a people. No student should leave this unit with a shred of contempt for Jewish people.
+
+## Christological and covenantal connections
+
+- **Sovereign over his own death.** 18:4-6, 8, 11 with 10:17-18. No one takes his life. He lays it down.
+- **The divine "I am."** 18:5-6 with 8:58, 8:28, and Exodus 3:14. The name that drew stones now drops soldiers.
+- **The King reigning through humiliation.** 18:36-37 with Daniel 7:14, Zechariah 9:9, and the "lifted up" thread (3:14; 8:28; 12:32). The charge "King of the Jews" is the truth Pilate cannot see.
+- **The cup of the Father's will.** 18:11 with Matthew 26:39 and John 12:27-28. John's Gethsemane, the wrath-cup taken by the Son's own choice.
+- **The innocent Lamb.** 18:38; 19:4, 6 with 1:29 and Exodus 12. No guilt in him.
+- **The substitution of Barabbas.** 18:40 with Acts 3:14, Isaiah 53:6, and the atonement Caiaphas stated at 11:50-52. The guilty freed, the innocent condemned.
+- **The kingdom not of this world.** 18:36 with Luke 17:20-21, Daniel 7:14, John 6:15. From God, present in the world, spread by the gospel.
+- **Truth on trial.** 18:37-38 with 14:6, 8:47, 10:26-27, 1 John 4:6. His sheep hear his voice.
+
+## Memory: review-only, and the optional stretch verse
+
+Confirmed review-only. This unit plants nothing. Students carry fourteen anchors: 20:31, 1:14, 1:12, 3:16, 4:24, 6:35, 8:12, 10:11, 11:25, 13:34-35, 14:6, 15:5, 16:33, 17:3. The next new anchor is 19:30 in Unit 25.
+
+Let the anchors do live work inside the scenes rather than sit in a separate drill. Two land themselves here. 14:6 ("the way, and the truth, and the life") pays off the instant Pilate asks "What is truth?" in front of the one who said it, so review 14:6 on L7 as the scene itself. 10:11 ("the good shepherd lays down his life for the sheep") is enacted at 18:8, "let these men go," so touch it on L1. Keep the rest sharp with a light cumulative pass on the half-day L1 warm-up, and keep it brief, since the checkpoint the day before already ran the heavy Farewell recap and quiz.
+
+The optional stretch verse: confirmed. John 18:37 is on the course's taught-not-memorized stretch list ("For this purpose I was born and for this purpose I have come into the world, to bear witness to the truth"). Offer it as an optional off-graded stretch verse on L6, the lesson where it sits in the Pilate dialogue (18:33-37). Keep it optional and off the grade, and teach it as the King's own account of why he came.
+
+## Reaching the three-tier room
+
+The contact points are strong and human: staying calm and in command while everything falls apart, denying you know someone when the pressure lands, shrugging that nobody can really know the truth, an innocent person condemned, a guilty person walking free, and the question of what kind of king Jesus actually is.
+
+- **The searching student.** The floor is the person in the storm. Everyone has watched someone crack under pressure. Here is a man betrayed, bound, slapped, and tried through the night, and he is the steadiest person in every room. Ask the plain question: who stays like that, and why? Peter is the mirror for the kid who has said "I don't know him" with his silence in a hallway. Show them the rooster, and then show them the charcoal fire where Jesus takes Peter back (chapter 21). Barabbas needs no Bible knowledge to feel: a guilty man goes home free because an innocent man takes his place, and that is the whole gospel in one swap.
+- **The churched but passive student.** Their mirror is at the praetorium door (18:28), guarding their record while missing the Truth on the porch, and it is Pilate asking "What is truth?" with no intention of waiting for the answer. Sermon 34 aims straight here, the person whose righteousness is church attendance and a clean streak. Press it warmly: you can keep every outward rule and hand the real Jesus over to get back to your feast.
+- **The maturing disciple.** Give them the weight. The ego eimi of 18:5-6 tied to 8:58 and Exodus 3:14, with Chrysostom and Augustine on the falling-back. The cup of 18:11 as John's Gethsemane. The fulfillment logic of 18:32 (stoning against crucifixion, the kind of death fixed by providence, Deuteronomy 21:23). Caiaphas as the Spirit speaking through a wicked mouth (18:14 with 11:51). The Daniel 7 kingdom behind 18:36. Let them trace how one arrest and one trial hold sovereignty, substitution, the divine name, and the kingdom of truth.
+
+Keep faith content invitational and participation assignable. Every student can analyze the falling-back, the cup, the denials, the kingdom sayings, and the Barabbas exchange. No student is required to profess.
+
+## Pitfalls with teenagers
+
+- **Anti-Judaism.** The big one. Build the guard into the exegesis (see above). "The Jews" here names the hostile leaders. The cross is human sin and God's plan, and never a people. Name and reject the historical weaponization for the disciple tier.
+- **Jesus as helpless victim.** He is sovereign throughout. The soldiers fall down (18:6), he chooses the cup (18:11), he protects his own (18:8), he tells the truth to his judges (18:20). Never let the arrest read as Jesus overpowered.
+- **Using Peter's denial to shame.** Teach it as grace for failures, aimed at restoration (21:15-19). Peter is the room, and not a villain.
+- **"My kingdom is not of this world" as escapism.** It does not mean Jesus abandons this world. His kingdom is present and active in it, sourced in God, spread by the gospel. Guard also against reducing it to politics.
+- **"What is truth?" as a cool open question.** Rule it tragic blindness before the Truth himself. Pilate asked and would not wait.
+- **Missing the Barabbas substitution.** Do not let it pass as a plot detail. The guilty man freed and the innocent condemned is the gospel in miniature (Acts 3:14).
+- **The Passion as gory spectacle.** Keep the reverence. The King is laying down his life. The weight is his willing love.
+
+## The eight-lesson split
+
+The seams cut on the scenes, close the two halves at the natural break, land a clean pre-break stop at L4 on Peter's denial, resume the Pilate trial at L5 after spring break, and give both Thursdays (L4, L8) a tight self-contained passage. L1 takes the fresh-build arrest lightly for the half-day. L2 through L4 match sermon 33 (18:12-27). L5 through L8 match sermon 34 (18:28-40). Coverage is complete with no gaps or overlaps: 1-11, 12-18, 19-24, 25-27, 28-32, 33-37, 38, 39-40.
+
+- **L1 (i=113, Fri Mar 19, half-day 26 min), John 18:1-11. Fresh-build.** A light first step into the Passion. Open with a brief cumulative memory warm-touch (kept short, since the checkpoint the day before carried the heavy recap), then a gentle entry into the arrest. Read the whole scene, and land the 26 minutes on the single center: Jesus says "I am he," and armed men fall to the ground (18:5-6), so he goes to the cross by his own choice. Touch the cup (18:11) and the sword (18:10) lightly and hold them for the reading guide and the Land. Lands on: Christ sovereign over his own arrest, the divine "I am" who lays down his life and keeps his own (18:8).
+
+- **L2 (i=114, Mon Mar 22, regular 50), John 18:12-18. Sermon 33.** Bound and led to Annas, the reminder of Caiaphas's prophecy (18:14, tie to 11:49-52), and Peter's first denial (18:15-18) introduced as the thread to be resolved. Lands on: Christ the one man who dies for the people, bound and led away willingly, the substitution stated by the priest who plots it.
+
+- **L3 (i=115, Tue Mar 23, regular 50), John 18:19-24. Sermon 33.** The night trial before Annas, "I have spoken openly to the world... I said nothing in secret" (18:20), the officer's blow (18:22), and Jesus' steady reply (18:23), then sent bound to Caiaphas. Lands on: Christ the truth-teller in the open, meeting an unjust court and a violent hand with the calm of the innocent.
+
+- **L4 (i=116, Thu Mar 25, Thursday 36, single-focus), John 18:25-27. Sermon 33.** Peter's second and third denials and the rooster, a tight self-contained scene and the clean pre-break stop. One key question: "Jesus boldly says 'I am he' while Peter says 'I am not.' Peter fails exactly as Jesus said he would (13:38). Is that the end of Peter?" Point to the charcoal fire ahead (chapter 21) so the room leaves for break on grace, and not shame. Lands on: Christ whose word about Peter comes true, and whose grace waits at another fire.
+
+- **L5 (i=117, Mon Apr 5, regular 50), John 18:28-32. Sermon 34.** The trial resumes at the praetorium. The ceremonial scruple at the door (18:28, taught with the anti-Judaism guard), "It is not lawful for us to put anyone to death" (18:31), and John's note that this fixed the kind of death Jesus would die (18:32, tie to 12:32-33). Lands on: Christ whose Roman cross was foretold and secured by providence, lifted up exactly as he said.
+
+- **L6 (i=118, Tue Apr 6, regular 50), John 18:33-37. Sermon 34. Offers optional stretch verse 18:37.** "Are you the King of the Jews?" (18:33), "My kingdom is not of this world" (18:36, both guards), and "to bear witness to the truth... everyone who is of the truth listens to my voice" (18:37, tie to 10:26-27 and 14:6). Land the lesson on the King's own words in 18:37, and offer 18:37 as the optional off-graded stretch verse here. Lands on: Christ the King whose kingdom comes from God and whose reign is bound to the truth.
+
+- **L7 (i=119, Wed Apr 7, regular 50), John 18:38. Sermon 34.** One verse, two headline beats. "What is truth?" (18:38a), Pilate's cynical evasion in front of the Truth himself (14:6, the memorized anchor paying off), and "I find no guilt in him" (18:38b), the first of three innocence verdicts (with 19:4, 6). Give the "what is truth?" discussion the full period, and review 14:6 as the scene itself. Lands on: Christ the Truth, dismissed by the cynic and declared innocent, the spotless Lamb.
+
+- **L8 (i=120, Thu Apr 8, Thursday 36, single-focus), John 18:39-40. Sermon 34.** Barabbas, a tight self-contained close for the short day and the unit. One key question: "A guilty, violent man walks free and the innocent man is condemned in his place. What does that swap show us about the cross?" Ground it in Acts 3:14. Lands on: Christ the innocent one condemned so the guilty go free, the substitution that opens the door to the cross of Unit 25.
+-----
+Student-facing, plain and warm; light prompts that lean on the Reading Journal and the discussion, not take-home busywork. Mark 'Go deeper' prompts optional. Keep it honest for a searching student.
+
+Do any Scripture or study-bible tool lookups you need BEFORE you start writing. Between tool calls, emit no progress notes, plans, or commentary; your visible output must be the finished document and nothing else.
+Produce only the finished resource in Markdown, beginning with the metadata header. End the main resource with a line `Standards: JN.18.1-11..18.39-40`.
+If (and only if) this resource has answers, solutions, or model responses, put them ALL in a single final section — after a `---` rule and headed EXACTLY `## Answer Key` — and reveal no answers anywhere before it.

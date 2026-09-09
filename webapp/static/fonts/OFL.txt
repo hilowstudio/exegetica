@@ -1,0 +1,20 @@
+Self-hosted web fonts — licensing & attribution
+================================================
+
+The .woff2 files in this directory are redistributed under the
+SIL Open Font License, Version 1.1 (https://openfontlicense.org).
+They were downloaded from Google Fonts' CDN by scripts/fetch_fonts.py.
+
+  - Fraunces
+    Copyright The Fraunces Project Authors (https://github.com/undercasetype/Fraunces)
+  - Source Serif 4
+    Copyright 2014–2021 Adobe (https://github.com/adobe-fonts/source-serif)
+  - Inter
+    Copyright The Inter Project Authors (https://github.com/rsms/inter)
+
+Each family is licensed under SIL OFL 1.1. Full license text:
+https://openfontlicense.org/open-font-license-official-text/
+
+Under the OFL these fonts may be freely used, embedded, and redistributed;
+they may not be sold on their own, and the reserved font names may not be
+used to promote derivative fonts.

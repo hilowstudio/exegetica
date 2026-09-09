@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "LIF.4.3.4",
+    "name": "Navigation Skills (reading maps, GPS ethics, orienting without technology)",
+    "topic_id": "LIF.4.3",
+    "topic_name": "Safety, Preparedness & Emergency Skills",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.4",
+    "sub_subject_name": "Personal Life Skills & Development",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Navigation Skills (reading maps, GPS ethics, orienting without technology) in Safety, Preparedness & Emergency Skills (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.4",
+            "sub_subject_name": "Personal Life Skills & Development",
+            "topic_id": "LIF.4.3",
+            "topic_name": "Safety, Preparedness & Emergency Skills",
+            "sub_topic_id": "LIF.4.3.4",
+            "sub_topic_name": "Navigation Skills (reading maps, GPS ethics, orienting without technology)",
+            "objective_id": "LIF.4.3.4.1",
+            "objective_text": "Use landmarks to find your way in a familiar area.",
+            "objective_uuid": "c846fb68-afcf-4200-848b-84a289f015ed",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.4",
+            "sub_subject_name": "Personal Life Skills & Development",
+            "topic_id": "LIF.4.3",
+            "topic_name": "Safety, Preparedness & Emergency Skills",
+            "sub_topic_id": "LIF.4.3.4",
+            "sub_topic_name": "Navigation Skills (reading maps, GPS ethics, orienting without technology)",
+            "objective_id": "LIF.4.3.4.2",
+            "objective_text": "Read a simple map to locate places.",
+            "objective_uuid": "9a809ebc-c084-4fd5-812b-2aaa80c1c06a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.4",
+            "sub_subject_name": "Personal Life Skills & Development",
+            "topic_id": "LIF.4.3",
+            "topic_name": "Safety, Preparedness & Emergency Skills",
+            "sub_topic_id": "LIF.4.3.4",
+            "sub_topic_name": "Navigation Skills (reading maps, GPS ethics, orienting without technology)",
+            "objective_id": "LIF.4.3.4.3",
+            "objective_text": "Use a compass to orient yourself and find a direction.",
+            "objective_uuid": "21a93b36-ffee-4005-8a0c-ec01a82e5c8f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.4",
+            "sub_subject_name": "Personal Life Skills & Development",
+            "topic_id": "LIF.4.3",
+            "topic_name": "Safety, Preparedness & Emergency Skills",
+            "sub_topic_id": "LIF.4.3.4",
+            "sub_topic_name": "Navigation Skills (reading maps, GPS ethics, orienting without technology)",
+            "objective_id": "LIF.4.3.4.4",
+            "objective_text": "Navigate a route using GPS responsibly.",
+            "objective_uuid": "8b1fcb26-47cc-4245-8b3b-4bf60bd09b59",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.4",
+            "sub_subject_name": "Personal Life Skills & Development",
+            "topic_id": "LIF.4.3",
+            "topic_name": "Safety, Preparedness & Emergency Skills",
+            "sub_topic_id": "LIF.4.3.4",
+            "sub_topic_name": "Navigation Skills (reading maps, GPS ethics, orienting without technology)",
+            "objective_id": "LIF.4.3.4.5",
+            "objective_text": "Orient yourself and find your way without technology.",
+            "objective_uuid": "e74471cf-982d-466c-8f00-dc170e8ec90b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

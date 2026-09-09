@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.10.1.5",
+    "name": "Sampling Methods (Random, Stratified, Convenience, Bias)",
+    "topic_id": "MAT.10.1",
+    "topic_name": "Data Collection & Interpretation",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.10",
+    "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Sampling Methods (Random, Stratified, Convenience, Bias) in Data Collection & Interpretation (Mathematics)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.1",
+            "topic_name": "Data Collection & Interpretation",
+            "sub_topic_id": "MAT.10.1.5",
+            "sub_topic_name": "Sampling Methods (Random, Stratified, Convenience, Bias)",
+            "objective_id": "MAT.10.1.5.1",
+            "objective_text": "Understand random sampling as a way to make a sample representative.",
+            "objective_uuid": "39b6da85-5e58-4d33-8456-55cbca953535",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.SP.A.1 — Understand that statistics can be used to gain information about a population by examining a sample of t (grade 7)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.1",
+            "topic_name": "Data Collection & Interpretation",
+            "sub_topic_id": "MAT.10.1.5",
+            "sub_topic_name": "Sampling Methods (Random, Stratified, Convenience, Bias)",
+            "objective_id": "MAT.10.1.5.2",
+            "objective_text": "Compare random, stratified, and convenience sampling.",
+            "objective_uuid": "f19a9eee-f0cf-4a37-8165-52ade90a0796",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-IC.B.4 — Use data from a sample survey to estimate a population mean or proportion; develop a margin of error thr (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.1",
+            "topic_name": "Data Collection & Interpretation",
+            "sub_topic_id": "MAT.10.1.5",
+            "sub_topic_name": "Sampling Methods (Random, Stratified, Convenience, Bias)",
+            "objective_id": "MAT.10.1.5.3",
+            "objective_text": "Use data from a random sample to draw an inference about a population.",
+            "objective_uuid": "0d532069-6ae6-4f68-8d3d-e29d23c6fe45",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-IC.B.4 — Use data from a sample survey to estimate a population mean or proportion; develop a margin of error thr (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

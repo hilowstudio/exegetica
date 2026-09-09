@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "studybible-mcp"
+version = "0.1.0"
+description = "A self-hosted study-Bible MCP server: readable translations, Hebrew/Greek lexicons, morphology, concordance, cross-references, and public-domain commentaries."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+
+# Deliberately minimal. We own the data and build it into a portable SQLite DB
+# at build time; there are no required runtime external services.
+dependencies = [
+    # Pinned: mcp 2.x removed Server.list_tools(). Match the reference impl.
+    "mcp==1.26.0",
+    "aiosqlite>=0.19.0",
+    "click>=8.0.0",
+    "rich>=13.0.0",
+    "httpx>=0.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.1.0",
+]
+# HTTP transport (for a hosted deployment once the platform is chosen).
+http = [
+    "starlette>=0.32.0",
+    "uvicorn>=0.24.0",
+]
+# Web front-end: streaming chat UI that drives the Claude API over the tools.
+webapp = [
+    "anthropic>=1.0.0",
+    "openai>=1.40.0",          # OpenAI, plus xAI Grok / Google Gemini via base_url
+    "starlette>=0.32.0",
+    "uvicorn>=0.24.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0",             # load the resource-generator catalog + recommendations
+    "numpy>=1.24",             # semantic standards search: cosine over precomputed vectors
+    "model2vec>=0.3",          # static embeddings (numpy-only, no torch/ONNX) for query + corpus
+    "markdown-it-py>=3.0",     # render the generated course Markdown to HTML for the course view
+]
+# Print-ready PDF rendering of the course materials. Uses the machine's installed
+# Edge/Chromium (Playwright channel=msedge) — no browser download needed.
+pdf = [
+    "playwright>=1.40",
+]
+# Push the finished student course into Google Classroom (scripts/push_to_classroom.py).
+# A standalone, run-on-demand tool — NOT wired into the webapp; no app persistence.
+classroom = [
+    "google-api-python-client>=2.100",
+    "google-auth-oauthlib>=1.2",
+    "google-auth-httplib2>=0.2",
+    "python-dotenv>=1.0",       # read GOOGLE_CLIENT_ID/SECRET from a local .env
+]
+
+[project.scripts]
+studybible-mcp = "studybible_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+# Ship the Theologian persona (served as the "theologian" MCP prompt).
+studybible_mcp = ["prompts/*.md"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

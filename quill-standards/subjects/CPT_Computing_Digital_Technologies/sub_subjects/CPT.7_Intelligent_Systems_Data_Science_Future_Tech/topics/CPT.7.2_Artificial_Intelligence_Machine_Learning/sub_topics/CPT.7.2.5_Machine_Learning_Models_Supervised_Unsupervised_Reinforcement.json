@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.7.2.5",
+    "name": "Machine Learning Models (Supervised, Unsupervised, Reinforcement)",
+    "topic_id": "CPT.7.2",
+    "topic_name": "Artificial Intelligence & Machine Learning",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.7",
+    "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Machine Learning Models (Supervised, Unsupervised, Reinforcement) in Artificial Intelligence & Machine Learning (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.2",
+            "topic_name": "Artificial Intelligence & Machine Learning",
+            "sub_topic_id": "CPT.7.2.5",
+            "sub_topic_name": "Machine Learning Models (Supervised, Unsupervised, Reinforcement)",
+            "objective_id": "CPT.7.2.5.1",
+            "objective_text": "Describe how a machine learning model learns patterns from examples",
+            "objective_uuid": "b95bcfb7-7358-40d8-89cc-8f493204b4ae",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-08 — Describe how artificial intelligence drives many software and physical systems. Clarification: Examples includ (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.2",
+            "topic_name": "Artificial Intelligence & Machine Learning",
+            "sub_topic_id": "CPT.7.2.5",
+            "sub_topic_name": "Machine Learning Models (Supervised, Unsupervised, Reinforcement)",
+            "objective_id": "CPT.7.2.5.2",
+            "objective_text": "Compare supervised, unsupervised, and reinforcement learning",
+            "objective_uuid": "af3033e7-31d4-449e-871a-31005afdc886",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-08 — Describe how artificial intelligence drives many software and physical systems. Clarification: Examples includ (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.2",
+            "topic_name": "Artificial Intelligence & Machine Learning",
+            "sub_topic_id": "CPT.7.2.5",
+            "sub_topic_name": "Machine Learning Models (Supervised, Unsupervised, Reinforcement)",
+            "objective_id": "CPT.7.2.5.3",
+            "objective_text": "Explain how labeled data is used to train a supervised learning model",
+            "objective_uuid": "b0b5a072-65fb-481c-8bbe-742ed50e3133",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-08 — Describe how artificial intelligence drives many software and physical systems. Clarification: Examples includ (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.2",
+            "topic_name": "Artificial Intelligence & Machine Learning",
+            "sub_topic_id": "CPT.7.2.5",
+            "sub_topic_name": "Machine Learning Models (Supervised, Unsupervised, Reinforcement)",
+            "objective_id": "CPT.7.2.5.4",
+            "objective_text": "Implement a simple machine learning algorithm to play a game or solve a problem",
+            "objective_uuid": "e1c7e02c-9ee8-4f26-8163-fe2d330a5ab5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-09 — Implement an artificial intelligence algorithm to play a game against a human opponent or solve a problem. Cla (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.2",
+            "topic_name": "Artificial Intelligence & Machine Learning",
+            "sub_topic_id": "CPT.7.2.5",
+            "sub_topic_name": "Machine Learning Models (Supervised, Unsupervised, Reinforcement)",
+            "objective_id": "CPT.7.2.5.5",
+            "objective_text": "Evaluate how the choice and quality of training data affect a model's predictions",
+            "objective_uuid": "5c48b398-e85c-43ff-8c04-a2ab026ddaea",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-08 — Describe how artificial intelligence drives many software and physical systems. Clarification: Examples includ (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "sub_topic": {
+    "id": "HSS.10.5.3",
+    "name": "World Wars I & II",
+    "topic_id": "HSS.10.5",
+    "topic_name": "World Wars, Cold War & Civil Rights",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.10",
+    "sub_subject_name": "U.S. History (Detailed Study)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for World Wars I & II in World Wars, Cold War & Civil Rights (History & Social Studies)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.3",
+            "sub_topic_name": "World Wars I & II",
+            "objective_id": "HSS.10.5.3.1",
+            "objective_text": "Sequence the two world wars and identify when the United States entered each",
+            "objective_uuid": "d1c1c11b-872e-4d98-8563-616619af10a1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.3",
+            "sub_topic_name": "World Wars I & II",
+            "objective_id": "HSS.10.5.3.2",
+            "objective_text": "Explain why the United States entered World War I",
+            "objective_uuid": "9528dbf2-0cf1-4442-881d-1b8fa3d1d03f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.K-2 — Generate possible reasons for an event or development in the past (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.3",
+            "sub_topic_name": "World Wars I & II",
+            "objective_id": "HSS.10.5.3.3",
+            "objective_text": "Explain the causes of World War II and the significance of the attack on Pearl Harbor",
+            "objective_uuid": "66f8e59a-1bfa-44f5-81d3-d45afe8359d7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.3",
+            "sub_topic_name": "World Wars I & II",
+            "objective_id": "HSS.10.5.3.4",
+            "objective_text": "Describe the Holocaust and the American home front during World War II",
+            "objective_uuid": "409d9d0a-9446-47fd-82a9-5d042b301ab8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.3",
+            "sub_topic_name": "World Wars I & II",
+            "objective_id": "HSS.10.5.3.5",
+            "objective_text": "Analyze how the world wars transformed the United States' role in global affairs",
+            "objective_uuid": "70784dcb-d470-4ec3-8004-6bde908f3d3d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.10",
+            "sub_subject_name": "U.S. History (Detailed Study)",
+            "topic_id": "HSS.10.5",
+            "topic_name": "World Wars, Cold War & Civil Rights",
+            "sub_topic_id": "HSS.10.5.3",
+            "sub_topic_name": "World Wars I & II",
+            "objective_id": "HSS.10.5.3.6",
+            "objective_text": "Evaluate the causes and consequences of the decision to use the atomic bomb",
+            "objective_uuid": "c93f8e9f-01ce-4da5-8b5a-9c286a39480f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

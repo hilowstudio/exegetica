@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ELA.1.1.4",
+    "name": "Semantics and Pragmatics (Meaning in Context)",
+    "topic_id": "ELA.1.1",
+    "topic_name": "Introductory Linguistics",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.1",
+    "sub_subject_name": "Grammar, Mechanics & Linguistics",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Semantics and Pragmatics (Meaning in Context) in Introductory Linguistics (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.4",
+            "sub_topic_name": "Semantics and Pragmatics (Meaning in Context)",
+            "objective_id": "ELA.1.1.4.1",
+            "objective_text": "Use context within a sentence to determine which meaning of a word is intended",
+            "objective_uuid": "9aa586b6-70d7-4e8a-8847-dc1d1da84133",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.1 — Demonstrate command of the conventions of standard English grammar and usage when writing or speaking (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.4",
+            "sub_topic_name": "Semantics and Pragmatics (Meaning in Context)",
+            "objective_id": "ELA.1.1.4.2",
+            "objective_text": "Distinguish the literal meaning (denotation) of a word from the feelings and associations it carries (connotation)",
+            "objective_uuid": "e93e17d3-8be3-43aa-86ca-b64bc1b29845",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.1 — Demonstrate command of the conventions of standard English grammar and usage when writing or speaking (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.4",
+            "sub_topic_name": "Semantics and Pragmatics (Meaning in Context)",
+            "objective_id": "ELA.1.1.4.3",
+            "objective_text": "Interpret figurative language such as similes, metaphors, and idioms in context",
+            "objective_uuid": "d03d37d8-7d5f-4650-827f-5624242be55d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.1 — Demonstrate command of the conventions of standard English grammar and usage when writing or speaking (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.4",
+            "sub_topic_name": "Semantics and Pragmatics (Meaning in Context)",
+            "objective_id": "ELA.1.1.4.4",
+            "objective_text": "Explain how word choice, tone, and register shift meaning for different audiences and purposes",
+            "objective_uuid": "605ca020-ede1-445a-8500-6e5047770f15",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.1 — Demonstrate command of the conventions of standard English grammar and usage when writing or speaking (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.4",
+            "sub_topic_name": "Semantics and Pragmatics (Meaning in Context)",
+            "objective_id": "ELA.1.1.4.5",
+            "objective_text": "Analyze how implied meaning and context (pragmatics) let a speaker communicate more than the literal words state",
+            "objective_uuid": "60d9a889-73db-49b4-8de8-a997d85f1f8b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.1 — Demonstrate command of the conventions of standard English grammar and usage when writing or speaking (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.4",
+            "sub_topic_name": "Semantics and Pragmatics (Meaning in Context)",
+            "objective_id": "ELA.1.1.4.6",
+            "objective_text": "Evaluate how ambiguity and shades of meaning can be used or resolved to shape a reader's interpretation",
+            "objective_uuid": "a9be695d-00d6-4eb9-8e6c-bab7d1772e81",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.1 — Demonstrate command of the conventions of standard English grammar and usage when writing or speaking (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

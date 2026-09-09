@@ -1,0 +1,164 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.1.5",
+    "name": "Modules & Libraries (Importing and using external code)",
+    "topic_id": "CPT.1.1",
+    "topic_name": "Advanced Programming Concepts",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Modules & Libraries (Importing and using external code) in Advanced Programming Concepts (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 2,
+        "average_complexity": 6.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.5",
+            "sub_topic_name": "Modules & Libraries (Importing and using external code)",
+            "objective_id": "CPT.1.1.5.1",
+            "objective_text": "Import an existing library and call its functions inside an original program",
+            "objective_uuid": "14849edb-7c3d-4dc4-8f53-4e331f5a78a3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-16 — Incorporate existing code, media, and libraries into original programs, and give attribution. Clarification: B (grades 6-8)"
+              ]
+            }
+          },
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.5",
+            "sub_topic_name": "Modules & Libraries (Importing and using external code)",
+            "objective_id": "CPT.1.1.5.2",
+            "objective_text": "Incorporate portions of existing code or media into a program and give proper attribution",
+            "objective_uuid": "b8fc0291-405b-4aa8-8ab7-2092dc15c3aa",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-16 — Incorporate existing code, media, and libraries into original programs, and give attribution. Clarification: B (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.5",
+            "sub_topic_name": "Modules & Libraries (Importing and using external code)",
+            "objective_id": "CPT.1.1.5.3",
+            "objective_text": "Use the functions provided by a library to add capability without rewriting them",
+            "objective_uuid": "9c9a1046-9b6f-4aca-8341-78bcfe9560fc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-16 — Demonstrate code reuse by creating programming solutions using libraries and APIs. Clarification: Libraries an (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.5",
+            "sub_topic_name": "Modules & Libraries (Importing and using external code)",
+            "objective_id": "CPT.1.1.5.4",
+            "objective_text": "Demonstrate code reuse by building a solution around one or more libraries and APIs",
+            "objective_uuid": "3487d479-d312-4881-802f-433d318ddc74",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-16 — Demonstrate code reuse by creating programming solutions using libraries and APIs. Clarification: Libraries an (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.5",
+            "sub_topic_name": "Modules & Libraries (Importing and using external code)",
+            "objective_id": "CPT.1.1.5.5",
+            "objective_text": "Connect a program to a web API and use the data it returns",
+            "objective_uuid": "add3452d-163e-4725-8d45-4f229fa0d641",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-16 — Demonstrate code reuse by creating programming solutions using libraries and APIs. Clarification: Libraries an (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

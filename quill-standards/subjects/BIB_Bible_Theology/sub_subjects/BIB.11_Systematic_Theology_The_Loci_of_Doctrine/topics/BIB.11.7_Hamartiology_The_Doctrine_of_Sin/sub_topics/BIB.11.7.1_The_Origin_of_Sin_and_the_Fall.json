@@ -1,0 +1,469 @@
+{
+  "sub_topic": {
+    "id": "BIB.11.7.1",
+    "name": "The Origin of Sin and the Fall",
+    "topic_id": "BIB.11.7",
+    "topic_name": "Hamartiology: The Doctrine of Sin",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.11",
+    "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+    "total_objectives": 16,
+    "description": "K-12 developmental progression for The Origin of Sin and the Fall in Hamartiology: The Doctrine of Sin, anchored in Scripture and the confessions via the Study Bible tools.",
+    "enrichment": {
+      "status": "expanded",
+      "levers": [
+        "structural-expansion",
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture and confession anchors validated against the study-bible MCP tools."
+    },
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.1",
+            "objective_text": "Identify that the first people disobeyed God.",
+            "objective_uuid": "55fdab41-fd4d-4b48-80c4-ec4487720a64",
+            "anchors": {
+              "scripture": [
+                "Genesis 3:6"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.2",
+            "objective_text": "Name Adam and Eve as the first to sin.",
+            "objective_uuid": "e55eeb3a-b548-44b1-b837-5324ba7489b2",
+            "anchors": {
+              "scripture": [
+                "Genesis 3:6"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.3",
+            "objective_text": "Recall that the serpent tempted Eve to doubt God.",
+            "objective_uuid": "762f7ca3-6afa-414d-925f-0ffa5ff702ac",
+            "anchors": {
+              "scripture": [
+                "Genesis 3:1-5"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.4",
+            "objective_text": "Observe that sin entered a good world God had made.",
+            "objective_uuid": "e165010a-6977-4590-a579-803465ff75d4",
+            "anchors": {
+              "scripture": [
+                "Genesis 1:31",
+                "Genesis 3:6"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.5",
+            "objective_text": "Summarize the Fall (our first parents fell by eating the forbidden fruit).",
+            "objective_uuid": "45c3e74e-5e48-47fe-921c-2a129d8e433d",
+            "anchors": {
+              "scripture": [
+                "Genesis 3:6"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q15"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.6",
+            "objective_text": "Explain the covenant of works and its threat of death.",
+            "objective_uuid": "fdcbea38-bdd2-46d1-ab27-5765480ae65a",
+            "anchors": {
+              "scripture": [
+                "Genesis 2:17"
+              ],
+              "confessions": [
+                "Westminster Confession 6.1"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.7",
+            "objective_text": "Compare the world before and after the Fall.",
+            "objective_uuid": "35b4ffa5-8551-491a-baa1-49d135d92071",
+            "anchors": {
+              "scripture": [
+                "Genesis 1:31",
+                "Genesis 3:17-19"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.8",
+            "objective_text": "Apply how temptation still works (doubt, desire, disobedience).",
+            "objective_uuid": "b29a9532-090f-46d5-b5a6-c175a839c5bd",
+            "anchors": {
+              "scripture": [
+                "James 1:14-15",
+                "Genesis 3:6"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.9",
+            "objective_text": "Analyze the first sin as unbelief and pride.",
+            "objective_uuid": "cd934875-d3e4-413d-b2d7-e17b947184fa",
+            "anchors": {
+              "scripture": [
+                "Genesis 3:5",
+                "1 Timothy 2:14"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.10",
+            "objective_text": "Interpret the serpent's strategy against God's word.",
+            "objective_uuid": "5c25e37c-c62e-4284-bbfa-a3d0294f2104",
+            "anchors": {
+              "scripture": [
+                "Genesis 3:1-5",
+                "2 Corinthians 11:3"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.11",
+            "objective_text": "Connect Satan's role to the origin of temptation.",
+            "objective_uuid": "e7886274-d212-4fb1-b0ff-6aa60c2b9b88",
+            "anchors": {
+              "scripture": [
+                "John 8:44",
+                "1 John 3:8"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.12",
+            "objective_text": "Explain why God is not the author of sin.",
+            "objective_uuid": "c47efda4-c0fb-4be1-8226-8c2841c0ece3",
+            "anchors": {
+              "scripture": [
+                "James 1:13"
+              ],
+              "confessions": [
+                "Westminster Confession 6.1"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.13",
+            "objective_text": "Construct a theology of the Fall from Genesis 3.",
+            "objective_uuid": "d7b02b77-8b9b-43d1-a34b-732a5e924f51",
+            "anchors": {
+              "scripture": [
+                "Genesis 3:1-19"
+              ],
+              "confessions": [
+                "Westminster Confession 6.1"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.14",
+            "objective_text": "Evaluate views that treat Genesis 3 as mere myth.",
+            "objective_uuid": "4966ae6b-4d4b-4e13-85b7-d149c7e11e8e",
+            "anchors": {
+              "scripture": [
+                "Romans 5:12",
+                "Genesis 3:6"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.15",
+            "objective_text": "Defend the historicity of the Fall as essential to the gospel.",
+            "objective_uuid": "1defcae6-99f0-4403-99c0-d66028e82ad7",
+            "anchors": {
+              "scripture": [
+                "Romans 5:12-19",
+                "1 Corinthians 15:21-22"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.7",
+            "topic_name": "Hamartiology: The Doctrine of Sin",
+            "sub_topic_id": "BIB.11.7.1",
+            "sub_topic_name": "The Origin of Sin and the Fall",
+            "objective_id": "BIB.11.7.1.16",
+            "objective_text": "Synthesize the Fall as the entry of sin and death, with the first promise of a Redeemer.",
+            "objective_uuid": "246b2e62-26c7-4593-a843-dd0003513c3e",
+            "anchors": {
+              "scripture": [
+                "Genesis 3:15",
+                "Romans 5:12"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

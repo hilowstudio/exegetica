@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.11.3.3",
+    "name": "Right Triangle Ratios (SOH–CAH–TOA)",
+    "topic_id": "MAT.11.3",
+    "topic_name": "Triangle Trigonometry",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.11",
+    "sub_subject_name": "Trigonometry (Ratios, Cycles & Mathematical Harmony)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Right Triangle Ratios (SOH–CAH–TOA) in Triangle Trigonometry (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.11",
+            "sub_subject_name": "Trigonometry (Ratios, Cycles & Mathematical Harmony)",
+            "topic_id": "MAT.11.3",
+            "topic_name": "Triangle Trigonometry",
+            "sub_topic_id": "MAT.11.3.3",
+            "sub_topic_name": "Right Triangle Ratios (SOH–CAH–TOA)",
+            "objective_id": "MAT.11.3.3.1",
+            "objective_text": "Define sine, cosine, and tangent as ratios of a right triangle's sides.",
+            "objective_uuid": "a611b1ad-a384-4105-8f3e-a5c745f27088",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-SRT.C.6 — Understand that by similarity, side ratios in right triangles are properties of the angles in the triang (HS)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.11",
+            "sub_subject_name": "Trigonometry (Ratios, Cycles & Mathematical Harmony)",
+            "topic_id": "MAT.11.3",
+            "topic_name": "Triangle Trigonometry",
+            "sub_topic_id": "MAT.11.3.3",
+            "sub_topic_name": "Right Triangle Ratios (SOH–CAH–TOA)",
+            "objective_id": "MAT.11.3.3.2",
+            "objective_text": "Use SOH-CAH-TOA to find a missing side of a right triangle.",
+            "objective_uuid": "ab2ef7fe-ea73-4df2-85c7-768235fa8e2c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-SRT.C.8 — Use trigonometric ratios and the Pythagorean Theorem to solve right triangles in applied problems (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.11",
+            "sub_subject_name": "Trigonometry (Ratios, Cycles & Mathematical Harmony)",
+            "topic_id": "MAT.11.3",
+            "topic_name": "Triangle Trigonometry",
+            "sub_topic_id": "MAT.11.3.3",
+            "sub_topic_name": "Right Triangle Ratios (SOH–CAH–TOA)",
+            "objective_id": "MAT.11.3.3.3",
+            "objective_text": "Use inverse trigonometric ratios to find a missing angle.",
+            "objective_uuid": "e788dd2f-c726-40b0-860b-7dc77d74b85f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-SRT.C.8 — Use trigonometric ratios and the Pythagorean Theorem to solve right triangles in applied problems (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ELA.4.6.3",
+    "name": "Motifs, Repetition, and Leitmotifs",
+    "topic_id": "ELA.4.6",
+    "topic_name": "Literary Devices & Techniques (Language Analysis)",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.4",
+    "sub_subject_name": "Literary Analysis & Criticism",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Motifs, Repetition, and Leitmotifs in Literary Devices & Techniques (Language Analysis) (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.6",
+            "topic_name": "Literary Devices & Techniques (Language Analysis)",
+            "sub_topic_id": "ELA.4.6.3",
+            "sub_topic_name": "Motifs, Repetition, and Leitmotifs",
+            "objective_id": "ELA.4.6.3.1",
+            "objective_text": "Notice words, images, or phrases that repeat in a story.",
+            "objective_uuid": "9395fad4-6e02-4cdf-8cd5-ad88af65ae0d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.6",
+            "topic_name": "Literary Devices & Techniques (Language Analysis)",
+            "sub_topic_id": "ELA.4.6.3",
+            "sub_topic_name": "Motifs, Repetition, and Leitmotifs",
+            "objective_id": "ELA.4.6.3.2",
+            "objective_text": "Identify a motif that recurs throughout a text.",
+            "objective_uuid": "9d9dc4f4-0ecf-4c03-8299-29e7792a29c2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.6",
+            "topic_name": "Literary Devices & Techniques (Language Analysis)",
+            "sub_topic_id": "ELA.4.6.3",
+            "sub_topic_name": "Motifs, Repetition, and Leitmotifs",
+            "objective_id": "ELA.4.6.3.3",
+            "objective_text": "Analyze how repetition builds emphasis and meaning.",
+            "objective_uuid": "151cefd7-bc7e-45c8-8a70-379b5be0f34d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.5 — Analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.6",
+            "topic_name": "Literary Devices & Techniques (Language Analysis)",
+            "sub_topic_id": "ELA.4.6.3",
+            "sub_topic_name": "Motifs, Repetition, and Leitmotifs",
+            "objective_id": "ELA.4.6.3.4",
+            "objective_text": "Evaluate how a leitmotif develops across a work to reinforce theme.",
+            "objective_uuid": "c142ca1a-e169-43a1-8f32-0aef64f26010",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.2 — Determine central ideas or themes of a text and analyze their development; summarize the key supporting  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

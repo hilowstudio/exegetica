@@ -1,0 +1,99 @@
+{
+  "sub_topic": {
+    "id": "MAT.9.1.4",
+    "name": "Polar Coordinates and Parametric Equations",
+    "topic_id": "MAT.9.1",
+    "topic_name": "Advanced Functions & Their Behavior",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.9",
+    "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Polar Coordinates and Parametric Equations in Advanced Functions & Their Behavior (Mathematics)",
+    "grade_levels": {
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.1",
+            "topic_name": "Advanced Functions & Their Behavior",
+            "sub_topic_id": "MAT.9.1.4",
+            "sub_topic_name": "Polar Coordinates and Parametric Equations",
+            "objective_id": "MAT.9.1.4.1",
+            "objective_text": "Plot points using polar coordinates.",
+            "objective_uuid": "dec67f25-584b-4d3d-82cf-1338477f186f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 2,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.1",
+            "topic_name": "Advanced Functions & Their Behavior",
+            "sub_topic_id": "MAT.9.1.4",
+            "sub_topic_name": "Polar Coordinates and Parametric Equations",
+            "objective_id": "MAT.9.1.4.2",
+            "objective_text": "Convert between polar and rectangular coordinates.",
+            "objective_uuid": "9fd42490-1485-444e-8328-6250e42d9b4d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.1",
+            "topic_name": "Advanced Functions & Their Behavior",
+            "sub_topic_id": "MAT.9.1.4",
+            "sub_topic_name": "Polar Coordinates and Parametric Equations",
+            "objective_id": "MAT.9.1.4.3",
+            "objective_text": "Describe a curve using parametric equations.",
+            "objective_uuid": "b5a05dda-4580-4f66-8ac8-4f438932155e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content runs beyond Common Core, so no standard anchor (honest gap)."
+    }
+  }
+}

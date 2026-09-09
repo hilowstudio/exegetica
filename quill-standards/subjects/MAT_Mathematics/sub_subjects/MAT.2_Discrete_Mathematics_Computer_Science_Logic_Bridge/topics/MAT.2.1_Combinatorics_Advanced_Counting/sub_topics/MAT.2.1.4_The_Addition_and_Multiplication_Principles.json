@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.2.1.4",
+    "name": "The Addition and Multiplication Principles",
+    "topic_id": "MAT.2.1",
+    "topic_name": "Combinatorics (Advanced Counting)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.2",
+    "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for The Addition and Multiplication Principles in Combinatorics (Advanced Counting) (Mathematics)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.2",
+            "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+            "topic_id": "MAT.2.1",
+            "topic_name": "Combinatorics (Advanced Counting)",
+            "sub_topic_id": "MAT.2.1.4",
+            "sub_topic_name": "The Addition and Multiplication Principles",
+            "objective_id": "MAT.2.1.4.1",
+            "objective_text": "Count the outcomes of a compound event with a list or tree diagram.",
+            "objective_uuid": "09366d60-568b-4f02-838f-f4831cdd3b46",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.SP.C.8 — Find probabilities of compound events using organized lists, tables, tree diagrams, and simulation (grade 7)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.2",
+            "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+            "topic_id": "MAT.2.1",
+            "topic_name": "Combinatorics (Advanced Counting)",
+            "sub_topic_id": "MAT.2.1.4",
+            "sub_topic_name": "The Addition and Multiplication Principles",
+            "objective_id": "MAT.2.1.4.2",
+            "objective_text": "Apply the multiplication principle to count sequential choices.",
+            "objective_uuid": "909dba50-da09-4517-8f92-48407e079c3d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-CP.B.9 — (+) Use permutations and combinations to compute probabilities of compound events and solve problems (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.2",
+            "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+            "topic_id": "MAT.2.1",
+            "topic_name": "Combinatorics (Advanced Counting)",
+            "sub_topic_id": "MAT.2.1.4",
+            "sub_topic_name": "The Addition and Multiplication Principles",
+            "objective_id": "MAT.2.1.4.3",
+            "objective_text": "Apply the addition principle to count mutually exclusive cases.",
+            "objective_uuid": "57d5557f-93b1-4e4f-8fe7-650d3c7c1426",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-CP.B.9 — (+) Use permutations and combinations to compute probabilities of compound events and solve problems (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

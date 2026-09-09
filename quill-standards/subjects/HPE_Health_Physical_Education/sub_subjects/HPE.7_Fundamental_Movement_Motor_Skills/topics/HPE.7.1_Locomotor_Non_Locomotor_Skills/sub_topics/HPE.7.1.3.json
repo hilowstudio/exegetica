@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "HPE.7.1.3",
+    "name": "Body & Spatial Awareness",
+    "topic_id": "HPE.7.1",
+    "topic_name": "Locomotor & Non-Locomotor Skills",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.7",
+    "sub_subject_name": "Fundamental Movement & Motor Skills",
+    "total_objectives": 3,
+    "description": "K-12 progression for Body & Spatial Awareness in Locomotor & Non-Locomotor Skills (Health & Physical Education)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.7",
+            "sub_subject_name": "Fundamental Movement & Motor Skills",
+            "topic_id": "HPE.7.1",
+            "topic_name": "Locomotor & Non-Locomotor Skills",
+            "sub_topic_id": "HPE.7.1.3",
+            "sub_topic_name": "Body & Spatial Awareness",
+            "objective_id": "HPE.7.1.3.1",
+            "objective_text": "Move safely through general and personal space.",
+            "objective_uuid": "634cee16-b32e-4218-8434-2e5edc00a3a6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.7",
+            "sub_subject_name": "Fundamental Movement & Motor Skills",
+            "topic_id": "HPE.7.1",
+            "topic_name": "Locomotor & Non-Locomotor Skills",
+            "sub_topic_id": "HPE.7.1.3",
+            "sub_topic_name": "Body & Spatial Awareness",
+            "objective_id": "HPE.7.1.3.2",
+            "objective_text": "Change direction, level, and speed on cue.",
+            "objective_uuid": "4ea984a5-62b1-4a7b-86cc-75782a20bf99",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.7",
+            "sub_subject_name": "Fundamental Movement & Motor Skills",
+            "topic_id": "HPE.7.1",
+            "topic_name": "Locomotor & Non-Locomotor Skills",
+            "sub_topic_id": "HPE.7.1.3",
+            "sub_topic_name": "Body & Spatial Awareness",
+            "objective_id": "HPE.7.1.3.3",
+            "objective_text": "Move in relation to others and objects without collisions.",
+            "objective_uuid": "fe05aaaf-309d-4f55-8b17-df857469f046",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "authored",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Authored at variable depth; physical-education content has no US standard in the owned corpus (honest gap)."
+    }
+  }
+}

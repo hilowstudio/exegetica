@@ -1,0 +1,475 @@
+{
+  "sub_topic": {
+    "id": "BIB.11.6.3",
+    "name": "The Resurrection and the Final Judgment",
+    "topic_id": "BIB.11.6",
+    "topic_name": "Eschatology: The Doctrine of Last Things",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.11",
+    "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+    "total_objectives": 16,
+    "description": "K-12 developmental progression for The Resurrection and the Final Judgment in Eschatology: The Doctrine of Last Things, anchored in Scripture and the confessions via the Study Bible tools.",
+    "enrichment": {
+      "status": "expanded",
+      "levers": [
+        "structural-expansion",
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture and confession anchors validated against the study-bible MCP tools."
+    },
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.1",
+            "objective_text": "Identify that God will raise the dead.",
+            "objective_uuid": "6c563d21-afff-417d-bcea-ec77c46d85b6",
+            "anchors": {
+              "scripture": [
+                "John 5:28-29"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.2",
+            "objective_text": "Name the day when Jesus will judge everyone.",
+            "objective_uuid": "50f8b5c7-29f4-43af-9f08-9691b20d5bc9",
+            "anchors": {
+              "scripture": [
+                "Acts 17:31"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.3",
+            "objective_text": "Recall that our bodies will be raised.",
+            "objective_uuid": "45b0cfd5-e476-475c-95be-33965b3116de",
+            "anchors": {
+              "scripture": [
+                "1 Corinthians 15:42-44"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.4",
+            "objective_text": "Observe that everyone will stand before God.",
+            "objective_uuid": "4ae4847f-3730-48fe-b16a-889258f5b0ee",
+            "anchors": {
+              "scripture": [
+                "2 Corinthians 5:10"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.5",
+            "objective_text": "Summarize the general resurrection of the just and the unjust.",
+            "objective_uuid": "2885b796-828f-44d9-9c3b-93446e39ecf6",
+            "anchors": {
+              "scripture": [
+                "John 5:28-29"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q87"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.6",
+            "objective_text": "Explain the believer's glorified, resurrection body.",
+            "objective_uuid": "897d8d11-2774-4e5f-9752-b471e58d076a",
+            "anchors": {
+              "scripture": [
+                "1 Corinthians 15:42-44",
+                "Philippians 3:21"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q38"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.7",
+            "objective_text": "Compare the resurrection of the just (to honor) with the unjust (to dishonor).",
+            "objective_uuid": "269a4f5a-95f2-488c-8e84-3596e3e83f0b",
+            "anchors": {
+              "scripture": [
+                "John 5:28-29",
+                "Daniel 12:2"
+              ],
+              "confessions": [
+                "Westminster Confession 32.3"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.8",
+            "objective_text": "Apply the hope of resurrection to present grief and suffering.",
+            "objective_uuid": "bab417b9-1a91-48af-9901-b27439d476e0",
+            "anchors": {
+              "scripture": [
+                "1 Thessalonians 4:13-14",
+                "1 Corinthians 15:58"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.9",
+            "objective_text": "Analyze the final judgment (its judge, its subjects, and its standard).",
+            "objective_uuid": "1daec85b-0ad0-4006-bed0-11bab6dbc761",
+            "anchors": {
+              "scripture": [
+                "Matthew 25:31-46",
+                "Revelation 20:11-15"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q88"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.10",
+            "objective_text": "Interpret the separation of the sheep and the goats.",
+            "objective_uuid": "9c2b169f-c60e-43a9-bddb-857b95a0dd90",
+            "anchors": {
+              "scripture": [
+                "Matthew 25:31-46"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.11",
+            "objective_text": "Connect the resurrection of Christ to the resurrection of believers.",
+            "objective_uuid": "e0766efb-6f31-4f4e-91eb-73edbffbce13",
+            "anchors": {
+              "scripture": [
+                "1 Corinthians 15:20-23",
+                "Romans 8:11"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.12",
+            "objective_text": "Explain the purpose of the last judgment (to display God's justice and mercy).",
+            "objective_uuid": "fa091ec6-cdab-4162-91ed-01cef20b9d34",
+            "anchors": {
+              "scripture": [
+                "Matthew 25:46"
+              ],
+              "confessions": [
+                "Westminster Confession 33.2"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.13",
+            "objective_text": "Construct a theology of the resurrection and final judgment.",
+            "objective_uuid": "6f2ba2c2-5d73-470b-9991-989b6f9d6d83",
+            "anchors": {
+              "scripture": [
+                "John 5:28-29",
+                "Revelation 20:11-15"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q87"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.14",
+            "objective_text": "Evaluate views that deny a bodily resurrection or a final judgment.",
+            "objective_uuid": "3094c057-a3ce-4705-8643-71ea138ee38a",
+            "anchors": {
+              "scripture": [
+                "1 Corinthians 15:12-19",
+                "Acts 17:31"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.15",
+            "objective_text": "Defend the justice of God in the final judgment.",
+            "objective_uuid": "f090a94b-f072-48dd-bbdb-de226e5c3672",
+            "anchors": {
+              "scripture": [
+                "Romans 2:5-11",
+                "Genesis 18:25"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.3",
+            "sub_topic_name": "The Resurrection and the Final Judgment",
+            "objective_id": "BIB.11.6.3.16",
+            "objective_text": "Synthesize resurrection and judgment as the vindication of God and His people.",
+            "objective_uuid": "29282c99-4e88-4598-a857-e758c3f9e130",
+            "anchors": {
+              "scripture": [
+                "John 5:28-29",
+                "2 Timothy 4:8"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q90"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

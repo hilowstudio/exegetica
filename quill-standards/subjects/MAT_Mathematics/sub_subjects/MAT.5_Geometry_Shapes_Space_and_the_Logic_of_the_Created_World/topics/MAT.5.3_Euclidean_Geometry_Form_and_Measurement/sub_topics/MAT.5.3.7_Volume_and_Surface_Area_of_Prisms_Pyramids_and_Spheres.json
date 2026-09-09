@@ -1,0 +1,135 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.3.7",
+    "name": "Volume and Surface Area of Prisms, Pyramids, and Spheres",
+    "topic_id": "MAT.5.3",
+    "topic_name": "Euclidean Geometry (Form and Measurement)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Volume and Surface Area of Prisms, Pyramids, and Spheres in Euclidean Geometry (Form and Measurement) (Mathematics)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 2,
+        "average_complexity": 7.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.7",
+            "sub_topic_name": "Volume and Surface Area of Prisms, Pyramids, and Spheres",
+            "objective_id": "MAT.5.3.7.1",
+            "objective_text": "Find the volume of a right rectangular prism by counting unit cubes.",
+            "objective_uuid": "aa3dc816-bae5-4e7a-8770-b8dbec647ae2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 5.MD.C.5 — Relate volume to the operations of multiplication and addition and solve real world and mathematical pro (grade 5)"
+              ]
+            }
+          },
+          {
+            "complexity": 11,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.7",
+            "sub_topic_name": "Volume and Surface Area of Prisms, Pyramids, and Spheres",
+            "objective_id": "MAT.5.3.7.2",
+            "objective_text": "Find volume using the formula V = l x w x h.",
+            "objective_uuid": "bd8085c4-6800-4da3-8759-1ed972ebd4bd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 5.MD.C.5 — Relate volume to the operations of multiplication and addition and solve real world and mathematical pro (grade 5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.7",
+            "sub_topic_name": "Volume and Surface Area of Prisms, Pyramids, and Spheres",
+            "objective_id": "MAT.5.3.7.3",
+            "objective_text": "Find the surface area of prisms and pyramids using nets.",
+            "objective_uuid": "4940a31f-b146-4304-8d55-90f0e315ab2d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 6.G.A.2 — Find the volume of a right rectangular prism with fractional edge lengths by packing it with unit cubes  (grade 6)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.7",
+            "sub_topic_name": "Volume and Surface Area of Prisms, Pyramids, and Spheres",
+            "objective_id": "MAT.5.3.7.4",
+            "objective_text": "Use volume formulas for cylinders, cones, and spheres to solve problems.",
+            "objective_uuid": "8c6a75c4-f864-4f0c-89e2-3e5546a17f4e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-GMD.A.3 — Use volume formulas for cylinders, pyramids, cones, and spheres to solve problems (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

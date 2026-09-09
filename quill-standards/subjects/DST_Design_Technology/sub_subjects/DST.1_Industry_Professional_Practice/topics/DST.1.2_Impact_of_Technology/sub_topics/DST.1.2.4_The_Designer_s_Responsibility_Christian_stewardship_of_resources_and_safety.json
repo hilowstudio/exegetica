@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "DST.1.2.4",
+    "name": "The Designer's Responsibility (Christian stewardship of resources and safety)",
+    "topic_id": "DST.1.2",
+    "topic_name": "Impact of Technology",
+    "subject_id": "DST",
+    "subject_name": "Design & Technology",
+    "sub_subject_id": "DST.1",
+    "sub_subject_name": "Industry & Professional Practice",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for The Designer's Responsibility (Christian stewardship of resources and safety) in Impact of Technology (Design & Technology)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.1",
+            "sub_subject_name": "Industry & Professional Practice",
+            "topic_id": "DST.1.2",
+            "topic_name": "Impact of Technology",
+            "sub_topic_id": "DST.1.2.4",
+            "sub_topic_name": "The Designer's Responsibility (Christian stewardship of resources and safety)",
+            "objective_id": "DST.1.2.4.1",
+            "objective_text": "Explain why a designer should protect people's safety and avoid wasting materials",
+            "objective_uuid": "9200da7e-2b4f-420e-89d0-48a647d05aed",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.1",
+            "sub_subject_name": "Industry & Professional Practice",
+            "topic_id": "DST.1.2",
+            "topic_name": "Impact of Technology",
+            "sub_topic_id": "DST.1.2.4",
+            "sub_topic_name": "The Designer's Responsibility (Christian stewardship of resources and safety)",
+            "objective_id": "DST.1.2.4.2",
+            "objective_text": "Describe how caring for creation shapes responsible choices in what we make and how we make it",
+            "objective_uuid": "6ee3a460-c773-4367-8acd-65ec7542e2ce",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.1",
+            "sub_subject_name": "Industry & Professional Practice",
+            "topic_id": "DST.1.2",
+            "topic_name": "Impact of Technology",
+            "sub_topic_id": "DST.1.2.4",
+            "sub_topic_name": "The Designer's Responsibility (Christian stewardship of resources and safety)",
+            "objective_id": "DST.1.2.4.3",
+            "objective_text": "Explain a designer's duty to consider users, workers, and the environment when making decisions",
+            "objective_uuid": "b0a3895c-0efe-4b20-8bc3-5b8b14abcd4e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.1",
+            "sub_subject_name": "Industry & Professional Practice",
+            "topic_id": "DST.1.2",
+            "topic_name": "Impact of Technology",
+            "sub_topic_id": "DST.1.2.4",
+            "sub_topic_name": "The Designer's Responsibility (Christian stewardship of resources and safety)",
+            "objective_id": "DST.1.2.4.4",
+            "objective_text": "Analyze a design decision through the lens of Christian stewardship of resources and neighbor",
+            "objective_uuid": "e10313fc-3aba-4c2d-82d3-0b1905dca723",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.1",
+            "sub_subject_name": "Industry & Professional Practice",
+            "topic_id": "DST.1.2",
+            "topic_name": "Impact of Technology",
+            "sub_topic_id": "DST.1.2.4",
+            "sub_topic_name": "The Designer's Responsibility (Christian stewardship of resources and safety)",
+            "objective_id": "DST.1.2.4.5",
+            "objective_text": "Evaluate a product's design against principles of safety, stewardship, and care for others",
+            "objective_uuid": "736e6d13-1da3-422e-8295-76e9106747b0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

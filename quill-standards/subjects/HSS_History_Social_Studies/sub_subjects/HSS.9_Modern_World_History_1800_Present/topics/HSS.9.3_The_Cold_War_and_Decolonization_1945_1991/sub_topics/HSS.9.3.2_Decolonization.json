@@ -1,0 +1,220 @@
+{
+  "sub_topic": {
+    "id": "HSS.9.3.2",
+    "name": "Decolonization",
+    "topic_id": "HSS.9.3",
+    "topic_name": "The Cold War and Decolonization (1945–1991)",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.9",
+    "sub_subject_name": "Modern World History (1800–Present)",
+    "total_objectives": 7,
+    "description": "13-year academic progression (K-12) for Decolonization in The Cold War and Decolonization (1945–1991) (History & Social Studies)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.3",
+            "topic_name": "The Cold War and Decolonization (1945–1991)",
+            "sub_topic_id": "HSS.9.3.2",
+            "sub_topic_name": "Decolonization",
+            "objective_id": "HSS.9.3.2.1",
+            "objective_text": "Ask questions about the leaders who helped colonized nations win their independence.",
+            "objective_uuid": "9bc40548-de5c-4c9e-8039-dd298554cad9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.K-2 — Generate questions about individuals and groups who have shaped a significant historical change (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 2,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.3",
+            "topic_name": "The Cold War and Decolonization (1945–1991)",
+            "sub_topic_id": "HSS.9.3.2",
+            "sub_topic_name": "Decolonization",
+            "objective_id": "HSS.9.3.2.2",
+            "objective_text": "Sequence major events of decolonization after World War II, such as Indian independence in 1947.",
+            "objective_uuid": "bfb180aa-a719-47c4-870a-ff1dc8e54698",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          },
+          {
+            "complexity": 11,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.3",
+            "topic_name": "The Cold War and Decolonization (1945–1991)",
+            "sub_topic_id": "HSS.9.3.2",
+            "sub_topic_name": "Decolonization",
+            "objective_id": "HSS.9.3.2.3",
+            "objective_text": "Generate possible reasons why colonized peoples sought independence after World War II.",
+            "objective_uuid": "197a1142-4d93-4287-8292-d23c54f63e3e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.K-2 — Generate possible reasons for an event or development in the past (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.3",
+            "topic_name": "The Cold War and Decolonization (1945–1991)",
+            "sub_topic_id": "HSS.9.3.2",
+            "sub_topic_name": "Decolonization",
+            "objective_id": "HSS.9.3.2.4",
+            "objective_text": "Describe how India gained independence through Gandhi's nonviolent movement.",
+            "objective_uuid": "addec15e-ad3b-419c-8e23-e9d804b75842",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.3",
+            "topic_name": "The Cold War and Decolonization (1945–1991)",
+            "sub_topic_id": "HSS.9.3.2",
+            "sub_topic_name": "Decolonization",
+            "objective_id": "HSS.9.3.2.5",
+            "objective_text": "Explain the causes and effects of the wave of decolonization across Africa and Asia.",
+            "objective_uuid": "5495d058-8e63-4e02-80e8-f6e1ecdeb0cb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.3",
+            "topic_name": "The Cold War and Decolonization (1945–1991)",
+            "sub_topic_id": "HSS.9.3.2",
+            "sub_topic_name": "Decolonization",
+            "objective_id": "HSS.9.3.2.6",
+            "objective_text": "Compare peaceful and violent paths to independence in different colonies.",
+            "objective_uuid": "fa99551b-12c8-4412-8f0e-acbd0c7e9e54",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.9",
+            "sub_subject_name": "Modern World History (1800–Present)",
+            "topic_id": "HSS.9.3",
+            "topic_name": "The Cold War and Decolonization (1945–1991)",
+            "sub_topic_id": "HSS.9.3.2",
+            "sub_topic_name": "Decolonization",
+            "objective_id": "HSS.9.3.2.7",
+            "objective_text": "Evaluate how the significance of independence leaders such as Gandhi, Nkrumah, and Ho Chi Minh changed over time.",
+            "objective_uuid": "12010184-0469-4ca9-89a4-63fc76acd0fe",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.9-12 — Use questions generated about individuals and groups to assess how the significance of their actions (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

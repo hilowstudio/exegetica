@@ -1,0 +1,122 @@
+{
+  "sub_topic": {
+    "id": "HPE.3.2.2",
+    "name": "Recognizing When to Seek Help",
+    "topic_id": "HPE.3.2",
+    "topic_name": "Resilience & Help-Seeking",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.3",
+    "sub_subject_name": "Mental & Emotional Health",
+    "total_objectives": 3,
+    "description": "K-12 progression for Recognizing When to Seek Help in Resilience & Help-Seeking (Health & Physical Education)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.3",
+            "sub_subject_name": "Mental & Emotional Health",
+            "topic_id": "HPE.3.2",
+            "topic_name": "Resilience & Help-Seeking",
+            "sub_topic_id": "HPE.3.2.2",
+            "sub_topic_name": "Recognizing When to Seek Help",
+            "objective_id": "HPE.3.2.2.1",
+            "objective_text": "Identify warning signs that someone needs help.",
+            "objective_uuid": "e0249336-83cd-4847-8225-cafa5bd003a1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 3.5.1 — Identify characteristics of valid health information, products, and services (National Health Education Standards, grades 3-5)",
+                "Health Ed 3.12.1 — Evaluate the validity of health information, products, and services (National Health Education Standards, grades 9-12)",
+                "Health Ed 4.5.1 — Demonstrate effective verbal and nonverbal communication skills to enhance health (National Health Education Standards, grades 3-5)",
+                "Health Ed 4.12.1 — Use skills for communicating effectively with family, peers, and others to enhance health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.3",
+            "sub_subject_name": "Mental & Emotional Health",
+            "topic_id": "HPE.3.2",
+            "topic_name": "Resilience & Help-Seeking",
+            "sub_topic_id": "HPE.3.2.2",
+            "sub_topic_name": "Recognizing When to Seek Help",
+            "objective_id": "HPE.3.2.2.2",
+            "objective_text": "Name trusted adults and resources for mental-health support.",
+            "objective_uuid": "0ee66c60-550f-4774-857d-5d66d8f913cb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 3.5.1 — Identify characteristics of valid health information, products, and services (National Health Education Standards, grades 3-5)",
+                "Health Ed 3.12.1 — Evaluate the validity of health information, products, and services (National Health Education Standards, grades 9-12)",
+                "Health Ed 4.5.1 — Demonstrate effective verbal and nonverbal communication skills to enhance health (National Health Education Standards, grades 3-5)",
+                "Health Ed 4.12.1 — Use skills for communicating effectively with family, peers, and others to enhance health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.3",
+            "sub_subject_name": "Mental & Emotional Health",
+            "topic_id": "HPE.3.2",
+            "topic_name": "Resilience & Help-Seeking",
+            "sub_topic_id": "HPE.3.2.2",
+            "sub_topic_name": "Recognizing When to Seek Help",
+            "objective_id": "HPE.3.2.2.3",
+            "objective_text": "Ask for help clearly when it is needed.",
+            "objective_uuid": "048a4b69-6387-47c8-8fb9-ade30d0d8cdf",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 3.5.1 — Identify characteristics of valid health information, products, and services (National Health Education Standards, grades 3-5)",
+                "Health Ed 3.12.1 — Evaluate the validity of health information, products, and services (National Health Education Standards, grades 9-12)",
+                "Health Ed 4.5.1 — Demonstrate effective verbal and nonverbal communication skills to enhance health (National Health Education Standards, grades 3-5)",
+                "Health Ed 4.12.1 — Use skills for communicating effectively with family, peers, and others to enhance health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Health Education Standards",
+      "anchor_note": "NHES codes verified against the owned corpus; objectives authored to the standard's real sub-skills at variable depth."
+    }
+  }
+}

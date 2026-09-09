@@ -1,0 +1,198 @@
+{
+  "sub_topic": {
+    "id": "HSS.8.1.4",
+    "name": "The Crusades",
+    "topic_id": "HSS.8.1",
+    "topic_name": "Byzantium, Islam & The Crusades",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.8",
+    "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for The Crusades in Byzantium, Islam & The Crusades (History & Social Studies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.1",
+            "topic_name": "Byzantium, Islam & The Crusades",
+            "sub_topic_id": "HSS.8.1.4",
+            "sub_topic_name": "The Crusades",
+            "objective_id": "HSS.8.1.4.1",
+            "objective_text": "Describe what the Crusades were and identify Jerusalem as a holy city to Christians, Muslims, and Jews.",
+            "objective_uuid": "a0bea7b6-2e65-4e5c-87b9-c5ead40d4fed",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.1",
+            "topic_name": "Byzantium, Islam & The Crusades",
+            "sub_topic_id": "HSS.8.1.4",
+            "sub_topic_name": "The Crusades",
+            "objective_id": "HSS.8.1.4.2",
+            "objective_text": "Sequence the major Crusades, beginning with Pope Urban II's call to arms in 1095.",
+            "objective_uuid": "67a32bbd-ac48-4c87-8c29-85cf3e741679",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.3-5 — Create and use a chronological sequence of related events to compare developments that happened at t (history, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.1",
+            "topic_name": "Byzantium, Islam & The Crusades",
+            "sub_topic_id": "HSS.8.1.4",
+            "sub_topic_name": "The Crusades",
+            "objective_id": "HSS.8.1.4.3",
+            "objective_text": "Explain the religious, political, and economic causes that led Europeans to launch the Crusades.",
+            "objective_uuid": "531c47e4-6a9f-47b6-86f2-bd92d343f24c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.3-5 — Explain probable causes and effects of events and developments (history, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.1",
+            "topic_name": "Byzantium, Islam & The Crusades",
+            "sub_topic_id": "HSS.8.1.4",
+            "sub_topic_name": "The Crusades",
+            "objective_id": "HSS.8.1.4.4",
+            "objective_text": "Explain the roles of figures such as Pope Urban II, Richard the Lionheart, and Saladin in the Crusades.",
+            "objective_uuid": "356c49ce-a56a-4d89-8b50-ab757dc0fe8e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.3-5 — Generate questions about individuals and groups who have shaped significant historical changes and c (history, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.1",
+            "topic_name": "Byzantium, Islam & The Crusades",
+            "sub_topic_id": "HSS.8.1.4",
+            "sub_topic_name": "The Crusades",
+            "objective_id": "HSS.8.1.4.5",
+            "objective_text": "Analyze the multiple effects of the Crusades on trade, cultural exchange, and relations among Christians, Muslims, and Jews.",
+            "objective_uuid": "51943e8c-7384-4107-845a-f2abf6ae64bf",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.1",
+            "topic_name": "Byzantium, Islam & The Crusades",
+            "sub_topic_id": "HSS.8.1.4",
+            "sub_topic_name": "The Crusades",
+            "objective_id": "HSS.8.1.4.6",
+            "objective_text": "Evaluate how the Crusades are remembered differently across cultures and how their significance has changed over time.",
+            "objective_uuid": "41a700d0-ad6d-408d-8d64-8f1e53632e86",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.9-12 — Use questions generated about individuals and groups to assess how the significance of their actions (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

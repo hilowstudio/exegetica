@@ -1,0 +1,135 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.3.3",
+    "name": "Circles (radius, diameter, circumference, area, arcs, sectors)",
+    "topic_id": "MAT.5.3",
+    "topic_name": "Euclidean Geometry (Form and Measurement)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Circles (radius, diameter, circumference, area, arcs, sectors) in Euclidean Geometry (Form and Measurement) (Mathematics)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 2,
+        "average_complexity": 7.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.3",
+            "sub_topic_name": "Circles (radius, diameter, circumference, area, arcs, sectors)",
+            "objective_id": "MAT.5.3.3.1",
+            "objective_text": "Identify the radius, diameter, and circumference of a circle.",
+            "objective_uuid": "aed4b8b9-e4bd-4a84-849c-5634ad647a09",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.G.B.4 — Know the formulas for the area and circumference of a circle and use them to solve problems; give an inf (grade 7)"
+              ]
+            }
+          },
+          {
+            "complexity": 11,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.3",
+            "sub_topic_name": "Circles (radius, diameter, circumference, area, arcs, sectors)",
+            "objective_id": "MAT.5.3.3.2",
+            "objective_text": "Use the formulas for circumference and area of a circle.",
+            "objective_uuid": "0e5b2ba4-72b6-4055-8068-d91b68a6034d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.G.B.4 — Know the formulas for the area and circumference of a circle and use them to solve problems; give an inf (grade 7)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.3",
+            "sub_topic_name": "Circles (radius, diameter, circumference, area, arcs, sectors)",
+            "objective_id": "MAT.5.3.3.3",
+            "objective_text": "Understand that all circles are similar.",
+            "objective_uuid": "61237763-a666-40be-813c-a49e8fbb8d41",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-C.A.1 — Prove that all circles are similar (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.3",
+            "sub_topic_name": "Circles (radius, diameter, circumference, area, arcs, sectors)",
+            "objective_id": "MAT.5.3.3.4",
+            "objective_text": "Find arc lengths and areas of sectors.",
+            "objective_uuid": "590ec866-2687-4e57-813b-7f97ee14cb2a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-C.A.1 — Prove that all circles are similar (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

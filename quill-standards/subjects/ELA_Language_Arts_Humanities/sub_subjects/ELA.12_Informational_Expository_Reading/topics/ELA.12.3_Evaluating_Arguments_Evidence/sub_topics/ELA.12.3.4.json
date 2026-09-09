@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ELA.12.3.4",
+    "name": "Detecting Faulty Reasoning",
+    "topic_id": "ELA.12.3",
+    "topic_name": "Evaluating Arguments & Evidence",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.12",
+    "sub_subject_name": "Informational & Expository Reading",
+    "total_objectives": 4,
+    "description": "K-12 progression for Detecting Faulty Reasoning in Evaluating Arguments & Evidence (Informational & Expository Reading)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.4",
+            "sub_topic_name": "Detecting Faulty Reasoning",
+            "objective_id": "ELA.12.3.4.1",
+            "objective_text": "Recognize when an argument does not follow logically.",
+            "objective_uuid": "e4ac8de5-0b7b-4e9f-828e-5048d983e3a2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.4",
+            "sub_topic_name": "Detecting Faulty Reasoning",
+            "objective_id": "ELA.12.3.4.2",
+            "objective_text": "Identify common flaws or fallacies in reasoning within a text.",
+            "objective_uuid": "2114e0f6-d584-4790-82aa-1cd2994b52dd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.4",
+            "sub_topic_name": "Detecting Faulty Reasoning",
+            "objective_id": "ELA.12.3.4.3",
+            "objective_text": "Explain why a specific piece of reasoning is faulty.",
+            "objective_uuid": "a0ba977d-7d39-4cdf-852f-838b02206b7e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.4",
+            "sub_topic_name": "Detecting Faulty Reasoning",
+            "objective_id": "ELA.12.3.4.4",
+            "objective_text": "Evaluate an argument's credibility given its reasoning flaws.",
+            "objective_uuid": "19b5851a-f06c-4256-8849-5a3dc0742563",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Authored to CCSS Reading anchors (CCRA.R); objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

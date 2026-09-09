@@ -1,0 +1,474 @@
+{
+  "sub_topic": {
+    "id": "BIB.11.6.2",
+    "name": "The Return of Christ",
+    "topic_id": "BIB.11.6",
+    "topic_name": "Eschatology: The Doctrine of Last Things",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.11",
+    "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+    "total_objectives": 16,
+    "description": "K-12 developmental progression for The Return of Christ in Eschatology: The Doctrine of Last Things, anchored in Scripture and the confessions via the Study Bible tools.",
+    "enrichment": {
+      "status": "expanded",
+      "levers": [
+        "structural-expansion",
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture and confession anchors validated against the study-bible MCP tools."
+    },
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.1",
+            "objective_text": "Identify that Jesus is coming back.",
+            "objective_uuid": "81bf10ec-0618-4486-a4c7-8fd7a0229d15",
+            "anchors": {
+              "scripture": [
+                "Acts 1:11"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.2",
+            "objective_text": "Name Jesus as the King who will return.",
+            "objective_uuid": "d70c898e-a598-46c8-805a-174a9209ca12",
+            "anchors": {
+              "scripture": [
+                "Revelation 22:12"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.3",
+            "objective_text": "Recall the angels' promise that Jesus will come again.",
+            "objective_uuid": "1c763604-fd21-47f3-ae4f-7deae2691501",
+            "anchors": {
+              "scripture": [
+                "Acts 1:11"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.4",
+            "objective_text": "Observe that we should watch and be ready.",
+            "objective_uuid": "64b52eac-0131-4a92-ac59-009f26ad4134",
+            "anchors": {
+              "scripture": [
+                "Matthew 24:44",
+                "Matthew 25:13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.5",
+            "objective_text": "Summarize the Second Coming of Christ.",
+            "objective_uuid": "533bd5b0-f7c8-46b3-9194-417c42e884c0",
+            "anchors": {
+              "scripture": [
+                "Acts 1:11",
+                "1 Thessalonians 4:16"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q28"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.6",
+            "objective_text": "Explain that Christ will return visibly and personally.",
+            "objective_uuid": "03d94e04-75e6-441f-a79b-9dc139556cc9",
+            "anchors": {
+              "scripture": [
+                "Acts 1:11",
+                "Revelation 1:7"
+              ],
+              "confessions": [
+                "Heidelberg Catechism Q52"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.7",
+            "objective_text": "Compare Christ's first coming (in humility) with His second (in glory).",
+            "objective_uuid": "5055cbbf-49e6-42eb-be9c-55cad56e090c",
+            "anchors": {
+              "scripture": [
+                "Hebrews 9:28",
+                "Titus 2:13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.8",
+            "objective_text": "Apply the call to live holy lives in light of His return.",
+            "objective_uuid": "052e6860-2568-4346-8b5d-7fbfe2522b8a",
+            "anchors": {
+              "scripture": [
+                "2 Peter 3:11-14",
+                "1 John 3:2-3"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.9",
+            "objective_text": "Analyze the signs that precede Christ's coming.",
+            "objective_uuid": "baf7b51d-f764-4f90-baed-c9c5637aff78",
+            "anchors": {
+              "scripture": [
+                "Matthew 24:3-14",
+                "2 Thessalonians 2:1-4"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.10",
+            "objective_text": "Interpret 'no one knows the day or hour.'",
+            "objective_uuid": "29bbcee9-791a-4908-9f56-d1ccb9e5a792",
+            "anchors": {
+              "scripture": [
+                "Matthew 24:36",
+                "Acts 1:7"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.11",
+            "objective_text": "Connect the return of Christ to the believer's blessed hope.",
+            "objective_uuid": "25d215eb-12d6-4eda-8eae-c49e18d85543",
+            "anchors": {
+              "scripture": [
+                "Titus 2:13",
+                "1 Thessalonians 4:16-18"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.12",
+            "objective_text": "Explain the comfort of Christ's return for the suffering church.",
+            "objective_uuid": "10c707a9-4d05-4b87-ada5-8089d5d16d7d",
+            "anchors": {
+              "scripture": [
+                "1 Thessalonians 4:18"
+              ],
+              "confessions": [
+                "Heidelberg Catechism Q52"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.13",
+            "objective_text": "Construct a theology of the Second Coming.",
+            "objective_uuid": "3653bd53-446a-48a7-ac33-f0d8abb0e366",
+            "anchors": {
+              "scripture": [
+                "Acts 1:11",
+                "1 Thessalonians 4:16"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q56"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.14",
+            "objective_text": "Evaluate the danger of date-setting and false predictions.",
+            "objective_uuid": "ab470911-e4ae-4636-9745-afd5f73d9c5d",
+            "anchors": {
+              "scripture": [
+                "Matthew 24:36",
+                "Mark 13:32-33"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.15",
+            "objective_text": "Defend the personal, bodily, visible return against a merely 'spiritual' coming.",
+            "objective_uuid": "96e22769-78bf-452a-88fe-b7cc6283cd6c",
+            "anchors": {
+              "scripture": [
+                "Acts 1:11",
+                "Revelation 1:7"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.6",
+            "topic_name": "Eschatology: The Doctrine of Last Things",
+            "sub_topic_id": "BIB.11.6.2",
+            "sub_topic_name": "The Return of Christ",
+            "objective_id": "BIB.11.6.2.16",
+            "objective_text": "Synthesize the return of Christ as judge and redeemer, our blessed hope.",
+            "objective_uuid": "d8fbf56b-53ca-4fb9-9db4-aa10f40956b9",
+            "anchors": {
+              "scripture": [
+                "Titus 2:13",
+                "Acts 1:11"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q28"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

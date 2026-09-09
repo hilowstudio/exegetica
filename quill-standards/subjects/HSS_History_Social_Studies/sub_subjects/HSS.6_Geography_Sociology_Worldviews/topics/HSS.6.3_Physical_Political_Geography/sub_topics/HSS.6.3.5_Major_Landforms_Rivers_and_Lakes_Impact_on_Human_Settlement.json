@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "HSS.6.3.5",
+    "name": "Major Landforms, Rivers and Lakes (Impact on Human Settlement)",
+    "topic_id": "HSS.6.3",
+    "topic_name": "Physical & Political Geography",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.6",
+    "sub_subject_name": "Geography, Sociology & Worldviews",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Major Landforms, Rivers and Lakes (Impact on Human Settlement) in Physical & Political Geography (History & Social Studies)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.6",
+            "sub_subject_name": "Geography, Sociology & Worldviews",
+            "topic_id": "HSS.6.3",
+            "topic_name": "Physical & Political Geography",
+            "sub_topic_id": "HSS.6.3.5",
+            "sub_topic_name": "Major Landforms, Rivers and Lakes (Impact on Human Settlement)",
+            "objective_id": "HSS.6.3.5.1",
+            "objective_text": "Identify major landforms and bodies of water, such as mountains, rivers, lakes, and plains.",
+            "objective_uuid": "2104a20f-68ce-4961-8bc3-a6fd6fe835c6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.K-2 — Construct maps, graphs, and other representations of familiar places (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.6",
+            "sub_subject_name": "Geography, Sociology & Worldviews",
+            "topic_id": "HSS.6.3",
+            "topic_name": "Physical & Political Geography",
+            "sub_topic_id": "HSS.6.3.5",
+            "sub_topic_name": "Major Landforms, Rivers and Lakes (Impact on Human Settlement)",
+            "objective_id": "HSS.6.3.5.2",
+            "objective_text": "Describe how landforms and water affect where people choose to live.",
+            "objective_uuid": "783f0f11-f774-440f-84e8-9bedcc378251",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.K-2 — Explain how weather, climate, and other environmental characteristics affect people's lives in a pla (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.6",
+            "sub_subject_name": "Geography, Sociology & Worldviews",
+            "topic_id": "HSS.6.3",
+            "topic_name": "Physical & Political Geography",
+            "sub_topic_id": "HSS.6.3.5",
+            "sub_topic_name": "Major Landforms, Rivers and Lakes (Impact on Human Settlement)",
+            "objective_id": "HSS.6.3.5.3",
+            "objective_text": "Explain why many early settlements and cities developed near rivers and lakes.",
+            "objective_uuid": "b1f14a01-00cb-4e4c-8f24-39a5e2575932",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.9-12 — Analyze relationships and interactions within and between human and physical systems to explain reci (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.6",
+            "sub_subject_name": "Geography, Sociology & Worldviews",
+            "topic_id": "HSS.6.3",
+            "topic_name": "Physical & Political Geography",
+            "sub_topic_id": "HSS.6.3.5",
+            "sub_topic_name": "Major Landforms, Rivers and Lakes (Impact on Human Settlement)",
+            "objective_id": "HSS.6.3.5.4",
+            "objective_text": "Use maps to locate major landforms and rivers and explain their relationship to where people live.",
+            "objective_uuid": "703b26c5-a635-498c-82d5-fae98fc761d8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.2.9-12 — Use maps, satellite images, photographs, and other representations to explain relationships between  (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.6",
+            "sub_subject_name": "Geography, Sociology & Worldviews",
+            "topic_id": "HSS.6.3",
+            "topic_name": "Physical & Political Geography",
+            "sub_topic_id": "HSS.6.3.5",
+            "sub_topic_name": "Major Landforms, Rivers and Lakes (Impact on Human Settlement)",
+            "objective_id": "HSS.6.3.5.5",
+            "objective_text": "Analyze how physical landforms and water systems have shaped human settlement patterns.",
+            "objective_uuid": "edd12212-f82f-4a06-8422-6cf65c4370b2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.9-12 — Analyze relationships and interactions within and between human and physical systems to explain reci (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

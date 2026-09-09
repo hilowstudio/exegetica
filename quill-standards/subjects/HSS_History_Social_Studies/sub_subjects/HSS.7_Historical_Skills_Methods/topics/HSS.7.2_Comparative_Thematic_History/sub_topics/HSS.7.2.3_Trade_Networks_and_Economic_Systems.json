@@ -1,0 +1,167 @@
+{
+  "sub_topic": {
+    "id": "HSS.7.2.3",
+    "name": "Trade Networks and Economic Systems",
+    "topic_id": "HSS.7.2",
+    "topic_name": "Comparative Thematic History",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.7",
+    "sub_subject_name": "Historical Skills & Methods",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Trade Networks and Economic Systems in Comparative Thematic History (History & Social Studies)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.2",
+            "topic_name": "Comparative Thematic History",
+            "sub_topic_id": "HSS.7.2.3",
+            "sub_topic_name": "Trade Networks and Economic Systems",
+            "objective_id": "HSS.7.2.3.1",
+            "objective_text": "Trace goods traveling along a trade route using a map and timeline.",
+            "objective_uuid": "3da30d54-c32f-4fd8-8d6b-2c8c791dfec2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.2",
+            "topic_name": "Comparative Thematic History",
+            "sub_topic_id": "HSS.7.2.3",
+            "sub_topic_name": "Trade Networks and Economic Systems",
+            "objective_id": "HSS.7.2.3.2",
+            "objective_text": "Generate reasons why people traded across long distances.",
+            "objective_uuid": "066f8d06-14cb-455d-8f4f-0c015063fd1c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.K-2 — Generate possible reasons for an event or development in the past (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.2",
+            "topic_name": "Comparative Thematic History",
+            "sub_topic_id": "HSS.7.2.3",
+            "sub_topic_name": "Trade Networks and Economic Systems",
+            "objective_id": "HSS.7.2.3.3",
+            "objective_text": "Explain how a trade network connected distant regions and cultures.",
+            "objective_uuid": "c8824f00-716f-4272-88c2-a494039ade6d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.2",
+            "topic_name": "Comparative Thematic History",
+            "sub_topic_id": "HSS.7.2.3",
+            "sub_topic_name": "Trade Networks and Economic Systems",
+            "objective_id": "HSS.7.2.3.4",
+            "objective_text": "Analyze the causes and consequences of shifts in trade networks and economic systems.",
+            "objective_uuid": "ec069538-0c20-400c-8443-66beed749a2f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.2",
+            "topic_name": "Comparative Thematic History",
+            "sub_topic_id": "HSS.7.2.3",
+            "sub_topic_name": "Trade Networks and Economic Systems",
+            "objective_id": "HSS.7.2.3.5",
+            "objective_text": "Evaluate how an economic system was shaped by the geography and context of its era.",
+            "objective_uuid": "cb9a1a06-ecf0-43a3-88b1-ca35abb15fa9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

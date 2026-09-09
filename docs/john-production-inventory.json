@@ -1,0 +1,2873 @@
+{
+ "course": "The Gospel of John — production inventory (per lesson)",
+ "drives": "the resource generator (Approach B)",
+ "course_level": [
+  {
+   "artifact": "Lesson template (style exemplar)",
+   "format": "lesson_plan",
+   "status": "built (John_Lesson_Template.md)"
+  },
+  {
+   "artifact": "'How to Read John' orientation handout",
+   "format": "book_survey",
+   "status": "to generate"
+  },
+  {
+   "artifact": "Reading Journal guide + template",
+   "format": "reflection_journal",
+   "status": "to generate"
+  },
+  {
+   "artifact": "Quiet-Time Journal guide",
+   "format": "reflection_journal",
+   "status": "to generate"
+  },
+  {
+   "artifact": "Memory Verse master sheet (16 verses + schedule)",
+   "format": "scripture_memory_plan",
+   "status": "to generate"
+  },
+  {
+   "artifact": "Memory Verse card set (16)",
+   "format": "flashcards",
+   "status": "to generate"
+  },
+  {
+   "artifact": "Rolling memory quiz bank + keys",
+   "format": "quiz+answer_key",
+   "status": "to generate"
+  },
+  {
+   "artifact": "Participation rubric",
+   "format": "rubric",
+   "status": "built (menu)"
+  },
+  {
+   "artifact": "Student-led devotional rubric",
+   "format": "rubric",
+   "status": "built (menu)"
+  },
+  {
+   "artifact": "Project & Oral rubric",
+   "format": "performance_rubric",
+   "status": "built (menu)"
+  },
+  {
+   "artifact": "Student-led devotional template",
+   "format": "devotional_guide",
+   "status": "to generate"
+  },
+  {
+   "artifact": "Semester 1 final (+ key + study guide)",
+   "format": "quiz+answer_key+study_guide",
+   "status": "to generate"
+  },
+  {
+   "artifact": "Semester 2 final (+ key + study guide)",
+   "format": "quiz+answer_key+study_guide",
+   "status": "to generate"
+  }
+ ],
+ "lessons": [
+  {
+   "i": 1,
+   "date": "2026-09-08",
+   "day_type": "regular",
+   "unit": "U0 Entering John",
+   "passage": "Day 1: the aim of the course (20:31)",
+   "role": "intro",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "built"
+    },
+    {
+     "artifact": "Memory verse plant (20:30-31) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 2,
+   "date": "2026-09-09",
+   "day_type": "regular",
+   "unit": "U0 Entering John",
+   "passage": "Day 2: author, date, setting; how to read a Gospel",
+   "role": "intro",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "built"
+    }
+   ]
+  },
+  {
+   "i": 3,
+   "date": "2026-09-10",
+   "day_type": "thursday",
+   "unit": "U1 The Word",
+   "passage": "the whole Prologue read aloud (orientation)",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "built"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (1:14) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 4,
+   "date": "2026-09-11",
+   "day_type": "regular",
+   "unit": "U1 The Word",
+   "passage": "1:1-5 (the Word: deity & creation)",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "built"
+    }
+   ]
+  },
+  {
+   "i": 5,
+   "date": "2026-09-14",
+   "day_type": "regular",
+   "unit": "U1 The Word",
+   "passage": "1:6-13 (the witness; received or rejected)",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "built"
+    }
+   ]
+  },
+  {
+   "i": 6,
+   "date": "2026-09-15",
+   "day_type": "regular",
+   "unit": "U1 The Word",
+   "passage": "1:14-18 (the Word made flesh; grace upon grace)",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "built"
+    }
+   ]
+  },
+  {
+   "i": 7,
+   "date": "2026-09-16",
+   "day_type": "regular",
+   "unit": "U2 Witness & first disciples",
+   "passage": "1:19-51",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (1:12) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 8,
+   "date": "2026-09-17",
+   "day_type": "thursday",
+   "unit": "U2 Witness & first disciples",
+   "passage": "1:19-51",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 9,
+   "date": "2026-09-18",
+   "day_type": "regular",
+   "unit": "U2 Witness & first disciples",
+   "passage": "1:19-51",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 10,
+   "date": "2026-09-21",
+   "day_type": "regular",
+   "unit": "U2 Witness & first disciples",
+   "passage": "1:19-51",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 11,
+   "date": "2026-09-22",
+   "day_type": "regular",
+   "unit": "U3 Sign 1 & the temple",
+   "passage": "2:1-25",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (2:11) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 12,
+   "date": "2026-09-23",
+   "day_type": "regular",
+   "unit": "U3 Sign 1 & the temple",
+   "passage": "2:1-25",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 13,
+   "date": "2026-09-24",
+   "day_type": "thursday",
+   "unit": "U3 Sign 1 & the temple",
+   "passage": "2:1-25",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 14,
+   "date": "2026-09-25",
+   "day_type": "regular",
+   "unit": "U3 Sign 1 & the temple",
+   "passage": "2:1-25",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 15,
+   "date": "2026-09-28",
+   "day_type": "regular",
+   "unit": "U4 The new birth",
+   "passage": "3:1-21",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (3:16) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 16,
+   "date": "2026-09-29",
+   "day_type": "regular",
+   "unit": "U4 The new birth",
+   "passage": "3:1-21",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 17,
+   "date": "2026-09-30",
+   "day_type": "regular",
+   "unit": "U4 The new birth",
+   "passage": "3:1-21",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 18,
+   "date": "2026-10-01",
+   "day_type": "thursday",
+   "unit": "U4 The new birth",
+   "passage": "3:1-21",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 19,
+   "date": "2026-10-02",
+   "day_type": "regular",
+   "unit": "CHK-1 chs 1-3",
+   "passage": "checkpoint quiz + The Signs project introduced",
+   "role": "checkpoint",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Checkpoint quiz",
+     "format": "quiz",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Checkpoint quiz answer key",
+     "format": "answer_key",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Project assignment sheet",
+     "format": "project_guide",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Project rubric",
+     "format": "rubric",
+     "audience": "student",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 20,
+   "date": "2026-10-05",
+   "day_type": "regular",
+   "unit": "U5 He must increase",
+   "passage": "3:22-36",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (3:36) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 21,
+   "date": "2026-10-06",
+   "day_type": "regular",
+   "unit": "U5 He must increase",
+   "passage": "3:22-36",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 22,
+   "date": "2026-10-07",
+   "day_type": "regular",
+   "unit": "U6 Living water",
+   "passage": "4:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (4:24) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 23,
+   "date": "2026-10-08",
+   "day_type": "thursday",
+   "unit": "U6 Living water",
+   "passage": "4:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 24,
+   "date": "2026-10-09",
+   "day_type": "half_day",
+   "unit": "U6 Living water",
+   "passage": "4:1-42",
+   "role": "half-day recap",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory quiz (recap day)",
+     "format": "quiz",
+     "audience": "student",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 25,
+   "date": "2026-10-13",
+   "day_type": "regular",
+   "unit": "U6 Living water",
+   "passage": "4:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 26,
+   "date": "2026-10-15",
+   "day_type": "thursday",
+   "unit": "U6 Living water",
+   "passage": "4:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 27,
+   "date": "2026-10-16",
+   "day_type": "regular",
+   "unit": "U7 Sign 2",
+   "passage": "4:43-54",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (4:50) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 28,
+   "date": "2026-10-19",
+   "day_type": "regular",
+   "unit": "U7 Sign 2",
+   "passage": "4:43-54",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 29,
+   "date": "2026-10-20",
+   "day_type": "regular",
+   "unit": "U8 Sign 3 & the Son's authority",
+   "passage": "5:1-47",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (5:24) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 30,
+   "date": "2026-10-21",
+   "day_type": "regular",
+   "unit": "U8 Sign 3 & the Son's authority",
+   "passage": "5:1-47",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 31,
+   "date": "2026-10-22",
+   "day_type": "thursday",
+   "unit": "U8 Sign 3 & the Son's authority",
+   "passage": "5:1-47",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 32,
+   "date": "2026-10-23",
+   "day_type": "regular",
+   "unit": "U8 Sign 3 & the Son's authority",
+   "passage": "5:1-47",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 33,
+   "date": "2026-10-26",
+   "day_type": "regular",
+   "unit": "U8 Sign 3 & the Son's authority",
+   "passage": "5:1-47",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 34,
+   "date": "2026-10-27",
+   "day_type": "regular",
+   "unit": "U9 Bread of Life",
+   "passage": "6:1-71",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (6:35) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 35,
+   "date": "2026-10-28",
+   "day_type": "regular",
+   "unit": "U9 Bread of Life",
+   "passage": "6:1-71",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 36,
+   "date": "2026-10-29",
+   "day_type": "thursday",
+   "unit": "U9 Bread of Life",
+   "passage": "6:1-71",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 37,
+   "date": "2026-10-30",
+   "day_type": "regular",
+   "unit": "U9 Bread of Life",
+   "passage": "6:1-71",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 38,
+   "date": "2026-11-02",
+   "day_type": "regular",
+   "unit": "U9 Bread of Life",
+   "passage": "6:1-71",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 39,
+   "date": "2026-11-03",
+   "day_type": "regular",
+   "unit": "U9 Bread of Life",
+   "passage": "6:1-71",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 40,
+   "date": "2026-11-04",
+   "day_type": "regular",
+   "unit": "U9 Bread of Life",
+   "passage": "6:1-71",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 41,
+   "date": "2026-11-05",
+   "day_type": "thursday",
+   "unit": "CHK-2 chs 4-6",
+   "passage": "checkpoint quiz + The Signs project due",
+   "role": "checkpoint",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Checkpoint quiz",
+     "format": "quiz",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Checkpoint quiz answer key",
+     "format": "answer_key",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 42,
+   "date": "2026-11-06",
+   "day_type": "regular",
+   "unit": "U10 Rivers of living water",
+   "passage": "7:1-52",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (7:37-38) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 43,
+   "date": "2026-11-09",
+   "day_type": "regular",
+   "unit": "U10 Rivers of living water",
+   "passage": "7:1-52",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 44,
+   "date": "2026-11-10",
+   "day_type": "regular",
+   "unit": "U10 Rivers of living water",
+   "passage": "7:1-52",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 45,
+   "date": "2026-11-11",
+   "day_type": "regular",
+   "unit": "U10 Rivers of living water",
+   "passage": "7:1-52",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 46,
+   "date": "2026-11-12",
+   "day_type": "thursday",
+   "unit": "U10 Rivers of living water",
+   "passage": "7:1-52",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 47,
+   "date": "2026-11-13",
+   "day_type": "regular",
+   "unit": "U11 A note on the text",
+   "passage": "7:53-8:11",
+   "role": "note",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 48,
+   "date": "2026-11-16",
+   "day_type": "regular",
+   "unit": "U12 Light of the world",
+   "passage": "8:12-59",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (8:12) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 49,
+   "date": "2026-11-17",
+   "day_type": "regular",
+   "unit": "U12 Light of the world",
+   "passage": "8:12-59",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 50,
+   "date": "2026-11-18",
+   "day_type": "regular",
+   "unit": "U12 Light of the world",
+   "passage": "8:12-59",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 51,
+   "date": "2026-11-19",
+   "day_type": "thursday",
+   "unit": "U12 Light of the world",
+   "passage": "8:12-59",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 52,
+   "date": "2026-11-20",
+   "day_type": "regular",
+   "unit": "U12 Light of the world",
+   "passage": "8:12-59",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 53,
+   "date": "2026-11-30",
+   "day_type": "regular",
+   "unit": "U13 Sign 6",
+   "passage": "9:1-41",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (9:25) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 54,
+   "date": "2026-12-01",
+   "day_type": "regular",
+   "unit": "U13 Sign 6",
+   "passage": "9:1-41",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 55,
+   "date": "2026-12-02",
+   "day_type": "regular",
+   "unit": "U13 Sign 6",
+   "passage": "9:1-41",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 56,
+   "date": "2026-12-03",
+   "day_type": "thursday",
+   "unit": "U13 Sign 6",
+   "passage": "9:1-41",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 57,
+   "date": "2026-12-04",
+   "day_type": "regular",
+   "unit": "U14 The Good Shepherd",
+   "passage": "10:1-42",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (10:11) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 58,
+   "date": "2026-12-07",
+   "day_type": "regular",
+   "unit": "U14 The Good Shepherd",
+   "passage": "10:1-42",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 59,
+   "date": "2026-12-08",
+   "day_type": "regular",
+   "unit": "U14 The Good Shepherd",
+   "passage": "10:1-42",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 60,
+   "date": "2026-12-09",
+   "day_type": "regular",
+   "unit": "U14 The Good Shepherd",
+   "passage": "10:1-42",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 61,
+   "date": "2026-12-10",
+   "day_type": "thursday",
+   "unit": "U14 The Good Shepherd",
+   "passage": "10:1-42",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 62,
+   "date": "2026-12-11",
+   "day_type": "regular",
+   "unit": "U15 Sign 7 (Lazarus)",
+   "passage": "11:1-57",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (11:25-26) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 63,
+   "date": "2026-12-14",
+   "day_type": "regular",
+   "unit": "U15 Sign 7 (Lazarus)",
+   "passage": "11:1-57",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 64,
+   "date": "2026-12-15",
+   "day_type": "regular",
+   "unit": "U15 Sign 7 (Lazarus)",
+   "passage": "11:1-57",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 65,
+   "date": "2026-12-16",
+   "day_type": "regular",
+   "unit": "U15 Sign 7 (Lazarus)",
+   "passage": "11:1-57",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 66,
+   "date": "2026-12-17",
+   "day_type": "thursday",
+   "unit": "U15 Sign 7 (Lazarus)",
+   "passage": "11:1-57",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 67,
+   "date": "2026-12-18",
+   "day_type": "half_day",
+   "unit": "U16 The hour has come",
+   "passage": "12:1-50",
+   "role": "half-day recap",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (12:24) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    },
+    {
+     "artifact": "Memory quiz (recap day)",
+     "format": "quiz",
+     "audience": "student",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 68,
+   "date": "2027-01-04",
+   "day_type": "regular",
+   "unit": "U16 The hour has come",
+   "passage": "12:1-50",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 69,
+   "date": "2027-01-05",
+   "day_type": "regular",
+   "unit": "U16 The hour has come",
+   "passage": "12:1-50",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 70,
+   "date": "2027-01-06",
+   "day_type": "regular",
+   "unit": "U16 The hour has come",
+   "passage": "12:1-50",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 71,
+   "date": "2027-01-07",
+   "day_type": "thursday",
+   "unit": "U16 The hour has come",
+   "passage": "12:1-50",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 72,
+   "date": "2027-01-20",
+   "day_type": "regular",
+   "unit": "U17 Re-entering the book",
+   "passage": "bridge + Farewell Discourse project introduced",
+   "role": "bridge",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Project assignment sheet",
+     "format": "project_guide",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Project rubric",
+     "format": "rubric",
+     "audience": "student",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 73,
+   "date": "2027-01-21",
+   "day_type": "thursday",
+   "unit": "U18 The towel and the basin",
+   "passage": "13:1-38",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (13:34-35) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 74,
+   "date": "2027-01-22",
+   "day_type": "regular",
+   "unit": "U18 The towel and the basin",
+   "passage": "13:1-38",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 75,
+   "date": "2027-01-25",
+   "day_type": "regular",
+   "unit": "U18 The towel and the basin",
+   "passage": "13:1-38",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 76,
+   "date": "2027-01-26",
+   "day_type": "regular",
+   "unit": "U18 The towel and the basin",
+   "passage": "13:1-38",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 77,
+   "date": "2027-01-27",
+   "day_type": "regular",
+   "unit": "U18 The towel and the basin",
+   "passage": "13:1-38",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 78,
+   "date": "2027-01-28",
+   "day_type": "thursday",
+   "unit": "U18 The towel and the basin",
+   "passage": "13:1-38",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 79,
+   "date": "2027-01-29",
+   "day_type": "regular",
+   "unit": "U18 The towel and the basin",
+   "passage": "13:1-38",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 80,
+   "date": "2027-02-01",
+   "day_type": "regular",
+   "unit": "U19 The way to the Father",
+   "passage": "14:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (14:6) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 81,
+   "date": "2027-02-02",
+   "day_type": "regular",
+   "unit": "U19 The way to the Father",
+   "passage": "14:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 82,
+   "date": "2027-02-03",
+   "day_type": "regular",
+   "unit": "U19 The way to the Father",
+   "passage": "14:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 83,
+   "date": "2027-02-04",
+   "day_type": "thursday",
+   "unit": "U19 The way to the Father",
+   "passage": "14:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 84,
+   "date": "2027-02-05",
+   "day_type": "regular",
+   "unit": "U19 The way to the Father",
+   "passage": "14:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 85,
+   "date": "2027-02-08",
+   "day_type": "regular",
+   "unit": "U19 The way to the Father",
+   "passage": "14:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 86,
+   "date": "2027-02-09",
+   "day_type": "regular",
+   "unit": "U19 The way to the Father",
+   "passage": "14:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 87,
+   "date": "2027-02-10",
+   "day_type": "regular",
+   "unit": "U19 The way to the Father",
+   "passage": "14:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 88,
+   "date": "2027-02-11",
+   "day_type": "thursday",
+   "unit": "U20 Abide",
+   "passage": "15:1-27",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (15:5) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 89,
+   "date": "2027-02-12",
+   "day_type": "regular",
+   "unit": "U20 Abide",
+   "passage": "15:1-27",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 90,
+   "date": "2027-02-16",
+   "day_type": "regular",
+   "unit": "U20 Abide",
+   "passage": "15:1-27",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 91,
+   "date": "2027-02-17",
+   "day_type": "regular",
+   "unit": "U20 Abide",
+   "passage": "15:1-27",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 92,
+   "date": "2027-02-18",
+   "day_type": "thursday",
+   "unit": "U20 Abide",
+   "passage": "15:1-27",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 93,
+   "date": "2027-02-19",
+   "day_type": "regular",
+   "unit": "U20 Abide",
+   "passage": "15:1-27",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 94,
+   "date": "2027-02-22",
+   "day_type": "regular",
+   "unit": "U20 Abide",
+   "passage": "15:1-27",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 95,
+   "date": "2027-02-23",
+   "day_type": "regular",
+   "unit": "U20 Abide",
+   "passage": "15:1-27",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 96,
+   "date": "2027-02-24",
+   "day_type": "regular",
+   "unit": "U21 The Spirit and the coming joy",
+   "passage": "16:1-33",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (16:33) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 97,
+   "date": "2027-02-25",
+   "day_type": "thursday",
+   "unit": "U21 The Spirit and the coming joy",
+   "passage": "16:1-33",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 98,
+   "date": "2027-02-26",
+   "day_type": "regular",
+   "unit": "U21 The Spirit and the coming joy",
+   "passage": "16:1-33",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 99,
+   "date": "2027-03-01",
+   "day_type": "regular",
+   "unit": "U21 The Spirit and the coming joy",
+   "passage": "16:1-33",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 100,
+   "date": "2027-03-02",
+   "day_type": "regular",
+   "unit": "U21 The Spirit and the coming joy",
+   "passage": "16:1-33",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 101,
+   "date": "2027-03-03",
+   "day_type": "regular",
+   "unit": "U21 The Spirit and the coming joy",
+   "passage": "16:1-33",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 102,
+   "date": "2027-03-04",
+   "day_type": "thursday",
+   "unit": "U21 The Spirit and the coming joy",
+   "passage": "16:1-33",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 103,
+   "date": "2027-03-05",
+   "day_type": "regular",
+   "unit": "U22 The Holy Spirit, gathered",
+   "passage": "synthesis of the Paraclete sayings",
+   "role": "synthesis",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (14:16-17) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 104,
+   "date": "2027-03-08",
+   "day_type": "regular",
+   "unit": "U23 The prayer of the Son",
+   "passage": "17:1-26",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (17:3) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 105,
+   "date": "2027-03-09",
+   "day_type": "regular",
+   "unit": "U23 The prayer of the Son",
+   "passage": "17:1-26",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 106,
+   "date": "2027-03-10",
+   "day_type": "regular",
+   "unit": "U23 The prayer of the Son",
+   "passage": "17:1-26",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 107,
+   "date": "2027-03-11",
+   "day_type": "thursday",
+   "unit": "U23 The prayer of the Son",
+   "passage": "17:1-26",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 108,
+   "date": "2027-03-12",
+   "day_type": "regular",
+   "unit": "U23 The prayer of the Son",
+   "passage": "17:1-26",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 109,
+   "date": "2027-03-15",
+   "day_type": "regular",
+   "unit": "U23 The prayer of the Son",
+   "passage": "17:1-26",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 110,
+   "date": "2027-03-16",
+   "day_type": "regular",
+   "unit": "U23 The prayer of the Son",
+   "passage": "17:1-26",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 111,
+   "date": "2027-03-17",
+   "day_type": "regular",
+   "unit": "U23 The prayer of the Son",
+   "passage": "17:1-26",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 112,
+   "date": "2027-03-18",
+   "day_type": "thursday",
+   "unit": "CHK-3 chs 13-17",
+   "passage": "checkpoint quiz + Farewell Discourse project due",
+   "role": "checkpoint",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Checkpoint quiz",
+     "format": "quiz",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Checkpoint quiz answer key",
+     "format": "answer_key",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 113,
+   "date": "2027-03-19",
+   "day_type": "half_day",
+   "unit": "U24 Arrest and trial",
+   "passage": "18:1-40",
+   "role": "half-day recap",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (18:37) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    },
+    {
+     "artifact": "Memory quiz (recap day)",
+     "format": "quiz",
+     "audience": "student",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 114,
+   "date": "2027-03-22",
+   "day_type": "regular",
+   "unit": "U24 Arrest and trial",
+   "passage": "18:1-40",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 115,
+   "date": "2027-03-23",
+   "day_type": "regular",
+   "unit": "U24 Arrest and trial",
+   "passage": "18:1-40",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 116,
+   "date": "2027-03-25",
+   "day_type": "thursday",
+   "unit": "U24 Arrest and trial",
+   "passage": "18:1-40",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 117,
+   "date": "2027-04-05",
+   "day_type": "regular",
+   "unit": "U24 Arrest and trial",
+   "passage": "18:1-40",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 118,
+   "date": "2027-04-06",
+   "day_type": "regular",
+   "unit": "U24 Arrest and trial",
+   "passage": "18:1-40",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 119,
+   "date": "2027-04-07",
+   "day_type": "regular",
+   "unit": "U24 Arrest and trial",
+   "passage": "18:1-40",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 120,
+   "date": "2027-04-08",
+   "day_type": "thursday",
+   "unit": "U24 Arrest and trial",
+   "passage": "18:1-40",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 121,
+   "date": "2027-04-09",
+   "day_type": "regular",
+   "unit": "U25 The cross",
+   "passage": "19:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (19:30) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 122,
+   "date": "2027-04-12",
+   "day_type": "regular",
+   "unit": "U25 The cross",
+   "passage": "19:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 123,
+   "date": "2027-04-13",
+   "day_type": "regular",
+   "unit": "U25 The cross",
+   "passage": "19:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 124,
+   "date": "2027-04-14",
+   "day_type": "regular",
+   "unit": "U25 The cross",
+   "passage": "19:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 125,
+   "date": "2027-04-15",
+   "day_type": "thursday",
+   "unit": "U25 The cross",
+   "passage": "19:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 126,
+   "date": "2027-04-16",
+   "day_type": "regular",
+   "unit": "U25 The cross",
+   "passage": "19:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 127,
+   "date": "2027-04-19",
+   "day_type": "regular",
+   "unit": "U25 The cross",
+   "passage": "19:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 128,
+   "date": "2027-04-20",
+   "day_type": "regular",
+   "unit": "U25 The cross",
+   "passage": "19:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 129,
+   "date": "2027-04-21",
+   "day_type": "regular",
+   "unit": "U25 The cross",
+   "passage": "19:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 130,
+   "date": "2027-04-22",
+   "day_type": "thursday",
+   "unit": "U25 The cross",
+   "passage": "19:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 131,
+   "date": "2027-04-23",
+   "day_type": "regular",
+   "unit": "U25 The cross",
+   "passage": "19:1-42",
+   "role": "exposition*fresh",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 132,
+   "date": "2027-04-26",
+   "day_type": "regular",
+   "unit": "CHK-4 chs 18-19",
+   "passage": "Passion checkpoint quiz",
+   "role": "checkpoint",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Checkpoint quiz",
+     "format": "quiz",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Checkpoint quiz answer key",
+     "format": "answer_key",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 133,
+   "date": "2027-04-27",
+   "day_type": "regular",
+   "unit": "U26 The empty tomb",
+   "passage": "20:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Per-unit student reading guide",
+     "format": "inductive_passage_study",
+     "audience": "student",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (20:31) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    }
+   ]
+  },
+  {
+   "i": 134,
+   "date": "2027-04-28",
+   "day_type": "regular",
+   "unit": "U26 The empty tomb",
+   "passage": "20:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 135,
+   "date": "2027-04-29",
+   "day_type": "thursday",
+   "unit": "U26 The empty tomb",
+   "passage": "20:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 136,
+   "date": "2027-04-30",
+   "day_type": "regular",
+   "unit": "U26 The empty tomb",
+   "passage": "20:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 137,
+   "date": "2027-05-03",
+   "day_type": "regular",
+   "unit": "U26 The empty tomb",
+   "passage": "20:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 138,
+   "date": "2027-05-04",
+   "day_type": "regular",
+   "unit": "U26 The empty tomb",
+   "passage": "20:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 139,
+   "date": "2027-05-05",
+   "day_type": "regular",
+   "unit": "U26 The empty tomb",
+   "passage": "20:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 140,
+   "date": "2027-05-06",
+   "day_type": "thursday",
+   "unit": "U26 The empty tomb",
+   "passage": "20:1-31",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 141,
+   "date": "2027-05-07",
+   "day_type": "half_day",
+   "unit": "U27 Do you love me",
+   "passage": "21:1-25",
+   "role": "half-day recap",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    },
+    {
+     "artifact": "Memory verse plant (21:17) card",
+     "format": "flashcards",
+     "audience": "student",
+     "status": "to generate (from course memory set)"
+    },
+    {
+     "artifact": "Memory quiz (recap day)",
+     "format": "quiz",
+     "audience": "student",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 142,
+   "date": "2027-05-10",
+   "day_type": "regular",
+   "unit": "U27 Do you love me",
+   "passage": "21:1-25",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 143,
+   "date": "2027-05-11",
+   "day_type": "regular",
+   "unit": "U27 Do you love me",
+   "passage": "21:1-25",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 144,
+   "date": "2027-05-12",
+   "day_type": "regular",
+   "unit": "U27 Do you love me",
+   "passage": "21:1-25",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 145,
+   "date": "2027-05-13",
+   "day_type": "thursday",
+   "unit": "U27 Do you love me",
+   "passage": "21:1-25",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 146,
+   "date": "2027-05-14",
+   "day_type": "regular",
+   "unit": "U27 Do you love me",
+   "passage": "21:1-25",
+   "role": "exposition",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 147,
+   "date": "2027-05-17",
+   "day_type": "regular",
+   "unit": "U28 The whole Christ of John",
+   "passage": "synthesis + Passion & Response project due + flex",
+   "role": "synthesis",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 148,
+   "date": "2027-05-18",
+   "day_type": "regular",
+   "unit": "U28 The whole Christ of John",
+   "passage": "synthesis + Passion & Response project due + flex",
+   "role": "synthesis",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 149,
+   "date": "2027-05-19",
+   "day_type": "regular",
+   "unit": "U28 The whole Christ of John",
+   "passage": "synthesis + Passion & Response project due + flex",
+   "role": "synthesis",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 150,
+   "date": "2027-05-20",
+   "day_type": "thursday",
+   "unit": "U28 The whole Christ of John",
+   "passage": "synthesis + Passion & Response project due + flex",
+   "role": "synthesis",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  },
+  {
+   "i": 151,
+   "date": "2027-05-21",
+   "day_type": "regular",
+   "unit": "FLEX (tentative)",
+   "passage": "pray for the graduating class",
+   "role": "prayer (graduation)",
+   "artifacts": [
+    {
+     "artifact": "Teacher lesson guide",
+     "format": "lesson_plan",
+     "audience": "teacher",
+     "status": "to generate"
+    }
+   ]
+  }
+ ]
+}

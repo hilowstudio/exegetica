@@ -1,0 +1,10 @@
+.venv/
+.git/
+data/
+.firecrawl/
+tests/
+docs/
+scripts/
+**/__pycache__/
+*.pyc
+.claude/

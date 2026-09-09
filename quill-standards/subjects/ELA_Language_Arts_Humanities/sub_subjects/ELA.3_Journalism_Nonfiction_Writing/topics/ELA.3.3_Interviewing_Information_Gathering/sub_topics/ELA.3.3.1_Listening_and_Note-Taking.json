@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ELA.3.3.1",
+    "name": "Listening and Note-Taking",
+    "topic_id": "ELA.3.3",
+    "topic_name": "Interviewing & Information Gathering",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.3",
+    "sub_subject_name": "Journalism & Nonfiction Writing",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Listening and Note-Taking in Interviewing & Information Gathering (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.3",
+            "sub_subject_name": "Journalism & Nonfiction Writing",
+            "topic_id": "ELA.3.3",
+            "topic_name": "Interviewing & Information Gathering",
+            "sub_topic_id": "ELA.3.3.1",
+            "sub_topic_name": "Listening and Note-Taking",
+            "objective_id": "ELA.3.3.1.1",
+            "objective_text": "Listen to a short talk and write down the most important thing you heard",
+            "objective_uuid": "83701a09-8bbe-438a-8bb7-7a5072276e11",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.4 — Produce clear and coherent writing in which the development, organization, and style are appropriate to  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.3",
+            "sub_subject_name": "Journalism & Nonfiction Writing",
+            "topic_id": "ELA.3.3",
+            "topic_name": "Interviewing & Information Gathering",
+            "sub_topic_id": "ELA.3.3.1",
+            "sub_topic_name": "Listening and Note-Taking",
+            "objective_id": "ELA.3.3.1.2",
+            "objective_text": "Take notes that capture key facts and the speaker's exact words",
+            "objective_uuid": "ffb11ba1-4a5d-4c7c-804f-af5ac4c17c0a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.4 — Produce clear and coherent writing in which the development, organization, and style are appropriate to  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.3",
+            "sub_subject_name": "Journalism & Nonfiction Writing",
+            "topic_id": "ELA.3.3",
+            "topic_name": "Interviewing & Information Gathering",
+            "sub_topic_id": "ELA.3.3.1",
+            "sub_topic_name": "Listening and Note-Taking",
+            "objective_id": "ELA.3.3.1.3",
+            "objective_text": "Organize your notes so you can quickly find quotations and facts when you write",
+            "objective_uuid": "ea6162fa-597a-4af2-821b-5a6b1d1f5d7f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.4 — Produce clear and coherent writing in which the development, organization, and style are appropriate to  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.3",
+            "sub_subject_name": "Journalism & Nonfiction Writing",
+            "topic_id": "ELA.3.3",
+            "topic_name": "Interviewing & Information Gathering",
+            "sub_topic_id": "ELA.3.3.1",
+            "sub_topic_name": "Listening and Note-Taking",
+            "objective_id": "ELA.3.3.1.4",
+            "objective_text": "Distinguish a speaker's main points from supporting detail while taking notes in real time",
+            "objective_uuid": "52a841b0-6f6c-42a5-812e-f07faab9b2b0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.2 — Write informative/explanatory texts to examine and convey complex ideas and information clearly and accu (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.3",
+            "sub_subject_name": "Journalism & Nonfiction Writing",
+            "topic_id": "ELA.3.3",
+            "topic_name": "Interviewing & Information Gathering",
+            "sub_topic_id": "ELA.3.3.1",
+            "sub_topic_name": "Listening and Note-Taking",
+            "objective_id": "ELA.3.3.1.5",
+            "objective_text": "Take accurate, organized notes during an interview and mark direct quotations clearly",
+            "objective_uuid": "41362e05-73b3-453c-80be-24f10bd1eabf",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.2 — Write informative/explanatory texts to examine and convey complex ideas and information clearly and accu (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "sub_topic": {
+    "id": "HPE.5.2.1",
+    "name": "Chronic Diseases & Risk Factors",
+    "topic_id": "HPE.5.2",
+    "topic_name": "Chronic Disease & Prevention",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.5",
+    "sub_subject_name": "Disease Prevention & Body Defense",
+    "total_objectives": 3,
+    "description": "K-12 progression for Chronic Diseases & Risk Factors in Chronic Disease & Prevention (Health & Physical Education)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.2",
+            "topic_name": "Chronic Disease & Prevention",
+            "sub_topic_id": "HPE.5.2.1",
+            "sub_topic_name": "Chronic Diseases & Risk Factors",
+            "objective_id": "HPE.5.2.1.1",
+            "objective_text": "Describe common chronic diseases in age-appropriate terms.",
+            "objective_uuid": "28a3f991-953c-4334-8358-dcc9054f14ae",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.5.1 — Describe the relationship between healthy behaviors and personal health (National Health Education Standards, grades 3-5)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.2",
+            "topic_name": "Chronic Disease & Prevention",
+            "sub_topic_id": "HPE.5.2.1",
+            "sub_topic_name": "Chronic Diseases & Risk Factors",
+            "objective_id": "HPE.5.2.1.2",
+            "objective_text": "Distinguish risk factors that can and cannot be controlled.",
+            "objective_uuid": "210536c5-c36e-4fb7-8c2c-fa08dc4548d9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.5.1 — Describe the relationship between healthy behaviors and personal health (National Health Education Standards, grades 3-5)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.5",
+            "sub_subject_name": "Disease Prevention & Body Defense",
+            "topic_id": "HPE.5.2",
+            "topic_name": "Chronic Disease & Prevention",
+            "sub_topic_id": "HPE.5.2.1",
+            "sub_topic_name": "Chronic Diseases & Risk Factors",
+            "objective_id": "HPE.5.2.1.3",
+            "objective_text": "Connect daily lifestyle choices to long-term disease risk.",
+            "objective_uuid": "63fe26ba-8fa9-40ac-8725-b3cb6ba848c1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.5.1 — Describe the relationship between healthy behaviors and personal health (National Health Education Standards, grades 3-5)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Health Education Standards",
+      "anchor_note": "NHES codes verified against the owned corpus; objectives authored to the standard's real sub-skills at variable depth."
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.5.4.5",
+    "name": "Oil Painting (underpainting, fat-over-lean, solvents and safety, impasto)",
+    "topic_id": "ART.5.4",
+    "topic_name": "Painting Techniques & Color Theory",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.5",
+    "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Oil Painting (underpainting, fat-over-lean, solvents and safety, impasto) in Painting Techniques & Color Theory (Fine Arts)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.4",
+            "topic_name": "Painting Techniques & Color Theory",
+            "sub_topic_id": "ART.5.4.5",
+            "sub_topic_name": "Oil Painting (underpainting, fat-over-lean, solvents and safety, impasto)",
+            "objective_id": "ART.5.4.5.1",
+            "objective_text": "Paint with oils, arranging colors on a palette and cleaning brushes safely",
+            "objective_uuid": "f901dd8e-4e12-4ecc-8143-06fbf111df2d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.4",
+            "topic_name": "Painting Techniques & Color Theory",
+            "sub_topic_id": "ART.5.4.5",
+            "sub_topic_name": "Oil Painting (underpainting, fat-over-lean, solvents and safety, impasto)",
+            "objective_id": "ART.5.4.5.2",
+            "objective_text": "Block in a thin underpainting to map values before adding color",
+            "objective_uuid": "d81841b8-df50-4a48-8449-7fa868f4ab35",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.4",
+            "topic_name": "Painting Techniques & Color Theory",
+            "sub_topic_id": "ART.5.4.5",
+            "sub_topic_name": "Oil Painting (underpainting, fat-over-lean, solvents and safety, impasto)",
+            "objective_id": "ART.5.4.5.3",
+            "objective_text": "Apply the fat-over-lean rule, adding more oil to each successive layer",
+            "objective_uuid": "b57d040f-bca7-457b-81c5-323ff42ae672",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.4",
+            "topic_name": "Painting Techniques & Color Theory",
+            "sub_topic_id": "ART.5.4.5",
+            "sub_topic_name": "Oil Painting (underpainting, fat-over-lean, solvents and safety, impasto)",
+            "objective_id": "ART.5.4.5.4",
+            "objective_text": "Handle solvents and mediums following safe studio practices",
+            "objective_uuid": "fe712c36-0f71-48ce-857c-b314bdf023ab",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.4",
+            "topic_name": "Painting Techniques & Color Theory",
+            "sub_topic_id": "ART.5.4.5",
+            "sub_topic_name": "Oil Painting (underpainting, fat-over-lean, solvents and safety, impasto)",
+            "objective_id": "ART.5.4.5.5",
+            "objective_text": "Build texture with impasto and refine forms through layered oil passages",
+            "objective_uuid": "18a4cc11-fff3-46de-85d1-e5c8df3a2de0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.4",
+            "topic_name": "Painting Techniques & Color Theory",
+            "sub_topic_id": "ART.5.4.5",
+            "sub_topic_name": "Oil Painting (underpainting, fat-over-lean, solvents and safety, impasto)",
+            "objective_id": "ART.5.4.5.6",
+            "objective_text": "Develop a finished oil painting, glazing and refining it for presentation",
+            "objective_uuid": "daef57d4-07a5-4d89-8152-a227d9fa4514",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Pr5 — Develop and refine artistic techniques and work for presentation (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

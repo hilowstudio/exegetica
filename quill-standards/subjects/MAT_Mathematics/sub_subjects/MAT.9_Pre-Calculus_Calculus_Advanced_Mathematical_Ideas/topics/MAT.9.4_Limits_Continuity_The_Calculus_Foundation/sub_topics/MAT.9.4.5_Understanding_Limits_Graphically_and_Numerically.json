@@ -1,0 +1,99 @@
+{
+  "sub_topic": {
+    "id": "MAT.9.4.5",
+    "name": "Understanding Limits Graphically and Numerically",
+    "topic_id": "MAT.9.4",
+    "topic_name": "Limits & Continuity (The Calculus Foundation)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.9",
+    "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Understanding Limits Graphically and Numerically in Limits & Continuity (The Calculus Foundation) (Mathematics)",
+    "grade_levels": {
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.4",
+            "topic_name": "Limits & Continuity (The Calculus Foundation)",
+            "sub_topic_id": "MAT.9.4.5",
+            "sub_topic_name": "Understanding Limits Graphically and Numerically",
+            "objective_id": "MAT.9.4.5.1",
+            "objective_text": "Estimate a limit from a graph.",
+            "objective_uuid": "c40a070b-c574-46b9-8d94-127041ce12c3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.4",
+            "topic_name": "Limits & Continuity (The Calculus Foundation)",
+            "sub_topic_id": "MAT.9.4.5",
+            "sub_topic_name": "Understanding Limits Graphically and Numerically",
+            "objective_id": "MAT.9.4.5.2",
+            "objective_text": "Estimate a limit from a table of values.",
+            "objective_uuid": "0c349819-da58-495f-8b49-a3fd961da17e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.4",
+            "topic_name": "Limits & Continuity (The Calculus Foundation)",
+            "sub_topic_id": "MAT.9.4.5",
+            "sub_topic_name": "Understanding Limits Graphically and Numerically",
+            "objective_id": "MAT.9.4.5.3",
+            "objective_text": "Describe the behavior of a function near a point using limits.",
+            "objective_uuid": "997958ca-2af8-457d-8e44-2f7f221017c8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content runs beyond Common Core, so no standard anchor (honest gap)."
+    }
+  }
+}

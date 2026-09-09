@@ -1,0 +1,163 @@
+{
+  "sub_topic": {
+    "id": "SCI.4.2.1",
+    "name": "Identifying Plants, Trees, Insects, Birds (using field guides and keys)",
+    "topic_id": "SCI.4.2",
+    "topic_name": "Field Observation & Habit Formation",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.4",
+    "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Identifying Plants, Trees, Insects, Birds (using field guides and keys) in Field Observation & Habit Formation (Science & Nature)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.2",
+            "topic_name": "Field Observation & Habit Formation",
+            "sub_topic_id": "SCI.4.2.1",
+            "sub_topic_name": "Identifying Plants, Trees, Insects, Birds (using field guides and keys)",
+            "objective_id": "SCI.4.2.1.1",
+            "objective_text": "Observe and name common plants and animals found in the local area.",
+            "objective_uuid": "2b64f809-1689-4949-80fa-ba2d44c0ae4d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.2",
+            "topic_name": "Field Observation & Habit Formation",
+            "sub_topic_id": "SCI.4.2.1",
+            "sub_topic_name": "Identifying Plants, Trees, Insects, Birds (using field guides and keys)",
+            "objective_id": "SCI.4.2.1.2",
+            "objective_text": "Make observations of plants and animals to compare the diversity of life in different habitats.",
+            "objective_uuid": "71bd89db-3ef0-4212-80de-684f64803216",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 2-LS4-1 — Make observations of plants and animals to compare the diversity of life in different habitats (grades 2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.2",
+            "topic_name": "Field Observation & Habit Formation",
+            "sub_topic_id": "SCI.4.2.1",
+            "sub_topic_name": "Identifying Plants, Trees, Insects, Birds (using field guides and keys)",
+            "objective_id": "SCI.4.2.1.3",
+            "objective_text": "Use a simple field guide to identify a tree, bird, or insect by its features.",
+            "objective_uuid": "d0705f09-86bb-47df-838a-ca0d22568144",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.2",
+            "topic_name": "Field Observation & Habit Formation",
+            "sub_topic_id": "SCI.4.2.1",
+            "sub_topic_name": "Identifying Plants, Trees, Insects, Birds (using field guides and keys)",
+            "objective_id": "SCI.4.2.1.4",
+            "objective_text": "Use a dichotomous key to identify a plant or animal to species.",
+            "objective_uuid": "34d983b2-95d2-4468-8dfc-5485046e08c0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.2",
+            "topic_name": "Field Observation & Habit Formation",
+            "sub_topic_id": "SCI.4.2.1",
+            "sub_topic_name": "Identifying Plants, Trees, Insects, Birds (using field guides and keys)",
+            "objective_id": "SCI.4.2.1.5",
+            "objective_text": "Distinguish similar species by subtle field marks, range, and habitat clues.",
+            "objective_uuid": "184c9874-c5f6-40b9-8e0a-2e3f8a17c1ca",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

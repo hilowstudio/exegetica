@@ -1,0 +1,126 @@
+{
+  "sub_topic": {
+    "id": "SCI.4.3.5",
+    "name": "Written Reflections (wonder, questions, hypotheses, poetry)",
+    "topic_id": "SCI.4.3",
+    "topic_name": "Nature Journaling (Scientific Art & Writing)",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.4",
+    "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Written Reflections (wonder, questions, hypotheses, poetry) in Nature Journaling (Scientific Art & Writing) (Science & Nature)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.5",
+            "sub_topic_name": "Written Reflections (wonder, questions, hypotheses, poetry)",
+            "objective_id": "SCI.4.3.5.1",
+            "objective_text": "Write a sentence describing something in nature that filled you with wonder.",
+            "objective_uuid": "4f037d6c-30d9-4efd-809f-37f2847dfa85",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.5",
+            "sub_topic_name": "Written Reflections (wonder, questions, hypotheses, poetry)",
+            "objective_id": "SCI.4.3.5.2",
+            "objective_text": "Write down questions that an observation raises in your mind.",
+            "objective_uuid": "7bbd6b37-6aa5-4e5c-8a73-96c9b13850e7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 2,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.5",
+            "sub_topic_name": "Written Reflections (wonder, questions, hypotheses, poetry)",
+            "objective_id": "SCI.4.3.5.3",
+            "objective_text": "Propose a simple hypothesis or careful guess to answer one of your own questions.",
+            "objective_uuid": "916f5e29-6a83-4098-8726-1ce21b8e5a78",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.5",
+            "sub_topic_name": "Written Reflections (wonder, questions, hypotheses, poetry)",
+            "objective_id": "SCI.4.3.5.4",
+            "objective_text": "Compose a short poem or reflection inspired by a nature observation.",
+            "objective_uuid": "036302ae-7f03-46d3-8e0a-6f6da9a4a05c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

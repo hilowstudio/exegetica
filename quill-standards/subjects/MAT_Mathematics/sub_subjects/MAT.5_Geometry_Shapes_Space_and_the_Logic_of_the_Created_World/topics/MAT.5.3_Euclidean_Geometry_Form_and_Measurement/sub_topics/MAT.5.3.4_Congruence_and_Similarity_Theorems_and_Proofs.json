@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.3.4",
+    "name": "Congruence and Similarity (Theorems and Proofs)",
+    "topic_id": "MAT.5.3",
+    "topic_name": "Euclidean Geometry (Form and Measurement)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Congruence and Similarity (Theorems and Proofs) in Euclidean Geometry (Form and Measurement) (Mathematics)",
+    "grade_levels": {
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.4",
+            "sub_topic_name": "Congruence and Similarity (Theorems and Proofs)",
+            "objective_id": "MAT.5.3.4.1",
+            "objective_text": "Understand that two figures are congruent if one maps to the other by rigid motions.",
+            "objective_uuid": "e8164f05-8515-49d7-863f-308530954361",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 8.G.A.4 — Understand that a two-dimensional figure is similar to another if the second can be obtained from the fi (grade 8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.4",
+            "sub_topic_name": "Congruence and Similarity (Theorems and Proofs)",
+            "objective_id": "MAT.5.3.4.2",
+            "objective_text": "Understand that two figures are similar if related by a similarity transformation.",
+            "objective_uuid": "a1d78558-fad8-4a14-80c2-3d196dc0ae91",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-SRT.A.2 — Given two figures, use the definition of similarity in terms of similarity transformations to decide if  (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.4",
+            "sub_topic_name": "Congruence and Similarity (Theorems and Proofs)",
+            "objective_id": "MAT.5.3.4.3",
+            "objective_text": "Use the definition of similarity to establish equal ratios of corresponding sides.",
+            "objective_uuid": "710932a4-3f21-4729-84f3-e41272387ffd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-SRT.A.2 — Given two figures, use the definition of similarity in terms of similarity transformations to decide if  (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

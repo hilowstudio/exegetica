@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.1.2",
+    "name": "Graphing Linear Equations and Inequalities",
+    "topic_id": "MAT.5.1",
+    "topic_name": "Coordinate Geometry",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Graphing Linear Equations and Inequalities in Coordinate Geometry (Mathematics)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.1",
+            "topic_name": "Coordinate Geometry",
+            "sub_topic_id": "MAT.5.1.2",
+            "sub_topic_name": "Graphing Linear Equations and Inequalities",
+            "objective_id": "MAT.5.1.2.1",
+            "objective_text": "Plot ordered pairs on a coordinate grid.",
+            "objective_uuid": "dd57ca45-f938-48ec-8009-2e7d9ee5867c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 5.G.A.1 — Use a pair of perpendicular number lines, called axes, to define a coordinate system, with the intersect (grade 5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.1",
+            "topic_name": "Coordinate Geometry",
+            "sub_topic_id": "MAT.5.1.2",
+            "sub_topic_name": "Graphing Linear Equations and Inequalities",
+            "objective_id": "MAT.5.1.2.2",
+            "objective_text": "Graph a linear equation by making a table of values.",
+            "objective_uuid": "d44a0b4d-3c0e-4d73-8570-d7afb3d5cedb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-REI.D.10 — Understand that the graph of an equation in two variables is the set of all its solutions plotted in the (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.1",
+            "topic_name": "Coordinate Geometry",
+            "sub_topic_id": "MAT.5.1.2",
+            "sub_topic_name": "Graphing Linear Equations and Inequalities",
+            "objective_id": "MAT.5.1.2.3",
+            "objective_text": "Understand that the graph of an equation is the set of all its solutions.",
+            "objective_uuid": "0f07b50e-af0e-48d3-83ba-6e1c6e365650",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-REI.D.10 — Understand that the graph of an equation in two variables is the set of all its solutions plotted in the (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

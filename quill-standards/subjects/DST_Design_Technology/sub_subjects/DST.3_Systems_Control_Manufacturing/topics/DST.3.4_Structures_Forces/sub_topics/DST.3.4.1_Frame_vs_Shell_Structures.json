@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "DST.3.4.1",
+    "name": "Frame vs. Shell Structures",
+    "topic_id": "DST.3.4",
+    "topic_name": "Structures & Forces",
+    "subject_id": "DST",
+    "subject_name": "Design & Technology",
+    "sub_subject_id": "DST.3",
+    "sub_subject_name": "Systems, Control & Manufacturing",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Frame vs. Shell Structures in Structures & Forces (Design & Technology)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.4",
+            "topic_name": "Structures & Forces",
+            "sub_topic_id": "DST.3.4.1",
+            "sub_topic_name": "Frame vs. Shell Structures",
+            "objective_id": "DST.3.4.1.1",
+            "objective_text": "Sort familiar objects into frame structures and shell structures",
+            "objective_uuid": "e8072e51-19e4-4457-8f55-acc719dd885e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.4",
+            "topic_name": "Structures & Forces",
+            "sub_topic_id": "DST.3.4.1",
+            "sub_topic_name": "Frame vs. Shell Structures",
+            "objective_id": "DST.3.4.1.2",
+            "objective_text": "Explain the difference between a frame structure made of connected parts and a shell structure with a continuous surface",
+            "objective_uuid": "2707565d-92a9-4c2c-8191-ba70f89e9b54",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.4",
+            "topic_name": "Structures & Forces",
+            "sub_topic_id": "DST.3.4.1",
+            "sub_topic_name": "Frame vs. Shell Structures",
+            "objective_id": "DST.3.4.1.3",
+            "objective_text": "Give examples of where frame and shell structures are used and explain why each suits its job",
+            "objective_uuid": "2283eed5-a78b-4ae7-8298-55bdeb82a340",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.4",
+            "topic_name": "Structures & Forces",
+            "sub_topic_id": "DST.3.4.1",
+            "sub_topic_name": "Frame vs. Shell Structures",
+            "objective_id": "DST.3.4.1.4",
+            "objective_text": "Compare the strength, weight, and material use of a frame versus a shell for the same object",
+            "objective_uuid": "687f4ab9-38cb-41b3-802f-852def1655ea",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.4",
+            "topic_name": "Structures & Forces",
+            "sub_topic_id": "DST.3.4.1",
+            "sub_topic_name": "Frame vs. Shell Structures",
+            "objective_id": "DST.3.4.1.5",
+            "objective_text": "Choose and justify a frame or shell approach when designing a structure for a given purpose and load",
+            "objective_uuid": "70a12a3c-b8c1-47c1-8b6f-2a965f874c5a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

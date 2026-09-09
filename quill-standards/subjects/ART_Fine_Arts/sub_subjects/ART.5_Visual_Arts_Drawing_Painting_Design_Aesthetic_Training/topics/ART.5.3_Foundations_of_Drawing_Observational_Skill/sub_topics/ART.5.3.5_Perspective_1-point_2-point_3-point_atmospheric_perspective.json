@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.5.3.5",
+    "name": "Perspective (1-point, 2-point, 3-point, atmospheric perspective)",
+    "topic_id": "ART.5.3",
+    "topic_name": "Foundations of Drawing & Observational Skill",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.5",
+    "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Perspective (1-point, 2-point, 3-point, atmospheric perspective) in Foundations of Drawing & Observational Skill (Fine Arts)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.5",
+            "sub_topic_name": "Perspective (1-point, 2-point, 3-point, atmospheric perspective)",
+            "objective_id": "ART.5.3.5.1",
+            "objective_text": "Show near objects larger and far objects smaller to suggest distance",
+            "objective_uuid": "c7782c04-ac38-4b5b-8a42-d022d3bf5613",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.5",
+            "sub_topic_name": "Perspective (1-point, 2-point, 3-point, atmospheric perspective)",
+            "objective_id": "ART.5.3.5.2",
+            "objective_text": "Draw a road or box in one-point perspective using a single vanishing point",
+            "objective_uuid": "c84218a1-c37f-4956-86b4-895d16e7a39e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.5",
+            "sub_topic_name": "Perspective (1-point, 2-point, 3-point, atmospheric perspective)",
+            "objective_id": "ART.5.3.5.3",
+            "objective_text": "Draw a scene in two-point perspective using two vanishing points on the horizon",
+            "objective_uuid": "54110c77-bf2d-47ce-8cfc-feaddf87273e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.5",
+            "sub_topic_name": "Perspective (1-point, 2-point, 3-point, atmospheric perspective)",
+            "objective_id": "ART.5.3.5.4",
+            "objective_text": "Use atmospheric perspective, fading value and detail to push objects into the distance",
+            "objective_uuid": "870184a9-547a-4f36-8443-4324203b5a9b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.5",
+            "sub_topic_name": "Perspective (1-point, 2-point, 3-point, atmospheric perspective)",
+            "objective_id": "ART.5.3.5.5",
+            "objective_text": "Construct a three-point perspective drawing for a dramatic high or low viewpoint",
+            "objective_uuid": "ac2e0f0e-88b7-4713-86ad-a4890bd3ecfd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.5",
+            "sub_topic_name": "Perspective (1-point, 2-point, 3-point, atmospheric perspective)",
+            "objective_id": "ART.5.3.5.6",
+            "objective_text": "Develop a complex scene combining linear and atmospheric perspective convincingly",
+            "objective_uuid": "370bf391-14d0-44ef-841d-7519baa9fb56",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr1 — Generate and conceptualize artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

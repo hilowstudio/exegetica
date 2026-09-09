@@ -1,0 +1,191 @@
+{
+  "sub_topic": {
+    "id": "HSS.1.2.4",
+    "name": "Persian Empire",
+    "topic_id": "HSS.1.2",
+    "topic_name": "Ancient Near East & Egypt (Biblical Core)",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.1",
+    "sub_subject_name": "Ancient Civilizations (Prehistory–500 AD)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Persian Empire in Ancient Near East & Egypt (Biblical Core) (History & Social Studies)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 2,
+        "average_complexity": 5.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.1",
+            "sub_subject_name": "Ancient Civilizations (Prehistory–500 AD)",
+            "topic_id": "HSS.1.2",
+            "topic_name": "Ancient Near East & Egypt (Biblical Core)",
+            "sub_topic_id": "HSS.1.2.4",
+            "sub_topic_name": "Persian Empire",
+            "objective_id": "HSS.1.2.4.1",
+            "objective_text": "Sequence the reigns of the Persian kings Cyrus, Darius, and Xerxes.",
+            "objective_uuid": "167b7f0c-4507-4176-8177-884d541e0136",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.1",
+            "sub_subject_name": "Ancient Civilizations (Prehistory–500 AD)",
+            "topic_id": "HSS.1.2",
+            "topic_name": "Ancient Near East & Egypt (Biblical Core)",
+            "sub_topic_id": "HSS.1.2.4",
+            "sub_topic_name": "Persian Empire",
+            "objective_id": "HSS.1.2.4.2",
+            "objective_text": "Generate reasons why the Persian kings let conquered peoples keep their own customs and religions.",
+            "objective_uuid": "b264ba37-43ba-41ac-847a-58c41b0ff6ee",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.K-2 — Generate possible reasons for an event or development in the past (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.1",
+            "sub_subject_name": "Ancient Civilizations (Prehistory–500 AD)",
+            "topic_id": "HSS.1.2",
+            "topic_name": "Ancient Near East & Egypt (Biblical Core)",
+            "sub_topic_id": "HSS.1.2.4",
+            "sub_topic_name": "Persian Empire",
+            "objective_id": "HSS.1.2.4.3",
+            "objective_text": "Describe how the Persians governed their huge empire using satraps (governors) and the Royal Road.",
+            "objective_uuid": "4a57a1fc-b6fa-41fd-8487-7bdc0b3c1a2b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.1",
+            "sub_subject_name": "Ancient Civilizations (Prehistory–500 AD)",
+            "topic_id": "HSS.1.2",
+            "topic_name": "Ancient Near East & Egypt (Biblical Core)",
+            "sub_topic_id": "HSS.1.2.4",
+            "sub_topic_name": "Persian Empire",
+            "objective_id": "HSS.1.2.4.4",
+            "objective_text": "Analyze the causes and effects of Persia's rapid expansion and its wars with the Greek city-states.",
+            "objective_uuid": "24d3d631-504c-4b41-8072-2c9f94bc9ff6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.1",
+            "sub_subject_name": "Ancient Civilizations (Prehistory–500 AD)",
+            "topic_id": "HSS.1.2",
+            "topic_name": "Ancient Near East & Egypt (Biblical Core)",
+            "sub_topic_id": "HSS.1.2.4",
+            "sub_topic_name": "Persian Empire",
+            "objective_id": "HSS.1.2.4.5",
+            "objective_text": "Evaluate how Cyrus the Great's policy of tolerance, including allowing the exiled Jews to return, reflected his empire's circumstances.",
+            "objective_uuid": "03a29294-a8a7-407a-8877-3717da800c1b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.1",
+            "sub_subject_name": "Ancient Civilizations (Prehistory–500 AD)",
+            "topic_id": "HSS.1.2",
+            "topic_name": "Ancient Near East & Egypt (Biblical Core)",
+            "sub_topic_id": "HSS.1.2.4",
+            "sub_topic_name": "Persian Empire",
+            "objective_id": "HSS.1.2.4.6",
+            "objective_text": "Assess how rulers such as Cyrus or Darius I are seen as historically significant and how that view is shaped by context.",
+            "objective_uuid": "a60adbf4-a8f2-4dcb-8e87-08667f53f33b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.9-12 — Use questions generated about individuals and groups to assess how the significance of their actions (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.8.2.6",
+    "name": "Triangular, Square, and other Figurate Numbers",
+    "topic_id": "MAT.8.2",
+    "topic_name": "Patterns & Sequences",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.8",
+    "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Triangular, Square, and other Figurate Numbers in Patterns & Sequences (Mathematics)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.2",
+            "topic_name": "Patterns & Sequences",
+            "sub_topic_id": "MAT.8.2.6",
+            "sub_topic_name": "Triangular, Square, and other Figurate Numbers",
+            "objective_id": "MAT.8.2.6.1",
+            "objective_text": "Build triangular and square numbers with dots or tiles.",
+            "objective_uuid": "507e06d2-f18d-446a-8494-2fd39d92c989",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.2",
+            "topic_name": "Patterns & Sequences",
+            "sub_topic_id": "MAT.8.2.6",
+            "sub_topic_name": "Triangular, Square, and other Figurate Numbers",
+            "objective_id": "MAT.8.2.6.2",
+            "objective_text": "Find a pattern and rule for figurate numbers.",
+            "objective_uuid": "787d26d0-caca-421a-8d21-8f6b976468bb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.2",
+            "topic_name": "Patterns & Sequences",
+            "sub_topic_id": "MAT.8.2.6",
+            "sub_topic_name": "Triangular, Square, and other Figurate Numbers",
+            "objective_id": "MAT.8.2.6.3",
+            "objective_text": "Derive a formula for the nth triangular or square number.",
+            "objective_uuid": "7d675753-b9ff-4936-8ce6-2853f06f01b5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content runs beyond Common Core, so no standard anchor (honest gap)."
+    }
+  }
+}

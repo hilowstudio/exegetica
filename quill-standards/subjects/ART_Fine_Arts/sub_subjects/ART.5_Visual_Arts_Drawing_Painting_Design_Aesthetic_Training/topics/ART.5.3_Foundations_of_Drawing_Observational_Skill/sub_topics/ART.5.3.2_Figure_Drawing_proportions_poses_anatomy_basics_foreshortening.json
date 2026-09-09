@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.5.3.2",
+    "name": "Figure Drawing (proportions, poses, anatomy basics, foreshortening)",
+    "topic_id": "ART.5.3",
+    "topic_name": "Foundations of Drawing & Observational Skill",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.5",
+    "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Figure Drawing (proportions, poses, anatomy basics, foreshortening) in Foundations of Drawing & Observational Skill (Fine Arts)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.2",
+            "sub_topic_name": "Figure Drawing (proportions, poses, anatomy basics, foreshortening)",
+            "objective_id": "ART.5.3.2.1",
+            "objective_text": "Draw a person using simple shapes for the head, body, and limbs",
+            "objective_uuid": "74bac70c-3a10-4500-81e3-816a54d654cb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.2",
+            "sub_topic_name": "Figure Drawing (proportions, poses, anatomy basics, foreshortening)",
+            "objective_id": "ART.5.3.2.2",
+            "objective_text": "Sketch a figure using proportion guides such as head-count heights",
+            "objective_uuid": "26057100-78fc-4498-8343-2af0f38a68c2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.2",
+            "sub_topic_name": "Figure Drawing (proportions, poses, anatomy basics, foreshortening)",
+            "objective_id": "ART.5.3.2.3",
+            "objective_text": "Draw quick gesture poses that capture a figure's movement and weight",
+            "objective_uuid": "15414f3f-53ce-4a14-8d62-5200dccd1c88",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.2",
+            "sub_topic_name": "Figure Drawing (proportions, poses, anatomy basics, foreshortening)",
+            "objective_id": "ART.5.3.2.4",
+            "objective_text": "Draw the figure with basic anatomy of the skeleton and major muscle groups",
+            "objective_uuid": "2a597bb3-1da3-4135-86e1-aac616ac3664",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.2",
+            "sub_topic_name": "Figure Drawing (proportions, poses, anatomy basics, foreshortening)",
+            "objective_id": "ART.5.3.2.5",
+            "objective_text": "Render foreshortened poses using overlapping forms to show depth",
+            "objective_uuid": "6319a26b-0be4-434a-863b-1206b1fdd9f9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr2 — Organize and develop artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.5",
+            "sub_subject_name": "Visual Arts (Drawing, Painting, Design & Aesthetic Training)",
+            "topic_id": "ART.5.3",
+            "topic_name": "Foundations of Drawing & Observational Skill",
+            "sub_topic_id": "ART.5.3.2",
+            "sub_topic_name": "Figure Drawing (proportions, poses, anatomy basics, foreshortening)",
+            "objective_id": "ART.5.3.2.6",
+            "objective_text": "Develop a finished figure drawing that unites proportion, anatomy, and gesture",
+            "objective_uuid": "a9f46c4d-53ee-476e-8faf-fd575b00733e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cr1 — Generate and conceptualize artistic ideas and work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

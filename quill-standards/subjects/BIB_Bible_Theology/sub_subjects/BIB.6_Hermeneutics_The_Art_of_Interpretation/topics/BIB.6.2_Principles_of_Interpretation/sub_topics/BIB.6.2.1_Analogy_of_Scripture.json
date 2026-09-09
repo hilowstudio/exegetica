@@ -1,0 +1,457 @@
+{
+  "sub_topic": {
+    "id": "BIB.6.2.1",
+    "name": "Analogy of Scripture",
+    "topic_id": "BIB.6.2",
+    "topic_name": "Principles of Interpretation",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.6",
+    "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+    "total_objectives": 16,
+    "description": "13-year academic progression (K-12) for Analogy of Scripture in Principles of Interpretation (Bible & Theology)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.1",
+            "objective_text": "Identify that the Bible tells one big true story.",
+            "objective_uuid": "a9f551ff-2fc6-40bc-a86f-06989b5082a9",
+            "anchors": {
+              "scripture": [
+                "2 Peter 1:20-21"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.2",
+            "objective_text": "Name the Bible as the best helper to understand the Bible.",
+            "objective_uuid": "cf2872bb-e30f-4af1-9c22-881a180b01b8",
+            "anchors": {
+              "scripture": [
+                "2 Peter 1:20-21"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.3",
+            "objective_text": "Recall that God never contradicts Himself.",
+            "objective_uuid": "abd440f0-f9ec-4fe2-95c7-22837f4fed90",
+            "anchors": {
+              "scripture": [
+                "2 Peter 1:20-21"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.4",
+            "objective_text": "Observe that the New Testament helps us understand the Old Testament.",
+            "objective_uuid": "993250df-cb93-4b9d-bfa3-e4bbd98b67eb",
+            "anchors": {
+              "scripture": [
+                "Luke 24:27"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.5",
+            "objective_text": "Summarize the rule: 'Scripture interprets Scripture'.",
+            "objective_uuid": "8ba7510c-2dab-4813-af15-c38204eecebc",
+            "anchors": {
+              "scripture": [
+                "2 Peter 1:20"
+              ],
+              "confessions": [
+                "Westminster Confession 1.9"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.6",
+            "objective_text": "Explain that clear verses help us understand hard verses.",
+            "objective_uuid": "71d4de4a-c85a-4cab-b0bb-cc7e591ea615",
+            "anchors": {
+              "scripture": [
+                "2 Peter 3:16"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.7",
+            "objective_text": "Compare two verses on the same topic to get the full picture.",
+            "objective_uuid": "bfa50b00-2cbc-426d-9953-faa492a7939f",
+            "anchors": {
+              "scripture": [
+                "2 Peter 1:20-21"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.8",
+            "objective_text": "Apply cross-references to find other verses.",
+            "objective_uuid": "1ddbc67f-c8fc-4550-a2fe-aa353777cb13",
+            "anchors": {
+              "scripture": [
+                "2 Peter 1:20-21"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.9",
+            "objective_text": "Analyze apparent contradictions (e.g., Paul vs. James) using harmonization.",
+            "objective_uuid": "2c24bdca-e869-4efa-8cd8-a06738b7f603",
+            "anchors": {
+              "scripture": [
+                "James 2:14-24"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.10",
+            "objective_text": "Interpret obscure passages in light of systematic theology.",
+            "objective_uuid": "73415c42-0fa2-468d-bef9-7c9842ce0be3",
+            "anchors": {
+              "scripture": [
+                "2 Peter 1:20-21"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.11",
+            "objective_text": "Connect OT types to NT antitypes.",
+            "objective_uuid": "3fe6d811-6e4d-480d-bfa8-14c20e152347",
+            "anchors": {
+              "scripture": [
+                "Colossians 2:16-17"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.12",
+            "objective_text": "Explain the unity of the Bible.",
+            "objective_uuid": "006d78ce-b67d-4e1c-864b-6a4666dc80e9",
+            "anchors": {
+              "scripture": [
+                "John 10:35"
+              ],
+              "confessions": [
+                "Westminster Confession 1.9"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.13",
+            "objective_text": "Construct a systematic theology on a topic using the whole Bible.",
+            "objective_uuid": "4e2e0917-5bd8-4d35-844e-ecaa0874c566",
+            "anchors": {
+              "scripture": [
+                "2 Peter 1:20-21"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.14",
+            "objective_text": "Evaluate how the Apostles interpreted the OT (hermeneutics of the Apostles).",
+            "objective_uuid": "0b3d9e31-6160-4a9e-88fc-c1ebeb508220",
+            "anchors": {
+              "scripture": [
+                "Luke 24:44"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.15",
+            "objective_text": "Defend the internal consistency of the Scriptures.",
+            "objective_uuid": "5dc9064b-ca69-476e-a79e-37b2de08dbd5",
+            "anchors": {
+              "scripture": [
+                "Psalm 119:160"
+              ],
+              "confessions": [
+                "Westminster Confession 1.5"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.6",
+            "sub_subject_name": "Hermeneutics (The Art of Interpretation)",
+            "topic_id": "BIB.6.2",
+            "topic_name": "Principles of Interpretation",
+            "sub_topic_id": "BIB.6.2.1",
+            "sub_topic_name": "Analogy of Scripture",
+            "objective_id": "BIB.6.2.1.16",
+            "objective_text": "Produce a study reconciling difficult parallel passages (e.g., Kings/Chronicles or Gospels).",
+            "objective_uuid": "5b8108b8-664b-4f9f-81ee-cbc76841966d",
+            "anchors": {
+              "scripture": [
+                "2 Peter 1:20-21"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "enriched",
+      "levers": [
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture anchors: passages about interpretation and inspiration, plus the example texts each objective names. Validated against the study-bible MCP tools."
+    }
+  }
+}

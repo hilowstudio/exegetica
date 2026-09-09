@@ -1,0 +1,128 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.5.6",
+    "name": "Version Control (Git, commits, branching)",
+    "topic_id": "CPT.1.5",
+    "topic_name": "Software Engineering (Project-Level Thinking)",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Version Control (Git, commits, branching) in Software Engineering (Project-Level Thinking) (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 7.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.6",
+            "sub_topic_name": "Version Control (Git, commits, branching)",
+            "objective_id": "CPT.1.5.6.1",
+            "objective_text": "Initialize a repository and commit changes to track a project's history",
+            "objective_uuid": "528af7fb-4e80-4059-862d-a0252e7e8e8e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-20 — Use version control systems, integrated development environments (IDEs), and collaborative tools and practices (grades 11-12)"
+              ]
+            }
+          },
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.6",
+            "sub_topic_name": "Version Control (Git, commits, branching)",
+            "objective_id": "CPT.1.5.6.2",
+            "objective_text": "Write clear commit messages and review the history of a project",
+            "objective_uuid": "2cfc6c02-6d11-46d2-88ed-f873e15dc50d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-20 — Use version control systems, integrated development environments (IDEs), and collaborative tools and practices (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 2,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.6",
+            "sub_topic_name": "Version Control (Git, commits, branching)",
+            "objective_id": "CPT.1.5.6.3",
+            "objective_text": "Create and merge branches to work on features separately",
+            "objective_uuid": "7d8fb9c4-4e8e-4677-89cf-601b4b30044f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-20 — Use version control systems, integrated development environments (IDEs), and collaborative tools and practices (grades 11-12)"
+              ]
+            }
+          },
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.6",
+            "sub_topic_name": "Version Control (Git, commits, branching)",
+            "objective_id": "CPT.1.5.6.4",
+            "objective_text": "Use a version control system within a group software project",
+            "objective_uuid": "ef103820-1be1-495d-8dee-0fc75b5d2c75",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-20 — Use version control systems, integrated development environments (IDEs), and collaborative tools and practices (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

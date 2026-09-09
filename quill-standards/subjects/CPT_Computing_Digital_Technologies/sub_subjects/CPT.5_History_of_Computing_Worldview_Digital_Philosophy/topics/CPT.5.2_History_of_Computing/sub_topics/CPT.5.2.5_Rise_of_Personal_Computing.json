@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.5.2.5",
+    "name": "Rise of Personal Computing",
+    "topic_id": "CPT.5.2",
+    "topic_name": "History of Computing",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.5",
+    "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Rise of Personal Computing in History of Computing (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.5",
+            "sub_topic_name": "Rise of Personal Computing",
+            "objective_id": "CPT.5.2.5.1",
+            "objective_text": "Describe how computers changed from large machines used by few people to personal computers used in homes and schools",
+            "objective_uuid": "d49135a5-1fc3-4e4c-89fa-ee34a4dac6d6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-18 — Discuss computing technologies that have changed the world, and express how those technologies influence, and  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.5",
+            "sub_topic_name": "Rise of Personal Computing",
+            "objective_id": "CPT.5.2.5.2",
+            "objective_text": "Explain how the personal computer put computing power into the hands of ordinary people",
+            "objective_uuid": "7387f442-ffb5-4025-8e5c-c9db6adc73ee",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-18 — Discuss computing technologies that have changed the world, and express how those technologies influence, and  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.5",
+            "sub_topic_name": "Rise of Personal Computing",
+            "objective_id": "CPT.5.2.5.3",
+            "objective_text": "Discuss how the rise of personal computing changed work, education, and daily life",
+            "objective_uuid": "39dd8fa2-7490-43f8-8faa-26b80237aace",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-18 — Discuss computing technologies that have changed the world, and express how those technologies influence, and  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.5",
+            "sub_topic_name": "Rise of Personal Computing",
+            "objective_id": "CPT.5.2.5.4",
+            "objective_text": "Analyze how the personal computing revolution influenced culture and was itself shaped by the demands of its users",
+            "objective_uuid": "af305ed8-391d-4905-8993-e42df7e47a61",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-18 — Discuss computing technologies that have changed the world, and express how those technologies influence, and  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

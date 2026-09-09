@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.7.3.3",
+    "name": "Patterns, Conjectures, and Generalizations",
+    "topic_id": "MAT.7.3",
+    "topic_name": "Reasoning Skills",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.7",
+    "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Patterns, Conjectures, and Generalizations in Reasoning Skills (Mathematics)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.3",
+            "topic_name": "Reasoning Skills",
+            "sub_topic_id": "MAT.7.3.3",
+            "sub_topic_name": "Patterns, Conjectures, and Generalizations",
+            "objective_id": "MAT.7.3.3.1",
+            "objective_text": "Identify and extend a repeating or growing pattern.",
+            "objective_uuid": "33804eb4-72aa-486b-89f9-047e524d649e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP7 — Look for and make use of structure (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.3",
+            "topic_name": "Reasoning Skills",
+            "sub_topic_id": "MAT.7.3.3",
+            "sub_topic_name": "Patterns, Conjectures, and Generalizations",
+            "objective_id": "MAT.7.3.3.2",
+            "objective_text": "Describe a pattern with a general rule.",
+            "objective_uuid": "bfa59bd6-e764-4a1f-850d-d7c26f83e688",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP8 — Look for and express regularity in repeated reasoning (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.3",
+            "topic_name": "Reasoning Skills",
+            "sub_topic_id": "MAT.7.3.3",
+            "sub_topic_name": "Patterns, Conjectures, and Generalizations",
+            "objective_id": "MAT.7.3.3.3",
+            "objective_text": "Generalize a pattern into an algebraic expression and justify it.",
+            "objective_uuid": "b9091104-d388-4108-89e9-97d1932c8467",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP8 — Look for and express regularity in repeated reasoning (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

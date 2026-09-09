@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ELA.9.6.2",
+    "name": "Reading Poetry Aloud",
+    "topic_id": "ELA.9.6",
+    "topic_name": "Oral Interpretation & Recitation",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.9",
+    "sub_subject_name": "Speech, Rhetoric & Logic (The Trivium's Apex)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Reading Poetry Aloud in Oral Interpretation & Recitation (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.9",
+            "sub_subject_name": "Speech, Rhetoric & Logic (The Trivium's Apex)",
+            "topic_id": "ELA.9.6",
+            "topic_name": "Oral Interpretation & Recitation",
+            "sub_topic_id": "ELA.9.6.2",
+            "sub_topic_name": "Reading Poetry Aloud",
+            "objective_id": "ELA.9.6.2.1",
+            "objective_text": "Recite a short poem aloud from memory with clear diction",
+            "objective_uuid": "4cfd5af1-e2e0-4678-848e-6f1f6340acd1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.SL.4 — Present information, findings, and supporting evidence such that listeners can follow the line of reason (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.9",
+            "sub_subject_name": "Speech, Rhetoric & Logic (The Trivium's Apex)",
+            "topic_id": "ELA.9.6",
+            "topic_name": "Oral Interpretation & Recitation",
+            "sub_topic_id": "ELA.9.6.2",
+            "sub_topic_name": "Reading Poetry Aloud",
+            "objective_id": "ELA.9.6.2.2",
+            "objective_text": "Read a poem aloud in a way that honors its line breaks, rhythm, and rhyme",
+            "objective_uuid": "4a1ca128-1084-495a-8a51-4375aa20200a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.SL.4 — Present information, findings, and supporting evidence such that listeners can follow the line of reason (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.9",
+            "sub_subject_name": "Speech, Rhetoric & Logic (The Trivium's Apex)",
+            "topic_id": "ELA.9.6",
+            "topic_name": "Oral Interpretation & Recitation",
+            "sub_topic_id": "ELA.9.6.2",
+            "sub_topic_name": "Reading Poetry Aloud",
+            "objective_id": "ELA.9.6.2.3",
+            "objective_text": "Use pace, volume, and pause to bring out a poem's mood and meaning",
+            "objective_uuid": "bae81abd-0aaf-420d-81c7-9d1516ca1436",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.SL.4 — Present information, findings, and supporting evidence such that listeners can follow the line of reason (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.9",
+            "sub_subject_name": "Speech, Rhetoric & Logic (The Trivium's Apex)",
+            "topic_id": "ELA.9.6",
+            "topic_name": "Oral Interpretation & Recitation",
+            "sub_topic_id": "ELA.9.6.2",
+            "sub_topic_name": "Reading Poetry Aloud",
+            "objective_id": "ELA.9.6.2.4",
+            "objective_text": "Adjust delivery to the poem's meter and form, avoiding a sing-song reading of the lines",
+            "objective_uuid": "5df76a64-d66d-4e2b-8942-49799089443b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.SL.6 — Adapt speech to a variety of contexts and communicative tasks, demonstrating command of formal English w (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.9",
+            "sub_subject_name": "Speech, Rhetoric & Logic (The Trivium's Apex)",
+            "topic_id": "ELA.9.6",
+            "topic_name": "Oral Interpretation & Recitation",
+            "sub_topic_id": "ELA.9.6.2",
+            "sub_topic_name": "Reading Poetry Aloud",
+            "objective_id": "ELA.9.6.2.5",
+            "objective_text": "Interpret a poem aloud for an audience, making deliberate choices about emphasis, tone, and phrasing",
+            "objective_uuid": "75531045-ee51-4265-8093-66a9f3dbad0a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.SL.4 — Present information, findings, and supporting evidence such that listeners can follow the line of reason (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

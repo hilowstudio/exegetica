@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.6.2",
+    "name": "Scale Factors and Scale Drawings (Maps and Models)",
+    "topic_id": "MAT.4.6",
+    "topic_name": "Ratios, Proportion & Scaling",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Scale Factors and Scale Drawings (Maps and Models) in Ratios, Proportion & Scaling (Mathematics)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.6",
+            "topic_name": "Ratios, Proportion & Scaling",
+            "sub_topic_id": "MAT.4.6.2",
+            "sub_topic_name": "Scale Factors and Scale Drawings (Maps and Models)",
+            "objective_id": "MAT.4.6.2.1",
+            "objective_text": "Recognize and represent proportional relationships between quantities.",
+            "objective_uuid": "ad979451-be0f-4cd3-80f7-42c25361971a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.RP.A.2 — Recognize and represent proportional relationships between quantities (grade 7)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 2,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.6",
+            "topic_name": "Ratios, Proportion & Scaling",
+            "sub_topic_id": "MAT.4.6.2",
+            "sub_topic_name": "Scale Factors and Scale Drawings (Maps and Models)",
+            "objective_id": "MAT.4.6.2.2",
+            "objective_text": "Solve problems involving scale drawings of geometric figures.",
+            "objective_uuid": "78405b51-2dd4-4d37-8023-bd8b89d6eca6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.G.A.1 — Solve problems involving scale drawings of geometric figures, including computing actual lengths and are (grade 7)"
+              ]
+            }
+          },
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.6",
+            "topic_name": "Ratios, Proportion & Scaling",
+            "sub_topic_id": "MAT.4.6.2",
+            "sub_topic_name": "Scale Factors and Scale Drawings (Maps and Models)",
+            "objective_id": "MAT.4.6.2.3",
+            "objective_text": "Use a scale factor to compute actual and scaled lengths.",
+            "objective_uuid": "2e428af1-1eca-4771-87da-a42ce3ca93b2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.G.A.1 — Solve problems involving scale drawings of geometric figures, including computing actual lengths and are (grade 7)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

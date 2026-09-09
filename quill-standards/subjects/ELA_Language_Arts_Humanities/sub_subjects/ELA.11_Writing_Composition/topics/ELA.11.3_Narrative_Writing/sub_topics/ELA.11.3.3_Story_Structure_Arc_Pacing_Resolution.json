@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ELA.11.3.3",
+    "name": "Story Structure (Arc, Pacing, Resolution)",
+    "topic_id": "ELA.11.3",
+    "topic_name": "Narrative Writing",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.11",
+    "sub_subject_name": "Writing & Composition",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Story Structure (Arc, Pacing, Resolution) in Narrative Writing (Language Arts & Humanities)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.3",
+            "topic_name": "Narrative Writing",
+            "sub_topic_id": "ELA.11.3.3",
+            "sub_topic_name": "Story Structure (Arc, Pacing, Resolution)",
+            "objective_id": "ELA.11.3.3.1",
+            "objective_text": "Tell a story that has a beginning, a middle, and an end",
+            "objective_uuid": "24557059-601e-4d9a-8650-3ec3e97eae80",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.3 — Write narratives to develop real or imagined experiences or events using effective technique, well-chose (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.3",
+            "topic_name": "Narrative Writing",
+            "sub_topic_id": "ELA.11.3.3",
+            "sub_topic_name": "Story Structure (Arc, Pacing, Resolution)",
+            "objective_id": "ELA.11.3.3.2",
+            "objective_text": "Write a story with a problem and a solution arranged in a clear sequence",
+            "objective_uuid": "643fee5c-c588-408c-87e7-f3f2028a35b8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.3 — Write narratives to develop real or imagined experiences or events using effective technique, well-chose (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.3",
+            "topic_name": "Narrative Writing",
+            "sub_topic_id": "ELA.11.3.3",
+            "sub_topic_name": "Story Structure (Arc, Pacing, Resolution)",
+            "objective_id": "ELA.11.3.3.3",
+            "objective_text": "Draft a story with a rising conflict, a climax, and a resolution",
+            "objective_uuid": "08defb30-efa3-4b6f-85ae-4151fd4a9c3c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.3 — Write narratives to develop real or imagined experiences or events using effective technique, well-chose (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.3",
+            "topic_name": "Narrative Writing",
+            "sub_topic_id": "ELA.11.3.3",
+            "sub_topic_name": "Story Structure (Arc, Pacing, Resolution)",
+            "objective_id": "ELA.11.3.3.4",
+            "objective_text": "Control pacing so tension builds toward the climax and eases in the resolution",
+            "objective_uuid": "8af52085-3642-4108-82b4-566fae6db94e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.3 — Write narratives to develop real or imagined experiences or events using effective technique, well-chose (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.3",
+            "topic_name": "Narrative Writing",
+            "sub_topic_id": "ELA.11.3.3",
+            "sub_topic_name": "Story Structure (Arc, Pacing, Resolution)",
+            "objective_id": "ELA.11.3.3.5",
+            "objective_text": "Structure a narrative arc that develops conflict, stakes, and a satisfying, purposeful resolution",
+            "objective_uuid": "10db79fe-d48e-4b4e-8e4d-b5d20e7391cd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.4 — Produce clear and coherent writing in which the development, organization, and style are appropriate to  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

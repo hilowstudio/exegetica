@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.4.4",
+    "name": "Functions, Parameters & Return Values (early introduction)",
+    "topic_id": "CPT.1.4",
+    "topic_name": "Programming Fundamentals (Block to Text)",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Functions, Parameters & Return Values (early introduction) in Programming Fundamentals (Block to Text) (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.4",
+            "sub_topic_name": "Functions, Parameters & Return Values (early introduction)",
+            "objective_id": "CPT.1.4.4.1",
+            "objective_text": "Define a function that groups a set of instructions under one name",
+            "objective_uuid": "074ce223-a1a8-48db-82fd-b28c022b00af",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-14 — Create procedures with parameters to organize code and make it easier to reuse. Clarification: Students should (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.4",
+            "sub_topic_name": "Functions, Parameters & Return Values (early introduction)",
+            "objective_id": "CPT.1.4.4.2",
+            "objective_text": "Pass arguments into a function's parameters to change its output",
+            "objective_uuid": "e457b162-50e4-4ce7-8930-0559c3f4727d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-14 — Create procedures with parameters to organize code and make it easier to reuse. Clarification: Students should (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.4",
+            "sub_topic_name": "Functions, Parameters & Return Values (early introduction)",
+            "objective_id": "CPT.1.4.4.3",
+            "objective_text": "Return a value from a function and use it in the rest of the program",
+            "objective_uuid": "d912b809-1c3d-40f7-8448-5f1249c8435d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-14 — Create procedures with parameters to organize code and make it easier to reuse. Clarification: Students should (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.4",
+            "sub_topic_name": "Functions, Parameters & Return Values (early introduction)",
+            "objective_id": "CPT.1.4.4.4",
+            "objective_text": "Construct a solution built from student-created functions",
+            "objective_uuid": "420f25e1-42e6-43bd-8f7a-e9c61ac9dbed",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-14 — Construct solutions to problems using student-created components, such as procedures, modules and/or objects.  (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.4",
+            "sub_topic_name": "Functions, Parameters & Return Values (early introduction)",
+            "objective_id": "CPT.1.4.4.5",
+            "objective_text": "Compose several functions together to build a larger program",
+            "objective_uuid": "bfb28cea-78f9-48cc-8224-509372c2b4e6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-14 — Construct solutions to problems using student-created components, such as procedures, modules and/or objects.  (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

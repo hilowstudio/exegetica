@@ -1,0 +1,2469 @@
+{
+  "school": "Yorkville Christian High School",
+  "school_year": "2026-2027",
+  "course": "The Gospel According to John (Sophomore / Grade 10 Bible)",
+  "instructor_periods": [
+    2,
+    5
+  ],
+  "term_start": "2026-09-08",
+  "term_end": "2027-05-28",
+  "notes": "Period 2 and Period 5 both meet on every regular, Thursday, and half-day schedule. Both sections follow the SAME curriculum, so lessons-to-design = class meetings per section.",
+  "bell_schedules": {
+    "regular_MTWF": {
+      "Period 1": "7:45-8:35",
+      "Period 2": "8:39-9:29",
+      "Period 3": "9:33-10:23",
+      "Period 4": "10:27-11:17",
+      "Lunch": "11:21-11:46",
+      "Period 5": "11:50-12:40",
+      "Period 6": "12:44-1:33",
+      "Period 7": "1:37-2:26",
+      "Homeroom": "2:30-3:00"
+    },
+    "thursday": {
+      "Period 1": "8:45-9:21",
+      "Period 2": "9:25-10:01",
+      "Period 3": "10:05-10:41",
+      "Period 4": "10:45-11:21",
+      "Chapel": "11:25-11:55",
+      "Lunch": "11:59-12:20",
+      "Period 5": "12:24-1:00",
+      "Period 6": "1:04-1:44",
+      "Period 7": "1:48-2:28",
+      "Homeroom": "2:32-3:00"
+    },
+    "half_day": {
+      "Period 1": "7:45-8:11",
+      "Period 2": "8:15-8:41",
+      "Period 3": "8:45-9:11",
+      "Period 4": "9:15-9:41",
+      "Period 5": "9:45-10:11",
+      "Period 6": "10:15-10:41",
+      "Period 7": "10:45-11:11",
+      "Homeroom": "11:15-11:30"
+    }
+  },
+  "period_lengths_minutes": {
+    "regular": 50,
+    "thursday": 36,
+    "half_day": 26
+  },
+  "summary": {
+    "confident_class_meetings_per_section": 152,
+    "by_schedule_type": {
+      "regular_full_50min": 116,
+      "thursday_36min": 32,
+      "half_day_26min": 4
+    },
+    "finals_days": 8,
+    "confirmed_no_class_days": 3,
+    "tentative_class_days": 1,
+    "container_range_per_section": "152-153",
+    "no_school_weekdays": 25,
+    "weekend_days": 74,
+    "semester_1": {
+      "class_meetings_per_section": 72,
+      "regular": 55,
+      "thursday": 15,
+      "half_day": 2
+    },
+    "semester_2": {
+      "class_meetings_per_section": 80,
+      "regular": 61,
+      "thursday": 17,
+      "half_day": 2
+    },
+    "total_teaching_period_instances_both_sections": 304,
+    "assessment_plan": {
+      "graded_final_each_semester": true,
+      "review_days_per_section": 2,
+      "review_day_dates": [
+        "2027-01-08",
+        "2027-05-24"
+      ],
+      "final_exam_windows": {
+        "semester_1": "2027-01-11..2027-01-14",
+        "semester_2": "2027-05-25..2027-05-28"
+      },
+      "content_lessons_per_section": 150,
+      "content_lessons_semester_1": 71,
+      "content_lessons_semester_2": 79
+    }
+  },
+  "days": [
+    {
+      "date": "2026-09-08",
+      "day_of_week": "Tuesday",
+      "event": "First day of school",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-09",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-10",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-11",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-12",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-09-13",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-09-14",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-15",
+      "day_of_week": "Tuesday",
+      "event": "Parent Night (eve)",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-16",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-17",
+      "day_of_week": "Thursday",
+      "event": "Senior Sunrise",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-18",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-19",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-09-20",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-09-21",
+      "day_of_week": "Monday",
+      "event": "Senior Fall Retreat",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-22",
+      "day_of_week": "Tuesday",
+      "event": "Senior Fall Retreat",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-23",
+      "day_of_week": "Wednesday",
+      "event": "Senior Fall Retreat",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-24",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-25",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-26",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-09-27",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-09-28",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-29",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-09-30",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-01",
+      "day_of_week": "Thursday",
+      "event": "Grandparent's Day",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-02",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-03",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-10-04",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-10-05",
+      "day_of_week": "Monday",
+      "event": "Homecoming Week",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-06",
+      "day_of_week": "Tuesday",
+      "event": "Homecoming Week",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-07",
+      "day_of_week": "Wednesday",
+      "event": "Homecoming Week",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-08",
+      "day_of_week": "Thursday",
+      "event": "Homecoming Week",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-09",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "half_day",
+      "schedule": "half_day",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-10",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-10-11",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-10-12",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-10-13",
+      "day_of_week": "Tuesday",
+      "event": "School Pictures",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-14",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "no_class",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false,
+      "flag_reason": "All-School Give Back Day (whole-school service day - CONFIRMED no regular class)"
+    },
+    {
+      "date": "2026-10-15",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-16",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-17",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-10-18",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-10-19",
+      "day_of_week": "Monday",
+      "event": "FFA Convention",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-20",
+      "day_of_week": "Tuesday",
+      "event": "FFA Convention",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-21",
+      "day_of_week": "Wednesday",
+      "event": "FFA Convention",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-22",
+      "day_of_week": "Thursday",
+      "event": "FFA Convention",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-23",
+      "day_of_week": "Friday",
+      "event": "FFA Convention",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-24",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-10-25",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-10-26",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-27",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-28",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-29",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-30",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-10-31",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-01",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-02",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-03",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-04",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-05",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-06",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-07",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-08",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-09",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-10",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-11",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-12",
+      "day_of_week": "Thursday",
+      "event": "Mustang Shadow Day",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-13",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-14",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-15",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-16",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-17",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-18",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-19",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-20",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-11-21",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-22",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-23",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-24",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-25",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-26",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-27",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-28",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-29",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-11-30",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-01",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-02",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-03",
+      "day_of_week": "Thursday",
+      "event": "Ag Shadow Day",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-04",
+      "day_of_week": "Friday",
+      "event": "Picture Retakes",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-05",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-06",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-07",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-08",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-09",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-10",
+      "day_of_week": "Thursday",
+      "event": "Math & Science Shadow Day",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-11",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-12",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-13",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-14",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-15",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-16",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-17",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-18",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "half_day",
+      "schedule": "half_day",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2026-12-19",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-20",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-21",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-22",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-23",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-24",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-25",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-26",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-27",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-28",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-29",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-30",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2026-12-31",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-01",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-02",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-03",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-04",
+      "day_of_week": "Monday",
+      "event": "Classes resume (after Christmas Break)",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-05",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-06",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-07",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-08",
+      "day_of_week": "Friday",
+      "event": "Semester 1 review day (John final exam falls within Jan 11-14)",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true,
+      "designation": "pre_finals_review"
+    },
+    {
+      "date": "2027-01-09",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-10",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-11",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "finals",
+      "schedule": "finals_exam",
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-12",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "finals",
+      "schedule": "finals_exam",
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-13",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "finals",
+      "schedule": "finals_exam",
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-14",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "finals",
+      "schedule": "finals_exam",
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-15",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-16",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-17",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-18",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-19",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "no_class",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false,
+      "flag_reason": "Pre-ACT Testing Grades 8-11 (CONFIRMED no regular P2/P5 class)"
+    },
+    {
+      "date": "2027-01-20",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-21",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-22",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-23",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-24",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-25",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-26",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-27",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-28",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-29",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-01-30",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-01-31",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-02-01",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-02",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-03",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-04",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-05",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-06",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-02-07",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-02-08",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-09",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-10",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-11",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-12",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-13",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-02-14",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-02-15",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-02-16",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-17",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-18",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-19",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-20",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-02-21",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-02-22",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-23",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-24",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-25",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-26",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-02-27",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-02-28",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-01",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-02",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-03",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-04",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-05",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-06",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-07",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-08",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-09",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-10",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-11",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-12",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-13",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-14",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-15",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-16",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-17",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-18",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-19",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "half_day",
+      "schedule": "half_day",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-20",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-21",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-22",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-23",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-24",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "no_class",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false,
+      "flag_reason": "All-School Give Back Day (whole-school service day - CONFIRMED no regular class)"
+    },
+    {
+      "date": "2027-03-25",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-03-26",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-27",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-28",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-29",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-30",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-03-31",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-04-01",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-04-02",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "no_school",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-04-03",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-04-04",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-04-05",
+      "day_of_week": "Monday",
+      "event": "Classes resume (after Spring Break)",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-06",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-07",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-08",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-09",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-10",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-04-11",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-04-12",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-13",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-14",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-15",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-16",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-17",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-04-18",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-04-19",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-20",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-21",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-22",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-23",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-24",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-04-25",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-04-26",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-27",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-28",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-29",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-04-30",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-01",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-05-02",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-05-03",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-04",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-05",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-06",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-07",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "half_day",
+      "schedule": "half_day",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-08",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-05-09",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-05-10",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-11",
+      "day_of_week": "Tuesday",
+      "event": "Senior Trip",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-12",
+      "day_of_week": "Wednesday",
+      "event": "Senior Trip",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-13",
+      "day_of_week": "Thursday",
+      "event": "Senior Trip",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-14",
+      "day_of_week": "Friday",
+      "event": "Senior Trip",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-15",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-05-16",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-05-17",
+      "day_of_week": "Monday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-18",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-19",
+      "day_of_week": "Wednesday",
+      "event": "Senior Final Exams / Gr8 Recognition",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-20",
+      "day_of_week": "Thursday",
+      "event": "Senior Final Exams / Gr8 Recognition",
+      "status": "instructional",
+      "schedule": "thursday",
+      "period_2_meets": true,
+      "period_5_meets": true
+    },
+    {
+      "date": "2027-05-21",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "tentative_class",
+      "schedule": "regular",
+      "period_2_meets": "tentative",
+      "period_5_meets": "tentative",
+      "flag_reason": "Graduation Day (senior last day - sophomore class MAY meet; confirm with admin)"
+    },
+    {
+      "date": "2027-05-22",
+      "day_of_week": "Saturday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-05-23",
+      "day_of_week": "Sunday",
+      "event": "",
+      "status": "weekend",
+      "schedule": null,
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-05-24",
+      "day_of_week": "Monday",
+      "event": "Semester 2 review day (John final exam falls within May 25-28)",
+      "status": "instructional",
+      "schedule": "regular",
+      "period_2_meets": true,
+      "period_5_meets": true,
+      "designation": "pre_finals_review"
+    },
+    {
+      "date": "2027-05-25",
+      "day_of_week": "Tuesday",
+      "event": "",
+      "status": "finals",
+      "schedule": "finals_exam",
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-05-26",
+      "day_of_week": "Wednesday",
+      "event": "",
+      "status": "finals",
+      "schedule": "finals_exam",
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-05-27",
+      "day_of_week": "Thursday",
+      "event": "",
+      "status": "finals",
+      "schedule": "finals_exam",
+      "period_2_meets": false,
+      "period_5_meets": false
+    },
+    {
+      "date": "2027-05-28",
+      "day_of_week": "Friday",
+      "event": "",
+      "status": "finals",
+      "schedule": "finals_exam",
+      "period_2_meets": false,
+      "period_5_meets": false
+    }
+  ]
+}

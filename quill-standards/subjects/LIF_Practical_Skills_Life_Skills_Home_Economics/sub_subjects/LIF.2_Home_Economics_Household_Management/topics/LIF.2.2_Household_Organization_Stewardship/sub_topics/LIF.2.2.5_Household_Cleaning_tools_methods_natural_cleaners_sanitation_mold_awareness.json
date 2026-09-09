@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "LIF.2.2.5",
+    "name": "Household Cleaning (tools, methods, natural cleaners, sanitation, mold awareness)",
+    "topic_id": "LIF.2.2",
+    "topic_name": "Household Organization & Stewardship",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.2",
+    "sub_subject_name": "Home Economics & Household Management",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Household Cleaning (tools, methods, natural cleaners, sanitation, mold awareness) in Household Organization & Stewardship (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.2",
+            "topic_name": "Household Organization & Stewardship",
+            "sub_topic_id": "LIF.2.2.5",
+            "sub_topic_name": "Household Cleaning (tools, methods, natural cleaners, sanitation, mold awareness)",
+            "objective_id": "LIF.2.2.5.1",
+            "objective_text": "Identify common cleaning tools and what each one is used for",
+            "objective_uuid": "e77f7a75-bb7b-4f1c-8830-ace790cf5088",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 2 — Evaluate management practices related to the human, economic, and environmental resources in a globa (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.2",
+            "topic_name": "Household Organization & Stewardship",
+            "sub_topic_id": "LIF.2.2.5",
+            "sub_topic_name": "Household Cleaning (tools, methods, natural cleaners, sanitation, mold awareness)",
+            "objective_id": "LIF.2.2.5.2",
+            "objective_text": "Clean and sanitize a kitchen or bathroom surface using the right method",
+            "objective_uuid": "7fb839ac-03ea-4c90-8e20-038e9da7f7fe",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 2 — Evaluate management practices related to the human, economic, and environmental resources in a globa (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.2",
+            "topic_name": "Household Organization & Stewardship",
+            "sub_topic_id": "LIF.2.2.5",
+            "sub_topic_name": "Household Cleaning (tools, methods, natural cleaners, sanitation, mold awareness)",
+            "objective_id": "LIF.2.2.5.3",
+            "objective_text": "Mix and use a safe natural cleaner for a household task",
+            "objective_uuid": "121338ae-61e8-4801-8ea5-739f726186b1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 2 — Evaluate management practices related to the human, economic, and environmental resources in a globa (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.2",
+            "topic_name": "Household Organization & Stewardship",
+            "sub_topic_id": "LIF.2.2.5",
+            "sub_topic_name": "Household Cleaning (tools, methods, natural cleaners, sanitation, mold awareness)",
+            "objective_id": "LIF.2.2.5.4",
+            "objective_text": "Recognize signs of mold and explain how to prevent and address it",
+            "objective_uuid": "3b7887fa-1803-440b-8059-ba106814ec03",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 2 — Evaluate management practices related to the human, economic, and environmental resources in a globa (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.2",
+            "topic_name": "Household Organization & Stewardship",
+            "sub_topic_id": "LIF.2.2.5",
+            "sub_topic_name": "Household Cleaning (tools, methods, natural cleaners, sanitation, mold awareness)",
+            "objective_id": "LIF.2.2.5.5",
+            "objective_text": "Develop a whole-home cleaning routine that maintains sanitation across regular and deep-cleaning tasks",
+            "objective_uuid": "0ad5bd52-2802-4e75-85de-9fd166a4bef7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 2 — Evaluate management practices related to the human, economic, and environmental resources in a globa (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "FCS / Jump$tart national standards",
+      "anchor_note": "Rebuilt from the FCS / Jump$tart national standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

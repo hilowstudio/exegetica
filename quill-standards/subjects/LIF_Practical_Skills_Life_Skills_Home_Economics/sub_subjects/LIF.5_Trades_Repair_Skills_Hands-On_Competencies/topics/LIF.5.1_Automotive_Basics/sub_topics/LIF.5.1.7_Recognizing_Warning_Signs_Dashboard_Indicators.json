@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "LIF.5.1.7",
+    "name": "Recognizing Warning Signs & Dashboard Indicators",
+    "topic_id": "LIF.5.1",
+    "topic_name": "Automotive Basics",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.5",
+    "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Recognizing Warning Signs & Dashboard Indicators in Automotive Basics (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.1",
+            "topic_name": "Automotive Basics",
+            "sub_topic_id": "LIF.5.1.7",
+            "sub_topic_name": "Recognizing Warning Signs & Dashboard Indicators",
+            "objective_id": "LIF.5.1.7.1",
+            "objective_text": "Point out the dashboard warning lights in a car and explain that they signal a problem.",
+            "objective_uuid": "cda1da8d-300d-4547-8cac-7ec558be8807",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.1",
+            "topic_name": "Automotive Basics",
+            "sub_topic_id": "LIF.5.1.7",
+            "sub_topic_name": "Recognizing Warning Signs & Dashboard Indicators",
+            "objective_id": "LIF.5.1.7.2",
+            "objective_text": "Match common warning lights (check engine, oil pressure, temperature, battery, brake) to what they mean.",
+            "objective_uuid": "87a639b0-fd03-4f88-8c8a-4eb4f8e7ebcf",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.1",
+            "topic_name": "Automotive Basics",
+            "sub_topic_id": "LIF.5.1.7",
+            "sub_topic_name": "Recognizing Warning Signs & Dashboard Indicators",
+            "objective_id": "LIF.5.1.7.3",
+            "objective_text": "Explain which warning lights mean 'stop the car safely now' versus 'have it checked soon.'",
+            "objective_uuid": "113ce1e3-ce60-4792-8627-13d1a8066e3f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.1",
+            "topic_name": "Automotive Basics",
+            "sub_topic_id": "LIF.5.1.7",
+            "sub_topic_name": "Recognizing Warning Signs & Dashboard Indicators",
+            "objective_id": "LIF.5.1.7.4",
+            "objective_text": "Recognize warning signs beyond the dashboard, such as unusual noises, smells, smoke, or vibration.",
+            "objective_uuid": "25329527-a669-4ab8-8497-bc8878b60780",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.1",
+            "topic_name": "Automotive Basics",
+            "sub_topic_id": "LIF.5.1.7",
+            "sub_topic_name": "Recognizing Warning Signs & Dashboard Indicators",
+            "objective_id": "LIF.5.1.7.5",
+            "objective_text": "Describe an appropriate response to each major warning indicator and when to seek professional help.",
+            "objective_uuid": "f3669a42-e31b-4aa7-8799-f0e681d375da",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

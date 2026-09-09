@@ -1,0 +1,135 @@
+{
+  "sub_topic": {
+    "id": "ELA.8.1.4",
+    "name": "Listening to Read-Alouds",
+    "topic_id": "ELA.8.1",
+    "topic_name": "Early Reading Foundations",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.8",
+    "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Listening to Read-Alouds in Early Reading Foundations (Language Arts & Humanities)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 2,
+        "average_complexity": 7.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.1",
+            "topic_name": "Early Reading Foundations",
+            "sub_topic_id": "ELA.8.1.4",
+            "sub_topic_name": "Listening to Read-Alouds",
+            "objective_id": "ELA.8.1.4.1",
+            "objective_text": "Listen to a read-aloud and identify words that rhyme",
+            "objective_uuid": "2b35af51-ae8f-40a6-83fb-4be136b0e53f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA RF.1.2 — Demonstrate understanding of spoken words, syllables, and sounds (phonemes) (foundational reading, grade 1)"
+              ]
+            }
+          },
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.1",
+            "topic_name": "Early Reading Foundations",
+            "sub_topic_id": "ELA.8.1.4",
+            "sub_topic_name": "Listening to Read-Alouds",
+            "objective_id": "ELA.8.1.4.2",
+            "objective_text": "Listen during read-alouds and identify the beginning and ending sounds of spoken words",
+            "objective_uuid": "f16559ae-5fd6-46ad-88a9-c9ebd6cbf4b4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA RF.1.2 — Demonstrate understanding of spoken words, syllables, and sounds (phonemes) (foundational reading, grade 1)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.1",
+            "topic_name": "Early Reading Foundations",
+            "sub_topic_id": "ELA.8.1.4",
+            "sub_topic_name": "Listening to Read-Alouds",
+            "objective_id": "ELA.8.1.4.3",
+            "objective_text": "Follow along in the text while listening to model the sounds of fluent reading",
+            "objective_uuid": "1bc9ed04-c086-4a3b-814d-b0d5892f0e1f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA RF.1.3 — Know and apply grade-level phonics and word analysis skills in decoding words (foundational reading, grade 1)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.1",
+            "topic_name": "Early Reading Foundations",
+            "sub_topic_id": "ELA.8.1.4",
+            "sub_topic_name": "Listening to Read-Alouds",
+            "objective_id": "ELA.8.1.4.4",
+            "objective_text": "Listen to read-alouds of texts above one's own reading level to build vocabulary and comprehension",
+            "objective_uuid": "ea50cce5-91d4-4ec6-8712-4fe9ab3278a2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA RF.1.3 — Know and apply grade-level phonics and word analysis skills in decoding words (foundational reading, grade 1)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

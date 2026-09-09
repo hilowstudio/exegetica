@@ -1,0 +1,216 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.2.1",
+    "name": "Adding/Subtracting Fractions (common denominators)",
+    "topic_id": "MAT.4.2",
+    "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 8,
+    "description": "13-year academic progression (K-12) for Adding/Subtracting Fractions (common denominators) in Fractions, Decimals, & Percentages (Rational Numbers) (Mathematics)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 5,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.1",
+            "sub_topic_name": "Adding/Subtracting Fractions (common denominators)",
+            "objective_id": "MAT.4.2.1.1",
+            "objective_text": "Understand a fraction a/b as a sum of unit fractions 1/b.",
+            "objective_uuid": "8056744c-6c86-4a53-8eb4-aa6dc2a2b6f1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NF.B.3 — Understand a fraction a/b with a > 1 as a sum of fractions 1/b (grade 4)"
+              ]
+            }
+          },
+          {
+            "complexity": 6,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.1",
+            "sub_topic_name": "Adding/Subtracting Fractions (common denominators)",
+            "objective_id": "MAT.4.2.1.2",
+            "objective_text": "Add and subtract fractions with the same denominator.",
+            "objective_uuid": "311c42dd-0ca5-4e23-8094-af48a11c3841",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NF.B.3 — Understand a fraction a/b with a > 1 as a sum of fractions 1/b (grade 4)"
+              ]
+            }
+          },
+          {
+            "complexity": 9,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.1",
+            "sub_topic_name": "Adding/Subtracting Fractions (common denominators)",
+            "objective_id": "MAT.4.2.1.3",
+            "objective_text": "Decompose a fraction into a sum of fractions with the same denominator in more than one way.",
+            "objective_uuid": "199ec827-fb29-4252-836d-901a112e17c9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NF.B.3 — Understand a fraction a/b with a > 1 as a sum of fractions 1/b (grade 4)"
+              ]
+            }
+          },
+          {
+            "complexity": 12,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.1",
+            "sub_topic_name": "Adding/Subtracting Fractions (common denominators)",
+            "objective_id": "MAT.4.2.1.4",
+            "objective_text": "Add and subtract mixed numbers with like denominators.",
+            "objective_uuid": "3fffcb46-bee5-4007-8953-3d8937f47ff8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NF.B.3 — Understand a fraction a/b with a > 1 as a sum of fractions 1/b (grade 4)"
+              ]
+            }
+          },
+          {
+            "complexity": 15,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.1",
+            "sub_topic_name": "Adding/Subtracting Fractions (common denominators)",
+            "objective_id": "MAT.4.2.1.5",
+            "objective_text": "Solve word problems involving addition and subtraction of fractions with like denominators.",
+            "objective_uuid": "2fda50b8-e1e1-44b5-8158-57dcc4d569a8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NF.B.3 — Understand a fraction a/b with a > 1 as a sum of fractions 1/b (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 3,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.1",
+            "sub_topic_name": "Adding/Subtracting Fractions (common denominators)",
+            "objective_id": "MAT.4.2.1.6",
+            "objective_text": "Add and subtract fractions with unlike denominators by finding a common denominator.",
+            "objective_uuid": "4b9922a8-7f9e-4261-80d3-e7c20cfe3aea",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 5.NF.A.1 — Add and subtract fractions with unlike denominators (including mixed numbers) by replacing given fractio (grade 5)"
+              ]
+            }
+          },
+          {
+            "complexity": 21,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.1",
+            "sub_topic_name": "Adding/Subtracting Fractions (common denominators)",
+            "objective_id": "MAT.4.2.1.7",
+            "objective_text": "Add and subtract mixed numbers with unlike denominators.",
+            "objective_uuid": "9f463af7-3d1f-4c69-805e-2ea8b5d5f857",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 5.NF.A.1 — Add and subtract fractions with unlike denominators (including mixed numbers) by replacing given fractio (grade 5)"
+              ]
+            }
+          },
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.1",
+            "sub_topic_name": "Adding/Subtracting Fractions (common denominators)",
+            "objective_id": "MAT.4.2.1.8",
+            "objective_text": "Solve word problems adding and subtracting fractions with unlike denominators, checking answers for reasonableness.",
+            "objective_uuid": "5a4ca969-81f2-489c-844c-e6ed4d38610a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 5.NF.A.2 — Solve word problems involving addition and subtraction of fractions referring to the same whole, includi (grade 5)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS fraction sub-skills (NF domain); objective count = the sub-topic's real distinct competencies. Replaces the prior templated 16-objective ladder that drifted off-topic."
+    }
+  }
+}

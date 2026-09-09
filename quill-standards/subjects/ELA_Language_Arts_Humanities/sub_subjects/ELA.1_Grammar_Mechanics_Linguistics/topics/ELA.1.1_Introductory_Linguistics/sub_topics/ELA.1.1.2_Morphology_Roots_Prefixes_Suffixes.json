@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ELA.1.1.2",
+    "name": "Morphology (Roots, Prefixes, Suffixes)",
+    "topic_id": "ELA.1.1",
+    "topic_name": "Introductory Linguistics",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.1",
+    "sub_subject_name": "Grammar, Mechanics & Linguistics",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Morphology (Roots, Prefixes, Suffixes) in Introductory Linguistics (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.2",
+            "sub_topic_name": "Morphology (Roots, Prefixes, Suffixes)",
+            "objective_id": "ELA.1.1.2.1",
+            "objective_text": "Identify a base word within a longer word by removing a simple prefix or suffix (as in unhappy or playing)",
+            "objective_uuid": "03e6f94f-41d0-492c-8216-b19709502f12",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.1 — Demonstrate command of the conventions of standard English grammar and usage when writing or speaking (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.2",
+            "sub_topic_name": "Morphology (Roots, Prefixes, Suffixes)",
+            "objective_id": "ELA.1.1.2.2",
+            "objective_text": "Use common prefixes and suffixes as clues to determine the meaning of an unfamiliar word",
+            "objective_uuid": "0ee619cc-645e-4ca1-8222-6f32866a6e02",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.1 — Demonstrate command of the conventions of standard English grammar and usage when writing or speaking (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.2",
+            "sub_topic_name": "Morphology (Roots, Prefixes, Suffixes)",
+            "objective_id": "ELA.1.1.2.3",
+            "objective_text": "Apply spelling rules for adding suffixes, such as dropping the silent e or doubling the final consonant",
+            "objective_uuid": "0a7e1c00-f84f-42be-80f7-096f9aeb81c1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.2 — Demonstrate command of the conventions of standard English capitalization, punctuation, and spelling whe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.2",
+            "sub_topic_name": "Morphology (Roots, Prefixes, Suffixes)",
+            "objective_id": "ELA.1.1.2.4",
+            "objective_text": "Use knowledge of common Greek and Latin roots to determine the meaning of academic words",
+            "objective_uuid": "a541205f-014e-43f9-8331-9f66394f98ff",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.1 — Demonstrate command of the conventions of standard English grammar and usage when writing or speaking (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.2",
+            "sub_topic_name": "Morphology (Roots, Prefixes, Suffixes)",
+            "objective_id": "ELA.1.1.2.5",
+            "objective_text": "Distinguish inflectional endings that change grammar (such as -ed or -s) from derivational affixes that change a word's part of speech",
+            "objective_uuid": "2054ac8b-1075-46f6-873e-bcf9376fd295",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.1 — Demonstrate command of the conventions of standard English grammar and usage when writing or speaking (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.1",
+            "sub_subject_name": "Grammar, Mechanics & Linguistics",
+            "topic_id": "ELA.1.1",
+            "topic_name": "Introductory Linguistics",
+            "sub_topic_id": "ELA.1.1.2",
+            "sub_topic_name": "Morphology (Roots, Prefixes, Suffixes)",
+            "objective_id": "ELA.1.1.2.6",
+            "objective_text": "Analyze how complex words are built from multiple morphemes to determine precise meaning across word families",
+            "objective_uuid": "398fdbf9-7be1-4046-8e3d-4872de48dec1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.1 — Demonstrate command of the conventions of standard English grammar and usage when writing or speaking (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

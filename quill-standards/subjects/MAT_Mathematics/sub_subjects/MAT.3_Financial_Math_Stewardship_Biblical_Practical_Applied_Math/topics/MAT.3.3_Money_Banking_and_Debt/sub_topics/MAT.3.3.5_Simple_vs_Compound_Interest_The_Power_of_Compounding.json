@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.3.3.5",
+    "name": "Simple vs Compound Interest (The Power of Compounding)",
+    "topic_id": "MAT.3.3",
+    "topic_name": "Money, Banking, and Debt",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.3",
+    "sub_subject_name": "Financial Math & Stewardship (Biblical & Practical Applied Math)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Simple vs Compound Interest (The Power of Compounding) in Money, Banking, and Debt (Mathematics)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.3",
+            "sub_subject_name": "Financial Math & Stewardship (Biblical & Practical Applied Math)",
+            "topic_id": "MAT.3.3",
+            "topic_name": "Money, Banking, and Debt",
+            "sub_topic_id": "MAT.3.3.5",
+            "sub_topic_name": "Simple vs Compound Interest (The Power of Compounding)",
+            "objective_id": "MAT.3.3.5.1",
+            "objective_text": "Calculate simple interest.",
+            "objective_uuid": "905085ff-d923-4407-8d7d-b19a48da7a6e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.RP.A.3 — Use proportional relationships to solve multistep ratio and percent problems (grade 7)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.3",
+            "sub_subject_name": "Financial Math & Stewardship (Biblical & Practical Applied Math)",
+            "topic_id": "MAT.3.3",
+            "topic_name": "Money, Banking, and Debt",
+            "sub_topic_id": "MAT.3.3.5",
+            "sub_topic_name": "Simple vs Compound Interest (The Power of Compounding)",
+            "objective_id": "MAT.3.3.5.2",
+            "objective_text": "Understand how compound interest earns interest on interest.",
+            "objective_uuid": "973f9895-3fa8-4b9d-8292-72dd42bb7dc2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.RP.A.3 — Use proportional relationships to solve multistep ratio and percent problems (grade 7)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.3",
+            "sub_subject_name": "Financial Math & Stewardship (Biblical & Practical Applied Math)",
+            "topic_id": "MAT.3.3",
+            "topic_name": "Money, Banking, and Debt",
+            "sub_topic_id": "MAT.3.3.5",
+            "sub_topic_name": "Simple vs Compound Interest (The Power of Compounding)",
+            "objective_id": "MAT.3.3.5.3",
+            "objective_text": "Model compound growth with an exponential function.",
+            "objective_uuid": "ecc5c9c1-6b0c-45c6-80fc-92c3e32aef63",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-LE.A.2 — Construct linear and exponential functions, including arithmetic and geometric sequences, given a graph, (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

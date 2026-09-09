@@ -1,0 +1,133 @@
+{
+  "sub_topic": {
+    "id": "LIF.1.2.2",
+    "name": "Hospitality & Sharing Resources (Practical generosity)",
+    "topic_id": "LIF.1.2",
+    "topic_name": "Giving, Charity & Biblical Generosity",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.1",
+    "sub_subject_name": "Financial Literacy & Christian Stewardship",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Hospitality & Sharing Resources (Practical generosity) in Giving, Charity & Biblical Generosity (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.2",
+            "topic_name": "Giving, Charity & Biblical Generosity",
+            "sub_topic_id": "LIF.1.2.2",
+            "sub_topic_name": "Hospitality & Sharing Resources (Practical generosity)",
+            "objective_id": "LIF.1.2.2.1",
+            "objective_text": "Explain what hospitality is and give examples of sharing a home, food, or belongings with others.",
+            "objective_uuid": "e9728fd7-40c7-4331-8937-e0f49a2efab1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.2",
+            "topic_name": "Giving, Charity & Biblical Generosity",
+            "sub_topic_id": "LIF.1.2.2",
+            "sub_topic_name": "Hospitality & Sharing Resources (Practical generosity)",
+            "objective_id": "LIF.1.2.2.2",
+            "objective_text": "Describe how the Bible calls believers to practice hospitality and share resources, using passages such as Romans 12:13 and Hebrews 13:2.",
+            "objective_uuid": "b89b5d15-9218-42dc-8869-5d989d874d39",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.2",
+            "topic_name": "Giving, Charity & Biblical Generosity",
+            "sub_topic_id": "LIF.1.2.2",
+            "sub_topic_name": "Hospitality & Sharing Resources (Practical generosity)",
+            "objective_id": "LIF.1.2.2.3",
+            "objective_text": "Plan a simple act of hospitality, such as hosting a meal or welcoming a newcomer.",
+            "objective_uuid": "3a1b7fd4-ee8a-463c-8672-79d835d83f9b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.2",
+            "topic_name": "Giving, Charity & Biblical Generosity",
+            "sub_topic_id": "LIF.1.2.2",
+            "sub_topic_name": "Hospitality & Sharing Resources (Practical generosity)",
+            "objective_id": "LIF.1.2.2.4",
+            "objective_text": "Evaluate how generously sharing time, home, and possessions reflects love for God and neighbor.",
+            "objective_uuid": "3e0e52ec-8c4e-403f-82a1-060324deb8cb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

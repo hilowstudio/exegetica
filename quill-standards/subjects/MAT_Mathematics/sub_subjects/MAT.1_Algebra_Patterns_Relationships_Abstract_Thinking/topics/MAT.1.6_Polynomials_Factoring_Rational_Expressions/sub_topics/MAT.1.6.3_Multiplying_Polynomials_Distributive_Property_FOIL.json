@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.1.6.3",
+    "name": "Multiplying Polynomials (Distributive Property, FOIL)",
+    "topic_id": "MAT.1.6",
+    "topic_name": "Polynomials, Factoring & Rational Expressions",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.1",
+    "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Multiplying Polynomials (Distributive Property, FOIL) in Polynomials, Factoring & Rational Expressions (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.6",
+            "topic_name": "Polynomials, Factoring & Rational Expressions",
+            "sub_topic_id": "MAT.1.6.3",
+            "sub_topic_name": "Multiplying Polynomials (Distributive Property, FOIL)",
+            "objective_id": "MAT.1.6.3.1",
+            "objective_text": "Multiply a monomial by a polynomial using the distributive property.",
+            "objective_uuid": "e063097d-ea7b-4566-8bdb-6f1c416a002b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-APR.A.1 — Understand that polynomials form a system analogous to the integers, namely, they are closed under the o (HS)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.6",
+            "topic_name": "Polynomials, Factoring & Rational Expressions",
+            "sub_topic_id": "MAT.1.6.3",
+            "sub_topic_name": "Multiplying Polynomials (Distributive Property, FOIL)",
+            "objective_id": "MAT.1.6.3.2",
+            "objective_text": "Multiply two binomials.",
+            "objective_uuid": "3bea29a9-47da-47bd-8b26-b2ffdae5e5c2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-APR.A.1 — Understand that polynomials form a system analogous to the integers, namely, they are closed under the o (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.6",
+            "topic_name": "Polynomials, Factoring & Rational Expressions",
+            "sub_topic_id": "MAT.1.6.3",
+            "sub_topic_name": "Multiplying Polynomials (Distributive Property, FOIL)",
+            "objective_id": "MAT.1.6.3.3",
+            "objective_text": "Multiply polynomials and simplify the result.",
+            "objective_uuid": "5e56749f-8066-4b7a-88e8-ead0632a520f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-APR.A.1 — Understand that polynomials form a system analogous to the integers, namely, they are closed under the o (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

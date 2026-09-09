@@ -1,0 +1,138 @@
+{
+  "sub_topic": {
+    "id": "HSS.7.1.5",
+    "name": "Using BC/BCE and AD/CE Accurately",
+    "topic_id": "HSS.7.1",
+    "topic_name": "Chronology & Sequencing (First-Order Skills)",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.7",
+    "sub_subject_name": "Historical Skills & Methods",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Using BC/BCE and AD/CE Accurately in Chronology & Sequencing (First-Order Skills) (History & Social Studies)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.1",
+            "topic_name": "Chronology & Sequencing (First-Order Skills)",
+            "sub_topic_id": "HSS.7.1.5",
+            "sub_topic_name": "Using BC/BCE and AD/CE Accurately",
+            "objective_id": "HSS.7.1.5.1",
+            "objective_text": "Label dates on a timeline as BC/BCE or AD/CE.",
+            "objective_uuid": "128cadc8-8fc3-4b34-866e-e02e0ce6a164",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.1",
+            "topic_name": "Chronology & Sequencing (First-Order Skills)",
+            "sub_topic_id": "HSS.7.1.5",
+            "sub_topic_name": "Using BC/BCE and AD/CE Accurately",
+            "objective_id": "HSS.7.1.5.2",
+            "objective_text": "Order BC/BCE dates correctly, recognizing that larger numbers are earlier.",
+            "objective_uuid": "c105b6c8-a25e-4da5-89a8-85c5f6a5683f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.1",
+            "topic_name": "Chronology & Sequencing (First-Order Skills)",
+            "sub_topic_id": "HSS.7.1.5",
+            "sub_topic_name": "Using BC/BCE and AD/CE Accurately",
+            "objective_id": "HSS.7.1.5.3",
+            "objective_text": "Explain why the BC/AD and BCE/CE systems name the same years and where the eras divide.",
+            "objective_uuid": "621d7be3-f8d6-4ae0-817e-0673a1ecdb81",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.1",
+            "topic_name": "Chronology & Sequencing (First-Order Skills)",
+            "sub_topic_id": "HSS.7.1.5",
+            "sub_topic_name": "Using BC/BCE and AD/CE Accurately",
+            "objective_id": "HSS.7.1.5.4",
+            "objective_text": "Evaluate how different dating conventions reflect the cultural context in which they arose.",
+            "objective_uuid": "5f08ed0a-905c-4f91-8f6f-ebf14955c4a6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.3.1.7",
+    "name": "Voice Projection & Articulation",
+    "topic_id": "ART.3.1",
+    "topic_name": "Acting & Stagecraft",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.3",
+    "sub_subject_name": "Dramatic Arts & Movement",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Voice Projection & Articulation in Acting & Stagecraft (Fine Arts)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.7",
+            "sub_topic_name": "Voice Projection & Articulation",
+            "objective_id": "ART.3.1.7.1",
+            "objective_text": "Speak a line loudly and clearly enough for the back of the room to hear",
+            "objective_uuid": "3c5c13e9-90ff-4adf-888c-d827a4145c49",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.7",
+            "sub_topic_name": "Voice Projection & Articulation",
+            "objective_id": "ART.3.1.7.2",
+            "objective_text": "Say tricky sounds and words clearly so every word is understood",
+            "objective_uuid": "5017267a-9552-42df-836b-a09042bdd593",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.7",
+            "sub_topic_name": "Voice Projection & Articulation",
+            "objective_id": "ART.3.1.7.3",
+            "objective_text": "Support your voice with breath so you can be heard without shouting",
+            "objective_uuid": "bada8f02-e343-4df7-882c-120068d9044b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.7",
+            "sub_topic_name": "Voice Projection & Articulation",
+            "objective_id": "ART.3.1.7.4",
+            "objective_text": "Use articulation and projection drills to speak crisply and fill a larger space",
+            "objective_uuid": "5fe5425f-5731-424b-8230-993bfb7b5cc6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.7",
+            "sub_topic_name": "Voice Projection & Articulation",
+            "objective_id": "ART.3.1.7.5",
+            "objective_text": "Adjust projection, pace, and diction to suit the size of the venue and the needs of the scene",
+            "objective_uuid": "882109b6-8a28-4a6c-842c-b3e6b79a1ce8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.7",
+            "sub_topic_name": "Voice Projection & Articulation",
+            "objective_id": "ART.3.1.7.6",
+            "objective_text": "Command vocal technique so that breath support, resonance, and precise articulation sustain a full performance without strain",
+            "objective_uuid": "7e62f77f-b5ef-4395-8ec5-fb44df30242a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

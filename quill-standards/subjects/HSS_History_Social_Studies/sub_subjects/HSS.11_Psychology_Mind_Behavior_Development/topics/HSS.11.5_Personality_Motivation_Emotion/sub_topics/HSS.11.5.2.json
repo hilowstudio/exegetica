@@ -1,0 +1,116 @@
+{
+  "sub_topic": {
+    "id": "HSS.11.5.2",
+    "name": "Motivation & Emotion",
+    "topic_id": "HSS.11.5",
+    "topic_name": "Personality, Motivation & Emotion",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.11",
+    "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+    "total_objectives": 3,
+    "description": "Progression for Motivation & Emotion in Personality, Motivation & Emotion (Psychology (Mind, Behavior & Development))",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.5",
+            "topic_name": "Personality, Motivation & Emotion",
+            "sub_topic_id": "HSS.11.5.2",
+            "sub_topic_name": "Motivation & Emotion",
+            "objective_id": "HSS.11.5.2.1",
+            "objective_text": "Explain major theories of motivation.",
+            "objective_uuid": "76caacbf-db42-4ffe-81fc-7a83f2c26720",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.9.9-12 — Describe biological, psychological, and sociocultural factors that influence individuals' cognition, (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.22.9-12 — Use psychological knowledge to promote healthy lifestyle choices (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 25.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.5",
+            "topic_name": "Personality, Motivation & Emotion",
+            "sub_topic_id": "HSS.11.5.2",
+            "sub_topic_name": "Motivation & Emotion",
+            "objective_id": "HSS.11.5.2.2",
+            "objective_text": "Describe how emotions arise and function.",
+            "objective_uuid": "a764022b-daf1-4383-8d09-b16f18a3da67",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.9.9-12 — Describe biological, psychological, and sociocultural factors that influence individuals' cognition, (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.22.9-12 — Use psychological knowledge to promote healthy lifestyle choices (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.5",
+            "topic_name": "Personality, Motivation & Emotion",
+            "sub_topic_id": "HSS.11.5.2",
+            "sub_topic_name": "Motivation & Emotion",
+            "objective_id": "HSS.11.5.2.3",
+            "objective_text": "Analyze the relationship between motivation, emotion, and behavior.",
+            "objective_uuid": "5fbde9af-3b16-4bc5-8920-67d944f877f4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.9.9-12 — Describe biological, psychological, and sociocultural factors that influence individuals' cognition, (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.22.9-12 — Use psychological knowledge to promote healthy lifestyle choices (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework (Psychology)",
+      "anchor_note": "C3 D2.Psy codes verified against the owned corpus. Objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

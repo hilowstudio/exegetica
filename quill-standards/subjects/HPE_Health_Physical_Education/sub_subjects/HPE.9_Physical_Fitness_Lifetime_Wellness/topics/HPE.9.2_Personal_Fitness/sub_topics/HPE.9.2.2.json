@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "HPE.9.2.2",
+    "name": "Designing a Personal Fitness Plan",
+    "topic_id": "HPE.9.2",
+    "topic_name": "Personal Fitness",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.9",
+    "sub_subject_name": "Physical Fitness & Lifetime Wellness",
+    "total_objectives": 3,
+    "description": "K-12 progression for Designing a Personal Fitness Plan in Personal Fitness (Health & Physical Education)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.9",
+            "sub_subject_name": "Physical Fitness & Lifetime Wellness",
+            "topic_id": "HPE.9.2",
+            "topic_name": "Personal Fitness",
+            "sub_topic_id": "HPE.9.2.2",
+            "sub_topic_name": "Designing a Personal Fitness Plan",
+            "objective_id": "HPE.9.2.2.1",
+            "objective_text": "Apply fitness principles (frequency, intensity, time, type) to a plan.",
+            "objective_uuid": "aea14b0b-3376-4b9b-8e7d-83776d886a3c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.9",
+            "sub_subject_name": "Physical Fitness & Lifetime Wellness",
+            "topic_id": "HPE.9.2",
+            "topic_name": "Personal Fitness",
+            "sub_topic_id": "HPE.9.2.2",
+            "sub_topic_name": "Designing a Personal Fitness Plan",
+            "objective_id": "HPE.9.2.2.2",
+            "objective_text": "Design a balanced personal fitness plan.",
+            "objective_uuid": "ff82b525-86fb-4a41-8acd-eda743c6d50b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.9",
+            "sub_subject_name": "Physical Fitness & Lifetime Wellness",
+            "topic_id": "HPE.9.2",
+            "topic_name": "Personal Fitness",
+            "sub_topic_id": "HPE.9.2.2",
+            "sub_topic_name": "Designing a Personal Fitness Plan",
+            "objective_id": "HPE.9.2.2.3",
+            "objective_text": "Adjust the plan based on progress and life circumstances.",
+            "objective_uuid": "fd54c3c1-82c6-4162-848d-e377bf74d27c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "authored",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Authored at variable depth; physical-education content has no US standard in the owned corpus (honest gap)."
+    }
+  }
+}

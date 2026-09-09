@@ -1,0 +1,186 @@
+{
+  "sub_topic": {
+    "id": "HPE.1.1.1",
+    "name": "Daily Hygiene Routines",
+    "topic_id": "HPE.1.1",
+    "topic_name": "Hygiene & Body Care",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.1",
+    "sub_subject_name": "Personal Health & Wellness",
+    "total_objectives": 5,
+    "description": "K-12 progression for Daily Hygiene Routines in Hygiene & Body Care (Health & Physical Education)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.1",
+            "sub_subject_name": "Personal Health & Wellness",
+            "topic_id": "HPE.1.1",
+            "topic_name": "Hygiene & Body Care",
+            "sub_topic_id": "HPE.1.1.1",
+            "sub_topic_name": "Daily Hygiene Routines",
+            "objective_id": "HPE.1.1.1.1",
+            "objective_text": "Wash hands with soap and water at the right times (before eating, after the bathroom).",
+            "objective_uuid": "2931389f-88fc-430d-84aa-f866a3119146",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.2.1 — Identify that healthy behaviors impact personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 1.8.1 — Analyze the relationship between healthy behaviors and personal health (National Health Education Standards, grades 6-8)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.8.1 — Explain the importance of assuming responsibility for personal health behaviors (National Health Education Standards, grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.1",
+            "sub_subject_name": "Personal Health & Wellness",
+            "topic_id": "HPE.1.1",
+            "topic_name": "Hygiene & Body Care",
+            "sub_topic_id": "HPE.1.1.1",
+            "sub_topic_name": "Daily Hygiene Routines",
+            "objective_id": "HPE.1.1.1.2",
+            "objective_text": "Name the steps of a daily hygiene routine and why each one matters.",
+            "objective_uuid": "462c4240-6308-4372-8569-7803cc401e40",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.2.1 — Identify that healthy behaviors impact personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 1.8.1 — Analyze the relationship between healthy behaviors and personal health (National Health Education Standards, grades 6-8)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.8.1 — Explain the importance of assuming responsibility for personal health behaviors (National Health Education Standards, grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.1",
+            "sub_subject_name": "Personal Health & Wellness",
+            "topic_id": "HPE.1.1",
+            "topic_name": "Hygiene & Body Care",
+            "sub_topic_id": "HPE.1.1.1",
+            "sub_topic_name": "Daily Hygiene Routines",
+            "objective_id": "HPE.1.1.1.3",
+            "objective_text": "Keep a consistent personal hygiene routine without being reminded.",
+            "objective_uuid": "e7ad17f9-5496-429e-853b-8c7906d7f3cb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.2.1 — Identify that healthy behaviors impact personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 1.8.1 — Analyze the relationship between healthy behaviors and personal health (National Health Education Standards, grades 6-8)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.8.1 — Explain the importance of assuming responsibility for personal health behaviors (National Health Education Standards, grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.1",
+            "sub_subject_name": "Personal Health & Wellness",
+            "topic_id": "HPE.1.1",
+            "topic_name": "Hygiene & Body Care",
+            "sub_topic_id": "HPE.1.1.1",
+            "sub_topic_name": "Daily Hygiene Routines",
+            "objective_id": "HPE.1.1.1.4",
+            "objective_text": "Explain how good hygiene stops the spread of germs to others.",
+            "objective_uuid": "4ecc3d28-2a22-441c-8284-c2ef01f2fa91",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.2.1 — Identify that healthy behaviors impact personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 1.8.1 — Analyze the relationship between healthy behaviors and personal health (National Health Education Standards, grades 6-8)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.8.1 — Explain the importance of assuming responsibility for personal health behaviors (National Health Education Standards, grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.1",
+            "sub_subject_name": "Personal Health & Wellness",
+            "topic_id": "HPE.1.1",
+            "topic_name": "Hygiene & Body Care",
+            "sub_topic_id": "HPE.1.1.1",
+            "sub_topic_name": "Daily Hygiene Routines",
+            "objective_id": "HPE.1.1.1.5",
+            "objective_text": "Adapt hygiene habits to new settings (travel, sports, shared spaces).",
+            "objective_uuid": "dd2949b0-8d81-43e2-8d66-02a56149f93a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.2.1 — Identify that healthy behaviors impact personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 1.8.1 — Analyze the relationship between healthy behaviors and personal health (National Health Education Standards, grades 6-8)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.8.1 — Explain the importance of assuming responsibility for personal health behaviors (National Health Education Standards, grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Health Education Standards",
+      "anchor_note": "NHES codes verified against the owned corpus; objectives authored to the standard's real sub-skills at variable depth."
+    }
+  }
+}

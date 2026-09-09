@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.2.3",
+    "name": "Greedy Algorithms, Divide & Conquer (conceptual exposure)",
+    "topic_id": "CPT.1.2",
+    "topic_name": "Algorithms & Logic",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Greedy Algorithms, Divide & Conquer (conceptual exposure) in Algorithms & Logic (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.3",
+            "sub_topic_name": "Greedy Algorithms, Divide & Conquer (conceptual exposure)",
+            "objective_id": "CPT.1.2.3.1",
+            "objective_text": "Solve a problem with a greedy approach by repeatedly making the locally best choice",
+            "objective_uuid": "e134b958-6528-4249-84d8-cdfab23cb444",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-10 — Use and adapt classic algorithms to solve computational problems. Clarification: Examples could include sortin (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.3",
+            "sub_topic_name": "Greedy Algorithms, Divide & Conquer (conceptual exposure)",
+            "objective_id": "CPT.1.2.3.2",
+            "objective_text": "Break a problem into smaller subproblems and combine their results (divide and conquer)",
+            "objective_uuid": "5503fc76-01d9-40b9-872d-c83b533bd6a0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-10 — Use and adapt classic algorithms to solve computational problems. Clarification: Examples could include sortin (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.3",
+            "sub_topic_name": "Greedy Algorithms, Divide & Conquer (conceptual exposure)",
+            "objective_id": "CPT.1.2.3.3",
+            "objective_text": "Recognize a case where a greedy strategy fails to give the best overall solution",
+            "objective_uuid": "e86e0671-7143-4e32-800d-a59bc38e0320",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-10 — Use and adapt classic algorithms to solve computational problems. Clarification: Examples could include sortin (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.3",
+            "sub_topic_name": "Greedy Algorithms, Divide & Conquer (conceptual exposure)",
+            "objective_id": "CPT.1.2.3.4",
+            "objective_text": "Adapt a classic divide-and-conquer algorithm to solve a new computational problem",
+            "objective_uuid": "99fc9838-bac0-4f69-8b13-07bb6137a856",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-10 — Use and adapt classic algorithms to solve computational problems. Clarification: Examples could include sortin (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

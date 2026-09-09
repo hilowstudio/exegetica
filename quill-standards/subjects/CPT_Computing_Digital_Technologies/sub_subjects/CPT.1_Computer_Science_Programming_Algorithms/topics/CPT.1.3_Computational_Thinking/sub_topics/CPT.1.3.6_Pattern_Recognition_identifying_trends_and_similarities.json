@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.3.6",
+    "name": "Pattern Recognition (identifying trends and similarities)",
+    "topic_id": "CPT.1.3",
+    "topic_name": "Computational Thinking",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Pattern Recognition (identifying trends and similarities) in Computational Thinking (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.3",
+            "topic_name": "Computational Thinking",
+            "sub_topic_id": "CPT.1.3.6",
+            "sub_topic_name": "Pattern Recognition (identifying trends and similarities)",
+            "objective_id": "CPT.1.3.6.1",
+            "objective_text": "Identify a repeating pattern within a sequence of objects or steps",
+            "objective_uuid": "658bad87-bc88-4d62-8621-e6417987d929",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-AP-08 — Model daily processes by creating and following algorithms (sets of step-by-step instructions) to complete tas (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.3",
+            "topic_name": "Computational Thinking",
+            "sub_topic_id": "CPT.1.3.6",
+            "sub_topic_name": "Pattern Recognition (identifying trends and similarities)",
+            "objective_id": "CPT.1.3.6.2",
+            "objective_text": "Recognize similarities between two problems that can be solved the same way",
+            "objective_uuid": "9eaf6a9f-b515-4986-82f3-ae8c3cf7cb8d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-AP-08 — Model daily processes by creating and following algorithms (sets of step-by-step instructions) to complete tas (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.3",
+            "topic_name": "Computational Thinking",
+            "sub_topic_id": "CPT.1.3.6",
+            "sub_topic_name": "Pattern Recognition (identifying trends and similarities)",
+            "objective_id": "CPT.1.3.6.3",
+            "objective_text": "Use a recognized pattern to generalize repeated steps into a loop",
+            "objective_uuid": "062aec15-498f-47c1-8b05-f0b922bdcc5d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-14 — Use lists to simplify solutions, generalizing computational problems instead of repeatedly using simple variab (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.3",
+            "topic_name": "Computational Thinking",
+            "sub_topic_id": "CPT.1.3.6",
+            "sub_topic_name": "Pattern Recognition (identifying trends and similarities)",
+            "objective_id": "CPT.1.3.6.4",
+            "objective_text": "Replace several nearly identical code segments with one segment that uses a list",
+            "objective_uuid": "3e7a4bc4-72e4-4256-88a4-612c01e1f2ca",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-14 — Use lists to simplify solutions, generalizing computational problems instead of repeatedly using simple variab (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.3",
+            "topic_name": "Computational Thinking",
+            "sub_topic_id": "CPT.1.3.6",
+            "sub_topic_name": "Pattern Recognition (identifying trends and similarities)",
+            "objective_id": "CPT.1.3.6.5",
+            "objective_text": "Generalize a solution by recognizing the common structure across many cases",
+            "objective_uuid": "b029198e-9163-4436-873d-c5a45fc5c0fb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-14 — Use lists to simplify solutions, generalizing computational problems instead of repeatedly using simple variab (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

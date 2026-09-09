@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "HSS.4.1.3",
+    "name": "Private Property vs Communal Ownership",
+    "topic_id": "HSS.4.1",
+    "topic_name": "Biblical Stewardship & Economic Ethics",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.4",
+    "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Private Property vs Communal Ownership in Biblical Stewardship & Economic Ethics (History & Social Studies)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.1",
+            "topic_name": "Biblical Stewardship & Economic Ethics",
+            "sub_topic_id": "HSS.4.1.3",
+            "sub_topic_name": "Private Property vs Communal Ownership",
+            "objective_id": "HSS.4.1.3.1",
+            "objective_text": "Define private property and shared (communal) ownership.",
+            "objective_uuid": "6e504f50-a318-47cb-80fc-f79ef5295c65",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.1",
+            "topic_name": "Biblical Stewardship & Economic Ethics",
+            "sub_topic_id": "HSS.4.1.3",
+            "sub_topic_name": "Private Property vs Communal Ownership",
+            "objective_id": "HSS.4.1.3.2",
+            "objective_text": "Identify how commands such as \"You shall not steal\" assume a right to own property.",
+            "objective_uuid": "9578663f-c590-450d-8134-2c58774690b8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.1",
+            "topic_name": "Biblical Stewardship & Economic Ethics",
+            "sub_topic_id": "HSS.4.1.3",
+            "sub_topic_name": "Private Property vs Communal Ownership",
+            "objective_id": "HSS.4.1.3.3",
+            "objective_text": "Explain how the early church in Acts voluntarily shared possessions to meet one another's needs.",
+            "objective_uuid": "ff46a481-0b54-40d0-86be-d5e9c34116a0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.1",
+            "topic_name": "Biblical Stewardship & Economic Ethics",
+            "sub_topic_id": "HSS.4.1.3",
+            "sub_topic_name": "Private Property vs Communal Ownership",
+            "objective_id": "HSS.4.1.3.4",
+            "objective_text": "Compare private property and communal ownership in terms of incentives and stewardship.",
+            "objective_uuid": "3f3b799a-d3e8-4b13-8f98-d0121eca1414",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.1",
+            "topic_name": "Biblical Stewardship & Economic Ethics",
+            "sub_topic_id": "HSS.4.1.3",
+            "sub_topic_name": "Private Property vs Communal Ownership",
+            "objective_id": "HSS.4.1.3.5",
+            "objective_text": "Evaluate the strengths and risks of private and communal ownership using biblical and economic reasoning.",
+            "objective_uuid": "7a380ce6-a7cc-48fa-81c5-aff7e1ac4672",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

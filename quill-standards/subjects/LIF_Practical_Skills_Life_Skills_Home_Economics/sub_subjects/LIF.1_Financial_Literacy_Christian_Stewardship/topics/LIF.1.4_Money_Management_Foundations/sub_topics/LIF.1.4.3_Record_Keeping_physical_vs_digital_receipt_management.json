@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "LIF.1.4.3",
+    "name": "Record Keeping (physical vs digital receipt management)",
+    "topic_id": "LIF.1.4",
+    "topic_name": "Money Management Foundations",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.1",
+    "sub_subject_name": "Financial Literacy & Christian Stewardship",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Record Keeping (physical vs digital receipt management) in Money Management Foundations (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.4",
+            "topic_name": "Money Management Foundations",
+            "sub_topic_id": "LIF.1.4.3",
+            "sub_topic_name": "Record Keeping (physical vs digital receipt management)",
+            "objective_id": "LIF.1.4.3.1",
+            "objective_text": "Explain why keeping receipts and records helps a person remember how money was spent.",
+            "objective_uuid": "e0838bb5-7faa-4f60-848d-a878136bcc9a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Jump$tart SP — Spending (financial-literacy national standards, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.4",
+            "topic_name": "Money Management Foundations",
+            "sub_topic_id": "LIF.1.4.3",
+            "sub_topic_name": "Record Keeping (physical vs digital receipt management)",
+            "objective_id": "LIF.1.4.3.2",
+            "objective_text": "Sort and file physical receipts by category or date.",
+            "objective_uuid": "1cdbda8f-3ded-4feb-8c90-4fb5e965284b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Jump$tart SP — Spending (financial-literacy national standards, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.4",
+            "topic_name": "Money Management Foundations",
+            "sub_topic_id": "LIF.1.4.3",
+            "sub_topic_name": "Record Keeping (physical vs digital receipt management)",
+            "objective_id": "LIF.1.4.3.3",
+            "objective_text": "Compare physical and digital methods for storing financial records.",
+            "objective_uuid": "a13aab23-2ad4-458b-854d-15066ca88292",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Jump$tart SP — Spending (financial-literacy national standards, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.1",
+            "sub_subject_name": "Financial Literacy & Christian Stewardship",
+            "topic_id": "LIF.1.4",
+            "topic_name": "Money Management Foundations",
+            "sub_topic_id": "LIF.1.4.3",
+            "sub_topic_name": "Record Keeping (physical vs digital receipt management)",
+            "objective_id": "LIF.1.4.3.4",
+            "objective_text": "Set up an organized record-keeping system for tracking spending and important documents.",
+            "objective_uuid": "87dbb1cb-3225-46c0-80a5-eada6bbe7c28",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Jump$tart SP — Spending (financial-literacy national standards, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "FCS / Jump$tart national standards",
+      "anchor_note": "Rebuilt from the FCS / Jump$tart national standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

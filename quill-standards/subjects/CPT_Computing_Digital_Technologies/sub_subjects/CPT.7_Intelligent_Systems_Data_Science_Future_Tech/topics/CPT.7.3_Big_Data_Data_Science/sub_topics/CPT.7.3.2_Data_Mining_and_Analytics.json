@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.7.3.2",
+    "name": "Data Mining and Analytics",
+    "topic_id": "CPT.7.3",
+    "topic_name": "Big Data & Data Science",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.7",
+    "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Data Mining and Analytics in Big Data & Data Science (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.2",
+            "sub_topic_name": "Data Mining and Analytics",
+            "objective_id": "CPT.7.3.2.1",
+            "objective_text": "Describe how analytics finds useful patterns in large amounts of data",
+            "objective_uuid": "43d1524d-fa80-4c7e-8094-cad64bbc6096",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-DA-05 — Use data analysis tools and techniques to identify patterns in data representing complex systems. Clarificatio (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.2",
+            "sub_topic_name": "Data Mining and Analytics",
+            "objective_id": "CPT.7.3.2.2",
+            "objective_text": "Use data analysis tools and techniques to identify trends in a dataset",
+            "objective_uuid": "37027b1a-3cce-422b-80ef-8293f2fdf74f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-DA-05 — Use data analysis tools and techniques to identify patterns in data representing complex systems. Clarificatio (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.2",
+            "sub_topic_name": "Data Mining and Analytics",
+            "objective_id": "CPT.7.3.2.3",
+            "objective_text": "Create a computational model that represents relationships among data elements",
+            "objective_uuid": "79d007a5-455c-4672-8dbf-d31d1803416f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-12 — Create computational models that represent the relationships among different elements of data collected from a (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.2",
+            "sub_topic_name": "Data Mining and Analytics",
+            "objective_id": "CPT.7.3.2.4",
+            "objective_text": "Evaluate a data model's predictions against real-world observations",
+            "objective_uuid": "74faba13-39c5-495e-8199-71031f064a17",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-12 — Create computational models that represent the relationships among different elements of data collected from a (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.4.3.5",
+    "name": "Search Engine Strategies (keywords, operators)",
+    "topic_id": "CPT.4.3",
+    "topic_name": "Information Literacy",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.4",
+    "sub_subject_name": "Digital Literacy, Safety & Ethics",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Search Engine Strategies (keywords, operators) in Information Literacy (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.3",
+            "topic_name": "Information Literacy",
+            "sub_topic_id": "CPT.4.3.5",
+            "sub_topic_name": "Search Engine Strategies (keywords, operators)",
+            "objective_id": "CPT.4.3.5.1",
+            "objective_text": "Search for and retrieve information using a computing device",
+            "objective_uuid": "a944f617-376b-4302-808c-e61cdaee2637",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-DA-05 — Store, copy, search, retrieve, modify, and delete information using a computing device and define the informat (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.3",
+            "topic_name": "Information Literacy",
+            "sub_topic_id": "CPT.4.3.5",
+            "sub_topic_name": "Search Engine Strategies (keywords, operators)",
+            "objective_id": "CPT.4.3.5.2",
+            "objective_text": "Choose effective keywords to find relevant information",
+            "objective_uuid": "debc832e-5c49-4eae-887b-d44fcb1fc82c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-DA-05 — Store, copy, search, retrieve, modify, and delete information using a computing device and define the informat (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.3",
+            "topic_name": "Information Literacy",
+            "sub_topic_id": "CPT.4.3.5",
+            "sub_topic_name": "Search Engine Strategies (keywords, operators)",
+            "objective_id": "CPT.4.3.5.3",
+            "objective_text": "Use search operators and filters to refine and narrow results",
+            "objective_uuid": "88c8518d-a1c9-40a3-8224-95025e97ff81",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-DA-08 — Collect data using computational tools and transform the data to make it more useful and reliable. Clarificati (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.3",
+            "topic_name": "Information Literacy",
+            "sub_topic_id": "CPT.4.3.5",
+            "sub_topic_name": "Search Engine Strategies (keywords, operators)",
+            "objective_id": "CPT.4.3.5.4",
+            "objective_text": "Evaluate and transform search results to identify reliable information",
+            "objective_uuid": "61502de5-07b9-4a81-82cd-00709151cb11",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-DA-08 — Collect data using computational tools and transform the data to make it more useful and reliable. Clarificati (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.3",
+            "topic_name": "Information Literacy",
+            "sub_topic_id": "CPT.4.3.5",
+            "sub_topic_name": "Search Engine Strategies (keywords, operators)",
+            "objective_id": "CPT.4.3.5.5",
+            "objective_text": "Apply advanced search strategies to gather and organize data for a specific task",
+            "objective_uuid": "d3f3bdd3-0cde-4df1-8e74-2bf87d46690d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-DA-08 — Collect data using computational tools and transform the data to make it more useful and reliable. Clarificati (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

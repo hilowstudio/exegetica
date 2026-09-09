@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "HSS.11.6.1",
+    "name": "Stress & Health",
+    "topic_id": "HSS.11.6",
+    "topic_name": "Health, Disorder & Applied Psychology",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.11",
+    "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+    "total_objectives": 3,
+    "description": "Progression for Stress & Health in Health, Disorder & Applied Psychology (Psychology (Mind, Behavior & Development))",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.6",
+            "topic_name": "Health, Disorder & Applied Psychology",
+            "sub_topic_id": "HSS.11.6.1",
+            "sub_topic_name": "Stress & Health",
+            "objective_id": "HSS.11.6.1.1",
+            "objective_text": "Explain how stress affects mind and body.",
+            "objective_uuid": "289770f9-df13-43f6-8709-d17eef5ed18c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.22.9-12 — Use psychological knowledge to promote healthy lifestyle choices (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 25.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.6",
+            "topic_name": "Health, Disorder & Applied Psychology",
+            "sub_topic_id": "HSS.11.6.1",
+            "sub_topic_name": "Stress & Health",
+            "objective_id": "HSS.11.6.1.2",
+            "objective_text": "Describe healthy strategies for coping with stress.",
+            "objective_uuid": "d5e6c0b7-be1e-4866-8804-684bfd19245f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.22.9-12 — Use psychological knowledge to promote healthy lifestyle choices (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.6",
+            "topic_name": "Health, Disorder & Applied Psychology",
+            "sub_topic_id": "HSS.11.6.1",
+            "sub_topic_name": "Stress & Health",
+            "objective_id": "HSS.11.6.1.3",
+            "objective_text": "Apply psychological knowledge to promote well-being.",
+            "objective_uuid": "e81c9857-fff5-4196-88f5-d80025edc135",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.22.9-12 — Use psychological knowledge to promote healthy lifestyle choices (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework (Psychology)",
+      "anchor_note": "C3 D2.Psy codes verified against the owned corpus. Objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

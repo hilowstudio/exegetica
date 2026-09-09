@@ -1,0 +1,146 @@
+{
+  "sub_topic": {
+    "id": "ELA.12.4.4",
+    "name": "Synthesizing Sources to Answer a Question",
+    "topic_id": "ELA.12.4",
+    "topic_name": "Reading Across Sources & Media",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.12",
+    "sub_subject_name": "Informational & Expository Reading",
+    "total_objectives": 4,
+    "description": "K-12 progression for Synthesizing Sources to Answer a Question in Reading Across Sources & Media (Informational & Expository Reading)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.4",
+            "topic_name": "Reading Across Sources & Media",
+            "sub_topic_id": "ELA.12.4.4",
+            "sub_topic_name": "Synthesizing Sources to Answer a Question",
+            "objective_id": "ELA.12.4.4.1",
+            "objective_text": "Gather information from several sources to answer a question.",
+            "objective_uuid": "d4b64959-7095-4a61-8be7-c667f868dc59",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.7 — Integrate and evaluate content presented in diverse media and formats, including visually and quanti (Common Core ELA reading anchor, K-12)",
+                "CCSS.ELA CCRA.R.9 — Analyze how two or more texts address similar themes or topics in order to build knowledge or to com (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.4",
+            "topic_name": "Reading Across Sources & Media",
+            "sub_topic_id": "ELA.12.4.4",
+            "sub_topic_name": "Synthesizing Sources to Answer a Question",
+            "objective_id": "ELA.12.4.4.2",
+            "objective_text": "Combine ideas from multiple sources into a coherent answer.",
+            "objective_uuid": "7f98edb7-46b9-40be-81cb-8d25c6f87cd2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.7 — Integrate and evaluate content presented in diverse media and formats, including visually and quanti (Common Core ELA reading anchor, K-12)",
+                "CCSS.ELA CCRA.R.9 — Analyze how two or more texts address similar themes or topics in order to build knowledge or to com (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.4",
+            "topic_name": "Reading Across Sources & Media",
+            "sub_topic_id": "ELA.12.4.4",
+            "sub_topic_name": "Synthesizing Sources to Answer a Question",
+            "objective_id": "ELA.12.4.4.3",
+            "objective_text": "Synthesize and evaluate sources to build a well-supported response.",
+            "objective_uuid": "49c18482-8f77-44ef-85c2-0b85f2e744ec",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.7 — Integrate and evaluate content presented in diverse media and formats, including visually and quanti (Common Core ELA reading anchor, K-12)",
+                "CCSS.ELA CCRA.R.9 — Analyze how two or more texts address similar themes or topics in order to build knowledge or to com (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.4",
+            "topic_name": "Reading Across Sources & Media",
+            "sub_topic_id": "ELA.12.4.4",
+            "sub_topic_name": "Synthesizing Sources to Answer a Question",
+            "objective_id": "ELA.12.4.4.4",
+            "objective_text": "Resolve conflicting information across sources and justify the resolution.",
+            "objective_uuid": "a98142ce-8ddc-4879-8b98-672e7fcb18e4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.7 — Integrate and evaluate content presented in diverse media and formats, including visually and quanti (Common Core ELA reading anchor, K-12)",
+                "CCSS.ELA CCRA.R.9 — Analyze how two or more texts address similar themes or topics in order to build knowledge or to com (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Authored to CCSS Reading anchors (CCRA.R); objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

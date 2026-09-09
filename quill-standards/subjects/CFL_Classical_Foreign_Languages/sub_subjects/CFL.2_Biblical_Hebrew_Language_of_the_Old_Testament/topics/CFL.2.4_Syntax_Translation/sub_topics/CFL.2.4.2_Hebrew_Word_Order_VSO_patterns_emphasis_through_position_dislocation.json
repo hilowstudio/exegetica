@@ -1,0 +1,163 @@
+{
+  "sub_topic": {
+    "id": "CFL.2.4.2",
+    "name": "Hebrew Word Order (VSO patterns, emphasis through position, dislocation)",
+    "topic_id": "CFL.2.4",
+    "topic_name": "Syntax & Translation",
+    "subject_id": "CFL",
+    "subject_name": "Classical & Foreign Languages",
+    "sub_subject_id": "CFL.2",
+    "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Hebrew Word Order (VSO patterns, emphasis through position, dislocation) in Syntax & Translation (Classical & Foreign Languages)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.4",
+            "topic_name": "Syntax & Translation",
+            "sub_topic_id": "CFL.2.4.2",
+            "sub_topic_name": "Hebrew Word Order (VSO patterns, emphasis through position, dislocation)",
+            "objective_id": "CFL.2.4.2.1",
+            "objective_text": "Recognize that a Hebrew sentence often begins with its verb",
+            "objective_uuid": "aa6a0130-7dd5-433a-8b1d-f09fb2d06eef",
+            "anchors": {
+              "scripture": [
+                "Genesis 1:1"
+              ],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.4",
+            "topic_name": "Syntax & Translation",
+            "sub_topic_id": "CFL.2.4.2",
+            "sub_topic_name": "Hebrew Word Order (VSO patterns, emphasis through position, dislocation)",
+            "objective_id": "CFL.2.4.2.2",
+            "objective_text": "Identify the default verb-subject-object order in a Hebrew clause",
+            "objective_uuid": "5df27b1b-a91d-4f35-8d50-521df57680bb",
+            "anchors": {
+              "scripture": [
+                "Genesis 1:1"
+              ],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.4",
+            "topic_name": "Syntax & Translation",
+            "sub_topic_id": "CFL.2.4.2",
+            "sub_topic_name": "Hebrew Word Order (VSO patterns, emphasis through position, dislocation)",
+            "objective_id": "CFL.2.4.2.3",
+            "objective_text": "Explain that placing a word before the verb (fronting) usually signals emphasis or contrast",
+            "objective_uuid": "0f294980-6826-4781-883c-0374d6f751a5",
+            "anchors": {
+              "scripture": [
+                "Genesis 1:1"
+              ],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 20,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.4",
+            "topic_name": "Syntax & Translation",
+            "sub_topic_id": "CFL.2.4.2",
+            "sub_topic_name": "Hebrew Word Order (VSO patterns, emphasis through position, dislocation)",
+            "objective_id": "CFL.2.4.2.4",
+            "objective_text": "Distinguish a verbal clause from a verbless (nominal) clause and translate each",
+            "objective_uuid": "ce18d238-1b3a-45ab-88e1-63bc6e044653",
+            "anchors": {
+              "scripture": [
+                "Genesis 1:1"
+              ],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.4",
+            "topic_name": "Syntax & Translation",
+            "sub_topic_id": "CFL.2.4.2",
+            "sub_topic_name": "Hebrew Word Order (VSO patterns, emphasis through position, dislocation)",
+            "objective_id": "CFL.2.4.2.5",
+            "objective_text": "Analyze how word order, fronting, and dislocation create emphasis or mark a topic in a chosen verse",
+            "objective_uuid": "301c37e4-6e58-4a7a-8088-dabb4ca513a9",
+            "anchors": {
+              "scripture": [
+                "Genesis 1:1"
+              ],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

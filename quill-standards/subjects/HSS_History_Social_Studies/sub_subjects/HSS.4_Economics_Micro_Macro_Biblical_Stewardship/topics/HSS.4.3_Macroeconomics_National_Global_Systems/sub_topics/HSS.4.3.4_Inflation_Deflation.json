@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "HSS.4.3.4",
+    "name": "Inflation & Deflation",
+    "topic_id": "HSS.4.3",
+    "topic_name": "Macroeconomics: National & Global Systems",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.4",
+    "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Inflation & Deflation in Macroeconomics: National & Global Systems (History & Social Studies)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.4",
+            "sub_topic_name": "Inflation & Deflation",
+            "objective_id": "HSS.4.3.4.1",
+            "objective_text": "Explain the meaning of inflation and deflation.",
+            "objective_uuid": "6c1e64fd-f081-408d-8881-872cf951d177",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.11.3-5 — Explain the meaning of inflation, deflation, and unemployment (economics, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.4",
+            "sub_topic_name": "Inflation & Deflation",
+            "objective_id": "HSS.4.3.4.2",
+            "objective_text": "Explain how inflation affects the buying power of money and wages.",
+            "objective_uuid": "8e6b72d8-dfb0-4287-8eb7-dbcbe9aeeb36",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.11.3-5 — Explain the meaning of inflation, deflation, and unemployment (economics, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.4",
+            "sub_topic_name": "Inflation & Deflation",
+            "objective_id": "HSS.4.3.4.3",
+            "objective_text": "Calculate a simple inflation rate using a price index.",
+            "objective_uuid": "189a8578-89b8-4f46-8e14-b43118813ec1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.11.9-12 — Use economic indicators to analyze the current and future state of the economy (economics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.4",
+            "sub_topic_name": "Inflation & Deflation",
+            "objective_id": "HSS.4.3.4.4",
+            "objective_text": "Analyze inflation together with other indicators to assess the economy's direction.",
+            "objective_uuid": "8688f0f7-be89-42cc-823a-480bc19ccaa2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.11.9-12 — Use economic indicators to analyze the current and future state of the economy (economics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.3",
+            "topic_name": "Macroeconomics: National & Global Systems",
+            "sub_topic_id": "HSS.4.3.4",
+            "sub_topic_name": "Inflation & Deflation",
+            "objective_id": "HSS.4.3.4.5",
+            "objective_text": "Evaluate the selection of monetary and fiscal policies used to control inflation and deflation.",
+            "objective_uuid": "bc5b6a14-620f-4853-86fa-ba9418748d05",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.12.9-12 — Evaluate the selection of monetary and fiscal policies in a variety of economic conditions (economics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

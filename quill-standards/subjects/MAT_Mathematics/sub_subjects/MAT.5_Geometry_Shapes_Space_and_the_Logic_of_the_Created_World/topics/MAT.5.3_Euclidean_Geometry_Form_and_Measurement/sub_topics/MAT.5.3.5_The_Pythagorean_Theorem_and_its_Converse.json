@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.3.5",
+    "name": "The Pythagorean Theorem and its Converse",
+    "topic_id": "MAT.5.3",
+    "topic_name": "Euclidean Geometry (Form and Measurement)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for The Pythagorean Theorem and its Converse in Euclidean Geometry (Form and Measurement) (Mathematics)",
+    "grade_levels": {
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.5",
+            "sub_topic_name": "The Pythagorean Theorem and its Converse",
+            "objective_id": "MAT.5.3.5.1",
+            "objective_text": "Explain a proof of the Pythagorean theorem.",
+            "objective_uuid": "8dcb3abf-b518-4d54-83b0-446d07b0cc9e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 8.G.B.7 — Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mat (grade 8)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.5",
+            "sub_topic_name": "The Pythagorean Theorem and its Converse",
+            "objective_id": "MAT.5.3.5.2",
+            "objective_text": "Use the Pythagorean theorem to find a missing side of a right triangle.",
+            "objective_uuid": "cb35e7a3-8724-438d-8178-80ffaa44f930",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 8.G.B.7 — Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mat (grade 8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.3",
+            "topic_name": "Euclidean Geometry (Form and Measurement)",
+            "sub_topic_id": "MAT.5.3.5",
+            "sub_topic_name": "The Pythagorean Theorem and its Converse",
+            "objective_id": "MAT.5.3.5.3",
+            "objective_text": "Use the converse of the Pythagorean theorem to test for a right triangle.",
+            "objective_uuid": "cb435c99-b6c4-4aa7-8303-1250eb55ef85",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 8.G.B.7 — Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mat (grade 8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

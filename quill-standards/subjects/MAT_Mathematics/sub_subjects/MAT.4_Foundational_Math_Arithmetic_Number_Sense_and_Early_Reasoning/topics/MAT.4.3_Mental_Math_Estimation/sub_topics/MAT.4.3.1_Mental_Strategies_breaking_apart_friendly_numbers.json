@@ -1,0 +1,164 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.3.1",
+    "name": "Mental Strategies (breaking apart, friendly numbers)",
+    "topic_id": "MAT.4.3",
+    "topic_name": "Mental Math & Estimation",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Mental Strategies (breaking apart, friendly numbers) in Mental Math & Estimation (Mathematics)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.3",
+            "topic_name": "Mental Math & Estimation",
+            "sub_topic_id": "MAT.4.3.1",
+            "sub_topic_name": "Mental Strategies (breaking apart, friendly numbers)",
+            "objective_id": "MAT.4.3.1.1",
+            "objective_text": "Add and subtract within 10 using counting on and counting back.",
+            "objective_uuid": "64da6077-c3d4-4f6b-8e9e-9da1f74a0999",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 1.OA.C.6 — Add and subtract within 20, demonstrating fluency for addition and subtraction within 10. Use strategies (grade 1)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 2,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.3",
+            "topic_name": "Mental Math & Estimation",
+            "sub_topic_id": "MAT.4.3.1",
+            "sub_topic_name": "Mental Strategies (breaking apart, friendly numbers)",
+            "objective_id": "MAT.4.3.1.2",
+            "objective_text": "Use the make-a-ten strategy to add within 20.",
+            "objective_uuid": "4662d29d-601f-4b28-8d77-57b85fb2f0b8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 1.OA.C.6 — Add and subtract within 20, demonstrating fluency for addition and subtraction within 10. Use strategies (grade 1)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.3",
+            "topic_name": "Mental Math & Estimation",
+            "sub_topic_id": "MAT.4.3.1",
+            "sub_topic_name": "Mental Strategies (breaking apart, friendly numbers)",
+            "objective_id": "MAT.4.3.1.3",
+            "objective_text": "Decompose numbers to add and subtract flexibly.",
+            "objective_uuid": "b3c6622a-3c94-4eed-8ba3-117d73f63593",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 1.OA.C.6 — Add and subtract within 20, demonstrating fluency for addition and subtraction within 10. Use strategies (grade 1)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.3",
+            "topic_name": "Mental Math & Estimation",
+            "sub_topic_id": "MAT.4.3.1",
+            "sub_topic_name": "Mental Strategies (breaking apart, friendly numbers)",
+            "objective_id": "MAT.4.3.1.4",
+            "objective_text": "Mentally add or subtract 10 or 100 to a given number.",
+            "objective_uuid": "37492c4b-c608-407b-88e6-d1308b6e2cc5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 2.NBT.B.8 — Mentally add 10 or 100 to a given number 100—900, and mentally subtract 10 or 100 from a given number 10 (grade 2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 24.0,
+        "objectives": [
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.3",
+            "topic_name": "Mental Math & Estimation",
+            "sub_topic_id": "MAT.4.3.1",
+            "sub_topic_name": "Mental Strategies (breaking apart, friendly numbers)",
+            "objective_id": "MAT.4.3.1.5",
+            "objective_text": "Use friendly numbers and compensation to compute mentally.",
+            "objective_uuid": "1c34d60b-a3bf-4734-85dc-57691c7e10b6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 2.NBT.B.8 — Mentally add 10 or 100 to a given number 100—900, and mentally subtract 10 or 100 from a given number 10 (grade 2)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

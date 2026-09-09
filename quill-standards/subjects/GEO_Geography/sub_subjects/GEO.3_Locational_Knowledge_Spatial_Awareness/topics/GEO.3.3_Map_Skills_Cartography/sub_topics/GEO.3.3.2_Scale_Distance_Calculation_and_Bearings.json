@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "GEO.3.3.2",
+    "name": "Scale, Distance Calculation, and Bearings",
+    "topic_id": "GEO.3.3",
+    "topic_name": "Map Skills & Cartography",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.3",
+    "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Scale, Distance Calculation, and Bearings in Map Skills & Cartography (Geography)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.3",
+            "topic_name": "Map Skills & Cartography",
+            "sub_topic_id": "GEO.3.3.2",
+            "sub_topic_name": "Scale, Distance Calculation, and Bearings",
+            "objective_id": "GEO.3.3.2.1",
+            "objective_text": "Use a map's scale bar to compare which places are near and which are far.",
+            "objective_uuid": "c24b31f0-43cc-49f9-8739-dc3694b31b6b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.K-2 — Construct maps, graphs, and other representations of familiar places (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.3",
+            "topic_name": "Map Skills & Cartography",
+            "sub_topic_id": "GEO.3.3.2",
+            "sub_topic_name": "Scale, Distance Calculation, and Bearings",
+            "objective_id": "GEO.3.3.2.2",
+            "objective_text": "Measure the distance between two points using a map's scale.",
+            "objective_uuid": "67cc296c-8344-44c9-8c78-33bed2c606c7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.3",
+            "topic_name": "Map Skills & Cartography",
+            "sub_topic_id": "GEO.3.3.2",
+            "sub_topic_name": "Scale, Distance Calculation, and Bearings",
+            "objective_id": "GEO.3.3.2.3",
+            "objective_text": "Calculate real-world distances using ratio scales and map measurements.",
+            "objective_uuid": "d5bdb2a6-ab52-4d32-8f12-7d1ccebe38d9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.3",
+            "topic_name": "Map Skills & Cartography",
+            "sub_topic_id": "GEO.3.3.2",
+            "sub_topic_name": "Scale, Distance Calculation, and Bearings",
+            "objective_id": "GEO.3.3.2.4",
+            "objective_text": "Determine the bearing in degrees between two points on a map.",
+            "objective_uuid": "ee9d3197-fb42-426c-81b6-f8949ec2972b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

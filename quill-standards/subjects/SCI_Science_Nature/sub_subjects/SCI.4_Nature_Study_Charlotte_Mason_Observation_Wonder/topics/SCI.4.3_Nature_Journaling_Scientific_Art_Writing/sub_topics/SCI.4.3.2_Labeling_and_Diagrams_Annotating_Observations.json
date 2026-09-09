@@ -1,0 +1,133 @@
+{
+  "sub_topic": {
+    "id": "SCI.4.3.2",
+    "name": "Labeling and Diagrams (Annotating Observations)",
+    "topic_id": "SCI.4.3",
+    "topic_name": "Nature Journaling (Scientific Art & Writing)",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.4",
+    "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Labeling and Diagrams (Annotating Observations) in Nature Journaling (Scientific Art & Writing) (Science & Nature)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.2",
+            "sub_topic_name": "Labeling and Diagrams (Annotating Observations)",
+            "objective_id": "SCI.4.3.2.1",
+            "objective_text": "Label the main parts of a plant or animal in a drawing.",
+            "objective_uuid": "c5b4eaa9-daf3-4c2e-830f-65e128c03aa3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.2",
+            "sub_topic_name": "Labeling and Diagrams (Annotating Observations)",
+            "objective_id": "SCI.4.3.2.2",
+            "objective_text": "Add clear titles, dates, and labels to observation diagrams.",
+            "objective_uuid": "64a16f38-456b-45c1-81ae-4b3f1704f660",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.2",
+            "sub_topic_name": "Labeling and Diagrams (Annotating Observations)",
+            "objective_id": "SCI.4.3.2.3",
+            "objective_text": "Draw a diagram with callouts explaining an object's structure and its function.",
+            "objective_uuid": "f89d6ce1-069a-4fb2-8b9a-c041a14e1a4f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.2",
+            "sub_topic_name": "Labeling and Diagrams (Annotating Observations)",
+            "objective_id": "SCI.4.3.2.4",
+            "objective_text": "Create annotated cross-section or life-cycle diagrams based on direct observation.",
+            "objective_uuid": "695c71c2-246d-4e69-875e-ae886b5649ee",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

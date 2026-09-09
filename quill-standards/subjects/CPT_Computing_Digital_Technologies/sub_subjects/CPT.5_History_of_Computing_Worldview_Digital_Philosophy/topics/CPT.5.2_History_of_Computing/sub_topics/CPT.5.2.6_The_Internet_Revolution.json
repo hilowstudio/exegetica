@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.5.2.6",
+    "name": "The Internet Revolution",
+    "topic_id": "CPT.5.2",
+    "topic_name": "History of Computing",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.5",
+    "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for The Internet Revolution in History of Computing (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.6",
+            "sub_topic_name": "The Internet Revolution",
+            "objective_id": "CPT.5.2.6.1",
+            "objective_text": "Describe how the Internet lets computers around the world share information",
+            "objective_uuid": "d5fa8385-b27e-4790-8853-69408903963c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-18 — Discuss computing technologies that have changed the world, and express how those technologies influence, and  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.6",
+            "sub_topic_name": "The Internet Revolution",
+            "objective_id": "CPT.5.2.6.2",
+            "objective_text": "Explain how the World Wide Web changed the way people find information and connect with others",
+            "objective_uuid": "1c05db55-3f26-40b4-8e89-b054053923cb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-18 — Discuss computing technologies that have changed the world, and express how those technologies influence, and  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.6",
+            "sub_topic_name": "The Internet Revolution",
+            "objective_id": "CPT.5.2.6.3",
+            "objective_text": "Model how messages travel across a network using agreed-upon rules, or protocols, to reach the right place",
+            "objective_uuid": "9c30b3f6-b037-426f-8e79-f1d1e27b380a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-NI-04 — Model the role of protocols in transmitting data across networks and the Internet. Clarification: Protocols ar (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.6",
+            "sub_topic_name": "The Internet Revolution",
+            "objective_id": "CPT.5.2.6.4",
+            "objective_text": "Discuss how the Internet revolution transformed communication, commerce, and culture worldwide",
+            "objective_uuid": "64a239af-096d-4f6b-8768-7fdda76f48f5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-18 — Discuss computing technologies that have changed the world, and express how those technologies influence, and  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.6",
+            "sub_topic_name": "The Internet Revolution",
+            "objective_id": "CPT.5.2.6.5",
+            "objective_text": "Analyze how protocols enable reliable and secure communication that made the global Internet possible, and how that infrastructure both shaped and was shaped by society",
+            "objective_uuid": "d69dffe6-d33d-416a-87fe-5a347985340a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-NI-04 — Model the role of protocols in transmitting data across networks and the Internet. Clarification: Protocols ar (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

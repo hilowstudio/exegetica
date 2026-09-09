@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.10.1.2",
+    "name": "Design of Experiments and Observational Studies",
+    "topic_id": "MAT.10.1",
+    "topic_name": "Data Collection & Interpretation",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.10",
+    "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Design of Experiments and Observational Studies in Data Collection & Interpretation (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.1",
+            "topic_name": "Data Collection & Interpretation",
+            "sub_topic_id": "MAT.10.1.2",
+            "sub_topic_name": "Design of Experiments and Observational Studies",
+            "objective_id": "MAT.10.1.2.1",
+            "objective_text": "Distinguish an experiment, an observational study, and a survey.",
+            "objective_uuid": "6b6d431c-649c-47d3-8217-7fd5526c2138",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-IC.B.3 — Recognize the purposes of and differences among sample surveys, experiments, and observational studies;  (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.1",
+            "topic_name": "Data Collection & Interpretation",
+            "sub_topic_id": "MAT.10.1.2",
+            "sub_topic_name": "Design of Experiments and Observational Studies",
+            "objective_id": "MAT.10.1.2.2",
+            "objective_text": "Explain the role of randomization in the design of a study.",
+            "objective_uuid": "1ea80c24-565c-43d8-8369-bfe06c3def05",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-IC.B.3 — Recognize the purposes of and differences among sample surveys, experiments, and observational studies;  (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.1",
+            "topic_name": "Data Collection & Interpretation",
+            "sub_topic_id": "MAT.10.1.2",
+            "sub_topic_name": "Design of Experiments and Observational Studies",
+            "objective_id": "MAT.10.1.2.3",
+            "objective_text": "Determine which study design is appropriate for a given question.",
+            "objective_uuid": "1e7bec76-9dc6-4ebd-8424-add2b2d42183",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-IC.B.3 — Recognize the purposes of and differences among sample surveys, experiments, and observational studies;  (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

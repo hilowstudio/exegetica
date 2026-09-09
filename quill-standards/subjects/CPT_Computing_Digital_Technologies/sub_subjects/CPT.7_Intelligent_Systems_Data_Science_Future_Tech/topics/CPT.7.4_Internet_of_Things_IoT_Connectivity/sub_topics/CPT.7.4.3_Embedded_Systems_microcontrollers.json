@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "CPT.7.4.3",
+    "name": "Embedded Systems (microcontrollers)",
+    "topic_id": "CPT.7.4",
+    "topic_name": "Internet of Things (IoT) & Connectivity",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.7",
+    "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Embedded Systems (microcontrollers) in Internet of Things (IoT) & Connectivity (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.4",
+            "topic_name": "Internet of Things (IoT) & Connectivity",
+            "sub_topic_id": "CPT.7.4.3",
+            "sub_topic_name": "Embedded Systems (microcontrollers)",
+            "objective_id": "CPT.7.4.3.1",
+            "objective_text": "Describe what an embedded system is and give everyday examples",
+            "objective_uuid": "867e1233-896b-4565-8357-bb07a359ab7f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-CS-02 — Illustrate ways computing systems implement logic, input, and output through hardware components. Clarificatio (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.4",
+            "topic_name": "Internet of Things (IoT) & Connectivity",
+            "sub_topic_id": "CPT.7.4.3",
+            "sub_topic_name": "Embedded Systems (microcontrollers)",
+            "objective_id": "CPT.7.4.3.2",
+            "objective_text": "Explain how a microcontroller reads input and controls output through its pins",
+            "objective_uuid": "0a478173-92e2-45fa-8d3e-1eb12b7fac35",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-CS-02 — Illustrate ways computing systems implement logic, input, and output through hardware components. Clarificatio (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.4",
+            "topic_name": "Internet of Things (IoT) & Connectivity",
+            "sub_topic_id": "CPT.7.4.3",
+            "sub_topic_name": "Embedded Systems (microcontrollers)",
+            "objective_id": "CPT.7.4.3.3",
+            "objective_text": "Illustrate how an embedded system implements logic to respond to its sensors",
+            "objective_uuid": "5d32ca5c-5b45-467a-84bf-5bbb36d9c3d1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-CS-02 — Illustrate ways computing systems implement logic, input, and output through hardware components. Clarificatio (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

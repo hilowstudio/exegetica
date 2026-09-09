@@ -1,0 +1,169 @@
+{
+  "sub_topic": {
+    "id": "ELA.5.5.3",
+    "name": "Setting and Atmosphere",
+    "topic_id": "ELA.5.5",
+    "topic_name": "Novel & Long Fiction",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.5",
+    "sub_subject_name": "Literature by Genre & Form",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Setting and Atmosphere in Novel & Long Fiction (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.5",
+            "topic_name": "Novel & Long Fiction",
+            "sub_topic_id": "ELA.5.5.3",
+            "sub_topic_name": "Setting and Atmosphere",
+            "objective_id": "ELA.5.5.3.1",
+            "objective_text": "Describe where and when a story takes place",
+            "objective_uuid": "1ed9c9f5-7fbe-41b2-8781-7789dc01caaf",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.5",
+            "topic_name": "Novel & Long Fiction",
+            "sub_topic_id": "ELA.5.5.3",
+            "sub_topic_name": "Setting and Atmosphere",
+            "objective_id": "ELA.5.5.3.2",
+            "objective_text": "Identify details that create the mood of a setting",
+            "objective_uuid": "288c3c84-2ff5-4842-88f6-bd999a9ba010",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.5",
+            "topic_name": "Novel & Long Fiction",
+            "sub_topic_id": "ELA.5.5.3",
+            "sub_topic_name": "Setting and Atmosphere",
+            "objective_id": "ELA.5.5.3.3",
+            "objective_text": "Explain how setting shapes what happens to the characters",
+            "objective_uuid": "1ca4bd50-2719-4842-84e2-73a392f920ba",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.5",
+            "topic_name": "Novel & Long Fiction",
+            "sub_topic_id": "ELA.5.5.3",
+            "sub_topic_name": "Setting and Atmosphere",
+            "objective_id": "ELA.5.5.3.4",
+            "objective_text": "Analyze how a writer builds atmosphere through description and detail",
+            "objective_uuid": "0e23248a-51cd-4098-8f4a-ac4281cd11a9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.5 — Analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.5",
+            "topic_name": "Novel & Long Fiction",
+            "sub_topic_id": "ELA.5.5.3",
+            "sub_topic_name": "Setting and Atmosphere",
+            "objective_id": "ELA.5.5.3.5",
+            "objective_text": "Interpret how setting and atmosphere reinforce a novel's themes",
+            "objective_uuid": "9bea79e0-a23a-4187-8ddd-59ab40adb808",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

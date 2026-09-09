@@ -1,0 +1,455 @@
+{
+  "sub_topic": {
+    "id": "BIB.10.1.1",
+    "name": "Christian Ethics",
+    "topic_id": "BIB.10.1",
+    "topic_name": "Christian Living and Spiritual Disciplines",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.10",
+    "sub_subject_name": "Practical Theology & Christian Living",
+    "total_objectives": 16,
+    "description": "13-year academic progression (K-12) for Christian Ethics in Christian Living and Spiritual Disciplines (Bible & Theology)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.1",
+            "objective_text": "Identify the Ten Commandments as God's rules for living.",
+            "objective_uuid": "69cb9e37-e66d-4990-8426-65c839336ec0",
+            "anchors": {
+              "scripture": [
+                "Exodus 20:1-17"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q41"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.2",
+            "objective_text": "Name lying and stealing as wrong.",
+            "objective_uuid": "a42db011-3cce-493e-a424-3bf9b042c793",
+            "anchors": {
+              "scripture": [
+                "Matthew 22:37-40"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.3",
+            "objective_text": "Recall that we should love our neighbor.",
+            "objective_uuid": "9ea7c8d6-aa3c-48eb-88fd-8b9976277bef",
+            "anchors": {
+              "scripture": [
+                "Matthew 22:37-40"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.4",
+            "objective_text": "Observe that God sees everything we do.",
+            "objective_uuid": "bb298591-b31a-46ec-8f7b-d2a97dd53f67",
+            "anchors": {
+              "scripture": [
+                "Matthew 22:37-40"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.5",
+            "objective_text": "Summarize the two greatest commandments (Love God, Love Neighbor).",
+            "objective_uuid": "5764c6db-5640-4c38-b29c-0ad7717fefb7",
+            "anchors": {
+              "scripture": [
+                "Matthew 22:37-40"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.6",
+            "objective_text": "Explain why we tell the truth (because God is Truth).",
+            "objective_uuid": "a14a349d-b751-4fcd-9d43-c63563b15ca7",
+            "anchors": {
+              "scripture": [
+                "Matthew 22:37-40"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.7",
+            "objective_text": "Compare what the world says is right with what the Bible says.",
+            "objective_uuid": "74158fc2-46c1-4298-8c68-24ae6d6dd212",
+            "anchors": {
+              "scripture": [
+                "Matthew 22:37-40"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.8",
+            "objective_text": "Apply the Golden Rule to bullying.",
+            "objective_uuid": "e191b83e-d88b-44d2-9b18-2a3c3fbd5d5a",
+            "anchors": {
+              "scripture": [
+                "Matthew 7:12"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.9",
+            "objective_text": "Analyze the Sermon on the Mount ethics (anger = murder, lust = adultery).",
+            "objective_uuid": "fe11c565-9ee9-485f-853a-1b375d02ff89",
+            "anchors": {
+              "scripture": [
+                "Matthew 5:21-30"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.10",
+            "objective_text": "Interpret the relationship between Law and Grace in ethics.",
+            "objective_uuid": "ffb2875a-77d1-43c0-805e-4d62c8c227db",
+            "anchors": {
+              "scripture": [
+                "Romans 6:14"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.11",
+            "objective_text": "Connect the value of life (Imago Dei) to issues like abortion.",
+            "objective_uuid": "19283323-5eb5-44f4-9f28-3736c62876c7",
+            "anchors": {
+              "scripture": [
+                "Genesis 9:6"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.12",
+            "objective_text": "Explain the Christian view of work and laziness.",
+            "objective_uuid": "89f2e136-8c2b-4044-8b7d-517b104c18dc",
+            "anchors": {
+              "scripture": [
+                "2 Thessalonians 3:10"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.13",
+            "objective_text": "Construct a biblical framework for decision making.",
+            "objective_uuid": "8b484f0a-901a-4af3-84d5-1be7c674a713",
+            "anchors": {
+              "scripture": [
+                "Matthew 22:37-40"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.14",
+            "objective_text": "Evaluate ethical dilemmas (e.g., war, bioethics) through a scriptural lens.",
+            "objective_uuid": "42e8784d-a415-4fc7-b9a0-b5010c4c6c47",
+            "anchors": {
+              "scripture": [
+                "Matthew 22:37-40"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.15",
+            "objective_text": "Defend objective morality against moral relativism.",
+            "objective_uuid": "d87ccd7b-ca5f-4dda-a59d-788af57112c8",
+            "anchors": {
+              "scripture": [
+                "Romans 2:14-15"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.1",
+            "sub_topic_name": "Christian Ethics",
+            "objective_id": "BIB.10.1.1.16",
+            "objective_text": "Synthesize the 'Third Use of the Law' (guide for the believer).",
+            "objective_uuid": "fe191478-8343-4160-893b-552c57da4880",
+            "anchors": {
+              "scripture": [
+                "Psalm 119:105"
+              ],
+              "confessions": [
+                "Westminster Confession 19.6"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "enriched",
+      "levers": [
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture anchors are the passages that ground each practice (ethics, disciplines, family, worship); confessions on doctrinal points. Validated against the study-bible MCP tools."
+    }
+  }
+}

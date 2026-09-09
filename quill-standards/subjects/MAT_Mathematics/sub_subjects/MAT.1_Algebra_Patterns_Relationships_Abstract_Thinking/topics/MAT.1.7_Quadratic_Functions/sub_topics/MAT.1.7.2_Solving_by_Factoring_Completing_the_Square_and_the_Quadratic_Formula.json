@@ -1,0 +1,135 @@
+{
+  "sub_topic": {
+    "id": "MAT.1.7.2",
+    "name": "Solving by Factoring, Completing the Square, and the Quadratic Formula",
+    "topic_id": "MAT.1.7",
+    "topic_name": "Quadratic Functions",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.1",
+    "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Solving by Factoring, Completing the Square, and the Quadratic Formula in Quadratic Functions (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.7",
+            "topic_name": "Quadratic Functions",
+            "sub_topic_id": "MAT.1.7.2",
+            "sub_topic_name": "Solving by Factoring, Completing the Square, and the Quadratic Formula",
+            "objective_id": "MAT.1.7.2.1",
+            "objective_text": "Solve a quadratic equation by factoring.",
+            "objective_uuid": "0e90f040-3325-4048-8050-fd9a1b314b9f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-REI.B.4 — Solve quadratic equations in one variable (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 2,
+        "average_complexity": 14.5,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.7",
+            "topic_name": "Quadratic Functions",
+            "sub_topic_id": "MAT.1.7.2",
+            "sub_topic_name": "Solving by Factoring, Completing the Square, and the Quadratic Formula",
+            "objective_id": "MAT.1.7.2.2",
+            "objective_text": "Solve a quadratic equation by completing the square.",
+            "objective_uuid": "e5a0d716-13f7-4148-83ec-b38699fb39b2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-REI.B.4 — Solve quadratic equations in one variable (HS)"
+              ]
+            }
+          },
+          {
+            "complexity": 18,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.7",
+            "topic_name": "Quadratic Functions",
+            "sub_topic_id": "MAT.1.7.2",
+            "sub_topic_name": "Solving by Factoring, Completing the Square, and the Quadratic Formula",
+            "objective_id": "MAT.1.7.2.3",
+            "objective_text": "Solve a quadratic equation using the quadratic formula.",
+            "objective_uuid": "d92ec554-8dc3-434f-885e-7496bb146bb5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-REI.B.4 — Solve quadratic equations in one variable (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.7",
+            "topic_name": "Quadratic Functions",
+            "sub_topic_id": "MAT.1.7.2",
+            "sub_topic_name": "Solving by Factoring, Completing the Square, and the Quadratic Formula",
+            "objective_id": "MAT.1.7.2.4",
+            "objective_text": "Use the discriminant to determine the number and type of solutions.",
+            "objective_uuid": "93c4a360-907e-4ec3-8a53-7b20314528ef",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-REI.B.4 — Solve quadratic equations in one variable (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

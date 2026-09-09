@@ -1,0 +1,169 @@
+{
+  "sub_topic": {
+    "id": "GEO.2.5.3",
+    "name": "Population Distribution",
+    "topic_id": "GEO.2.5",
+    "topic_name": "Population & Demographics",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.2",
+    "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Population Distribution in Population & Demographics (Geography)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.5",
+            "topic_name": "Population & Demographics",
+            "sub_topic_id": "GEO.2.5.3",
+            "sub_topic_name": "Population Distribution",
+            "objective_id": "GEO.2.5.3.1",
+            "objective_text": "Identify where many people live and where few people live on a world map.",
+            "objective_uuid": "4d5a44aa-b946-457e-8080-fe974b298ce7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.5",
+            "topic_name": "Population & Demographics",
+            "sub_topic_id": "GEO.2.5.3",
+            "sub_topic_name": "Population Distribution",
+            "objective_id": "GEO.2.5.3.2",
+            "objective_text": "Explain how climate, water, and landforms influence where people choose to live.",
+            "objective_uuid": "6a2bc6fd-200d-409d-88e4-ca662ac3782e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.3-5 — Explain how culture influences the way people modify and adapt to their environments (geography, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.5",
+            "topic_name": "Population & Demographics",
+            "sub_topic_id": "GEO.2.5.3",
+            "sub_topic_name": "Population Distribution",
+            "objective_id": "GEO.2.5.3.3",
+            "objective_text": "Describe how people adapt to living in densely and sparsely populated environments.",
+            "objective_uuid": "59316b63-7a1c-4c5e-82de-5319699e22ab",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.3-5 — Explain how culture influences the way people modify and adapt to their environments (geography, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.5",
+            "topic_name": "Population & Demographics",
+            "sub_topic_id": "GEO.2.5.3",
+            "sub_topic_name": "Population Distribution",
+            "objective_id": "GEO.2.5.3.4",
+            "objective_text": "Analyze the reciprocal relationship between the physical environment and population density.",
+            "objective_uuid": "ec8024c2-c521-4781-8e2d-eadcfd21e030",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.9-12 — Analyze relationships and interactions within and between human and physical systems to explain reci (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.2",
+            "sub_subject_name": "Human Geography (Geopolitics, Culture & Economics)",
+            "topic_id": "GEO.2.5",
+            "topic_name": "Population & Demographics",
+            "sub_topic_id": "GEO.2.5.3",
+            "sub_topic_name": "Population Distribution",
+            "objective_id": "GEO.2.5.3.5",
+            "objective_text": "Evaluate how human systems and physical systems interact to shape global population distribution.",
+            "objective_uuid": "0682099a-7508-4fb2-8747-823e960b38ad",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.4.9-12 — Analyze relationships and interactions within and between human and physical systems to explain reci (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

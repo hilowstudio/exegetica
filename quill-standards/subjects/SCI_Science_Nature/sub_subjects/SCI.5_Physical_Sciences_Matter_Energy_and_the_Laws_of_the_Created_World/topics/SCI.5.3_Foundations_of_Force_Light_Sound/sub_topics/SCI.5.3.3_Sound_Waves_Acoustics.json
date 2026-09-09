@@ -1,0 +1,167 @@
+{
+  "sub_topic": {
+    "id": "SCI.5.3.3",
+    "name": "Sound Waves & Acoustics",
+    "topic_id": "SCI.5.3",
+    "topic_name": "Foundations of Force, Light & Sound",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.5",
+    "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Sound Waves & Acoustics in Foundations of Force, Light & Sound (Science & Nature)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.3",
+            "topic_name": "Foundations of Force, Light & Sound",
+            "sub_topic_id": "SCI.5.3.3",
+            "sub_topic_name": "Sound Waves & Acoustics",
+            "objective_id": "SCI.5.3.3.1",
+            "objective_text": "Plan and conduct investigations to provide evidence that vibrating materials can make sound and that sound can make materials vibrate",
+            "objective_uuid": "9ffcca5a-46b2-4ae0-85cb-a56f143c1273",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 1-PS4-1 — Plan and conduct investigations to provide evidence that vibrating materials can make sound and that sou (grades 1)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.3",
+            "topic_name": "Foundations of Force, Light & Sound",
+            "sub_topic_id": "SCI.5.3.3",
+            "sub_topic_name": "Sound Waves & Acoustics",
+            "objective_id": "SCI.5.3.3.2",
+            "objective_text": "Develop a model of waves to describe patterns in terms of amplitude and wavelength and how waves can cause objects to move",
+            "objective_uuid": "bd1a7560-d85b-413a-8417-e62494e179e1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 4-PS4-1 — Develop a model of waves to describe patterns in terms of amplitude and wavelength and that waves can ca (grades 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.3",
+            "topic_name": "Foundations of Force, Light & Sound",
+            "sub_topic_id": "SCI.5.3.3",
+            "sub_topic_name": "Sound Waves & Acoustics",
+            "objective_id": "SCI.5.3.3.3",
+            "objective_text": "Describe how the pitch and loudness of a sound relate to the frequency and amplitude of the sound wave",
+            "objective_uuid": "e4105447-d2dc-4420-8788-c7f40063b451",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.3",
+            "topic_name": "Foundations of Force, Light & Sound",
+            "sub_topic_id": "SCI.5.3.3",
+            "sub_topic_name": "Sound Waves & Acoustics",
+            "objective_id": "SCI.5.3.3.4",
+            "objective_text": "Use mathematical representations to describe a simple model for waves, including how the amplitude of a wave is related to the energy it carries",
+            "objective_uuid": "80ad667b-07e8-41a7-8fb2-faf3aadd13f3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-PS4-1 — Use mathematical representations to describe a simple model for waves that includes how the amplitude of (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.3",
+            "topic_name": "Foundations of Force, Light & Sound",
+            "sub_topic_id": "SCI.5.3.3",
+            "sub_topic_name": "Sound Waves & Acoustics",
+            "objective_id": "SCI.5.3.3.5",
+            "objective_text": "Explain how sound travels at different speeds through solids, liquids, and gases, relating this to how tightly the particles of each medium are packed",
+            "objective_uuid": "65fcfd08-3290-4a11-86e1-af175852a0b8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

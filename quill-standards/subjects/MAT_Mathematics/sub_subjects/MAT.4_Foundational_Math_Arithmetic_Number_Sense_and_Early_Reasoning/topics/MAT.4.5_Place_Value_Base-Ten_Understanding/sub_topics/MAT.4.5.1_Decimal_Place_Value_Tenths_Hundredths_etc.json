@@ -1,0 +1,128 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.5.1",
+    "name": "Decimal Place Value (Tenths, Hundredths, etc.)",
+    "topic_id": "MAT.4.5",
+    "topic_name": "Place Value & Base-Ten Understanding",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Decimal Place Value (Tenths, Hundredths, etc.) in Place Value & Base-Ten Understanding (Mathematics)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.5",
+            "topic_name": "Place Value & Base-Ten Understanding",
+            "sub_topic_id": "MAT.4.5.1",
+            "sub_topic_name": "Decimal Place Value (Tenths, Hundredths, etc.)",
+            "objective_id": "MAT.4.5.1.1",
+            "objective_text": "Write fractions with denominators 10 and 100 in decimal notation.",
+            "objective_uuid": "01e54c23-888e-400a-8a96-d1fe14ae8e4a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NF.C.6 — Use decimal notation for fractions with denominators 10 or 100 (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 3,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 10,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.5",
+            "topic_name": "Place Value & Base-Ten Understanding",
+            "sub_topic_id": "MAT.4.5.1",
+            "sub_topic_name": "Decimal Place Value (Tenths, Hundredths, etc.)",
+            "objective_id": "MAT.4.5.1.2",
+            "objective_text": "Read and write decimals to thousandths in base-ten numerals and expanded form.",
+            "objective_uuid": "618b9e4a-1f2e-4a3c-85f3-1d6d29d3d33b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 5.NBT.A.3 — Read, write, and compare decimals to thousandths (grade 5)"
+              ]
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.5",
+            "topic_name": "Place Value & Base-Ten Understanding",
+            "sub_topic_id": "MAT.4.5.1",
+            "sub_topic_name": "Decimal Place Value (Tenths, Hundredths, etc.)",
+            "objective_id": "MAT.4.5.1.3",
+            "objective_text": "Understand that each place is one-tenth the value of the place to its left.",
+            "objective_uuid": "ac10c3d0-fc70-4b9d-8317-b5363f1b1d3b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 5.NBT.A.3 — Read, write, and compare decimals to thousandths (grade 5)"
+              ]
+            }
+          },
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.5",
+            "topic_name": "Place Value & Base-Ten Understanding",
+            "sub_topic_id": "MAT.4.5.1",
+            "sub_topic_name": "Decimal Place Value (Tenths, Hundredths, etc.)",
+            "objective_id": "MAT.4.5.1.4",
+            "objective_text": "Compare decimals to the thousandths using place value.",
+            "objective_uuid": "5d2695de-716c-4018-85ee-8ce137698dda",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 5.NBT.A.3 — Read, write, and compare decimals to thousandths (grade 5)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

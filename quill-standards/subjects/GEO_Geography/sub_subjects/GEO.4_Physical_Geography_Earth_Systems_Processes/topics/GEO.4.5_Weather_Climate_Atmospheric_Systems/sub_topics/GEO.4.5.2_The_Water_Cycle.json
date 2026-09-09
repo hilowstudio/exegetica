@@ -1,0 +1,169 @@
+{
+  "sub_topic": {
+    "id": "GEO.4.5.2",
+    "name": "The Water Cycle",
+    "topic_id": "GEO.4.5",
+    "topic_name": "Weather, Climate & Atmospheric Systems",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.4",
+    "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for The Water Cycle in Weather, Climate & Atmospheric Systems (Geography)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.5",
+            "topic_name": "Weather, Climate & Atmospheric Systems",
+            "sub_topic_id": "GEO.4.5.2",
+            "sub_topic_name": "The Water Cycle",
+            "objective_id": "GEO.4.5.2.1",
+            "objective_text": "Identify where water is found on Earth and describe whether it is solid or liquid.",
+            "objective_uuid": "90efc0bc-d205-432c-8685-6158347eb95d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 2-ESS2-3 — Obtain information to identify where water is found on Earth and that it can be solid or liquid (grades 2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.5",
+            "topic_name": "Weather, Climate & Atmospheric Systems",
+            "sub_topic_id": "GEO.4.5.2",
+            "sub_topic_name": "The Water Cycle",
+            "objective_id": "GEO.4.5.2.2",
+            "objective_text": "Describe the stages of the water cycle: evaporation, condensation, precipitation, and collection.",
+            "objective_uuid": "a4538411-ac16-4f12-876a-0360967c1159",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.5",
+            "topic_name": "Weather, Climate & Atmospheric Systems",
+            "sub_topic_id": "GEO.4.5.2",
+            "sub_topic_name": "The Water Cycle",
+            "objective_id": "GEO.4.5.2.3",
+            "objective_text": "Develop a model using an example to describe ways the geosphere, biosphere, hydrosphere, and atmosphere interact through water.",
+            "objective_uuid": "e829d7d1-ab91-4c75-8bcb-1f8b063e0481",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 5-ESS2-1 — Develop a model using an example to describe ways the geosphere, biosphere, hydrosphere, and/or atmosphe (grades 5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.5",
+            "topic_name": "Weather, Climate & Atmospheric Systems",
+            "sub_topic_id": "GEO.4.5.2",
+            "sub_topic_name": "The Water Cycle",
+            "objective_id": "GEO.4.5.2.4",
+            "objective_text": "Explain how energy from the sun and the force of gravity drive the movement of water through Earth's systems.",
+            "objective_uuid": "6699e859-3db3-4fbf-80f7-046e1fe0daec",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ESS2-4 — Develop a model to describe the cycling of water through Earth's systems driven by energy from the sun a (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.5",
+            "topic_name": "Weather, Climate & Atmospheric Systems",
+            "sub_topic_id": "GEO.4.5.2",
+            "sub_topic_name": "The Water Cycle",
+            "objective_id": "GEO.4.5.2.5",
+            "objective_text": "Develop a model to describe the cycling of water through Earth's systems driven by energy from the sun and the force of gravity.",
+            "objective_uuid": "49d04446-63bf-4874-8dad-4131b5c914c5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ESS2-4 — Develop a model to describe the cycling of water through Earth's systems driven by energy from the sun a (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

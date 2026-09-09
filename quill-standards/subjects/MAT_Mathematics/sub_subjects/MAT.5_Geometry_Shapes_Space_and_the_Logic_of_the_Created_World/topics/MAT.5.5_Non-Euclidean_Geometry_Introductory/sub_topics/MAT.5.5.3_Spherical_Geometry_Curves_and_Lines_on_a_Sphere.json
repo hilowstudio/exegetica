@@ -1,0 +1,99 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.5.3",
+    "name": "Spherical Geometry (Curves and Lines on a Sphere)",
+    "topic_id": "MAT.5.5",
+    "topic_name": "Non-Euclidean Geometry (Introductory)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Spherical Geometry (Curves and Lines on a Sphere) in Non-Euclidean Geometry (Introductory) (Mathematics)",
+    "grade_levels": {
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.5",
+            "topic_name": "Non-Euclidean Geometry (Introductory)",
+            "sub_topic_id": "MAT.5.5.3",
+            "sub_topic_name": "Spherical Geometry (Curves and Lines on a Sphere)",
+            "objective_id": "MAT.5.5.3.1",
+            "objective_text": "Describe spherical geometry as geometry on the surface of a sphere.",
+            "objective_uuid": "364f044c-adfa-4a97-8a56-e758a584b73c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.5",
+            "topic_name": "Non-Euclidean Geometry (Introductory)",
+            "sub_topic_id": "MAT.5.5.3",
+            "sub_topic_name": "Spherical Geometry (Curves and Lines on a Sphere)",
+            "objective_id": "MAT.5.5.3.2",
+            "objective_text": "Understand that 'lines' on a sphere are great circles.",
+            "objective_uuid": "cda873c7-31fa-4f6b-85df-9e263823290b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.5",
+            "topic_name": "Non-Euclidean Geometry (Introductory)",
+            "sub_topic_id": "MAT.5.5.3",
+            "sub_topic_name": "Spherical Geometry (Curves and Lines on a Sphere)",
+            "objective_id": "MAT.5.5.3.3",
+            "objective_text": "Recognize that a spherical triangle's angles sum to more than 180 degrees.",
+            "objective_uuid": "833e2bbd-8903-479e-8e31-7cef26b546a3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content runs beyond Common Core, so no standard anchor (honest gap)."
+    }
+  }
+}

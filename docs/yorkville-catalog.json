@@ -1,0 +1,268 @@
+{
+  "school": "Yorkville Christian School",
+  "catalog": "High School Course Catalog 2026-27",
+  "location": "Yorkville, Illinois",
+  "authority": "Yorkville Christian High School Board; meets/exceeds Illinois State Board of Education (ISBE) requirements",
+  "source_note": "Transcribed from High-School-Course-Catalog-26-27-1.pdf (24 pages) and verified against the source PDF; the earlier copy-paste that was truncated at 'Psychology and Sociology' has been fully reconciled. Three courses appear in the department index but carry NO description in the PDF's course-detail pages and are genuinely undescribed (description=null): 'Illustration and Graphic Design' (Business/Comms/Media), Agriculture 'Independent Study', and 'Technical Drawing' (Waubonsee Engineering). 'Dual Credit Chemistry' is also listed with credits/grade but no description. Repeated FFA/SAE boilerplate in Agriculture descriptions was condensed to '(FFA activities and SAE projects are an integral component.)'. Where the department index and detail pages disagree on a course's name or credit, the detail page is authoritative and the index value is preserved in an 'index_*' or note field.",
+  "grading_legend": {
+    "honors_star": "* Honors: 0.5 GPA escalator; faculty recommendation; weighted grades; placement reassessed each year; assumes no in-class remediation of basic skills",
+    "dual_credit_star2": "** Dual credit: earns both high school and college credit; 1.0 GPA escalator",
+    "ap_star3": "*** AP: must take the AP exam in May for possible college exemption; 1.0 GPA escalator"
+  },
+  "mission": "Develop graduates characterized as scholars, disciple makers, and influencers.",
+  "student_outcomes": {
+    "scholars": [
+      "Scholarly knowledge of the Bible as God's inspired Word, the foundation of all truth and life",
+      "Understand and embrace the essential doctrines of the Christian faith",
+      "Comprehensive command of communication fundamentals (speaking, listening, writing, reading)",
+      "Proficient in mathematics and science, can use the scientific method, and see God's created order",
+      "Appreciation and skills within literature and how it expresses and shapes beliefs and values",
+      "Effectively and ethically use technology to communicate and to find, analyze, and evaluate information",
+      "Appreciate languages and cultures of other peoples, dispelling prejudice and promoting biblical hospitality",
+      "Knowledge of people, events, and movements in history (including church history) and other cultures",
+      "A creative, versatile, analytic mind that pursues lifelong learning",
+      "Solve complex problems by thinking critically and creatively",
+      "Understand opposing worldviews and possess apologetic skills to defend their faith",
+      "Competencies to pursue their college and career goals"
+    ],
+    "disciples": [
+      "A personal, saving relationship with Jesus Christ as Lord and Savior",
+      "A strong moral compass that glorifies God in mind, heart, and activity",
+      "Scholarly knowledge of the Bible and ability to study and apply Scripture to all of life",
+      "Commitment to growth in faith through study, prayer, and fellowship",
+      "A heart of service motivated by love for God and humankind",
+      "Ability to share their faith with others",
+      "Appreciation for the natural environment and responsible stewardship of creation"
+    ],
+    "influencers": [
+      "Readily and humbly influence others by faith, compassion, and service",
+      "Intelligence and skills to build positive, cooperative, effective relationships",
+      "Pursue their unique passions and gifts to influence culture for Christ through excellence",
+      "Actively engaged in the church and community, serving God and others",
+      "Display a consistent Christian world-and-life view in all they do"
+    ]
+  },
+  "graduation_requirements": {
+    "note": "Two tracks: standard graduation and College Prep. College entrance requirements often exceed these.",
+    "credits": {
+      "total_standard": 25.5,
+      "total_college_prep": 27.5
+    },
+    "departments": [
+      { "department": "Biblical Studies", "standard": 4.0, "college_prep": 4.0 },
+      { "department": "English", "standard": 4.0, "college_prep": 4.0 },
+      { "department": "Math", "standard": 3.0, "college_prep": 4.0, "note": "Must include Algebra and Geometry (ISBE)" },
+      { "department": "Science", "standard": 3.0, "college_prep": 4.0, "note": "Must include one life-science lab and one physical-science lab (chemistry/physics)" },
+      { "department": "Social Sciences", "standard": 3.0, "college_prep": 3.5, "note": "Must include World History, US History, and Government/Economics" },
+      { "department": "Physical Education", "standard": 3.0, "college_prep": 3.0, "note": "Jr/Sr varsity athletes may substitute by semester" },
+      { "department": "Health", "standard": 0.5, "college_prep": 0.5 },
+      { "department": "Fine Arts", "standard": 0.5, "college_prep": 0.5 },
+      { "department": "Business/Media/Communication", "standard": 0.5, "college_prep": 1.0 },
+      { "department": "World Languages", "standard": null, "college_prep": 2.0, "note": "Required for standard track starting with freshmen entering 2028-29 (2.0 years)" },
+      { "department": "Electives", "standard": 4.0, "college_prep": 1.0 }
+    ]
+  },
+  "special_programs": {
+    "FFA": "All Agricultural Education students are automatically enrolled in FFA; Ag courses require FFA activities and Supervised Agricultural Experience (SAE) projects.",
+    "dual_credit_program": "Students may earn high school and college credit concurrently. Offered through Waubonsee Community College and Lewis University. Some dual-credit classes are taught at Yorkville Christian High School by qualified YCHS teachers; WCC Plano courses are taken at the Plano campus. Students must be at least 16 to earn college credit unless an underage waiver is completed. Credit transfers to all Illinois colleges/universities; grades appear on both the HS and college transcripts. Weighted with a 1.0 GPA escalator. Families are charged the costs associated with dual-credit courses (except YCHS-taught dual-credit tuition, which the school pays).",
+    "waubonsee_community_college": {
+      "campus": "Plano",
+      "type": "Dual enrollment / Engineering-CAD tracks (see the 'Engineering (Waubonsee CC - Plano)' department for course descriptions)",
+      "fall": { "track": "Engineering/CAD", "courses": [ { "name": "Intro to Engineering", "days": "T/TH" }, { "name": "Technical Drawing", "days": "M/W" } ] },
+      "spring": { "track": "Engineering/CAD", "courses": [ { "name": "Engineering Graphics", "days": "T/TH" }, { "name": "AutoCAD I", "days": "M/W" } ] }
+    }
+  },
+  "honors_criteria": {
+    "general": "Honors courses target students with well-developed reading/writing skills, emphasizing critical thinking, synthesis, and presentation. No in-class remediation is assumed. Placement is reassessed yearly and is faculty-recommended with weighted grades (0.5 GPA escalator).",
+    "language_arts": [
+      "Earns/maintains an A- average",
+      "Top national 25th percentile in Language Usage AND Reading on MAP or PreACT (or equivalent)",
+      "Independence, focus, work ethic; consistent completion",
+      "Positive, teachable attitude; strong analytical/evaluative skills in written and spoken word",
+      "Presents ideas logically and persuasively; identifies/summarizes key points; responds critically",
+      "Strongly organized writing following standard English conventions",
+      "New students: placement testing"
+    ],
+    "math_geometry_algebra2": [
+      "Strong problem-solving skills; makes connections; draws conclusions from data",
+      "Active, positive participation",
+      "A- or higher in the previous math course",
+      "Top national 25th percentile in Math on MAP or PreACT (or equivalent)",
+      "New students: placement testing"
+    ],
+    "ap_calculus_additional": [
+      "B average in Precalculus",
+      "3.0 or greater GPA",
+      "80%+ on latest Precalculus Final OR 90%+ on Precalculus assessments",
+      "Independence, focus, work ethic"
+    ],
+    "science_biology_chemistry": [
+      "Strong problem-solving; makes connections; draws conclusions from data",
+      "Active, positive participation",
+      "A- or higher in the previous science course",
+      "Top national 25th percentile in Science on MAP or PreACT (or equivalent)",
+      "Honors Chemistry also requires A- or higher in Algebra I and Geometry"
+    ],
+    "us_history": [
+      "A- average in World History coursework",
+      "Independence, focus, work ethic; consistent completion",
+      "Positive, teachable attitude; strong analytical/evaluative skills",
+      "Presents ideas logically/persuasively; critical response to text; standard English conventions",
+      "Self-advocates"
+    ],
+    "spanish_2": [
+      "A average in Spanish class",
+      "Cumulative 3.0 or greater GPA",
+      "85%+ on the latest Spanish final",
+      "Independence, focus, work ethic; positive, teachable attitude; appreciation for Spanish culture and desire to expand proficiency"
+    ]
+  },
+  "departments": [
+    {
+      "name": "Agriculture",
+      "requirement": "Elective",
+      "note": "All students auto-enrolled in FFA; FFA + SAE required. Intro to Agriculture is the prerequisite for all other Ag courses.",
+      "courses": [
+        { "name": "Introduction to Agriculture", "credit": 1.0, "semesters": 2, "grades": "9-12", "prerequisite": null, "description": "Learn how the agriculture industry is organized; its major components; the economic influence of agriculture at state, national, and international levels; and the scope/types of agricultural careers. Covers basics of animal science, plant science, soil science, horticulture, natural resources, agribusiness management, and agricultural mechanics. (FFA activities and SAE projects are an integral component.)" },
+        { "name": "Animal Science I", "credit": 1.0, "semesters": 2, "grades": "10-12", "prerequisite": "Introduction to Agriculture", "description": "Develops understanding of the livestock (beef, dairy, sheep, goats, swine), poultry, and equine industries. Topics: scientific investigations, genetics, animal anatomy and physiology, nutrition, reproduction, animal health, and meat science." },
+        { "name": "Agricultural Business 1", "subtitle": "Business/Management", "credit": 0.5, "semesters": 1, "grades": "11-12", "prerequisite": "Introduction to Agriculture OR Animal Science OR Horticultural Science", "description": "Understanding of the agricultural industry relative to the US and world marketplace. Units: business ownership types, planning/organizing the agribusiness, financing, records, operations, agricultural law, taxes, and employability skills. Emphasis on math, reading comprehension, writing, and computer/workplace skills. (FFA activities and SAE projects are an integral component.)" },
+        { "name": "Agricultural Business 2", "subtitle": "Entrepreneur/Communication", "credit": 0.5, "semesters": 1, "grades": "11-12", "prerequisite": "Introduction to Agriculture OR Animal Science OR Horticultural Science", "description": "Knowledge/skills in Agricultural Sales, Agribusiness Marketing, and Commodity Marketing. Units: economic principles, marketing/advertising, product development, sales techniques, communicating with employees/customers, managing risk, international agribusiness, and studying agricultural companies and careers. (FFA activities and SAE projects are an integral component.)" },
+        { "name": "Environmental Science", "term": "Fall", "credit": 0.5, "semesters": 1, "grades": "10-12", "prerequisite": "Introduction to Agriculture", "description": "Explores the natural-resources industry: interrelationships between natural resources, environmental systems, and humans; scientific principles of natural resources; environmental and natural-resource management; outdoor skills, safety, and ethics; outdoor recreation; energy; and waste management. (FFA activities and SAE projects are required.)" },
+        { "name": "Introduction to Ag Mechanics", "term": "Spring", "credit": 0.5, "semesters": 1, "grades": "10-12", "prerequisite": "Introduction to Agriculture", "description": "Introduces different agricultural-mechanics areas: safety, electricity, small engines, construction, plumbing, and surveying. (FFA activities and SAE projects are required.)" },
+        { "name": "Introduction to Food Science", "term": "Semester 1", "credit": 0.5, "semesters": 1, "grades": "10-12", "prerequisite": "Introduction to Agriculture", "description": "Applies scientific knowledge and processes to food development and preservation. Units: principles of food preservation, food processing, biochemistry of foods, food selection, and consumer health. Careers examined: meat inspector, quality-control technician, food processor, sanitation supervisor. (FFA activities and SAE projects are an integral component.)" },
+        { "name": "Horticultural Science & Landscaping", "term": "Semester 2", "credit": 0.5, "semesters": 1, "grades": "10-12", "prerequisite": "Introduction to Agriculture", "description": "Introduces the horticulture industry and basic plant science: horticulture research/careers, plant anatomy, seed germination, plant propagation, growing media, pest management, hydroponics, plant identification, greenhouse crops, and floral design. Landscaping: identifying landscape plants, designing plans, growing from seed, and maintaining landscaping and rain gardens. Agribusiness units on pricing, managing a horticulture business, advertising, and sales. (FFA activities and SAE projects are an integral component.)" },
+        { "name": "Independent Study", "credit": 0.5, "semesters": "per semester", "grades": null, "prerequisite": null, "description": null }
+      ]
+    },
+    {
+      "name": "Biblical Studies",
+      "requirement": "4.0 credits required",
+      "note": "Four sequential year courses (Bible I-IV) plus a 0.5-credit Bible elective (Book of Acts or Book of Romans).",
+      "courses": [
+        { "name": "Bible I: Dynamic Christian Living", "sequence": "Freshman Bible", "credit": 1.0, "semesters": 2, "grades": "9", "description": "Explores the basic elements of Christianity: salvation, biblical truths, prayer, and living out one's faith. A solid foundation for students new to the faith and those maturing toward a personal relationship with Christ." },
+        { "name": "Bible II: Study of Matthew", "sequence": "Sophomore Bible", "credit": 1.0, "semesters": 2, "grades": "10", "description": "Studies the life of Jesus through the Gospel of Matthew. Students gain a theological foundation for following Christ, learn to study the Bible with depth, memorize key verses, and study the Lord's Prayer and the Apostles' Creed." },
+        { "name": "Bible III: Behold Your God", "sequence": "Junior Bible", "credit": 1.0, "semesters": 2, "grades": "11", "description": "A study of God's character and attributes: that God is holy, righteous, and worthy of praise, and desires to know us. Students discover the blessing of relationship with Him." },
+        { "name": "Bible IV: LEAD / Culture & Theology", "sequence": "Senior Bible", "credit": 1.0, "semesters": 2, "grades": "12", "description": "Semester 1: God's eternal plan and purpose for the earth and the student's role in His mission; unpacking unique talents and stewarding them into strengths. Semester 2: identifying the tension between God's eternal plan and a disintegrated culture, and applying one's unique calling in this generation." },
+        { "name": "The Book of Acts", "type": "Bible elective", "credit": 0.5, "semesters": 1, "grades": "10-11", "description": "Inductive Bible study of Acts: meaning and application, communicating the gospel and one's testimony, memorizing key verses. Discussion- and community-based, with Christian student-leadership experience." },
+        { "name": "The Book of Romans", "type": "Bible elective", "credit": 0.5, "semesters": 1, "grades": "10-11", "description": "Inductive Bible study of Romans: meaning and application, communicating the gospel and one's testimony, memorizing key verses. Discussion- and community-based, with Christian student-leadership experience." }
+      ]
+    },
+    {
+      "name": "Business / Communications and Media",
+      "requirement": "0.5 credits required",
+      "courses": [
+        { "name": "Adobe Photoshop / Illustrator", "credit": 0.5, "semesters": 1, "grades": "9-12", "description": "Basics of Illustrator and Photoshop applied to a variety of projects: program interface, tools, illustration, image manipulation, file types." },
+        { "name": "Introduction to Business", "dual_credit": true, "credit": 0.5, "semesters": 1, "grades": "9-12", "fulfills": "computer/business requirement", "description": "Foundational business concepts and philosophies in free/open and stringent markets: management strategies, marketing (incl. digital), accounting/finance basics (balance sheets, inventory, depreciation), securities markets and regulation, economics, ethics and social responsibility, human resources, advertising/promotion (brick-and-mortar vs e-commerce), distribution, international business, and entrepreneurship with SWOT analysis." },
+        { "name": "Illustration and Graphic Design", "credit": 0.5, "semesters": 1, "grades": "9-12", "description": null },
+        { "name": "3D Rendering and Design", "credit": 0.5, "semesters": 1, "grades": "9-12", "description": "Introduction to 3D rendering in Blender: program basics, design concepts, and printing work on 3D printers for review." },
+        { "name": "Speech", "dual_credit": true, "term": "Semester 1", "credit": 0.5, "semesters": 1, "grades": "10-12", "description": "College dual-credit course in human, interpersonal, and group communication. Students deliver introductory, informative, persuasive, and narrative content, culminating in a job/scholarship interview, and work in teams to deliver a cohesive message." },
+        { "name": "Mass Communications", "dual_credit": true, "term": "Semester 2", "credit": 0.5, "semesters": 1, "grades": "10-12", "description": "College dual-credit course analyzing the nature and impact of media on society: theories, uses/impacts, research, ethics, and social responsibility. Historical developments in print, radio, film, television, internet technologies, public relations, and advertising, plus business practices and legal controls." },
+        { "name": "Critical Film Analysis", "term": "Semester 1", "credit": 0.5, "semesters": 1, "grades": "11-12", "description": "Introduces film as an art form through four production elements: cinematography, art direction, sound production, and editing, plus narrative style. Students view scenes and full-length films to critically analyze and dissect the production elements. (Listed as Semester 2 in the department index; described as Sem 1.)" },
+        { "name": "Yearbook / Journalism", "credit": "0.5 or 1.0", "semesters": "1 or 2", "grades": "9-12", "description": "Hands-on creation of the school yearbook from concept to publication: photography, graphic design, layout, digital publishing, journalism principles, storytelling, and marketing. No prior experience required." }
+      ]
+    },
+    {
+      "name": "Fine Arts",
+      "requirement": "0.5 credits required",
+      "courses": [
+        { "name": "Drawing", "credit": 0.5, "semesters": 1, "grades": "9-12", "description": "Basic understanding of 2D art; students keep an active sketchbook, showcase presentations for peers, and collaborate using peer feedback for growth." },
+        { "name": "Painting", "credit": 0.5, "semesters": 1, "grades": "9-12", "description": "Color theory and applied painting skills; students showcase presentations for peers and collaborate using peer feedback for growth." },
+        { "name": "Theater Showcase", "credit": 0.5, "semesters": 1, "grades": "9-12", "description": "Stage performance through exercises and drills for stage acting, moving, and singing; each student prepares a performance for a live showcase as part of their final grade." }
+      ]
+    },
+    {
+      "name": "Language Arts",
+      "requirement": "4.0 credits required",
+      "courses": [
+        { "name": "Freshman Literature and Composition", "credit": 1.0, "semesters": 2, "grades": "9", "description": "Survey/application of functional grammar progressing to advanced concepts (sentence structure, diction, punctuation, capitalization). Introduces literary works by American, British, and European writers. Composition progresses from sentence to paragraph to short creative writing. Frequent reading/writing with spelling and vocabulary emphasis; introductory ACT/SAT English skills." },
+        { "name": "Honors Freshman Literature and Composition", "honors": true, "credit": 1.0, "semesters": 2, "grades": "9", "description": "For strong, independent learners. Nurtures understanding and appreciation of literature from a Christian worldview around themes of journey and coming of age. Develops vocabulary and critical writing across genres; collaboration and technology for presentation skills." },
+        { "name": "Sophomore Literature and Composition", "credit": 1.0, "semesters": 2, "grades": "10", "description": "Studies genres of increasing complexity; reads/responds to fiction and non-fiction; integrates language and grammar with oral and written work. College/career readiness in reading, writing, listening, speaking, with global perspectives; intermediate ACT/SAT English skills." },
+        { "name": "Honors Sophomore Literature and Composition", "honors": true, "credit": 1.0, "semesters": 2, "grades": "10", "description": "Deep literary analysis and advanced writing for independent learners. Focuses on influential American and British authors; critical reading, writing, and public-speaking projects with technology. Central focus: comparing/contrasting authors' themes with biblical truth; vocabulary development." },
+        { "name": "Junior Literature and Composition", "credit": 1.0, "semesters": 2, "grades": "11", "description": "Continues critical reading and strong writing. ACT/SAT preparation across Usage/Mechanics (punctuation, grammar, sentence structure) and Rhetorical Skills (strategy, organization, style); sharpens writing for the essay portion of the ACT/SAT." },
+        { "name": "Honors Junior Literature and Composition", "honors": true, "credit": 1.0, "semesters": 2, "grades": "11", "description": "Builds on honors sophomore skills. Focuses on several influential American authors; critical reading and responding to literature through writing and speaking. Discovers themes/messages, examines connections, and compares/contrasts with biblical truth. Expects engaged, self-motivated readers of complex material." },
+        { "name": "Senior Literature and Composition", "credit": 1.0, "semesters": 2, "grades": "12", "description": "Focuses primarily on British Literature across historical periods. Explores key authors and literary movements as a basis for students' own writing and speaking; examines styles, techniques, and themes; engages in literary criticism of short stories, novels, and poetry. Authors may include O'Brien, Shakespeare, Shelley, Orwell, and Whitman." },
+        { "name": "Honors Senior Literature and Composition", "honors": true, "credit": 1.0, "semesters": 2, "grades": "12", "description": "Challenging preparation for college-level literary study and the AP test. Reads varied texts exposing students to styles, authors, and techniques; examines the writer's use of language and its effect on the reader; considers structure and themes; develops students' own writing across styles." },
+        { "name": "Newsprint / Journalism", "term": "Semester 2", "credit": 0.5, "semesters": 1, "grades": "11-12", "description": "Foundational training in gathering, reporting, and writing news for print and digital media: compelling leads, interviews, and ethical standards in developing campus news." }
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "requirement": "3.0 credits required (must include Algebra and Geometry)",
+      "courses": [
+        { "name": "Algebra I", "credit": 1.0, "semesters": 2, "grades": "8-9", "description": "Develops algebraic skills and concepts for advanced courses, with problem-solving emphasis. Topics: operations with real numbers, linear equations and inequalities, relations and functions, polynomials, algebraic fractions, nonlinear equations." },
+        { "name": "Geometry", "credit": 1.0, "semesters": 2, "grades": "9-11", "prerequisite": "Algebra I", "description": "Properties and applications of common geometric figures in 2D and 3D; transformations and right-triangle trigonometry; writing proofs; inductive and deductive reasoning with real-world applications." },
+        { "name": "Honors Geometry", "honors": true, "credit": 1.0, "semesters": 2, "grades": "9-11", "prerequisite": "Algebra I", "description": "In-depth geometry that solidifies and extends concepts, introduces new ones, and applies algebra in geometric settings. Introduces proofs; topics include lines/angles, triangles, quadrilaterals, circles, area, and volume. Differs from regular geometry in depth of discussion and discovery." },
+        { "name": "Algebra II", "credit": 1.0, "semesters": 2, "grades": "10-12", "description": "Builds on algebraic and geometric concepts. Advanced algebra: systems of equations, advanced polynomials, imaginary/complex numbers, quadratics, and trigonometric functions; introduces matrices and their properties." },
+        { "name": "Honors Algebra II", "honors": true, "credit": 1.0, "semesters": 2, "grades": "10-12", "description": "Comprehensive honors course preparing for pre-calculus and calculus. Topics: conic sections; functions/relations and their graphs; quadratic, inverse, advanced polynomial, rational, radical, exponential, and logarithmic functions; sequences and series." },
+        { "name": "Trigonometry", "credit": 1.0, "semesters": 2, "grades": "11-12", "prerequisite": "Algebra II", "description": "Trig identities, graphing transformations of trig functions, and using laws of trig to solve for angles and sides of triangles; continued graphing-calculator exploration." },
+        { "name": "Pre-Calculus", "credit": 1.0, "semesters": 2, "grades": "11-12", "prerequisite": "Algebra II", "description": "Builds on Algebra 2 with a focus on trigonometry; introduces combinatorics, probability, and induction proofs. In-depth techniques and applications with technology to prepare for advanced coursework." },
+        { "name": "AP Calculus AB", "ap": true, "credit": 1.0, "semesters": 2, "grades": "11-12", "prerequisite": "Grade of B or higher in Pre-Calculus", "fees": "$100 for the required AP exam in May", "description": "Yearlong college-level course preparing for the AP Calculus AB exam: precalculus review; limits, derivatives, definite integrals, and differential-equation modeling, and their applications. Multi-representative approach (numerical, graphical, verbal, analytical) with technology." }
+      ]
+    },
+    {
+      "name": "Physical Education",
+      "requirement": "3.0 PE credits + 0.5 Health credit required",
+      "courses": [
+        { "name": "Health and Wellness", "index_name": "Health", "credit": 0.5, "semesters": 1, "grades": "9-11", "description": "Semester-long course on how the body functions and the importance of wise decisions to protect health and well-being. Beyond physical health, covers mental/emotional, social, and spiritual health: stress management, communication and relationships, body image, coping skills, safety, and dealing with peer pressure and difficult situations." },
+        { "name": "Sports Performance", "credit": 1.0, "semesters": 2, "index_credit": "0.5-1.0", "grades": "9-12", "description": "High-intensity class for students serious about improving skills for high school and college athletics: hand-eye coordination, jumping ability, speed, agility, and strength. Students track progress, attendance, body-fat percentage, food intake, and sprint times. Students with other activities that limit full participation should not enroll; grading is partly based on attendance and quarterly progress, with weekly communication between the Sports Performance teacher and coaching staff." },
+        { "name": "Intro to Team Sports", "credit": 1.0, "semesters": 2, "index_credit": "0.5-1.0", "grades": "9-12", "description": "Rules, skills, fundamentals, and strategies across a variety of individual and dual sport activities. Health, safety, and sportsmanship are emphasized and assessed." },
+        { "name": "Competitive Team Sports", "index_name": "Competitive Sports", "credit": 1.0, "semesters": 2, "index_credit": "0.5-1.0", "grades": "9-12", "description": "Participation in a variety of competitive team sports at an advanced level of activity, performance, and skill development." }
+      ]
+    },
+    {
+      "name": "Preparatory / Non-Subject",
+      "requirement": "0.5 electives",
+      "courses": [
+        { "name": "Life Skills 101", "index_name": "Life Skills", "term": "Semester 1", "credit": 0.5, "semesters": 1, "grades": "11-12", "description": "Introduces several basic life skills including (but not limited to): goal setting; personal finance and budgeting; consumer awareness; investing and retirement; insurance (health, life, home, auto); auto maintenance and simple repairs; resumes, interviewing, and workplace etiquette; and domestic skills (utilities, rental agreements). Builds confidence to navigate the world independently." },
+        { "name": "Teacher Assistant", "credit": "0.5 or 1.0", "semesters": "1 or 2", "grades": "11-12", "description": "Students may serve as a Teacher's Assistant (TA) for faculty or staff during a regularly scheduled class period. Requires a form approved first by the faculty/staff member and then by the parent. Earns 0.5 elective credit, open to juniors and seniors, limited to one per semester." }
+      ]
+    },
+    {
+      "name": "Science",
+      "requirement": "3.0 credits required (one life-science lab + one physical-science lab)",
+      "courses": [
+        { "name": "Biology", "credit": 1.0, "semesters": 2, "grades": "9-10", "description": "Introduction to living organisms, how they function, and how they interact in the biosphere: ecology, biochemistry, cells (structure, division, energy usage), human body systems, genetics, bacteria and viruses, and an introduction to plants." },
+        { "name": "Honors Biology", "honors": true, "credit": 1.0, "semesters": 2, "grades": "9-10", "description": "Inquiry-centered laboratory biology stressing life processes in greater depth. Students are guided through the scientific process and examine all levels of biological organization from molecules and cells to populations and ecosystems." },
+        { "name": "Chemistry", "credit": 1.0, "semesters": 2, "grades": "10-12", "description": "Basic general chemistry: atomic structure, chemical symbols/formulas/equations, equation calculations, phases of matter, algebraic manipulations, molecular structure, and solution chemistry; lab safety, basic lab skills, and computer-assisted labs." },
+        { "name": "Honors Chemistry", "honors": true, "credit": 1.0, "semesters": 2, "grades": "10-12", "note": "Honors placement also requires A- or higher in Algebra I and Geometry", "description": "In-depth exploration via labs, note-taking, and discussion. Topics: chemistry equipment/techniques, elements and compounds, gases, thermodynamics, structure of matter, periodic table, math used in chemistry, the metric system, chemical bonds and intermolecular forces, balanced equations, stoichiometry, and the scientific method." },
+        { "name": "AP or Dual Credit Chemistry", "detail_name": "Dual Credit Chemistry", "ap": true, "dual_credit": true, "credit": 1.0, "semesters": 2, "grades": "11-12", "note": "Department index lists it as 'AP or Dual Credit Chemistry'; the detail page lists 'Dual Credit Chemistry' (grade 11-12, 1.0 credit) with no course description.", "description": null },
+        { "name": "Physics", "credit": 1.0, "semesters": 2, "grades": "11-12", "description": "In-depth, collaborative, project-based physics: mechanics in one and two dimensions, momentum and energy, waves and light, electricity and magnetism, subatomic physics, and cross-curricular earth-science topics." },
+        { "name": "Anatomy and Physiology", "credit": 1.0, "semesters": 2, "grades": "11-12", "prerequisite": "Biology, Chemistry", "description": "Full-year lab course in human anatomy and physiology from a Christ-centered perspective. Uses microscope investigations, lab exercises, and extensive dissections. Topics: histology, organ systems, homeostasis, health, development, injury/pathology, disease diagnosis/treatment, medical imaging, and drug action, with a culminating cadaver-lab trip. Prepares students for medicine, nursing, research, EMT, physical therapy, pharmacy, and sports training." }
+      ]
+    },
+    {
+      "name": "Social Sciences",
+      "requirement": "3.0 credits required (must include World History, US History, and Government/Economics)",
+      "courses": [
+        { "name": "Geography", "credit": 0.5, "semesters": 1, "grades": "9", "description": "Reviews US states/capitals and studies other continents, countries, and capitals; mapping skills. Focuses on climates, landforms, culture, history, and environment of regions; resources produced by other countries and their impact on the US; religions of each country compared/contrasted with Christianity." },
+        { "name": "World History", "credit": 1.0, "semesters": 2, "grades": "10-11", "description": "Major themes of world history beginning with the Renaissance and Enlightenment in Europe, using maps and geographic tools. Connects the past with the present and future." },
+        { "name": "U.S. History", "credit": 1.0, "semesters": 2, "grades": "11-12", "note": "Students must pass a Constitution Test", "description": "Chronological US history from early European colonization and government formation to present day. Activities include text reading, map analysis, debate, inquiry, research, presentation, media, and current-event discussion." },
+        { "name": "Honors U.S. History", "honors": true, "credit": 1.0, "semesters": 2, "grades": "11-12", "prerequisite": "Selection by social studies department and administration", "description": "Covers US history from the precolonial period to the present, with emphasis on 20th-century economic/diplomatic interactions, the Great Depression, and the World Wars. Develops analytical skills (cause and effect, media impact, multiple perspectives); relies on Christian faith and morality to evaluate events; enhances communication through writing and presentations. Built to state standards." },
+        { "name": "U.S. Government", "term": "Semester 1", "credit": 0.5, "semesters": 1, "grades": "11-12", "prerequisite": "U.S. History and World History", "description": "Workings of American government and the Constitution and citizens' responsibilities toward God, one another, and country. Focuses on the federal government with exposure to state and local government; challenges Christians to be involved in government." },
+        { "name": "Economics", "term": "Semester 2", "credit": 0.5, "semesters": 1, "grades": "12", "prerequisite": "U.S. History", "description": "Basic understanding of the US economic system, classical and Keynesian economics, and responsibilities toward God and fellow man. Introduces other current world theories; hands-on investing and factors influencing the stock market." },
+        { "name": "Psychology and Sociology", "credit": 0.5, "semesters": 1, "grades": "11-12", "description": "Humanities-level introduction covering psychology, sociology, and social work; a chance to fulfill a college-level humanities requirement in a Christian setting. Sociology is the study of people in groups: the structure, function, and behavior of human society, with emphasis on the interaction between society and its members and how the individual is affected by society. Topics include social institutions, gender issues, marriage and the family, adolescence, the adult world, mass media, and deviance, discrimination, and inequality. Students design and conduct a social research project." },
+        { "name": "Street Law", "credit": 0.5, "semesters": 1, "grades": "11-12", "description": "Introduction to the law and legal systems of the United States. Major focal points: constitutional law, general legal principles, civil and criminal law, the courts, court procedures, and civil rights; additional topics may include family law, housing law, and consumer law. Real-world experiences deepen understanding of government, individual rights, and legal disputes, using case studies, mock trials, contemporary issues, current events, and legal research applied to students' everyday lives." }
+      ]
+    },
+    {
+      "name": "World Language",
+      "requirement": "Elective (2.0 years required for College Prep; required for standard track starting 2028-29)",
+      "courses": [
+        { "name": "Spanish I", "credit": 1.0, "semesters": 2, "grades": "9-10", "description": "First-year introduction to Spanish language and culture. Emphasis on listening, speaking, reading, and writing; communicating on daily-life topics via paired practice, small groups, and role plays; geography and culture of Spanish-speaking countries; expressing feelings/opinions, describing people/things/places, making requests, and asking/answering simple questions." },
+        { "name": "Spanish II", "credit": 1.0, "semesters": 2, "grades": "10-12", "description": "Builds on Spanish 1 vocabulary, grammar, and culture; improves listening, speaking, reading, and writing. Communicates on topics of life, travel, sports, food, and culture." },
+        { "name": "Honors Spanish II", "honors": true, "credit": 1.0, "semesters": 2, "grades": "10-12", "prerequisite": "Grade of A or higher in Spanish I and a placement test", "description": "Deeper study toward independent use of the language and critical thinking in listening, speaking, reading, and writing. Strengthens grammar and vocabulary with depth and complexity at an accelerated pace; continues geography, history, food, and culture of Spanish-speaking countries." }
+      ]
+    },
+    {
+      "name": "Engineering (Waubonsee CC - Plano)",
+      "requirement": "Elective (dual credit)",
+      "note": "Waubonsee Community College dual-credit Engineering/CAD track taught at the WCC Plano campus. All courses are dual credit (1.0 GPA escalator); students must be 16+ to earn college credit. See special_programs.dual_credit_program.",
+      "courses": [
+        { "name": "Introduction to Engineering", "dual_credit": true, "term": "1st semester", "days": "T/TH", "credit": 0.5, "semesters": 1, "grades": "11-12", "description": "Introduction to the engineering profession, including the wide variety of fields of study and potential careers. Covers general engineering theory and an overview of different engineering fields; students learn to use computer-aided design software and lab equipment within the engineering design process." },
+        { "name": "Technical Drawing", "dual_credit": true, "term": "1st semester", "days": "M/W", "credit": 0.5, "semesters": 1, "grades": "11-12", "description": null },
+        { "name": "Engineering Graphics", "dual_credit": true, "term": "2nd semester", "days": "T/TH", "credit": 0.5, "semesters": 1, "grades": "11-12", "description": "Introduction to engineering and design: drafting, dimensioning, tolerancing, fasteners, and descriptive geometry. Topics include multi-view orthographic representations, principal auxiliary views, section views, and production drawings for part models. At least 50% of the course requires Computer-Aided Drafting and Design (CAD)." },
+        { "name": "AutoCAD I", "dual_credit": true, "term": "2nd semester", "days": "M/W", "credit": 0.5, "semesters": 1, "grades": "11-12", "description": "Introduces computer-aided drafting using AutoCAD to set up drawings and add lines, circles, arcs, other shapes, geometric constructions, and text. Students use display and editing techniques to obtain information about their drawings, work with drawing files, and examine basic dimensioning concepts." }
+      ]
+    }
+  ]
+}

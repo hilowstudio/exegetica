@@ -1,0 +1,167 @@
+{
+  "sub_topic": {
+    "id": "SCI.4.2.6",
+    "name": "Understanding Ecosystems through Direct Observation (Food Webs, Interdependence)",
+    "topic_id": "SCI.4.2",
+    "topic_name": "Field Observation & Habit Formation",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.4",
+    "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Understanding Ecosystems through Direct Observation (Food Webs, Interdependence) in Field Observation & Habit Formation (Science & Nature)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.2",
+            "topic_name": "Field Observation & Habit Formation",
+            "sub_topic_id": "SCI.4.2.6",
+            "sub_topic_name": "Understanding Ecosystems through Direct Observation (Food Webs, Interdependence)",
+            "objective_id": "SCI.4.2.6.1",
+            "objective_text": "Observe how living things in a habitat depend on one another and on nonliving things.",
+            "objective_uuid": "d73a4526-d6e6-462b-853e-17b1c817f92a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.2",
+            "topic_name": "Field Observation & Habit Formation",
+            "sub_topic_id": "SCI.4.2.6",
+            "sub_topic_name": "Understanding Ecosystems through Direct Observation (Food Webs, Interdependence)",
+            "objective_id": "SCI.4.2.6.2",
+            "objective_text": "Construct an argument with evidence that in a habitat some organisms survive well, some less well, and some cannot survive at all.",
+            "objective_uuid": "13d10c20-d78f-453f-8a64-0353f71835cd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 3-LS4-3 — Construct an argument with evidence that in a particular habitat some organisms can survive well, some s (grades 3)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.2",
+            "topic_name": "Field Observation & Habit Formation",
+            "sub_topic_id": "SCI.4.2.6",
+            "sub_topic_name": "Understanding Ecosystems through Direct Observation (Food Webs, Interdependence)",
+            "objective_id": "SCI.4.2.6.3",
+            "objective_text": "Develop a model to describe the movement of matter among plants, animals, decomposers, and the environment.",
+            "objective_uuid": "84b5f7d8-27c6-411b-8a32-21b258dac5c2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 5-LS2-1 — Develop a model to describe the movement of matter among plants, animals, decomposers, and the environme (grades 5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.2",
+            "topic_name": "Field Observation & Habit Formation",
+            "sub_topic_id": "SCI.4.2.6",
+            "sub_topic_name": "Understanding Ecosystems through Direct Observation (Food Webs, Interdependence)",
+            "objective_id": "SCI.4.2.6.4",
+            "objective_text": "Explain how organisms and populations depend on their interactions with other living things and nonliving factors.",
+            "objective_uuid": "a0c10f6a-a43d-4961-8270-5425a519c29b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-LS2-1 — Organisms, and populations of organisms, are dependent on their environmental interactions both with oth (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.2",
+            "topic_name": "Field Observation & Habit Formation",
+            "sub_topic_id": "SCI.4.2.6",
+            "sub_topic_name": "Understanding Ecosystems through Direct Observation (Food Webs, Interdependence)",
+            "objective_id": "SCI.4.2.6.5",
+            "objective_text": "Analyze a local food web to predict the effects of removing one organism from it.",
+            "objective_uuid": "298326a9-bbf6-4c98-8032-f6525cc336db",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

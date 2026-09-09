@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.6.1.5",
+    "name": "Pivot Tables & Data Dashboards (Introductory)",
+    "topic_id": "CPT.6.1",
+    "topic_name": "Data Handling & Spreadsheets",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.6",
+    "sub_subject_name": "Information Technology: Creative & Professional Application",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Pivot Tables & Data Dashboards (Introductory) in Data Handling & Spreadsheets (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.5",
+            "sub_topic_name": "Pivot Tables & Data Dashboards (Introductory)",
+            "objective_id": "CPT.6.1.5.1",
+            "objective_text": "Summarize a data set with a pivot table to group records and total them by category",
+            "objective_uuid": "10e7fd82-fde6-4ff9-8556-8000c70a3778",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-DA-08 — Collect data using computational tools and transform the data to make it more useful and reliable. Clarificati (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.5",
+            "sub_topic_name": "Pivot Tables & Data Dashboards (Introductory)",
+            "objective_id": "CPT.6.1.5.2",
+            "objective_text": "Rearrange pivot table rows, columns, and values to expose relationships in the data",
+            "objective_uuid": "531423b6-c6a9-4bdd-88db-5615d3244c7b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-11 — Create interactive data visualizations using software tools to help others better understand real-world phenom (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.5",
+            "sub_topic_name": "Pivot Tables & Data Dashboards (Introductory)",
+            "objective_id": "CPT.6.1.5.3",
+            "objective_text": "Prepare and clean source data so a pivot table produces reliable, consistent results",
+            "objective_uuid": "16054ddb-16df-46c9-84c2-4fe03fb6028b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-DA-08 — Collect data using computational tools and transform the data to make it more useful and reliable. Clarificati (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.5",
+            "sub_topic_name": "Pivot Tables & Data Dashboards (Introductory)",
+            "objective_id": "CPT.6.1.5.4",
+            "objective_text": "Build a simple dashboard that combines pivot tables and charts to display key figures at a glance",
+            "objective_uuid": "95db3339-eadc-4326-83e3-f24867f55c60",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-11 — Create interactive data visualizations using software tools to help others better understand real-world phenom (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.5",
+            "sub_topic_name": "Pivot Tables & Data Dashboards (Introductory)",
+            "objective_id": "CPT.6.1.5.5",
+            "objective_text": "Add slicers or filters to an interactive dashboard so viewers can explore the data themselves",
+            "objective_uuid": "69d243a7-19ef-4b39-8f4f-4384987bd995",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-11 — Create interactive data visualizations using software tools to help others better understand real-world phenom (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

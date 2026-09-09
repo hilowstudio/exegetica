@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ART.1.2.3",
+    "name": "Contemporary Art (installation, conceptual, public art)",
+    "topic_id": "ART.1.2",
+    "topic_name": "History of Visual Art",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.1",
+    "sub_subject_name": "Art History, Aesthetic Philosophy & Christian Worldview",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Contemporary Art (installation, conceptual, public art) in History of Visual Art (Fine Arts)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.1",
+            "sub_subject_name": "Art History, Aesthetic Philosophy & Christian Worldview",
+            "topic_id": "ART.1.2",
+            "topic_name": "History of Visual Art",
+            "sub_topic_id": "ART.1.2.3",
+            "sub_topic_name": "Contemporary Art (installation, conceptual, public art)",
+            "objective_id": "ART.1.2.3.1",
+            "objective_text": "Describe forms of contemporary art such as installation, conceptual, and public art.",
+            "objective_uuid": "d312131e-2204-41c7-8ba7-117cb9b71204",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Re7 — Perceive and analyze artistic work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.1",
+            "sub_subject_name": "Art History, Aesthetic Philosophy & Christian Worldview",
+            "topic_id": "ART.1.2",
+            "topic_name": "History of Visual Art",
+            "sub_topic_id": "ART.1.2.3",
+            "sub_topic_name": "Contemporary Art (installation, conceptual, public art)",
+            "objective_id": "ART.1.2.3.2",
+            "objective_text": "Explain how conceptual art can prioritize an idea over traditional craft.",
+            "objective_uuid": "ccd864cd-4253-49d8-8afd-8cb01e4a41ef",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Re7 — Perceive and analyze artistic work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.1",
+            "sub_subject_name": "Art History, Aesthetic Philosophy & Christian Worldview",
+            "topic_id": "ART.1.2",
+            "topic_name": "History of Visual Art",
+            "sub_topic_id": "ART.1.2.3",
+            "sub_topic_name": "Contemporary Art (installation, conceptual, public art)",
+            "objective_id": "ART.1.2.3.3",
+            "objective_text": "Analyze how a public artwork interacts with its site and community.",
+            "objective_uuid": "06593c04-fdb1-47d5-86dc-956acefe9ce4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cn11 — Relate artistic ideas and works with societal, cultural, and historical context (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.1",
+            "sub_subject_name": "Art History, Aesthetic Philosophy & Christian Worldview",
+            "topic_id": "ART.1.2",
+            "topic_name": "History of Visual Art",
+            "sub_topic_id": "ART.1.2.3",
+            "sub_topic_name": "Contemporary Art (installation, conceptual, public art)",
+            "objective_id": "ART.1.2.3.4",
+            "objective_text": "Evaluate how contemporary art reflects and responds to current cultural questions.",
+            "objective_uuid": "701b9104-99f9-4808-8e6d-c29239b83518",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Cn11 — Relate artistic ideas and works with societal, cultural, and historical context (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

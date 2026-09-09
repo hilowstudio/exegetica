@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.5.3",
+    "name": "Documenting Code (docstrings, READMEs)",
+    "topic_id": "CPT.1.5",
+    "topic_name": "Software Engineering (Project-Level Thinking)",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Documenting Code (docstrings, READMEs) in Software Engineering (Project-Level Thinking) (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.3",
+            "sub_topic_name": "Documenting Code (docstrings, READMEs)",
+            "objective_id": "CPT.1.5.3.1",
+            "objective_text": "Describe choices made during development using code comments",
+            "objective_uuid": "d7cdedb6-b066-4ea4-821b-c8167c56a2aa",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-AP-17 — Describe choices made during program development using code comments, presentations, and demonstrations (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.3",
+            "sub_topic_name": "Documenting Code (docstrings, READMEs)",
+            "objective_id": "CPT.1.5.3.2",
+            "objective_text": "Add comments that explain how sections of code work",
+            "objective_uuid": "ccf1d70d-8506-4021-8496-d84b6f864da2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-19 — Document programs in order to make them easier to follow, test, and debug. Clarification: Documentation allows (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.3",
+            "sub_topic_name": "Documenting Code (docstrings, READMEs)",
+            "objective_id": "CPT.1.5.3.3",
+            "objective_text": "Write user documentation such as a README with clear instructions",
+            "objective_uuid": "42d62d22-01ec-41a0-8378-5106de4f79ed",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-19 — Document programs in order to make them easier to follow, test, and debug. Clarification: Documentation allows (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.3",
+            "sub_topic_name": "Documenting Code (docstrings, READMEs)",
+            "objective_id": "CPT.1.5.3.4",
+            "objective_text": "Write docstrings that describe what a function does and what it expects",
+            "objective_uuid": "ef923b8b-dfce-42ce-8e59-f378771ef16a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-19 — Document programs in order to make them easier to follow, test, and debug. Clarification: Documentation allows (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.3",
+            "sub_topic_name": "Documenting Code (docstrings, READMEs)",
+            "objective_id": "CPT.1.5.3.5",
+            "objective_text": "Document design decisions for a complex program using text, graphics, and demonstrations",
+            "objective_uuid": "ebb6a16e-6278-470e-8e44-f8000ce1c7f8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-23 — Document design decisions using text, graphics, presentations, and/or demonstrations in the development of com (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

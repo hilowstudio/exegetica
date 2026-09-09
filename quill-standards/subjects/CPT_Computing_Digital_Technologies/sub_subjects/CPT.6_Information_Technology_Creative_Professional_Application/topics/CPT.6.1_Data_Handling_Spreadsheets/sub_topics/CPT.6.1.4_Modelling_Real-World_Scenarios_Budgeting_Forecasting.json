@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "CPT.6.1.4",
+    "name": "Modelling Real-World Scenarios (Budgeting, Forecasting)",
+    "topic_id": "CPT.6.1",
+    "topic_name": "Data Handling & Spreadsheets",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.6",
+    "sub_subject_name": "Information Technology: Creative & Professional Application",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Modelling Real-World Scenarios (Budgeting, Forecasting) in Data Handling & Spreadsheets (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.4",
+            "sub_topic_name": "Modelling Real-World Scenarios (Budgeting, Forecasting)",
+            "objective_id": "CPT.6.1.4.1",
+            "objective_text": "Build a simple budget spreadsheet that adds income and subtracts expenses to show money left over",
+            "objective_uuid": "6bd23893-6877-4a12-86fa-4709875a578f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-DA-09 — Refine computational models based on the data they have generated. Clarification: A model may be a programmed  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.4",
+            "sub_topic_name": "Modelling Real-World Scenarios (Budgeting, Forecasting)",
+            "objective_id": "CPT.6.1.4.2",
+            "objective_text": "Use formulas to project a future value, such as savings growing over several weeks",
+            "objective_uuid": "f1d2e7ce-a9fe-4c07-868d-129545053f6f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-DA-09 — Refine computational models based on the data they have generated. Clarification: A model may be a programmed  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.4",
+            "sub_topic_name": "Modelling Real-World Scenarios (Budgeting, Forecasting)",
+            "objective_id": "CPT.6.1.4.3",
+            "objective_text": "Create a computational model that represents how different data elements of a scenario relate to each other",
+            "objective_uuid": "5d87494b-9b3f-4be6-8c8a-e85fb1c83346",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-12 — Create computational models that represent the relationships among different elements of data collected from a (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.4",
+            "sub_topic_name": "Modelling Real-World Scenarios (Budgeting, Forecasting)",
+            "objective_id": "CPT.6.1.4.4",
+            "objective_text": "Refine a budget or forecast model by comparing its predictions against actual results",
+            "objective_uuid": "64cc9bea-4212-4806-88a5-6a4bf02bc32f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-DA-09 — Refine computational models based on the data they have generated. Clarification: A model may be a programmed  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.4",
+            "sub_topic_name": "Modelling Real-World Scenarios (Budgeting, Forecasting)",
+            "objective_id": "CPT.6.1.4.5",
+            "objective_text": "Add variables and assumptions to a forecasting model so users can test different what-if scenarios",
+            "objective_uuid": "addf9b70-00f2-44cf-88f4-a159880859a8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-12 — Create computational models that represent the relationships among different elements of data collected from a (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.6",
+            "sub_subject_name": "Information Technology: Creative & Professional Application",
+            "topic_id": "CPT.6.1",
+            "topic_name": "Data Handling & Spreadsheets",
+            "sub_topic_id": "CPT.6.1.4",
+            "sub_topic_name": "Modelling Real-World Scenarios (Budgeting, Forecasting)",
+            "objective_id": "CPT.6.1.4.6",
+            "objective_text": "Evaluate and validate a model against real-world observations and adjust the features chosen to improve accuracy",
+            "objective_uuid": "74aff177-aa59-41eb-8808-1a166270f824",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-12 — Create computational models that represent the relationships among different elements of data collected from a (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ART.2.4.3",
+    "name": "Color Grading (mood and tone)",
+    "topic_id": "ART.2.4",
+    "topic_name": "Videography, Film & Audio Production",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.2",
+    "sub_subject_name": "Digital Art, Photography & Media Production",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Color Grading (mood and tone) in Videography, Film & Audio Production (Fine Arts)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.4",
+            "topic_name": "Videography, Film & Audio Production",
+            "sub_topic_id": "ART.2.4.3",
+            "sub_topic_name": "Color Grading (mood and tone)",
+            "objective_id": "ART.2.4.3.1",
+            "objective_text": "Change the overall color of a video clip to feel warm or cool.",
+            "objective_uuid": "16df96b9-1efb-4188-8aad-eb85e0188377",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr1 — Generate and conceptualize artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.4",
+            "topic_name": "Videography, Film & Audio Production",
+            "sub_topic_id": "ART.2.4.3",
+            "sub_topic_name": "Color Grading (mood and tone)",
+            "objective_id": "ART.2.4.3.2",
+            "objective_text": "Adjust brightness and contrast to set a clip's mood.",
+            "objective_uuid": "e7d157a3-60c0-468f-8800-3a804b2e0c79",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.4",
+            "topic_name": "Videography, Film & Audio Production",
+            "sub_topic_id": "ART.2.4.3",
+            "sub_topic_name": "Color Grading (mood and tone)",
+            "objective_id": "ART.2.4.3.3",
+            "objective_text": "Apply a color grade that supports the emotion of a scene.",
+            "objective_uuid": "5b1c2190-6324-4812-84fa-bece38ea00a7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.4",
+            "topic_name": "Videography, Film & Audio Production",
+            "sub_topic_id": "ART.2.4.3",
+            "sub_topic_name": "Color Grading (mood and tone)",
+            "objective_id": "ART.2.4.3.4",
+            "objective_text": "Grade multiple clips to maintain a consistent look across a video for presentation.",
+            "objective_uuid": "d498c299-007e-4aab-8f60-5f1533bfda25",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Pr5 — Develop and refine artistic techniques and work for presentation (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

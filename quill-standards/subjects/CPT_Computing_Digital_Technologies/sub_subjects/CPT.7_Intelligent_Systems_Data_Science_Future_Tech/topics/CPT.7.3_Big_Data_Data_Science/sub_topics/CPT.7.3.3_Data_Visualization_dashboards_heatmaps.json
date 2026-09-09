@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.7.3.3",
+    "name": "Data Visualization (dashboards, heatmaps)",
+    "topic_id": "CPT.7.3",
+    "topic_name": "Big Data & Data Science",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.7",
+    "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Data Visualization (dashboards, heatmaps) in Big Data & Data Science (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.3",
+            "sub_topic_name": "Data Visualization (dashboards, heatmaps)",
+            "objective_id": "CPT.7.3.3.1",
+            "objective_text": "Collect and present the same data in more than one visual format",
+            "objective_uuid": "62ed8209-5d3b-479e-867e-b6d64729d022",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-DA-06 — Collect and present the same data in various visual formats. Clarification: The collection and use of data abo (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.3",
+            "sub_topic_name": "Data Visualization (dashboards, heatmaps)",
+            "objective_id": "CPT.7.3.3.2",
+            "objective_text": "Choose an appropriate chart type to represent a given dataset",
+            "objective_uuid": "7e22203f-afd8-4c05-8724-424842143a4c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-DA-06 — Collect and present the same data in various visual formats. Clarification: The collection and use of data abo (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.3",
+            "sub_topic_name": "Data Visualization (dashboards, heatmaps)",
+            "objective_id": "CPT.7.3.3.3",
+            "objective_text": "Describe how dashboards and heatmaps reveal patterns at a glance",
+            "objective_uuid": "9ef472e6-7b71-4c5a-8534-4fea1a23f291",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-11 — Create interactive data visualizations using software tools to help others better understand real-world phenom (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.3",
+            "sub_topic_name": "Data Visualization (dashboards, heatmaps)",
+            "objective_id": "CPT.7.3.3.4",
+            "objective_text": "Create an interactive data visualization to help others understand a real-world phenomenon",
+            "objective_uuid": "96dc7fca-e04d-4f80-8203-23b3541c6fe8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-11 — Create interactive data visualizations using software tools to help others better understand real-world phenom (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.3",
+            "sub_topic_name": "Data Visualization (dashboards, heatmaps)",
+            "objective_id": "CPT.7.3.3.5",
+            "objective_text": "Evaluate how a visualization's design can clarify or mislead its audience",
+            "objective_uuid": "6185b33c-92e5-4ed0-8392-8047b715128d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-DA-11 — Create interactive data visualizations using software tools to help others better understand real-world phenom (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

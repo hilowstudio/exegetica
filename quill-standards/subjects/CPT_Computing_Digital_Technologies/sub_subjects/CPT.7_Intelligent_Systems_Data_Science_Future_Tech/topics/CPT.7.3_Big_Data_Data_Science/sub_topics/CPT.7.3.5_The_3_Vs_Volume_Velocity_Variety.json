@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.7.3.5",
+    "name": "The 3 Vs (Volume, Velocity, Variety)",
+    "topic_id": "CPT.7.3",
+    "topic_name": "Big Data & Data Science",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.7",
+    "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for The 3 Vs (Volume, Velocity, Variety) in Big Data & Data Science (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.5",
+            "sub_topic_name": "The 3 Vs (Volume, Velocity, Variety)",
+            "objective_id": "CPT.7.3.5.1",
+            "objective_text": "Describe what makes data 'big' in terms of volume, velocity, and variety",
+            "objective_uuid": "0757f5b6-a276-4447-8877-3d6c00db7414",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-DA-05 — Use data analysis tools and techniques to identify patterns in data representing complex systems. Clarificatio (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.5",
+            "sub_topic_name": "The 3 Vs (Volume, Velocity, Variety)",
+            "objective_id": "CPT.7.3.5.2",
+            "objective_text": "Give an example of each of the three Vs from everyday technology",
+            "objective_uuid": "af7614e8-f775-4632-8e57-97b01ff19b3b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-DA-05 — Use data analysis tools and techniques to identify patterns in data representing complex systems. Clarificatio (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.5",
+            "sub_topic_name": "The 3 Vs (Volume, Velocity, Variety)",
+            "objective_id": "CPT.7.3.5.3",
+            "objective_text": "Explain how the three Vs create challenges for storing and analyzing data",
+            "objective_uuid": "d2138767-c811-42bf-8c46-701f496a682b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-DA-05 — Use data analysis tools and techniques to identify patterns in data representing complex systems. Clarificatio (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.3",
+            "topic_name": "Big Data & Data Science",
+            "sub_topic_id": "CPT.7.3.5",
+            "sub_topic_name": "The 3 Vs (Volume, Velocity, Variety)",
+            "objective_id": "CPT.7.3.5.4",
+            "objective_text": "Use data analysis techniques to find patterns in a large, varied dataset",
+            "objective_uuid": "e9fffe4d-0312-44e8-8cce-51273da6feb7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-DA-05 — Use data analysis tools and techniques to identify patterns in data representing complex systems. Clarificatio (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

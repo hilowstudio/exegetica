@@ -1,0 +1,138 @@
+{
+  "sub_topic": {
+    "id": "SCI.5.2.3",
+    "name": "Solutions, Acids & Bases",
+    "topic_id": "SCI.5.2",
+    "topic_name": "Chemistry: Structure & Transformation of Matter (Advanced)",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.5",
+    "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Solutions, Acids & Bases in Chemistry: Structure & Transformation of Matter (Advanced) (Science & Nature)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.2",
+            "topic_name": "Chemistry: Structure & Transformation of Matter (Advanced)",
+            "sub_topic_id": "SCI.5.2.3",
+            "sub_topic_name": "Solutions, Acids & Bases",
+            "objective_id": "SCI.5.2.3.1",
+            "objective_text": "Analyze and interpret data on the properties of substances before and after mixing to determine whether a solution or a chemical reaction has formed",
+            "objective_uuid": "e82fe51e-8acc-49d5-8b4f-a36f5779a0bc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-PS1-2 — Analyze and interpret data on the properties of substances before and after the substances interact to d (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.2",
+            "topic_name": "Chemistry: Structure & Transformation of Matter (Advanced)",
+            "sub_topic_id": "SCI.5.2.3",
+            "sub_topic_name": "Solutions, Acids & Bases",
+            "objective_id": "SCI.5.2.3.2",
+            "objective_text": "Describe a solution as a mixture in which a solute dissolves uniformly in a solvent, and identify factors such as stirring and temperature that affect dissolving",
+            "objective_uuid": "d9e55b73-2d6c-4491-8bf6-3d6e3934d98d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.2",
+            "topic_name": "Chemistry: Structure & Transformation of Matter (Advanced)",
+            "sub_topic_id": "SCI.5.2.3",
+            "sub_topic_name": "Solutions, Acids & Bases",
+            "objective_id": "SCI.5.2.3.3",
+            "objective_text": "Explain how acids and bases can be distinguished using indicators and the pH scale",
+            "objective_uuid": "f0c9a63e-2fa9-47ec-83c5-bbc7ccbaf067",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.5",
+            "sub_subject_name": "Physical Sciences (Matter, Energy, and the Laws of the Created World)",
+            "topic_id": "SCI.5.2",
+            "topic_name": "Chemistry: Structure & Transformation of Matter (Advanced)",
+            "sub_topic_id": "SCI.5.2.3",
+            "sub_topic_name": "Solutions, Acids & Bases",
+            "objective_id": "SCI.5.2.3.4",
+            "objective_text": "Apply scientific principles and evidence to explain how changing the temperature or concentration of reacting particles affects the rate at which a reaction occurs",
+            "objective_uuid": "ecf42941-d580-497f-8738-72bc8eb2ebd0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS HS-PS1-5 — Apply scientific principles and evidence to provide an explanation about the effects of changing the tem (grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

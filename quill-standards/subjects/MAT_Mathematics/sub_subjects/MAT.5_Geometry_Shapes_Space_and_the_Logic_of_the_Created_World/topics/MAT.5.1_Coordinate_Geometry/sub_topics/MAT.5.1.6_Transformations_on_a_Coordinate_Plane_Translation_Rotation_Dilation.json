@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.1.6",
+    "name": "Transformations on a Coordinate Plane (Translation, Rotation, Dilation)",
+    "topic_id": "MAT.5.1",
+    "topic_name": "Coordinate Geometry",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Transformations on a Coordinate Plane (Translation, Rotation, Dilation) in Coordinate Geometry (Mathematics)",
+    "grade_levels": {
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.1",
+            "topic_name": "Coordinate Geometry",
+            "sub_topic_id": "MAT.5.1.6",
+            "sub_topic_name": "Transformations on a Coordinate Plane (Translation, Rotation, Dilation)",
+            "objective_id": "MAT.5.1.6.1",
+            "objective_text": "Describe the effect of a translation, reflection, or rotation on coordinates.",
+            "objective_uuid": "3b51d5b7-8526-44cc-8202-29c71080af62",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 8.G.A.3 — Describe the effect of dilations, translations, rotations, and reflections on two-dimensional figures us (grade 8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.1",
+            "topic_name": "Coordinate Geometry",
+            "sub_topic_id": "MAT.5.1.6",
+            "sub_topic_name": "Transformations on a Coordinate Plane (Translation, Rotation, Dilation)",
+            "objective_id": "MAT.5.1.6.2",
+            "objective_text": "Represent a transformation as a mapping of the plane.",
+            "objective_uuid": "beb2a183-9cdf-4700-810f-1ae20cd63dde",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.A.2 — Represent transformations in the plane using, e.g., transparencies and geometry software; describe trans (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.1",
+            "topic_name": "Coordinate Geometry",
+            "sub_topic_id": "MAT.5.1.6",
+            "sub_topic_name": "Transformations on a Coordinate Plane (Translation, Rotation, Dilation)",
+            "objective_id": "MAT.5.1.6.3",
+            "objective_text": "Compare transformations that preserve distance and angle to those that do not.",
+            "objective_uuid": "25906f5f-21c4-4ef7-8566-07ea7999f9a0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.A.2 — Represent transformations in the plane using, e.g., transparencies and geometry software; describe trans (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

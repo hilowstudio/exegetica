@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "DST.2.3.1",
+    "name": "Commercial Printing & Die Cutting",
+    "topic_id": "DST.2.3",
+    "topic_name": "Technical Textiles & Papers",
+    "subject_id": "DST",
+    "subject_name": "Design & Technology",
+    "sub_subject_id": "DST.2",
+    "sub_subject_name": "Material Science & Application",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Commercial Printing & Die Cutting in Technical Textiles & Papers (Design & Technology)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.2",
+            "sub_subject_name": "Material Science & Application",
+            "topic_id": "DST.2.3",
+            "topic_name": "Technical Textiles & Papers",
+            "sub_topic_id": "DST.2.3.1",
+            "sub_topic_name": "Commercial Printing & Die Cutting",
+            "objective_id": "DST.2.3.1.1",
+            "objective_text": "Identify printed and die-cut products such as packaging, cards, and labels",
+            "objective_uuid": "1d96497a-244f-4ad2-84e0-768d3beba58f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.2",
+            "sub_subject_name": "Material Science & Application",
+            "topic_id": "DST.2.3",
+            "topic_name": "Technical Textiles & Papers",
+            "sub_topic_id": "DST.2.3.1",
+            "sub_topic_name": "Commercial Printing & Die Cutting",
+            "objective_id": "DST.2.3.1.2",
+            "objective_text": "Describe die cutting as using a shaped blade to cut card or paper into a set outline",
+            "objective_uuid": "4eabeb9f-38fc-44ae-8df5-93f4f7d42c38",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.2",
+            "sub_subject_name": "Material Science & Application",
+            "topic_id": "DST.2.3",
+            "topic_name": "Technical Textiles & Papers",
+            "sub_topic_id": "DST.2.3.1",
+            "sub_topic_name": "Commercial Printing & Die Cutting",
+            "objective_id": "DST.2.3.1.3",
+            "objective_text": "Compare common commercial printing methods such as offset, digital, and screen printing",
+            "objective_uuid": "43ec3361-fd54-4c5d-8fa6-98a65869d1be",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.2",
+            "sub_subject_name": "Material Science & Application",
+            "topic_id": "DST.2.3",
+            "topic_name": "Technical Textiles & Papers",
+            "sub_topic_id": "DST.2.3.1",
+            "sub_topic_name": "Commercial Printing & Die Cutting",
+            "objective_id": "DST.2.3.1.4",
+            "objective_text": "Explain how a die-cutting template, or net, is used to produce a folded package",
+            "objective_uuid": "62be24ab-2975-4b5a-81be-57326b1f2b25",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.2",
+            "sub_subject_name": "Material Science & Application",
+            "topic_id": "DST.2.3",
+            "topic_name": "Technical Textiles & Papers",
+            "sub_topic_id": "DST.2.3.1",
+            "sub_topic_name": "Commercial Printing & Die Cutting",
+            "objective_id": "DST.2.3.1.5",
+            "objective_text": "Select suitable printing and die-cutting methods for a product and justify them by quantity and finish",
+            "objective_uuid": "c78b2e5a-6e3e-4656-884f-03d91e99eae5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

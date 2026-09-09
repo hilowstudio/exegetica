@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "CPT.2.1.6",
+    "name": "Secondary Storage (Magnetic, Optical, Solid State)",
+    "topic_id": "CPT.2.1",
+    "topic_name": "Computer Architecture (Hardware)",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.2",
+    "sub_subject_name": "Computer Systems, Networks & Hardware",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Secondary Storage (Magnetic, Optical, Solid State) in Computer Architecture (Hardware) (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.1",
+            "topic_name": "Computer Architecture (Hardware)",
+            "sub_topic_id": "CPT.2.1.6",
+            "sub_topic_name": "Secondary Storage (Magnetic, Optical, Solid State)",
+            "objective_id": "CPT.2.1.6.1",
+            "objective_text": "Identify devices such as hard drives, USB drives, and discs as places where files are saved to keep them",
+            "objective_uuid": "c80d909a-a23c-4a56-8e28-7b804593d405",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-CS-02 — Use appropriate terminology in identifying and describing the function of common physical components of comput (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.1",
+            "topic_name": "Computer Architecture (Hardware)",
+            "sub_topic_id": "CPT.2.1.6",
+            "sub_topic_name": "Secondary Storage (Magnetic, Optical, Solid State)",
+            "objective_id": "CPT.2.1.6.2",
+            "objective_text": "Explain that secondary storage keeps data even after the computer is switched off",
+            "objective_uuid": "b9d457f9-129e-419f-8058-18cb447eb2a5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-CS-01 — Describe how internal and external parts of computing devices function to form a system (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.1",
+            "topic_name": "Computer Architecture (Hardware)",
+            "sub_topic_id": "CPT.2.1.6",
+            "sub_topic_name": "Secondary Storage (Magnetic, Optical, Solid State)",
+            "objective_id": "CPT.2.1.6.3",
+            "objective_text": "Describe how magnetic, optical, and solid-state storage each store data using a different physical method",
+            "objective_uuid": "df0cf579-a51e-4ac9-87cd-05581dbc81e3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-CS-01 — Describe how internal and external parts of computing devices function to form a system (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.1",
+            "topic_name": "Computer Architecture (Hardware)",
+            "sub_topic_id": "CPT.2.1.6",
+            "sub_topic_name": "Secondary Storage (Magnetic, Optical, Solid State)",
+            "objective_id": "CPT.2.1.6.4",
+            "objective_text": "Compare secondary storage types by capacity, speed, durability, and cost",
+            "objective_uuid": "1e5b5e0a-9177-41c6-8d65-00b8a51d8094",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-CS-01 — Describe how internal and external parts of computing devices function to form a system (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.1",
+            "topic_name": "Computer Architecture (Hardware)",
+            "sub_topic_id": "CPT.2.1.6",
+            "sub_topic_name": "Secondary Storage (Magnetic, Optical, Solid State)",
+            "objective_id": "CPT.2.1.6.5",
+            "objective_text": "Explain why solid-state drives are faster and more shock-resistant than magnetic hard drives",
+            "objective_uuid": "2630165a-b0c7-4dcd-8a88-be797a31452d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-CS-01 — Describe how internal and external parts of computing devices function to form a system (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.1",
+            "topic_name": "Computer Architecture (Hardware)",
+            "sub_topic_id": "CPT.2.1.6",
+            "sub_topic_name": "Secondary Storage (Magnetic, Optical, Solid State)",
+            "objective_id": "CPT.2.1.6.6",
+            "objective_text": "Select an appropriate storage medium for a given scenario and justify the choice",
+            "objective_uuid": "aa7db10e-ecff-463d-89a8-f642ed0b48bd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-CS-01 — Describe how internal and external parts of computing devices function to form a system (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

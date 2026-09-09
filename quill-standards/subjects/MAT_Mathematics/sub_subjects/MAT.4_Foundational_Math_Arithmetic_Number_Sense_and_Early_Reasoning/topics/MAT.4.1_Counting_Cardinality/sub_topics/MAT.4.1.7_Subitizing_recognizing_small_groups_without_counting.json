@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.1.7",
+    "name": "Subitizing (recognizing small groups without counting)",
+    "topic_id": "MAT.4.1",
+    "topic_name": "Counting & Cardinality",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Subitizing (recognizing small groups without counting) in Counting & Cardinality (Mathematics)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.1",
+            "topic_name": "Counting & Cardinality",
+            "sub_topic_id": "MAT.4.1.7",
+            "sub_topic_name": "Subitizing (recognizing small groups without counting)",
+            "objective_id": "MAT.4.1.7.1",
+            "objective_text": "Instantly recognize the number in a small group (up to 5) without counting.",
+            "objective_uuid": "ebb56f2f-52ce-4341-83ae-88d6b5a5b27f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math K.CC.B.4 — Understand the relationship between numbers and quantities; connect counting to cardinality (grade K)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.1",
+            "topic_name": "Counting & Cardinality",
+            "sub_topic_id": "MAT.4.1.7",
+            "sub_topic_name": "Subitizing (recognizing small groups without counting)",
+            "objective_id": "MAT.4.1.7.2",
+            "objective_text": "Recognize familiar dot patterns, such as those on dice, at a glance.",
+            "objective_uuid": "2aa02836-0972-421a-81a7-2c674ef60d48",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math K.CC.B.4 — Understand the relationship between numbers and quantities; connect counting to cardinality (grade K)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 24.0,
+        "objectives": [
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.1",
+            "topic_name": "Counting & Cardinality",
+            "sub_topic_id": "MAT.4.1.7",
+            "sub_topic_name": "Subitizing (recognizing small groups without counting)",
+            "objective_id": "MAT.4.1.7.3",
+            "objective_text": "Combine two subitized groups to find a total (e.g., see 3 and 2 as 5).",
+            "objective_uuid": "2e868a2d-a7ae-4195-8048-e827aae7756a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math K.CC.B.5 — Count to answer \"how many?\" questions about as many as 20 things arranged in a line, a rectangular array (grade K)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

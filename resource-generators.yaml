@@ -1,0 +1,1752 @@
+# =============================================================================
+# Study Bible — Resource Generators
+#
+# A two-layer catalog for the "generate a downloadable resource" feature.
+#
+#   Layer 1  formats/   Reusable output archetypes ("generators" / skills). Each
+#                       has a DEFINITION (what it is, for the LLM) and a
+#                       STRUCTURE (the schema the LLM must fill) so output is
+#                       consistent regardless of subject. This is the engine.
+#   Layer 2  subjects/  The teaching taxonomy (subject -> topic). Each topic
+#                       lists the formats that fit it and a few signature,
+#                       subject-specific resources. This is the menu.
+#
+# How the app uses it: the instructor picks Subject -> Topic -> Format (+ grade
+# band, + a short brief). The backend injects `global_conventions`, the chosen
+# format's definition + structure + grade-band adaptation, and the subject
+# context into the model, which returns one clean, downloadable document.
+#
+# Seed for this catalog: GENERATOR_CONTENT_TYPES.YAML (the instructor's list).
+# =============================================================================
+
+version: 1
+
+# -----------------------------------------------------------------------------
+# GLOBAL CONVENTIONS — applied to EVERY generated resource, before the format
+# schema. These make output trustworthy, downloadable, and grade-appropriate.
+# -----------------------------------------------------------------------------
+global_conventions:
+
+  identity: >
+    You are generating a finished classroom resource for an instructor to hand
+    to students (or to teach from). The output IS the deliverable — no chat
+    preamble, no "here is your worksheet," no closing pleasantries. Produce the
+    document itself.
+
+  output_format:
+    medium: >
+      Return clean, self-contained GitHub-flavored Markdown formatted as a
+      printable handout — not an essay. No HTML unless a format explicitly calls
+      for it, and never wrap the whole document in a code fence.
+    scannable_not_prose: >
+      Design for the eye, not for reading straight through. This is the most
+      important rule: do NOT produce verbose, continuous blocks of text. Break
+      every resource into clearly headed sections and subsections. Strongly prefer
+      bulleted lists, numbered steps, short labeled fields, and tables over
+      paragraphs. Keep any paragraph to 1-3 short sentences; if you find yourself
+      writing a fourth, convert it to a list. One idea per line where you can.
+    headings: >
+      Use clear headings (##) and subheadings (###) to break the material into
+      logical sections a reader can navigate at a glance. Give each section a short,
+      descriptive title. Keep sections short; add a new heading rather than a long
+      run of text.
+    numbering: >
+      Number questions, tasks, problems, and steps as ONE continuous sequence
+      across the whole resource — 1, 2, 3, … through the final item — so students
+      and the answer key can reference them by number. Never restart at 1 for a new
+      section or after a box or a writing line; each numbered item gets the next
+      number in the running sequence, even when a callout, a table, or answer space
+      comes between two items. Write each item as a Markdown list line beginning
+      with its own explicit number (e.g. `7. …`). The Answer Key must reuse these
+      exact numbers.
+    header_block: >
+      Begin with the title as an H1, then a compact metadata block as a Markdown
+      blockquote (lines starting with `>`). Put EACH field on its own line and end
+      every line but the last with two trailing spaces (a hard line break), so the
+      fields render as separate lines instead of running together into one
+      paragraph. A few short lines only. Fields: Grade Band; Estimated Time;
+      Materials (if any); Learning Objective(s) as 1-3 "Students will…" statements;
+      a Sources/Scripture line when applicable. On a STUDENT-facing resource do NOT
+      print the internal subject/standards taxonomy path or the Grade Band line —
+      those belong on teacher/reference resources only; lead with what the student
+      needs. NEVER write a bracketed placeholder such as [Name], [email], or [room
+      number]; if you have no real value for a field, omit that field entirely.
+    callouts_and_emphasis: >
+      Put key instructions, definitions of important terms, and "remember" notes in
+      a Markdown blockquote (`>`) so they stand out as a shaded box. Bold important
+      terms and the command verbs in directions. Use these highlights sparingly, for
+      what genuinely matters — not on every line.
+    whitespace_and_note_room: >
+      Embrace white space; do NOT try to fill every inch of the page. Space items
+      generously and leave the reader room to write. Mark writing space with
+      underscores, which render as solid ruled lines: for a full answer line, put a
+      line containing ONLY underscores (e.g. `____________________`); for a
+      multi-line answer or a notes area, put several such underscore-only lines in a
+      row (one per writing line); for a short in-line blank (a name/date/word), use
+      a run of underscores inside the text (e.g. `Name: __________`). Use dashes
+      (`---`) only for a section divider, never for writing space. Prefer fewer,
+      well-spaced items over a dense page.
+    alignment: >
+      All body text is left-aligned. Never center paragraphs or blocks of running
+      text (a single short title line is the only exception).
+    student_vs_teacher: >
+      Default to a STUDENT-FACING document (what the learner receives). If the
+      format is a teacher/lesson/answer resource, write it instructor-facing and say
+      so in the title. Never pre-fill a student answer field.
+
+  sourcing:
+    biblical_and_theological: >
+      This app is rooted in the Study Bible tools. For any Scripture text, quote,
+      reference, original-language word, lexical/morphological claim, cross-
+      reference, commentary, church-father citation, confession/creed text, or
+      parallel passage, GROUND it in the tools and cite what you used. Never
+      invent a verse, a reference, a Greek/Hebrew form, or a source attribution.
+    general_academic: >
+      For non-biblical subjects, be accurate and age-appropriate; prefer durable,
+      well-established facts. When a fact is uncertain, contested, or outside what
+      you can verify, say so or omit it rather than fabricate. Never invent
+      quotations, dates, statistics, or citations.
+    worldview_note: >
+      The default audience is classical/Christian and homeschool-to-seminary. Hold
+      a historic-Christian frame where the subject invites it (see the
+      `theologian` voice), but present other traditions and viewpoints fairly and
+      without caricature, and keep general academic content academically sound.
+
+  differentiation:
+    honor_grade_band: >
+      Read the requested grade band and apply that format's `grade_band_adaptations`.
+      Adjust vocabulary, reading level, text length, cognitive demand (recall ->
+      analysis -> synthesis), scaffolding, and the amount of original-language or
+      scholarly apparatus.
+    scaffolding: >
+      Lower bands get more scaffolding (word banks, sentence starters, examples,
+      visuals-in-words, fewer items). Higher bands get less scaffolding, primary
+      sources, and open-ended synthesis.
+
+  answer_keys: >
+    When a format is assessable (quiz, worksheet, problem set, drill, translation,
+    etc.), append an "Answer Key" as the FINAL section, clearly separated by a
+    horizontal rule and heading, so the instructor can remove it before copying.
+    For open-ended items, give a model response or a scoring note instead of a
+    single "correct" answer.
+
+  quantity_and_length: >
+    Respect any count the instructor gives ("10 questions", "one page"). Absent a
+    count, use the format's default. Prefer fewer, well-made items over padding.
+
+  accessibility: >
+    Plain, legible structure; describe any needed visual in words (the app outputs
+    text/markdown, not images); expand abbreviations on first use; define
+    technical terms inline the first time at lower bands.
+
+  grade_bands:
+    primary: '      "Grades K-5. Concrete, short, heavy scaffolding, simple vocabulary, lots of visuals-in-words, few items, large answer space."'
+    middle: '       "Grades 6-8. Guided practice, defined terms, moderate length, some independence, recall-to-application."'
+    secondary: '    "Grades 9-12. Academic vocabulary, longer texts, analysis and argument, primary-source excerpts, citations expected."'
+    undergraduate: '"College. Scholarly engagement, independent analysis, multiple sources, formal citation, synthesis."'
+    seminary: '     "Graduate / Seminary. Original languages, critical apparatus, exegetical and theological rigor, scholarly interaction, precise terminology."'
+
+  ubiquitous_variants: >
+    Two adaptations may be requested for almost any format and should be honored
+    without a separate entry: (a) an ANSWER KEY / model-response version, and
+    (b) a DIGITAL/fillable note (describe where inputs go). Blank vs. completed,
+    and short vs. extended, are length settings, not new formats.
+
+
+# -----------------------------------------------------------------------------
+# LAYER 1 — FORMAT ARCHETYPES (the generators)
+# Each: id, name, aka (names it absorbs from the seed list), definition,
+# use_when, structure (ordered schema), formatting, defaults, variants,
+# grade_band_adaptations.
+# -----------------------------------------------------------------------------
+formats:
+
+  # ---- Lesson infrastructure -------------------------------------------------
+  - id: lesson_plan
+    name: Lesson Plan / Teacher Guide
+    aka: [Teacher Guide, Lesson Guide]
+    definition: >
+      An instructor-facing plan to teach a single lesson: what to teach, in what
+      order, with what activities, checks for understanding, and materials.
+    use_when: The instructor wants a ready-to-teach session, not a student handout.
+    structure:
+      - Metadata header (+ Big Idea and Essential Question)
+      - Objectives ("Students will…", measurable)
+      - Materials & preparation
+      - Opening / hook (est. minutes)
+      - Instruction / "I do" (key content, in teach order)
+      - Guided practice / "we do" (activity + teacher moves)
+      - Independent practice / "you do" (student task; link to a student resource)
+      - Assessment / check for understanding
+      - Closure & optional extension / homework
+      - Differentiation notes (support and challenge)
+    formatting: Headed sections with time estimates in parentheses; keep teacher moves as bullets.
+    defaults: One class session (30-60 min).
+    variants: [unit_plan, mini_lesson]
+    grade_band_adaptations:
+      primary: Shorter segments, movement, concrete manipulatives, picture support.
+      seminary: Seminar/lecture structure, primary-source engagement, discussion aims over activities.
+
+  - id: unit_plan
+    name: Unit Plan / Scope & Sequence
+    aka: [Curriculum Overview]
+    definition: A multi-lesson plan sequencing objectives, texts, activities, and assessments across a unit.
+    use_when: Planning a multi-day/-week arc rather than one lesson.
+    structure:
+      - Metadata header (+ Unit title, duration, driving question)
+      - Enduring understandings & essential questions
+      - Objectives / outcomes for the unit
+      - 'Lesson sequence (table: lesson #, focus, key text/topic, activity, assessment)'
+      - Culminating assessment / project
+      - Resource list (link the formats to generate per lesson)
+    formatting: Use a sequence table for the lesson map.
+    defaults: 5-15 lessons.
+    grade_band_adaptations:
+      primary: Fewer lessons, thematic, integrated across subjects.
+      seminary: Reading-heavy modules, exegetical/theological progression, papers.
+
+  - id: student_packet
+    name: Student Packet / Workbook
+    aka: [Student Packet, Workbook]
+    definition: A multi-page student-facing bundle combining several resources (readings, worksheets, prompts) into one deliverable.
+    use_when: You want a self-contained booklet a student works through.
+    structure:
+      - Cover / title page (name, class, dates)
+      - Table of contents
+      - Sequenced sections (each a generated resource with its own header)
+      - Reflection / self-check at the end
+    formatting: 'Page-break hints ("--- (new page)"); consistent section headers.'
+    defaults: 3-8 sections.
+    variants: [reading_anthology]
+
+  - id: reading_anthology
+    name: Reading Anthology
+    aka: [Reading Anthology, Annotated Reader]
+    definition: A curated set of passages/excerpts on a theme, with front matter and light apparatus (intros, questions, glossary).
+    use_when: Assembling primary texts/excerpts for close reading.
+    structure:
+      - Anthology title + theme + how-to-use note
+      - 'Per selection: source/attribution, 1-2 sentence intro, the text (or excerpt), 2-4 margin/after questions, brief glossary of hard terms'
+      - Cumulative discussion or synthesis questions
+    formatting: Blockquote the primary texts; keep apparatus visually distinct.
+    sourcing_note: For Scripture and PD sources, pull exact text via the tools and attribute.
+    grade_band_adaptations:
+      primary: Short, high-interest passages with heavy glossing.
+      seminary: Longer primary sources, original-language snippets, critical notes.
+
+  - id: slide_deck
+    name: Slide Deck / Presentation
+    aka: [Slides, Presentation]
+    definition: A linear teaching presentation expressed as an ordered list of slides (title + concise bullets + speaker notes).
+    use_when: You want projectable teaching slides.
+    structure:
+      - Title slide
+      - 'Per slide: "Slide N — <title>", 3-6 tight bullets, optional "Notes:" line, optional "Visual:" description'
+      - Closing / review / discussion slide
+    formatting: 'One "## Slide N" heading per slide; bullets terse (not paragraphs).'
+    defaults: 8-20 slides.
+
+  - id: rubric
+    name: Rubric
+    aka: [Rubric Creator, Grading Rubric, Scoring Guide, Performance Rubric, Public Speaking Rubric]
+    definition: A grading grid that defines performance criteria and describes each quality level, for consistent, transparent assessment.
+    use_when: Scoring an essay, project, speech, performance, or any open task.
+    structure:
+      - What is being assessed + total points/weighting
+      - 'Criteria (rows): 3-6 dimensions (e.g., thesis, evidence, organization, mechanics)'
+      - 'Levels (columns): 3-4 (e.g., Exemplary / Proficient / Developing / Beginning)'
+      - 'Cells: observable, criterion-specific descriptors (not just "good/bad")'
+      - Scoring note / how to total
+    formatting: Markdown table, criteria as rows, levels as columns; parallel descriptors.
+    variants: [single_point_rubric, checklist_rubric]
+    grade_band_adaptations:
+      primary: 3 criteria, 3 levels, kid-friendly descriptors, ⭐ language.
+      seminary: Discipline-specific criteria (exegetical method, use of sources, theological precision).
+
+  - id: answer_key
+    name: Answer Key
+    aka: [Answer Key, Solutions]
+    definition: The companion answers/solutions/model-responses for an assessable resource.
+    use_when: Requested separately, or auto-appended per the answer_keys convention.
+    structure:
+      - Reference to the parent resource
+      - Item-by-item answers; for open items, a model response or scoring note; for computation, the worked steps
+    formatting: Mirror the parent's numbering exactly.
+
+  # ---- Assessments -----------------------------------------------------------
+  - id: quiz
+    name: Quiz / Test
+    aka: [Quiz, Test, Exam, Short-Answer Questions, Fact Recall]
+    definition: A set of assessment questions measuring recall and understanding, in one or mixed item types, with an answer key.
+    use_when: Checking mastery of content or skills.
+    structure:
+      - Metadata header (+ points, directions, time)
+      - Sectioned items by type (see item_types), numbered continuously
+      - Point values per item or section
+      - '"--- Answer Key ---" section at the end'
+    item_types: [multiple_choice, true_false, matching, fill_in_the_blank, short_answer, essay]
+    formatting: Number every item; MC options as A-D; leave answer space for written items.
+    defaults: 10 items; balance recall with 2-3 higher-order items.
+    variants: [pop_quiz, unit_test, cumulative_exam, oral_quiz]
+    grade_band_adaptations:
+      primary: Picture/word-bank support, mostly matching/MC, 5-8 items.
+      secondary: Add short-answer and one analytical prompt.
+      seminary: Essay and exegetical items; sources/apparatus permitted.
+
+  - id: flashcards
+    name: Flashcard Set
+    aka: [Flashcards, Element & Compound Flashcards, Vocabulary Cards]
+    definition: Paired front/back prompts for spaced-repetition memorization (term/definition, word/gloss, question/answer).
+    use_when: Memorizing vocabulary, facts, dates, verses, forms.
+    structure:
+      - Set title + purpose + count
+      - A two-column table (Front | Back) OR a numbered "Front / Back" list
+      - Optional cut-and-fold layout note
+    formatting: Two-column table; keep each side short; parallel style.
+    defaults: 15-30 cards.
+    variants: [verse_memory_cards, vocab_cards, formula_cards]
+
+  - id: puzzle_activity
+    name: Puzzle / Review Game
+    aka: [Crossword, Word Search, Bingo, Matching Game, Logical Fallacy Bingo, Art Terminology Crossword]
+    definition: A gamified review activity (crossword, word search, matching, bingo) that reinforces terms or facts.
+    use_when: Low-stakes review or a fun reinforcement break.
+    structure:
+      - Title + directions
+      - 'Word/term bank with clues (for crossword: numbered Across/Down clues + the answer list; the app renders a grid in text or gives a clue list to place)'
+      - Answer key
+    formatting: For crosswords, provide clues + answers (note that a printable grid is drawn from these); for word searches, give the hidden word list + a text grid; for bingo, give a call list + a sample card.
+    grade_band_adaptations:
+      primary: Word searches, picture matching, simple bingo.
+      secondary: Crosswords with definition clues; concept matching.
+
+  - id: diagnostic
+    name: Diagnostic / Pre-Assessment
+    aka: [Pretest, Placement Check]
+    definition: A low-stakes check of prior knowledge/skill to place students or target instruction.
+    use_when: Before a unit, to gauge readiness.
+    structure:
+      - Purpose + "not for a grade" note
+      - Tiered items from foundational to advanced (tagged by skill/objective)
+      - Self-rating confidence scale
+      - Scoring guide mapping results to next steps / groupings
+    formatting: Tag each item with the objective it probes.
+
+  # ---- Practice --------------------------------------------------------------
+  - id: worksheet
+    name: Worksheet
+    aka: [Worksheet, Practice Sheet, Application Worksheet, Analysis Worksheet]
+    definition: >
+      The general-purpose student practice page: instructions, worked example(s),
+      and a set of items that apply a concept or skill, with space to respond.
+      Use a more specific format when one fits (comparison_matrix, problem_set,
+      labeled_diagram, reading_comprehension_set, etc.).
+    use_when: Practicing/applying a specific concept when no specialized format fits better.
+    structure:
+      - Metadata header (+ concept, directions)
+      - Brief review box (the rule/concept in 1-3 sentences) or a worked example
+      - Practice items (numbered), increasing in difficulty
+      - A short apply/extend item
+      - Answer key
+    formatting: Clear directions; numbered items; visible answer space.
+    defaults: 8-15 items.
+    grade_band_adaptations:
+      primary: Word bank, examples, 5-8 items, big spaces.
+      seminary: Fewer, deeper items requiring analysis and sources.
+
+  - id: drill_set
+    name: Skill Drill Set
+    aka: [Drill Worksheets, Practice Drills, Fact Practice, Note Reading Drills, Sight-Reading Drills]
+    definition: Repetitive, focused practice of a single procedural skill to build fluency and automaticity.
+    use_when: Building speed/accuracy on a mechanical skill (math facts, conjugation, note reading, handwriting).
+    structure:
+      - Skill + directions + (optional) time target
+      - Rows/sets of same-type items, plentiful
+      - Optional self-timer / score box
+      - Answer key
+    formatting: Dense, uniform layout; group in sets of 5-10.
+    defaults: 20-40 items.
+    variants: [math_facts, conjugation_drill, declension_drill, note_reading, typing]
+
+  - id: problem_set
+    name: Problem Set (Math / Science)
+    aka: [Problem Set, Word Problem Scenarios, Physics Problem Set, Genetics Problem Set, Equation Solving]
+    definition: A set of quantitative or multi-step reasoning problems, progressing from procedural to applied/word problems, with worked solutions.
+    use_when: Mathematics, physics, chemistry, statistics, financial math.
+    structure:
+      - Topic + directions + formula reminders (if allowed)
+      - One fully worked example
+      - Problems, numbered, increasing difficulty; include applied/word problems
+      - '"Show your work" space'
+      - Answer key WITH worked steps
+    formatting: Number problems; render math clearly (plain notation or LaTeX-ish); label word problems.
+    defaults: 8-12 problems.
+    grade_band_adaptations:
+      primary: Single-step, concrete contexts, number lines.
+      undergraduate: Proofs, multi-step derivations, real-world modeling.
+
+  # ---- Graphic organizers ----------------------------------------------------
+  - id: comparison_matrix
+    name: Comparison Chart / Matrix
+    aka: [Comparison Chart, Comparison Grid, Comparison Charts (all), Worldview Comparison Grid, Doctrine Comparison, Belief Comparison, Pro/Con]
+    definition: A grid that compares 2-5 items across a shared set of criteria so similarities and differences are visible at a glance.
+    use_when: Comparing doctrines, worldviews, figures, movements, texts, materials, systems, etc.
+    structure:
+      - Title + the comparison question / purpose (1 sentence)
+      - 'Items compared (columns): 2-5'
+      - 'Criteria (rows): 4-8 parallel dimensions'
+      - 'Cells: concise, parallel phrasing (not paragraphs)'
+      - 'Synthesis prompt: 1-3 questions asking students to interpret the pattern'
+      - (optional) Answer/model key
+    formatting: Markdown table, criteria as rows, items as columns. Keep cells short and parallel.
+    variants: [venn_diagram, t_chart, pro_con, before_after, feature_matrix]
+    grade_band_adaptations:
+      primary: 2 items, 3 criteria, single-word/short cells; or a T-chart.
+      seminary: Fine-grained criteria; note intra-tradition nuance; cite sources.
+
+  - id: venn_diagram
+    name: Venn Diagram (described)
+    aka: [Venn Diagram, Theological Concept Venn Diagrams]
+    definition: 'A compare/contrast organizer of 2-3 overlapping sets, expressed in text as "only A / only B / shared" regions.'
+    use_when: Two or three items with meaningful overlap.
+    structure:
+      - Title + the two/three items
+      - '"Only <A>" list; "Only <B>" list; "Shared by both" list (and triple-overlap if 3)'
+      - Synthesis question
+    formatting: Labeled lists per region (text stands in for the drawn circles).
+
+  - id: graphic_organizer
+    name: Graphic Organizer (concept map / KWL / sequence / cause-effect)
+    aka: [Graphic Organizers, Concept Map, Mind Map, KWL Chart, Sequence Chart, Cause and Effect, Interdisciplinary Connection Maps]
+    definition: A structured thinking scaffold that arranges information spatially — concept map, mind map, KWL, sequence/flow, cause-and-effect, or hierarchy.
+    use_when: Organizing ideas, activating prior knowledge, mapping relationships or processes.
+    structure:
+      - Title + which organizer + directions
+      - The scaffold rendered in text (e.g., KWL as three columns; concept map as a central term with branching sub-nodes and labeled links; sequence as numbered stages with arrows "→"; cause/effect as paired lists)
+      - A reflection/synthesis line
+    formatting: Choose the text rendering that matches the organizer; keep nodes short.
+    variants: [concept_map, mind_map, kwl, sequence_flow, cause_effect, spider_web, frayer_model]
+    grade_band_adaptations:
+      primary: KWL, simple webs, picture-word nodes.
+      secondary: Concept maps with labeled relationships; systems diagrams.
+
+  - id: story_map
+    name: Story Map / Plot Diagram
+    aka: [Plot Diagramming Guides, Story Arc Summaries, Narrative Flow Worksheets, Story Map]
+    definition: A narrative organizer capturing setting, characters, conflict, and the plot arc (exposition → rising action → climax → falling action → resolution).
+    use_when: Analyzing or planning a narrative (literature, Bible narrative, creative writing).
+    structure:
+      - Title + text/story
+      - Setting; Characters (name + role/trait); Central conflict
+      - Plot arc stages with 1-2 lines each
+      - Theme / lesson; and (for Scripture) redemptive-historical placement
+    formatting: Labeled sections following the arc order.
+
+  - id: cornell_notes
+    name: Note-Taking Template (Cornell / guided)
+    aka: [Cornell Notes, Guided Notes, Note-Taking Template]
+    definition: A structured note page (cue column, notes, summary) or fill-in guided notes that scaffold listening/reading.
+    use_when: Supporting note-taking during lecture, reading, or video.
+    structure:
+      - Topic + date
+      - Two-column body (Cues/Questions | Notes) OR guided notes with blanks
+      - Summary box (2-3 sentences) at the bottom
+    formatting: Two-column table for Cornell; underscores for guided blanks.
+
+  # ---- Timelines, maps, trees ------------------------------------------------
+  - id: timeline
+    name: Timeline
+    aka: [Timeline Creator, Chronological Timeline, Historical Timeline, Church History Timeline, Missionary Timeline]
+    definition: A chronological sequence of events with dates and short descriptions, optionally annotated or thematic.
+    use_when: Ordering events in history, redemptive history, a life, a movement, or a discipline's development.
+    structure:
+      - Title + span + scope note
+      - 'Ordered entries "Date — Event: 1-2 sentence significance"'
+      - (optional) parallel tracks (e.g., biblical events beside world events) as a two-column table
+      - Analysis questions (patterns, causes, turning points)
+      - (blank variant) a dated skeleton for students to fill
+    formatting: Ordered list or two-column table; consistent date format.
+    defaults: 10-20 events.
+    variants: [annotated_timeline, parallel_timeline, blank_timeline, life_timeline]
+    grade_band_adaptations:
+      primary: 5-8 big events, simple dates, illustrate-in-words.
+      seminary: Fine chronology, historiographical notes, dating debates.
+
+  - id: annotated_map
+    name: Map Activity (annotated or blank)
+    aka: [Missionary Journey Maps, Bible Lands Topography Map, Silk Road Trade Route Map, Empire Map, Blank Political & Physical Maps, Map Quizzes]
+    definition: A geography resource keyed to a map — either an annotated/thematic map described in text, or a labeling/quiz activity over a (student-supplied or standard) map.
+    use_when: Journeys, trade routes, empires, biblical geography, physical features, place identification.
+    structure:
+      - Title + region + map type
+      - Locations/features list to place or that are annotated (name + coordinates-in-words or relation + significance)
+      - Routes/movements as ordered stops (for journeys)
+      - Student task (label these N places; trace the route; answer map questions)
+      - Answer key / place list
+    formatting: Since the app outputs text, give a precise, labeled place/route list and clear labeling instructions rather than a drawn map.
+    sourcing_note: For biblical geography use the tools (people/place graph, place lookups).
+    variants: [labeling_map, route_map, thematic_map, map_quiz]
+
+  - id: family_tree
+    name: Family Tree / Genealogy Chart
+    aka: [Biblical Family Tree Visualizer, Genealogy Chart, Language Family Tree]
+    definition: A hierarchical relationship chart (genealogy, lineage, or classification-as-tree) expressed as an indented outline.
+    use_when: Genealogies (biblical or historical), lineages, or any parent→child hierarchy.
+    structure:
+      - Title + root person/entity + scope
+      - Indented outline showing generations/relationships (parent → children), with 1-line notes
+      - Questions (relationships, significance, patterns)
+    formatting: Nested bullets to show generations; mark spouses/notes inline.
+    sourcing_note: For biblical genealogies use the graph/genealogy tools; do not invent links.
+
+  - id: classification_tree
+    name: Classification / Taxonomy Chart
+    aka: [Animal Kingdom Classification, Kingdom & Phylum Sorting, Taxonomy Key, Hierarchy Tree]
+    definition: A hierarchy that sorts items into nested categories (biological taxonomy, parts-of-speech, genres, doctrinal loci).
+    use_when: Classifying/sorting into levels or building a dichotomous key.
+    structure:
+      - Title + what is being classified + the levels used
+      - Indented hierarchy (level → sublevel → items) OR a dichotomous key (numbered either/or steps)
+      - A sorting task with a word bank
+      - Answer key
+    formatting: Indented outline for hierarchy; numbered couplets for a key.
+
+  # ---- Reference & explanatory ----------------------------------------------
+  - id: fact_sheet
+    name: Fact Sheet
+    aka: [Fact Sheet, Fact Sheets (all), Cultural Fact Sheet, Instrument Family Fact Sheet, Planet Fact Sheet]
+    definition: A one-page reference presenting the key facts about a single topic/entity in scannable form.
+    use_when: Giving students a concise reference on one subject, place, entity, or category.
+    structure:
+      - Title (the topic)
+      - '"At a glance" quick facts (labeled key: value pairs)'
+      - 3-6 short sections on the main aspects
+      - Key terms; A "why it matters" / significance line
+      - Sources
+    formatting: Labeled key-facts block + short headed sections; scannable.
+    grade_band_adaptations:
+      primary: 5-8 simple facts, one idea each.
+      seminary: Denser, with scholarly nuance and citations.
+
+  - id: study_guide
+    name: Study Guide / Review Sheet
+    aka: [Study Guide, Review Sheet, Exam Review, Loci Study Guides, Book Club Prep]
+    definition: A consolidated review of a unit/topic that organizes what students must know for an assessment or discussion.
+    use_when: Preparing for a test, discussion, or synthesis of a topic.
+    structure:
+      - Topic + what it prepares for
+      - Key terms & definitions
+      - Key people/events/texts (as relevant)
+      - Core concepts explained briefly
+      - Self-check questions (with a hidden/за-the-rule key)
+      - '"Be able to…" objective checklist'
+    formatting: Term lists + concise explanations + a self-check.
+    variants: [exam_review, discussion_prep, concept_review]
+
+  - id: reference_chart
+    name: Reference Chart (formulas / paradigms / tables)
+    aka: [Formula Sheet, Physics Formula Sheet, Verb & Noun Charts, Declension & Conjugation, Periodic Table, Scale & Chord Chart, Key Signature]
+    definition: A compact, lookup-oriented table of formulas, paradigms, or systematized facts for reference during work.
+    use_when: Students need a paradigm/formula/table to consult (grammar paradigms, math formulas, music charts).
+    structure:
+      - Title + scope
+      - The organized table(s) with clear row/column labels
+      - Brief usage notes / worked mini-example
+    formatting: Dense, well-labeled tables; group related rows.
+    variants: [formula_sheet, paradigm_chart, conversion_table]
+
+  - id: vocabulary_list
+    name: Vocabulary List
+    aka: [Vocabulary Lists, Biblical Greek/Hebrew Vocabulary, Sight Word Lists, Custom Spelling List]
+    definition: A curated list of terms with definitions and supporting info (part of speech, example, gloss, frequency, root).
+    use_when: Introducing terms for a topic, language, or reading.
+    structure:
+      - Title + topic/text + purpose
+      - 'Entries: term — (part of speech / gloss) — concise definition — example sentence/usage — (optional) root/etymology or frequency'
+      - A short practice task (match, use in a sentence, sort)
+    formatting: Table or definition list; consistent fields per entry.
+    defaults: 10-20 terms.
+    sourcing_note: For Greek/Hebrew, pull forms/glosses/frequency from the tools.
+    variants: [spelling_list, glossary, term_bank]
+
+  - id: biography_profile
+    name: Biography Profile
+    aka: [Biography Sheets, Biography Summaries, Reformation Figure Biographies, Composer/Artist Biography, Missionary Biography]
+    definition: 'A structured profile of a person: life facts, context, contributions, and significance.'
+    use_when: Studying a historical, biblical, literary, artistic, scientific, or theological figure.
+    structure:
+      - Name + dates + one-line identity
+      - Quick facts (born/died, place, tradition/field, known for)
+      - Historical/cultural context
+      - Life & work (narrative or milestones)
+      - Key contributions / ideas / works
+      - Significance & legacy (and, where apt, a discerning worldview note)
+      - Sources; A reflection or research question
+    formatting: Quick-facts block + short headed sections.
+    grade_band_adaptations:
+      primary: 5-6 simple facts + why they matter.
+      seminary: Critical engagement with the figure's thought and influence.
+
+  - id: explainer_sheet
+    name: Concept Explainer Sheet
+    aka: [Theological Terminology Explainer Sheets, Concept Explainer, Grammar Rule Explanation, Statistical Terminology, Philosophical Concept Explanations]
+    definition: 'A focused explanation of one concept/term/rule: what it means, why it matters, how it works, with examples.'
+    use_when: Teaching a single idea, doctrine, term, or rule clearly.
+    structure:
+      - The concept (title)
+      - Plain-language definition (1-3 sentences)
+      - Why it matters / where it's used
+      - How it works (steps, parts, or an analogy)
+      - Worked example(s) / illustrations
+      - Common misconceptions or misuse
+      - Check-yourself question(s)
+    formatting: Short headed sections; lead with the plain definition.
+
+  # ---- Reading & language ----------------------------------------------------
+  - id: reading_comprehension_set
+    name: Reading Comprehension Set
+    aka: [Reading Comprehension, Comprehension Question Stems, Passage Analysis Question Guides]
+    definition: A reading passage (or assigned text reference) followed by comprehension and analysis questions across cognitive levels.
+    use_when: Building/assessing reading comprehension of a text.
+    structure:
+      - Text (provided or referenced) + brief context line
+      - Vocabulary pre-teach (2-5 terms)
+      - Literal questions (right there)
+      - Inferential questions (read between the lines)
+      - Evaluative/analytical questions (beyond the text)
+      - A written-response prompt
+      - Answer key / model responses
+    formatting: Group questions by level; number continuously; give answer space.
+    grade_band_adaptations:
+      primary: Short decodable text, mostly literal, picture support.
+      seminary: Dense primary source, critical and intertextual questions.
+
+  - id: close_reading_guide
+    name: Close Reading / Annotation Guide
+    aka: [Contextualization Worksheets, Close Reading, Passage Analysis]
+    definition: A guided annotation protocol that walks students through marking and analyzing a text (diction, structure, devices, meaning).
+    use_when: Deep analysis of a short, rich passage (literary or biblical).
+    structure:
+      - Passage + annotation legend (what to mark and how)
+      - 'Guided passes: (1) observe, (2) analyze language/structure/devices, (3) interpret meaning, (4) apply/connect'
+      - Guiding questions per pass
+      - Synthesis statement students write
+    formatting: Number the passes; provide margin-question prompts.
+    variants: [inductive_passage_study]
+
+  - id: decodable_text
+    name: Decodable Text / Phonics Practice
+    aka: [Decodable Text Generator, Phonics Rule Posters, Word Family Wheel, Rhyming Word]
+    definition: Early-literacy text/practice controlled to target phonics patterns already taught, plus practice of the target pattern.
+    use_when: Teaching/practicing a specific phonics skill (early readers).
+    structure:
+      - Target pattern (e.g., short-a; CVCe) + a 1-line rule
+      - Word list featuring the pattern
+      - 3-6 decodable sentences / a short decodable story using mostly taught patterns
+      - Practice (blend, sort, fill the pattern)
+    formatting: Very short lines; large print intent; controlled vocabulary.
+    grade_band_adaptations:
+      primary: The whole point; keep to taught patterns only.
+
+  - id: copywork_handwriting
+    name: Copywork / Handwriting Practice
+    aka: [Handwriting Practice Sheets, Copywork Accountability, Dictation Scripts, Calligraphy Alphabet Practice]
+    definition: A passage or letters/strokes for penmanship practice via copying (and optionally dictation), often keyed to a worthy text.
+    use_when: Penmanship, letter formation, or copywork of a memorable/Scripture passage.
+    structure:
+      - Model text or letter set (worthy, short)
+      - Formation notes (stroke order for letters/scripts)
+      - Copy space (a lined region indicated) + repetitions
+      - (dictation variant) a script for the teacher to read with punctuation cues
+    formatting: Indicate lined practice space; keep model text short.
+    variants: [manuscript, cursive, calligraphy, dictation]
+
+  - id: translation_worksheet
+    name: Translation Worksheet (Greek / Hebrew / Latin / Modern)
+    aka: [Verse Translation Worksheets, Latin to English Translation Drills, NT/OT Verse Translation]
+    definition: 'A guided translation exercise from a source language: text, parsing/vocab aids, and space to translate, with a model translation.'
+    use_when: Practicing translation in Greek, Hebrew, Latin, or a modern language.
+    structure:
+      - Source text (with reference)
+      - Vocabulary/parsing aids (lemma, gloss, form) for hard words
+      - Line-by-line translation space
+      - Guiding questions (a key construction, a syntactic feature)
+      - Model translation + notes (answer key)
+    formatting: Present source text with per-word or per-line aids; leave translation lines.
+    sourcing_note: For Greek/Hebrew, pull the exact text, lemmas, morphology, and glosses from the tools.
+    grade_band_adaptations:
+      middle: Heavy glossing, short clauses.
+      seminary: Minimal aids, syntactic and text-critical notes.
+
+  - id: word_study
+    name: Original-Language Word Study
+    aka: [Greek Word Study Guides, Hebrew Word Study Guides, Word Study]
+    definition: 'A structured study of a single biblical word: lemma, semantic range, key usages, and interpretive payoff — built from the tools.'
+    use_when: Studying a significant Greek/Hebrew term in a passage.
+    structure:
+      - The word (lemma + transliteration + Strong's) + the passage prompting it
+      - Gloss & semantic range (from the lexicon)
+      - Morphology in this occurrence
+      - Key other occurrences (with references) and how usage varies
+      - Interpretive significance for the passage (guarding against word-study fallacies)
+      - Application/discussion question
+    formatting: Lead with the lexical data block, then interpretation.
+    sourcing_note: MUST use word_study / search_lexicon / concordance / morphology tools and cite.
+    grade_band_adaptations:
+      secondary: Focus on gloss + a few usages + significance.
+      seminary: Full semantic-range analysis, discourse, and cautions.
+
+  - id: grammar_practice
+    name: Grammar / Mechanics Practice
+    aka: [Parts of Speech Quizzes, Punctuation Correction, Verb Tense Drills, Sentence Structure]
+    definition: Practice identifying or applying a grammar/mechanics rule (parts of speech, punctuation, agreement, tense).
+    use_when: Teaching/practicing a grammar or mechanics rule.
+    structure:
+      - The rule (brief) + example
+      - Identify items (label/underline) then Apply items (correct/produce)
+      - A short editing paragraph
+      - Answer key
+    formatting: Two phases (identify, then apply); numbered items.
+
+  - id: sentence_diagram
+    name: Sentence Diagramming
+    aka: [Sentence Diagramming Practice Sheets]
+    definition: Practice breaking sentences into grammatical structure via diagramming (rendered as a labeled parts breakdown in text).
+    use_when: Teaching syntax through diagramming.
+    structure:
+      - The diagramming convention reminder
+      - Example sentence broken into subject | verb | objects/modifiers (text-rendered)
+      - Sentences to diagram (increasing complexity)
+      - Answer key showing each breakdown
+    formatting: Render diagrams as labeled, indented part breakdowns (text stands in for the drawn lines).
+
+  # ---- Writing & composition -------------------------------------------------
+  - id: writing_prompt_set
+    name: Writing Prompt Set
+    aka: [Creative Writing Prompts, Narrative Story Starters, Expository Topic Brainstormers, Journaling Prompts, Drawing Prompts]
+    definition: A set of prompts to spark writing (or drawing) in a mode — creative, narrative, expository, persuasive, or reflective/journal.
+    use_when: Sparking student writing; warm-ups; journals.
+    structure:
+      - Mode + directions (length/time)
+      - 6-12 varied prompts (with a sentence of setup each)
+      - (optional) sentence starters or a word bank for support
+      - A "choose one and plan" mini-organizer
+    formatting: Numbered prompts; vary difficulty and angle.
+    variants: [creative, narrative, expository, persuasive, journal, devotional_journal]
+
+  - id: essay_assignment
+    name: Essay / Composition Assignment
+    aka: [Persuasive Essay Argument Outlines, Doctrine-based Essay Questions, Editorial Writing Prompts]
+    definition: 'A full writing assignment: the task, requirements, a planning outline, and the rubric.'
+    use_when: Assigning a formal essay or composition.
+    structure:
+      - The prompt/question + mode (argumentative, expository, analytical…)
+      - Requirements (length, sources, format)
+      - Planning outline (thesis line, body-paragraph frames, evidence slots)
+      - Drafting checklist
+      - The grading rubric (or reference to a rubric resource)
+    formatting: Task + requirements + outline scaffold + rubric.
+    variants: [research_paper, exegetical_paper, editorial]
+    grade_band_adaptations:
+      seminary: Exegetical/theological paper with source and method expectations.
+
+  - id: outline_template
+    name: Outline Template
+    aka: [Speech Outline Templates, Epistle Outline Templates, Sermon Outline, Systematic Theology Outline]
+    definition: A skeletal structure for a composition, speech, sermon, or analysis, with labeled slots to fill.
+    use_when: Structuring a speech, essay, sermon, or study before drafting.
+    structure:
+      - Purpose + the structure it teaches (e.g., intro/point/point/point/conclusion; or observation/interpretation/application)
+      - Labeled, indented slots with brief guidance per slot
+      - A reminder of what makes each part strong
+    formatting: Indented outline with fill-in guidance under each slot.
+
+  - id: fill_in_template
+    name: Creative Fill-in Template
+    aka: [Fable-Writing Templates, Haiku & Sonnet Writing Templates, Parable Modernization, Genre Writing Templates]
+    definition: A guided template that scaffolds producing a specific form or genre (fable, haiku, sonnet, parable, news article) via structured slots.
+    use_when: Producing a specific literary/media form with support.
+    structure:
+      - 'The form + its defining features/constraints (e.g., sonnet: 14 lines, meter, rhyme scheme)'
+      - A worked mini-example
+      - The template with slots and constraint reminders
+      - A revision checklist against the form's rules
+    formatting: Constraint reminders beside each slot.
+
+  - id: reflection_journal
+    name: Reflection / Devotional Journal
+    aka: [Prayer Journal Templates, Self-Reflection Journal Prompts, Volunteer Reflection Prompts, Nature Journal Prompts]
+    definition: A repeatable journaling template with prompts for reflection, prayer, observation, or application.
+    use_when: Habitual reflection — spiritual, personal, or observational (nature/field).
+    structure:
+      - Title + rhythm (daily/weekly)
+      - Date/heading fields
+      - Prompt set (observe / reflect / respond / pray or apply), with space
+      - (Scripture variant) a passage slot + response
+    formatting: Repeatable one-entry template with generous space.
+    variants: [prayer_journal, gratitude, lectio_divina, nature_journal, learning_log]
+
+  # ---- Discussion, rhetoric, logic ------------------------------------------
+  - id: discussion_questions
+    name: Discussion Question Set
+    aka: [Discussion Question Lists, Book Club Discussion Questions, Socratic Method Scenarios, Guided Inquiry Prompts]
+    definition: A sequenced set of open questions to drive discussion or a Socratic seminar, from opening to deep to closing.
+    use_when: Leading a discussion, seminar, or small group.
+    structure:
+      - Text/topic + facilitator note (norms, aim)
+      - Opening/warm-up questions
+      - Core analytical questions (sequenced to build)
+      - Perspective/application/objection questions
+      - Closing synthesis question
+      - Facilitator tips (follow-ups, what to listen for)
+    formatting: Grouped, sequenced questions; keep them genuinely open.
+    variants: [socratic_seminar, book_club, bible_study, harkness]
+
+  - id: debate_kit
+    name: Debate Kit
+    aka: [Debate Topic Prompts, Theological Debate Outlines, Debate Flowsheet, Mock Trial Script]
+    definition: 'Materials to run a structured debate: resolution, format, prep organizers for both sides, and a flow/judging sheet.'
+    use_when: Running a formal debate or mock trial.
+    structure:
+      - Resolution + format (times, speaking order)
+      - Background brief (neutral)
+      - Affirmative prep organizer (claims, warrants, evidence)
+      - Negative prep organizer (same)
+      - Rebuttal/clash flowsheet
+      - Judging rubric / audience ballot
+    formatting: Symmetric prep organizers for each side; a flowsheet table.
+
+  - id: case_study
+    name: Case Study
+    aka: [Ethical Case Study Scenarios, Case Studies on Effective Ministry, Persecution Case Studies, Species Adaptation Case Studies]
+    definition: A realistic scenario plus analysis questions requiring students to apply principles to a concrete situation.
+    use_when: Applying ethics, doctrine, history, or scientific reasoning to a real/realistic case.
+    structure:
+      - Scenario (concrete, enough detail to reason about)
+      - Background/relevant principles or data
+      - Analysis questions (what's happening, what principles apply, what should be done and why)
+      - Decision/recommendation prompt with justification
+      - (optional) what actually happened / debrief
+    formatting: Scenario first, then staged questions.
+    variants: [ethical_dilemma, historical_case, ministry_case, scientific_case]
+
+  - id: role_play_scenario
+    name: Role-Play / Simulation Scenario
+    aka: [Witnessing Role-Playing Scenarios, Town Hall Meeting Script, Code-Switching Scenario, Social Scenarios]
+    definition: A scripted or semi-scripted scenario with roles and objectives for students to enact and then debrief.
+    use_when: Practicing a skill or perspective through simulation (evangelism, civics, conflict, language).
+    structure:
+      - Setup + learning goal
+      - Roles (each with a name, stance, and private objective)
+      - The situation / opening + optional sample lines
+      - Constraints / what to practice
+      - Debrief questions (what worked, what was hard, what to do differently)
+    formatting: Clear role cards; separate the debrief.
+
+  - id: logic_practice
+    name: Logic / Reasoning Practice
+    aka: [Syllogism Practice, Logical Fallacy Identification, Truth Table Practice, Deductive vs Inductive Quizzes, Argument Map]
+    definition: Exercises in formal or informal logic — syllogisms, validity, fallacy identification, truth tables, or argument mapping.
+    use_when: Teaching logic and reasoning (Trivium, math logic, apologetics).
+    structure:
+      - The concept (brief) + example
+      - Identify items (name the fallacy / test validity / map the argument)
+      - Construct items (build a valid syllogism / complete a truth table)
+      - Application to a real argument or claim
+      - Answer key with reasoning
+    formatting: Match the sub-skill (truth tables as tables; maps as claim→support structure).
+    variants: [syllogism, fallacy_id, truth_table, argument_map, validity]
+
+  # ---- Diagrams, labs, science ----------------------------------------------
+  - id: labeled_diagram
+    name: Labeled Diagram (labeling activity)
+    aka: [Cell Diagram Labeling, Plant Part Labeling, Atmospheric Layer Diagrams, Anatomy, Architecture Identification]
+    definition: A labeling activity over a structure/system — described in text with a parts list, a blank labeling task, and a key.
+    use_when: Learning the parts of a structure (cell, plant, atmosphere, instrument, building).
+    structure:
+      - Title + the structure + brief overview
+      - 'Parts list: each part — its location/relation (in words) — its function'
+      - 'Labeling task: a numbered blank list (1-N) for students to name, with a word bank at lower bands'
+      - Answer key
+    formatting: Because output is text, give a precise parts-with-locations list plus a numbered blank-label task (the printed image is supplied separately).
+    variants: [anatomy, plant, cell, geological, architectural, instrument]
+
+  - id: process_diagram
+    name: Process / Cycle Diagram
+    aka: [Photosynthesis Process, Rock Cycle Diagramming, Bill to Law Process, Water Cycle, Cell Division Diagrams]
+    definition: A step/stage representation of a process or cycle, with inputs/outputs and what happens at each stage.
+    use_when: Teaching a process or cycle (science, civics, systems).
+    structure:
+      - Process name + overview (1-2 sentences)
+      - Ordered stages "Stage → Stage → …" each with what happens, inputs/outputs
+      - (cycle) note the loop back
+      - Check questions (order, cause, what-if)
+      - (blank variant) a skeleton to complete
+    formatting: Arrowed sequence or numbered stages; mark cycles as looping.
+
+  - id: lab_report
+    name: Lab Report / Investigation Template
+    aka: [Lab Report Templates, Scientific Method Templates, Virtual Lab Scenarios, Experiment Templates]
+    definition: A structured template guiding a scientific investigation and its write-up (question → hypothesis → method → data → analysis → conclusion).
+    use_when: Running or writing up an experiment/investigation.
+    structure:
+      - Title + question/problem
+      - Hypothesis (if/then/because) slot
+      - Materials & procedure (numbered) — or a given procedure to follow
+      - Data table(s) / observation space
+      - Analysis questions (patterns, error, math)
+      - Conclusion slot (claim–evidence–reasoning) + connection to the concept
+    formatting: Full sections with generous space; include a blank data table.
+    variants: [scientific_method, engineering_test, field_investigation]
+
+  - id: field_observation
+    name: Field Observation / Nature Journal
+    aka: [Nature Journal Templates, Field Observation Templates, Bird & Plant ID Sheets, Bio-Blitz Checklist]
+    definition: A template for structured outdoor/field observation and recording (nature study, field science).
+    use_when: Nature study, field science, or observational data collection.
+    structure:
+      - Date, time, location, weather/conditions fields
+      - Focus (what to observe)
+      - Observation space (sketch-in-words, describe, count/measure)
+      - Guiding questions (notice, wonder, identify)
+      - (Charlotte Mason) a wonder/reflection prompt
+    formatting: Repeatable field-entry template.
+    variants: [nature_study, id_checklist, phenology]
+
+  - id: data_analysis
+    name: Data Analysis / Graphing Worksheet
+    aka: [Data Analysis Prompts, Graphing & Chart Creation, Supply and Demand Graphing, Statistical Analysis]
+    definition: A worksheet giving or gathering data and guiding students to represent and interpret it (tables, graphs, statistics).
+    use_when: Statistics, science data, economics, social studies data.
+    structure:
+      - The data (given table) or a collection plan
+      - Representation task (make the specified graph/chart; axes/labels required)
+      - Computation (measures of center/spread, rates, etc.) with space
+      - Interpretation questions (trend, meaning, limitation)
+      - Answer key
+    formatting: Provide a data table; specify the graph type and required labels.
+
+  - id: engineering_design
+    name: Engineering Design / Build Challenge
+    aka: [Engineering Design Process Worksheets, Bridge Building Challenge, Rube Goldberg Blueprint, Project Blueprints]
+    definition: A design-challenge worksheet following the engineering design process (define → brainstorm → plan → build → test → improve).
+    use_when: STEM/design challenges and maker projects.
+    structure:
+      - The challenge + constraints + criteria for success
+      - Define the problem (in students' words)
+      - Brainstorm/sketch-in-words options
+      - Plan (materials, steps, a labeled design description)
+      - Test plan + results table
+      - 'Iterate: what to improve and why'
+    formatting: Follow the design-process stages; include a test-results table.
+
+  # ---- Projects & planning ---------------------------------------------------
+  - id: project_guide
+    name: Step-by-Step Project Guide
+    aka: [Painting Project Step-by-Step, Bookbinding Guides, Recipe Cards, Crafting Tutorials, Art Technique Guides]
+    definition: A how-to guide walking a maker through a hands-on project or technique, step by step, with materials and tips.
+    use_when: Art/craft/cooking/trade projects and technique tutorials.
+    structure:
+      - Project + result + time + difficulty
+      - Materials & tools list (with quantities)
+      - Safety notes (if tools/heat/chemicals)
+      - Numbered steps (each an action + what success looks like), with technique tips
+      - Troubleshooting (common problems → fixes)
+      - Extension / variation ideas
+    formatting: Materials list, then numbered steps; call out safety.
+    variants: [recipe, craft, technique_tutorial, build]
+
+  - id: project_planner
+    name: Project Planner
+    aka: [Project Planning Templates, Service Project Planning, Research Guides, Business Plan Outlines]
+    definition: 'A planning organizer for a larger student-run project (research, service, entrepreneurship): goals, steps, roles, timeline.'
+    use_when: Scaffolding a multi-step student project.
+    structure:
+      - Project goal + success criteria + audience
+      - Research/needs (questions to answer, sources, or a needs assessment)
+      - Task breakdown with owners and due dates (table)
+      - Resource/material/budget plan
+      - Timeline/milestones
+      - Reflection/evaluation plan
+    formatting: Include a task table and a milestone timeline.
+    variants: [research_project, service_project, entrepreneurship, event]
+
+  - id: checklist
+    name: Checklist
+    aka: [Skills Checklists, Safety Guides, Study Skills Checklists, Character Development Checklists, Quality Control Checklists]
+    definition: An actionable list of items to complete, verify, or observe — for skills, safety, quality, or accountability.
+    use_when: Verifying steps/skills/safety or tracking completion.
+    structure:
+      - Title + purpose + how to use
+      - Grouped checklist items (checkbox lines), specific and observable
+      - (optional) a sign-off / date line
+    formatting: '"[ ]" checkbox lines, grouped by phase or category.'
+    variants: [safety, skills_mastery, accountability, quality]
+
+  - id: tracker
+    name: Tracker / Log
+    aka: [Practice Log Templates, Habit Tracker Grid, Scripture Memory Plan, Reading Log, Spiritual Discipline Tracking]
+    definition: A repeating grid/log to record practice, habits, progress, or completion over time.
+    use_when: Tracking a habit, practice, plan, or progress across days/weeks.
+    structure:
+      - What is tracked + goal + period
+      - The grid (days/weeks × items) or dated log rows
+      - A goal/streak or reflection line
+      - (plan variant) a pre-filled schedule (e.g., a verse-per-day memory plan)
+    formatting: A grid table for habits; dated rows for logs.
+    variants: [habit_grid, practice_log, memory_plan, reading_log]
+
+  - id: planner_template
+    name: Planner Template (meal / budget / garden / schedule)
+    aka: [Meal Planning Templates, Budgeting Templates, Garden Layout Planners, Grocery Organizers]
+    definition: A domain planning template (meals, budget, garden, schedule) with the right fields to plan that domain.
+    use_when: Practical life-skills planning.
+    structure:
+      - Domain + period + goal/constraints (budget, dietary, space)
+      - The planning grid/fields specific to the domain
+      - A totals/summary line (cost, calories, tasks)
+      - Notes / adjustments
+    formatting: Domain-appropriate table; include a summary/total.
+    variants: [meal_plan, budget, garden_layout, schedule, chore_rotation]
+
+  - id: how_to_guide
+    name: How-To / Procedure Guide
+    aka: [Basic Car Maintenance Checklists, Home Repair Guides, Troubleshooting Scenarios, GPS & GIS Guides]
+    definition: A concise procedural guide to accomplish a practical task, with steps, cautions, and troubleshooting.
+    use_when: Teaching a discrete practical procedure (life skills, tech, trades).
+    structure:
+      - Task + when/why you'd do it + tools needed
+      - Numbered procedure (clear, imperative steps)
+      - Cautions / safety
+      - Troubleshooting (symptom → likely cause → fix)
+      - 'Check: how you know it worked'
+    formatting: Numbered imperative steps; a troubleshooting table.
+
+  # ---- Creative & performance ------------------------------------------------
+  - id: script
+    name: Script (reader's theater / skit / dialogue)
+    aka: [Reader's Theater Script, Scriptwriting Prompts, Public Reading Practice Scripts, Cantata Libretto]
+    definition: A performable script — reader's theater, skit, dramatized dialogue, or reading — with roles, lines, and stage/reading directions.
+    use_when: Drama, oral reading, dramatized history/Scripture, language practice.
+    structure:
+      - Title + cast list (roles) + setting
+      - Staging/reading notes
+      - 'The script: speaker labels + lines + [stage directions]'
+      - (teaching variant) fluency/expression notes; comprehension or debrief questions
+    formatting: 'SPEAKER: line; bracket stage directions; number scenes.'
+    sourcing_note: For dramatized Scripture, use exact text via the tools.
+    variants: [readers_theater, skit, mock_trial, dialogue]
+
+  - id: performance_rubric
+    name: Performance Rubric
+    aka: [Public Speaking Rubrics, Vocal/Reading Performance Rubrics]
+    definition: A rubric specialized for a live performance (speech, recitation, music, drama) with performance criteria.
+    use_when: Assessing a speech, recitation, or musical/dramatic performance.
+    structure: (see `rubric`; criteria are performance dimensions — delivery, expression, accuracy, poise, etc.)
+    formatting: Rubric table with performance criteria.
+
+  - id: art_technique_tutorial
+    name: Art / Music Technique Guide
+    aka: [Drawing Prompts, Color Theory Worksheets, Brushstroke Practice, Perspective Drawing Guides]
+    definition: A guide teaching a specific artistic or musical technique, with steps, practice, and what to notice.
+    use_when: Teaching a visual-art or music technique (distinct from a whole project).
+    structure:
+      - Technique + what it's for + materials
+      - Concept/principle behind it (e.g., value, perspective, dynamics)
+      - Step-by-step practice progression
+      - Practice prompts / exercises
+      - Self-critique checklist (what to look/listen for)
+    formatting: Principle → steps → practice → self-critique.
+
+  - id: music_worksheet
+    name: Music Theory / Notation Worksheet
+    aka: [Music Theory Worksheets, Music Notation Quizzes, Rhythm & Meter Practice, Scale & Chord Charts]
+    definition: A worksheet for music theory or notation practice (notes, rhythm, intervals, scales, chords, key signatures).
+    use_when: Music theory and notation instruction.
+    structure:
+      - Concept (brief) + notation reminder
+      - Identify items (name notes/intervals/keys — described in text or on a described staff)
+      - Construct items (build a scale/chord; write a rhythm to a count)
+      - Ear/application note (if applicable)
+      - Answer key
+    formatting: Describe staff positions in words (line/space, note names) since output is text.
+    variants: [notation, rhythm, intervals, scales_chords, key_signatures]
+
+  - id: listening_guide
+    name: Listening / Viewing Guide
+    aka: [Listening Guides for Specific Pieces, Film Analysis Question Guides, Picture Study Questions]
+    definition: A guide to attentively listen to a piece / watch a work / study an artwork, with directed observations and analysis.
+    use_when: Music appreciation, film study, picture study (art).
+    structure:
+      - The work (title, composer/artist/director, context)
+      - What to notice (guided observations, in order/time-stamped if apt)
+      - Analysis questions (elements, technique, meaning, worldview)
+      - Response prompt
+    formatting: Observations then analysis; time-stamp for media where useful.
+    variants: [music_listening, film_study, picture_study]
+
+  # ---- Bible & Theology native (uses the app's tools directly) --------------
+  - id: inductive_passage_study
+    name: Inductive Bible Study (Observe / Interpret / Apply)
+    aka: [Passage Analysis Question Guides, Thematic Reading Guides, Verse-by-Verse Commentary Prompts, Bible Study]
+    definition: A guided inductive study of a passage moving through observation, interpretation (in context), and application.
+    use_when: Studying a Bible passage with students (any level).
+    structure:
+      - Passage (exact text via the tools) + context note (book, genre, redemptive-historical location)
+      - 'Observe: what does it say (structure, key words, repetitions, who/what/when)'
+      - 'Interpret: what did it mean (context, cross-references, hard terms) with guiding questions'
+      - 'Apply: what does it mean for us (guarded, text-driven)'
+      - Christ-connection (how the passage relates to the gospel), where fitting
+      - Discussion/response questions
+    formatting: Three clear movements; keep observation before interpretation.
+    sourcing_note: Use lookup/passage, cross-references, word study, commentary, genre tools; cite.
+    grade_band_adaptations:
+      primary: Simple who/what/one-application, short passage.
+      seminary: Add discourse structure, original languages, and interpretive options.
+
+  - id: exegesis_report
+    name: Exegesis Report / Template
+    aka: [Exegesis Report Templates]
+    definition: A rigorous passage exegesis template covering text, context, structure, grammar/lexis, theology, and application — for advanced study.
+    use_when: Seminary/college-level exegetical work.
+    structure:
+      - Passage + text-critical note (if any) + translation
+      - Historical/literary context
+      - Structure/discourse analysis
+      - Grammatical & lexical analysis (key words via word study)
+      - Cross-references & biblical-theological connections
+      - Interpretive issues & options (with a reasoned decision)
+      - Theological synthesis
+      - Application / homiletical bridge
+      - Sources
+    formatting: Formal headed sections; cite tool output.
+    sourcing_note: Heavy use of word_study, morphology, get_commentary, get_church_fathers, cross-references; cite each.
+    grade_band_adaptations:
+      undergraduate: Lighter apparatus, guided decisions.
+      seminary: Full rigor, original languages, scholarly interaction.
+
+  - id: character_study
+    name: Bible Character Study
+    aka: [Character Study Templates, Character Trait Development Worksheets]
+    definition: 'A structured study of a biblical figure: their story, context, relationships, character, and what we learn.'
+    use_when: Studying a person in Scripture.
+    structure:
+      - Name + who they are + key passages (via the tools/graph)
+      - Timeline/story of their life (events)
+      - Relationships (via the people graph) and context
+      - 'Character: strengths, failures, growth (text-anchored)'
+      - God's dealings with them / redemptive role
+      - Lessons & application; discussion questions
+    formatting: Story → analysis → application.
+    sourcing_note: Use lookup_name, people_in_passage, explore_person_events, genealogy; cite verses.
+
+  - id: book_survey
+    name: Bible Book / Section Survey
+    aka: [Story Arc Summaries, Book Overview, Covenant-based Study Charts, Narrative Flow]
+    definition: 'An overview of a biblical book (or section): author, date, audience, purpose, structure, themes, and Christ-connection.'
+    use_when: Introducing or surveying a book of the Bible.
+    structure:
+      - Book + author/date/audience (as known) + one-line purpose
+      - Genre & how to read it
+      - Structure/outline (major sections)
+      - Key themes & key passages
+      - Place in redemptive history / Christ-connection
+      - Big-picture questions
+    formatting: Overview block + outline + themes.
+    sourcing_note: Ground references and text in the tools.
+
+  - id: harmony_chart
+    name: Parallel / Harmony Chart
+    aka: [Gospel Harmony Worksheets, Parallel Passages, Prophecy Fulfillment Worksheets]
+    definition: A chart aligning parallel accounts or paired passages (gospel harmony, OT-in-NT, prophecy→fulfillment) side by side for comparison.
+    use_when: Comparing parallel accounts or prophecy/fulfillment or OT/NT links.
+    structure:
+      - What's being paralleled + the passages
+      - Side-by-side table (columns = accounts/passages; rows = events/elements)
+      - Similarities/differences noted
+      - Interpretation questions (why the differences; what the pairing teaches)
+    formatting: Parallel columns table.
+    sourcing_note: Use get_parallel_passages / cross-references; use exact text.
+
+  - id: confession_study
+    name: Creed / Confession / Catechism Study
+    aka: [Creeds & Confessions Comparison Charts, Catechism Study, Confession-based Essay]
+    definition: 'A study of a creed/confession/catechism section: its text, meaning, Scripture proofs, and significance (optionally comparative).'
+    use_when: Teaching the confessional standards or catechism.
+    structure:
+      - The document + section/question (exact text via the tools)
+      - Plain-language explanation
+      - Scripture proofs (with the actual verses, via the tools) and how they support it
+      - Historical context / why it was written
+      - (comparative variant) a comparison_matrix across traditions
+      - Reflection/memorization prompt
+    formatting: Text → explanation → proofs → significance.
+    sourcing_note: Use get_confession / get_confession_proofs / find_confessions_by_verse; cite.
+
+  - id: scripture_memory_plan
+    name: Scripture Memory Plan
+    aka: [Scripture Memory Plan Generator, Key Scripture Verse Lists]
+    definition: A structured plan for memorizing verses/passages over time, with a schedule, review cycle, and helps.
+    use_when: Organizing Scripture memorization.
+    structure:
+      - Goal (verses/passage) + timeframe + translation
+      - The verse list (exact text via the tools)
+      - A dated schedule (new + review each day/week, spaced)
+      - Memory helps (chunking, first-letters, context notes)
+      - A tracking grid
+    formatting: Verse list + schedule table + tracker.
+    sourcing_note: Pull exact verse text via the tools in the chosen translation.
+
+  - id: devotional_guide
+    name: Devotional / Lectio Divina Guide
+    aka: [Lectio Divina Guide, Family Devotion Guide, Bible Journaling Template, Scripture Doodle Guide]
+    definition: A guided devotional walkthrough of a passage for formation (read, reflect, respond, rest/pray), optionally family-oriented.
+    use_when: Devotional formation, family worship, quiet time.
+    structure:
+      - Passage (exact text) + a settling note
+      - Read (slowly; what stands out)
+      - Reflect (a question or two; a short insight — grounded, not fanciful)
+      - Respond (application; a prayer prompt)
+      - Rest/Pray (a closing prayer or silence prompt)
+      - (family variant) a discussion question and an activity for children
+    formatting: Movement-based, warm but sober; keep it Scripture-centered.
+    sourcing_note: Use exact Scripture text; keep interpretation tethered to the passage.
+
+  - id: sermon_lesson_outline
+    name: Sermon / Teaching Outline
+    aka: [Theological Debate Outlines, Lesson Outline, Homiletical Outline]
+    definition: 'A preaching/teaching outline of a passage or topic: main idea, points, support, illustration, and application.'
+    use_when: Preparing to preach or teach a passage/topic.
+    structure:
+      - Passage/topic + the one main idea (a single sentence)
+      - Introduction (hook + orientation)
+      - 'Points (each: statement, textual support via the tools, brief explanation, illustration idea)'
+      - Application (specific, gospel-anchored)
+      - Conclusion + call
+    formatting: Point-driven; each point tied to the text.
+    sourcing_note: Anchor every point in the passage; use commentary/word tools; cite.
+
+  - id: apologetics_argument_map
+    name: Apologetics Argument / Worldview Tool
+    aka: [Argument Outline Templates, Counter-Argument Worksheets, Objection Handling Prompts, Worldview Comparison Grids]
+    definition: A tool for reasoning about worldviews and objections — argument outlines, objection→response frames, or worldview comparison.
+    use_when: Apologetics, worldview analysis, handling objections.
+    structure:
+      - The claim / question / worldview in view
+      - Argument structure (premises → conclusion) OR objection → best response frame
+      - Supporting evidence/Scripture (grounded, cited)
+      - Steel-manned counter-argument / opposing view (fairly stated)
+      - Response & remaining tension (honest)
+      - (worldview variant) a comparison_matrix across worldviews on key questions
+    formatting: Argument/response structure; state opponents fairly.
+
+  - id: faith_integration
+    name: Faith & Bible Integration Guide
+    aka: [Christian Integration Guide, Biblical Worldview Integration, Faith-Learning Integration]
+    definition: >
+      A teacher-facing guide for weaving authentic Christian perspective and devotion to
+      Jesus into a specific piece of curriculum (any subject, strand, topic, sub-topic, or
+      objective) truthfully and without forcing it. Written in the Theologian voice; names the
+      mode(s) of integration the material genuinely supports and refuses strained connections.
+    use_when: >
+      A teacher wants to integrate biblical faith into a lesson thoughtfully rather than tack it
+      on. Works on ANY standards node, including subjects with no obvious faith content.
+    structure:
+      - Metadata header (curricular location + grade band)
+      - 'The honest starting point (what this material actually teaches; do not spiritualize prematurely)'
+      - 'Modes that fit (name 1-2 from: wonder/creation, worldview, image & dignity, sin/grace/redemption, providence, virtue & formation, vocation & stewardship, doxology/devotion, Christ Himself — and WHY; if only a posture-level mode fits, say so honestly)'
+      - '2-3 concrete integration angles a teacher could use tomorrow (a framing sentence, a question, a moment of wonder/gratitude; ground any Scripture in the tools and cite it, invent none)'
+      - 'Devotion to Jesus (how this lesson can cultivate love for Christ — a posture or question, never a forced gospel add-on)'
+      - 'Discussion / wonder questions (a few open, age-appropriate)'
+      - 'Cautions (the specific way a teacher might overreach here; keep the academic content honest)'
+      - 'If it does not fit on the surface (the honest note: often the deepest integration is the praying, joyful, grace-filled teacher, not a content link)'
+    formatting: Warm, plain teacher-facing prose under clear headings. No forced doxological landing. State any Scripture with its reference, quoted from the tools.
+    sourcing_note: Ground every Scripture, confession, or church-father reference in the Study Bible tools and cite it; never proof-text or fabricate a reference. Where no passage genuinely fits, use none.
+    grade_band_adaptations:
+      primary: Wonder, story, gratitude, and simple Christlike character. Concrete, not abstract. Short questions a child can hold.
+      middle: Begin worldview comparison and "why" questions; connect the subject to God's order and to loving neighbor.
+      secondary: Worldview analysis, apologetic depth, ethical reasoning, and the harder questions handled fairly.
+      undergraduate: Rigorous integration of the discipline with a Christian account of knowledge, vocation, and the good.
+      seminary: Theological method, the discipline read christotelically, and the formation of teacher-scholars who love Christ.
+
+
+  # ---- Bible course (bespoke: John verse-by-verse) ---------------------------
+  - id: bible_lesson_guide
+    name: Bible Lesson Guide (5-move, teacher-governed)
+    aka: [John Lesson Guide, Bible Exposition Lesson]
+    definition: >
+      A single-period, teacher-facing plan for verse-by-verse Bible exposition in a
+      mixed classroom. Built to three ends at once: reach a three-tier room (a student
+      new to the Bible who cannot yet find the passage, a churched but passive student,
+      and a maturing disciple) in one lesson through a low floor, a high ceiling, and no
+      assumed knowledge; govern the teacher's voice so the students do the discovering;
+      and treat the text as the living Word to be ministered, not a document to lecture.
+    use_when: >
+      Producing a daily teacher guide for a year-long, passage-driven Bible course
+      (e.g., the Gospel of John), where each lesson opens in quiet time, works the text
+      through student output, and lands on Christ.
+    structure:
+      - "Metadata header table: Unit; Lesson n of N; Date / Day type (Regular 50 / Thursday 36 / Half-day 26); Passage; Big idea (one sentence); Christ connection (the christotelic landing); Memory verse (if planted or reviewed); Content objectives (2-4, measurable, the floor that quizzes and finals assess); Reach / Hold / Stretch (the entry for the searching student, the background for the churched, the high-ceiling thread for the disciple); Resources (paired sermon + external map)"
+      - "Talk budget line: teacher sustained voice under about 40% of the working period, and no single block past 8-10 minutes"
+      - "Move 1 - Quiet time with the Lord (7 min, ungraded): host (teacher or rotating student, prayer opt-in); settle plus a centering verse or prompt; journal in the Quiet-Time Journal; an honest on-ramp so a doubter can write questions to God; phones away"
+      - "Move 2 - Hear the Word (3-5 min): students read the passage aloud, slowly; navigation help so the newcomer is never lost"
+      - "Move 3 - Work the text (about 25 min, THE GOVERNED BLOCK, no lecture): a prepared question sequence the teacher asks so students discover the meaning - an Entry question any student can answer, a Core question worked in small groups with observation in the Reading Journal, and a Deeper high-ceiling question for the disciple; named cold-call comprehension checks; teacher circulates and probes in short turns"
+      - "Move 4 - Land and minister (5-7 min, the teacher's protected pulpit): bring the passage to Christ and speak its truth over the students, instructing the believer and inviting the outsider; gently correct or deepen any theology that surfaced, off the grade"
+      - "Move 5 - Respond (3-5 min, graded participation): an in-room written response to an existential prompt ('what is this passage asking of you?'), room given for the Word to press rather than a manufactured result"
+      - "After the bell: homework (near-zero, the reading itself); what the lesson feeds the gradebook (participation; content mastery lives in the memory verses, quizzes, and finals, not here); what it sets up next"
+      - "Teacher notes: the governing reminders, the fresh-build or paired-sermon note, and the day-type adaptation"
+    formatting: >
+      Markdown. Open with the metadata header as a two-column table, then the talk
+      budget, then the five moves as headed sections, each with its time box in the
+      heading and short teacher-move bullets. Write the Work-block questions out for the
+      teacher to ask verbatim; never write a paragraph for the teacher to read aloud in
+      that block - convert content into a question.
+    defaults: One class session; 50-minute regular day unless the day type says otherwise.
+    grade_band_adaptations:
+      secondary: The default. A sophomore mixed-faith classroom; keep the floor low and the ceiling real.
+    variants:
+      - "Thursday (36 min): keep all five moves but run one key question in the Work block instead of a full sequence"
+      - "Half-day (26 min): trim the quiet time to 3-4 minutes and make one focused verse, a memory-verse quiz, or a recap the whole lesson"
+    sourcing_note: >
+      Quote all Scripture in the ESV: pass translation='ESV' to the study-bible tools
+      (lookup_verse, get_passage, compare_translations). Ground every quotation and
+      cross-reference in those tools; do not rely on memory for wording or references.
+      Draw framing and illustrations from the paired sermon and the vetted external
+      resources named in the header, deriving and citing rather than copying.
+
+  - id: bible_reading_guide
+    name: Bible Reading Guide (per-unit, student)
+    aka: [Unit Reading Guide, Student Passage Guide]
+    definition: >
+      A student-facing guide that carries a class through one unit of a verse-by-verse
+      Bible course. It is a light follow-along structure used alongside the student's
+      Reading Journal and the in-room discussion, not a worksheet to complete at home.
+      Built for a three-tier room: a low floor (navigation help, plain language, no
+      assumed knowledge) and a high ceiling (optional go-deeper prompts for the disciple).
+    use_when: >
+      The instructor wants one guide per unit that students follow across its lessons,
+      supporting observation, interpretation, and response without take-home busywork.
+    structure:
+      - "Unit header: unit name; passage range; the unit's memory verse (ESV); the one big question the unit asks"
+      - "How to use this guide: with your Reading Journal, in class; what a good observation looks like"
+      - "For each lesson passage in the unit, a short block: the reference and 'read it'; 1-2 Observe prompts (what the text says); one Interpret prompt (what it means and who Jesus is here); one Respond prompt (what it asks of you); an optional 'Go deeper' for the disciple (a cross-reference or Old Testament echo); navigation help for the newcomer where a passage is hard to find"
+      - "Key words to know: a few light vocabulary or background terms for the unit"
+      - "Memory verse (ESV) with the review note"
+      - "The whole unit points to Christ: one or two sentences naming where the unit lands on Jesus"
+    formatting: >
+      Markdown, addressed to the student in plain, warm language. Keep prompts short and
+      answerable; leave the heavy lifting to the Reading Journal and the discussion. Mark
+      'Go deeper' prompts clearly as optional. Quote Scripture in the ESV.
+    defaults: One guide per unit (typically 2-11 lessons).
+    grade_band_adaptations:
+      secondary: The default. A sophomore mixed-faith classroom; never assume Bible literacy.
+    sourcing_note: >
+      Quote all Scripture in the ESV (pass translation='ESV' to the study-bible tools) and
+      ground it there; do not rely on memory. Keep the guide honest for a searching student
+      as well as a believing one.
+
+  - id: student_devotional
+    name: Student-Led Devotional Template
+    aka: [Devotional Builder, Peer Devotional Guide]
+    definition: >
+      A template a student or small group uses to BUILD and LEAD a short devotional for the
+      class, mirroring the course's lesson arc in miniature. It is peer discipleship and an
+      oral assessment at once: graded as participation for preparation, engagement, and
+      service, with theology coached live and never scored.
+    use_when: >
+      Assigning a student-led devotional in a Bible course, where a group ministers a
+      passage to their peers and facilitates a short discussion.
+    structure:
+      - "What this is and the goal: minister the passage to your peers and invite a response; you are serving the class, not performing"
+      - "Your passage and the date you lead"
+      - "Build the devotional (fill each part): (1) read the passage aloud; (2) the one big idea in a sentence; (3) how it points to Christ; (4) one good question for the class, and how you will facilitate a short discussion; (5) one application, or a truth to speak over the class to close"
+      - "Group roles so everyone speaks: Reader, Big-Idea, Christ-connection, Facilitator (match roles to readiness; a student still exploring faith can read or facilitate)"
+      - "Leading well: keep it to about 10-15 minutes; invite response; handle questions graciously; encourage rather than perform"
+      - "How this is graded (participation): preparation, engagement, and service; theology is coached live, not scored; listening groups owe one written affirmation and one honest question"
+      - "Prep checklist before you lead"
+    formatting: >
+      Markdown, addressed to the student, warm and encouraging, with fill-in space under each
+      part of the build. Quote Scripture in the ESV.
+    defaults: One devotional, 10-15 minutes of class time.
+    grade_band_adaptations:
+      secondary: The default. Keep it safe for a mixed-faith room; faith content stays invitational.
+    sourcing_note: >
+      Quote all Scripture in the ESV (pass translation='ESV' to the study-bible tools) and
+      ground it there. Model reverence without pressuring any student to profess.
+
+  - id: course_syllabus
+    name: Course Syllabus (student & parent facing)
+    aka: [Syllabus]
+    definition: >
+      A student- and parent-facing syllabus for a year-long course: what the course is, its aims, how
+      the year is organized, what students will do, required materials, grading, and the classroom and
+      academic-honesty expectations, ending with a warm note to parents. Accurate to the course as
+      actually designed - it states real specifics, not placeholders.
+    use_when: >
+      Producing the syllabus for a full-year course, to hand out in week one.
+    structure:
+      - "Header: school, course title, term/year, instructor, class periods/sections, a contact line"
+      - "Course description (what we will study and why)"
+      - "The aim of the course (the central questions it returns to)"
+      - "How the year is organized (major divisions and terms; the shape of the calendar and the finals)"
+      - "How we study (the daily rhythm and method)"
+      - "What students will do (the ongoing work and the major assessments)"
+      - "Required materials"
+      - "Grading (the categories and weights, stated exactly; note where school policy sets the final's weight)"
+      - "Memory verses (the full reference list and the cumulative-review approach)"
+      - "Projects (the set, one line each on what students create)"
+      - "Classroom expectations"
+      - "Academic honesty (including the stance on AI use)"
+      - "A note to parents and families, closing with the instructor's name"
+    formatting: >
+      Markdown, warm and plain, addressed to students and parents. State every specific (weights, counts,
+      dates, the verse list, the projects) exactly as given in the brief; do not invent, hedge, or pad.
+      Quote Scripture in the ESV.
+    defaults: One document, 2-4 pages.
+    grade_band_adaptations:
+      secondary: The default. A high-school student and parent audience.
+    sourcing_note: >
+      Quote Scripture in the ESV (translation='ESV' via the study-bible tools). Use ONLY the specifics
+      provided in the brief for grading, memory verses, projects, and dates; never fabricate policy.
+
+# -----------------------------------------------------------------------------
+# LAYER 2 — SUBJECT TAXONOMY (the menu)
+# Each topic lists `formats` (archetype ids that fit it) and `signature`
+# (distinctive, subject-specific resources -> the format that produces them).
+# The instructor's original named resources all resolve here to a format + a
+# subject context. Add topics/subjects freely; formats above stay the engine.
+# -----------------------------------------------------------------------------
+subjects:
+
+  Universal (any subject):
+    Curriculum & Delivery:
+      formats: [lesson_plan, unit_plan, student_packet, reading_anthology, slide_deck, rubric, answer_key, checklist, tracker]
+      signature:
+        - {name: Teacher Guide, format: lesson_plan}
+        - {name: Student Packet, format: student_packet}
+        - {name: Graphic Organizers, format: graphic_organizer}
+        - {name: Release Manifest, format: checklist, note: "a packaging/version checklist for a resource set"}
+
+  Bible & Theology:
+    Biblical Studies (OT & NT, Survey, Redemptive History):
+      formats: [inductive_passage_study, book_survey, harmony_chart, character_study, timeline, comparison_matrix, reading_comprehension_set, discussion_questions, quiz, study_guide, annotated_map]
+      signature:
+        - {name: Chronological Timeline of Redemptive History, format: timeline}
+        - {name: Covenant Study Chart, format: comparison_matrix}
+        - {name: Gospel Harmony Worksheet, format: harmony_chart}
+        - {name: Prophecy → Fulfillment Chart, format: harmony_chart}
+        - {name: Kings & Judges Character Chart, format: comparison_matrix}
+        - {name: Major Prophet Summary Guide, format: book_survey}
+        - {name: Psalm Analysis, format: inductive_passage_study}
+        - {name: Epistle Outline Template, format: outline_template}
+        - {name: Parable Interpretation Worksheet, format: inductive_passage_study}
+    Hermeneutics & Exegesis:
+      formats: [exegesis_report, inductive_passage_study, close_reading_guide, word_study, explainer_sheet, worksheet]
+      signature:
+        - {name: Exegesis Report Template, format: exegesis_report}
+        - {name: Literary Genre Identification, format: worksheet}
+        - {name: Contextualization Worksheet, format: close_reading_guide}
+        - {name: Interpretive Principles Scenarios, format: case_study}
+    Systematic & Practical Theology:
+      formats: [explainer_sheet, comparison_matrix, study_guide, outline_template, essay_assignment, case_study, discussion_questions, apologetics_argument_map]
+      signature:
+        - {name: Doctrine Comparison Chart, format: comparison_matrix}
+        - {name: Theological Loci Study Guide, format: study_guide}
+        - {name: Systematic Theology Outline, format: outline_template}
+        - {name: Theological Terminology Explainer, format: explainer_sheet}
+        - {name: Ethical Case Study, format: case_study}
+    Confessions, Creeds & Catechisms:
+      formats: [confession_study, comparison_matrix, flashcards, scripture_memory_plan, quiz]
+      signature:
+        - {name: Creeds & Confessions Comparison Chart, format: comparison_matrix}
+        - {name: Catechism Q&A Study, format: confession_study}
+        - {name: Doctrinal Statement Writing Prompt, format: essay_assignment}
+    Church History:
+      formats: [timeline, biography_profile, comparison_matrix, annotated_map, case_study, quiz, reading_anthology]
+      signature:
+        - {name: Reformation Figure Comparison, format: comparison_matrix}
+        - {name: Church Council Summary Sheet, format: fact_sheet}
+        - {name: Heresy Identification Quiz, format: quiz}
+        - {name: Missionary Journey Map, format: annotated_map}
+        - {name: Persecution & Martyrdom Case Study, format: case_study}
+        - {name: Reformation Figure Biography, format: biography_profile}
+    Apologetics & Worldview:
+      formats: [apologetics_argument_map, comparison_matrix, case_study, logic_practice, debate_kit, discussion_questions]
+      signature:
+        - {name: Worldview Comparison Grid, format: comparison_matrix}
+        - {name: Objection → Response Worksheet, format: apologetics_argument_map}
+        - {name: Logical Fallacy Quiz, format: logic_practice}
+        - {name: Science & Faith Integration, format: explainer_sheet}
+    Comparative Religions & Ethics:
+      formats: [comparison_matrix, fact_sheet, biography_profile, venn_diagram, annotated_map, case_study]
+      signature:
+        - {name: World Religions Fact Sheet, format: fact_sheet}
+        - {name: Belief Comparison Chart, format: comparison_matrix}
+        - {name: Unreached People Groups Map, format: annotated_map}
+    Discipleship & Christian Living:
+      formats: [reflection_journal, tracker, scripture_memory_plan, devotional_guide, checklist, project_planner]
+      signature:
+        - {name: Prayer Journal, format: reflection_journal}
+        - {name: Family Devotion Guide, format: devotional_guide}
+        - {name: Spiritual Discipline Tracker, format: tracker}
+        - {name: Christian Service Project Plan, format: project_planner}
+
+  Classical & Biblical Languages:
+    Biblical Greek & Hebrew:
+      formats: [vocabulary_list, flashcards, reference_chart, translation_worksheet, word_study, drill_set, quiz]
+      signature:
+        - {name: Vocabulary List (by frequency), format: vocabulary_list}
+        - {name: Verb/Noun Paradigm Chart, format: reference_chart}
+        - {name: Alphabet Practice, format: copywork_handwriting}
+        - {name: Verse Translation Worksheet, format: translation_worksheet}
+        - {name: Word Study Guide, format: word_study}
+        - {name: Conjugation/Declension Drills, format: drill_set}
+    Latin:
+      formats: [vocabulary_list, reference_chart, translation_worksheet, drill_set, grammar_practice, fact_sheet, quiz]
+      signature:
+        - {name: Declension & Conjugation Practice, format: drill_set}
+        - {name: Vocabulary with English Derivatives, format: vocabulary_list}
+        - {name: Vulgate Reading Guide, format: reading_anthology}
+        - {name: Roman History Fact Sheet, format: fact_sheet}
+        - {name: Etymology Detective Sheet, format: worksheet}
+    Modern Foreign Languages:
+      formats: [vocabulary_list, grammar_practice, reading_comprehension_set, script, drill_set, role_play_scenario]
+      signature:
+        - {name: Conversation Scripts, format: script}
+        - {name: Listening Comprehension (with audio script), format: script, note: "provide a transcript/script; audio is produced separately"}
+    Linguistics & Language Skills:
+      formats: [explainer_sheet, comparison_matrix, classification_tree, worksheet, role_play_scenario]
+      signature:
+        - {name: Language Family Tree, format: family_tree}
+        - {name: Comparative Grammar Worksheet, format: comparison_matrix}
+        - {name: Phonetic Transcription Practice, format: drill_set}
+
+  Language Arts & Humanities:
+    Foundational Literacy (Reading, Phonics, Penmanship):
+      formats: [decodable_text, copywork_handwriting, reading_comprehension_set, vocabulary_list, drill_set, worksheet]
+      signature:
+        - {name: Decodable Text, format: decodable_text}
+        - {name: Handwriting Practice, format: copywork_handwriting}
+        - {name: Sight Word List, format: vocabulary_list}
+        - {name: Narration Prompt (Charlotte Mason), format: writing_prompt_set}
+    Writing & Composition:
+      formats: [writing_prompt_set, essay_assignment, outline_template, fill_in_template, rubric, reflection_journal]
+      signature:
+        - {name: Persuasive Essay Outline, format: outline_template}
+        - {name: Fable / Haiku / Sonnet Template, format: fill_in_template}
+        - {name: Grading Rubric, format: rubric}
+    Grammar & Mechanics:
+      formats: [grammar_practice, sentence_diagram, reference_chart, drill_set, quiz]
+    Literary Analysis:
+      formats: [close_reading_guide, story_map, comparison_matrix, biography_profile, discussion_questions, reading_comprehension_set, explainer_sheet, essay_assignment]
+      signature:
+        - {name: Character Analysis, format: story_map}
+        - {name: Plot Diagram, format: story_map}
+        - {name: Literary Device Worksheet, format: worksheet}
+        - {name: Poetry Analysis, format: close_reading_guide}
+        - {name: Theme Comparison, format: comparison_matrix}
+        - {name: Author Worldview Analysis, format: apologetics_argument_map}
+        - {name: Commonplace Book Entry, format: reflection_journal}
+    Speech, Rhetoric & Logic:
+      formats: [outline_template, debate_kit, logic_practice, discussion_questions, script, performance_rubric, role_play_scenario]
+      signature:
+        - {name: Speech Outline, format: outline_template}
+        - {name: Debate Flowsheet, format: debate_kit}
+        - {name: Mock Trial Script, format: script}
+        - {name: Syllogism Practice, format: logic_practice}
+        - {name: Logical Fallacy Bingo, format: puzzle_activity}
+    Spelling, Vocabulary & Word Study:
+      formats: [vocabulary_list, puzzle_activity, quiz, worksheet]
+    Media & Journalism:
+      formats: [close_reading_guide, listening_guide, fill_in_template, rubric, case_study]
+      signature:
+        - {name: Media Bias Analysis, format: close_reading_guide}
+        - {name: News Article Template, format: fill_in_template}
+        - {name: Film Analysis Guide, format: listening_guide}
+
+  Fine Arts:
+    Art History & Appreciation:
+      formats: [biography_profile, timeline, comparison_matrix, listening_guide, fact_sheet, explainer_sheet]
+      signature:
+        - {name: Picture Study Questions, format: listening_guide}
+        - {name: Art Movement Comparison, format: comparison_matrix}
+        - {name: Christian Symbolism in Art Guide, format: explainer_sheet}
+    Visual Arts (studio):
+      formats: [art_technique_tutorial, project_guide, reference_chart, writing_prompt_set, checklist]
+      signature:
+        - {name: Color Theory Worksheet, format: worksheet}
+        - {name: Perspective Drawing Guide, format: art_technique_tutorial}
+        - {name: Illuminated Manuscript Template, format: fill_in_template}
+        - {name: Tool & Safety Guide, format: checklist}
+    Music:
+      formats: [music_worksheet, listening_guide, biography_profile, reference_chart, drill_set, comparison_matrix, tracker]
+      signature:
+        - {name: Music Theory Worksheet, format: music_worksheet}
+        - {name: Listening Guide, format: listening_guide}
+        - {name: Hymn Text vs. Scripture Comparison, format: comparison_matrix}
+        - {name: Composer Biography, format: biography_profile}
+        - {name: Practice Log, format: tracker}
+    Dramatic Arts:
+      formats: [script, performance_rubric, art_technique_tutorial, role_play_scenario]
+      signature:
+        - {name: Reader's Theater Script, format: script}
+        - {name: Shakespearean Monologue Guide, format: art_technique_tutorial}
+    Digital Art & Media:
+      formats: [project_guide, art_technique_tutorial, project_planner, rubric]
+
+  Geography:
+    Physical & Human Geography:
+      formats: [annotated_map, fact_sheet, data_analysis, comparison_matrix, labeled_diagram]
+      signature:
+        - {name: Blank Map for Labeling, format: annotated_map}
+        - {name: Climate Zone Quiz, format: quiz}
+        - {name: Cultural Fact Sheet, format: fact_sheet}
+    Geographic Skills & Biblical Geography:
+      formats: [annotated_map, how_to_guide, field_observation, reflection_journal, timeline]
+      signature:
+        - {name: Bible Lands Topography Map, format: annotated_map}
+        - {name: Silk Road Trade Route Map, format: annotated_map}
+        - {name: Map Reading Skills, format: how_to_guide}
+        - {name: Creation Care / Stewardship Reflection, format: reflection_journal}
+
+  History & Social Studies:
+    World & U.S. History (all eras):
+      formats: [timeline, biography_profile, annotated_map, comparison_matrix, close_reading_guide, case_study, quiz, essay_assignment]
+      signature:
+        - {name: Primary Source Analysis, format: close_reading_guide}
+        - {name: Historical Figure Comparison, format: comparison_matrix}
+        - {name: Cause & Effect Analysis, format: graphic_organizer}
+        - {name: Empire/Exploration Map, format: annotated_map}
+        - {name: Time Travel Journal Entry, format: writing_prompt_set}
+    Civics, Government & Law:
+      formats: [process_diagram, comparison_matrix, case_study, role_play_scenario, close_reading_guide, debate_kit]
+      signature:
+        - {name: Bill-to-Law Process Diagram, format: process_diagram}
+        - {name: Constitution Analysis, format: close_reading_guide}
+        - {name: Mock Election Ballot, format: fill_in_template}
+        - {name: Town Hall Script, format: script}
+        - {name: Biblical Law vs. Civil Law Comparison, format: comparison_matrix}
+    Economics:
+      formats: [comparison_matrix, data_analysis, case_study, planner_template, explainer_sheet]
+      signature:
+        - {name: Supply & Demand Graphing, format: data_analysis}
+        - {name: Budgeting Scenario, format: planner_template}
+        - {name: Biblical Stewardship Principles, format: explainer_sheet}
+    Historical Skills & Methods:
+      formats: [close_reading_guide, timeline, essay_assignment, rubric, role_play_scenario]
+      signature:
+        - {name: Evidence Evaluation Rubric, format: rubric}
+        - {name: Oral History Interview Guide, format: discussion_questions}
+
+  Practical & Life Skills:
+    Financial Literacy & Stewardship:
+      formats: [planner_template, problem_set, tracker, explainer_sheet, case_study]
+      signature:
+        - {name: Budget Template, format: planner_template}
+        - {name: Tithing & Stewardship Calculation, format: problem_set}
+        - {name: Debt Management Plan, format: planner_template}
+    Home Economics & Household:
+      formats: [project_guide, how_to_guide, planner_template, checklist, reference_chart]
+      signature:
+        - {name: Recipe Card, format: project_guide}
+        - {name: Meal Plan, format: planner_template}
+        - {name: Mending/Repair Instructions, format: how_to_guide}
+    Trades & Hands-On:
+      formats: [project_guide, how_to_guide, checklist, labeled_diagram, fact_sheet, engineering_design]
+      signature:
+        - {name: Project Blueprint, format: engineering_design}
+        - {name: Tool Safety Guide, format: checklist}
+        - {name: Joinery Technique, format: project_guide}
+    Homesteading & Agriculture:
+      formats: [planner_template, how_to_guide, tracker, field_observation, explainer_sheet]
+      signature:
+        - {name: Garden Layout Planner, format: planner_template}
+        - {name: Seed Starting Schedule, format: tracker}
+        - {name: Biblical Farming Principles, format: explainer_sheet}
+    Personal Development & Career:
+      formats: [tracker, checklist, planner_template, reflection_journal, project_planner, how_to_guide, script]
+      signature:
+        - {name: Habit Tracker, format: tracker}
+        - {name: Goal Setting Template, format: planner_template}
+        - {name: Resume Worksheet, format: fill_in_template}
+        - {name: Business Plan Outline, format: project_planner}
+        - {name: Elevator Pitch Script, format: script}
+
+  Mathematics:
+    All strands (Arithmetic → Calculus, Geometry, Stats, Discrete, Number Theory):
+      formats: [problem_set, drill_set, reference_chart, explainer_sheet, worksheet, data_analysis, quiz, logic_practice]
+      signature:
+        - {name: Arithmetic Drills, format: drill_set}
+        - {name: Equation-Solving Practice, format: problem_set}
+        - {name: Formula Sheet, format: reference_chart}
+        - {name: Geometric Proof Template, format: outline_template}
+        - {name: Probability Problem Set, format: problem_set}
+        - {name: Truth Table Practice, format: logic_practice}
+        - {name: Real-World Word Problems, format: problem_set}
+    History & Philosophy of Math (Theological Context):
+      formats: [timeline, biography_profile, explainer_sheet, reflection_journal]
+      signature:
+        - {name: Mathematician Biography, format: biography_profile}
+        - {name: Golden Ratio Hunt, format: field_observation}
+        - {name: Theology & Mathematics Connection, format: explainer_sheet}
+
+  Science & Nature:
+    Life / Physical / Earth & Space Sciences:
+      formats: [labeled_diagram, process_diagram, lab_report, problem_set, comparison_matrix, classification_tree, fact_sheet, data_analysis, quiz]
+      signature:
+        - {name: Cell/Plant Labeling, format: labeled_diagram}
+        - {name: Photosynthesis / Rock Cycle Process, format: process_diagram}
+        - {name: Punnett Square Practice, format: problem_set}
+        - {name: Taxonomy / Classification Chart, format: classification_tree}
+        - {name: Periodic Table Quiz, format: quiz}
+        - {name: Star Chart / Observation Log, format: field_observation}
+    Scientific Method & Inquiry:
+      formats: [lab_report, field_observation, data_analysis, explainer_sheet, rubric]
+      signature:
+        - {name: Scientific Method Template, format: lab_report}
+        - {name: Hypothesis & Conclusion Writing, format: lab_report}
+        - {name: Scientific Drawing Template, format: field_observation}
+    Nature Study (Charlotte Mason):
+      formats: [field_observation, reflection_journal, checklist, art_technique_tutorial]
+      signature:
+        - {name: Nature Journal, format: field_observation}
+        - {name: Bio-Blitz Checklist, format: checklist}
+        - {name: Phenology Wheel, format: tracker}
+    Applied Science / Engineering (STEM):
+      formats: [engineering_design, project_guide, case_study, project_planner, discussion_questions]
+      signature:
+        - {name: Bridge Building Challenge, format: engineering_design}
+        - {name: Rube Goldberg Blueprint, format: engineering_design}
+        - {name: Technology Ethics Discussion, format: discussion_questions}
+
+  Computing & Technology:
+    Programming & Computer Science:
+      formats: [explainer_sheet, worksheet, problem_set, how_to_guide, project_guide, checklist]
+      signature:
+        - {name: Algorithm Design Worksheet, format: worksheet}
+        - {name: Pseudocode Template, format: outline_template}
+        - {name: Debugging Strategy Guide, format: how_to_guide}
+        - {name: Code Review Checklist, format: checklist}
+        - {name: Flowchart Planner, format: graphic_organizer}
+    Systems, Networks & Hardware:
+      formats: [labeled_diagram, process_diagram, how_to_guide, fact_sheet]
+    Digital Literacy, Safety & Ethics:
+      formats: [checklist, discussion_questions, case_study, explainer_sheet, fill_in_template]
+      signature:
+        - {name: Online Safety Checklist, format: checklist}
+        - {name: Screen Time Contract, format: fill_in_template}
+        - {name: Digital Footprint Analysis, format: worksheet}
+        - {name: AI Ethics Discussion, format: discussion_questions}
+    History & Philosophy of Computing:
+      formats: [timeline, biography_profile, discussion_questions, explainer_sheet]
+
+  Personal Relationships & Digital Discipleship:
+    Identity, Ethics & Relationships:
+      formats: [reflection_journal, explainer_sheet, case_study, discussion_questions, checklist, comparison_matrix, role_play_scenario]
+      signature:
+        - {name: Biblical Identity Study, format: inductive_passage_study}
+        - {name: Emotional Regulation Card, format: explainer_sheet}
+        - {name: Conflict Resolution Guide, format: how_to_guide}
+        - {name: Healthy Relationship / Boundaries, format: explainer_sheet}
+        - {name: Digital Discipleship Guide, format: how_to_guide}
+        - {name: Digital Fast Guide, format: how_to_guide}

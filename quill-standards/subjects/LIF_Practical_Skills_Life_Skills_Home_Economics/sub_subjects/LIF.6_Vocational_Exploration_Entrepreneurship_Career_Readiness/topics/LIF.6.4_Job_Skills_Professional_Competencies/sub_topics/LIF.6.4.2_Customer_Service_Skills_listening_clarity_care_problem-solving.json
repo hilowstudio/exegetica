@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "LIF.6.4.2",
+    "name": "Customer Service Skills (listening, clarity, care, problem-solving)",
+    "topic_id": "LIF.6.4",
+    "topic_name": "Job Skills & Professional Competencies",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.6",
+    "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Customer Service Skills (listening, clarity, care, problem-solving) in Job Skills & Professional Competencies (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.6",
+            "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+            "topic_id": "LIF.6.4",
+            "topic_name": "Job Skills & Professional Competencies",
+            "sub_topic_id": "LIF.6.4.2",
+            "sub_topic_name": "Customer Service Skills (listening, clarity, care, problem-solving)",
+            "objective_id": "LIF.6.4.2.1",
+            "objective_text": "Listen carefully and speak kindly when helping someone.",
+            "objective_uuid": "aec659eb-8b83-4858-87d2-c828f209632c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 1 — Integrate multiple life roles and responsibilities in family, work, and community settings (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.6",
+            "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+            "topic_id": "LIF.6.4",
+            "topic_name": "Job Skills & Professional Competencies",
+            "sub_topic_id": "LIF.6.4.2",
+            "sub_topic_name": "Customer Service Skills (listening, clarity, care, problem-solving)",
+            "objective_id": "LIF.6.4.2.2",
+            "objective_text": "Practice listening fully before you answer a question.",
+            "objective_uuid": "c9fb526a-6996-410a-8388-73c4634380e7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 1 — Integrate multiple life roles and responsibilities in family, work, and community settings (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.6",
+            "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+            "topic_id": "LIF.6.4",
+            "topic_name": "Job Skills & Professional Competencies",
+            "sub_topic_id": "LIF.6.4.2",
+            "sub_topic_name": "Customer Service Skills (listening, clarity, care, problem-solving)",
+            "objective_id": "LIF.6.4.2.3",
+            "objective_text": "Role-play helping a customer solve a problem clearly and patiently.",
+            "objective_uuid": "2c28e9e0-3ce3-45d7-8a55-7de1b22639dd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 1 — Integrate multiple life roles and responsibilities in family, work, and community settings (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.6",
+            "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+            "topic_id": "LIF.6.4",
+            "topic_name": "Job Skills & Professional Competencies",
+            "sub_topic_id": "LIF.6.4.2",
+            "sub_topic_name": "Customer Service Skills (listening, clarity, care, problem-solving)",
+            "objective_id": "LIF.6.4.2.4",
+            "objective_text": "Handle a difficult customer situation with care and a helpful solution.",
+            "objective_uuid": "409d0ff2-84d7-42d8-887d-1759e87ffb6e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 1 — Integrate multiple life roles and responsibilities in family, work, and community settings (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.6",
+            "sub_subject_name": "Vocational Exploration, Entrepreneurship & Career Readiness",
+            "topic_id": "LIF.6.4",
+            "topic_name": "Job Skills & Professional Competencies",
+            "sub_topic_id": "LIF.6.4.2",
+            "sub_topic_name": "Customer Service Skills (listening, clarity, care, problem-solving)",
+            "objective_id": "LIF.6.4.2.5",
+            "objective_text": "Evaluate a customer service interaction and suggest improvements.",
+            "objective_uuid": "3e11445b-ceda-442a-881d-98d202254a6d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 1 — Integrate multiple life roles and responsibilities in family, work, and community settings (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "FCS / Jump$tart national standards",
+      "anchor_note": "Rebuilt from the FCS / Jump$tart national standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "sub_topic": {
+    "id": "SCI.6.2.1",
+    "name": "Ethics of Technology & Bioethics",
+    "topic_id": "SCI.6.2",
+    "topic_name": "Science & Christian Worldview",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.6",
+    "sub_subject_name": "Scientific Inquiry, Method & Worldview",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Ethics of Technology & Bioethics in Science & Christian Worldview (Science & Nature)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.6",
+            "sub_subject_name": "Scientific Inquiry, Method & Worldview",
+            "topic_id": "SCI.6.2",
+            "topic_name": "Science & Christian Worldview",
+            "sub_topic_id": "SCI.6.2.1",
+            "sub_topic_name": "Ethics of Technology & Bioethics",
+            "objective_id": "SCI.6.2.1.1",
+            "objective_text": "Give examples of how a tool or technology can be used to help people or to cause harm",
+            "objective_uuid": "511b9105-453e-4a70-8a29-6b6d0a6766ba",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.6",
+            "sub_subject_name": "Scientific Inquiry, Method & Worldview",
+            "topic_id": "SCI.6.2",
+            "topic_name": "Science & Christian Worldview",
+            "sub_topic_id": "SCI.6.2.1",
+            "sub_topic_name": "Ethics of Technology & Bioethics",
+            "objective_id": "SCI.6.2.1.2",
+            "objective_text": "Explain why people who make and use technology are responsible for how it affects others",
+            "objective_uuid": "1fa90e03-0c55-4bdd-8890-c93d0fbbf2a0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.6",
+            "sub_subject_name": "Scientific Inquiry, Method & Worldview",
+            "topic_id": "SCI.6.2",
+            "topic_name": "Science & Christian Worldview",
+            "sub_topic_id": "SCI.6.2.1",
+            "sub_topic_name": "Ethics of Technology & Bioethics",
+            "objective_id": "SCI.6.2.1.3",
+            "objective_text": "Describe an ethical question raised by a medical or biological technology, such as how it should or should not be used",
+            "objective_uuid": "36934947-4544-466d-81c2-78921fd202df",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.6",
+            "sub_subject_name": "Scientific Inquiry, Method & Worldview",
+            "topic_id": "SCI.6.2",
+            "topic_name": "Science & Christian Worldview",
+            "sub_topic_id": "SCI.6.2.1",
+            "sub_topic_name": "Ethics of Technology & Bioethics",
+            "objective_id": "SCI.6.2.1.4",
+            "objective_text": "Analyze a bioethics case, weighing benefits, risks, and the dignity of the people involved, and defend a reasoned position",
+            "objective_uuid": "b74007de-8fd9-474a-8c30-9e9599d4636c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

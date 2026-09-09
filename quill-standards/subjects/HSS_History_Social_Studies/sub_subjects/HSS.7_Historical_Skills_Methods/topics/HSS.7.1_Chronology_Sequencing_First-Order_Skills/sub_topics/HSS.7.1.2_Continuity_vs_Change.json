@@ -1,0 +1,169 @@
+{
+  "sub_topic": {
+    "id": "HSS.7.1.2",
+    "name": "Continuity vs. Change",
+    "topic_id": "HSS.7.1",
+    "topic_name": "Chronology & Sequencing (First-Order Skills)",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.7",
+    "sub_subject_name": "Historical Skills & Methods",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Continuity vs. Change in Chronology & Sequencing (First-Order Skills) (History & Social Studies)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.1",
+            "topic_name": "Chronology & Sequencing (First-Order Skills)",
+            "sub_topic_id": "HSS.7.1.2",
+            "sub_topic_name": "Continuity vs. Change",
+            "objective_id": "HSS.7.1.2.1",
+            "objective_text": "Identify one thing that stayed the same and one thing that changed between two points in time.",
+            "objective_uuid": "796780fc-1363-4b2e-82e2-fecd1a913b3d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.K-2 — Generate questions about individuals and groups who have shaped a significant historical change (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.1",
+            "topic_name": "Chronology & Sequencing (First-Order Skills)",
+            "sub_topic_id": "HSS.7.1.2",
+            "sub_topic_name": "Continuity vs. Change",
+            "objective_id": "HSS.7.1.2.2",
+            "objective_text": "Sort features of a society into those that continued and those that changed over a period.",
+            "objective_uuid": "fcfbd381-2797-41ce-8351-3f66fcb6fe99",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.1",
+            "topic_name": "Chronology & Sequencing (First-Order Skills)",
+            "sub_topic_id": "HSS.7.1.2",
+            "sub_topic_name": "Continuity vs. Change",
+            "objective_id": "HSS.7.1.2.3",
+            "objective_text": "Explain why some aspects of life change quickly while others stay the same.",
+            "objective_uuid": "aca0cb8e-9aaf-4f7c-8cba-aee6d1218b2b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.K-2 — Generate possible reasons for an event or development in the past (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.1",
+            "topic_name": "Chronology & Sequencing (First-Order Skills)",
+            "sub_topic_id": "HSS.7.1.2",
+            "sub_topic_name": "Continuity vs. Change",
+            "objective_id": "HSS.7.1.2.4",
+            "objective_text": "Analyze the causes behind a major change while identifying what persisted alongside it.",
+            "objective_uuid": "16eaca3d-4904-45de-828d-cec05d92136b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.1",
+            "topic_name": "Chronology & Sequencing (First-Order Skills)",
+            "sub_topic_id": "HSS.7.1.2",
+            "sub_topic_name": "Continuity vs. Change",
+            "objective_id": "HSS.7.1.2.5",
+            "objective_text": "Evaluate the degree of continuity and change across an era, weighing which mattered more.",
+            "objective_uuid": "763da4c0-48bc-4af3-8807-ccee8676e48d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

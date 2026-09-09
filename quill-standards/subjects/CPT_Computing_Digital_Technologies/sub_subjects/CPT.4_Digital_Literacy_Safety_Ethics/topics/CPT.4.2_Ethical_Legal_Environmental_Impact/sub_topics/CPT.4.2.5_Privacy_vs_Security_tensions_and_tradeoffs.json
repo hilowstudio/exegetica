@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.4.2.5",
+    "name": "Privacy vs Security (tensions and tradeoffs)",
+    "topic_id": "CPT.4.2",
+    "topic_name": "Ethical, Legal & Environmental Impact",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.4",
+    "sub_subject_name": "Digital Literacy, Safety & Ethics",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Privacy vs Security (tensions and tradeoffs) in Ethical, Legal & Environmental Impact (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.2",
+            "topic_name": "Ethical, Legal & Environmental Impact",
+            "sub_topic_id": "CPT.4.2.5",
+            "sub_topic_name": "Privacy vs Security (tensions and tradeoffs)",
+            "objective_id": "CPT.4.2.5.1",
+            "objective_text": "Identify information that should be kept private when online",
+            "objective_uuid": "4cdc0617-c78e-4fc0-83cc-9072d22221ee",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-IC-23 — Describe tradeoffs between allowing information to be public and keeping information private and secure. Clari (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.2",
+            "topic_name": "Ethical, Legal & Environmental Impact",
+            "sub_topic_id": "CPT.4.2.5",
+            "sub_topic_name": "Privacy vs Security (tensions and tradeoffs)",
+            "objective_id": "CPT.4.2.5.2",
+            "objective_text": "Describe tradeoffs between allowing information to be public and keeping it private and secure",
+            "objective_uuid": "1953f9b1-6b2a-4bb3-892f-5d540cc9723d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-IC-23 — Describe tradeoffs between allowing information to be public and keeping information private and secure. Clari (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.2",
+            "topic_name": "Ethical, Legal & Environmental Impact",
+            "sub_topic_id": "CPT.4.2.5",
+            "sub_topic_name": "Privacy vs Security (tensions and tradeoffs)",
+            "objective_id": "CPT.4.2.5.3",
+            "objective_text": "Explain the tension between individual privacy and collective security",
+            "objective_uuid": "ba4e6b45-d266-49ba-8471-03125f1792f7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-IC-30 — Evaluate the social and economic implications of privacy in the context of safety, law, or ethics. Clarificati (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.2",
+            "topic_name": "Ethical, Legal & Environmental Impact",
+            "sub_topic_id": "CPT.4.2.5",
+            "sub_topic_name": "Privacy vs Security (tensions and tradeoffs)",
+            "objective_id": "CPT.4.2.5.4",
+            "objective_text": "Evaluate the social and economic implications of privacy in the context of safety, law, or ethics",
+            "objective_uuid": "f09bd810-64f8-44d4-8483-fd35c7d654ec",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-IC-30 — Evaluate the social and economic implications of privacy in the context of safety, law, or ethics. Clarificati (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

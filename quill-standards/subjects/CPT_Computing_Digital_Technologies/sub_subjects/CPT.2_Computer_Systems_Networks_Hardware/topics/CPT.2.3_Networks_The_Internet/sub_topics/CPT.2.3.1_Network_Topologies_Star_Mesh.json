@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "CPT.2.3.1",
+    "name": "Network Topologies (Star, Mesh)",
+    "topic_id": "CPT.2.3",
+    "topic_name": "Networks & The Internet",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.2",
+    "sub_subject_name": "Computer Systems, Networks & Hardware",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Network Topologies (Star, Mesh) in Networks & The Internet (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.3",
+            "topic_name": "Networks & The Internet",
+            "sub_topic_id": "CPT.2.3.1",
+            "sub_topic_name": "Network Topologies (Star, Mesh)",
+            "objective_id": "CPT.2.3.1.1",
+            "objective_text": "Explain that a network topology is the arrangement of how devices are connected together",
+            "objective_uuid": "d815a208-0056-4f31-8acd-7bcc4ffee0df",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-NI-04 — Model how information is broken down into smaller pieces, transmitted as packets through multiple devices over (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.3",
+            "topic_name": "Networks & The Internet",
+            "sub_topic_id": "CPT.2.3.1",
+            "sub_topic_name": "Network Topologies (Star, Mesh)",
+            "objective_id": "CPT.2.3.1.2",
+            "objective_text": "Describe a star topology in which each device connects to a central point such as a switch",
+            "objective_uuid": "07270c41-f0dd-423a-83e1-220b4a796b52",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-NI-04 — Model how information is broken down into smaller pieces, transmitted as packets through multiple devices over (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.3",
+            "topic_name": "Networks & The Internet",
+            "sub_topic_id": "CPT.2.3.1",
+            "sub_topic_name": "Network Topologies (Star, Mesh)",
+            "objective_id": "CPT.2.3.1.3",
+            "objective_text": "Describe a mesh topology in which devices connect to many others, offering multiple paths",
+            "objective_uuid": "f07e7c10-f970-4541-87a9-6379d20351d0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-NI-04 — Model how information is broken down into smaller pieces, transmitted as packets through multiple devices over (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.3",
+            "topic_name": "Networks & The Internet",
+            "sub_topic_id": "CPT.2.3.1",
+            "sub_topic_name": "Network Topologies (Star, Mesh)",
+            "objective_id": "CPT.2.3.1.4",
+            "objective_text": "Compare star and mesh topologies in terms of cost, reliability, and ease of adding devices",
+            "objective_uuid": "f3a9b770-8306-4844-8a3d-1f7582ffb4c8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-04 — Evaluate the scalability and reliability of networks, by describing the relationship between routers, switches (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.3",
+            "topic_name": "Networks & The Internet",
+            "sub_topic_id": "CPT.2.3.1",
+            "sub_topic_name": "Network Topologies (Star, Mesh)",
+            "objective_id": "CPT.2.3.1.5",
+            "objective_text": "Explain how a topology's design affects the scalability and reliability of a network",
+            "objective_uuid": "d2b91fba-1e5e-473f-81cf-70160f5a4aa7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-04 — Evaluate the scalability and reliability of networks, by describing the relationship between routers, switches (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.2",
+            "sub_subject_name": "Computer Systems, Networks & Hardware",
+            "topic_id": "CPT.2.3",
+            "topic_name": "Networks & The Internet",
+            "sub_topic_id": "CPT.2.3.1",
+            "sub_topic_name": "Network Topologies (Star, Mesh)",
+            "objective_id": "CPT.2.3.1.6",
+            "objective_text": "Evaluate which topology best suits a scenario by considering routers, switches, and how devices are addressed",
+            "objective_uuid": "30688f08-cb93-42d6-84bb-b0f2cefba8e4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-04 — Evaluate the scalability and reliability of networks, by describing the relationship between routers, switches (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

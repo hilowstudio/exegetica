@@ -1,0 +1,196 @@
+{
+  "sub_topic": {
+    "id": "HSS.3.2.2",
+    "name": "Mercantilism and Global Trade",
+    "topic_id": "HSS.3.2",
+    "topic_name": "Global Exploration, Exchange & Imperialism",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.3",
+    "sub_subject_name": "Early Modern World (1500–1800)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Mercantilism and Global Trade in Global Exploration, Exchange & Imperialism (History & Social Studies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.2",
+            "sub_topic_name": "Mercantilism and Global Trade",
+            "objective_id": "HSS.3.2.2.1",
+            "objective_text": "Describe how European nations wanted to sell more goods than they bought in order to gain wealth.",
+            "objective_uuid": "d7c90e30-2c0f-4248-8775-c6e15707f513",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.2",
+            "sub_topic_name": "Mercantilism and Global Trade",
+            "objective_id": "HSS.3.2.2.2",
+            "objective_text": "Sequence the growth of global trade networks connecting Europe, Africa, Asia, and the Americas in the early modern period.",
+            "objective_uuid": "d03b45e8-4967-4726-8c74-f46f12c87efd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.2",
+            "sub_topic_name": "Mercantilism and Global Trade",
+            "objective_id": "HSS.3.2.2.3",
+            "objective_text": "Generate possible reasons why European governments tightly controlled trade with their colonies.",
+            "objective_uuid": "5dfc164e-e778-4ee2-8747-316fdb54c0f4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.K-2 — Generate possible reasons for an event or development in the past (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.2",
+            "sub_topic_name": "Mercantilism and Global Trade",
+            "objective_id": "HSS.3.2.2.4",
+            "objective_text": "Explain the principles of mercantilism and the role of colonies in supplying raw materials and markets.",
+            "objective_uuid": "66d443bd-2add-4dcb-8476-cf43e3e3f6f4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.2",
+            "sub_topic_name": "Mercantilism and Global Trade",
+            "objective_id": "HSS.3.2.2.5",
+            "objective_text": "Analyze how mercantilist policies and chartered companies like the Dutch and British East India Companies reshaped global commerce.",
+            "objective_uuid": "dcc77c2a-dee7-4b22-8aec-4c5fa597a2b0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.2",
+            "sub_topic_name": "Mercantilism and Global Trade",
+            "objective_id": "HSS.3.2.2.6",
+            "objective_text": "Evaluate how mercantilism shaped the economic and political rivalries of early modern Europe and set the stage for later economic theories.",
+            "objective_uuid": "890cc9f4-bb96-4051-833f-ffef10f96979",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

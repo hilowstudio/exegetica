@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ELA.11.2.3",
+    "name": "Descriptive Writing (\"Show, Don't Tell\")",
+    "topic_id": "ELA.11.2",
+    "topic_name": "Expository and Informative Writing",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.11",
+    "sub_subject_name": "Writing & Composition",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Descriptive Writing (\"Show, Don't Tell\") in Expository and Informative Writing (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.2",
+            "topic_name": "Expository and Informative Writing",
+            "sub_topic_id": "ELA.11.2.3",
+            "sub_topic_name": "Descriptive Writing (\"Show, Don't Tell\")",
+            "objective_id": "ELA.11.2.3.1",
+            "objective_text": "Describe a person, place, or object using words about how it looks, sounds, or feels",
+            "objective_uuid": "d776f5bf-ea57-445c-869c-87f9f7a32713",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.2 — Write informative/explanatory texts to examine and convey complex ideas and information clearly and accu (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.2",
+            "topic_name": "Expository and Informative Writing",
+            "sub_topic_id": "ELA.11.2.3",
+            "sub_topic_name": "Descriptive Writing (\"Show, Don't Tell\")",
+            "objective_id": "ELA.11.2.3.2",
+            "objective_text": "Write a descriptive paragraph using sensory details instead of plain statements",
+            "objective_uuid": "724c64b5-bbe4-48d7-868b-c1cc6cd3de91",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.2 — Write informative/explanatory texts to examine and convey complex ideas and information clearly and accu (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.2",
+            "topic_name": "Expository and Informative Writing",
+            "sub_topic_id": "ELA.11.2.3",
+            "sub_topic_name": "Descriptive Writing (\"Show, Don't Tell\")",
+            "objective_id": "ELA.11.2.3.3",
+            "objective_text": "Revise a telling sentence into a showing one using concrete detail and precise verbs",
+            "objective_uuid": "644f0767-4fce-44b2-8a60-5f61e8a3454e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.2 — Write informative/explanatory texts to examine and convey complex ideas and information clearly and accu (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.2",
+            "topic_name": "Expository and Informative Writing",
+            "sub_topic_id": "ELA.11.2.3",
+            "sub_topic_name": "Descriptive Writing (\"Show, Don't Tell\")",
+            "objective_id": "ELA.11.2.3.4",
+            "objective_text": "Draft a descriptive piece that shows a subject through vivid imagery and specific, well-chosen details",
+            "objective_uuid": "a8657dd8-e893-474a-8921-b8b45d6906d0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.2 — Write informative/explanatory texts to examine and convey complex ideas and information clearly and accu (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.2",
+            "topic_name": "Expository and Informative Writing",
+            "sub_topic_id": "ELA.11.2.3",
+            "sub_topic_name": "Descriptive Writing (\"Show, Don't Tell\")",
+            "objective_id": "ELA.11.2.3.5",
+            "objective_text": "Craft description that controls tone and dominant impression through diction, imagery, and figurative language",
+            "objective_uuid": "8090b9ce-3136-4b3c-8588-ea9b0b6eb48f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.4 — Produce clear and coherent writing in which the development, organization, and style are appropriate to  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

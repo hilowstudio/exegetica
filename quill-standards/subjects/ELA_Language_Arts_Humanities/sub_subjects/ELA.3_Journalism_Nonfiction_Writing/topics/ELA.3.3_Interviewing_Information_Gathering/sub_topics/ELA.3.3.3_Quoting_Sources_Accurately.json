@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ELA.3.3.3",
+    "name": "Quoting Sources Accurately",
+    "topic_id": "ELA.3.3",
+    "topic_name": "Interviewing & Information Gathering",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.3",
+    "sub_subject_name": "Journalism & Nonfiction Writing",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Quoting Sources Accurately in Interviewing & Information Gathering (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.3",
+            "sub_subject_name": "Journalism & Nonfiction Writing",
+            "topic_id": "ELA.3.3",
+            "topic_name": "Interviewing & Information Gathering",
+            "sub_topic_id": "ELA.3.3.3",
+            "sub_topic_name": "Quoting Sources Accurately",
+            "objective_id": "ELA.3.3.3.1",
+            "objective_text": "Copy a source's exact words inside quotation marks and name who said them",
+            "objective_uuid": "53c45556-04b8-4917-88e3-0ee94068e74f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.2 — Write informative/explanatory texts to examine and convey complex ideas and information clearly and accu (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.3",
+            "sub_subject_name": "Journalism & Nonfiction Writing",
+            "topic_id": "ELA.3.3",
+            "topic_name": "Interviewing & Information Gathering",
+            "sub_topic_id": "ELA.3.3.3",
+            "sub_topic_name": "Quoting Sources Accurately",
+            "objective_id": "ELA.3.3.3.2",
+            "objective_text": "Integrate a direct quotation smoothly into a sentence with correct punctuation",
+            "objective_uuid": "d522b892-09ed-4202-8d35-2a654cd49f40",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.4 — Produce clear and coherent writing in which the development, organization, and style are appropriate to  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.3",
+            "sub_subject_name": "Journalism & Nonfiction Writing",
+            "topic_id": "ELA.3.3",
+            "topic_name": "Interviewing & Information Gathering",
+            "sub_topic_id": "ELA.3.3.3",
+            "sub_topic_name": "Quoting Sources Accurately",
+            "objective_id": "ELA.3.3.3.3",
+            "objective_text": "Paraphrase a source fairly and cite it without distorting the original meaning",
+            "objective_uuid": "b858cf3d-ef9a-4be3-8a2b-fa55ac15ebb1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.2 — Write informative/explanatory texts to examine and convey complex ideas and information clearly and accu (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.3",
+            "sub_subject_name": "Journalism & Nonfiction Writing",
+            "topic_id": "ELA.3.3",
+            "topic_name": "Interviewing & Information Gathering",
+            "sub_topic_id": "ELA.3.3.3",
+            "sub_topic_name": "Quoting Sources Accurately",
+            "objective_id": "ELA.3.3.3.4",
+            "objective_text": "Choose between direct quotation and paraphrase to represent a source both accurately and effectively",
+            "objective_uuid": "0e4f63a9-c02b-4cb8-89bf-cdff3de80a31",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.4 — Produce clear and coherent writing in which the development, organization, and style are appropriate to  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

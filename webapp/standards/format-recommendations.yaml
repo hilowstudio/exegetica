@@ -1,0 +1,145 @@
+# =============================================================================
+# Format recommendations — the bridge between the K-12 standards spine and the
+# resource-generator formats (resource-generators.yaml).
+#
+# When an instructor lands on a standard, the app suggests fitting formats.
+# Resolution (most specific wins, then union with `universal`):
+#   recommended(sub_subject_id) = by_sub_subject[ssid]  or  by_subject[subject]
+#                                 , then + universal (deduped, specific first)
+#
+# All ids reference `formats[].id` in resource-generators.yaml. Editable.
+# =============================================================================
+
+# Fit almost any objective in any subject (always offered, after the specific set).
+universal: [faith_integration, worksheet, quiz, flashcards, study_guide, discussion_questions, graphic_organizer, comparison_matrix, explainer_sheet]
+
+# Broad default palette per subject (fallback when a sub_subject isn't listed).
+by_subject:
+  ART: [biography_profile, timeline, comparison_matrix, listening_guide, art_technique_tutorial, project_guide, fact_sheet, explainer_sheet, rubric]
+  BIB: [inductive_passage_study, book_survey, character_study, comparison_matrix, discussion_questions, timeline, explainer_sheet, quiz, study_guide, confession_study]
+  CFL: [vocabulary_list, flashcards, reference_chart, translation_worksheet, drill_set, grammar_practice, quiz, word_study]
+  CPT: [explainer_sheet, worksheet, how_to_guide, project_guide, checklist, case_study, discussion_questions, timeline]
+  DST: [engineering_design, project_guide, how_to_guide, labeled_diagram, checklist, project_planner, rubric, fact_sheet]
+  ELA: [close_reading_guide, writing_prompt_set, essay_assignment, comparison_matrix, discussion_questions, reading_comprehension_set, grammar_practice, vocabulary_list, outline_template, story_map]
+  # (ELA.12 Informational & Expository Reading — see by_sub_subject below)
+  GEO: [annotated_map, fact_sheet, comparison_matrix, data_analysis, labeled_diagram, timeline, field_observation, reflection_journal]
+  HPE: [explainer_sheet, fact_sheet, how_to_guide, checklist, tracker, case_study, discussion_questions, reflection_journal, comparison_matrix, rubric]
+  HSS: [timeline, biography_profile, annotated_map, comparison_matrix, close_reading_guide, case_study, discussion_questions, essay_assignment]
+  LIF: [project_guide, how_to_guide, planner_template, checklist, tracker, case_study, project_planner, explainer_sheet]
+  MAT: [problem_set, drill_set, worksheet, reference_chart, explainer_sheet, data_analysis, quiz, logic_practice]
+  PER: [reflection_journal, explainer_sheet, case_study, discussion_questions, checklist, comparison_matrix, role_play_scenario, how_to_guide]
+  SCI: [labeled_diagram, process_diagram, lab_report, problem_set, comparison_matrix, classification_tree, fact_sheet, data_analysis, field_observation, quiz]
+
+# Discipline-specific palette per sub_subject (the precise layer).
+by_sub_subject:
+  # Fine Arts
+  ART.1: [biography_profile, timeline, comparison_matrix, listening_guide, fact_sheet, explainer_sheet, close_reading_guide]
+  ART.2: [project_guide, art_technique_tutorial, project_planner, rubric, how_to_guide]
+  ART.3: [script, performance_rubric, art_technique_tutorial, role_play_scenario, rubric]
+  ART.4: [music_worksheet, listening_guide, biography_profile, reference_chart, drill_set, comparison_matrix, tracker]
+  ART.5: [art_technique_tutorial, project_guide, reference_chart, writing_prompt_set, checklist, fill_in_template]
+  # Bible & Theology
+  BIB.1: [apologetics_argument_map, comparison_matrix, case_study, logic_practice, debate_kit, discussion_questions]
+  BIB.2: [inductive_passage_study, character_study, scripture_memory_plan, devotional_guide, quiz, flashcards, explainer_sheet, discussion_questions]
+  BIB.3: [book_survey, timeline, harmony_chart, comparison_matrix, story_map, annotated_map]
+  BIB.4: [timeline, biography_profile, comparison_matrix, annotated_map, case_study, quiz]
+  BIB.5: [comparison_matrix, fact_sheet, biography_profile, venn_diagram, case_study, annotated_map]
+  BIB.6: [exegesis_report, inductive_passage_study, close_reading_guide, word_study, explainer_sheet, worksheet]
+  BIB.7: [fact_sheet, timeline, comparison_matrix, annotated_map, explainer_sheet]
+  BIB.8: [inductive_passage_study, book_survey, harmony_chart, character_study, word_study, outline_template, discussion_questions]
+  BIB.9: [inductive_passage_study, book_survey, character_study, timeline, comparison_matrix, harmony_chart]
+  BIB.10: [devotional_guide, reflection_journal, scripture_memory_plan, tracker, project_planner, case_study, sermon_lesson_outline]
+  BIB.11: [explainer_sheet, comparison_matrix, study_guide, outline_template, confession_study, essay_assignment, apologetics_argument_map]
+  # Classical & Foreign Languages
+  CFL.1: [vocabulary_list, flashcards, reference_chart, translation_worksheet, word_study, drill_set, quiz]
+  CFL.2: [vocabulary_list, flashcards, reference_chart, translation_worksheet, word_study, drill_set, copywork_handwriting]
+  CFL.3: [explainer_sheet, comparison_matrix, classification_tree, family_tree, drill_set, role_play_scenario]
+  CFL.4: [vocabulary_list, reference_chart, translation_worksheet, drill_set, grammar_practice, fact_sheet, quiz]
+  CFL.5: [vocabulary_list, grammar_practice, reading_comprehension_set, script, drill_set, role_play_scenario, flashcards]
+  # Computing & Digital Technologies
+  CPT.1: [explainer_sheet, worksheet, problem_set, outline_template, how_to_guide, project_guide, checklist, graphic_organizer]
+  CPT.2: [labeled_diagram, process_diagram, how_to_guide, fact_sheet, reference_chart]
+  CPT.3: [project_planner, project_guide, rubric, writing_prompt_set, fill_in_template]
+  CPT.4: [checklist, discussion_questions, case_study, explainer_sheet, fill_in_template]
+  CPT.5: [timeline, biography_profile, discussion_questions, explainer_sheet]
+  CPT.6: [project_guide, how_to_guide, project_planner, slide_deck, rubric, checklist]
+  CPT.7: [data_analysis, explainer_sheet, case_study, discussion_questions, project_planner]
+  # Design & Technology
+  DST.1: [project_planner, checklist, rubric, explainer_sheet, reflection_journal]
+  DST.2: [comparison_matrix, lab_report, fact_sheet, reference_chart, data_analysis]
+  DST.3: [process_diagram, labeled_diagram, project_planner, checklist, how_to_guide]
+  DST.4: [engineering_design, project_guide, rubric, outline_template, reflection_journal]
+  # Language Arts & Humanities
+  ELA.1: [grammar_practice, sentence_diagram, reference_chart, drill_set, quiz]
+  ELA.2: [comparison_matrix, timeline, close_reading_guide, explainer_sheet, graphic_organizer]
+  ELA.3: [fill_in_template, close_reading_guide, discussion_questions, rubric, essay_assignment]
+  ELA.4: [close_reading_guide, story_map, comparison_matrix, biography_profile, discussion_questions, essay_assignment, explainer_sheet]
+  ELA.5: [comparison_matrix, close_reading_guide, fill_in_template, explainer_sheet, quiz]
+  ELA.6: [comparison_matrix, timeline, annotated_map, close_reading_guide, study_guide]
+  ELA.7: [close_reading_guide, listening_guide, fill_in_template, rubric, case_study]
+  ELA.8: [decodable_text, copywork_handwriting, reading_comprehension_set, vocabulary_list, drill_set, worksheet]
+  ELA.9: [outline_template, debate_kit, logic_practice, discussion_questions, script, performance_rubric, role_play_scenario]
+  ELA.10: [vocabulary_list, puzzle_activity, quiz, worksheet, flashcards]
+  ELA.11: [writing_prompt_set, essay_assignment, outline_template, fill_in_template, rubric, reflection_journal]
+  ELA.12: [reading_comprehension_set, close_reading_guide, comparison_matrix, graphic_organizer, discussion_questions, data_analysis, explainer_sheet]
+  # Geography
+  GEO.1: [annotated_map, how_to_guide, field_observation, data_analysis, reflection_journal]
+  GEO.2: [fact_sheet, comparison_matrix, data_analysis, annotated_map, case_study]
+  GEO.3: [annotated_map, flashcards, quiz, worksheet]
+  GEO.4: [labeled_diagram, process_diagram, annotated_map, comparison_matrix, data_analysis, fact_sheet]
+  GEO.5: [annotated_map, timeline, reflection_journal, explainer_sheet, inductive_passage_study]
+  # History & Social Studies
+  HSS.1: [timeline, biography_profile, annotated_map, comparison_matrix, close_reading_guide, fact_sheet, case_study]
+  HSS.2: [process_diagram, comparison_matrix, case_study, role_play_scenario, close_reading_guide, debate_kit]
+  HSS.3: [timeline, annotated_map, comparison_matrix, biography_profile, close_reading_guide]
+  HSS.4: [comparison_matrix, data_analysis, case_study, planner_template, explainer_sheet, problem_set]
+  HSS.5: [timeline, close_reading_guide, biography_profile, graphic_organizer, explainer_sheet]
+  HSS.6: [comparison_matrix, case_study, role_play_scenario, discussion_questions, fact_sheet]
+  HSS.7: [close_reading_guide, timeline, essay_assignment, rubric, discussion_questions]
+  HSS.8: [timeline, annotated_map, comparison_matrix, biography_profile, labeled_diagram, case_study]
+  HSS.9: [timeline, comparison_matrix, biography_profile, annotated_map, close_reading_guide, essay_assignment]
+  HSS.10: [timeline, biography_profile, close_reading_guide, comparison_matrix, discussion_questions, essay_assignment]
+  HSS.11: [case_study, comparison_matrix, explainer_sheet, discussion_questions, data_analysis, reflection_journal]
+  # Practical / Life Skills
+  LIF.1: [planner_template, problem_set, tracker, explainer_sheet, case_study]
+  LIF.2: [project_guide, how_to_guide, planner_template, checklist, reference_chart]
+  LIF.3: [planner_template, how_to_guide, tracker, field_observation, explainer_sheet]
+  LIF.4: [tracker, checklist, planner_template, reflection_journal, how_to_guide]
+  LIF.5: [project_guide, how_to_guide, checklist, labeled_diagram, engineering_design, fact_sheet]
+  LIF.6: [project_planner, fill_in_template, script, how_to_guide, checklist]
+  LIF.7: [how_to_guide, case_study, checklist, explainer_sheet, reflection_journal, planner_template]
+  # Mathematics
+  MAT.1: [problem_set, drill_set, worksheet, reference_chart, explainer_sheet, quiz]
+  MAT.2: [problem_set, logic_practice, worksheet, explainer_sheet, graphic_organizer]
+  MAT.3: [problem_set, planner_template, worksheet, explainer_sheet, case_study]
+  MAT.4: [drill_set, problem_set, worksheet, reference_chart, puzzle_activity, flashcards]
+  MAT.5: [problem_set, labeled_diagram, reference_chart, outline_template, worksheet]
+  MAT.6: [timeline, biography_profile, explainer_sheet, reflection_journal, field_observation]
+  MAT.7: [logic_practice, worksheet, explainer_sheet, quiz, graphic_organizer]
+  MAT.8: [problem_set, worksheet, explainer_sheet, outline_template, puzzle_activity]
+  MAT.9: [problem_set, drill_set, reference_chart, explainer_sheet, worksheet]
+  MAT.10: [data_analysis, problem_set, worksheet, explainer_sheet, reference_chart]
+  MAT.11: [problem_set, drill_set, reference_chart, labeled_diagram, worksheet]
+  # Personal Relationships & Digital Discipleship
+  PER.1: [reflection_journal, explainer_sheet, inductive_passage_study, checklist, tracker]
+  PER.2: [comparison_matrix, case_study, apologetics_argument_map, discussion_questions, explainer_sheet]
+  PER.3: [how_to_guide, checklist, fill_in_template, discussion_questions, case_study]
+  PER.4: [explainer_sheet, inductive_passage_study, discussion_questions, case_study, reflection_journal]
+  PER.5: [role_play_scenario, how_to_guide, explainer_sheet, checklist, reflection_journal]
+  # Science & Nature
+  SCI.1: [engineering_design, project_guide, case_study, project_planner, discussion_questions]
+  SCI.2: [labeled_diagram, process_diagram, comparison_matrix, fact_sheet, field_observation, data_analysis, annotated_map]
+  SCI.3: [labeled_diagram, classification_tree, process_diagram, problem_set, comparison_matrix, fact_sheet, lab_report]
+  SCI.4: [field_observation, reflection_journal, checklist, art_technique_tutorial]
+  SCI.5: [problem_set, lab_report, labeled_diagram, process_diagram, reference_chart, data_analysis]
+  SCI.6: [lab_report, field_observation, data_analysis, explainer_sheet, rubric]
+  # Health & Physical Education
+  HPE.1: [checklist, tracker, how_to_guide, explainer_sheet, reflection_journal, fact_sheet]
+  HPE.2: [fact_sheet, comparison_matrix, tracker, data_analysis, explainer_sheet, planner_template, worksheet]
+  HPE.3: [reflection_journal, case_study, discussion_questions, role_play_scenario, explainer_sheet, checklist]
+  HPE.4: [case_study, role_play_scenario, fact_sheet, discussion_questions, explainer_sheet, debate_kit]
+  HPE.5: [explainer_sheet, fact_sheet, labeled_diagram, process_diagram, checklist, quiz]
+  HPE.6: [case_study, how_to_guide, comparison_matrix, discussion_questions, project_guide, rubric]
+  HPE.7: [how_to_guide, rubric, checklist, art_technique_tutorial, fact_sheet]
+  HPE.8: [how_to_guide, rubric, comparison_matrix, checklist, role_play_scenario]
+  HPE.9: [tracker, planner_template, how_to_guide, checklist, data_analysis, rubric]

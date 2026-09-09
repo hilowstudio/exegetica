@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ELA.12.1.4",
+    "name": "Tracing Ideas, Events & Connections",
+    "topic_id": "ELA.12.1",
+    "topic_name": "Key Ideas & Details",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.12",
+    "sub_subject_name": "Informational & Expository Reading",
+    "total_objectives": 5,
+    "description": "K-12 progression for Tracing Ideas, Events & Connections in Key Ideas & Details (Informational & Expository Reading)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.1",
+            "topic_name": "Key Ideas & Details",
+            "sub_topic_id": "ELA.12.1.4",
+            "sub_topic_name": "Tracing Ideas, Events & Connections",
+            "objective_id": "ELA.12.1.4.1",
+            "objective_text": "Describe the order of events or steps in a text.",
+            "objective_uuid": "ba2ff6be-f1a2-4ae2-82e9-e9924934d1b2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.1",
+            "topic_name": "Key Ideas & Details",
+            "sub_topic_id": "ELA.12.1.4",
+            "sub_topic_name": "Tracing Ideas, Events & Connections",
+            "objective_id": "ELA.12.1.4.2",
+            "objective_text": "Explain the connection between two individuals, events, or ideas in a text.",
+            "objective_uuid": "de3cdfdc-cf0d-49e1-8e2c-8668df21e9a5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.1",
+            "topic_name": "Key Ideas & Details",
+            "sub_topic_id": "ELA.12.1.4",
+            "sub_topic_name": "Tracing Ideas, Events & Connections",
+            "objective_id": "ELA.12.1.4.3",
+            "objective_text": "Explain how a series of events or ideas is connected (sequence, cause/effect).",
+            "objective_uuid": "b41c0ffa-d042-4a9d-89b7-642255065c66",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.1",
+            "topic_name": "Key Ideas & Details",
+            "sub_topic_id": "ELA.12.1.4",
+            "sub_topic_name": "Tracing Ideas, Events & Connections",
+            "objective_id": "ELA.12.1.4.4",
+            "objective_text": "Analyze how individuals, ideas, or events interact and influence one another.",
+            "objective_uuid": "9fa81670-36db-4a80-8dcd-3d24e8d5276f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.1",
+            "topic_name": "Key Ideas & Details",
+            "sub_topic_id": "ELA.12.1.4",
+            "sub_topic_name": "Tracing Ideas, Events & Connections",
+            "objective_id": "ELA.12.1.4.5",
+            "objective_text": "Evaluate how the author develops and connects complex ideas across a whole text.",
+            "objective_uuid": "78500757-da47-4a2d-8c42-ecb0ce044be2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Authored to CCSS Reading anchors (CCRA.R); objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

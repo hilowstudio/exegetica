@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "CPT.7.5.2",
+    "name": "Autonomous Navigation (SLAM)",
+    "topic_id": "CPT.7.5",
+    "topic_name": "Modern Robotics & Autonomous Systems",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.7",
+    "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Autonomous Navigation (SLAM) in Modern Robotics & Autonomous Systems (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.5",
+            "topic_name": "Modern Robotics & Autonomous Systems",
+            "sub_topic_id": "CPT.7.5.2",
+            "sub_topic_name": "Autonomous Navigation (SLAM)",
+            "objective_id": "CPT.7.5.2.1",
+            "objective_text": "Describe how an autonomous robot senses and moves through its environment",
+            "objective_uuid": "7aaf958b-a353-4424-8dc9-21f2552e8fb5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-08 — Describe how artificial intelligence drives many software and physical systems. Clarification: Examples includ (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.5",
+            "topic_name": "Modern Robotics & Autonomous Systems",
+            "sub_topic_id": "CPT.7.5.2",
+            "sub_topic_name": "Autonomous Navigation (SLAM)",
+            "objective_id": "CPT.7.5.2.2",
+            "objective_text": "Explain how SLAM lets a robot map an area while tracking its own location",
+            "objective_uuid": "2ae41067-8b8c-44dc-898e-673d75b22b5d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-08 — Describe how artificial intelligence drives many software and physical systems. Clarification: Examples includ (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.5",
+            "topic_name": "Modern Robotics & Autonomous Systems",
+            "sub_topic_id": "CPT.7.5.2",
+            "sub_topic_name": "Autonomous Navigation (SLAM)",
+            "objective_id": "CPT.7.5.2.3",
+            "objective_text": "Describe how autonomous navigation drives systems such as self-driving cars",
+            "objective_uuid": "fbc322f9-4569-4495-879d-ec81a274a307",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-08 — Describe how artificial intelligence drives many software and physical systems. Clarification: Examples includ (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

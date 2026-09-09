@@ -1,0 +1,133 @@
+{
+  "sub_topic": {
+    "id": "SCI.6.2.3",
+    "name": "Science as Worship (Doxology)",
+    "topic_id": "SCI.6.2",
+    "topic_name": "Science & Christian Worldview",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.6",
+    "sub_subject_name": "Scientific Inquiry, Method & Worldview",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Science as Worship (Doxology) in Science & Christian Worldview (Science & Nature)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.6",
+            "sub_subject_name": "Scientific Inquiry, Method & Worldview",
+            "topic_id": "SCI.6.2",
+            "topic_name": "Science & Christian Worldview",
+            "sub_topic_id": "SCI.6.2.3",
+            "sub_topic_name": "Science as Worship (Doxology)",
+            "objective_id": "SCI.6.2.3.1",
+            "objective_text": "Express wonder and gratitude for the created world when observing nature",
+            "objective_uuid": "72c6175c-dc6f-4c92-8341-3088c4ae8bcd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.6",
+            "sub_subject_name": "Scientific Inquiry, Method & Worldview",
+            "topic_id": "SCI.6.2",
+            "topic_name": "Science & Christian Worldview",
+            "sub_topic_id": "SCI.6.2.3",
+            "sub_topic_name": "Science as Worship (Doxology)",
+            "objective_id": "SCI.6.2.3.2",
+            "objective_text": "Explain how studying creation can lead a person to praise its Creator",
+            "objective_uuid": "ac4e964b-4506-4eeb-8d52-41b59ca2afbd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.6",
+            "sub_subject_name": "Scientific Inquiry, Method & Worldview",
+            "topic_id": "SCI.6.2",
+            "topic_name": "Science & Christian Worldview",
+            "sub_topic_id": "SCI.6.2.3",
+            "sub_topic_name": "Science as Worship (Doxology)",
+            "objective_id": "SCI.6.2.3.3",
+            "objective_text": "Describe how careful, honest scientific work can itself be an act of worship and stewardship",
+            "objective_uuid": "e00fb60b-8e00-434a-87c3-1ef646c57350",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.6",
+            "sub_subject_name": "Scientific Inquiry, Method & Worldview",
+            "topic_id": "SCI.6.2",
+            "topic_name": "Science & Christian Worldview",
+            "sub_topic_id": "SCI.6.2.3",
+            "sub_topic_name": "Science as Worship (Doxology)",
+            "objective_id": "SCI.6.2.3.4",
+            "objective_text": "Reflect on how discovering the order and beauty of nature deepens awe and thankfulness toward God",
+            "objective_uuid": "0043c98c-6bb1-4567-8bd7-951a16a0e1ac",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

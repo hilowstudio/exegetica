@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "LIF.7.2.1",
+    "name": "Meeting Children's Basic Needs",
+    "topic_id": "LIF.7.2",
+    "topic_name": "Caring for Children",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.7",
+    "sub_subject_name": "Child Development, Caregiving & Parenting",
+    "total_objectives": 3,
+    "description": "Progression for Meeting Children's Basic Needs in Caring for Children (Child Development, Caregiving & Parenting)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 6.0,
+        "objectives": [
+          {
+            "complexity": 6,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.7",
+            "sub_subject_name": "Child Development, Caregiving & Parenting",
+            "topic_id": "LIF.7.2",
+            "topic_name": "Caring for Children",
+            "sub_topic_id": "LIF.7.2.1",
+            "sub_topic_name": "Meeting Children's Basic Needs",
+            "objective_id": "LIF.7.2.1.1",
+            "objective_text": "Identify the physical, emotional, and safety needs of children.",
+            "objective_uuid": "df2eed2d-57fe-4e65-8651-fc11cc146c9d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 4.4 — Demonstrate a safe and healthy learning environment for children, youth and adults (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.7",
+            "sub_subject_name": "Child Development, Caregiving & Parenting",
+            "topic_id": "LIF.7.2",
+            "topic_name": "Caring for Children",
+            "sub_topic_id": "LIF.7.2.1",
+            "sub_topic_name": "Meeting Children's Basic Needs",
+            "objective_id": "LIF.7.2.1.2",
+            "objective_text": "Describe safe care routines for infants and young children.",
+            "objective_uuid": "700b0810-9c34-4937-82b8-c772538e619c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 4.4 — Demonstrate a safe and healthy learning environment for children, youth and adults (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.7",
+            "sub_subject_name": "Child Development, Caregiving & Parenting",
+            "topic_id": "LIF.7.2",
+            "topic_name": "Caring for Children",
+            "sub_topic_id": "LIF.7.2.1",
+            "sub_topic_name": "Meeting Children's Basic Needs",
+            "objective_id": "LIF.7.2.1.3",
+            "objective_text": "Respond appropriately to a child's needs and cues.",
+            "objective_uuid": "1da1a206-4f36-4608-8959-079570d91be0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 4.4 — Demonstrate a safe and healthy learning environment for children, youth and adults (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Family & Consumer Sciences national standards",
+      "anchor_note": "FCS national-standard codes verified against the owned corpus. Objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

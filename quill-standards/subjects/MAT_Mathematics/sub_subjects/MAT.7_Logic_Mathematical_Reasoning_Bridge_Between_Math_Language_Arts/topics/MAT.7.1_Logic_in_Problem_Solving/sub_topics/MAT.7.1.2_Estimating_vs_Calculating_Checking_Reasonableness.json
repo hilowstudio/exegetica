@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.7.1.2",
+    "name": "Estimating vs Calculating (Checking Reasonableness)",
+    "topic_id": "MAT.7.1",
+    "topic_name": "Logic in Problem Solving",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.7",
+    "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Estimating vs Calculating (Checking Reasonableness) in Logic in Problem Solving (Mathematics)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.1",
+            "topic_name": "Logic in Problem Solving",
+            "sub_topic_id": "MAT.7.1.2",
+            "sub_topic_name": "Estimating vs Calculating (Checking Reasonableness)",
+            "objective_id": "MAT.7.1.2.1",
+            "objective_text": "Estimate an answer before computing.",
+            "objective_uuid": "cc4e0bc6-a413-4027-81ca-2f5e3bcf0ebe",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP1 — Make sense of problems and persevere in solving them (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.1",
+            "topic_name": "Logic in Problem Solving",
+            "sub_topic_id": "MAT.7.1.2",
+            "sub_topic_name": "Estimating vs Calculating (Checking Reasonableness)",
+            "objective_id": "MAT.7.1.2.2",
+            "objective_text": "Check whether an exact answer is reasonable against an estimate.",
+            "objective_uuid": "12008870-3784-471e-8247-6b86da57cc2e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP6 — Attend to precision (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.1",
+            "topic_name": "Logic in Problem Solving",
+            "sub_topic_id": "MAT.7.1.2",
+            "sub_topic_name": "Estimating vs Calculating (Checking Reasonableness)",
+            "objective_id": "MAT.7.1.2.3",
+            "objective_text": "Use estimation to detect and correct calculation errors.",
+            "objective_uuid": "b7117545-e8a3-4961-89d8-099ba5b5e901",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP6 — Attend to precision (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

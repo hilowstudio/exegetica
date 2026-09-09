@@ -1,0 +1,169 @@
+{
+  "sub_topic": {
+    "id": "GEO.4.4.3",
+    "name": "The River Course",
+    "topic_id": "GEO.4.4",
+    "topic_name": "Rivers, Hydrology & Freshwater Systems",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.4",
+    "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for The River Course in Rivers, Hydrology & Freshwater Systems (Geography)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.4",
+            "topic_name": "Rivers, Hydrology & Freshwater Systems",
+            "sub_topic_id": "GEO.4.4.3",
+            "sub_topic_name": "The River Course",
+            "objective_id": "GEO.4.4.3.1",
+            "objective_text": "Describe how a river flows from its source in the highlands to its mouth at the sea or a lake.",
+            "objective_uuid": "c90b35d8-0765-48a7-8e69-aad9ab0cf2b3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.4",
+            "topic_name": "Rivers, Hydrology & Freshwater Systems",
+            "sub_topic_id": "GEO.4.4.3",
+            "sub_topic_name": "The River Course",
+            "objective_id": "GEO.4.4.3.2",
+            "objective_text": "Make observations of how a river's speed and erosion change along its course.",
+            "objective_uuid": "9d91407e-7ea5-421c-8261-e729c0e97f40",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 4-ESS2-1 — Make observations and/or measurements to provide evidence of the effects of weathering or the rate of er (grades 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.4",
+            "topic_name": "Rivers, Hydrology & Freshwater Systems",
+            "sub_topic_id": "GEO.4.4.3",
+            "sub_topic_name": "The River Course",
+            "objective_id": "GEO.4.4.3.3",
+            "objective_text": "Compare the upper, middle, and lower courses of a river by their landforms and flow.",
+            "objective_uuid": "af28ee38-daf2-4acd-868a-65412add4cd3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ESS2-2 — Construct an explanation based on evidence for how geoscience processes have changed Earth's surface at  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.4",
+            "topic_name": "Rivers, Hydrology & Freshwater Systems",
+            "sub_topic_id": "GEO.4.4.3",
+            "sub_topic_name": "The River Course",
+            "objective_id": "GEO.4.4.3.4",
+            "objective_text": "Explain how erosion dominates the upper course while deposition dominates the lower course.",
+            "objective_uuid": "9026afaa-a2a9-44bf-8479-dc2e4a4237bd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ESS2-2 — Construct an explanation based on evidence for how geoscience processes have changed Earth's surface at  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.4",
+            "topic_name": "Rivers, Hydrology & Freshwater Systems",
+            "sub_topic_id": "GEO.4.4.3",
+            "sub_topic_name": "The River Course",
+            "objective_id": "GEO.4.4.3.5",
+            "objective_text": "Construct an evidence-based explanation for how a river reshapes its channel and valley over time.",
+            "objective_uuid": "ed40ff54-3e7e-420c-8123-2ca006d56d0e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ESS2-2 — Construct an explanation based on evidence for how geoscience processes have changed Earth's surface at  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

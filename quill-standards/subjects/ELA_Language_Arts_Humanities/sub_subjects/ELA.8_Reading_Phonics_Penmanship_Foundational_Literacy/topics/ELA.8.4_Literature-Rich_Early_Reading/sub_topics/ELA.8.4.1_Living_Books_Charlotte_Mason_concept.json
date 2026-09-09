@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ELA.8.4.1",
+    "name": "Living Books (Charlotte Mason concept)",
+    "topic_id": "ELA.8.4",
+    "topic_name": "Literature-Rich Early Reading",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.8",
+    "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Living Books (Charlotte Mason concept) in Literature-Rich Early Reading (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.4",
+            "topic_name": "Literature-Rich Early Reading",
+            "sub_topic_id": "ELA.8.4.1",
+            "sub_topic_name": "Living Books (Charlotte Mason concept)",
+            "objective_id": "ELA.8.4.1.1",
+            "objective_text": "Choose well-written, engaging living books over dry, fact-listing texts",
+            "objective_uuid": "076e3b74-0957-4394-8b0a-86cf08f06cce",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite spe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.4",
+            "topic_name": "Literature-Rich Early Reading",
+            "sub_topic_id": "ELA.8.4.1",
+            "sub_topic_name": "Living Books (Charlotte Mason concept)",
+            "objective_id": "ELA.8.4.1.2",
+            "objective_text": "Determine the meaning of unfamiliar words met in living books using context",
+            "objective_uuid": "5ba5b5db-4568-4d48-8098-c476b99a541b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.L.4 — Determine or clarify the meaning of unknown and multiple-meaning words and phrases by using context clue (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.4",
+            "topic_name": "Literature-Rich Early Reading",
+            "sub_topic_id": "ELA.8.4.1",
+            "sub_topic_name": "Living Books (Charlotte Mason concept)",
+            "objective_id": "ELA.8.4.1.3",
+            "objective_text": "Read closely to find what a living book says explicitly and cite details that support conclusions",
+            "objective_uuid": "4bfd6df8-29a1-4be8-8aaf-832c30af08e9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite spe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.4",
+            "topic_name": "Literature-Rich Early Reading",
+            "sub_topic_id": "ELA.8.4.1",
+            "sub_topic_name": "Living Books (Charlotte Mason concept)",
+            "objective_id": "ELA.8.4.1.4",
+            "objective_text": "Compare and evaluate ideas presented across books and other media on the same topic",
+            "objective_uuid": "4667adf9-beba-4539-8eaf-c46291d543b7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.SL.2 — Integrate and evaluate information presented in diverse media and formats, including visually, quantitat (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.3.3.3",
+    "name": "Poetry Recitation (rhythm, emotion, pacing)",
+    "topic_id": "ART.3.3",
+    "topic_name": "Oral Interpretation & Public Reading",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.3",
+    "sub_subject_name": "Dramatic Arts & Movement",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Poetry Recitation (rhythm, emotion, pacing) in Oral Interpretation & Public Reading (Fine Arts)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.3",
+            "sub_topic_name": "Poetry Recitation (rhythm, emotion, pacing)",
+            "objective_id": "ART.3.3.3.1",
+            "objective_text": "Recite a short poem from memory with a clear voice",
+            "objective_uuid": "1322b2eb-f76a-465d-8807-f0ebaabad35e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.3",
+            "sub_topic_name": "Poetry Recitation (rhythm, emotion, pacing)",
+            "objective_id": "ART.3.3.3.2",
+            "objective_text": "Recite a poem, keeping its rhythm and pausing at the right places",
+            "objective_uuid": "794add9a-3122-43fb-8386-a23a123a9e09",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.3",
+            "sub_topic_name": "Poetry Recitation (rhythm, emotion, pacing)",
+            "objective_id": "ART.3.3.3.3",
+            "objective_text": "Recite a poem with expression that matches its mood and feeling",
+            "objective_uuid": "ad1bb507-fd1c-4f38-8da6-776bf564060c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr6 — Convey meaning through the presentation of artistic work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.3",
+            "sub_topic_name": "Poetry Recitation (rhythm, emotion, pacing)",
+            "objective_id": "ART.3.3.3.4",
+            "objective_text": "Interpret a poem's meaning and use pacing and emotion to bring it to life",
+            "objective_uuid": "b9bcc323-2c81-45fd-842e-515244ec9b2b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr4 — Select, analyze, and interpret artistic work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.3",
+            "sub_topic_name": "Poetry Recitation (rhythm, emotion, pacing)",
+            "objective_id": "ART.3.3.3.5",
+            "objective_text": "Prepare a poetry recitation that balances the poem's rhythm, imagery, and emotional tone",
+            "objective_uuid": "62c358ff-3d4d-49eb-8215-b0b2ff837314",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr4 — Select, analyze, and interpret artistic work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.3",
+            "topic_name": "Oral Interpretation & Public Reading",
+            "sub_topic_id": "ART.3.3.3",
+            "sub_topic_name": "Poetry Recitation (rhythm, emotion, pacing)",
+            "objective_id": "ART.3.3.3.6",
+            "objective_text": "Deliver a refined recitation that reveals a poem's layered meaning through controlled rhythm, emphasis, and feeling",
+            "objective_uuid": "8841f28c-8f81-4bd0-8d30-5fb15c9e592f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr6 — Convey meaning through the presentation of artistic work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

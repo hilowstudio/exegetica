@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "LIF.5.3.1",
+    "name": "Basic Soldering and Circuit Repair (introductory)",
+    "topic_id": "LIF.5.3",
+    "topic_name": "Small Engine & Tool Maintenance",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.5",
+    "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Basic Soldering and Circuit Repair (introductory) in Small Engine & Tool Maintenance (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.3",
+            "topic_name": "Small Engine & Tool Maintenance",
+            "sub_topic_id": "LIF.5.3.1",
+            "sub_topic_name": "Basic Soldering and Circuit Repair (introductory)",
+            "objective_id": "LIF.5.3.1.1",
+            "objective_text": "Name the parts of a simple circuit (power source, wire, and a device like a bulb) and explain that they must form a loop.",
+            "objective_uuid": "c2921240-3cb0-4cae-878a-05eb2cab234e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.3",
+            "topic_name": "Small Engine & Tool Maintenance",
+            "sub_topic_id": "LIF.5.3.1",
+            "sub_topic_name": "Basic Soldering and Circuit Repair (introductory)",
+            "objective_id": "LIF.5.3.1.2",
+            "objective_text": "Explain that a soldering iron is very hot and describe the safety gear and ventilation needed before using one.",
+            "objective_uuid": "7fbb361a-7093-40ca-8115-514bdb212ba4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.3",
+            "topic_name": "Small Engine & Tool Maintenance",
+            "sub_topic_id": "LIF.5.3.1",
+            "sub_topic_name": "Basic Soldering and Circuit Repair (introductory)",
+            "objective_id": "LIF.5.3.1.3",
+            "objective_text": "Set up a safe soldering station: heat-proof surface, stand for the hot iron, eye protection, and good airflow.",
+            "objective_uuid": "3f109988-6be6-4588-812c-f6fd23191a79",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.3",
+            "topic_name": "Small Engine & Tool Maintenance",
+            "sub_topic_id": "LIF.5.3.1",
+            "sub_topic_name": "Basic Soldering and Circuit Repair (introductory)",
+            "objective_id": "LIF.5.3.1.4",
+            "objective_text": "Make a clean solder joint on a practice board, heating the joint and applying solder correctly.",
+            "objective_uuid": "5d0a16d3-850a-4c23-88d8-2a33d44e9c23",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.5",
+            "sub_subject_name": "Trades, Repair Skills & Hands-On Competencies",
+            "topic_id": "LIF.5.3",
+            "topic_name": "Small Engine & Tool Maintenance",
+            "sub_topic_id": "LIF.5.3.1",
+            "sub_topic_name": "Basic Soldering and Circuit Repair (introductory)",
+            "objective_id": "LIF.5.3.1.5",
+            "objective_text": "Diagnose and repair a simple broken connection, such as re-soldering a loose wire, and inspect the joint for quality.",
+            "objective_uuid": "541d7646-b1f9-4890-8e3b-4cbe43aaf0cb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

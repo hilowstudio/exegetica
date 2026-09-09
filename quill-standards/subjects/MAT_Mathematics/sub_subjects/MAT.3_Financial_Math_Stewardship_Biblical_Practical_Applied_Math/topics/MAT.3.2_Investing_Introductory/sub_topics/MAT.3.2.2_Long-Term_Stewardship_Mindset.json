@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.3.2.2",
+    "name": "Long-Term Stewardship Mindset",
+    "topic_id": "MAT.3.2",
+    "topic_name": "Investing (Introductory)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.3",
+    "sub_subject_name": "Financial Math & Stewardship (Biblical & Practical Applied Math)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Long-Term Stewardship Mindset in Investing (Introductory) (Mathematics)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.3",
+            "sub_subject_name": "Financial Math & Stewardship (Biblical & Practical Applied Math)",
+            "topic_id": "MAT.3.2",
+            "topic_name": "Investing (Introductory)",
+            "sub_topic_id": "MAT.3.2.2",
+            "sub_topic_name": "Long-Term Stewardship Mindset",
+            "objective_id": "MAT.3.2.2.1",
+            "objective_text": "Understand that saving now can provide for future needs.",
+            "objective_uuid": "162e8e09-a529-46b4-854c-16eecd2f02e2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.3",
+            "sub_subject_name": "Financial Math & Stewardship (Biblical & Practical Applied Math)",
+            "topic_id": "MAT.3.2",
+            "topic_name": "Investing (Introductory)",
+            "sub_topic_id": "MAT.3.2.2",
+            "sub_topic_name": "Long-Term Stewardship Mindset",
+            "objective_id": "MAT.3.2.2.2",
+            "objective_text": "Set a long-term savings goal.",
+            "objective_uuid": "4a4b42b2-ed9c-49e7-82dd-d8d192185c1d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.3",
+            "sub_subject_name": "Financial Math & Stewardship (Biblical & Practical Applied Math)",
+            "topic_id": "MAT.3.2",
+            "topic_name": "Investing (Introductory)",
+            "sub_topic_id": "MAT.3.2.2",
+            "sub_topic_name": "Long-Term Stewardship Mindset",
+            "objective_id": "MAT.3.2.2.3",
+            "objective_text": "Explain the value of patience and delayed gratification in finance.",
+            "objective_uuid": "0886bf22-1f16-4797-8261-b0aa67172aad",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content runs beyond Common Core, so no standard anchor (honest gap)."
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.1.2",
+    "name": "Debugging Techniques and Trace Tables",
+    "topic_id": "CPT.1.1",
+    "topic_name": "Advanced Programming Concepts",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Debugging Techniques and Trace Tables in Advanced Programming Concepts (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.2",
+            "sub_topic_name": "Debugging Techniques and Trace Tables",
+            "objective_id": "CPT.1.1.2.1",
+            "objective_text": "Identify and fix a simple error in an algorithm or program that uses a sequence or a loop",
+            "objective_uuid": "63164381-9b63-4524-875f-a637aad131ef",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1A-AP-14 — Debug (identify and fix) errors in an algorithm or program that includes sequences and simple loops (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.2",
+            "sub_topic_name": "Debugging Techniques and Trace Tables",
+            "objective_id": "CPT.1.1.2.2",
+            "objective_text": "Test a program with sample inputs and debug it so it runs as intended",
+            "objective_uuid": "16f36624-0810-4754-8ae5-1bff87df064a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-AP-15 — Test and debug (identify and fix errors) a program or algorithm to ensure it runs as intended (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.2",
+            "sub_topic_name": "Debugging Techniques and Trace Tables",
+            "objective_id": "CPT.1.1.2.3",
+            "objective_text": "Construct a trace table that records the value of each variable as a program executes step by step",
+            "objective_uuid": "7aad71da-2a7d-44a7-82f3-3d49e52d16f9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-AP-15 — Test and debug (identify and fix errors) a program or algorithm to ensure it runs as intended (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.2",
+            "sub_topic_name": "Debugging Techniques and Trace Tables",
+            "objective_id": "CPT.1.1.2.4",
+            "objective_text": "Use a trace table to locate the exact statement where a logic error occurs",
+            "objective_uuid": "5c33d364-7d28-4791-8026-0b1e263743c4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-AP-15 — Test and debug (identify and fix errors) a program or algorithm to ensure it runs as intended (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.2",
+            "sub_topic_name": "Debugging Techniques and Trace Tables",
+            "objective_id": "CPT.1.1.2.5",
+            "objective_text": "Develop a series of test cases to verify a program performs according to its design specification",
+            "objective_uuid": "14b7430e-1597-4ee2-89b1-20371d870009",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-21 — Develop and use a series of test cases to verify that a program performs according to its design specification (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.2",
+            "sub_topic_name": "Debugging Techniques and Trace Tables",
+            "objective_id": "CPT.1.1.2.6",
+            "objective_text": "Apply a systematic debugging strategy that isolates a fault by narrowing down its cause",
+            "objective_uuid": "17583a13-9934-410d-8bc4-3b97dd6ebde5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-21 — Develop and use a series of test cases to verify that a program performs according to its design specification (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.3.2.4",
+    "name": "Historical Dance Forms (ballet, folk, period dances)",
+    "topic_id": "ART.3.2",
+    "topic_name": "Dance, Movement & Choreography",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.3",
+    "sub_subject_name": "Dramatic Arts & Movement",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Historical Dance Forms (ballet, folk, period dances) in Dance, Movement & Choreography (Fine Arts)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.4",
+            "sub_topic_name": "Historical Dance Forms (ballet, folk, period dances)",
+            "objective_id": "ART.3.2.4.1",
+            "objective_text": "Try simple steps from a folk or circle dance and keep time with the music",
+            "objective_uuid": "20eefb25-ae59-4caa-86cd-42ba9090135b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.4",
+            "sub_topic_name": "Historical Dance Forms (ballet, folk, period dances)",
+            "objective_id": "ART.3.2.4.2",
+            "objective_text": "Perform a traditional folk or period dance, following its basic steps and formations",
+            "objective_uuid": "8b6e72dc-2f60-4ca2-8715-df77af61bf66",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.4",
+            "sub_topic_name": "Historical Dance Forms (ballet, folk, period dances)",
+            "objective_id": "ART.3.2.4.3",
+            "objective_text": "Learn foundational ballet positions and vocabulary and perform them with correct form",
+            "objective_uuid": "c9672ebd-f1d6-4649-8abb-62076df1aae0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.4",
+            "sub_topic_name": "Historical Dance Forms (ballet, folk, period dances)",
+            "objective_id": "ART.3.2.4.4",
+            "objective_text": "Perform a historical dance form accurately and describe the culture or era it comes from",
+            "objective_uuid": "8777f153-5db3-4a53-8c85-d9559ae3cdd7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.4",
+            "sub_topic_name": "Historical Dance Forms (ballet, folk, period dances)",
+            "objective_id": "ART.3.2.4.5",
+            "objective_text": "Compare historical dance forms and demonstrate the technique and style of one with accuracy",
+            "objective_uuid": "ef587df0-4e1a-4ea8-82ed-05135c21e11f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.2",
+            "topic_name": "Dance, Movement & Choreography",
+            "sub_topic_id": "ART.3.2.4",
+            "sub_topic_name": "Historical Dance Forms (ballet, folk, period dances)",
+            "objective_id": "ART.3.2.4.6",
+            "objective_text": "Perform and contextualize a historical dance form, refining its style, technique, and period character",
+            "objective_uuid": "ee55986d-53d5-4634-8371-9e8f6b521a0e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS DA:Pr5 — Develop and refine artistic techniques and work for presentation (Dance, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

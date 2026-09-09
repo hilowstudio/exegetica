@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ART.2.2.5",
+    "name": "Resolution & DPI (print vs web)",
+    "topic_id": "ART.2.2",
+    "topic_name": "Graphic Asset Management & Presentation",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.2",
+    "sub_subject_name": "Digital Art, Photography & Media Production",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Resolution & DPI (print vs web) in Graphic Asset Management & Presentation (Fine Arts)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.2",
+            "topic_name": "Graphic Asset Management & Presentation",
+            "sub_topic_id": "ART.2.2.5",
+            "sub_topic_name": "Resolution & DPI (print vs web)",
+            "objective_id": "ART.2.2.5.1",
+            "objective_text": "Explain that bigger images have more pixels and look clearer.",
+            "objective_uuid": "dcadebd5-198e-49f4-8270-430b22eae302",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr1 — Generate and conceptualize artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.2",
+            "topic_name": "Graphic Asset Management & Presentation",
+            "sub_topic_id": "ART.2.2.5",
+            "sub_topic_name": "Resolution & DPI (print vs web)",
+            "objective_id": "ART.2.2.5.2",
+            "objective_text": "Compare how the same image looks at low and high resolution.",
+            "objective_uuid": "feddfd8c-951e-4eb9-8e13-7988e241ad29",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.2",
+            "topic_name": "Graphic Asset Management & Presentation",
+            "sub_topic_id": "ART.2.2.5",
+            "sub_topic_name": "Resolution & DPI (print vs web)",
+            "objective_id": "ART.2.2.5.3",
+            "objective_text": "Set an appropriate resolution for web (72 dpi) versus print (300 dpi).",
+            "objective_uuid": "5afe44dd-ccb4-4623-8dac-07e9fc7f917a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.2",
+            "topic_name": "Graphic Asset Management & Presentation",
+            "sub_topic_id": "ART.2.2.5",
+            "sub_topic_name": "Resolution & DPI (print vs web)",
+            "objective_id": "ART.2.2.5.4",
+            "objective_text": "Prepare a file at the correct size and DPI for a specific output.",
+            "objective_uuid": "40e1cbac-1fb5-4427-86f9-1457c1e2b408",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

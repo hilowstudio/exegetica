@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.10.1.4",
+    "name": "Misleading Graphs and Statistics (Identifying Deception)",
+    "topic_id": "MAT.10.1",
+    "topic_name": "Data Collection & Interpretation",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.10",
+    "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Misleading Graphs and Statistics (Identifying Deception) in Data Collection & Interpretation (Mathematics)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.1",
+            "topic_name": "Data Collection & Interpretation",
+            "sub_topic_id": "MAT.10.1.4",
+            "sub_topic_name": "Misleading Graphs and Statistics (Identifying Deception)",
+            "objective_id": "MAT.10.1.4.1",
+            "objective_text": "Recognize how a graph's scale can distort the data.",
+            "objective_uuid": "68ec4185-fb2e-489d-855c-3134ac68996b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 6.SP.B.4 — Display numerical data in plots on a number line, including dot plots, histograms, and box plots (grade 6)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.1",
+            "topic_name": "Data Collection & Interpretation",
+            "sub_topic_id": "MAT.10.1.4",
+            "sub_topic_name": "Misleading Graphs and Statistics (Identifying Deception)",
+            "objective_id": "MAT.10.1.4.2",
+            "objective_text": "Identify misleading features in a statistical display.",
+            "objective_uuid": "722efe51-f8d4-40ce-8eab-2a87921c3206",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 6.SP.B.4 — Display numerical data in plots on a number line, including dot plots, histograms, and box plots (grade 6)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.1",
+            "topic_name": "Data Collection & Interpretation",
+            "sub_topic_id": "MAT.10.1.4",
+            "sub_topic_name": "Misleading Graphs and Statistics (Identifying Deception)",
+            "objective_id": "MAT.10.1.4.3",
+            "objective_text": "Evaluate a report or advertisement's use of statistics for accuracy.",
+            "objective_uuid": "b68fd311-eca6-4fed-85d0-d41feaf590a1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-IC.B.6 — Evaluate reports based on data (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

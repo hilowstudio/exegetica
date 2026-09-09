@@ -1,0 +1,169 @@
+{
+  "sub_topic": {
+    "id": "HSS.8.3.6",
+    "name": "The Black Death",
+    "topic_id": "HSS.8.3",
+    "topic_name": "Medieval Europe: Foundations of Anglo-American Liberty",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.8",
+    "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for The Black Death in Medieval Europe: Foundations of Anglo-American Liberty (History & Social Studies)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.3",
+            "topic_name": "Medieval Europe: Foundations of Anglo-American Liberty",
+            "sub_topic_id": "HSS.8.3.6",
+            "sub_topic_name": "The Black Death",
+            "objective_id": "HSS.8.3.6.1",
+            "objective_text": "Describe what the Black Death was and how it spread across Europe in the 1300s.",
+            "objective_uuid": "7fade51c-4b7e-47ae-8a6b-839b491a66b3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.3",
+            "topic_name": "Medieval Europe: Foundations of Anglo-American Liberty",
+            "sub_topic_id": "HSS.8.3.6",
+            "sub_topic_name": "The Black Death",
+            "objective_id": "HSS.8.3.6.2",
+            "objective_text": "Put in order how the plague traveled along trade routes into and across Europe.",
+            "objective_uuid": "62dc2468-a5af-44bb-80d8-77e7bee23813",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.3",
+            "topic_name": "Medieval Europe: Foundations of Anglo-American Liberty",
+            "sub_topic_id": "HSS.8.3.6",
+            "sub_topic_name": "The Black Death",
+            "objective_id": "HSS.8.3.6.3",
+            "objective_text": "Generate reasons why the Black Death spread so quickly and killed so many people.",
+            "objective_uuid": "8bec3a30-8f24-435f-895c-21d0ef757151",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.K-2 — Generate possible reasons for an event or development in the past (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.3",
+            "topic_name": "Medieval Europe: Foundations of Anglo-American Liberty",
+            "sub_topic_id": "HSS.8.3.6",
+            "sub_topic_name": "The Black Death",
+            "objective_id": "HSS.8.3.6.4",
+            "objective_text": "Analyze the multiple effects of the Black Death on Europe's population, economy, and society.",
+            "objective_uuid": "3151da8d-b70e-4bb5-8f33-2346d85aef43",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.3",
+            "topic_name": "Medieval Europe: Foundations of Anglo-American Liberty",
+            "sub_topic_id": "HSS.8.3.6",
+            "sub_topic_name": "The Black Death",
+            "objective_id": "HSS.8.3.6.5",
+            "objective_text": "Evaluate how the Black Death weakened feudalism and changed the lives of those who survived.",
+            "objective_uuid": "918959ea-a90b-4b4c-871e-17cf2da45744",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

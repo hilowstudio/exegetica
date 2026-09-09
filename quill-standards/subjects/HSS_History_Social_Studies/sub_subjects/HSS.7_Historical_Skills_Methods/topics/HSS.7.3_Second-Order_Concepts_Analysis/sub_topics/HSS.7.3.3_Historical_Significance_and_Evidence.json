@@ -1,0 +1,169 @@
+{
+  "sub_topic": {
+    "id": "HSS.7.3.3",
+    "name": "Historical Significance and Evidence",
+    "topic_id": "HSS.7.3",
+    "topic_name": "Second-Order Concepts (Analysis)",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.7",
+    "sub_subject_name": "Historical Skills & Methods",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Historical Significance and Evidence in Second-Order Concepts (Analysis) (History & Social Studies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.3",
+            "topic_name": "Second-Order Concepts (Analysis)",
+            "sub_topic_id": "HSS.7.3.3",
+            "sub_topic_name": "Historical Significance and Evidence",
+            "objective_id": "HSS.7.3.3.1",
+            "objective_text": "Explain why a particular event or person is remembered as important.",
+            "objective_uuid": "d422ad4c-ddc5-463f-8ff6-720c2ba28591",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.K-2 — Generate questions about individuals and groups who have shaped a significant historical change (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.3",
+            "topic_name": "Second-Order Concepts (Analysis)",
+            "sub_topic_id": "HSS.7.3.3",
+            "sub_topic_name": "Historical Significance and Evidence",
+            "objective_id": "HSS.7.3.3.2",
+            "objective_text": "Generate questions about a person or group who shaped a significant change.",
+            "objective_uuid": "bc967721-4f66-4825-8d53-0e2357db4a85",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.K-2 — Generate questions about individuals and groups who have shaped a significant historical change (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.3",
+            "topic_name": "Second-Order Concepts (Analysis)",
+            "sub_topic_id": "HSS.7.3.3",
+            "sub_topic_name": "Historical Significance and Evidence",
+            "objective_id": "HSS.7.3.3.3",
+            "objective_text": "Support a claim about an event's significance with specific evidence.",
+            "objective_uuid": "001fbc71-2f5d-476b-8d63-f0b5280a2b09",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.3",
+            "topic_name": "Second-Order Concepts (Analysis)",
+            "sub_topic_id": "HSS.7.3.3",
+            "sub_topic_name": "Historical Significance and Evidence",
+            "objective_id": "HSS.7.3.3.4",
+            "objective_text": "Assess how the significance of a person's actions changes over time and with historical context.",
+            "objective_uuid": "e4369f43-1f70-4bb9-81af-1a6a4f3daeb1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.9-12 — Use questions generated about individuals and groups to assess how the significance of their actions (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.7",
+            "sub_subject_name": "Historical Skills & Methods",
+            "topic_id": "HSS.7.3",
+            "topic_name": "Second-Order Concepts (Analysis)",
+            "sub_topic_id": "HSS.7.3.3",
+            "sub_topic_name": "Historical Significance and Evidence",
+            "objective_id": "HSS.7.3.3.5",
+            "objective_text": "Evaluate how an event's significance was shaped by broader historical contexts.",
+            "objective_uuid": "2efccc43-7754-410f-8c9c-209004172dcd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

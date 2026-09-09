@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "LIF.2.4.2",
+    "name": "Hand Sewing (basic stitches, mending, buttons, hemming)",
+    "topic_id": "LIF.2.4",
+    "topic_name": "Sewing, Textiles & Clothing Care",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.2",
+    "sub_subject_name": "Home Economics & Household Management",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Hand Sewing (basic stitches, mending, buttons, hemming) in Sewing, Textiles & Clothing Care (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.4",
+            "topic_name": "Sewing, Textiles & Clothing Care",
+            "sub_topic_id": "LIF.2.4.2",
+            "sub_topic_name": "Hand Sewing (basic stitches, mending, buttons, hemming)",
+            "objective_id": "LIF.2.4.2.1",
+            "objective_text": "Thread a needle and tie a knot to begin hand sewing",
+            "objective_uuid": "c0e808e2-6f9a-4535-8bbd-a7d02e7b944f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 16 — Integrate knowledge, skills, and practices required for careers in textiles and apparels (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.4",
+            "topic_name": "Sewing, Textiles & Clothing Care",
+            "sub_topic_id": "LIF.2.4.2",
+            "sub_topic_name": "Hand Sewing (basic stitches, mending, buttons, hemming)",
+            "objective_id": "LIF.2.4.2.2",
+            "objective_text": "Sew a straight running stitch along a marked line",
+            "objective_uuid": "f3000fd9-2e4b-43cf-88e4-7af9815fa7ba",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 16 — Integrate knowledge, skills, and practices required for careers in textiles and apparels (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.4",
+            "topic_name": "Sewing, Textiles & Clothing Care",
+            "sub_topic_id": "LIF.2.4.2",
+            "sub_topic_name": "Hand Sewing (basic stitches, mending, buttons, hemming)",
+            "objective_id": "LIF.2.4.2.3",
+            "objective_text": "Sew a button securely onto fabric",
+            "objective_uuid": "7f89cd3e-4ea7-4121-8fc8-865a550fb11b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 16 — Integrate knowledge, skills, and practices required for careers in textiles and apparels (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.4",
+            "topic_name": "Sewing, Textiles & Clothing Care",
+            "sub_topic_id": "LIF.2.4.2",
+            "sub_topic_name": "Hand Sewing (basic stitches, mending, buttons, hemming)",
+            "objective_id": "LIF.2.4.2.4",
+            "objective_text": "Mend a small tear or seam using a suitable hand stitch",
+            "objective_uuid": "fd7263c4-01c6-4d8c-89d9-28050b6491e3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 16 — Integrate knowledge, skills, and practices required for careers in textiles and apparels (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.2",
+            "sub_subject_name": "Home Economics & Household Management",
+            "topic_id": "LIF.2.4",
+            "topic_name": "Sewing, Textiles & Clothing Care",
+            "sub_topic_id": "LIF.2.4.2",
+            "sub_topic_name": "Hand Sewing (basic stitches, mending, buttons, hemming)",
+            "objective_id": "LIF.2.4.2.5",
+            "objective_text": "Hem a garment neatly by hand",
+            "objective_uuid": "a414e67a-b767-4202-81d7-2f5a1a6940f6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 16 — Integrate knowledge, skills, and practices required for careers in textiles and apparels (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "FCS / Jump$tart national standards",
+      "anchor_note": "Rebuilt from the FCS / Jump$tart national standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

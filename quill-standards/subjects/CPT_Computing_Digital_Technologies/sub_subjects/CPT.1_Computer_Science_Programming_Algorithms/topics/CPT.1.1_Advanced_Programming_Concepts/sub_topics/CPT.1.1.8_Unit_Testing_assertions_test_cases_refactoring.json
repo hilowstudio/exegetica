@@ -1,0 +1,164 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.1.8",
+    "name": "Unit Testing (assertions, test cases, refactoring)",
+    "topic_id": "CPT.1.1",
+    "topic_name": "Advanced Programming Concepts",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Unit Testing (assertions, test cases, refactoring) in Advanced Programming Concepts (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.8",
+            "sub_topic_name": "Unit Testing (assertions, test cases, refactoring)",
+            "objective_id": "CPT.1.1.8.1",
+            "objective_text": "Test a program systematically across a range of inputs to check it behaves as intended",
+            "objective_uuid": "501fba66-3966-42c3-85cb-6bb5bfac888a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-17 — Systematically test and refine programs using a range of test cases. Clarification: Use cases and test cases a (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.8",
+            "sub_topic_name": "Unit Testing (assertions, test cases, refactoring)",
+            "objective_id": "CPT.1.1.8.2",
+            "objective_text": "Write assertions that compare a program's actual output against its expected output",
+            "objective_uuid": "1e09f87c-06c8-4e1b-8e81-852913166f1e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-17 — Systematically test and refine programs using a range of test cases. Clarification: Use cases and test cases a (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.8",
+            "sub_topic_name": "Unit Testing (assertions, test cases, refactoring)",
+            "objective_id": "CPT.1.1.8.3",
+            "objective_text": "Develop a suite of test cases derived from a program's design specification",
+            "objective_uuid": "4f863cf3-d59f-4fd6-8cf1-58a7a2a91f0e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-21 — Develop and use a series of test cases to verify that a program performs according to its design specification (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 2,
+        "average_complexity": 23.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.8",
+            "sub_topic_name": "Unit Testing (assertions, test cases, refactoring)",
+            "objective_id": "CPT.1.1.8.4",
+            "objective_text": "Refactor code and re-run tests to confirm behavior is unchanged",
+            "objective_uuid": "cd73ae73-5f3d-4993-8f14-0ef9dea95721",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-21 — Develop and use a series of test cases to verify that a program performs according to its design specification (grades 11-12)"
+              ]
+            }
+          },
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.8",
+            "sub_topic_name": "Unit Testing (assertions, test cases, refactoring)",
+            "objective_id": "CPT.1.1.8.5",
+            "objective_text": "Select test cases that cover normal, boundary, and error conditions",
+            "objective_uuid": "0a6c53af-9989-485c-8e8b-247bc076d9be",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-21 — Develop and use a series of test cases to verify that a program performs according to its design specification (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

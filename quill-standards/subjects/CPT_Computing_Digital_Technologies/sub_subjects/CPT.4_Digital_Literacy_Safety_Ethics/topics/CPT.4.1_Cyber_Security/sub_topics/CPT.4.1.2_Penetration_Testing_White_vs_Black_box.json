@@ -1,0 +1,164 @@
+{
+  "sub_topic": {
+    "id": "CPT.4.1.2",
+    "name": "Penetration Testing (White vs Black box)",
+    "topic_id": "CPT.4.1",
+    "topic_name": "Cyber Security",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.4",
+    "sub_subject_name": "Digital Literacy, Safety & Ethics",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Penetration Testing (White vs Black box) in Cyber Security (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.1",
+            "topic_name": "Cyber Security",
+            "sub_topic_id": "CPT.4.1.2",
+            "sub_topic_name": "Penetration Testing (White vs Black box)",
+            "objective_id": "CPT.4.1.2.1",
+            "objective_text": "Explain the purpose of penetration testing in identifying weaknesses in a system before attackers do",
+            "objective_uuid": "bdc50c70-f96a-4b47-8769-640594705221",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-06 — Recommend security measures to address various scenarios based on factors such as efficiency, feasibility, and (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.1",
+            "topic_name": "Cyber Security",
+            "sub_topic_id": "CPT.4.1.2",
+            "sub_topic_name": "Penetration Testing (White vs Black box)",
+            "objective_id": "CPT.4.1.2.2",
+            "objective_text": "Distinguish between white-box and black-box penetration testing based on the tester's knowledge of the system",
+            "objective_uuid": "b297c740-5842-4d27-8382-2905a41e6b43",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-07 — Compare various security measures, considering tradeoffs between the usability and security of a computing sys (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.1",
+            "topic_name": "Cyber Security",
+            "sub_topic_id": "CPT.4.1.2",
+            "sub_topic_name": "Penetration Testing (White vs Black box)",
+            "objective_id": "CPT.4.1.2.3",
+            "objective_text": "Explain the ethical and legal importance of conducting penetration testing only with authorization",
+            "objective_uuid": "e3966fd7-6cb3-4bea-8e3f-84259b8279a9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-06 — Recommend security measures to address various scenarios based on factors such as efficiency, feasibility, and (grades 9-10)"
+              ]
+            }
+          },
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.1",
+            "topic_name": "Cyber Security",
+            "sub_topic_id": "CPT.4.1.2",
+            "sub_topic_name": "Penetration Testing (White vs Black box)",
+            "objective_id": "CPT.4.1.2.4",
+            "objective_text": "Recommend an appropriate penetration testing approach for a given scenario based on efficiency and feasibility",
+            "objective_uuid": "d90a4a85-07d8-4a1f-8a1c-2d29120b8c3b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-06 — Recommend security measures to address various scenarios based on factors such as efficiency, feasibility, and (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.4",
+            "sub_subject_name": "Digital Literacy, Safety & Ethics",
+            "topic_id": "CPT.4.1",
+            "topic_name": "Cyber Security",
+            "sub_topic_id": "CPT.4.1.2",
+            "sub_topic_name": "Penetration Testing (White vs Black box)",
+            "objective_id": "CPT.4.1.2.5",
+            "objective_text": "Evaluate the tradeoffs between the thoroughness of testing and the usability or cost of a system",
+            "objective_uuid": "52d845f9-0cf0-4dcd-8daa-2cc173453b37",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-NI-07 — Compare various security measures, considering tradeoffs between the usability and security of a computing sys (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

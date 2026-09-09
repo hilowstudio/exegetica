@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.2.6",
+    "name": "Searching Algorithms (Linear Search, Binary Search)",
+    "topic_id": "CPT.1.2",
+    "topic_name": "Algorithms & Logic",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Searching Algorithms (Linear Search, Binary Search) in Algorithms & Logic (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.6",
+            "sub_topic_name": "Searching Algorithms (Linear Search, Binary Search)",
+            "objective_id": "CPT.1.2.6.1",
+            "objective_text": "Express a linear search as pseudocode or a flowchart",
+            "objective_uuid": "ca4cf3ea-b7ff-4d77-8c19-9cee9e2b264d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-10 — Use flowcharts and/or pseudocode to address complex problems as algorithms. Clarification: Complex problems ar (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.6",
+            "sub_topic_name": "Searching Algorithms (Linear Search, Binary Search)",
+            "objective_id": "CPT.1.2.6.2",
+            "objective_text": "Implement a linear search that scans a list to find a target value",
+            "objective_uuid": "504199bf-4b84-45a2-8f38-5706a1d79c7d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-AP-10 — Use flowcharts and/or pseudocode to address complex problems as algorithms. Clarification: Complex problems ar (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.6",
+            "sub_topic_name": "Searching Algorithms (Linear Search, Binary Search)",
+            "objective_id": "CPT.1.2.6.3",
+            "objective_text": "Trace a binary search step by step on a sorted list",
+            "objective_uuid": "abb71dad-04ed-46b1-8406-b0b201d216c1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-10 — Use and adapt classic algorithms to solve computational problems. Clarification: Examples could include sortin (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.6",
+            "sub_topic_name": "Searching Algorithms (Linear Search, Binary Search)",
+            "objective_id": "CPT.1.2.6.4",
+            "objective_text": "Implement and adapt a binary search for a sorted data set",
+            "objective_uuid": "000db459-aa16-46ba-89ee-ca4f8c3cc487",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-10 — Use and adapt classic algorithms to solve computational problems. Clarification: Examples could include sortin (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.2",
+            "topic_name": "Algorithms & Logic",
+            "sub_topic_id": "CPT.1.2.6",
+            "sub_topic_name": "Searching Algorithms (Linear Search, Binary Search)",
+            "objective_id": "CPT.1.2.6.5",
+            "objective_text": "Compare linear and binary search in terms of efficiency and the conditions each requires",
+            "objective_uuid": "bdb0a1c7-1cc7-4208-85d7-c7a51d78076f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-10 — Use and adapt classic algorithms to solve computational problems. Clarification: Examples could include sortin (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

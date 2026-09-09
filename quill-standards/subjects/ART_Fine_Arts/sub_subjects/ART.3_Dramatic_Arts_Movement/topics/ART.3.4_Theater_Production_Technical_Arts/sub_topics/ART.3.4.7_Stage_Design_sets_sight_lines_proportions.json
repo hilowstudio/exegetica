@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.3.4.7",
+    "name": "Stage Design (sets, sight lines, proportions)",
+    "topic_id": "ART.3.4",
+    "topic_name": "Theater Production & Technical Arts",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.3",
+    "sub_subject_name": "Dramatic Arts & Movement",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Stage Design (sets, sight lines, proportions) in Theater Production & Technical Arts (Fine Arts)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.7",
+            "sub_topic_name": "Stage Design (sets, sight lines, proportions)",
+            "objective_id": "ART.3.4.7.1",
+            "objective_text": "Draw or arrange a simple setting that shows where a scene takes place",
+            "objective_uuid": "bb5ee9f6-06bb-4cd6-830f-d556224e026a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr6 — Convey meaning through the presentation of artistic work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.7",
+            "sub_topic_name": "Stage Design (sets, sight lines, proportions)",
+            "objective_id": "ART.3.4.7.2",
+            "objective_text": "Build a simple set piece or backdrop that shows the location of a scene",
+            "objective_uuid": "657b1d9f-f19f-4667-8a4a-b0de3338d8d7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.7",
+            "sub_topic_name": "Stage Design (sets, sight lines, proportions)",
+            "objective_id": "ART.3.4.7.3",
+            "objective_text": "Design a set that tells the audience where and when the story happens",
+            "objective_uuid": "02c98bd9-be8d-474e-8c7f-6240f573d3dc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr6 — Convey meaning through the presentation of artistic work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.7",
+            "sub_topic_name": "Stage Design (sets, sight lines, proportions)",
+            "objective_id": "ART.3.4.7.4",
+            "objective_text": "Plan a set with attention to sight lines so the audience can see the action",
+            "objective_uuid": "53ffc22c-720e-4471-8ae7-bd9c640d5dc4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.7",
+            "sub_topic_name": "Stage Design (sets, sight lines, proportions)",
+            "objective_id": "ART.3.4.7.5",
+            "objective_text": "Design a set to scale, considering proportion, sight lines, and the flow of the action",
+            "objective_uuid": "8abc474f-f3c5-4a70-81dd-371dedf5becc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.7",
+            "sub_topic_name": "Stage Design (sets, sight lines, proportions)",
+            "objective_id": "ART.3.4.7.6",
+            "objective_text": "Develop a complete scenic design, unifying proportion, sight lines, and style to serve the production's concept",
+            "objective_uuid": "ee78cb21-adf8-4e89-849e-c66c0d8db7dc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr6 — Convey meaning through the presentation of artistic work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

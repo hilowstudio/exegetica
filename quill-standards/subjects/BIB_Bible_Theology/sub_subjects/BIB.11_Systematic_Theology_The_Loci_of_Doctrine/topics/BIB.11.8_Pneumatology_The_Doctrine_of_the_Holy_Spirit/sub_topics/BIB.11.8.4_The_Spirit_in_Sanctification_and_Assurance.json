@@ -1,0 +1,465 @@
+{
+  "sub_topic": {
+    "id": "BIB.11.8.4",
+    "name": "The Spirit in Sanctification and Assurance",
+    "topic_id": "BIB.11.8",
+    "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.11",
+    "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+    "total_objectives": 16,
+    "description": "K-12 developmental progression for The Spirit in Sanctification and Assurance in Pneumatology: The Doctrine of the Holy Spirit, anchored in Scripture and the confessions via the Study Bible tools.",
+    "enrichment": {
+      "status": "expanded",
+      "levers": [
+        "structural-expansion",
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture and confession anchors validated against the study-bible MCP tools."
+    },
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.1",
+            "objective_text": "Identify the Spirit as our helper to grow in holiness.",
+            "objective_uuid": "bcf964d8-fee2-43ca-9233-748c90a5cd9c",
+            "anchors": {
+              "scripture": [
+                "Galatians 5:16"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.2",
+            "objective_text": "Name the fruit of the Spirit.",
+            "objective_uuid": "be9faca4-7451-48ae-a039-e8e343dfc6cc",
+            "anchors": {
+              "scripture": [
+                "Galatians 5:22-23"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.3",
+            "objective_text": "Recall that the Spirit helps us pray.",
+            "objective_uuid": "28039b57-6e94-408c-b030-a9779bf7d6c8",
+            "anchors": {
+              "scripture": [
+                "Romans 8:26"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.4",
+            "objective_text": "Observe that the Spirit makes us more like Jesus.",
+            "objective_uuid": "aea21a96-d8ef-45c2-a39a-5bd445e8e949",
+            "anchors": {
+              "scripture": [
+                "2 Corinthians 3:18"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.5",
+            "objective_text": "Summarize walking by the Spirit versus the flesh.",
+            "objective_uuid": "29024b08-ec5a-4e0b-8aec-8eceb2f57514",
+            "anchors": {
+              "scripture": [
+                "Galatians 5:16-17"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.6",
+            "objective_text": "Explain the fruit of the Spirit as the Spirit's work in us.",
+            "objective_uuid": "81af24c1-fe5e-44b2-b777-1ac3afc5d277",
+            "anchors": {
+              "scripture": [
+                "Galatians 5:22-23"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.7",
+            "objective_text": "Compare 'grieving' and 'quenching' the Spirit.",
+            "objective_uuid": "a4f421a1-0985-49cf-93cd-b4f82b257bf6",
+            "anchors": {
+              "scripture": [
+                "Ephesians 4:30",
+                "1 Thessalonians 5:19"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.8",
+            "objective_text": "Apply the call to 'keep in step with the Spirit.'",
+            "objective_uuid": "b56d0572-01ff-4adc-80c1-80dd61134bdf",
+            "anchors": {
+              "scripture": [
+                "Galatians 5:25"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.9",
+            "objective_text": "Analyze the Spirit's inward witness of adoption.",
+            "objective_uuid": "e65b44b7-55d8-4342-8722-8aabfdfdaee8",
+            "anchors": {
+              "scripture": [
+                "Romans 8:15-16"
+              ],
+              "confessions": [
+                "Westminster Confession 18.2"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.10",
+            "objective_text": "Interpret the Spirit's intercession for us 'with groanings.'",
+            "objective_uuid": "37fda570-557a-4b42-b8ac-9ce027a61618",
+            "anchors": {
+              "scripture": [
+                "Romans 8:26-27"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.11",
+            "objective_text": "Connect the Spirit's sealing to the believer's assurance and security.",
+            "objective_uuid": "4bbaa9d0-3f43-422e-a43c-7e08838fb361",
+            "anchors": {
+              "scripture": [
+                "Ephesians 1:13-14"
+              ],
+              "confessions": [
+                "Westminster Confession 18.2"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.12",
+            "objective_text": "Explain how the Spirit produces assurance without extraordinary revelation.",
+            "objective_uuid": "9917f735-a8c2-4d64-a77b-d4097c4faa5f",
+            "anchors": {
+              "scripture": [
+                "Romans 8:16"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q80"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.13",
+            "objective_text": "Construct a theology of the Spirit's role in progressive sanctification.",
+            "objective_uuid": "e0f9a873-f966-4745-b573-16875ab3fede",
+            "anchors": {
+              "scripture": [
+                "2 Corinthians 3:18",
+                "Galatians 5:16-25"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.14",
+            "objective_text": "Evaluate perfectionist claims about the Spirit-filled life.",
+            "objective_uuid": "4d825232-e388-4509-bf75-8bad0a673d89",
+            "anchors": {
+              "scripture": [
+                "Galatians 5:17",
+                "1 John 1:8"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.15",
+            "objective_text": "Defend the Spirit's witness as a ground of assurance alongside the Word.",
+            "objective_uuid": "fe99432f-d1f5-468c-823c-dcae86bf4249",
+            "anchors": {
+              "scripture": [
+                "Romans 8:16",
+                "1 John 5:10"
+              ],
+              "confessions": [
+                "Westminster Confession 18.2"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.8",
+            "topic_name": "Pneumatology: The Doctrine of the Holy Spirit",
+            "sub_topic_id": "BIB.11.8.4",
+            "sub_topic_name": "The Spirit in Sanctification and Assurance",
+            "objective_id": "BIB.11.8.4.16",
+            "objective_text": "Synthesize the Spirit as the Seal and Guarantee of our final redemption.",
+            "objective_uuid": "b9d94ce0-3488-416b-aff0-4aa1dc76040b",
+            "anchors": {
+              "scripture": [
+                "Ephesians 1:13-14",
+                "2 Corinthians 1:22"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

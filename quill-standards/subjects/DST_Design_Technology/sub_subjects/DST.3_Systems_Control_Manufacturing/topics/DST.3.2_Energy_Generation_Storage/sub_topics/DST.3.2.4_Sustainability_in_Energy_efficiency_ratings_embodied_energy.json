@@ -1,0 +1,163 @@
+{
+  "sub_topic": {
+    "id": "DST.3.2.4",
+    "name": "Sustainability in Energy (efficiency ratings, embodied energy)",
+    "topic_id": "DST.3.2",
+    "topic_name": "Energy Generation & Storage",
+    "subject_id": "DST",
+    "subject_name": "Design & Technology",
+    "sub_subject_id": "DST.3",
+    "sub_subject_name": "Systems, Control & Manufacturing",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Sustainability in Energy (efficiency ratings, embodied energy) in Energy Generation & Storage (Design & Technology)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.2",
+            "topic_name": "Energy Generation & Storage",
+            "sub_topic_id": "DST.3.2.4",
+            "sub_topic_name": "Sustainability in Energy (efficiency ratings, embodied energy)",
+            "objective_id": "DST.3.2.4.1",
+            "objective_text": "Explain what an energy-efficiency rating tells you about a product and why a higher rating is better",
+            "objective_uuid": "b5cf361e-ef13-4012-8cd7-031c9ad03d54",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.2",
+            "topic_name": "Energy Generation & Storage",
+            "sub_topic_id": "DST.3.2.4",
+            "sub_topic_name": "Sustainability in Energy (efficiency ratings, embodied energy)",
+            "objective_id": "DST.3.2.4.2",
+            "objective_text": "Suggest ways to reduce the energy a home or device wastes in daily use",
+            "objective_uuid": "f8e3fcde-75ec-44e8-8165-a65fb1a23ff6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.2",
+            "topic_name": "Energy Generation & Storage",
+            "sub_topic_id": "DST.3.2.4",
+            "sub_topic_name": "Sustainability in Energy (efficiency ratings, embodied energy)",
+            "objective_id": "DST.3.2.4.3",
+            "objective_text": "Investigate and compare how well different materials or designs reduce heat loss from a container",
+            "objective_uuid": "d907eee8-6781-4974-8c6e-83973aacf0f4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-PS3-3 — Apply scientific principles to design, construct, and test a device that either minimizes or maximizes t (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.2",
+            "topic_name": "Energy Generation & Storage",
+            "sub_topic_id": "DST.3.2.4",
+            "sub_topic_name": "Sustainability in Energy (efficiency ratings, embodied energy)",
+            "objective_id": "DST.3.2.4.4",
+            "objective_text": "Explain what embodied energy is and why it matters when choosing materials for a product",
+            "objective_uuid": "fdc31759-e54d-4dcf-89d5-d2ee7715931d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.2",
+            "topic_name": "Energy Generation & Storage",
+            "sub_topic_id": "DST.3.2.4",
+            "sub_topic_name": "Sustainability in Energy (efficiency ratings, embodied energy)",
+            "objective_id": "DST.3.2.4.5",
+            "objective_text": "Evaluate a product's whole-life energy use, from making it to using and disposing of it, and recommend improvements",
+            "objective_uuid": "9621c997-169f-4840-8733-79f05bfb65ff",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

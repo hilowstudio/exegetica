@@ -1,0 +1,135 @@
+{
+  "sub_topic": {
+    "id": "MAT.1.6.2",
+    "name": "Factoring Trinomials and Grouping",
+    "topic_id": "MAT.1.6",
+    "topic_name": "Polynomials, Factoring & Rational Expressions",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.1",
+    "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Factoring Trinomials and Grouping in Polynomials, Factoring & Rational Expressions (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.6",
+            "topic_name": "Polynomials, Factoring & Rational Expressions",
+            "sub_topic_id": "MAT.1.6.2",
+            "sub_topic_name": "Factoring Trinomials and Grouping",
+            "objective_id": "MAT.1.6.2.1",
+            "objective_text": "Factor out the greatest common factor of a polynomial.",
+            "objective_uuid": "211cd6c2-d436-400d-8178-5601f731ea51",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-SSE.A.2 — Use the structure of an expression to identify ways to rewrite it (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 2,
+        "average_complexity": 14.5,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.6",
+            "topic_name": "Polynomials, Factoring & Rational Expressions",
+            "sub_topic_id": "MAT.1.6.2",
+            "sub_topic_name": "Factoring Trinomials and Grouping",
+            "objective_id": "MAT.1.6.2.2",
+            "objective_text": "Factor a trinomial into a product of two binomials.",
+            "objective_uuid": "d9d124f8-70f5-4794-8f8e-2b2c8f8b30e2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-SSE.A.2 — Use the structure of an expression to identify ways to rewrite it (HS)"
+              ]
+            }
+          },
+          {
+            "complexity": 18,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.6",
+            "topic_name": "Polynomials, Factoring & Rational Expressions",
+            "sub_topic_id": "MAT.1.6.2",
+            "sub_topic_name": "Factoring Trinomials and Grouping",
+            "objective_id": "MAT.1.6.2.3",
+            "objective_text": "Factor a polynomial by grouping.",
+            "objective_uuid": "d8470ae8-8fd1-4a4b-8b47-aa2e6b5eaab7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-SSE.A.2 — Use the structure of an expression to identify ways to rewrite it (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.6",
+            "topic_name": "Polynomials, Factoring & Rational Expressions",
+            "sub_topic_id": "MAT.1.6.2",
+            "sub_topic_name": "Factoring Trinomials and Grouping",
+            "objective_id": "MAT.1.6.2.4",
+            "objective_text": "Use the structure of an expression to choose a factoring strategy.",
+            "objective_uuid": "e775ee92-7a4b-4381-8c11-ba321fc6cc2a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSA-SSE.A.2 — Use the structure of an expression to identify ways to rewrite it (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.3.1.2",
+    "name": "Character Development (motivation, emotion, arc)",
+    "topic_id": "ART.3.1",
+    "topic_name": "Acting & Stagecraft",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.3",
+    "sub_subject_name": "Dramatic Arts & Movement",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Character Development (motivation, emotion, arc) in Acting & Stagecraft (Fine Arts)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.2",
+            "sub_topic_name": "Character Development (motivation, emotion, arc)",
+            "objective_id": "ART.3.1.2.1",
+            "objective_text": "Tell what a character in a story wants and how the character feels",
+            "objective_uuid": "cbf00397-405e-4df2-8652-c88b3935f1cd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Cr1 — Generate and conceptualize artistic ideas and work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.2",
+            "sub_topic_name": "Character Development (motivation, emotion, arc)",
+            "objective_id": "ART.3.1.2.2",
+            "objective_text": "Act out a character's want and show how the character reacts when something helps or blocks it",
+            "objective_uuid": "2763b188-2486-4daa-8835-de9ea3f24b42",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Cr2 — Organize and develop artistic ideas and work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.2",
+            "sub_topic_name": "Character Development (motivation, emotion, arc)",
+            "objective_id": "ART.3.1.2.3",
+            "objective_text": "Identify a character's motivation and describe how it drives the character's choices in a scene",
+            "objective_uuid": "0f8e8a38-c757-4808-84c9-967a0e4d785c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Cr1 — Generate and conceptualize artistic ideas and work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.2",
+            "sub_topic_name": "Character Development (motivation, emotion, arc)",
+            "objective_id": "ART.3.1.2.4",
+            "objective_text": "Develop a character with a clear objective, obstacle, and emotional response across a short scene",
+            "objective_uuid": "0fea04f5-3d6f-4a20-8637-519df6ac0ede",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Cr2 — Organize and develop artistic ideas and work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.2",
+            "sub_topic_name": "Character Development (motivation, emotion, arc)",
+            "objective_id": "ART.3.1.2.5",
+            "objective_text": "Trace and perform a character's emotional arc from beginning to end of a play",
+            "objective_uuid": "ce8bc781-7aac-47f6-85f8-a7b8e0ce47e0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Cr2 — Organize and develop artistic ideas and work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.1",
+            "topic_name": "Acting & Stagecraft",
+            "sub_topic_id": "ART.3.1.2",
+            "sub_topic_name": "Character Development (motivation, emotion, arc)",
+            "objective_id": "ART.3.1.2.6",
+            "objective_text": "Refine a fully realized character, layering backstory, shifting objectives, and subtext into a sustained performance",
+            "objective_uuid": "dcd55b76-d5ec-4081-85d1-db43936c25ae",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

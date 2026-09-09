@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.1.4.4",
+    "name": "Variables and Expressions (Substitution)",
+    "topic_id": "MAT.1.4",
+    "topic_name": "Foundations of Algebraic Thinking",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.1",
+    "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Variables and Expressions (Substitution) in Foundations of Algebraic Thinking (Mathematics)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.4",
+            "topic_name": "Foundations of Algebraic Thinking",
+            "sub_topic_id": "MAT.1.4.4",
+            "sub_topic_name": "Variables and Expressions (Substitution)",
+            "objective_id": "MAT.1.4.4.1",
+            "objective_text": "Write an expression that records operations with numbers and variables.",
+            "objective_uuid": "efb43a7b-2aae-4a17-8e49-0345a9ebff73",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 6.EE.A.2 — Write, read, and evaluate expressions in which letters stand for numbers (grade 6)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.4",
+            "topic_name": "Foundations of Algebraic Thinking",
+            "sub_topic_id": "MAT.1.4.4",
+            "sub_topic_name": "Variables and Expressions (Substitution)",
+            "objective_id": "MAT.1.4.4.2",
+            "objective_text": "Evaluate an expression by substituting a value for the variable.",
+            "objective_uuid": "0e95013c-67c6-414b-8c29-a53e6dc60300",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 6.EE.A.2 — Write, read, and evaluate expressions in which letters stand for numbers (grade 6)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.1",
+            "sub_subject_name": "Algebra (Patterns, Relationships & Abstract Thinking)",
+            "topic_id": "MAT.1.4",
+            "topic_name": "Foundations of Algebraic Thinking",
+            "sub_topic_id": "MAT.1.4.4",
+            "sub_topic_name": "Variables and Expressions (Substitution)",
+            "objective_id": "MAT.1.4.4.3",
+            "objective_text": "Use variables to represent quantities in a real-world problem.",
+            "objective_uuid": "9c20584c-b5e6-4358-81a4-e448a0702bdb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 6.EE.B.6 — Use variables to represent numbers and write expressions when solving a real-world or mathematical probl (grade 6)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

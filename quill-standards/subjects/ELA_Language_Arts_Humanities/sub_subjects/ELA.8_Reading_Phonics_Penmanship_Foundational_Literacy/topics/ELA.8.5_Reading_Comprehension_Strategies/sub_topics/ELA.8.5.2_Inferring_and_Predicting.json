@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ELA.8.5.2",
+    "name": "Inferring and Predicting",
+    "topic_id": "ELA.8.5",
+    "topic_name": "Reading Comprehension Strategies",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.8",
+    "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Inferring and Predicting in Reading Comprehension Strategies (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.5",
+            "topic_name": "Reading Comprehension Strategies",
+            "sub_topic_id": "ELA.8.5.2",
+            "sub_topic_name": "Inferring and Predicting",
+            "objective_id": "ELA.8.5.2.1",
+            "objective_text": "Use picture and text clues to predict what will happen next",
+            "objective_uuid": "abefc541-8fb3-4ea5-89e0-b6dd40524905",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite spe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.5",
+            "topic_name": "Reading Comprehension Strategies",
+            "sub_topic_id": "ELA.8.5.2",
+            "sub_topic_name": "Inferring and Predicting",
+            "objective_id": "ELA.8.5.2.2",
+            "objective_text": "Confirm or revise predictions as new information is read",
+            "objective_uuid": "61df632a-6c78-43bd-81d5-7dc77a855445",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite spe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.5",
+            "topic_name": "Reading Comprehension Strategies",
+            "sub_topic_id": "ELA.8.5.2",
+            "sub_topic_name": "Inferring and Predicting",
+            "objective_id": "ELA.8.5.2.3",
+            "objective_text": "Make logical inferences about characters and events using specific text evidence",
+            "objective_uuid": "0fb15b00-0d9e-4192-81ca-1cff0f9e1bc1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite spe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.5",
+            "topic_name": "Reading Comprehension Strategies",
+            "sub_topic_id": "ELA.8.5.2",
+            "sub_topic_name": "Inferring and Predicting",
+            "objective_id": "ELA.8.5.2.4",
+            "objective_text": "Infer central ideas and themes that a text does not state directly",
+            "objective_uuid": "c3ae0346-c355-4673-8ddf-04a63361db9c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.2 — Determine central ideas or themes of a text and analyze their development; summarize the key supporting  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

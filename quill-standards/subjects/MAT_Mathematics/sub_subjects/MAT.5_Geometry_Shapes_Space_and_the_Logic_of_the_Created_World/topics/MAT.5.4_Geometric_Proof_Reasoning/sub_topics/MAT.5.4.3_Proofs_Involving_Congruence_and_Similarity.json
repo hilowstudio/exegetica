@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.4.3",
+    "name": "Proofs Involving Congruence and Similarity",
+    "topic_id": "MAT.5.4",
+    "topic_name": "Geometric Proof & Reasoning",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Proofs Involving Congruence and Similarity in Geometric Proof & Reasoning (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.3",
+            "sub_topic_name": "Proofs Involving Congruence and Similarity",
+            "objective_id": "MAT.5.4.3.1",
+            "objective_text": "Prove two triangles congruent using SSS, SAS, ASA, AAS, or HL.",
+            "objective_uuid": "1842839c-51d0-4024-8d91-faff356c4ddd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-SRT.B.5 — Use congruence and similarity criteria for triangles to solve problems and to prove relationships in geo (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.3",
+            "sub_topic_name": "Proofs Involving Congruence and Similarity",
+            "objective_id": "MAT.5.4.3.2",
+            "objective_text": "Prove two triangles similar using AA, SAS, or SSS similarity.",
+            "objective_uuid": "4068fbb6-1c90-4a60-8d04-236ddc7e5183",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-SRT.B.5 — Use congruence and similarity criteria for triangles to solve problems and to prove relationships in geo (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.3",
+            "sub_topic_name": "Proofs Involving Congruence and Similarity",
+            "objective_id": "MAT.5.4.3.3",
+            "objective_text": "Use congruent or similar triangles to prove relationships between figures.",
+            "objective_uuid": "33d944c7-5dcd-44f9-8788-8536fa2df3ab",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.C.10 — Prove theorems about triangles (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

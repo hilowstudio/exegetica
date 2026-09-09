@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.10.4.3",
+    "name": "Experimental vs Theoretical Probability (Relative Frequency)",
+    "topic_id": "MAT.10.4",
+    "topic_name": "Probability Foundations",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.10",
+    "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Experimental vs Theoretical Probability (Relative Frequency) in Probability Foundations (Mathematics)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.4",
+            "topic_name": "Probability Foundations",
+            "sub_topic_id": "MAT.10.4.3",
+            "sub_topic_name": "Experimental vs Theoretical Probability (Relative Frequency)",
+            "objective_id": "MAT.10.4.3.1",
+            "objective_text": "Estimate the probability of an event from experimental data.",
+            "objective_uuid": "c4968620-635d-4ed3-879d-93aeec48d1bf",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.SP.C.6 — Approximate the probability of a chance event by collecting data on the chance process that produces it  (grade 7)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.4",
+            "topic_name": "Probability Foundations",
+            "sub_topic_id": "MAT.10.4.3",
+            "sub_topic_name": "Experimental vs Theoretical Probability (Relative Frequency)",
+            "objective_id": "MAT.10.4.3.2",
+            "objective_text": "Develop a theoretical probability model for a chance event.",
+            "objective_uuid": "3973245b-1ef3-4171-8ee8-7aebd4242a8a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.SP.C.7 — Develop a probability model and use it to find probabilities of events. Compare probabilities from a mod (grade 7)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.4",
+            "topic_name": "Probability Foundations",
+            "sub_topic_id": "MAT.10.4.3",
+            "sub_topic_name": "Experimental vs Theoretical Probability (Relative Frequency)",
+            "objective_id": "MAT.10.4.3.3",
+            "objective_text": "Compare experimental results to theoretical probabilities.",
+            "objective_uuid": "3df1c5f9-37c6-42f5-81f2-d5a599f710d2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 7.SP.C.6 — Approximate the probability of a chance event by collecting data on the chance process that produces it  (grade 7)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

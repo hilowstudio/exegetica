@@ -1,0 +1,169 @@
+{
+  "sub_topic": {
+    "id": "ELA.5.1.2",
+    "name": "Classic Allegories (Pilgrim's Progress, Narnia, Faerie Queene)",
+    "topic_id": "ELA.5.1",
+    "topic_name": "Allegory & Symbolic Narrative",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.5",
+    "sub_subject_name": "Literature by Genre & Form",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Classic Allegories (Pilgrim's Progress, Narnia, Faerie Queene) in Allegory & Symbolic Narrative (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.1",
+            "topic_name": "Allegory & Symbolic Narrative",
+            "sub_topic_id": "ELA.5.1.2",
+            "sub_topic_name": "Classic Allegories (Pilgrim's Progress, Narnia, Faerie Queene)",
+            "objective_id": "ELA.5.1.2.1",
+            "objective_text": "Follow the journey of a character in an allegory like Pilgrim's Progress",
+            "objective_uuid": "85d5b0aa-0a89-4747-83b7-b0c3a1e889fe",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.1",
+            "topic_name": "Allegory & Symbolic Narrative",
+            "sub_topic_id": "ELA.5.1.2",
+            "sub_topic_name": "Classic Allegories (Pilgrim's Progress, Narnia, Faerie Queene)",
+            "objective_id": "ELA.5.1.2.2",
+            "objective_text": "Match allegorical names and places (Vanity Fair, the Slough of Despond) to what they stand for",
+            "objective_uuid": "becfef18-dd6c-4c8f-8c2a-98f21e54dcbc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.1",
+            "topic_name": "Allegory & Symbolic Narrative",
+            "sub_topic_id": "ELA.5.1.2",
+            "sub_topic_name": "Classic Allegories (Pilgrim's Progress, Narnia, Faerie Queene)",
+            "objective_id": "ELA.5.1.2.3",
+            "objective_text": "Explain how a whole allegory carries a second, spiritual meaning beneath its story",
+            "objective_uuid": "38d6f232-db6c-4200-881d-8170db19cc33",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.1",
+            "topic_name": "Allegory & Symbolic Narrative",
+            "sub_topic_id": "ELA.5.1.2",
+            "sub_topic_name": "Classic Allegories (Pilgrim's Progress, Narnia, Faerie Queene)",
+            "objective_id": "ELA.5.1.2.4",
+            "objective_text": "Analyze how the episodes of an allegory build stage by stage toward its goal",
+            "objective_uuid": "a4cfca6f-0627-4f9a-82ea-7ba335a4b914",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.5 — Analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.5",
+            "sub_subject_name": "Literature by Genre & Form",
+            "topic_id": "ELA.5.1",
+            "topic_name": "Allegory & Symbolic Narrative",
+            "sub_topic_id": "ELA.5.1.2",
+            "sub_topic_name": "Classic Allegories (Pilgrim's Progress, Narnia, Faerie Queene)",
+            "objective_id": "ELA.5.1.2.5",
+            "objective_text": "Compare the allegorical methods of Bunyan, Lewis, and Spenser",
+            "objective_uuid": "4e38a595-321a-401a-817e-a44788d0bf4f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

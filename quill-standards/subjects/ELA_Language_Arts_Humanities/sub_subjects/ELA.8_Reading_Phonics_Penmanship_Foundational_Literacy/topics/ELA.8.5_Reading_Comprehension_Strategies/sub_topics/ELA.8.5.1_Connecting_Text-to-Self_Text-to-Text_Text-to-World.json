@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ELA.8.5.1",
+    "name": "Connecting (Text-to-Self, Text-to-Text, Text-to-World)",
+    "topic_id": "ELA.8.5",
+    "topic_name": "Reading Comprehension Strategies",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.8",
+    "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Connecting (Text-to-Self, Text-to-Text, Text-to-World) in Reading Comprehension Strategies (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.5",
+            "topic_name": "Reading Comprehension Strategies",
+            "sub_topic_id": "ELA.8.5.1",
+            "sub_topic_name": "Connecting (Text-to-Self, Text-to-Text, Text-to-World)",
+            "objective_id": "ELA.8.5.1.1",
+            "objective_text": "Connect events in a text to one's own experiences",
+            "objective_uuid": "67a4888f-b615-4155-84f0-3946bbd1df1d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite spe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.5",
+            "topic_name": "Reading Comprehension Strategies",
+            "sub_topic_id": "ELA.8.5.1",
+            "sub_topic_name": "Connecting (Text-to-Self, Text-to-Text, Text-to-World)",
+            "objective_id": "ELA.8.5.1.2",
+            "objective_text": "Make text-to-text connections between two stories or books",
+            "objective_uuid": "77b7dc68-dc65-4802-8e3a-3831cbacde02",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.1 — Read closely to determine what the text says explicitly and to make logical inferences from it; cite spe (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.5",
+            "topic_name": "Reading Comprehension Strategies",
+            "sub_topic_id": "ELA.8.5.1",
+            "sub_topic_name": "Connecting (Text-to-Self, Text-to-Text, Text-to-World)",
+            "objective_id": "ELA.8.5.1.3",
+            "objective_text": "Relate a text's ideas to events and issues in the wider world",
+            "objective_uuid": "83cef48f-cf6b-4823-858d-1b845fe3a664",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.2 — Determine central ideas or themes of a text and analyze their development; summarize the key supporting  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.8",
+            "sub_subject_name": "Reading, Phonics & Penmanship (Foundational Literacy)",
+            "topic_id": "ELA.8.5",
+            "topic_name": "Reading Comprehension Strategies",
+            "sub_topic_id": "ELA.8.5.1",
+            "sub_topic_name": "Connecting (Text-to-Self, Text-to-Text, Text-to-World)",
+            "objective_id": "ELA.8.5.1.4",
+            "objective_text": "Use connections across texts to deepen understanding of central themes",
+            "objective_uuid": "c735649a-4a8a-4cff-8afd-ada47aa785b0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.2 — Determine central ideas or themes of a text and analyze their development; summarize the key supporting  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

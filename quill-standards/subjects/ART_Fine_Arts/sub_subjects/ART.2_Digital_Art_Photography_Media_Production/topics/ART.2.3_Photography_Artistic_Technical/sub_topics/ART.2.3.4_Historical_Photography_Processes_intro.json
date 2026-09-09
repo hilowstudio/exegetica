@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ART.2.3.4",
+    "name": "Historical Photography Processes (intro)",
+    "topic_id": "ART.2.3",
+    "topic_name": "Photography (Artistic & Technical)",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.2",
+    "sub_subject_name": "Digital Art, Photography & Media Production",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Historical Photography Processes (intro) in Photography (Artistic & Technical) (Fine Arts)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.4",
+            "sub_topic_name": "Historical Photography Processes (intro)",
+            "objective_id": "ART.2.3.4.1",
+            "objective_text": "Describe how early cameras captured pictures without digital screens.",
+            "objective_uuid": "fbed3668-5432-418c-8fc9-c472cb616983",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr1 — Generate and conceptualize artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.4",
+            "sub_topic_name": "Historical Photography Processes (intro)",
+            "objective_id": "ART.2.3.4.2",
+            "objective_text": "Identify major historical processes such as the daguerreotype, film, and Polaroid.",
+            "objective_uuid": "94bd1569-b479-4de2-82ab-644c6ebc8657",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.4",
+            "sub_topic_name": "Historical Photography Processes (intro)",
+            "objective_id": "ART.2.3.4.3",
+            "objective_text": "Compare historical photographic processes with modern digital photography.",
+            "objective_uuid": "798f2a19-59aa-4d67-8ad0-50f07e32c539",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.4",
+            "sub_topic_name": "Historical Photography Processes (intro)",
+            "objective_id": "ART.2.3.4.4",
+            "objective_text": "Create an image inspired by a historical process or aesthetic for presentation.",
+            "objective_uuid": "ddbf4143-805b-479a-8b49-df3a90122e1c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Pr5 — Develop and refine artistic techniques and work for presentation (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

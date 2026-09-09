@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ART.1.3.3",
+    "name": "Description (What do you see?)",
+    "topic_id": "ART.1.3",
+    "topic_name": "Principles of Art Criticism",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.1",
+    "sub_subject_name": "Art History, Aesthetic Philosophy & Christian Worldview",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Description (What do you see?) in Principles of Art Criticism (Fine Arts)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.1",
+            "sub_subject_name": "Art History, Aesthetic Philosophy & Christian Worldview",
+            "topic_id": "ART.1.3",
+            "topic_name": "Principles of Art Criticism",
+            "sub_topic_id": "ART.1.3.3",
+            "sub_topic_name": "Description (What do you see?)",
+            "objective_id": "ART.1.3.3.1",
+            "objective_text": "Describe in detail what you literally see in a work of art without interpreting it.",
+            "objective_uuid": "69da4060-2c92-4ba0-89df-41e96545f41b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Re7 — Perceive and analyze artistic work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.1",
+            "sub_subject_name": "Art History, Aesthetic Philosophy & Christian Worldview",
+            "topic_id": "ART.1.3",
+            "topic_name": "Principles of Art Criticism",
+            "sub_topic_id": "ART.1.3.3",
+            "sub_topic_name": "Description (What do you see?)",
+            "objective_id": "ART.1.3.3.2",
+            "objective_text": "Identify the subject matter, media, and visual elements present in a work.",
+            "objective_uuid": "5c6833fa-3d44-43e1-88da-bb7491ded4f6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Re7 — Perceive and analyze artistic work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.1",
+            "sub_subject_name": "Art History, Aesthetic Philosophy & Christian Worldview",
+            "topic_id": "ART.1.3",
+            "topic_name": "Principles of Art Criticism",
+            "sub_topic_id": "ART.1.3.3",
+            "sub_topic_name": "Description (What do you see?)",
+            "objective_id": "ART.1.3.3.3",
+            "objective_text": "Use accurate art vocabulary to give a thorough description of a work.",
+            "objective_uuid": "b4060f60-73f3-45c2-86bd-200348e46379",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Re7 — Perceive and analyze artistic work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.1",
+            "sub_subject_name": "Art History, Aesthetic Philosophy & Christian Worldview",
+            "topic_id": "ART.1.3",
+            "topic_name": "Principles of Art Criticism",
+            "sub_topic_id": "ART.1.3.3",
+            "sub_topic_name": "Description (What do you see?)",
+            "objective_id": "ART.1.3.3.4",
+            "objective_text": "Distinguish careful observation from assumption when describing an artwork.",
+            "objective_uuid": "89ab6c7d-9e23-4dcc-8591-4d56b90dbe15",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS VA:Re7 — Perceive and analyze artistic work (Visual Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.8.4.4",
+    "name": "Prime and Composite Numbers (Sieve of Eratosthenes)",
+    "topic_id": "MAT.8.4",
+    "topic_name": "Properties of Numbers",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.8",
+    "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Prime and Composite Numbers (Sieve of Eratosthenes) in Properties of Numbers (Mathematics)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.4",
+            "topic_name": "Properties of Numbers",
+            "sub_topic_id": "MAT.8.4.4",
+            "sub_topic_name": "Prime and Composite Numbers (Sieve of Eratosthenes)",
+            "objective_id": "MAT.8.4.4.1",
+            "objective_text": "Distinguish prime from composite numbers.",
+            "objective_uuid": "c199b270-f76a-4c15-8f70-5a22b7f80109",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.OA.B.4 — Find all factor pairs for a whole number in the range 1—100. Recognize that a whole number is a multiple (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.4",
+            "topic_name": "Properties of Numbers",
+            "sub_topic_id": "MAT.8.4.4",
+            "sub_topic_name": "Prime and Composite Numbers (Sieve of Eratosthenes)",
+            "objective_id": "MAT.8.4.4.2",
+            "objective_text": "Use the Sieve of Eratosthenes to find primes.",
+            "objective_uuid": "f2bd4275-8d40-4860-8827-603abd8bb7f6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.OA.B.4 — Find all factor pairs for a whole number in the range 1—100. Recognize that a whole number is a multiple (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.4",
+            "topic_name": "Properties of Numbers",
+            "sub_topic_id": "MAT.8.4.4",
+            "sub_topic_name": "Prime and Composite Numbers (Sieve of Eratosthenes)",
+            "objective_id": "MAT.8.4.4.3",
+            "objective_text": "Determine whether a given number is prime.",
+            "objective_uuid": "da6cbb3f-cfed-4f96-8942-bd813d55d6f0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.OA.B.4 — Find all factor pairs for a whole number in the range 1—100. Recognize that a whole number is a multiple (grade 4)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

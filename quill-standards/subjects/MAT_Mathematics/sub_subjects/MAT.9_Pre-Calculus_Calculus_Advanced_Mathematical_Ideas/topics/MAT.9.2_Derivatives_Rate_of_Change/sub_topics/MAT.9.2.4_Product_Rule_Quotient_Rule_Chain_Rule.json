@@ -1,0 +1,92 @@
+{
+  "sub_topic": {
+    "id": "MAT.9.2.4",
+    "name": "Product Rule, Quotient Rule, Chain Rule",
+    "topic_id": "MAT.9.2",
+    "topic_name": "Derivatives (Rate of Change)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.9",
+    "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Product Rule, Quotient Rule, Chain Rule in Derivatives (Rate of Change) (Mathematics)",
+    "grade_levels": {
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 3,
+        "average_complexity": 14.33,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.2",
+            "topic_name": "Derivatives (Rate of Change)",
+            "sub_topic_id": "MAT.9.2.4",
+            "sub_topic_name": "Product Rule, Quotient Rule, Chain Rule",
+            "objective_id": "MAT.9.2.4.1",
+            "objective_text": "Apply the product rule to differentiate a product of functions.",
+            "objective_uuid": "8c528437-7f1e-489b-84e0-b2ae424b8df6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.2",
+            "topic_name": "Derivatives (Rate of Change)",
+            "sub_topic_id": "MAT.9.2.4",
+            "sub_topic_name": "Product Rule, Quotient Rule, Chain Rule",
+            "objective_id": "MAT.9.2.4.2",
+            "objective_text": "Apply the quotient rule to differentiate a quotient of functions.",
+            "objective_uuid": "82d82054-1cdc-49ec-83ac-2058d3d3712c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          },
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.9",
+            "sub_subject_name": "Pre-Calculus & Calculus (Advanced Mathematical Ideas)",
+            "topic_id": "MAT.9.2",
+            "topic_name": "Derivatives (Rate of Change)",
+            "sub_topic_id": "MAT.9.2.4",
+            "sub_topic_name": "Product Rule, Quotient Rule, Chain Rule",
+            "objective_id": "MAT.9.2.4.3",
+            "objective_text": "Apply the chain rule to differentiate a composite function.",
+            "objective_uuid": "f0d6f761-549e-4522-8a42-c03c38408fa1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content runs beyond Common Core, so no standard anchor (honest gap)."
+    }
+  }
+}

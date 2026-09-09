@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "PER.3.2.2",
+    "name": "Algorithmic Influence (Echo chambers, rage-baiting, polarization)",
+    "topic_id": "PER.3.2",
+    "topic_name": "Online Relationships & Social Media",
+    "subject_id": "PER",
+    "subject_name": "Personal Relationships, Identity & Digital Discipleship",
+    "sub_subject_id": "PER.3",
+    "sub_subject_name": "Digital Discipleship, Safety & Citizenship",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Algorithmic Influence (Echo chambers, rage-baiting, polarization) in Online Relationships & Social Media (Personal Relationships, Identity & Digital Discipleship)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "PER",
+            "subject_name": "Personal Relationships, Identity & Digital Discipleship",
+            "sub_subject_id": "PER.3",
+            "sub_subject_name": "Digital Discipleship, Safety & Citizenship",
+            "topic_id": "PER.3.2",
+            "topic_name": "Online Relationships & Social Media",
+            "sub_topic_id": "PER.3.2.2",
+            "sub_topic_name": "Algorithmic Influence (Echo chambers, rage-baiting, polarization)",
+            "objective_id": "PER.3.2.2.1",
+            "objective_text": "Explain how apps decide what to show you based on what you click and watch.",
+            "objective_uuid": "958aa3fb-2819-4027-8404-6fd67ead9d78",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CASEL RD.5 — The abilities to make caring and constructive choices about personal behavior and social interaction (CASEL SEL, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "PER",
+            "subject_name": "Personal Relationships, Identity & Digital Discipleship",
+            "sub_subject_id": "PER.3",
+            "sub_subject_name": "Digital Discipleship, Safety & Citizenship",
+            "topic_id": "PER.3.2",
+            "topic_name": "Online Relationships & Social Media",
+            "sub_topic_id": "PER.3.2.2",
+            "sub_topic_name": "Algorithmic Influence (Echo chambers, rage-baiting, polarization)",
+            "objective_id": "PER.3.2.2.2",
+            "objective_text": "Describe how an echo chamber forms and narrows what you get to see.",
+            "objective_uuid": "5a794a6a-e858-4c95-8719-812ecf664f46",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CASEL RD.5 — The abilities to make caring and constructive choices about personal behavior and social interaction (CASEL SEL, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "PER",
+            "subject_name": "Personal Relationships, Identity & Digital Discipleship",
+            "sub_subject_id": "PER.3",
+            "sub_subject_name": "Digital Discipleship, Safety & Citizenship",
+            "topic_id": "PER.3.2",
+            "topic_name": "Online Relationships & Social Media",
+            "sub_topic_id": "PER.3.2.2",
+            "sub_topic_name": "Algorithmic Influence (Echo chambers, rage-baiting, polarization)",
+            "objective_id": "PER.3.2.2.3",
+            "objective_text": "Identify rage-baiting content designed to keep you angry and scrolling.",
+            "objective_uuid": "92b9a283-a25b-4a0e-87d7-c66fce26e856",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CASEL RD.5 — The abilities to make caring and constructive choices about personal behavior and social interaction (CASEL SEL, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "PER",
+            "subject_name": "Personal Relationships, Identity & Digital Discipleship",
+            "sub_subject_id": "PER.3",
+            "sub_subject_name": "Digital Discipleship, Safety & Citizenship",
+            "topic_id": "PER.3.2",
+            "topic_name": "Online Relationships & Social Media",
+            "sub_topic_id": "PER.3.2.2",
+            "sub_topic_name": "Algorithmic Influence (Echo chambers, rage-baiting, polarization)",
+            "objective_id": "PER.3.2.2.4",
+            "objective_text": "Analyze how recommendation algorithms can deepen division and polarization.",
+            "objective_uuid": "976843ce-1361-4903-8173-e97f3734f41b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CASEL RD.5 — The abilities to make caring and constructive choices about personal behavior and social interaction (CASEL SEL, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "PER",
+            "subject_name": "Personal Relationships, Identity & Digital Discipleship",
+            "sub_subject_id": "PER.3",
+            "sub_subject_name": "Digital Discipleship, Safety & Citizenship",
+            "topic_id": "PER.3.2",
+            "topic_name": "Online Relationships & Social Media",
+            "sub_topic_id": "PER.3.2.2",
+            "sub_topic_name": "Algorithmic Influence (Echo chambers, rage-baiting, polarization)",
+            "objective_id": "PER.3.2.2.5",
+            "objective_text": "Evaluate practices for seeking out diverse and truthful perspectives on purpose.",
+            "objective_uuid": "28e65dfb-df41-485a-8d12-129358329c1c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CASEL RD.5 — The abilities to make caring and constructive choices about personal behavior and social interaction (CASEL SEL, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CASEL / National Health Education Standards",
+      "anchor_note": "Rebuilt from the CASEL / National Health Education Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

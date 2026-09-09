@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ART.2.1.6",
+    "name": "Vector Illustration (paths, shapes, scaling)",
+    "topic_id": "ART.2.1",
+    "topic_name": "Digital Art & Illustration",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.2",
+    "sub_subject_name": "Digital Art, Photography & Media Production",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Vector Illustration (paths, shapes, scaling) in Digital Art & Illustration (Fine Arts)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.6",
+            "sub_topic_name": "Vector Illustration (paths, shapes, scaling)",
+            "objective_id": "ART.2.1.6.1",
+            "objective_text": "Create simple shapes and combine them into a picture using vector tools.",
+            "objective_uuid": "372b853f-ab6d-46fe-840b-387c3cbc3c4d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr1 — Generate and conceptualize artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.6",
+            "sub_topic_name": "Vector Illustration (paths, shapes, scaling)",
+            "objective_id": "ART.2.1.6.2",
+            "objective_text": "Draw and edit paths using anchor points and handles.",
+            "objective_uuid": "4a40c54d-52bd-422a-815e-350eba7ccf10",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.6",
+            "sub_topic_name": "Vector Illustration (paths, shapes, scaling)",
+            "objective_id": "ART.2.1.6.3",
+            "objective_text": "Scale and reshape vector artwork without losing quality.",
+            "objective_uuid": "e8b5d30d-d43d-48e6-89b3-c9d783943b12",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.6",
+            "sub_topic_name": "Vector Illustration (paths, shapes, scaling)",
+            "objective_id": "ART.2.1.6.4",
+            "objective_text": "Build a multi-object illustration using grouping and alignment.",
+            "objective_uuid": "798e0b50-ada2-436c-87e3-49788eb189c1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.6",
+            "sub_topic_name": "Vector Illustration (paths, shapes, scaling)",
+            "objective_id": "ART.2.1.6.5",
+            "objective_text": "Refine a vector illustration with clean paths and consistent color for presentation.",
+            "objective_uuid": "7be325b8-a1be-42ac-8bd0-78c52fde3b5e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Pr5 — Develop and refine artistic techniques and work for presentation (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

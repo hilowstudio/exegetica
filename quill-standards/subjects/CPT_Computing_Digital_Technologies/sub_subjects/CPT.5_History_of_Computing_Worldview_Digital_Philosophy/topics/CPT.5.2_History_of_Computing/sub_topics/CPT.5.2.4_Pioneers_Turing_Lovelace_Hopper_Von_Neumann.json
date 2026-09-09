@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.5.2.4",
+    "name": "Pioneers (Turing, Lovelace, Hopper, Von Neumann)",
+    "topic_id": "CPT.5.2",
+    "topic_name": "History of Computing",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.5",
+    "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Pioneers (Turing, Lovelace, Hopper, Von Neumann) in History of Computing (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.4",
+            "sub_topic_name": "Pioneers (Turing, Lovelace, Hopper, Von Neumann)",
+            "objective_id": "CPT.5.2.4.1",
+            "objective_text": "Identify a computing pioneer such as Ada Lovelace, Alan Turing, Grace Hopper, or John von Neumann and one thing they are known for",
+            "objective_uuid": "5f21b3de-fd5a-4da6-889b-dd568efd9c42",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-18 — Discuss computing technologies that have changed the world, and express how those technologies influence, and  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.4",
+            "sub_topic_name": "Pioneers (Turing, Lovelace, Hopper, Von Neumann)",
+            "objective_id": "CPT.5.2.4.2",
+            "objective_text": "Describe a key contribution of a computing pioneer to the way modern computers work",
+            "objective_uuid": "efe98c79-96dd-4914-812a-4e57e9908148",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-18 — Discuss computing technologies that have changed the world, and express how those technologies influence, and  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.4",
+            "sub_topic_name": "Pioneers (Turing, Lovelace, Hopper, Von Neumann)",
+            "objective_id": "CPT.5.2.4.3",
+            "objective_text": "Explain how the ideas of pioneers like Turing, Lovelace, Hopper, and von Neumann shaped computing that changed the world",
+            "objective_uuid": "dcdbccc4-6851-4311-8a59-a77b67857290",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-18 — Discuss computing technologies that have changed the world, and express how those technologies influence, and  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.2",
+            "topic_name": "History of Computing",
+            "sub_topic_id": "CPT.5.2.4",
+            "sub_topic_name": "Pioneers (Turing, Lovelace, Hopper, Von Neumann)",
+            "objective_id": "CPT.5.2.4.4",
+            "objective_text": "Discuss how a pioneer's work was influenced by their time and place and how it went on to influence later cultural practices",
+            "objective_uuid": "15f5e95e-6663-4345-82bc-82d0543bf090",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-IC-18 — Discuss computing technologies that have changed the world, and express how those technologies influence, and  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

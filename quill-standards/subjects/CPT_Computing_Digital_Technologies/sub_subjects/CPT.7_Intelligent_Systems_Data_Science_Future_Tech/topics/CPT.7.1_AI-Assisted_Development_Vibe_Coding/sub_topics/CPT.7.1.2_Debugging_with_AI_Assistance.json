@@ -1,0 +1,133 @@
+{
+  "sub_topic": {
+    "id": "CPT.7.1.2",
+    "name": "Debugging with AI Assistance",
+    "topic_id": "CPT.7.1",
+    "topic_name": "AI-Assisted Development (“Vibe Coding”)",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.7",
+    "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Debugging with AI Assistance in AI-Assisted Development (“Vibe Coding”) (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.1",
+            "topic_name": "AI-Assisted Development (“Vibe Coding”)",
+            "sub_topic_id": "CPT.7.1.2",
+            "sub_topic_name": "Debugging with AI Assistance",
+            "objective_id": "CPT.7.1.2.1",
+            "objective_text": "Describe how an AI assistant can help find errors in a program",
+            "objective_uuid": "1b0a835a-8197-45ee-8b7a-9031c5656879",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.1",
+            "topic_name": "AI-Assisted Development (“Vibe Coding”)",
+            "sub_topic_id": "CPT.7.1.2",
+            "sub_topic_name": "Debugging with AI Assistance",
+            "objective_id": "CPT.7.1.2.2",
+            "objective_text": "Use an AI assistant to explain what an error message means",
+            "objective_uuid": "d5fccddf-3926-45d1-834f-e05cb736b5d2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.1",
+            "topic_name": "AI-Assisted Development (“Vibe Coding”)",
+            "sub_topic_id": "CPT.7.1.2",
+            "sub_topic_name": "Debugging with AI Assistance",
+            "objective_id": "CPT.7.1.2.3",
+            "objective_text": "Ask an AI tool for possible causes of a bug and test each suggestion",
+            "objective_uuid": "22a6d48d-8157-4e39-8f67-5e4625edd970",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.1",
+            "topic_name": "AI-Assisted Development (“Vibe Coding”)",
+            "sub_topic_id": "CPT.7.1.2",
+            "sub_topic_name": "Debugging with AI Assistance",
+            "objective_id": "CPT.7.1.2.4",
+            "objective_text": "Evaluate whether an AI's proposed fix resolves the bug without creating new problems",
+            "objective_uuid": "e04b800b-6a04-4a9f-8c1a-38135db7591b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

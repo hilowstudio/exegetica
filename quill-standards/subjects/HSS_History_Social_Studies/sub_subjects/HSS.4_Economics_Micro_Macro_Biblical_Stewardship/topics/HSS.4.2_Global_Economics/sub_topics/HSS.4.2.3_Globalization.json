@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "HSS.4.2.3",
+    "name": "Globalization",
+    "topic_id": "HSS.4.2",
+    "topic_name": "Global Economics",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.4",
+    "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Globalization in Global Economics (History & Social Studies)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.2",
+            "topic_name": "Global Economics",
+            "sub_topic_id": "HSS.4.2.3",
+            "sub_topic_name": "Globalization",
+            "objective_id": "HSS.4.2.3.1",
+            "objective_text": "Define globalization as the growing connection among the world's economies.",
+            "objective_uuid": "c198c83a-34b3-4ca1-8bf4-44fa702d9945",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.14.3-5 — Explain how trade leads to increasing economic interdependence among nations (economics, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.2",
+            "topic_name": "Global Economics",
+            "sub_topic_id": "HSS.4.2.3",
+            "sub_topic_name": "Globalization",
+            "objective_id": "HSS.4.2.3.2",
+            "objective_text": "Explain how trade leads to increasing economic interdependence among nations.",
+            "objective_uuid": "edeb6777-45b2-4e56-8366-8a97941a608b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.14.3-5 — Explain how trade leads to increasing economic interdependence among nations (economics, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.2",
+            "topic_name": "Global Economics",
+            "sub_topic_id": "HSS.4.2.3",
+            "sub_topic_name": "Globalization",
+            "objective_id": "HSS.4.2.3.3",
+            "objective_text": "Explain how globalization affects different groups within participating nations.",
+            "objective_uuid": "c8b26696-be87-407f-8b88-6a38e2ac55dc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.15.3-5 — Explain the effects of increasing economic interdependence on different groups within participating  (economics, grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.2",
+            "topic_name": "Global Economics",
+            "sub_topic_id": "HSS.4.2.3",
+            "sub_topic_name": "Globalization",
+            "objective_id": "HSS.4.2.3.4",
+            "objective_text": "Analyze the role of comparative advantage in a globalized economy.",
+            "objective_uuid": "c9de0b2a-c688-4402-8ed7-bcb8d949cb3b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.14.9-12 — Analyze the role of comparative advantage in international trade of goods and services (economics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.2",
+            "topic_name": "Global Economics",
+            "sub_topic_id": "HSS.4.2.3",
+            "sub_topic_name": "Globalization",
+            "objective_id": "HSS.4.2.3.5",
+            "objective_text": "Evaluate how globalization trends and policies affect growth, labor, rights, the environment, and income distribution.",
+            "objective_uuid": "cc17eae8-38dd-496e-852e-abc152322b98",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Eco.15.9-12 — Explain how current globalization trends and policies affect economic growth, labor markets, rights  (economics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

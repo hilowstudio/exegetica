@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "GEO.5.2.2",
+    "name": "Eden, Mesopotamia & the Cradle of Civilization",
+    "topic_id": "GEO.5.2",
+    "topic_name": "Biblical Geography & Cultural Context",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.5",
+    "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Eden, Mesopotamia & the Cradle of Civilization in Biblical Geography & Cultural Context (Geography)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.2",
+            "sub_topic_name": "Eden, Mesopotamia & the Cradle of Civilization",
+            "objective_id": "GEO.5.2.2.1",
+            "objective_text": "Locate the rivers Tigris and Euphrates on a map and connect them to the garden of Eden",
+            "objective_uuid": "89c0c309-385a-4497-89dc-efd125029e74",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.2",
+            "sub_topic_name": "Eden, Mesopotamia & the Cradle of Civilization",
+            "objective_id": "GEO.5.2.2.2",
+            "objective_text": "Describe the region of Mesopotamia and why it is called a cradle of civilization",
+            "objective_uuid": "f737e2d4-4dff-44d0-83d5-d28d4e75692b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.2",
+            "sub_topic_name": "Eden, Mesopotamia & the Cradle of Civilization",
+            "objective_id": "GEO.5.2.2.3",
+            "objective_text": "Explain how the fertile land between the rivers supported early cities, farming, and writing",
+            "objective_uuid": "4fe5f598-0fec-4032-897a-b7aa86325bee",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.2",
+            "sub_topic_name": "Eden, Mesopotamia & the Cradle of Civilization",
+            "objective_id": "GEO.5.2.2.4",
+            "objective_text": "Trace the movements of early Genesis, from Eden to Babel to the call of Abram, across the geography of Mesopotamia",
+            "objective_uuid": "36e8a303-7f55-4fb5-8b39-e931b1ecf283",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.2",
+            "sub_topic_name": "Eden, Mesopotamia & the Cradle of Civilization",
+            "objective_id": "GEO.5.2.2.5",
+            "objective_text": "Analyze how the biblical account of humanity's beginnings both uses and stands apart from the culture of ancient Mesopotamia",
+            "objective_uuid": "31ccab47-03ab-4a5c-810e-885134361a30",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

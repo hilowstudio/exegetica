@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.4.4",
+    "name": "Proofs with Triangles, Parallel Lines, and Transversals",
+    "topic_id": "MAT.5.4",
+    "topic_name": "Geometric Proof & Reasoning",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Proofs with Triangles, Parallel Lines, and Transversals in Geometric Proof & Reasoning (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.4",
+            "sub_topic_name": "Proofs with Triangles, Parallel Lines, and Transversals",
+            "objective_id": "MAT.5.4.4.1",
+            "objective_text": "Prove the triangle angle-sum theorem.",
+            "objective_uuid": "737773b7-a5ee-45a6-8e01-62f1ef737ae2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.C.10 — Prove theorems about triangles (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.4",
+            "sub_topic_name": "Proofs with Triangles, Parallel Lines, and Transversals",
+            "objective_id": "MAT.5.4.4.2",
+            "objective_text": "Prove theorems about the angles formed by parallel lines and a transversal.",
+            "objective_uuid": "63944b37-1fd4-483f-8cd6-efeb3a3fafe2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.C.10 — Prove theorems about triangles (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.4",
+            "sub_topic_name": "Proofs with Triangles, Parallel Lines, and Transversals",
+            "objective_id": "MAT.5.4.4.3",
+            "objective_text": "Prove the triangle midsegment theorem and related results.",
+            "objective_uuid": "59179006-643f-4139-8683-14a04ef7d3eb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.C.10 — Prove theorems about triangles (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "HPE.9.1.2",
+    "name": "Heart Rate & Cardiovascular Health",
+    "topic_id": "HPE.9.1",
+    "topic_name": "Components of Fitness",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.9",
+    "sub_subject_name": "Physical Fitness & Lifetime Wellness",
+    "total_objectives": 3,
+    "description": "K-12 progression for Heart Rate & Cardiovascular Health in Components of Fitness (Health & Physical Education)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.9",
+            "sub_subject_name": "Physical Fitness & Lifetime Wellness",
+            "topic_id": "HPE.9.1",
+            "topic_name": "Components of Fitness",
+            "sub_topic_id": "HPE.9.1.2",
+            "sub_topic_name": "Heart Rate & Cardiovascular Health",
+            "objective_id": "HPE.9.1.2.1",
+            "objective_text": "Locate and count a pulse.",
+            "objective_uuid": "186e0254-336f-4e9d-8bfb-6a40662eaa16",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.9",
+            "sub_subject_name": "Physical Fitness & Lifetime Wellness",
+            "topic_id": "HPE.9.1",
+            "topic_name": "Components of Fitness",
+            "sub_topic_id": "HPE.9.1.2",
+            "sub_topic_name": "Heart Rate & Cardiovascular Health",
+            "objective_id": "HPE.9.1.2.2",
+            "objective_text": "Describe how activity raises heart rate and strengthens the heart.",
+            "objective_uuid": "15dbdd6b-9570-405e-8dc4-49537e483a11",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.9",
+            "sub_subject_name": "Physical Fitness & Lifetime Wellness",
+            "topic_id": "HPE.9.1",
+            "topic_name": "Components of Fitness",
+            "sub_topic_id": "HPE.9.1.2",
+            "sub_topic_name": "Heart Rate & Cardiovascular Health",
+            "objective_id": "HPE.9.1.2.3",
+            "objective_text": "Use heart rate to gauge exercise intensity.",
+            "objective_uuid": "0d4d92ec-910c-428a-8ed2-9c3dbecf00d8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "authored",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Authored at variable depth; physical-education content has no US standard in the owned corpus (honest gap)."
+    }
+  }
+}

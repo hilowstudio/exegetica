@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ELA.6.6.2",
+    "name": "Non-Western Narratives",
+    "topic_id": "ELA.6.6",
+    "topic_name": "World Literature (Global Narratives)",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.6",
+    "sub_subject_name": "Literature by Tradition & Region",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Non-Western Narratives in World Literature (Global Narratives) (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.6",
+            "topic_name": "World Literature (Global Narratives)",
+            "sub_topic_id": "ELA.6.6.2",
+            "sub_topic_name": "Non-Western Narratives",
+            "objective_id": "ELA.6.6.2.1",
+            "objective_text": "Listen to a story from a non-Western culture and tell one thing it teaches.",
+            "objective_uuid": "04b0144e-2a44-406f-821c-bb10fc33a5b7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.6",
+            "topic_name": "World Literature (Global Narratives)",
+            "sub_topic_id": "ELA.6.6.2",
+            "sub_topic_name": "Non-Western Narratives",
+            "objective_id": "ELA.6.6.2.2",
+            "objective_text": "Read a non-Western tale or poem and describe what its people value.",
+            "objective_uuid": "2077e288-2bfb-4cb6-87b9-39caf7c119ee",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.6",
+            "topic_name": "World Literature (Global Narratives)",
+            "sub_topic_id": "ELA.6.6.2",
+            "sub_topic_name": "Non-Western Narratives",
+            "objective_id": "ELA.6.6.2.3",
+            "objective_text": "Analyze how a non-Western narrative reflects the worldview and traditions of its culture.",
+            "objective_uuid": "1f5d3418-f713-4064-8966-4b8e4d2e3e91",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.10 — Read and comprehend complex literary and informational texts independently and proficiently (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.6",
+            "sub_subject_name": "Literature by Tradition & Region",
+            "topic_id": "ELA.6.6",
+            "topic_name": "World Literature (Global Narratives)",
+            "sub_topic_id": "ELA.6.6.2",
+            "sub_topic_name": "Non-Western Narratives",
+            "objective_id": "ELA.6.6.2.4",
+            "objective_text": "Compare how a Western and a non-Western text address the same human question.",
+            "objective_uuid": "3d36cfeb-a5fa-4df2-84fc-9e9bf35c7ce2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.9 — Analyze how two or more texts address similar themes or topics in order to build knowledge or to compare (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

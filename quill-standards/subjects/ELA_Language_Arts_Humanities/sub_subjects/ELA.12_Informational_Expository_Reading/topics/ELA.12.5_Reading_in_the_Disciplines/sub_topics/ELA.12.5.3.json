@@ -1,0 +1,116 @@
+{
+  "sub_topic": {
+    "id": "ELA.12.5.3",
+    "name": "Following Technical Procedures & Directions",
+    "topic_id": "ELA.12.5",
+    "topic_name": "Reading in the Disciplines",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.12",
+    "sub_subject_name": "Informational & Expository Reading",
+    "total_objectives": 3,
+    "description": "K-12 progression for Following Technical Procedures & Directions in Reading in the Disciplines (Informational & Expository Reading)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.5",
+            "topic_name": "Reading in the Disciplines",
+            "sub_topic_id": "ELA.12.5.3",
+            "sub_topic_name": "Following Technical Procedures & Directions",
+            "objective_id": "ELA.12.5.3.1",
+            "objective_text": "Follow a simple multi-step set of written directions.",
+            "objective_uuid": "d9a6a7dc-5e4d-4b58-84d6-359070657fae",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA reading anchor, K-12)",
+                "CCSS.ELA CCRA.R.4 — Interpret words and phrases as they are used in a text, including determining technical, connotative (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.5",
+            "topic_name": "Reading in the Disciplines",
+            "sub_topic_id": "ELA.12.5.3",
+            "sub_topic_name": "Following Technical Procedures & Directions",
+            "objective_id": "ELA.12.5.3.2",
+            "objective_text": "Carry out a technical procedure precisely from a written text.",
+            "objective_uuid": "e8ba88aa-74ea-44e5-8f7a-8dfd230e834e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA reading anchor, K-12)",
+                "CCSS.ELA CCRA.R.4 — Interpret words and phrases as they are used in a text, including determining technical, connotative (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.5",
+            "topic_name": "Reading in the Disciplines",
+            "sub_topic_id": "ELA.12.5.3",
+            "sub_topic_name": "Following Technical Procedures & Directions",
+            "objective_id": "ELA.12.5.3.3",
+            "objective_text": "Analyze a complex multistep procedure and troubleshoot where it could fail.",
+            "objective_uuid": "0ead04fc-1922-44f5-8b25-2a1af883ad75",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA reading anchor, K-12)",
+                "CCSS.ELA CCRA.R.4 — Interpret words and phrases as they are used in a text, including determining technical, connotative (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Authored to CCSS Reading anchors (CCRA.R); objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

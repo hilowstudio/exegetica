@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.7.3.4",
+    "name": "Recognizing and Avoiding Contradictions",
+    "topic_id": "MAT.7.3",
+    "topic_name": "Reasoning Skills",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.7",
+    "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Recognizing and Avoiding Contradictions in Reasoning Skills (Mathematics)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.3",
+            "topic_name": "Reasoning Skills",
+            "sub_topic_id": "MAT.7.3.4",
+            "sub_topic_name": "Recognizing and Avoiding Contradictions",
+            "objective_id": "MAT.7.3.4.1",
+            "objective_text": "Recognize when two statements cannot both be true.",
+            "objective_uuid": "9d081462-0405-439a-896b-1b43a87412a9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP3 — Construct viable arguments and critique the reasoning of others (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.3",
+            "topic_name": "Reasoning Skills",
+            "sub_topic_id": "MAT.7.3.4",
+            "sub_topic_name": "Recognizing and Avoiding Contradictions",
+            "objective_id": "MAT.7.3.4.2",
+            "objective_text": "Check a solution for internal consistency.",
+            "objective_uuid": "e5331285-51f2-458f-8ea1-ddcd1cbfd000",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP3 — Construct viable arguments and critique the reasoning of others (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.7",
+            "sub_subject_name": "Logic & Mathematical Reasoning (Bridge Between Math & Language Arts)",
+            "topic_id": "MAT.7.3",
+            "topic_name": "Reasoning Skills",
+            "sub_topic_id": "MAT.7.3.4",
+            "sub_topic_name": "Recognizing and Avoiding Contradictions",
+            "objective_id": "MAT.7.3.4.3",
+            "objective_text": "Identify a logical inconsistency in an argument.",
+            "objective_uuid": "fef4b68f-8682-4bc6-801c-ea2e83ca0528",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP3 — Construct viable arguments and critique the reasoning of others (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

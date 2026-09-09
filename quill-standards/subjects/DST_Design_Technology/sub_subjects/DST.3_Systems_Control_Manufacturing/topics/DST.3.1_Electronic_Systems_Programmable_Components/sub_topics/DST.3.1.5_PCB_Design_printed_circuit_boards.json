@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "DST.3.1.5",
+    "name": "PCB Design (printed circuit boards)",
+    "topic_id": "DST.3.1",
+    "topic_name": "Electronic Systems & Programmable Components",
+    "subject_id": "DST",
+    "subject_name": "Design & Technology",
+    "sub_subject_id": "DST.3",
+    "sub_subject_name": "Systems, Control & Manufacturing",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for PCB Design (printed circuit boards) in Electronic Systems & Programmable Components (Design & Technology)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.5",
+            "sub_topic_name": "PCB Design (printed circuit boards)",
+            "objective_id": "DST.3.1.5.1",
+            "objective_text": "Explain what a printed circuit board is and why it is used instead of loose wires in a finished product",
+            "objective_uuid": "d6a8def1-0fc3-4f5f-8eaf-a7cb82a1186e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.5",
+            "sub_topic_name": "PCB Design (printed circuit boards)",
+            "objective_id": "DST.3.1.5.2",
+            "objective_text": "Convert a simple breadboard or schematic circuit into a PCB track layout",
+            "objective_uuid": "2bab9dbf-ff24-468b-8550-7a0d52c45a85",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.5",
+            "sub_topic_name": "PCB Design (printed circuit boards)",
+            "objective_id": "DST.3.1.5.3",
+            "objective_text": "Use PCB design software to place components and route tracks that do not cross or short",
+            "objective_uuid": "26c89b02-9366-4bce-8f49-1a833740a510",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.5",
+            "sub_topic_name": "PCB Design (printed circuit boards)",
+            "objective_id": "DST.3.1.5.4",
+            "objective_text": "Apply design rules for track width, pad size, and component spacing to make a board that can be reliably manufactured",
+            "objective_uuid": "1615bbda-476f-411d-8aa8-8fc2378bab25",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.3",
+            "sub_subject_name": "Systems, Control & Manufacturing",
+            "topic_id": "DST.3.1",
+            "topic_name": "Electronic Systems & Programmable Components",
+            "sub_topic_id": "DST.3.1.5",
+            "sub_topic_name": "PCB Design (printed circuit boards)",
+            "objective_id": "DST.3.1.5.5",
+            "objective_text": "Design, produce, and test a working single-sided PCB for a project, then evaluate its performance and layout",
+            "objective_uuid": "bbc5ee4b-a49c-42c6-8564-0fadc74de4cf",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

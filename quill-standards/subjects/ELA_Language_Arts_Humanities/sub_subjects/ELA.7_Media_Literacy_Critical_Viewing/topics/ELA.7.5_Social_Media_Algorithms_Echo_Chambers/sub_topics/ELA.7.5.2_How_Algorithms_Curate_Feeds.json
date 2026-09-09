@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ELA.7.5.2",
+    "name": "How Algorithms Curate Feeds",
+    "topic_id": "ELA.7.5",
+    "topic_name": "Social Media, Algorithms & Echo Chambers",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.7",
+    "sub_subject_name": "Media Literacy & Critical Viewing",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for How Algorithms Curate Feeds in Social Media, Algorithms & Echo Chambers (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.7",
+            "sub_subject_name": "Media Literacy & Critical Viewing",
+            "topic_id": "ELA.7.5",
+            "topic_name": "Social Media, Algorithms & Echo Chambers",
+            "sub_topic_id": "ELA.7.5.2",
+            "sub_topic_name": "How Algorithms Curate Feeds",
+            "objective_id": "ELA.7.5.2.1",
+            "objective_text": "Explain that a feed is chosen for you by a computer program, not shown at random",
+            "objective_uuid": "fbd3690e-531f-4161-8eb7-4534163967b6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.SL.2 — Integrate and evaluate information presented in diverse media and formats, including visually, quantitat (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.7",
+            "sub_subject_name": "Media Literacy & Critical Viewing",
+            "topic_id": "ELA.7.5",
+            "topic_name": "Social Media, Algorithms & Echo Chambers",
+            "sub_topic_id": "ELA.7.5.2",
+            "sub_topic_name": "How Algorithms Curate Feeds",
+            "objective_id": "ELA.7.5.2.2",
+            "objective_text": "Identify signals an algorithm uses, such as likes, watch time, and what you click",
+            "objective_uuid": "1a52207d-6eb8-4f3e-8b5b-4574c35fb5cb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.7 — Integrate and evaluate content presented in diverse media and formats, including visually and quantitati (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.7",
+            "sub_subject_name": "Media Literacy & Critical Viewing",
+            "topic_id": "ELA.7.5",
+            "topic_name": "Social Media, Algorithms & Echo Chambers",
+            "sub_topic_id": "ELA.7.5.2",
+            "sub_topic_name": "How Algorithms Curate Feeds",
+            "objective_id": "ELA.7.5.2.3",
+            "objective_text": "Analyze how a feed designed to keep your attention can affect what you see and believe",
+            "objective_uuid": "76daf47b-e3d2-4f3d-802c-0675edbe85e0",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.SL.2 — Integrate and evaluate information presented in diverse media and formats, including visually, quantitat (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.7",
+            "sub_subject_name": "Media Literacy & Critical Viewing",
+            "topic_id": "ELA.7.5",
+            "topic_name": "Social Media, Algorithms & Echo Chambers",
+            "sub_topic_id": "ELA.7.5.2",
+            "sub_topic_name": "How Algorithms Curate Feeds",
+            "objective_id": "ELA.7.5.2.4",
+            "objective_text": "Explain how filter bubbles and echo chambers form when algorithms show more of the same",
+            "objective_uuid": "6ccc8105-1e2d-49a8-855f-91854fa3301d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.7 — Integrate and evaluate content presented in diverse media and formats, including visually and quantitati (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.7",
+            "sub_subject_name": "Media Literacy & Critical Viewing",
+            "topic_id": "ELA.7.5",
+            "topic_name": "Social Media, Algorithms & Echo Chambers",
+            "sub_topic_id": "ELA.7.5.2",
+            "sub_topic_name": "How Algorithms Curate Feeds",
+            "objective_id": "ELA.7.5.2.5",
+            "objective_text": "Evaluate how algorithmic curation shapes the information and viewpoints available to you",
+            "objective_uuid": "0f254194-2ad1-4146-81d4-f9fbda3dd4b1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.SL.3 — Evaluate a speaker's point of view, reasoning, and use of evidence and rhetoric (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

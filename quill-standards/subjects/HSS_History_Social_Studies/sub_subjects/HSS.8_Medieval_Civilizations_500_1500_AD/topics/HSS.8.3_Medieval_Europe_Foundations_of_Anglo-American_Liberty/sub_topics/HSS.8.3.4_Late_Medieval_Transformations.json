@@ -1,0 +1,140 @@
+{
+  "sub_topic": {
+    "id": "HSS.8.3.4",
+    "name": "Late Medieval Transformations",
+    "topic_id": "HSS.8.3",
+    "topic_name": "Medieval Europe: Foundations of Anglo-American Liberty",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.8",
+    "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Late Medieval Transformations in Medieval Europe: Foundations of Anglo-American Liberty (History & Social Studies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.3",
+            "topic_name": "Medieval Europe: Foundations of Anglo-American Liberty",
+            "sub_topic_id": "HSS.8.3.4",
+            "sub_topic_name": "Late Medieval Transformations",
+            "objective_id": "HSS.8.3.4.1",
+            "objective_text": "Describe how towns and trade grew again in the later Middle Ages.",
+            "objective_uuid": "1ab87758-da49-4dde-8874-98fb74ef947d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.3",
+            "topic_name": "Medieval Europe: Foundations of Anglo-American Liberty",
+            "sub_topic_id": "HSS.8.3.4",
+            "sub_topic_name": "Late Medieval Transformations",
+            "objective_id": "HSS.8.3.4.2",
+            "objective_text": "Generate reasons why the growth of towns, guilds, and trade changed medieval life.",
+            "objective_uuid": "79af6bb1-9034-457e-82e2-272a5e938c6b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.K-2 — Generate possible reasons for an event or development in the past (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.3",
+            "topic_name": "Medieval Europe: Foundations of Anglo-American Liberty",
+            "sub_topic_id": "HSS.8.3.4",
+            "sub_topic_name": "Late Medieval Transformations",
+            "objective_id": "HSS.8.3.4.3",
+            "objective_text": "Analyze how the rise of universities, banking, and a money economy transformed late medieval Europe.",
+            "objective_uuid": "bd8b3a1a-c88b-4b74-81a7-dc52864a3714",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.8",
+            "sub_subject_name": "Medieval Civilizations (500–1500 AD)",
+            "topic_id": "HSS.8.3",
+            "topic_name": "Medieval Europe: Foundations of Anglo-American Liberty",
+            "sub_topic_id": "HSS.8.3.4",
+            "sub_topic_name": "Late Medieval Transformations",
+            "objective_id": "HSS.8.3.4.4",
+            "objective_text": "Evaluate how stronger monarchies and the decline of feudalism reshaped Europe by 1500.",
+            "objective_uuid": "a2ca54a2-c83e-4c93-8b58-f4d9cecf2b69",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

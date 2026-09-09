@@ -1,0 +1,174 @@
+{
+  "sub_topic": {
+    "id": "HSS.11.1.2",
+    "name": "Research Methods in Psychology",
+    "topic_id": "HSS.11.1",
+    "topic_name": "Foundations & Methods of Psychology",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.11",
+    "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+    "total_objectives": 5,
+    "description": "Progression for Research Methods in Psychology in Foundations & Methods of Psychology (Psychology (Mind, Behavior & Development))",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.1",
+            "topic_name": "Foundations & Methods of Psychology",
+            "sub_topic_id": "HSS.11.1.2",
+            "sub_topic_name": "Research Methods in Psychology",
+            "objective_id": "HSS.11.1.2.1",
+            "objective_text": "Describe how psychologists apply the scientific method.",
+            "objective_uuid": "c51b1d04-c284-4d6c-8993-7eecdd2d5526",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.1.9-12 — Demonstrate a basic understanding of the scientific methods that are at the core of psychology (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.5.9-12 — Explain how the validity and reliability of observations and measurements relate to data analysis (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.6.9-12 — Collect and analyze data designed to answer a psychological question using basic descriptive and inf (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.1",
+            "topic_name": "Foundations & Methods of Psychology",
+            "sub_topic_id": "HSS.11.1.2",
+            "sub_topic_name": "Research Methods in Psychology",
+            "objective_id": "HSS.11.1.2.2",
+            "objective_text": "Compare research methods (experiment, correlation, case study, survey, observation).",
+            "objective_uuid": "839cdbeb-55d1-4b4f-8f47-3f9296615cb3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.1.9-12 — Demonstrate a basic understanding of the scientific methods that are at the core of psychology (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.5.9-12 — Explain how the validity and reliability of observations and measurements relate to data analysis (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.6.9-12 — Collect and analyze data designed to answer a psychological question using basic descriptive and inf (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.5,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.1",
+            "topic_name": "Foundations & Methods of Psychology",
+            "sub_topic_id": "HSS.11.1.2",
+            "sub_topic_name": "Research Methods in Psychology",
+            "objective_id": "HSS.11.1.2.3",
+            "objective_text": "Explain the difference between correlation and causation.",
+            "objective_uuid": "eea9d845-b2b0-4dd5-8819-d56cbd654da5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.1.9-12 — Demonstrate a basic understanding of the scientific methods that are at the core of psychology (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.5.9-12 — Explain how the validity and reliability of observations and measurements relate to data analysis (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.6.9-12 — Collect and analyze data designed to answer a psychological question using basic descriptive and inf (C3 psychology, grades 9-12)"
+              ]
+            }
+          },
+          {
+            "complexity": 28,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.1",
+            "topic_name": "Foundations & Methods of Psychology",
+            "sub_topic_id": "HSS.11.1.2",
+            "sub_topic_name": "Research Methods in Psychology",
+            "objective_id": "HSS.11.1.2.4",
+            "objective_text": "Evaluate the validity and reliability of a psychological study.",
+            "objective_uuid": "45206251-adc6-42d1-821f-1960f3662a0b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.1.9-12 — Demonstrate a basic understanding of the scientific methods that are at the core of psychology (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.5.9-12 — Explain how the validity and reliability of observations and measurements relate to data analysis (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.6.9-12 — Collect and analyze data designed to answer a psychological question using basic descriptive and inf (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.11",
+            "sub_subject_name": "Psychology (Mind, Behavior & Development)",
+            "topic_id": "HSS.11.1",
+            "topic_name": "Foundations & Methods of Psychology",
+            "sub_topic_id": "HSS.11.1.2",
+            "sub_topic_name": "Research Methods in Psychology",
+            "objective_id": "HSS.11.1.2.5",
+            "objective_text": "Interpret basic data from a psychological study.",
+            "objective_uuid": "b7a851a0-9054-46d7-8a55-ebdf84c63ec5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Psy.1.9-12 — Demonstrate a basic understanding of the scientific methods that are at the core of psychology (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.5.9-12 — Explain how the validity and reliability of observations and measurements relate to data analysis (C3 psychology, grades 9-12)",
+                "C3 D2.Psy.6.9-12 — Collect and analyze data designed to answer a psychological question using basic descriptive and inf (C3 psychology, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework (Psychology)",
+      "anchor_note": "C3 D2.Psy codes verified against the owned corpus. Objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

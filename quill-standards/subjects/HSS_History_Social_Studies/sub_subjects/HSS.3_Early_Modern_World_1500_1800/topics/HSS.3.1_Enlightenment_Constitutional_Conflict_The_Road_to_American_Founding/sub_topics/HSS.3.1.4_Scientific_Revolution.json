@@ -1,0 +1,196 @@
+{
+  "sub_topic": {
+    "id": "HSS.3.1.4",
+    "name": "Scientific Revolution",
+    "topic_id": "HSS.3.1",
+    "topic_name": "Enlightenment & Constitutional Conflict (The Road to American Founding)",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.3",
+    "sub_subject_name": "Early Modern World (1500–1800)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Scientific Revolution in Enlightenment & Constitutional Conflict (The Road to American Founding) (History & Social Studies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.1",
+            "topic_name": "Enlightenment & Constitutional Conflict (The Road to American Founding)",
+            "sub_topic_id": "HSS.3.1.4",
+            "sub_topic_name": "Scientific Revolution",
+            "objective_id": "HSS.3.1.4.1",
+            "objective_text": "Describe how early scientists such as Galileo used telescopes and careful observation to study the natural world.",
+            "objective_uuid": "20e109b1-f4db-4fdf-8461-280274ace276",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.1",
+            "topic_name": "Enlightenment & Constitutional Conflict (The Road to American Founding)",
+            "sub_topic_id": "HSS.3.1.4",
+            "sub_topic_name": "Scientific Revolution",
+            "objective_id": "HSS.3.1.4.2",
+            "objective_text": "Sequence major discoveries of the Scientific Revolution, from Copernicus's heliocentric model to Newton's laws of motion.",
+            "objective_uuid": "16c1f23a-0544-4b4a-880a-842c47b9b517",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.1",
+            "topic_name": "Enlightenment & Constitutional Conflict (The Road to American Founding)",
+            "sub_topic_id": "HSS.3.1.4",
+            "sub_topic_name": "Scientific Revolution",
+            "objective_id": "HSS.3.1.4.3",
+            "objective_text": "Generate possible reasons why new scientific ideas often conflicted with traditional and church-held beliefs.",
+            "objective_uuid": "7c89394c-bbb4-416d-847a-98824aa482a7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.K-2 — Generate possible reasons for an event or development in the past (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.1",
+            "topic_name": "Enlightenment & Constitutional Conflict (The Road to American Founding)",
+            "sub_topic_id": "HSS.3.1.4",
+            "sub_topic_name": "Scientific Revolution",
+            "objective_id": "HSS.3.1.4.4",
+            "objective_text": "Explain how the scientific method changed the way Europeans investigated and understood nature.",
+            "objective_uuid": "377ee236-13b2-4919-82f0-b8567ab1b31b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.1",
+            "topic_name": "Enlightenment & Constitutional Conflict (The Road to American Founding)",
+            "sub_topic_id": "HSS.3.1.4",
+            "sub_topic_name": "Scientific Revolution",
+            "objective_id": "HSS.3.1.4.5",
+            "objective_text": "Analyze how the work of Copernicus, Galileo, Kepler, and Newton transformed European understanding of the universe.",
+            "objective_uuid": "e164e0cb-c130-4b6a-805e-61ed825ab919",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.1",
+            "topic_name": "Enlightenment & Constitutional Conflict (The Road to American Founding)",
+            "sub_topic_id": "HSS.3.1.4",
+            "sub_topic_name": "Scientific Revolution",
+            "objective_id": "HSS.3.1.4.6",
+            "objective_text": "Evaluate how the Scientific Revolution emerged from the unique circumstances of the Renaissance and reshaped the broader course of Western thought.",
+            "objective_uuid": "214db5d2-620e-4f40-8818-92f2a816efde",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

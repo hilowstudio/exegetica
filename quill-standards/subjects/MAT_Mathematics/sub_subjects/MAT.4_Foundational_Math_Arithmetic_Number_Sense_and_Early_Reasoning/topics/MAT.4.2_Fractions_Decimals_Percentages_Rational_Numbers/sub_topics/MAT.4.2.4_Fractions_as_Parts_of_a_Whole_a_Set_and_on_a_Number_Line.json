@@ -1,0 +1,172 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.2.4",
+    "name": "Fractions as Parts of a Whole, a Set, and on a Number Line",
+    "topic_id": "MAT.4.2",
+    "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Fractions as Parts of a Whole, a Set, and on a Number Line in Fractions, Decimals, & Percentages (Rational Numbers) (Mathematics)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 5,
+        "average_complexity": 11.4,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.4",
+            "sub_topic_name": "Fractions as Parts of a Whole, a Set, and on a Number Line",
+            "objective_id": "MAT.4.2.4.1",
+            "objective_text": "Understand a unit fraction 1/b as one part of a whole split into b equal parts.",
+            "objective_uuid": "5d167fc8-4f14-432d-8917-011385a3c4dc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.NF.A.1 — Understand a fraction 1/b as the quantity formed by 1 part when a whole is partitioned into b equal part (grade 3)"
+              ]
+            }
+          },
+          {
+            "complexity": 7,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.4",
+            "sub_topic_name": "Fractions as Parts of a Whole, a Set, and on a Number Line",
+            "objective_id": "MAT.4.2.4.2",
+            "objective_text": "Understand a fraction a/b as a copies of the unit fraction 1/b.",
+            "objective_uuid": "d5579d30-4754-4594-82b5-37de4623ce4e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.NF.A.1 — Understand a fraction 1/b as the quantity formed by 1 part when a whole is partitioned into b equal part (grade 3)"
+              ]
+            }
+          },
+          {
+            "complexity": 11,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.4",
+            "sub_topic_name": "Fractions as Parts of a Whole, a Set, and on a Number Line",
+            "objective_id": "MAT.4.2.4.3",
+            "objective_text": "Represent a fraction on a number line by partitioning and marking unit fractions.",
+            "objective_uuid": "b44bdd9d-1783-4dd3-86d7-a8857a087fe8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.NF.A.2 — Understand a fraction as a number on the number line; represent fractions on a number line diagram (grade 3)"
+              ]
+            }
+          },
+          {
+            "complexity": 16,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.4",
+            "sub_topic_name": "Fractions as Parts of a Whole, a Set, and on a Number Line",
+            "objective_id": "MAT.4.2.4.4",
+            "objective_text": "Identify a fraction of a set (e.g., 3/4 of a group of objects).",
+            "objective_uuid": "152f4df6-dba0-410c-800f-7993e156d636",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.NF.A.1 — Understand a fraction 1/b as the quantity formed by 1 part when a whole is partitioned into b equal part (grade 3)"
+              ]
+            }
+          },
+          {
+            "complexity": 20,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.4",
+            "sub_topic_name": "Fractions as Parts of a Whole, a Set, and on a Number Line",
+            "objective_id": "MAT.4.2.4.5",
+            "objective_text": "Compare fractions with the same numerator or the same denominator by reasoning about size.",
+            "objective_uuid": "16de2cd8-5662-4d69-8940-2b088d214b3f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 3.NF.A.3 — Explain equivalence of fractions in special cases, and compare fractions by reasoning about their size (grade 3)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 24.0,
+        "objectives": [
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.2",
+            "topic_name": "Fractions, Decimals, & Percentages (Rational Numbers)",
+            "sub_topic_id": "MAT.4.2.4",
+            "sub_topic_name": "Fractions as Parts of a Whole, a Set, and on a Number Line",
+            "objective_id": "MAT.4.2.4.6",
+            "objective_text": "Compare two fractions with different numerators and denominators using benchmarks or common denominators.",
+            "objective_uuid": "60582d79-0e18-4b48-8670-631e6d4399b6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.NF.A.2 — Compare two fractions with different numerators and different denominators, e.g., by creating common den (grade 4)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS fraction sub-skills (NF domain); objective count = the sub-topic's real distinct competencies. Replaces the prior templated 16-objective ladder that drifted off-topic."
+    }
+  }
+}

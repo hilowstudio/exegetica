@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.4.2",
+    "name": "Postulates, Definitions, Theorems, and Proof Structure",
+    "topic_id": "MAT.5.4",
+    "topic_name": "Geometric Proof & Reasoning",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Postulates, Definitions, Theorems, and Proof Structure in Geometric Proof & Reasoning (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.2",
+            "sub_topic_name": "Postulates, Definitions, Theorems, and Proof Structure",
+            "objective_id": "MAT.5.4.2.1",
+            "objective_text": "Distinguish among definitions, postulates, and theorems.",
+            "objective_uuid": "06099851-58f3-4e57-8a6e-5eda71dca108",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.C.9 — Prove theorems about lines and angles (HS)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.2",
+            "sub_topic_name": "Postulates, Definitions, Theorems, and Proof Structure",
+            "objective_id": "MAT.5.4.2.2",
+            "objective_text": "Identify the given information and what must be proven.",
+            "objective_uuid": "36c25d13-94f5-412b-8d80-86d0426118a1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.C.9 — Prove theorems about lines and angles (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.2",
+            "sub_topic_name": "Postulates, Definitions, Theorems, and Proof Structure",
+            "objective_id": "MAT.5.4.2.3",
+            "objective_text": "Justify each step of a proof with a definition, postulate, or theorem.",
+            "objective_uuid": "4d16d338-6c8d-4b04-8987-00bc099064b1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.C.9 — Prove theorems about lines and angles (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

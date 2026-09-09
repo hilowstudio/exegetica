@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "LIF.3.2.4",
+    "name": "Planting Methods (direct sow, transplanting, spacing, succession planting)",
+    "topic_id": "LIF.3.2",
+    "topic_name": "Gardening & Food Production",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.3",
+    "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Planting Methods (direct sow, transplanting, spacing, succession planting) in Gardening & Food Production (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.2",
+            "topic_name": "Gardening & Food Production",
+            "sub_topic_id": "LIF.3.2.4",
+            "sub_topic_name": "Planting Methods (direct sow, transplanting, spacing, succession planting)",
+            "objective_id": "LIF.3.2.4.1",
+            "objective_text": "Plant seeds at the correct depth and cover them with soil",
+            "objective_uuid": "c859d89d-e9ed-4b2a-8c51-aa16eea2d08d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.2",
+            "topic_name": "Gardening & Food Production",
+            "sub_topic_id": "LIF.3.2.4",
+            "sub_topic_name": "Planting Methods (direct sow, transplanting, spacing, succession planting)",
+            "objective_id": "LIF.3.2.4.2",
+            "objective_text": "Space seeds and seedlings apart using a ruler or spacing guide",
+            "objective_uuid": "83307c52-e20a-4551-8c47-6884057649d4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.2",
+            "topic_name": "Gardening & Food Production",
+            "sub_topic_id": "LIF.3.2.4",
+            "sub_topic_name": "Planting Methods (direct sow, transplanting, spacing, succession planting)",
+            "objective_id": "LIF.3.2.4.3",
+            "objective_text": "Transplant a seedling into a garden bed without harming its roots",
+            "objective_uuid": "f861db91-88b6-4644-8804-4e170d178edd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.2",
+            "topic_name": "Gardening & Food Production",
+            "sub_topic_id": "LIF.3.2.4",
+            "sub_topic_name": "Planting Methods (direct sow, transplanting, spacing, succession planting)",
+            "objective_id": "LIF.3.2.4.4",
+            "objective_text": "Decide which crops to direct sow and which to start indoors and transplant",
+            "objective_uuid": "278e0114-89bd-40a3-8982-90fc2d0939da",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.2",
+            "topic_name": "Gardening & Food Production",
+            "sub_topic_id": "LIF.3.2.4",
+            "sub_topic_name": "Planting Methods (direct sow, transplanting, spacing, succession planting)",
+            "objective_id": "LIF.3.2.4.5",
+            "objective_text": "Plan succession plantings so a crop can be harvested continuously through the season",
+            "objective_uuid": "22e73de9-b1a8-4a8a-8536-7d735992be33",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

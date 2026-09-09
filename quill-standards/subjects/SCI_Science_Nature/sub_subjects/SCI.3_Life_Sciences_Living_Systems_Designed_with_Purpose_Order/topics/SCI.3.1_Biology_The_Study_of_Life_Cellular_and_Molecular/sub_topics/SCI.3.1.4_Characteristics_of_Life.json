@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "SCI.3.1.4",
+    "name": "Characteristics of Life",
+    "topic_id": "SCI.3.1",
+    "topic_name": "Biology: The Study of Life (Cellular and Molecular)",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.3",
+    "sub_subject_name": "Life Sciences (Living Systems Designed with Purpose & Order)",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Characteristics of Life in Biology: The Study of Life (Cellular and Molecular) (Science & Nature)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.3",
+            "sub_subject_name": "Life Sciences (Living Systems Designed with Purpose & Order)",
+            "topic_id": "SCI.3.1",
+            "topic_name": "Biology: The Study of Life (Cellular and Molecular)",
+            "sub_topic_id": "SCI.3.1.4",
+            "sub_topic_name": "Characteristics of Life",
+            "objective_id": "SCI.3.1.4.1",
+            "objective_text": "Use observations to describe what plants and animals need to survive, such as food, water, air, and space.",
+            "objective_uuid": "a06ebdeb-38c3-4e61-8f51-6d1d5ad9e3c7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS K-LS1-1 — Use observations to describe patterns of what plants and animals (including humans) need to survive (grades K)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.3",
+            "sub_subject_name": "Life Sciences (Living Systems Designed with Purpose & Order)",
+            "topic_id": "SCI.3.1",
+            "topic_name": "Biology: The Study of Life (Cellular and Molecular)",
+            "sub_topic_id": "SCI.3.1.4",
+            "sub_topic_name": "Characteristics of Life",
+            "objective_id": "SCI.3.1.4.2",
+            "objective_text": "List the characteristics shared by all living things, such as growth, reproduction, and response to the environment.",
+            "objective_uuid": "eb646b14-a847-430c-8b85-996fb151756e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS K-LS1-1 — Use observations to describe patterns of what plants and animals (including humans) need to survive (grades K)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.3",
+            "sub_subject_name": "Life Sciences (Living Systems Designed with Purpose & Order)",
+            "topic_id": "SCI.3.1",
+            "topic_name": "Biology: The Study of Life (Cellular and Molecular)",
+            "sub_topic_id": "SCI.3.1.4",
+            "sub_topic_name": "Characteristics of Life",
+            "objective_id": "SCI.3.1.4.3",
+            "objective_text": "Distinguish living things from nonliving things using the characteristics of life.",
+            "objective_uuid": "3880fea0-4104-425c-83be-e96cdcac13e8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-LS1-1 — Conduct an investigation to provide evidence that living things are made of cells, either one cell or ma (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.3",
+            "sub_subject_name": "Life Sciences (Living Systems Designed with Purpose & Order)",
+            "topic_id": "SCI.3.1",
+            "topic_name": "Biology: The Study of Life (Cellular and Molecular)",
+            "sub_topic_id": "SCI.3.1.4",
+            "sub_topic_name": "Characteristics of Life",
+            "objective_id": "SCI.3.1.4.4",
+            "objective_text": "Explain how being made of cells is one of the defining characteristics shared by all living organisms.",
+            "objective_uuid": "df920acd-c4c1-4071-8f8e-30ddda63f3f1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-LS1-1 — Conduct an investigation to provide evidence that living things are made of cells, either one cell or ma (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

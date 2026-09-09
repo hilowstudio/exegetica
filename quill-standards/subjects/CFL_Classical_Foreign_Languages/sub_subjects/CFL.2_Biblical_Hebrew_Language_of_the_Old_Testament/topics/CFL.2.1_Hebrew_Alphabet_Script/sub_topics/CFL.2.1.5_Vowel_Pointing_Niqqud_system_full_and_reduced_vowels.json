@@ -1,0 +1,187 @@
+{
+  "sub_topic": {
+    "id": "CFL.2.1.5",
+    "name": "Vowel Pointing (Niqqud system, full and reduced vowels)",
+    "topic_id": "CFL.2.1",
+    "topic_name": "Hebrew Alphabet & Script",
+    "subject_id": "CFL",
+    "subject_name": "Classical & Foreign Languages",
+    "sub_subject_id": "CFL.2",
+    "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Vowel Pointing (Niqqud system, full and reduced vowels) in Hebrew Alphabet & Script (Classical & Foreign Languages)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.1",
+            "topic_name": "Hebrew Alphabet & Script",
+            "sub_topic_id": "CFL.2.1.5",
+            "sub_topic_name": "Vowel Pointing (Niqqud system, full and reduced vowels)",
+            "objective_id": "CFL.2.1.5.1",
+            "objective_text": "Recognize that small dots and dashes below and beside the consonants stand for vowels",
+            "objective_uuid": "5273180a-2d26-4d38-8857-9cdcebebe220",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.1",
+            "topic_name": "Hebrew Alphabet & Script",
+            "sub_topic_id": "CFL.2.1.5",
+            "sub_topic_name": "Vowel Pointing (Niqqud system, full and reduced vowels)",
+            "objective_id": "CFL.2.1.5.2",
+            "objective_text": "Name the basic full vowels (qamets, patach, tsere, segol, chireq, cholem, qibbuts, shureq) and their sounds",
+            "objective_uuid": "6d9000d9-a622-45ad-800e-db802c94250a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.1",
+            "topic_name": "Hebrew Alphabet & Script",
+            "sub_topic_id": "CFL.2.1.5",
+            "sub_topic_name": "Vowel Pointing (Niqqud system, full and reduced vowels)",
+            "objective_id": "CFL.2.1.5.3",
+            "objective_text": "Read a fully pointed Hebrew word by combining each consonant with its vowel",
+            "objective_uuid": "3e6a7e4b-e2e7-48c1-8345-75a80f843ac6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.1",
+            "topic_name": "Hebrew Alphabet & Script",
+            "sub_topic_id": "CFL.2.1.5",
+            "sub_topic_name": "Vowel Pointing (Niqqud system, full and reduced vowels)",
+            "objective_id": "CFL.2.1.5.4",
+            "objective_text": "Distinguish long, short, and reduced (chateph) vowels and identify the chateph vowels under gutturals",
+            "objective_uuid": "e23dfb96-80ec-4402-84a3-3b934da92546",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.1",
+            "topic_name": "Hebrew Alphabet & Script",
+            "sub_topic_id": "CFL.2.1.5",
+            "sub_topic_name": "Vowel Pointing (Niqqud system, full and reduced vowels)",
+            "objective_id": "CFL.2.1.5.5",
+            "objective_text": "Explain the difference between qamets gadol and qamets chatuph and read each correctly",
+            "objective_uuid": "5bd40dcc-6a32-4384-8632-95d6ca349269",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CFL",
+            "subject_name": "Classical & Foreign Languages",
+            "sub_subject_id": "CFL.2",
+            "sub_subject_name": "Biblical Hebrew (Language of the Old Testament)",
+            "topic_id": "CFL.2.1",
+            "topic_name": "Hebrew Alphabet & Script",
+            "sub_topic_id": "CFL.2.1.5",
+            "sub_topic_name": "Vowel Pointing (Niqqud system, full and reduced vowels)",
+            "objective_id": "CFL.2.1.5.6",
+            "objective_text": "Divide a pointed word into syllables and mark whether each syllable is open or closed",
+            "objective_uuid": "c1069c10-2a93-4595-8340-918f57dcc3e1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ART.2.4.6",
+    "name": "Storyboarding & Scripting",
+    "topic_id": "ART.2.4",
+    "topic_name": "Videography, Film & Audio Production",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.2",
+    "sub_subject_name": "Digital Art, Photography & Media Production",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Storyboarding & Scripting in Videography, Film & Audio Production (Fine Arts)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.4",
+            "topic_name": "Videography, Film & Audio Production",
+            "sub_topic_id": "ART.2.4.6",
+            "sub_topic_name": "Storyboarding & Scripting",
+            "objective_id": "ART.2.4.6.1",
+            "objective_text": "Draw a simple storyboard showing the order of events in a story.",
+            "objective_uuid": "beadcdb9-98b1-446e-8e1a-1ada0430fc41",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr1 — Generate and conceptualize artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.4",
+            "topic_name": "Videography, Film & Audio Production",
+            "sub_topic_id": "ART.2.4.6",
+            "sub_topic_name": "Storyboarding & Scripting",
+            "objective_id": "ART.2.4.6.2",
+            "objective_text": "Write a short script with dialogue and scene directions.",
+            "objective_uuid": "475e18d4-4c5b-40c2-8513-e683a6f2a111",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.4",
+            "topic_name": "Videography, Film & Audio Production",
+            "sub_topic_id": "ART.2.4.6",
+            "sub_topic_name": "Storyboarding & Scripting",
+            "objective_id": "ART.2.4.6.3",
+            "objective_text": "Plan camera shots and action in a storyboard for each scene.",
+            "objective_uuid": "863f9d81-84bc-430c-8deb-5d326c06e602",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.4",
+            "topic_name": "Videography, Film & Audio Production",
+            "sub_topic_id": "ART.2.4.6",
+            "sub_topic_name": "Storyboarding & Scripting",
+            "objective_id": "ART.2.4.6.4",
+            "objective_text": "Develop a script and matching storyboard for a complete short video.",
+            "objective_uuid": "90a98dcc-7254-47bb-82f8-0f212ed2f7ed",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.4",
+            "topic_name": "Videography, Film & Audio Production",
+            "sub_topic_id": "ART.2.4.6",
+            "sub_topic_name": "Storyboarding & Scripting",
+            "objective_id": "ART.2.4.6.5",
+            "objective_text": "Refine a storyboard and script into a production-ready plan for presentation.",
+            "objective_uuid": "9b4a6011-3b91-465a-879b-04f81a9f7713",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Pr5 — Develop and refine artistic techniques and work for presentation (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

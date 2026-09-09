@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ART.2.1.4",
+    "name": "Drawing Tablets & Digital Workflow",
+    "topic_id": "ART.2.1",
+    "topic_name": "Digital Art & Illustration",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.2",
+    "sub_subject_name": "Digital Art, Photography & Media Production",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Drawing Tablets & Digital Workflow in Digital Art & Illustration (Fine Arts)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.4",
+            "sub_topic_name": "Drawing Tablets & Digital Workflow",
+            "objective_id": "ART.2.1.4.1",
+            "objective_text": "Draw basic shapes and lines using a drawing tablet and stylus.",
+            "objective_uuid": "b7718b31-94a7-4a61-8172-e7bf4b75eb82",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr1 — Generate and conceptualize artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.4",
+            "sub_topic_name": "Drawing Tablets & Digital Workflow",
+            "objective_id": "ART.2.1.4.2",
+            "objective_text": "Adjust brush size, pressure, and opacity settings on the tablet.",
+            "objective_uuid": "2071fbab-557a-49bd-8103-820caff2894f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.4",
+            "sub_topic_name": "Drawing Tablets & Digital Workflow",
+            "objective_id": "ART.2.1.4.3",
+            "objective_text": "Organize a digital project using layers, folders, and clear file names.",
+            "objective_uuid": "9367d0a6-1903-4efc-8b11-982986f51b52",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.4",
+            "sub_topic_name": "Drawing Tablets & Digital Workflow",
+            "objective_id": "ART.2.1.4.4",
+            "objective_text": "Customize tablet shortcuts and workspace to build an efficient workflow.",
+            "objective_uuid": "fdbc8921-c54b-4727-8acb-53d70a455bcb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.1",
+            "topic_name": "Digital Art & Illustration",
+            "sub_topic_id": "ART.2.1.4",
+            "sub_topic_name": "Drawing Tablets & Digital Workflow",
+            "objective_id": "ART.2.1.4.5",
+            "objective_text": "Manage a full digital project from sketch to export using a consistent workflow for presentation.",
+            "objective_uuid": "0123a84b-cf96-4237-84aa-18e524228ae1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Pr5 — Develop and refine artistic techniques and work for presentation (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

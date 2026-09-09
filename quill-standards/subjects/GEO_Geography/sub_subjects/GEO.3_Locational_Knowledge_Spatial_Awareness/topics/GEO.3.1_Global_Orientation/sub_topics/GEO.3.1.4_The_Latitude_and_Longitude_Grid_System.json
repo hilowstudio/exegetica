@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "GEO.3.1.4",
+    "name": "The Latitude and Longitude Grid System",
+    "topic_id": "GEO.3.1",
+    "topic_name": "Global Orientation",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.3",
+    "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for The Latitude and Longitude Grid System in Global Orientation (Geography)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.1",
+            "topic_name": "Global Orientation",
+            "sub_topic_id": "GEO.3.1.4",
+            "sub_topic_name": "The Latitude and Longitude Grid System",
+            "objective_id": "GEO.3.1.4.1",
+            "objective_text": "Describe latitude and longitude as the lines that form a grid on maps and globes.",
+            "objective_uuid": "ae64f73c-63ca-471b-87a9-ba32e54c27e4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.K-2 — Construct maps, graphs, and other representations of familiar places (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.1",
+            "topic_name": "Global Orientation",
+            "sub_topic_id": "GEO.3.1.4",
+            "sub_topic_name": "The Latitude and Longitude Grid System",
+            "objective_id": "GEO.3.1.4.2",
+            "objective_text": "Identify the equator (0° latitude) and prime meridian (0° longitude) on a grid.",
+            "objective_uuid": "d331b478-aeb7-43fd-88c1-f8629635545f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.1",
+            "topic_name": "Global Orientation",
+            "sub_topic_id": "GEO.3.1.4",
+            "sub_topic_name": "The Latitude and Longitude Grid System",
+            "objective_id": "GEO.3.1.4.3",
+            "objective_text": "Locate a place using its latitude and longitude coordinates.",
+            "objective_uuid": "53a6db4b-8508-4c0e-8ab0-0dca2cae0287",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.1",
+            "topic_name": "Global Orientation",
+            "sub_topic_id": "GEO.3.1.4",
+            "sub_topic_name": "The Latitude and Longitude Grid System",
+            "objective_id": "GEO.3.1.4.4",
+            "objective_text": "Determine the coordinates of a given location to the nearest degree.",
+            "objective_uuid": "f0db469d-86b0-48fe-8fef-bb6dcf38b069",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.1",
+            "topic_name": "Global Orientation",
+            "sub_topic_id": "GEO.3.1.4",
+            "sub_topic_name": "The Latitude and Longitude Grid System",
+            "objective_id": "GEO.3.1.4.5",
+            "objective_text": "Use coordinates in degrees, minutes, and seconds to pinpoint precise locations.",
+            "objective_uuid": "8393db87-ee05-4359-84ff-437570a88439",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

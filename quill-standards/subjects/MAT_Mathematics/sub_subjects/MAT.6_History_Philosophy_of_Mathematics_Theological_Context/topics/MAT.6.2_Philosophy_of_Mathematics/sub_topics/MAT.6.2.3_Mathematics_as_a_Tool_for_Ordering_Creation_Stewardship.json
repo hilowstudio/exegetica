@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.6.2.3",
+    "name": "Mathematics as a Tool for Ordering Creation (Stewardship)",
+    "topic_id": "MAT.6.2",
+    "topic_name": "Philosophy of Mathematics",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.6",
+    "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Mathematics as a Tool for Ordering Creation (Stewardship) in Philosophy of Mathematics (Mathematics)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.2",
+            "topic_name": "Philosophy of Mathematics",
+            "sub_topic_id": "MAT.6.2.3",
+            "sub_topic_name": "Mathematics as a Tool for Ordering Creation (Stewardship)",
+            "objective_id": "MAT.6.2.3.1",
+            "objective_text": "Describe ways mathematics helps us understand the created world.",
+            "objective_uuid": "15d6d217-f6a2-41cd-8d61-1945a040bf42",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.2",
+            "topic_name": "Philosophy of Mathematics",
+            "sub_topic_id": "MAT.6.2.3",
+            "sub_topic_name": "Mathematics as a Tool for Ordering Creation (Stewardship)",
+            "objective_id": "MAT.6.2.3.2",
+            "objective_text": "Explain how mathematics is used to steward resources and solve problems.",
+            "objective_uuid": "28a46fba-8bde-4d56-856f-d270edae42d1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.6",
+            "sub_subject_name": "History & Philosophy of Mathematics (Theological Context)",
+            "topic_id": "MAT.6.2",
+            "topic_name": "Philosophy of Mathematics",
+            "sub_topic_id": "MAT.6.2.3",
+            "sub_topic_name": "Mathematics as a Tool for Ordering Creation (Stewardship)",
+            "objective_id": "MAT.6.2.3.3",
+            "objective_text": "Reflect on mathematics as a gift for ordering and serving creation.",
+            "objective_uuid": "880af49d-0932-4dc5-8ceb-fda1868c4a98",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content runs beyond Common Core, so no standard anchor (honest gap)."
+    }
+  }
+}

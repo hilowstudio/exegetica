@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.8.4.5",
+    "name": "Prime Factorization (Fundamental Theorem of Arithmetic)",
+    "topic_id": "MAT.8.4",
+    "topic_name": "Properties of Numbers",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.8",
+    "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Prime Factorization (Fundamental Theorem of Arithmetic) in Properties of Numbers (Mathematics)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.4",
+            "topic_name": "Properties of Numbers",
+            "sub_topic_id": "MAT.8.4.5",
+            "sub_topic_name": "Prime Factorization (Fundamental Theorem of Arithmetic)",
+            "objective_id": "MAT.8.4.5.1",
+            "objective_text": "Express a composite number as a product of prime factors.",
+            "objective_uuid": "138c943e-6432-47d8-842a-369820f013f5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.OA.B.4 — Find all factor pairs for a whole number in the range 1—100. Recognize that a whole number is a multiple (grade 4)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.4",
+            "topic_name": "Properties of Numbers",
+            "sub_topic_id": "MAT.8.4.5",
+            "sub_topic_name": "Prime Factorization (Fundamental Theorem of Arithmetic)",
+            "objective_id": "MAT.8.4.5.2",
+            "objective_text": "Use a factor tree to find a prime factorization.",
+            "objective_uuid": "c065f427-5d63-4f34-89e7-9864bfa75960",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.OA.B.4 — Find all factor pairs for a whole number in the range 1—100. Recognize that a whole number is a multiple (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.4",
+            "topic_name": "Properties of Numbers",
+            "sub_topic_id": "MAT.8.4.5",
+            "sub_topic_name": "Prime Factorization (Fundamental Theorem of Arithmetic)",
+            "objective_id": "MAT.8.4.5.3",
+            "objective_text": "Use prime factorization to find the GCF and LCM.",
+            "objective_uuid": "3072ab4f-314e-46e9-8dd8-497538c8a733",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 6.NS.B.4 — Find the greatest common factor of two whole numbers less than or equal to 100 and the least common mult (grade 6)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

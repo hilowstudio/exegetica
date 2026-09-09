@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "LIF.7.4.3",
+    "name": "Readiness & Family Formation",
+    "topic_id": "LIF.7.4",
+    "topic_name": "Parenting Roles & Family",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.7",
+    "sub_subject_name": "Child Development, Caregiving & Parenting",
+    "total_objectives": 3,
+    "description": "Progression for Readiness & Family Formation in Parenting Roles & Family (Child Development, Caregiving & Parenting)",
+    "grade_levels": {
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.7",
+            "sub_subject_name": "Child Development, Caregiving & Parenting",
+            "topic_id": "LIF.7.4",
+            "topic_name": "Parenting Roles & Family",
+            "sub_topic_id": "LIF.7.4.3",
+            "sub_topic_name": "Readiness & Family Formation",
+            "objective_id": "LIF.7.4.3.1",
+            "objective_text": "Discuss the responsibilities and costs of raising children.",
+            "objective_uuid": "47944dac-6b82-47ed-8051-6a6e7f0aa1e6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 15.4 — Analyze physical and emotional factors related to beginning the parenting process (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 24.0,
+        "objectives": [
+          {
+            "complexity": 24,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.7",
+            "sub_subject_name": "Child Development, Caregiving & Parenting",
+            "topic_id": "LIF.7.4",
+            "topic_name": "Parenting Roles & Family",
+            "sub_topic_id": "LIF.7.4.3",
+            "sub_topic_name": "Readiness & Family Formation",
+            "objective_id": "LIF.7.4.3.2",
+            "objective_text": "Explain factors involved in healthy family readiness.",
+            "objective_uuid": "62d589ad-bd2e-4e81-8aa2-4821d82b5ee5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 15.4 — Analyze physical and emotional factors related to beginning the parenting process (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.7",
+            "sub_subject_name": "Child Development, Caregiving & Parenting",
+            "topic_id": "LIF.7.4",
+            "topic_name": "Parenting Roles & Family",
+            "sub_topic_id": "LIF.7.4.3",
+            "sub_topic_name": "Readiness & Family Formation",
+            "objective_id": "LIF.7.4.3.3",
+            "objective_text": "Reflect on children as a gift and a stewardship.",
+            "objective_uuid": "34ad4914-2087-45a0-80d5-6a25239e5dfa",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "FCS 15.4 — Analyze physical and emotional factors related to beginning the parenting process (Family & Consumer Sciences national standards)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Family & Consumer Sciences national standards",
+      "anchor_note": "FCS national-standard codes verified against the owned corpus. Objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

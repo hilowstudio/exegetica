@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "CPT.5.1.5",
+    "name": "Tech Dependency & Wisdom",
+    "topic_id": "CPT.5.1",
+    "topic_name": "Biblical Worldview & Technology",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.5",
+    "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Tech Dependency & Wisdom in Biblical Worldview & Technology (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.1",
+            "topic_name": "Biblical Worldview & Technology",
+            "sub_topic_id": "CPT.5.1.5",
+            "sub_topic_name": "Tech Dependency & Wisdom",
+            "objective_id": "CPT.5.1.5.1",
+            "objective_text": "Identify times when relying on a device could keep a person from learning or doing something for themselves",
+            "objective_uuid": "93b3371d-7c74-4c13-8999-7b946e7d080e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-IC-20 — Compare tradeoffs associated with computing technologies that affect people's everyday activities and career o (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.1",
+            "topic_name": "Biblical Worldview & Technology",
+            "sub_topic_id": "CPT.5.1.5",
+            "sub_topic_name": "Tech Dependency & Wisdom",
+            "objective_id": "CPT.5.1.5.2",
+            "objective_text": "Explain the difference between helpfully using a technology and becoming dependent on it",
+            "objective_uuid": "51dc8423-4950-4d78-86ee-ee04ee341480",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-IC-20 — Compare tradeoffs associated with computing technologies that affect people's everyday activities and career o (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.1",
+            "topic_name": "Biblical Worldview & Technology",
+            "sub_topic_id": "CPT.5.1.5",
+            "sub_topic_name": "Tech Dependency & Wisdom",
+            "objective_id": "CPT.5.1.5.3",
+            "objective_text": "Compare the benefits and costs of depending on technologies such as calculators, GPS, or search engines",
+            "objective_uuid": "d7212330-7449-429c-8d70-2d2bee694ebf",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-IC-20 — Compare tradeoffs associated with computing technologies that affect people's everyday activities and career o (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.1",
+            "topic_name": "Biblical Worldview & Technology",
+            "sub_topic_id": "CPT.5.1.5",
+            "sub_topic_name": "Tech Dependency & Wisdom",
+            "objective_id": "CPT.5.1.5.4",
+            "objective_text": "Analyze how habits of technology use can shape a person's attention, skills, and relationships over time",
+            "objective_uuid": "28b7ff49-3455-4df1-8001-031b932a70f5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-IC-20 — Compare tradeoffs associated with computing technologies that affect people's everyday activities and career o (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.5",
+            "sub_subject_name": "History of Computing, Worldview & Digital Philosophy",
+            "topic_id": "CPT.5.1",
+            "topic_name": "Biblical Worldview & Technology",
+            "sub_topic_id": "CPT.5.1.5",
+            "sub_topic_name": "Tech Dependency & Wisdom",
+            "objective_id": "CPT.5.1.5.5",
+            "objective_text": "Evaluate the tradeoffs of technological dependence and describe wise practices that keep technology in its proper place",
+            "objective_uuid": "5d7a7fcd-a6de-481b-89b8-bd1dfc6fbd3a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 2-IC-20 — Compare tradeoffs associated with computing technologies that affect people's everyday activities and career o (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

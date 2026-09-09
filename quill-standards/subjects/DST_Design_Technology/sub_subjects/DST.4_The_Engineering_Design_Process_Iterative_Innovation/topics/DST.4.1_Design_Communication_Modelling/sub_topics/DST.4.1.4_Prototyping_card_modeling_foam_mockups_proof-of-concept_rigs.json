@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "DST.4.1.4",
+    "name": "Prototyping (card modeling, foam mockups, proof-of-concept rigs)",
+    "topic_id": "DST.4.1",
+    "topic_name": "Design Communication & Modelling",
+    "subject_id": "DST",
+    "subject_name": "Design & Technology",
+    "sub_subject_id": "DST.4",
+    "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Prototyping (card modeling, foam mockups, proof-of-concept rigs) in Design Communication & Modelling (Design & Technology)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.1",
+            "topic_name": "Design Communication & Modelling",
+            "sub_topic_id": "DST.4.1.4",
+            "sub_topic_name": "Prototyping (card modeling, foam mockups, proof-of-concept rigs)",
+            "objective_id": "DST.4.1.4.1",
+            "objective_text": "Build a simple physical model out of paper or clay to show how an object's shape helps it work",
+            "objective_uuid": "29be83e8-e0f5-4f7c-86c5-b8ab4ba16d5c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS K-2-ETS1-2 — Develop a simple sketch, drawing, or physical model to illustrate how the shape of an object helps it fu (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.1",
+            "topic_name": "Design Communication & Modelling",
+            "sub_topic_id": "DST.4.1.4",
+            "sub_topic_name": "Prototyping (card modeling, foam mockups, proof-of-concept rigs)",
+            "objective_id": "DST.4.1.4.2",
+            "objective_text": "Make a card or foam mockup of a design idea so others can see and hold it",
+            "objective_uuid": "9e3c23b7-ab16-4d8b-86b8-469bad4811fe",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS K-2-ETS1-2 — Develop a simple sketch, drawing, or physical model to illustrate how the shape of an object helps it fu (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.1",
+            "topic_name": "Design Communication & Modelling",
+            "sub_topic_id": "DST.4.1.4",
+            "sub_topic_name": "Prototyping (card modeling, foam mockups, proof-of-concept rigs)",
+            "objective_id": "DST.4.1.4.3",
+            "objective_text": "Construct a proof-of-concept rig to test whether one key part of a design actually works",
+            "objective_uuid": "9ad95c87-5c36-4876-8a4f-e2e467872fa2",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-2 — There are systematic processes for evaluating solutions with respect to how well they meet the criteria  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.1",
+            "topic_name": "Design Communication & Modelling",
+            "sub_topic_id": "DST.4.1.4",
+            "sub_topic_name": "Prototyping (card modeling, foam mockups, proof-of-concept rigs)",
+            "objective_id": "DST.4.1.4.4",
+            "objective_text": "Choose modeling materials that let you test the specific feature you care about most quickly and cheaply",
+            "objective_uuid": "ac2f2b15-1b2c-43e0-8e88-bf9f9610c307",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-2 — There are systematic processes for evaluating solutions with respect to how well they meet the criteria  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.1",
+            "topic_name": "Design Communication & Modelling",
+            "sub_topic_id": "DST.4.1.4",
+            "sub_topic_name": "Prototyping (card modeling, foam mockups, proof-of-concept rigs)",
+            "objective_id": "DST.4.1.4.5",
+            "objective_text": "Evaluate a prototype against the criteria and constraints of the problem and note what to change in the next version",
+            "objective_uuid": "370dfff3-52d9-43b8-86d5-5591bf3f7c5c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-2 — There are systematic processes for evaluating solutions with respect to how well they meet the criteria  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.4",
+            "sub_subject_name": "The Engineering Design Process (Iterative Innovation)",
+            "topic_id": "DST.4.1",
+            "topic_name": "Design Communication & Modelling",
+            "sub_topic_id": "DST.4.1.4",
+            "sub_topic_name": "Prototyping (card modeling, foam mockups, proof-of-concept rigs)",
+            "objective_id": "DST.4.1.4.6",
+            "objective_text": "Plan a staged prototyping process, from rough mockup to functional prototype, that systematically checks the design against its specifications",
+            "objective_uuid": "35a60cae-ef88-4f49-8cb6-a44823d06fdf",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-2 — There are systematic processes for evaluating solutions with respect to how well they meet the criteria  (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

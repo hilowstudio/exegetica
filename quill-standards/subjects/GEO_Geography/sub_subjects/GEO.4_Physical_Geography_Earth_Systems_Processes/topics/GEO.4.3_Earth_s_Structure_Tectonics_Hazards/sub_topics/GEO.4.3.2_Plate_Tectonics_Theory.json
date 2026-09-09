@@ -1,0 +1,198 @@
+{
+  "sub_topic": {
+    "id": "GEO.4.3.2",
+    "name": "Plate Tectonics Theory",
+    "topic_id": "GEO.4.3",
+    "topic_name": "Earth’s Structure, Tectonics & Hazards",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.4",
+    "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Plate Tectonics Theory in Earth’s Structure, Tectonics & Hazards (Geography)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.3",
+            "topic_name": "Earth’s Structure, Tectonics & Hazards",
+            "sub_topic_id": "GEO.4.3.2",
+            "sub_topic_name": "Plate Tectonics Theory",
+            "objective_id": "GEO.4.3.2.1",
+            "objective_text": "Analyze and interpret maps to describe patterns in Earth's continents, mountain ranges, and coastlines.",
+            "objective_uuid": "34864edf-27a2-42ab-83d7-a12a86cc0175",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 4-ESS2-2 — Analyze and interpret data from maps to describe patterns of Earth's features (grades 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.3",
+            "topic_name": "Earth’s Structure, Tectonics & Hazards",
+            "sub_topic_id": "GEO.4.3.2",
+            "sub_topic_name": "Plate Tectonics Theory",
+            "objective_id": "GEO.4.3.2.2",
+            "objective_text": "Describe how Earth's rigid outer shell is broken into large plates that slowly move.",
+            "objective_uuid": "366e1720-22f3-49fd-8ef1-a1567bba4330",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.3",
+            "topic_name": "Earth’s Structure, Tectonics & Hazards",
+            "sub_topic_id": "GEO.4.3.2",
+            "sub_topic_name": "Plate Tectonics Theory",
+            "objective_id": "GEO.4.3.2.3",
+            "objective_text": "Interpret data on fossils, rock types, continental shapes, and seafloor structures as evidence of past plate motions.",
+            "objective_uuid": "8bd03e78-a245-410b-8103-8ce61a5748c5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ESS2-3 — Analyze and interpret data on the distribution of fossils and rocks, continental shapes, and seafloor st (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.3",
+            "topic_name": "Earth’s Structure, Tectonics & Hazards",
+            "sub_topic_id": "GEO.4.3.2",
+            "sub_topic_name": "Plate Tectonics Theory",
+            "objective_id": "GEO.4.3.2.4",
+            "objective_text": "Explain the three types of plate boundaries—divergent, convergent, and transform—and the landforms each produces.",
+            "objective_uuid": "2bcaee7f-dfb6-46eb-82af-b8cc9f056bad",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ESS2-3 — Analyze and interpret data on the distribution of fossils and rocks, continental shapes, and seafloor st (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.3",
+            "topic_name": "Earth’s Structure, Tectonics & Hazards",
+            "sub_topic_id": "GEO.4.3.2",
+            "sub_topic_name": "Plate Tectonics Theory",
+            "objective_id": "GEO.4.3.2.5",
+            "objective_text": "Model how seafloor spreading adds new crust at mid-ocean ridges.",
+            "objective_uuid": "111f9f4c-f868-4868-84ac-c4d35c701130",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS HS-ESS2-1 — Develop a model to illustrate how Earth’s internal and surface processes operate at different spatial an (grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.4",
+            "sub_subject_name": "Physical Geography (Earth Systems & Processes)",
+            "topic_id": "GEO.4.3",
+            "topic_name": "Earth’s Structure, Tectonics & Hazards",
+            "sub_topic_id": "GEO.4.3.2",
+            "sub_topic_name": "Plate Tectonics Theory",
+            "objective_id": "GEO.4.3.2.6",
+            "objective_text": "Develop a model to illustrate how Earth's internal and surface processes operate at different spatial and temporal scales to form continental and ocean-floor features.",
+            "objective_uuid": "4fc9ba76-f6da-4d02-807b-a108642b6a72",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS HS-ESS2-1 — Develop a model to illustrate how Earth’s internal and surface processes operate at different spatial an (grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "LIF.3.1.4",
+    "name": "Ethical Treatment of Animals (biblical stewardship, respect for life)",
+    "topic_id": "LIF.3.1",
+    "topic_name": "Animal Husbandry (Small-Scale)",
+    "subject_id": "LIF",
+    "subject_name": "Practical Skills, Life Skills & Home Economics",
+    "sub_subject_id": "LIF.3",
+    "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Ethical Treatment of Animals (biblical stewardship, respect for life) in Animal Husbandry (Small-Scale) (Practical Skills, Life Skills & Home Economics)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.1",
+            "topic_name": "Animal Husbandry (Small-Scale)",
+            "sub_topic_id": "LIF.3.1.4",
+            "sub_topic_name": "Ethical Treatment of Animals (biblical stewardship, respect for life)",
+            "objective_id": "LIF.3.1.4.1",
+            "objective_text": "Handle animals gently and calmly so they are not frightened or hurt",
+            "objective_uuid": "e19de1cd-7d51-469b-8de3-a072b68a8c89",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.1",
+            "topic_name": "Animal Husbandry (Small-Scale)",
+            "sub_topic_id": "LIF.3.1.4",
+            "sub_topic_name": "Ethical Treatment of Animals (biblical stewardship, respect for life)",
+            "objective_id": "LIF.3.1.4.2",
+            "objective_text": "Explain from Scripture that people are stewards who care for God's creatures",
+            "objective_uuid": "79775ee9-aa04-458d-8118-2b7cae22bff9",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.1",
+            "topic_name": "Animal Husbandry (Small-Scale)",
+            "sub_topic_id": "LIF.3.1.4",
+            "sub_topic_name": "Ethical Treatment of Animals (biblical stewardship, respect for life)",
+            "objective_id": "LIF.3.1.4.3",
+            "objective_text": "Describe the basic needs every animal deserves: food, water, shelter, and rest",
+            "objective_uuid": "0689918b-febf-4cf1-8378-1904e9b11b80",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.1",
+            "topic_name": "Animal Husbandry (Small-Scale)",
+            "sub_topic_id": "LIF.3.1.4",
+            "sub_topic_name": "Ethical Treatment of Animals (biblical stewardship, respect for life)",
+            "objective_id": "LIF.3.1.4.4",
+            "objective_text": "Give reasons why causing needless suffering to an animal is wrong",
+            "objective_uuid": "eb8558de-9fb5-435d-8cd4-b061363e4579",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "LIF",
+            "subject_name": "Practical Skills, Life Skills & Home Economics",
+            "sub_subject_id": "LIF.3",
+            "sub_subject_name": "Homesteading, Agriculture & Sustainable Living",
+            "topic_id": "LIF.3.1",
+            "topic_name": "Animal Husbandry (Small-Scale)",
+            "sub_topic_id": "LIF.3.1.4",
+            "sub_topic_name": "Ethical Treatment of Animals (biblical stewardship, respect for life)",
+            "objective_id": "LIF.3.1.4.5",
+            "objective_text": "Discuss how biblical stewardship shapes decisions about raising animals for food",
+            "objective_uuid": "7699ec6a-cbcf-4404-8071-35e385ca4a22",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

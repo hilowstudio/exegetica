@@ -1,0 +1,121 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.5.5",
+    "name": "Software Development Lifecycle (Requirements, Design, Build, Test, Deploy)",
+    "topic_id": "CPT.1.5",
+    "topic_name": "Software Engineering (Project-Level Thinking)",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Software Development Lifecycle (Requirements, Design, Build, Test, Deploy) in Software Engineering (Project-Level Thinking) (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 4,
+        "average_complexity": 14.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.5",
+            "sub_topic_name": "Software Development Lifecycle (Requirements, Design, Build, Test, Deploy)",
+            "objective_id": "CPT.1.5.5.1",
+            "objective_text": "Identify the phases of the software development lifecycle",
+            "objective_uuid": "8603df1d-f2a6-41c6-8934-50b41f067fef",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-17 — Plan and develop programs for broad audiences using a software life cycle process. Clarification: Processes co (grades 11-12)"
+              ]
+            }
+          },
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.5",
+            "sub_topic_name": "Software Development Lifecycle (Requirements, Design, Build, Test, Deploy)",
+            "objective_id": "CPT.1.5.5.2",
+            "objective_text": "Gather requirements and produce a design before building a program",
+            "objective_uuid": "b8be7ed2-b901-4b89-85ae-dde8bbed921d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-17 — Plan and develop programs for broad audiences using a software life cycle process. Clarification: Processes co (grades 11-12)"
+              ]
+            }
+          },
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.5",
+            "sub_topic_name": "Software Development Lifecycle (Requirements, Design, Build, Test, Deploy)",
+            "objective_id": "CPT.1.5.5.3",
+            "objective_text": "Plan and develop a program for a broad audience using a software life cycle process",
+            "objective_uuid": "fbd10170-9894-4967-87d7-05b10bdd149c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-17 — Plan and develop programs for broad audiences using a software life cycle process. Clarification: Processes co (grades 11-12)"
+              ]
+            }
+          },
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.5",
+            "sub_topic_name": "Software Development Lifecycle (Requirements, Design, Build, Test, Deploy)",
+            "objective_id": "CPT.1.5.5.4",
+            "objective_text": "Test and deploy a program and gather feedback for the next iteration",
+            "objective_uuid": "d351148d-4200-43e3-8d23-71b7df120db4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-17 — Plan and develop programs for broad audiences using a software life cycle process. Clarification: Processes co (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

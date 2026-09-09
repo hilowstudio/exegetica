@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "GEO.3.3.4",
+    "name": "The Compass Rose and Directional Orientation",
+    "topic_id": "GEO.3.3",
+    "topic_name": "Map Skills & Cartography",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.3",
+    "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for The Compass Rose and Directional Orientation in Map Skills & Cartography (Geography)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.3",
+            "topic_name": "Map Skills & Cartography",
+            "sub_topic_id": "GEO.3.3.4",
+            "sub_topic_name": "The Compass Rose and Directional Orientation",
+            "objective_id": "GEO.3.3.4.1",
+            "objective_text": "Use a compass rose to find north, south, east, and west on a map.",
+            "objective_uuid": "d57a9def-9ce7-494d-8de1-858821650b31",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.K-2 — Construct maps, graphs, and other representations of familiar places (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.3",
+            "topic_name": "Map Skills & Cartography",
+            "sub_topic_id": "GEO.3.3.4",
+            "sub_topic_name": "The Compass Rose and Directional Orientation",
+            "objective_id": "GEO.3.3.4.2",
+            "objective_text": "Identify the intermediate directions (NE, NW, SE, SW) on a compass rose.",
+            "objective_uuid": "9326e049-a0c5-48a7-8247-25dd7f46dac5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.K-2 — Construct maps, graphs, and other representations of familiar places (geography, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.3",
+            "topic_name": "Map Skills & Cartography",
+            "sub_topic_id": "GEO.3.3.4",
+            "sub_topic_name": "The Compass Rose and Directional Orientation",
+            "objective_id": "GEO.3.3.4.3",
+            "objective_text": "Describe the location of one place relative to another using compass directions.",
+            "objective_uuid": "fff280bc-5e90-4db0-817c-a21c3a7ec16d",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.3",
+            "sub_subject_name": "Locational Knowledge & Spatial Awareness",
+            "topic_id": "GEO.3.3",
+            "topic_name": "Map Skills & Cartography",
+            "sub_topic_id": "GEO.3.3.4",
+            "sub_topic_name": "The Compass Rose and Directional Orientation",
+            "objective_id": "GEO.3.3.4.4",
+            "objective_text": "Orient a map so its compass rose aligns with cardinal directions in the real world.",
+            "objective_uuid": "3873280b-6150-4d59-883b-d9a0c9b07257",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Geo.1.9-12 — Use geospatial and related technologies to create maps to display and explain the spatial patterns o (geography, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework / NGSS",
+      "anchor_note": "Rebuilt from the C3 Framework / NGSS sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

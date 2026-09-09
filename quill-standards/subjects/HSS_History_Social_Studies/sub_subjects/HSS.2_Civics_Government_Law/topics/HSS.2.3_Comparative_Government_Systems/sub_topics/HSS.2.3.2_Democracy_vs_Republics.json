@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "HSS.2.3.2",
+    "name": "Democracy vs Republics",
+    "topic_id": "HSS.2.3",
+    "topic_name": "Comparative Government Systems",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.2",
+    "sub_subject_name": "Civics, Government & Law",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Democracy vs Republics in Comparative Government Systems (History & Social Studies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.2",
+            "sub_subject_name": "Civics, Government & Law",
+            "topic_id": "HSS.2.3",
+            "topic_name": "Comparative Government Systems",
+            "sub_topic_id": "HSS.2.3.2",
+            "sub_topic_name": "Democracy vs Republics",
+            "objective_id": "HSS.2.3.2.1",
+            "objective_text": "Describe how, in a democracy, people help make the decisions that govern them.",
+            "objective_uuid": "5fa8d9a7-e900-40f2-8d99-11385e64be31",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Civ.4.K-2 — Begins in grades 3–5 (civics, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.2",
+            "sub_subject_name": "Civics, Government & Law",
+            "topic_id": "HSS.2.3",
+            "topic_name": "Comparative Government Systems",
+            "sub_topic_id": "HSS.2.3.2",
+            "sub_topic_name": "Democracy vs Republics",
+            "objective_id": "HSS.2.3.2.2",
+            "objective_text": "Explain the difference between a direct democracy and a republic.",
+            "objective_uuid": "722070e1-f31a-4976-88c6-70347fe91843",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Civ.4.9-12 — Explain how the U.S. Constitution establishes a system of government that has powers, responsibiliti (civics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.2",
+            "sub_subject_name": "Civics, Government & Law",
+            "topic_id": "HSS.2.3",
+            "topic_name": "Comparative Government Systems",
+            "sub_topic_id": "HSS.2.3.2",
+            "sub_topic_name": "Democracy vs Republics",
+            "objective_id": "HSS.2.3.2.3",
+            "objective_text": "Explain why the United States is a constitutional republic rather than a pure democracy.",
+            "objective_uuid": "35118674-8de8-4fd5-8cb8-b17341a2b172",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Civ.4.9-12 — Explain how the U.S. Constitution establishes a system of government that has powers, responsibiliti (civics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.2",
+            "sub_subject_name": "Civics, Government & Law",
+            "topic_id": "HSS.2.3",
+            "topic_name": "Comparative Government Systems",
+            "sub_topic_id": "HSS.2.3.2",
+            "sub_topic_name": "Democracy vs Republics",
+            "objective_id": "HSS.2.3.2.4",
+            "objective_text": "Analyze how the U.S. Constitution creates a representative government with defined powers and limits.",
+            "objective_uuid": "921c3d35-830b-42cf-8410-fc4d9607a5f1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.Civ.4.9-12 — Explain how the U.S. Constitution establishes a system of government that has powers, responsibiliti (civics, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

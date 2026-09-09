@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.4.5",
+    "name": "Input and Output Handling",
+    "topic_id": "CPT.1.4",
+    "topic_name": "Programming Fundamentals (Block to Text)",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Input and Output Handling in Programming Fundamentals (Block to Text) (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.5",
+            "sub_topic_name": "Input and Output Handling",
+            "objective_id": "CPT.1.4.5.1",
+            "objective_text": "Display output to the user with a print or output statement",
+            "objective_uuid": "23827400-c83b-4cc4-87c9-85808a387d58",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-AP-10 — Create programs that include sequences, events, loops, and conditionals (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.5",
+            "sub_topic_name": "Input and Output Handling",
+            "objective_id": "CPT.1.4.5.2",
+            "objective_text": "Get input from the user and store it in a variable",
+            "objective_uuid": "f65b92be-de97-4f10-83b2-0f2c0425d8b1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-AP-10 — Create programs that include sequences, events, loops, and conditionals (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.5",
+            "sub_topic_name": "Input and Output Handling",
+            "objective_id": "CPT.1.4.5.3",
+            "objective_text": "Use user input to control what a program does next",
+            "objective_uuid": "c8de276e-d78c-420e-8307-c43066f9858f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-AP-10 — Create programs that include sequences, events, loops, and conditionals (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.4",
+            "topic_name": "Programming Fundamentals (Block to Text)",
+            "sub_topic_id": "CPT.1.4.5",
+            "sub_topic_name": "Input and Output Handling",
+            "objective_id": "CPT.1.4.5.4",
+            "objective_text": "Handle multiple inputs and produce clearly formatted output",
+            "objective_uuid": "fc98814a-5ca9-40ee-8121-28bf5e7ef011",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 1B-AP-10 — Create programs that include sequences, events, loops, and conditionals (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

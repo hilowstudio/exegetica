@@ -1,0 +1,99 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.5.4",
+    "name": "Refactoring & Code Quality (clean code principles)",
+    "topic_id": "CPT.1.5",
+    "topic_name": "Software Engineering (Project-Level Thinking)",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Refactoring & Code Quality (clean code principles) in Software Engineering (Project-Level Thinking) (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 3,
+        "average_complexity": 14.33,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.4",
+            "sub_topic_name": "Refactoring & Code Quality (clean code principles)",
+            "objective_id": "CPT.1.5.4.1",
+            "objective_text": "Evaluate a program's readability and correctness through a code review",
+            "objective_uuid": "37390905-3512-4ef8-882f-2af2e16821dd",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-23 — Evaluate key qualities of a program through a process such as a code review. Clarification: Examples of qualit (grades 11-12)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.4",
+            "sub_topic_name": "Refactoring & Code Quality (clean code principles)",
+            "objective_id": "CPT.1.5.4.2",
+            "objective_text": "Refactor code to improve its clarity without changing its behavior",
+            "objective_uuid": "63c937fc-46d8-4d0e-89c2-d7f0cce96206",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-23 — Evaluate key qualities of a program through a process such as a code review. Clarification: Examples of qualit (grades 11-12)"
+              ]
+            }
+          },
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.5",
+            "topic_name": "Software Engineering (Project-Level Thinking)",
+            "sub_topic_id": "CPT.1.5.4",
+            "sub_topic_name": "Refactoring & Code Quality (clean code principles)",
+            "objective_id": "CPT.1.5.4.3",
+            "objective_text": "Apply clean code principles such as meaningful names and small, focused functions",
+            "objective_uuid": "abc75b5a-a3b4-42ab-8bfe-0a90f667f092",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-23 — Evaluate key qualities of a program through a process such as a code review. Clarification: Examples of qualit (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

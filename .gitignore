@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Built data — reproducible from scripts/, never committed
+/db/*.db
+/db/*.sqlite
+/db/*.sqlite3
+/data/
+
+# Local env / secrets
+.env
+*.key
+
+# Google Classroom push: OAuth client secret, cached token, and the per-course
+# idempotency state. Never commit — these grant access to your class + Drive.
+/.secrets/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Standards corpus: raw API dumps are re-downloadable via scripts/download_standards.py
+/standards/raw/
+
+# Copyrighted third-party teaching material — teacher-prep only, derive-and-cite, never redistributed
+/sproul-transcripts/
+/ferguson-transcripts/
+
+# Confidential student data — rosters + success plans (health diagnoses, PII). Never commit.
+/student_profiles/
+
+# Copyrighted third-party research scrapes (TGC, BibleProject, etc.) — teacher-prep only, never redistributed
+/.firecrawl/
+
+# Local backups / archives — not source
+/_backups/
+
+# School-owned PDFs (catalog + handbook) — Yorkville's documents, not ours to redistribute
+/High-School-Course-Catalog-26-27-1.pdf
+/YCS-SY26-27-Student-and-Family-Handbook-FINAL-PDF.pdf

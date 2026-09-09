@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "ELA.4.4.1",
+    "name": "Internal vs External Conflict",
+    "topic_id": "ELA.4.4",
+    "topic_name": "Elements of Story & Narrative",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.4",
+    "sub_subject_name": "Literary Analysis & Criticism",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Internal vs External Conflict in Elements of Story & Narrative (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.4",
+            "topic_name": "Elements of Story & Narrative",
+            "sub_topic_id": "ELA.4.4.1",
+            "sub_topic_name": "Internal vs External Conflict",
+            "objective_id": "ELA.4.4.1.1",
+            "objective_text": "Identify the problem a character faces in a story.",
+            "objective_uuid": "033568eb-3fb8-4191-87fd-9d9aea205b1e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.4",
+            "topic_name": "Elements of Story & Narrative",
+            "sub_topic_id": "ELA.4.4.1",
+            "sub_topic_name": "Internal vs External Conflict",
+            "objective_id": "ELA.4.4.1.2",
+            "objective_text": "Distinguish conflict inside a character from conflict with outside forces.",
+            "objective_uuid": "4fc9bc00-eff1-4d23-8025-84b4fcdcbae4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.4",
+            "topic_name": "Elements of Story & Narrative",
+            "sub_topic_id": "ELA.4.4.1",
+            "sub_topic_name": "Internal vs External Conflict",
+            "objective_id": "ELA.4.4.1.3",
+            "objective_text": "Analyze how internal and external conflicts drive a character's choices.",
+            "objective_uuid": "40a2732a-6f27-421b-89c4-7c5434fdd5f6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.3 — Analyze how and why individuals, events, and ideas develop and interact over the course of a text (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.4",
+            "topic_name": "Elements of Story & Narrative",
+            "sub_topic_id": "ELA.4.4.1",
+            "sub_topic_name": "Internal vs External Conflict",
+            "objective_id": "ELA.4.4.1.4",
+            "objective_text": "Evaluate how the interplay of internal and external conflict develops a story's theme.",
+            "objective_uuid": "45fe163a-d555-4106-8583-0cc9bc5e45b1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.2 — Determine central ideas or themes of a text and analyze their development; summarize the key supporting  (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

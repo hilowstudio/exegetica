@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.2.3.2",
+    "name": "Propositions and Truth Values",
+    "topic_id": "MAT.2.3",
+    "topic_name": "Mathematical Logic",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.2",
+    "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Propositions and Truth Values in Mathematical Logic (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.2",
+            "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+            "topic_id": "MAT.2.3",
+            "topic_name": "Mathematical Logic",
+            "sub_topic_id": "MAT.2.3.2",
+            "sub_topic_name": "Propositions and Truth Values",
+            "objective_id": "MAT.2.3.2.1",
+            "objective_text": "Identify a proposition as a statement that is either true or false.",
+            "objective_uuid": "9db0c86d-2af6-4621-8076-c89b9af3348e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP3 — Construct viable arguments and critique the reasoning of others (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 2,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.2",
+            "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+            "topic_id": "MAT.2.3",
+            "topic_name": "Mathematical Logic",
+            "sub_topic_id": "MAT.2.3.2",
+            "sub_topic_name": "Propositions and Truth Values",
+            "objective_id": "MAT.2.3.2.2",
+            "objective_text": "Assign a truth value to a simple proposition.",
+            "objective_uuid": "a7a1bc92-ad12-4712-840f-c8dcffeb9c69",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP3 — Construct viable arguments and critique the reasoning of others (Math Practice, K-12)"
+              ]
+            }
+          },
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.2",
+            "sub_subject_name": "Discrete Mathematics (Computer Science & Logic Bridge)",
+            "topic_id": "MAT.2.3",
+            "topic_name": "Mathematical Logic",
+            "sub_topic_id": "MAT.2.3.2",
+            "sub_topic_name": "Propositions and Truth Values",
+            "objective_id": "MAT.2.3.2.3",
+            "objective_text": "Form the negation of a proposition.",
+            "objective_uuid": "edff197b-ded7-453d-87b1-e04beafe8e5a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math MP3 — Construct viable arguments and critique the reasoning of others (Math Practice, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

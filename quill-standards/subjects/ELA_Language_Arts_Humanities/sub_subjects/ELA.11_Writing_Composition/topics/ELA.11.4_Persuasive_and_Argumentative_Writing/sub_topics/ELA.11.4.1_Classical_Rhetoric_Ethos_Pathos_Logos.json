@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ELA.11.4.1",
+    "name": "Classical Rhetoric (Ethos, Pathos, Logos)",
+    "topic_id": "ELA.11.4",
+    "topic_name": "Persuasive and Argumentative Writing",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.11",
+    "sub_subject_name": "Writing & Composition",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Classical Rhetoric (Ethos, Pathos, Logos) in Persuasive and Argumentative Writing (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.4",
+            "topic_name": "Persuasive and Argumentative Writing",
+            "sub_topic_id": "ELA.11.4.1",
+            "sub_topic_name": "Classical Rhetoric (Ethos, Pathos, Logos)",
+            "objective_id": "ELA.11.4.1.1",
+            "objective_text": "Give a reason people should agree with you when you ask for something",
+            "objective_uuid": "da3f8325-2acf-4651-814a-7ccb1fe1505b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.1 — Write arguments to support claims in an analysis of substantive topics or texts, using valid reasoning a (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.4",
+            "topic_name": "Persuasive and Argumentative Writing",
+            "sub_topic_id": "ELA.11.4.1",
+            "sub_topic_name": "Classical Rhetoric (Ethos, Pathos, Logos)",
+            "objective_id": "ELA.11.4.1.2",
+            "objective_text": "Persuade a reader by appealing to fairness, feelings, or facts in a short piece",
+            "objective_uuid": "1fae4bda-e511-47ea-88a9-22ba646f13bb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.1 — Write arguments to support claims in an analysis of substantive topics or texts, using valid reasoning a (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.4",
+            "topic_name": "Persuasive and Argumentative Writing",
+            "sub_topic_id": "ELA.11.4.1",
+            "sub_topic_name": "Classical Rhetoric (Ethos, Pathos, Logos)",
+            "objective_id": "ELA.11.4.1.3",
+            "objective_text": "Identify ethos, pathos, and logos in a persuasive text and explain how each works",
+            "objective_uuid": "05c8e769-97e1-409a-8721-4f603f5166f8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.1 — Write arguments to support claims in an analysis of substantive topics or texts, using valid reasoning a (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.4",
+            "topic_name": "Persuasive and Argumentative Writing",
+            "sub_topic_id": "ELA.11.4.1",
+            "sub_topic_name": "Classical Rhetoric (Ethos, Pathos, Logos)",
+            "objective_id": "ELA.11.4.1.4",
+            "objective_text": "Draft an argument that uses appeals to character, emotion, and logic to persuade an audience",
+            "objective_uuid": "cc71ef5d-bd0a-47c8-89a5-ceb7b6c2bb18",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.W.1 — Write arguments to support claims in an analysis of substantive topics or texts, using valid reasoning a (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.11",
+            "sub_subject_name": "Writing & Composition",
+            "topic_id": "ELA.11.4",
+            "topic_name": "Persuasive and Argumentative Writing",
+            "sub_topic_id": "ELA.11.4.1",
+            "sub_topic_name": "Classical Rhetoric (Ethos, Pathos, Logos)",
+            "objective_id": "ELA.11.4.1.5",
+            "objective_text": "Deliver a persuasive presentation that balances ethos, pathos, and logos for a specific audience",
+            "objective_uuid": "45516364-c631-4d7f-89a6-7bc4fda886be",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.SL.4 — Present information, findings, and supporting evidence such that listeners can follow the line of reason (Common Core ELA anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Rebuilt from the Common Core State Standards (English Language Arts) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "ART.3.4.3",
+    "name": "Directing Basics (vision, pacing, actor coaching)",
+    "topic_id": "ART.3.4",
+    "topic_name": "Theater Production & Technical Arts",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.3",
+    "sub_subject_name": "Dramatic Arts & Movement",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Directing Basics (vision, pacing, actor coaching) in Theater Production & Technical Arts (Fine Arts)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.3",
+            "sub_topic_name": "Directing Basics (vision, pacing, actor coaching)",
+            "objective_id": "ART.3.4.3.1",
+            "objective_text": "Tell actors in a small scene where to stand and when to speak",
+            "objective_uuid": "adbaec6c-0758-4770-8c04-e952a5ce155e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.3",
+            "sub_topic_name": "Directing Basics (vision, pacing, actor coaching)",
+            "objective_id": "ART.3.4.3.2",
+            "objective_text": "Guide a short scene by helping actors know their entrances and positions",
+            "objective_uuid": "48fde21d-d443-4a6f-83d0-16afc7b87db5",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.3",
+            "sub_topic_name": "Directing Basics (vision, pacing, actor coaching)",
+            "objective_id": "ART.3.4.3.3",
+            "objective_text": "Direct a scene by setting basic blocking and encouraging clear delivery",
+            "objective_uuid": "a11c46f0-8f31-4174-833b-29516c0e5496",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr5 — Develop and refine artistic techniques and work for presentation (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.3",
+            "sub_topic_name": "Directing Basics (vision, pacing, actor coaching)",
+            "objective_id": "ART.3.4.3.4",
+            "objective_text": "Shape a scene's pacing and coach actors toward a consistent interpretation",
+            "objective_uuid": "e3381066-023c-475d-86d0-a7358c3d744e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr6 — Convey meaning through the presentation of artistic work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.3",
+            "sub_topic_name": "Directing Basics (vision, pacing, actor coaching)",
+            "objective_id": "ART.3.4.3.5",
+            "objective_text": "Direct a one-act with a clear vision, guiding blocking, pacing, and performances",
+            "objective_uuid": "33ad7d3d-32a5-4b04-8944-de89474a967a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr6 — Convey meaning through the presentation of artistic work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.3",
+            "sub_subject_name": "Dramatic Arts & Movement",
+            "topic_id": "ART.3.4",
+            "topic_name": "Theater Production & Technical Arts",
+            "sub_topic_id": "ART.3.4.3",
+            "sub_topic_name": "Directing Basics (vision, pacing, actor coaching)",
+            "objective_id": "ART.3.4.3.6",
+            "objective_text": "Realize a directorial vision for a full production, unifying staging, pacing, and ensemble performance to convey meaning",
+            "objective_uuid": "566e83e9-6178-4286-8d56-fcb9edea8f19",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS TH:Pr6 — Convey meaning through the presentation of artistic work (Theatre, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

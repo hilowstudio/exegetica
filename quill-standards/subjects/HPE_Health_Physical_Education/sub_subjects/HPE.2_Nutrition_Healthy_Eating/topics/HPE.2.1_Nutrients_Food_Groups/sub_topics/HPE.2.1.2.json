@@ -1,0 +1,116 @@
+{
+  "sub_topic": {
+    "id": "HPE.2.1.2",
+    "name": "Macronutrients",
+    "topic_id": "HPE.2.1",
+    "topic_name": "Nutrients & Food Groups",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.2",
+    "sub_subject_name": "Nutrition & Healthy Eating",
+    "total_objectives": 3,
+    "description": "K-12 progression for Macronutrients in Nutrients & Food Groups (Health & Physical Education)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.2",
+            "sub_subject_name": "Nutrition & Healthy Eating",
+            "topic_id": "HPE.2.1",
+            "topic_name": "Nutrients & Food Groups",
+            "sub_topic_id": "HPE.2.1.2",
+            "sub_topic_name": "Macronutrients",
+            "objective_id": "HPE.2.1.2.1",
+            "objective_text": "Identify carbohydrates, proteins, and fats and foods that contain them.",
+            "objective_uuid": "5351a7f7-02cc-4238-8430-06544ed6d61f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.5.1 — Describe the relationship between healthy behaviors and personal health (National Health Education Standards, grades 3-5)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.2",
+            "sub_subject_name": "Nutrition & Healthy Eating",
+            "topic_id": "HPE.2.1",
+            "topic_name": "Nutrients & Food Groups",
+            "sub_topic_id": "HPE.2.1.2",
+            "sub_topic_name": "Macronutrients",
+            "objective_id": "HPE.2.1.2.2",
+            "objective_text": "Explain the role each macronutrient plays in energy and growth.",
+            "objective_uuid": "3102a5fd-87cd-4306-85b9-9061d59d9677",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.5.1 — Describe the relationship between healthy behaviors and personal health (National Health Education Standards, grades 3-5)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.2",
+            "sub_subject_name": "Nutrition & Healthy Eating",
+            "topic_id": "HPE.2.1",
+            "topic_name": "Nutrients & Food Groups",
+            "sub_topic_id": "HPE.2.1.2",
+            "sub_topic_name": "Macronutrients",
+            "objective_id": "HPE.2.1.2.3",
+            "objective_text": "Analyze a meal for its balance of macronutrients.",
+            "objective_uuid": "718a8ba6-fcd0-4c45-8c13-41b944c9c879",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.5.1 — Describe the relationship between healthy behaviors and personal health (National Health Education Standards, grades 3-5)",
+                "Health Ed 1.12.1 — Predict how healthy behaviors can affect health status (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Health Education Standards",
+      "anchor_note": "NHES codes verified against the owned corpus; objectives authored to the standard's real sub-skills at variable depth."
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "PER.4.1.5",
+    "name": "The Myth of 'Safe Sex' vs. Holistic Health (STIs, emotional bonding)",
+    "topic_id": "PER.4.1",
+    "topic_name": "Biblical Sexual Ethics",
+    "subject_id": "PER",
+    "subject_name": "Personal Relationships, Identity & Digital Discipleship",
+    "sub_subject_id": "PER.4",
+    "sub_subject_name": "Embodiment, Safety & Sexual Ethics",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for The Myth of 'Safe Sex' vs. Holistic Health (STIs, emotional bonding) in Biblical Sexual Ethics (Personal Relationships, Identity & Digital Discipleship)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "PER",
+            "subject_name": "Personal Relationships, Identity & Digital Discipleship",
+            "sub_subject_id": "PER.4",
+            "sub_subject_name": "Embodiment, Safety & Sexual Ethics",
+            "topic_id": "PER.4.1",
+            "topic_name": "Biblical Sexual Ethics",
+            "sub_topic_id": "PER.4.1.5",
+            "sub_topic_name": "The Myth of 'Safe Sex' vs. Holistic Health (STIs, emotional bonding)",
+            "objective_id": "PER.4.1.5.1",
+            "objective_text": "Explain that some choices can harm the body even when they are called 'safe.'",
+            "objective_uuid": "e6468936-7121-430f-8f16-db1a63cf20ed",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.8.1 — Analyze the relationship between healthy behaviors and personal health (National Health Education Standards, grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "PER",
+            "subject_name": "Personal Relationships, Identity & Digital Discipleship",
+            "sub_subject_id": "PER.4",
+            "sub_subject_name": "Embodiment, Safety & Sexual Ethics",
+            "topic_id": "PER.4.1",
+            "topic_name": "Biblical Sexual Ethics",
+            "sub_topic_id": "PER.4.1.5",
+            "sub_topic_name": "The Myth of 'Safe Sex' vs. Holistic Health (STIs, emotional bonding)",
+            "objective_id": "PER.4.1.5.2",
+            "objective_text": "Describe how physical intimacy bonds people emotionally as well as physically.",
+            "objective_uuid": "7a84bda0-b548-4764-81bd-967943c40d32",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.8.1 — Analyze the relationship between healthy behaviors and personal health (National Health Education Standards, grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "PER",
+            "subject_name": "Personal Relationships, Identity & Digital Discipleship",
+            "sub_subject_id": "PER.4",
+            "sub_subject_name": "Embodiment, Safety & Sexual Ethics",
+            "topic_id": "PER.4.1",
+            "topic_name": "Biblical Sexual Ethics",
+            "sub_topic_id": "PER.4.1.5",
+            "sub_topic_name": "The Myth of 'Safe Sex' vs. Holistic Health (STIs, emotional bonding)",
+            "objective_id": "PER.4.1.5.3",
+            "objective_text": "Analyze the relationship between sexual choices outside marriage and risks to physical health, including STIs.",
+            "objective_uuid": "852dea39-cadb-4c4c-8923-a868d1f8200e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.8.1 — Analyze the relationship between healthy behaviors and personal health (National Health Education Standards, grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "PER",
+            "subject_name": "Personal Relationships, Identity & Digital Discipleship",
+            "sub_subject_id": "PER.4",
+            "sub_subject_name": "Embodiment, Safety & Sexual Ethics",
+            "topic_id": "PER.4.1",
+            "topic_name": "Biblical Sexual Ethics",
+            "sub_topic_id": "PER.4.1.5",
+            "sub_topic_name": "The Myth of 'Safe Sex' vs. Holistic Health (STIs, emotional bonding)",
+            "objective_id": "PER.4.1.5.4",
+            "objective_text": "Evaluate the claim that protection makes intimacy fully 'safe,' weighing emotional and spiritual dimensions.",
+            "objective_uuid": "55a5e73b-09a1-4991-81b4-71d1bcb5491c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 1.8.1 — Analyze the relationship between healthy behaviors and personal health (National Health Education Standards, grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CASEL / National Health Education Standards",
+      "anchor_note": "Rebuilt from the CASEL / National Health Education Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

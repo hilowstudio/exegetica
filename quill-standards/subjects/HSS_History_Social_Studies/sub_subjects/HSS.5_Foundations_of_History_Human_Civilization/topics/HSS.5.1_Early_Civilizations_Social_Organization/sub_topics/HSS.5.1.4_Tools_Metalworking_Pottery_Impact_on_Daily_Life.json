@@ -1,0 +1,193 @@
+{
+  "sub_topic": {
+    "id": "HSS.5.1.4",
+    "name": "Tools, Metalworking, Pottery (Impact on Daily Life)",
+    "topic_id": "HSS.5.1",
+    "topic_name": "Early Civilizations & Social Organization",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.5",
+    "sub_subject_name": "Foundations of History & Human Civilization",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Tools, Metalworking, Pottery (Impact on Daily Life) in Early Civilizations & Social Organization (History & Social Studies)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.1",
+            "topic_name": "Early Civilizations & Social Organization",
+            "sub_topic_id": "HSS.5.1.4",
+            "sub_topic_name": "Tools, Metalworking, Pottery (Impact on Daily Life)",
+            "objective_id": "HSS.5.1.4.1",
+            "objective_text": "Identify early tools made of stone and containers made of clay.",
+            "objective_uuid": "529fe700-9107-469c-8cb7-9ddb678b923f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 2,
+        "average_complexity": 10.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.1",
+            "topic_name": "Early Civilizations & Social Organization",
+            "sub_topic_id": "HSS.5.1.4",
+            "sub_topic_name": "Tools, Metalworking, Pottery (Impact on Daily Life)",
+            "objective_id": "HSS.5.1.4.2",
+            "objective_text": "Describe how pottery helped people store food and water.",
+            "objective_uuid": "70ddcfee-6fd2-45ef-8ac0-025f4abd12cc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.K-2 — Generate questions about individuals and groups who have shaped a significant historical change (history, grades K-2)"
+              ]
+            }
+          },
+          {
+            "complexity": 12,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.1",
+            "topic_name": "Early Civilizations & Social Organization",
+            "sub_topic_id": "HSS.5.1.4",
+            "sub_topic_name": "Tools, Metalworking, Pottery (Impact on Daily Life)",
+            "objective_id": "HSS.5.1.4.3",
+            "objective_text": "Sequence the development of tool materials from stone to copper, bronze, and iron.",
+            "objective_uuid": "a8a2af39-2b72-455b-8a7e-74a8bed8739f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.1",
+            "topic_name": "Early Civilizations & Social Organization",
+            "sub_topic_id": "HSS.5.1.4",
+            "sub_topic_name": "Tools, Metalworking, Pottery (Impact on Daily Life)",
+            "objective_id": "HSS.5.1.4.4",
+            "objective_text": "Explain how better tools and metalworking changed farming, building, and daily work.",
+            "objective_uuid": "495579a3-d44a-4df7-810c-02fdb9dc8274",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.1",
+            "topic_name": "Early Civilizations & Social Organization",
+            "sub_topic_id": "HSS.5.1.4",
+            "sub_topic_name": "Tools, Metalworking, Pottery (Impact on Daily Life)",
+            "objective_id": "HSS.5.1.4.5",
+            "objective_text": "Analyze how the mastery of metals gave some groups advantages in trade and warfare.",
+            "objective_uuid": "f044a732-a9c8-429e-878b-b3ddf1b1cde7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.3.9-12 — Use questions generated about individuals and groups to assess how the significance of their actions (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.5",
+            "sub_subject_name": "Foundations of History & Human Civilization",
+            "topic_id": "HSS.5.1",
+            "topic_name": "Early Civilizations & Social Organization",
+            "sub_topic_id": "HSS.5.1.4",
+            "sub_topic_name": "Tools, Metalworking, Pottery (Impact on Daily Life)",
+            "objective_id": "HSS.5.1.4.6",
+            "objective_text": "Evaluate how technological change in tools reshaped early societies over time.",
+            "objective_uuid": "90be528d-542f-476e-8c2b-369a5d852c7c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

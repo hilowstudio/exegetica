@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ART.2.3.7",
+    "name": "Post-Processing (RAW workflow, color grading)",
+    "topic_id": "ART.2.3",
+    "topic_name": "Photography (Artistic & Technical)",
+    "subject_id": "ART",
+    "subject_name": "Fine Arts",
+    "sub_subject_id": "ART.2",
+    "sub_subject_name": "Digital Art, Photography & Media Production",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Post-Processing (RAW workflow, color grading) in Photography (Artistic & Technical) (Fine Arts)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.7",
+            "sub_topic_name": "Post-Processing (RAW workflow, color grading)",
+            "objective_id": "ART.2.3.7.1",
+            "objective_text": "Crop and brighten a photo using editing software.",
+            "objective_uuid": "abf2c72d-3251-4f89-8eb0-e9b957ed670f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr1 — Generate and conceptualize artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.7",
+            "sub_topic_name": "Post-Processing (RAW workflow, color grading)",
+            "objective_id": "ART.2.3.7.2",
+            "objective_text": "Adjust exposure, contrast, and white balance in an image editor.",
+            "objective_uuid": "0885f347-06b0-4434-831e-380df7cd4a9f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.7",
+            "sub_topic_name": "Post-Processing (RAW workflow, color grading)",
+            "objective_id": "ART.2.3.7.3",
+            "objective_text": "Edit a RAW file to recover detail in the highlights and shadows.",
+            "objective_uuid": "f8e855f5-0e16-49e9-888c-427ebb325145",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.7",
+            "sub_topic_name": "Post-Processing (RAW workflow, color grading)",
+            "objective_id": "ART.2.3.7.4",
+            "objective_text": "Apply color grading to set a consistent mood across a set of photos.",
+            "objective_uuid": "02ba79b3-091d-4910-8def-500ee88f7b2b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Cr2 — Organize and develop artistic ideas and work (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ART",
+            "subject_name": "Fine Arts",
+            "sub_subject_id": "ART.2",
+            "sub_subject_name": "Digital Art, Photography & Media Production",
+            "topic_id": "ART.2.3",
+            "topic_name": "Photography (Artistic & Technical)",
+            "sub_topic_id": "ART.2.3.7",
+            "sub_topic_name": "Post-Processing (RAW workflow, color grading)",
+            "objective_id": "ART.2.3.7.5",
+            "objective_text": "Refine a complete post-processing workflow to finish images for presentation.",
+            "objective_uuid": "d1e3f5ed-ff34-47dc-80cb-3724ccf70a76",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NCAS MA:Pr5 — Develop and refine artistic techniques and work for presentation (Media Arts, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Core Arts Standards",
+      "anchor_note": "Rebuilt from the National Core Arts Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

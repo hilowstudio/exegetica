@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "HSS.4.1.4",
+    "name": "Wealth and Responsibility",
+    "topic_id": "HSS.4.1",
+    "topic_name": "Biblical Stewardship & Economic Ethics",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.4",
+    "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Wealth and Responsibility in Biblical Stewardship & Economic Ethics (History & Social Studies)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.1",
+            "topic_name": "Biblical Stewardship & Economic Ethics",
+            "sub_topic_id": "HSS.4.1.4",
+            "sub_topic_name": "Wealth and Responsibility",
+            "objective_id": "HSS.4.1.4.1",
+            "objective_text": "Define wealth and describe responsibilities that come with having resources.",
+            "objective_uuid": "79621911-a43a-4a4e-8b0f-213cbdb7cbcf",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.1",
+            "topic_name": "Biblical Stewardship & Economic Ethics",
+            "sub_topic_id": "HSS.4.1.4",
+            "sub_topic_name": "Wealth and Responsibility",
+            "objective_id": "HSS.4.1.4.2",
+            "objective_text": "Identify biblical teachings that treat wealth as a stewardship entrusted by God.",
+            "objective_uuid": "3ce9b295-6a7d-463d-8eb1-c7ef96ab3b73",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.1",
+            "topic_name": "Biblical Stewardship & Economic Ethics",
+            "sub_topic_id": "HSS.4.1.4",
+            "sub_topic_name": "Wealth and Responsibility",
+            "objective_id": "HSS.4.1.4.3",
+            "objective_text": "Explain the Parable of the Talents and its lessons about using resources faithfully.",
+            "objective_uuid": "392598d4-0bc7-44ea-88a8-d690dfacded4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.1",
+            "topic_name": "Biblical Stewardship & Economic Ethics",
+            "sub_topic_id": "HSS.4.1.4",
+            "sub_topic_name": "Wealth and Responsibility",
+            "objective_id": "HSS.4.1.4.4",
+            "objective_text": "Analyze biblical warnings about greed and the danger of trusting in riches.",
+            "objective_uuid": "ca202ec8-07dd-4118-8562-6a30b095de75",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.4",
+            "sub_subject_name": "Economics (Micro, Macro & Biblical Stewardship)",
+            "topic_id": "HSS.4.1",
+            "topic_name": "Biblical Stewardship & Economic Ethics",
+            "sub_topic_id": "HSS.4.1.4",
+            "sub_topic_name": "Wealth and Responsibility",
+            "objective_id": "HSS.4.1.4.5",
+            "objective_text": "Evaluate how wealthy individuals and businesses can use resources responsibly toward the common good.",
+            "objective_uuid": "096a5844-a5ad-4ad0-800e-4a362fa22a73",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

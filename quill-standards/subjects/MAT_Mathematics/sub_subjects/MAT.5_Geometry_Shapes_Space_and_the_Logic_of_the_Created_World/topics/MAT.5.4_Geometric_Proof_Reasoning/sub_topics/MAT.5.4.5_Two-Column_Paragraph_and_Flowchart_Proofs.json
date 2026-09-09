@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.5.4.5",
+    "name": "Two-Column, Paragraph, and Flowchart Proofs",
+    "topic_id": "MAT.5.4",
+    "topic_name": "Geometric Proof & Reasoning",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.5",
+    "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Two-Column, Paragraph, and Flowchart Proofs in Geometric Proof & Reasoning (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.5",
+            "sub_topic_name": "Two-Column, Paragraph, and Flowchart Proofs",
+            "objective_id": "MAT.5.4.5.1",
+            "objective_text": "Write a simple two-column proof.",
+            "objective_uuid": "6020fc21-4859-41f9-827a-a54751d1acdb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.C.9 — Prove theorems about lines and angles (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.5",
+            "sub_topic_name": "Two-Column, Paragraph, and Flowchart Proofs",
+            "objective_id": "MAT.5.4.5.2",
+            "objective_text": "Write a paragraph proof of a geometric statement.",
+            "objective_uuid": "39f63a11-4d6a-48c0-8753-ed9fa69d5ec7",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.C.9 — Prove theorems about lines and angles (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.5",
+            "sub_subject_name": "Geometry (Shapes, Space, and the Logic of the Created World)",
+            "topic_id": "MAT.5.4",
+            "topic_name": "Geometric Proof & Reasoning",
+            "sub_topic_id": "MAT.5.4.5",
+            "sub_topic_name": "Two-Column, Paragraph, and Flowchart Proofs",
+            "objective_id": "MAT.5.4.5.3",
+            "objective_text": "Represent a proof as a flowchart and choose the clearest proof format.",
+            "objective_uuid": "ef9ccf62-f957-4f7d-8b4b-f1cd02f9cdab",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSG-CO.C.9 — Prove theorems about lines and angles (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

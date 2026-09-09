@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "GEO.5.2.6",
+    "name": "Spread of the Early Church",
+    "topic_id": "GEO.5.2",
+    "topic_name": "Biblical Geography & Cultural Context",
+    "subject_id": "GEO",
+    "subject_name": "Geography",
+    "sub_subject_id": "GEO.5",
+    "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Spread of the Early Church in Biblical Geography & Cultural Context (Geography)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.6",
+            "sub_topic_name": "Spread of the Early Church",
+            "objective_id": "GEO.5.2.6.1",
+            "objective_text": "Locate Jerusalem, Antioch, and Rome on a map of the early church",
+            "objective_uuid": "82c4d900-5964-4bd1-8251-117a21638b1c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.6",
+            "sub_topic_name": "Spread of the Early Church",
+            "objective_id": "GEO.5.2.6.2",
+            "objective_text": "Describe how the good news spread from Jerusalem outward after Pentecost",
+            "objective_uuid": "729cd6af-5f98-48ec-8323-455e3f675f53",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.6",
+            "sub_topic_name": "Spread of the Early Church",
+            "objective_id": "GEO.5.2.6.3",
+            "objective_text": "Trace one of Paul's missionary journeys across the Roman world",
+            "objective_uuid": "8a1feda3-8054-4b74-8cf4-3e3835e4d172",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.6",
+            "sub_topic_name": "Spread of the Early Church",
+            "objective_id": "GEO.5.2.6.4",
+            "objective_text": "Explain how Roman roads, sea routes, and cities helped the gospel spread quickly",
+            "objective_uuid": "7ac7dc0d-9c21-47b7-8e23-3fcf42e6d8f1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "GEO",
+            "subject_name": "Geography",
+            "sub_subject_id": "GEO.5",
+            "sub_subject_name": "Worldview, Biblical Geography & Stewardship",
+            "topic_id": "GEO.5.2",
+            "topic_name": "Biblical Geography & Cultural Context",
+            "sub_topic_id": "GEO.5.2.6",
+            "sub_topic_name": "Spread of the Early Church",
+            "objective_id": "GEO.5.2.6.5",
+            "objective_text": "Analyze how the pattern of the church's growth, from Jerusalem to Judea, Samaria, and the ends of the earth, unfolds across the geography of Acts",
+            "objective_uuid": "e5e8adb1-700f-4f5d-8f7d-d90114c9644c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

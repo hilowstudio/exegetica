@@ -1,0 +1,154 @@
+{
+  "sub_topic": {
+    "id": "HPE.3.1.3",
+    "name": "Healthy Coping Strategies",
+    "topic_id": "HPE.3.1",
+    "topic_name": "Understanding Emotions & Stress",
+    "subject_id": "HPE",
+    "subject_name": "Health & Physical Education",
+    "sub_subject_id": "HPE.3",
+    "sub_subject_name": "Mental & Emotional Health",
+    "total_objectives": 4,
+    "description": "K-12 progression for Healthy Coping Strategies in Understanding Emotions & Stress (Health & Physical Education)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.3",
+            "sub_subject_name": "Mental & Emotional Health",
+            "topic_id": "HPE.3.1",
+            "topic_name": "Understanding Emotions & Stress",
+            "sub_topic_id": "HPE.3.1.3",
+            "sub_topic_name": "Healthy Coping Strategies",
+            "objective_id": "HPE.3.1.3.1",
+            "objective_text": "Practice simple calming strategies (breathing, movement, talking to someone).",
+            "objective_uuid": "e714884e-980a-4b28-85d2-5529bf7b656e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 4.2.1 — Demonstrate healthy ways to express needs, wants, and feelings (National Health Education Standards, grades K-2)",
+                "Health Ed 4.12.1 — Use skills for communicating effectively with family, peers, and others to enhance health (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.3",
+            "sub_subject_name": "Mental & Emotional Health",
+            "topic_id": "HPE.3.1",
+            "topic_name": "Understanding Emotions & Stress",
+            "sub_topic_id": "HPE.3.1.3",
+            "sub_topic_name": "Healthy Coping Strategies",
+            "objective_id": "HPE.3.1.3.2",
+            "objective_text": "Choose coping strategies that fit the situation.",
+            "objective_uuid": "bb416416-a739-4188-8942-cf4f6d7a45de",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 4.2.1 — Demonstrate healthy ways to express needs, wants, and feelings (National Health Education Standards, grades K-2)",
+                "Health Ed 4.12.1 — Use skills for communicating effectively with family, peers, and others to enhance health (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.3",
+            "sub_subject_name": "Mental & Emotional Health",
+            "topic_id": "HPE.3.1",
+            "topic_name": "Understanding Emotions & Stress",
+            "sub_topic_id": "HPE.3.1.3",
+            "sub_topic_name": "Healthy Coping Strategies",
+            "objective_id": "HPE.3.1.3.3",
+            "objective_text": "Build a personal toolkit of healthy ways to handle hard emotions.",
+            "objective_uuid": "77c8b241-bc9b-4eb2-8562-f92a73d04f3b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 4.2.1 — Demonstrate healthy ways to express needs, wants, and feelings (National Health Education Standards, grades K-2)",
+                "Health Ed 4.12.1 — Use skills for communicating effectively with family, peers, and others to enhance health (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "HPE",
+            "subject_name": "Health & Physical Education",
+            "sub_subject_id": "HPE.3",
+            "sub_subject_name": "Mental & Emotional Health",
+            "topic_id": "HPE.3.1",
+            "topic_name": "Understanding Emotions & Stress",
+            "sub_topic_id": "HPE.3.1.3",
+            "sub_topic_name": "Healthy Coping Strategies",
+            "objective_id": "HPE.3.1.3.4",
+            "objective_text": "Evaluate which coping strategies actually work for oneself and adjust.",
+            "objective_uuid": "f95551de-5f59-41c2-84aa-a75b1da7feeb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "Health Ed 4.2.1 — Demonstrate healthy ways to express needs, wants, and feelings (National Health Education Standards, grades K-2)",
+                "Health Ed 4.12.1 — Use skills for communicating effectively with family, peers, and others to enhance health (National Health Education Standards, grades 9-12)",
+                "Health Ed 7.2.1 — Demonstrate healthy practices and behaviors to maintain or improve personal health (National Health Education Standards, grades K-2)",
+                "Health Ed 7.12.1 — Analyze the role of individual responsibility for enhancing health (National Health Education Standards, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "National Health Education Standards",
+      "anchor_note": "NHES codes verified against the owned corpus; objectives authored to the standard's real sub-skills at variable depth."
+    }
+  }
+}

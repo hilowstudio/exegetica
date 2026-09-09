@@ -1,0 +1,472 @@
+{
+  "sub_topic": {
+    "id": "BIB.11.9.5",
+    "name": "Adoption",
+    "topic_id": "BIB.11.9",
+    "topic_name": "Soteriology: The Doctrine of Salvation",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.11",
+    "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+    "total_objectives": 16,
+    "description": "K-12 developmental progression for Adoption in Soteriology: The Doctrine of Salvation, anchored in Scripture and the confessions via the Study Bible tools.",
+    "enrichment": {
+      "status": "expanded",
+      "levers": [
+        "structural-expansion",
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture and confession anchors validated against the study-bible MCP tools."
+    },
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.1",
+            "objective_text": "Identify that God makes believers His own children.",
+            "objective_uuid": "0e357516-d45b-4231-b42d-779d7e77f815",
+            "anchors": {
+              "scripture": [
+                "John 1:12"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.2",
+            "objective_text": "Name God as our Father in heaven.",
+            "objective_uuid": "e15bf93c-96b4-42f8-b547-7449822718d9",
+            "anchors": {
+              "scripture": [
+                "Romans 8:15"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.3",
+            "objective_text": "Recall that we may call God 'Abba, Father.'",
+            "objective_uuid": "57f4bcdb-99cf-4dbc-a477-e1e7a8da4f27",
+            "anchors": {
+              "scripture": [
+                "Romans 8:15",
+                "Galatians 4:6"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.4",
+            "objective_text": "Observe that God's children are loved and cared for.",
+            "objective_uuid": "3a9ea1b8-9f89-4050-9a3d-c969539321ac",
+            "anchors": {
+              "scripture": [
+                "Matthew 6:26",
+                "1 John 3:1"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.5",
+            "objective_text": "Summarize adoption (being received into God's family).",
+            "objective_uuid": "db812cbd-1478-44cd-8ca1-74dc50831ee2",
+            "anchors": {
+              "scripture": [
+                "John 1:12"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q34"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.6",
+            "objective_text": "Explain the 'Spirit of adoption' who assures us we are God's.",
+            "objective_uuid": "f2653d2e-3039-44e8-a7cb-2ff35d3a9f90",
+            "anchors": {
+              "scripture": [
+                "Romans 8:15-16"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.7",
+            "objective_text": "Compare being a servant with being a son and heir.",
+            "objective_uuid": "7ce04a46-f29b-4589-b047-9b6302136644",
+            "anchors": {
+              "scripture": [
+                "Galatians 4:7",
+                "John 15:15"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.8",
+            "objective_text": "Apply the confidence to come to God as Father in prayer.",
+            "objective_uuid": "75a92c44-46d5-4f5a-986a-da9eda3e5b65",
+            "anchors": {
+              "scripture": [
+                "Matthew 7:11",
+                "Hebrews 4:16"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q189"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.9",
+            "objective_text": "Analyze adoption as distinct from justification and regeneration.",
+            "objective_uuid": "f55939d9-843f-46e2-a0cb-a5992221045b",
+            "anchors": {
+              "scripture": [
+                "Romans 8:15"
+              ],
+              "confessions": [
+                "Westminster Confession 12.1"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.10",
+            "objective_text": "Interpret believers as 'heirs of God and joint-heirs with Christ.'",
+            "objective_uuid": "7d0c305e-44ea-48fd-a54b-e288b5fdf788",
+            "anchors": {
+              "scripture": [
+                "Romans 8:17",
+                "Galatians 4:7"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.11",
+            "objective_text": "Connect adoption to union with the eternal Son.",
+            "objective_uuid": "4da31516-31c3-40b3-b1a9-83cb7c3d37ba",
+            "anchors": {
+              "scripture": [
+                "Galatians 4:4-5",
+                "Ephesians 1:5"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.12",
+            "objective_text": "Explain the privileges and fatherly discipline of God's children.",
+            "objective_uuid": "23ccc275-abf6-42fa-be2a-10837898c710",
+            "anchors": {
+              "scripture": [
+                "Hebrews 12:5-11"
+              ],
+              "confessions": [
+                "Westminster Confession 12.1"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.13",
+            "objective_text": "Construct a theology of adoption from Galatians 4.",
+            "objective_uuid": "2f805fed-ed97-49fd-860e-8fb4ec32ad83",
+            "anchors": {
+              "scripture": [
+                "Galatians 4:4-7"
+              ],
+              "confessions": [
+                "Westminster Confession 12.1"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.14",
+            "objective_text": "Evaluate the 'universal fatherhood of God' claim against biblical adoption.",
+            "objective_uuid": "6d76cdc5-390d-4ba4-b193-3c2640700805",
+            "anchors": {
+              "scripture": [
+                "John 1:12",
+                "John 8:44"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.15",
+            "objective_text": "Defend adoption as a distinct grace of the gospel.",
+            "objective_uuid": "b75e1871-7105-464c-9170-ed566dd47b9e",
+            "anchors": {
+              "scripture": [
+                "1 John 3:1",
+                "Romans 8:15"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.11",
+            "sub_subject_name": "Systematic Theology (The Loci of Doctrine)",
+            "topic_id": "BIB.11.9",
+            "topic_name": "Soteriology: The Doctrine of Salvation",
+            "sub_topic_id": "BIB.11.9.5",
+            "sub_topic_name": "Adoption",
+            "objective_id": "BIB.11.9.5.16",
+            "objective_text": "Synthesize adoption as the highest privilege of the justified.",
+            "objective_uuid": "5de17cba-72ec-45bb-a6af-73bafcb79998",
+            "anchors": {
+              "scripture": [
+                "1 John 3:1-2"
+              ],
+              "confessions": [
+                "Westminster Larger Catechism Q74"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

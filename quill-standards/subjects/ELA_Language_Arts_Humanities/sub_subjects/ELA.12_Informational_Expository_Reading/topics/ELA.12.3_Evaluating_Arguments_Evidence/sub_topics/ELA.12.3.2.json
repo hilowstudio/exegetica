@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "ELA.12.3.2",
+    "name": "Evaluating Evidence & Reasoning",
+    "topic_id": "ELA.12.3",
+    "topic_name": "Evaluating Arguments & Evidence",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.12",
+    "sub_subject_name": "Informational & Expository Reading",
+    "total_objectives": 5,
+    "description": "K-12 progression for Evaluating Evidence & Reasoning in Evaluating Arguments & Evidence (Informational & Expository Reading)",
+    "grade_levels": {
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.2",
+            "sub_topic_name": "Evaluating Evidence & Reasoning",
+            "objective_id": "ELA.12.3.2.1",
+            "objective_text": "Decide whether the evidence given actually supports the point.",
+            "objective_uuid": "14183714-926f-48c3-8a22-f53533f3af72",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.2",
+            "sub_topic_name": "Evaluating Evidence & Reasoning",
+            "objective_id": "ELA.12.3.2.2",
+            "objective_text": "Evaluate whether the reasoning is sound and the evidence sufficient.",
+            "objective_uuid": "03680a31-53d0-4184-863b-8237950ac557",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 16.0,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.2",
+            "sub_topic_name": "Evaluating Evidence & Reasoning",
+            "objective_id": "ELA.12.3.2.3",
+            "objective_text": "Assess the relevance and adequacy of evidence for a claim.",
+            "objective_uuid": "1fe68af6-dd48-4624-8e60-7f31c87509d8",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.2",
+            "sub_topic_name": "Evaluating Evidence & Reasoning",
+            "objective_id": "ELA.12.3.2.4",
+            "objective_text": "Judge the validity of the reasoning and identify gaps or false statements.",
+            "objective_uuid": "47987c7c-3672-4bdf-882c-8c22918a16ec",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 29.0,
+        "objectives": [
+          {
+            "complexity": 29,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.12",
+            "sub_subject_name": "Informational & Expository Reading",
+            "topic_id": "ELA.12.3",
+            "topic_name": "Evaluating Arguments & Evidence",
+            "sub_topic_id": "ELA.12.3.2",
+            "sub_topic_name": "Evaluating Evidence & Reasoning",
+            "objective_id": "ELA.12.3.2.5",
+            "objective_text": "Evaluate the overall soundness of an argument across sources.",
+            "objective_uuid": "e187c74b-3f2a-4f5e-897f-a1962a9054a1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.ELA CCRA.R.8 — Delineate and evaluate the argument and specific claims in a text, including the validity of the rea (Common Core ELA reading anchor, K-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "authored",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (English Language Arts)",
+      "anchor_note": "Authored to CCSS Reading anchors (CCRA.R); objective count = the sub-topic's distinct competencies, not a fixed number."
+    }
+  }
+}

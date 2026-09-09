@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "SCI.4.3.3",
+    "name": "Measuring and Recording Data (Systematic Recording)",
+    "topic_id": "SCI.4.3",
+    "topic_name": "Nature Journaling (Scientific Art & Writing)",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.4",
+    "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Measuring and Recording Data (Systematic Recording) in Nature Journaling (Scientific Art & Writing) (Science & Nature)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.3",
+            "sub_topic_name": "Measuring and Recording Data (Systematic Recording)",
+            "objective_id": "SCI.4.3.3.1",
+            "objective_text": "Measure natural objects using simple tools and standard units.",
+            "objective_uuid": "dd707c06-4060-4798-8b79-36bb7e0f9271",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.3",
+            "sub_topic_name": "Measuring and Recording Data (Systematic Recording)",
+            "objective_id": "SCI.4.3.3.2",
+            "objective_text": "Record measurements in a simple table or chart.",
+            "objective_uuid": "987c6782-2d6c-4ba1-885c-dce01d7921d3",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.3",
+            "sub_topic_name": "Measuring and Recording Data (Systematic Recording)",
+            "objective_id": "SCI.4.3.3.3",
+            "objective_text": "Collect repeated measurements over time and organize them systematically.",
+            "objective_uuid": "8c2e1fc4-597c-455d-8722-0b89b804dbcb",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.3",
+            "sub_topic_name": "Measuring and Recording Data (Systematic Recording)",
+            "objective_id": "SCI.4.3.3.4",
+            "objective_text": "Graph recorded data to show change over time or comparison between things.",
+            "objective_uuid": "4d5eed58-2fd9-4c7e-862f-a61e14706424",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.4",
+            "sub_subject_name": "Nature Study (Charlotte Mason Observation & Wonder)",
+            "topic_id": "SCI.4.3",
+            "topic_name": "Nature Journaling (Scientific Art & Writing)",
+            "sub_topic_id": "SCI.4.3.3",
+            "sub_topic_name": "Measuring and Recording Data (Systematic Recording)",
+            "objective_id": "SCI.4.3.3.5",
+            "objective_text": "Summarize the patterns in a data set and note possible sources of measurement error.",
+            "objective_uuid": "c9d47ec3-bd95-44db-87bc-cc705f61d0a1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

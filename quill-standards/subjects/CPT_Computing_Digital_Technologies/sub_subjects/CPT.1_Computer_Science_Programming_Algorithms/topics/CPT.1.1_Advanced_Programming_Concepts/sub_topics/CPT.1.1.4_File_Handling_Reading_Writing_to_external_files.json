@@ -1,0 +1,164 @@
+{
+  "sub_topic": {
+    "id": "CPT.1.1.4",
+    "name": "File Handling (Reading/Writing to external files)",
+    "topic_id": "CPT.1.1",
+    "topic_name": "Advanced Programming Concepts",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.1",
+    "sub_subject_name": "Computer Science: Programming & Algorithms",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for File Handling (Reading/Writing to external files) in Advanced Programming Concepts (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 6.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.4",
+            "sub_topic_name": "File Handling (Reading/Writing to external files)",
+            "objective_id": "CPT.1.1.4.1",
+            "objective_text": "Write a program that reads data from an external text file",
+            "objective_uuid": "0af52e31-47c2-428c-830c-bf12c29e5c2b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-18 — Create artifacts by using procedures within a program, combinations of data and procedures, or independent but (grades 9-10)"
+              ]
+            }
+          },
+          {
+            "complexity": 9,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.4",
+            "sub_topic_name": "File Handling (Reading/Writing to external files)",
+            "objective_id": "CPT.1.1.4.2",
+            "objective_text": "Write a program that saves output by writing data to an external file",
+            "objective_uuid": "6cace538-6106-4849-8122-804a451a8eca",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-18 — Create artifacts by using procedures within a program, combinations of data and procedures, or independent but (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.4",
+            "sub_topic_name": "File Handling (Reading/Writing to external files)",
+            "objective_id": "CPT.1.1.4.3",
+            "objective_text": "Process the contents of a file line by line to extract or transform information",
+            "objective_uuid": "78d82423-ca39-4d5a-86e7-c2271a9f2aa1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-18 — Create artifacts by using procedures within a program, combinations of data and procedures, or independent but (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.4",
+            "sub_topic_name": "File Handling (Reading/Writing to external files)",
+            "objective_id": "CPT.1.1.4.4",
+            "objective_text": "Build a program that reads input from one file, processes it, and writes results to another",
+            "objective_uuid": "7e2f7542-e412-430c-8c67-1adf04988434",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-18 — Create artifacts by using procedures within a program, combinations of data and procedures, or independent but (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.1",
+            "sub_subject_name": "Computer Science: Programming & Algorithms",
+            "topic_id": "CPT.1.1",
+            "topic_name": "Advanced Programming Concepts",
+            "sub_topic_id": "CPT.1.1.4",
+            "sub_topic_name": "File Handling (Reading/Writing to external files)",
+            "objective_id": "CPT.1.1.4.5",
+            "objective_text": "Handle file-related errors such as a missing or unreadable file without crashing",
+            "objective_uuid": "40bea09e-f1fe-4f62-887f-24783a994e1c",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3A-AP-18 — Create artifacts by using procedures within a program, combinations of data and procedures, or independent but (grades 9-10)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

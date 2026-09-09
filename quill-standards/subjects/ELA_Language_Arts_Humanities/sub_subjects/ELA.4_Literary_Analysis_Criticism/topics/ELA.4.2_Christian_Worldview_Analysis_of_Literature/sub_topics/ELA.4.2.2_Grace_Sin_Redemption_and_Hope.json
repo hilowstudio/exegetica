@@ -1,0 +1,160 @@
+{
+  "sub_topic": {
+    "id": "ELA.4.2.2",
+    "name": "Grace, Sin, Redemption, and Hope",
+    "topic_id": "ELA.4.2",
+    "topic_name": "Christian Worldview Analysis of Literature",
+    "subject_id": "ELA",
+    "subject_name": "Language Arts & Humanities",
+    "sub_subject_id": "ELA.4",
+    "sub_subject_name": "Literary Analysis & Criticism",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Grace, Sin, Redemption, and Hope in Christian Worldview Analysis of Literature (Language Arts & Humanities)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.2",
+            "topic_name": "Christian Worldview Analysis of Literature",
+            "sub_topic_id": "ELA.4.2.2",
+            "sub_topic_name": "Grace, Sin, Redemption, and Hope",
+            "objective_id": "ELA.4.2.2.1",
+            "objective_text": "Recognize when a character does wrong and needs forgiveness.",
+            "objective_uuid": "15504a56-0abd-4746-86ab-2f3834d98418",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.2",
+            "topic_name": "Christian Worldview Analysis of Literature",
+            "sub_topic_id": "ELA.4.2.2",
+            "sub_topic_name": "Grace, Sin, Redemption, and Hope",
+            "objective_id": "ELA.4.2.2.2",
+            "objective_text": "Identify moments of grace and second chances in a story.",
+            "objective_uuid": "611f39e6-a168-45e1-8867-3b279443f615",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.2",
+            "topic_name": "Christian Worldview Analysis of Literature",
+            "sub_topic_id": "ELA.4.2.2",
+            "sub_topic_name": "Grace, Sin, Redemption, and Hope",
+            "objective_id": "ELA.4.2.2.3",
+            "objective_text": "Trace a character's path from wrongdoing toward redemption.",
+            "objective_uuid": "b632f429-73db-412d-85d0-561daf570fb4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.2",
+            "topic_name": "Christian Worldview Analysis of Literature",
+            "sub_topic_id": "ELA.4.2.2",
+            "sub_topic_name": "Grace, Sin, Redemption, and Hope",
+            "objective_id": "ELA.4.2.2.4",
+            "objective_text": "Analyze how the themes of sin and redemption shape a story's meaning.",
+            "objective_uuid": "1e4aa0d3-dbd4-43a3-8504-7e5b9703d2f4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "ELA",
+            "subject_name": "Language Arts & Humanities",
+            "sub_subject_id": "ELA.4",
+            "sub_subject_name": "Literary Analysis & Criticism",
+            "topic_id": "ELA.4.2",
+            "topic_name": "Christian Worldview Analysis of Literature",
+            "sub_topic_id": "ELA.4.2.2",
+            "sub_topic_name": "Grace, Sin, Redemption, and Hope",
+            "objective_id": "ELA.4.2.2.5",
+            "objective_text": "Evaluate how a work portrays hope and redemption in comparison to the gospel's account of grace.",
+            "objective_uuid": "259855d2-3ca7-4148-8a7d-52e15bfa5543",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "grade-fixed",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth"
+      ],
+      "standardsBody": null,
+      "anchor_note": "Rebuilt to the sub-topic's real sub-skills at scope-driven depth; content has no coded standard in the owned corpus (honest gap)."
+    }
+  }
+}

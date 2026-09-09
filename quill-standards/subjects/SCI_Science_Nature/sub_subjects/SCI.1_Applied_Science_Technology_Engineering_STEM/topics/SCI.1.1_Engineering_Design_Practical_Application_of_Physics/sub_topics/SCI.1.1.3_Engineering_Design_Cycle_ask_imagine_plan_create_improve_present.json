@@ -1,0 +1,200 @@
+{
+  "sub_topic": {
+    "id": "SCI.1.1.3",
+    "name": "Engineering Design Cycle (ask, imagine, plan, create, improve, present)",
+    "topic_id": "SCI.1.1",
+    "topic_name": "Engineering & Design (Practical Application of Physics)",
+    "subject_id": "SCI",
+    "subject_name": "Science & Nature",
+    "sub_subject_id": "SCI.1",
+    "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for Engineering Design Cycle (ask, imagine, plan, create, improve, present) in Engineering & Design (Practical Application of Physics) (Science & Nature)",
+    "grade_levels": {
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.1",
+            "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+            "topic_id": "SCI.1.1",
+            "topic_name": "Engineering & Design (Practical Application of Physics)",
+            "sub_topic_id": "SCI.1.1.3",
+            "sub_topic_name": "Engineering Design Cycle (ask, imagine, plan, create, improve, present)",
+            "objective_id": "SCI.1.1.3.1",
+            "objective_text": "Ask questions and make observations about a situation people want to change to define a simple problem that a new or improved object could solve",
+            "objective_uuid": "11a76287-179c-4c09-8cad-86bd47deeb49",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS K-2-ETS1-1 — Ask questions, make observations, and gather information about a situation people want to change to defi (grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.1",
+            "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+            "topic_id": "SCI.1.1",
+            "topic_name": "Engineering & Design (Practical Application of Physics)",
+            "sub_topic_id": "SCI.1.1.3",
+            "sub_topic_name": "Engineering Design Cycle (ask, imagine, plan, create, improve, present)",
+            "objective_id": "SCI.1.1.3.2",
+            "objective_text": "Imagine and sketch more than one possible solution to a defined problem before choosing one to build",
+            "objective_uuid": "122a6341-8cf6-416e-8002-42e46f9e097b",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 3-5-ETS1-1 — Define a simple design problem reflecting a need or a want that includes specified criteria for success  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.1",
+            "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+            "topic_id": "SCI.1.1",
+            "topic_name": "Engineering & Design (Practical Application of Physics)",
+            "sub_topic_id": "SCI.1.1.3",
+            "sub_topic_name": "Engineering Design Cycle (ask, imagine, plan, create, improve, present)",
+            "objective_id": "SCI.1.1.3.3",
+            "objective_text": "Define a design problem that states clear criteria for success and constraints on materials, time, or cost",
+            "objective_uuid": "8f0369f9-de94-4c52-8c64-5fdea167deff",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS 3-5-ETS1-1 — Define a simple design problem reflecting a need or a want that includes specified criteria for success  (grades 3-5)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.1",
+            "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+            "topic_id": "SCI.1.1",
+            "topic_name": "Engineering & Design (Practical Application of Physics)",
+            "sub_topic_id": "SCI.1.1.3",
+            "sub_topic_name": "Engineering Design Cycle (ask, imagine, plan, create, improve, present)",
+            "objective_id": "SCI.1.1.3.4",
+            "objective_text": "Plan, create, and then improve a prototype by moving deliberately through the steps of the engineering design cycle",
+            "objective_uuid": "9e99497b-0367-417a-801b-16fb2e358b62",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-1 — The more precisely a design task’s criteria and constraints can be defined, the more likely it is that t (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.1",
+            "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+            "topic_id": "SCI.1.1",
+            "topic_name": "Engineering & Design (Practical Application of Physics)",
+            "sub_topic_id": "SCI.1.1.3",
+            "sub_topic_name": "Engineering Design Cycle (ask, imagine, plan, create, improve, present)",
+            "objective_id": "SCI.1.1.3.5",
+            "objective_text": "Specify criteria and constraints precisely, including relevant scientific principles, to make a designed solution more likely to succeed",
+            "objective_uuid": "94e79b41-8571-4d14-80b3-122c70707f29",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-ETS1-1 — The more precisely a design task’s criteria and constraints can be defined, the more likely it is that t (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "SCI",
+            "subject_name": "Science & Nature",
+            "sub_subject_id": "SCI.1",
+            "sub_subject_name": "Applied Science, Technology & Engineering (STEM)",
+            "topic_id": "SCI.1.1",
+            "topic_name": "Engineering & Design (Practical Application of Physics)",
+            "sub_topic_id": "SCI.1.1.3",
+            "sub_topic_name": "Engineering Design Cycle (ask, imagine, plan, create, improve, present)",
+            "objective_id": "SCI.1.1.3.6",
+            "objective_text": "Design a solution to a complex real-world problem by breaking it into smaller, manageable engineering sub-problems and presenting the integrated result",
+            "objective_uuid": "c08594e0-6c06-4ba3-865b-b86c64ca2ecc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS HS-ETS1-2 — Design a solution to a complex real-world problem by breaking it down into smaller, more manageable prob (grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

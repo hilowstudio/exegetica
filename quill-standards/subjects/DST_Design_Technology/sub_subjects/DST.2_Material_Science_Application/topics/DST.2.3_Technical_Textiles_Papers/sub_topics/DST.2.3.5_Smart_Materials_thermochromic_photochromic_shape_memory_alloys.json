@@ -1,0 +1,171 @@
+{
+  "sub_topic": {
+    "id": "DST.2.3.5",
+    "name": "Smart Materials (thermochromic, photochromic, shape memory alloys)",
+    "topic_id": "DST.2.3",
+    "topic_name": "Technical Textiles & Papers",
+    "subject_id": "DST",
+    "subject_name": "Design & Technology",
+    "sub_subject_id": "DST.2",
+    "sub_subject_name": "Material Science & Application",
+    "total_objectives": 5,
+    "description": "13-year academic progression (K-12) for Smart Materials (thermochromic, photochromic, shape memory alloys) in Technical Textiles & Papers (Design & Technology)",
+    "grade_levels": {
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.2",
+            "sub_subject_name": "Material Science & Application",
+            "topic_id": "DST.2.3",
+            "topic_name": "Technical Textiles & Papers",
+            "sub_topic_id": "DST.2.3.5",
+            "sub_topic_name": "Smart Materials (thermochromic, photochromic, shape memory alloys)",
+            "objective_id": "DST.2.3.5.1",
+            "objective_text": "Identify smart materials such as thermochromic and photochromic pigments by how they respond to change",
+            "objective_uuid": "4cf0471d-c55b-4688-8529-6edcb9176843",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-PS1-2 — Analyze and interpret data on the properties of substances before and after the substances interact to d (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.2",
+            "sub_subject_name": "Material Science & Application",
+            "topic_id": "DST.2.3",
+            "topic_name": "Technical Textiles & Papers",
+            "sub_topic_id": "DST.2.3.5",
+            "sub_topic_name": "Smart Materials (thermochromic, photochromic, shape memory alloys)",
+            "objective_id": "DST.2.3.5.2",
+            "objective_text": "Describe how a thermochromic material changes color with temperature",
+            "objective_uuid": "b7af9bf0-8324-4ca3-874f-a06a9e168611",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-PS1-2 — Analyze and interpret data on the properties of substances before and after the substances interact to d (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.2",
+            "sub_subject_name": "Material Science & Application",
+            "topic_id": "DST.2.3",
+            "topic_name": "Technical Textiles & Papers",
+            "sub_topic_id": "DST.2.3.5",
+            "sub_topic_name": "Smart Materials (thermochromic, photochromic, shape memory alloys)",
+            "objective_id": "DST.2.3.5.3",
+            "objective_text": "Compare thermochromic, photochromic, and shape memory materials by the trigger each responds to",
+            "objective_uuid": "25aaf037-0100-45bc-81dc-0ff4b2c57562",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-PS1-2 — Analyze and interpret data on the properties of substances before and after the substances interact to d (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 20.0,
+        "objectives": [
+          {
+            "complexity": 20,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.2",
+            "sub_subject_name": "Material Science & Application",
+            "topic_id": "DST.2.3",
+            "topic_name": "Technical Textiles & Papers",
+            "sub_topic_id": "DST.2.3.5",
+            "sub_topic_name": "Smart Materials (thermochromic, photochromic, shape memory alloys)",
+            "objective_id": "DST.2.3.5.4",
+            "objective_text": "Explain how a shape memory alloy returns to a remembered shape when heated",
+            "objective_uuid": "c488a913-7c94-4eed-898c-327baa5bdddc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-PS1-2 — Analyze and interpret data on the properties of substances before and after the substances interact to d (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "DST",
+            "subject_name": "Design & Technology",
+            "sub_subject_id": "DST.2",
+            "sub_subject_name": "Material Science & Application",
+            "topic_id": "DST.2.3",
+            "topic_name": "Technical Textiles & Papers",
+            "sub_topic_id": "DST.2.3.5",
+            "sub_topic_name": "Smart Materials (thermochromic, photochromic, shape memory alloys)",
+            "objective_id": "DST.2.3.5.5",
+            "objective_text": "Analyze how a smart material's properties change before and after a stimulus to design a responsive product",
+            "objective_uuid": "063cf587-fecd-4461-818f-71e745990c43",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "NGSS MS-PS1-2 — Analyze and interpret data on the properties of substances before and after the substances interact to d (grades 6-8)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Next Generation Science Standards",
+      "anchor_note": "Rebuilt from the Next Generation Science Standards sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

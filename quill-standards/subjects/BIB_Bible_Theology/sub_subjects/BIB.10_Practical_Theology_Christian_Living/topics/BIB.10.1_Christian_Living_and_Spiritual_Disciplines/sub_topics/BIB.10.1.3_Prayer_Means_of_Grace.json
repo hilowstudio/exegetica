@@ -1,0 +1,455 @@
+{
+  "sub_topic": {
+    "id": "BIB.10.1.3",
+    "name": "Prayer (Means of Grace)",
+    "topic_id": "BIB.10.1",
+    "topic_name": "Christian Living and Spiritual Disciplines",
+    "subject_id": "BIB",
+    "subject_name": "Bible & Theology",
+    "sub_subject_id": "BIB.10",
+    "sub_subject_name": "Practical Theology & Christian Living",
+    "total_objectives": 16,
+    "description": "13-year academic progression (K-12) for Prayer (Means of Grace) in Christian Living and Spiritual Disciplines (Bible & Theology)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 1,
+        "average_complexity": 2.0,
+        "objectives": [
+          {
+            "complexity": 2,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.1",
+            "objective_text": "Identify prayer as talking to God our Father.",
+            "objective_uuid": "e6d40251-d3c4-47dd-b7c8-314c35a4f96a",
+            "anchors": {
+              "scripture": [
+                "Matthew 6:9-13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.2",
+            "objective_text": "Name the Lord's Prayer.",
+            "objective_uuid": "53202ae3-4303-4a9f-ad2c-506e9c79dc9b",
+            "anchors": {
+              "scripture": [
+                "Matthew 6:9-13"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q99"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 5.0,
+        "objectives": [
+          {
+            "complexity": 5,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.3",
+            "objective_text": "Recall that God always hears us.",
+            "objective_uuid": "72545fd8-2599-4b70-bb0e-df4d39739b9c",
+            "anchors": {
+              "scripture": [
+                "Matthew 6:9-13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 2,
+        "average_complexity": 7.5,
+        "objectives": [
+          {
+            "complexity": 7,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.4",
+            "objective_text": "Observe that Jesus prayed often.",
+            "objective_uuid": "f7432913-c9c1-41ce-8669-0ddd4f9d6694",
+            "anchors": {
+              "scripture": [
+                "Luke 5:16"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 8,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.5",
+            "objective_text": "Summarize the A.C.T.S. model (Adoration, Confession, Thanksgiving, Supplication).",
+            "objective_uuid": "1157544f-7ca5-4af3-b59c-4f61dc8dcf2f",
+            "anchors": {
+              "scripture": [
+                "Matthew 6:9-13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 9.0,
+        "objectives": [
+          {
+            "complexity": 9,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.6",
+            "objective_text": "Explain why we pray 'in Jesus' name'.",
+            "objective_uuid": "d6de4729-37e4-47e4-999e-46e2d154fee6",
+            "anchors": {
+              "scripture": [
+                "John 16:23-24"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 5": {
+        "grade_number": 5,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.7",
+            "objective_text": "Compare private prayer with corporate (group) prayer.",
+            "objective_uuid": "c0374003-028c-4f71-87e9-69df7cf08281",
+            "anchors": {
+              "scripture": [
+                "Matthew 6:9-13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.8",
+            "objective_text": "Apply the practice of praying for enemies.",
+            "objective_uuid": "0859cfc6-20ae-4fb0-a7df-1b0b8a40e2ff",
+            "anchors": {
+              "scripture": [
+                "Matthew 5:44"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 7": {
+        "grade_number": 7,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.9",
+            "objective_text": "Analyze the prayers of Paul in the Epistles.",
+            "objective_uuid": "5930504d-1689-4dfc-b47f-d96abbd3774c",
+            "anchors": {
+              "scripture": [
+                "Ephesians 1:15-19"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 8": {
+        "grade_number": 8,
+        "objective_count": 2,
+        "average_complexity": 16.5,
+        "objectives": [
+          {
+            "complexity": 16,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.10",
+            "objective_text": "Interpret the role of the Holy Spirit in intercession (Romans 8).",
+            "objective_uuid": "bc41addb-9f49-440b-ae04-1a6c4b4eaf29",
+            "anchors": {
+              "scripture": [
+                "Romans 8:26-27"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 17,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.11",
+            "objective_text": "Connect prayer to the sovereignty of God (Why pray if God knows?).",
+            "objective_uuid": "3d4d8227-f5b2-4fc3-93c0-b99735b5ed67",
+            "anchors": {
+              "scripture": [
+                "Matthew 6:9-13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 19.0,
+        "objectives": [
+          {
+            "complexity": 19,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.12",
+            "objective_text": "Explain the discipline of fasting as an aid to prayer.",
+            "objective_uuid": "d76fe186-fac7-4d72-8a6d-fdfe525d66f4",
+            "anchors": {
+              "scripture": [
+                "Matthew 6:16-18"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 22.0,
+        "objectives": [
+          {
+            "complexity": 22,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.13",
+            "objective_text": "Construct a theology of prayer based on the priesthood of believers.",
+            "objective_uuid": "519448a3-1374-4bd4-aab5-894e5d52ff97",
+            "anchors": {
+              "scripture": [
+                "1 Peter 2:5"
+              ],
+              "confessions": [
+                "Westminster Shorter Catechism Q98"
+              ],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 2,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 25,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.14",
+            "objective_text": "Evaluate the difference between mystical contemplation and biblical meditation.",
+            "objective_uuid": "27cd1a4a-8dd2-40a5-a354-847325ff64c2",
+            "anchors": {
+              "scripture": [
+                "Matthew 6:9-13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          },
+          {
+            "complexity": 27,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.15",
+            "objective_text": "Defend the effectiveness of prayer against deistic views.",
+            "objective_uuid": "3b8fd469-b5cb-49b0-9e65-7c644c8bf450",
+            "anchors": {
+              "scripture": [
+                "Matthew 6:9-13"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 30.0,
+        "objectives": [
+          {
+            "complexity": 30,
+            "subject_id": "BIB",
+            "subject_name": "Bible & Theology",
+            "sub_subject_id": "BIB.10",
+            "sub_subject_name": "Practical Theology & Christian Living",
+            "topic_id": "BIB.10.1",
+            "topic_name": "Christian Living and Spiritual Disciplines",
+            "sub_topic_id": "BIB.10.1.3",
+            "sub_topic_name": "Prayer (Means of Grace)",
+            "objective_id": "BIB.10.1.3.16",
+            "objective_text": "Synthesize the relationship between prayer and providence.",
+            "objective_uuid": "13eff0a1-ddcd-4344-9896-ec1c90a24f65",
+            "anchors": {
+              "scripture": [
+                "1 Thessalonians 5:17"
+              ],
+              "confessions": [],
+              "greek": []
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "enriched",
+      "levers": [
+        "grade-replacement",
+        "primary-source-anchors"
+      ],
+      "anchor_note": "Scripture anchors are the passages that ground each practice (ethics, disciplines, family, worship); confessions on doctrinal points. Validated against the study-bible MCP tools."
+    }
+  }
+}

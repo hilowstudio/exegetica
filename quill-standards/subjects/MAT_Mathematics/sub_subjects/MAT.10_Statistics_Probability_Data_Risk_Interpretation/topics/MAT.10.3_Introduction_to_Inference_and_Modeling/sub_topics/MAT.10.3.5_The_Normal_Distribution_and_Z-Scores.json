@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.10.3.5",
+    "name": "The Normal Distribution and Z-Scores",
+    "topic_id": "MAT.10.3",
+    "topic_name": "Introduction to Inference and Modeling",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.10",
+    "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for The Normal Distribution and Z-Scores in Introduction to Inference and Modeling (Mathematics)",
+    "grade_levels": {
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.3",
+            "topic_name": "Introduction to Inference and Modeling",
+            "sub_topic_id": "MAT.10.3.5",
+            "sub_topic_name": "The Normal Distribution and Z-Scores",
+            "objective_id": "MAT.10.3.5.1",
+            "objective_text": "Recognize the shape and symmetry of a normal distribution.",
+            "objective_uuid": "9b65feb4-fca3-4955-895b-ca10623f60ed",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-ID.A.4 — Use the mean and standard deviation of a data set to fit it to a normal distribution and to estimate pop (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.3",
+            "topic_name": "Introduction to Inference and Modeling",
+            "sub_topic_id": "MAT.10.3.5",
+            "sub_topic_name": "The Normal Distribution and Z-Scores",
+            "objective_id": "MAT.10.3.5.2",
+            "objective_text": "Use the mean and standard deviation to describe a normal distribution.",
+            "objective_uuid": "0153d359-c657-43f6-887b-06da54b30f35",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-ID.A.4 — Use the mean and standard deviation of a data set to fit it to a normal distribution and to estimate pop (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.10",
+            "sub_subject_name": "Statistics & Probability (Data, Risk & Interpretation)",
+            "topic_id": "MAT.10.3",
+            "topic_name": "Introduction to Inference and Modeling",
+            "sub_topic_id": "MAT.10.3.5",
+            "sub_topic_name": "The Normal Distribution and Z-Scores",
+            "objective_id": "MAT.10.3.5.3",
+            "objective_text": "Use z-scores and the empirical rule to estimate proportions.",
+            "objective_uuid": "5dc829b5-d4a0-4e4f-8f87-caba78bc6447",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSS-ID.A.4 — Use the mean and standard deviation of a data set to fit it to a normal distribution and to estimate pop (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

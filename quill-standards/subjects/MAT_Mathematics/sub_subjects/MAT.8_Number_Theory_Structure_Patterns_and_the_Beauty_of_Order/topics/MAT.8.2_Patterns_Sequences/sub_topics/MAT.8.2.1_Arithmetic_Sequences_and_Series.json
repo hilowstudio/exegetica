@@ -1,0 +1,113 @@
+{
+  "sub_topic": {
+    "id": "MAT.8.2.1",
+    "name": "Arithmetic Sequences and Series",
+    "topic_id": "MAT.8.2",
+    "topic_name": "Patterns & Sequences",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.8",
+    "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Arithmetic Sequences and Series in Patterns & Sequences (Mathematics)",
+    "grade_levels": {
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.2",
+            "topic_name": "Patterns & Sequences",
+            "sub_topic_id": "MAT.8.2.1",
+            "sub_topic_name": "Arithmetic Sequences and Series",
+            "objective_id": "MAT.8.2.1.1",
+            "objective_text": "Extend an arithmetic pattern by adding a constant difference.",
+            "objective_uuid": "7f07c040-adf7-4183-8149-fe907dd4af7f",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math 4.OA.C.5 — Generate a number or shape pattern that follows a given rule. Identify apparent features of the pattern  (grade 4)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 14.0,
+        "objectives": [
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.2",
+            "topic_name": "Patterns & Sequences",
+            "sub_topic_id": "MAT.8.2.1",
+            "sub_topic_name": "Arithmetic Sequences and Series",
+            "objective_id": "MAT.8.2.1.2",
+            "objective_text": "Write a recursive or explicit rule for an arithmetic sequence.",
+            "objective_uuid": "6df47207-81e7-409d-85d1-f8c8ef831a07",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-BF.A.2 — Write arithmetic and geometric sequences both recursively and with an explicit formula, use them to mode (HS)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.8",
+            "sub_subject_name": "Number Theory (Structure, Patterns, and the Beauty of Order)",
+            "topic_id": "MAT.8.2",
+            "topic_name": "Patterns & Sequences",
+            "sub_topic_id": "MAT.8.2.1",
+            "sub_topic_name": "Arithmetic Sequences and Series",
+            "objective_id": "MAT.8.2.1.3",
+            "objective_text": "Find the sum of a finite arithmetic series.",
+            "objective_uuid": "8233383a-3681-458d-8e06-0faf3166849a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math HSF-BF.A.2 — Write arithmetic and geometric sequences both recursively and with an explicit formula, use them to mode (HS)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

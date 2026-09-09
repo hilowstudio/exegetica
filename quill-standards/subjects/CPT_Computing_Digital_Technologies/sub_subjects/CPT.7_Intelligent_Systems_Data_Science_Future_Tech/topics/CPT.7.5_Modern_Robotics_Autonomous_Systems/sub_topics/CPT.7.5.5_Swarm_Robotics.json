@@ -1,0 +1,142 @@
+{
+  "sub_topic": {
+    "id": "CPT.7.5.5",
+    "name": "Swarm Robotics",
+    "topic_id": "CPT.7.5",
+    "topic_name": "Modern Robotics & Autonomous Systems",
+    "subject_id": "CPT",
+    "subject_name": "Computing & Digital Technologies",
+    "sub_subject_id": "CPT.7",
+    "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+    "total_objectives": 4,
+    "description": "13-year academic progression (K-12) for Swarm Robotics in Modern Robotics & Autonomous Systems (Computing & Digital Technologies)",
+    "grade_levels": {
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.5",
+            "topic_name": "Modern Robotics & Autonomous Systems",
+            "sub_topic_id": "CPT.7.5.5",
+            "sub_topic_name": "Swarm Robotics",
+            "objective_id": "CPT.7.5.5.1",
+            "objective_text": "Describe how many simple robots can work together as a swarm",
+            "objective_uuid": "22afdc41-25a5-4c41-8d5d-8ee7a8f36ee1",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-08 — Describe how artificial intelligence drives many software and physical systems. Clarification: Examples includ (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 9": {
+        "grade_number": 9,
+        "objective_count": 1,
+        "average_complexity": 11.0,
+        "objectives": [
+          {
+            "complexity": 11,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.5",
+            "topic_name": "Modern Robotics & Autonomous Systems",
+            "sub_topic_id": "CPT.7.5.5",
+            "sub_topic_name": "Swarm Robotics",
+            "objective_id": "CPT.7.5.5.2",
+            "objective_text": "Explain how simple rules followed by each robot produce coordinated swarm behavior",
+            "objective_uuid": "965a2487-62a4-4a6b-8183-f999ae1762cc",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-08 — Describe how artificial intelligence drives many software and physical systems. Clarification: Examples includ (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 11": {
+        "grade_number": 11,
+        "objective_count": 1,
+        "average_complexity": 18.0,
+        "objectives": [
+          {
+            "complexity": 18,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.5",
+            "topic_name": "Modern Robotics & Autonomous Systems",
+            "sub_topic_id": "CPT.7.5.5",
+            "sub_topic_name": "Swarm Robotics",
+            "objective_id": "CPT.7.5.5.3",
+            "objective_text": "Describe real-world applications of swarm robotics",
+            "objective_uuid": "e702b09b-d2d6-4ea3-8553-884c918cd35a",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-08 — Describe how artificial intelligence drives many software and physical systems. Clarification: Examples includ (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "CPT",
+            "subject_name": "Computing & Digital Technologies",
+            "sub_subject_id": "CPT.7",
+            "sub_subject_name": "Intelligent Systems, Data Science & Future Tech",
+            "topic_id": "CPT.7.5",
+            "topic_name": "Modern Robotics & Autonomous Systems",
+            "sub_topic_id": "CPT.7.5.5",
+            "sub_topic_name": "Swarm Robotics",
+            "objective_id": "CPT.7.5.5.4",
+            "objective_text": "Evaluate the advantages and challenges of a swarm compared with a single robot",
+            "objective_uuid": "718ee19b-ff25-402d-8018-9b1fd497eb54",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CSTA 3B-AP-08 — Describe how artificial intelligence drives many software and physical systems. Clarification: Examples includ (grades 11-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "CSTA (Computer Science Teachers Association)",
+      "anchor_note": "Rebuilt from the CSTA (Computer Science Teachers Association) sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

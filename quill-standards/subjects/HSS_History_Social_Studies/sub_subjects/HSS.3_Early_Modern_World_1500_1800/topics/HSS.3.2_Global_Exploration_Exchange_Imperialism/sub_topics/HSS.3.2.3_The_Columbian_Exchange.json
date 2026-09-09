@@ -1,0 +1,196 @@
+{
+  "sub_topic": {
+    "id": "HSS.3.2.3",
+    "name": "The Columbian Exchange",
+    "topic_id": "HSS.3.2",
+    "topic_name": "Global Exploration, Exchange & Imperialism",
+    "subject_id": "HSS",
+    "subject_name": "History & Social Studies",
+    "sub_subject_id": "HSS.3",
+    "sub_subject_name": "Early Modern World (1500–1800)",
+    "total_objectives": 6,
+    "description": "13-year academic progression (K-12) for The Columbian Exchange in Global Exploration, Exchange & Imperialism (History & Social Studies)",
+    "grade_levels": {
+      "Grade 2": {
+        "grade_number": 2,
+        "objective_count": 1,
+        "average_complexity": 3.0,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.3",
+            "sub_topic_name": "The Columbian Exchange",
+            "objective_id": "HSS.3.2.3.1",
+            "objective_text": "Identify foods that moved between the Americas and the rest of the world, such as potatoes, corn, and tomatoes.",
+            "objective_uuid": "899b469c-6afa-4ad8-8acc-8041e2586209",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 3": {
+        "grade_number": 3,
+        "objective_count": 1,
+        "average_complexity": 8.0,
+        "objectives": [
+          {
+            "complexity": 8,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.3",
+            "sub_topic_name": "The Columbian Exchange",
+            "objective_id": "HSS.3.2.3.2",
+            "objective_text": "Describe how plants, animals, and diseases were exchanged between the Old World and the New World after 1492.",
+            "objective_uuid": "a3ef4916-c668-4b72-82e8-b1ca0d32b485",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": []
+            }
+          }
+        ]
+      },
+      "Grade 4": {
+        "grade_number": 4,
+        "objective_count": 1,
+        "average_complexity": 12.0,
+        "objectives": [
+          {
+            "complexity": 12,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.3",
+            "sub_topic_name": "The Columbian Exchange",
+            "objective_id": "HSS.3.2.3.3",
+            "objective_text": "Sequence how crops, livestock, and diseases spread across continents following European contact with the Americas.",
+            "objective_uuid": "8cfa1d0d-1be3-4046-8352-26bf957ecc00",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.K-2 — Create a chronological sequence of multiple events (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 6": {
+        "grade_number": 6,
+        "objective_count": 1,
+        "average_complexity": 17.0,
+        "objectives": [
+          {
+            "complexity": 17,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.3",
+            "sub_topic_name": "The Columbian Exchange",
+            "objective_id": "HSS.3.2.3.4",
+            "objective_text": "Generate possible reasons why the exchange of diseases had such a devastating effect on indigenous American populations.",
+            "objective_uuid": "5b515f94-3fe8-4947-808b-50987bf0a6d6",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.K-2 — Generate possible reasons for an event or development in the past (history, grades K-2)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 10": {
+        "grade_number": 10,
+        "objective_count": 1,
+        "average_complexity": 21.0,
+        "objectives": [
+          {
+            "complexity": 21,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.3",
+            "sub_topic_name": "The Columbian Exchange",
+            "objective_id": "HSS.3.2.3.5",
+            "objective_text": "Analyze the far-reaching effects of the Columbian Exchange on populations, diets, and economies across the globe.",
+            "objective_uuid": "561af73b-6f14-485b-848d-6eadc23ca60e",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.14.9-12 — Analyze multiple and complex causes and effects of events in the past (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 12": {
+        "grade_number": 12,
+        "objective_count": 1,
+        "average_complexity": 26.0,
+        "objectives": [
+          {
+            "complexity": 26,
+            "subject_id": "HSS",
+            "subject_name": "History & Social Studies",
+            "sub_subject_id": "HSS.3",
+            "sub_subject_name": "Early Modern World (1500–1800)",
+            "topic_id": "HSS.3.2",
+            "topic_name": "Global Exploration, Exchange & Imperialism",
+            "sub_topic_id": "HSS.3.2.3",
+            "sub_topic_name": "The Columbian Exchange",
+            "objective_id": "HSS.3.2.3.6",
+            "objective_text": "Evaluate how the Columbian Exchange, arising from the unique moment of 1492 contact, reshaped the broader demographic and ecological history of the world.",
+            "objective_uuid": "d6b4f2a2-dcd9-450b-861c-e8c9e58cadba",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "C3 D2.His.1.9-12 — Evaluate how historical events and developments were shaped by unique circumstances of time and plac (history, grades 9-12)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "C3 Framework for Social Studies",
+      "anchor_note": "Rebuilt from the C3 Framework for Social Studies sub-skills; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

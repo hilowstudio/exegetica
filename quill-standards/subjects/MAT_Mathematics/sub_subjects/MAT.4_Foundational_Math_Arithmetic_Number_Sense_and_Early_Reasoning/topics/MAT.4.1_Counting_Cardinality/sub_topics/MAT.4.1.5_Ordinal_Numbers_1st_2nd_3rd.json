@@ -1,0 +1,106 @@
+{
+  "sub_topic": {
+    "id": "MAT.4.1.5",
+    "name": "Ordinal Numbers (1st, 2nd, 3rd)",
+    "topic_id": "MAT.4.1",
+    "topic_name": "Counting & Cardinality",
+    "subject_id": "MAT",
+    "subject_name": "Mathematics",
+    "sub_subject_id": "MAT.4",
+    "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+    "total_objectives": 3,
+    "description": "13-year academic progression (K-12) for Ordinal Numbers (1st, 2nd, 3rd) in Counting & Cardinality (Mathematics)",
+    "grade_levels": {
+      "Kindergarten": {
+        "grade_number": 0,
+        "objective_count": 2,
+        "average_complexity": 8.5,
+        "objectives": [
+          {
+            "complexity": 3,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.1",
+            "topic_name": "Counting & Cardinality",
+            "sub_topic_id": "MAT.4.1.5",
+            "sub_topic_name": "Ordinal Numbers (1st, 2nd, 3rd)",
+            "objective_id": "MAT.4.1.5.1",
+            "objective_text": "Use ordinal words (first, second, third) to describe position.",
+            "objective_uuid": "44358413-b569-4640-8516-7f68ebfda3a4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math K.CC.A.3 — Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representi (grade K)"
+              ]
+            }
+          },
+          {
+            "complexity": 14,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.1",
+            "topic_name": "Counting & Cardinality",
+            "sub_topic_id": "MAT.4.1.5",
+            "sub_topic_name": "Ordinal Numbers (1st, 2nd, 3rd)",
+            "objective_id": "MAT.4.1.5.2",
+            "objective_text": "Identify the ordinal position of an object in a sequence.",
+            "objective_uuid": "9e2967b8-17ef-44f8-89ae-39af98710964",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math K.CC.A.3 — Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representi (grade K)"
+              ]
+            }
+          }
+        ]
+      },
+      "Grade 1": {
+        "grade_number": 1,
+        "objective_count": 1,
+        "average_complexity": 24.0,
+        "objectives": [
+          {
+            "complexity": 24,
+            "subject_id": "MAT",
+            "subject_name": "Mathematics",
+            "sub_subject_id": "MAT.4",
+            "sub_subject_name": "Foundational Math & Arithmetic (Number Sense and Early Reasoning)",
+            "topic_id": "MAT.4.1",
+            "topic_name": "Counting & Cardinality",
+            "sub_topic_id": "MAT.4.1.5",
+            "sub_topic_name": "Ordinal Numbers (1st, 2nd, 3rd)",
+            "objective_id": "MAT.4.1.5.3",
+            "objective_text": "Order objects and name each position through tenth.",
+            "objective_uuid": "ae6ac1bb-550f-4a13-805d-5b24dd7273f4",
+            "anchors": {
+              "scripture": [],
+              "confessions": [],
+              "greek": [],
+              "standards": [
+                "CCSS.Math K.CC.A.3 — Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representi (grade K)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "enrichment": {
+      "status": "standards-aligned",
+      "levers": [
+        "objective-rebuild",
+        "variable-depth",
+        "standards-anchors"
+      ],
+      "standardsBody": "Common Core State Standards (Mathematics)",
+      "anchor_note": "Rebuilt from the CCSS sub-skills of its domain; objective count = the sub-topic's real distinct competencies (replaces the templated 16-objective ladder)."
+    }
+  }
+}

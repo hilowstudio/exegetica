@@ -1,0 +1,31 @@
+{
+  "school": "Yorkville Christian School",
+  "catalog": "Middle School Exploratory Options 2026-27",
+  "level": "Middle School (grades 6-8)",
+  "source_type": "Parent/student communication (email) announcing Semester 1 elective options and a ranking request",
+  "source_note": "Transcribed from the pasted email. This is NOT a full course catalog like the high school one (docs/yorkville-catalog.json) — it lists exploratory electives and lunch clubs only, with brief descriptions and no credits or formal course structure. The source text was truncated in the clubs list ('...such as Prayer Team, Speech/Debate, eta'), so the club list is incomplete.",
+  "structure": {
+    "electives_per_student": 2,
+    "periods": [4, 5],
+    "when": "middle of the school day",
+    "term_covered": "Semester 1",
+    "selection": "Students rank their top 3 choices; placement is not guaranteed. Students who do not list a top 3 are placed in an elective that may not be a preferred choice.",
+    "purpose": "Enhance the middle school experience and let students grow across a variety of options."
+  },
+  "electives": [
+    { "name": "Archeology", "grades": "6-8", "description": "Covers the basics of how to study a real piece of history, plus hands-on learning where students research historical artifacts brought into class." },
+    { "name": "Agriculture", "grades": "6-8", "description": "Introductory course exposing students to the world of agriculture to prepare them for a possible Agriculture track in high school at Yorkville Christian.", "pipeline_to": "High School Agriculture department" },
+    { "name": "Art", "grades": "6-8", "description": "Builds skills through the understanding, appreciation, and creative processes of art." },
+    { "name": "Physical Education", "grades": "6-8", "description": "A variety of team sports throughout the semester.", "requirements": "PE shirt and gym shoes required." },
+    { "name": "Robotics", "grades": "6-8", "description": "STEM class learning and understanding coding and robotics." },
+    { "name": "Social Media and Me", "grades": "6-8", "description": "Learn how to be more human in a digital world through a Christ-centered lens." },
+    { "name": "Spanish 1A", "grades": "7", "description": "Grade 7 students take the first half of High School Spanish 1.", "pipeline_to": "High School Spanish I" },
+    { "name": "Spanish 1B", "grades": "8", "description": "Grade 8 students take the second half of High School Spanish 1. Students who pass the assessment may test into Spanish 2 as a freshman at YCS.", "prerequisite": "Must have passed Spanish 1A.", "pipeline_to": "High School Spanish II (via placement test)" },
+    { "name": "Study Skills", "grades": "6", "term": "Semester 1 only", "description": "Required for all Grade 6 students in Semester 1. Learn the 'ins and outs' of beginning middle school." }
+  ],
+  "lunch_clubs": {
+    "when": "During lunch",
+    "note": "List is incomplete in the source (truncated after Speech/Debate).",
+    "clubs": ["Prayer Team", "Speech/Debate"]
+  }
+}
