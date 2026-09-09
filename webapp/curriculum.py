@@ -247,17 +247,27 @@ def handle(name: str, args: dict) -> str:
 
 
 def system_note() -> str:
-    """A block appended to the chat system prompt so the model knows these tools exist."""
+    """A block appended to the chat system prompt so the model knows these tools exist.
+
+    It deliberately does NOT set a voice or role — it inherits whichever persona the
+    chat is already using (the Theologian, or the neutral assistant). Telling the model
+    it "is also the study assistant" or to answer "at a high-school level" made it drop
+    the Theologian persona whenever curriculum context was in play; this keeps the
+    existing voice and treats the course docs only as a source of facts.
+    """
     return (
         "\n\n---\n\n"
-        "## Course materials (Gospel of John)\n"
-        "You are also the study assistant for a high-school Sophomore Bible course on the "
-        "Gospel of John (Yorkville Christian School). Students may ask about their unit "
-        "reading guides, the four quarter projects, or the year's memory verses. Answer from "
-        "the actual course documents using the curriculum tools: call list_john_curriculum to "
-        "see what exists or to map a passage or topic to a unit, then get_reading_guide(unit), "
-        "get_project(quarter), or get_memory_verses(unit). Quote the guide's own wording, keep "
-        "explanations at a high-school level, and never invent an assignment, a due date, or a "
-        "memory verse that isn't in these documents. If a student asks for daily-page answers "
-        "or a teacher answer key, explain that those aren't available here."
+        "## The Gospel of John course\n"
+        "Some questions come from students in a high-school Sophomore Bible course on the "
+        "Gospel of John (Yorkville Christian School), asking about a unit's reading guide, one "
+        "of the four quarter projects, or the year's memory verses. These tools let you answer "
+        "from the actual course documents: call list_john_curriculum to see or locate what "
+        "exists, then get_reading_guide(unit), get_project(quarter), or get_memory_verses(unit).\n\n"
+        "Stay fully in your established voice and role for these answers — do not switch into a "
+        "generic school-assistant persona. The course documents are a source of facts (which "
+        "passage a unit covers, what a project asks, which verse is memorized when), not a model "
+        "for how you speak. Ground your answer in them: quote their specifics — passages, verses, "
+        "assignments, due dates — accurately, and never invent one that isn't there. You may "
+        "explain plainly enough for a sophomore to follow while remaining entirely yourself. If "
+        "someone asks for daily-page answers or a teacher answer key, say those aren't available here."
     )
