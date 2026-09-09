@@ -881,9 +881,31 @@ function actArea(){
 function audioTag(url){
   return '<audio controls preload="none" src="'+esc(url)+'"></audio>';
 }
+// Mask profanity in the spoken-transcript display (school setting). Display-only:
+// grading still uses the raw recognition text, and profanity never matches
+// Scripture, so scoring is unaffected. Whole-word matching avoids false positives
+// (e.g. "class"/"assess" are never touched).
+var PROFANITY_LIST = ("fuck fucks fucked fucking fuckin fucker fuckers motherfucker motherfuckers motherfucking "
+  + "shit shits shitty shitting shithead bullshit dipshit "
+  + "ass asshole assholes asses asshat dumbass jackass "
+  + "bitch bitches bitching bastard bastards bollocks "
+  + "damn dammit goddamn goddamnit dick dickhead dicks "
+  + "cunt cunts cock cocks cocksucker piss pissed prick pricks "
+  + "whore whores slut sluts wanker twat pussy pussies arse arsehole bugger "
+  + "nigger niggers nigga niggas fag faggot faggots fags dyke retard retarded "
+  + "spic chink kike wetback coon gook").split(/\s+/);
+var _profSet = null;
+function maskProfanity(text){
+  if(!text) return text;
+  if(!_profSet){ _profSet = {}; PROFANITY_LIST.forEach(function(w){ _profSet[w]=1; }); }
+  return text.replace(/[A-Za-z][A-Za-z'’]*/g, function(w){
+    return _profSet[w.toLowerCase().replace(/[’']/g,"")] ? "•••" : w;
+  });
+}
+
 function speakTrans(){
   if(!practice.input) return '<span style="opacity:.6">…</span>';
-  return '<div class="said">&ldquo;'+esc(practice.input)+'&rdquo;</div><div class="acc">Accuracy: '+practice.accuracy+'%</div>';
+  return '<div class="said">&ldquo;'+esc(maskProfanity(practice.input))+'&rdquo;</div><div class="acc">Accuracy: '+practice.accuracy+'%</div>';
 }
 function speakAdvance(){
   if(practice.feedback==="success") return '<button class="btn ok big" id="a-next">Perfect! Next step →</button>';
