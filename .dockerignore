@@ -1,10 +1,34 @@
+# Keep the Fly/Docker build context lean and secret-free. The image only needs
+# pyproject/README/NOTICE/LICENSE, src/, webapp/, and db/study_bible.db (see
+# Dockerfile). Everything else is excluded so it is never uploaded to the builder.
+
+# Virtualenv, VCS, caches
 .venv/
 .git/
-data/
-.firecrawl/
-tests/
-docs/
-scripts/
+.claude/
 **/__pycache__/
 *.pyc
-.claude/
+
+# Secrets & local env — must never enter the build context
+.env
+.secrets/
+
+# Confidential / copyrighted — never ship off this machine
+student_profiles/
+sproul-transcripts/
+ferguson-transcripts/
+.firecrawl/
+
+# Large content trees the image does not use
+quill-standards/
+standards/
+data/
+_backups/
+scripts/
+tests/
+# NOTE: docs/ is intentionally NOT ignored — the /course and /calendar views
+# read the John lessons, materials, and calendar JSON from docs/ at runtime.
+
+# Root-level files the image does not copy
+favicon1.png
+*.pdf

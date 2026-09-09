@@ -1,0 +1,36 @@
+# fly.toml app configuration file generated for exegetica on 2026-09-08T22:52:02-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'exegetica'
+primary_region = 'ord'
+swap_size_mb = 512
+
+[build]
+[env]
+  PORT = '8100'
+  STUDY_BIBLE_DB = '/app/db/study_bible.db'
+
+[http_service]
+  internal_port = 8100
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [http_service.concurrency]
+    type = 'requests'
+    hard_limit = 20
+    soft_limit = 15
+
+  [[http_service.checks]]
+    interval = '30s'
+    timeout = '5s'
+    grace_period = '30s'
+    method = 'GET'
+    path = '/api/config'
+
+[[vm]]
+  size = 'shared-cpu-1x'
+  memory = '1gb'

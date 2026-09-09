@@ -15,6 +15,13 @@ RUN pip install --no-cache-dir ".[webapp]"
 COPY db/study_bible.db ./db/study_bible.db
 COPY webapp ./webapp
 
+# Runtime data the web app reads from the project root:
+#   resource-generators.yaml  -> generator.py loads it at import (boot-critical)
+#   docs/                     -> the /course and /calendar views read the John
+#                                lessons, materials, and calendar JSON from here
+COPY resource-generators.yaml ./resource-generators.yaml
+COPY docs ./docs
+
 ENV STUDY_BIBLE_DB=/app/db/study_bible.db \
     PORT=8100 \
     PYTHONUNBUFFERED=1
