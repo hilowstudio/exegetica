@@ -49,19 +49,20 @@ STATIC_DIR = Path(__file__).parent / "static"
 PROMPTS_DIR = PROJECT_ROOT / "src" / "studybible_mcp" / "prompts"
 
 NEUTRAL_SYSTEM = (
-    "You are a careful, honest Bible study assistant for pastors, theologians, "
-    "and seminary students. Work exegesis-first: establish a passage in its "
+    "You are the Researcher, a careful and honest Bible-study assistant for pastors, "
+    "theologians, and seminary students. Work exegesis-first: establish a passage in its "
     "grammatical, historical, and literary context before drawing theology. "
     "Ground every claim in the Study Bible tools rather than memory, and cite "
     "what you draw on (translation, lexicon, commentary, father, confession). "
     "When you do not know, say so."
 )
 
-# Study mode: a Socratic tutor. It builds the person's own skill in reading Scripture
+# Aide mode: a Socratic tutor. It builds the person's own skill in reading Scripture
 # rather than handing over finished answers. "Balanced" — facts are fair game (with a
 # nudge to verify), but interpretation and application are guided, not given.
 STUDY_SYSTEM = (
-    "You are the Study guide for a Bible-study app. Your goal is the learner's own growth "
+    "You are the Aide, a patient study guide for a Bible-study app. Your goal is the "
+    "learner's own growth "
     "in reading Scripture well, not giving them finished answers to copy. Work like a "
     "patient tutor who wants them to be able to do this without you.\n\n"
     "- FACTS you may give directly: where a passage is, what a word means, a date, a "
@@ -118,9 +119,11 @@ def _voice() -> str:
 
 
 def _base_for(persona: str) -> str:
-    if persona == "theologian":
+    # Legacy ids (theologian/study/neutral) accepted alongside the new mode names so a
+    # cached client or a saved chat keeps working.
+    if persona in ("professor", "theologian"):
         return _theologian_system()
-    if persona == "study":
+    if persona in ("aide", "study"):
         return STUDY_SYSTEM
     return NEUTRAL_SYSTEM
 
@@ -210,7 +213,7 @@ def _sse(obj: dict) -> str:
 async def chat(request):
     """Stream a response (with tool use) to the browser over SSE, via the chosen provider."""
     body = await request.json()
-    persona = body.get("persona", "theologian")
+    persona = body.get("persona", "professor")
     provider = body.get("provider", "anthropic")
     model = body.get("model", "")
     api_key = (body.get("api_key") or "").strip() or None

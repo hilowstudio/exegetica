@@ -229,9 +229,9 @@
       <span class="ttl" id="thread-title">New study</span>
       <span class="vlab">Mode</span>
       <div class="toggle" role="group" aria-label="Mode">
-        <button id="p-theo" aria-pressed="true" type="button">Theologian</button>
-        <button id="p-study" aria-pressed="false" type="button">Study</button>
-        <button id="p-neutral" aria-pressed="false" type="button">Assistant</button>
+        <button id="p-professor" aria-pressed="true" type="button">Professor</button>
+        <button id="p-aide" aria-pressed="false" type="button">Aide</button>
+        <button id="p-researcher" aria-pressed="false" type="button">Researcher</button>
       </div>
     </div>
 
@@ -319,7 +319,7 @@
     </div>
     <div class="pane on" id="pane-about">
     <p class="about-lede">A study companion for pastors, teachers, and students. It answers from Scripture and the historic church, and cites every source.</p>
-    <p class="muted small">The Theologian voice works exegesis-first: establish the text in its grammatical, historical, and literary context, read it as one story culminating in Christ, and ground every answer in the tools rather than recall.</p>
+    <p class="muted small">The Professor voice works exegesis-first: establish the text in its grammatical, historical, and literary context, read it as one story culminating in Christ, and ground every answer in the tools rather than recall.</p>
 
     <h3>Grounded in cited sources</h3>
     <p>Most AI answers about the Bible are reconstructed from a blurred memory of training data, inventing wording and references with full confidence. Here, Exegetica quotes the passage and lexicon entries through its tools and cites what it used, so every claim can be checked.</p>
@@ -420,16 +420,17 @@ function renderMarkdown(src){
 const thread=document.getElementById("thread"), input=document.getElementById("input"),
       sendBtn=document.getElementById("send"),
       titleEl=document.getElementById("thread-title");
-let persona="theologian", busy=false;
+let persona="professor", busy=false;
 let history=[]; // [{role, content}]
 
-function setPersona(p){persona=p;
-  document.getElementById("p-theo").setAttribute("aria-pressed",p==="theologian");
-  document.getElementById("p-study").setAttribute("aria-pressed",p==="study");
-  document.getElementById("p-neutral").setAttribute("aria-pressed",p==="neutral");}
-document.getElementById("p-theo").onclick=()=>setPersona("theologian");
-document.getElementById("p-study").onclick=()=>setPersona("study");
-document.getElementById("p-neutral").onclick=()=>setPersona("neutral");
+const LEGACY_PERSONA={theologian:"professor",study:"aide",neutral:"researcher"};
+function setPersona(p){p=LEGACY_PERSONA[p]||p;persona=p;
+  document.getElementById("p-professor").setAttribute("aria-pressed",p==="professor");
+  document.getElementById("p-aide").setAttribute("aria-pressed",p==="aide");
+  document.getElementById("p-researcher").setAttribute("aria-pressed",p==="researcher");}
+document.getElementById("p-professor").onclick=()=>setPersona("professor");
+document.getElementById("p-aide").onclick=()=>setPersona("aide");
+document.getElementById("p-researcher").onclick=()=>setPersona("researcher");
 
 /* ---------- crisis help affordance (stateless; verified resources from /api/config) ---------- */
 const helpBg=document.getElementById("help-bg"),helpList=document.getElementById("help-list"),helpLead=document.getElementById("help-lead");
@@ -576,7 +577,7 @@ fetch("/api/config").then(r=>r.json()).then(c=>{CFG=c;populateProviders();update
 function addMsg(role){
   showEmpty(false);
   const m=document.createElement("div");m.className="msg "+role;
-  const who=document.createElement("div");who.className="who";who.textContent=role==="user"?"You":(persona==="theologian"?"The Theologian":persona==="study"?"Study Guide":"Assistant");
+  const who=document.createElement("div");who.className="who";who.textContent=role==="user"?"You":(persona==="professor"?"Professor":persona==="aide"?"Aide":"Researcher");
   const bubble=document.createElement("div");bubble.className="bubble";
   m.appendChild(who);m.appendChild(bubble);thread.appendChild(m);
   scroll();return bubble;
