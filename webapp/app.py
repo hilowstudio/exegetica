@@ -29,7 +29,7 @@ from starlette.responses import FileResponse, HTMLResponse, JSONResponse, Stream
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import calendar_views, course, course_views, curriculum, generator, library, memory, providers, safety
+from webapp import calendar_views, course, course_views, curriculum, db, generator, library, memory, providers, safety
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("study-bible-web")
@@ -482,9 +482,20 @@ async def revise_endpoint(request):
 async def lifespan(app: Starlette):
     app.state.mcp = MCPBridge()
     await app.state.mcp.start()
+    # Optional DB pool. A missing DATABASE_URL, or a connection failure, must never
+    # take the app down — DB-backed features simply stay off until it's reachable.
+    if db.dsn():
+        try:
+            await db.init_pool()
+            logger.info("Database pool ready")
+        except Exception as e:  # noqa: BLE001
+            logger.warning("Database unavailable, continuing without it: %s", e)
+    else:
+        logger.info("DATABASE_URL not set; database features disabled")
     try:
         yield
     finally:
+        await db.close_pool()
         await app.state.mcp.stop()
 
 

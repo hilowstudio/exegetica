@@ -43,6 +43,7 @@ webapp = [
     "numpy>=1.24",             # semantic standards search: cosine over precomputed vectors
     "model2vec>=0.3",          # static embeddings (numpy-only, no torch/ONNX) for query + corpus
     "markdown-it-py>=3.0",     # render the generated course Markdown to HTML for the course view
+    "asyncpg>=0.29",           # Neon/Postgres backend storage (optional at runtime; off if DATABASE_URL unset)
 ]
 # Print-ready PDF rendering of the course materials. Uses the machine's installed
 # Edge/Chromium (Playwright channel=msedge) — no browser download needed.
