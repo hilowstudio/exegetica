@@ -239,6 +239,8 @@
   <nav class="rail" aria-label="Primary">
     <a class="railbtn" href="/" title="Chat" aria-label="Chat"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg></a>
     <a class="railbtn" href="/memory" title="Scripture Memory" aria-label="Scripture Memory"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/><path d="M6.5 11h6M6.5 14h4"/></svg></a>
+    <a class="railbtn teach active" href="/generate" style="display:none" title="Generator" aria-label="Generator"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/></svg></a>
+    <a class="railbtn teach" href="/library" style="display:none" title="Living Library" aria-label="Living Library"><svg viewBox="0 0 24 24"><rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/><path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/></svg></a>
     <span class="sp"></span>
     <button id="open-about" type="button" title="About" aria-label="About"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button>
     <button id="open-settings" type="button" title="Model &amp; API key" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.2 7l2.6 1.5M17.2 15.5l2.6 1.5M4.2 17l2.6-1.5M17.2 8.5l2.6-1.5"/></svg></button>
@@ -654,6 +656,10 @@ async function applyMod(){
 $("pdf").addEventListener("click",()=>{if(mode==="edit"){rawDoc=editor.value;mode="view";syncMode();}render();setTimeout(()=>window.print(),60);});
 $("download").addEventListener("click",()=>{const blob=new Blob([shown()],{type:"text/markdown"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=slug()+(audience==="student"?"_student":"")+".md";a.click();URL.revokeObjectURL(a.href);});
 $("copy").addEventListener("click",()=>{navigator.clipboard&&navigator.clipboard.writeText(shown());$("copy").textContent="Copied";setTimeout(()=>$("copy").textContent="Copy",1200);});
+/* teacher-only rail modules — reveal for teacher accounts */
+fetch("/api/me",{credentials:"same-origin"}).then(function(r){return r.json();}).then(function(d){
+  if(d&&d.user&&d.user.role==="teacher"){ document.querySelectorAll(".rail .teach").forEach(function(e){e.style.display="";}); }
+}).catch(function(){});
 </script>
 </body>
 </html>
