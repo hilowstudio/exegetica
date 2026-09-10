@@ -335,26 +335,12 @@ function save(){
   else { saveLocal(); }
 }
 
-function wireAccount(){
-  var el=document.getElementById("acct"); if(!el) return;
-  var here=location.pathname+location.search;
-  if(AUTH.signed && AUTH.user){
-    var u=AUTH.user, initial=((u.name||u.email||"?").trim()[0]||"?").toUpperCase();
-    el.innerHTML = u.picture ? '<img src="'+u.picture+'" alt="" referrerpolicy="no-referrer">' : '<span class="ini">'+initial+'</span>';
-    el.setAttribute("href","/auth/logout?next="+encodeURIComponent(here));
-    var label=(u.name||u.email||"Account")+" · Sign out";
-    el.setAttribute("title",label); el.setAttribute("aria-label",label);
-  } else {
-    el.setAttribute("href","/auth/login?next="+encodeURIComponent(here));
-    el.setAttribute("title","Sign in"); el.setAttribute("aria-label","Sign in");
-  }
-}
+/* The rail account control and teacher-only module reveal are handled by
+   /static/acct.js, shared across all pages. */
 
 async function init(){
   try { var r=await fetch("/api/me",{credentials:"same-origin"}); var d=await r.json();
         AUTH.user=(d&&d.user)||null; AUTH.signed=!!AUTH.user; } catch(e){ AUTH.signed=false; }
-  wireAccount();
-  if(AUTH.user&&AUTH.user.role==="teacher"){ document.querySelectorAll(".rail .teach").forEach(function(e){e.style.display="";}); }
   if(AUTH.signed){
     var server=null;
     try { var rr=await fetch("/api/memory",{credentials:"same-origin"}); if(rr.ok){ server=await rr.json(); } } catch(e){}
@@ -1039,5 +1025,6 @@ $("theme-toggle").onclick=function(){
 init();
 })();
 </script>
+<script src="/static/acct.js"></script>
 </body>
 </html>
