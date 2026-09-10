@@ -87,7 +87,8 @@
 
   /* ---------- main column ---------- */
   .col{display:flex;flex-direction:column;min-width:0;background:var(--paper)}
-  .thread-h{display:flex;align-items:center;gap:12px;padding:10px 22px;border-bottom:1px solid var(--rule);background:var(--surface);flex:none}
+  .thread-h{display:flex;align-items:center;gap:12px;padding:10px 22px;border-bottom:1px solid var(--rule);background:var(--surface);flex:none;position:relative}
+  .thread-h .kitty{position:absolute;right:20px;bottom:calc(100% - 12px);width:90px;height:auto;pointer-events:none;z-index:6}
   .thread-h .ttl{font-family:var(--serif);font-weight:600;font-size:1.04rem;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .vlab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
   .toggle{display:flex;border:1px solid var(--rule-strong);border-radius:999px;overflow:hidden;font-size:12px;font-weight:600}
@@ -249,6 +250,7 @@
         <button id="p-aide" aria-pressed="false" type="button">Aide</button>
         <button id="p-researcher" aria-pressed="false" type="button">Researcher</button>
       </div>
+      <img class="kitty" src="/static/kitty.gif" alt="">
     </div>
 
     <main class="scroll" id="main">
