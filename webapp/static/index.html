@@ -46,7 +46,7 @@
   @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 
   /* ---------- app shell ---------- */
-  .app{display:grid;grid-template-columns:58px 266px 1fr;height:100%;transition:grid-template-columns .2s ease}
+  .app{display:grid;grid-template-columns:58px 1fr;height:100%}
   .rail{background:color-mix(in srgb,var(--surface) 90%,transparent);border-right:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;gap:3px;padding:12px 0;z-index:20}
   .rail .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:10px;text-decoration:none;overflow:hidden}
   .rail .mark img{width:100%;height:100%;object-fit:cover;border-radius:9px;display:block}
@@ -70,7 +70,9 @@
   .rail .glyph{font-size:18px;line-height:1}
 
   /* ---------- conversation sidebar ---------- */
-  .side{background:color-mix(in srgb,var(--paper) 84%,transparent);border-right:1px solid var(--rule);display:flex;flex-direction:column;min-width:0;overflow:hidden}
+  .side{background:var(--paper);border-right:1px solid var(--rule);display:flex;flex-direction:column;min-width:0;overflow:hidden;
+    position:fixed;left:58px;top:0;bottom:0;width:266px;transform:translateX(calc(-100% - 60px));transition:transform .2s ease;z-index:30;pointer-events:none}
+  .side.open{transform:translateX(0);box-shadow:0 0 40px rgba(0,0,0,.22);pointer-events:auto}
   .side-h{padding:13px 13px 11px}
   .newbtn{width:100%;display:flex;align-items:center;justify-content:center;gap:7px;font-family:var(--sans);font-weight:600;font-size:13.5px;color:#fff;background:var(--accent);border:0;border-radius:9px;padding:9px 12px;cursor:pointer}
   .newbtn:hover{background:var(--accent-soft)}
@@ -206,15 +208,6 @@
   .resgroup h4{font-family:var(--serif);font-weight:600;font-size:.92rem;color:var(--ink);margin:0 0 1px}
   .resgroup p{font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.5}
 
-  /* ---------- responsive ---------- */
-  @media(max-width:820px){
-    .app{grid-template-columns:58px 1fr}
-    .side{position:fixed;left:58px;top:0;bottom:0;width:266px;transform:translateX(-110%);transition:transform .18s ease;z-index:30;box-shadow:0 0 40px rgba(0,0,0,.25)}
-    .side.open{transform:translateX(0)}
-    .menu-btn{display:grid}
-  }
-  @media(min-width:821px){ .app.side-collapsed{grid-template-columns:58px 0 1fr} }
-  .app.side-collapsed .side{border-right:0}
 </style>
 </head>
 <body>
@@ -222,7 +215,7 @@
 
 <div class="app">
   <nav class="rail" aria-label="Primary">
-    <button id="toggle-studies" class="railbtn" type="button" title="Toggle studies panel" aria-label="Toggle studies panel" aria-expanded="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M9 5v14"/></svg></button>
+    <button id="toggle-studies" class="railbtn" type="button" title="Toggle studies panel" aria-label="Toggle studies panel" aria-expanded="false"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M9 5v14"/></svg></button>
     <a class="railbtn active" href="/" title="Chat" aria-label="Chat"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg></a>
     <a class="railbtn" href="/memory" title="Scripture Memory" aria-label="Scripture Memory"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/><path d="M6.5 11h6M6.5 14h4"/></svg></a>
     <span class="sp"></span>
@@ -529,18 +522,14 @@ function openSide(){sideEl.classList.add("open");}
 function closeSide(){sideEl.classList.remove("open");}
 document.getElementById("menu-btn").onclick=()=>sideEl.classList.toggle("open");
 
-const appEl=document.querySelector(".app");
-function setStudiesCollapsed(c){
-  appEl.classList.toggle("side-collapsed",c);
+function setStudiesOpen(o){
+  sideEl.classList.toggle("open",o);
   var tb=document.getElementById("toggle-studies");
-  if(tb) tb.setAttribute("aria-expanded",String(!c));
-  try{localStorage.setItem("studybible.side.collapsed",c?"1":"0");}catch(e){}
+  if(tb) tb.setAttribute("aria-expanded",String(o));
+  try{localStorage.setItem("studybible.side.open",o?"1":"0");}catch(e){}
 }
-document.getElementById("toggle-studies").onclick=function(){
-  if(window.matchMedia("(min-width:821px)").matches){ setStudiesCollapsed(!appEl.classList.contains("side-collapsed")); }
-  else { sideEl.classList.toggle("open"); }
-};
-try{ if(localStorage.getItem("studybible.side.collapsed")==="1" && window.matchMedia("(min-width:821px)").matches) setStudiesCollapsed(true); }catch(e){}
+document.getElementById("toggle-studies").onclick=function(){ setStudiesOpen(!sideEl.classList.contains("open")); };
+try{ if(localStorage.getItem("studybible.side.open")==="1") setStudiesOpen(true); }catch(e){}
 
 // ---------- BYOK settings (shared with Generator via same key) ----------
 const SKEY="studybible.byok.v1";
