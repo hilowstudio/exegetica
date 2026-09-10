@@ -466,11 +466,27 @@ document.getElementById("help-link").onclick=e=>{e.preventDefault();openHelp();}
 helpBg.addEventListener("click",e=>{if(e.target===helpBg)closeHelp();});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&helpBg.classList.contains("open"))closeHelp();});
 
-// ---------- conversation persistence (this browser only) ----------
+// ---------- conversation persistence ----------
+// Auth-aware: signed-in users read/write their Neon account; anonymous users use
+// localStorage exactly as before. AUTH is resolved once at boot (initChats).
 const CKEY="studybible.chats.v1";
 let curChatId=null;
-function loadChats(){try{return JSON.parse(localStorage.getItem(CKEY))||[]}catch(e){return[]}}
-function saveChats(a){try{localStorage.setItem(CKEY,JSON.stringify(a))}catch(e){}}
+var AUTH={signed:false,user:null};
+function _loadLocalChats(){try{return JSON.parse(localStorage.getItem(CKEY))||[]}catch(e){return[]}}
+var chatsMem=_loadLocalChats(); // in-memory source of truth once booted
+function loadChats(){return chatsMem;}
+var _chatTimer=null,_chatDirty=false;
+function flushChats(keepalive){
+  if(!_chatDirty)return;_chatDirty=false;clearTimeout(_chatTimer);
+  try{fetch("/api/chats",{method:"PUT",credentials:"same-origin",keepalive:!!keepalive,
+    headers:{"Content-Type":"application/json"},body:JSON.stringify({chats:chatsMem})}).catch(function(){});}catch(e){}
+}
+function saveChats(a){
+  chatsMem=a||[];
+  if(AUTH.signed){_chatDirty=true;clearTimeout(_chatTimer);_chatTimer=setTimeout(function(){flushChats(false);},500);}
+  else{try{localStorage.setItem(CKEY,JSON.stringify(chatsMem));}catch(e){}}
+}
+window.addEventListener("pagehide",function(){if(AUTH.signed)flushChats(true);});
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7);}
 function titleFrom(msgs){const u=msgs.find(m=>m.role==="user");return u?u.content.replace(/\s+/g," ").trim().slice(0,60):"New study";}
 
@@ -678,21 +694,43 @@ document.getElementById("examples").addEventListener("click",e=>{
   const b=e.target.closest("button");if(b){input.value=b.textContent;auto();sendBtn.click();}});
 
 /* account control: reflects /api/me; sign-in is optional and never gates the app */
-(function(){
+function wireAccount(){
   var el=document.getElementById("acct"); if(!el) return;
   var here=location.pathname+location.search;
-  el.setAttribute("href","/auth/login?next="+encodeURIComponent(here));
-  fetch("/api/me",{credentials:"same-origin"}).then(function(r){return r.json();}).then(function(d){
-    var u=d&&d.user; if(!u) return;
-    var initial=((u.name||u.email||"?").trim()[0]||"?").toUpperCase();
+  if(AUTH.signed&&AUTH.user){
+    var u=AUTH.user,initial=((u.name||u.email||"?").trim()[0]||"?").toUpperCase();
     el.innerHTML = u.picture ? '<img src="'+u.picture+'" alt="" referrerpolicy="no-referrer">' : '<span class="ini">'+initial+'</span>';
     el.setAttribute("href","/auth/logout?next="+encodeURIComponent(here));
     var label=(u.name||u.email||"Account")+" · Sign out";
     el.setAttribute("title",label); el.setAttribute("aria-label",label);
-  }).catch(function(){});
-})();
+  } else {
+    el.setAttribute("href","/auth/login?next="+encodeURIComponent(here));
+    el.setAttribute("title","Sign in"); el.setAttribute("aria-label","Sign in");
+  }
+}
 
-renderChatList();
+/* boot: resolve auth, load this user's chats from Neon (or keep localStorage) */
+async function initChats(){
+  try{ var r=await fetch("/api/me",{credentials:"same-origin"}); var d=await r.json();
+       AUTH.user=(d&&d.user)||null; AUTH.signed=!!AUTH.user; }catch(e){ AUTH.signed=false; }
+  wireAccount();
+  if(AUTH.signed){
+    var server=null;
+    try{ var rr=await fetch("/api/chats",{credentials:"same-origin"}); if(rr.ok){ server=await rr.json(); } }catch(e){}
+    var srvChats=(server&&server.chats)||[];
+    if(srvChats.length){ chatsMem=srvChats; }
+    else{
+      // Empty account: offer a one-time import of this browser's studies, else start clean.
+      var local=_loadLocalChats();
+      if(local.length && confirm("Import your "+local.length+" saved stud"+(local.length===1?"y":"ies")+" from this browser into your account?")){
+        chatsMem=local; _chatDirty=true; flushChats(false);
+      } else { chatsMem=[]; }
+    }
+  }
+  renderChatList();
+}
+renderChatList(); // immediate paint from localStorage; initChats re-renders after auth resolves
+initChats();
 </script>
 </body>
 </html>

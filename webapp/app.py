@@ -522,6 +522,8 @@ app = Starlette(
         Route("/api/memory/audio", memory.memory_audio),
         Route("/api/memory", store.memory_get, methods=["GET"]),
         Route("/api/memory", store.memory_put, methods=["PUT"]),
+        Route("/api/chats", store.chat_get, methods=["GET"]),
+        Route("/api/chats", store.chat_put, methods=["PUT"]),
         Route("/course", course_overview),
         Route("/course/unit/{key}", course_unit),
         Route("/course/day/{date}", course_day),
