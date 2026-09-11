@@ -363,3 +363,111 @@ async def upload_complete(request):
     except Exception:  # noqa: BLE001
         return JSONResponse({"error": "could not queue extraction"}, status_code=502)
     return JSONResponse({"extraction_id": str(exid), "status": "pending"})
+
+
+# --------------------------------------------------------------------------- #
+# Borderline-review queue: when two same-tier (upload) copies of a book score
+# within _PROMOTE_MARGIN, neither auto-wins — a teacher decides which is canonical.
+# Reviewers see quality SIGNALS only, never the private source text.
+# --------------------------------------------------------------------------- #
+def _is_teacher(user) -> bool:
+    return bool(user) and (user or {}).get("role") == "teacher"
+
+
+async def reviews_list(request):
+    """Pending borderline copies awaiting a promote/keep-private decision (teacher-only)."""
+    user = auth.current_user(request)
+    if not _is_teacher(user):
+        return JSONResponse({"error": "teacher access required"}, status_code=403)
+    if not db.ready():
+        return JSONResponse({"error": "database unavailable"}, status_code=503)
+    rows = await db.fetch(
+        """select e.id as extraction_id, e.title, e.creator,
+                  e.canonical_source, e.canonical_tier, e.quality_score as incumbent_quality,
+                  st.user_id as candidate_user, st.quality_score as candidate_quality,
+                  st.source_format, st.char_count, st.acquisition, st.updated_at
+             from library_source_texts st
+             join library_extractions e on e.id = st.extraction_id
+            where st.review_status = 'pending'
+            order by st.updated_at desc""",
+    )
+    out = [{
+        "extraction_id": str(r["extraction_id"]), "title": r["title"], "creator": r["creator"],
+        "incumbent": {"source": r["canonical_source"], "tier": r["canonical_tier"],
+                      "quality": r["incumbent_quality"]},
+        "candidate": {"user_id": str(r["candidate_user"]), "quality": r["candidate_quality"],
+                      "format": r["source_format"], "chars": r["char_count"],
+                      "acquisition": r["acquisition"], "uploaded_at": r["updated_at"].isoformat()},
+    } for r in rows]
+    return JSONResponse({"reviews": out})
+
+
+async def _review_target(request):
+    """Shared validation for promote/reject: teacher + a pending candidate. Returns
+    (user, exid, cand_uid) or a JSONResponse error."""
+    user = auth.current_user(request)
+    if not _is_teacher(user):
+        return JSONResponse({"error": "teacher access required"}, status_code=403)
+    if not db.ready():
+        return JSONResponse({"error": "database unavailable"}, status_code=503)
+    try:
+        body = await request.json()
+        exid = uuid.UUID((body.get("extraction_id") or "").strip())
+        cand_uid = uuid.UUID((body.get("user_id") or "").strip())
+    except Exception:  # noqa: BLE001
+        return JSONResponse({"error": "extraction_id and user_id required"}, status_code=400)
+    st = await db.fetchrow(
+        "select review_status, quality_score from library_source_texts where extraction_id=$1 and user_id=$2",
+        exid, cand_uid,
+    )
+    if not st or st["review_status"] != "pending":
+        return JSONResponse({"error": "no pending review for that copy"}, status_code=404)
+    return (user, exid, cand_uid, st["quality_score"])
+
+
+async def review_promote(request):
+    """Promote a borderline copy to canonical and rebuild the shared derivative from it."""
+    t = await _review_target(request)
+    if isinstance(t, JSONResponse):
+        return t
+    _user, exid, cand_uid, cand_q = t
+    from webapp import inngest_app
+
+    ex = await db.fetchrow("select title, creator from library_extractions where id=$1", exid)
+    await db.execute(
+        """update library_extractions set
+             canonical_source=$2, canonical_tier=2, quality_score=$3,
+             verify_verdict='accepted', status='extracting', updated_at=now()
+           where id=$1""",
+        exid, f"upload:{cand_uid}", cand_q,
+    )
+    # This copy wins; sibling pending candidates for the same book lose.
+    await db.execute(
+        "update library_source_texts set review_status='promoted', updated_at=now() where extraction_id=$1 and user_id=$2",
+        exid, cand_uid,
+    )
+    await db.execute(
+        "update library_source_texts set review_status='rejected', updated_at=now() "
+        "where extraction_id=$1 and user_id<>$2 and review_status='pending'",
+        exid, cand_uid,
+    )
+    try:
+        await inngest_app.trigger_rederive(
+            title=ex["title"], author=ex["creator"] or None, extraction_id=exid, user_id=cand_uid,
+        )
+    except Exception:  # noqa: BLE001
+        return JSONResponse({"error": "could not queue rebuild"}, status_code=502)
+    return JSONResponse({"extraction_id": str(exid), "status": "extracting", "promoted": True})
+
+
+async def review_reject(request):
+    """Keep a borderline copy private; leave the current canonical derivative untouched."""
+    t = await _review_target(request)
+    if isinstance(t, JSONResponse):
+        return t
+    _user, exid, cand_uid, _q = t
+    await db.execute(
+        "update library_source_texts set review_status='rejected', updated_at=now() where extraction_id=$1 and user_id=$2",
+        exid, cand_uid,
+    )
+    return JSONResponse({"extraction_id": str(exid), "rejected": True})

@@ -157,6 +157,11 @@ create table if not exists library_source_texts (
     acquisition     text not null default 'owned',   -- owned | borrowed | accessibility (CHECK added below)
     attested        boolean not null default true,   -- attests lawful access for the acquisition type
     attested_at     timestamptz not null default now(),
+    -- This copy's mechanical quality score + its standing in canonical selection.
+    -- review_status: none | pending (same-tier borderline, awaiting a human) |
+    -- promoted (won canonical) | rejected (reviewer declined; stays private).
+    quality_score   double precision,
+    review_status   text not null default 'none',
     created_at      timestamptz not null default now(),
     updated_at      timestamptz not null default now(),
     unique (user_id, extraction_id)
@@ -325,6 +330,8 @@ alter table library_extractions  add column if not exists verify_detail   jsonb;
 alter table library_extractions  add column if not exists canonical_source text;
 alter table library_extractions  add column if not exists canonical_tier  integer;
 alter table library_source_texts add column if not exists acquisition   text not null default 'owned';
+alter table library_source_texts add column if not exists quality_score double precision;
+alter table library_source_texts add column if not exists review_status text not null default 'none';
 do $$ begin
   if not exists (select 1 from pg_constraint where conname = 'library_source_texts_acquisition_chk') then
     alter table library_source_texts add constraint library_source_texts_acquisition_chk

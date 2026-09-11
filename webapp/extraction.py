@@ -456,21 +456,7 @@ async def step_ingest_upload(exid, r2_object_key: str, source_format: str, user_
     sections = TP.segment_into_chapters(text)
     q = compute_quality(text, sections)
 
-    # Always keep the uploader's own verified copy in their PRIVATE tier-1 vault
-    # (accessibility): a copy that doesn't win canonical is still theirs to build from.
-    nonce, ct = encrypt_text(text)
-    await db.execute(
-        """insert into library_source_texts
-             (user_id, extraction_id, nonce, ciphertext, char_count, source_format, extraction_full, acquisition)
-           values ($1, $2, $3, $4, $5, $6, true, $7)
-           on conflict (user_id, extraction_id) do update set
-             nonce=excluded.nonce, ciphertext=excluded.ciphertext, char_count=excluded.char_count,
-             source_format=excluded.source_format, acquisition=excluded.acquisition, updated_at=now()""",
-        uuid.UUID(str(user_id)), exid, nonce, ct, len(text), source_format, acquisition,
-    )
-    await r2.delete_async(r2_object_key)  # verified-full extraction done → discard the original
-
-    # --- Supersession: best verified copy wins (auto-promote clear wins, keep rest private) ---
+    # --- Supersession: best verified copy wins (auto-promote clear wins, review borderline) ---
     cur = await db.fetchrow(
         "select status, canonical_tier, coalesce(quality_score, 0) qs from library_extractions where id=$1", exid,
     )
@@ -478,13 +464,36 @@ async def step_ingest_upload(exid, r2_object_key: str, source_format: str, user_
     incumbent_q = float(cur["qs"]) if cur else 0.0
     already = bool(cur) and cur["status"] == "extracted"
 
-    promote = (
-        not already                                   # nothing canonical yet → this copy defines it
-        or incumbent_tier < _UPLOAD_TIER              # replace a lower-tier incumbent
-        or (incumbent_tier == _UPLOAD_TIER and q["score"] >= incumbent_q + _PROMOTE_MARGIN)
+    if not already or incumbent_tier < _UPLOAD_TIER:
+        outcome = "promote"                                    # nothing canonical yet, or a weaker incumbent
+    elif incumbent_tier > _UPLOAD_TIER:
+        outcome = "superseded"                                 # a trusted PD copy is canonical; uploads can't win
+    elif q["score"] >= incumbent_q + _PROMOTE_MARGIN:
+        outcome = "promote"                                    # same tier, a clear quality win
+    elif q["score"] <= incumbent_q - _PROMOTE_MARGIN:
+        outcome = "superseded"                                 # same tier, clearly worse → keep private
+    else:
+        outcome = "review"                                     # same tier, within the margin → human decides
+
+    # Always keep the uploader's own verified copy in their PRIVATE tier-1 vault
+    # (accessibility): a copy that doesn't win canonical is still theirs to build from.
+    review_status = "pending" if outcome == "review" else ("promoted" if outcome == "promote" else "none")
+    nonce, ct = encrypt_text(text)
+    await db.execute(
+        """insert into library_source_texts
+             (user_id, extraction_id, nonce, ciphertext, char_count, source_format, extraction_full,
+              acquisition, quality_score, review_status)
+           values ($1, $2, $3, $4, $5, $6, true, $7, $8, $9)
+           on conflict (user_id, extraction_id) do update set
+             nonce=excluded.nonce, ciphertext=excluded.ciphertext, char_count=excluded.char_count,
+             source_format=excluded.source_format, acquisition=excluded.acquisition,
+             quality_score=excluded.quality_score, review_status=excluded.review_status, updated_at=now()""",
+        uuid.UUID(str(user_id)), exid, nonce, ct, len(text), source_format, acquisition,
+        q["score"], review_status,
     )
-    verdict = "accepted" if promote else ("superseded" if incumbent_tier > _UPLOAD_TIER else "borderline")
-    if promote:
+    await r2.delete_async(r2_object_key)  # verified-full extraction done → discard the original
+
+    if outcome == "promote":
         await db.execute(
             """update library_extractions set
                  grounding='source_text', status='extracting', error=null,
@@ -494,8 +503,8 @@ async def step_ingest_upload(exid, r2_object_key: str, source_format: str, user_
             exid, f"upload:{user_id}", _UPLOAD_TIER, q["score"], {"identity": ident, "quality": q},
         )
         return {"ok": True, "derive": True, "chars": len(text), "quality": q["score"]}
-    # Kept private: do not disturb the canonical derivative built from a better/PD copy.
-    return {"ok": True, "derive": False, "reason": verdict, "quality": q["score"]}
+    # Kept private (superseded or awaiting review): don't disturb the canonical derivative.
+    return {"ok": True, "derive": False, "reason": outcome, "quality": q["score"]}
 
 
 async def step_derive(exid, meta: dict, user_id=None) -> dict:

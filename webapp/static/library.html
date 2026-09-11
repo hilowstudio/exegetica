@@ -370,6 +370,21 @@
   .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--paper);font-size:13.5px;font-weight:500;padding:10px 18px;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:60}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+  /* Borderline copy-review queue (teacher-only) */
+  .review-pill{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:600;font-size:12.5px;color:var(--ink);background:var(--surface);border:1px solid var(--rule-strong);border-radius:999px;padding:6px 12px;cursor:pointer}
+  .review-pill[hidden]{display:none}
+  .review-pill:hover{border-color:var(--accent)}
+  .review-pill .rn{min-width:18px;height:18px;padding:0 5px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:#fff;background:var(--accent);border-radius:999px}
+  .rv-card{border:1px solid var(--rule);border-radius:11px;padding:13px 15px;margin-bottom:12px}
+  .rv-card h4{margin:0 0 2px;font-family:var(--serif,Georgia,serif);font-size:16px;color:var(--ink)}
+  .rv-card .rv-by{font-size:12px;color:var(--ink-soft);margin:0 0 10px}
+  .rv-copies{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .rv-copy{flex:1;min-width:150px;border:1px solid var(--rule);border-radius:9px;padding:9px 11px;font-size:12px;color:var(--ink-soft)}
+  .rv-copy .rv-tag{font-weight:700;color:var(--ink);font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+  .rv-copy .rv-q{font-size:20px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+  .rv-actions{display:flex;gap:8px}
+  .rv-actions .btn-solid,.rv-actions .btn-ghost{padding:8px 14px;font-size:13px}
+  .rv-empty{color:var(--ink-soft);font-size:13px;padding:8px 0}
   @media(max-width:640px){.wrap{padding:20px 16px 50px}.o-field{flex-direction:column}.o-add{padding:12px}.books{gap:18px}.book{width:96px}}
 </style>
 </head>
@@ -393,6 +408,7 @@
       <div class="eyebrow">Living Library</div>
       <h1>Your shelf of sources</h1>
       <p>Books, podcasts, and videos you can build lessons and worksheets from.</p>
+      <button id="review-open" class="review-pill" type="button" hidden>Copy reviews <span class="rn" id="review-n">0</span></button>
     </div>
 
     <main class="scroll">
@@ -484,6 +500,16 @@
   <div class="modal read" role="dialog" aria-modal="true">
     <div id="read-body"></div>
     <div class="modal-actions"><span class="sp"></span><button class="btn-ghost" id="read-close" type="button">Close</button></div>
+  </div>
+</div>
+
+<!-- Borderline copy reviews (teacher-only): two same-quality copies of one book -->
+<div class="modal-bg" id="review-bg">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="review-title" style="max-width:560px">
+    <h2 id="review-title">Copies awaiting review</h2>
+    <p class="muted">Two uploaded copies of the same book scored too close to auto-pick a winner. Choose which becomes the shared source for its study materials — the other stays private to its owner. You see quality signals only, never the private text.</p>
+    <div id="review-list"></div>
+    <div class="modal-actions"><span class="sp"></span><button class="btn-ghost" id="review-close" type="button">Close</button></div>
   </div>
 </div>
 
@@ -948,9 +974,66 @@ function initLibrary(){
     fetch("/api/library/shelf",{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;}).then(function(s){
       if(s&&s.items){LIB=s.items;render();}
     }).catch(function(){});
+    if(AUTH.user.role==="teacher")loadReviews();
   }).catch(function(){});
 }
 initLibrary();
+
+// --- Borderline copy-review queue (teacher-only) ---
+var REVIEWS=[];
+function loadReviews(){
+  fetch("/api/library/reviews",{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;}).then(function(d){
+    REVIEWS=(d&&d.reviews)||[];
+    var pill=document.getElementById("review-open"),n=document.getElementById("review-n");
+    if(!pill)return;
+    n.textContent=REVIEWS.length;
+    pill.hidden=REVIEWS.length===0;
+  }).catch(function(){});
+}
+function fmtQ(q){return (q==null)?"—":Number(q).toFixed(2);}
+function renderReviews(){
+  var box=document.getElementById("review-list");
+  if(!REVIEWS.length){box.innerHTML='<div class="rv-empty">No copies awaiting review.</div>';return;}
+  box.innerHTML=REVIEWS.map(function(r){
+    var inc=r.incumbent||{},cand=r.candidate||{};
+    var incLabel=(inc.source&&inc.source.indexOf("upload:")===0)?"Current copy":("Current ("+(inc.source||"—")+")");
+    return '<div class="rv-card" data-ex="'+r.extraction_id+'" data-uid="'+cand.user_id+'">'
+      +'<h4>'+esc(r.title||"Untitled")+'</h4>'
+      +'<p class="rv-by">'+esc(r.creator||"")+'</p>'
+      +'<div class="rv-copies">'
+        +'<div class="rv-copy"><div class="rv-tag">'+esc(incLabel)+'</div><div class="rv-q">'+fmtQ(inc.quality)+'</div>quality score</div>'
+        +'<div class="rv-copy"><div class="rv-tag">New copy · '+esc((cand.format||"").toUpperCase())+'</div><div class="rv-q">'+fmtQ(cand.quality)+'</div>quality score · '+esc(cand.acquisition||"")+'</div>'
+      +'</div>'
+      +'<div class="rv-actions"><button class="btn-solid rv-promote" type="button">Make this the shared copy</button>'
+      +'<button class="btn-ghost rv-reject" type="button">Keep private</button></div>'
+    +'</div>';
+  }).join("");
+}
+function reviewAct(card,action){
+  var ex=card.getAttribute("data-ex"),uid=card.getAttribute("data-uid");
+  card.querySelectorAll("button").forEach(function(b){b.disabled=true;});
+  fetch("/api/library/reviews/"+action,{method:"POST",credentials:"same-origin",
+    headers:{"Content-Type":"application/json"},body:JSON.stringify({extraction_id:ex,user_id:uid})})
+    .then(function(r){return r.ok?r.json():Promise.reject();}).then(function(){
+      toast(action==="promote"?"Rebuilding shared materials from the chosen copy…":"Kept private.");
+      REVIEWS=REVIEWS.filter(function(x){return !(x.extraction_id===ex&&(x.candidate||{}).user_id===uid);});
+      renderReviews();
+      var n=document.getElementById("review-n");n.textContent=REVIEWS.length;
+      if(!REVIEWS.length){document.getElementById("review-open").hidden=true;$("review-bg").classList.remove("open");}
+    }).catch(function(){toast("Could not complete that action.");card.querySelectorAll("button").forEach(function(b){b.disabled=false;});});
+}
+(function(){
+  var open=document.getElementById("review-open");
+  if(open)open.addEventListener("click",function(){renderReviews();$("review-bg").classList.add("open");});
+  var close=document.getElementById("review-close");
+  if(close)close.addEventListener("click",function(){$("review-bg").classList.remove("open");});
+  var list=document.getElementById("review-list");
+  if(list)list.addEventListener("click",function(e){
+    var card=e.target.closest(".rv-card");if(!card)return;
+    if(e.target.closest(".rv-promote"))reviewAct(card,"promote");
+    else if(e.target.closest(".rv-reject"))reviewAct(card,"reject");
+  });
+})();
 </script>
 <script src="/static/acct.js"></script>
 </body>

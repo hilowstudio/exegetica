@@ -104,7 +104,35 @@ async def extract_upload_fn(ctx) -> dict:
     return await ctx.step.run("summary", extraction.extraction_summary, exid)
 
 
-functions = [extract_book_fn, extract_upload_fn]
+@client.create_function(
+    fn_id="rederive",
+    trigger=TriggerEvent(event="library/rederive.requested"),
+    concurrency=[Concurrency(limit=2)],
+    retries=3,
+)
+async def rederive_fn(ctx) -> dict:
+    """Rebuild the shared derivative from an already-stored copy — no ingest, no R2. Fired
+    when a reviewer promotes a borderline upload to canonical: the canonical_source/tier/
+    quality are set by the promote endpoint first; here we just re-run derive → objectives
+    → finalize against that copy's text (user_id set → the private tier-1 vault; null → the
+    PD raw)."""
+    import uuid
+
+    d = ctx.event.data or {}
+    exid = uuid.UUID(d["extraction_id"])
+    user_id = d.get("user_id")  # may be None for a PD copy
+    meta = {"title": d.get("title") or "", "authors": ([d["author"]] if d.get("author") else [])}
+
+    derived = await ctx.step.run("derive", extraction.step_derive, exid, meta, user_id)
+    n = int(derived.get("sections", 0))
+    batch = extraction.OBJECTIVES_BATCH
+    for b in range((n + batch - 1) // batch):
+        await ctx.step.run(f"objectives-{b}", extraction.step_objectives, exid, meta, b, batch, user_id)
+    await ctx.step.run("finalize", extraction.step_finalize, exid, user_id)
+    return await ctx.step.run("summary", extraction.extraction_summary, exid)
+
+
+functions = [extract_book_fn, extract_upload_fn, rederive_fn]
 
 
 async def trigger_extract(title: str, author: str | None = None, extraction_id=None) -> list[str]:
@@ -126,6 +154,19 @@ async def trigger_upload_extract(*, title, author, extraction_id, r2_object_key,
                 "title": title, "author": author, "extraction_id": str(extraction_id),
                 "r2_object_key": r2_object_key, "source_format": source_format,
                 "user_id": str(user_id), "acquisition": acquisition,
+            },
+        )
+    )
+
+
+async def trigger_rederive(*, title, author, extraction_id, user_id=None) -> list[str]:
+    """Rebuild the shared derivative from an already-stored copy (reviewer promotion)."""
+    return await client.send(
+        Event(
+            name="library/rederive.requested",
+            data={
+                "title": title, "author": author, "extraction_id": str(extraction_id),
+                "user_id": str(user_id) if user_id else None,
             },
         )
     )
