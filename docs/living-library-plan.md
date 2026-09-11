@@ -307,10 +307,14 @@ per-copy quality history when >2 copies compete.
 ## 12. Open questions / next steps
 
 **Prioritized build order (2026-09-11):**
-1. **Borderline-review queue** — surface same-tier copies within the `_PROMOTE_MARGIN`
-   (0.10) band for a human to promote/reject; closes the last gap in the integrity model
-   (plan §11). Ties into the wiki governance UI (§9).
-2. **TOC alignment** — reconcile detected sections to the work's published table of
+1. ~~**Borderline-review queue**~~ — **DONE 2026-09-11.** Same-tier copies within
+   `_PROMOTE_MARGIN` (0.10) are held `review_status='pending'`; teacher-only endpoints
+   (`GET /api/library/reviews`, `POST .../reviews/{promote,reject}`) + a "Copy reviews"
+   pill/modal in library.html let a teacher pick the canonical copy (quality signals only,
+   never the private text). Promotion fires the `rederive` Inngest fn to rebuild the shared
+   derivative from the chosen vault copy. Columns on `library_source_texts`:
+   `quality_score`, `review_status` (none/pending/promoted/rejected).
+2. **TOC alignment (NEXT)** — reconcile detected sections to the work's published table of
    contents for cleaner section titles, better objective anchoring, and to tell
    front-matter outlines apart from real bodies (fixes the Institutes 12→4 duplication).
    Sources: CCEL exposes a TOC; EPUB nav/NCX; Gutenberg heuristic. ~½ day; polish, not
