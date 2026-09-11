@@ -314,11 +314,15 @@ per-copy quality history when >2 copies compete.
    never the private text). Promotion fires the `rederive` Inngest fn to rebuild the shared
    derivative from the chosen vault copy. Columns on `library_source_texts`:
    `quality_score`, `review_status` (none/pending/promoted/rejected).
-2. **TOC alignment (NEXT)** — reconcile detected sections to the work's published table of
-   contents for cleaner section titles, better objective anchoring, and to tell
-   front-matter outlines apart from real bodies (fixes the Institutes 12→4 duplication).
-   Sources: CCEL exposes a TOC; EPUB nav/NCX; Gutenberg heuristic. ~½ day; polish, not
-   correctness. Deliberately AFTER the review queue.
+2. **TOC alignment — correctness half DONE 2026-09-11.** Duplicate top-level divisions
+   (front-matter argument / real body / back-matter index) now fold to their real body by
+   enumerator value (`_dedupe_major`, major tier only — chapter numbers legitimately repeat
+   across books), fixing the Institutes 12→4 duplication. Also fixed a latent bug: the
+   cross-ref guard's bare `v` token was rejecting the roman numeral in "Book V" (verse
+   tokens now require their period). **Remaining (optional enrichment):** pull DESCRIPTIVE
+   titles from a source's published TOC (EPUB nav/NCX, PDF outline, CCEL ThML, embedded
+   "Contents") — e.g. "Book I — Boyhood" vs "Book I". Needs extract→persist→thread plumbing;
+   deferred as polish since detected titles are already serviceable.
 3. Next PD source waves (Sefaria, Perseus) per docs/living-library-sources.md.
 
 - **Verification pilot — NOT a gate (decided 2026-09-10).** Grounding is locked

@@ -88,7 +88,9 @@ _re_arabic = re.compile(r"^\d{1,3}\.?$")
 # A genuine heading is short and clean. Cross-reference prose ("Book 2, chap. 1--6. See
 # also…") starts like a heading but carries commas, parens, ranges, or reference tokens —
 # reject those so scripture/cross-refs in the body don't read as structure.
-_XREF = re.compile(r"[,)(]|--|[–—]|\b(?:chap|chaps|vv?|pp|sec|cf|see|note|vol)\b\.?", re.I)
+# Verse tokens must carry their period ("v." / "vv.") so the roman numeral V in a real
+# heading ("Book V") is not mistaken for a cross-reference.
+_XREF = re.compile(r"[,)(]|--|[–—]|\bvv?\.|\b(?:chap|chaps|pp|sec|cf|see|note|vol)\b\.?", re.I)
 
 
 def _kw_heading(low: str, kw_re: re.Pattern) -> bool:
@@ -147,11 +149,68 @@ def _segment_pass(lines: list[str], levels: set[str]) -> list[dict]:
     return [s for s in sections if len(s["text"]) >= _MIN_SECTION_CHARS]
 
 
+_ORDINALS = {w: i + 1 for i, w in enumerate(
+    "first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth "
+    "thirteenth fourteenth fifteenth sixteenth seventeenth eighteenth nineteenth twentieth".split())}
+_CARDINALS = {w: i + 1 for i, w in enumerate(
+    "one two three four five six seven eight nine ten eleven twelve".split())}
+
+
+def _roman_to_int(s: str) -> int | None:
+    vals = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
+    if any(ch not in vals for ch in s):
+        return None
+    total, prev = 0, 0
+    for ch in reversed(s):
+        v = vals[ch]
+        total += -v if v < prev else v
+        prev = max(prev, v)
+    return total or None
+
+
+def _major_ordinal(title: str) -> int | None:
+    """The numeric value of a major heading's enumerator (Book Third → 3, BOOK 3 → 3,
+    Book III → 3), used to fold a work's front-matter outline, real body, and back-matter
+    index for the same division into one section."""
+    m = re.match(rf"^{_MAJOR}\s+(?:the\s+)?([ivxlcdm]+|\d+|[a-z]+)", title.strip(), re.I)
+    if not m:
+        return None
+    tok = m.group(1).rstrip(".").lower()
+    if tok.isdigit():
+        return int(tok)
+    if tok in _ORDINALS:
+        return _ORDINALS[tok]
+    if tok in _CARDINALS:
+        return _CARDINALS[tok]
+    if re.fullmatch(r"[ivxlcdm]+", tok):
+        return _roman_to_int(tok)
+    return None
+
+
+def _dedupe_major(sections: list[dict]) -> list[dict]:
+    """A top-level division (book/part) is unique, so if the same one appears more than
+    once — a front-matter argument, the real body, a back-matter index — keep only the
+    occurrence with the largest body. Unkeyed headings pass through untouched."""
+    best: dict = {}
+    passthrough: list[dict] = []
+    for pos, s in enumerate(sections):
+        k = _major_ordinal(s["title"])
+        if k is None:
+            passthrough.append((pos, s))
+            continue
+        if k not in best or len(s["text"]) > len(best[k][1]["text"]):
+            best[k] = (pos, s)
+    merged = list(best.values()) + passthrough
+    return [s for _pos, s in sorted(merged, key=lambda t: t[0])]
+
+
 def segment_into_chapters(text: str | None) -> list[dict]:
     """Split into structural sections at detected heading lines (heading inclusive),
-    choosing the coarsest heading tier that yields a plausible section count. No usable
-    headings → one "Full text" section. Returns [{section_number, title, text}].
-    (Alignment to a published TOC for cleaner titles is a later refinement.)
+    choosing the coarsest heading tier that yields a plausible section count, and folding
+    duplicate top-level divisions (front-matter outline / real body / back-matter index) to
+    their real body. No usable headings → one "Full text" section. Returns
+    [{section_number, title, text}]. (Descriptive titles from a source's published TOC —
+    EPUB nav / PDF outline / embedded Contents — remain an optional later enrichment.)
     """
     if not text:
         return []
@@ -159,6 +218,8 @@ def segment_into_chapters(text: str | None) -> list[dict]:
     kept: list[dict] = []
     for tier in _TIERS:
         candidate = _segment_pass(lines, set(tier))
+        if tier == ("major",):  # fold duplicate top-level divisions to their real bodies
+            candidate = _dedupe_major(candidate)
         if 2 <= len(candidate) <= _MAX_SECTIONS:
             kept = candidate
             break
