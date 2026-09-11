@@ -46,6 +46,13 @@ webapp = [
     "asyncpg>=0.29",           # Neon/Postgres backend storage (optional at runtime; off if DATABASE_URL unset)
     "authlib>=1.3",            # Google OAuth (OpenID Connect) sign-in
     "itsdangerous>=2.1",       # signs the session cookie (Starlette SessionMiddleware)
+    "cryptography>=42.0",      # AES-GCM encryption of private tier-1 source text (Living Library)
+    "inngest>=0.5",            # durable, concurrency-capped extraction worker (serve mode)
+    "fastapi>=0.110",          # hosts the Inngest serve endpoint (mounted into Starlette)
+    "boto3>=1.34",             # S3-compatible client for Cloudflare R2 (presigned uploads, get/delete)
+    "ebooklib>=0.18",          # EPUB → text (uploaded book copies)
+    "pypdf>=4.0",              # PDF → text (uploaded book copies)
+    "beautifulsoup4>=4.12",    # strip EPUB chapter HTML to text
 ]
 # Print-ready PDF rendering of the course materials. Uses the machine's installed
 # Edge/Chromium (Playwright channel=msedge) — no browser download needed.

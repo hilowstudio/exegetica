@@ -183,6 +183,37 @@
   .r-author{font-size:14px;color:var(--ink-soft)}
   .r-facts{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);margin-top:6px}
   .r-note{font-size:13px;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--rule);border-radius:9px;padding:11px 13px;margin-top:16px}
+  .lib-remove{margin-top:12px;font-family:var(--sans);font-weight:600;font-size:12.5px;color:var(--accent-soft);background:none;border:1px solid var(--rule-strong);border-radius:8px;padding:7px 13px;cursor:pointer}
+  .lib-remove:hover{background:var(--surface-2);color:var(--accent)}
+  /* ---------- extraction (build study materials) ---------- */
+  .lib-extract{margin-top:16px;font-family:var(--sans);font-weight:600;font-size:13px;color:#fff;background:var(--accent);border:0;border-radius:9px;padding:9px 14px;cursor:pointer}
+  .lib-extract:hover{background:var(--accent-soft)}
+  .extract-out{margin-top:14px}
+  .ex-status{font-size:13px;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--rule);border-radius:9px;padding:11px 13px;display:flex;align-items:center;gap:9px}
+  .ex-status::before{content:"";width:13px;height:13px;border:2px solid var(--rule-strong);border-top-color:var(--accent);border-radius:50%;animation:exspin .8s linear infinite;flex:none}
+  .ex-status.err{color:var(--accent-soft)}
+  .ex-status.err::before{display:none}
+  @keyframes exspin{to{transform:rotate(360deg)}}
+  .ex-result{border-top:1px solid var(--rule);margin-top:6px}
+  .ex-sec{padding:12px 0;border-bottom:1px solid var(--rule)}
+  .ex-h{font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--iron-soft);margin-bottom:6px}
+  .ex-h .ex-n{color:var(--ink-faint);margin-left:5px}
+  .ex-sec p{margin:0;font-size:13.5px;color:var(--ink);line-height:1.55}
+  .ex-tags{display:flex;flex-wrap:wrap;gap:6px}
+  .ex-tag{font-size:12px;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--rule);border-radius:999px;padding:3px 10px}
+  .ex-list{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink);line-height:1.5}
+  .ex-list li{margin-bottom:6px}
+  .ex-cite{display:inline-block;margin-left:6px;font-size:11px;color:var(--ink-faint);background:var(--surface-2);border-radius:6px;padding:1px 7px}
+  .ex-actions{display:flex;flex-wrap:wrap;gap:8px}
+  .lib-upload{margin-top:16px;font-family:var(--sans);font-weight:600;font-size:13px;color:var(--ink);background:var(--surface-2);border:1px solid var(--rule-strong);border-radius:9px;padding:9px 14px;cursor:pointer}
+  .lib-upload:hover{background:var(--sunk)}
+  .up-title{margin:0 0 6px;font-family:var(--serif,Georgia,serif);font-size:19px;color:var(--ink)}
+  .up-lead{margin:0 0 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.55}
+  .up-book{font-size:13.5px;font-weight:600;color:var(--ink);background:var(--surface-2);border:1px solid var(--rule);border-radius:8px;padding:8px 11px;margin-bottom:6px}
+  .up-lbl{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--iron-soft);margin:12px 0 5px}
+  .up-input{width:100%;font-family:var(--sans);font-size:13.5px;color:var(--ink);background:var(--surface);border:1px solid var(--rule-strong);border-radius:8px;padding:8px 10px;box-sizing:border-box}
+  .up-attest{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink-soft);margin-top:14px;line-height:1.4}
+  .up-attest input{margin-top:2px;flex:none}
   @media(max-width:520px){.read-grid{grid-template-columns:1fr;gap:16px}.read-cover{max-width:180px}}
 
   /* ---------- podcasts: records + turntable ---------- */
@@ -456,6 +487,26 @@
   </div>
 </div>
 
+<!-- Upload a copy (in-copyright / accessibility) -->
+<div class="modal-bg" id="upload-bg">
+  <div class="modal" role="dialog" aria-modal="true" style="max-width:470px">
+    <h3 class="up-title">Upload a copy</h3>
+    <p class="up-lead">Provide a copy you legally <strong>own</strong>, have <strong>borrowed</strong>, or can access under the <strong>accessibility exception</strong>. It builds study materials and is stored <strong>privately, encrypted</strong> — never shared. Only the derived materials become community resources.</p>
+    <div class="up-book" id="up-book"></div>
+    <label class="up-lbl" for="up-file">Book file</label>
+    <input type="file" id="up-file" accept=".epub,.pdf,.txt,.md" class="up-input">
+    <label class="up-lbl" for="up-acq">How did you get this copy?</label>
+    <select id="up-acq" class="up-input">
+      <option value="owned">I own this copy</option>
+      <option value="borrowed">I borrowed it (library)</option>
+      <option value="accessibility">Accessibility loan (print-disabled)</option>
+    </select>
+    <label class="up-attest"><input type="checkbox" id="up-attest"> I am authorized to access this copy for the purpose selected.</label>
+    <div id="up-out" class="extract-out"></div>
+    <div class="modal-actions"><span class="sp"></span><button class="btn-ghost" id="up-cancel" type="button">Cancel</button><button class="lib-extract" id="up-submit" type="button" style="margin-top:0">Upload &amp; build</button></div>
+  </div>
+</div>
+
 <!-- Turntable (a record set to play) -->
 <div class="modal-bg" id="play-bg">
   <div class="modal play" role="dialog" aria-modal="true">
@@ -505,6 +556,7 @@ var TYPE_UI={
 };
 
 var curType="book", curFilter="all";
+var AUTH={signed:false,user:null};  // resolved in initLibrary(); shelf persists to Neon when signed in
 var wrap=(function(){try{return localStorage.getItem("studybible.lib.wrap")==="on";}catch(e){return false;}})();
 var sortKey=(function(){try{return localStorage.getItem("studybible.lib.sort")==="title"?"title":"author";}catch(e){return "author";}})();
 
@@ -600,10 +652,15 @@ function openBook(id){
     ? '<img src="'+esc(it.cover)+'" alt="">'
     : '<div class="ph" style="--c:'+it.accent+'"><span class="sp"></span><div class="t">'+esc(it.title)+'</div><div class="a">'+esc(it.sub)+'</div></div>';
   var facts=[it.meta,it.isbn?("ISBN "+it.isbn):""].filter(Boolean).join("  ·  ");
+  _curBook=it;
   $("read-body").innerHTML='<div class="read-grid"><div class="read-cover">'+cover+'</div>'+
     '<div class="read-meta"><div class="r-eyebrow">Book</div><h2 class="r-title">'+esc(it.title)+'</h2>'+
     '<div class="r-author">'+esc(it.sub)+'</div>'+(facts?'<div class="r-facts">'+esc(facts)+'</div>':'')+
-    '<div class="r-note">Ready to ingest. Building a worksheet from a chapter comes in the next phase.</div></div></div>';
+    (AUTH.signed
+      ? '<div class="ex-actions"><button type="button" class="lib-extract">✦ Build / view study materials</button><button type="button" class="lib-upload">⬆ Upload a copy</button></div>'
+      : '<div class="r-note">Sign in to build study materials from this book.</div>')+
+    '<div id="extract-out" class="extract-out"></div>'+
+    _rmBtn(it)+'</div></div>';
   $("read-bg").classList.add("open");
 }
 $("shelf").addEventListener("click",function(e){var b=e.target.closest(".book");if(b)openBook(b.dataset.id);});
@@ -624,7 +681,7 @@ function openPlayer(id){
   if(!it)return;
   $("play-body").innerHTML='<div class="play-grid"><div class="deck-holder"><div class="deck"><div class="plinth"></div><div class="platter"></div><div class="disc spinning">'+discLabel(it)+'</div><div class="tonearm"><span class="arm"><span class="head"></span></span><span class="pivot"></span></div></div></div>'+
     '<div class="play-meta"><div class="r-eyebrow">Podcast</div><h2 class="r-title">'+esc(it.title)+'</h2><div class="r-author">'+esc(it.sub)+'</div>'+(it.meta?'<div class="r-facts">'+esc(it.meta)+'</div>':'')+
-    '<div class="r-note">Ready to ingest. Turning an episode into a study set comes in the next phase.</div></div></div>';
+    '<div class="r-note">Ready to ingest. Turning an episode into a study set comes in the next phase.</div>'+_rmBtn(it)+'</div></div>';
   $("play-bg").classList.add("open");
 }
 $("records").addEventListener("click",function(e){var b=e.target.closest(".rec");if(b)openPlayer(b.dataset.id);});
@@ -647,17 +704,113 @@ function openScreen(id){
   var projector='<div class="projector"><div class="p-reels"><span class="p-reel small spin"></span><span class="p-reel big spin"></span></div><div class="p-body"></div><div class="p-lens"></div></div>';
   $("screen-body").innerHTML='<div class="screening"><div class="scene-holder"><div class="proj-scene">'+projector+'<div class="beam"></div>'+screen+'</div></div>'+
     '<div class="play-meta"><div class="r-eyebrow">Video</div><h2 class="r-title">'+esc(it.title)+'</h2><div class="r-author">'+esc(it.sub)+'</div>'+(it.meta?'<div class="r-facts">'+esc(it.meta)+'</div>':'')+
-    '<div class="r-note">Ready to ingest. Turning a video into a lesson set comes in the next phase.</div></div></div>';
+    '<div class="r-note">Ready to ingest. Turning a video into a lesson set comes in the next phase.</div>'+_rmBtn(it)+'</div></div>';
   $("screen-bg").classList.add("open");
 }
 $("films").addEventListener("click",function(e){var b=e.target.closest(".film");if(b)openScreen(b.dataset.id);});
 $("screen-close").addEventListener("click",function(){$("screen-bg").classList.remove("open");});
 var _rz;window.addEventListener("resize",function(){clearTimeout(_rz);_rz=setTimeout(function(){if(curFilter==="book")render();},160);});
+function _rmBtn(it){return '<button type="button" class="lib-remove" data-remove="'+it.id+'">Remove from library</button>';}
+function _place(it){ if(curFilter!=="all"&&curFilter!==it.type){curFilter="all";syncFilters();} }
 function addItem(it){
-  it.id=uid();it.fresh=true;LIB.unshift(it);
-  if(curFilter!=="all"&&curFilter!==it.type){curFilter="all";syncFilters();}
-  render();toast("“"+it.title+"” added to your library");
+  if(AUTH.signed){
+    fetch("/api/library/shelf",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify(it)})
+      .then(function(r){return r.ok?r.json():null;}).then(function(d){
+        if(!d||!d.item){toast("Could not save. Try again.");return;}
+        var x=d.item;x.fresh=true;
+        if(!LIB.some(function(y){return y.id===x.id;}))LIB.unshift(x);
+        _place(x);render();toast("“"+x.title+"” added to your library");
+      }).catch(function(){toast("Could not save. Try again.");});
+  }else{
+    it.id=uid();it.fresh=true;LIB.unshift(it);_place(it);render();
+    toast("“"+it.title+"” added to your library");
+  }
 }
+function removeItem(id){
+  LIB=LIB.filter(function(x){return x.id!==id;});render();
+  ["read-bg","play-bg","screen-bg"].forEach(function(m){var el=$(m);if(el)el.classList.remove("open");});
+  if(AUTH.signed){fetch("/api/library/shelf/"+encodeURIComponent(id),{method:"DELETE",credentials:"same-origin"}).catch(function(){});}
+  toast("Removed from your library");
+}
+document.addEventListener("click",function(e){var rb=e.target.closest("[data-remove]");if(rb)removeItem(rb.getAttribute("data-remove"));});
+
+// ---------- extraction: build study materials from a book ----------
+var _curBook=null;
+function startExtract(it){
+  if(!it||!AUTH.signed)return;
+  var out=$("extract-out");if(!out)return;
+  out.innerHTML='<div class="ex-status">Building study materials… this can take a minute.</div>';
+  fetch("/api/library/extract",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({title:it.title,author:it.sub})})
+    .then(function(r){return r.ok?r.json():null;}).then(function(d){
+      if(!d||!d.extraction_id){out.innerHTML='<div class="ex-status err">Could not start. Try again.</div>';return;}
+      pollExtract(d.extraction_id,out,0);
+    }).catch(function(){out.innerHTML='<div class="ex-status err">Could not start. Try again.</div>';});
+}
+function pollExtract(id,out,tries){
+  fetch("/api/library/extract/"+encodeURIComponent(id),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;})
+    .then(function(s){
+      if(!s){out.innerHTML='<div class="ex-status err">Lost track of the extraction.</div>';return;}
+      if(s.status==="extracted"){loadExtraction(id,out);return;}
+      if(s.status==="failed"){out.innerHTML='<div class="ex-status err">'+esc(s.error||"Extraction failed — this may not be a public-domain title.")+'</div>';return;}
+      out.innerHTML='<div class="ex-status">Building… '+esc(s.status)+(s.sections?' · '+s.sections+' sections':'')+(s.objectives?' · '+s.objectives+' objectives':'')+'</div>';
+      if(tries>80){out.innerHTML='<div class="ex-status">Still working — reopen this book shortly to see the results.</div>';return;}
+      setTimeout(function(){pollExtract(id,out,tries+1);},3000);
+    }).catch(function(){setTimeout(function(){pollExtract(id,out,tries+1);},3000);});
+}
+function loadExtraction(id,out){
+  fetch("/api/library/extraction/"+encodeURIComponent(id),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;})
+    .then(function(d){ if(!d){out.innerHTML='<div class="ex-status err">Could not load results.</div>';return;} renderExtraction(d,out); });
+}
+function renderExtraction(d,out){
+  var h='<div class="ex-result">';
+  if(d.summary)h+='<div class="ex-sec"><div class="ex-h">Summary</div><p>'+esc(d.summary)+'</p></div>';
+  if(d.themes&&d.themes.length)h+='<div class="ex-sec"><div class="ex-h">Themes</div><div class="ex-tags">'+d.themes.map(function(t){return '<span class="ex-tag">'+esc(t)+'</span>';}).join("")+'</div></div>';
+  if(d.reading_level)h+='<div class="ex-sec"><div class="ex-h">Reading level</div><p>'+esc(d.reading_level)+'</p></div>';
+  if(d.objectives&&d.objectives.length)h+='<div class="ex-sec"><div class="ex-h">Learning objectives<span class="ex-n">'+d.objectives.length+'</span></div><ul class="ex-list">'+
+    d.objectives.map(function(o){return '<li>'+esc(o.text)+(o.section?'<span class="ex-cite">'+esc(o.section)+'</span>':'')+'</li>';}).join("")+'</ul></div>';
+  if(d.alignments&&d.alignments.length)h+='<div class="ex-sec"><div class="ex-h">Standards alignment<span class="ex-n">'+d.alignments.length+'</span></div><ul class="ex-list">'+
+    d.alignments.map(function(a){return '<li>'+esc(a.node||a.code)+'<span class="ex-cite">'+esc(a.level)+(a.section?' · Ch. '+esc(a.section):'')+'</span></li>';}).join("")+'</ul></div>';
+  if(h==='<div class="ex-result">')h+='<div class="ex-status">No study materials were produced for this title.</div>';
+  out.innerHTML=h+'</div>';
+}
+document.addEventListener("click",function(e){if(e.target.closest(".lib-extract"))startExtract(_curBook);});
+
+// ---------- upload a copy (in-copyright / accessibility) ----------
+function openUpload(it){
+  if(!it||!AUTH.signed)return;
+  _curBook=it;
+  $("up-book").textContent=it.title+(it.sub?" — "+it.sub:"");
+  $("up-file").value="";$("up-attest").checked=false;$("up-acq").value="owned";$("up-out").innerHTML="";
+  $("upload-bg").classList.add("open");
+}
+function submitUpload(){
+  var it=_curBook,out=$("up-out");if(!it)return;
+  var f=$("up-file").files&&$("up-file").files[0];
+  if(!f){out.innerHTML='<div class="ex-status err">Choose a file first.</div>';return;}
+  if(!$("up-attest").checked){out.innerHTML='<div class="ex-status err">Please confirm you are authorized to access this copy.</div>';return;}
+  var ext=((f.name||"").split(".").pop()||"").toLowerCase(),acq=$("up-acq").value;
+  out.innerHTML='<div class="ex-status">Uploading…</div>';
+  fetch("/api/library/upload/presign",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({source_format:ext,size:f.size})})
+    .then(function(r){if(r.status===503)throw{msg:"Uploads aren't set up yet."};return r.ok?r.json():r.json().then(function(e){throw{msg:(e&&e.error)||"Upload failed."};});})
+    .then(function(p){
+      return fetch(p.upload_url,{method:"PUT",body:f,headers:{"Content-Type":p.content_type}}).then(function(pr){
+        if(!pr.ok)throw{msg:"Upload to storage failed."};
+        return fetch("/api/library/upload/complete",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},
+          body:JSON.stringify({object_key:p.object_key,title:it.title,author:it.sub,acquisition:acq,source_format:ext,attested:true})});
+      });
+    })
+    .then(function(r){return r.ok?r.json():r.json().then(function(e){throw{msg:(e&&e.error)||"Could not queue extraction."};});})
+    .then(function(d){if(!d||!d.extraction_id)throw{msg:"Could not start extraction."};
+      out.innerHTML='<div class="ex-status">Building study materials from your copy… this can take a minute.</div>';
+      pollExtract(d.extraction_id,out,0);})
+    .catch(function(err){out.innerHTML='<div class="ex-status err">'+esc((err&&err.msg)||"Upload failed.")+'</div>';});
+}
+document.addEventListener("click",function(e){if(e.target.closest(".lib-upload"))openUpload(_curBook);});
+$("up-cancel").addEventListener("click",function(){$("upload-bg").classList.remove("open");});
+$("up-submit").addEventListener("click",submitUpload);
+$("upload-bg").addEventListener("click",function(e){if(e.target===$("upload-bg"))$("upload-bg").classList.remove("open");});
 
 // ---------- omnibox ----------
 function syncType(){
@@ -786,6 +939,18 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")Array.protot
 })();
 
 syncType();syncFilters();syncWrap();syncSort();render();
+// Signed-in users get their persisted Neon shelf (replacing the demo seed);
+// anonymous visitors keep the in-memory demo shelf.
+function initLibrary(){
+  fetch("/api/me",{credentials:"same-origin"}).then(function(r){return r.json();}).then(function(d){
+    AUTH.user=(d&&d.user)||null;AUTH.signed=!!AUTH.user;
+    if(!AUTH.signed)return;
+    fetch("/api/library/shelf",{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;}).then(function(s){
+      if(s&&s.items){LIB=s.items;render();}
+    }).catch(function(){});
+  }).catch(function(){});
+}
+initLibrary();
 </script>
 <script src="/static/acct.js"></script>
 </body>

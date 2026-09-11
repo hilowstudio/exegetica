@@ -32,7 +32,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import auth, calendar_views, course, course_views, curriculum, db, generator, library, memory, providers, safety, store
+from webapp import auth, calendar_views, course, course_views, curriculum, db, generator, library, library_store, memory, providers, safety, store
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("study-bible-web")
@@ -507,6 +507,15 @@ SESSION_SECRET = os.environ.get("SESSION_SECRET") or secrets.token_urlsafe(32)
 if not os.environ.get("SESSION_SECRET"):
     logger.warning("SESSION_SECRET not set; using an ephemeral dev secret (sessions reset on restart)")
 
+# Inngest serve endpoint (durable extraction worker). Built here so a missing/broken
+# Inngest config disables the worker rather than taking the whole app down.
+try:
+    from webapp import inngest_app
+    _inngest_serve_app = inngest_app.build_serve_app()
+except Exception:  # noqa: BLE001
+    logger.warning("Inngest serve endpoint disabled (not configured)", exc_info=True)
+    _inngest_serve_app = None
+
 app = Starlette(
     lifespan=lifespan,
     middleware=[
@@ -537,6 +546,14 @@ app = Starlette(
         Route("/api/library/podcasts", library_podcasts),
         Route("/api/library/video", library_video),
         Route("/api/library/youtube", library_youtube),
+        Route("/api/library/shelf", library_store.shelf_get, methods=["GET"]),
+        Route("/api/library/shelf", library_store.shelf_add, methods=["POST"]),
+        Route("/api/library/shelf/{id}", library_store.shelf_remove, methods=["DELETE"]),
+        Route("/api/library/extract", library_store.extract_request, methods=["POST"]),
+        Route("/api/library/extract/{id}", library_store.extract_status, methods=["GET"]),
+        Route("/api/library/extraction/{id}", library_store.extraction_detail, methods=["GET"]),
+        Route("/api/library/upload/presign", library_store.upload_presign, methods=["POST"]),
+        Route("/api/library/upload/complete", library_store.upload_complete, methods=["POST"]),
         Route("/api/config", config),
         Route("/auth/login", auth.login, name="auth_login"),
         Route("/auth/google/callback", auth.auth_callback, name="auth_callback"),
@@ -553,3 +570,8 @@ app = Starlette(
         Mount("/static", app=StaticFiles(directory=str(STATIC_DIR)), name="static"),
     ],
 )
+
+# Mount the Inngest serve endpoint at /api/inngest (its FastAPI sub-app serves at "/",
+# with public_path telling Inngest the real path). Appended so it's optional.
+if _inngest_serve_app is not None:
+    app.router.routes.append(Mount("/api/inngest", app=_inngest_serve_app))
