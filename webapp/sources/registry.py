@@ -9,11 +9,15 @@ from __future__ import annotations
 
 import time
 
-from webapp.sources import gutenberg
+from webapp.sources import ccel, gutenberg
 
-# (key, module) in best-first priority order.
+# (key, module) in best-first priority order. Gutenberg leads: it is US-clear by
+# construction (so it can publish full_text) and its plain text is cleanest. CCEL
+# follows for the on-mission classics Gutenberg lacks (Fathers/Reformers/Puritans/
+# creeds); CCEL grounds derivation only and never publishes full_text.
 _SOURCES = [
     ("gutenberg", gutenberg),
+    ("ccel", ccel),
 ]
 _FETCH = {key: mod.fetch for key, mod in _SOURCES}
 
