@@ -332,6 +332,19 @@ per-copy quality history when >2 copies compete.
      through from the worker.
 3. Next PD source waves (Sefaria, Perseus) per docs/living-library-sources.md.
 
+**Bulk seeding + extraction cost (2026-09-11).** `scripts/seed_batch.py` seeds the shared
+catalog from the public-domain list (`docs/classics-lists-pd-split.md`) via the **Batch API**
+(50% off) on **Claude Sonnet 5** (`EXTRACTION_MODEL` default is now `claude-sonnet-5`). Two
+batch rounds: derive + propose, then verify. Cost drivers cut four ways (approved): Sonnet
+over Opus (~−60%), Batch API (−50%), **verify batched one-call-per-section** (was one call
+per objective — core change in `verify_objectives`, benefits every path), and **section-text
+prompt caching** on the interactive path only (in batch, propose/verify are separate rounds
+so the 5-min cache can't hit — `cache=False` there). Estimated ~$45–50 for all 266 PD titles;
+the seeder reports **actual** usage/cost and has `--limit N` for a measured pilot and
+`--dry-run` (fetch+segment, no spend). Extraction request-building is now split into
+`derive_params`/`propose_params`/`verify_params` reused by both the interactive `_call` path
+and the batch seeder.
+
 - **Verification pilot — NOT a gate (decided 2026-09-10).** Grounding is locked
   unconditionally, so no pilot is required before building. The citation-verify pass
   provides continuous, model-agnostic measurement instead. (A pilot is available later

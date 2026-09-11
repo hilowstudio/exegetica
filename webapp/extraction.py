@@ -28,7 +28,15 @@ from webapp.sources import matching, text_processing as TP
 
 logger = logging.getLogger("study-bible-web.extraction")
 
-_MODEL = os.environ.get("EXTRACTION_MODEL", "claude-opus-4-8")
+_MODEL = os.environ.get("EXTRACTION_MODEL", "claude-sonnet-5")
+
+# Shared system for the section-grounded steps (propose + verify). Keeping it identical
+# across both lets the section text be a cacheable prefix reused between the two calls on
+# the interactive path (propose then verify, seconds apart). See _section_user/_call.
+_GROUNDING_SYSTEM = (
+    "You are a careful curriculum assistant. Work ONLY from the supplied section text — do "
+    "not use outside knowledge and do not fabricate. Reply with STRICT JSON only."
+)
 
 
 # --------------------------------------------------------------------------- #
@@ -60,20 +68,25 @@ def _parse_json(text: str | None):
         return None
 
 
-async def _complete_json(system: str, user: str, max_tokens: int = 4000, model: str | None = None):
-    """One-shot structured (JSON) completion. Returns the parsed object or None."""
+def _params(system, user, max_tokens: int = 4000, model: str | None = None) -> dict:
+    """A `messages.create` param dict — the single request shape reused by the interactive
+    path (_call, below) and the Batch API seeder (scripts/seed_batch.py). `user` is a plain
+    string or a list of content blocks (so the section text can carry cache_control)."""
+    return {"model": model or _MODEL, "max_tokens": max_tokens,
+            "system": system, "messages": [{"role": "user", "content": user}]}
+
+
+def _text_of(msg) -> str:
+    return "".join(getattr(b, "text", "") for b in msg.content if getattr(b, "type", None) == "text")
+
+
+async def _call(params: dict):
+    """Run one param dict now and parse its JSON (the interactive path). None on failure."""
     from anthropic import AsyncAnthropic
 
     client = AsyncAnthropic()  # uses ANTHROPIC_API_KEY
     try:
-        msg = await client.messages.create(
-            model=model or _MODEL,
-            max_tokens=max_tokens,
-            system=system,
-            messages=[{"role": "user", "content": user}],
-        )
-        text = "".join(getattr(b, "text", "") for b in msg.content if getattr(b, "type", None) == "text")
-        return _parse_json(text)
+        return _parse_json(_text_of(await client.messages.create(**params)))
     except Exception:  # noqa: BLE001
         logger.exception("extraction model call failed")
         return None
@@ -82,6 +95,11 @@ async def _complete_json(system: str, user: str, max_tokens: int = 4000, model: 
 
         with contextlib.suppress(Exception):
             await client.close()
+
+
+async def _complete_json(system: str, user: str, max_tokens: int = 4000, model: str | None = None):
+    """One-shot structured (JSON) completion. Returns the parsed object or None."""
+    return await _call(_params(system, user, max_tokens, model))
 
 
 # --------------------------------------------------------------------------- #
@@ -123,17 +141,10 @@ def _excerpt(s: str, n: int) -> str:
     return s[:n]
 
 
-async def derive_book(meta: dict, sections: list[dict]) -> dict:
-    """Summary + themes + reading level, grounded in the text (section titles + a
-    sample per section). Never fabricates; returns {} on failure."""
+def derive_params(meta: dict, sections: list[dict]) -> dict:
     title = (meta or {}).get("title") or "this work"
     toc = "\n".join(f"{s['section_number']}. {s['title']}" for s in sections[:60])
     sample = "\n\n".join(f"[{s['section_number']}] {_excerpt(s['text'], 800)}" for s in sections[:8])
-    system = (
-        "You are a careful curriculum assistant. Work ONLY from the supplied text of a "
-        "book — do not use outside knowledge and do not fabricate. If the text is "
-        "insufficient, say so with null. Reply with STRICT JSON only."
-    )
     user = (
         f"BOOK: {title}\n\nTABLE OF CONTENTS (detected):\n{toc}\n\n"
         f"EXCERPTS (grounding):\n{sample}\n\n"
@@ -141,7 +152,10 @@ async def derive_book(meta: dict, sections: list[dict]) -> dict:
         "words, no verbatim copying), \"themes\": string[] (3-6), \"reading_level\": "
         "string|null (e.g. 'Grade 7-9'), \"confidence\": \"high\"|\"medium\"|\"low\"}."
     )
-    out = await _complete_json(system, user, max_tokens=1500)
+    return _params(_GROUNDING_SYSTEM, user, max_tokens=1500)
+
+
+def parse_derivative(out) -> dict:
     if not isinstance(out, dict):
         return {}
     return {
@@ -152,59 +166,93 @@ async def derive_book(meta: dict, sections: list[dict]) -> dict:
     }
 
 
+async def derive_book(meta: dict, sections: list[dict]) -> dict:
+    """Summary + themes + reading level, grounded in the text. Never fabricates; {} on
+    failure. (Interactive path; the seeder builds the same request via derive_params.)"""
+    return parse_derivative(await _call(derive_params(meta, sections)))
+
+
+def _section_user(section: dict, instruction: str, cache: bool) -> list[dict]:
+    """User content = the section text (a cacheable prefix, so propose and verify reuse it
+    on the interactive path) followed by the task instruction. `cache=False` for the Batch
+    API, where propose and verify land in separate batches and the 5-min cache never hits."""
+    body = _excerpt(section["text"], 6000)
+    block = {"type": "text", "text": f"SECTION {section['section_number']}: {section['title']}\n\nTEXT:\n{body}"}
+    if cache:
+        block["cache_control"] = {"type": "ephemeral"}
+    return [block, {"type": "text", "text": instruction}]
+
+
+def propose_params(meta: dict, section: dict, per_section: int = 3, cache: bool = True) -> dict:
+    title = (meta or {}).get("title") or "this work"
+    instruction = (
+        f"BOOK: {title}\nFrom the section text above, write up to {per_section} grounded, "
+        "teachable learning objectives — each supported by THIS section, no outside knowledge "
+        "or invented facts. Return JSON: {\"objectives\": [ {\"text\": string (e.g. 'Explain "
+        "how ...'), \"citation\": string (the specific passage/detail it rests on)} ] }. If the "
+        "section can't support a solid objective, return an empty list."
+    )
+    return _params(_GROUNDING_SYSTEM, _section_user(section, instruction, cache), max_tokens=1200)
+
+
+def verify_params(section: dict, objectives: list[dict], cache: bool = True) -> dict:
+    listing = "\n".join(
+        f"{i}. {o['text']}  (cited: {o.get('citation') or '(none)'})" for i, o in enumerate(objectives)
+    )
+    instruction = (
+        "You are an adversarial fact-checker. For EACH numbered objective below, decide ONLY "
+        "from the section text above whether the text SUPPORTS it (the facts it presupposes are "
+        "actually present). Be strict: unsupported or fabricated → false.\n\n"
+        f"OBJECTIVES:\n{listing}\n\n"
+        "Return JSON: {\"verdicts\": [ {\"index\": int, \"supported\": true|false} ] }."
+    )
+    return _params(_GROUNDING_SYSTEM, _section_user(section, instruction, cache), max_tokens=600)
+
+
+def parse_proposals(section_number, out) -> list[dict]:
+    return [
+        {"section_number": section_number, "text": o["text"], "citation": o.get("citation")}
+        for o in ((out or {}).get("objectives", []) if isinstance(out, dict) else [])
+        if isinstance(o, dict) and o.get("text")
+    ]
+
+
 async def propose_objectives(meta: dict, sections: list[dict], per_section: int = 3) -> list[dict]:
     """Per-section grounded learning objectives, each CITED to its section. Community
-    (shared) candidates — they enter 'proposed' and must pass verify."""
-    title = (meta or {}).get("title") or "this work"
+    (shared) candidates — they enter 'proposed' and must pass verify. (Interactive path;
+    the Batch API seeder builds the same requests via propose_params.)"""
     proposals: list[dict] = []
     for s in sections:
-        body = _excerpt(s["text"], 6000)
-        if len(body) < TP._MIN_SECTION_CHARS:
+        if len(_excerpt(s["text"], 6000)) < TP._MIN_SECTION_CHARS:
             continue
-        system = (
-            "You write learning objectives for a section of a book, grounded ONLY in the "
-            "supplied section text. Do NOT use outside knowledge; do NOT invent characters, "
-            "plot points, or facts not present in the text. Each objective must be a real, "
-            "teachable outcome supported by THIS section. STRICT JSON only."
-        )
-        user = (
-            f"BOOK: {title}\nSECTION {s['section_number']}: {s['title']}\n\nTEXT:\n{body}\n\n"
-            f"Return JSON: {{\"objectives\": [ up to {per_section} × "
-            "{\"text\": string (a learning objective, e.g. 'Explain how ...'), "
-            "\"citation\": string (the specific passage/detail in THIS section it rests on) } ] }. "
-            "If the section can't support a solid objective, return an empty list."
-        )
-        out = await _complete_json(system, user, max_tokens=1200)
-        for o in (out or {}).get("objectives", []) if isinstance(out, dict) else []:
-            if isinstance(o, dict) and o.get("text"):
-                proposals.append(
-                    {"section_number": s["section_number"], "text": o["text"], "citation": o.get("citation")}
-                )
+        out = await _call(propose_params(meta, s, per_section))
+        proposals.extend(parse_proposals(s["section_number"], out))
     return proposals
 
 
+def keep_verified(objectives: list[dict], out) -> list[dict]:
+    """Filter one section's proposed objectives by a verify response's per-index verdicts."""
+    ok = {v.get("index") for v in ((out or {}).get("verdicts", []) if isinstance(out, dict) else [])
+          if v.get("supported") is True}
+    return [o for i, o in enumerate(objectives) if i in ok]
+
+
 async def verify_objectives(objectives: list[dict], sections_by_num: dict[int, dict]) -> list[dict]:
-    """Citation-verify gate: keep an objective only if its cited section actually
-    supports it. The source text is the reviewer — verification is retrieval, not
-    expertise. Anything unverifiable is dropped."""
-    kept: list[dict] = []
+    """Citation-verify gate: keep an objective only if its section actually supports it. ONE
+    call per section verifies all that section's objectives together (was one-per-objective).
+    The source text is the reviewer — verification is retrieval, not expertise."""
+    from collections import defaultdict
+
+    by_section: dict = defaultdict(list)
     for o in objectives:
-        sec = sections_by_num.get(o.get("section_number"))
+        by_section[o.get("section_number")].append(o)
+    kept: list[dict] = []
+    for sn, objs in by_section.items():
+        sec = sections_by_num.get(sn)
         if not sec:
             continue
-        system = (
-            "You are an adversarial fact-checker. Decide ONLY from the supplied section text "
-            "whether it SUPPORTS the claim in the objective (the facts it presupposes are "
-            "actually in the text). Be strict: unsupported or fabricated → false. STRICT JSON only."
-        )
-        user = (
-            f"SECTION TEXT:\n{_excerpt(sec['text'], 6000)}\n\n"
-            f"OBJECTIVE: {o['text']}\nCITED: {o.get('citation') or '(none)'}\n\n"
-            "Return JSON: {\"supported\": true|false, \"reason\": string}."
-        )
-        out = await _complete_json(system, user, max_tokens=400)
-        if isinstance(out, dict) and out.get("supported") is True:
-            kept.append(o)
+        out = await _call(verify_params(sec, objs))
+        kept.extend(keep_verified(objs, out))
     return kept
 
 
