@@ -268,6 +268,79 @@ _US_CLEAR_SOURCES = {"gutenberg"}
 # Sections per objectives step — keeps each step's Claude calls bounded.
 OBJECTIVES_BATCH = 2
 
+# Provenance tier for canonical-copy selection: a trusted, clean PD source outranks any
+# user upload, so a book we can fetch ourselves is never superseded by someone's PDF.
+_TRUSTED_SOURCE_TIER = 3
+_UPLOAD_TIER = 2
+# A newer same-tier copy must beat the incumbent's quality by at least this margin to be
+# auto-promoted to canonical; a smaller gap is "borderline" and held (copy kept private).
+_PROMOTE_MARGIN = 0.10
+
+
+async def verify_identity(meta: dict, text: str) -> dict:
+    """Grounding-first identity check for an upload: does the extracted text actually BELONG
+    to the work the uploader claims? Judges the WORK, not the edition — a different
+    translation/abridgment/printing of the same work is still a match — so it rejects only
+    a genuinely different work (or non-prose). Returns
+    {match: 'yes'|'no'|'unsure', detected: str, confidence: 'high'|'medium'|'low', reason: str}.
+    Fails OPEN (returns 'unsure') on any model/parse error, so the gate never wrongly blocks
+    a legitimate upload because of an infrastructure hiccup."""
+    title = (meta or {}).get("title") or ""
+    author = (((meta or {}).get("authors") or [""]) or [""])[0] or ""
+    n = len(text)
+    samples = "\n\n".join([
+        f"[opening]\n{_excerpt(text, 1500)}",
+        f"[middle]\n{_excerpt(text[n // 2:], 1200)}" if n > 4000 else "",
+        f"[near end]\n{_excerpt(text[-1500:], 1200)}" if n > 4000 else "",
+    ]).strip()
+    system = (
+        "You verify whether an uploaded text is the work its uploader claims, to catch "
+        "mislabeled uploads before they are processed. Judge the WORK, not the edition: a "
+        "different translation, abridgment, annotated edition, or printing of the SAME work "
+        "is a MATCH ('yes'). Answer 'no' ONLY when the text is clearly a DIFFERENT work than "
+        "claimed, or is not coherent readable prose. When the samples are too thin or "
+        "genuinely ambiguous, answer 'unsure'. Reply with STRICT JSON only."
+    )
+    user = (
+        f"CLAIMED TITLE: {title}\nCLAIMED AUTHOR: {author}\n\n"
+        f"SAMPLES FROM THE UPLOADED TEXT:\n{samples}\n\n"
+        "Return JSON: {\"match\": \"yes\"|\"no\"|\"unsure\", \"detected\": string (what work "
+        "this actually appears to be, or \"\"), \"confidence\": \"high\"|\"medium\"|\"low\", "
+        "\"reason\": string (one sentence)}."
+    )
+    out = await _complete_json(system, user, max_tokens=300)
+    if not isinstance(out, dict) or out.get("match") not in ("yes", "no", "unsure"):
+        return {"match": "unsure", "detected": "", "confidence": "low", "reason": "verifier unavailable"}
+    return {
+        "match": out["match"],
+        "detected": out.get("detected") or "",
+        "confidence": out.get("confidence") or "low",
+        "reason": out.get("reason") or "",
+    }
+
+
+def compute_quality(text: str, sections: list[dict]) -> dict:
+    """A cheap, mechanical 0..1 quality score for a copy — used to pick the best copy of a
+    book across uploads/sources. No model call. Rewards clean structure and clean text and
+    penalizes the single-'Full text' blob and OCR/mojibake garble."""
+    text = text or ""
+    n_chars = len(text)
+    n = len(sections)
+    single_blob = n == 1 and (sections[0].get("title") == "Full text")
+    structure = 0.35 if (single_blob or n == 0) else (1.0 if 2 <= n <= 60 else 0.6)
+    nonspace = sum(1 for c in text if not c.isspace()) or 1
+    alpha_ratio = sum(1 for c in text if c.isalpha()) / nonspace
+    garble_ratio = (text.count("�") + text.count("�")) / max(n_chars, 1)
+    integrity = max(0.0, min(1.0, alpha_ratio / 0.8)) - min(0.5, garble_ratio * 200)
+    integrity = max(0.0, integrity)
+    length = min(1.0, n_chars / 30000)  # most books clear this; short fragments score lower
+    score = round(0.4 * structure + 0.4 * integrity + 0.2 * length, 3)
+    return {
+        "score": score,
+        "signals": {"sections": n, "chars": n_chars, "alpha_ratio": round(alpha_ratio, 3),
+                    "garble_ratio": round(garble_ratio, 5), "single_blob": single_blob},
+    }
+
 
 def book_dedup_key(meta: dict) -> str:
     isbn = re.sub(r"[^0-9Xx]", "", (meta or {}).get("isbn") or "")
@@ -326,12 +399,15 @@ async def step_fetch(exid, meta: dict) -> dict:
         )
         return {"ok": False, "reason": "no_source"}
     us_clear = got["source"] in _US_CLEAR_SOURCES
+    q = compute_quality(got["text"], TP.segment_into_chapters(got["text"]))
     await db.execute(
         """update library_extractions set
              full_text_raw=$2, source_meta=$3, public_domain=true, us_clear=$4,
-             grounding='source_text', status='extracting', error=null, updated_at=now()
+             grounding='source_text', status='extracting', error=null,
+             canonical_source=$5, canonical_tier=$6, quality_score=$7, updated_at=now()
            where id=$1""",
         exid, got["text"], {"source": got["source"], "source_id": got["source_id"]}, us_clear,
+        got["source"], _TRUSTED_SOURCE_TIER, q["score"],
     )
     return {"ok": True, "source": got["source"], "us_clear": us_clear, "chars": len(got["text"])}
 
@@ -358,6 +434,30 @@ async def step_ingest_upload(exid, r2_object_key: str, source_format: str, user_
         )
         await r2.delete_async(r2_object_key)
         return {"ok": False, "reason": "not_full"}
+
+    # --- Identity gate (grounding-first): reject a copy that isn't the claimed work ---
+    ident = await verify_identity(meta, text)
+    if ident["match"] == "no":
+        detected = f" (looks like: {ident['detected']})" if ident.get("detected") else ""
+        await db.execute(
+            "update library_extractions set verify_verdict='rejected', verify_detail=$2, updated_at=now() where id=$1",
+            exid, ident,
+        )
+        # Only fail the shared row if nothing good is already published there.
+        await db.execute(
+            "update library_extractions set status='failed', "
+            "error=$2 where id=$1 and status <> 'extracted'",
+            exid, f"upload does not match the stated title/author{detected}",
+        )
+        await r2.delete_async(r2_object_key)  # never store a mislabeled copy
+        return {"ok": False, "reason": "identity_mismatch", "detail": ident}
+
+    # --- Quality score for canonical-copy selection ---
+    sections = TP.segment_into_chapters(text)
+    q = compute_quality(text, sections)
+
+    # Always keep the uploader's own verified copy in their PRIVATE tier-1 vault
+    # (accessibility): a copy that doesn't win canonical is still theirs to build from.
     nonce, ct = encrypt_text(text)
     await db.execute(
         """insert into library_source_texts
@@ -368,14 +468,34 @@ async def step_ingest_upload(exid, r2_object_key: str, source_format: str, user_
              source_format=excluded.source_format, acquisition=excluded.acquisition, updated_at=now()""",
         uuid.UUID(str(user_id)), exid, nonce, ct, len(text), source_format, acquisition,
     )
-    # Leave us_clear alone (a fresh upload row defaults false; don't downgrade a PD row);
-    # finalize guarantees an upload never publishes full_text regardless.
-    await db.execute(
-        "update library_extractions set grounding='source_text', status='extracting', error=null, updated_at=now() where id=$1",
-        exid,
-    )
     await r2.delete_async(r2_object_key)  # verified-full extraction done → discard the original
-    return {"ok": True, "chars": len(text)}
+
+    # --- Supersession: best verified copy wins (auto-promote clear wins, keep rest private) ---
+    cur = await db.fetchrow(
+        "select status, canonical_tier, coalesce(quality_score, 0) qs from library_extractions where id=$1", exid,
+    )
+    incumbent_tier = (cur["canonical_tier"] if cur else None) or 0
+    incumbent_q = float(cur["qs"]) if cur else 0.0
+    already = bool(cur) and cur["status"] == "extracted"
+
+    promote = (
+        not already                                   # nothing canonical yet → this copy defines it
+        or incumbent_tier < _UPLOAD_TIER              # replace a lower-tier incumbent
+        or (incumbent_tier == _UPLOAD_TIER and q["score"] >= incumbent_q + _PROMOTE_MARGIN)
+    )
+    verdict = "accepted" if promote else ("superseded" if incumbent_tier > _UPLOAD_TIER else "borderline")
+    if promote:
+        await db.execute(
+            """update library_extractions set
+                 grounding='source_text', status='extracting', error=null,
+                 canonical_source=$2, canonical_tier=$3, quality_score=$4,
+                 verify_verdict='accepted', verify_detail=$5, updated_at=now()
+               where id=$1""",
+            exid, f"upload:{user_id}", _UPLOAD_TIER, q["score"], {"identity": ident, "quality": q},
+        )
+        return {"ok": True, "derive": True, "chars": len(text), "quality": q["score"]}
+    # Kept private: do not disturb the canonical derivative built from a better/PD copy.
+    return {"ok": True, "derive": False, "reason": verdict, "quality": q["score"]}
 
 
 async def step_derive(exid, meta: dict, user_id=None) -> dict:

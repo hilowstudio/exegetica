@@ -275,7 +275,36 @@ exemplars, AP lists, state adoption lists) are *facts* → use them to define **
 books to pre-seed; the **objectives** come from OER (provenance) or source-grounding
 (grounding), **never** from proprietary guides (SparkNotes/LitCharts) or model memory.
 
-## 11. Open questions / next steps
+## 11. Ingestion quality & content integrity (LOCKED 2026-09-11)
+
+Uploads take countless shapes (OCR PDFs, mixed EPUBs, wrong/partial files) and a user
+could mislabel one (upload a romance novel as *The Hobbit*). Same principle as the MCP
+tools: **never trust unverified input.** Two guards, both grounding-first:
+
+- **Identity gate (per upload, before anything is shared).** After text extraction, a
+  grounded model check asks whether the extracted text *is the claimed work* — judging
+  the WORK, not the edition (a different translation/abridgment/printing still matches).
+  **Decision: hard-reject on a confident mismatch** — the copy is discarded, the R2 object
+  deleted, nothing enters the shared catalog (an already-`extracted` row is left intact).
+  It **fails open** (`unsure` → pass) so an infrastructure hiccup never blocks a real
+  upload. **Safety = identity-only:** a mislabeled/pornographic file fails identity and is
+  rejected anyway, so no separate content-safety classifier — a *correctly-labeled* mature
+  book (Gatsby, Of Mice and Men) is a teacher's curricular call, not ours to police.
+- **Best-copy-wins canonicalization.** `library_extractions` no longer welds the first
+  copy to the shared derivative. Each copy carries a mechanical `quality_score` (structure
+  health + text integrity + length) and a provenance `canonical_tier` (trusted PD source
+  Gutenberg/CCEL = 3 > user upload = 2). **Decision: auto-promote clear wins, hold
+  borderline.** A new copy becomes canonical iff nothing is canonical yet, or it outranks
+  the incumbent's tier, or (same tier) beats its score by ≥ `_PROMOTE_MARGIN` (0.10);
+  otherwise it is kept in the uploader's private vault (accessibility preserved) but does
+  NOT rebuild the shared derivative. This also fixes the prior last-writer-wins bug.
+
+Columns added to `library_extractions`: `quality_score`, `verify_verdict`
+(accepted/rejected/borderline/superseded), `verify_detail` jsonb, `canonical_source`,
+`canonical_tier`. Still TODO: a **borderline-review queue** UI (governance §9) and
+per-copy quality history when >2 copies compete.
+
+## 12. Open questions / next steps
 
 - **Verification pilot — NOT a gate (decided 2026-09-10).** Grounding is locked
   unconditionally, so no pilot is required before building. The citation-verify pass

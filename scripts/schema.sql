@@ -315,6 +315,15 @@ create index if not exists library_spine_proposals_status_idx on library_spine_p
 -- from the CREATE statements above).
 alter table library_extractions  add column if not exists us_clear      boolean not null default false;
 alter table library_extractions  add column if not exists full_text_raw text;
+-- Ingestion quality gate + best-copy-wins canonicalization (docs/living-library-plan.md).
+-- verify_verdict: null (unchecked) | accepted | rejected | borderline | superseded.
+-- canonical_source: which copy produced the live derivative ('gutenberg'/'ccel'/'upload:<uid>').
+-- canonical_tier: provenance rank of that copy (trusted PD source 3 > user upload 2).
+alter table library_extractions  add column if not exists quality_score   double precision;
+alter table library_extractions  add column if not exists verify_verdict  text;
+alter table library_extractions  add column if not exists verify_detail   jsonb;
+alter table library_extractions  add column if not exists canonical_source text;
+alter table library_extractions  add column if not exists canonical_tier  integer;
 alter table library_source_texts add column if not exists acquisition   text not null default 'owned';
 do $$ begin
   if not exists (select 1 from pg_constraint where conname = 'library_source_texts_acquisition_chk') then

@@ -89,6 +89,10 @@ async def extract_upload_fn(ctx) -> dict:
     )
     if not ingested.get("ok"):
         return {"status": "failed", "reason": ingested.get("reason"), "extraction_id": str(exid)}
+    if not ingested.get("derive"):
+        # Verified and stored in the uploader's private vault, but a better/PD copy is
+        # already canonical — don't rebuild the shared derivative from this one.
+        return {"status": "kept_private", "reason": ingested.get("reason"), "extraction_id": str(exid)}
 
     derived = await ctx.step.run("derive", extraction.step_derive, exid, meta, user_id)
     n = int(derived.get("sections", 0))
