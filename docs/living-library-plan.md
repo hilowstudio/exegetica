@@ -306,6 +306,17 @@ per-copy quality history when >2 copies compete.
 
 ## 12. Open questions / next steps
 
+**Prioritized build order (2026-09-11):**
+1. **Borderline-review queue** — surface same-tier copies within the `_PROMOTE_MARGIN`
+   (0.10) band for a human to promote/reject; closes the last gap in the integrity model
+   (plan §11). Ties into the wiki governance UI (§9).
+2. **TOC alignment** — reconcile detected sections to the work's published table of
+   contents for cleaner section titles, better objective anchoring, and to tell
+   front-matter outlines apart from real bodies (fixes the Institutes 12→4 duplication).
+   Sources: CCEL exposes a TOC; EPUB nav/NCX; Gutenberg heuristic. ~½ day; polish, not
+   correctness. Deliberately AFTER the review queue.
+3. Next PD source waves (Sefaria, Perseus) per docs/living-library-sources.md.
+
 - **Verification pilot — NOT a gate (decided 2026-09-10).** Grounding is locked
   unconditionally, so no pilot is required before building. The citation-verify pass
   provides continuous, model-agnostic measurement instead. (A pilot is available later
