@@ -85,7 +85,7 @@ async def extract_upload_fn(ctx) -> dict:
 
     ingested = await ctx.step.run(
         "ingest", extraction.step_ingest_upload,
-        exid, d["r2_object_key"], d.get("source_format", "epub"), user_id, d.get("acquisition", "owned"),
+        exid, d["r2_object_key"], d.get("source_format", "epub"), user_id, d.get("acquisition", "owned"), meta,
     )
     if not ingested.get("ok"):
         return {"status": "failed", "reason": ingested.get("reason"), "extraction_id": str(exid)}

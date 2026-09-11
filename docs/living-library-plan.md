@@ -314,15 +314,22 @@ per-copy quality history when >2 copies compete.
    never the private text). Promotion fires the `rederive` Inngest fn to rebuild the shared
    derivative from the chosen vault copy. Columns on `library_source_texts`:
    `quality_score`, `review_status` (none/pending/promoted/rejected).
-2. **TOC alignment — correctness half DONE 2026-09-11.** Duplicate top-level divisions
-   (front-matter argument / real body / back-matter index) now fold to their real body by
-   enumerator value (`_dedupe_major`, major tier only — chapter numbers legitimately repeat
-   across books), fixing the Institutes 12→4 duplication. Also fixed a latent bug: the
-   cross-ref guard's bare `v` token was rejecting the roman numeral in "Book V" (verse
-   tokens now require their period). **Remaining (optional enrichment):** pull DESCRIPTIVE
-   titles from a source's published TOC (EPUB nav/NCX, PDF outline, CCEL ThML, embedded
-   "Contents") — e.g. "Book I — Boyhood" vs "Book I". Needs extract→persist→thread plumbing;
-   deferred as polish since detected titles are already serviceable.
+2. ~~**TOC alignment**~~ — **DONE 2026-09-11.** Two parts:
+   - *Duplicate-division fold* (`_dedupe_major`, major tier only — chapter numbers
+     legitimately repeat across books): a work's front-matter argument, real body, and
+     back-matter index for the same book/part fold to the largest (real) body, fixing the
+     Institutes 12→4 duplication. Also fixed a latent bug — the cross-ref guard's bare `v`
+     token rejected the roman numeral in "Book V" (verse tokens now require their period).
+   - *Descriptive titles* from a **structured** published TOC: `filetext.extract_toc` reads
+     the EPUB nav / PDF outline (front/back-matter filtered), persisted to
+     `library_extractions.toc`; `_align_titles` upgrades a terse section label ("Chapter 5")
+     to its TOC title ("Chapter 5. The Confrontation") — by enumerator, or purely positional
+     when TOC and sections line up 1:1 — and NEVER overwrites an already-descriptive body
+     title. Verified end-to-end on the upload path. The embedded-plain-text "Contents"
+     parser was tried and **dropped as unreliable** (it mis-titled Pilgrim's Progress);
+     alignment uses structured TOCs only. Also fixed a latent crash: `step_ingest_upload`
+     referenced `meta` without receiving it (would NameError on every upload) — now passed
+     through from the worker.
 3. Next PD source waves (Sefaria, Perseus) per docs/living-library-sources.md.
 
 - **Verification pilot — NOT a gate (decided 2026-09-10).** Grounding is locked

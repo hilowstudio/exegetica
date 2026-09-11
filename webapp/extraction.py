@@ -387,6 +387,12 @@ async def _read_source_text(exid, user_id=None) -> str | None:
     return await db.fetchval("select full_text_raw from library_extractions where id=$1", exid)
 
 
+async def _read_toc(exid) -> list[str] | None:
+    """The stored published TOC (EPUB nav / PDF outline / embedded Contents), if any."""
+    toc = await db.fetchval("select toc from library_extractions where id=$1", exid)
+    return toc if isinstance(toc, list) and toc else None
+
+
 async def step_fetch(exid, meta: dict) -> dict:
     """Discover + fetch a PD full text and PARK it in full_text_raw (never returned).
     Sets us_clear / public_domain / source. Returns a small summary."""
@@ -412,12 +418,13 @@ async def step_fetch(exid, meta: dict) -> dict:
     return {"ok": True, "source": got["source"], "us_clear": us_clear, "chars": len(got["text"])}
 
 
-async def step_ingest_upload(exid, r2_object_key: str, source_format: str, user_id, acquisition: str) -> dict:
-    """Upload path: fetch the R2 object, extract text, verify it's full, encrypt it into
-    the uploader's PRIVATE tier-1 vault, then delete the R2 object. In-copyright → us_clear
-    stays false (full_text never shared). Nothing plaintext ever touches the shared catalog."""
+async def step_ingest_upload(exid, r2_object_key: str, source_format: str, user_id, acquisition: str, meta: dict | None = None) -> dict:
+    """Upload path: fetch the R2 object, extract text, verify it's the claimed work, encrypt
+    it into the uploader's PRIVATE tier-1 vault, then delete the R2 object. In-copyright →
+    us_clear stays false (full_text never shared). Nothing plaintext touches the shared catalog."""
     from webapp import filetext, r2
 
+    meta = meta or {}
     data = await r2.get_bytes_async(r2_object_key)
     if not data:
         await db.execute(
@@ -434,6 +441,7 @@ async def step_ingest_upload(exid, r2_object_key: str, source_format: str, user_
         )
         await r2.delete_async(r2_object_key)
         return {"ok": False, "reason": "not_full"}
+    toc = filetext.extract_toc(data, source_format) or None  # EPUB nav / PDF outline
 
     # --- Identity gate (grounding-first): reject a copy that isn't the claimed work ---
     ident = await verify_identity(meta, text)
@@ -453,7 +461,7 @@ async def step_ingest_upload(exid, r2_object_key: str, source_format: str, user_
         return {"ok": False, "reason": "identity_mismatch", "detail": ident}
 
     # --- Quality score for canonical-copy selection ---
-    sections = TP.segment_into_chapters(text)
+    sections = TP.segment_into_chapters(text, toc)
     q = compute_quality(text, sections)
 
     # --- Supersession: best verified copy wins (auto-promote clear wins, review borderline) ---
@@ -498,9 +506,9 @@ async def step_ingest_upload(exid, r2_object_key: str, source_format: str, user_
             """update library_extractions set
                  grounding='source_text', status='extracting', error=null,
                  canonical_source=$2, canonical_tier=$3, quality_score=$4,
-                 verify_verdict='accepted', verify_detail=$5, updated_at=now()
+                 verify_verdict='accepted', verify_detail=$5, toc=$6, updated_at=now()
                where id=$1""",
-            exid, f"upload:{user_id}", _UPLOAD_TIER, q["score"], {"identity": ident, "quality": q},
+            exid, f"upload:{user_id}", _UPLOAD_TIER, q["score"], {"identity": ident, "quality": q}, toc,
         )
         return {"ok": True, "derive": True, "chars": len(text), "quality": q["score"]}
     # Kept private (superseded or awaiting review): don't disturb the canonical derivative.
@@ -513,7 +521,7 @@ async def step_derive(exid, meta: dict, user_id=None) -> dict:
     raw = await _read_source_text(exid, user_id)
     if not raw:
         return {"sections": 0, "reason": "no_source"}
-    sections = TP.segment_into_chapters(raw)
+    sections = TP.segment_into_chapters(raw, await _read_toc(exid))
     derivative = await derive_book(meta, sections)
     derivative["table_of_contents"] = [{"n": s["section_number"], "title": s["title"]} for s in sections]
     await db.execute("update library_extractions set derivative=$2, updated_at=now() where id=$1", exid, derivative)

@@ -92,6 +92,77 @@ def extract_text(data: bytes, source_format: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", (text or "").strip())
 
 
+def _epub_toc(data: bytes) -> list[str]:
+    try:
+        from ebooklib import epub
+
+        with tempfile.NamedTemporaryFile(suffix=".epub", delete=False) as f:
+            f.write(data)
+            path = f.name
+        try:
+            book = epub.read_epub(path)
+        finally:
+            try:
+                os.unlink(path)
+            except OSError:
+                pass
+
+        titles: list[str] = []
+
+        def walk(items):
+            for it in items:
+                if isinstance(it, (list, tuple)):
+                    walk(it)
+                else:
+                    t = getattr(it, "title", None)
+                    if t:
+                        titles.append(str(t).strip())
+
+        walk(book.toc or [])
+        return titles
+    except Exception:  # noqa: BLE001
+        logger.exception("epub toc failed")
+        return []
+
+
+def _pdf_toc(data: bytes) -> list[str]:
+    try:
+        from pypdf import PdfReader
+
+        reader = PdfReader(io.BytesIO(data))
+        titles: list[str] = []
+
+        def walk(items):
+            for it in items:
+                if isinstance(it, list):
+                    walk(it)
+                else:
+                    t = getattr(it, "title", None)
+                    if t:
+                        titles.append(str(t).strip())
+
+        walk(getattr(reader, "outline", []) or [])
+        return titles
+    except Exception:  # noqa: BLE001
+        logger.exception("pdf outline failed")
+        return []
+
+
+# Generic front-matter / back-matter TOC entries that aren't real content sections.
+_TOC_SKIP = re.compile(
+    r"^\s*(cover|title\s*page|copyright|contents|table of contents|dedication|"
+    r"acknowledge?ments?|about the author|colophon|index|notes?|bibliography|"
+    r"foreword|frontmatter|nav|toc)\s*$", re.I)
+
+
+def extract_toc(data: bytes, source_format: str) -> list[str]:
+    """A published table of contents (ordered entry titles) from an EPUB's nav or a PDF's
+    outline, with obvious front/back-matter entries filtered out. [] when unavailable."""
+    fmt = (source_format or "").lower().lstrip(".")
+    raw = _epub_toc(data) if fmt == "epub" else (_pdf_toc(data) if fmt == "pdf" else [])
+    return [t for t in raw if t and not _TOC_SKIP.match(t)]
+
+
 def looks_full(text: str, min_chars: int = 500) -> bool:
     """The 'verified-full' heuristic: substantial text, not an empty/scanned/DRM'd shell.
     A scanned image-only PDF yields ~nothing → not full → we reject rather than store an

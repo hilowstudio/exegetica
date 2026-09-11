@@ -168,14 +168,8 @@ def _roman_to_int(s: str) -> int | None:
     return total or None
 
 
-def _major_ordinal(title: str) -> int | None:
-    """The numeric value of a major heading's enumerator (Book Third → 3, BOOK 3 → 3,
-    Book III → 3), used to fold a work's front-matter outline, real body, and back-matter
-    index for the same division into one section."""
-    m = re.match(rf"^{_MAJOR}\s+(?:the\s+)?([ivxlcdm]+|\d+|[a-z]+)", title.strip(), re.I)
-    if not m:
-        return None
-    tok = m.group(1).rstrip(".").lower()
+def _enum_to_int(tok: str) -> int | None:
+    tok = tok.rstrip(".").lower()
     if tok.isdigit():
         return int(tok)
     if tok in _ORDINALS:
@@ -185,6 +179,65 @@ def _major_ordinal(title: str) -> int | None:
     if re.fullmatch(r"[ivxlcdm]+", tok):
         return _roman_to_int(tok)
     return None
+
+
+def _major_ordinal(title: str) -> int | None:
+    """The numeric value of a major heading's enumerator (Book Third → 3, BOOK 3 → 3,
+    Book III → 3), used to fold a work's front-matter outline, real body, and back-matter
+    index for the same division into one section."""
+    m = re.match(rf"^{_MAJOR}\s+(?:the\s+)?([ivxlcdm]+|\d+|[a-z]+)", title.strip(), re.I)
+    return _enum_to_int(m.group(1)) if m else None
+
+
+def _entry_ordinal(title: str) -> int | None:
+    """Enumerator of any heading or TOC entry — major, minor, or a bare numeral —
+    e.g. 'Chapter V. …'→5, 'BOOK 3'→3, 'IV. The Storm'→4. Used to align a body section
+    to its table-of-contents entry by number."""
+    t = title.strip()
+    m = re.match(rf"^(?:{_MAJOR}|{_MINOR})\s+(?:the\s+)?([ivxlcdm]+|\d+|[a-z]+)", t, re.I)
+    if m:
+        return _enum_to_int(m.group(1))
+    m = re.match(r"^(?:the\s+)?([ivxlcdm]+|\d+)\b", t, re.I)  # bare leading numeral
+    return _enum_to_int(m.group(1)) if m else None
+
+
+def _descriptive_tail(title: str) -> str:
+    """The part of a heading beyond its keyword + enumerator + punctuation — the actual
+    words of a title. '' when the heading is only a label ('Chapter 5', 'Book I')."""
+    t = re.sub(rf"^(?:{_MAJOR}|{_MINOR})\b", "", title.strip(), flags=re.I)
+    t = re.sub(r"^\s*(?:the\s+)?(?:[ivxlcdm]+|\d+|[a-z]+)\b", "", t, flags=re.I)
+    t = re.sub(r"^[\s.:)—–-]+", "", t)
+    return t.strip() if re.search(r"[A-Za-z]{2,}", t) else ""
+
+
+def _is_descriptive(title: str) -> bool:
+    return bool(_descriptive_tail(title))
+
+
+def _align_titles(sections: list[dict], toc: list[str] | None) -> list[dict]:
+    """Replace a section's terse label ('Chapter 5') with a richer table-of-contents title
+    ('Chapter 5. The Confrontation') — conservatively, so a wrong TOC never mis-titles a
+    section. Two safe paths: (1) by enumerator, when both carry the same number; (2) purely
+    positional, only when the TOC and sections line up 1:1. A section that already has a
+    descriptive title is left alone."""
+    if not toc:
+        return sections
+    toc = [t.strip() for t in toc if t and t.strip()]
+    by_num = {}
+    for t in toc:
+        n = _entry_ordinal(t)
+        if n is not None and _is_descriptive(t):
+            by_num.setdefault(n, t)
+    positional = len(toc) == len(sections) and all(_is_descriptive(t) for t in toc)
+    for i, s in enumerate(sections):
+        if _is_descriptive(s["title"]):
+            continue  # body heading is already rich — trust it over the TOC
+        num = _entry_ordinal(s["title"])
+        if num is not None and num in by_num:
+            s["title"] = by_num[num]
+        elif positional:
+            s["title"] = toc[i]
+    return sections
 
 
 def _dedupe_major(sections: list[dict]) -> list[dict]:
@@ -204,13 +257,14 @@ def _dedupe_major(sections: list[dict]) -> list[dict]:
     return [s for _pos, s in sorted(merged, key=lambda t: t[0])]
 
 
-def segment_into_chapters(text: str | None) -> list[dict]:
+def segment_into_chapters(text: str | None, toc: list[str] | None = None) -> list[dict]:
     """Split into structural sections at detected heading lines (heading inclusive),
-    choosing the coarsest heading tier that yields a plausible section count, and folding
+    choosing the coarsest heading tier that yields a plausible section count, folding
     duplicate top-level divisions (front-matter outline / real body / back-matter index) to
-    their real body. No usable headings → one "Full text" section. Returns
-    [{section_number, title, text}]. (Descriptive titles from a source's published TOC —
-    EPUB nav / PDF outline / embedded Contents — remain an optional later enrichment.)
+    their real body, and — when a published table of contents is supplied (EPUB nav / PDF
+    outline) or embedded in the text — upgrading terse section labels to their descriptive
+    TOC titles. No usable headings → one "Full text" section. Returns
+    [{section_number, title, text}].
     """
     if not text:
         return []
@@ -225,6 +279,7 @@ def segment_into_chapters(text: str | None) -> list[dict]:
             break
     if not kept:  # no tier produced a plausible split → treat the body as one section
         return [{"section_number": 1, "title": "Full text", "text": text.strip()}]
+    kept = _align_titles(kept, toc)  # titles enrich only from a structured TOC (nav/outline)
     for i, s in enumerate(kept):
         s["section_number"] = i + 1
     return kept

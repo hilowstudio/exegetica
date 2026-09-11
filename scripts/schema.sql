@@ -329,6 +329,9 @@ alter table library_extractions  add column if not exists verify_verdict  text;
 alter table library_extractions  add column if not exists verify_detail   jsonb;
 alter table library_extractions  add column if not exists canonical_source text;
 alter table library_extractions  add column if not exists canonical_tier  integer;
+-- Published table of contents (ordered entry titles) from an EPUB nav / PDF outline /
+-- embedded 'Contents' — used to upgrade terse section labels to descriptive titles.
+alter table library_extractions  add column if not exists toc            jsonb;
 alter table library_source_texts add column if not exists acquisition   text not null default 'owned';
 alter table library_source_texts add column if not exists quality_score double precision;
 alter table library_source_texts add column if not exists review_status text not null default 'none';
