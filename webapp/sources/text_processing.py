@@ -54,7 +54,7 @@ _re_roman = re.compile(r"^[ivxlcdm]{1,7}\.?$", re.I)
 _re_arabic = re.compile(r"^\d{1,3}\.?$")
 
 
-def _is_heading(line: str) -> bool:
+def _is_heading(line: str, allow_arabic: bool = True) -> bool:
     s = line.strip()
     if not s or len(s) > 80:
         return False
@@ -65,7 +65,9 @@ def _is_heading(line: str) -> bool:
     # pronoun on its own line isn't mistaken for a heading.
     if _re_roman.match(low) and (low.endswith(".") or len(low.rstrip(".")) >= 2):
         return True
-    if _re_arabic.match(s):
+    # Bare arabic numeral: the weakest signal, and PDF page numbers look exactly like
+    # it. Only trust it when a stronger heading scheme is absent (allow_arabic).
+    if allow_arabic and _re_arabic.match(s):
         return True
     return False
 
@@ -74,6 +76,21 @@ def _is_heading(line: str) -> bool:
 # sections removes TOC entries and stray front-matter headings. Matches the 200-char
 # content-leaf floor quillnext uses in its OpenStax/LibreTexts adapters.
 _MIN_SECTION_CHARS = 200
+# A book has chapters, not hundreds of sections. More kept sections than this means
+# the heading heuristic is misfiring (classically: PDF page numbers read as arabic
+# headings) — so we re-segment on strong headings only, then fall back to whole-body.
+_MAX_SECTIONS = 60
+
+
+def _segment_pass(lines: list[str], allow_arabic: bool) -> list[dict]:
+    heads = [i for i, ln in enumerate(lines) if _is_heading(ln, allow_arabic)]
+    if not heads:
+        return []
+    sections: list[dict] = []
+    for n, li in enumerate(heads):
+        end = heads[n + 1] if n + 1 < len(heads) else len(lines)
+        sections.append({"title": lines[li].strip(), "text": "\n".join(lines[li:end]).strip()})
+    return [s for s in sections if len(s["text"]) >= _MIN_SECTION_CHARS]
 
 
 def segment_into_chapters(text: str | None) -> list[dict]:
@@ -85,16 +102,13 @@ def segment_into_chapters(text: str | None) -> list[dict]:
     if not text:
         return []
     lines = text.split("\n")
-    heads = [i for i, ln in enumerate(lines) if _is_heading(ln)]
-    if not heads:
-        return [{"section_number": 1, "title": "Full text", "text": text.strip()}]
-    sections: list[dict] = []
-    for n, li in enumerate(heads):
-        end = heads[n + 1] if n + 1 < len(heads) else len(lines)
-        sections.append({"title": lines[li].strip(), "text": "\n".join(lines[li:end]).strip()})
-
-    kept = [s for s in sections if len(s["text"]) >= _MIN_SECTION_CHARS]
-    if not kept:  # e.g. only a TOC was detected — fall back to the whole body
+    kept = _segment_pass(lines, allow_arabic=True)
+    # Over-segmented (page numbers etc.) → retry trusting only named/keyword/roman
+    # headings, which page numbers can't fake.
+    if len(kept) > _MAX_SECTIONS:
+        kept = _segment_pass(lines, allow_arabic=False)
+    # Still implausible, or nothing survived → treat the body as one section.
+    if not kept or len(kept) > _MAX_SECTIONS:
         return [{"section_number": 1, "title": "Full text", "text": text.strip()}]
     for i, s in enumerate(kept):
         s["section_number"] = i + 1

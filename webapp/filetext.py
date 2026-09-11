@@ -57,12 +57,22 @@ def _from_epub(data: bytes) -> str:
         return ""
 
 
+_re_pagenum = re.compile(r"^\s*\d{1,4}\s*$")
+
+
+def _strip_page_numbers(page_text: str) -> str:
+    """Drop lines that are nothing but a page number. pypdf lands each page's number
+    on its own line, and a bare integer is indistinguishable from an arabic chapter
+    heading downstream — so hundreds of page numbers would over-segment the book."""
+    return "\n".join(ln for ln in page_text.split("\n") if not _re_pagenum.match(ln))
+
+
 def _from_pdf(data: bytes) -> str:
     try:
         from pypdf import PdfReader
 
         reader = PdfReader(io.BytesIO(data))
-        return "\n\n".join((page.extract_text() or "") for page in reader.pages)
+        return "\n\n".join(_strip_page_numbers(page.extract_text() or "") for page in reader.pages)
     except Exception:  # noqa: BLE001
         logger.exception("pdf parse failed")
         return ""
