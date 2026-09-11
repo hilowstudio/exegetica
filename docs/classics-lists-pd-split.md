@@ -1,0 +1,727 @@
+# Classic-lists PD split — four canon lists, deduplicated
+
+Companion to `community-book-batch.md`. The union of four 'best/classic books' lists — Center for Fiction *200 Books That Shaped 200 Years* (200), Penguin *100 Must-Read Classics* (100), OCLC WorldCat *Library 100* top 500 (500), and Goodreads *Best Classics* top 200 — **deduplicated** (normalized title + author, variant titles and series volumes merged) and **split by US public-domain status**.
+
+**685 unique works** · **266 public domain** · **419 in copyright**. ★ = appears on 3+ of the four lists. ‡ = original is PD but a public-domain English translation may not exist (foreign 20th-c work).
+
+**PD rule:** first published **≤ 1929** (US public domain; matches the pipeline's `us_clear` gate). Foreign/ancient works auto-ingest only via a **PD translation** (Gutenberg carries these for pre-20th-c works; the ‡ flag marks where that's doubtful). Years are first-publication; taken from the two year-bearing lists and a curated table.
+
+## Public domain — auto-ingestable (Gutenberg / CCEL), 266 works
+
+### Antiquity & medieval (through 1500) — 17
+
+- The Epic of Gilgamesh — Anonymous (1800 BC)
+- The Iliad — Homer (800 BC)
+- The Odyssey — Homer (800 BC)
+- Aesop's Fables — Aesop (560 BC)
+- The Art of War — Sun-Tzu (500 BC)
+- The Art of War — Sun Tzu (500 BC)
+- The Histories — Herodotus (430 BC)
+- Metamorphoses — Ovid (8)
+- The Letters of the Younger Pliny — Pliny the Younger (100)
+- The Twelve Caesars — Suetonius (121)
+- Beowulf — Anonymous (1000)
+- The Tale of Genji — Murasaki Shikibu (1021)
+- The Divine Comedy — Dante Alighieri (1320)
+- The Decameron — Giovanni Boccaccio (1353)
+- The Canterbury Tales — Geoffrey Chaucer (1400)
+- The Imitation of Christ — Thomas à Kempis (1418)
+- Le Morte D'Arthur — Thomas Malory (1485)
+
+### Renaissance & 18th century (1501–1799) — 35
+
+- Utopia — Thomas More (1516)
+- The Prince — Niccolò Machiavelli (1532)
+- The Taming of the Shrew — William Shakespeare (1594)
+- A Midsummer Night's Dream — William Shakespeare (1595)
+- Romeo and Juliet — William Shakespeare (1597)
+- Julius Caesar — William Shakespeare (1599)
+- Much Ado About Nothing — William Shakespeare (1599)
+- Hamlet — William Shakespeare (1600)
+- The Merchant of Venice — William Shakespeare (1600)
+- Twelfth Night — William Shakespeare (1602)
+- Othello — William Shakespeare (1603)
+- Don Quixote — Miguel Cervantes (1605)
+- Don Quixote — Miguel de Cervantes Saavedra (1605)
+- King Lear — William Shakespeare (1606)
+- Macbeth — William Shakespeare (1606)
+- Shakespeare's Sonnets — William Shakespeare (1609)
+- The Tempest — William Shakespeare (1611)
+- Paradise Lost — John Milton (1667)
+- The Pilgrim's Progress — John Bunyan (1678)
+- The Princess of Cleves — Madame de La Fayette (1678)
+- Robinson Crusoe — Daniel Defoe (1719)
+- Persian Letters — Montesquieu (1721)
+- Gulliver's Travels — Jonathan Swift (1726)
+- The History of Tom Jones — Henry Fielding (1749)
+- Candide — Voltaire (1759)
+- The Life and Opinions of Tristram Shandy — Laurence Sterne (1759)
+- The Castle of Otranto — Horace Walpole (1764)
+- The Vicar of Wakefield — Oliver Goldsmith (1766)
+- A Sentimental Journey — Laurence Sterne (1768)
+- The Sorrows of Young Werther — Johann Wolfgang von Goethe (1774)
+- Dangerous Liaisons — Choderlos de Laclos (1782)
+- A Sicilian Romance — Ann Radcliffe (1790)
+- Dream of the Red Chamber — Cao Xueqin (1791)
+- Jacques the Fatalist — Denis Diderot (1796)
+- The Italian — Ann Radcliffe (1797)
+
+### 19th century (1800–1899) — 132
+
+- Sense and Sensibility — Jane Austen (1811)
+- The Complete Grimm's Fairy Tales — Jacob Grimm (1812)
+- The Swiss Family Robinson — Johann David Wyss (1812)
+- Pride and Prejudice — Jane Austen (1813) ★
+- Mansfield Park — Jane Austen (1814)
+- Emma — Jane Austen (1815)
+- Northanger Abbey — Jane Austen (1817)
+- Rob Roy — Walter Scott (1817)
+- Persuasion — Jane Austen (1818) ★
+- Ivanhoe — Walter Scott (1820)
+- Kenilworth — Walter Scott (1821)
+- Frankenstein — Mary Shelley (1823) ★
+- The Last of the Mohicans — James Fenimore Cooper (1826)
+- The Betrothed — Alessandro Manzoni (1827)
+- The Red and the Black — Stendhal (1830)
+- The Hunchback of Notre Dame — Victor Hugo (1831)
+- Eugénie Grandet — Honoré de Balzac (1833)
+- The Last Days of Pompeii — Edward Bulwer Lytton (1834)
+- The Queen of Spades — Alexander Pushkin (1834)
+- Père Goriot — Honoré de Balzac (1835)
+- The Pickwick Papers — Charles Dickens (1836)
+- The Complete Fairy Tales — Hans Christian Andersen (1837)
+- Oliver Twist — Charles Dickens (1838)
+- Nicholas Nickleby — Charles Dickens (1839)
+- The Collected Works of Edgar Allan Poe — Edgar Allan Poe (1839)
+- Barnaby Rudge — Charles Dickens (1841)
+- The Old Curiosity Shop — Charles Dickens (1841)
+- A Christmas Carol — Charles Dickens (1843) ★
+- The Count of Monte Cristo — Alexandre Dumas (1844) ★
+- The Three Musketeers — Alexandre Dumas (1844)
+- The Raven — Edgar Allan Poe (1845)
+- Jane Eyre — Charlotte Bronte (1847) ★
+- The Man in the Iron Mask — Alexandre Dumas (1847)
+- Vanity Fair — William Makepeace Thackeray (1847) ★
+- Wuthering Heights — Emily Brontë (1847) ★
+- Dombey and Son — Charles Dickens (1848)
+- The Tenant of Wildfell Hall — Anne Brontë (1848)
+- White Nights — Fyodor Dostoyevsky (1848)
+- David Copperfield — Charles Dickens (1849) ★
+- Shirley — Charlotte Brontë (1849)
+- The Scarlet Letter — Nathaniel Hawthorne (1850)
+- Moby-Dick — Herman Melville (1851) ★
+- The House of the Seven Gables — Nathaniel Hawthorne (1851)
+- Uncle Tom's Cabin — Harriet Beecher Stowe (1852)
+- Bleak House — Charles Dickens (1853) ★
+- Clotel — Williams Wells Brown (1853)
+- Cranford — Elizabeth Gaskell (1853)
+- Villette — Charlotte Brontë (1853)
+- Hard Times — Charles Dickens (1854)
+- North and South — Elizabeth Gaskell (1854)
+- The Warden — Anthony Trollope (1855)
+- Barchester Towers — Anthony Trollope (1857)
+- Little Dorrit — Charles Dickens (1857)
+- Madame Bovary — Gustave Flaubert (1857) ★
+- A Tale of Two Cities — Charles Dickens (1859) ★
+- Adam Bede — George Eliot (1859)
+- Our Nig — Harriet E. Wilson (1859)
+- Great Expectations — Charles Dickens (1860) ★
+- The Mill on the Floss — George Eliot (1860) ★
+- The Woman in White — Wilkie Collins (1860) ★
+- Silas Marner — George Eliot (1861)
+- Fathers and Sons — Ivan Turgenev (1862)
+- Les Miserables — Victor Hugo (1862) ★
+- The House of the Dead — Fyodor Dostoevsky (1862)
+- A Journey to the Center of the Earth — Jules Verne (1864)
+- Alice's Adventures in Wonderland — Lewis Carroll (1865)
+- Our Mutual Friend — Charles Dickens (1865)
+- Crime and Punishment — Fyodor Dostoevsky (1866) ★
+- Crime and Punishment — Fyodor Dostoyevsky (1866)
+- Felix Holt, the Radical — George Eliot (1866)
+- War and Peace — Leo Tolstoy (1867) ★
+- Little Women — Louisa May Alcott (1868) ★
+- The Moonstone — Wilkie Collins (1868)
+- Lorna Doone — R.D. Blackmore (1869)
+- The Idiot — Fyodor Dostoyevsky (1869)
+- The Idiot — Fyodor Dostoevsky (1869)
+- The Mystery of Edwin Drood — Charles Dickens (1870)
+- Twenty Thousand Leagues Under the Sea — Jules Verne (1870)
+- Middlemarch — George Eliot (1871) ★
+- Through the Looking-Glass — Lewis Carroll (1871)
+- Around the World in Eighty Days — Jules Verne (1873)
+- Far from the Madding Crowd — Thomas Hardy (1874)
+- The Mysterious Island — Jules Verne (1875)
+- The Adventures of Tom Sawyer — Mark Twain (1876)
+- Black Beauty — Anna Sewell (1877) ★
+- Anna Karenina — Leo Tolstoy (1878) ★
+- The Return of the Native — Thomas Hardy (1878)
+- Ben-Hur — Lew Wallace (1880)
+- Nana — Émile Zola (1880)
+- The Brothers Karamazov — Fyodor Dostoyevsky (1880)
+- The Brothers Karamazov — Fyodor Dostoevsky (1880)
+- Washington Square — Henry James (1880)
+- Heidi — Johanna Spyri (1881)
+- The Portrait of a Lady — Henry James (1881)
+- The Prince and the Pauper — Mark Twain (1881)
+- Pinocchio — Carlo Collodi (1883)
+- The Merry Adventures of Robin Hood — Howard Pyle (1883)
+- Treasure Island — Robert Louis Stevenson (1883)
+- Adventures of Huckleberry Finn — Mark Twain (1884) ★
+- Flatland — Edwin A. Abbott (1884)
+- Germinal — Émile Zola (1885)
+- King Solomon's Mines — H. Rider Haggard (1885)
+- The Rise of Silas Lapham — William Dean Howells (1885)
+- Kidnapped — Robert Louis Stevenson (1886)
+- The Death of Ivan Ilych — Leo Tolstoy (1886)
+- The Mayor of Casterbridge — Thomas Hardy (1886)
+- The Strange Case of Dr. Jekyll and Mr. Hyde — Robert Louis Stevenson (1886)
+- The Canterville Ghost — Oscar Wilde (1887)
+- Looking Backward — Edward Bellamy (1888)
+- The Black Arrow — Robert Louis Stevenson (1888)
+- A Connecticut Yankee in King Arthur's Court — Mark Twain (1889)
+- L'Argent — Émile Zola (1891)
+- Tess of the d'Urbervilles — Thomas Hardy (1891) ★
+- The Picture of Dorian Gray — Oscar Wilde (1891) ★
+- Diary of a Nobody — George Grossmith (1892)
+- The Yellow Wallpaper — Charlotte Perkins Gilman (1892)
+- The Great God Pan — Arthur Machen (1894)
+- The Jungle Books — Rudyard Kipling (1894)
+- Jude the Obscure — Thomas Hardy (1895)
+- The Importance of Being Earnest — Oscar Wilde (1895)
+- The Red Badge of Courage — Stephen Crane (1895)
+- The Time Machine — H. G. Wells (1895) ★
+- Quo Vadis — Henryk Sienkiewicz (1896)
+- The Island of Dr. Moreau — H.G. Wells (1896)
+- Captains Courageous — Rudyard Kipling (1897)
+- Cyrano de Bergerac — Edmond Rostand (1897)
+- Dracula — Bram Stoker (1897) ★
+- The Invisible Man — H.G. Wells (1897)
+- The Turn of the Screw — Henry James (1898)
+- The War of the Worlds — H.G. Wells (1898)
+- Resurrection — Leo Tolstoy (1899)
+- The Awakening — Kate Chopin (1899)
+
+### Early 20th century (1900–1929) — 82
+
+- Lord Jim — Joseph Conrad (1900)
+- Sister Carrie — Theodore Dreiser (1900)
+- The Claudine Novels — Colette (1900)
+- The Wizard of Oz — L. Frank Baum (1900)
+- The Wonderful Wizard of Oz — L. Frank Baum (1900)
+- Buddenbrooks — Thomas Mann (1901)
+- Kim — Rudyard Kipling (1901)
+- Heart of Darkness — Joseph Conrad (1902)
+- Just So Stories — Rudyard Kipling (1902)
+- The Complete Sherlock Holmes — Arthur Conan Doyle (1902) ★
+- The Virginian — Owen Wister (1902)
+- The Wings of the Dove — Henry James (1902)
+- Rebecca of Sunnybrook Farm — Kate Douglas Wiggin (1903)
+- The Ambassadors — Henry James (1903)
+- The Call of the Wild — Jack London (1903) ★
+- The Way of All Flesh — Samuel Butler (1903)
+- Nostromo — Joseph Conrad (1904)
+- The Sea Wolf — Jack London (1904)
+- A Little Princess — Frances Hodgson Burnett (1905)
+- House of Mirth — Edith Wharton (1905) ★
+- The Jungle — Upton Sinclair (1905)
+- Love Among the Chickens — P. G. Wodehouse (1906)
+- White Fang — Jack London (1906)
+- The Secret Agent — Joseph Conrad (1907)
+- A Room With a View — E.M. Forster (1908)
+- Anne of Green Gables — L.M. Montgomery (1908)
+- The Man Who Was Thursday — G. K. Chesterton (1908)
+- The Wind in the Willows — Kenneth Grahame (1908)
+- Anne of Avonlea — L.M. Montgomery (1909)
+- Howards End — E.M. Forster (1910)
+- The Notebooks of Malte Laurids Brigge — Rainer Maria Rilke (1910) ‡
+- The Phantom of the Opera — Gaston Leroux (1910)
+- Ethan Frome — Edith Wharton (1911)
+- Peter Pan — J.M. Barrie (1911)
+- Peter and Wendy — J. M. Barrie (1911)
+- The Secret Garden — Frances Hodgson Burnett (1911)
+- A Princess of Mars — Edgar Rice Burroughs (1912)
+- Death in Venice — Thomas Mann (1912)
+- Tarzan of the Apes — Edgar Rice Burroughs (1912)
+- In Search of Lost Time — Marcel Proust (1913)
+- O Pioneers! — Willa Cather (1913)
+- Sons and Lovers — D.H. Lawrence (1913)
+- Swann's Way — Marcel Proust (1913)
+- Anne of the Island — L.M. Montgomery (1915)
+- Of Human Bondage — Somerset Maugham (1915)
+- The Metamorphosis — Franz Kafka (1915)
+- The Rainbow — D.H. Lawrence (1915)
+- A Portrait of the Artist as a Young Man — James Joyce (1916)
+- My Ántonia — Willa Cather (1918)
+- The Moon and Sixpence — W. Somerset Maugham (1919)
+- Winesburg, Ohio — Sherwood Anderson (1919)
+- Main Street — Sinclair Lewis (1920)
+- The Age of Innocence — Edith Wharton (1920) ★
+- This Side of Paradise — F. Scott Fitzgerald (1920)
+- Women in Love — D.H. Lawrence (1920)
+- Babbitt — Sinclair Lewis (1922)
+- Siddhartha — Hermann Hesse (1922) ‡
+- The Forsyte Saga — John Galsworthy (1922)
+- The Velveteen Rabbit — Margery Williams Bianco (1922)
+- Ulysses — James Joyce (1922) ★
+- Cane — Jean Toomer (1923) ‡
+- A Passage to India — E.M. Forster (1924)
+- The Magic Mountain — Thomas Mann (1924) ‡
+- An American Tragedy — Theodore Dreiser (1925)
+- Arrowsmith — Sinclair Lewis (1925)
+- Mrs Dalloway — Virginia Woolf (1925) ★
+- The Cantos — Ezra Pound (1925)
+- The Great Gatsby — F. Scott Fitzgerald (1925) ★
+- The Trial — Franz Kafka (1925) ‡
+- Lud-in-the-Mist — Hope Mirrlees (1926)
+- The Castle — Franz Kafka (1926) ‡
+- The Murder of Roger Ackroyd — Agatha Christie (1926)
+- The Sun Also Rises — Ernest Hemingway (1926)
+- Winnie-the-Pooh — A.A. Milne (1926)
+- Death Comes for the Archbishop — Willa Cather (1927)
+- Steppenwolf — Hermann Hesse (1927) ‡
+- To the Lighthouse — Virginia Woolf (1927) ★
+- Lady Chatterley's Lover — D.H Lawrence (1928)
+- Orlando — Virginia Woolf (1928)
+- A Farewell to Arms — Ernest Hemingway (1929)
+- Passing — Nella Larsen (1929)
+- The Sound and the Fury — William Faulkner (1929)
+
+## In copyright — upload-gated (derivatives only), 419 works
+
+### Published 1930–present — 171
+
+- As I Lay Dying — William Faulkner (1930)
+- The Maltese Falcon — Dashiell Hammett (1930)
+- The Man Without Qualities — Robert Musil (1930)
+- Cartucho — Nellie Campobello (1931)
+- The Good Earth — Pearl S. Buck (1931)
+- Brave New World — Aldous Huxley (1932) ★
+- Light in August — William Faulkner (1932)
+- Burmese Days — George Orwell (1934)
+- I, Claudius — Robert Graves (1934)
+- Murder on the Orient Express — Agatha Christie (1934) ★
+- Tender is the Night — F. Scott Fitzgerald (1934)
+- Tropic of Cancer — Henry Miller (1934)
+- Absalom, Absalom! — William Faulkner (1936)
+- Nightwood — Djuna Barnes (1936)
+- East Goes West — Younghill Kang (1937)
+- The Hobbit — J.R.R. Tolkien (1937)
+- Their Eyes Were Watching God — Zora Neale Hurston (1937)
+- Rebecca — Daphne du Maurier (1938) ★
+- Scoop — Evelyn Waugh (1938)
+- The Code of the Woosters — P. G. Wodehouse (1938)
+- The Death of the Heart — Elizabeth Bowen (1938)
+- The Sword in the Stone — T.H. White (1938)
+- Finnegans Wake — James Joyce (1939)
+- Lark Rise to Candleford — Flora Thompson (1939)
+- The Grapes of Wrath — John Steinbeck (1939) ★
+- The Outsider and Others — H. P. Lovecraft (1939)
+- Native Son — Richard Wright (1940)
+- The Heart is a Lonely Hunter — Carson McCullers (1940)
+- The Stranger — Albert Camus (1942)
+- Madonna in a Fur Coat — Sabahattin Ali (1943)
+- The Razor's Edge — W. Somerset Maugham (1944)
+- Brideshead Revisited — Evelyn Waugh (1945)
+- The Street — Ann Petry (1946)
+- The Diary of a Young Girl — Anne Frank (1947)
+- I Capture the Castle — Dodie Smith (1948)
+- 1984 — George Orwell (1949) ★
+- Love in a Cold Climate — Nancy Mitford (1949)
+- The Catcher in the Rye — J.D. Salinger (1951) ★
+- East of Eden — John Steinbeck (1952) ★
+- Invisible Man — Ralph Ellison (1952)
+- The Price of Salt — Patricia Highsmith (1952)
+- Fahrenheit 451 — Ray Bradbury (1953) ★
+- Maud Martha — Gwendolyn Brooks (1953)
+- The Go-Between — L. P. Hartley (1953)
+- The Two Towers — J.R.R. Tolkien (1954) ★
+- Lolita — Vladimir Nabokov (1955) ★
+- Pedro Páramo — Juan Rulfo (1955)
+- The Chrysalids — John Wyndham (1955)
+- The Quiet American — Graham Greene (1955)
+- Giovanni's Room — James Baldwin (1956)
+- Atlas Shrugged — Ayn Rand (1957)
+- On the Road — Jack Kerouac (1957)
+- The Once and Future King — T. H. White (1958)
+- Things Fall Apart — Chinua Achebe (1958) ★
+- The Haunting of Hill House — Shirley Jackson (1959)
+- The Nine Guardians — Rosario Castellanos (1959)
+- To Kill a Mockingbird — Harper Lee (1960) ★
+- Catch-22 — Joseph Heller (1961) ★
+- Solaris — Stanislaw Lem (1961)
+- Another Country — James Baldwin (1962)
+- Labyrinths — Jorge Luis Borges (1962)
+- One Day in the Life of Ivan Denisovich — Alexander Solzhenitsyn (1962)
+- One Flew Over the Cuckoo's Nest — Ken Kesey (1962) ★
+- Travels with Charley — John Steinbeck (1962)
+- The Bell Jar — Sylvia Plath (1963)
+- The Spy Who Came in From the Cold — John Le Carré (1963)
+- The Passion According to G.H. — Clarice Lispector (1964)
+- In Cold Blood — Truman Capote (1965) ★
+- The Master and Margarita — Mikhail Bulgakov (1966) ★
+- Wide Sargasso Sea — Jean Rhys (1966)
+- One Hundred Years of Solitude — Gabriel García Márquez (1967) ★
+- The Confessions of Nat Turner — William Styron (1967)
+- The Outsiders — S. E. Hinton (1967) ★
+- Do Androids Dream of Electric Sheep? — Philip K. Dick (1968)
+- I Know Why the Caged Bird Sings — Maya Angelou (1969)
+- Slaughterhouse-Five — Kurt Vonnegut (1969) ★
+- The French Lieutenant's Woman — John Fowles (1969)
+- The Godfather — Mario Puzo (1969)
+- The Left Hand of Darkness — Ursula K. Le Guin (1969)
+- Are You There God? It's Me, Margaret — Judy Blume (1970)
+- Play It As It Lays — Joan Didion (1970)
+- The Bluest Eye — Toni Morrison (1970)
+- Maurice — E. M. Forster (1971)
+- The Book of Daniel — E. L. Doctorow (1971)
+- The Complete Stories — Flannery O'Connor (1971)
+- Invisible Cities — Italo Calvino (1972)
+- Mumbo Jumbo — Ishmael Reed (1972)
+- The Summer Book — Tove Jansson (1972)
+- Sula — Toni Morrison (1973)
+- Dhalgren — Samuel R. Delany (1974)
+- Woman at Point Zero — Nawal El Saadawi (1975)
+- Ceremony — Leslie Marmon Silko (1977)
+- Song of Solomon — Toni Morrison (1977)
+- Staying On — Paul Scott (1977)
+- The Hour of the Star — Clarice Lispector (1977)
+- The Shining — Stephen King (1977)
+- The Sea, The Sea — Iris Murdoch (1978)
+- The Stories of John Cheever — John Cheever (1978)
+- The World According to Garp — John Irving (1978)
+- Kindred — Octavia E. Butler (1979)
+- A Confederacy of Dunces — John Kennedy Toole (1980)
+- Housekeeping — Marilynne Robinson (1980)
+- The Name of the Rose — Umberto Eco (1980)
+- Midnight's Children — Salman Rushdie (1981)
+- Obasan — Joy Kogawa (1981)
+- Concrete — Thomas Bernhard (1982)
+- The Book of Disquiet — Fernando Pessoa (1982)
+- The Color Purple — Alice Walker (1982)
+- The House of the Spirits — Isabel Allende (1982)
+- The Women of Brewster Place — Gloria Naylor (1982)
+- Cathedral — Raymond Carver (1983)
+- The House on Mango Street — Sandra Cisneros (1983)
+- Love Medicine — Louise Erdrich (1984)
+- Neuromancer — William Gibson (1984)
+- Nights at the Circus — Angela Carter (1984)
+- The Lover — Marguerite Duras (1984)
+- The Unbearable Lightness of Being — Milan Kundera (1984)
+- Blood Meridian — Cormac McCarthy (1985)
+- Perfume — Patrick Süskind (1985)
+- The Handmaid's Tale — Margaret Atwood (1985) ★
+- Beloved — Toni Morrison (1987) ★
+- The New York Trilogy — Paul Auster (1987)
+- Bad Behavior — Mary Gaitskill (1988)
+- Nervous Conditions — Tsitsi Dangarembga (1988)
+- Sexing the Cherry — Jeanette Winterson (1989)
+- The Joy Luck Club — Amy Tan (1989)
+- The Things They Carried — Tim O'Brien (1990)
+- American Psycho — Bret Easton Ellis (1991)
+- Bastard Out of Carolina — Dorothy Allison (1992)
+- Jesus' Son — Denis Johnson (1992)
+- The English Patient — Michael Ondaatje (1992)
+- The Secret History — Donna Tartt (1992)
+- A Lesson Before Dying — Ernest J. Gaines (1993)
+- Parable of the Sower — Octavia E. Butler (1993)
+- The Shipping News — Annie Proulx (1993)
+- In the Time of the Butterflies — Julia Alvarez (1994)
+- The Wind-Up Bird Chronicle — Haruki Murakami (1994)
+- Infinite Jest — David Foster Wallace (1996)
+- Underworld — Don DeLillo (1997)
+- My Name is Red — Orhan Pamuk (1998)
+- The Hours — Michael Cunningham (1998)
+- The Poisonwood Bible — Barbara Kingsolver (1998)
+- Interpreter of Maladies — Jhumpa Lahiri (1999)
+- The Amazing Adventures of Kavalier and Clay — Michael Chabon (2000)
+- White Teeth — Zadie Smith (2000)
+- Atonement — Ian McEwan (2001)
+- The Corrections — Jonathan Franzen (2001)
+- Fingersmith — Sarah Waters (2002)
+- The Known World — Edward P. Jones (2003)
+- Cloud Atlas — David Mitchell (2004)
+- The Master — Colm Tóibín (2004)
+- The Plot Against America — Philip Roth (2004)
+- Never Let Me Go — Kazuo Ishiguro (2005)
+- The Brief Wondrous Life of Oscar Wao — Junot Díaz (2007)
+- Let the Great World Spin — Colum McCann (2009)
+- My Struggle — Karl Ove Knausgard (2009)
+- A Visit from the Goon Squad — Jennifer Egan (2010)
+- My Brilliant Friend — Elena Ferrante (2011)
+- Salvage the Bones — Jesmyn Ward (2011)
+- The Song of Achilles — Madeline Miller (2011)
+- Gone Girl — Gillian Flynn (2012)
+- A Brief History of Seven Killings — Marlon James (2014)
+- The Sellout — Paul Beatty (2015)
+- The Underground Railroad — Colson Whitehead (2016)
+- Exit West — Mohsin Hamid (2017)
+- Lincoln in the Bardo — George Saunders (2017)
+- Sing, Unburied, Sing — Jesmyn Ward (2017)
+- Normal People — Sally Rooney (2018)
+- Girl, Woman, Other — Bernadine Evaristo (2019)
+- On Earth We're Briefly Gorgeous — Ocean Vuong (2019)
+- Deacon King Kong — James McBride (2020)
+
+### 20th–21st century (in copyright) — 248
+
+- A Clockwork Orange — Anthony Burgess
+- A Game of Thrones — George R.R. Martin
+- A Painted House — John Grisham
+- A Prayer for Owen Meany — John Irving
+- A Separate Peace — John Knowles
+- A Thousand Splendid Suns — Khaled Hosseini
+- A Time to Kill — John Grisham
+- A Tree Grows in Brooklyn — Betty Smith
+- A Walk to Remember — Nicholas Sparks
+- A Wrinkle in Time — Madeleine L'Engle
+- Alex Cross's Trial — James Patterson
+- All Quiet on the Western Front — Erich Maria Remarque
+- All the King's Men — Robert Penn Warren
+- And Then There Were None — Agatha Christie
+- Angels and Demons — Dan Brown
+- Animal Farm — George Orwell
+- Artemis Fowl — Eoin Colfer
+- Because of Winn-Dixie — Kate DiCamillo
+- Bleachers — John Grisham
+- Breakfast at Tiffany's — Truman Capote
+- Breaking Dawn — Stephenie Meyer
+- Bridge to Terabithia — Katherine Paterson
+- Bud, Not Buddy — Christopher Paul Curtis
+- By the Shores of Silver Lake — Laura Ingalls Wilder
+- Caddie Woodlawn — Carol Ryrie Brink
+- Call It Courage — Armstrong Sperry
+- Cannery Row — John Steinbeck
+- Carrie — Stephen King
+- Cat's Cradle — Kurt Vonnegut
+- Catching Fire — Suzanne Collins
+- Charlotte's Web — E.B. White
+- Chronicle of a Death Foretold — Gabriel García Márquez
+- Cold Mountain — Charles Frazier
+- Coraline — Neil Gaiman
+- Cross Country — James Patterson
+- Cross Fire — James Patterson
+- Cry, The Beloved Country — Alan Paton
+- Dandelion Wine — Ray Bradbury
+- Darkness at Noon — Arthur Koestler
+- Daughter of Fortune — Isabel Allende
+- Dear John — Nicholas Sparks
+- Dear Mr. Henshaw — Beverly Cleary
+- Death on the Nile — Agatha Christie
+- Deception Point — Dan Brown
+- Diary of a Wimpy Kid — Jeff Kinney ★
+- Doctor Zhivago — Boris Pasternak
+- Dreamcatcher — Stephen King
+- Elijah of Buxton — Christopher Paul Curtis
+- Encyclopedia Brown — Donald J. Sobol
+- Ender's Game — Orson Scott Card
+- Eragon — Christopher Paolini
+- Fearless Fourteen — Janet Evanovich
+- First Family — David Baldacci
+- Flowers for Algernon — Daniel Keyes
+- For Whom the Bell Tolls — Ernest Hemingway
+- Fried Green Tomatoes at the Whistle-Stop Cafe — Fannie Flagg
+- From the Mixed-Up Files of Mrs. Basil E. Frankweiler — E.L. Konigsburg
+- Girl With a Pearl Earring — Tracy Chevalier
+- Go Set a Watchman — Harper Lee
+- Go Tell It on the Mountain — James Baldwin
+- Gone with the Wind — Margaret Mitchell
+- Harriet the Spy — Louise Fitzhugh
+- Harry Potter and the Chamber of Secrets — J.K. Rowling
+- Harry Potter and the Deathly Hallows — J.K. Rowling
+- Harry Potter and the Goblet of Fire — J.K. Rowling
+- Harry Potter and the Half-Blood Prince — J.K. Rowling
+- Harry Potter and the Order of the Phoenix — J.K. Rowling
+- Harry Potter and the Prisoner of Azkaban — J.K. Rowling
+- Harry Potter and the Sorcerer's Stone — J.K. Rowling
+- Hatchet — Gary Paulsen
+- Holes — Louis Sachar
+- Inferno — Dan Brown
+- Inkheart — Cornelia Funke
+- Inkspell — Cornelia Funke
+- It — Stephen King
+- Jacob Have I Loved — Katherine Paterson
+- James and the Giant Peach — Roald Dahl
+- Johnny Tremain — Esther Forbes
+- Jonathan Livingston Seagull — Richard Bach
+- Julie of the Wolves — Jean Craighead George
+- Jurassic Park — Michael Crichton
+- King of the Wind — Marguerite Henry
+- Life of Pi — Yann Martel
+- Like Water for Chocolate — Laura Esquivel
+- Little House in the Big Woods — Laura Ingalls Wilder
+- Little House on the Prairie — Laura Ingalls Wilder
+- Little Town on the Prairie — Laura Ingalls Wilder
+- Look Homeward, Angel — Thomas Wolfe
+- Looking for Alaska — John Green
+- Lord of the Flies — William Golding
+- Lost Horizon — James Hilton
+- Love in the Time of Cholera — Gabriel García Márquez
+- M.C. Higgins, the Great — Virginia Hamilton
+- Mary Poppins — P.L. Travers
+- Matilda — Roald Dahl
+- Memoirs of a Geisha — Arthur Golden
+- Mere Christianity — C.S. Lewis
+- Miss Peregrine's Home for Peculiar Children — Ransom Riggs
+- Misty of Chincoteague — Marguerite Henry
+- Mockingjay — Suzanne Collins
+- Mrs. Frisby and the Rats of NIMH — Robert C. O'Brien
+- My Side of the Mountain — Jean Craighead George
+- My Sister's Keeper — Jodi Picoult
+- Nausea — Jean-Paul Sartre
+- Nights in Rodanthe — Nicholas Sparks
+- Number the Stars — Lois Lowry
+- Of Mice and Men — John Steinbeck
+- Old Yeller — Fred Gipson
+- On the Banks of Plum Creek — Laura Ingalls Wilder
+- P Is for Peril — Sue Grafton
+- Paper Towns — John Green
+- Picnic at Hanging Rock — Joan Lindsay
+- Pippi Longstocking — Astrid Lindgren
+- Prince Caspian — C.S. Lewis ★
+- Ramona Quimby, Age 8 — Beverly Cleary
+- Ramona and Her Father — Beverly Cleary
+- Ramona the Pest — Beverly Cleary
+- Redwall — Brian Jacques
+- Roll of Thunder, Hear My Cry — Mildred D. Taylor
+- Room — Emma Donoghue
+- Roots — Alex Haley
+- Sarah, Plain and Tall — Patricia MacLachlan
+- Schindler's List — Thomas Keneally
+- Shiloh — Phyllis Reynolds Naylor
+- Snow Falling on Cedars — David Guterson
+- Sophie's Choice — William Styron
+- Sounder — William H. Armstrong
+- Stranger in a Strange Land — Robert A. Heinlein
+- Stuart Little — E.B. White
+- Swimsuit — James Patterson
+- Tales of a Fourth Grade Nothing — Judy Blume
+- The Absolutely True Diary of a Part-time Indian — Sherman Alexie
+- The Alchemist — Paulo Coelho
+- The Amber Spyglass — Philip Pullman
+- The Appeal — John Grisham
+- The Associate — John Grisham
+- The BFG — Roald Dahl
+- The Birds and Other Stories — Daphne du Maurier
+- The Book Thief — Markus Zusak
+- The Brethren — John Grisham
+- The Bridge of San Luis Rey — Thornton Wilder
+- The Bridges of Madison County — Robert James Waller
+- The Broker — John Grisham
+- The Caine Mutiny — Herman Wouk
+- The Camel Club — David Baldacci
+- The Chamber — John Grisham
+- The Chocolate War — Robert Cormier
+- The Choice — Nicholas Sparks
+- The Clan of the Cave Bear — Jean M. Auel
+- The Client — John Grisham
+- The Cricket in Times Square — George Selden
+- The Curious Incident of the Dog in the Night-Time — Mark Haddon
+- The Da Vinci Code — Dan Brown
+- The Dark Is Rising — Susan Cooper
+- The Fall — Albert Camus
+- The Fault in Our Stars — John Green
+- The Firm — John Grisham
+- The Five People You Meet in Heaven — Mitch Albom
+- The Fountainhead — Ayn Rand
+- The Girl Who Kicked the Hornet's Nest — Stieg Larsson
+- The Girl Who Played With Fire — Stieg Larsson
+- The Girl With the Dragon Tattoo — Stieg Larsson
+- The Girl on the Train — Paula Hawkins
+- The Giver — Lois Lowry
+- The God of Small Things — Arundhati Roy
+- The Golden Compass — Philip Pullman
+- The Graveyard Book — Neil Gaiman
+- The Grey King — Susan Cooper
+- The Gunslinger — Stephen King
+- The Heart of the Matter — Graham Greene
+- The Help — Kathryn Stockett
+- The Higher Power of Lucky — Susan Patron
+- The Historian — Elizabeth Kostova
+- The Hitchhiker's Guide to the Galaxy — Douglas Adams
+- The Horse Whisperer — Nicholas Evans
+- The Hunger Games — Suzanne Collins
+- The Incredible Journey — Sheila Burnford
+- The Indian in the Cupboard — Lynne Reid Banks
+- The Killer Angels — Michael Shaara
+- The King of Torts — John Grisham
+- The Kite Runner — Khaled Hosseini
+- The Last Juror — John Grisham
+- The Leopard — Giuseppe Tomasi di Lampedusa
+- The Lightning Thief — Rick Riordan
+- The Little Prince — Antoine de Saint-Exupéry
+- The Long Winter — Laura Ingalls Wilder
+- The Lost Symbol — Dan Brown
+- The Lovely Bones — Alice Sebold
+- The Lucky One — Nicholas Sparks
+- The Mammoth Hunters — Jean M. Auel
+- The Martian Chronicles — Ray Bradbury
+- The Maze Runner — James Dashner
+- The Memory Keeper's Daughter — Kim Edwards
+- The Miraculous Journey of Edward Tulane — Kate DiCamillo
+- The Mouse and the Motorcycle — Beverly Cleary
+- The Naked and the Dead — Norman Mailer
+- The No. 1 Ladies' Detective Agency — Alexander McCall Smith
+- The Notebook — Nicholas Sparks
+- The Old Man and the Sea — Ernest Hemingway
+- The Partner — John Grisham
+- The Pearl — John Steinbeck
+- The Pelican Brief — John Grisham
+- The Phantom Tollbooth — Norton Juster
+- The Pillars of the Earth — Ken Follett
+- The Plague — Albert Camus
+- The Power and the Glory — Graham Greene
+- The Rainmaker — John Grisham
+- The Reader — Bernhard Schlink
+- The Red Pony — John Steinbeck
+- The Remains of the Day — Kazuo Ishiguro
+- The Road — Cormac McCarthy
+- The Runaway Jury — John Grisham
+- The Screwtape Letters — C.S. Lewis
+- The Sea of Monsters — Rick Riordan
+- The Secret Life of Bees — Sue Monk Kidd
+- The Shack — William P. Young
+- The Silmarillion — J.R.R. Tolkien
+- The Slave Dancer — Paula Fox
+- The Stand — Stephen King
+- The Street Lawyer — John Grisham
+- The Subtle Knife — Philip Pullman
+- The Summer of the Swans — Betsy Byars
+- The Summons — John Grisham
+- The Tale of Despereaux — Kate DiCamillo
+- The Testament — John Grisham
+- The Thorn Birds — Colleen McCullough
+- The Time Traveler's Wife — Audrey Niffenegger
+- The Trumpet of the Swan — E.B. White
+- The Wedding — Nicholas Sparks
+- The Westing Game — Ellen Raskin
+- The Whipping Boy — Sid Fleischman
+- The Winter of Our Discontent — John Steinbeck
+- The Witch of Blackbird Pond — Elizabeth George Speare
+- The Witches — Roald Dahl
+- The Wives of Henry VIII — Antonia Fraser
+- The Yearling — Marjorie Kinnan Rawlings
+- These Happy Golden Years — Laura Ingalls Wilder
+- To Have and Have Not — Ernest Hemingway
+- Tortilla Flat — John Steinbeck
+- Tuck Everlasting — Natalie Babbitt
+- Twilight — Stephenie Meyer
+- Vision in White — Nora Roberts
+- Walk Two Moons — Sharon Creech
+- Water for Elephants — Sara Gruen
+- Watership Down — Richard Adams
+- When You Reach Me — Rebecca Stead
+- Where the Red Fern Grows — Wilson Rawls
+- Worst Case — James Patterson
+
+## Sources
+
+- Center for Fiction — benefit.centerforfiction.org/200-books-that-shaped-200-years-of-literature
+- Penguin — penguin.co.uk/discover/articles/100-must-read-classic-books
+- OCLC WorldCat Library 100 — oclc.org/en/worldcat/library100/top500.html
+- Goodreads — goodreads.com/list/show/12647.Best_classics
+
+## Caveats
+
+- OCLC's list is circulation-based ('most widely held'), so its in-copyright half includes a lot of modern popular fiction (Grisham, Patterson, King, Rowling, kids' series) alongside literary classics.
+- The ≤1929 cutoff is US law as of 2025; works first published in 1930 become PD on 2026-01-01. A handful of 1928–1929 titles are PD but freshly so.
+- Series volumes were merged (e.g. the three *Lord of the Rings* volumes, the seven *Narnia* books) into one entry; a couple of author-name variants may leave a rare near-duplicate.
