@@ -1,8 +1,8 @@
-# Classic-lists PD split — four canon lists, deduplicated
+# Classic-lists PD split — seven canon lists, deduplicated
 
-Companion to `community-book-batch.md`. The union of four 'best/classic books' lists — Center for Fiction *200 Books That Shaped 200 Years* (200), Penguin *100 Must-Read Classics* (100), OCLC WorldCat *Library 100* top 500 (500), and Goodreads *Best Classics* top 200 — **deduplicated** (normalized title + author, variant titles and series volumes merged) and **split by US public-domain status**.
+Companion to `community-book-batch.md`. The union of seven 'best/classic books' lists — **classic canon:** Center for Fiction *200 Books That Shaped 200 Years* (200), Penguin *100 Must-Read Classics* (100), OCLC WorldCat *Library 100* top 500 (500), Goodreads *Best Classics* top 200; **modern classics:** Goodreads *Best Books of the Last 50 Years* (141), Tertulia *Modern Classics of the 21st Century* (26), the NYT *100 Best Books of the 21st Century* (100) — **deduplicated** (normalized title + author, variant titles and series volumes merged) and **split by US public-domain status**.
 
-**685 unique works** · **266 public domain** · **419 in copyright**. ★ = appears on 3+ of the four lists. ‡ = original is PD but a public-domain English translation may not exist (foreign 20th-c work).
+**858 unique works** · **266 public domain** · **592 in copyright** (of which 214 are modern classics). ★ = appears on 3+ lists. ‡ = original is PD but a public-domain English translation may not exist (foreign 20th-c work).
 
 **PD rule:** first published **≤ 1929** (US public domain; matches the pipeline's `us_clear` gate). Foreign/ancient works auto-ingest only via a **PD translation** (Gutenberg carries these for pre-20th-c works; the ‡ flag marks where that's doubtful). Years are first-publication; taken from the two year-bearing lists and a curated table.
 
@@ -286,9 +286,226 @@ Companion to `community-book-batch.md`. The union of four 'best/classic books' l
 - Passing — Nella Larsen (1929)
 - The Sound and the Fury — William Faulkner (1929)
 
-## In copyright — upload-gated (derivatives only), 419 works
+## In copyright — upload-gated (derivatives only), 592 works
 
-### Published 1930–present — 171
+### Modern classics — last 50 years / 21st century — 214
+
+- 10:04 — Ben Lerner
+- 2666 — Roberto Bolaño ★
+- A Brief History of Seven Killings — Marlon James (2014)
+- A Brief History of Time — Stephen W. Hawking
+- A Dry White Season — André Brink
+- A God in Ruins — Kate Atkinson
+- A Little Life — Hanya Yanagihara
+- A Manual for Cleaning Women — Lucia Berlin
+- A Mercy — Toni Morrison
+- A Thousand Splendid Suns — Khaled Hosseini
+- A Visit from the Goon Squad — Jennifer Egan (2010) ★
+- Africa: A Biography of the Continent — John Reader
+- All Aunt Hagar's Children — Edward P. Jones
+- All the Light We Cannot See — Anthony Doerr
+- American Psycho — Bret Easton Ellis (1991)
+- American Wife — Curtis Sittenfeld
+- Americanah — Chimamanda Ngozi Adichie
+- An American Marriage — Tayari Jones
+- Atonement — Ian McEwan (2001) ★
+- Austerlitz — W.G. Sebald
+- Behind the Beautiful Forevers — Katherine Boo
+- Bel Canto — Ann Patchett
+- Beloved — Toni Morrison (1987) ★
+- Between the World and Me — Ta-Nehisi Coates
+- Birdsong — Sebastian Faulks
+- Blindness — José Saramago
+- Blood Meridian — Cormac McCarthy (1985)
+- Bright Lights, Big City — Jay McInerney
+- Bring Up the Bodies — Hilary Mantel
+- Capital in the Twenty-First Century — Thomas Piketty
+- Carter Beats the Devil — Glen David Gold
+- Citizen — Claudia Rankine
+- Cloud Atlas — David Mitchell (2004)
+- Cryptonomicon — Neal Stephenson
+- Death Comes to Pemberley — P.D. James
+- Demon Copperhead — Barbara Kingsolver
+- Detransition, Baby — Torrey Peters
+- Disgrace — J.M. Coetzee
+- Dispatches — Michael Herr
+- Dissolution — C.J. Sansom
+- Drive Your Plow Over the Bones of the Dead — Olga Tokarczuk
+- Erasure — Percival Everett
+- Evicted — Matthew Desmond
+- Exit West — Mohsin Hamid (2017)
+- Far From the Tree — Andrew Solomon
+- Fingersmith — Sarah Waters (2002)
+- Fludd — Hilary Mantel
+- Frederick Douglass: Prophet of Freedom — David W. Blight
+- Fun Home — Alison Bechdel
+- Gilead — Marilynne Robinson
+- Good Night, Mr. Tom — Michelle Magorian
+- Gravity's Rainbow — Thomas Pynchon
+- H Is for Hawk — Helen MacDonald
+- Half of a Yellow Sun — Chimamanda Ngozi Adichie
+- Hateship, Friendship, Courtship, Loveship, Marriage — Alice Munro
+- Heavy — Kiese Laymon
+- Herzog — Saul Bellow
+- Housekeeping — Marilynne Robinson (1980)
+- How to be both — Ali Smith
+- Hurricane Season — Fernanda Melchor
+- If on a Winter's Night a Traveler — Italo Calvino
+- Infinite Jest — David Foster Wallace (1996)
+- Invisible Cities — Italo Calvino (1972)
+- Iron Council — China Miéville
+- Jesus' Son — Denis Johnson (1992)
+- Jonathan Strange and Mr Norrell — Susanna Clarke
+- Kafka on the Shore — Haruki Murakami
+- Kraken — China Miéville
+- Life After Life — Kate Atkinson
+- Lincoln — Gore Vidal
+- Lincoln in the Bardo — George Saunders (2017) ★
+- Little, Big — John Crowley
+- London: The Biography — Peter Ackroyd
+- Love in the Time of Cholera — Gabriel García Márquez
+- Many a River — Elmer Kelton
+- Mason & Dixon — Thomas Pynchon
+- Men We Reaped — Jesmyn Ward
+- Middlesex — Jeffrey Eugenides
+- Milkman — Anna Burns
+- Moonglow — Michael Chabon
+- My Brilliant Friend — Elena Ferrante (2011) ★
+- My Name is Red — Orhan Pamuk (1998)
+- My Struggle — Karl Ove Knausgard (2009)
+- Never Let Me Go — Kazuo Ishiguro (2005) ★
+- Nickel and Dimed — Barbara Ehrenreich
+- Night Train to Lisbon — Pascal Mercier
+- Of Love and Other Demons — Gabriel García Márquez
+- Olive Kitteridge — Elizabeth Strout
+- On Beauty — Zadie Smith
+- On Chesil Beach — Ian McEwan
+- One Hundred Years of Solitude — Gabriel García Márquez (1967) ★
+- Outline — Rachel Cusk
+- Pachinko — Min Jin Lee
+- Pastoralia — George Saunders
+- Perdido Street Station — China Miéville
+- Persepolis — Marjane Satrapi
+- Portnoy's Complaint — Philip Roth
+- Possession — A.S. Byatt
+- Postwar — Tony Judt
+- Pulphead — John Jeremiah Sullivan
+- Purge — Sofi Oksanen
+- Rabbit Is Rich — John Updike
+- Random Family — Adrian Nicole LeBlanc
+- Riddley Walker — Russell Hoban
+- Rites of Passage — William Golding
+- Runaway — Alice Munro
+- Salvage the Bones — Jesmyn Ward (2011) ★
+- Say Nothing — Patrick Radden Keefe
+- Secondhand Time — Svetlana Alexievich
+- Septology — Jon Fosse
+- Sing, Unburied, Sing — Jesmyn Ward (2017)
+- Small Things Like These — Claire Keegan
+- Snow — Orhan Pamuk
+- Song of Solomon — Toni Morrison (1977) ★
+- Station Eleven — Emily St. John Mandel
+- Stay True — Hua Hsu
+- Tenth of December — George Saunders
+- The Amazing Adventures of Kavalier and Clay — Michael Chabon (2000) ★
+- The Ancestor's Tale — Richard Dawkins
+- The Argonauts — Maggie Nelson
+- The Brief Wondrous Life of Oscar Wao — Junot Díaz (2007)
+- The Buddha in the Attic — Julie Otsuka
+- The Changing Light at Sandover — James Merrill
+- The Children's Book — A.S. Byatt
+- The City and the City — China Miéville
+- The Collected Stories of Lydia Davis — Lydia Davis
+- The Complete Maus — Art Spiegelman
+- The Copenhagen Trilogy — Tove Ditlevsen
+- The Corrections — Jonathan Franzen (2001)
+- The Counterlife — Philip Roth
+- The Days of Abandonment — Elena Ferrante
+- The Demon-Haunted World — Carl Sagan
+- The Dispossessed — Ursula K. Le Guin
+- The Dying Grass — William T. Vollmann
+- The Earthsea Quartet — Ursula K. Le Guin
+- The Emperor of All Maladies — Siddhartha Mukherjee
+- The Fifth Season — N.K. Jemisin
+- The Flamethrowers — Rachel Kushner
+- The Flounder — Günter Grass
+- The Friend — Sigrid Nunez
+- The God of Small Things — Arundhati Roy
+- The Goldfinch — Donna Tartt
+- The Great Believers — Rebecca Makkai
+- The Handmaid's Tale — Margaret Atwood (1985) ★
+- The House of the Spirits — Isabel Allende (1982) ★
+- The Human Stain — Philip Roth
+- The Informers — Bret Easton Ellis
+- The Intellectual Life of the British Working Classes — Jonathan Rose
+- The Known World — Edward P. Jones (2003)
+- The Last Samurai — Helen DeWitt
+- The Left Hand of Darkness — Ursula K. Le Guin (1969)
+- The Lesser Bohemians — Eimear McBride
+- The Light Between Oceans — M.L. Stedman
+- The Line of Beauty — Alan Hollinghurst
+- The Looming Tower — Lawrence Wright
+- The Man Who Mistook His Wife for a Hat — Oliver Sacks
+- The Name of the Rose — Umberto Eco (1980) ★
+- The New Jim Crow — Michelle Alexander
+- The Overstory — Richard Powers
+- The Passage of Power — Robert A. Caro
+- The Patrick Melrose Novels — Edward St. Aubyn
+- The Paying Guests — Sarah Waters
+- The Penguin History of the World — J.M. Roberts
+- The Plot Against America — Philip Roth (2004)
+- The Quincunx — Charles Palliser
+- The Reader — Bernhard Schlink
+- The Return — Hisham Matar
+- The Rings of Saturn — W.G. Sebald
+- The Road — Cormac McCarthy ★
+- The Satanic Verses — Salman Rushdie
+- The Savage Detectives — Roberto Bolaño
+- The Secret History — Donna Tartt (1992) ★
+- The Selfish Gene — Richard Dawkins
+- The Sellout — Paul Beatty (2015)
+- The Shadow of the Wind — Carlos Ruiz Zafón
+- The Story of the Lost Child — Elena Ferrante
+- The Swimming-Pool Library — Alan Hollinghurst
+- The Sympathizer — Viet Thanh Nguyen
+- The Tenderness of Wolves — Stef Penney
+- The Three-Body Problem — Liu Cixin
+- The Tiger's Wife — Téa Obreht
+- The Time It Never Rained — Elmer Kelton
+- The Time of Our Singing — Richard Powers
+- The Underground Railroad — Colson Whitehead (2016)
+- The Unfortunates — B.S. Johnson
+- The Vegetarian — Han Kang
+- The War of the End of the World — Mario Vargas Llosa
+- The Warmth of Other Suns — Isabel Wilkerson
+- The Woman in Black — Susan Hill
+- The Women's Room — Marilyn French
+- The Worst Hard Time — Timothy Egan
+- The Year of Magical Thinking — Joan Didion
+- The Years — Annie Ernaux
+- There There — Tommy Orange
+- There's Always This Year — Hanif Abdurraqib
+- Thinking, Fast and Slow — Daniel Kahneman
+- Tinker, Tailor, Soldier, Spy — John le Carré
+- Tomorrow, and Tomorrow, and Tomorrow — Gabrielle Zevin
+- Train Dreams — Denis Johnson
+- Tree of Smoke — Denis Johnson
+- Trust — Hernan Diaz
+- Underworld — Don DeLillo (1997)
+- Veronica — Mary Gaitskill
+- Watchmen — Alan Moore
+- Waterland — Graham Swift
+- Wayward Lives, Beautiful Experiments — Saidiya Hartman
+- We The Animals — Justin Torres
+- What a Carve Up! — Jonathan Coe
+- When We Cease to Understand the World — Benjamin Labatut
+- Where I'm Calling From — Raymond Carver
+- White Teeth — Zadie Smith (2000) ★
+- Why We Sleep — Matthew Walker
+- Wizard of the Crow — Ngugi wa Thiong'o
+- Wolf Hall — Hilary Mantel ★
+
+### Classic canon, published 1930–present — 135
 
 - As I Lay Dying — William Faulkner (1930)
 - The Maltese Falcon — Dashiell Hammett (1930)
@@ -360,7 +577,6 @@ Companion to `community-book-batch.md`. The union of four 'best/classic books' l
 - In Cold Blood — Truman Capote (1965) ★
 - The Master and Margarita — Mikhail Bulgakov (1966) ★
 - Wide Sargasso Sea — Jean Rhys (1966)
-- One Hundred Years of Solitude — Gabriel García Márquez (1967) ★
 - The Confessions of Nat Turner — William Styron (1967)
 - The Outsiders — S. E. Hinton (1967) ★
 - Do Androids Dream of Electric Sheep? — Philip K. Dick (1968)
@@ -368,21 +584,18 @@ Companion to `community-book-batch.md`. The union of four 'best/classic books' l
 - Slaughterhouse-Five — Kurt Vonnegut (1969) ★
 - The French Lieutenant's Woman — John Fowles (1969)
 - The Godfather — Mario Puzo (1969)
-- The Left Hand of Darkness — Ursula K. Le Guin (1969)
 - Are You There God? It's Me, Margaret — Judy Blume (1970)
 - Play It As It Lays — Joan Didion (1970)
 - The Bluest Eye — Toni Morrison (1970)
 - Maurice — E. M. Forster (1971)
 - The Book of Daniel — E. L. Doctorow (1971)
 - The Complete Stories — Flannery O'Connor (1971)
-- Invisible Cities — Italo Calvino (1972)
 - Mumbo Jumbo — Ishmael Reed (1972)
 - The Summer Book — Tove Jansson (1972)
 - Sula — Toni Morrison (1973)
 - Dhalgren — Samuel R. Delany (1974)
 - Woman at Point Zero — Nawal El Saadawi (1975)
 - Ceremony — Leslie Marmon Silko (1977)
-- Song of Solomon — Toni Morrison (1977)
 - Staying On — Paul Scott (1977)
 - The Hour of the Star — Clarice Lispector (1977)
 - The Shining — Stephen King (1977)
@@ -391,14 +604,11 @@ Companion to `community-book-batch.md`. The union of four 'best/classic books' l
 - The World According to Garp — John Irving (1978)
 - Kindred — Octavia E. Butler (1979)
 - A Confederacy of Dunces — John Kennedy Toole (1980)
-- Housekeeping — Marilynne Robinson (1980)
-- The Name of the Rose — Umberto Eco (1980)
 - Midnight's Children — Salman Rushdie (1981)
 - Obasan — Joy Kogawa (1981)
 - Concrete — Thomas Bernhard (1982)
 - The Book of Disquiet — Fernando Pessoa (1982)
 - The Color Purple — Alice Walker (1982)
-- The House of the Spirits — Isabel Allende (1982)
 - The Women of Brewster Place — Gloria Naylor (1982)
 - Cathedral — Raymond Carver (1983)
 - The House on Mango Street — Sandra Cisneros (1983)
@@ -407,69 +617,39 @@ Companion to `community-book-batch.md`. The union of four 'best/classic books' l
 - Nights at the Circus — Angela Carter (1984)
 - The Lover — Marguerite Duras (1984)
 - The Unbearable Lightness of Being — Milan Kundera (1984)
-- Blood Meridian — Cormac McCarthy (1985)
 - Perfume — Patrick Süskind (1985)
-- The Handmaid's Tale — Margaret Atwood (1985) ★
-- Beloved — Toni Morrison (1987) ★
 - The New York Trilogy — Paul Auster (1987)
 - Bad Behavior — Mary Gaitskill (1988)
 - Nervous Conditions — Tsitsi Dangarembga (1988)
 - Sexing the Cherry — Jeanette Winterson (1989)
 - The Joy Luck Club — Amy Tan (1989)
 - The Things They Carried — Tim O'Brien (1990)
-- American Psycho — Bret Easton Ellis (1991)
 - Bastard Out of Carolina — Dorothy Allison (1992)
-- Jesus' Son — Denis Johnson (1992)
 - The English Patient — Michael Ondaatje (1992)
-- The Secret History — Donna Tartt (1992)
 - A Lesson Before Dying — Ernest J. Gaines (1993)
 - Parable of the Sower — Octavia E. Butler (1993)
 - The Shipping News — Annie Proulx (1993)
 - In the Time of the Butterflies — Julia Alvarez (1994)
 - The Wind-Up Bird Chronicle — Haruki Murakami (1994)
-- Infinite Jest — David Foster Wallace (1996)
-- Underworld — Don DeLillo (1997)
-- My Name is Red — Orhan Pamuk (1998)
 - The Hours — Michael Cunningham (1998)
 - The Poisonwood Bible — Barbara Kingsolver (1998)
 - Interpreter of Maladies — Jhumpa Lahiri (1999)
-- The Amazing Adventures of Kavalier and Clay — Michael Chabon (2000)
-- White Teeth — Zadie Smith (2000)
-- Atonement — Ian McEwan (2001)
-- The Corrections — Jonathan Franzen (2001)
-- Fingersmith — Sarah Waters (2002)
-- The Known World — Edward P. Jones (2003)
-- Cloud Atlas — David Mitchell (2004)
 - The Master — Colm Tóibín (2004)
-- The Plot Against America — Philip Roth (2004)
-- Never Let Me Go — Kazuo Ishiguro (2005)
-- The Brief Wondrous Life of Oscar Wao — Junot Díaz (2007)
 - Let the Great World Spin — Colum McCann (2009)
-- My Struggle — Karl Ove Knausgard (2009)
-- A Visit from the Goon Squad — Jennifer Egan (2010)
-- My Brilliant Friend — Elena Ferrante (2011)
-- Salvage the Bones — Jesmyn Ward (2011)
 - The Song of Achilles — Madeline Miller (2011)
 - Gone Girl — Gillian Flynn (2012)
-- A Brief History of Seven Killings — Marlon James (2014)
-- The Sellout — Paul Beatty (2015)
-- The Underground Railroad — Colson Whitehead (2016)
-- Exit West — Mohsin Hamid (2017)
-- Lincoln in the Bardo — George Saunders (2017)
-- Sing, Unburied, Sing — Jesmyn Ward (2017)
 - Normal People — Sally Rooney (2018)
 - Girl, Woman, Other — Bernadine Evaristo (2019)
 - On Earth We're Briefly Gorgeous — Ocean Vuong (2019)
 - Deacon King Kong — James McBride (2020)
 
-### 20th–21st century (in copyright) — 248
+### Other 20th-century (in copyright) — 243
 
 - A Clockwork Orange — Anthony Burgess
 - A Game of Thrones — George R.R. Martin
 - A Painted House — John Grisham
 - A Prayer for Owen Meany — John Irving
 - A Separate Peace — John Knowles
-- A Thousand Splendid Suns — Khaled Hosseini
 - A Time to Kill — John Grisham
 - A Tree Grows in Brooklyn — Betty Smith
 - A Walk to Remember — Nicholas Sparks
@@ -555,7 +735,6 @@ Companion to `community-book-batch.md`. The union of four 'best/classic books' l
 - Looking for Alaska — John Green
 - Lord of the Flies — William Golding
 - Lost Horizon — James Hilton
-- Love in the Time of Cholera — Gabriel García Márquez
 - M.C. Higgins, the Great — Virginia Hamilton
 - Mary Poppins — P.L. Travers
 - Matilda — Roald Dahl
@@ -628,7 +807,6 @@ Companion to `community-book-batch.md`. The union of four 'best/classic books' l
 - The Girl With the Dragon Tattoo — Stieg Larsson
 - The Girl on the Train — Paula Hawkins
 - The Giver — Lois Lowry
-- The God of Small Things — Arundhati Roy
 - The Golden Compass — Philip Pullman
 - The Graveyard Book — Neil Gaiman
 - The Grey King — Susan Cooper
@@ -671,10 +849,8 @@ Companion to `community-book-batch.md`. The union of four 'best/classic books' l
 - The Plague — Albert Camus
 - The Power and the Glory — Graham Greene
 - The Rainmaker — John Grisham
-- The Reader — Bernhard Schlink
 - The Red Pony — John Steinbeck
 - The Remains of the Day — Kazuo Ishiguro
-- The Road — Cormac McCarthy
 - The Runaway Jury — John Grisham
 - The Screwtape Letters — C.S. Lewis
 - The Sea of Monsters — Rick Riordan
@@ -715,10 +891,8 @@ Companion to `community-book-batch.md`. The union of four 'best/classic books' l
 
 ## Sources
 
-- Center for Fiction — benefit.centerforfiction.org/200-books-that-shaped-200-years-of-literature
-- Penguin — penguin.co.uk/discover/articles/100-must-read-classic-books
-- OCLC WorldCat Library 100 — oclc.org/en/worldcat/library100/top500.html
-- Goodreads — goodreads.com/list/show/12647.Best_classics
+Classic canon: Center for Fiction (200-books-that-shaped-200-years-of-literature) · Penguin (100-must-read-classic-books) · OCLC WorldCat Library 100 (library100/top500) · Goodreads Best Classics (list 12647).  
+Modern classics: Goodreads Best Books of the Last 50 Years (list 116810) · Tertulia Modern Classics of the 21st Century · NYT 100 Best Books of the 21st Century (via flyleafbooks.com/nyt-100-21stcentury).
 
 ## Caveats
 
