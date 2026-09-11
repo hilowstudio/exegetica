@@ -81,7 +81,16 @@ def _text_of(msg) -> str:
 
 
 async def _call(params: dict):
-    """Run one param dict now and parse its JSON (the interactive path). None on failure."""
+    """Run one param dict now and parse its JSON (the interactive path). None on failure.
+    Dispatches by model: gemini-* → the Gemini provider (run in a thread; the SDK call is
+    sync), everything else → Anthropic."""
+    if str(params.get("model", "")).startswith("gemini"):
+        import asyncio
+
+        from webapp import gemini
+
+        return await asyncio.to_thread(gemini.complete_json_sync, params)
+
     from anthropic import AsyncAnthropic
 
     client = AsyncAnthropic()  # uses ANTHROPIC_API_KEY

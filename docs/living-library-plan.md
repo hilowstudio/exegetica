@@ -345,6 +345,19 @@ the seeder reports **actual** usage/cost and has `--limit N` for a measured pilo
 `derive_params`/`propose_params`/`verify_params` reused by both the interactive `_call` path
 and the batch seeder.
 
+**Gemini Flash adapter (2026-09-11).** Extraction is now provider-pluggable, chosen by model
+prefix: `claude-*` → Anthropic, `gemini-*` → Google Gemini (`webapp/gemini.py`, `google-genai`
+SDK). `extraction._call` dispatches the interactive path; `scripts/seed_batch.py --model` the
+bulk path (native Gemini **Batch API** — JSONL upload → poll → download — since the OpenAI-compat
+batch can't upload the request file). The seeder **defaults to `gemini-3.8-flash`**: ~$13 for
+all 266 PD titles (~⅓ of Sonnet), **while its promo pricing lasts (through 2026-12-31; doubles
+2027)**. Thinking pinned to `low` (Gemini bills thinking as output; these are low-reasoning
+grounded tasks); JSON forced via `response_mime_type`; cache_control dropped (Gemini implicit
+cache needs ≥4k tokens, our calls are smaller). Needs `GEMINI_API_KEY`/`GOOGLE_API_KEY`.
+Interactive prod stays on Sonnet 5 unless `EXTRACTION_MODEL=gemini-3.8-flash` is set. **Before a
+full Flash run, do the Sonnet-vs-Flash quality eval** (objective quality + verify pass rates)
+so the model switch is measured, not assumed.
+
 - **Verification pilot — NOT a gate (decided 2026-09-10).** Grounding is locked
   unconditionally, so no pilot is required before building. The citation-verify pass
   provides continuous, model-agnostic measurement instead. (A pilot is available later

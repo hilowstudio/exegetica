@@ -34,9 +34,17 @@ from webapp.sources import registry  # noqa: E402
 from webapp.sources import text_processing as TP  # noqa: E402
 
 PD_DOC = pathlib.Path(__file__).resolve().parents[1] / "docs" / "classics-lists-pd-split.md"
-# Sonnet 5 Batch API rates (50% of $2 / $10 per MTok).
-_IN_RATE, _OUT_RATE = 1.0 / 1_000_000, 5.0 / 1_000_000
+# Batch API rates (50% of standard), $/MTok input, output. Gemini 3.8 Flash is intro-priced
+# through 2026-12-31 (doubles in 2027). Unknown models fall back to Sonnet-5 rates.
+_BATCH_RATES = {
+    "gemini-3.8-flash": (0.375, 1.875),
+    "claude-sonnet-5": (1.0, 5.0),
+}
 _ENTRY = re.compile(r"^- (.+?) — (.+?)(?:\s*\((?:\d{1,4}(?: BC)?)\))?\s*[★‡]*\s*$")
+
+
+def _rates(model: str) -> tuple[float, float]:
+    return _BATCH_RATES.get(model, _BATCH_RATES["claude-sonnet-5"])
 
 
 def load_pd(limit: int | None) -> list[dict]:
@@ -77,23 +85,37 @@ def _usable(section: dict) -> bool:
     return len(EX._excerpt(section["text"], 6000)) >= TP._MIN_SECTION_CHARS
 
 
-def phase1_requests(books: list[dict]) -> list[dict]:
+def _with_model(params: dict, model: str) -> dict:
+    params["model"] = model
+    return params
+
+
+def phase1_requests(books: list[dict], model: str) -> list[dict]:
     reqs = []
     for i, b in enumerate(books):
-        reqs.append({"custom_id": f"d_{i}", "params": EX.derive_params(b["meta"], b["sections"])})
+        reqs.append({"custom_id": f"d_{i}", "params": _with_model(EX.derive_params(b["meta"], b["sections"]), model)})
         for s in b["sections"]:
             if _usable(s):
                 reqs.append({"custom_id": f"p_{i}_{s['section_number']}",
-                             "params": EX.propose_params(b["meta"], s, cache=False)})
+                             "params": _with_model(EX.propose_params(b["meta"], s, cache=False), model)})
     return reqs
 
 
-def phase2_requests(books: list[dict], proposals: dict) -> list[dict]:
+def phase2_requests(books: list[dict], proposals: dict, model: str) -> list[dict]:
     reqs = []
     for (i, sn), objs in proposals.items():
         sec = next(s for s in books[i]["sections"] if s["section_number"] == sn)
-        reqs.append({"custom_id": f"v_{i}_{sn}", "params": EX.verify_params(sec, objs, cache=False)})
+        reqs.append({"custom_id": f"v_{i}_{sn}", "params": _with_model(EX.verify_params(sec, objs, cache=False), model)})
     return reqs
+
+
+def run_batch_provider(model: str, requests: list[dict], label: str, poll: int) -> tuple[dict, dict]:
+    """Dispatch a batch to the right provider's Batch API by model prefix."""
+    if model.startswith("gemini"):
+        from webapp import gemini
+        return gemini.run_batch(requests, label, poll)
+    import anthropic
+    return run_batch(anthropic.Anthropic(), requests, label, poll)
 
 
 def run_batch(client, requests: list[dict], label: str, poll: int = 30) -> tuple[dict, dict]:
@@ -170,7 +192,10 @@ async def main() -> None:
     ap.add_argument("--limit", type=int, default=None, help="process only the first N PD titles")
     ap.add_argument("--dry-run", action="store_true", help="fetch + segment only; no API calls")
     ap.add_argument("--poll", type=int, default=30, help="batch poll interval (s)")
+    ap.add_argument("--model", default="gemini-3.8-flash",
+                    help="extraction model (gemini-3.8-flash [default] or claude-sonnet-5)")
     args = ap.parse_args()
+    model = args.model
 
     await db.init_pool()
     wanted = load_pd(args.limit)
@@ -193,17 +218,16 @@ async def main() -> None:
 
     if args.dry_run or not books:
         secs = sum(len(b["sections"]) for b in books)
-        p1 = len(phase1_requests(books))
-        print(f"[dry-run] {len(books)} books, {secs} sections → phase-1 requests: {p1}, "
+        p1 = len(phase1_requests(books, model))
+        print(f"[dry-run] model={model} · {len(books)} books, {secs} sections → phase-1 requests: {p1}, "
               f"phase-2 (verify) ≈ {sum(1 for b in books for s in b['sections'] if _usable(s))}")
         await db.close_pool()
         return
 
-    import anthropic
-    client = anthropic.Anthropic()  # sync client for the batch workflow
-
+    print(f"extracting with model: {model}")
     # Round 1: derive + propose
-    r1, u1 = await asyncio.to_thread(run_batch, client, phase1_requests(books), "derive+propose", args.poll)
+    r1, u1 = await asyncio.to_thread(
+        run_batch_provider, model, phase1_requests(books, model), "derive+propose", args.poll)
     derivatives, proposals = {}, {}
     for i, b in enumerate(books):
         derivatives[i] = EX.parse_derivative(r1.get(f"d_{i}"))
@@ -215,7 +239,8 @@ async def main() -> None:
     # Round 2: verify (one call per section)
     r2, u2 = ({}, {"in": 0, "out": 0})
     if proposals:
-        r2, u2 = await asyncio.to_thread(run_batch, client, phase2_requests(books, proposals), "verify", args.poll)
+        r2, u2 = await asyncio.to_thread(
+            run_batch_provider, model, phase2_requests(books, proposals, model), "verify", args.poll)
     kept_by_book: dict = {}
     for (i, sn), objs in proposals.items():
         kept_by_book.setdefault(i, []).extend(EX.keep_verified(objs, r2.get(f"v_{i}_{sn}")))
@@ -230,10 +255,11 @@ async def main() -> None:
             print(f"  persist failed: {b['meta']['title']}: {e}")
 
     tin, tout = u1["in"] + u2["in"], u1["out"] + u2["out"]
-    cost = tin * _IN_RATE + tout * _OUT_RATE
+    in_rate, out_rate = _rates(model)
+    cost = tin * in_rate / 1_000_000 + tout * out_rate / 1_000_000
     print(f"\nSeeded {persisted}/{len(books)} books · objectives kept "
           f"{sum(len(v) for v in kept_by_book.values())}")
-    print(f"Tokens: in {tin:,} out {tout:,} · Sonnet-5 batch cost ≈ ${cost:,.2f} "
+    print(f"Tokens: in {tin:,} out {tout:,} · {model} batch cost ≈ ${cost:,.2f} "
           f"(${cost / max(persisted,1):.3f}/book)")
     await db.close_pool()
 

@@ -36,6 +36,7 @@ http = [
 webapp = [
     "anthropic>=1.0.0",
     "openai>=1.40.0",          # OpenAI, plus xAI Grok / Google Gemini via base_url
+    "google-genai>=1.0",       # Gemini extraction adapter (grounded objectives on Flash, Batch API)
     "starlette>=0.32.0",
     "uvicorn>=0.24.0",
     "python-dotenv>=1.0.0",
