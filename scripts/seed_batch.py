@@ -204,6 +204,8 @@ async def main() -> None:
     ap.add_argument("--poll", type=int, default=30, help="batch poll interval (s)")
     ap.add_argument("--model", default="gemini-3.8-flash",
                     help="extraction model (gemini-3.8-flash [default] or claude-sonnet-5)")
+    ap.add_argument("--delay", type=float, default=0.3,
+                    help="pause between per-book source fetches (s), to be gentle on free mirrors")
     args = ap.parse_args()
     model = args.model
 
@@ -222,8 +224,10 @@ async def main() -> None:
         if not got:
             missing += 1
             print(f"  no source: {meta['title']} — {meta['authors'][0]}")
-            continue
-        books.append(got)
+        else:
+            books.append(got)
+        if args.delay:
+            await asyncio.sleep(args.delay)
     print(f"fetched {len(books)} | already-extracted {skipped} | no source {missing}")
 
     if args.dry_run or not books:

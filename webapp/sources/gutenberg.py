@@ -7,10 +7,32 @@ edition, then title/author closeness.
 """
 from __future__ import annotations
 
+import asyncio
+
 import httpx
 
 from webapp.sources.matching import BROWSER_UA, author_last_name, normalize, score_title_author
 from webapp.sources.text_processing import strip_gutenberg_boilerplate
+
+_RETRY_STATUS = {429, 500, 502, 503, 504}
+
+
+async def _get_with_retry(client: httpx.AsyncClient, url: str, *, params=None, attempts: int = 4):
+    """GET that rides out gutendex/gutenberg throttling — a bulk seed fires hundreds of
+    requests and free mirrors return 429/5xx transiently. Retries those (and network errors)
+    with backoff; returns the httpx.Response (200) or None."""
+    for i in range(attempts):
+        try:
+            r = await client.get(url, params=params)
+            if r.status_code == 200:
+                return r
+            if r.status_code not in _RETRY_STATUS:
+                return None
+        except Exception:  # noqa: BLE001 — network hiccup; treat as retryable
+            if i == attempts - 1:
+                return None
+        await asyncio.sleep(1.0 * (2 ** i))  # 1s, 2s, 4s
+    return None
 
 _GUTENDEX = "https://gutendex.com/books"
 
@@ -45,8 +67,8 @@ async def discover(meta: dict) -> dict | None:
     want_author = author_last_name(authors[0]) if authors else None
 
     async with httpx.AsyncClient(timeout=15, headers={"User-Agent": BROWSER_UA}, follow_redirects=True) as c:
-        r = await c.get(_GUTENDEX, params={"search": query})
-        if r.status_code != 200:
+        r = await _get_with_retry(c, _GUTENDEX, params={"search": query})
+        if r is None:
             return None
         results = r.json().get("results") or []
 
@@ -68,8 +90,8 @@ async def discover(meta: dict) -> dict | None:
 
 async def fetch(text_url: str) -> str | None:
     async with httpx.AsyncClient(timeout=30, headers={"User-Agent": BROWSER_UA}, follow_redirects=True) as c:
-        r = await c.get(text_url)
-        if r.status_code != 200:
+        r = await _get_with_retry(c, text_url)
+        if r is None:
             return None
         text = r.text
     cleaned = strip_gutenberg_boilerplate(text)
