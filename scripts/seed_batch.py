@@ -79,16 +79,47 @@ def load_pd(limit: int | None) -> list[dict]:
     return books[:limit] if limit else books
 
 
+# On-disk cache of fetched source text, so re-runs (dry-run iteration especially) are instant
+# and don't re-hammer gutendex into throttling. Keyed by dedup; re-segments from cached text
+# each run so segmentation improvements still take effect.
+_CACHE = _ROOT / ".seed_cache"
+
+
+def _cache_path(meta: dict) -> pathlib.Path:
+    import hashlib
+    return _CACHE / (hashlib.sha1(EX.book_dedup_key(meta).encode()).hexdigest()[:16] + ".json")
+
+
+def cached(meta: dict) -> bool:
+    return _cache_path(meta).exists()
+
+
 async def fetch_book(meta: dict) -> dict | None:
-    hits = await registry.discover_all(meta)
-    got = await registry.fetch_first_available(hits)
-    if not got:
-        return None
+    import json
+    cp = _cache_path(meta)
+    got = None
+    if cp.exists():
+        try:
+            got = json.loads(cp.read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            got = None
+    if got is None:
+        hits = await registry.discover_all(meta)
+        g = await registry.fetch_first_available(hits)
+        if not g:
+            return None
+        got = {"text": g["text"], "source": g["source"], "source_id": g["source_id"],
+               "us_clear": g["source"] in EX._US_CLEAR_SOURCES}
+        try:
+            _CACHE.mkdir(exist_ok=True)
+            cp.write_text(json.dumps(got), encoding="utf-8")
+        except Exception:  # noqa: BLE001
+            pass
     sections = TP.segment_into_chapters(got["text"])
     if not sections:
         return None
     return {"meta": meta, "text": got["text"], "sections": sections, "source": got["source"],
-            "source_id": got["source_id"], "us_clear": got["source"] in EX._US_CLEAR_SOURCES}
+            "source_id": got["source_id"], "us_clear": got["us_clear"]}
 
 
 def _usable(section: dict) -> bool:
@@ -260,13 +291,16 @@ async def main() -> None:
         if (await db.fetchval("select status from library_extractions where id=$1", exid)) == "extracted":
             skipped += 1
             continue
+        was_cached = cached(meta)
         got = await fetch_book(meta)
         if not got:
             missing += 1
-            print(f"  no source: {meta['title']} — {meta['authors'][0]}")
+            print(f"  --  no source: {meta['title']} — {meta['authors'][0]}", flush=True)
         else:
             books.append(got)
-        if args.delay:
+            n_use = sum(1 for s in got["sections"] if _usable(s))
+            print(f"  {n_use:4} sec  {meta['title'][:50]:50} [{got['source']}]", flush=True)
+        if args.delay and not was_cached:  # only pace real network fetches
             await asyncio.sleep(args.delay)
     print(f"fetched {len(books)} | already-extracted {skipped} | no source {missing}")
 
