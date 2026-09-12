@@ -18,15 +18,15 @@ import os
 logger = logging.getLogger("study-bible-web.r2")
 
 _client = None
-_REQUIRED = ("R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET")
-
-
-def configured() -> bool:
-    return all(os.environ.get(k) for k in _REQUIRED)
+_REQUIRED = ("R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY")
 
 
 def _bucket() -> str:
-    return os.environ["R2_BUCKET"]
+    return os.environ.get("R2_BUCKET") or os.environ.get("R2_BUCKET_NAME") or ""
+
+
+def configured() -> bool:
+    return all(os.environ.get(k) for k in _REQUIRED) and bool(_bucket())
 
 
 def _get_client():
