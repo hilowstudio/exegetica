@@ -114,33 +114,67 @@ def _parse_result_line(obj: dict):
     return obj.get("key"), (_parse_json(text) if text else None), usage
 
 
-def run_batch(requests: list[dict], label: str, poll: int = 30) -> tuple[dict, dict]:
-    """Submit one Gemini batch (JSONL file → upload → create → poll → download), returning
-    {custom_id: parsed_json} + summed token usage. Mirrors the seeder's Anthropic run_batch."""
+# Max input tokens to enqueue in a single batch job. The Batch API caps *concurrent*
+# enqueued tokens per model (Gemini 3.8 Flash at paid Tier 1 = 3,000,000); exceed it and
+# batches.create returns 429 RESOURCE_EXHAUSTED. We chunk under this and submit chunks
+# sequentially — each drains (polled to completion) before the next, so there is no ceiling
+# on total tokens processed, only on how many wait at once. Override via env for other tiers.
+_BATCH_TOKEN_BUDGET = int(os.environ.get("GEMINI_BATCH_TOKEN_BUDGET", "2500000"))
+
+
+def _est_tokens(params: dict) -> int:
+    """Rough input-token estimate for one request (~4 chars/token), used only to size chunks."""
+    return (len(params.get("system", "") or "") + len(_user_text(params))) // 4
+
+
+def _chunk_by_tokens(requests: list[dict], budget: int) -> list[list[dict]]:
+    """Greedily pack requests into chunks whose estimated input tokens stay under budget.
+    A single request larger than budget gets its own chunk (can't be split further)."""
+    chunks: list[list[dict]] = []
+    cur: list[dict] = []
+    cur_tok = 0
+    for r in requests:
+        t = _est_tokens(r["params"])
+        if cur and cur_tok + t > budget:
+            chunks.append(cur)
+            cur, cur_tok = [], 0
+        cur.append(r)
+        cur_tok += t
+    if cur:
+        chunks.append(cur)
+    return chunks
+
+
+def _submit_and_drain(client, model: str, requests: list[dict], label: str, poll: int) -> tuple[dict, dict]:
+    """Upload → create → poll one batch job to completion → download. On a 429 at create
+    (still over the enqueue cap despite chunking), split the chunk in half and recurse; a
+    lone request over the cap re-raises with a clear message."""
     import tempfile
     import time
 
     from google.genai import types
+    from google.genai import errors as _gerr
 
-    client = _get_client()
-    model = requests[0]["params"]["model"]
     with tempfile.NamedTemporaryFile("w", suffix=".jsonl", delete=False, encoding="utf-8") as f:
         for r in requests:
             f.write(json.dumps(_batch_line(r["custom_id"], r["params"])) + "\n")
         path = f.name
     up = client.files.upload(file=path, config=types.UploadFileConfig(display_name=label, mime_type="jsonl"))
-    from google.genai import errors as _gerr
     try:
         job = client.batches.create(model=model, src=up.name, config={"display_name": label})
     except _gerr.ClientError as e:
+        if getattr(e, "code", None) == 429 and len(requests) > 1:
+            mid = len(requests) // 2
+            print(f"  [{label}] 429 on {len(requests)} reqs — splitting into {mid} + {len(requests) - mid}")
+            a = _submit_and_drain(client, model, requests[:mid], label + "a", poll)
+            b = _submit_and_drain(client, model, requests[mid:], label + "b", poll)
+            out = {**a[0], **b[0]}
+            return out, {"in": a[1]["in"] + b[1]["in"], "out": a[1]["out"] + b[1]["out"]}
         if getattr(e, "code", None) == 429:
             raise RuntimeError(
-                "Gemini returned 429 RESOURCE_EXHAUSTED when creating the batch job. The Batch API and "
-                "the Gemini 3.8 Flash promo pricing require a BILLING-ENABLED (paid-tier) project — the "
-                "free tier cannot create batch jobs. Enable billing on the Cloud project behind your "
-                "GEMINI_API_KEY at https://aistudio.google.com/apikey (open the key → its Google Cloud "
-                "project → Billing), then re-run. Fetched texts are cached in .seed_cache/, so the re-run "
-                "skips fetching and starts straight at extraction."
+                "Gemini 429 RESOURCE_EXHAUSTED on a single-request batch — one work's text alone "
+                "exceeds this tier's enqueued-token cap (Gemini 3.8 Flash Tier 1 = 3,000,000). Raise "
+                "the account tier, or skip that oversized work."
             ) from e
         raise
     print(f"  [{label}] gemini batch {job.name}: {len(requests)} requests submitted")
@@ -164,4 +198,26 @@ def run_batch(requests: list[dict], label: str, poll: int = 30) -> tuple[dict, d
               f"tokens in {usage['in']:,} out {usage['out']:,}")
     else:
         print(f"  [{label}] state {job.state.name} (no results): {getattr(job, 'error', None)}")
+    return out, usage
+
+
+def run_batch(requests: list[dict], label: str, poll: int = 30) -> tuple[dict, dict]:
+    """Submit requests as one or more Gemini batch jobs, returning {custom_id: parsed_json} +
+    summed token usage. Chunks under the per-model enqueued-token cap and submits chunks
+    sequentially (each drains before the next). Mirrors the seeder's Anthropic run_batch."""
+    if not requests:
+        return {}, {"in": 0, "out": 0}
+    client = _get_client()
+    model = requests[0]["params"]["model"]
+    chunks = _chunk_by_tokens(requests, _BATCH_TOKEN_BUDGET)
+    if len(chunks) > 1:
+        print(f"  [{label}] {len(requests)} requests exceed the enqueue budget "
+              f"(~{_BATCH_TOKEN_BUDGET:,} tok) → {len(chunks)} sequential batches")
+    out, usage = {}, {"in": 0, "out": 0}
+    for i, chunk in enumerate(chunks, 1):
+        clabel = label if len(chunks) == 1 else f"{label} {i}/{len(chunks)}"
+        o, u = _submit_and_drain(client, model, chunk, clabel, poll)
+        out.update(o)
+        usage["in"] += u["in"]
+        usage["out"] += u["out"]
     return out, usage
