@@ -30,12 +30,18 @@ logger = logging.getLogger("study-bible-web.extraction")
 
 _MODEL = os.environ.get("EXTRACTION_MODEL", "claude-sonnet-5")
 
-# Shared system for the section-grounded steps (propose + verify). Keeping it identical
-# across both lets the section text be a cacheable prefix reused between the two calls on
-# the interactive path (propose then verify, seconds apart). See _section_user/_call.
+# Shared system for the grounded steps (derive + propose + verify). Keeping it identical
+# across propose and verify also lets the section text be a cacheable prefix reused between
+# the two calls on the interactive path (propose then verify, seconds apart).
+#
+# The source may be in ANY language: a pre-1930 foreign work's original text is public
+# domain (the original expression), so we ground on it directly rather than depend on a
+# possibly-copyrighted modern translation — and write our own English derivative from it.
 _GROUNDING_SYSTEM = (
-    "You are a careful curriculum assistant. Work ONLY from the supplied section text — do "
-    "not use outside knowledge and do not fabricate. Reply with STRICT JSON only."
+    "You are a careful curriculum assistant. Work ONLY from the supplied text — do not use "
+    "outside knowledge and do not fabricate. The source text may be in ANY language; ALWAYS "
+    "write your response — summaries, themes, objectives, and any quoted citation (translate "
+    "it) — in ENGLISH. Reply with STRICT JSON only."
 )
 
 
