@@ -78,7 +78,7 @@ _ENUM = (
     r"one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve))"
 )
 _MAJOR = r"(?:book|part|volume|canto)"
-_MINOR = r"(?:chapter|section|letter|act|scene|lecture|sermon|discourse|homily)"
+_MINOR = r"(?:chapter|section|letter|act|scene|lecture|sermon|discourse|homily|stave|canto)"
 _NAMED = r"(?:prologue|epilogue|introduction|preface|foreword|argument)"
 _re_major = re.compile(rf"^{_MAJOR}\s+{_ENUM}\b", re.I)
 _re_minor = re.compile(rf"^{_MINOR}\s+{_ENUM}\b", re.I)
@@ -123,10 +123,12 @@ def _heading_level(line: str) -> str | None:
 # A real chapter's body dwarfs a table-of-contents line; dropping sub-threshold sections
 # removes TOC entries and stray front-matter headings.
 _MIN_SECTION_CHARS = 200
-# A sane book segments into a few to a few dozen sections. A count past this means the
+# A sane book segments into a few to ~a hundred sections. A count past this means the
 # heading tier is too fine (e.g. every chapter of a 13-book work, or PDF page numbers) —
-# so we prefer a coarser tier and, failing that, fall back to the whole body.
-_MAX_SECTIONS = 60
+# so we prefer a coarser tier and, failing that, fall back to the whole body. Set high
+# enough for the long Victorian novels (Bleak House ~67, David Copperfield ~64 chapters)
+# to segment instead of collapsing to one "Full text" blob.
+_MAX_SECTIONS = 120
 # Heading tiers from coarsest/strongest to finest/weakest. We segment at the first tier
 # that yields a sane section count, so Confessions splits into its 13 books (not 200+
 # chapters) and a plain novel still splits into its chapters.

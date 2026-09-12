@@ -276,7 +276,9 @@ async def main() -> None:
     ap.add_argument("--model", default="gemini-3.8-flash",
                     help="extraction model (gemini-3.8-flash [default] or claude-sonnet-5)")
     ap.add_argument("--delay", type=float, default=0.3,
-                    help="pause between per-book source fetches (s), to be gentle on free mirrors")
+                    help="pause after each real (uncached) network fetch (s), to be gentle on free mirrors")
+    ap.add_argument("--concurrency", type=int, default=6,
+                    help="how many books to fetch in parallel (overlaps throttle-waits)")
     args = ap.parse_args()
     model = args.model
 
@@ -284,15 +286,22 @@ async def main() -> None:
     wanted = load_pd(args.limit)
     print(f"PD titles to seed: {len(wanted)}")
 
-    # Fetch + segment (skip anything already extracted, and anything no PD source carries).
+    # Fetch + segment concurrently (bounded), skipping already-extracted books. The disk cache
+    # makes repeats free; concurrency overlaps the gutendex throttle-waits on a cold run.
     books, skipped, missing = [], 0, 0
-    for meta in wanted:
+    sem = asyncio.Semaphore(max(1, args.concurrency))
+
+    async def process(meta: dict):
+        nonlocal skipped, missing
         exid = await EX.ensure_extraction_row(meta)
         if (await db.fetchval("select status from library_extractions where id=$1", exid)) == "extracted":
             skipped += 1
-            continue
-        was_cached = cached(meta)
-        got = await fetch_book(meta)
+            return
+        async with sem:
+            was_cached = cached(meta)
+            got = await fetch_book(meta)
+            if not was_cached and args.delay:
+                await asyncio.sleep(args.delay)
         if not got:
             missing += 1
             print(f"  --  no source: {meta['title']} — {meta['authors'][0]}", flush=True)
@@ -300,8 +309,8 @@ async def main() -> None:
             books.append(got)
             n_use = sum(1 for s in got["sections"] if _usable(s))
             print(f"  {n_use:4} sec  {meta['title'][:50]:50} [{got['source']}]", flush=True)
-        if args.delay and not was_cached:  # only pace real network fetches
-            await asyncio.sleep(args.delay)
+
+    await asyncio.gather(*(process(m) for m in wanted))
     print(f"fetched {len(books)} | already-extracted {skipped} | no source {missing}")
 
     if args.dry_run or not books:
