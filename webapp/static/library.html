@@ -204,6 +204,19 @@
   .ex-list{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink);line-height:1.5}
   .ex-list li{margin-bottom:6px}
   .ex-cite{display:inline-block;margin-left:6px;font-size:11px;color:var(--ink-faint);background:var(--surface-2);border-radius:6px;padding:1px 7px}
+  .ex-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0 2px}
+  .ex-top .ex-h{margin:0}
+  .ex-export{font-family:var(--sans);font-weight:600;font-size:11.5px;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--rule-strong);border-radius:8px;padding:6px 11px;cursor:pointer}
+  .ex-export:hover{background:var(--sunk);color:var(--ink)}
+  .ex-group{padding:11px 0 3px}
+  .ex-group+.ex-group{border-top:1px dashed var(--rule)}
+  .ex-gh{font-family:var(--serif,Georgia,serif);font-size:14px;font-weight:600;color:var(--ink);margin:0 0 10px}
+  .ex-obj{margin:0 0 12px;padding-left:13px;border-left:2px solid var(--rule-strong)}
+  .ex-obj:last-child{margin-bottom:0}
+  .ex-obj-t{font-size:13.5px;color:var(--ink);line-height:1.5}
+  .ex-obj-cite{margin-top:5px;font-size:12px;color:var(--ink-soft);font-style:italic;line-height:1.5}
+  .ex-obj-cite::before{content:"\201C"}
+  .ex-obj-cite::after{content:"\201D"}
   .ex-actions{display:flex;flex-wrap:wrap;gap:8px}
   .lib-upload{margin-top:16px;font-family:var(--sans);font-weight:600;font-size:13px;color:var(--ink);background:var(--surface-2);border:1px solid var(--rule-strong);border-radius:9px;padding:9px 14px;cursor:pointer}
   .lib-upload:hover{background:var(--sunk)}
@@ -828,17 +841,72 @@ function loadExtraction(id,out){
   fetch("/api/library/extraction/"+encodeURIComponent(id),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;})
     .then(function(d){ if(!d){out.innerHTML='<div class="ex-status err">Could not load results.</div>';return;} renderExtraction(d,out); });
 }
+var _curExtraction=null;
+function _groupObjectives(objs){
+  // Group objectives by their section, preserving first-seen order (server returns them ordered by section position).
+  var groups=[],idx={};
+  objs.forEach(function(o){
+    var key=o.section||"";
+    if(!(key in idx)){idx[key]=groups.length;groups.push({title:o.section||null,items:[]});}
+    groups[idx[key]].items.push(o);
+  });
+  return groups;
+}
 function renderExtraction(d,out){
+  _curExtraction=d;
   var h='<div class="ex-result">';
+  var has=d.summary||(d.themes&&d.themes.length)||d.reading_level||(d.objectives&&d.objectives.length)||(d.alignments&&d.alignments.length);
+  if(has)h+='<div class="ex-top"><div class="ex-h">Study materials</div><button class="ex-export" onclick="exportMaterials()">Print / save PDF</button></div>';
   if(d.summary)h+='<div class="ex-sec"><div class="ex-h">Summary</div><p>'+esc(d.summary)+'</p></div>';
   if(d.themes&&d.themes.length)h+='<div class="ex-sec"><div class="ex-h">Themes</div><div class="ex-tags">'+d.themes.map(function(t){return '<span class="ex-tag">'+esc(t)+'</span>';}).join("")+'</div></div>';
   if(d.reading_level)h+='<div class="ex-sec"><div class="ex-h">Reading level</div><p>'+esc(d.reading_level)+'</p></div>';
-  if(d.objectives&&d.objectives.length)h+='<div class="ex-sec"><div class="ex-h">Learning objectives<span class="ex-n">'+d.objectives.length+'</span></div><ul class="ex-list">'+
-    d.objectives.map(function(o){return '<li>'+esc(o.text)+(o.section?'<span class="ex-cite">'+esc(o.section)+'</span>':'')+'</li>';}).join("")+'</ul></div>';
+  if(d.objectives&&d.objectives.length){
+    var groups=_groupObjectives(d.objectives),single=groups.length===1&&!groups[0].title;
+    h+='<div class="ex-sec"><div class="ex-h">Learning objectives<span class="ex-n">'+d.objectives.length+'</span></div>'+
+      groups.map(function(g){
+        return '<div class="ex-group">'+(single||!g.title?'':'<div class="ex-gh">'+esc(g.title)+'</div>')+
+          g.items.map(function(o){
+            return '<div class="ex-obj"><div class="ex-obj-t">'+esc(o.text)+'</div>'+
+              (o.citation?'<div class="ex-obj-cite">'+esc(o.citation)+'</div>':'')+'</div>';
+          }).join("")+'</div>';
+      }).join("")+'</div>';
+  }
   if(d.alignments&&d.alignments.length)h+='<div class="ex-sec"><div class="ex-h">Standards alignment<span class="ex-n">'+d.alignments.length+'</span></div><ul class="ex-list">'+
     d.alignments.map(function(a){return '<li>'+esc(a.node||a.code)+'<span class="ex-cite">'+esc(a.level)+(a.section?' · Ch. '+esc(a.section):'')+'</span></li>';}).join("")+'</ul></div>';
-  if(h==='<div class="ex-result">')h+='<div class="ex-status">No study materials were produced for this title.</div>';
+  if(!has)h+='<div class="ex-status">No study materials were produced for this title.</div>';
   out.innerHTML=h+'</div>';
+}
+function exportMaterials(){
+  var d=_curExtraction;if(!d)return;
+  var title=(_curBook&&_curBook.title)||d.title||"Study materials",author=(_curBook&&_curBook.sub)||d.author||"";
+  var w=window.open("","_blank");if(!w)return;
+  var css="body{font:15px/1.6 Georgia,'Times New Roman',serif;color:#1a1a1a;max-width:720px;margin:40px auto;padding:0 28px}"+
+    "h1{font-size:25px;margin:0 0 2px;line-height:1.2}.by{color:#666;font-size:14px;margin:0 0 26px}"+
+    "h2{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8a8a8a;border-bottom:1px solid #e0ddd4;padding-bottom:5px;margin:30px 0 13px;font-family:Arial,sans-serif}"+
+    "p{margin:0 0 10px}.ch{font-size:16px;font-weight:bold;margin:20px 0 9px}"+
+    ".ob{margin:0 0 13px;padding-left:14px;border-left:3px solid #d8d4c8}"+
+    ".ci{color:#555;font-style:italic;font-size:13px;margin-top:4px}"+
+    ".tag{display:inline-block;background:#f2f0e9;border:1px solid #e4e1d7;border-radius:4px;padding:2px 9px;margin:0 5px 5px 0;font-size:13px}"+
+    ".foot{margin-top:34px;padding-top:12px;border-top:1px solid #e0ddd4;color:#999;font-size:11px;font-family:Arial,sans-serif}"+
+    "@media print{body{margin:0}}";
+  var b='<h1>'+esc(title)+'</h1>';
+  if(author)b+='<div class="by">'+esc(author)+'</div>';
+  if(d.summary)b+='<h2>Summary</h2><p>'+esc(d.summary)+'</p>';
+  if(d.reading_level)b+='<h2>Reading level</h2><p>'+esc(d.reading_level)+'</p>';
+  if(d.themes&&d.themes.length)b+='<h2>Themes</h2><p>'+d.themes.map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join("")+'</p>';
+  if(d.objectives&&d.objectives.length){
+    b+='<h2>Learning objectives</h2>';
+    _groupObjectives(d.objectives).forEach(function(g){
+      if(g.title)b+='<div class="ch">'+esc(g.title)+'</div>';
+      g.items.forEach(function(o){
+        b+='<div class="ob">'+esc(o.text)+(o.citation?'<div class="ci">“'+esc(o.citation)+'”</div>':'')+'</div>';
+      });
+    });
+  }
+  b+='<div class="foot">Study materials from Exegetica · exegetica.app</div>';
+  w.document.write('<!doctype html><meta charset="utf-8"><title>'+esc(title)+' — study materials</title><style>'+css+'</style>'+b);
+  w.document.close();
+  setTimeout(function(){try{w.focus();w.print();}catch(e){}},300);
 }
 document.addEventListener("click",function(e){if(e.target.closest(".lib-extract"))startExtract(_curBook);});
 
