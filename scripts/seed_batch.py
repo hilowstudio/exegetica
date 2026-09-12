@@ -311,6 +311,21 @@ async def main() -> None:
             print(f"  {n_use:4} sec  {meta['title'][:50]:50} [{got['source']}]", flush=True)
 
     await asyncio.gather(*(process(m) for m in wanted))
+
+    # Dedup works that appear under author-name variants (Dostoevsky/Dostoyevsky, Cervantes /
+    # Cervantes Saavedra) or from two sources — keep the best-segmenting copy so we never
+    # double-charge or persist the coarse one (e.g. a 1-section CCEL over a 6-section Gutenberg).
+    from webapp.sources.matching import normalize as _norm
+    best: dict = {}
+    for b in books:
+        k = _norm(b["meta"]["title"])
+        n_use = sum(1 for s in b["sections"] if _usable(s))
+        if k not in best or n_use > best[k][0]:
+            best[k] = (n_use, b)
+    deduped = [b for _, b in best.values()]
+    if len(deduped) < len(books):
+        print(f"deduped {len(books) - len(deduped)} author/source-variant duplicates")
+    books = deduped
     print(f"fetched {len(books)} | already-extracted {skipped} | no source {missing}")
 
     if args.dry_run or not books:
