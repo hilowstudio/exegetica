@@ -37,7 +37,9 @@ except Exception:  # noqa: BLE001
 
 from dotenv import load_dotenv  # noqa: E402
 
-load_dotenv(_ROOT / ".env")
+# override=True so .env is authoritative — a stale GEMINI_API_KEY left in a PowerShell
+# session (override=False's default) would otherwise silently shadow the real key.
+load_dotenv(_ROOT / ".env", override=True)
 
 from webapp import db, extraction as EX  # noqa: E402
 from webapp.sources import registry  # noqa: E402
