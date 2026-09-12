@@ -548,6 +548,7 @@ app = Starlette(
         Route("/api/library/youtube", library_youtube),
         Route("/api/library/shelf", library_store.shelf_get, methods=["GET"]),
         Route("/api/library/shelf", library_store.shelf_add, methods=["POST"]),
+        Route("/api/library/catalog", library_store.catalog_search, methods=["GET"]),
         Route("/api/library/shelf/{id}", library_store.shelf_remove, methods=["DELETE"]),
         Route("/api/library/extract", library_store.extract_request, methods=["POST"]),
         Route("/api/library/extract/{id}", library_store.extract_status, methods=["GET"]),

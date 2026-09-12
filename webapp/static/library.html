@@ -356,6 +356,10 @@
   .result .r-a{font-size:12.5px;color:var(--ink-soft)}
   .result .r-y{font-family:var(--mono);font-size:11px;color:var(--ink-faint);margin-left:auto;flex:none;white-space:nowrap}
   .s-note{padding:16px 12px;color:var(--ink-faint);font-size:12.5px;text-align:center}
+  .s-note.ready-head{color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:11px;padding-bottom:8px}
+  .result.ready{border-color:var(--accent);background:color-mix(in srgb, var(--accent) 6%, var(--surface))}
+  .result.ready:hover{background:color-mix(in srgb, var(--accent) 12%, var(--surface))}
+  .result .r-ready{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);margin-left:auto;flex:none;white-space:nowrap}
 
   /* url preview (video) */
   .preview{display:flex;gap:14px;align-items:center;border:1px solid var(--rule);border-radius:12px;padding:12px;background:var(--paper);margin:6px 0 4px}
@@ -683,11 +687,12 @@ function openBook(id){
     '<div class="read-meta"><div class="r-eyebrow">Book</div><h2 class="r-title">'+esc(it.title)+'</h2>'+
     '<div class="r-author">'+esc(it.sub)+'</div>'+(facts?'<div class="r-facts">'+esc(facts)+'</div>':'')+
     (AUTH.signed
-      ? '<div class="ex-actions"><button type="button" class="lib-extract">✦ Build / view study materials</button><button type="button" class="lib-upload">⬆ Upload a copy</button></div>'
+      ? '<div class="ex-actions"><button type="button" class="lib-extract">✦ '+(it.ready?'View':'Build')+' study materials</button><button type="button" class="lib-upload">⬆ Upload a copy</button></div>'
       : '<div class="r-note">Sign in to build study materials from this book.</div>')+
     '<div id="extract-out" class="extract-out"></div>'+
     _rmBtn(it)+'</div></div>';
   $("read-bg").classList.add("open");
+  if(AUTH.signed&&it.ready)loadExtraction(it.id,$("extract-out"));  // seeded → show instantly
 }
 $("shelf").addEventListener("click",function(e){var b=e.target.closest(".book");if(b)openBook(b.dataset.id);});
 $("read-close").addEventListener("click",function(){$("read-bg").classList.remove("open");});
@@ -854,7 +859,7 @@ $("omni-input").addEventListener("keydown",function(e){if(e.key==="Enter"){e.pre
 function openAdd(){openSearch(curType,$("omni-input").value.trim());}
 
 // ---------- live search (books via OpenLibrary/Google Books, podcasts via iTunes) ----------
-var SEARCH_KIND="book", SR=[], stTimer=null;
+var SEARCH_KIND="book", SR=[], CAT=[], stTimer=null;
 function openSearch(kind,prefill){
   SEARCH_KIND=kind;
   var T={book:["Find a book","Search by title, author, or ISBN, then pick the edition to add.","Search books","e.g. The Pilgrim's Progress, or Homer"],
@@ -873,9 +878,19 @@ $("search-q").addEventListener("input",function(){
   stTimer=setTimeout(function(){runSearch(q);},280);
 });
 function runSearch(q){
-  var url,ytUrl=false;
-  if(SEARCH_KIND==="book")url="/api/library/books?q="+encodeURIComponent(q);
-  else if(SEARCH_KIND==="podcast")url="/api/library/podcasts?q="+encodeURIComponent(q);
+  if(SEARCH_KIND==="book"){
+    // Ready (already-seeded) catalog first, external Google Books second — in parallel.
+    Promise.all([
+      fetch("/api/library/catalog?q="+encodeURIComponent(q),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():{catalog:[]};}).catch(function(){return {catalog:[]};}),
+      fetch("/api/library/books?q="+encodeURIComponent(q)).then(function(r){return r.json();}).catch(function(){return {results:[]};})
+    ]).then(function(res){
+      if($("search-q").value.trim()!==q)return;
+      CAT=res[0].catalog||[];SR=res[1].results||[];renderSearch();
+    });
+    return;
+  }
+  var url,ytUrl=false;CAT=[];
+  if(SEARCH_KIND==="podcast")url="/api/library/podcasts?q="+encodeURIComponent(q);
   else if(/youtube\.com\/watch|youtu\.be\//i.test(q)){url="/api/library/video?url="+encodeURIComponent(q);ytUrl=true;}
   else url="/api/library/youtube?q="+encodeURIComponent(q);
   fetch(url).then(function(r){return r.json();}).then(function(d){
@@ -885,13 +900,25 @@ function runSearch(q){
     renderSearch();
   }).catch(function(){$("search-results").innerHTML='<div class="s-note">Search failed. Try again.</div>';});
 }
+function catResultHTML(x,i){
+  var mini=x.cover?'<img class="mini-img" src="'+esc(x.cover)+'" alt="" loading="lazy">':'<span class="mini" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
+  return '<button class="result ready" type="button" data-cat="'+i+'">'+mini+
+    '<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+esc(x.sub||"")+'</span></span>'+
+    '<span class="r-ready">✦ Ready · '+x.objectives+' objectives</span></button>';
+}
 function renderSearch(){
-  if(!SR.length){$("search-results").innerHTML='<div class="s-note">No matches found.</div>';return;}
-  $("search-results").innerHTML=SR.map(function(x,i){
-    if(SEARCH_KIND==="book"){
+  if(SEARCH_KIND==="book"){
+    var h="";
+    if(CAT.length)h+='<div class="s-note ready-head">Ready in the library — instant, no wait</div>'+CAT.map(catResultHTML).join("");
+    if(SR.length)h+=(CAT.length?'<div class="s-note">Or build a new one</div>':'')+SR.map(function(x,i){
       var mini=x.cover?'<img class="mini-img" src="'+esc(x.cover)+'" alt="" loading="lazy">':'<span class="mini" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
       return '<button class="result" type="button" data-i="'+i+'">'+mini+'<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+esc(x.author||"Unknown author")+'</span></span><span class="r-y">'+esc(x.year||"")+'</span></button>';
-    }
+    }).join("");
+    $("search-results").innerHTML=h||'<div class="s-note">No matches found.</div>';
+    return;
+  }
+  if(!SR.length){$("search-results").innerHTML='<div class="s-note">No matches found.</div>';return;}
+  $("search-results").innerHTML=SR.map(function(x,i){
     if(SEARCH_KIND==="video"){
       var vt=x.thumbnail?'<img class="mini-img vid" src="'+esc(x.thumbnail)+'" alt="" loading="lazy">':'<span class="mini vid" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
       return '<button class="result" type="button" data-i="'+i+'">'+vt+'<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+esc(x.author||"")+'</span></span>'+(x.duration?'<span class="r-y">'+esc(x.duration)+'</span>':'')+'</button>';
@@ -902,7 +929,13 @@ function renderSearch(){
   }).join("");
 }
 $("search-results").addEventListener("click",function(e){
-  var b=e.target.closest(".result");if(!b)return;var x=SR[+b.dataset.i];if(!x)return;
+  var b=e.target.closest(".result");if(!b)return;
+  if(b.dataset.cat!==undefined){  // a ready, already-seeded book — add it (guaranteed reuse)
+    var c=CAT[+b.dataset.cat];if(!c)return;
+    addItem({type:"book",title:c.title,sub:c.sub,meta:(c.objectives+" objectives ready"),accent:nextAccent(),cover:c.cover||null});
+    $("search-bg").classList.remove("open");return;
+  }
+  var x=SR[+b.dataset.i];if(!x)return;
   if(SEARCH_KIND==="book"){
     addItem({type:"book",title:x.title,sub:x.author||"Unknown author",meta:x.year||"",accent:nextAccent(),cover:x.cover||null,isbn:x.isbn||null});
   }else if(SEARCH_KIND==="video"){

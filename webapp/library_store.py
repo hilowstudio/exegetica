@@ -72,6 +72,7 @@ def _to_client(row) -> dict:
         "sub": row["creator"] or "",
         "meta": meta.get("meta", ""),
         "accent": meta.get("accent", _DEFAULT_ACCENT),
+        "ready": (row.get("status") == "extracted"),  # study materials already built
     }
     if kind == "book":
         it["cover"] = row["cover_url"]
@@ -92,12 +93,37 @@ async def shelf_get(request):
     if not db.ready():
         return JSONResponse({"error": "database unavailable"}, status_code=503)
     rows = await db.fetch(
-        """select li.extraction_id, e.kind, e.title, e.creator, e.cover_url, e.source_url, e.source_meta
+        """select li.extraction_id, e.kind, e.title, e.creator, e.cover_url, e.source_url, e.source_meta, e.status
            from library_items li join library_extractions e on e.id = li.extraction_id
            where li.user_id = $1 order by li.added_at desc""",
         _uid(user),
     )
     return JSONResponse({"items": [_to_client(r) for r in rows]})
+
+
+async def catalog_search(request):
+    """Search the SEEDED shared catalog — books already built into study materials — so a
+    teacher can add ready work in one click instead of re-extracting. Empty q → browse all."""
+    user = auth.current_user(request)
+    if not user:
+        return JSONResponse({"error": "authentication required"}, status_code=401)
+    if not db.ready():
+        return JSONResponse({"error": "database unavailable"}, status_code=503)
+    q = (request.query_params.get("q") or "").strip()
+    rows = await db.fetch(
+        """select e.id, e.title, e.creator, e.cover_url,
+                  (select count(*) from library_sections   s where s.extraction_id=e.id) secs,
+                  (select count(*) from library_objectives  o where o.extraction_id=e.id and o.user_id is null) objs
+           from library_extractions e
+           where e.status='extracted' and e.kind='book'
+             and ($1 = '' or e.title ilike '%'||$1||'%' or e.creator ilike '%'||$1||'%')
+           order by e.title limit 40""",
+        q,
+    )
+    return JSONResponse({"catalog": [
+        {"id": str(r["id"]), "type": "book", "title": r["title"] or "", "sub": r["creator"] or "",
+         "cover": r["cover_url"], "sections": r["secs"], "objectives": r["objs"], "ready": True}
+        for r in rows]})
 
 
 async def shelf_add(request):
@@ -114,7 +140,15 @@ async def shelf_add(request):
     if kind not in ("book", "video", "podcast"):
         return JSONResponse({"error": "unsupported type"}, status_code=400)
 
-    dedup_key = _dedup_key(kind, item)
+    # Books key by the SAME identity as Build/seed (title|author-surname, or ISBN) so a
+    # teacher adding a title lands on the already-seeded catalog row (guaranteed reuse),
+    # not a divergent one. Video/podcast keep their strong-id key.
+    if kind == "book":
+        from webapp import extraction
+        dedup_key = extraction.book_dedup_key(
+            {"title": item.get("title"), "authors": [item.get("sub") or ""], "isbn": item.get("isbn")})
+    else:
+        dedup_key = _dedup_key(kind, item)
     cover = item.get("cover") or item.get("artwork") or item.get("thumbnail")
     source_url = item.get("url") or item.get("feed")
     source_meta = {"meta": item.get("meta") or "", "accent": item.get("accent") or _DEFAULT_ACCENT}
@@ -129,7 +163,7 @@ async def shelf_add(request):
              (kind, dedup_key, title, creator, cover_url, source_url, source_meta, seeded_by_user_id)
            values ($1, $2, $3, $4, $5, $6, $7, $8)
            on conflict (kind, dedup_key) do update set updated_at = now()
-           returning id, kind, title, creator, cover_url, source_url, source_meta""",
+           returning id, kind, title, creator, cover_url, source_url, source_meta, status""",
         kind, dedup_key, item.get("title") or "", item.get("sub") or "",
         cover, source_url, source_meta, uid,
     )
