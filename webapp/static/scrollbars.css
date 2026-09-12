@@ -1,0 +1,40 @@
+/* Nearly-invisible scrollbars, app-wide.
+   Track is always transparent; the thumb is a faint, theme-aware sliver that only
+   becomes perceptible while you're hovering the scroll area, and a touch stronger on
+   the thumb itself. Uses --ink (defined on each page's :root) so it reads correctly in
+   both light and dark, with a neutral fallback if the variable is absent. */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128, 128, 128, 0.28) transparent;
+  scrollbar-color: color-mix(in srgb, var(--ink, #808080) 24%, transparent) transparent;
+}
+
+/* WebKit / Chromium / Edge */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: transparent;           /* invisible at rest */
+  border-radius: 8px;
+  border: 2px solid transparent;     /* insets the sliver so it reads as thin */
+  background-clip: padding-box;
+  transition: background-color 0.15s ease;
+}
+/* reveal a faint thumb only while the scroll area is hovered */
+*:hover::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.22);
+  background: color-mix(in srgb, var(--ink, #808080) 16%, transparent);
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.4);
+  background: color-mix(in srgb, var(--ink, #808080) 32%, transparent);
+  background-clip: padding-box;
+}
