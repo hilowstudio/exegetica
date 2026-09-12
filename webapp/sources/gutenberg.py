@@ -65,6 +65,11 @@ async def discover(meta: dict) -> dict | None:
     query = title.strip()
     want_title = normalize(title)
     want_author = author_last_name(authors[0]) if authors else None
+    # A placeholder "author" (Anonymous/Unknown) isn't a surname to match on — Gutenberg
+    # files those works under an empty or translator author — so match the distinctive title
+    # alone (Beowulf, The Epic of Gilgamesh).
+    if want_author in {"anonymous", "unknown", "anon", "various", "anonymous anonymous"}:
+        want_author = None
 
     async with httpx.AsyncClient(timeout=15, headers={"User-Agent": BROWSER_UA}, follow_redirects=True) as c:
         r = await _get_with_retry(c, _GUTENDEX, params={"search": query})
