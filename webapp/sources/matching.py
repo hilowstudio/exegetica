@@ -8,6 +8,7 @@ author's surname. All functions are pure and never raise.
 from __future__ import annotations
 
 import re
+import unicodedata
 
 # A real desktop UA — some catalogs/mirrors 403 a default client UA. Shared.
 BROWSER_UA = (
@@ -17,8 +18,11 @@ BROWSER_UA = (
 
 
 def normalize(s: str | None) -> str:
-    """Lowercase, strip punctuation, collapse whitespace — for fuzzy comparison."""
+    """Lowercase, fold accents (Brontë → bronte), strip punctuation, collapse whitespace —
+    for fuzzy comparison. Accents are TRANSLITERATED, not dropped, so an ASCII list entry
+    matches an accented catalog author."""
     s = (s or "").lower()
+    s = "".join(c for c in unicodedata.normalize("NFKD", s) if not unicodedata.combining(c))
     s = re.sub(r"[^a-z0-9\s]", " ", s)
     return re.sub(r"\s+", " ", s).strip()
 

@@ -37,11 +37,14 @@ async def discover(meta: dict) -> dict | None:
     authors = (meta or {}).get("authors") or []
     if not title.strip():
         return None
-    query = " ".join([title] + ([authors[0]] if authors else [])).strip()
+    # Search by TITLE only: Gutendex's search is accent-sensitive and ANDs all terms, so an
+    # ASCII author name ("Bronte") returns nothing against an accented catalog author
+    # ("Brontë"). The accent-folding scorer below picks the right author from the results.
+    query = title.strip()
     want_title = normalize(title)
     want_author = author_last_name(authors[0]) if authors else None
 
-    async with httpx.AsyncClient(timeout=15, headers={"User-Agent": BROWSER_UA}) as c:
+    async with httpx.AsyncClient(timeout=15, headers={"User-Agent": BROWSER_UA}, follow_redirects=True) as c:
         r = await c.get(_GUTENDEX, params={"search": query})
         if r.status_code != 200:
             return None
