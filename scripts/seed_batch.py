@@ -197,6 +197,46 @@ async def persist(book: dict, derivative: dict, kept: list[dict]) -> str:
     return str(exid)
 
 
+# Per-book token profile for the dry-run forecast (excludes thinking tokens): 1 `derive`
+# call, plus a `propose` and a `verify` call per USABLE section (>= _MIN_SECTION_CHARS).
+_DERIVE_IN, _DERIVE_OUT = 1800, 600
+_PER_SECTION_IN, _PER_SECTION_OUT = 3550, 550
+
+
+def _report_segments(books: list[dict], model: str) -> None:
+    """Per-work segment counts + a cost forecast grounded in the ACTUAL counts (not a guess).
+    Sorted so single-'Full text' books (segmentation misses worth inspecting) surface first."""
+    import statistics
+
+    rows = []
+    for b in books:
+        n_all = len(b["sections"])
+        n_use = sum(1 for s in b["sections"] if _usable(s))
+        single = n_all == 1 and b["sections"][0].get("title") == "Full text"
+        rows.append((n_use, n_all, single, b["meta"]["title"], b["source"]))
+    rows.sort()
+
+    print(f"\n=== segment report · model={model} · {len(books)} books ===")
+    for n_use, n_all, single, title, src in rows:
+        flag = "  ⚠ Full text (no chapters detected)" if single else ""
+        print(f"  {n_use:4} usable / {n_all:4} total   {title[:46]:46} [{src}]{flag}")
+
+    if not rows:
+        return
+    total_use = sum(r[0] for r in rows)
+    singles = sum(1 for r in rows if r[2])
+    counts = [r[0] for r in rows]
+    tin = len(rows) * _DERIVE_IN + total_use * _PER_SECTION_IN
+    tout = len(rows) * _DERIVE_OUT + total_use * _PER_SECTION_OUT
+    in_rate, out_rate = _rates(model)
+    cost = tin * in_rate / 1_000_000 + tout * out_rate / 1_000_000
+    print(f"\n  usable sections: {total_use:,} (total {sum(r[1] for r in rows):,}) · "
+          f"per book min {min(counts)} / median {statistics.median(counts):g} / max {max(counts)} · "
+          f"single-'Full text' books: {singles}")
+    print(f"  forecast (Batch API, excludes thinking): in {tin:,} out {tout:,} tok · "
+          f"{model} ≈ ${cost:,.2f}  (${cost / len(rows):.3f}/book)")
+
+
 async def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None, help="process only the first N PD titles")
@@ -231,10 +271,7 @@ async def main() -> None:
     print(f"fetched {len(books)} | already-extracted {skipped} | no source {missing}")
 
     if args.dry_run or not books:
-        secs = sum(len(b["sections"]) for b in books)
-        p1 = len(phase1_requests(books, model))
-        print(f"[dry-run] model={model} · {len(books)} books, {secs} sections → phase-1 requests: {p1}, "
-              f"phase-2 (verify) ≈ {sum(1 for b in books for s in b['sections'] if _usable(s))}")
+        _report_segments(books, model)
         await db.close_pool()
         return
 
