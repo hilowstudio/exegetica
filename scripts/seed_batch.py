@@ -268,6 +268,20 @@ def _report_segments(books: list[dict], model: str) -> None:
           f"{model} ≈ ${cost:,.2f}  (${cost / len(rows):.3f}/book)")
 
 
+def _keep_awake(on: bool) -> None:
+    """Stop Windows from sleeping mid-run — the Gemini batch poll can run long and a sleep
+    suspends the whole process. No-op on other platforms; releases on exit either way."""
+    if sys.platform != "win32":
+        return
+    import ctypes
+
+    ES_CONTINUOUS, ES_SYSTEM_REQUIRED = 0x80000000, 0x00000001
+    try:
+        ctypes.windll.kernel32.SetThreadExecutionState(ES_CONTINUOUS | (ES_SYSTEM_REQUIRED if on else 0))
+    except Exception:  # noqa: BLE001
+        pass
+
+
 async def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None, help="process only the first N PD titles")
@@ -333,6 +347,7 @@ async def main() -> None:
         await db.close_pool()
         return
 
+    _keep_awake(True)  # released on exit; the batch poll can run long
     print(f"extracting with model: {model}")
     # Round 1: derive + propose
     r1, u1 = await asyncio.to_thread(
@@ -370,6 +385,7 @@ async def main() -> None:
           f"{sum(len(v) for v in kept_by_book.values())}")
     print(f"Tokens: in {tin:,} out {tout:,} · {model} batch cost ≈ ${cost:,.2f} "
           f"(${cost / max(persisted,1):.3f}/book)")
+    _keep_awake(False)
     await db.close_pool()
 
 
