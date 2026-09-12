@@ -23,11 +23,21 @@ import argparse
 import asyncio
 import pathlib
 import re
+import sys
 import time
 
-from dotenv import load_dotenv
+# Make the script runnable as-is (no PYTHONPATH needed): put the project root on the path
+# so `import webapp` resolves, and force UTF-8 stdout so em-dashes/★ in titles print on Windows.
+_ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(_ROOT))
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:  # noqa: BLE001
+    pass
 
-load_dotenv(pathlib.Path(__file__).resolve().parents[1] / ".env")
+from dotenv import load_dotenv  # noqa: E402
+
+load_dotenv(_ROOT / ".env")
 
 from webapp import db, extraction as EX  # noqa: E402
 from webapp.sources import registry  # noqa: E402
