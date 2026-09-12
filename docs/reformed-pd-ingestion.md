@@ -2,13 +2,13 @@
 
 The public-domain, actually-ours-to-ingest subset of the Reformed/historic-Christian canon that Monergism, CCEL, and the Banner/Puritan tradition curate — the target for enriching the study-Bible **MCP** (distinct from the teacher-facing Living Library).
 
-**Triage rule.** Include a work only when it is **US public domain** — the safe proxy is **author died ≤ 1928** *and* a **PD English edition/translation exists** (first published ≤ 1929). Modern works distributed free-by-permission on Monergism (Piper, Sproul, Beeke, Reformation Trust, Banner reprints) are **excluded** — link-out for discovery, never ingest. Foreign-language authors are marked **⚠tr** where the standard English translation is modern (so ingest only if a PD translation exists, or ground the original).
+**Triage rule.** Include a work only when it is **US public domain** — the true test is **first published ≤ 1929**, *not* the author's death year. Author-died-≤-1928 is a convenient proxy, but several authors who died later published landmark works before 1930 — **Vos** (1903), **Kuyper's *Work of the Holy Spirit*** (1900), **George Adam Smith** (1894) — and those specific pre-1930 works **are** PD and are included (their post-1929 works are not). Modern works distributed free-by-permission on Monergism (Piper, Sproul, Beeke, Reformation Trust, Banner reprints) are **excluded** — link-out for discovery, never ingest. Foreign-language authors are marked **⚠tr** where the standard English translation is modern (so ingest only if a PD translation exists, or ground the original).
 
 **Source priority.** `CCEL` (most of the Reformed/Puritan corpus, adapter built) → `Gb` Project Gutenberg (popular classics, adapter built) → `Ar` archive.org (**the long tail — needs a new adapter, Phase 2**).
 
 **Shape.** `[C]` verse-keyed commentary (slots into `get_commentary`, needs the reference-index parser) · `[T]` treatise/book · `[S]` sermons · `[D]` dictionary/reference/topical · `[H]` hymnody/devotional · `[Sym]` creed/confession/catechism.
 
-**Counts:** ~150 authors · **~560 works** flagged ingestible. ★ = top-priority first wave.
+**Counts:** ~160 authors · **~585 works** flagged ingestible (v2 — adds the Anglican scholars, Lutheran & Dutch anchors, covenant/biblical-theology architects, and the historical-cultural background layer). ★ = top-priority first wave.
 
 ---
 
@@ -126,6 +126,7 @@ The theologian persona is built on Marshall and the Marrow stream — none of it
 - **John Brown of Edinburgh (d. 1858)** [C] — Expositions of Romans, Galatians, Hebrews, 1 Peter; The Sufferings and Glories of the Messiah. — Ar
 - **William Symington (d. 1862)** [T] — On the Atonement and Intercession of Jesus Christ; Messiah the Prince. — Ar
 - **Richard C. Trench (d. 1886)** [D] — Synonyms of the New Testament; Notes on the Parables / Miracles. — Gb / Ar
+- **Marvin R. Vincent (d. 1922)** [D/C] ★ — Word Studies in the New Testament (4 vols) — Greek nuance, idiom, and usage for readers without Greek; the perfect complement to the lexicon shelf. — Ar / CCEL
 - **Handley Moule (d. 1920)** [C/T] — commentaries on Romans/Ephesians/Philippians; Outlines of Christian Doctrine. — Ar
 - **F.W. Krummacher (d. 1868)** [T] ⚠tr — The Suffering Saviour; Elijah the Tishbite. — Gb / Ar
 - **J.C. Philpot (d. 1869)** [S] — sermons; Through Baca's Vale. — Ar
@@ -195,14 +196,37 @@ Beyond the 21 already loaded — the Lutheran and continental symbols, and the R
 - **Brother Lawrence (d. 1691)** — The Practice of the Presence of God. — Gb / CCEL
 - **Spurgeon** — All of Grace; The Cheque Book of the Bank of Faith (see §G).
 
+## M. Covenant theology, typology & the dawn of biblical theology
+The redemptive-historical architecture — how the Testaments connect through covenants and types — before Vos formalized the discipline.
+
+- **Herman Witsius (d. 1708)** [T] ★ — The Economy of the Covenants Between God and Man (Crookshank tr., PD); Sacred Dissertations on the Apostles' Creed. — Ar
+- **Patrick Fairbairn (d. 1874)** [T] — The Typology of Scripture; Prophecy Viewed in its Distinctive Nature *(also §G)*. — Ar
+- **Geerhardus Vos (d. 1949) — pre-1929 works only** [T] ★ — The Teaching of Jesus Concerning the Kingdom of God and the Church (1903); The Self-Disclosure of Jesus (1926); the Princeton essays. *(Death is post-1928, but these titles were **published ≤ 1929** → US-PD; his 1948 Biblical Theology is not.)* — Ar
+- **Johannes Cocceius (d. 1669)** [T] ⚠tr — the fount of Reformed federal theology (Latin; PD English scarce — ground the original). — Ar
+
+## N. Church history, cultural background & intertestamental texts
+The macro-scaffolding: *why* the creeds were written, the world Jesus and Paul inhabited, and the literature between the Testaments.
+
+- **Philip Schaff (d. 1893)** [T/D] ★ — History of the Christian Church (8 vols); The Creeds of Christendom (3 vols) [Sym]. *(You already use his edited NPNF translations — these are his own works.)* — CCEL / Ar
+- **J.H. Merle d'Aubigné (d. 1872)** [T] — History of the Reformation of the Sixteenth Century; History of the Reformation in the Time of Calvin. — Gb / Ar
+- **John Foxe (d. 1587)** [T] — Foxe's Book of Martyrs (Acts and Monuments). — Gb / CCEL
+- **Alfred Edersheim (d. 1889)** [T] ★ — The Life and Times of Jesus the Messiah; The Temple: Its Ministry and Services; Sketches of Jewish Social Life; Bible History (OT). — CCEL / Gb
+- **John Lightfoot the elder (d. 1675)** [C] — Horae Hebraicae et Talmudicae — the NT read through the Talmud and first-century rabbinic sources. *(A Westminster divine; distinct from the 19th-c J.B. Lightfoot in §G.)* — Ar
+- **E.W. Hengstenberg (d. 1869)** [C] ⚠tr — Christology of the Old Testament; Commentary on the Psalms; on Revelation — conservative Lutheran defense of literal Messianic prophecy, relied on by the Princeton men. — Ar
+- **George Adam Smith (d. 1942) — pre-1929 works** [D] — The Historical Geography of the Holy Land (1894). *(Published pre-1930 → US-PD despite the later death.)* — Ar
+- **Abraham Kuyper (d. 1920)** [T] ★ — The Work of the Holy Spirit (de Vries tr., 1900, PD); Lectures on Calvinism / the Stone Lectures (1898). *(These two are clean; most other Kuyper English translations are modern ⚠tr.)* — CCEL / Ar
+- **R.H. Charles (d. 1931), ed.** [D] ⚠guardrail — The Apocrypha and Pseudepigrapha of the Old Testament (2 vols, 1913): 1 Enoch, Jubilees, Testaments of the Twelve Patriarchs, 2 Baruch, etc. **Must be tagged "historical / cultural background only" — the MCP must never serve it as canonical Scripture.** — Ar
+
 ---
 
 ## Excluded — too modern to ingest (link-out only)
-PD-adjacent but **not** clear US-PD; serve as discovery links to Monergism, never full text:
-**Geerhardus Vos (d. 1949)**, **J. Gresham Machen (d. 1937)**, **Louis Berkhof (d. 1957)**, **Herman Bavinck (d. 1921, but standard English translations are modern ⚠tr)**, **Abraham Kuyper (d. 1920, most English translations modern ⚠tr)**, **Cornelius Van Til**, and all living/20th–21st-c authors Monergism distributes by permission (Piper, Sproul, Beeke, Ferguson, Packer, etc.).
+Not clear US-PD; serve as discovery links to Monergism, never full text:
+**J. Gresham Machen (d. 1937)**, **Louis Berkhof (d. 1957)**, **Herman Bavinck (d. 1921 — but the standard English *Reformed Dogmatics* is a modern translation ⚠tr)**, **Cornelius Van Til**, **Vos's *Biblical Theology* (1948)**, later Kuyper translations, and all living / 20th–21st-c authors Monergism distributes by permission (Piper, Sproul, Beeke, Ferguson, Packer, etc.).
+*Note: the **pre-1929** works of **Vos**, **Kuyper**, and **George Adam Smith** are public domain and are included above (§M–§N) — the exclusion is per-work by publication date, not a blanket author ban.*
 
 ## Ingestion notes
 - **Shape split:** `[C]` and `[D]` works flow to the **MCP reference tools** (need the verse/entry-index parser); `[T] [S] [H]` flow through the **derivative pipeline** as grounded, browsable works.
 - **Multi-volume sets** (Owen's Works, Calvin's Commentaries, the Pulpit Commentary) resolve to many source files — count each volume as a fetch unit.
 - **⚠tr** works need a confirmed PD English edition at fetch time; the adapters already fail-closed, so a missing PD translation simply skips rather than ingesting a copyrighted one.
-- **Archive.org adapter (Phase 2)** unlocks the `Ar`-only long tail — the majority of §C–§K.
+- **Archive.org adapter (Phase 2)** unlocks the `Ar`-only long tail — the majority of §C–§N.
+- **⚠guardrail** works (R.H. Charles's Apocrypha & Pseudepigrapha, and any deuterocanonical/Second-Temple text) must carry a `canonicity: background-only` flag so the MCP surfaces them as historical/cultural context and never cites them as Scripture — the same discipline the catena already applies to patristic opinion.
