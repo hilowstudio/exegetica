@@ -129,7 +129,20 @@ def run_batch(requests: list[dict], label: str, poll: int = 30) -> tuple[dict, d
             f.write(json.dumps(_batch_line(r["custom_id"], r["params"])) + "\n")
         path = f.name
     up = client.files.upload(file=path, config=types.UploadFileConfig(display_name=label, mime_type="jsonl"))
-    job = client.batches.create(model=model, src=up.name, config={"display_name": label})
+    from google.genai import errors as _gerr
+    try:
+        job = client.batches.create(model=model, src=up.name, config={"display_name": label})
+    except _gerr.ClientError as e:
+        if getattr(e, "code", None) == 429:
+            raise RuntimeError(
+                "Gemini returned 429 RESOURCE_EXHAUSTED when creating the batch job. The Batch API and "
+                "the Gemini 3.8 Flash promo pricing require a BILLING-ENABLED (paid-tier) project — the "
+                "free tier cannot create batch jobs. Enable billing on the Cloud project behind your "
+                "GEMINI_API_KEY at https://aistudio.google.com/apikey (open the key → its Google Cloud "
+                "project → Billing), then re-run. Fetched texts are cached in .seed_cache/, so the re-run "
+                "skips fetching and starts straight at extraction."
+            ) from e
+        raise
     print(f"  [{label}] gemini batch {job.name}: {len(requests)} requests submitted")
     done = {"JOB_STATE_SUCCEEDED", "JOB_STATE_FAILED", "JOB_STATE_CANCELLED", "JOB_STATE_EXPIRED"}
     while job.state.name not in done:
