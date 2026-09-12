@@ -59,12 +59,12 @@
   .rail svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
   .rail .glyph{font-size:18px;line-height:1}
 
-  .col{display:flex;flex-direction:column;min-width:0;background:var(--paper)}
+  .col{display:flex;flex-direction:column;min-width:0;background:var(--paper);height:100%;overflow:hidden}
   .lib-head{padding:16px 28px 12px;border-bottom:1px solid var(--rule);background:var(--surface);flex:none}
   .lib-head .eyebrow{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--iron-soft)}
   .lib-head h1{font-family:var(--serif);font-weight:700;font-size:1.5rem;margin:3px 0 2px}
   .lib-head p{margin:0;font-size:13.5px;color:var(--ink-soft)}
-  main.scroll{flex:1;overflow-y:auto}
+  main.scroll{flex:1;overflow-y:auto;min-height:0}
   .wrap{max-width:1080px;margin:0 auto;padding:26px 28px 60px}
 
   /* ---------- omnibox ---------- */
