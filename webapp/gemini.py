@@ -145,23 +145,135 @@ def _chunk_by_tokens(requests: list[dict], budget: int) -> list[list[dict]]:
     return chunks
 
 
-def _submit_and_drain(client, model: str, requests: list[dict], label: str, poll: int) -> tuple[dict, dict]:
-    """Upload → create → poll one batch job to completion → download. On a 429 at create
-    (still over the enqueue cap despite chunking), split the chunk in half and recurse; a
-    lone request over the cap re-raises with a clear message."""
-    import tempfile
+_TERMINAL = {"JOB_STATE_SUCCEEDED", "JOB_STATE_FAILED", "JOB_STATE_CANCELLED", "JOB_STATE_EXPIRED"}
+_DEAD = {"JOB_STATE_FAILED", "JOB_STATE_CANCELLED", "JOB_STATE_EXPIRED"}
+
+
+def _net_retry(fn, what: str, tries: int = 10, base: float = 2.0, cap: float = 90.0):
+    """Call fn(), riding out transient network errors (DNS blips, dropped wifi, 5xx) with
+    exponential backoff. A long batch poll must not die on one hiccup. Non-transient errors
+    (4xx incl. 429) propagate immediately so the caller's split/handle logic still runs."""
+    import time as _t
+
+    import httpx
+    from google.genai import errors as _gerr
+
+    for attempt in range(1, tries + 1):
+        try:
+            return fn()
+        except httpx.RequestError as e:  # ConnectError, ReadError, timeouts, protocol errors
+            err = e
+        except _gerr.APIError as e:
+            if getattr(e, "code", None) and e.code >= 500:
+                err = e
+            else:
+                raise
+        except OSError as e:  # getaddrinfo / socket-level failures
+            err = e
+        if attempt == tries:
+            raise err
+        delay = min(cap, base * (2 ** (attempt - 1)))
+        print(f"    [{what}] transient network error ({type(err).__name__}); "
+              f"retry {attempt}/{tries - 1} in {delay:.0f}s")
+        _t.sleep(delay)
+
+
+def _batch_state_path() -> str:
+    return os.environ.get("GEMINI_BATCH_STATE", os.path.join(".seed_cache", "gemini_batches.json"))
+
+
+def _load_batch_state() -> dict:
+    try:
+        with open(_batch_state_path(), encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def _save_batch_state(state: dict) -> None:
+    p = _batch_state_path()
+    try:
+        os.makedirs(os.path.dirname(p) or ".", exist_ok=True)
+        tmp = p + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(state, f)
+        os.replace(tmp, p)
+    except Exception as e:  # best-effort; resume is an optimization, not required for correctness
+        print("    [batch-state] could not persist resume cache:", str(e)[:80])
+
+
+def _chunk_key(model: str, requests: list[dict]) -> str:
+    """Stable id for a request set (independent of chunk numbering), so a restart reconnects
+    to the same submitted job instead of paying to resubmit it."""
+    import hashlib
+
+    ids = "\n".join(sorted(str(r["custom_id"]) for r in requests))
+    return hashlib.sha1((model + "\n" + ids).encode("utf-8")).hexdigest()
+
+
+def _drain(client, job, label: str, poll: int) -> tuple[dict, dict]:
+    """Poll a submitted job to completion, then download + parse its results."""
     import time
+
+    while job.state.name not in _TERMINAL:
+        time.sleep(poll)
+        job = _net_retry(lambda: client.batches.get(name=job.name), f"{label} poll")
+    out, usage = {}, {"in": 0, "out": 0}
+    if job.state.name == "JOB_STATE_SUCCEEDED" and job.dest and job.dest.file_name:
+        data = _net_retry(lambda: client.files.download(file=job.dest.file_name), f"{label} download").decode("utf-8")
+        ok = 0
+        for line in data.splitlines():
+            if not line.strip():
+                continue
+            key, parsed, u = _parse_result_line(json.loads(line))
+            out[key] = parsed
+            usage["in"] += u["in"]
+            usage["out"] += u["out"]
+            ok += parsed is not None
+        print(f"  [{label}] state {job.state.name}; parsed {ok}/{len(out)}; "
+              f"tokens in {usage['in']:,} out {usage['out']:,}")
+    else:
+        print(f"  [{label}] state {job.state.name} (no results): {getattr(job, 'error', None)}")
+    return out, usage
+
+
+def _submit_and_drain(client, model: str, requests: list[dict], label: str, poll: int) -> tuple[dict, dict]:
+    """Reconnect to a previously-submitted job (resume) or upload → create a new one, then
+    poll to completion → download. On a 429 at create (still over the enqueue cap despite
+    chunking), split the chunk in half and recurse; a lone request over the cap re-raises."""
+    import tempfile
 
     from google.genai import types
     from google.genai import errors as _gerr
+
+    key = _chunk_key(model, requests)
+    state = _load_batch_state()
+
+    # Resume: if we already submitted this exact request set, rejoin that job.
+    if key in state:
+        try:
+            job = _net_retry(lambda: client.batches.get(name=state[key]), f"{label} reconnect")
+            if job.state.name not in _DEAD:
+                print(f"  [{label}] reconnected to {job.name} ({job.state.name})")
+                return _drain(client, job, label, poll)
+            state.pop(key, None)
+            _save_batch_state(state)
+        except _gerr.APIError as e:
+            if getattr(e, "code", None) == 404:
+                state.pop(key, None)
+                _save_batch_state(state)
+            else:
+                raise
 
     with tempfile.NamedTemporaryFile("w", suffix=".jsonl", delete=False, encoding="utf-8") as f:
         for r in requests:
             f.write(json.dumps(_batch_line(r["custom_id"], r["params"])) + "\n")
         path = f.name
-    up = client.files.upload(file=path, config=types.UploadFileConfig(display_name=label, mime_type="jsonl"))
+    up = _net_retry(lambda: client.files.upload(
+        file=path, config=types.UploadFileConfig(display_name=label, mime_type="jsonl")), f"{label} upload")
     try:
-        job = client.batches.create(model=model, src=up.name, config={"display_name": label})
+        job = _net_retry(lambda: client.batches.create(
+            model=model, src=up.name, config={"display_name": label}), f"{label} create")
     except _gerr.ClientError as e:
         if getattr(e, "code", None) == 429 and len(requests) > 1:
             mid = len(requests) // 2
@@ -177,28 +289,10 @@ def _submit_and_drain(client, model: str, requests: list[dict], label: str, poll
                 "the account tier, or skip that oversized work."
             ) from e
         raise
+    state[key] = job.name
+    _save_batch_state(state)
     print(f"  [{label}] gemini batch {job.name}: {len(requests)} requests submitted")
-    done = {"JOB_STATE_SUCCEEDED", "JOB_STATE_FAILED", "JOB_STATE_CANCELLED", "JOB_STATE_EXPIRED"}
-    while job.state.name not in done:
-        time.sleep(poll)
-        job = client.batches.get(name=job.name)
-    out, usage = {}, {"in": 0, "out": 0}
-    if job.state.name == "JOB_STATE_SUCCEEDED" and job.dest and job.dest.file_name:
-        data = client.files.download(file=job.dest.file_name).decode("utf-8")
-        ok = 0
-        for line in data.splitlines():
-            if not line.strip():
-                continue
-            key, parsed, u = _parse_result_line(json.loads(line))
-            out[key] = parsed
-            usage["in"] += u["in"]
-            usage["out"] += u["out"]
-            ok += parsed is not None
-        print(f"  [{label}] state {job.state.name}; parsed {ok}/{len(out)}; "
-              f"tokens in {usage['in']:,} out {usage['out']:,}")
-    else:
-        print(f"  [{label}] state {job.state.name} (no results): {getattr(job, 'error', None)}")
-    return out, usage
+    return _drain(client, job, label, poll)
 
 
 def run_batch(requests: list[dict], label: str, poll: int = 30) -> tuple[dict, dict]:
