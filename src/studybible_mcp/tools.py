@@ -796,6 +796,33 @@ and `get_study_notes` (modern translation-oriented notes).""",
         }
     ),
     Tool(
+        name="search_theology",
+        annotations=ToolAnnotations(title="Theology Library (grounding)", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
+        description="""Full-text search the church's public-domain theological treasury for grounding.
+
+A local corpus of ~965 complete public-domain works — the Ante-Nicene and
+Nicene/Post-Nicene Fathers, Reformers and Puritans (Owen, Edwards, Manton, Flavel,
+Watson, Shepard), Reformed systematics (Hodge, Boyce), Aquinas' Summa, Schaff's
+church history, Edersheim, Josephus, and Philo — indexed for keyword/BM25 retrieval.
+
+Use it to GROUND a claim in what the tradition actually wrote: search a term or
+phrase ('propitiation', 'federal headship', 'union with Christ', 'effectual
+calling') and get the most relevant passages, each with author and work to cite.
+Restrict to one writer with `author` (e.g. 'owen', 'edwards', 'schaff').
+
+Distinct from `get_commentary` (verse-keyed commentary) and `get_church_fathers`
+(verse-keyed patristic catena): this searches the full continuous texts by topic.""",
+        inputSchema={
+            "type": "object",
+            "properties": {
+                "query": {"type": "string", "description": "A theological term, phrase, or question (e.g., 'mortification of sin')."},
+                "author": {"type": "string", "description": "Optional: restrict to one author's works (e.g., 'owen', 'aquinas', 'schaff')."},
+                "limit": {"type": "integer", "description": "Max passages to return (default 8, max 25)."}
+            },
+            "required": ["query"]
+        }
+    ),
+    Tool(
         name="get_confession",
         annotations=ToolAnnotations(title="Creeds & Confessions", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
         description="""Retrieve or search the historical creeds, confessions, and catechisms.

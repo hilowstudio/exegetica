@@ -5,6 +5,7 @@ Uses SQLite with async access via aiosqlite.
 """
 
 import json
+import os
 import re
 import sqlite3
 from collections import deque
@@ -186,6 +187,19 @@ class StudyBibleDB:
             except Exception:
                 pass
 
+        # Attach the theology grounding corpus (the R2-distributed theology.db) if present, so
+        # its FTS5 full text + scripture refs are queryable at call time. Read-only/immutable;
+        # absent file → self.has_theology stays False and grounding tools degrade gracefully.
+        self.has_theology = False
+        theo = os.environ.get("THEOLOGY_DB") or str(self.db_path.parent / "theology.db")
+        if Path(theo).exists():
+            try:
+                turi = f"file:{Path(theo).resolve().as_posix()}?mode=ro&immutable=1"
+                await self.conn.execute(f"ATTACH DATABASE '{turi}' AS theology")
+                self.has_theology = True
+            except Exception:
+                logging.getLogger("studybible-mcp").warning("could not attach theology.db at %s", theo)
+
     async def close(self):
         """Close database connection."""
         if self.conn:
@@ -210,6 +224,38 @@ class StudyBibleDB:
         async with self.conn.execute(sql, params) as cursor:
             row = await cursor.fetchone()
             return dict(row) if row else None
+
+    # ---- theology grounding corpus (attached theology.db; FTS5 over PD full texts) ----
+    @staticmethod
+    def _theology_fts_expr(query: str) -> str | None:
+        """Turn a natural query into a safe FTS5 AND-of-terms expression (quoted tokens),
+        stripping FTS operators so user input can't break or inject the MATCH."""
+        toks = re.findall(r"[A-Za-z0-9']+", query or "")
+        return " ".join(f'"{t}"' for t in toks) or None
+
+    async def search_theology(self, query: str, author: str | None = None, limit: int = 8) -> list[dict]:
+        """BM25 full-text search over the church's PD treasury, returning cited passages.
+        Bare `theology_fts` is used for match/snippet/bm25; join tables are schema-qualified."""
+        if not getattr(self, "has_theology", False):
+            return []
+        expr = self._theology_fts_expr(query)
+        if not expr:
+            return []
+        sql = (
+            "select w.author, w.title, t.text, t.refs, t.work_id, "
+            "snippet(theology_fts, 0, '', '', ' … ', 18) as snippet "
+            "from theology.theology_fts "
+            "join theology.theology_texts t on t.id = theology_fts.rowid "
+            "join theology.theology_works w on w.work_id = t.work_id "
+            "where theology_fts match ?"
+        )
+        params: list = [expr]
+        if author:
+            sql += " and w.author like ?"
+            params.append(f"%{author.strip().lower()}%")
+        sql += " order by bm25(theology_fts) limit ?"
+        params.append(max(1, min(int(limit or 8), 25)))
+        return await self._fetchall(sql, params)
 
     async def _table_has_rows(self, table: str) -> bool:
         """Check if a table exists and has at least one row."""

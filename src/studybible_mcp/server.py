@@ -1066,6 +1066,43 @@ async def handle_get_church_fathers(args: dict[str, Any]) -> list[TextContent]:
     return text("\n".join(lines))
 
 
+async def handle_search_theology(args: dict[str, Any]) -> list[TextContent]:
+    """Ground a query in the church's public-domain theological treasury (full-text/BM25)."""
+    query = (args.get("query") or "").strip()
+    author = args.get("author")
+    limit = int(args.get("limit") or 8)
+    if not query:
+        return text("Please provide a query (a theological term, phrase, or question).")
+    if not getattr(db, "has_theology", False):
+        return text(
+            "The theology grounding corpus (theology.db) is not attached. Build it with "
+            "'python scripts/build_theology_grounding.py' (and set THEOLOGY_DB if it lives elsewhere)."
+        )
+    rows = await db.search_theology(query, author=author, limit=limit)
+    if not rows:
+        return text(f"No passages found for '{query}'" + (f" in {author}'s works." if author else "."))
+
+    lines = [f"## Theology Library — grounding for “{query}”",
+             f"*{len(rows)} passage(s) from the public-domain treasury, most relevant first.*", ""]
+    for r in rows:
+        passage = (r.get("text") or "").strip()
+        if len(passage) > 1500:
+            passage = passage[:1500].rstrip() + " …"
+        lines.append(f"### {r.get('author', '?')} — *{r.get('title', '')}*")
+        lines.append(passage)
+        refs = r.get("refs")
+        if refs and refs not in ("[]", "null"):
+            try:
+                rl = json.loads(refs)
+                if rl:
+                    lines.append(f"*Scripture cited: {', '.join(str(x) for x in rl[:8])}*")
+            except Exception:
+                pass
+        lines.append("")
+    lines.append("*Full public-domain texts, housed locally (source: CCEL). Cite the author and work.*")
+    return text("\n".join(lines))
+
+
 async def handle_get_confession(args: dict[str, Any]) -> list[TextContent]:
     """List / retrieve / search creeds, confessions, and catechisms."""
     document = args.get("document")
@@ -1325,6 +1362,7 @@ _TOOL_HANDLERS = {
     "get_key_terms": handle_get_key_terms,
     "get_commentary": handle_get_commentary,
     "get_church_fathers": handle_get_church_fathers,
+    "search_theology": handle_search_theology,
     "get_confession": handle_get_confession,
     "find_confessions_by_verse": handle_find_confessions_by_verse,
     "get_confession_proofs": handle_get_confession_proofs,
