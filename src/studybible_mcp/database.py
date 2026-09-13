@@ -191,6 +191,7 @@ class StudyBibleDB:
         # its FTS5 full text + scripture refs are queryable at call time. Read-only/immutable;
         # absent file → self.has_theology stays False and grounding tools degrade gracefully.
         self.has_theology = False
+        self.has_theology_vec = False
         theo = os.environ.get("THEOLOGY_DB") or str(self.db_path.parent / "theology.db")
         if Path(theo).exists():
             try:
@@ -199,6 +200,20 @@ class StudyBibleDB:
                 self.has_theology = True
             except Exception:
                 logging.getLogger("studybible-mcp").warning("could not attach theology.db at %s", theo)
+        # Load sqlite-vec so the theology.db vec0 table (semantic layer) is queryable. Optional:
+        # absent extension or vectors → keyword grounding (FTS) still works.
+        if self.has_theology:
+            try:
+                import sqlite_vec
+
+                await self.conn.enable_load_extension(True)
+                await self.conn.load_extension(sqlite_vec.loadable_path())
+                await self.conn.enable_load_extension(False)
+                async with self.conn.execute("select count(*) from theology.theology_vecmeta") as cur:
+                    if await cur.fetchone():
+                        self.has_theology_vec = True
+            except Exception:
+                logging.getLogger("studybible-mcp").info("theology semantic layer off (sqlite-vec/vectors absent)")
 
     async def close(self):
         """Close database connection."""
@@ -256,6 +271,35 @@ class StudyBibleDB:
         sql += " order by bm25(theology_fts) limit ?"
         params.append(max(1, min(int(limit or 8), 25)))
         return await self._fetchall(sql, params)
+
+    _theo_model = None  # model2vec query-embedder, loaded once per process
+
+    @classmethod
+    def _theology_model(cls):
+        if cls._theo_model is None:
+            from model2vec import StaticModel
+            cls._theo_model = StaticModel.from_pretrained("minishlab/potion-retrieval-32M")
+        return cls._theo_model
+
+    async def semantic_theology(self, query: str, limit: int = 8) -> list[dict]:
+        """Semantic (fuzzy) recall over the treasury via sqlite-vec KNN — finds passages by meaning
+        even when the exact term isn't used. Query embedded locally (model2vec), int8, one vec0 KNN."""
+        if not getattr(self, "has_theology_vec", False) or not (query or "").strip():
+            return []
+        import numpy as np
+
+        v = self._theology_model().encode([query])[0].astype(np.float32)
+        n = float(np.linalg.norm(v)) or 1.0
+        q8 = np.clip(np.round(v / n * 127.0), -127, 127).astype(np.int8).tobytes()
+        sql = (
+            "select w.author, w.title, p.text, p.work_id, v.distance "
+            "from theology.theology_vec v "
+            "join theology.theology_passages p on p.id = v.id "
+            "join theology.theology_works w on w.work_id = p.work_id "
+            "where v.emb match vec_int8(?) and v.k = ? "  # vec0 KNN needs an explicit k
+            "order by v.distance"
+        )
+        return await self._fetchall(sql, [q8, max(1, min(int(limit or 8), 25))])
 
     async def _table_has_rows(self, table: str) -> bool:
         """Check if a table exists and has at least one row."""

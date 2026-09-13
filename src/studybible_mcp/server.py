@@ -1078,27 +1078,42 @@ async def handle_search_theology(args: dict[str, Any]) -> list[TextContent]:
             "The theology grounding corpus (theology.db) is not attached. Build it with "
             "'python scripts/build_theology_grounding.py' (and set THEOLOGY_DB if it lives elsewhere)."
         )
-    rows = await db.search_theology(query, author=author, limit=limit)
-    if not rows:
+    fts = await db.search_theology(query, author=author, limit=limit)
+    sem = await db.semantic_theology(query, limit=limit)
+    if author:  # the vec KNN doesn't filter by author, so post-filter
+        a = author.strip().lower()
+        sem = [s for s in sem if a in (s.get("author") or "").lower()]
+    fts_works = {r.get("work_id") for r in fts}
+    sem = [s for s in sem if s.get("work_id") not in fts_works][:limit]  # drop overlap with keyword hits
+    if not fts and not sem:
         return text(f"No passages found for '{query}'" + (f" in {author}'s works." if author else "."))
 
-    lines = [f"## Theology Library — grounding for “{query}”",
-             f"*{len(rows)} passage(s) from the public-domain treasury, most relevant first.*", ""]
-    for r in rows:
-        passage = (r.get("text") or "").strip()
-        if len(passage) > 1500:
-            passage = passage[:1500].rstrip() + " …"
-        lines.append(f"### {r.get('author', '?')} — *{r.get('title', '')}*")
-        lines.append(passage)
-        refs = r.get("refs")
-        if refs and refs not in ("[]", "null"):
-            try:
-                rl = json.loads(refs)
-                if rl:
-                    lines.append(f"*Scripture cited: {', '.join(str(x) for x in rl[:8])}*")
-            except Exception:
-                pass
-        lines.append("")
+    def _blocks(rows, refs_ok):
+        out = []
+        for r in rows:
+            passage = (r.get("text") or "").strip()
+            if len(passage) > 1400:
+                passage = passage[:1400].rstrip() + " …"
+            out.append(f"### {r.get('author', '?')} — *{r.get('title', '')}*")
+            out.append(passage)
+            refs = r.get("refs") if refs_ok else None
+            if refs and refs not in ("[]", "null"):
+                try:
+                    rl = json.loads(refs)
+                    if rl:
+                        out.append(f"*Scripture cited: {', '.join(str(x) for x in rl[:8])}*")
+                except Exception:
+                    pass
+            out.append("")
+        return out
+
+    lines = [f"## Theology Library — grounding for “{query}”", ""]
+    if fts:
+        lines.append("### Keyword matches")
+        lines += _blocks(fts, True)
+    if sem:
+        lines.append("### Related by meaning")
+        lines += _blocks(sem, False)
     lines.append("*Full public-domain texts, housed locally (source: CCEL). Cite the author and work.*")
     return text("\n".join(lines))
 

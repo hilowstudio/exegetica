@@ -16,6 +16,7 @@ dependencies = [
     # Pinned: mcp 2.x removed Server.list_tools(). Match the reference impl.
     "mcp==1.26.0",
     "aiosqlite>=0.19.0",
+    "sqlite-vec>=0.1.6",       # vec0 KNN for the theology semantic layer (optional at runtime)
     "click>=8.0.0",
     "rich>=13.0.0",
     "httpx>=0.25.0",

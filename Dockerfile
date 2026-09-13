@@ -11,6 +11,10 @@ COPY pyproject.toml README.md NOTICE LICENSE ./
 COPY src ./src
 RUN pip install --no-cache-dir ".[webapp]"
 
+# Bake the model2vec query-embedder into the image cache so grounding + generation embed queries
+# fully offline at runtime (HF_HUB_OFFLINE=1 below) — no HuggingFace call on the query path.
+RUN python -c "from model2vec import StaticModel; StaticModel.from_pretrained('minishlab/potion-retrieval-32M')"
+
 # The web front-end. The SQLite DBs (study_bible.db, theology.db) are NOT baked in — they are
 # distributed via R2 and boot-fetched to the Fly volume (/data) by webapp.app._ensure_r2_dbs,
 # which keeps the image small and deploys fast.
