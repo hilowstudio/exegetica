@@ -1,5 +1,10 @@
 # Reformed & historic PD ingestion list — Phase 1
 
+> **This is the target list (the *what*).** For the *how*, see
+> [reformed-ingestion-plan.md](reformed-ingestion-plan.md) — a source spike found the whole corpus
+> already exists as pre-built collections, so we **clone and ingest locally** rather than crawl
+> per-work. That plan supersedes the "archive.org adapter / fetch-per-work" build order noted below.
+
 The public-domain, actually-ours-to-ingest subset of the Reformed/historic-Christian canon that Monergism, CCEL, and the Banner/Puritan tradition curate — the target for enriching the study-Bible **MCP** (distinct from the teacher-facing Living Library).
 
 **Triage rule.** Include a work only when it is **US public domain** — the true test is **first published ≤ 1929**, *not* the author's death year. Author-died-≤-1928 is a convenient proxy, but several authors who died later published landmark works before 1930 — **Vos** (1903), **Kuyper's *Work of the Holy Spirit*** (1900), **George Adam Smith** (1894) — and those specific pre-1930 works **are** PD and are included (their post-1929 works are not). Modern works distributed free-by-permission on Monergism (Piper, Sproul, Beeke, Reformation Trust, Banner reprints) are **excluded** — link-out for discovery, never ingest. Foreign-language authors are marked **⚠tr** where the standard English translation is modern (so ingest only if a PD translation exists, or ground the original).
