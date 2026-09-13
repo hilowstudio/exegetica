@@ -57,6 +57,16 @@ def _role_for(email: str | None) -> str:
     return "teacher" if (email or "").lower() in _teacher_emails() else "student"
 
 
+def _admin_emails() -> set[str]:
+    raw = os.environ.get("LIBRARY_ADMIN_EMAILS", "")
+    return {e.strip().lower() for e in raw.split(",") if e.strip()}
+
+
+def is_admin(user) -> bool:
+    """A library admin may edit canonical shared-catalog data (e.g. cover art for everyone)."""
+    return bool(user) and (user.get("email") or "").lower() in _admin_emails()
+
+
 def current_user(request):
     """The signed-in user's profile dict, or None."""
     return request.session.get("user")
@@ -129,4 +139,5 @@ async def logout(request):
 
 
 async def me(request):
-    return JSONResponse({"user": current_user(request)})
+    u = current_user(request)
+    return JSONResponse({"user": u, "admin": is_admin(u)})

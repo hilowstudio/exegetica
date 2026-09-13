@@ -193,6 +193,7 @@
   .cover-edit .csave:hover{background:var(--accent-soft)}
   .cover-edit .creset{flex:none;font-family:var(--sans);font-weight:600;font-size:12px;color:var(--ink-soft);background:none;border:1px solid var(--rule-strong);border-radius:8px;padding:7px 11px;cursor:pointer}
   .cover-edit .creset:hover{background:var(--surface-2);color:var(--ink)}
+  .cover-edit-note{font-size:11px;color:var(--accent);line-height:1.4}
   .r-eyebrow{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--iron-soft)}
   .r-title{font-family:var(--serif);font-weight:600;font-size:1.4rem;line-height:1.2;margin:6px 0 4px;color:var(--ink)}
   .r-author{font-size:14px;color:var(--ink-soft)}
@@ -648,7 +649,7 @@ var TYPE_UI={
 };
 
 var curType="book", curFilter="all";
-var AUTH={signed:false,user:null};  // resolved in initLibrary(); shelf persists to Neon when signed in
+var AUTH={signed:false,user:null,admin:false};  // resolved in initLibrary(); shelf persists to Neon when signed in
 var wrap=(function(){try{return localStorage.getItem("studybible.lib.wrap")==="on";}catch(e){return false;}})();
 var sortKey=(function(){try{return localStorage.getItem("studybible.lib.sort")==="title"?"title":"author";}catch(e){return "author";}})();
 
@@ -762,6 +763,7 @@ function openBook(id){
       '<input type="url" id="cover-url" placeholder="https://…/cover.jpg" value="'+esc(it.cover||"")+'">'+
       '<div class="cover-edit-row"><button type="button" class="csave" id="cover-save">Save</button>'+
       '<button type="button" class="creset" id="cover-reset">Reset</button></div>'+
+      (AUTH.admin?'<div class="cover-edit-note">✦ Admin — this sets the cover for everyone.</div>':'')+
     '</div>';
   $("read-body").innerHTML='<div class="read-grid"><div class="read-cover">'+cover+coverEdit+'</div>'+
     '<div class="read-meta"><div class="r-eyebrow">Book</div><h2 class="r-title">'+esc(it.title)+'</h2>'+
@@ -781,14 +783,15 @@ function openBook(id){
 function setCover(it,url){
   url=(url||"").trim();
   if(url&&!/^https?:\/\//i.test(url)){toast("Enter an http(s) image link.");return;}
-  function apply(eff){it.cover=eff||null;render();openBook(it.id);toast(url?"Cover updated":"Cover reset");}
+  function apply(eff,canonical){it.cover=eff||null;render();openBook(it.id);
+    toast(url?(canonical?"Catalog cover updated for everyone":"Cover updated"):(canonical?"Catalog cover reset":"Cover reset"));}
   if(AUTH.signed){
     fetch("/api/library/shelf/"+encodeURIComponent(it.id)+"/cover",{method:"POST",credentials:"same-origin",
       headers:{"Content-Type":"application/json"},body:JSON.stringify({cover:url})})
       .then(function(r){return r.ok?r.json():r.json().then(function(e){throw e;});})
-      .then(function(d){apply(d.cover);})
+      .then(function(d){apply(d.cover,d.canonical);})
       .catch(function(e){toast((e&&e.error)||"Could not update cover.");});
-  }else{apply(url||null);}
+  }else{apply(url||null,false);}
 }
 $("shelf").addEventListener("click",function(e){var b=e.target.closest(".book");if(b)openBook(b.dataset.id);});
 $("read-close").addEventListener("click",function(){$("read-bg").classList.remove("open");});
@@ -1191,7 +1194,7 @@ syncType();syncFilters();syncWrap();syncSort();render();
 // anonymous visitors keep the in-memory demo shelf.
 function initLibrary(){
   fetch("/api/me",{credentials:"same-origin"}).then(function(r){return r.json();}).then(function(d){
-    AUTH.user=(d&&d.user)||null;AUTH.signed=!!AUTH.user;
+    AUTH.user=(d&&d.user)||null;AUTH.signed=!!AUTH.user;AUTH.admin=!!(d&&d.admin);
     if(!AUTH.signed)return;
     fetch("/api/library/shelf",{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;}).then(function(s){
       if(s&&s.items){LIB=s.items;render();}

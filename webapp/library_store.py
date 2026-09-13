@@ -124,6 +124,22 @@ async def shelf_set_cover(request):
     if url:
         if len(url) > 2048 or not re.match(r"^https?://", url, re.I):
             return JSONResponse({"error": "cover must be an http(s) image link"}, status_code=400)
+
+    if auth.is_admin(user):
+        # Canonical edit: write the shared catalog cover for everyone, and clear this admin's
+        # own per-shelf override so they see the canonical image too. Works on any catalog
+        # book, not just one on the admin's shelf.
+        await db.execute(
+            "update library_items set cover_url = null where user_id = $1 and extraction_id = $2",
+            _uid(user), exid)
+        row = await db.fetchrow(
+            "update library_extractions set cover_url = $2, updated_at = now() where id = $1 returning cover_url as cover",
+            exid, (url or None))
+        if not row:
+            return JSONResponse({"error": "no such book"}, status_code=404)
+        return JSONResponse({"ok": True, "cover": row["cover"], "canonical": True})
+
+    # Everyone else: a personal per-shelf override that never touches the shared catalog.
     row = await db.fetchrow(
         """update library_items li set cover_url = $3
              from library_extractions e
@@ -133,7 +149,7 @@ async def shelf_set_cover(request):
     )
     if not row:
         return JSONResponse({"error": "not on your shelf"}, status_code=404)
-    return JSONResponse({"ok": True, "cover": row["cover"]})
+    return JSONResponse({"ok": True, "cover": row["cover"], "canonical": False})
 
 
 async def catalog_search(request):
