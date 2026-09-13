@@ -10,15 +10,86 @@ and shared across teachers who add the same resource.
 """
 from __future__ import annotations
 
+import ipaddress
 import re
+import socket
+import time
 import uuid
 from urllib.parse import parse_qs, urlparse
 
-from starlette.responses import JSONResponse
+import httpx
+from starlette.responses import JSONResponse, Response
 
-from webapp import auth, db
+from webapp import auth, db, r2
 
 _DEFAULT_ACCENT = "#5b4b8a"
+_MAX_COVER_BYTES = 5 * 1024 * 1024
+_COVER_UA = {"User-Agent": "StudyBibleLivingLibrary/1.0 (+study-bible app)"}
+
+
+def _host_is_public(hostname: str) -> bool:
+    """SSRF guard: true only if every address the host resolves to is a public IP."""
+    try:
+        infos = socket.getaddrinfo(hostname, None)
+    except Exception:  # noqa: BLE001
+        return False
+    for info in infos:
+        ip = ipaddress.ip_address(info[4][0])
+        if (ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved
+                or ip.is_multicast or ip.is_unspecified):
+            return False
+    return True
+
+
+async def _fetch_cover_image(url: str):
+    """Fetch an external image to snapshot it. Guards: public hosts only (re-checked on each
+    redirect hop), image content-type, 5 MB cap. Returns ((bytes, content_type), None) on
+    success, or (None, reason) on failure."""
+    async with httpx.AsyncClient(timeout=15.0, follow_redirects=False) as client:
+        for _ in range(4):
+            p = urlparse(url)
+            if p.scheme not in ("http", "https") or not p.hostname:
+                return None, "not an http(s) URL"
+            if not _host_is_public(p.hostname):
+                return None, "host not allowed"
+            try:
+                resp = await client.get(url, headers=_COVER_UA)
+            except Exception:  # noqa: BLE001
+                return None, "could not reach the image"
+            if resp.is_redirect:
+                loc = resp.headers.get("location")
+                if not loc:
+                    return None, "bad redirect"
+                url = str(httpx.URL(resp.url).join(loc))
+                continue
+            if resp.status_code != 200:
+                return None, f"source returned {resp.status_code}"
+            ct = (resp.headers.get("content-type") or "").split(";")[0].strip().lower()
+            if not ct.startswith("image/"):
+                return None, "that link is not an image"
+            data = resp.content
+            if not data:
+                return None, "empty image"
+            if len(data) > _MAX_COVER_BYTES:
+                return None, "image is larger than 5 MB"
+            return (data, ct), None
+        return None, "too many redirects"
+
+
+async def cover_serve(request):
+    """Serve a snapshotted cover from R2 (public — book covers are public content)."""
+    try:
+        exid = uuid.UUID(request.path_params["id"])
+    except (ValueError, KeyError):
+        return JSONResponse({"error": "bad id"}, status_code=400)
+    if not r2.configured():
+        return JSONResponse({"error": "unavailable"}, status_code=503)
+    obj = await r2.get_object_async(f"covers/{exid}")
+    if not obj:
+        return JSONResponse({"error": "not found"}, status_code=404)
+    data, ct = obj
+    return Response(data, media_type=ct or "image/jpeg",
+                    headers={"Cache-Control": "public, max-age=31536000, immutable"})
 
 
 def _uid(user) -> uuid.UUID:
@@ -126,15 +197,24 @@ async def shelf_set_cover(request):
             return JSONResponse({"error": "cover must be an http(s) image link"}, status_code=400)
 
     if auth.is_admin(user):
-        # Canonical edit: write the shared catalog cover for everyone, and clear this admin's
-        # own per-shelf override so they see the canonical image too. Works on any catalog
-        # book, not just one on the admin's shelf.
+        # Canonical edit: write the shared catalog cover for everyone. Snapshot the image into
+        # R2 and serve it from our own domain so the cover survives the source link rotting —
+        # if R2 isn't configured, fall back to storing the raw URL (a live hotlink).
+        stored = url or None
+        if url and not url.startswith("/api/library/cover/") and r2.configured():
+            img, err = await _fetch_cover_image(url)
+            if err:
+                return JSONResponse({"error": f"couldn't use that image — {err}"}, status_code=400)
+            data, ct = img
+            await r2.put_bytes_async(f"covers/{exid}", data, ct)
+            stored = f"/api/library/cover/{exid}?v={int(time.time())}"  # ?v busts the immutable cache
+        # Clear this admin's own per-shelf override so they see the canonical image too.
         await db.execute(
             "update library_items set cover_url = null where user_id = $1 and extraction_id = $2",
             _uid(user), exid)
         row = await db.fetchrow(
             "update library_extractions set cover_url = $2, updated_at = now() where id = $1 returning cover_url as cover",
-            exid, (url or None))
+            exid, stored)
         if not row:
             return JSONResponse({"error": "no such book"}, status_code=404)
         return JSONResponse({"ok": True, "cover": row["cover"], "canonical": True})

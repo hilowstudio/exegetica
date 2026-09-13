@@ -64,6 +64,31 @@ def _head(object_key: str) -> dict | None:
         return None
 
 
+def _put_bytes(object_key: str, data: bytes, content_type: str) -> None:
+    _get_client().put_object(
+        Bucket=_bucket(), Key=object_key, Body=data, ContentType=content_type,
+        CacheControl="public, max-age=31536000, immutable",
+    )
+
+
+async def put_bytes_async(object_key: str, data: bytes, content_type: str) -> None:
+    """Store bytes durably (used to snapshot cover art so it survives the source link rotting)."""
+    await asyncio.to_thread(_put_bytes, object_key, data, content_type)
+
+
+def _get_object(object_key: str):
+    try:
+        r = _get_client().get_object(Bucket=_bucket(), Key=object_key)
+        return r["Body"].read(), (r.get("ContentType") or "image/jpeg")
+    except Exception:  # noqa: BLE001
+        return None
+
+
+async def get_object_async(object_key: str):
+    """Return (bytes, content_type) for a stored object, or None."""
+    return await asyncio.to_thread(_get_object, object_key)
+
+
 def _get_bytes(object_key: str) -> bytes | None:
     try:
         r = _get_client().get_object(Bucket=_bucket(), Key=object_key)

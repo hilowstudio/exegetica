@@ -551,6 +551,7 @@ app = Starlette(
         Route("/api/library/catalog", library_store.catalog_search, methods=["GET"]),
         Route("/api/library/shelf/{id}", library_store.shelf_remove, methods=["DELETE"]),
         Route("/api/library/shelf/{id}/cover", library_store.shelf_set_cover, methods=["POST"]),
+        Route("/api/library/cover/{id}", library_store.cover_serve, methods=["GET"]),
         Route("/api/library/extract", library_store.extract_request, methods=["POST"]),
         Route("/api/library/extract/{id}", library_store.extract_status, methods=["GET"]),
         Route("/api/library/extraction/{id}", library_store.extraction_detail, methods=["GET"]),
