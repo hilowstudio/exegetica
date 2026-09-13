@@ -549,7 +549,14 @@ function openChat(id){
   history.forEach(m=>{
     const b=addMsg(m.role);
     if(m.role==="user")b.innerHTML="<div class='prose'>"+renderMarkdown(m.content)+"</div>";
-    else{const pr=document.createElement("div");pr.className="prose";pr.innerHTML=renderMarkdown(m.content);b.appendChild(pr);addCopy(b,m.content);}
+    else{
+      if(Array.isArray(m.tools)&&m.tools.length){
+        const tb=document.createElement("div");tb.className="tools";
+        m.tools.forEach(t=>{const el=document.createElement("div");el.className="tool "+(t.is_error?"error":"done");
+          el.innerHTML="<span class='ic'></span><span>"+(t.name||"tool")+"</span>";tb.appendChild(el);});
+        b.appendChild(tb);
+      }
+      const pr=document.createElement("div");pr.className="prose";pr.innerHTML=renderMarkdown(m.content);b.appendChild(pr);addCopy(b,m.content);}
   });
   titleEl.textContent=c.title;renderChatList();closeSide();scroll();
 }
@@ -665,7 +672,7 @@ async function send(text){
   const thinkEl=document.createElement("div");thinkEl.className="thinking";thinkEl.style.display="none";bubble.appendChild(thinkEl);
   const prose=document.createElement("div");prose.className="prose";bubble.appendChild(prose);
   const caret=document.createElement("span");caret.className="caret";prose.appendChild(caret);
-  let raw="",thinkBuf="";const toolEls={};
+  let raw="",thinkBuf="";const toolEls={};const turnTools=[];
 
   function paint(){prose.innerHTML=renderMarkdown(raw);prose.appendChild(caret);scroll();}
 
@@ -687,7 +694,8 @@ async function send(text){
           if(!toolEls[ev.name]){const t=document.createElement("div");t.className="tool running";
             t.innerHTML="<span class='ic'></span><span>"+ev.name+"</span>";toolsBox.appendChild(t);toolEls[ev.name]=t;}
         }
-        else if(ev.type==="tool_done"){const t=toolEls[ev.name];if(t){t.className="tool "+(ev.error?"error":"done");}}
+        else if(ev.type==="tool_done"){const t=toolEls[ev.name];if(t){t.className="tool "+(ev.error?"error":"done");}
+          turnTools.push({name:ev.name,input:ev.input||{},output:ev.output||"",is_error:!!ev.error});}
         else if(ev.type==="notice"){const n=document.createElement("div");n.className="notice";n.textContent=ev.message;bubble.insertBefore(n,prose);scroll();}
         else if(ev.type==="safety"){openHelp(ev.resources,"You matter, and you don't have to carry this alone. These people can help right now — free and private. Please also tell a parent, pastor, teacher, or friend you trust.");}
         else if(ev.type==="error"){raw+="\n\n**Error:** "+ev.message;paint();}
@@ -695,12 +703,16 @@ async function send(text){
       }
     }
     caret.remove();
-    history.push({role:"assistant",content:raw||"(no response)"});
+    const amsg={role:"assistant",content:raw||"(no response)"};
+    if(turnTools.length)amsg.tools=turnTools;
+    history.push(amsg);
     addCopy(bubble,raw||"");
     persistCurrent();
   }catch(e){
     caret.remove();prose.innerHTML=renderMarkdown(raw+"\n\n**Connection error:** "+e.message);
-    history.push({role:"assistant",content:raw});persistCurrent();
+    const amsg={role:"assistant",content:raw};
+    if(turnTools.length)amsg.tools=turnTools;
+    history.push(amsg);persistCurrent();
   }finally{busy=false;sendBtn.disabled=false;input.focus();}
 }
 

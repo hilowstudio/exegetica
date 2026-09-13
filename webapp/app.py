@@ -221,11 +221,16 @@ async def chat(request):
     model = body.get("model", "")
     api_key = (body.get("api_key") or "").strip() or None
     incoming = body.get("messages", [])
-    messages = [
-        {"role": m["role"], "content": m["content"]}
-        for m in incoming
-        if m.get("content") and m.get("role") in ("user", "assistant")
-    ]
+    messages = []
+    for m in incoming:
+        if not (m.get("content") and m.get("role") in ("user", "assistant")):
+            continue
+        msg = {"role": m["role"], "content": m["content"]}
+        # Carry the provider-neutral tool exchange so providers.run can rehydrate
+        # the model's own earlier tool calls + results (see providers._hist_tools).
+        if m["role"] == "assistant" and isinstance(m.get("tools"), list) and m["tools"]:
+            msg["tools"] = m["tools"]
+        messages.append(msg)
     if not messages:
         return JSONResponse({"error": "no messages"}, status_code=400)
 

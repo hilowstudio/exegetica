@@ -96,6 +96,125 @@ def _openai_tools(mcp_tools: list[dict]) -> list[dict]:
     ]
 
 
+# ---------------------------------------------------------------------------
+# Cross-turn tool memory
+#
+# The browser stores each assistant turn as {role, content, tools?} where `tools`
+# is a provider-NEUTRAL list of the tools that ran during that turn:
+#   [{"name", "input": {...}, "output": "...", "is_error": bool}, ...]
+# On the next request we rehydrate those into each provider's native tool turns,
+# so the model actually sees its own earlier tool calls + results (and can build
+# on them) instead of a transcript with the tool activity amputated.
+#
+# We cap each stored output so the persisted chat blob can't grow without bound;
+# the LIVE turn always feeds the model the FULL tool output — only the copy we
+# stream back for persistence is capped.
+# ---------------------------------------------------------------------------
+_TOOL_OUTPUT_CAP = 4000
+
+
+def _cap(text: str, n: int = _TOOL_OUTPUT_CAP) -> str:
+    text = text or ""
+    return text if len(text) <= n else text[:n] + "\n…[truncated]"
+
+
+def _hist_tools(m: dict) -> list[dict]:
+    return m.get("tools") or [] if m.get("role") == "assistant" else []
+
+
+def _anthropic_messages(history: list[dict]) -> list[dict]:
+    """Neutral history -> Anthropic message list, reconstructing tool_use/tool_result."""
+    out: list[dict] = []
+    for idx, m in enumerate(history):
+        if m.get("role") == "user":
+            out.append({"role": "user", "content": m["content"]})
+            continue
+        content = m.get("content")
+        if not isinstance(content, str):  # already native (defensive) — pass through
+            out.append({"role": "assistant", "content": content})
+            continue
+        tools = _hist_tools(m)
+        blocks: list[dict] = []
+        if content:
+            blocks.append({"type": "text", "text": content})
+        for i, t in enumerate(tools):
+            blocks.append({"type": "tool_use", "id": f"h{idx}_{i}",
+                           "name": t.get("name") or "tool", "input": t.get("input") or {}})
+        if not blocks:
+            continue
+        out.append({"role": "assistant", "content": blocks})
+        if tools:
+            out.append({"role": "user", "content": [
+                {"type": "tool_result", "tool_use_id": f"h{idx}_{i}",
+                 "content": t.get("output") or "", "is_error": bool(t.get("is_error"))}
+                for i, t in enumerate(tools)
+            ]})
+    return _merge_user_runs(out)
+
+
+def _merge_user_runs(msgs: list[dict]) -> list[dict]:
+    """Fold consecutive user turns into one (a reconstructed tool_result turn is
+    followed by the next real user turn) so message roles stay well-formed."""
+    def as_blocks(c):
+        if isinstance(c, str):
+            return [{"type": "text", "text": c}] if c else []
+        return list(c)
+
+    merged: list[dict] = []
+    for m in msgs:
+        if merged and m["role"] == "user" and merged[-1]["role"] == "user":
+            merged[-1] = {"role": "user",
+                          "content": as_blocks(merged[-1]["content"]) + as_blocks(m["content"])}
+        else:
+            merged.append(dict(m))
+    return merged
+
+
+def _responses_input(history: list[dict]) -> list[dict]:
+    """Neutral history -> OpenAI Responses input items (function_call + output)."""
+    items: list[dict] = []
+    for idx, m in enumerate(history):
+        if m.get("role") == "user":
+            items.append({"role": "user", "content": m["content"]})
+            continue
+        content = m.get("content")
+        if isinstance(content, str) and content:
+            items.append({"role": "assistant", "content": content})
+        for i, t in enumerate(_hist_tools(m)):
+            cid = f"h{idx}_{i}"
+            items.append({"type": "function_call", "call_id": cid,
+                          "name": t.get("name") or "tool",
+                          "arguments": json.dumps(t.get("input") or {})})
+            items.append({"type": "function_call_output", "call_id": cid,
+                          "output": t.get("output") or ""})
+    return items
+
+
+def _chat_messages(history: list[dict]) -> list[dict]:
+    """Neutral history -> OpenAI-compatible chat messages (tool_calls + role:tool)."""
+    msgs: list[dict] = []
+    for idx, m in enumerate(history):
+        if m.get("role") == "user":
+            msgs.append({"role": "user", "content": m["content"]})
+            continue
+        content = m.get("content")
+        tools = _hist_tools(m)
+        if not tools:
+            msgs.append({"role": "assistant", "content": content})
+            continue
+        msgs.append({"role": "assistant",
+                     "content": content if isinstance(content, str) and content else None,
+                     "tool_calls": [
+                         {"id": f"h{idx}_{i}", "type": "function",
+                          "function": {"name": t.get("name") or "tool",
+                                       "arguments": json.dumps(t.get("input") or {})}}
+                         for i, t in enumerate(tools)]})
+        for i, t in enumerate(tools):
+            msgs.append({"role": "tool", "tool_call_id": f"h{idx}_{i}",
+                         "content": t.get("output") or ""})
+    return msgs
+
+
 def _attempt(cfg, api_key, model, system_text, history, mcp):
     """One streaming attempt on a single model (returns an async generator)."""
     kind = cfg["kind"]
@@ -153,7 +272,7 @@ async def _run_anthropic(api_key, model, system_text, history, mcp):
 
     client = AsyncAnthropic(api_key=api_key) if api_key else AsyncAnthropic()
     system = [{"type": "text", "text": system_text, "cache_control": {"type": "ephemeral"}}]
-    messages = [{"role": m["role"], "content": m["content"]} for m in history]
+    messages = _anthropic_messages(history)
 
     try:
         for _turn in range(MAX_TOOL_TURNS):
@@ -184,7 +303,8 @@ async def _run_anthropic(api_key, model, system_text, history, mcp):
                 out, is_error = await mcp.call(block.name, block.input)
                 tool_results.append({"type": "tool_result", "tool_use_id": block.id,
                                      "content": out, "is_error": is_error})
-                yield {"type": "tool_done", "name": block.name, "error": is_error}
+                yield {"type": "tool_done", "name": block.name, "input": block.input,
+                       "output": _cap(out), "error": is_error}
             messages.append({"role": "user", "content": tool_results})
     except anthropic.APIStatusError as e:
         yield {"type": "error", "message": f"Anthropic API error {e.status_code}: {getattr(e, 'message', str(e))}"}
@@ -212,8 +332,9 @@ async def _run_openai_responses(cfg, api_key, model, system_text, history, mcp):
     tools = [{"type": "function", "name": t["name"], "description": t["description"],
               "parameters": t["input_schema"]} for t in mcp.tools]
     reasoning = {"effort": cfg.get("reasoning_effort", "medium")}
-    # Stateless multi-turn: resend the growing input list each turn.
-    input_list: list = [{"role": m["role"], "content": m["content"]} for m in history]
+    # Stateless multi-turn: resend the growing input list each turn. Rehydrate any
+    # tool activity from earlier turns so the model sees its own prior calls.
+    input_list: list = _responses_input(history)
 
     try:
         for _turn in range(MAX_TOOL_TURNS):
@@ -249,7 +370,8 @@ async def _run_openai_responses(cfg, api_key, model, system_text, history, mcp):
                 out, is_error = await mcp.call(it.name, args)
                 input_list.append({"type": "function_call_output",
                                    "call_id": it.call_id, "output": out})
-                yield {"type": "tool_done", "name": it.name, "error": is_error}
+                yield {"type": "tool_done", "name": it.name, "input": args,
+                       "output": _cap(out), "error": is_error}
     except openai.APIStatusError as e:
         yield {"type": "error", "message": f"{cfg['label']} API error {e.status_code}: {getattr(e, 'message', str(e))}"}
     except openai.APIConnectionError:
@@ -272,7 +394,7 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp):
     client = AsyncOpenAI(api_key=api_key, base_url=cfg["base_url"])
     tools = _openai_tools(mcp.tools)
     messages = [{"role": "system", "content": system_text}]
-    messages += [{"role": m["role"], "content": m["content"]} for m in history]
+    messages += _chat_messages(history)
 
     extra = cfg.get("extra_params", {})
     try:
@@ -323,7 +445,8 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp):
                     args = {}
                 out, is_error = await mcp.call(c["name"], args)
                 messages.append({"role": "tool", "tool_call_id": c["id"], "content": out})
-                yield {"type": "tool_done", "name": c["name"], "error": is_error}
+                yield {"type": "tool_done", "name": c["name"], "input": args,
+                       "output": _cap(out), "error": is_error}
     except openai.APIStatusError as e:
         yield {"type": "error", "message": f"{cfg['label']} API error {e.status_code}: {getattr(e, 'message', str(e))}"}
     except openai.APIConnectionError:
