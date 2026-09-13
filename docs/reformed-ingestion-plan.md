@@ -79,6 +79,21 @@ Two problems this also retires for free:
   Puritan treatises become grounded, browsable derived works (summary/themes/objectives).
 - **Confessions `[Sym]` → `get_confession`**: `Creeds.json` loads as structured documents.
 
+## Patristic full works → Living Library (decided 2026-09-13)
+The MCP already covers the fathers verse-keyed (`patristic_catena`, 85,654 excerpts / 302 fathers),
+so **full patristic works go to the teacher Living Library** (browsable derived works), **not** a
+duplicate MCP table. Source choice, after evaluation: **take them as the patristic slice of the
+Phase B `ccel-paragraphs` pull** (already per-`title`/`author`, English, with `refs`) — do *not*
+build a bespoke splitter. Rejected sources: `ntwkst/patristics` (Portuguese, not English) and
+`gregorycrane/nicenefathers` (English TEI but work boundaries are only in `<head>` text → needs
+one-off heuristics; and it's CC BY-SA anyway, same class as `ccel-paragraphs` but harder to split).
+
+## Phase A status (done)
+- **Confessions → MCP:** `scripts/import_creeds_json.py` added **21 net-new** PD confessions to
+  `historical_documents` (get_confession: 21 → 42 docs), dedup-verified, PD-gated. Local-ingest path
+  proven. (Live tool serves them after an MCP restart — DB is opened read-only/immutable.)
+- **Fathers:** routed to the Living Library via Phase B (above), not ingested standalone.
+
 ## Revised build order
 1. **Phase A — prove the local-ingest path** on the smallest, cleanest sets:
    - `Creeds.json` → expand `get_confession` (21 → 40+).
