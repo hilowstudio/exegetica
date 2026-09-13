@@ -11,7 +11,13 @@ import asyncio
 
 import httpx
 
-from webapp.sources.matching import BROWSER_UA, author_last_name, normalize, score_title_author
+from webapp.sources.matching import (
+    BROWSER_UA,
+    author_last_name,
+    author_tokens,
+    normalize,
+    score_title_author,
+)
 from webapp.sources.text_processing import strip_gutenberg_boilerplate
 
 _RETRY_STATUS = {429, 500, 502, 503, 504}
@@ -70,6 +76,9 @@ async def discover(meta: dict) -> dict | None:
     # alone (Beowulf, The Epic of Gilgamesh).
     if want_author in {"anonymous", "unknown", "anon", "various", "anonymous anonymous"}:
         want_author = None
+    # Token-overlap author match tolerates pre-modern name shapes ("Augustine of Hippo",
+    # "Thomas Aquinas") that a surname-only test misses; None → title-only (placeholders).
+    want_tokens = author_tokens(authors[0]) if (authors and want_author) else None
 
     async with httpx.AsyncClient(timeout=15, headers={"User-Agent": BROWSER_UA}, follow_redirects=True) as c:
         r = await _get_with_retry(c, _GUTENDEX, params={"search": query})
@@ -80,7 +89,8 @@ async def discover(meta: dict) -> dict | None:
     best, best_rank = None, None
     for b in results:
         cand_authors = [a.get("name") for a in (b.get("authors") or [])]
-        score = score_title_author(b.get("title"), cand_authors, want_title, want_author)
+        score = score_title_author(b.get("title"), cand_authors, want_title, want_author,
+                                   want_author_tokens=want_tokens)
         if score is None:
             continue
         url = _pick_plain_text_url(b.get("formats") or {})

@@ -39,20 +39,41 @@ def author_last_name(name: str | None) -> str:
     return parts[-1] if parts else ""
 
 
+# Honorifics, particles, and byname connectors that carry no identity — dropped so that
+# "Augustine of Hippo" and a catalog's "Augustine, Saint, Bishop of Hippo" still overlap.
+_AUTHOR_STOP = {
+    "of", "the", "a", "an", "saint", "st", "san", "santa", "sir", "dr", "mr", "mrs", "ms",
+    "jr", "sr", "junior", "senior", "elder", "younger", "von", "van", "de", "del", "della",
+    "di", "da", "la", "le", "du", "bishop", "archbishop", "pope", "reverend", "rev",
+    "father", "fr", "brother", "venerable", "blessed",
+}
+
+
+def author_tokens(name: str | None) -> set[str]:
+    """Identity-bearing name tokens (≥3 chars, honorifics/particles dropped), for matching
+    across cataloging conventions — "Thomas Aquinas" vs "Thomas, Aquinas, Saint",
+    "Augustine of Hippo" vs "Augustine, Saint, Bishop of Hippo"."""
+    return {t for t in normalize(name).split() if len(t) >= 3 and t not in _AUTHOR_STOP}
+
+
 def score_title_author(
     candidate_title: str | None,
     candidate_authors: list[str] | None,
     want_title_norm: str,
     want_author_last: str | None,
+    want_author_tokens: set[str] | None = None,
 ) -> float | None:
     """Score a candidate against the requested title/author. Higher = better; None
     when it is NOT a genuine match.
 
     - Title: normalized containment in EITHER direction (catalogs carry subtitles),
       with a 3-char minimum so a 1-2 char overlap can't pass.
-    - Author (only when supplied): the requested surname must appear among the
-      candidate authors, else reject — this blocks a wrong-author same-title work.
-    Score = exact-title(2) + author-match(1) − small length-distance penalty.
+    - Author (only when supplied): when `want_author_tokens` is given, at least one
+      identity-bearing name token must be shared with the candidate authors (robust to
+      "Augustine of Hippo" vs "Augustine, Saint, Bishop of Hippo"); otherwise the older
+      surname test is used. Either way a mismatch rejects, blocking a wrong-author
+      same-title work. A surname that also matches earns a small ranking bonus.
+    Score = exact-title(2) + author-match(1, +0.5 surname) − small length penalty.
     """
     t = normalize(candidate_title)
     if not t or not want_title_norm:
@@ -62,7 +83,16 @@ def score_title_author(
         return None
 
     author_score = 0
-    if want_author_last:
+    if want_author_tokens:
+        cand_tokens: set[str] = set()
+        for a in (candidate_authors or []):
+            cand_tokens |= author_tokens(a)
+        if not (want_author_tokens & cand_tokens):
+            return None
+        author_score = 1
+        if want_author_last and want_author_last in cand_tokens:  # exact surname → rank higher
+            author_score += 0.5
+    elif want_author_last:
         last_names = [ln for ln in (author_last_name(a) for a in (candidate_authors or [])) if ln]
         author_ok = any(
             ln == want_author_last or want_author_last in ln or ln in want_author_last
