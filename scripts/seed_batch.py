@@ -41,7 +41,23 @@ from dotenv import load_dotenv  # noqa: E402
 # session (override=False's default) would otherwise silently shadow the real key.
 load_dotenv(_ROOT / ".env", override=True)
 
-from webapp import db, extraction as EX  # noqa: E402
+import httpx  # noqa: E402
+
+from webapp import db, extraction as EX, library as _lib  # noqa: E402
+
+_HTTP: "httpx.AsyncClient | None" = None
+
+
+async def _cover_for(meta: dict) -> "str | None":
+    """Resolve cover art (Google Books → Open Library) for a book being persisted."""
+    global _HTTP
+    if _HTTP is None:
+        _HTTP = httpx.AsyncClient(timeout=15.0)
+    try:
+        authors = meta.get("authors") or []
+        return await _lib.resolve_cover(_HTTP, meta.get("title", ""), authors[0] if authors else "")
+    except Exception:  # noqa: BLE001
+        return None
 from webapp.sources import registry  # noqa: E402
 from webapp.sources import text_processing as TP  # noqa: E402
 
@@ -190,15 +206,17 @@ async def persist(book: dict, derivative: dict, kept: list[dict]) -> str:
     q = EX.compute_quality(book["text"], sections)
     derivative = dict(derivative or {})
     derivative["table_of_contents"] = [{"n": s["section_number"], "title": s["title"]} for s in sections]
+    cover = await _cover_for(meta)  # Google Books → Open Library
     await db.execute(
         """update library_extractions set
              kind='book', derivative=$2, public_domain=true, us_clear=$3, grounding='source_text',
              source_meta=$4, canonical_source=$5, canonical_tier=$6, quality_score=$7,
              full_text = case when $3 then $8 else null end, full_text_raw=null,
+             cover_url = coalesce($9, cover_url),
              status='extracted', extracted_at=now(), updated_at=now()
            where id=$1""",
         exid, derivative, book["us_clear"], {"source": book["source"], "source_id": book["source_id"]},
-        book["source"], EX._TRUSTED_SOURCE_TIER, q["score"], book["text"],
+        book["source"], EX._TRUSTED_SOURCE_TIER, q["score"], book["text"], cover,
     )
     await db.execute("delete from library_sections where extraction_id=$1", exid)
     for s in sections:

@@ -8,6 +8,7 @@ keyless iTunes Search API (the same source Podcatch uses).
 
 import asyncio
 import os
+import re
 from urllib.parse import urlparse
 
 import httpx
@@ -79,6 +80,62 @@ async def _googlebooks(client: httpx.AsyncClient, q: str, limit: int) -> list[di
         return out
     except Exception:
         return []
+
+
+async def _gb_cover(client: httpx.AsyncClient, title: str, author: str) -> str | None:
+    """Best cover thumbnail for one work from Google Books (keyless works; the key just
+    raises quota). Queries by intitle/inauthor for a precise match on the seeded book."""
+    q = f'intitle:"{title}"' + (f' inauthor:"{author}"' if author else "")
+    params = {"q": q, "maxResults": 5, "printType": "books", "country": "US"}
+    key = os.environ.get("GOOGLE_BOOKS_API_KEY")
+    if key:
+        params["key"] = key
+    try:
+        r = await client.get(_GB_SEARCH, headers=_UA, params=params)
+        if r.status_code != 200:
+            return None
+        for v in (r.json().get("items") or []):
+            img = ((v.get("volumeInfo") or {}).get("imageLinks") or {}).get("thumbnail")
+            if img:
+                img = img.replace("http://", "https://").replace("&edge=curl", "")
+                return re.sub(r"zoom=\d+", "zoom=1", img)
+    except Exception:  # noqa: BLE001
+        return None
+    return None
+
+
+async def _ol_cover(client: httpx.AsyncClient, title: str, author: str) -> str | None:
+    """Fallback cover from Open Library's cover service (large size)."""
+    params = {"title": title, "limit": 1, "fields": "cover_i"}
+    if author:
+        params["author"] = author
+    try:
+        r = await client.get(_OL_SEARCH, headers=_UA, params=params)
+        if r.status_code != 200:
+            return None
+        docs = r.json().get("docs") or []
+        if docs and docs[0].get("cover_i"):
+            return f"https://covers.openlibrary.org/b/id/{docs[0]['cover_i']}-L.jpg"
+    except Exception:  # noqa: BLE001
+        return None
+    return None
+
+
+async def resolve_cover(client: httpx.AsyncClient, title: str, author: str = "") -> str | None:
+    """Cover-art URL for a seeded book: Google Books first, Open Library as fallback.
+    Tries title+author for precision, then falls back to a title-only query (recovers works
+    whose stored author string doesn't match the catalog's, e.g. abbreviated first names).
+    Returns None when neither source has one. Reusable by the backfill and the seeder."""
+    title = (title or "").strip()
+    author = (author or "").strip()
+    if not title:
+        return None
+    passes = [(title, author)] + ([(title, "")] if author else [])
+    for t, a in passes:
+        url = await _gb_cover(client, t, a) or await _ol_cover(client, t, a)
+        if url:
+            return url
+    return None
 
 
 async def search_books(q: str, limit: int = 10) -> list[dict]:
