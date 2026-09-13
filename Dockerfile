@@ -11,8 +11,9 @@ COPY pyproject.toml README.md NOTICE LICENSE ./
 COPY src ./src
 RUN pip install --no-cache-dir ".[webapp]"
 
-# Bake in the prebuilt database (read-only at runtime) and the web front-end.
-COPY db/study_bible.db ./db/study_bible.db
+# The web front-end. The SQLite DBs (study_bible.db, theology.db) are NOT baked in — they are
+# distributed via R2 and boot-fetched to the Fly volume (/data) by webapp.app._ensure_r2_dbs,
+# which keeps the image small and deploys fast.
 COPY webapp ./webapp
 
 # Runtime data the web app reads from the project root:
@@ -22,7 +23,7 @@ COPY webapp ./webapp
 COPY resource-generators.yaml ./resource-generators.yaml
 COPY docs ./docs
 
-ENV STUDY_BIBLE_DB=/app/db/study_bible.db \
+ENV STUDY_BIBLE_DB=/data/study_bible.db \
     PORT=8100 \
     PYTHONUNBUFFERED=1
 # ANTHROPIC_API_KEY is provided at deploy time as a secret, never baked in.

@@ -10,7 +10,7 @@ swap_size_mb = 512
 [build]
 [env]
   PORT = '8100'
-  STUDY_BIBLE_DB = '/app/db/study_bible.db'
+  STUDY_BIBLE_DB = '/data/study_bible.db'
   THEOLOGY_DB = '/data/theology.db'
 
 # Persistent volume for the theology grounding corpus (boot-fetched from R2, version-gated).
@@ -33,7 +33,7 @@ swap_size_mb = 512
   [[http_service.checks]]
     interval = '30s'
     timeout = '5s'
-    grace_period = '120s'   # room for the one-time first-boot theology.db fetch from R2
+    grace_period = '180s'   # room for the one-time first-boot fetch of the DBs from R2 to /data
     method = 'GET'
     path = '/api/config'
 

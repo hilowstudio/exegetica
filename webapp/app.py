@@ -481,21 +481,24 @@ async def revise_endpoint(request):
     )
 
 
-@contextlib.asynccontextmanager
-async def _ensure_theology_db():
-    """Boot-fetch the theology grounding DB from R2 onto the Fly volume if missing/stale, so the
-    MCP can ATTACH it locally. Version-gated (only re-downloads when the corpus changed); any
-    failure is non-fatal — grounding simply stays limited until it's present."""
-    path = os.environ.get("THEOLOGY_DB")
-    if not path or not r2.configured():
-        return
-    key = os.environ.get("THEOLOGY_DB_KEY", "theology/theology.db")
+# SQLite DBs distributed via R2 → the Fly volume: (env var holding the local path, R2 object key).
+# A DB is fetched only when R2 holds a version marker for it, so listing one here is a no-op until
+# it's actually published — safe to keep both.
+_R2_DBS = [
+    ("STUDY_BIBLE_DB", "study-bible/study_bible.db"),
+    ("THEOLOGY_DB", "theology/theology.db"),
+]
+
+
+async def _fetch_db_if_stale(name: str, path: str, key: str):
+    """Download one R2-distributed DB to `path` if missing or a newer version exists. Version-gated
+    against a small marker object; non-fatal on failure (the feature degrades, the app still boots)."""
     try:
         remote_ver = ((await r2.get_bytes_async(key + ".version")) or b"").decode().strip()
     except Exception:  # noqa: BLE001
         remote_ver = ""
     if not remote_ver:
-        return
+        return  # not published to R2 → leave whatever is on disk / in the image
     ver_path = path + ".version"
     local_ver = ""
     with contextlib.suppress(Exception):
@@ -503,9 +506,9 @@ async def _ensure_theology_db():
             with open(ver_path) as f:
                 local_ver = f.read().strip()
     if local_ver == remote_ver and os.path.exists(path):
-        logger.info("theology.db up to date (v%s)", remote_ver)
+        logger.info("%s up to date (v%s)", name, remote_ver)
         return
-    logger.info("theology.db: fetching v%s from R2…", remote_ver)
+    logger.info("%s: fetching v%s from R2…", name, remote_ver)
     try:
         os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
         tmp = path + ".tmp"
@@ -513,13 +516,24 @@ async def _ensure_theology_db():
         os.replace(tmp, path)
         with open(ver_path, "w") as f:
             f.write(remote_ver)
-        logger.info("theology.db ready (v%s)", remote_ver)
+        logger.info("%s ready (v%s)", name, remote_ver)
     except Exception as e:  # noqa: BLE001
-        logger.warning("theology.db fetch failed (grounding limited): %s", e)
+        logger.warning("%s fetch failed: %s", name, e)
 
 
+async def _ensure_r2_dbs():
+    """Boot-fetch the R2-distributed SQLite DBs onto the volume before the MCP starts."""
+    if not r2.configured():
+        return
+    for env_var, key in _R2_DBS:
+        path = os.environ.get(env_var)
+        if path:
+            await _fetch_db_if_stale(env_var, path, key)
+
+
+@contextlib.asynccontextmanager
 async def lifespan(app: Starlette):
-    await _ensure_theology_db()   # before the MCP starts, so it can attach the corpus
+    await _ensure_r2_dbs()   # before the MCP starts, so it can open/attach the DBs
     app.state.mcp = MCPBridge()
     await app.state.mcp.start()
     # Optional DB pool. A missing DATABASE_URL, or a connection failure, must never
