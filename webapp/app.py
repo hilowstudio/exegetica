@@ -32,7 +32,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import auth, calendar_views, course, course_views, curriculum, db, generator, library, library_store, memory, providers, safety, store
+from webapp import auth, calendar_views, course, course_views, curriculum, db, generator, library, library_store, memory, providers, r2, safety, store
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("study-bible-web")
@@ -482,7 +482,44 @@ async def revise_endpoint(request):
 
 
 @contextlib.asynccontextmanager
+async def _ensure_theology_db():
+    """Boot-fetch the theology grounding DB from R2 onto the Fly volume if missing/stale, so the
+    MCP can ATTACH it locally. Version-gated (only re-downloads when the corpus changed); any
+    failure is non-fatal — grounding simply stays limited until it's present."""
+    path = os.environ.get("THEOLOGY_DB")
+    if not path or not r2.configured():
+        return
+    key = os.environ.get("THEOLOGY_DB_KEY", "theology/theology.db")
+    try:
+        remote_ver = ((await r2.get_bytes_async(key + ".version")) or b"").decode().strip()
+    except Exception:  # noqa: BLE001
+        remote_ver = ""
+    if not remote_ver:
+        return
+    ver_path = path + ".version"
+    local_ver = ""
+    with contextlib.suppress(Exception):
+        if os.path.exists(path) and os.path.exists(ver_path):
+            with open(ver_path) as f:
+                local_ver = f.read().strip()
+    if local_ver == remote_ver and os.path.exists(path):
+        logger.info("theology.db up to date (v%s)", remote_ver)
+        return
+    logger.info("theology.db: fetching v%s from R2…", remote_ver)
+    try:
+        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+        tmp = path + ".tmp"
+        await r2.download_file_async(key, tmp)
+        os.replace(tmp, path)
+        with open(ver_path, "w") as f:
+            f.write(remote_ver)
+        logger.info("theology.db ready (v%s)", remote_ver)
+    except Exception as e:  # noqa: BLE001
+        logger.warning("theology.db fetch failed (grounding limited): %s", e)
+
+
 async def lifespan(app: Starlette):
+    await _ensure_theology_db()   # before the MCP starts, so it can attach the corpus
     app.state.mcp = MCPBridge()
     await app.state.mcp.start()
     # Optional DB pool. A missing DATABASE_URL, or a connection failure, must never

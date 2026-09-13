@@ -76,6 +76,24 @@ async def put_bytes_async(object_key: str, data: bytes, content_type: str) -> No
     await asyncio.to_thread(_put_bytes, object_key, data, content_type)
 
 
+def _upload_file(object_key: str, local_path: str, content_type: str) -> None:
+    # boto3 upload_file is multipart + streams from disk, so a multi-GB file never loads into RAM.
+    _get_client().upload_file(local_path, _bucket(), object_key, ExtraArgs={"ContentType": content_type})
+
+
+async def upload_file_async(object_key: str, local_path: str,
+                            content_type: str = "application/octet-stream") -> None:
+    await asyncio.to_thread(_upload_file, object_key, local_path, content_type)
+
+
+def _download_file(object_key: str, local_path: str) -> None:
+    _get_client().download_file(_bucket(), object_key, local_path)  # streams to disk, low memory
+
+
+async def download_file_async(object_key: str, local_path: str) -> None:
+    await asyncio.to_thread(_download_file, object_key, local_path)
+
+
 def _get_object(object_key: str):
     try:
         r = _get_client().get_object(Bucket=_bucket(), Key=object_key)
