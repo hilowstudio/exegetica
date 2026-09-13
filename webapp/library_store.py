@@ -93,12 +93,47 @@ async def shelf_get(request):
     if not db.ready():
         return JSONResponse({"error": "database unavailable"}, status_code=503)
     rows = await db.fetch(
-        """select li.extraction_id, e.kind, e.title, e.creator, e.cover_url, e.source_url, e.source_meta, e.status
+        """select li.extraction_id, e.kind, e.title, e.creator,
+                  coalesce(li.cover_url, e.cover_url) as cover_url,
+                  e.source_url, e.source_meta, e.status
            from library_items li join library_extractions e on e.id = li.extraction_id
            where li.user_id = $1 order by li.added_at desc""",
         _uid(user),
     )
     return JSONResponse({"items": [_to_client(r) for r in rows]})
+
+
+async def shelf_set_cover(request):
+    """Set (or clear) a per-shelf cover override for one of the user's books. Personal only —
+    never touches the shared catalog cover, so one teacher's choice can't rewrite it for all.
+    Body {cover}: an http(s) image URL, or empty/omitted to reset to the catalog cover."""
+    user = auth.current_user(request)
+    if not user:
+        return JSONResponse({"error": "authentication required"}, status_code=401)
+    if not db.ready():
+        return JSONResponse({"error": "database unavailable"}, status_code=503)
+    try:
+        exid = uuid.UUID(request.path_params["id"])
+    except (ValueError, KeyError):
+        return JSONResponse({"error": "bad id"}, status_code=400)
+    try:
+        body = await request.json()
+    except Exception:  # noqa: BLE001
+        body = {}
+    url = (body.get("cover") or body.get("cover_url") or "").strip()
+    if url:
+        if len(url) > 2048 or not re.match(r"^https?://", url, re.I):
+            return JSONResponse({"error": "cover must be an http(s) image link"}, status_code=400)
+    row = await db.fetchrow(
+        """update library_items li set cover_url = $3
+             from library_extractions e
+            where li.user_id = $1 and li.extraction_id = $2 and e.id = li.extraction_id
+        returning coalesce(li.cover_url, e.cover_url) as cover""",
+        _uid(user), exid, (url or None),
+    )
+    if not row:
+        return JSONResponse({"error": "not on your shelf"}, status_code=404)
+    return JSONResponse({"ok": True, "cover": row["cover"]})
 
 
 async def catalog_search(request):

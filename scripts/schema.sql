@@ -174,9 +174,11 @@ create table if not exists library_items (
     extraction_id uuid not null references library_extractions(id) on delete cascade,
     notes         text,
     tags          text[] not null default '{}',
+    cover_url     text,   -- per-shelf cover override; falls back to the catalog cover when null
     added_at      timestamptz not null default now(),
     unique (user_id, extraction_id)
 );
+alter table library_items add column if not exists cover_url text;
 create index if not exists library_items_user_idx on library_items(user_id);
 
 -- Async ingest/extraction jobs (executed by Inngest in serve mode; status kept
