@@ -113,14 +113,18 @@ async def catalog_search(request):
     rows = await db.fetch(
         """select e.id, e.title, e.creator, e.cover_url,
                   (select count(*) from library_sections   s where s.extraction_id=e.id) secs,
-                  (select count(*) from library_objectives  o where o.extraction_id=e.id and o.user_id is null) objs
+                  (select count(*) from library_objectives  o where o.extraction_id=e.id and o.user_id is null) objs,
+                  count(*) over() as total
            from library_extractions e
            where e.status='extracted' and e.kind='book'
              and ($1 = '' or e.title ilike '%'||$1||'%' or e.creator ilike '%'||$1||'%')
-           order by e.title limit 40""",
+           order by e.title limit 500""",
         q,
     )
-    return JSONResponse({"catalog": [
+    # `total` is the full match count before the row cap, so the UI's count reflects the
+    # whole ready library rather than however many rows this page returned.
+    total = rows[0]["total"] if rows else 0
+    return JSONResponse({"total": total, "catalog": [
         {"id": str(r["id"]), "type": "book", "title": r["title"] or "", "sub": r["creator"] or "",
          "cover": r["cover_url"], "sections": r["secs"], "objectives": r["objs"], "ready": True}
         for r in rows]})

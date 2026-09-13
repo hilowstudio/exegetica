@@ -1068,11 +1068,11 @@ $("search-results").addEventListener("click",function(e){
 $("search-cancel").addEventListener("click",function(){$("search-bg").classList.remove("open");});
 
 // ---------- browse the ready (seeded) library ----------
-var BROWSE=[], browseTimer=null;
+var BROWSE=[], BROWSE_TOTAL=0, browseTimer=null;
 function loadBrowseCount(){
   if(!AUTH.signed)return;
   fetch("/api/library/catalog",{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;}).then(function(d){
-    var n=(d&&d.catalog||[]).length, btn=$("browse-open"); if(!btn)return;
+    var n=(d&&typeof d.total==="number")?d.total:((d&&d.catalog||[]).length), btn=$("browse-open"); if(!btn)return;
     if(n>0){$("browse-count").textContent=n+" book"+(n===1?"":"s")+" built and ready to use";btn.hidden=false;}
   }).catch(function(){});
 }
@@ -1080,12 +1080,12 @@ function openBrowse(){$("browse-bg").classList.add("open");$("browse-q").value="
 function runBrowse(q){
   $("browse-grid").innerHTML='<div class="s-note">Loading…</div>';
   fetch("/api/library/catalog?q="+encodeURIComponent(q),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():{catalog:[]};}).then(function(d){
-    BROWSE=d.catalog||[];renderBrowse();
+    BROWSE=d.catalog||[];BROWSE_TOTAL=(typeof d.total==="number")?d.total:BROWSE.length;renderBrowse();
   }).catch(function(){$("browse-grid").innerHTML='<div class="s-note">Could not load.</div>';});
 }
 function renderBrowse(){
   var g=$("browse-grid"),c2=$("browse-count2");
-  if(c2)c2.textContent=BROWSE.length?(BROWSE.length+" ready"):"";
+  if(c2)c2.textContent=BROWSE_TOTAL?(BROWSE_TOTAL+" ready"+(BROWSE_TOTAL>BROWSE.length?(" · showing "+BROWSE.length):"")):"";
   if(!BROWSE.length){g.innerHTML='<div class="s-note">No ready books match.</div>';return;}
   g.innerHTML=BROWSE.map(function(x,i){
     var cover=x.cover?'<img src="'+esc(x.cover)+'" alt="" loading="lazy">':'<span class="bg-ph" style="--c:'+ACCENTS[i%ACCENTS.length]+'">'+esc(initials(x.title))+'</span>';
