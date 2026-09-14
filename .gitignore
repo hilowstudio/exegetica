@@ -48,3 +48,7 @@ Thumbs.db
 /High-School-Course-Catalog-26-27-1.pdf
 /YCS-SY26-27-Student-and-Family-Handbook-FINAL-PDF.pdf
 .seed_cache/
+
+# Local source EPUBs fed to the ingestion scripts (Ryle/Hodge/Owen, etc.) — public-domain
+# working copies, not repo source; the derived data ships via the R2-hosted SQLite DBs.
+*.epub
