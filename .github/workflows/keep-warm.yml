@@ -1,0 +1,29 @@
+name: Keep Exegetica warm
+
+# Pings the app on a schedule so Fly's scale-to-zero doesn't leave it cold when a real
+# user arrives (a cold start re-fetches the SQLite DBs from R2 and can 502 for a minute+).
+# NOTE: GitHub's scheduled runs are best-effort and often delayed 5-15 min under load, so
+# this reduces — but doesn't eliminate — cold-start 502s. The reliable (but always-on-cost)
+# alternative is min_machines_running = 1 in fly.toml.
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # every 5 minutes (GitHub may fire late / skip under load)
+  workflow_dispatch: {}      # allow manual "wake it now" runs
+
+# Never pile up overlapping pings if a run is slow (cold start).
+concurrency:
+  group: keep-warm
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping /api/config (wakes + warms the machine)
+        run: |
+          # Retry to ride out a cold start (DB re-fetch from R2 can take ~1-2 min).
+          curl -fsS --retry 6 --retry-all-errors --retry-delay 15 --max-time 120 \
+            -o /dev/null -w "warmed: HTTP %{http_code} in %{time_total}s\n" \
+            https://exegetica.app/api/config

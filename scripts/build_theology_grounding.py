@@ -33,13 +33,22 @@ _INVENTORY = _ROOT / ".seed_cache" / "ccel_titles.json"
 # Authors the MCP already serves, or that don't belong in a Reformed PD grounding treasury.
 DENY_AUTHORS = {
     "bible",                                             # translations (have)
-    "calvin", "henry", "jamieson", "gill", "barnes", "wesley",  # commentaries (have / [C]->MCP separately)
+    "calvin", "henry", "jamieson", "gill", "barnes",    # commentaries (in get_commentary)
     "nave",                                              # topical dict (have)
     "robertson", "robertson_at",                        # NON-PD (Word Pictures, renewed 1960)
     "macdonald", "tolstoy", "dostoevsky",               # fiction
     "gibbon", "renan", "harnack",                       # secular / liberal history
-    "chesterton",                                        # mixed, d.1936 (some works ©)
+    "chesterton",                                        # d.1936: fiction + some (c); PD works allow-listed
     "white",                                            # uncertain author
+}
+# Titles that override an author-level deny — specific PD, US-clear, theologically relevant works.
+ALLOW_TITLES = {
+    # G.K. Chesterton apologetics/theology, all first published <=1929 (US public domain). His
+    # fiction (Father Brown, The Man Who Was Thursday, …) stays denied, as does the 1933
+    # "St. Thomas Aquinas" (still under US copyright until 2029).
+    "Orthodoxy", "Heretics", "The Everlasting Man", "What's Wrong With the World",
+    "All Things Considered", "Eugenics and Other Evils", "The Defendant",
+    "The Superstition of Divorce",
 }
 # Title patterns to drop (translations, dictionaries, foreign-language Bibles).
 DENY_TITLE = re.compile(
@@ -54,6 +63,9 @@ def curated_from_inventory():
     keep = {}
     for title, v in inv.items():
         author = (v.get("author") or "").strip()
+        if title in ALLOW_TITLES:
+            keep[title] = v
+            continue
         if author in DENY_AUTHORS or DENY_TITLE.search(str(title)):
             continue
         keep[title] = v

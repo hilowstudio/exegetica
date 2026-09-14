@@ -94,6 +94,68 @@ one-off heuristics; and it's CC BY-SA anyway, same class as `ccel-paragraphs` bu
   proven. (Live tool serves them after an MCP restart — DB is opened read-only/immutable.)
 - **Fathers:** routed to the Living Library via Phase B (above), not ingested standalone.
 
+## Phase B & C status (done 2026-09-13)
+**Phase B landed as *grounding*, not the `[C]`/`[T]` MCP rows sketched above.** The `ccel-paragraphs`
+bulk pull (`scripts/ccel_inventory.py` → `build_theology_grounding.py` → `build_theology_vectors.py`
+→ `publish_db.py theology`) became a **separate `db/theology.db`**: **965 curated PD works /
+1,528,760 paragraphs**, FTS5 + sqlite-vec (model2vec `potion-retrieval-32M`), served by the
+**`search_theology`** MCP tool (hybrid BM25 + semantic). This is the "own the data / ground at call
+time" layer for chat + generators — CCEL is CC BY-SA so it grounds/derives, never republishes
+verbatim. The reference-tool (`get_commentary` `[C]`) and derivative-pipeline (`[T]`) shapes above
+were **not** built; grounding covers the need.
+
+**Phase C — the CC0 author sets — resolved by that pivot + one clean addition:**
+- **Owen** (37 works) and **Spurgeon** (76 works — sermon vols, Morning & Evening, Faith's Checkbook,
+  Puritan Catechism) were **already absorbed into `theology.db`** via the CCEL pull, so the
+  `eddyekofo94` Owen EPUBs and `lyteword/chspurgeon-*` sermon sets are **redundant** — skipped.
+- **Treasury of David** (`lyteword/chspurgeon-tod`, CC0) → **ingested as a verse-keyed `get_commentary`
+  source** (`spurgeon-treasury`, **2,576 rows**, all 150 Psalms incl. the split Psalm 119), which
+  grounding can't do (verse-addressable Spurgeon on the Psalms). Scripts:
+  `download_treasury.py` + `import_treasury.py`; registered in `parsers/commentaries.py`
+  (`COMMENTARIES`).
+- **J.C. Ryle — Expository Thoughts on the Gospels** (Adam's own PD EPUB; Ryle d.1900) → verse-keyed
+  `get_commentary` source (`ryle-expository`, **414 passage-keyed rows**, all four Gospels). Not on
+  Gutenberg, not on CCEL, no clean structured source online — the local EPUB was the clean path.
+  `scripts/import_ryle_epub.py` parses passage headers ("MARK 1:1-8") and strips the modernized-WEB
+  Scripture block the EPUB prints before each exposition (fuzzy word-overlap against bundled WEB).
+- **Charles Hodge — Commentary on Romans** (Adam's own PD EPUB; Hodge d.1878) → verse-keyed
+  `get_commentary` source (`hodge-romans`, **433 rows**, all 16 chapters). `scripts/import_hodge_romans.py`
+  keys off `<h3>` section headers ("ROMANS 1:1-17") to skip the `<p>` front-matter TOC, then splits
+  each section's dense body (30-75k chars) into a range-keyed ANALYSIS overview + one row per
+  "VERSE N." note — so a verse lookup returns the section overview plus Hodge's specific verse note,
+  not a truncated blob. Commentary sources: 6 → **9** (with Treasury + Ryle).
+
+**Grounding gaps closed (Phase C, second pass):** Wesley (Notes/Sermons/Journal) and Chesterton's
+pre-1930 apologetics (Orthodoxy, Heretics, The Everlasting Man, …) were wrongly/deliberately excluded
+from `theology.db`; curation widened (un-deny Wesley; `ALLOW_TITLES` for Chesterton PD works),
+appended incrementally via `append_theology_grounding.py` (+13 works / 30,936 paragraphs → **978
+works**), vectors rebuilt. **Hodge *Romans*** and **Ryle** were closed with Adam's own PD EPUBs (verse-keyed get_commentary,
+above). **Owen *Exposition of Hebrews* (7 vols)** was closed into **grounding** from Adam's EPUBs —
+Owen is far too verbose for verse-keyed get_commentary (Heb 1:3 alone ≈ 105k chars), so
+`scripts/import_owen_hebrews.py` ingests all 7 vols into theology.db (13,620 paragraphs → **985
+works**), tagging each verse-section paragraph with its Hebrews `refs` so `search_theology` surfaces
+Owen (author "John Owen") whenever the chat model grounds a Hebrews question. NON-CCEL source →
+re-run it + build_theology_vectors after any full theology.db rebuild. **Source comparison:** Adam's
+EPUBs vs the GitHub `eddyekofo94` set carry identical text (Heb 1:3 = 104,910 vs 104,904 chars) but
+Adam's are 10× smaller with clean bare-ref `<h3>` headers and no added editorial scaffolding — the
+easier shape. **Still with no clean source: Alford** (structured versions Logos-tainted) and
+**Bengel** — archive.org PD OCR only; awaiting Adam's own EPUBs or a decision to parse OCR.
+- **`sermonindex/early-church-fathers`** → **only the genuinely-new 3% ingested.** A dedup pass
+  against the existing 85k `patristic_catena` (HistoricalChristianFaith) found **97% exact-text
+  duplicates** / 85% same-father+verse; bulk-importing was rejected. But the residue —
+  **1,752 rows** kept via dedup-at-ingest (skip if text-dup OR same normalized-father+verse) — is
+  real content: only 2 are even soft near-dups, ~874 fall on verses the catena did not cover at all
+  (e.g. 2 Chr 30:1 → Pseudo-Tertullian), from Augustine/Bede/Theodoret + Pseudonymous works. Ingested
+  with `year`/`father_category` backfilled from our own vetted catena by normalized father, provenance
+  stamped via a **new `patristic_catena.source` column** (`historical-christian-faith` |
+  `sermonindex`), and get_church_fathers' footer made source-aware (CC BY 4.0 credits SermonIndex).
+  Scripts: `download_sermonindex.py` + `import_sermonindex_fathers.py` (idempotent; re-run replaces
+  only the sermonindex rows). Catena: 85,654 → **87,406**.
+
+**Deploy the Treasury + catena changes:** they edit `study_bible.db`, so go live via
+`scripts/publish_db.py study-bible` (uploads to R2 + version marker) → app restart re-fetches it onto
+the Fly volume; the MCP opens the DB read-only, so a restart is required.
+
 ## Revised build order
 1. **Phase A — prove the local-ingest path** on the smallest, cleanest sets:
    - `Creeds.json` → expand `get_confession` (21 → 40+).

@@ -1,6 +1,13 @@
 # Keep the Fly/Docker build context lean and secret-free. The image only needs
-# pyproject/README/NOTICE/LICENSE, src/, webapp/, and db/study_bible.db (see
-# Dockerfile). Everything else is excluded so it is never uploaded to the builder.
+# pyproject/README/NOTICE/LICENSE, src/, webapp/, docs/, and resource-generators.yaml
+# (see Dockerfile). The SQLite DBs are fetched from R2 at runtime, NOT baked in.
+# Everything else is excluded so it is never uploaded to the builder.
+
+# Local DB working copies (3+ GB) + ingestion caches + source EPUBs — fetched/derived,
+# never shipped in the image. (These live in the repo root during ingestion work.)
+db/
+.seed_cache/
+*.epub
 
 # Virtualenv, VCS, caches
 .venv/

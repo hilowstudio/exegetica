@@ -10,8 +10,10 @@ covering a given verse.
 
 from typing import Iterator
 
-# The six public-domain commentaries (id -> display name). Tyndale (CC BY) is
-# already covered by the Aquifer study notes, so it is not duplicated here.
+# Public-domain commentaries (id -> display name). Tyndale (CC BY) is already
+# covered by the Aquifer study notes, so it is not duplicated here. The six from
+# HelloAO come in via import_commentaries.py; Spurgeon's Treasury of David (a
+# verse-by-verse exposition of the Psalms) comes in via import_treasury.py.
 COMMENTARIES = {
     "john-gill": "John Gill's Exposition",
     "matthew-henry": "Matthew Henry's Commentary",
@@ -19,6 +21,9 @@ COMMENTARIES = {
     "adam-clarke": "Adam Clarke's Commentary",
     "john-calvin": "Calvin's Commentaries",
     "keil-delitzsch": "Keil & Delitzsch (Old Testament)",
+    "spurgeon-treasury": "Spurgeon — The Treasury of David (Psalms)",
+    "ryle-expository": "J.C. Ryle — Expository Thoughts on the Gospels",
+    "hodge-romans": "Charles Hodge — Commentary on Romans",
 }
 
 

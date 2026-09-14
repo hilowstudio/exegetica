@@ -100,19 +100,19 @@ def main(db_path: str | None, data_dir: str | None):
                 continue
             verse_end = ve if (ce == cs and ve is not None and ve >= vs) else vs
             batch.append((fname, category.get(fname), year, internal, cs, vs, verse_end,
-                          txt, stitle, surl))
+                          txt, stitle, surl, "historical-christian-faith"))
             count += 1
             if len(batch) >= 2000:
                 conn.executemany(
                     "INSERT INTO patristic_catena "
                     "(father_name, father_category, year, book, chapter, verse_start, verse_end, "
-                    "quote, source_title, source_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", batch)
+                    "quote, source_title, source_url, source) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", batch)
                 conn.commit(); batch = []
         if batch:
             conn.executemany(
                 "INSERT INTO patristic_catena "
                 "(father_name, father_category, year, book, chapter, verse_start, verse_end, "
-                "quote, source_title, source_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", batch)
+                "quote, source_title, source_url, source) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", batch)
             conn.commit()
 
         conn.execute("ANALYZE"); conn.commit()

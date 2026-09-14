@@ -103,6 +103,44 @@ BOOK_ABBREV_MAP = {
     "greek esther": "Esg", "additions to esther": "Esg", "esg": "Esg",
 }
 
+# OSIS book tokens as used in the theology.db `refs` column (Gen/Exod/Matt/1Cor/Heb/…) — distinct
+# from the internal codes above (Exo/Mat/1Co/…). Used by theology_by_ref + reference detection so a
+# book/verse question can surface the grounding work tagged to it. (osis, [names/abbrevs]).
+_OSIS_BOOKS = [
+    ("Gen", ["genesis", "gen"]), ("Exod", ["exodus", "exod", "ex"]), ("Lev", ["leviticus", "lev"]),
+    ("Num", ["numbers", "num"]), ("Deut", ["deuteronomy", "deut", "dt"]), ("Josh", ["joshua", "josh"]),
+    ("Judg", ["judges", "judg"]), ("Ruth", ["ruth"]),
+    ("1Sam", ["1 samuel", "1samuel", "1 sam", "1sam"]), ("2Sam", ["2 samuel", "2samuel", "2 sam", "2sam"]),
+    ("1Kgs", ["1 kings", "1kings", "1 kgs", "1kgs"]), ("2Kgs", ["2 kings", "2kings", "2 kgs", "2kgs"]),
+    ("1Chr", ["1 chronicles", "1chronicles", "1 chron", "1chr"]),
+    ("2Chr", ["2 chronicles", "2chronicles", "2 chron", "2chr"]),
+    ("Ezra", ["ezra"]), ("Neh", ["nehemiah", "neh"]), ("Esth", ["esther", "esth"]), ("Job", ["job"]),
+    ("Ps", ["psalms", "psalm", "ps", "psa"]), ("Prov", ["proverbs", "prov"]),
+    ("Eccl", ["ecclesiastes", "eccl", "eccles"]), ("Song", ["song of solomon", "song of songs", "song", "canticles"]),
+    ("Isa", ["isaiah", "isa"]), ("Jer", ["jeremiah", "jer"]), ("Lam", ["lamentations", "lam"]),
+    ("Ezek", ["ezekiel", "ezek"]), ("Dan", ["daniel", "dan"]), ("Hos", ["hosea", "hos"]),
+    ("Joel", ["joel"]), ("Amos", ["amos"]), ("Obad", ["obadiah", "obad"]), ("Jonah", ["jonah", "jon"]),
+    ("Mic", ["micah", "mic"]), ("Nah", ["nahum", "nah"]), ("Hab", ["habakkuk", "hab"]),
+    ("Zeph", ["zephaniah", "zeph"]), ("Hag", ["haggai", "hag"]), ("Zech", ["zechariah", "zech"]),
+    ("Mal", ["malachi", "mal"]),
+    ("Matt", ["matthew", "matt", "mt"]), ("Mark", ["mark", "mk"]), ("Luke", ["luke", "lk"]),
+    ("John", ["john", "jn"]), ("Acts", ["acts"]), ("Rom", ["romans", "rom"]),
+    ("1Cor", ["1 corinthians", "1corinthians", "1 cor", "1cor"]),
+    ("2Cor", ["2 corinthians", "2corinthians", "2 cor", "2cor"]),
+    ("Gal", ["galatians", "gal"]), ("Eph", ["ephesians", "eph"]), ("Phil", ["philippians", "phil"]),
+    ("Col", ["colossians", "col"]),
+    ("1Thess", ["1 thessalonians", "1thessalonians", "1 thess", "1thess"]),
+    ("2Thess", ["2 thessalonians", "2thessalonians", "2 thess", "2thess"]),
+    ("1Tim", ["1 timothy", "1timothy", "1 tim", "1tim"]), ("2Tim", ["2 timothy", "2timothy", "2 tim", "2tim"]),
+    ("Titus", ["titus"]), ("Phlm", ["philemon", "phlm", "philem"]), ("Heb", ["hebrews", "heb"]),
+    ("Jas", ["james", "jas"]), ("1Pet", ["1 peter", "1peter", "1 pet", "1pet"]),
+    ("2Pet", ["2 peter", "2peter", "2 pet", "2pet"]),
+    ("1John", ["1 john", "1john", "1 jn"]), ("2John", ["2 john", "2john", "2 jn"]),
+    ("3John", ["3 john", "3john", "3 jn"]), ("Jude", ["jude"]), ("Rev", ["revelation", "rev", "apocalypse"]),
+]
+_NAME_TO_OSIS = {name: osis for osis, names in _OSIS_BOOKS for name in names}
+_OSIS_TO_NAME = {osis: names[0] for osis, names in _OSIS_BOOKS}
+
 # Single-chapter books are conventionally cited by verse alone ("Jude 3" =
 # Jude 1:3, "Obadiah 15" = Obadiah 1:15). Internally they are stored with
 # chapter 1, so a bare "Book N" must be read as verse N of chapter 1.
@@ -300,6 +338,36 @@ class StudyBibleDB:
             "order by v.distance"
         )
         return await self._fetchall(sql, [q8, max(1, min(int(limit or 8), 25))])
+
+    async def theology_by_ref(self, osis_book: str, chapter: int | None = None,
+                              verse: int | None = None, limit: int = 6) -> list[dict]:
+        """Passages tagged (in `refs`) with a given Scripture reference — the bridge that makes a
+        book/verse question surface the work devoted to it (e.g. 'Hebrews' -> Owen's Exposition).
+        Dedicated commentaries (whose title names the book) rank first, then by document order."""
+        if not getattr(self, "has_theology", False) or not osis_book:
+            return []
+        # refs are JSON like ["Bible:Heb.1.3"] / ["Bible:Heb.1.1-Heb.1.2"]; match by specificity.
+        if verse is not None and chapter is not None:
+            like = f'%"Bible:{osis_book}.{chapter}.{verse}%'
+        elif chapter is not None:
+            like = f'%"Bible:{osis_book}.{chapter}.%'
+        else:
+            like = f'%"Bible:{osis_book}.%'
+        # One representative passage per work, so the *set* of works devoted to this reference
+        # surfaces (Owen's Exposition among the other Hebrews commentaries), dedicated works
+        # (whose title names the book) first.
+        book_word = _OSIS_TO_NAME.get(osis_book, osis_book).lower()
+        sql = (
+            "select w.author, w.title, t.text, t.refs, t.work_id from ("
+            "  select id, work_id, text, refs, "
+            "         row_number() over (partition by work_id order by id) rn "
+            "  from theology.theology_texts where refs like ?"
+            ") t join theology.theology_works w on w.work_id = t.work_id "
+            "where t.rn = 1 "
+            "order by (case when lower(w.title) like ? then 0 else 1 end), t.work_id "
+            "limit ?"
+        )
+        return await self._fetchall(sql, [like, f"%{book_word}%", max(1, min(int(limit or 6), 25))])
 
     async def _table_has_rows(self, table: str) -> bool:
         """Check if a table exists and has at least one row."""
@@ -636,14 +704,14 @@ class StudyBibleDB:
         """Church-father excerpts covering a verse, earliest first."""
         sql = (
             "SELECT father_name, father_category, year, verse_start, verse_end, "
-            "quote, source_title, source_url FROM patristic_catena "
+            "quote, source_title, source_url, source FROM patristic_catena "
             "WHERE book = ? AND chapter = ? AND verse_start <= ? AND verse_end >= ?"
         )
         params: list = [book, chapter, verse, verse]
         if father:
             sql += " AND father_name LIKE ?"
             params.append(f"%{father}%")
-        sql += " ORDER BY year LIMIT ?"
+        sql += " ORDER BY year IS NULL, year LIMIT ?"  # NULL years sort last, not as 'earliest'
         params.append(limit)
         return await self._fetchall(sql, params)
 
@@ -1604,7 +1672,8 @@ def create_schema(conn: sqlite3.Connection):
             verse_end INTEGER,
             quote TEXT,
             source_title TEXT,
-            source_url TEXT
+            source_url TEXT,
+            source TEXT                 -- provenance: 'historical-christian-faith' | 'sermonindex'
         );
         CREATE INDEX IF NOT EXISTS idx_catena_lookup
             ON patristic_catena(book, chapter, verse_start, verse_end);

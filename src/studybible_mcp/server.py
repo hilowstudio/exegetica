@@ -34,7 +34,7 @@ from mcp.types import (
 
 from .database import (
     StudyBibleDB, BOOK_ABBREV_MAP, SINGLE_CHAPTER_BOOKS,
-    DEUTERO_BOOKS, resolve_folded_ref,
+    DEUTERO_BOOKS, resolve_folded_ref, _NAME_TO_OSIS, _OSIS_TO_NAME,
 )
 from .tools import (
     TOOLS,
@@ -1062,8 +1062,36 @@ async def handle_get_church_fathers(args: dict[str, Any]) -> list[TextContent]:
             lines.append(f"*— {src}*")
         lines.append("")
 
-    lines.append("*Public-domain patristic excerpts via HistoricalChristianFaith.*")
+    sources = {r.get("source") for r in rows}
+    credits = []
+    if "historical-christian-faith" in sources or None in sources:
+        credits.append("HistoricalChristianFaith")
+    if "sermonindex" in sources:
+        credits.append("SermonIndex (CC BY 4.0)")
+    lines.append(f"*Public-domain patristic excerpts via {' and '.join(credits)}.*")
     return text("\n".join(lines))
+
+
+# A Scripture reference embedded in a free-text query, e.g. "what does Hebrews 1:3 mean",
+# "faith in Hebrews 11", "the book of Romans". Book names longest-first so "1 john" beats "john".
+_REF_IN_QUERY = re.compile(
+    r"\b(" + "|".join(re.escape(n) for n in sorted(_NAME_TO_OSIS, key=len, reverse=True))
+    + r")\b\.?(?:\s+(\d+)(?:\s*:\s*(\d+))?)?",
+    re.I,
+)
+
+
+def _detect_scripture_ref(query: str):
+    """(osis_book, chapter|None, verse|None) if the query names a Bible book, else None."""
+    m = _REF_IN_QUERY.search(query or "")
+    if not m:
+        return None
+    osis = _NAME_TO_OSIS.get(m.group(1).lower())
+    if not osis:
+        return None
+    ch = int(m.group(2)) if m.group(2) else None
+    v = int(m.group(3)) if m.group(3) else None
+    return osis, ch, v
 
 
 async def handle_search_theology(args: dict[str, Any]) -> list[TextContent]:
@@ -1085,7 +1113,21 @@ async def handle_search_theology(args: dict[str, Any]) -> list[TextContent]:
         sem = [s for s in sem if a in (s.get("author") or "").lower()]
     fts_works = {r.get("work_id") for r in fts}
     sem = [s for s in sem if s.get("work_id") not in fts_works][:limit]  # drop overlap with keyword hits
-    if not fts and not sem:
+
+    # Reference-aware grounding: if the query names a Bible book/verse, surface the works devoted
+    # to it (whose paragraphs are `refs`-tagged) — this is how e.g. a Hebrews question grounds on
+    # Owen's Exposition, which keyword/semantic ranking alone would not reliably surface.
+    ref = _detect_scripture_ref(query)
+    ref_rows, ref_label = [], ""
+    if ref:
+        osis, ch, v = ref
+        seen = {(r.get("work_id"), (r.get("text") or "")[:60]) for r in fts + sem}
+        for r in await db.theology_by_ref(osis, ch, v, limit=6):
+            if (r.get("work_id"), (r.get("text") or "")[:60]) not in seen:
+                ref_rows.append(r)
+        ref_label = _OSIS_TO_NAME.get(osis, osis).title() + (f" {ch}" if ch else "") + (f":{v}" if v else "")
+
+    if not fts and not sem and not ref_rows:
         return text(f"No passages found for '{query}'" + (f" in {author}'s works." if author else "."))
 
     def _blocks(rows, refs_ok):
@@ -1108,13 +1150,16 @@ async def handle_search_theology(args: dict[str, Any]) -> list[TextContent]:
         return out
 
     lines = [f"## Theology Library — grounding for “{query}”", ""]
+    if ref_rows:
+        lines.append(f"### Works on {ref_label}")
+        lines += _blocks(ref_rows, True)
     if fts:
         lines.append("### Keyword matches")
         lines += _blocks(fts, True)
     if sem:
         lines.append("### Related by meaning")
         lines += _blocks(sem, False)
-    lines.append("*Full public-domain texts, housed locally (source: CCEL). Cite the author and work.*")
+    lines.append("*Full public-domain texts, housed locally (CCEL and other PD editions). Cite the author and work.*")
     return text("\n".join(lines))
 
 
