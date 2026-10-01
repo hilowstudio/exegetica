@@ -9,7 +9,7 @@ backend; the browser only talks to this app.
 ## Architecture
 
 ```
-browser (SSE)  ──►  webapp/app.py  ──►  Anthropic API (claude-opus-4-8, streaming)
+browser (SSE)  ──►  webapp/app.py  ──►  Anthropic API (claude-opus-5-5, streaming)
                          │
                          └──►  studybible_mcp.server (stdio, in-process)  ──►  SQLite
 ```
@@ -66,7 +66,7 @@ the panel.
 
 | Provider | Path | Default model | Notes |
 |---|---|---|---|
-| Anthropic (Claude) | native Anthropic SDK | `claude-opus-4-8` | best experience; persona + tools are Claude-tuned. Works with the server key too. |
+| Anthropic (Claude) | native Anthropic SDK | `claude-opus-5-5` | best experience; persona + tools are Claude-tuned. Works with the server key too. |
 | OpenAI | OpenAI SDK, **Responses API** | `gpt-5.6` | flagship `gpt-5.6-sol`. Uses the Responses API so **reasoning + function tools** run together (`reasoning.effort="medium"`). |
 | xAI Grok | OpenAI SDK, chat completions, `base_url=https://api.x.ai/v1` | `grok-4.6` | flagship |
 | Google Gemini | OpenAI SDK, chat completions, `base_url=.../v1beta/openai/` | `gemini-3.1-pro-preview` | Pro tier (Flash alt: `gemini-3.7-flash`); compat endpoint + tools confirmed |

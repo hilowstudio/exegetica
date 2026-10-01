@@ -26,18 +26,19 @@ from pathlib import Path
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 from starlette.applications import Starlette
-from starlette.responses import FileResponse, HTMLResponse, JSONResponse, StreamingResponse
+from starlette.concurrency import run_in_threadpool
+from starlette.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse, StreamingResponse
 from starlette.middleware import Middleware
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import auth, calendar_views, course, course_views, curriculum, db, generator, library, library_store, memory, providers, r2, safety, store
+from webapp import auth, calendar_views, comprehension, course, course_views, curriculum, db, generator, library, library_store, memory, providers, r2, reader, safety, store
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("study-bible-web")
 
-MODEL = "claude-opus-4-8"
+MODEL = "claude-opus-5-5"
 MAX_TOKENS = 16000
 PROJECT_ROOT = Path(__file__).parent.parent
 
@@ -293,6 +294,11 @@ async def library_page(request):
     return FileResponse(STATIC_DIR / "library.html")
 
 
+async def corpus_page(request):
+    """The source-corpus inventory ('everything the connector can cite'), linked from the chat info icon."""
+    return FileResponse(STATIC_DIR / "corpus.html")
+
+
 # ---------------------------------------------------------------------------
 # Course view (browsable Gospel of John materials: day / week / month / unit)
 # ---------------------------------------------------------------------------
@@ -391,7 +397,8 @@ async def library_video(request):
 
 async def library_youtube(request):
     q = request.query_params.get("q", "")
-    return JSONResponse({"results": await library.search_youtube(q, 12)})
+    return JSONResponse({"results": await library.search_youtube(q, 12),
+                         "configured": bool(os.environ.get("YOUTUBE_API_KEY"))})
 
 
 async def standards_tree(request):
@@ -418,8 +425,67 @@ async def recommend_endpoint(request):
     return JSONResponse({"recommended": generator.recommend(ss)})
 
 
+async def generate_book_endpoint(request):
+    """Living Library redesign: generate a resource FROM a book (read live from books.db), calibrated
+    to the student's position in it. Feeds the whole work when it fits (omniscient comprehension) plus
+    a position marker for the covered range. See docs/living-library-generation-plan.md."""
+    body = await request.json()
+    format_id = body.get("format_id")
+    if format_id not in generator.FORMATS:
+        return JSONResponse({"error": "unknown format"}, status_code=400)
+    slug = (body.get("book_slug") or "").strip()
+    if not slug:
+        return JSONResponse({"error": "book_slug required"}, status_code=400)
+    coverage = body.get("coverage") or {}
+    grade_band = body.get("grade_band", "secondary")
+    brief = body.get("brief", "")
+    provider = body.get("provider", "anthropic")
+    model = body.get("model", "")
+    api_key = (body.get("api_key") or "").strip() or None
+
+    book = await run_in_threadpool(reader._gen_book_sync, slug)
+    if not book or not book.get("chapters"):
+        return JSONResponse({"error": "book not found"}, status_code=404)
+
+    system_text = generator.build_system(format_id, grade_band)
+    total = book.get("word_count") or sum(c.get("words", 0) for c in book["chapters"])
+    if total <= generator._GEN_WORD_BUDGET:                       # fits: feed the whole work
+        task = generator.build_book_task(format_id, book, coverage, grade_band, brief)
+    else:                                                          # large: whole-work comprehension + covered text
+        comp = await comprehension.ensure(book)
+        if not comp:                                              # can't build (no key/failure) → Phase-1 degradation
+            task = generator.build_book_task(format_id, book, coverage, grade_band, brief)
+        else:
+            covered, cov_desc, _ = generator._coverage(coverage, book["chapters"])
+            query = f'{generator.FORMATS[format_id]["name"]}. {brief} {book["title"]} {cov_desc}'.strip()
+            covered_text, retrieved = await run_in_threadpool(
+                comprehension.select_covered_text, book, covered, query, generator._GEN_WORD_BUDGET)
+            recap = comprehension.recap_before(comp, min(covered) if covered else 1)
+            task = generator.build_book_task_large(format_id, book, coverage, grade_band, brief,
+                                                   comp, covered_text, recap, retrieved)
+    mcp: MCPBridge = request.app.state.mcp
+
+    async def gen():
+        yield _sse({"type": "start", "format": format_id, "provider": provider, "book": book["slug"]})
+        try:
+            async for ev in providers.run(provider, api_key, model, system_text,
+                                          [{"role": "user", "content": task}], mcp):
+                yield _sse(ev)
+        except Exception as e:  # noqa: BLE001
+            logger.exception("book generate dispatch failed")
+            yield _sse({"type": "error", "message": str(e)})
+        yield _sse({"type": "done"})
+
+    return StreamingResponse(
+        gen(), media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no", "Connection": "keep-alive"},
+    )
+
+
 async def generate_endpoint(request):
-    """Assemble the generation prompt and stream the resource (with tool use)."""
+    """Standards-mode generation: assemble the prompt from selected academic-spine
+    objectives and stream the resource (with tool use). Book-mode uses
+    /api/generate/book instead."""
     body = await request.json()
     format_id = body.get("format_id")
     if format_id not in generator.FORMATS:
@@ -492,6 +558,8 @@ async def revise_endpoint(request):
 _R2_DBS = [
     ("STUDY_BIBLE_DB", "study-bible/study_bible.db"),
     ("THEOLOGY_DB", "theology/theology.db"),
+    ("BOOKS_DB", "books/books.db"),
+    ("COVERS_DB", "covers/covers.db"),
 ]
 
 
@@ -572,9 +640,49 @@ except Exception:  # noqa: BLE001
     logger.warning("Inngest serve endpoint disabled (not configured)", exc_info=True)
     _inngest_serve_app = None
 
+class CanonicalHostMiddleware:
+    """Redirect the ``www.`` host to the bare apex so the app has one canonical origin.
+
+    Without this, ``www.exegetica.app`` and ``exegetica.app`` are *separate origins*:
+    the session cookie is host-only (SessionMiddleware sets no ``domain``) and the Google
+    OAuth ``redirect_uri`` is built from the request host (see auth._redirect_uri). So a
+    sign-in begun on ``www`` gets a ``www`` state cookie and a ``www`` callback that the
+    apex-registered Google client can't complete — leaving ``www`` visitors stuck while the
+    apex works fine. Collapsing to a single origin removes that whole class of bug.
+
+    Runs before SessionMiddleware, so a ``www`` request is redirected before it touches any
+    session, cookie, or auth state. Inert off ``www`` (localhost/apex fall straight through)."""
+
+    def __init__(self, app):
+        self.app = app
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] == "http":
+            host = ""
+            for k, v in scope.get("headers") or ():
+                if k == b"host":
+                    host = v.decode("latin-1")
+                    break
+            name = host.split(":", 1)[0].lower()
+            if name.startswith("www.") and len(name) > 4:
+                path = scope.get("raw_path") or scope.get("path", "").encode()
+                if isinstance(path, str):
+                    path = path.encode("latin-1")
+                target = "https://" + name[4:] + path.decode("latin-1")
+                qs = scope.get("query_string") or b""
+                if qs:
+                    target += "?" + qs.decode("latin-1")
+                # 308: permanent + preserves method/body, so every verb (GET pages, POST APIs)
+                # lands correctly on the apex.
+                await RedirectResponse(target, status_code=308)(scope, receive, send)
+                return
+        await self.app(scope, receive, send)
+
+
 app = Starlette(
     lifespan=lifespan,
     middleware=[
+        Middleware(CanonicalHostMiddleware),
         Middleware(SessionMiddleware, secret_key=SESSION_SECRET, same_site="lax",
                    https_only=bool(os.environ.get("FLY_APP_NAME"))),
     ],
@@ -582,6 +690,7 @@ app = Starlette(
         Route("/", index),
         Route("/generate", generate_page),
         Route("/library", library_page),
+        Route("/corpus", corpus_page),
         Route("/memory", memory.memory_page),
         Route("/api/memory/text", memory.memory_text),
         Route("/api/memory/audio", memory.memory_audio),
@@ -616,6 +725,18 @@ app = Starlette(
         Route("/api/library/reviews", library_store.reviews_list, methods=["GET"]),
         Route("/api/library/reviews/promote", library_store.review_promote, methods=["POST"]),
         Route("/api/library/reviews/reject", library_store.review_reject, methods=["POST"]),
+        Route("/read", reader.reader_page),
+        Route("/read/{slug}", reader.reader_page),
+        Route("/api/books", reader.books_list),
+        Route("/api/shelves", reader.shelves),
+        Route("/api/catalog", reader.catalog),
+        Route("/api/cover/{slug}", reader.cover_image),
+        Route("/api/books/{slug}", reader.book_detail),
+        Route("/api/books/{slug}/chapter/{n}", reader.book_chapter),
+        Route("/api/reading/position", reader.position_get, methods=["GET"]),
+        Route("/api/reading/position", reader.position_put, methods=["PUT"]),
+        Route("/api/reading/cover", reader.cover_put, methods=["PUT"]),
+        Route("/api/reading/cover/search", reader.cover_search, methods=["GET"]),
         Route("/api/config", config),
         Route("/auth/login", auth.login, name="auth_login"),
         Route("/auth/google/callback", auth.auth_callback, name="auth_callback"),
@@ -628,6 +749,7 @@ app = Starlette(
         Route("/api/formats", formats_endpoint),
         Route("/api/recommend", recommend_endpoint),
         Route("/api/generate", generate_endpoint, methods=["POST"]),
+        Route("/api/generate/book", generate_book_endpoint, methods=["POST"]),
         Route("/api/revise", revise_endpoint, methods=["POST"]),
         Mount("/static", app=StaticFiles(directory=str(STATIC_DIR)), name="static"),
     ],

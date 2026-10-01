@@ -403,9 +403,154 @@ def build_system(format_id: str, grade_band: str) -> str:
     return _with_voice("\n".join(lines))
 
 
+_GEN_WORD_BUDGET = 90000   # ~120k tokens of book text; above this a book needs the Phase-2 comprehension layer
+
+
+def _ch_label(c: dict | None, n: int) -> str:
+    t = (c or {}).get("title")
+    return f'section {n} ("{t}")' if t else f"section {n}"
+
+
+def _coverage(coverage: dict, chapters: list[dict]) -> tuple[set, str, int]:
+    """Normalize a coverage spec to (covered section numbers, human description, last covered n)."""
+    nmap = {c["n"]: c for c in chapters}
+    if coverage.get("through"):
+        n = int(coverage["through"])
+        return {c["n"] for c in chapters if c["n"] <= n}, f"through {_ch_label(nmap.get(n), n)}", n
+    if coverage.get("range"):
+        a, b = int(coverage["range"][0]), int(coverage["range"][1])
+        return ({c["n"] for c in chapters if a <= c["n"] <= b},
+                f"{_ch_label(nmap.get(a), a)} through {_ch_label(nmap.get(b), b)}", b)
+    if coverage.get("chapters"):
+        cs = [int(x) for x in coverage["chapters"]]
+        return {c["n"] for c in chapters if c["n"] in cs}, "sections " + ", ".join(map(str, cs)), max(cs)
+    return {c["n"] for c in chapters}, "the whole work", (chapters[-1]["n"] if chapters else 0)
+
+
+def build_book_task(format_id: str, book: dict, coverage: dict, grade_band: str, brief: str) -> str:
+    """The user turn for BOOK-based generation (the Living Library redesign): read the real text,
+    understand the whole work, but calibrate the artifact to the student's position in it."""
+    fmt = FORMATS[format_id]
+    chapters = book.get("chapters") or []
+    covered, cov_desc, last = _coverage(coverage, chapters)
+    total = book.get("word_count") or sum(c.get("words", 0) for c in chapters)
+
+    if total <= _GEN_WORD_BUDGET:              # fits: feed the whole work (omniscient comprehension)
+        included, omitted = chapters, ""
+    else:                                      # too big for Phase 1: keep covered + recent prior, up to budget
+        budget, keep = _GEN_WORD_BUDGET, []
+        for c in reversed([c for c in chapters if c["n"] <= last]):
+            if c["n"] in covered or budget - c.get("words", 0) > 0:
+                keep.append(c); budget -= c.get("words", 0)
+        included = sorted(keep, key=lambda c: c["n"])
+        omitted = ("\n(Note: earlier chapters were omitted for length — a whole-work comprehension "
+                   "layer is pending. Work only from the text provided.)")
+
+    blocks = [f"\n[{_ch_label(c, c['n'])}]" + (" »»» COVERED »»»" if c["n"] in covered else "")
+              + f"\n{c['text']}" for c in included]
+
+    lines = [
+        f'Generate the {fmt["name"]} now, for a class reading of "{book["title"]}"'
+        + (f' by {book["author"]}' if book.get("author") else "") + ".",
+        "",
+        f"ASSIGNMENT COVERAGE: {cov_desc}.",
+        f"The students have read {cov_desc} and NOT beyond. Calibrate every student-facing item to that vantage:",
+        "  - Ask only about what is knowable from the covered sections.",
+        "  - Honor the reader's current understanding — an appearance is only an appearance, not a "
+        "later revelation (keep dramatic irony intact).",
+        "  - Reveal nothing from beyond the covered sections anywhere in student-facing content.",
+        "",
+        "Use your understanding of the WHOLE work (below) to judge what is significant in the covered "
+        "sections and to develop their themes deliberately — but the artifact must land exactly where "
+        "the students are in their reading.",
+        "",
+        f"Grade band: {grade_band}.",
+    ]
+    if brief and brief.strip():
+        lines += ["", f"Instructor's additional instructions: {brief.strip()}"]
+    lines += [
+        "",
+        "Do any study-bible tool lookups you need BEFORE writing; emit no progress notes. Produce only "
+        "the finished resource in Markdown, beginning with the metadata header (book title, author, and "
+        f"coverage: {cov_desc}). End the student-facing resource with a line `Coverage: {cov_desc}`.",
+        "If this resource has answers or model responses, put them ALL after a `---` rule in a final "
+        "section headed EXACTLY `## Answer Key`, revealing no answers before it.",
+        "You MAY add one final `## Teaching Notes` section (teacher-only); there, and only there, you "
+        "may reference later developments in the work to help the teacher steer discussion." + omitted,
+        "",
+        f'=== FULL TEXT of "{book["title"]}" (covered sections marked »»» COVERED »»») ===',
+        "".join(blocks),
+    ]
+    return "\n".join(lines)
+
+
+def build_book_task_large(format_id: str, book: dict, coverage: dict, grade_band: str, brief: str,
+                          comprehension: dict, covered: list, recap: str, retrieved: bool = False) -> str:
+    """Book-based generation for a LARGE work: a pre-built whole-work understanding (so the model is
+    'omniscient') + the covered text (verbatim, or the most-relevant passages when the range is huge)
+    + the story-so-far for ranges that don't start at the beginning. Output stays positioned."""
+    fmt = FORMATS[format_id]
+    _, cov_desc, _ = _coverage(coverage, book.get("chapters") or [])
+    comp = comprehension or {}
+    arc = "; ".join(f'{a.get("title", "")} ({a.get("span", "")}): {a.get("what_happens", "")}'
+                    for a in comp.get("arc", []))
+    themes = "; ".join(f'{t.get("name", "")} — {t.get("arc", "")}' for t in comp.get("themes", []))
+    sig = "; ".join(f'{s.get("element", "")}: {s.get("why_matters", "")}' for s in comp.get("significance", []))
+    covered_block = "".join(f'\n[{_ch_label({"title": t}, n)}]\n{txt}' for n, t, txt in covered)
+
+    lines = [
+        f'Generate the {fmt["name"]} now, for a class reading of "{book["title"]}"'
+        + (f' by {book["author"]}' if book.get("author") else "") + ".",
+        "",
+        f"ASSIGNMENT COVERAGE: {cov_desc}.",
+        f"The students have read {cov_desc} and NOT beyond. Calibrate every student-facing item to that vantage:",
+        "  - Ask only about what is knowable from the covered sections.",
+        "  - Honor the reader's current understanding — an appearance is only an appearance, not a "
+        "later revelation (keep dramatic irony intact).",
+        "  - Reveal nothing from beyond the covered sections anywhere in student-facing content.",
+        "",
+        "This is a large work. You are given a WHOLE-WORK UNDERSTANDING (so you know what is significant "
+        "and how the themes develop) and the COVERED TEXT itself. Use the understanding to judge "
+        "significance and shape strong items — but never leak anything past the covered sections into "
+        "student-facing content.",
+        f"Grade band: {grade_band}.",
+    ]
+    if brief and brief.strip():
+        lines += ["", f"Instructor's additional instructions: {brief.strip()}"]
+    lines += [
+        "",
+        "Do any study-bible tool lookups you need BEFORE writing; emit no progress notes. Produce only "
+        "the finished resource in Markdown, beginning with the metadata header (book title, author, and "
+        f"coverage: {cov_desc}). End the student-facing resource with a line `Coverage: {cov_desc}`.",
+        "If this resource has answers, put them ALL after a `---` rule in a final section headed EXACTLY "
+        "`## Answer Key`, revealing none before it.",
+        "You MAY add one final `## Teaching Notes` section (teacher-only); there, and only there, you may "
+        "reference later developments in the work to help the teacher steer discussion.",
+        "",
+        f'=== WHOLE-WORK UNDERSTANDING of "{book["title"]}" (for significance & theme development) ===',
+        "Summary: " + (comp.get("summary", "") or ""),
+    ]
+    if arc:
+        lines.append("Arc: " + arc)
+    if themes:
+        lines.append("Themes: " + themes)
+    if sig:
+        lines.append("Significant elements: " + sig)
+    if recap:
+        lines += ["", "=== THE STORY SO FAR (up to the start of the covered range) ===", recap]
+    lines += [
+        "",
+        f'=== COVERED TEXT ({"selected relevant passages" if retrieved else "full text"}; {cov_desc}) ===',
+        covered_block,
+    ]
+    return "\n".join(lines)
+
+
 def build_task(format_id: str, objectives: list[dict], grade_band: str,
                context: dict | None, brief: str) -> str:
-    """The user turn: what to make, for which objectives, where."""
+    """The user turn for standards-mode generation: what to make, for which
+    academic-spine objectives, where. (Book-mode generation uses build_book_task /
+    build_book_task_large instead.)"""
     fmt = FORMATS[format_id]
     ctx = context or {}
     path = " > ".join(x for x in [

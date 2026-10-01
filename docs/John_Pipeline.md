@@ -4,7 +4,7 @@ How the Gospel of John course is produced by the resource-generator app. Read th
 
 ## What produces what
 
-- **Generation:** `scripts/john_gen.py` writes Markdown to `docs/john-lessons/` (teacher lesson guides) and `docs/john-materials/` (student reading guides + course docs). It drives the REAL app loop (`webapp.providers.run` over an `MCPBridge`, model `claude-opus-4-8`), so Scripture is genuinely ESV, fetched from the Study Bible tools, not from memory.
+- **Generation:** `scripts/john_gen.py` writes Markdown to `docs/john-lessons/` (teacher lesson guides) and `docs/john-materials/` (student reading guides + course docs). It drives the REAL app loop (`webapp.providers.run` over an `MCPBridge`, model `claude-opus-5-5`), so Scripture is genuinely ESV, fetched from the Study Bible tools, not from memory.
 - **Publishing:** `webapp/course.py` (manifest) + `webapp/course_views.py` + routes in `webapp/app.py` serve the web view at `/course`; `scripts/course_pdf.py` renders print PDFs into `docs/john-pdf/`.
 
 ## Environment (gotchas that will bite)

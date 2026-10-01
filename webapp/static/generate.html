@@ -61,6 +61,10 @@
   .builder{border-right:1px solid var(--rule);background:var(--surface);display:flex;flex-direction:column;min-height:0;overflow:hidden}
   .builder-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding:16px 20px 8px;flex:none}
   .bh-title{font-family:var(--serif);font-weight:600;font-size:1.08rem}
+  .src-toggle{display:flex;gap:4px;margin:2px 20px 10px;padding:3px;background:var(--surface-2);border:1px solid var(--rule);border-radius:9px}
+  .srcbtn{flex:1;font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--iron-soft);background:none;border:0;border-radius:7px;padding:7px 8px;cursor:pointer}
+  .srcbtn.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(30,26,20,.12)}
+  .srcbtn:not(.on):hover{color:var(--ink)}
   .bsearch{padding:2px 20px 12px;border-bottom:1px solid var(--rule);flex:none}
   .bsearch .lbl{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--iron-soft);display:block;margin-bottom:5px}
   .acc{flex:1 1 auto;overflow-y:auto;min-height:0}
@@ -240,28 +244,38 @@
   <nav class="rail" aria-label="Primary">
     <a class="railbtn" href="/" title="Chat" aria-label="Chat"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg></a>
     <a class="railbtn" href="/memory" title="Scripture Memory" aria-label="Scripture Memory"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/><path d="M6.5 11h6M6.5 14h4"/></svg></a>
+    <a class="railbtn" href="/read" title="Reading Room" aria-label="Reading Room"><svg viewBox="0 0 24 24"><path d="M12 6.6C10.2 5.3 7.3 5 4.8 5.6v12.3c2.5-.6 5.4-.3 7.2 1 1.8-1.3 4.7-1.6 7.2-1V5.6C16.7 5 13.8 5.3 12 6.6z"/><path d="M12 6.6v11.7"/></svg></a>
     <a class="railbtn teach active" href="/generate" style="display:none" title="Generator" aria-label="Generator"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/></svg></a>
     <a class="railbtn teach" href="/library" style="display:none" title="Living Library" aria-label="Living Library"><svg viewBox="0 0 24 24"><rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/><path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/></svg></a>
     <span class="sp"></span>
-    <a id="acct" class="railbtn acct" href="/auth/login" title="Sign in" aria-label="Sign in"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg></a>
-    <button id="open-about" type="button" title="About" aria-label="About"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button>
-    <button id="open-settings" type="button" title="Model &amp; API key" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.2 7l2.6 1.5M17.2 15.5l2.6 1.5M4.2 17l2.6-1.5M17.2 8.5l2.6-1.5"/></svg></button>
-    <button id="theme-toggle" type="button" title="Toggle light / dark" aria-label="Toggle theme"><span class="glyph">◐</span></button>
+    <button id="open-settings" type="button" title="Settings" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.2 7l2.6 1.5M17.2 15.5l2.6 1.5M4.2 17l2.6-1.5M17.2 8.5l2.6-1.5"/></svg></button>
   </nav>
 
   <aside class="builder">
     <div class="builder-head"><span class="bh-title">Build a resource</span></div>
     <div id="keybanner" class="banner" style="display:none"></div>
-    <div class="bsearch">
+    <div class="src-toggle" role="tablist" aria-label="Source">
+      <button class="srcbtn on" type="button" data-src="book" role="tab">From a book</button>
+      <button class="srcbtn" type="button" data-src="standard" role="tab">From standards</button>
+    </div>
+    <div class="bsearch" id="stdsearchwrap" style="display:none">
       <span class="lbl">Find a standard</span>
       <div class="searchbox">
         <input id="stdsearch" type="text" autocomplete="off" spellcheck="false" placeholder="Search a subject, topic, or objective…">
         <div class="sresults" id="sresults"></div>
       </div>
     </div>
-
     <div class="acc" id="acc">
-      <section class="acc-sec open" data-sec="standard">
+      <section class="acc-sec open" data-sec="book">
+        <button class="acc-h" type="button"><span class="acc-n">1</span><span class="acc-t">Book</span><span class="acc-sum" id="sum-book">None</span><span class="chev">›</span></button>
+        <div class="acc-body">
+          <div class="fld"><label>Find a book</label>
+            <div class="searchbox"><input id="booksearch" type="text" autocomplete="off" spellcheck="false" placeholder="Search title or author…"><div class="sresults" id="bookresults"></div></div>
+          </div>
+          <div class="fld" id="coverwrap" style="display:none"><label>Assign through (students have read up to and including)</label><select id="sel-cover"></select></div>
+        </div>
+      </section>
+      <section class="acc-sec" data-sec="standard" style="display:none">
         <button class="acc-h" type="button"><span class="acc-n">1</span><span class="acc-t">Standard</span><span class="acc-sum" id="sum-standard">Not chosen</span><span class="chev">›</span></button>
         <div class="acc-body">
           <div class="crumb" id="crumb"></div>
@@ -271,21 +285,21 @@
           <div class="fld"><label>Sub-topic</label><select id="sel-subtopic" disabled></select></div>
         </div>
       </section>
-      <section class="acc-sec" data-sec="objectives">
+      <section class="acc-sec" data-sec="objectives" style="display:none">
         <button class="acc-h" type="button"><span class="acc-n">2</span><span class="acc-t">Objectives</span><span class="acc-sum" id="sum-objectives">None</span><span class="chev">›</span></button>
         <div class="acc-body">
           <div class="objs" id="objs"><div class="empty">Select a sub-topic to load objectives.</div></div>
         </div>
       </section>
       <section class="acc-sec" data-sec="format">
-        <button class="acc-h" type="button"><span class="acc-n">3</span><span class="acc-t">Resource Kind</span><span class="acc-sum" id="sum-format">None</span><span class="chev">›</span></button>
+        <button class="acc-h" type="button"><span class="acc-n">2</span><span class="acc-t">Resource Kind</span><span class="acc-sum" id="sum-format">None</span><span class="chev">›</span></button>
         <div class="acc-body">
           <div class="recs" id="recs"></div>
           <div class="fld"><select id="sel-format"></select><span class="fmtdef" id="fmtdef"></span></div>
         </div>
       </section>
       <section class="acc-sec" data-sec="audience">
-        <button class="acc-h" type="button"><span class="acc-n">4</span><span class="acc-t">Audience</span><span class="acc-sum" id="sum-audience">Secondary</span><span class="chev">›</span></button>
+        <button class="acc-h" type="button"><span class="acc-n">3</span><span class="acc-t">Audience</span><span class="acc-sum" id="sum-audience">Secondary</span><span class="chev">›</span></button>
         <div class="acc-body">
           <div class="fld"><label>Grade band (who you're teaching)</label><select id="sel-band"></select></div>
           <div class="fld"><label>Optional instructions</label><textarea id="brief" placeholder="e.g. 12 items, focus on the Greek, make it a one-pager"></textarea></div>
@@ -294,7 +308,7 @@
     </div>
 
     <div class="builder-foot">
-      <div class="note" id="gennote">Pick a standard, an objective, and a format.</div>
+      <div class="note" id="gennote">Pick a book, coverage, and a format.</div>
       <button class="gen" id="gen" disabled>Generate resource</button>
     </div>
   </aside>
@@ -316,74 +330,10 @@
     <div class="tools" id="tools"></div>
     <div class="paperwrap" id="paperwrap" style="display:none"><div class="paper prose" id="paper"></div></div>
     <textarea class="editor" id="editor" style="display:none" spellcheck="false"></textarea>
-    <div class="placeholder" id="placeholder"><h1>Generate a standards-aligned resource</h1><p>Choose an objective and a format at left. The document appears here. Switch between Teacher and Student, edit it directly, or revise it with a plain instruction.</p></div>
+    <div class="placeholder" id="placeholder"><h1>Generate a resource</h1><p>Build from a book — pick the title and the chapters your class has read, and the document lands where your students are — or from an academic standard. Choose the source at left. Switch between Teacher and Student, edit it directly, or revise it with a plain instruction.</p></div>
   </section>
 </div>
 
-<div class="modal-bg" id="set-bg">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="set-title">
-    <h2 id="set-title">Model &amp; API key</h2>
-    <p class="muted">Bring your own key. It is stored only in this browser, shared with the Chat page, and sent to the app only to make your request. The server never saves it.</p>
-    <div class="fld"><label>Provider</label><select id="sel-provider"></select></div>
-    <div class="fld"><label>Model</label><input id="in-model" spellcheck="false" autocomplete="off"></div>
-    <div class="fld"><label>API key</label><input id="in-key" type="password" spellcheck="false" autocomplete="off" placeholder="Paste your key"></div>
-    <div class="modal-actions"><button class="btn-ghost" id="forget-key" type="button">Forget key</button><span class="spacer"></span><button class="btn-solid" id="close-settings" type="button">Done</button></div>
-  </div>
-</div>
-
-<div class="modal-bg" id="about-bg">
-  <div class="modal wide about" role="dialog" aria-modal="true" aria-labelledby="about-title">
-    <h2 id="about-title">About the Generator</h2>
-    <div class="tabs">
-      <button class="tab on" type="button" data-pane="about">About</button>
-      <button class="tab" type="button" data-pane="res">Resources</button>
-    </div>
-    <div class="pane on" id="pane-about">
-    <p class="about-lede">Turn any point in the K-12 standards spine into a finished, ready-to-teach resource.</p>
-    <p class="muted small">Navigate from a subject down to a single learning objective, choose a format, and Exegetica writes the document, grounded in the standards and its tools.</p>
-
-    <h3>Built on a real standards spine</h3>
-    <p>Thirteen subjects, down to the individual objective. Every objective is grade-placed and aligned to a national academic standard (Common Core, NGSS, the C3 Framework, CSTA, National Core Arts, among others), or marked honestly where no secular standard applies. The objectives are real, distinct competencies, right-sized to each topic rather than padded to a template.</p>
-
-    <h3>Faith and Bible integration on every lesson</h3>
-    <p>For any subject, strand, topic, or objective, the Faith &amp; Bible Integration Guide helps you weave Christian perspective and devotion to Jesus into the material truthfully, matched to what the content genuinely supports, and without forcing it. Where a lesson only supports a posture of wonder, diligence, or gratitude rather than a content link, it says so plainly.</p>
-
-    <h3>Grounded and cited</h3>
-    <p>Biblical, original-language, confessional, and church-father content is drawn from the Exegetica tools and cited. The academic content stays faithful to the standard and the grade level.</p>
-
-    <h3>Many formats, one engine</h3>
-    <p>Worksheets, lesson plans, quizzes, study guides, rubrics, close readings, lab reports, and dozens more, each adapted to your grade band from primary through seminary. The page suggests the formats that fit the material; pick the one the lesson calls for.</p>
-
-    <h3>Yours to shape</h3>
-    <p>Generate a teacher or student version, view or edit it in place, revise it with a plain instruction, and download the Markdown or print to PDF.</p>
-
-    <p class="caveat">The tools ground and discipline the work. They do not make it infallible. Review the biblical and factual content before you teach it, and verify against Scripture.</p>
-    </div>
-
-    <div class="pane" id="pane-res">
-      <p class="muted small" style="margin-top:0">Biblical, original-language, and confessional content is drawn from these bundled sources through the Exegetica connector and cited. All are public-domain or openly licensed.</p>
-      <div class="reslist">
-        <div class="resgroup"><h4>English translations (bundled)</h4><p>Berean Standard Bible (BSB), World English Bible (WEB), King James Version (KJV), American Standard Version (ASV), and Young's Literal Translation (YLT).</p></div>
-        <div class="resgroup"><h4>Modern translations (fetched live)</h4><p>English Standard Version (ESV, via a Crossway API key) and the New English Translation (NET, keyless). Quoted live at request time with attribution, never bundled or stored.</p></div>
-        <div class="resgroup"><h4>Original languages</h4><p>Tagged Hebrew and Greek with full morphological parsing, and the Greek Septuagint (LXX).</p></div>
-        <div class="resgroup"><h4>Lexicons</h4><p>Brown-Driver-Briggs (Hebrew), Liddell-Scott-Jones (Greek), and Abbott-Smith (New Testament Greek), keyed to Strong's numbers.</p></div>
-        <div class="resgroup"><h4>Concordance</h4><p>Every-occurrence search across the tagged text, by English word or Strong's number.</p></div>
-        <div class="resgroup"><h4>Cross-references &amp; parallels</h4><p>A cross-reference network and the UBS parallel-passage set.</p></div>
-        <div class="resgroup"><h4>Classic commentaries</h4><p>Matthew Henry, John Gill, Jamieson-Fausset-Brown, Adam Clarke, John Calvin, and Keil &amp; Delitzsch (Old Testament).</p></div>
-        <div class="resgroup"><h4>Church fathers</h4><p>A catena of Ante-Nicene, Nicene and Post-Nicene, Eastern/Byzantine, Syriac, and medieval writers (Chrysostom, Augustine, Irenaeus, and more).</p></div>
-        <div class="resgroup"><h4>Study notes</h4><p>Tyndale, SIL, and unfoldingWord translation notes.</p></div>
-        <div class="resgroup"><h4>Creeds, confessions &amp; catechisms</h4><p>Ecumenical creeds (Apostles', Nicene, Athanasian, Chalcedon); Reformed and Protestant (Westminster Confession with the Larger and Shorter Catechisms, Belgic, Canons of Dort, Heidelberg, 1689 London Baptist, the Thirty-Nine Articles, Augsburg); Catholic (Council of Trent, Baltimore Catechism); and Orthodox (Confession of Dositheus, Philaret's Catechism).</p></div>
-        <div class="resgroup"><h4>People, places &amp; genealogy</h4><p>A graph of biblical people, places, events, and family lines to explore and connect.</p></div>
-        <div class="resgroup"><h4>Bible dictionary</h4><p>The Tyndale Bible Dictionary: 500+ articles on people, places, doctrines, customs, and background.</p></div>
-        <div class="resgroup"><h4>Key terms &amp; vocabulary</h4><p>Passage key-term and vocabulary lists for study and teaching.</p></div>
-      </div>
-    </div>
-
-    <div class="modal-actions"><span class="spacer"></span>
-      <button class="btn-solid" id="close-about" type="button">Close</button>
-    </div>
-  </div>
-</div>
 
 <script>
 "use strict";
@@ -406,36 +356,17 @@ function md(src){const L=src.replace(/\r\n/g,"\n").split("\n");let h="",i=0;cons
 
 // ---- state ----
 const $=id=>document.getElementById(id);
-const aboutBg=$("about-bg");
-$("open-about").onclick=()=>aboutBg.classList.add("open");
-$("close-about").onclick=()=>aboutBg.classList.remove("open");
-aboutBg.addEventListener("click",e=>{if(e.target===aboutBg)aboutBg.classList.remove("open");});
-aboutBg.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{
-  aboutBg.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===t));
-  aboutBg.querySelectorAll(".pane").forEach(p=>p.classList.toggle("on",p.id==="pane-"+t.dataset.pane));
-});
-// settings modal (shared BYOK)
-const setBg=$("set-bg");
-$("open-settings").onclick=()=>setBg.classList.add("open");
-$("close-settings").onclick=()=>setBg.classList.remove("open");
-setBg.addEventListener("click",e=>{if(e.target===setBg)setBg.classList.remove("open");});
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){aboutBg.classList.remove("open");setBg.classList.remove("open");if(typeof closeResults==="function")closeResults();}});
-// theme toggle
-(function(){var btn=$("theme-toggle");if(!btn)return;
-  function eff(){var e=document.documentElement.getAttribute("data-theme");if(e)return e;return (window.matchMedia&&window.matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";}
-  btn.onclick=function(){var n=eff()==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",n);try{localStorage.setItem("studybible.theme",n);}catch(e){}};
-})();
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){if(typeof closeResults==="function")closeResults();}});
 
-const SKEY="studybible.byok.v1";
+// BYOK provider/model/key + theme + account all live in the global Settings panel (/static/settings.js).
 let CFG={}, FORMATS=[], FMT={}, BANDS={}, TREE=null, RECS=[], busy=false, rawDoc="";
-let settings=(()=>{try{return JSON.parse(localStorage.getItem(SKEY))||{}}catch(e){return{}}})();
-settings.provider=settings.provider||"anthropic";settings.models=settings.models||{};settings.keys=settings.keys||{};
-function saveSettings(){try{localStorage.setItem(SKEY,JSON.stringify(settings))}catch(e){}}
+let srcMode="book", pickedBook=null, _bkTimer=null;   // two source modes: a book (live text) or academic-spine standards
 function pcfg(id){return (CFG.providers||[]).find(p=>p.id===id)||{};}
-function curProvider(){return settings.provider;}
-function curModel(){return $("in-model").value.trim()||pcfg(curProvider()).default_model||"";}
-function curKey(){return $("in-key").value.trim();}
+function curProvider(){return window.AppSettings?AppSettings.provider():"anthropic";}
+function curModel(){return window.AppSettings?AppSettings.model():"";}
+function curKey(){return window.AppSettings?AppSettings.key():"";}
 function needsKey(){return !(curProvider()==="anthropic"&&CFG.server_anthropic_key)&&!curKey();}
+window.addEventListener("appsettings:changed",function(){updateKeyBanner();});
 
 Promise.all([
   fetch("/api/config").then(r=>r.json()),
@@ -444,28 +375,65 @@ Promise.all([
 ]).then(([cfg,fmts,tree])=>{
   CFG=cfg;FORMATS=fmts.formats;BANDS=fmts.grade_bands;TREE=tree;
   FORMATS.forEach(f=>FMT[f.id]=f);
-  (CFG.providers||[]).forEach(p=>{const o=document.createElement("option");o.value=p.id;o.textContent=p.label;$("sel-provider").appendChild(o);});
-  $("sel-provider").value=curProvider();
-  syncProviderFields();
   Object.keys(BANDS).forEach(b=>{const o=document.createElement("option");o.value=b;o.textContent=b[0].toUpperCase()+b.slice(1);$("sel-band").appendChild(o);});
   $("sel-band").value="secondary";
   FORMATS.forEach(f=>{const o=document.createElement("option");o.value=f.id;o.textContent=f.name;$("sel-format").appendChild(o);});
   fmtChanged();
-  TREE.subjects.forEach(s=>{const o=document.createElement("option");o.value=s.id;o.textContent=s.name;$("sel-subject").appendChild(o);});
+  (TREE.subjects||[]).forEach(s=>{const o=document.createElement("option");o.value=s.id;o.textContent=s.name;$("sel-subject").appendChild(o);});
   $("sel-subject").insertAdjacentHTML("afterbegin","<option value=''>Select…</option>");
   $("sel-subject").value="";
   updateKeyBanner();
 }).catch(()=>{console.error("backend unavailable");});
 
-// ---- provider fields (shared BYOK) ----
-function syncProviderFields(){const p=pcfg(curProvider());$("in-model").value=settings.models[curProvider()]||p.default_model||"";$("in-model").placeholder=p.default_model||"";$("in-key").value=settings.keys[curProvider()]||"";updateKeyBanner();}
-$("sel-provider").addEventListener("change",()=>{settings.provider=$("sel-provider").value;saveSettings();syncProviderFields();});
-$("in-model").addEventListener("change",()=>{settings.models[curProvider()]=$("in-model").value.trim();saveSettings();});
-$("in-key").addEventListener("change",()=>{const k=$("in-key").value.trim();if(k)settings.keys[curProvider()]=k;else delete settings.keys[curProvider()];saveSettings();updateKeyBanner();});
-$("forget-key").onclick=()=>{delete settings.keys[curProvider()];$("in-key").value="";saveSettings();updateKeyBanner();};
 function updateKeyBanner(){const b=$("keybanner");if(needsKey()){b.style.display="block";b.textContent="Add your "+(pcfg(curProvider()).label||curProvider())+" API key in Settings (left rail) to generate.";}else b.style.display="none";refreshGen();}
 
-// ---- standards navigation ----
+// ---- format recommendations ----
+function loadRecs(subSubjectId){if(!subSubjectId){$("recs").innerHTML="";RECS=[];return;}
+  fetch("/api/recommend?sub_subject="+encodeURIComponent(subSubjectId)).then(r=>r.json()).then(d=>{
+    RECS=d.recommended||[];const box=$("recs");box.innerHTML="";
+    RECS.slice(0,8).forEach(id=>{const b=document.createElement("button");b.className="rec";b.textContent=(FMT[id]||{}).name||id;
+      b.onclick=()=>{$("sel-format").value=id;fmtChanged();};box.appendChild(b);});
+    fmtChanged();
+  });}
+$("sel-format").addEventListener("change",fmtChanged);
+function fmtChanged(){const id=$("sel-format").value;$("fmtdef").textContent=(FMT[id]||{}).definition||"";
+  Array.prototype.forEach.call($("recs").children,b=>b.classList.toggle("on",((FMT[[...FORMATS].find(f=>f.name===b.textContent)?.id]||{}).id||"")===id||b.textContent===(FMT[id]||{}).name));
+  refreshGen();}
+
+function refreshGen(){
+  const srcOk = srcMode==="book" ? !!(pickedBook && $("sel-cover").value) : !!(curSubtopic && selectedObjectives().length);
+  $("gen").disabled = !(srcOk && $("sel-format").value && !needsKey() && !busy);
+  const n=$("gennote");
+  if(busy){n.textContent="Generating…";n.className="note";}
+  else if(needsKey()){n.textContent="Add your API key in Settings to generate.";n.className="note warn";}
+  else if(!srcOk){n.textContent = srcMode==="book" ? "Pick a book, coverage, and a format." : "Pick a standard, an objective, and a format.";n.className="note";}
+  else if(srcMode==="book"){n.textContent="Ready. "+pickedBook.title+" · through ch "+$("sel-cover").value+" · "+((FMT[$("sel-format").value]||{}).name||"")+".";n.className="note";}
+  else{n.textContent="Ready. "+selectedObjectives().length+" objective(s) · "+((FMT[$("sel-format").value]||{}).name||"")+".";n.className="note";}
+  updateSummaries();
+}
+
+// ---- builder accordion (single-open; content discloses instead of nesting scrolls) ----
+function openSec(name){document.querySelectorAll(".acc-sec").forEach(s=>s.classList.toggle("open",s.dataset.sec===name));}
+document.querySelectorAll(".acc-h").forEach(h=>h.addEventListener("click",()=>{
+  const sec=h.closest(".acc-sec"),willOpen=!sec.classList.contains("open");
+  document.querySelectorAll(".acc-sec").forEach(s=>s.classList.remove("open"));
+  if(willOpen)sec.classList.add("open");
+}));
+function bandLabel(){const s=$("sel-band"),o=s.options[s.selectedIndex];return o?o.textContent:"";}
+function updateSummaries(){
+  function set(id,txt,sec,done){const el=$(id);if(el)el.textContent=txt;const s=document.querySelector('.acc-sec[data-sec="'+sec+'"]');if(s)s.classList.toggle("done",!!done);}
+  set("sum-book", pickedBook ? (pickedBook.title + ($("sel-cover").value ? " · through ch "+$("sel-cover").value : "")) : "None",
+      "book", !!(pickedBook && $("sel-cover").value));
+  const path=[curSubject&&curSubject.name,curSub&&curSub.name,curTopic&&curTopic.name,curSubtopic&&curSubtopic.name].filter(Boolean);
+  const nobj=selectedObjectives().length;
+  set("sum-standard",path.length?path[path.length-1]:"Not chosen","standard",!!curSubtopic);
+  set("sum-objectives",nobj?nobj+" selected":"None","objectives",nobj>0);
+  set("sum-format",(FMT[$("sel-format").value]||{}).name||"None","format",!!$("sel-format").value);
+  set("sum-audience",bandLabel(),"audience",true);
+}
+$("sel-band").addEventListener("change",updateSummaries);
+
+// ---- standards navigation (academic-spine source mode) ----
 function opts(sel,items,label){sel.innerHTML="<option value=''>Select…</option>";items.forEach(it=>{const o=document.createElement("option");o.value=it.id;o.textContent=label(it);sel.appendChild(o);});sel.disabled=items.length===0;}
 let curSubject=null,curSub=null,curTopic=null,curSubtopic=null;
 function setCrumb(){const parts=[curSubject&&curSubject.name,curSub&&curSub.name,curTopic&&curTopic.name,curSubtopic&&curSubtopic.name].filter(Boolean);$("crumb").textContent=parts.join("  ›  ");updateSummaries();}
@@ -541,51 +509,49 @@ function loadObjectives(){const box=$("objs");if(!curSubtopic){box.innerHTML="<d
   }).catch(()=>{box.innerHTML="<div class='empty'>Failed to load.</div>";});}
 function selectedObjectives(){return Array.prototype.map.call($("objs").querySelectorAll("input:checked"),i=>i.closest(".obj").__obj).map(o=>({id:o.id,t:o.t,g:o.g,c:o.c}));}
 
-// ---- format recommendations ----
-function loadRecs(subSubjectId){if(!subSubjectId){$("recs").innerHTML="";RECS=[];return;}
-  fetch("/api/recommend?sub_subject="+encodeURIComponent(subSubjectId)).then(r=>r.json()).then(d=>{
-    RECS=d.recommended||[];const box=$("recs");box.innerHTML="";
-    RECS.slice(0,8).forEach(id=>{const b=document.createElement("button");b.className="rec";b.textContent=(FMT[id]||{}).name||id;
-      b.onclick=()=>{$("sel-format").value=id;fmtChanged();};box.appendChild(b);});
-    fmtChanged();
-  });}
-$("sel-format").addEventListener("change",fmtChanged);
-function fmtChanged(){const id=$("sel-format").value;$("fmtdef").textContent=(FMT[id]||{}).definition||"";
-  Array.prototype.forEach.call($("recs").children,b=>b.classList.toggle("on",((FMT[[...FORMATS].find(f=>f.name===b.textContent)?.id]||{}).id||"")===id||b.textContent===(FMT[id]||{}).name));
-  refreshGen();}
-
-function refreshGen(){const ok=curSubtopic&&selectedObjectives().length&&$("sel-format").value&&!needsKey()&&!busy;
-  $("gen").disabled=!ok;
-  const n=$("gennote");
-  if(busy){n.textContent="Generating…";n.className="note";}
-  else if(needsKey()){n.textContent="Add your API key in Settings to generate.";n.className="note warn";}
-  else if(!curSubtopic||!selectedObjectives().length){n.textContent="Pick a standard, an objective, and a format.";n.className="note";}
-  else n.textContent="Ready. "+selectedObjectives().length+" objective(s) · "+((FMT[$("sel-format").value]||{}).name||"")+".";
-  updateSummaries();}
-
-// ---- builder accordion (single-open; content discloses instead of nesting scrolls) ----
-function openSec(name){document.querySelectorAll(".acc-sec").forEach(s=>s.classList.toggle("open",s.dataset.sec===name));}
-document.querySelectorAll(".acc-h").forEach(h=>h.addEventListener("click",()=>{
-  const sec=h.closest(".acc-sec"),willOpen=!sec.classList.contains("open");
-  document.querySelectorAll(".acc-sec").forEach(s=>s.classList.remove("open"));
-  if(willOpen)sec.classList.add("open");
-}));
-function bandLabel(){const s=$("sel-band"),o=s.options[s.selectedIndex];return o?o.textContent:"";}
-function updateSummaries(){
-  function set(id,txt,sec,done){const el=$(id);if(el)el.textContent=txt;const s=document.querySelector('.acc-sec[data-sec="'+sec+'"]');if(s)s.classList.toggle("done",!!done);}
-  const path=[curSubject&&curSubject.name,curSub&&curSub.name,curTopic&&curTopic.name,curSubtopic&&curSubtopic.name].filter(Boolean);
-  const nobj=selectedObjectives().length;
-  set("sum-standard",path.length?path[path.length-1]:"Not chosen","standard",!!curSubtopic);
-  set("sum-objectives",nobj?nobj+" selected":"None","objectives",nobj>0);
-  set("sum-format",(FMT[$("sel-format").value]||{}).name||"None","format",!!$("sel-format").value);
-  set("sum-audience",bandLabel(),"audience",true);
+// ---- source mode toggle: a book (live text) vs. academic-spine standards ----
+function setNums(map){for(const k in map){const s=document.querySelector('.acc-sec[data-sec="'+k+'"] .acc-n');if(s)s.textContent=map[k];}}
+function applySrcMode(){
+  const book = srcMode==="book";
+  $("stdsearchwrap").style.display = book ? "none" : "";
+  document.querySelector('.acc-sec[data-sec="book"]').style.display = book ? "" : "none";
+  document.querySelector('.acc-sec[data-sec="standard"]').style.display = book ? "none" : "";
+  document.querySelector('.acc-sec[data-sec="objectives"]').style.display = book ? "none" : "";
+  setNums(book ? {book:"1",format:"2",audience:"3"} : {standard:"1",objectives:"2",format:"3",audience:"4"});
+  document.querySelectorAll(".srcbtn").forEach(b=>b.classList.toggle("on",b.dataset.src===srcMode));
+  openSec(book ? "book" : "standard");
+  refreshGen();
 }
-$("sel-band").addEventListener("change",updateSummaries);
+document.querySelectorAll(".srcbtn").forEach(b=>b.addEventListener("click",()=>{if(srcMode===b.dataset.src)return;srcMode=b.dataset.src;applySrcMode();}));
+applySrcMode();   // set the initial mode (book) and its step layout
+
+// ---- book picker (generation reads the book's live text at request time) ----
+$("booksearch").addEventListener("input",()=>{clearTimeout(_bkTimer);const q=$("booksearch").value.trim();
+  if(q.length<2){$("bookresults").classList.remove("open");$("bookresults").innerHTML="";return;}
+  _bkTimer=setTimeout(()=>bookSearch(q),180);});
+function bookSearch(q){fetch("/api/books?q="+encodeURIComponent(q)+"&limit=12").then(r=>r.json()).then(d=>{
+  const box=$("bookresults");box.innerHTML="";
+  (d.items||[]).forEach(b=>{const it=document.createElement("div");it.className="sitem";
+    it.innerHTML="<div class='si-top'><span class='si-lab'>"+esc(b.title)+"</span></div>"
+      +"<div class='si-path'>"+esc(b.author||"")+" · "+b.chapter_count+" ch</div>";
+    it.onclick=()=>chooseBook(b);box.appendChild(it);});
+  box.classList.toggle("open",(d.items||[]).length>0);}).catch(()=>{});}
+function chooseBook(b){fetch("/api/books/"+encodeURIComponent(b.slug)).then(r=>r.json()).then(d=>{
+  pickedBook={slug:b.slug,title:b.title,author:b.author,toc:d.toc||[]};
+  $("booksearch").value=b.title;$("bookresults").classList.remove("open");$("bookresults").innerHTML="";
+  const sel=$("sel-cover");sel.innerHTML="";
+  (pickedBook.toc||[]).forEach(t=>{const o=document.createElement("option");o.value=t.section_number;
+    o.textContent="Ch "+t.section_number+(t.title?" — "+t.title:"");sel.appendChild(o);});
+  if(pickedBook.toc.length)sel.value=pickedBook.toc[pickedBook.toc.length-1].section_number;  // default: whole book
+  $("coverwrap").style.display=pickedBook.toc.length?"":"none";
+  refreshGen();}).catch(()=>{});}
+$("sel-cover").addEventListener("change",refreshGen);
+document.addEventListener("click",e=>{if(!e.target.closest("#sum-book")&&!e.target.closest("#coverwrap")&&!e.target.closest(".searchbox"))$("bookresults").classList.remove("open");});
 
 // ---- output: paper / teacher-student / view-edit / modify / pdf ----
 const paper=$("paper"),editor=$("editor"),placeholder=$("placeholder"),paperwrap=$("paperwrap"),modrow=$("modrow"),tools=$("tools");
 let audience="teacher",mode="view";
-function slug(){const t=curSubtopic?curSubtopic.name:"resource";const f=(FMT[$("sel-format").value]||{}).name||"";return (f+" - "+t).replace(/[^\w \-]/g,"").slice(0,60).trim().replace(/\s+/g,"_");}
+function slug(){const t=srcMode==="book"?(pickedBook?pickedBook.title:"resource"):(curSubtopic?curSubtopic.name:"resource");const f=(FMT[$("sel-format").value]||{}).name||"";return (f+" - "+t).replace(/[^\w \-]/g,"").slice(0,60).trim().replace(/\s+/g,"_");}
 function splitKey(raw){const L=raw.split("\n");let idx=-1;for(let i=0;i<L.length;i++){if(/^#{1,3}\s*Answer Key\b/i.test(L[i].trim())){idx=i;}}
   if(idx<0)return {body:raw,key:""};let cut=idx;while(cut>0&&(/^\s*-{3,}\s*$/.test(L[cut-1])||/^\s*$/.test(L[cut-1])))cut--;
   return {body:L.slice(0,cut).join("\n").trimEnd(),key:L.slice(idx).join("\n")};}
@@ -629,14 +595,24 @@ async function streamInto(url,body){
 $("gen").addEventListener("click",generate);
 async function generate(){
   if($("gen").disabled)return;busy=true;refreshGen();
-  const context={subject_name:curSubject?curSubject.name:"",sub_subject_name:curSub?curSub.name:"",topic_name:curTopic?curTopic.name:"",sub_topic_name:curSubtopic?curSubtopic.name:""};
-  const body={format_id:$("sel-format").value,objectives:selectedObjectives(),grade_band:$("sel-band").value,context,brief:$("brief").value,
-    provider:curProvider(),model:curModel(),api_key:curKey()};
-  $("outtitle").textContent=(FMT[body.format_id]||{}).name+" · "+(curSubtopic?curSubtopic.name:"");
+  let body, title, url;
+  if(srcMode==="book"){
+    url="/api/generate/book";
+    body={format_id:$("sel-format").value,book_slug:pickedBook.slug,coverage:{through:parseInt($("sel-cover").value,10)},
+      grade_band:$("sel-band").value,brief:$("brief").value,provider:curProvider(),model:curModel(),api_key:curKey()};
+    title=(FMT[body.format_id]||{}).name+" · "+pickedBook.title;
+  } else {
+    url="/api/generate";
+    const context={subject_name:curSubject?curSubject.name:"",sub_subject_name:curSub?curSub.name:"",topic_name:curTopic?curTopic.name:"",sub_topic_name:curSubtopic?curSubtopic.name:""};
+    body={format_id:$("sel-format").value,objectives:selectedObjectives(),grade_band:$("sel-band").value,context,brief:$("brief").value,
+      provider:curProvider(),model:curModel(),api_key:curKey()};
+    title=(FMT[body.format_id]||{}).name+" · "+(curSubtopic?curSubtopic.name:"");
+  }
+  $("outtitle").textContent=title;
   audience="teacher";mode="view";segOn("aud",x=>x.dataset.v==="teacher");segOn("mode",x=>x.dataset.m==="view");
   placeholder.style.display="none";paperwrap.style.display="flex";editor.style.display="none";modrow.style.display="flex";
   rawDoc="";
-  await streamInto("/api/generate",body);
+  await streamInto(url,body);
   busy=false;refreshGen();
 }
 
@@ -644,7 +620,7 @@ $("modbtn").addEventListener("click",applyMod);
 $("modin").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();applyMod();}});
 async function applyMod(){
   const instr=$("modin").value.trim();if(!instr||busy||!rawDoc.trim())return;
-  if(needsKey()){updateKeyBanner();setBg.classList.add("open");return;}
+  if(needsKey()){updateKeyBanner();AppSettings.open();return;}
   if(mode==="edit"){rawDoc=editor.value;mode="view";syncMode();}
   busy=true;refreshGen();$("modbtn").textContent="Applying…";
   const prev=rawDoc;
@@ -659,6 +635,6 @@ $("pdf").addEventListener("click",()=>{if(mode==="edit"){rawDoc=editor.value;mod
 $("download").addEventListener("click",()=>{const blob=new Blob([shown()],{type:"text/markdown"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=slug()+(audience==="student"?"_student":"")+".md";a.click();URL.revokeObjectURL(a.href);});
 $("copy").addEventListener("click",()=>{navigator.clipboard&&navigator.clipboard.writeText(shown());$("copy").textContent="Copied";setTimeout(()=>$("copy").textContent="Copy",1200);});
 </script>
-<script src="/static/acct.js"></script>
+<script src="/static/settings.js"></script>
 </body>
 </html>

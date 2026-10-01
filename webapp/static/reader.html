@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reading Room — Exegetica</title>
+<meta name="description" content="Read public-domain classics in Exegetica — the Reading Room.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#f0e8dc; --surface:#f8f2ea; --surface-2:#e9e0d1; --sunk:#e2d7c6; --ink:#1e2026;
+    --ink-soft:#54596a; --ink-faint:#8b8f9b; --rule:#ddd3c1; --rule-strong:#c9bda6;
+    --accent:#c05a64; --accent-soft:#a84a55; --iron:#42718a; --brass:#9a7c3d;
+    --serif:"Spectral",Georgia,serif; --sans:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    --shadow:0 14px 40px -22px rgba(40,32,22,.55);
+    --gutter:linear-gradient(90deg,transparent 0%,rgba(47,36,24,.045) 36%,rgba(47,36,24,.13) 49.4%,rgba(255,255,255,.30) 50%,rgba(47,36,24,.13) 50.6%,rgba(47,36,24,.045) 64%,transparent 100%);
+    --page:#f8f2ea;
+    --desk:#e3d8c5;
+    --read-scale:1.15rem;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#14151a; --surface:#1b1d23; --surface-2:#23252c; --sunk:#101116; --ink:#e9e7e0;
+    --ink-soft:#a9aeb9; --ink-faint:#787d88; --rule:#2c2f37; --rule-strong:#3b3f49;
+    --accent:#dd8089; --accent-soft:#b0555f; --iron:#7fb0c2; --brass:#c7a45f;
+    --shadow:0 16px 44px -22px rgba(0,0,0,.7);
+    --gutter:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.28) 38%,rgba(0,0,0,.6) 49.3%,rgba(255,255,255,.10) 50%,rgba(0,0,0,.6) 50.7%,rgba(0,0,0,.28) 62%,transparent 100%);
+    --page:#1c1f26;
+    --desk:#0e0f13;
+  }}
+  :root[data-theme="dark"]{
+    --paper:#14151a; --surface:#1b1d23; --surface-2:#23252c; --sunk:#101116; --ink:#e9e7e0;
+    --ink-soft:#a9aeb9; --ink-faint:#787d88; --rule:#2c2f37; --rule-strong:#3b3f49;
+    --accent:#dd8089; --accent-soft:#b0555f; --iron:#7fb0c2; --brass:#c7a45f;
+    --shadow:0 16px 44px -22px rgba(0,0,0,.7);
+    --gutter:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.28) 38%,rgba(0,0,0,.6) 49.3%,rgba(255,255,255,.10) 50%,rgba(0,0,0,.6) 50.7%,rgba(0,0,0,.28) 62%,transparent 100%);
+    --page:#1c1f26;
+    --desk:#0e0f13;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  html,body{margin:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;
+    -webkit-font-smoothing:antialiased}
+  a{color:var(--iron);text-decoration:none}
+  a:hover{text-decoration:underline}
+  button{font-family:inherit;cursor:pointer}
+  h1,h2,h3{text-wrap:balance}
+
+  /* ---- top bar ---- */
+  .topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;
+    padding:12px 20px;background:color-mix(in srgb,var(--paper) 88%,transparent);
+    backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid var(--rule)}
+  .tb-back{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--iron);flex:none}
+  .tb-title{font-family:var(--serif);font-weight:600;font-size:1rem;color:var(--ink);
+    flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center}
+  .tb-ctrls{display:flex;align-items:center;gap:6px;flex:none}
+  .iconbtn{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--rule-strong);
+    background:var(--surface);border-radius:9px;color:var(--ink-soft);font-size:14px;padding:0}
+  .iconbtn:hover{color:var(--ink);border-color:var(--brass)}
+  .iconbtn.sm{font-size:12px}
+
+  /* ---- browse : search-first, faceted, cover grid ---- */
+  .wrap{max-width:1280px;margin:0 auto;padding:34px 28px 110px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  h1.title{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,5vw,3rem);line-height:1.04;margin:.28em 0 .5em;letter-spacing:-.015em}
+  /* the search-first centerpiece */
+  .search{display:flex;align-items:center;gap:12px;background:var(--surface);
+    border:1px solid var(--rule-strong);border-radius:14px;padding:15px 20px;max-width:680px;
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset, var(--shadow);transition:border-color .15s}
+  .search:focus-within{border-color:var(--brass)}
+  .search svg{width:20px;height:20px;stroke:var(--ink-faint);fill:none;stroke-width:2;flex:none}
+  .search input{flex:1;border:0;background:none;font-family:var(--serif);font-size:1.12rem;color:var(--ink);outline:none}
+  .search input::placeholder{color:var(--ink-faint)}
+  .search .clr{font-family:var(--mono);font-size:12px;color:var(--ink-faint);border:0;background:none;padding:4px}
+  .search .clr:hover{color:var(--ink)}
+
+  .browse-layout{display:grid;grid-template-columns:214px minmax(0,1fr);gap:38px;margin-top:30px;align-items:start}
+  /* facet rail — quiet rows, not pills */
+  .facets{position:sticky;top:70px;display:flex;flex-direction:column;gap:22px}
+  .facet-group{display:flex;flex-direction:column}
+  .facet-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 9px;padding-bottom:7px;border-bottom:1px solid var(--rule)}
+  .fopt{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding:5px 8px;margin:0 -8px;border-radius:7px;
+    font-size:14px;color:var(--ink-soft);cursor:pointer;border-left:2px solid transparent;line-height:1.35;text-align:left;background:none;border-top:0;border-right:0;border-bottom:0;width:calc(100% + 16px)}
+  .fopt:hover{background:var(--surface);color:var(--ink)}
+  .fopt.on{color:var(--ink);font-weight:600;border-left-color:var(--accent);background:var(--surface)}
+  .fopt .fk{font-family:var(--mono);font-size:11px;color:var(--ink-faint);flex:none;font-variant-numeric:tabular-nums}
+  .fopt.on .fk{color:var(--accent)}
+  .facet-scroll{max-height:min(52vh,460px);overflow-y:auto;margin:0 -8px;padding:0 8px}
+  .facet-scroll::-webkit-scrollbar{width:8px}.facet-scroll::-webkit-scrollbar-thumb{background:var(--rule-strong);border-radius:8px}
+
+  .results{min-width:0}
+  .rbar{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin:0 0 20px;flex-wrap:wrap}
+  .rcount{font-family:var(--mono);font-size:12px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+  .rcount b{color:var(--ink);font-weight:600}
+  .rclear{font-family:var(--mono);font-size:12px;color:var(--iron);background:none;border:0;padding:0}
+  .rtools{display:flex;align-items:center;gap:16px;margin-left:auto}
+  .wrap-tog{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--ink-faint);background:none;border:0;padding:0}
+  .wrap-tog:hover{color:var(--ink-soft)}
+  .wrap-tog .sw{width:34px;height:18px;border-radius:999px;background:var(--sunk);border:1px solid var(--rule-strong);position:relative;transition:background .15s;flex:none}
+  .wrap-tog .sw::after{content:"";position:absolute;top:1px;left:1px;width:14px;height:14px;border-radius:50%;
+    background:var(--surface);box-shadow:0 1px 2px rgba(0,0,0,.35);transition:transform .15s}
+  .wrap-tog.on{color:var(--ink-soft)}
+  .wrap-tog.on .sw{background:var(--accent);border-color:var(--accent)}
+  .wrap-tog.on .sw::after{transform:translateX(16px)}
+
+  .shelf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:30px 22px}
+  /* bespoke cloth-bound cover — no images; typeset per book, colored by section */
+  .cover{position:relative;display:flex;flex-direction:column;justify-content:center;aspect-ratio:2/3;
+    border-radius:3px 6px 6px 3px;padding:20px 16px 16px 22px;color:#f4ecd8;overflow:hidden;
+    background:var(--cloth,#4a4038);text-decoration:none;isolation:isolate;
+    box-shadow:0 10px 22px -14px rgba(20,14,6,.7), 0 1px 2px rgba(0,0,0,.3);
+    transition:transform .16s ease, box-shadow .16s ease}
+  .cover::before{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(155deg,rgba(255,255,255,.14),rgba(255,255,255,0) 42%),
+      radial-gradient(120% 80% at 80% 0,rgba(255,255,255,.10),transparent 60%),
+      linear-gradient(90deg,rgba(0,0,0,.34) 0 5px,rgba(0,0,0,.10) 5px 9px,transparent 9px)}
+  .cover::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;mix-blend-mode:overlay;
+    background:repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 2px,transparent 2px 3px),
+      repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 2px,transparent 2px 3px)}
+  .cover:hover{transform:translateY(-5px);box-shadow:0 20px 34px -16px rgba(20,14,6,.78), 0 2px 3px rgba(0,0,0,.3)}
+  .cover:hover{text-decoration:none}
+  .cv-title{font-family:var(--serif);font-weight:600;font-size:1.02rem;line-height:1.2;letter-spacing:-.005em;
+    color:#f7efdc;text-shadow:0 1px 1px rgba(0,0,0,.35);
+    display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+  .cv-rule{width:26px;height:2px;background:rgba(247,239,220,.55);margin:11px 0 9px;flex:none}
+  .cv-author{font-family:var(--serif);font-style:italic;font-size:.82rem;line-height:1.3;color:rgba(247,239,220,.82);
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .cv-sec{position:absolute;left:22px;right:14px;bottom:12px;font-family:var(--mono);font-size:8.5px;letter-spacing:.11em;
+    text-transform:uppercase;color:rgba(247,239,220,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* real cover art (Open Library / Google Books), overlaid on the cloth fallback */
+  .cv-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;background:transparent;
+    border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);opacity:0;transition:opacity .25s ease}
+  .cv-img.ld{opacity:1}
+  @media (prefers-reduced-motion:reduce){.cv-img{transition:none}}
+  .cv-flag{position:absolute;top:0;right:12px;width:16px;height:26px;background:var(--accent);z-index:3;
+    clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%)}  /* "in progress" ribbon */
+  /* admin-only: replace cover art (shown on hover when the grid has .admin) */
+  .cv-edit{position:absolute;top:6px;left:6px;z-index:4;width:26px;height:26px;display:none;place-items:center;
+    border:0;border-radius:7px;background:rgba(18,12,5,.74);color:#f4ecd8;font-size:13px;line-height:1;padding:0;
+    backdrop-filter:blur(2px);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+  .shelf-grid.admin .cover:hover .cv-edit,.cv-edit:focus{display:grid}
+  .cv-edit:hover{background:var(--accent);color:#fff}
+  /* admin cover search: Google Images results in a modal, click one to make it the cover */
+  .cd{width:min(980px,calc(100vw - 32px));max-height:min(88vh,900px);padding:0;border:1px solid var(--rule-strong);
+    border-radius:14px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow);overflow:hidden}
+  .cd[open]{display:flex;flex-direction:column}
+  .cd::backdrop{background:rgba(20,16,10,.55)}
+  .cd-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:18px 22px 14px;border-bottom:1px solid var(--rule)}
+  .cd-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+  .cd-title{font-family:var(--serif);font-weight:600;font-size:1.25rem;line-height:1.2;margin:2px 0 0;text-wrap:balance}
+  .cd-author{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:.95rem}
+  .cd-x{grid-column:2;grid-row:1/span 3;align-self:start;width:34px;height:34px;border:1px solid var(--rule);border-radius:9px;
+    background:transparent;color:var(--ink-soft);font-size:18px;line-height:1;cursor:pointer}
+  .cd-x:hover{color:var(--ink);border-color:var(--rule-strong)}
+  .cd-q{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-top:8px}
+  .cd-q code{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);overflow-wrap:anywhere}
+  .cd-q a{font-size:13px;color:var(--iron);white-space:nowrap}
+  .cd-status{margin:0;padding:10px 22px;font-size:13.5px;color:var(--ink-soft);border-bottom:1px solid var(--rule)}
+  .cd-status.bad{color:var(--accent)}
+  .cd-results{flex:1 1 auto;min-height:120px;overflow-y:auto;padding:16px 22px;display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:16px 14px;align-content:start}
+  .cd-item{display:flex;flex-direction:column;gap:6px;padding:0;border:0;background:none;color:inherit;text-align:left;cursor:pointer;min-width:0}
+  .cd-frame{aspect-ratio:2/3;display:grid;place-items:center;background:var(--sunk);border-radius:6px;overflow:hidden;
+    box-shadow:inset 0 0 0 1px var(--rule)}
+  .cd-frame img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+  .cd-item:hover .cd-frame,.cd-item:focus-visible .cd-frame{box-shadow:inset 0 0 0 2px var(--accent)}
+  .cd-item:focus-visible{outline:none}
+  .cd-meta{font-family:var(--mono);font-size:10px;line-height:1.35;color:var(--ink-faint);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cd-meta b{font-weight:500;color:var(--ink-soft)}
+  .cd-item.lo .cd-meta b{color:var(--accent)}   /* narrower than the 400px we store: will look soft */
+  .cd.busy .cd-results{opacity:.45;pointer-events:none}
+  .cd-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:14px 22px;border-top:1px solid var(--rule);background:var(--surface-2)}
+  .cd-foot form{display:flex;gap:8px;flex:1 1 360px;min-width:0}
+  .cd-foot input{flex:1 1 auto;min-width:0;padding:8px 11px;border:1px solid var(--rule-strong);border-radius:8px;
+    background:var(--surface);color:var(--ink);font:13px var(--sans)}
+  .cd-btn{padding:8px 14px;border-radius:8px;border:1px solid var(--rule-strong);background:var(--surface);color:var(--ink);
+    font:500 13px var(--sans);cursor:pointer;white-space:nowrap}
+  .cd-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .cd-btn:hover{border-color:var(--ink-faint)}
+  .cd.busy .cd-btn{opacity:.5;pointer-events:none}
+  @media (max-width:760px){
+    .cd{max-height:92vh}
+    .cd-head,.cd-results,.cd-foot{padding-left:16px;padding-right:16px}
+    .cd-status{padding-left:16px;padding-right:16px}
+    .cd-results{grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:12px 10px}
+  }
+  .more{display:block;margin:34px auto 0;padding:11px 26px;background:var(--surface);border:1px solid var(--rule-strong);
+    border-radius:10px;color:var(--ink);font-size:14px;font-weight:500}
+  .empty{color:var(--ink-soft);font-size:15px;padding:56px 0;text-align:center;max-width:52ch;margin:0 auto}
+  .empty b{color:var(--ink);font-weight:600}
+
+  .mfilters{display:none}
+  /* mobile: one swipeable chip strip (Continue reading + sections), Sort/Length as native selects,
+     a denser 3-up cover grid */
+  @media (max-width:760px){
+    .wrap{padding:20px 16px 90px}
+    h1.title{font-size:2rem;margin:.18em 0 .45em}
+    .search{padding:11px 14px;gap:10px;border-radius:12px}
+    .search input{font-size:1rem;min-width:0}
+    .browse-layout{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:16px}
+    .facets{position:static;flex-direction:row;gap:6px;overflow-x:auto;overflow-y:hidden;
+      margin:0 -16px;padding:2px 16px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .facets::-webkit-scrollbar{display:none}
+    .facets .facet-group,.facets .facet-group > div{display:contents}
+    .facets .facet-group > .facet-h,.facets .fg-sort,.facets .fg-len{display:none}
+    .fopt{flex:none;white-space:nowrap;width:auto;margin:0;padding:7px 13px;gap:7px;font-size:13.5px;
+      border:1px solid var(--rule-strong);border-radius:999px;background:var(--surface)}
+    .fopt.on{border-color:var(--accent);background:var(--surface)}
+    .mfilters{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
+    .msel{position:relative;display:flex;flex-direction:column;gap:3px;min-width:0}
+    .msel-l{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+    .msel select{appearance:none;-webkit-appearance:none;width:100%;min-width:0;font-family:var(--sans);font-size:16px;
+      color:var(--ink);background:var(--surface);border:1px solid var(--rule-strong);border-radius:10px;
+      padding:8px 30px 8px 12px;text-overflow:ellipsis}
+    .msel::after{content:"";position:absolute;right:13px;bottom:15px;width:7px;height:7px;pointer-events:none;
+      border-right:1.6px solid var(--ink-soft);border-bottom:1.6px solid var(--ink-soft);transform:rotate(45deg)}
+    .msel select:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
+    .rbar{margin:0 0 14px}
+    .shelf-grid{grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:18px 12px}
+    .cover{padding:12px 8px 10px 13px;border-radius:2px 4px 4px 2px}
+    .cover::before{background:linear-gradient(155deg,rgba(255,255,255,.14),rgba(255,255,255,0) 42%),
+      linear-gradient(90deg,rgba(0,0,0,.34) 0 3px,rgba(0,0,0,.10) 3px 6px,transparent 6px)}
+    .cover:hover{transform:none}
+    .cv-title{font-size:.78rem;line-height:1.18;-webkit-line-clamp:5}
+    .cv-rule{width:16px;height:1.5px;margin:7px 0 6px}
+    .cv-author{font-size:.66rem}
+    .cv-sec{display:none}
+    .cv-flag{right:7px;width:11px;height:18px}
+  }
+
+  /* ---- reader ---- */
+  .reader{display:grid;grid-template-columns:minmax(0,1fr);position:relative}
+  .toc{position:fixed;top:59px;bottom:0;left:0;width:288px;overflow-y:auto;padding:22px 10px 40px 24px;
+    border-right:1px solid var(--rule);background:var(--surface);transform:translateX(0);
+    transition:transform .18s ease}
+  .toc.hidden{transform:translateX(-100%)}
+  .toc .bt{font-family:var(--serif);font-weight:600;font-size:1.05rem;color:var(--ink);line-height:1.2;margin-bottom:2px}
+  .toc .ba{font-size:12.5px;color:var(--ink-soft);margin-bottom:16px}
+  .toc-h{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 8px}
+  .toc ol{list-style:none;margin:0;padding:0}
+  .toc li{margin:0}
+  .toc a{display:block;padding:7px 12px;border-radius:8px;color:var(--ink-soft);font-size:14px;line-height:1.35;
+    border-left:2px solid transparent}
+  .toc a:hover{background:var(--surface-2);text-decoration:none;color:var(--ink)}
+  .toc a.on{background:var(--surface-2);color:var(--ink);border-left-color:var(--accent);font-weight:500}
+  .toc a .n{font-family:var(--mono);font-size:11px;color:var(--ink-faint);margin-right:8px}
+
+  /* reading stage — horizontally paginated via CSS multi-column (page turns) */
+  body.reading{overflow:hidden}
+  .stage{position:relative;margin-left:288px;transition:margin-left .18s ease;height:calc(100vh - 59px);overflow:hidden;background:var(--desk)}
+  .stage.wide{margin-left:0}
+  /* the page: a centered card on the desk; its width is sized in JS, leftover shows desk */
+  .book{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;background:var(--page);box-shadow:var(--shadow);border-radius:3px;overflow:hidden}
+  .pageport{position:absolute;left:0;right:0;top:0;bottom:44px;overflow:hidden}
+  /* center binding: soft shadow curving into a bright seam — desktop two-up only */
+  .gutter{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:clamp(88px,13%,176px);pointer-events:none;z-index:2;display:none;background:var(--gutter)}
+  .stage.twoup .gutter{display:block}
+  .chapter{position:relative;height:100%;margin:0;padding:60px 0 40px;column-fill:auto;column-gap:76px;transform:translateX(0);transition:opacity .12s ease}
+  .chapter.fading{opacity:0}
+  .ch-eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
+  .chapter :is(h1,h2,h3,h4){font-family:var(--serif);font-weight:600;color:var(--ink);line-height:1.18;text-wrap:balance;margin:1.4em 0 .6em;letter-spacing:-.01em;break-after:avoid}
+  .chapter h1,.chapter h2{font-size:1.55rem;margin-top:.1em}
+  .chapter h3{font-size:1.25rem}
+  .chapter p{font-family:var(--serif);font-size:var(--read-scale);line-height:1.72;color:var(--ink);margin:0 0 1em;hyphens:auto;orphans:2;widows:2;text-align:justify}
+  .chapter blockquote{margin:1.2em 0;padding:.2em 0 .2em 1.2em;border-left:3px solid var(--rule-strong);color:var(--ink-soft);font-style:italic}
+  .chapter blockquote p{color:var(--ink-soft)}
+  .chapter :is(em,i){font-style:italic}
+  .chapter hr{border:0;height:1px;background:var(--rule-strong);width:38%;margin:2em auto;break-inside:avoid}
+  .chapter ul,.chapter ol{font-family:var(--serif);font-size:var(--read-scale);line-height:1.7;padding-left:1.4em}
+  .chapter table{border-collapse:collapse;margin:1.1em 0;font-size:.92rem}
+  .chapter td,.chapter th{border:1px solid var(--rule);padding:6px 10px}
+  .chapter sup{font-size:.7em;color:var(--ink-faint)}
+  .chapter :first-child{margin-top:0}
+  /* opening spread: a blank verso + a full-page title recto (chapter 1 only) */
+  .fp-blank{height:100%;-webkit-column-break-after:always;break-after:column}
+  .fp-title{height:100%;-webkit-column-break-after:always;break-after:column;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+  .fp-title .fp-inner{max-width:84%}
+  .fp-t{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.16;letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
+  .fp-rule{width:54px;height:2px;background:var(--brass);margin:22px auto}
+  .fp-a{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ink-soft)}
+
+  /* page-turn edge zones (also the desktop click targets) */
+  .edge{position:absolute;top:0;bottom:44px;width:15%;min-width:52px;max-width:150px;border:0;background:transparent;cursor:pointer;z-index:6;padding:0;display:grid;place-items:center;color:var(--ink-faint);transition:background .15s}
+  .edge svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;opacity:0;transition:opacity .15s}
+  .edge.prev{left:0}.edge.next{right:0}
+  .edge:hover{background:color-mix(in srgb,var(--ink) 5%,transparent)}
+  .edge:hover svg{opacity:.75}
+  .edge:disabled{cursor:default}
+  .edge:disabled:hover{background:transparent}
+  .edge:disabled svg{display:none}
+
+  /* footer progress bar */
+  .pagebar{position:absolute;left:0;right:0;bottom:0;height:44px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0;border-top:1px solid var(--rule);background:transparent;font-family:var(--mono);font-size:11px;color:var(--ink-faint)}
+  .pb-fill{position:absolute;left:0;top:-1px;height:2px;width:0;background:var(--accent);transition:width .2s ease}
+  .pb-l,.pb-r{flex:none;font-variant-numeric:tabular-nums;min-width:34px;color:var(--ink-soft)}
+  .pb-r{text-align:right}
+  .pb-c{flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+  .backdrop{display:none}
+  @media (max-width:820px){
+    .toc{z-index:15;box-shadow:var(--shadow)}
+    .toc.hidden{transform:translateX(-100%)}
+    .stage{margin-left:0}
+    .edge{width:20%}
+    .fp-blank{display:none}   /* single-page: open straight to the title, no blank verso */
+    .backdrop{position:fixed;inset:59px 0 0;background:rgba(0,0,0,.34);z-index:14}
+    .backdrop.show{display:block}
+  }
+  @media (min-width:821px){ .tb-toc{display:none} }
+  @media (max-width:820px){ body.reading .tb-title{visibility:hidden} }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="tb-back" id="back" href="/read">‹ Library</a>
+    <div class="tb-title" id="topTitle">Reading Room</div>
+    <div class="tb-ctrls">
+      <button class="iconbtn tb-toc" id="tocToggle" title="Contents" hidden>☰</button>
+      <button class="iconbtn sm" id="fMinus" title="Smaller text" hidden>A−</button>
+      <button class="iconbtn sm" id="fPlus" title="Larger text" hidden>A+</button>
+      <button class="iconbtn" id="theme" title="Toggle light / dark">◐</button>
+    </div>
+  </header>
+
+  <main id="browse" hidden>
+    <div class="wrap">
+      <div class="eyebrow">Reading Room</div>
+      <h1 class="title">The Library</h1>
+      <label class="search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input id="q" type="search" placeholder="Search by title or author…" autocomplete="off" spellcheck="false">
+        <button class="clr" id="qClear" hidden>clear</button>
+      </label>
+      <div class="browse-layout">
+        <aside class="facets" id="facets">
+          <div class="facet-group"><div class="facet-h">Section</div><div class="facet-scroll" id="secOpts"></div></div>
+          <div class="facet-group fg-sort"><div class="facet-h">Sort</div><div id="sortOpts"></div></div>
+          <div class="facet-group fg-len"><div class="facet-h">Length</div><div id="lenOpts"></div></div>
+        </aside>
+        <div class="results">
+          <div class="mfilters">
+            <label class="msel"><span class="msel-l">Sort</span><select id="mSort" aria-label="Sort"></select></label>
+            <label class="msel"><span class="msel-l">Length</span><select id="mLen" aria-label="Length"></select></label>
+          </div>
+          <div class="rbar">
+            <span class="rcount" id="count"></span>
+            <div class="rtools">
+              <button class="rclear" id="resetF" hidden>Reset filters</button>
+              <button class="wrap-tog" id="wrapTog" type="button" title="Show plain cloth wraps instead of cover art"><span class="sw"></span>Book Wrap</button>
+            </div>
+          </div>
+          <div class="shelf-grid" id="grid"></div>
+          <div class="empty" id="browseEmpty" hidden></div>
+          <button class="more" id="loadMore" hidden>Show more</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <main id="reader" hidden>
+    <div class="reader">
+      <nav class="toc" id="toc" aria-label="Contents">
+        <div class="bt" id="tocBookTitle"></div>
+        <div class="ba" id="tocBookAuthor"></div>
+        <div class="toc-h">Contents</div>
+        <ol id="tocList"></ol>
+      </nav>
+      <div class="backdrop" id="backdrop"></div>
+      <div class="stage" id="stage">
+        <div class="book" id="book">
+          <div class="pageport" id="pageport"><article class="chapter" id="chapter"></article><div class="gutter" aria-hidden="true"></div></div>
+          <div class="pagebar" id="pagebar"><div class="pb-fill" id="pbFill"></div><span class="pb-l" id="pbL"></span><span class="pb-c" id="pbC"></span><span class="pb-r" id="pbR"></span></div>
+        </div>
+        <button class="edge prev" id="pgPrev" aria-label="Previous page"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="edge next" id="pgNext" aria-label="Next page"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </main>
+
+  <dialog class="cd" id="coverDlg" aria-labelledby="cdTitle">
+    <div class="cd-head">
+      <div class="cd-kicker">Find cover art</div>
+      <h2 class="cd-title" id="cdTitle"></h2>
+      <div class="cd-author" id="cdAuthor"></div>
+      <button class="cd-x" id="cdClose" type="button" aria-label="Close">×</button>
+      <div class="cd-q"><code id="cdQuery"></code><a id="cdGoogle" target="_blank" rel="noopener" hidden>Open in Google Images ↗</a></div>
+    </div>
+    <p class="cd-status" id="cdStatus" role="status" aria-live="polite"></p>
+    <div class="cd-results" id="cdResults"></div>
+    <div class="cd-foot">
+      <form id="cdForm">
+        <input id="cdUrl" type="url" placeholder="Or paste an image address (https://…)" aria-label="Image address">
+        <button class="cd-btn primary" type="submit">Use this image</button>
+      </form>
+      <button class="cd-btn" id="cdRevert" type="button">Restore original cover</button>
+    </div>
+  </dialog>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var root = document.documentElement;
+  var relayout = null;  // set by the reader to re-paginate after a text-size change
+
+  // ---- theme + text size (per-viewer, localStorage) ----
+  function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+  function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+  var savedTheme = lsGet("exeg-theme");
+  if(savedTheme){ root.setAttribute("data-theme", savedTheme); }
+  $("theme").addEventListener("click", function(){
+    var cur = root.getAttribute("data-theme");
+    if(!cur){ cur = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+    var next = cur === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next); lsSet("exeg-theme", next);
+  });
+  var SCALES = [1.0, 1.08, 1.15, 1.24, 1.34, 1.45];
+  var scaleIdx = parseInt(lsGet("exeg-read-scale") || "2", 10);
+  if(isNaN(scaleIdx) || scaleIdx < 0 || scaleIdx >= SCALES.length){ scaleIdx = 2; }
+  function applyScale(){ root.style.setProperty("--read-scale", SCALES[scaleIdx] + "rem"); lsSet("exeg-read-scale", scaleIdx); if(relayout){ relayout(); } }
+  $("fMinus").addEventListener("click", function(){ if(scaleIdx>0){ scaleIdx--; applyScale(); } });
+  $("fPlus").addEventListener("click", function(){ if(scaleIdx<SCALES.length-1){ scaleIdx++; applyScale(); } });
+  applyScale();
+
+  function fmtWords(w){
+    if(!w) return "";
+    if(w >= 1000) return Math.round(w/1000) + "k words";
+    return w + " words";
+  }
+  function readTime(w){
+    var mins = Math.round((w||0)/220);
+    if(mins < 60) return mins + " min";
+    var h = Math.floor(mins/60), m = mins%60;
+    return h + "h" + (m ? " " + m + "m" : "");
+  }
+  function esc(s){ return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  var m = location.pathname.match(/^\/read\/(.+)$/);
+  if(m){ initReader(decodeURIComponent(m[1])); } else { initBrowse(); }
+
+  // =================== BROWSE (search-first, faceted cover grid) ===================
+  var CLOTH = {
+    "Literary & Classics":"#6d2b30","Fantasy":"#1f5a54","Science Fiction":"#26364f",
+    "Mystery & Crime":"#33373d","Horror & Gothic":"#2a2130","Adventure":"#8a4a2b",
+    "Romance":"#8d4a5a","Humor & Satire":"#8f7130","Short Stories":"#495560",
+    "Children's":"#b0733a","Poetry":"#4a2e54","Plays & Drama":"#5e2a2a",
+    "Biography & Memoir":"#34513a","History":"#6a4a24","Travel & Places":"#1f5e6e",
+    "Christianity":"#2f3a6b","World Religions & Spirituality":"#7a5326","Philosophy":"#3b3f47",
+    "Psychology":"#4a3f6b","Science & Nature":"#2c5140","Health & Medicine":"#7d3f3a",
+    "Technology & How-To":"#3d5566","Cooking & Home":"#8a4030","Society, Politics & Economics":"#5a5a2e",
+    "Art, Music & Performance":"#1f5a63","Sports & Recreation":"#2f4d33","Language & Reference":"#6a5230",
+    "Reference & Knowledge":"#4d4a44"
+  };
+  var LENGTHS = [
+    {key:"s",label:"Short reads · under 20k",lo:0,hi:20000},
+    {key:"m",label:"Medium · 20–80k words",lo:20000,hi:80000},
+    {key:"l",label:"Long · 80–200k words",lo:80000,hi:200000},
+    {key:"e",label:"Epics · 200k+ words",lo:200000,hi:Infinity}
+  ];
+  var SORTS = [
+    {key:"author",label:"Author (A–Z)"},{key:"title",label:"Title (A–Z)"},
+    {key:"long",label:"Longest first"},{key:"short",label:"Shortest first"}
+  ];
+
+  function initBrowse(){
+    $("browse").hidden = false;
+    $("back").href = "/"; $("back").textContent = "‹ Exegetica";
+    $("topTitle").textContent = "Reading Room";
+    document.title = "The Library — Exegetica";
+
+    var books = [], positions = {}, progress = {}, secList = [];
+    var READ_MIN = 7;   // a book joins "Continue Reading" only after this many pages read
+    function started(slug){ return (progress[slug] || 0) >= READ_MIN; }
+    var state = { q:"", section:null, length:null, sort:"author", reading:false, wrap: lsGet("exeg-book-wrap") === "1" };
+    var filtered = [], shown = 0, BATCH = 48;
+
+    var bySlug = {}, isAdmin = false;
+    function cloth(sec){ return CLOTH[sec] || "#4a4038"; }
+    function cover(b){
+      var a = document.createElement("a");
+      a.className = "cover"; a.href = "/read/" + encodeURIComponent(b.slug); a.dataset.slug = b.slug;
+      a.style.setProperty("--cloth", cloth(b.sections[0]));
+      a.innerHTML =
+        '<span class="cv-title">' + esc(b.title) + '</span><span class="cv-rule"></span>' +
+        (b.author ? '<span class="cv-author">' + esc(b.author) + '</span>' : "") +
+        '<span class="cv-sec">' + esc(b.sections[0] || "") + '</span>' +
+        (!state.wrap && b.cover ? '<img class="cv-img" alt="" loading="lazy" src="' + esc(b.cover) + '" onload="this.classList.add(\'ld\')" onerror="this.remove()">' : "") +
+        (started(b.slug) ? '<span class="cv-flag" title="In progress"></span>' : "") +
+        (isAdmin ? '<button class="cv-edit" type="button" title="Find cover art" aria-label="Find cover art">✎</button>' : "");
+      return a;
+    }
+
+    // ---- facet rail ----
+    function fopt(label, count, active, onClick){
+      var b = document.createElement("button"); b.className = "fopt" + (active ? " on" : "");
+      b.innerHTML = '<span>' + esc(label) + '</span>' + (count != null ? '<span class="fk">' + count.toLocaleString() + '</span>' : "");
+      b.addEventListener("click", onClick); return b;
+    }
+    function buildFacets(){
+      var sortBox = $("sortOpts"); sortBox.innerHTML = "";
+      SORTS.forEach(function(s){ sortBox.appendChild(fopt(s.label, null, state.sort === s.key, function(){ state.sort = s.key; compute(); })); });
+
+      var lenBox = $("lenOpts"); lenBox.innerHTML = "";
+      lenBox.appendChild(fopt("Any length", null, !state.length, function(){ state.length = null; compute(); }));
+      LENGTHS.forEach(function(L){
+        var c = books.filter(function(b){ return b.words >= L.lo && b.words < L.hi; }).length;
+        lenBox.appendChild(fopt(L.label, c, state.length === L.key, function(){ state.length = (state.length === L.key ? null : L.key); compute(); }));
+      });
+
+      $("mSort").innerHTML = SORTS.map(function(o){
+        return '<option value="' + o.key + '"' + (state.sort === o.key ? " selected" : "") + '>' + esc(o.label) + '</option>';
+      }).join("");
+      $("mLen").innerHTML = '<option value="">Any length</option>' + LENGTHS.map(function(L){
+        var c = books.filter(function(b){ return b.words >= L.lo && b.words < L.hi; }).length;
+        return '<option value="' + L.key + '"' + (state.length === L.key ? " selected" : "") + '>' + esc(L.label) + ' (' + c.toLocaleString() + ')</option>';
+      }).join("");
+
+      var secBox = $("secOpts"); secBox.innerHTML = "";
+      secBox.appendChild(fopt("All sections", books.length, !state.section, function(){ state.section = null; compute(); }));
+      secList.forEach(function(s){
+        secBox.appendChild(fopt(s.name, s.count, state.section === s.name, function(){ state.section = (state.section === s.name ? null : s.name); compute(); }));
+      });
+    }
+
+    function updateCount(){
+      var n = filtered.length, act = state.section || state.length || state.reading;
+      $("count").innerHTML = '<b>' + n.toLocaleString() + '</b> ' + (n === 1 ? "book" : "books") +
+        (state.q ? ' matching “' + esc(state.q) + '”' : "") +
+        (state.section ? " in " + esc(state.section) : "");
+      $("resetF").hidden = !(act || state.q);
+      var rb = $("readingOpt"); if(rb){ rb.classList.toggle("on", state.reading); }
+    }
+
+    function render(reset){
+      var grid = $("grid");
+      if(reset){ grid.innerHTML = ""; shown = 0; }
+      var frag = document.createDocumentFragment();
+      var end = Math.min(shown + BATCH, filtered.length);
+      for(var i = shown; i < end; i++){ frag.appendChild(cover(filtered[i])); }
+      grid.appendChild(frag); shown = end;
+      $("loadMore").hidden = shown >= filtered.length;
+      $("browseEmpty").hidden = filtered.length !== 0;
+      if(!filtered.length){
+        $("browseEmpty").innerHTML = state.q ? 'No books match <b>“' + esc(state.q) + '”</b>.' : "No books match these filters.";
+      }
+    }
+    function compute(){
+      var q = state.q.toLowerCase();
+      var L = state.length ? LENGTHS.filter(function(x){ return x.key === state.length; })[0] : null;
+      filtered = books.filter(function(b){
+        if(q && b._s.indexOf(q) < 0) return false;
+        if(state.section && b.sections.indexOf(state.section) < 0) return false;
+        if(state.reading && !started(b.slug)) return false;
+        if(L && !(b.words >= L.lo && b.words < L.hi)) return false;
+        return true;
+      });
+      var s = state.sort;
+      filtered.sort(function(a,b){
+        if(s === "title") return a._t < b._t ? -1 : (a._t > b._t ? 1 : 0);
+        if(s === "long") return b.words - a.words;
+        if(s === "short") return a.words - b.words;
+        return a._a < b._a ? -1 : (a._a > b._a ? 1 : (a._t < b._t ? -1 : 1));
+      });
+      render(true); updateCount(); buildFacets();
+    }
+
+    // ---- wire controls ----
+    var t;
+    $("q").addEventListener("input", function(e){
+      var v = e.target.value; $("qClear").hidden = !v;
+      clearTimeout(t); t = setTimeout(function(){ state.q = v.trim(); compute(); }, 160);
+    });
+    $("qClear").addEventListener("click", function(){ $("q").value = ""; $("qClear").hidden = true; state.q = ""; compute(); $("q").focus(); });
+    $("resetF").addEventListener("click", function(){
+      state.q = ""; state.section = null; state.length = null; state.reading = false;
+      $("q").value = ""; $("qClear").hidden = true; compute(); window.scrollTo({top:0});
+    });
+    $("wrapTog").classList.toggle("on", state.wrap);
+    $("wrapTog").setAttribute("aria-pressed", state.wrap ? "true" : "false");
+    $("wrapTog").addEventListener("click", function(){
+      state.wrap = !state.wrap; lsSet("exeg-book-wrap", state.wrap ? "1" : "0");
+      $("wrapTog").classList.toggle("on", state.wrap);
+      $("wrapTog").setAttribute("aria-pressed", state.wrap ? "true" : "false");
+      render(true);   // re-render the current results with/without cover art
+    });
+    $("loadMore").addEventListener("click", function(){ render(false); });
+    $("mSort").addEventListener("change", function(){ state.sort = this.value; compute(); });
+    $("mLen").addEventListener("change", function(){ state.length = this.value || null; compute(); });
+    // admin: one-click cover search (delegated; buttons only render for admins). The modal
+    // shows Google Images results; clicking one downloads it server-side as the new cover.
+    var dlg = $("coverDlg"), dlgBook = null;
+    function jsonRes(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return {ok:r.ok, status:r.status, j:j}; }); }
+    function cdStatus(msg, bad){ $("cdStatus").textContent = msg || ""; $("cdStatus").classList.toggle("bad", !!bad); }
+    function applyCover(url){
+      var b = dlgBook; if(!b) return;
+      cdStatus(url ? "Downloading that image and saving it as the cover…" : "Restoring the original cover…");
+      dlg.classList.add("busy");
+      fetch("/api/reading/cover", {method:"PUT", headers:{"Content-Type":"application/json"}, body: JSON.stringify({slug: b.slug, cover_url: url})})
+        .then(jsonRes)
+        .then(function(res){
+          dlg.classList.remove("busy");
+          if(res.ok){
+            b.cover = res.j.cover || null;
+            var a = $("grid").querySelector('.cover[data-slug="' + CSS.escape(b.slug) + '"]');
+            if(a){ a.replaceWith(cover(b)); }
+            dlg.close(); return;
+          }
+          var err = res.j.error;
+          cdStatus(res.status === 403 ? "You're not signed in as a library admin, so you can't change covers."
+            : err === "bad-url" ? "That address has to start with http:// or https://."
+            : err === "fetch-failed" ? "That site wouldn't let us download the image. Pick another result, or paste a different image address."
+            : err === "no-db" ? "Storage is unavailable right now. Try again shortly."
+            : "Couldn't update the cover.", true);
+        })
+        .catch(function(){ dlg.classList.remove("busy"); cdStatus("Couldn't reach the server to update the cover.", true); });
+    }
+    function resultItem(r){
+      var btn = document.createElement("button"), frame = document.createElement("span"),
+          img = document.createElement("img"), meta = document.createElement("span"), dims = document.createElement("b");
+      btn.type = "button"; btn.className = "cd-item" + (r.w && r.w < 400 ? " lo" : "");
+      btn.title = (r.title ? r.title + "\n" : "") + "Use this image as the cover";
+      frame.className = "cd-frame";
+      img.alt = r.title || ""; img.loading = "lazy"; img.referrerPolicy = "no-referrer"; img.src = r.thumb;
+      img.onerror = function(){ btn.remove(); };
+      meta.className = "cd-meta";
+      dims.textContent = r.w && r.h ? r.w + "×" + r.h : "size unknown";
+      meta.appendChild(dims); meta.appendChild(document.createTextNode(r.domain ? " · " + r.domain : ""));
+      frame.appendChild(img); btn.appendChild(frame); btn.appendChild(meta);
+      btn.addEventListener("click", function(){ applyCover(r.image); });
+      return btn;
+    }
+    function openCoverSearch(b){
+      dlgBook = b; dlg.classList.remove("busy");
+      $("cdTitle").textContent = b.title; $("cdAuthor").textContent = b.author || "";
+      $("cdQuery").textContent = ""; $("cdGoogle").hidden = true; $("cdUrl").value = "";
+      $("cdResults").replaceChildren();
+      cdStatus("Searching Google Images…");
+      dlg.showModal();
+      fetch("/api/reading/cover/search?slug=" + encodeURIComponent(b.slug))
+        .then(jsonRes)
+        .then(function(res){
+          if(dlgBook !== b) return;                       // closed or moved on to another book
+          if(!res.ok){ cdStatus(res.status === 403 ? "You're not signed in as a library admin." : "Couldn't find that book in the catalog.", true); return; }
+          var j = res.j;
+          $("cdQuery").textContent = j.query; $("cdGoogle").href = j.google_url; $("cdGoogle").hidden = false;
+          if(j.error === "no-key"){ cdStatus("Results can't show here until the server has a SERPER_API_KEY. Open the search in Google Images, right-click an image, choose “Copy image address”, and paste it below."); return; }
+          if(j.error === "search-failed"){ cdStatus("The image search didn't respond. Try again, or open it in Google Images and paste an image address below.", true); return; }
+          if(!j.results.length){ cdStatus("No images found. Try Google Images, or paste an image address below."); return; }
+          cdStatus(j.results.length + " results. Click one to make it the cover. Sizes in red are under 400px wide and will look soft.");
+          $("cdResults").replaceChildren.apply($("cdResults"), j.results.map(resultItem));
+        })
+        .catch(function(){ if(dlgBook === b) cdStatus("Couldn't reach the server to search.", true); });
+    }
+    $("grid").addEventListener("click", function(e){
+      var btn = e.target.closest ? e.target.closest(".cv-edit") : null; if(!btn) return;
+      e.preventDefault(); e.stopPropagation();
+      var a = btn.closest(".cover"), b = a && bySlug[a.dataset.slug]; if(b) openCoverSearch(b);
+    });
+    $("cdClose").addEventListener("click", function(){ dlg.close(); });
+    dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.close(); });   // backdrop
+    dlg.addEventListener("close", function(){ dlgBook = null; });
+    $("cdForm").addEventListener("submit", function(e){
+      e.preventDefault(); var url = $("cdUrl").value.trim(); if(url) applyCover(url);
+    });
+    $("cdRevert").addEventListener("click", function(){
+      if(window.confirm("Remove the custom cover and go back to the original?")) applyCover("");
+    });
+    // infinite scroll: auto-reveal more as the sentinel nears the viewport
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(es){ if(es[0].isIntersecting && shown < filtered.length){ render(false); } }, {rootMargin:"600px"})
+        .observe($("loadMore"));
+    }
+
+    // ---- load the whole catalog once, then everything is instant client-side ----
+    Promise.all([
+      fetch("/api/catalog").then(function(r){ return r.json(); }),
+      fetch("/api/reading/position").then(function(r){ return r.ok ? r.json() : {positions:{}}; }).catch(function(){ return {positions:{}}; })
+    ]).then(function(res){
+      var d = res[0];
+      if(!d || d.available === false || !(d.items && d.items.length)){
+        $("browseEmpty").hidden = false;
+        $("browseEmpty").textContent = "The Reading Room is still being stocked — check back soon.";
+        return;
+      }
+      positions = (res[1] && res[1].positions) || {};
+      progress = (res[1] && res[1].progress) || {};
+      isAdmin = !!d.admin;
+      if(isAdmin){ $("grid").classList.add("admin"); }
+      books = d.items;
+      books.forEach(function(b){ b._t = (b.title || "").toLowerCase(); b._a = (b.author_sort || "").toLowerCase(); b._s = b._t + " " + (b.author || "").toLowerCase(); bySlug[b.slug] = b; });
+      var counts = {};
+      books.forEach(function(b){ b.sections.forEach(function(g){ counts[g] = (counts[g] || 0) + 1; }); });
+      secList = Object.keys(counts).map(function(k){ return {name:k, count:counts[k]}; }).sort(function(a,b){ return b.count - a.count; });
+      // if the reader has books in progress, offer a one-click "Continue" filter
+      var inProg = books.filter(function(b){ return started(b.slug); }).length;
+      if(inProg){
+        var g = document.createElement("div"); g.className = "facet-group";
+        g.innerHTML = '<div class="facet-h">Yours</div>';
+        var box = document.createElement("div"); g.appendChild(box);
+        var rb = fopt("Continue reading", inProg, false, function(){ state.reading = !state.reading; compute(); });
+        rb.id = "readingOpt"; box.appendChild(rb);
+        $("facets").insertBefore(g, $("facets").firstChild);
+      }
+      compute();
+    }).catch(function(){ $("browseEmpty").hidden = false; $("browseEmpty").textContent = "Could not load the library."; });
+  }
+
+  // =================== READER (paginated) ===================
+  function initReader(slug){
+    $("reader").hidden = false;
+    document.body.classList.add("reading");
+    $("tocToggle").hidden = false; $("fMinus").hidden = false; $("fPlus").hidden = false;
+    $("back").href = "/read"; $("back").textContent = "‹ Library";
+    var book = null, current = 0, savedPositions = {};   // `book` = fetched book DATA (toc, title…)
+    var chapter = $("chapter"), pageport = $("pageport"), bookEl = $("book"), pagebar = $("pagebar");
+    var stride = 1, pages = 1, page = 0, colGap = 56, numCols = 1, colsPer = 1, foliosBefore = 0, frontCols = 0, turnT, maxPage = 0;
+    var pendingAnchor = null;   // child index to land on after (re)paginating
+
+    var narrow = function(){ return matchMedia("(max-width:820px)").matches; };
+    function setToc(open){
+      $("toc").classList.toggle("hidden", !open);
+      $("stage").classList.toggle("wide", !open);
+      $("backdrop").classList.toggle("show", open && narrow());
+      pendingAnchor = firstVisibleBlockIndex();
+      requestAnimationFrame(paginate);   // sidebar changed the width → re-measure, keep place
+    }
+    if(narrow()){ $("toc").classList.add("hidden"); $("stage").classList.add("wide"); }
+    $("tocToggle").addEventListener("click", function(){ setToc($("toc").classList.contains("hidden")); });
+    $("backdrop").addEventListener("click", function(){ setToc(false); });
+
+    // ---- pagination engine ----
+    function firstVisibleBlockIndex(){
+      var kids = chapter.children, x = page * stride;
+      for(var i = 0; i < kids.length; i++){ if(kids[i].offsetLeft >= x - 2){ return i; } }
+      return Math.max(0, kids.length - 1);
+    }
+    function paginate(){
+      var host = $("stage").clientWidth;            // width available for the book + side "desk"
+      if(host <= 0){ return; }                      // not laid out yet; a settle pass will retry
+      var scale = SCALES[scaleIdx] || 1.15;
+      colGap = narrow() ? 52 : 76;                  // gutter = inner margins (split across the seam)
+      var margin = narrow() ? 30 : 66;              // outer page margin (kept ≤ gutter, so no bleed)
+      var measure = Math.round(560 * scale / 1.15); // hardcover line ≈ 62 chars; scales with text size
+      var minCol = narrow() ? 260 : 420;            // go two-up only when each column clears this
+      var cols = ((host - 2 * margin - colGap) / 2 >= minCol) ? 2 : 1;
+      var contentW = Math.min(cols * measure + (cols - 1) * colGap, host - 2 * margin);
+      var colW = Math.floor((contentW - (cols - 1) * colGap) / cols);
+      bookEl.style.width = (contentW + 2 * margin) + "px";     // the centered page card; desk shows on the sides
+      pageport.style.paddingLeft = pageport.style.paddingRight = margin + "px";
+      pagebar.style.paddingLeft = pagebar.style.paddingRight = margin + "px";   // folios align under each page
+      chapter.classList.remove("fading");           // never leave a re-measure mid-fade
+      chapter.style.columnGap = colGap + "px";
+      chapter.style.columnWidth = colW + "px";
+      stride = chapter.clientWidth + colGap;        // one page = `cols` columns; stride is content width + gutter
+      pages = Math.max(1, Math.ceil(chapter.scrollWidth / stride - 0.05));
+      // gutter (two-up only) + continuous folio numbering estimated from word counts
+      colsPer = cols;
+      $("stage").classList.toggle("twoup", cols === 2);
+      frontCols = (current === 1) ? (narrow() ? 1 : 2) : 0;   // blank + title opening spread (blank hidden on mobile)
+      numCols = Math.max(1, Math.round((chapter.scrollWidth + colGap) / (colW + colGap)));
+      foliosBefore = 0;
+      var curWords = (book.toc[current - 1] && book.toc[current - 1].words) || 0;
+      if(curWords > 0){
+        var wpc = curWords / Math.max(1, numCols - frontCols);  // words per CONTENT page (excl. front matter)
+        for(var k = 0; k < current - 1; k++){
+          foliosBefore += Math.max(1, Math.round(((book.toc[k] && book.toc[k].words) || 0) / wpc));
+        }
+      }
+      var target = 0;
+      if(pendingAnchor != null && chapter.children[pendingAnchor]){
+        target = Math.floor(chapter.children[pendingAnchor].offsetLeft / stride);
+      }
+      pendingAnchor = null;
+      goToPage(Math.min(Math.max(target, 0), pages - 1), false);
+    }
+    function updateBar(){
+      var toc = book.toc || [], entry = toc[current - 1];
+      var title = (entry && entry.title) ? entry.title : ("Section " + current);
+      var leftIdx = page * colsPer;                 // 0-based column (page) within this chapter
+      var contentIdx = leftIdx - frontCols;         // < 0 → blank/title front matter: no folio, no header
+      if(contentIdx < 0){
+        $("pbL").textContent = ""; $("pbR").textContent = ""; $("pbC").textContent = "";
+      } else {
+        var folioL = foliosBefore + contentIdx + 1;
+        if(folioL > maxPage){ maxPage = folioL; }   // furthest overall page reached → gates "Continue Reading"
+        if(colsPer === 2){                          // two-up: a folio under each visible page
+          $("pbL").textContent = folioL;
+          $("pbR").textContent = (leftIdx + 1 < numCols) ? (folioL + 1) : "";
+        } else {                                    // single page: one folio, outer corner
+          $("pbL").textContent = "";
+          $("pbR").textContent = folioL;
+        }
+        $("pbC").textContent = title;
+      }
+      var frac = pages > 1 ? page / (pages - 1) : 1;
+      var overall = ((current - 1) + frac) / (book.chapter_count || 1);
+      $("pbFill").style.width = Math.max(0, Math.min(100, overall * 100)).toFixed(1) + "%";
+      $("pgPrev").disabled = (page <= 0 && current <= 1);
+      $("pgNext").disabled = (page >= pages - 1 && current >= (book.chapter_count || 1));
+    }
+    function goToPage(p, animate){
+      page = Math.min(Math.max(p, 0), pages - 1);
+      var apply = function(){
+        chapter.style.transform = "translateX(" + (-page * stride) + "px)";   // reposition while hidden
+        updateBar();
+        savePosition();
+      };
+      clearTimeout(turnT);
+      if(animate){                                  // quick fade out → swap → fade in (no sliding)
+        chapter.classList.add("fading");
+        turnT = setTimeout(function(){ apply(); chapter.classList.remove("fading"); }, 120);
+      } else {
+        chapter.classList.remove("fading");
+        apply();
+      }
+    }
+    function nextPage(){
+      if(page < pages - 1){ goToPage(page + 1, true); }
+      else if(current < (book.chapter_count || 1)){ loadChapter(current + 1, "start"); }
+    }
+    function prevPage(){
+      if(page > 0){ goToPage(page - 1, true); }
+      else if(current > 1){ loadChapter(current - 1, "end"); }
+    }
+
+    // ---- data + rendering ----
+    Promise.all([
+      fetch("/api/books/" + encodeURIComponent(slug)).then(function(r){ return r.ok ? r.json() : null; }),
+      fetch("/api/reading/position").then(function(r){ return r.ok ? r.json() : {positions:{}}; }).catch(function(){ return {positions:{}}; })
+    ]).then(function(res){
+      book = res[0];
+      if(!book){ chapter.innerHTML = '<div class="ch-eyebrow">Not found</div><p>This book isn’t in the Reading Room.</p>'; return; }
+      savedPositions = (res[1] && res[1].positions) || {};
+      document.title = book.title + " — Exegetica";
+      $("tocBookTitle").textContent = book.title;
+      $("tocBookAuthor").textContent = book.author || "";
+      renderToc();
+      var fromHash = parseInt((location.hash || "").replace("#", ""), 10);
+      var start = fromHash || savedPositions[slug] || parseInt(lsGet("read-pos:" + slug) || "0", 10) || 1;
+      start = Math.min(Math.max(start, 1), book.chapter_count || 1);
+      loadChapter(start, "restore");
+    });
+
+    function renderToc(){
+      var ol = $("tocList"); ol.innerHTML = "";
+      (book.toc || []).forEach(function(c){
+        var li = document.createElement("li"), a = document.createElement("a");
+        a.href = "#" + c.section_number; a.dataset.n = c.section_number;
+        a.innerHTML = '<span class="n">' + c.section_number + '</span>' + esc(c.title || ("Section " + c.section_number));
+        a.addEventListener("click", function(ev){ ev.preventDefault(); loadChapter(c.section_number, "start"); if(narrow()){ setToc(false); } });
+        li.appendChild(a); ol.appendChild(li);
+      });
+    }
+    function markToc(){
+      $("tocList").querySelectorAll("a").forEach(function(a){ a.classList.toggle("on", parseInt(a.dataset.n, 10) === current); });
+      var on = $("tocList").querySelector("a.on"); if(on && on.scrollIntoView){ on.scrollIntoView({block:"nearest"}); }
+    }
+    function loadChapter(n, landing){
+      fetch("/api/books/" + encodeURIComponent(slug) + "/chapter/" + n).then(function(r){ return r.ok ? r.json() : null; }).then(function(c){
+        if(!c){ return; }
+        current = c.section_number;
+        var eyebrow = esc(book.title) + " · " + current + " / " + (book.chapter_count || "?");
+        var front = "";
+        if(current === 1){                            // open the book on a blank verso + a title recto
+          front = '<div class="fp-blank" aria-hidden="true"></div>' +
+            '<div class="fp-title"><div class="fp-inner">' +
+              '<div class="fp-t">' + esc(book.title) + '</div><div class="fp-rule"></div>' +
+              (book.author ? '<div class="fp-a">' + esc(book.author) + '</div>' : '') +
+            '</div></div>';
+        }
+        chapter.innerHTML = front + '<div class="ch-eyebrow">' + eyebrow + '</div>' + c.html;
+        markToc();
+        history.replaceState(null, "", "/read/" + encodeURIComponent(slug) + "#" + current);
+        var savedAnchor = parseInt(lsGet("read-anchor:" + slug + ":" + current) || "0", 10);
+        pendingAnchor = (landing === "restore" && savedAnchor > 0) ? savedAnchor : null;
+        paginate();
+        if(landing === "end"){ goToPage(pages - 1, false); }
+        // re-measure once layout/webfonts settle (metrics shift how columns fill)
+        var settle = function(){
+          if(landing === "end"){ pendingAnchor = null; paginate(); goToPage(pages - 1, false); }
+          else { pendingAnchor = firstVisibleBlockIndex(); paginate(); }
+        };
+        requestAnimationFrame(settle);
+        if(document.fonts && document.fonts.ready){ document.fonts.ready.then(settle); }
+      });
+    }
+    var saveT;
+    function savePosition(){
+      lsSet("read-pos:" + slug, current);
+      lsSet("read-anchor:" + slug + ":" + current, firstVisibleBlockIndex());
+      clearTimeout(saveT);
+      saveT = setTimeout(function(){
+        fetch("/api/reading/position", {method:"PUT", headers:{"Content-Type":"application/json"},
+          body: JSON.stringify({slug: slug, section_number: current, pages: maxPage})}).catch(function(){});
+      }, 700);
+    }
+
+    // ---- input: edge zones, keys, swipe ----
+    $("pgNext").addEventListener("click", nextPage);
+    $("pgPrev").addEventListener("click", prevPage);
+    document.addEventListener("keydown", function(e){
+      if(e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)){ return; }
+      if(e.key === "ArrowRight" || e.key === "PageDown" || e.key === " "){ e.preventDefault(); nextPage(); }
+      else if(e.key === "ArrowLeft" || e.key === "PageUp"){ e.preventDefault(); prevPage(); }
+      else if(e.key === "Home"){ goToPage(0, true); }
+      else if(e.key === "End"){ goToPage(pages - 1, true); }
+    });
+    var tsx = 0, tsy = 0, tst = 0;
+    pageport.addEventListener("touchstart", function(e){ var t = e.changedTouches[0]; tsx = t.clientX; tsy = t.clientY; tst = Date.now(); }, {passive:true});
+    pageport.addEventListener("touchend", function(e){
+      var t = e.changedTouches[0], dx = t.clientX - tsx, dy = t.clientY - tsy;
+      if(Date.now() - tst < 600 && Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.6){
+        if(dx < 0){ nextPage(); } else { prevPage(); }
+      }
+    }, {passive:true});
+
+    // resize / text-size → re-paginate, keeping the reader's place
+    var rz;
+    window.addEventListener("resize", function(){ clearTimeout(rz); rz = setTimeout(function(){ pendingAnchor = firstVisibleBlockIndex(); paginate(); }, 150); });
+    relayout = function(){ pendingAnchor = firstVisibleBlockIndex(); paginate(); };
+  }
+})();
+</script>
+</body>
+</html>

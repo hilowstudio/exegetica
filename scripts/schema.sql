@@ -52,6 +52,31 @@ create table if not exists chat_state (
     updated_at timestamptz not null default now()
 );
 
+-- E-reader position: where each signed-in reader left off in each book. book_slug keys into
+-- the static reader corpus (books.db on the volume — no Neon FK). One row per (user, book).
+create table if not exists reading_state (
+    user_id        uuid not null references users(id) on delete cascade,
+    book_slug      text not null,
+    section_number integer not null default 1,
+    pages          integer not null default 1,   -- furthest overall page (folio) reached; gates "Continue Reading" (>= 7)
+    updated_at     timestamptz not null default now(),
+    primary key (user_id, book_slug)
+);
+alter table reading_state add column if not exists pages integer not null default 1;
+
+-- Library-admin cover-art overrides for the shared Reading-Room catalog. books.db is
+-- read-only (R2 -> volume), so an admin's replacement cover URL lives here and is merged
+-- on top of the baked-in cover_url when the catalog is served. Deleting a row reverts a
+-- book to its original cover. See webapp/reader.py (catalog / cover_put), auth.is_admin.
+create table if not exists cover_overrides (
+    book_slug   text primary key,
+    cover_url   text not null,      -- source URL the admin supplied (for reference / re-fetch)
+    webp        bytea,              -- the downloaded, resized WebP bytes we self-host and serve
+    updated_by  text,
+    updated_at  timestamptz not null default now()
+);
+alter table cover_overrides add column if not exists webp bytea;
+
 -- ===========================================================================
 -- Academic spine (canonical store). Source of truth for the Generator's K–12
 -- scope-and-sequence (Subject → Sub-subject → Topic → Sub-topic → Objective),
@@ -230,93 +255,15 @@ create table if not exists library_sections (
 create index if not exists library_sections_extraction_idx on library_sections(extraction_id);
 create index if not exists library_sections_parent_idx on library_sections(parent_id);
 
--- Alignment of a resource (optionally one section) to a spine node. Shared /
--- catalog-level (intrinsic to the work); auto-proposed at extraction, teacher-
--- curated via status. section_id NULL = book-level; set = section-level.
-create table if not exists library_alignments (
-    id            uuid primary key default gen_random_uuid(),
-    extraction_id uuid not null references library_extractions(id) on delete cascade,
-    section_id    uuid references library_sections(id) on delete cascade,   -- NULL = book-level
-    spine_level   text not null check (spine_level in ('subject','sub_subject','topic','sub_topic','objective')),
-    spine_node_id text not null,                     -- durable id/code from webapp/standards
-    status        text not null default 'proposed' check (status in ('proposed','accepted','rejected')),
-    source        text not null default 'auto' check (source in ('auto','teacher')),
-    created_by    uuid references users(id) on delete set null,
-    created_at    timestamptz not null default now(),
-    updated_at    timestamptz not null default now()
-);
-create index if not exists library_alignments_extraction_idx on library_alignments(extraction_id);
-create index if not exists library_alignments_node_idx on library_alignments(spine_node_id);  -- reverse: sources for an objective
--- one alignment per (resource[/section], spine node); NULL section needs partial indexes
-create unique index if not exists library_alignments_book_uk
-    on library_alignments(extraction_id, spine_level, spine_node_id) where section_id is null;
-create unique index if not exists library_alignments_section_uk
-    on library_alignments(extraction_id, section_id, spine_level, spine_node_id) where section_id is not null;
-
--- Resource-specific objectives (NOT spine objectives — those live in
--- webapp/standards, reached via library_alignments). Three tiers via nullable
--- user_id: NULL = community (shared, tier 2); set = that teacher's personal
--- (tier 3). GROUNDING-FIRST: a community objective may only enter from a
--- verifiable source — provenance 'seed_oer' (human-authored OER) or
--- 'seed_grounded' (source-text-derived, with `citation`) — never ungrounded
--- model memory; it enters 'proposed' and is promoted to 'accepted' only after the
--- citation-verify pass. Personal objectives (user_id set) are 'personal'/'accepted'
--- on create. The community set is wiki-editable (library_objective_revisions).
-create table if not exists library_objectives (
-    id            uuid primary key default gen_random_uuid(),
-    extraction_id uuid not null references library_extractions(id) on delete cascade,
-    user_id       uuid references users(id) on delete cascade,   -- NULL = community; set = personal
-    section_id    uuid references library_sections(id) on delete set null,  -- optional grain
-    text          text not null,
-    citation      text,                              -- the passage the objective rests on (grounded)
-    provenance    text not null default 'personal'
-                    check (provenance in ('seed_oer','seed_grounded','community_added','promoted_personal','personal')),
-    status        text not null default 'accepted'
-                    check (status in ('proposed','accepted','rejected')),
-    created_by    uuid references users(id) on delete set null,
-    created_at    timestamptz not null default now(),
-    updated_at    timestamptz not null default now()
-);
-create index if not exists library_objectives_extraction_idx on library_objectives(extraction_id);
-create index if not exists library_objectives_scope_idx on library_objectives(extraction_id, user_id);
-
--- Wiki-style revision history for community objectives. Each edit is a row;
--- library_objectives holds the latest text. Editor kept for attribution.
-create table if not exists library_objective_revisions (
-    id             uuid primary key default gen_random_uuid(),
-    objective_id   uuid not null references library_objectives(id) on delete cascade,
-    editor_user_id uuid references users(id) on delete set null,
-    text           text not null,
-    note           text,
-    created_at     timestamptz not null default now()
-);
-create index if not exists library_objective_revisions_obj_idx on library_objective_revisions(objective_id);
-
--- A teacher hides a COMMUNITY objective on their own shelf without mutating the
--- shared one (the tier-3 override; separate from wiki editing).
-create table if not exists library_hidden_objectives (
-    user_id      uuid not null references users(id) on delete cascade,
-    objective_id uuid not null references library_objectives(id) on delete cascade,
-    created_at   timestamptz not null default now(),
-    primary key (user_id, objective_id)
-);
-
--- Spine-gap proposals: when a book won't place cleanly, extraction (or a teacher)
--- proposes a NEW spine node for curator review — the spine grows deliberately,
--- never per-book ad hoc.
-create table if not exists library_spine_proposals (
-    id             uuid primary key default gen_random_uuid(),
-    extraction_id  uuid references library_extractions(id) on delete cascade,  -- which book surfaced it
-    proposed_level text not null check (proposed_level in ('subject','sub_subject','topic','sub_topic','objective')),
-    parent_node_id text,                             -- spine node it would attach under
-    label          text not null,                   -- proposed name/text
-    rationale      text,
-    status         text not null default 'proposed' check (status in ('proposed','accepted','rejected')),
-    created_by     uuid references users(id) on delete set null,
-    created_at     timestamptz not null default now(),
-    updated_at     timestamptz not null default now()
-);
-create index if not exists library_spine_proposals_status_idx on library_spine_proposals(status);
+-- Living Library generation redesign (Phase 3, 2026-09-17): the per-book OBJECTIVES and
+-- SPINE-ALIGNMENT layer is retired — generation now reads book text live plus a whole-work
+-- comprehension layer (library_comprehension). No live code writes or reads these tables, so
+-- they are dropped. (The academic spine itself — spine_nodes / webapp/standards — stays.)
+drop table if exists library_objective_revisions cascade;
+drop table if exists library_hidden_objectives   cascade;
+drop table if exists library_objectives           cascade;
+drop table if exists library_alignments           cascade;
+drop table if exists library_spine_proposals      cascade;
 
 -- Additive columns for already-migrated databases (idempotent; fresh DBs get them
 -- from the CREATE statements above).
@@ -344,18 +291,23 @@ do $$ begin
   end if;
 end $$;
 
--- Referential integrity from Living Library rows to the spine. Added via ALTER
--- (idempotent) because these tables are defined above spine_nodes; safe on empty
--- tables and validated on future inserts.
-do $$ begin
-  if not exists (select 1 from pg_constraint where conname = 'library_alignments_spine_fk') then
-    alter table library_alignments
-      add constraint library_alignments_spine_fk
-      foreign key (spine_node_id) references spine_nodes(id) on delete cascade;
-  end if;
-  if not exists (select 1 from pg_constraint where conname = 'library_spine_proposals_parent_fk') then
-    alter table library_spine_proposals
-      add constraint library_spine_proposals_parent_fk
-      foreign key (parent_node_id) references spine_nodes(id) on delete set null;
-  end if;
-end $$;
+
+-- ===========================================================================
+-- Living Library — generation redesign (docs/living-library-generation-plan.md).
+-- Whole-work COMPREHENSION layer for LARGE works only (small books are read whole at
+-- generation time). Built lazily on first generation against a big book and cached here;
+-- rebuilt only when the source text changes (word_count guard) or on manual request.
+-- Keyed by book identity: a books.db slug (PD) or 'upload:<extraction_id>'.
+-- ===========================================================================
+create table if not exists library_comprehension (
+    book_key     text primary key,          -- books.db slug, or 'upload:<extraction_id>'
+    title        text,
+    summary      text,                       -- one-paragraph whole-work summary
+    arc          jsonb,                       -- [{title, span, what_happens}] major movements
+    themes       jsonb,                       -- [{name, arc}] introduced → developed → paid off
+    significance jsonb,                       -- [{element, why_matters}] load-bearing elements
+    recap        jsonb,                       -- [{through_section, so_far}] cumulative, bounded per point
+    model        text,
+    word_count   integer,                     -- invalidation guard (rebuild if the text changed)
+    built_at     timestamptz not null default now()
+);

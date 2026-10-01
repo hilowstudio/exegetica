@@ -1,18 +1,20 @@
-"""Verify the Gutenberg-sourceable Reformed/historic works against gutendex and write the
-confirmed wave to docs/reformed-gutenberg-wave.md.
+"""Verify the Gutenberg-sourceable Reformed/historic works against Gutenberg's catalog and
+write the confirmed wave to docs/reformed-gutenberg-wave.md.
 
-Runs serially with per-work retries so a slow/throttling gutendex doesn't cause false misses
-(the study-Bible sandbox throttles; a normal network handles this fine). Uses the SAME
-gutenberg adapter that does the real fetch, so a confirmation here means ingestion will find
-it too. Runnable plain:
+Matches against the full downloadable catalog (pg_catalog.csv.gz) LOCALLY — no per-work
+gutendex calls, so no throttling/hangs. Uses the same normalize + author-token matching as the
+live adapter (accent-folded token overlap), so a hit here means ingestion will find it too.
+The catalog is cached in .seed_cache/. Runnable plain:
 
-    .venv\\Scripts\\python.exe scripts\\verify_gutenberg_wave.py [--delay 1.5] [--tries 4]
+    .venv\\Scripts\\python.exe scripts\\verify_gutenberg_wave.py [--refresh]
 """
 from __future__ import annotations
 
 import argparse
-import asyncio
+import csv
 import datetime
+import gzip
+import io
 import pathlib
 import sys
 
@@ -24,7 +26,11 @@ try:
 except Exception:  # noqa: BLE001
     pass
 
-from webapp.sources import gutenberg as G  # noqa: E402
+import httpx  # noqa: E402
+
+from webapp.sources.matching import author_tokens, normalize  # noqa: E402
+
+_CATALOG_URL = "https://www.gutenberg.org/cache/epub/feeds/pg_catalog.csv.gz"
 
 # author -> works, transcribed from the Gb-tagged entries of docs/reformed-pd-ingestion.md
 CANDIDATES = [
@@ -66,61 +72,89 @@ CANDIDATES = [
 ]
 
 
-async def resolve(author: str, title: str, tries: int, delay: float):
-    """discover() with an outer retry so a transient gutendex timeout isn't a false miss."""
-    for attempt in range(tries):
-        try:
-            hit = await G.discover({"title": title, "authors": [author]})
-        except Exception:  # noqa: BLE001
-            hit = None
-        if hit:
-            return hit
-        await asyncio.sleep(delay * (attempt + 1))
-    return None
+def load_catalog(refresh: bool) -> list[dict]:
+    cache = _ROOT / ".seed_cache" / "pg_catalog.csv.gz"
+    cache.parent.mkdir(exist_ok=True)
+    if refresh or not cache.exists():
+        print("downloading Gutenberg catalog…", flush=True)
+        r = httpx.get(_CATALOG_URL, timeout=90, follow_redirects=True, headers={"User-Agent": "Mozilla/5.0"})
+        r.raise_for_status()
+        cache.write_bytes(r.content)
+    data = gzip.decompress(cache.read_bytes()).decode("utf-8", "replace")
+    return list(csv.DictReader(io.StringIO(data)))
 
 
-async def main() -> None:
+def build_index(rows: list[dict]) -> list[tuple]:
+    """English text rows, pre-normalized: (id, orig_title, norm_title, author_token_set)."""
+    idx = []
+    for row in rows:
+        if row.get("Type") != "Text" or row.get("Language") != "en":
+            continue
+        nt = normalize(row.get("Title"))
+        if not nt:
+            continue
+        idx.append((row.get("Text#"), row.get("Title"), nt, author_tokens(row.get("Authors"))))
+    return idx
+
+
+def best_match(title: str, author: str, index: list[tuple]):
+    wt = normalize(title)
+    want = author_tokens(author)
+    best, best_score = None, None
+    for gid, otitle, nt, atoks in index:
+        if not ((wt in nt or nt in wt) and min(len(nt), len(wt)) >= 3):
+            continue
+        if want and not (want & atoks):
+            continue
+        score = (2 if nt == wt else 0) - abs(len(nt) - len(wt)) / 100.0
+        if best_score is None or score > best_score:
+            best, best_score = (gid, otitle), score
+    return best
+
+
+def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--delay", type=float, default=1.5, help="base pause between lookups (grows on retry)")
-    ap.add_argument("--tries", type=int, default=4, help="outer attempts per work before calling it a miss")
+    ap.add_argument("--refresh", action="store_true", help="re-download the catalog instead of using the cache")
     args = ap.parse_args()
+
+    index = build_index(load_catalog(args.refresh))
+    print(f"catalog: {len(index):,} English text works indexed\n", flush=True)
 
     results = []
     for author, works in CANDIDATES:
         print(author, flush=True)
         for title in works:
-            hit = await resolve(author, title, args.tries, args.delay)
-            results.append((author, title, hit))
-            print(f"  {'OK #' + hit['source_id'] if hit else '-- (not found)':14} {title}", flush=True)
-            await asyncio.sleep(args.delay)
+            m = best_match(title, author, index)
+            results.append((author, title, m))
+            print(f"  {'OK #' + m[0] if m else '-- (not found)':16} {title}"
+                  + (f"   [{m[1][:44]}]" if m else ""), flush=True)
 
     ok = [r for r in results if r[2]]
-    miss = [r for r in results if not r[2]]
     today = datetime.date.today().isoformat()
     lines = [
         "# Gutenberg wave — verified sourceable works",
         "",
-        f"Generated by `scripts/verify_gutenberg_wave.py` on {today}. The Gutenberg-reachable subset of "
-        "[reformed-pd-ingestion.md](reformed-pd-ingestion.md), confirmed against gutendex with the same "
-        "adapter that performs ingestion (a hit here = ingestion will find it).",
+        f"Generated by `scripts/verify_gutenberg_wave.py` on {today}, matched against Gutenberg's full "
+        "catalog with the same accent-folded title + author-token logic the ingestion adapter uses. "
+        "The Gutenberg-reachable subset of [reformed-pd-ingestion.md](reformed-pd-ingestion.md).",
         "",
-        f"**Confirmed {len(ok)} / {len(results)} works.**",
+        f"**Confirmed {len(ok)} / {len(results)} works on Gutenberg.**",
         "",
-        "## Confirmed on Gutenberg (ready to ingest)",
+        "## Confirmed — ready to ingest",
         "",
     ]
     cur = None
-    for author, title, hit in results:
-        if not hit:
+    for author, title, m in results:
+        if not m:
             continue
         if author != cur:
             lines.append(f"### {author}")
             cur = author
-        lines.append(f"- {title} — Gutenberg #{hit['source_id']} · `{hit['text_url']}`")
-    lines += ["", "## Not found on Gutenberg (fall through to the CCEL pass, then archive.org)", ""]
+        lines.append(f"- {title} — Gutenberg #{m[0]} · `https://www.gutenberg.org/ebooks/{m[0]}.txt.utf-8`  \n  _catalog title: {m[1]}_")
+    lines += ["", "## Not found on Gutenberg — fall through to the CCEL pass, then archive.org", ""]
     cur = None
-    for author, title, hit in results:
-        if hit:
+    for author, title, m in results:
+        if m:
             continue
         if author != cur:
             lines.append(f"### {author}")
@@ -132,4 +166,4 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

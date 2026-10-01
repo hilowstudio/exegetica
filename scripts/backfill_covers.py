@@ -14,7 +14,7 @@ import asyncio
 import pathlib
 import sys
 
-# self-resolve project root + UTF-8 stdout, like seed_batch.py
+# self-resolve project root + UTF-8 stdout so `import webapp` works when run directly
 _ROOT = pathlib.Path(__file__).resolve().parent.parent
 if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))

@@ -41,10 +41,9 @@ client = Inngest(
 )
 async def extract_book_fn(ctx) -> dict:
     """Grounding-first extraction as bounded, memoized steps (the quillnext pattern):
-    fetch (park text) → derive → objectives-{b} (batched) → finalize. The multi-MB text
-    lives in library_extractions.full_text_raw between steps, so nothing large crosses a
-    step boundary and a long book just adds more objectives-{b} steps. Each step is
-    idempotent, so a retry re-runs only the failing step."""
+    fetch (park text) → derive → finalize. The multi-MB text lives in
+    library_extractions.full_text_raw between steps, so nothing large crosses a step
+    boundary. Each step is idempotent, so a retry re-runs only the failing step."""
     import uuid
 
     d = ctx.event.data or {}
@@ -55,12 +54,7 @@ async def extract_book_fn(ctx) -> dict:
     if not fetched.get("ok"):
         return {"status": "failed", "reason": fetched.get("reason"), "extraction_id": str(exid)}
 
-    derived = await ctx.step.run("derive", extraction.step_derive, exid, meta)
-    n = int(derived.get("sections", 0))
-    batch = extraction.OBJECTIVES_BATCH
-    for b in range((n + batch - 1) // batch):
-        await ctx.step.run(f"objectives-{b}", extraction.step_objectives, exid, meta, b, batch)
-
+    await ctx.step.run("derive", extraction.step_derive, exid, meta)
     await ctx.step.run("finalize", extraction.step_finalize, exid)
     return await ctx.step.run("summary", extraction.extraction_summary, exid)
 
@@ -75,7 +69,7 @@ async def extract_upload_fn(ctx) -> dict:
     """Upload path (in-copyright / accessibility): the same batched steps, but the source
     text is the teacher's uploaded copy — ingested from R2 into the private tier-1 vault,
     never published as full_text. `ingest` replaces `fetch`; user_id threads through so the
-    derive/objectives/finalize steps read the DECRYPTED tier-1 copy."""
+    derive/finalize steps read the DECRYPTED tier-1 copy."""
     import uuid
 
     d = ctx.event.data or {}
@@ -94,12 +88,7 @@ async def extract_upload_fn(ctx) -> dict:
         # already canonical — don't rebuild the shared derivative from this one.
         return {"status": "kept_private", "reason": ingested.get("reason"), "extraction_id": str(exid)}
 
-    derived = await ctx.step.run("derive", extraction.step_derive, exid, meta, user_id)
-    n = int(derived.get("sections", 0))
-    batch = extraction.OBJECTIVES_BATCH
-    for b in range((n + batch - 1) // batch):
-        await ctx.step.run(f"objectives-{b}", extraction.step_objectives, exid, meta, b, batch, user_id)
-
+    await ctx.step.run("derive", extraction.step_derive, exid, meta, user_id)
     await ctx.step.run("finalize", extraction.step_finalize, exid, user_id)
     return await ctx.step.run("summary", extraction.extraction_summary, exid)
 
@@ -113,9 +102,8 @@ async def extract_upload_fn(ctx) -> dict:
 async def rederive_fn(ctx) -> dict:
     """Rebuild the shared derivative from an already-stored copy — no ingest, no R2. Fired
     when a reviewer promotes a borderline upload to canonical: the canonical_source/tier/
-    quality are set by the promote endpoint first; here we just re-run derive → objectives
-    → finalize against that copy's text (user_id set → the private tier-1 vault; null → the
-    PD raw)."""
+    quality are set by the promote endpoint first; here we just re-run derive → finalize
+    against that copy's text (user_id set → the private tier-1 vault; null → the PD raw)."""
     import uuid
 
     d = ctx.event.data or {}
@@ -123,11 +111,7 @@ async def rederive_fn(ctx) -> dict:
     user_id = d.get("user_id")  # may be None for a PD copy
     meta = {"title": d.get("title") or "", "authors": ([d["author"]] if d.get("author") else [])}
 
-    derived = await ctx.step.run("derive", extraction.step_derive, exid, meta, user_id)
-    n = int(derived.get("sections", 0))
-    batch = extraction.OBJECTIVES_BATCH
-    for b in range((n + batch - 1) // batch):
-        await ctx.step.run(f"objectives-{b}", extraction.step_objectives, exid, meta, b, batch, user_id)
+    await ctx.step.run("derive", extraction.step_derive, exid, meta, user_id)
     await ctx.step.run("finalize", extraction.step_finalize, exid, user_id)
     return await ctx.step.run("summary", extraction.extraction_summary, exid)
 

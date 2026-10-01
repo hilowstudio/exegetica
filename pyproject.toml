@@ -55,6 +55,7 @@ webapp = [
     "ebooklib>=0.18",          # EPUB → text (uploaded book copies)
     "pypdf>=4.0",              # PDF → text (uploaded book copies)
     "beautifulsoup4>=4.12",    # strip EPUB chapter HTML to text
+    "pillow>=10.0",            # download + WebP-convert admin cover-art overrides (self-hosted)
 ]
 # Print-ready PDF rendering of the course materials. Uses the machine's installed
 # Edge/Chromium (Playwright channel=msedge) — no browser download needed.

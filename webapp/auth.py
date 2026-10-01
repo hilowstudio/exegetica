@@ -48,9 +48,16 @@ def configured() -> bool:
     return bool(os.environ.get("GOOGLE_CLIENT_ID_WEB") and os.environ.get("GOOGLE_CLIENT_SECRET_WEB"))
 
 
+def _emails_env(var: str) -> set[str]:
+    """Comma-separated email allowlist from an env var, robust to surrounding quotes.
+    (python-dotenv strips quotes locally, but Fly/other hosts inject secrets raw, so a value
+    set as "a@x.com,b@y.com" would otherwise keep its quotes and never match.)"""
+    raw = (os.environ.get(var) or "").strip().strip('"').strip("'")
+    return {e.strip().strip('"').strip("'").lower() for e in raw.split(",") if e.strip().strip('"').strip("'")}
+
+
 def _teacher_emails() -> set[str]:
-    raw = os.environ.get("TEACHER_EMAILS", "")
-    return {e.strip().lower() for e in raw.split(",") if e.strip()}
+    return _emails_env("TEACHER_EMAILS")
 
 
 def _role_for(email: str | None) -> str:
@@ -58,8 +65,7 @@ def _role_for(email: str | None) -> str:
 
 
 def _admin_emails() -> set[str]:
-    raw = os.environ.get("LIBRARY_ADMIN_EMAILS", "")
-    return {e.strip().lower() for e in raw.split(",") if e.strip()}
+    return _emails_env("LIBRARY_ADMIN_EMAILS")
 
 
 def is_admin(user) -> bool:

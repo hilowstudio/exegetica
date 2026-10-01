@@ -446,12 +446,11 @@
   <nav class="rail" aria-label="Primary">
     <a class="railbtn" href="/" title="Chat" aria-label="Chat"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg></a>
     <a class="railbtn" href="/memory" title="Scripture Memory" aria-label="Scripture Memory"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/><path d="M6.5 11h6M6.5 14h4"/></svg></a>
+    <a class="railbtn" href="/read" title="Reading Room" aria-label="Reading Room"><svg viewBox="0 0 24 24"><path d="M12 6.6C10.2 5.3 7.3 5 4.8 5.6v12.3c2.5-.6 5.4-.3 7.2 1 1.8-1.3 4.7-1.6 7.2-1V5.6C16.7 5 13.8 5.3 12 6.6z"/><path d="M12 6.6v11.7"/></svg></a>
     <a class="railbtn teach" href="/generate" style="display:none" title="Generator" aria-label="Generator"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/></svg></a>
     <a class="railbtn teach active" href="/library" style="display:none" title="Living Library" aria-label="Living Library"><svg viewBox="0 0 24 24"><rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/><path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/></svg></a>
     <span class="sp"></span>
-    <a id="acct" class="railbtn acct" href="/auth/login" title="Sign in" aria-label="Sign in"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg></a>
-    <button id="open-about" type="button" title="About" aria-label="About"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button>
-    <button id="theme-toggle" type="button" title="Toggle light / dark" aria-label="Toggle theme"><span class="glyph">◐</span></button>
+    <button id="open-settings" type="button" title="Settings" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.2 7l2.6 1.5M17.2 15.5l2.6 1.5M4.2 17l2.6-1.5M17.2 8.5l2.6-1.5"/></svg></button>
   </nav>
 
   <div class="col">
@@ -482,7 +481,6 @@
           </div>
           <div class="o-hint" id="omni-hint"><span class="k">tip</span> Search the great books by title or author, or paste an ISBN.</div>
           <button class="browse-cta" id="browse-open" type="button" hidden>
-            <span class="bc-star">✦</span>
             <span class="bc-txt"><strong>Browse the ready library</strong><span class="bc-sub" id="browse-count">books built and ready to use</span></span>
             <span class="bc-arrow">→</span>
           </button>
@@ -516,16 +514,6 @@
   </div>
 </div>
 
-<!-- About modal -->
-<div class="modal-bg" id="about-bg">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="about-title">
-    <h2 id="about-title">The Living Library</h2>
-    <p class="muted">A shelf for the sources you teach from.</p>
-    <p style="font-size:14px;color:var(--ink-soft);line-height:1.55">Keep the books, podcasts, and videos your lessons draw on in one place, then generate a worksheet, study guide, or discussion set for a chapter, an episode, or a topic. Books search OpenLibrary and Google Books; podcasts search Apple Podcasts; videos take a link.</p>
-    <p style="font-size:13px;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--rule);border-radius:9px;padding:11px 13px;margin-top:14px">Search and adding are live. Turning a saved source into ingestible text you can generate from is the next phase.</p>
-    <div class="modal-actions"><span class="sp"></span><button class="btn-solid" id="close-about" type="button">Close</button></div>
-  </div>
-</div>
 
 <!-- Add: Book / Podcast search -->
 <div class="modal-bg" id="search-bg">
@@ -535,19 +523,6 @@
     <div class="fld"><label id="search-label">Search books</label><input id="search-q" type="text" autocomplete="off" spellcheck="false" placeholder="Search…"></div>
     <div class="results" id="search-results"><div class="s-note">Type to search.</div></div>
     <div class="modal-actions"><span class="sp"></span><button class="btn-ghost" id="search-cancel" type="button">Cancel</button></div>
-  </div>
-</div>
-
-<!-- Add: Video (URL + preview, still cosmetic) -->
-<div class="modal-bg" id="url-bg">
-  <div class="modal" role="dialog" aria-modal="true">
-    <h2 id="url-title">Add a video</h2>
-    <p class="muted" id="url-sub">Paste a YouTube link and we'll pull the title and channel.</p>
-    <div class="fld"><label id="url-label">Video link</label>
-      <div class="row"><input id="url-input" type="text" autocomplete="off" spellcheck="false" placeholder="https://youtube.com/watch?v=…" style="flex:1"><button class="btn-ghost" id="url-fetch" type="button">Preview</button></div>
-    </div>
-    <div class="preview hidden" id="url-preview"></div>
-    <div class="modal-actions"><span class="sp"></span><button class="btn-ghost" id="url-cancel" type="button">Cancel</button><button class="btn-solid hidden" id="url-add" type="button">Add to library</button></div>
   </div>
 </div>
 
@@ -629,12 +604,13 @@ var ai=0; function nextAccent(){return ACCENTS[ai++%ACCENTS.length];}
 function uid(){return "r"+Math.random().toString(36).slice(2,8);}
 
 // ---------- seed library (skin only) ----------
-var LIB=[
+var DEMO_SEED=[
   {id:uid(),type:"book",title:"The Pilgrim's Progress",sub:"John Bunyan",meta:"1678",accent:"#8f2533"},
   {id:uid(),type:"book",title:"Confessions",sub:"Augustine of Hippo",meta:"AD 397",accent:"#2f4d5c"},
   {id:uid(),type:"podcast",title:"Renewing Your Mind",sub:"Ligonier Ministries",meta:"1,200+ episodes",accent:"#5b4b8a"},
   {id:uid(),type:"video",title:"The Water Cycle, Explained",sub:"Crash Course Kids",meta:"9:14",accent:"#3f6b4f"}
 ];
+var LIB=[], booting=true, anon=false;
 
 var TYPE_UI={
   book:{title:"Bring a book into your library",placeholder:"Search a book by title, author, or ISBN…",add:"Search",
@@ -671,8 +647,8 @@ function cardHTML(it){
   var label=it.type==="book"?"Book":it.type==="podcast"?"Podcast":"Video";
   var metaRight=it.type==="video"?'<span class="c-meta"></span>':('<span class="c-meta">'+esc(it.meta||"")+'</span>');
   var status=(it.type==="book"&&it.ready)
-    ? '<span class="status ready" title="Study materials ready">✦ Ready</span>'
-    : '<span class="status">Ready to ingest</span>';
+    ? '<span class="status ready" title="Study materials ready">Materials ready</span>'
+    : (it.type==="book" ? '<span class="status">Not built yet</span>' : '');
   return '<article class="card'+(it.fresh?" fresh":"")+'" data-id="'+it.id+'">'+
     coverHTML(it)+
     '<span class="c-badge '+it.type+'"><span class="dot"></span>'+label+'</span>'+
@@ -731,6 +707,7 @@ function renderShelf(items){
 }
 function render(){
   counts();
+  if(booting){["grid","shelf","records","films"].forEach(function(x){$(x).style.display="none";});$("empty").innerHTML='<h3>Loading your library\u2026</h3><p>One moment.</p>';$("empty").classList.remove("hidden");return;}
   $("sortby").style.display=curFilter==="book"?"":"none";
   var items=curFilter==="all"?LIB:LIB.filter(function(it){return it.type===curFilter;});
   $("grid").style.display="none";$("shelf").style.display="none";$("records").style.display="none";$("films").style.display="none";
@@ -763,13 +740,13 @@ function openBook(id){
       '<input type="url" id="cover-url" placeholder="https://…/cover.jpg" value="'+esc(it.cover||"")+'">'+
       '<div class="cover-edit-row"><button type="button" class="csave" id="cover-save">Save</button>'+
       '<button type="button" class="creset" id="cover-reset">Reset</button></div>'+
-      (AUTH.admin?'<div class="cover-edit-note">✦ Admin — this sets the cover for everyone.</div>':'')+
+      (AUTH.admin?'<div class="cover-edit-note">Admin — this sets the cover for everyone.</div>':'')+
     '</div>';
   $("read-body").innerHTML='<div class="read-grid"><div class="read-cover">'+cover+coverEdit+'</div>'+
     '<div class="read-meta"><div class="r-eyebrow">Book</div><h2 class="r-title">'+esc(it.title)+'</h2>'+
     '<div class="r-author">'+esc(it.sub)+'</div>'+(facts?'<div class="r-facts">'+esc(facts)+'</div>':'')+
     (AUTH.signed
-      ? '<div class="ex-actions"><button type="button" class="lib-extract">✦ '+(it.ready?'View':'Build')+' study materials</button><button type="button" class="lib-upload">⬆ Upload a copy</button></div>'
+      ? '<div class="ex-actions"><button type="button" class="lib-extract">'+(it.ready?'View':'Build')+' study materials</button><button type="button" class="lib-upload">⬆ Upload a copy</button></div>'
       : '<div class="r-note">Sign in to build study materials from this book.</div>')+
     '<div id="extract-out" class="extract-out"></div>'+
     _rmBtn(it)+'</div></div>';
@@ -839,6 +816,7 @@ function openScreen(id){
 }
 $("films").addEventListener("click",function(e){var b=e.target.closest(".film");if(b)openScreen(b.dataset.id);});
 $("screen-close").addEventListener("click",function(){$("screen-bg").classList.remove("open");});
+$("grid").addEventListener("click",function(e){var c=e.target.closest(".card");if(!c)return;var it=null,k;for(k=0;k<LIB.length;k++){if(LIB[k].id===c.dataset.id){it=LIB[k];break;}}if(!it)return;if(it.type==="book")openBook(it.id);else if(it.type==="podcast")openPlayer(it.id);else openScreen(it.id);});
 var _rz;window.addEventListener("resize",function(){clearTimeout(_rz);_rz=setTimeout(function(){if(curFilter==="book")render();},160);});
 function _rmBtn(it){return '<button type="button" class="lib-remove" data-remove="'+it.id+'">Remove from library</button>';}
 function _place(it){ if(curFilter!=="all"&&curFilter!==it.type){curFilter="all";syncFilters();} }
@@ -854,7 +832,7 @@ function addItem(it,cb){
       }).catch(function(){toast("Could not save. Try again.");});
   }else{
     it.id=uid();it.fresh=true;LIB.unshift(it);_place(it);render();
-    toast("“"+it.title+"” added to your library");if(cb)cb(it);
+    toast("Added for this visit — sign in to save it to your library");if(cb)cb(it);
   }
 }
 function removeItem(id){
@@ -878,16 +856,27 @@ function startExtract(it){
       pollExtract(d.extraction_id,out,0);
     }).catch(function(){out.innerHTML='<div class="ex-status err">Could not start. Try again.</div>';});
 }
+function _exLabel(s){
+  if(s.status==="pending"||!s.sections)return "Finding and reading the source…";
+  var bits=[];
+  if(s.sections)bits.push(s.sections+" section"+(s.sections===1?"":"s"));
+  if(s.objectives)bits.push(s.objectives+" objective"+(s.objectives===1?"":"s")+" so far");
+  return "Building study materials… "+(bits.join(" · ")||"working");
+}
 function pollExtract(id,out,tries){
   fetch("/api/library/extract/"+encodeURIComponent(id),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;})
     .then(function(s){
       if(!s){out.innerHTML='<div class="ex-status err">Lost track of the extraction.</div>';return;}
       if(s.status==="extracted"){loadExtraction(id,out);return;}
       if(s.status==="failed"){out.innerHTML='<div class="ex-status err">'+esc(s.error||"Extraction failed — this may not be a public-domain title.")+'</div>';return;}
-      out.innerHTML='<div class="ex-status">Building… '+esc(s.status)+(s.sections?' · '+s.sections+' sections':'')+(s.objectives?' · '+s.objectives+' objectives':'')+'</div>';
-      if(tries>80){out.innerHTML='<div class="ex-status">Still working — reopen this book shortly to see the results.</div>';return;}
-      setTimeout(function(){pollExtract(id,out,tries+1);},3000);
-    }).catch(function(){setTimeout(function(){pollExtract(id,out,tries+1);},3000);});
+      var msg='<div class="ex-status">'+esc(_exLabel(s))+'</div>';
+      if(s.summary)msg+='<div class="ex-sec"><div class="ex-h">Summary (preview)</div><p>'+esc(s.summary)+'</p></div>';
+      if(tries>=140)msg+='<div class="ex-status" style="margin-top:8px;font-size:12px;opacity:.75">Taking a while — you can leave this page and it keeps building; reopen the book later to see the finished materials.</div>';
+      out.innerHTML=msg;
+      if(tries>=300){out.innerHTML='<div class="ex-status">Still building after several minutes. Reopen this book later — the materials will be here when it finishes.</div>';return;}
+      var delay=tries<20?3000:(tries<60?5000:9000);
+      setTimeout(function(){pollExtract(id,out,tries+1);},delay);
+    }).catch(function(){setTimeout(function(){pollExtract(id,out,tries+1);},5000);});
 }
 function loadExtraction(id,out){
   fetch("/api/library/extraction/"+encodeURIComponent(id),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;})
@@ -960,7 +949,7 @@ function exportMaterials(){
   w.document.close();
   setTimeout(function(){try{w.focus();w.print();}catch(e){}},300);
 }
-document.addEventListener("click",function(e){if(e.target.closest(".lib-extract"))startExtract(_curBook);});
+document.addEventListener("click",function(e){if(e.target.closest(".lib-extract")){var o=$("extract-out");if(_curBook&&_curBook.ready&&o){loadExtraction(_curBook.id,o);}else{startExtract(_curBook);}}});
 
 // ---------- upload a copy (in-copyright / accessibility) ----------
 function openUpload(it){
@@ -1014,7 +1003,7 @@ $("omni-input").addEventListener("keydown",function(e){if(e.key==="Enter"){e.pre
 function openAdd(){openSearch(curType,$("omni-input").value.trim());}
 
 // ---------- live search (books via OpenLibrary/Google Books, podcasts via iTunes) ----------
-var SEARCH_KIND="book", SR=[], CAT=[], stTimer=null;
+var SEARCH_KIND="book", SR=[], CAT=[], stTimer=null, SEARCH_NOTE="No matches found.";
 function openSearch(kind,prefill){
   SEARCH_KIND=kind;
   var T={book:["Find a book","Search by title, author, or ISBN, then pick the edition to add.","Search books","e.g. The Pilgrim's Progress, or Homer"],
@@ -1037,29 +1026,31 @@ function runSearch(q){
     // Ready (already-seeded) catalog first, external Google Books second — in parallel.
     Promise.all([
       fetch("/api/library/catalog?q="+encodeURIComponent(q),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():{catalog:[]};}).catch(function(){return {catalog:[]};}),
-      fetch("/api/library/books?q="+encodeURIComponent(q)).then(function(r){return r.json();}).catch(function(){return {results:[]};})
+      fetch("/api/library/books?q="+encodeURIComponent(q)).then(function(r){return r.ok?r.json():{results:[],__err:true};}).catch(function(){return {results:[],__err:true};})
     ]).then(function(res){
       if($("search-q").value.trim()!==q)return;
-      CAT=res[0].catalog||[];SR=res[1].results||[];renderSearch();
+      CAT=res[0].catalog||[];SR=res[1].results||[];
+      SEARCH_NOTE=res[1].__err?"Book search failed — try again.":"No matches found.";
+      renderSearch();
     });
     return;
   }
-  var url,ytUrl=false;CAT=[];
+  var url,ytUrl=false;CAT=[];SEARCH_NOTE="No matches found.";
   if(SEARCH_KIND==="podcast")url="/api/library/podcasts?q="+encodeURIComponent(q);
   else if(/youtube\.com\/watch|youtu\.be\//i.test(q)){url="/api/library/video?url="+encodeURIComponent(q);ytUrl=true;}
   else url="/api/library/youtube?q="+encodeURIComponent(q);
   fetch(url).then(function(r){return r.json();}).then(function(d){
     if($("search-q").value.trim()!==q)return;
-    if(ytUrl){var p=d.preview;SR=d.ok?[{title:p.title,author:p.author,thumbnail:p.thumbnail,url:p.url,duration:""}]:[];}
-    else SR=d.results||[];
+    if(ytUrl){var p=d.preview;SR=(d.ok&&p)?[{title:p.title,author:p.author,thumbnail:p.thumbnail,url:p.url,duration:""}]:[];if(!d.ok)SEARCH_NOTE="Couldn’t read that link — paste a public YouTube URL.";}
+    else{SR=d.results||[];if(SEARCH_KIND==="video"&&d.configured===false)SEARCH_NOTE="YouTube search isn’t set up on this server yet.";}
     renderSearch();
-  }).catch(function(){$("search-results").innerHTML='<div class="s-note">Search failed. Try again.</div>';});
+  }).catch(function(){SR=[];SEARCH_NOTE="Search failed — try again.";renderSearch();});
 }
 function catResultHTML(x,i){
   var mini=x.cover?'<img class="mini-img" src="'+esc(x.cover)+'" alt="" loading="lazy">':'<span class="mini" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
   return '<button class="result ready" type="button" data-cat="'+i+'">'+mini+
     '<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+esc(x.sub||"")+'</span></span>'+
-    '<span class="r-ready">✦ Ready · '+x.objectives+' objectives</span></button>';
+    '<span class="r-ready">Ready'+(x.objectives?' · '+x.objectives+' objectives':'')+'</span></button>';
 }
 function renderSearch(){
   if(SEARCH_KIND==="book"){
@@ -1069,10 +1060,10 @@ function renderSearch(){
       var mini=x.cover?'<img class="mini-img" src="'+esc(x.cover)+'" alt="" loading="lazy">':'<span class="mini" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
       return '<button class="result" type="button" data-i="'+i+'">'+mini+'<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+esc(x.author||"Unknown author")+'</span></span><span class="r-y">'+esc(x.year||"")+'</span></button>';
     }).join("");
-    $("search-results").innerHTML=h||'<div class="s-note">No matches found.</div>';
+    $("search-results").innerHTML=h||'<div class="s-note">'+esc(SEARCH_NOTE)+'</div>';
     return;
   }
-  if(!SR.length){$("search-results").innerHTML='<div class="s-note">No matches found.</div>';return;}
+  if(!SR.length){$("search-results").innerHTML='<div class="s-note">'+esc(SEARCH_NOTE)+'</div>';return;}
   $("search-results").innerHTML=SR.map(function(x,i){
     if(SEARCH_KIND==="video"){
       var vt=x.thumbnail?'<img class="mini-img vid" src="'+esc(x.thumbnail)+'" alt="" loading="lazy">':'<span class="mini vid" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
@@ -1085,10 +1076,10 @@ function renderSearch(){
 }
 $("search-results").addEventListener("click",function(e){
   var b=e.target.closest(".result");if(!b)return;
-  if(b.dataset.cat!==undefined){  // a ready, already-seeded book — add it (guaranteed reuse)
+  if(b.dataset.cat!==undefined){  // a ready, already-seeded book — add it and open its materials
     var c=CAT[+b.dataset.cat];if(!c)return;
-    addItem({type:"book",title:c.title,sub:c.sub,meta:(c.objectives+" objectives ready"),accent:nextAccent(),cover:c.cover||null});
-    $("search-bg").classList.remove("open");return;
+    addItem({type:"book",title:c.title,sub:c.sub,meta:(c.objectives?c.objectives+" objectives ready":""),accent:nextAccent(),cover:c.cover||null},function(item){$("search-bg").classList.remove("open");openBook(item.id);});
+    return;
   }
   var x=SR[+b.dataset.i];if(!x)return;
   if(SEARCH_KIND==="book"){
@@ -1139,36 +1130,6 @@ function renderBrowse(){
   });
 })();
 
-// ---------- video add (YouTube oEmbed preview, keyless) ----------
-var VP=null;
-function openUrl(kind,prefill){
-  VP=null;$("url-input").value=prefill||"";
-  $("url-preview").classList.add("hidden");$("url-preview").innerHTML="";$("url-add").classList.add("hidden");
-  $("url-bg").classList.add("open");setTimeout(function(){$("url-input").focus();if(prefill&&prefill.trim().length>=11)fetchPreview();},30);
-}
-function fetchPreview(){
-  var url=$("url-input").value.trim();if(url.length<8)return;
-  VP=null;$("url-add").classList.add("hidden");
-  $("url-preview").classList.remove("hidden");$("url-preview").innerHTML='<div class="s-note" style="width:100%">Fetching…</div>';
-  fetch("/api/library/video?url="+encodeURIComponent(url)).then(function(r){return r.json();}).then(function(d){
-    if(!d.ok){$("url-preview").innerHTML='<div class="s-note" style="width:100%">Could not read that link. Paste a public YouTube URL.</div>';return;}
-    VP=d.preview;
-    var media=VP.thumbnail
-      ? '<div class="pv-media video" style="background-image:url('+cssurl(VP.thumbnail)+');background-size:cover;background-position:center"><span class="play">▶</span></div>'
-      : '<div class="pv-media video"><span class="play">▶</span></div>';
-    $("url-preview").innerHTML=media+'<div><div class="pv-t">'+esc(VP.title)+'</div><div class="pv-s">'+esc(VP.author)+'</div><div class="pv-m">'+esc(VP.provider)+'</div></div>';
-    $("url-add").classList.remove("hidden");
-  }).catch(function(){$("url-preview").innerHTML='<div class="s-note" style="width:100%">Preview failed. Try again.</div>';});
-}
-$("url-fetch").addEventListener("click",fetchPreview);
-$("url-input").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();fetchPreview();}});
-$("url-add").addEventListener("click",function(){
-  if(!VP)return;
-  addItem({type:"video",title:VP.title,sub:VP.author||VP.provider,meta:"",accent:nextAccent(),thumbnail:VP.thumbnail||null,url:VP.url});
-  $("url-bg").classList.remove("open");
-});
-$("url-cancel").addEventListener("click",function(){$("url-bg").classList.remove("open");});
-
 // ---------- filters ----------
 function syncFilters(){Array.prototype.forEach.call($("filters").children,function(b){b.classList.toggle("on",b.dataset.f===curFilter);});}
 $("filters").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;curFilter=b.dataset.f;syncFilters();render();});
@@ -1180,14 +1141,9 @@ $("sortseg").addEventListener("click",function(e){var b=e.target.closest("button
 // ---------- misc ----------
 var toastT;
 function toast(msg){var t=$("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove("show");},2200);}
-$("open-about").addEventListener("click",function(){$("about-bg").classList.add("open");});
-$("close-about").addEventListener("click",function(){$("about-bg").classList.remove("open");});
 Array.prototype.forEach.call(document.querySelectorAll(".modal-bg"),function(bg){bg.addEventListener("click",function(e){if(e.target===bg)bg.classList.remove("open");});});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")Array.prototype.forEach.call(document.querySelectorAll(".modal-bg"),function(bg){bg.classList.remove("open");});});
-(function(){var btn=$("theme-toggle");if(!btn)return;
-  function eff(){var e=document.documentElement.getAttribute("data-theme");if(e)return e;return (window.matchMedia&&window.matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";}
-  btn.onclick=function(){var n=eff()==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",n);try{localStorage.setItem("studybible.theme",n);}catch(e){}};
-})();
+// Account, theme (and API key, where relevant) live in the global Settings panel (/static/settings.js).
 
 syncType();syncFilters();syncWrap();syncSort();render();
 // Signed-in users get their persisted Neon shelf (replacing the demo seed);
@@ -1195,13 +1151,14 @@ syncType();syncFilters();syncWrap();syncSort();render();
 function initLibrary(){
   fetch("/api/me",{credentials:"same-origin"}).then(function(r){return r.json();}).then(function(d){
     AUTH.user=(d&&d.user)||null;AUTH.signed=!!AUTH.user;AUTH.admin=!!(d&&d.admin);
-    if(!AUTH.signed)return;
-    fetch("/api/library/shelf",{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;}).then(function(s){
-      if(s&&s.items){LIB=s.items;render();}
-    }).catch(function(){});
+    if(!AUTH.signed){anon=true;LIB=DEMO_SEED.slice();booting=false;render();return;}
+    fetch("/api/library/shelf",{credentials:"same-origin"}).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(s){
+      LIB=(s&&s.items)||[];booting=false;render();
+    }).catch(function(){booting=false;LIB=[];render();
+      $("empty").innerHTML='<h3>Couldn\u2019t load your library</h3><p>Something went wrong reaching the server — refresh to try again.</p>';$("empty").classList.remove("hidden");});
     loadBrowseCount();
     if(AUTH.user.role==="teacher")loadReviews();
-  }).catch(function(){});
+  }).catch(function(){anon=true;LIB=DEMO_SEED.slice();booting=false;render();});
 }
 initLibrary();
 
@@ -1261,6 +1218,6 @@ function reviewAct(card,action){
   });
 })();
 </script>
-<script src="/static/acct.js"></script>
+<script src="/static/settings.js"></script>
 </body>
 </html>

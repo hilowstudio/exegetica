@@ -243,8 +243,7 @@ async def catalog_search(request):
     q = (request.query_params.get("q") or "").strip()
     rows = await db.fetch(
         """select e.id, e.title, e.creator, e.cover_url,
-                  (select count(*) from library_sections   s where s.extraction_id=e.id) secs,
-                  (select count(*) from library_objectives  o where o.extraction_id=e.id and o.user_id is null) objs,
+                  (select count(*) from library_sections s where s.extraction_id=e.id) secs,
                   count(*) over() as total
            from library_extractions e
            where e.status='extracted' and e.kind='book'
@@ -257,7 +256,7 @@ async def catalog_search(request):
     total = rows[0]["total"] if rows else 0
     return JSONResponse({"total": total, "catalog": [
         {"id": str(r["id"]), "type": "book", "title": r["title"] or "", "sub": r["creator"] or "",
-         "cover": r["cover_url"], "sections": r["secs"], "objectives": r["objs"], "ready": True}
+         "cover": r["cover_url"], "sections": r["secs"], "ready": True}
         for r in rows]})
 
 
@@ -380,9 +379,7 @@ async def extract_status(request):
         return JSONResponse({"error": "bad id"}, status_code=400)
     row = await db.fetchrow(
         """select e.status, e.error,
-             (select count(*) from library_sections   s where s.extraction_id = e.id) sections,
-             (select count(*) from library_objectives o where o.extraction_id = e.id and o.user_id is null) objectives,
-             (select count(*) from library_alignments a where a.extraction_id = e.id) alignments,
+             (select count(*) from library_sections s where s.extraction_id = e.id) sections,
              e.derivative->>'summary' summary
            from library_extractions e where e.id = $1""",
         exid,
@@ -390,16 +387,14 @@ async def extract_status(request):
     if not row:
         return JSONResponse({"error": "not found"}, status_code=404)
     return JSONResponse(
-        {
-            "status": row["status"], "error": row["error"], "sections": row["sections"],
-            "objectives": row["objectives"], "alignments": row["alignments"], "summary": row["summary"],
-        }
+        {"status": row["status"], "error": row["error"], "sections": row["sections"],
+         "summary": row["summary"]}
     )
 
 
 async def extraction_detail(request):
-    """The full extraction result for display: derivative + community objectives (with
-    their cited section) + spine alignments (with the node's readable name)."""
+    """The extraction result for display: the transformative derivative (summary/themes/level).
+    (Objectives + spine alignments were retired in the Living Library generation redesign.)"""
     user = auth.current_user(request)
     if not user:
         return JSONResponse({"error": "authentication required"}, status_code=401)
@@ -412,41 +407,11 @@ async def extraction_detail(request):
     ex = await db.fetchrow("select status, us_clear, derivative from library_extractions where id=$1", exid)
     if not ex:
         return JSONResponse({"error": "not found"}, status_code=404)
-    objs = await db.fetch(
-        """select o.text, o.citation, s.number sec_num, s.title sec_title
-           from library_objectives o left join library_sections s on s.id = o.section_id
-           where o.extraction_id = $1 and o.user_id is null and o.status = 'accepted'
-           order by s.position nulls first, o.created_at""",
-        exid,
-    )
-    aligns = await db.fetch(
-        """select a.spine_level, a.spine_node_id, n.name node_name, s.number sec_num
-           from library_alignments a
-           left join spine_nodes n on n.id = a.spine_node_id
-           left join library_sections s on s.id = a.section_id
-           where a.extraction_id = $1 and a.source = 'auto'
-           order by (a.section_id is null) desc, a.spine_level""",
-        exid,
-    )
     d = ex["derivative"] or {}
     return JSONResponse(
         {
             "status": ex["status"], "us_clear": ex["us_clear"],
             "summary": d.get("summary"), "themes": d.get("themes"), "reading_level": d.get("reading_level"),
-            "objectives": [
-                {
-                    "text": o["text"], "citation": o["citation"],
-                    "section": (o["sec_title"] or (("Ch. " + o["sec_num"]) if o["sec_num"] else None)),
-                }
-                for o in objs
-            ],
-            "alignments": [
-                {
-                    "level": a["spine_level"], "node": a["node_name"] or a["spine_node_id"],
-                    "code": a["spine_node_id"], "section": a["sec_num"],
-                }
-                for a in aligns
-            ],
         }
     )
 

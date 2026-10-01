@@ -8,8 +8,10 @@ edition, then title/author closeness.
 from __future__ import annotations
 
 import asyncio
+import re
 
 import httpx
+from bs4 import BeautifulSoup
 
 from webapp.sources.matching import (
     BROWSER_UA,
@@ -18,9 +20,14 @@ from webapp.sources.matching import (
     normalize,
     score_title_author,
 )
+from webapp.sources.standardebooks import _clean_chapter
 from webapp.sources.text_processing import strip_gutenberg_boilerplate
 
 _RETRY_STATUS = {429, 500, 502, 503, 504}
+
+# For the bulk e-reader corpus (seed_gutenberg.py). PG hosts US-public-domain texts.
+SOURCE = "gutenberg"
+LICENSE = "PD-US"
 
 
 async def _get_with_retry(client: httpx.AsyncClient, url: str, *, params=None, attempts: int = 4):
@@ -111,3 +118,117 @@ async def fetch(text_url: str) -> str | None:
         text = r.text
     cleaned = strip_gutenberg_boilerplate(text)
     return cleaned if len(cleaned) > 200 else None
+
+
+# --------------------------------------------------------------------------- #
+# Bulk e-reader ingest: HTML → beautiful, chaptered copies (seed_gutenberg.py)
+# --------------------------------------------------------------------------- #
+# PG's HTML lives under several naming schemes depending on the book's vintage/images; try
+# them in order. A book with none of these is text/epub-only → skipped (not a beautiful copy).
+_HTML_URLS = (
+    "https://www.gutenberg.org/ebooks/{gid}.html.images",
+    "https://www.gutenberg.org/ebooks/{gid}.html.noimages",
+    "https://www.gutenberg.org/cache/epub/{gid}/pg{gid}-images.html",
+    "https://www.gutenberg.org/cache/epub/{gid}/pg{gid}.html.utf8",
+    "https://www.gutenberg.org/files/{gid}/{gid}-h/{gid}-h.htm",
+)
+
+# Chapter titles that are front/back matter, not the readable body — dropped.
+_SKIP_TITLE = re.compile(
+    r"^\s*(contents|table of contents|title\s*page|half.?title|colophon|cover|copyright|"
+    r"the full project gutenberg|project gutenberg|transcriber.?s? note|transcriber|"
+    r"list of illustrations|illustrations|list of plates|colou?r plates|plates|"
+    r"units of measure|advertisement|by the same author|frontispiece|endnotes|footnotes)\b",
+    re.I,
+)
+
+
+def _display_name(pg_author: str) -> tuple[str, str]:
+    """PG stores 'Surname, Given' → (display 'Given Surname', sort 'Surname, Given').
+    Multi-author strings and comma-less names are left as-is."""
+    a = (pg_author or "").strip()
+    if "," not in a:
+        return a, a
+    surname, _, given = a.partition(",")
+    return f"{given.strip()} {surname.strip()}".strip(), a
+
+
+def _slugify(s: str) -> str:
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (s or "").lower())).strip("-")
+
+
+def _choose_level(body) -> str | None:
+    """Fallback chaptering: the heading level with the most entries in a sane range — so a
+    book that nests chapters (<h3>) under parts (<h2>) splits on the <h3> chapters, not the
+    two parts."""
+    best, lvl = 0, None
+    for tag in ("h2", "h3", "h4", "h1"):
+        c = len(body.find_all(tag))
+        if 3 <= c <= 400 and c > best:
+            best, lvl = c, tag
+    return lvl
+
+
+def _raw_chapters(body) -> list:
+    """Ordered chapter nodes: prefer <div class='chapter'> (PG's clean convention), else split
+    the serialized body at each heading of the chosen level (string split → robust to nesting;
+    fragments are re-parsed and cleaned). Returns soup nodes ready for _clean_chapter."""
+    # Only trust div.chapter blocks that actually hold text — some PG HTML uses empty
+    # <div class="chapter"> as scroll anchors, with the prose in following siblings.
+    divs = [d for d in body.find_all("div", class_="chapter") if len(d.get_text(strip=True)) > 40]
+    if len(divs) >= 3:
+        return divs
+    level = _choose_level(body)
+    if not level:
+        return [body]  # unstructured → single chapter (a short work, or low-value blob)
+    html = body.decode_contents() if hasattr(body, "decode_contents") else str(body)
+    toks = re.split(rf"(<{level}\b[^>]*>.*?</{level}>)", html, flags=re.I | re.S)
+    nodes = []
+    i = 1  # toks[0] is the preamble before the first heading (title page etc.) — dropped
+    while i < len(toks):
+        frag = toks[i] + (toks[i + 1] if i + 1 < len(toks) else "")
+        nodes.append(BeautifulSoup(frag, "html.parser"))
+        i += 2
+    return nodes
+
+
+async def fetch_book(client: httpx.AsyncClient, gid, meta: dict) -> dict | None:
+    """One Gutenberg work → the e-reader book dict (same shape as standardebooks.fetch_book).
+    Title/author/genre come from the curated manifest `meta`; the HTML supplies clean chapters."""
+    r = None
+    for tmpl in _HTML_URLS:
+        r = await _get_with_retry(client, tmpl.format(gid=gid))
+        if r is not None:
+            break
+    if r is None:
+        return None
+    soup = BeautifulSoup(r.text, "html.parser")
+    for el in soup.select('[class*="pg-boilerplate"], [class*="pgheader"], #pg-header, #pg-footer'):
+        el.decompose()
+    body = soup.body or soup
+
+    chapters = []
+    for node in _raw_chapters(body):
+        title, chtml, words = _clean_chapter(node)
+        if words < 30 or _SKIP_TITLE.match(title or ""):
+            continue
+        chapters.append({"section_number": len(chapters) + 1, "title": title,
+                         "html": chtml, "words": words})
+    if not chapters:
+        return None
+
+    display, sort = _display_name(meta.get("author") or "")
+    title = meta.get("title") or ""
+    genre = meta.get("genre")
+    subjects = [s.strip() for s in (meta.get("subjects") or "").split("|") if s.strip()]
+    return {
+        "slug": (f"{_slugify(display)}_{_slugify(title)}"[:78] or "book") + f"-pg{gid}",
+        "title": title,
+        "author": display,
+        "author_sort": sort,
+        "language": "en",
+        "subjects": subjects,
+        "genres": [genre] if genre else [],
+        "chapters": chapters,
+        "word_count": sum(c["words"] for c in chapters),
+    }

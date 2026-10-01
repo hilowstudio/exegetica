@@ -83,7 +83,7 @@ Every lesson: **Quiet time with the Lord (7 min)** → **Hear the Word (read alo
 
 **The pipeline** — `scripts/john_gen.py` (single generation path):
 - Subcommands: `lesson --index N [--passage]` · `reading-guide --unit U2` · `devotional --passage 1:35-51` · `course --doc <slug> | --all`. Flags: `--dry-run` (assemble, no API), `--force`, `--no-sermon`.
-- Drives the REAL app loop (`providers.run` over `MCPBridge`, model `claude-opus-4-8`) so citations are genuinely tool-grounded ESV. Pins facts from the calendar map; carries ESV + three-tier + evangelical design invariants on every job; auto-matches the paired sermon.
+- Drives the REAL app loop (`providers.run` over `MCPBridge`, model `claude-opus-5-5`) so citations are genuinely tool-grounded ESV. Pins facts from the calendar map; carries ESV + three-tier + evangelical design invariants on every job; auto-matches the paired sermon.
 - **Sturdiness:** reuses one MCP bridge per batch; idempotent (skips existing unless `--force`); one-shot retry; never writes a broken/too-short file; JSONL run log at `docs/_john-gen-log.jsonl`.
 - Outputs: teacher guides → `docs/john-lessons/GEN_*.md`; student + course docs → `docs/john-materials/GEN_*.md`. **GEN_ files are drafts to review**, not final.
 - Course `--all` week-one set (5 docs): `how-to-read-john` (book_survey), `reading-journal-guide` + `quiet-time-journal-guide` (reflection_journal), `memory-master` (scripture_memory_plan, 16 verses), `memory-cards` (flashcards, 16).

@@ -97,6 +97,9 @@
   .toggle{display:flex;border:1px solid var(--rule-strong);border-radius:999px;overflow:hidden;font-size:12px;font-weight:600}
   .toggle button{font-family:var(--sans);font-weight:600;border:0;background:var(--surface);color:var(--ink-soft);padding:5px 12px;cursor:pointer}
   .toggle button[aria-pressed="true"]{background:var(--accent);color:#fff}
+  .corpus-info{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;color:var(--ink-faint);text-decoration:none}
+  .corpus-info:hover{color:var(--accent);background:var(--surface)}
+  .corpus-info svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
   /* crisis help affordance */
   .help-link{color:var(--accent-soft);cursor:pointer;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
   .help-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:80;padding:20px}
@@ -239,13 +242,11 @@
     <button id="toggle-studies" class="railbtn" type="button" title="Toggle studies panel" aria-label="Toggle studies panel" aria-expanded="false"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M9 5v14"/></svg></button>
     <a class="railbtn active" href="/" title="Chat" aria-label="Chat"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg></a>
     <a class="railbtn" href="/memory" title="Scripture Memory" aria-label="Scripture Memory"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/><path d="M6.5 11h6M6.5 14h4"/></svg></a>
+    <a class="railbtn" href="/read" title="Reading Room" aria-label="Reading Room"><svg viewBox="0 0 24 24"><path d="M12 6.6C10.2 5.3 7.3 5 4.8 5.6v12.3c2.5-.6 5.4-.3 7.2 1 1.8-1.3 4.7-1.6 7.2-1V5.6C16.7 5 13.8 5.3 12 6.6z"/><path d="M12 6.6v11.7"/></svg></a>
     <a class="railbtn teach" href="/generate" style="display:none" title="Generator" aria-label="Generator"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/></svg></a>
     <a class="railbtn teach" href="/library" style="display:none" title="Living Library" aria-label="Living Library"><svg viewBox="0 0 24 24"><rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/><path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/></svg></a>
     <span class="sp"></span>
-    <a id="acct" class="railbtn acct" href="/auth/login" title="Sign in" aria-label="Sign in"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg></a>
-    <button id="open-about" type="button" title="About" aria-label="About"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button>
-    <button id="open-settings" type="button" title="Model &amp; API key" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.2 7l2.6 1.5M17.2 15.5l2.6 1.5M4.2 17l2.6-1.5M17.2 8.5l2.6-1.5"/></svg></button>
-    <button id="theme-toggle" type="button" title="Toggle light / dark" aria-label="Toggle theme"><span class="glyph">◐</span></button>
+    <button id="open-settings" type="button" title="Settings" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.2 7l2.6 1.5M17.2 15.5l2.6 1.5M4.2 17l2.6-1.5M17.2 8.5l2.6-1.5"/></svg></button>
   </nav>
 
   <aside class="side" id="side">
@@ -269,6 +270,7 @@
         <button id="p-aide" aria-pressed="false" type="button">Aide</button>
         <button id="p-researcher" aria-pressed="false" type="button">Researcher</button>
       </div>
+      <a class="corpus-info" href="/corpus" title="The corpus — every source Exegetica can cite" aria-label="View the source corpus"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></a>
     </div>
 
     <main class="scroll" id="main">
@@ -322,80 +324,6 @@
   </div>
 </div>
 
-<div class="modal-bg" id="modal-bg">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <h2 id="modal-title">Model &amp; API key</h2>
-    <p class="muted">Bring your own key. It is stored only in this browser and sent to the app only to make your request. The server never saves it. The Chat and Generator pages share this setting.</p>
-    <label class="fld">Provider
-      <select id="sel-provider"></select>
-    </label>
-    <label class="fld">Model
-      <input id="in-model" type="text" spellcheck="false" autocomplete="off">
-      <span class="muted small" id="model-hint"></span>
-    </label>
-    <label class="fld">API key
-      <input id="in-key" type="password" spellcheck="false" autocomplete="off" placeholder="Paste your key">
-      <span class="muted small" id="key-hint"></span>
-    </label>
-    <div class="modal-actions">
-      <button class="btn-ghost" id="clear-key" type="button">Forget key</button>
-      <span class="spacer"></span>
-      <button class="btn-ghost" id="cancel-settings" type="button">Cancel</button>
-      <button class="btn-solid" id="save-settings" type="button">Save</button>
-    </div>
-  </div>
-</div>
-
-<div class="modal-bg" id="about-bg">
-  <div class="modal wide about" role="dialog" aria-modal="true" aria-labelledby="about-title">
-    <h2 id="about-title">About Exegetica</h2>
-    <div class="tabs">
-      <button class="tab on" type="button" data-pane="about">About</button>
-      <button class="tab" type="button" data-pane="res">Resources</button>
-    </div>
-    <div class="pane on" id="pane-about">
-    <p class="about-lede">A study companion for pastors, teachers, and students. It answers from Scripture and the historic church, and cites every source.</p>
-    <p class="muted small">The Professor voice works exegesis-first: establish the text in its grammatical, historical, and literary context, read it as one story culminating in Christ, and ground every answer in the tools rather than recall.</p>
-
-    <h3>Grounded in cited sources</h3>
-    <p>Most AI answers about the Bible are reconstructed from a blurred memory of training data, inventing wording and references with full confidence. Here, Exegetica quotes the passage and lexicon entries through its tools and cites what it used, so every claim can be checked.</p>
-
-    <h3>The original languages, precisely</h3>
-    <p>Real Hebrew and Greek morphology, the Brown-Driver-Briggs and Liddell-Scott lexicons, Strong's, the Septuagint, and every-occurrence search over tagged text. This is the backbone of an honest word study.</p>
-
-    <h3>The church, heard on purpose</h3>
-    <p>A curated body of classic commentary (Henry, Gill, Calvin, JFB, Clarke, Keil &amp; Delitzsch), the church fathers, and the creeds, confessions, and catechisms with their proof-texts. A web search returns whatever ranks highest; this hears two thousand years of orthodox witness deliberately.</p>
-
-    <h3>Owned and reproducible</h3>
-    <p>The data is bundled and self-hosted, so answers are reproducible and never depend on live websites or paywalled texts. The same question gives the same sourced answer, today and next year.</p>
-
-    <p class="caveat">The tools ground and discipline the work. They do not make it infallible. Treat it as a servant of your study and the church, under your own discernment and the Spirit's illumination. Always verify against Scripture.</p>
-    </div>
-
-    <div class="pane" id="pane-res">
-      <p class="muted small" style="margin-top:0">Exegetica answers from these bundled sources through its connector and cites what it uses, rather than reconstructing from memory. All are public-domain or openly licensed.</p>
-      <div class="reslist">
-        <div class="resgroup"><h4>English translations (bundled)</h4><p>Berean Standard Bible (BSB), World English Bible (WEB), King James Version (KJV), American Standard Version (ASV), and Young's Literal Translation (YLT).</p></div>
-        <div class="resgroup"><h4>Modern translations (fetched live)</h4><p>English Standard Version (ESV, via a Crossway API key) and the New English Translation (NET, keyless). Quoted live at request time with attribution, never bundled or stored.</p></div>
-        <div class="resgroup"><h4>Original languages</h4><p>Tagged Hebrew and Greek with full morphological parsing, and the Greek Septuagint (LXX).</p></div>
-        <div class="resgroup"><h4>Lexicons</h4><p>Brown-Driver-Briggs (Hebrew), Liddell-Scott-Jones (Greek), and Abbott-Smith (New Testament Greek), keyed to Strong's numbers.</p></div>
-        <div class="resgroup"><h4>Concordance</h4><p>Every-occurrence search across the tagged text, by English word or Strong's number.</p></div>
-        <div class="resgroup"><h4>Cross-references &amp; parallels</h4><p>A cross-reference network and the UBS parallel-passage set.</p></div>
-        <div class="resgroup"><h4>Classic commentaries</h4><p>Matthew Henry, John Gill, Jamieson-Fausset-Brown, Adam Clarke, John Calvin, and Keil &amp; Delitzsch (Old Testament).</p></div>
-        <div class="resgroup"><h4>Church fathers</h4><p>A catena of Ante-Nicene, Nicene and Post-Nicene, Eastern/Byzantine, Syriac, and medieval writers (Chrysostom, Augustine, Irenaeus, and more).</p></div>
-        <div class="resgroup"><h4>Study notes</h4><p>Tyndale, SIL, and unfoldingWord translation notes.</p></div>
-        <div class="resgroup"><h4>Creeds, confessions &amp; catechisms</h4><p>Ecumenical creeds (Apostles', Nicene, Athanasian, Chalcedon); Reformed and Protestant (Westminster Confession with the Larger and Shorter Catechisms, Belgic, Canons of Dort, Heidelberg, 1689 London Baptist, the Thirty-Nine Articles, Augsburg); Catholic (Council of Trent, Baltimore Catechism); and Orthodox (Confession of Dositheus, Philaret's Catechism).</p></div>
-        <div class="resgroup"><h4>People, places &amp; genealogy</h4><p>A graph of biblical people, places, events, and family lines to explore and connect.</p></div>
-        <div class="resgroup"><h4>Bible dictionary</h4><p>The Tyndale Bible Dictionary: 500+ articles on people, places, doctrines, customs, and background.</p></div>
-        <div class="resgroup"><h4>Key terms &amp; vocabulary</h4><p>Passage key-term and vocabulary lists for study and teaching.</p></div>
-      </div>
-    </div>
-
-    <div class="modal-actions"><span class="spacer"></span>
-      <button class="btn-solid" id="close-about" type="button">Close</button>
-    </div>
-  </div>
-</div>
 
 <script>
 "use strict";
@@ -577,69 +505,25 @@ function setStudiesOpen(o){
 document.getElementById("toggle-studies").onclick=function(){ setStudiesOpen(!sideEl.classList.contains("open")); };
 try{ if(localStorage.getItem("studybible.side.open")==="1") setStudiesOpen(true); }catch(e){}
 
-// ---------- BYOK settings (shared with Generator via same key) ----------
-const SKEY="studybible.byok.v1";
+// ---------- BYOK settings (GLOBAL — the panel + store live in /static/settings.js) ----------
 let CFG={providers:[],server_anthropic_key:false,tools:0,crisis_resources:[]};
-let settings=(()=>{try{return JSON.parse(localStorage.getItem(SKEY))||{}}catch(e){return{}}})();
-if(!settings.provider)settings.provider="anthropic";
-settings.models=settings.models||{};settings.keys=settings.keys||{};
-function saveSettings(){try{localStorage.setItem(SKEY,JSON.stringify(settings))}catch(e){}}
 function pcfg(id){return CFG.providers.find(p=>p.id===id)||{};}
-function curProvider(){return settings.provider;}
-function curModel(){return settings.models[curProvider()]||pcfg(curProvider()).default_model||"";}
-function curKey(){return settings.keys[curProvider()]||"";}
+function curProvider(){return window.AppSettings?AppSettings.provider():"anthropic";}
+function curModel(){return window.AppSettings?AppSettings.model():"";}
+function curKey(){return window.AppSettings?AppSettings.key():"";}
 function needsKey(){const p=curProvider();return !(p==="anthropic"&&CFG.server_anthropic_key)&&!curKey();}
 
 const banner=document.getElementById("keybanner");
 function updateStatus(){
+  if(!window.AppSettings)return;
   const p=pcfg(curProvider());const label=p.label||curProvider();
   if(needsKey()){banner.style.display="block";banner.innerHTML="Add your <strong>"+label+"</strong> API key to start chatting. Open <strong>Settings</strong> in the left rail.";}
   else{banner.style.display="none";}
 }
+window.addEventListener("appsettings:changed",updateStatus);          // refresh banner when the global Settings change
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeSide();}});
 
-const modalBg=document.getElementById("modal-bg"),selProvider=document.getElementById("sel-provider"),
-      inModel=document.getElementById("in-model"),inKey=document.getElementById("in-key"),
-      modelHint=document.getElementById("model-hint"),keyHint=document.getElementById("key-hint");
-function populateProviders(){selProvider.innerHTML="";CFG.providers.forEach(p=>{const o=document.createElement("option");o.value=p.id;o.textContent=p.label;selProvider.appendChild(o);});}
-function syncModal(){
-  const pid=selProvider.value,p=pcfg(pid);
-  inModel.value=settings.models[pid]||p.default_model||"";inModel.placeholder=p.default_model||"";
-  inKey.value=settings.keys[pid]||"";
-  modelHint.textContent="Default: "+(p.default_model||"none")+(p.fallback_model?" · auto-falls back to "+p.fallback_model+" if unavailable":"")+" · editable.";
-  if(pid==="anthropic"&&CFG.server_anthropic_key){keyHint.textContent="Optional. Leave blank to use the app's key, or paste your own.";}
-  else{keyHint.innerHTML="Required. Get one at <a href='"+(p.key_url||"#")+"' target='_blank' rel='noopener'>"+(p.key_url||"the provider")+"</a>.";}
-}
-function openSettings(){selProvider.value=curProvider();syncModal();modalBg.classList.add("open");setTimeout(()=>inKey.focus(),30);}
-function closeSettings(){modalBg.classList.remove("open");}
-selProvider.addEventListener("change",syncModal);
-document.getElementById("open-settings").onclick=openSettings;
-document.getElementById("cancel-settings").onclick=closeSettings;
-modalBg.addEventListener("click",e=>{if(e.target===modalBg)closeSettings();});
-const aboutBg=document.getElementById("about-bg");
-document.getElementById("open-about").onclick=()=>aboutBg.classList.add("open");
-document.getElementById("close-about").onclick=()=>aboutBg.classList.remove("open");
-aboutBg.addEventListener("click",e=>{if(e.target===aboutBg)aboutBg.classList.remove("open");});
-aboutBg.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{
-  aboutBg.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===t));
-  aboutBg.querySelectorAll(".pane").forEach(p=>p.classList.toggle("on",p.id==="pane-"+t.dataset.pane));
-});
-// theme toggle: OS default until the reader makes an explicit choice
-(function(){var btn=document.getElementById("theme-toggle");if(!btn)return;
-  function eff(){var e=document.documentElement.getAttribute("data-theme");if(e)return e;
-    return (window.matchMedia&&window.matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light";}
-  btn.onclick=function(){var n=eff()==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",n);
-    try{localStorage.setItem("studybible.theme",n);}catch(e){}};
-})();
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeSettings();aboutBg.classList.remove("open");closeSide();}});
-document.getElementById("save-settings").onclick=()=>{
-  const pid=selProvider.value;settings.provider=pid;
-  settings.models[pid]=inModel.value.trim();
-  if(inKey.value.trim())settings.keys[pid]=inKey.value.trim();else delete settings.keys[pid];
-  saveSettings();updateStatus();closeSettings();
-};
-document.getElementById("clear-key").onclick=()=>{const pid=selProvider.value;delete settings.keys[pid];inKey.value="";saveSettings();updateStatus();};
-
-fetch("/api/config").then(r=>r.json()).then(c=>{CFG=c;populateProviders();updateStatus();})
+fetch("/api/config").then(r=>r.json()).then(c=>{CFG=c;updateStatus();})
   .catch(()=>{console.error("backend unavailable");});
 
 function addMsg(role){
@@ -660,7 +544,7 @@ function addCopy(bubble,text){
 
 async function send(text){
   if(busy||!text.trim())return;
-  if(needsKey()){openSettings();return;}
+  if(needsKey()){AppSettings.open();return;}
   busy=true;sendBtn.disabled=true;
   if(!curChatId)curChatId=uid();
   addMsg("user").innerHTML="<div class='prose'>"+renderMarkdown(text)+"</div>";
@@ -723,8 +607,8 @@ input.addEventListener("input",auto);
 document.getElementById("examples").addEventListener("click",e=>{
   const b=e.target.closest("button");if(b){input.value=b.textContent;auto();sendBtn.click();}});
 
-/* The rail account control (avatar, sign-in/out menu) and teacher-only module
-   reveal are handled by /static/acct.js, shared across all pages. */
+/* Account, Model & Key, and Appearance all live in the global Settings panel now
+   (/static/settings.js, loaded at end of body — supersedes the old acct.js). */
 
 /* boot: resolve auth, load this user's chats from Neon (or keep localStorage) */
 async function initChats(){
@@ -748,6 +632,6 @@ async function initChats(){
 renderChatList(); // immediate paint from localStorage; initChats re-renders after auth resolves
 initChats();
 </script>
-<script src="/static/acct.js"></script>
+<script src="/static/settings.js"></script>
 </body>
 </html>

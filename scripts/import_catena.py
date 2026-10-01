@@ -30,6 +30,11 @@ console = Console(legacy_windows=False)
 
 PD_YEAR_CUTOFF = 1900  # entries by authors from this year on are treated as fair-use / (c)
 
+# Fathers to exclude by name regardless of year — an explicit editorial/values block so they can
+# never enter the catena even if the source's year metadata changes. (The source lists Douglas
+# Wilson as a "father" dated 2020; the PD cutoff already drops him, this makes it permanent.)
+DENY_FATHERS = {"douglas wilson"}
+
 
 def _book_to_internal(book: str) -> str | None:
     b = book.strip().lower()
@@ -81,6 +86,9 @@ def main(db_path: str | None, data_dir: str | None):
             "FROM commentary"
         )
         for fname, book, ls, le, ts, txt, surl, stitle in rows:
+            if (fname or "").strip().lower() in DENY_FATHERS:  # explicit name block
+                skipped += 1
+                continue
             try:
                 year = int(ts)
             except (TypeError, ValueError):

@@ -30,6 +30,8 @@ from webapp import r2  # noqa: E402
 DBS = {
     "theology": ("db/theology.db", "theology/theology.db"),
     "study-bible": ("db/study_bible.db", "study-bible/study_bible.db"),
+    "books": ("db/books.db", "books/books.db"),
+    "covers": ("db/covers.db", "covers/covers.db"),
 }
 
 

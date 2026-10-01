@@ -12,6 +12,7 @@ venv/
 /db/*.db
 /db/*.sqlite
 /db/*.sqlite3
+/db/*.tmp.*
 /data/
 
 # Local env / secrets

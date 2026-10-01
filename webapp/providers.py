@@ -31,7 +31,7 @@ MAX_TOOL_TURNS = 12
 PROVIDERS = {
     "anthropic": {
         "label": "Anthropic (Claude)", "kind": "anthropic",
-        "default_model": "claude-opus-4-8",
+        "default_model": "claude-opus-5-5",
         "fallback_model": "claude-sonnet-4-6",   # stable, broadly available
         "base_url": None,
         "key_url": "https://console.anthropic.com/settings/keys",
@@ -266,6 +266,28 @@ async def run(provider: str, api_key: str | None, model: str,
 # ---------------------------------------------------------------------------
 # Anthropic (native SDK)
 # ---------------------------------------------------------------------------
+# Models whose safety classifiers can decline a request (stop_reason "refusal").
+# For these we opt into the server-side fallback: a declined request is re-run on
+# Anthropic's recommended model for that refusal category, inside the same call.
+_REFUSAL_FALLBACK_PREFIXES = ("claude-opus-5", "claude-fable-5")
+_FALLBACK_BETA = "server-side-fallback-2026-07-01"   # the header for fallbacks="default"
+
+# Explicit effort per model. Opus 5.5 defaults to "medium" (Opus 4.8 defaulted to
+# "high"); stating it keeps the setting visible here as the thing to tune.
+_EFFORT = {"claude-opus-5-5": "medium"}
+
+
+def _after_fallback(content: list) -> list:
+    """Apply the echo rule for a mid-output server-side fallback: before the last
+    `fallback` marker, keep only text blocks (the declined model's thinking and
+    tool calls don't carry over); keep everything after it."""
+    last = max((i for i, b in enumerate(content) if getattr(b, "type", None) == "fallback"), default=None)
+    if last is None:
+        return list(content)
+    kept = [b for b in content[:last] if getattr(b, "type", None) == "text"]
+    return kept + list(content[last + 1:])
+
+
 async def _run_anthropic(api_key, model, system_text, history, mcp):
     import anthropic
     from anthropic import AsyncAnthropic
@@ -274,13 +296,20 @@ async def _run_anthropic(api_key, model, system_text, history, mcp):
     system = [{"type": "text", "text": system_text, "cache_control": {"type": "ephemeral"}}]
     messages = _anthropic_messages(history)
 
+    # Thinking is always on for current models and counts toward max_tokens, so leave
+    # room for it plus a long generated document (streaming, so no HTTP timeout risk).
+    params = dict(model=model, max_tokens=64000, system=system, tools=mcp.tools,
+                  thinking={"type": "adaptive", "display": "summarized"})
+    if model in _EFFORT:
+        params["output_config"] = {"effort": _EFFORT[model]}
+    fallback = model.startswith(_REFUSAL_FALLBACK_PREFIXES)
+    if fallback:
+        params.update(betas=[_FALLBACK_BETA], fallbacks="default")
+    stream_fn = client.beta.messages.stream if fallback else client.messages.stream
+
     try:
         for _turn in range(MAX_TOOL_TURNS):
-            async with client.messages.stream(
-                model=model, max_tokens=16000, system=system,
-                tools=mcp.tools, messages=messages,
-                thinking={"type": "adaptive", "display": "summarized"},
-            ) as stream:
+            async with stream_fn(messages=messages, **params) as stream:
                 async for event in stream:
                     if event.type == "content_block_start" and \
                             getattr(event.content_block, "type", None) == "tool_use":
@@ -293,11 +322,16 @@ async def _run_anthropic(api_key, model, system_text, history, mcp):
                             yield {"type": "thinking", "text": d.thinking}
                 final = await stream.get_final_message()
 
-            messages.append({"role": "assistant", "content": final.content})
+            if final.stop_reason == "refusal":   # declined, and any fallback declined too
+                yield {"type": "error",
+                       "message": "Claude declined to answer this request. Try rephrasing it, or ask it a different way."}
+                return
+            content = _after_fallback(final.content)
+            messages.append({"role": "assistant", "content": content})
             if final.stop_reason != "tool_use":
                 return
             tool_results = []
-            for block in final.content:
+            for block in content:
                 if block.type != "tool_use":
                     continue
                 out, is_error = await mcp.call(block.name, block.input)
