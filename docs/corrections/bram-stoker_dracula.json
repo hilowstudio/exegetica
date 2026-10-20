@@ -1,0 +1,400 @@
+[
+ {
+  "op": "delete",
+  "chapter": 1,
+  "find": "<p class=\"ex-ded\">To my dear friend<br/>Hommy-Beg</p>",
+  "why": "superseded: the dedication is now restored from the Standard Ebooks source as front matter (restore_se_frontmatter.py)"
+ },
+ {
+  "op": "replace",
+  "chapter": 6,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">V</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n<header class=\"ex-dochead\">\n<p>Letter from Miss Mina Murray to Miss Lucy West­en­ra.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">V</p><h2 class=\"ex-t\">Letter from Miss Mina Murray to Miss Lucy Westenra</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 6,
+  "label": "V",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 6,
+  "name": "Letter from Miss Mina Murray to Miss Lucy Westenra",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 7,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">VI</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n<header class=\"ex-dochead\">\n<p>Mina Murray’s Jour­nal.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">VI</p><h2 class=\"ex-t\">Mina Murray’s Journal</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 7,
+  "label": "VI",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 7,
+  "name": "Mina Murray’s Journal",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 9,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">VIII</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n<header class=\"ex-dochead\">\n<p>Mina Murray’s Jour­nal.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">VIII</p><h2 class=\"ex-t\">Mina Murray’s Journal</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 9,
+  "label": "VIII",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 9,
+  "name": "Mina Murray’s Journal",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 10,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">IX</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n<header class=\"ex-dochead\">\n<p>Letter, Mina Harker to Lucy West­en­ra.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">IX</p><h2 class=\"ex-t\">Letter, Mina Harker to Lucy Westenra</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 10,
+  "label": "IX",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 10,
+  "name": "Letter, Mina Harker to Lucy Westenra",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 11,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">X</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n<header class=\"ex-dochead\">\n<p>Letter, <abbr>Dr.</abbr> Seward to <abbr>Hon.</abbr> Arthur Holmwood.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">X</p><h2 class=\"ex-t\">Letter, Dr. Seward to Hon. Arthur Holmwood</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 11,
+  "label": "X",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 11,
+  "name": "Letter, Dr. Seward to Hon. Arthur Holmwood",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 12,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XI</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n<header class=\"ex-dochead\">\n<p>Lucy West­en­ra’s Diary.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XI</p><h2 class=\"ex-t\">Lucy Westenra’s Diary</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 12,
+  "label": "XI",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 12,
+  "name": "Lucy Westenra’s Diary",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 13,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XII</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n<header class=\"ex-dochead\">\n<p><abbr>Dr.</abbr> Seward’s Diary.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XII</p><h2 class=\"ex-t\">Dr. Seward’s Diary</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 13,
+  "label": "XII",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 13,
+  "name": "Dr. Seward’s Diary",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 14,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XIII</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n<header class=\"ex-dochead\">\n<p><abbr>Dr.</abbr> Seward’s Diary⁠—<i>con­tin­ued</i>.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XIII</p><h2 class=\"ex-t\">Dr. Seward’s Diary⁠—continued</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 14,
+  "label": "XIII",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 14,
+  "name": "Dr. Seward’s Diary⁠—continued",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 15,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XIV</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n<header class=\"ex-dochead\">\n<p>Mina Harker’s Jour­nal.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XIV</p><h2 class=\"ex-t\">Mina Harker’s Journal</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 15,
+  "label": "XIV",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 15,
+  "name": "Mina Harker’s Journal",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 16,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XV</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n<header class=\"ex-dochead\">\n<p><abbr>Dr.</abbr> Seward’s Diary⁠—<i>con­tin­ued</i>.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XV</p><h2 class=\"ex-t\">Dr. Seward’s Diary⁠—continued</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 16,
+  "label": "XV",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 16,
+  "name": "Dr. Seward’s Diary⁠—continued",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 18,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XVII</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n<header class=\"ex-dochead\">\n<p><abbr>Dr.</abbr> Seward’s Diary⁠—<i>con­tin­ued</i></p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XVII</p><h2 class=\"ex-t\">Dr. Seward’s Diary⁠—continued</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 18,
+  "label": "XVII",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 18,
+  "name": "Dr. Seward’s Diary⁠—continued",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 19,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XVIII</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n<header class=\"ex-dochead\">\n<p><abbr>Dr.</abbr> Seward’s Diary.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XVIII</p><h2 class=\"ex-t\">Dr. Seward’s Diary</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 19,
+  "label": "XVIII",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 19,
+  "name": "Dr. Seward’s Diary",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 20,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XIX</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n<header class=\"ex-dochead\">\n<p>Jonathan Harker’s Jour­nal.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XIX</p><h2 class=\"ex-t\">Jonathan Harker’s Journal</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 20,
+  "label": "XIX",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 20,
+  "name": "Jonathan Harker’s Journal",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 21,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XX</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n<header class=\"ex-dochead\">\n<p>Jonathan Harker’s Jour­nal.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XX</p><h2 class=\"ex-t\">Jonathan Harker’s Journal</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 21,
+  "label": "XX",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 21,
+  "name": "Jonathan Harker’s Journal",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 24,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XXIII</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n<header class=\"ex-dochead\">\n<p><abbr>Dr.</abbr> Seward’s Diary.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XXIII</p><h2 class=\"ex-t\">Dr. Seward’s Diary</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote class=\"ex-doc\">\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 24,
+  "label": "XXIII",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 24,
+  "name": "Dr. Seward’s Diary",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 25,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XXIV</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n<header class=\"ex-dochead\">\n<p><abbr>Dr.</abbr> Seward’s Phonograph Diary, Spoken by Van Helsing.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XXIV</p><h2 class=\"ex-t\">Dr. Seward’s Phonograph Diary, Spoken by Van Helsing</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 25,
+  "label": "XXIV",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 25,
+  "name": "Dr. Seward’s Phonograph Diary, Spoken by Van Helsing",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 26,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XXV</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n<header class=\"ex-dochead\">\n<p><abbr>Dr.</abbr> Seward’s Diary.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XXV</p><h2 class=\"ex-t\">Dr. Seward’s Diary</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 26,
+  "label": "XXV",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 26,
+  "name": "Dr. Seward’s Diary",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 27,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XXVI</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n<header class=\"ex-dochead\">\n<p><abbr>Dr.</abbr> Seward’s Diary.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XXVI</p><h2 class=\"ex-t\">Dr. Seward’s Diary</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 27,
+  "label": "XXVI",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 27,
+  "name": "Dr. Seward’s Diary",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "replace",
+  "chapter": 28,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">XXVII</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n<header class=\"ex-dochead\">\n<p>Mina Harker’s Jour­nal.</p>\n</header>\n",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">XXVII</p><h2 class=\"ex-t\">Mina Harker’s Journal</h2><i class=\"ex-orn\" aria-hidden=\"true\"></i></header><blockquote>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "label",
+  "chapter": 28,
+  "label": "XXVII",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 28,
+  "name": "Mina Harker’s Journal",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 1,
+  "name": "A Note on These Papers",
+  "why": "Stoker's prefatory note is untitled; give it a contents name instead of a clipped first line"
+ },
+ {
+  "op": "replace",
+  "chapter": 8,
+  "find": "<header class=\"ex-open\"><h2 class=\"ex-t ex-num\">VII</h2>",
+  "with": "<header class=\"ex-open\"><p class=\"ex-lab\">VII</p><h2 class=\"ex-t\">Cutting from <i>The Dailygraph</i>, 8 August</h2>",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "delete",
+  "chapter": 8,
+  "find": "<p>Cut­ting from <i>The Dai­ly­graph</i>, 8 August</p>\n",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were. (first line of the newspaper heading moved to the chapter title)"
+ },
+ {
+  "op": "label",
+  "chapter": 8,
+  "label": "VII",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ },
+ {
+  "op": "name",
+  "chapter": 8,
+  "name": "Cutting from The Dailygraph, 8 August",
+  "why": "Stoker's chapters carry no titles; each opens with its document's heading. Set it under the numeral in every chapter, as chapters I–IV already were."
+ }
+]

@@ -1,0 +1,2305 @@
+{
+ "science-fiction/submarine": {
+  "shelf": "Science Fiction",
+  "subject": "submarine with a riveted hull and a short periscope",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.19,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-fiction/diving-helmet": {
+  "shelf": "Science Fiction",
+  "subject": "brass deep-sea diving helmet with round portholes",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.283,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-fiction/fighting-machine": {
+  "shelf": "Science Fiction",
+  "subject": "three-legged fighting machine standing on long jointed legs, from The War of the Worlds",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.125,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-fiction/orrery": {
+  "shelf": "Science Fiction",
+  "subject": "brass orrery with three small planets on curved arms",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.151,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "literary-classics/ornate-key": {
+  "shelf": "Literary & Classics",
+  "subject": "key with an ornate bow",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.113,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "literary-classics/oil-lamp": {
+  "shelf": "Literary & Classics",
+  "subject": "oil lamp with a tall glass chimney",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.092,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "literary-classics/birdcage": {
+  "shelf": "Literary & Classics",
+  "subject": "birdcage with its door open",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.237,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "literary-classics/weathervane": {
+  "shelf": "Literary & Classics",
+  "subject": "weathervane cockerel on its arrow",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.215,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "biography-memoir/pen-nib": {
+  "shelf": "Biography & Memoir",
+  "subject": "fountain pen nib",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.154,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "literary-classics/acorn": {
+  "shelf": "Literary & Classics",
+  "subject": "acorn on an oak twig with two leaves",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.266,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "biography-memoir/rocking-chair": {
+  "shelf": "Biography & Memoir",
+  "subject": "rocking chair",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.189,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "biography-memoir/oak-roots": {
+  "shelf": "Biography & Memoir",
+  "subject": "oak tree with spreading roots",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.297,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "biography-memoir/medal": {
+  "shelf": "Biography & Memoir",
+  "subject": "medal hanging from a ribbon",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.183,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "biography-memoir/rosemary": {
+  "shelf": "Biography & Memoir",
+  "subject": "sprig of rosemary",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.151,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christianity/wheat": {
+  "shelf": "Christianity",
+  "subject": "sheaf of wheat bound with a cord",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.222,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christianity/fish": {
+  "shelf": "Christianity",
+  "subject": "single fish in profile, drawn in plain early-Christian style",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.227,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christianity/vine": {
+  "shelf": "Christianity",
+  "subject": "grapevine branch with a cluster of grapes and one leaf",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.197,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christianity/lamb": {
+  "shelf": "Christianity",
+  "subject": "lamb standing in profile",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.25,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christianity/clay-lamp": {
+  "shelf": "Christianity",
+  "subject": "clay oil lamp with a small flame",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.179,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christianity/dove": {
+  "shelf": "Christianity",
+  "subject": "small gentle dove in flight, seen from the side, wings raised, holding an olive sprig in its beak",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.24,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christianity/pomegranate": {
+  "shelf": "Christianity",
+  "subject": "pomegranate split open",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.249,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christianity/anchor": {
+  "shelf": "Christianity",
+  "subject": "anchor with a crossbar",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.199,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "history/capital": {
+  "shelf": "History",
+  "subject": "Corinthian column capital",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.274,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "history/amphora": {
+  "shelf": "History",
+  "subject": "amphora",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.227,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "history/galleon": {
+  "shelf": "History",
+  "subject": "three-masted galleon under sail",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.356,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "history/helmet": {
+  "shelf": "History",
+  "subject": "medieval helmet with a nose guard",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.291,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "history/longship": {
+  "shelf": "History",
+  "subject": "Viking longship with a dragon prow",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.297,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "history/tricorn": {
+  "shelf": "History",
+  "subject": "tricorn hat",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.219,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "children-s/kite": {
+  "shelf": "Children's",
+  "subject": "kite with a ribboned tail",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.183,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "history/spinning-wheel": {
+  "shelf": "History",
+  "subject": "spinning wheel",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.24,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "children-s/paper-boat": {
+  "shelf": "Children's",
+  "subject": "folded paper boat",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.217,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "children-s/spinning-top": {
+  "shelf": "Children's",
+  "subject": "spinning top",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.203,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "children-s/rocking-horse": {
+  "shelf": "Children's",
+  "subject": "rocking horse",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.237,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "children-s/hedgehog": {
+  "shelf": "Children's",
+  "subject": "hedgehog",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.224,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "children-s/snail": {
+  "shelf": "Children's",
+  "subject": "snail with a spiral shell",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.345,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "children-s/penny-farthing": {
+  "shelf": "Children's",
+  "subject": "penny-farthing bicycle",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.211,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "adventure/peak": {
+  "shelf": "Adventure",
+  "subject": "snow-capped mountain peak",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.238,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "adventure/canoe": {
+  "shelf": "Adventure",
+  "subject": "canoe with a paddle laid across it",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.147,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "adventure/hawk": {
+  "shelf": "Adventure",
+  "subject": "hawk in flight",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.184,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "adventure/ships-wheel": {
+  "shelf": "Adventure",
+  "subject": "ship's wheel",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.289,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "adventure/storm-lantern": {
+  "shelf": "Adventure",
+  "subject": "storm lantern",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.169,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-nature/fiddlehead": {
+  "shelf": "Science & Nature",
+  "subject": "fern fiddlehead unfurling",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.194,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-nature/moth": {
+  "shelf": "Science & Nature",
+  "subject": "moth with patterned wings",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.229,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-nature/stag-beetle": {
+  "shelf": "Science & Nature",
+  "subject": "stag beetle",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.202,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-nature/ammonite": {
+  "shelf": "Science & Nature",
+  "subject": "ammonite fossil",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.373,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-nature/dragonfly": {
+  "shelf": "Science & Nature",
+  "subject": "dragonfly",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.166,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-nature/ginkgo": {
+  "shelf": "Science & Nature",
+  "subject": "ginkgo leaf",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.24,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-nature/nautilus": {
+  "shelf": "Science & Nature",
+  "subject": "nautilus shell cut in half to show its chambers",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.357,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "poetry/nightingale": {
+  "shelf": "Poetry",
+  "subject": "nightingale on a branch",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.187,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-nature/honeybee": {
+  "shelf": "Science & Nature",
+  "subject": "honeybee",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.232,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "poetry/lyre": {
+  "shelf": "Poetry",
+  "subject": "lyre",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.203,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "poetry/swan": {
+  "shelf": "Poetry",
+  "subject": "swan gliding",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.221,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "poetry/daffodil": {
+  "shelf": "Poetry",
+  "subject": "daffodil",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.173,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "poetry/cherry-blossom": {
+  "shelf": "Poetry",
+  "subject": "cherry blossom twig",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.164,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "poetry/maple-leaf": {
+  "shelf": "Poetry",
+  "subject": "falling maple leaf",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.248,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "poetry/dandelion": {
+  "shelf": "Poetry",
+  "subject": "dandelion clock",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.177,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "mystery-crime/escutcheon": {
+  "shelf": "Mystery & Crime",
+  "subject": "ornate keyhole escutcheon",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.285,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "poetry/hare": {
+  "shelf": "Poetry",
+  "subject": "leaping hare",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.163,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "mystery-crime/black-cat": {
+  "shelf": "Mystery & Crime",
+  "subject": "black cat sitting, seen from behind",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.23,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "mystery-crime/streetlamp": {
+  "shelf": "Mystery & Crime",
+  "subject": "gas streetlamp",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.073,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "mystery-crime/dark-lantern": {
+  "shelf": "Mystery & Crime",
+  "subject": "dark lantern with its shutter half closed",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.237,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "mystery-crime/locomotive": {
+  "shelf": "Mystery & Crime",
+  "subject": "steam locomotive seen head-on",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.291,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "mystery-crime/key-ring": {
+  "shelf": "Mystery & Crime",
+  "subject": "ring of old keys",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.176,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "fantasy/dragon": {
+  "shelf": "Fantasy",
+  "subject": "dragon curled in a ring",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.229,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "fantasy/sword-stone": {
+  "shelf": "Fantasy",
+  "subject": "sword set in a stone",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.176,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "fantasy/griffin": {
+  "shelf": "Fantasy",
+  "subject": "griffin, rampant",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.246,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "fantasy/winged-key": {
+  "shelf": "Fantasy",
+  "subject": "winged key",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.18,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "fantasy/phoenix": {
+  "shelf": "Fantasy",
+  "subject": "phoenix rising",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.175,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "fantasy/hawthorn": {
+  "shelf": "Fantasy",
+  "subject": "hawthorn sprig with berries",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.227,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "short-stories/ship-bottle": {
+  "shelf": "Short Stories",
+  "subject": "ship in a bottle",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.159,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "short-stories/crane": {
+  "shelf": "Short Stories",
+  "subject": "origami crane",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.164,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "short-stories/wishbone": {
+  "shelf": "Short Stories",
+  "subject": "wishbone",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.091,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "short-stories/carousel-horse": {
+  "shelf": "Short Stories",
+  "subject": "carousel horse on its pole",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.223,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "short-stories/door-knocker": {
+  "shelf": "Short Stories",
+  "subject": "door knocker",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.23,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "humor-satire/goose": {
+  "shelf": "Humor & Satire",
+  "subject": "goose waddling",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.15,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "short-stories/paper-lantern": {
+  "shelf": "Short Stories",
+  "subject": "paper lantern",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.203,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "humor-satire/cuckoo-clock": {
+  "shelf": "Humor & Satire",
+  "subject": "cuckoo clock",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.176,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "humor-satire/dodo": {
+  "shelf": "Humor & Satire",
+  "subject": "dodo",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.259,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "humor-satire/frog-hat": {
+  "shelf": "Humor & Satire",
+  "subject": "frog wearing a top hat",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.257,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "humor-satire/umbrella": {
+  "shelf": "Humor & Satire",
+  "subject": "umbrella blown inside out",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.11,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "travel-places/suitcase": {
+  "shelf": "Travel & Places",
+  "subject": "leather suitcase with straps",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.274,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "travel-places/steamship": {
+  "shelf": "Travel & Places",
+  "subject": "steamship with two funnels",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.245,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "travel-places/camel": {
+  "shelf": "Travel & Places",
+  "subject": "camel with a saddle",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.196,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "travel-places/lighthouse": {
+  "shelf": "Travel & Places",
+  "subject": "lighthouse",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.177,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "travel-places/windmill": {
+  "shelf": "Travel & Places",
+  "subject": "Dutch windmill",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.186,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "travel-places/balloon": {
+  "shelf": "Travel & Places",
+  "subject": "hot-air balloon with a wicker basket",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.207,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "travel-places/gondola": {
+  "shelf": "Travel & Places",
+  "subject": "Venetian gondola",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.097,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "travel-places/globe": {
+  "shelf": "Travel & Places",
+  "subject": "globe on a stand",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.236,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "plays-drama/ruff": {
+  "shelf": "Plays & Drama",
+  "subject": "Elizabethan ruff collar",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.349,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "plays-drama/fan": {
+  "shelf": "Plays & Drama",
+  "subject": "folding fan, half open",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.301,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "plays-drama/curtain": {
+  "shelf": "Plays & Drama",
+  "subject": "swagged stage curtain",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.164,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "philosophy/column": {
+  "shelf": "Philosophy",
+  "subject": "Greek column",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.229,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "plays-drama/lute": {
+  "shelf": "Plays & Drama",
+  "subject": "lute",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.188,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "plays-drama/herald-trumpet": {
+  "shelf": "Plays & Drama",
+  "subject": "herald's trumpet with a hanging banner",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.231,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "philosophy/owl": {
+  "shelf": "Philosophy",
+  "subject": "little owl perched",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.217,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "philosophy/scales": {
+  "shelf": "Philosophy",
+  "subject": "set of balance scales",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.207,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "philosophy/diogenes-lantern": {
+  "shelf": "Philosophy",
+  "subject": "old hand lantern, like Diogenes' lantern",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.18,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "philosophy/hemlock": {
+  "shelf": "Philosophy",
+  "subject": "sprig of hemlock",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.17,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "philosophy/labyrinth": {
+  "shelf": "Philosophy",
+  "subject": "round spiral labyrinth",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.392,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "philosophy/tortoise": {
+  "shelf": "Philosophy",
+  "subject": "tortoise",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.196,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "philosophy/sphere-cube": {
+  "shelf": "Philosophy",
+  "subject": "sphere resting on a cube",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.283,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "world-religions-spirituality/lotus": {
+  "shelf": "World Religions & Spirituality",
+  "subject": "lotus flower",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.235,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "world-religions-spirituality/torii": {
+  "shelf": "World Religions & Spirituality",
+  "subject": "torii gate",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.202,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "world-religions-spirituality/bodhi-leaf": {
+  "shelf": "World Religions & Spirituality",
+  "subject": "bodhi leaf",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.225,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "world-religions-spirituality/temple-bell": {
+  "shelf": "World Religions & Spirituality",
+  "subject": "temple bell",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.217,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "world-religions-spirituality/shofar": {
+  "shelf": "World Religions & Spirituality",
+  "subject": "shofar",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.165,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "world-religions-spirituality/mosque-lamp": {
+  "shelf": "World Religions & Spirituality",
+  "subject": "hanging glass mosque lamp",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.179,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "world-religions-spirituality/conch": {
+  "shelf": "World Religions & Spirituality",
+  "subject": "conch shell",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.255,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "world-religions-spirituality/crane-flight": {
+  "shelf": "World Religions & Spirituality",
+  "subject": "crane in flight",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.179,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "society-politics-economics/beehive": {
+  "shelf": "Society, Politics & Economics",
+  "subject": "straw beehive skep",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.329,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "society-politics-economics/anvil": {
+  "shelf": "Society, Politics & Economics",
+  "subject": "anvil with a hammer",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.192,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "society-politics-economics/cracked-bell": {
+  "shelf": "Society, Politics & Economics",
+  "subject": "cracked bell",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.251,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "society-politics-economics/water-pump": {
+  "shelf": "Society, Politics & Economics",
+  "subject": "village water pump",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.144,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "society-politics-economics/steelyard": {
+  "shelf": "Society, Politics & Economics",
+  "subject": "merchant's steelyard balance",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.153,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "society-politics-economics/factory": {
+  "shelf": "Society, Politics & Economics",
+  "subject": "factory with a smoking chimney",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.225,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "romance/locket": {
+  "shelf": "Romance",
+  "subject": "locket on a chain",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.143,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "romance/garden-gate": {
+  "shelf": "Romance",
+  "subject": "wrought-iron garden gate",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.436,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "romance/honeysuckle": {
+  "shelf": "Romance",
+  "subject": "sprig of honeysuckle",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.268,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "romance/parasol": {
+  "shelf": "Romance",
+  "subject": "open parasol",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.201,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "romance/turtle-dove": {
+  "shelf": "Romance",
+  "subject": "turtle dove",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.161,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "romance/lace-glove": {
+  "shelf": "Romance",
+  "subject": "lace glove",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.219,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "romance/wisteria": {
+  "shelf": "Romance",
+  "subject": "wisteria spray",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.155,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "romance/atomizer": {
+  "shelf": "Romance",
+  "subject": "perfume bottle with an atomizer bulb",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.208,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "horror-gothic/candelabra": {
+  "shelf": "Horror & Gothic",
+  "subject": "candelabra with dripping candles",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.127,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "horror-gothic/bare-tree": {
+  "shelf": "Horror & Gothic",
+  "subject": "gnarled bare tree",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.209,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "horror-gothic/crow": {
+  "shelf": "Horror & Gothic",
+  "subject": "crow perched, head turned",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.192,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "horror-gothic/hawkmoth": {
+  "shelf": "Horror & Gothic",
+  "subject": "death's-head hawkmoth",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.17,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "horror-gothic/gothic-window": {
+  "shelf": "Horror & Gothic",
+  "subject": "Gothic arched window",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.21,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "horror-gothic/nightshade": {
+  "shelf": "Horror & Gothic",
+  "subject": "sprig of nightshade with berries",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.25,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "health-medicine/mortar-pestle": {
+  "shelf": "Health & Medicine",
+  "subject": "mortar and pestle",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.186,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "health-medicine/apothecary-bottle": {
+  "shelf": "Health & Medicine",
+  "subject": "apothecary bottle with a stopper",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.166,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "health-medicine/foxglove": {
+  "shelf": "Health & Medicine",
+  "subject": "foxglove stem",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.114,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "health-medicine/chamomile": {
+  "shelf": "Health & Medicine",
+  "subject": "chamomile flower",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.271,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "horror-gothic/bat": {
+  "shelf": "Horror & Gothic",
+  "subject": "bat in flight with wings spread wide, seen from below, scalloped wing edges",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.165,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "health-medicine/lavender": {
+  "shelf": "Health & Medicine",
+  "subject": "lavender sprig",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.103,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "health-medicine/nightingale-lamp": {
+  "shelf": "Health & Medicine",
+  "subject": "Florence Nightingale's hand lamp",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.206,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "art-music-performance/violin": {
+  "shelf": "Art, Music & Performance",
+  "subject": "violin",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.131,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "health-medicine/poppy-head": {
+  "shelf": "Health & Medicine",
+  "subject": "poppy seed head",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.213,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "art-music-performance/french-horn": {
+  "shelf": "Art, Music & Performance",
+  "subject": "French horn",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.269,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "art-music-performance/ballet-slippers": {
+  "shelf": "Art, Music & Performance",
+  "subject": "pair of ballet slippers",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.268,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "art-music-performance/metronome": {
+  "shelf": "Art, Music & Performance",
+  "subject": "metronome",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.246,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christmas-reading/holly": {
+  "shelf": "Christmas Reading",
+  "subject": "sprig of holly with berries",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.209,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "art-music-performance/gramophone": {
+  "shelf": "Art, Music & Performance",
+  "subject": "gramophone with a horn",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.229,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "art-music-performance/easel": {
+  "shelf": "Art, Music & Performance",
+  "subject": "painter's easel",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.149,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "art-music-performance/grand-piano": {
+  "shelf": "Art, Music & Performance",
+  "subject": "grand piano",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.345,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christmas-reading/manger": {
+  "shelf": "Christmas Reading",
+  "subject": "manger with straw",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.288,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christmas-reading/star": {
+  "shelf": "Christmas Reading",
+  "subject": "eight-pointed star",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.277,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christmas-reading/robin": {
+  "shelf": "Christmas Reading",
+  "subject": "robin",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.274,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christmas-reading/carol-lantern": {
+  "shelf": "Christmas Reading",
+  "subject": "carol singer's lantern on a pole",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.082,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "language-reference/dip-pen": {
+  "shelf": "Language & Reference",
+  "subject": "dip pen nib",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.151,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "language-reference/globe": {
+  "shelf": "Language & Reference",
+  "subject": "globe on a stand",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.236,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christmas-reading/plum-pudding": {
+  "shelf": "Christmas Reading",
+  "subject": "plum pudding with a sprig of holly",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.395,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "language-reference/parrot": {
+  "shelf": "Language & Reference",
+  "subject": "parrot",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.168,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "language-reference/ear-trumpet": {
+  "shelf": "Language & Reference",
+  "subject": "ear trumpet",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.173,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "language-reference/telegraph-key": {
+  "shelf": "Language & Reference",
+  "subject": "telegraph key",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.171,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "society-politics-economics/pick-shovel": {
+  "shelf": "Society, Politics & Economics",
+  "subject": "a miner's pick and a shovel crossed",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.153,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "literary-classics/chess-knight": {
+  "shelf": "Literary & Classics",
+  "subject": "chess knight",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.197,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "literary-classics/lily-of-the-valley": {
+  "shelf": "Literary & Classics",
+  "subject": "sprig of lily of the valley with its bell flowers and one broad leaf",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.181,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-fiction/gyroscope": {
+  "shelf": "Science Fiction",
+  "subject": "gyroscope tilted on its stand",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.205,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-fiction/zeppelin": {
+  "shelf": "Science Fiction",
+  "subject": "zeppelin with tail fins and a small gondola underneath",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.246,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-fiction/crescent-moon": {
+  "shelf": "Science Fiction",
+  "subject": "crescent moon with a few round craters",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.25,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "biography-memoir/forget-me-not": {
+  "shelf": "Biography & Memoir",
+  "subject": "sprig of forget-me-not flowers",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.165,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "literary-classics/candlestick": {
+  "shelf": "Literary & Classics",
+  "subject": "candlestick with a half-burned taper and a small flame",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.132,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "biography-memoir/hourglass": {
+  "shelf": "Biography & Memoir",
+  "subject": "hourglass in a turned wooden frame",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.234,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "history/fleur-de-lis": {
+  "shelf": "History",
+  "subject": "fleur-de-lis",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.272,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "biography-memoir/swallow": {
+  "shelf": "Biography & Memoir",
+  "subject": "swallow in flight with a forked tail",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.203,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "children-s/squirrel": {
+  "shelf": "Children's",
+  "subject": "squirrel holding a nut",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.338,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "adventure/palm-tree": {
+  "shelf": "Adventure",
+  "subject": "palm tree leaning over",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.188,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "adventure/galloping-horse": {
+  "shelf": "Adventure",
+  "subject": "galloping horse",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.152,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "mystery-crime/bowler-hat": {
+  "shelf": "Mystery & Crime",
+  "subject": "bowler hat",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.221,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "mystery-crime/thorned-rose": {
+  "shelf": "Mystery & Crime",
+  "subject": "cut rose with thorns on its stem",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.252,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "fantasy/raven": {
+  "shelf": "Fantasy",
+  "subject": "raven with wings half open",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.266,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "fantasy/sea-serpent": {
+  "shelf": "Fantasy",
+  "subject": "sea serpent coiled in loops above the waves",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.307,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "humor-satire/pig": {
+  "shelf": "Humor & Satire",
+  "subject": "pig standing in profile",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.224,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "humor-satire/hen": {
+  "shelf": "Humor & Satire",
+  "subject": "hen standing in profile",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.195,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "humor-satire/donkey": {
+  "shelf": "Humor & Satire",
+  "subject": "donkey standing in profile",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.199,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "plays-drama/laurel-crown": {
+  "shelf": "Plays & Drama",
+  "subject": "laurel crown",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.221,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "plays-drama/masquerade-mask": {
+  "shelf": "Plays & Drama",
+  "subject": "masquerade eye mask held on a stick",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.11,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "plays-drama/feathered-cap": {
+  "shelf": "Plays & Drama",
+  "subject": "Renaissance cap with a long feather",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.245,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "society-politics-economics/cogwheel": {
+  "shelf": "Society, Politics & Economics",
+  "subject": "cogwheel",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.249,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "health-medicine/garlic": {
+  "shelf": "Health & Medicine",
+  "subject": "garlic bulb",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.219,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "art-music-performance/harp": {
+  "shelf": "Art, Music & Performance",
+  "subject": "harp",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.175,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christmas-reading/pinecone": {
+  "shelf": "Christmas Reading",
+  "subject": "frosted pinecone on a short sprig of pine",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.184,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "horror-gothic/wolf-head": {
+  "shelf": "Horror & Gothic",
+  "subject": "wolf's head in profile",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.274,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "language-reference/lectern": {
+  "shelf": "Language & Reference",
+  "subject": "open book on a wooden lectern",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.208,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "language-reference/scroll": {
+  "shelf": "Language & Reference",
+  "subject": "rolled scroll tied with a ribbon",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.23,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "language-reference/magpie": {
+  "shelf": "Language & Reference",
+  "subject": "magpie perched",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.12,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "short-stories/teapot": {
+  "shelf": "Short Stories",
+  "subject": "round-bellied teapot with a curved spout",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.238,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "science-fiction/crystals": {
+  "shelf": "Science Fiction",
+  "subject": "cluster of hexagonal crystals growing at angles",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.289,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "adventure/tent": {
+  "shelf": "Adventure",
+  "subject": "canvas tent with its door flap tied open",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.215,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "christmas-reading/wreath": {
+  "shelf": "Christmas Reading",
+  "subject": "evergreen wreath with a ribbon bow at the bottom",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.308,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true,
+   "attempt": 1
+  }
+ },
+ "short-stories/fleuron": {
+  "shelf": "Short Stories",
+  "subject": "printer's fleuron: the hedera ivy-leaf ornament printed between stories in old books, a heart-shaped leaf with a curling stem",
+  "model": "gemini-nano-banana-2.1",
+  "check": {
+   "coverage": 0.151,
+   "touches_edge": false,
+   "tinted": 0.0,
+   "ok": true
+  }
+ }
+}

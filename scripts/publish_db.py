@@ -32,6 +32,7 @@ DBS = {
     "study-bible": ("db/study_bible.db", "study-bible/study_bible.db"),
     "books": ("db/books.db", "books/books.db"),
     "covers": ("db/covers.db", "covers/covers.db"),
+    "social-sciences": ("db/social_sciences.db", "social-sciences/social_sciences.db"),
 }
 
 

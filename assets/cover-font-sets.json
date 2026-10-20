@@ -1,0 +1,677 @@
+{
+ "_about": "Cover font sets: a title face and an author pairing. axes set variable-font axes (wght = weight); upper sets capitals; track is letter-spacing in em; lh is line height. genres are the shelves each set suits. house is the default.",
+ "house": {
+  "name": "Fraunces (house)",
+  "genres": [
+   "all",
+   "Mystery & Crime",
+   "Short Stories",
+   "Humor & Satire"
+  ],
+  "title": {
+   "file": "Fraunces.ttf",
+   "axes": {
+    "wght": 700,
+    "opsz": 96,
+    "SOFT": 50
+   },
+   "lh": 1.02,
+   "italic": "Fraunces-Italic.ttf"
+  },
+  "author": {
+   "file": "LibreBaskerville.ttf",
+   "axes": {
+    "wght": 400
+   },
+   "upper": true,
+   "track": 0.14
+  }
+ },
+ "playfair": {
+  "name": "Playfair Display",
+  "genres": [
+   "Romance",
+   "Literary & Classics"
+  ],
+  "title": {
+   "file": "PlayfairDisplay.ttf",
+   "axes": {
+    "wght": 800
+   },
+   "lh": 1.05,
+   "italic": "PlayfairDisplay-Italic.ttf"
+  },
+  "author": {
+   "file": "Montserrat.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "great-vibes": {
+  "name": "Great Vibes",
+  "genres": [
+   "Romance"
+  ],
+  "title": {
+   "file": "GreatVibes-Regular.ttf",
+   "lh": 1.15,
+   "scale": 1.25
+  },
+  "author": {
+   "file": "Montserrat.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "cherry-swash": {
+  "name": "Cherry Swash",
+  "genres": [
+   "Mystery & Crime",
+   "Children's"
+  ],
+  "title": {
+   "file": "CherrySwash-Bold.ttf",
+   "lh": 1.08
+  },
+  "author": {
+   "file": "JosefinSans.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.2
+  }
+ },
+ "dm-serif": {
+  "name": "DM Serif Display",
+  "genres": [
+   "Philosophy",
+   "Health & Medicine",
+   "Literary & Classics"
+  ],
+  "title": {
+   "file": "DMSerifDisplay-Regular.ttf",
+   "lh": 1.05,
+   "italic": "DMSerifDisplay-Italic.ttf"
+  },
+  "author": {
+   "file": "Lora.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.14
+  }
+ },
+ "poppins": {
+  "name": "Poppins",
+  "genres": [
+   "Health & Medicine",
+   "Society, Politics & Economics"
+  ],
+  "title": {
+   "file": "Poppins-Bold.ttf",
+   "lh": 1.08,
+   "italic": "Poppins-BoldItalic.ttf"
+  },
+  "author": {
+   "file": "Inter.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.18
+  }
+ },
+ "cinzel": {
+  "name": "Cinzel",
+  "genres": [
+   "Fantasy",
+   "History",
+   "Christianity"
+  ],
+  "title": {
+   "file": "Cinzel.ttf",
+   "axes": {
+    "wght": 700
+   },
+   "upper": true,
+   "track": 0.08,
+   "lh": 1.15
+  },
+  "author": {
+   "file": "CormorantGaramond.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.16
+  }
+ },
+ "cinzel-decorative": {
+  "name": "Cinzel Decorative",
+  "genres": [
+   "Fantasy"
+  ],
+  "title": {
+   "file": "CinzelDecorative-Bold.ttf",
+   "track": 0.04,
+   "lh": 1.15
+  },
+  "author": {
+   "file": "EBGaramond.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.16
+  }
+ },
+ "metamorphous": {
+  "name": "Metamorphous",
+  "genres": [
+   "Fantasy"
+  ],
+  "title": {
+   "file": "Metamorphous-Regular.ttf",
+   "lh": 1.1
+  },
+  "author": {
+   "file": "CormorantGaramond.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.16
+  }
+ },
+ "almendra": {
+  "name": "Almendra",
+  "genres": [
+   "Fantasy",
+   "Poetry"
+  ],
+  "title": {
+   "file": "Almendra-Bold.ttf",
+   "lh": 1.08,
+   "italic": "Almendra-BoldItalic.ttf"
+  },
+  "author": {
+   "file": "EBGaramond.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.16
+  }
+ },
+ "uncial": {
+  "name": "Uncial Antiqua",
+  "genres": [
+   "Fantasy",
+   "World Religions & Spirituality"
+  ],
+  "title": {
+   "file": "UncialAntiqua-Regular.ttf",
+   "lh": 1.12
+  },
+  "author": {
+   "file": "CormorantGaramond.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.16
+  }
+ },
+ "cormorant-italic": {
+  "name": "Cormorant Garamond Italic",
+  "genres": [
+   "Fantasy",
+   "Romance",
+   "Poetry"
+  ],
+  "title": {
+   "file": "CormorantGaramond-Italic.ttf",
+   "axes": {
+    "wght": 700
+   },
+   "lh": 1.0
+  },
+  "author": {
+   "file": "Raleway.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "italiana": {
+  "name": "Italiana",
+  "genres": [
+   "Romance",
+   "Art, Music & Performance"
+  ],
+  "title": {
+   "file": "Italiana-Regular.ttf",
+   "upper": true,
+   "track": 0.06,
+   "lh": 1.12
+  },
+  "author": {
+   "file": "Raleway.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "bebas": {
+  "name": "Bebas Neue",
+  "genres": [
+   "Mystery & Crime",
+   "Adventure"
+  ],
+  "title": {
+   "file": "BebasNeue-Regular.ttf",
+   "upper": true,
+   "track": 0.06,
+   "lh": 0.98
+  },
+  "author": {
+   "file": "Montserrat.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "anton": {
+  "name": "Anton",
+  "genres": [
+   "Mystery & Crime",
+   "Adventure"
+  ],
+  "title": {
+   "file": "Anton-Regular.ttf",
+   "upper": true,
+   "track": 0.04,
+   "lh": 1.05
+  },
+  "author": {
+   "file": "RobotoCondensed.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.2
+  }
+ },
+ "league-gothic": {
+  "name": "League Gothic",
+  "genres": [
+   "Mystery & Crime",
+   "History"
+  ],
+  "title": {
+   "file": "LeagueGothic.ttf",
+   "upper": true,
+   "track": 0.06,
+   "lh": 0.98
+  },
+  "author": {
+   "file": "RobotoCondensed.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.2
+  }
+ },
+ "oswald": {
+  "name": "Oswald",
+  "genres": [
+   "Mystery & Crime",
+   "Society, Politics & Economics"
+  ],
+  "title": {
+   "file": "Oswald.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.04,
+   "lh": 1.08
+  },
+  "author": {
+   "file": "Montserrat.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "pirata": {
+  "name": "Pirata One",
+  "genres": [
+   "Horror & Gothic"
+  ],
+  "title": {
+   "file": "PirataOne-Regular.ttf",
+   "lh": 1.05
+  },
+  "author": {
+   "file": "Oswald.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "unifraktur": {
+  "name": "UnifrakturCook",
+  "genres": [
+   "Horror & Gothic"
+  ],
+  "title": {
+   "file": "UnifrakturCook-Bold.ttf",
+   "lh": 1.05
+  },
+  "author": {
+   "file": "LibreBaskerville.ttf",
+   "axes": {
+    "wght": 400
+   },
+   "upper": true,
+   "track": 0.14
+  }
+ },
+ "michroma": {
+  "name": "Michroma",
+  "genres": [
+   "Science Fiction"
+  ],
+  "title": {
+   "file": "Michroma-Regular.ttf",
+   "upper": true,
+   "track": 0.08,
+   "lh": 1.2
+  },
+  "author": {
+   "file": "Rajdhani-SemiBold.ttf",
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "oxanium": {
+  "name": "Oxanium",
+  "genres": [
+   "Science Fiction"
+  ],
+  "title": {
+   "file": "Oxanium.ttf",
+   "axes": {
+    "wght": 700
+   },
+   "lh": 1.05
+  },
+  "author": {
+   "file": "SpaceGrotesk.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.2
+  }
+ },
+ "syncopate": {
+  "name": "Syncopate",
+  "genres": [
+   "Science Fiction"
+  ],
+  "title": {
+   "file": "Syncopate-Bold.ttf",
+   "upper": true,
+   "track": 0.08,
+   "lh": 1.2
+  },
+  "author": {
+   "file": "Rajdhani-SemiBold.ttf",
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "space-grotesk": {
+  "name": "Space Grotesk",
+  "genres": [
+   "Science Fiction",
+   "Science & Nature"
+  ],
+  "title": {
+   "file": "SpaceGrotesk.ttf",
+   "axes": {
+    "wght": 700
+   },
+   "lh": 1.02
+  },
+  "author": {
+   "file": "SpaceGrotesk.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.2
+  }
+ },
+ "exo": {
+  "name": "Exo 2",
+  "genres": [
+   "Science Fiction"
+  ],
+  "title": {
+   "file": "Exo2.ttf",
+   "axes": {
+    "wght": 800
+   },
+   "lh": 1.02,
+   "italic": "Exo2-Italic.ttf"
+  },
+  "author": {
+   "file": "Rajdhani-SemiBold.ttf",
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "eb-garamond": {
+  "name": "EB Garamond",
+  "genres": [
+   "History",
+   "Literary & Classics",
+   "Christianity",
+   "Biography & Memoir"
+  ],
+  "title": {
+   "file": "EBGaramond.ttf",
+   "axes": {
+    "wght": 700
+   },
+   "lh": 1.05,
+   "italic": "EBGaramond-Italic.ttf"
+  },
+  "author": {
+   "file": "CormorantGaramond.ttf",
+   "axes": {
+    "wght": 600
+   },
+   "upper": true,
+   "track": 0.16
+  }
+ },
+ "libre-baskerville": {
+  "name": "Libre Baskerville",
+  "genres": [
+   "History",
+   "Biography & Memoir",
+   "Christianity"
+  ],
+  "title": {
+   "file": "LibreBaskerville.ttf",
+   "axes": {
+    "wght": 700
+   },
+   "lh": 1.08,
+   "italic": "LibreBaskerville-Italic.ttf"
+  },
+  "author": {
+   "file": "Lora.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.14
+  }
+ },
+ "montserrat": {
+  "name": "Montserrat",
+  "genres": [
+   "Society, Politics & Economics",
+   "Travel & Places"
+  ],
+  "title": {
+   "file": "Montserrat.ttf",
+   "axes": {
+    "wght": 800
+   },
+   "lh": 1.02,
+   "italic": "Montserrat-Italic.ttf"
+  },
+  "author": {
+   "file": "Inter.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.18
+  }
+ },
+ "roboto-slab": {
+  "name": "Roboto Slab",
+  "genres": [
+   "Society, Politics & Economics",
+   "Science & Nature",
+   "Language & Reference"
+  ],
+  "title": {
+   "file": "RobotoSlab.ttf",
+   "axes": {
+    "wght": 700
+   },
+   "lh": 1.05
+  },
+  "author": {
+   "file": "Roboto.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.18
+  }
+ },
+ "libre-franklin": {
+  "name": "Libre Franklin",
+  "genres": [
+   "Society, Politics & Economics",
+   "Travel & Places"
+  ],
+  "title": {
+   "file": "LibreFranklin.ttf",
+   "axes": {
+    "wght": 800
+   },
+   "lh": 1.02,
+   "italic": "LibreFranklin-Italic.ttf"
+  },
+  "author": {
+   "file": "Inter.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.18
+  }
+ },
+ "cormorant": {
+  "name": "Cormorant",
+  "genres": [
+   "Literary & Classics",
+   "Poetry",
+   "Plays & Drama"
+  ],
+  "title": {
+   "file": "Cormorant.ttf",
+   "axes": {
+    "wght": 700
+   },
+   "lh": 1.0,
+   "italic": "Cormorant-Italic.ttf"
+  },
+  "author": {
+   "file": "Jost.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "instrument": {
+  "name": "Instrument Serif",
+  "genres": [
+   "Literary & Classics",
+   "Short Stories"
+  ],
+  "title": {
+   "file": "InstrumentSerif-Regular.ttf",
+   "lh": 1.0,
+   "italic": "InstrumentSerif-Italic.ttf"
+  },
+  "author": {
+   "file": "Jost.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.22
+  }
+ },
+ "libre-caslon": {
+  "name": "Libre Caslon Display",
+  "genres": [
+   "Literary & Classics",
+   "Plays & Drama"
+  ],
+  "title": {
+   "file": "LibreCaslonDisplay-Regular.ttf",
+   "lh": 1.05
+  },
+  "author": {
+   "file": "Lora.ttf",
+   "axes": {
+    "wght": 500
+   },
+   "upper": true,
+   "track": 0.14
+  }
+ }
+}

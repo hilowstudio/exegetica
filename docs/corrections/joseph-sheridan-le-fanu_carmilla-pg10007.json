@@ -1,0 +1,306 @@
+[
+ {
+  "op": "replace",
+  "chapter": 2,
+  "find": "<h2 class=\"ex-t\">I. An Early Fright</h2>",
+  "with": "<p class=\"ex-lab\">I</p><h2 class=\"ex-t\">An Early Fright</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 2,
+  "label": "I",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 2,
+  "name": "An Early Fright",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 3,
+  "find": "<h2 class=\"ex-t\">II. A Guest</h2>",
+  "with": "<p class=\"ex-lab\">II</p><h2 class=\"ex-t\">A Guest</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 3,
+  "label": "II",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 3,
+  "name": "A Guest",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 4,
+  "find": "<h2 class=\"ex-t\">III. We Compare Notes</h2>",
+  "with": "<p class=\"ex-lab\">III</p><h2 class=\"ex-t\">We Compare Notes</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 4,
+  "label": "III",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 4,
+  "name": "We Compare Notes",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 5,
+  "find": "<h2 class=\"ex-t\">IV. Her Habits—A Saunter</h2>",
+  "with": "<p class=\"ex-lab\">IV</p><h2 class=\"ex-t\">Her Habits—A Saunter</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 5,
+  "label": "IV",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 5,
+  "name": "Her Habits—A Saunter",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 6,
+  "find": "<h2 class=\"ex-t\">V. A Wonderful Likeness</h2>",
+  "with": "<p class=\"ex-lab\">V</p><h2 class=\"ex-t\">A Wonderful Likeness</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 6,
+  "label": "V",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 6,
+  "name": "A Wonderful Likeness",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 7,
+  "find": "<h2 class=\"ex-t\">VI. A Very Strange Agony</h2>",
+  "with": "<p class=\"ex-lab\">VI</p><h2 class=\"ex-t\">A Very Strange Agony</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 7,
+  "label": "VI",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 7,
+  "name": "A Very Strange Agony",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 8,
+  "find": "<h2 class=\"ex-t\">VII. Descending</h2>",
+  "with": "<p class=\"ex-lab\">VII</p><h2 class=\"ex-t\">Descending</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 8,
+  "label": "VII",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 8,
+  "name": "Descending",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 9,
+  "find": "<h2 class=\"ex-t\">VIII. Search</h2>",
+  "with": "<p class=\"ex-lab\">VIII</p><h2 class=\"ex-t\">Search</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 9,
+  "label": "VIII",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 9,
+  "name": "Search",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 10,
+  "find": "<h2 class=\"ex-t\">IX. The Doctor</h2>",
+  "with": "<p class=\"ex-lab\">IX</p><h2 class=\"ex-t\">The Doctor</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 10,
+  "label": "IX",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 10,
+  "name": "The Doctor",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 11,
+  "find": "<h2 class=\"ex-t\">X. Bereaved</h2>",
+  "with": "<p class=\"ex-lab\">X</p><h2 class=\"ex-t\">Bereaved</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 11,
+  "label": "X",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 11,
+  "name": "Bereaved",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 12,
+  "find": "<h2 class=\"ex-t\">XI. The Story</h2>",
+  "with": "<p class=\"ex-lab\">XI</p><h2 class=\"ex-t\">The Story</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 12,
+  "label": "XI",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 12,
+  "name": "The Story",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 13,
+  "find": "<h2 class=\"ex-t\">XII. A Petition</h2>",
+  "with": "<p class=\"ex-lab\">XII</p><h2 class=\"ex-t\">A Petition</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 13,
+  "label": "XII",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 13,
+  "name": "A Petition",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 14,
+  "find": "<h2 class=\"ex-t\">XIII. The Woodman</h2>",
+  "with": "<p class=\"ex-lab\">XIII</p><h2 class=\"ex-t\">The Woodman</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 14,
+  "label": "XIII",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 14,
+  "name": "The Woodman",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 15,
+  "find": "<h2 class=\"ex-t\">XIV. The Meeting</h2>",
+  "with": "<p class=\"ex-lab\">XIV</p><h2 class=\"ex-t\">The Meeting</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 15,
+  "label": "XIV",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 15,
+  "name": "The Meeting",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 16,
+  "find": "<h2 class=\"ex-t\">XV. Ordeal and Execution</h2>",
+  "with": "<p class=\"ex-lab\">XV</p><h2 class=\"ex-t\">Ordeal and Execution</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 16,
+  "label": "XV",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 16,
+  "name": "Ordeal and Execution",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "replace",
+  "chapter": 17,
+  "find": "<h2 class=\"ex-t\">XVI. Conclusion</h2>",
+  "with": "<p class=\"ex-lab\">XVI</p><h2 class=\"ex-t\">Conclusion</h2>",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "label",
+  "chapter": 17,
+  "label": "XVI",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ },
+ {
+  "op": "name",
+  "chapter": 17,
+  "name": "Conclusion",
+  "why": "chapter numeral was set inside the title; set as the chapter label"
+ }
+]

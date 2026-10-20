@@ -46,6 +46,14 @@ create table if not exists memory_state (
     updated_at timestamptz not null default now()
 );
 
+-- Reading Room cover styles: a reader's light/dark theme, font and motif for the whole library,
+-- each shelf and single books. One JSON blob per user; the browser owns its shape.
+create table if not exists cover_prefs (
+    user_id    uuid primary key references users(id) on delete cascade,
+    prefs      jsonb not null default '{"library":{},"shelves":{},"books":{}}'::jsonb,
+    updated_at timestamptz not null default now()
+);
+
 create table if not exists chat_state (
     user_id    uuid primary key references users(id) on delete cascade,
     state      jsonb not null default '{"chats":[]}'::jsonb,
@@ -76,6 +84,10 @@ create table if not exists cover_overrides (
     updated_at  timestamptz not null default now()
 );
 alter table cover_overrides add column if not exists webp bytea;
+-- Where the chosen art came from, for attribution and any later rights question:
+-- e.g. source = "Galaxy Science Fiction, July 1958 (Galactic Central)", source_page = its page.
+alter table cover_overrides add column if not exists source text;
+alter table cover_overrides add column if not exists source_page text;
 
 -- ===========================================================================
 -- Academic spine (canonical store). Source of truth for the Generator's K–12

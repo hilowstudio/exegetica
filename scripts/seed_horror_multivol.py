@@ -71,6 +71,11 @@ def _store(con, book: dict, cover_url: str | None, raw_title: str) -> None:
         (book["slug"], book["title"], book["author"], book["author_sort"], gb.SOURCE, gb.LICENSE,
          1, "en", json.dumps(book["subjects"]), json.dumps(SECTION), json.dumps(SECTION),
          json.dumps(SECTION), raw_title, cover_url, len(book["chapters"]), book["word_count"]))
+    # write the chapters too (this was missing, so the 2026-09-21 batch went in with no text;
+    # restored by restore_empty_books.py)
+    cur.executemany(
+        "insert into book_chapters(book_id,section_number,title,html,words) values(?,?,?,?,?)",
+        [(cur.lastrowid, c["section_number"], c["title"], c["html"], c["words"]) for c in book["chapters"]])
     con.commit()
 
 

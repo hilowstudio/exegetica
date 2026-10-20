@@ -1,0 +1,16 @@
+[
+ {
+  "op": "replace",
+  "chapter": 2,
+  "find": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Volume</p><p class=\"ex-pt\">I</p>",
+  "with": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Volume One</p>",
+  "why": "division label read apart from its numeral at restore; set as house label"
+ },
+ {
+  "op": "replace",
+  "chapter": 37,
+  "find": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Volume</p><p class=\"ex-pt\">II</p>",
+  "with": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Volume Two</p>",
+  "why": "division label read apart from its numeral at restore; set as house label"
+ }
+]

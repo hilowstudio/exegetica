@@ -160,12 +160,26 @@ def _slugify(s: str) -> str:
 def _choose_level(body) -> str | None:
     """Fallback chaptering: the heading level with the most entries in a sane range — so a
     book that nests chapters (<h3>) under parts (<h2>) splits on the <h3> chapters, not the
-    two parts."""
-    best, lvl = 0, None
+    two parts. Single-letter index headings ("A.", "B.") don't count, or a back-of-book index
+    outvotes the real chapters and the book imports as its index.
+    Text before the first heading of the chosen level is dropped as front matter, so a level
+    that only starts late (a publisher's catalogue of <h3>s after a novel set in <h2>s) would
+    throw the book away: prefer levels whose first heading leaves >=80% of the text after it."""
+    html = body.decode_contents() if hasattr(body, "decode_contents") else str(body)
+    total = len(re.sub(r"<[^>]+>", "", html)) or 1
+    best, lvl = (False, 0.0), None
     for tag in ("h2", "h3", "h4", "h1"):
-        c = len(body.find_all(tag))
-        if 3 <= c <= 400 and c > best:
-            best, lvl = c, tag
+        # repeated "FOOTNOTES:" / "Contents" headings aren't chapters — counting them splits the
+        # book at its notes, and the notes-titled chunks (holding the next chapter) get dropped
+        c = sum(1 for h in body.find_all(tag)
+                if not re.fullmatch(r"[A-Z]\.?", h.get_text(strip=True)) and not _SKIP_TITLE.match(h.get_text(" ", strip=True)))
+        if not 3 <= c <= 400:
+            continue
+        m = re.search(rf"<{tag}\b", html, re.I)
+        cover = len(re.sub(r"<[^>]+>", "", html[m.start():])) / total if m else 0.0
+        key = (cover >= 0.8, c if cover >= 0.8 else cover)
+        if key > best:
+            best, lvl = key, tag
     return lvl
 
 
@@ -176,20 +190,85 @@ def _raw_chapters(body) -> list:
     # Only trust div.chapter blocks that actually hold text — some PG HTML uses empty
     # <div class="chapter"> as scroll anchors, with the prose in following siblings.
     divs = [d for d in body.find_all("div", class_="chapter") if len(d.get_text(strip=True)) > 40]
-    if len(divs) >= 3:
+    # ...and only when they hold the book: some PG files wrap just each chapter's HEADING in the
+    # div and put the prose after it as siblings (Varney the Vampyre, many dime novels), which
+    # would keep the headings and drop the text. Then split on headings instead.
+    in_divs = sum(len(d.get_text(strip=True)) for d in divs)
+    if len(divs) >= 3 and in_divs >= 0.95 * len(body.get_text(strip=True)):   # text outside the divs would be lost
         return divs
     level = _choose_level(body)
     if not level:
-        return [body]  # unstructured → single chapter (a short work, or low-value blob)
+        # no heading tags, but chapters marked by plain paragraphs ("<p>CHAPTER IV.</p>"), common
+        # in dime-novel transcriptions: promote those paragraphs to headings and split on them
+        marks = [p for p in body.find_all("p")
+                 if re.match(r"\s*CHAPTER\s+([IVXLC]+|\d+)\b", p.get_text(" ", strip=True), re.I)
+                 and len(p.get_text(strip=True)) < 120]
+        if len(marks) < 3:
+            return [body]  # unstructured → single chapter (a short work, or low-value blob)
+        for p in marks:
+            p.name = "h3"
+        level = "h3"
     html = body.decode_contents() if hasattr(body, "decode_contents") else str(body)
     toks = re.split(rf"(<{level}\b[^>]*>.*?</{level}>)", html, flags=re.I | re.S)
     nodes = []
-    i = 1  # toks[0] is the preamble before the first heading (title page etc.) — dropped
+    # toks[0] is the preamble before the first heading: usually just the title page and contents
+    # (dropped), but sometimes a long introduction or the opening stories — keep it then
+    if len(re.sub(r"<[^>]+>", " ", toks[0]).split()) > 1000:
+        nodes.append(BeautifulSoup(toks[0], "html.parser"))
+    i = 1
     while i < len(toks):
         frag = toks[i] + (toks[i + 1] if i + 1 < len(toks) else "")
         nodes.append(BeautifulSoup(frag, "html.parser"))
         i += 2
     return nodes
+
+
+def _restore_drop_caps(soup) -> None:
+    """Pulp transcriptions set each chapter's first letter as an image (<img alt="A">, often in
+    a div.figleft) and start the paragraph without it, so dropping images loses the letter
+    ("drab gray sheet"). Put the letter back at the start of the next paragraph: with a space
+    when the source leaves one ("A drab"), joined when it doesn't ("R" + "ed-hot")."""
+    for img in soup.find_all("img"):
+        alt = (img.get("alt") or "").strip()
+        if not re.fullmatch(r"[A-Z]{1,2}", alt):
+            continue
+        holder = img.parent if img.parent and img.parent.name in ("div", "span") \
+            and not img.parent.get_text(strip=True) else img
+        para = holder.find_next("p")
+        if para is None:
+            continue
+        first = next((s for s in para.strings if s.strip() or s), None)
+        if first is None:
+            continue
+        rest = str(first)
+        spaced = bool(re.match(r"^[\s ]", rest))
+        first.replace_with(alt + (" " if spaced else "") + rest.lstrip("  \t\r\n"))
+        holder.decompose()
+
+
+def _split_every_heading(soup, meta: dict) -> list[dict]:
+    """Fallback chaptering for books the level-based split mangles: a chapter starts at every
+    <h1>–<h4>. Front-matter-titled chunks are dropped only when short (a real contents page),
+    so a chunk that merely STARTS with "Contents" but carries the book is kept; a long
+    preamble before the first heading is kept too."""
+    for el in soup.select('[class*="pg-boilerplate"], [class*="pgheader"], #pg-header, #pg-footer'):
+        el.decompose()
+    _restore_drop_caps(soup)
+    body = soup.body or soup
+    html = body.decode_contents()
+    toks = re.split(r"(<h[1-4]\b[^>]*>.*?</h[1-4]>)", html, flags=re.I | re.S)
+    frags = [toks[0]] + [toks[i] + (toks[i + 1] if i + 1 < len(toks) else "") for i in range(1, len(toks), 2)]
+    chapters = []
+    for n, frag in enumerate(frags):
+        title, chtml, words = _clean_chapter(BeautifulSoup(frag, "html.parser"))
+        if words < 30 or (n == 0 and words < 1000):
+            continue
+        if _SKIP_TITLE.match(title or "") and words < 1500:
+            continue
+        if not title or _SKIP_TITLE.match(title):
+            title = meta.get("title") or "Text"
+        chapters.append({"section_number": len(chapters) + 1, "title": title, "html": chtml, "words": words})
+    return chapters
 
 
 async def fetch_book(client: httpx.AsyncClient, gid, meta: dict) -> dict | None:
@@ -205,15 +284,39 @@ async def fetch_book(client: httpx.AsyncClient, gid, meta: dict) -> dict | None:
     soup = BeautifulSoup(r.text, "html.parser")
     for el in soup.select('[class*="pg-boilerplate"], [class*="pgheader"], #pg-header, #pg-footer'):
         el.decompose()
+    _restore_drop_caps(soup)
     body = soup.body or soup
+    source_words = len(body.get_text(" ").split())   # whole page, for a caller's coverage check
 
-    chapters = []
+    chapters, skipped = [], []
     for node in _raw_chapters(body):
         title, chtml, words = _clean_chapter(node)
-        if words < 30 or _SKIP_TITLE.match(title or ""):
+        if words - len((title or "").split()) < 5:    # a bare heading; a 4-line poem still counts
             continue
+        if _SKIP_TITLE.match(title or ""):
+            # a long "Contents"/"Transcriber's Note" chunk is the book's text filed under a
+            # front-matter heading — keep it under the work's title. Notes stay dropped.
+            if words >= 1500 and not re.match(r"\s*(foot|end)notes\b", title, re.I):
+                title = meta.get("title") or "Text"
+            else:
+                skipped.append((words, chtml))
+                continue
+        elif not title and not chapters:             # a kept preamble with no heading of its own
+            title = meta.get("title") or "Text"
         chapters.append({"section_number": len(chapters) + 1, "title": title,
                          "html": chtml, "words": words})
+    if not chapters and skipped:
+        # a one-block story whose first heading is front matter ("Transcriber's Note"): the
+        # block IS the work, so keep it under the work's own title rather than lose it
+        words, chtml = max(skipped)
+        chapters.append({"section_number": 1, "title": meta.get("title") or "Text", "html": chtml, "words": words})
+    if sum(c["words"] for c in chapters) < 0.6 * source_words:
+        # The split lost most of the book: headings only in the front matter, or chapters spread
+        # across heading levels so the text landed in a dropped "Contents"/"Illustrations" chunk.
+        # Re-split at EVERY heading and drop front-matter chunks only when they're short.
+        alt = _split_every_heading(BeautifulSoup(r.text, "html.parser"), meta)
+        if sum(c["words"] for c in alt) > sum(c["words"] for c in chapters):
+            chapters = alt
     if not chapters:
         return None
 
@@ -231,4 +334,5 @@ async def fetch_book(client: httpx.AsyncClient, gid, meta: dict) -> dict | None:
         "genres": [genre] if genre else [],
         "chapters": chapters,
         "word_count": sum(c["words"] for c in chapters),
+        "source_words": source_words,
     }

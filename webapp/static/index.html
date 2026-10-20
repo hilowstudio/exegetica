@@ -264,6 +264,11 @@
     <div class="thread-h">
       <button class="menu-btn railbtn" id="menu-btn" type="button" aria-label="Show studies" style="width:34px;height:34px;border-radius:8px"><svg viewBox="0 0 24 24" style="width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.7"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       <span class="ttl" id="thread-title">New study</span>
+      <span class="vlab" id="subj-lab" hidden>Subject</span>
+      <div class="toggle" id="subj" role="group" aria-label="Subject" hidden>
+        <button id="s-bible" aria-pressed="true" type="button">Bible</button>
+        <button id="s-history" aria-pressed="false" type="button">History</button>
+      </div>
       <span class="vlab">Mode</span>
       <div class="toggle" role="group" aria-label="Mode">
         <button id="p-professor" aria-pressed="true" type="button">Professor</button>
@@ -384,7 +389,7 @@ function renderMarkdown(src){
 const thread=document.getElementById("thread"), input=document.getElementById("input"),
       sendBtn=document.getElementById("send"),
       titleEl=document.getElementById("thread-title");
-let persona="professor", busy=false;
+let persona="professor", subject="bible", busy=false;
 let history=[]; // [{role, content}]
 
 const LEGACY_PERSONA={theologian:"professor",study:"aide",neutral:"researcher"};
@@ -395,6 +400,21 @@ function setPersona(p){p=LEGACY_PERSONA[p]||p;persona=p;
 document.getElementById("p-professor").onclick=()=>setPersona("professor");
 document.getElementById("p-aide").onclick=()=>setPersona("aide");
 document.getElementById("p-researcher").onclick=()=>setPersona("researcher");
+/* Subject: Bible (Study Bible tools) or History (Social Sciences tools). A study stays in one
+   subject, so switching mid-study starts a new one. */
+function personaName(p){return p==="professor"?(subject==="history"?"Historian":"Professor"):p==="aide"?"Aide":"Researcher";}
+function setSubject(sj,fresh){
+  if(sj!=="history")sj="bible";
+  const restart=fresh&&sj!==subject&&history.length;
+  subject=sj;try{localStorage.setItem("exeg-subject",sj);}catch(e){}
+  if(restart)newStudy();
+  document.getElementById("s-bible").setAttribute("aria-pressed",sj==="bible");
+  document.getElementById("s-history").setAttribute("aria-pressed",sj==="history");
+  document.getElementById("p-professor").textContent=personaName("professor");
+}
+document.getElementById("s-bible").onclick=()=>setSubject("bible",true);
+document.getElementById("s-history").onclick=()=>setSubject("history",true);
+try{setSubject(localStorage.getItem("exeg-subject")||"bible",false);}catch(e){}
 
 /* ---------- crisis help affordance (stateless; verified resources from /api/config) ---------- */
 const helpBg=document.getElementById("help-bg"),helpList=document.getElementById("help-list"),helpLead=document.getElementById("help-lead");
@@ -453,8 +473,8 @@ function renderChatList(){
 function persistCurrent(){
   if(!history.length)return;
   const chats=loadChats();let c=chats.find(x=>x.id===curChatId);
-  if(!c){c={id:curChatId,title:titleFrom(history),persona,messages:[],updated:0};chats.push(c);}
-  c.messages=history.slice();c.persona=persona;c.title=titleFrom(history);c.updated=Date.now();
+  if(!c){c={id:curChatId,title:titleFrom(history),persona,subject,messages:[],updated:0};chats.push(c);}
+  c.messages=history.slice();c.persona=persona;c.subject=subject;c.title=titleFrom(history);c.updated=Date.now();
   saveChats(chats);renderChatList();
   titleEl.textContent=c.title;
 }
@@ -472,7 +492,7 @@ function newStudy(){
 }
 function openChat(id){
   const c=loadChats().find(x=>x.id===id);if(!c)return;
-  curChatId=id;history=c.messages.slice();if(c.persona)setPersona(c.persona);
+  curChatId=id;history=c.messages.slice();setSubject(c.subject||"bible",false);if(c.persona)setPersona(c.persona);
   clearThread();showEmpty(false);
   history.forEach(m=>{
     const b=addMsg(m.role);
@@ -523,13 +543,15 @@ function updateStatus(){
 window.addEventListener("appsettings:changed",updateStatus);          // refresh banner when the global Settings change
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeSide();}});
 
-fetch("/api/config").then(r=>r.json()).then(c=>{CFG=c;updateStatus();})
+fetch("/api/config").then(r=>r.json()).then(c=>{CFG=c;updateStatus();
+  if((c.history_tools||[]).length){document.getElementById("subj").hidden=false;document.getElementById("subj-lab").hidden=false;}
+  else if(subject==="history")setSubject("bible",false);})
   .catch(()=>{console.error("backend unavailable");});
 
 function addMsg(role){
   showEmpty(false);
   const m=document.createElement("div");m.className="msg "+role;
-  const who=document.createElement("div");who.className="who";who.textContent=role==="user"?"You":(persona==="professor"?"Professor":persona==="aide"?"Aide":"Researcher");
+  const who=document.createElement("div");who.className="who";who.textContent=role==="user"?"You":personaName(persona);
   const bubble=document.createElement("div");bubble.className="bubble";
   m.appendChild(who);m.appendChild(bubble);thread.appendChild(m);
   scroll();return bubble;
@@ -562,7 +584,7 @@ async function send(text){
 
   try{
     const resp=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({persona,provider:curProvider(),model:curModel(),api_key:curKey(),messages:history})});
+      body:JSON.stringify({persona,subject,provider:curProvider(),model:curModel(),api_key:curKey(),messages:history})});
     if(!resp.ok||!resp.body){throw new Error("HTTP "+resp.status);}
     const reader=resp.body.getReader(),dec=new TextDecoder();let buf="";
     while(true){

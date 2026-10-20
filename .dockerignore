@@ -32,6 +32,10 @@ standards/
 data/
 _backups/
 scripts/
+# ...except the house-cover renderer, which the web app runs (see Dockerfile)
+!scripts/house_covers.py
+!scripts/cover_text.py
+!scripts/generate_motifs.py
 tests/
 # NOTE: docs/ is intentionally NOT ignored — the /course and /calendar views
 # read the John lessons, materials, and calendar JSON from docs/ at runtime.

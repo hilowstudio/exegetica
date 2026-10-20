@@ -56,6 +56,8 @@ webapp = [
     "pypdf>=4.0",              # PDF → text (uploaded book copies)
     "beautifulsoup4>=4.12",    # strip EPUB chapter HTML to text
     "pillow>=10.0",            # download + WebP-convert admin cover-art overrides (self-hosted)
+    "lxml>=5.0",               # Reading Room typesetting pass (webapp/typeset.py)
+    "pyphen>=0.14",            # soft hyphens for justified Reading Room text
 ]
 # Print-ready PDF rendering of the course materials. Uses the machine's installed
 # Edge/Chromium (Playwright channel=msedge) — no browser download needed.
@@ -73,6 +75,7 @@ classroom = [
 
 [project.scripts]
 studybible-mcp = "studybible_mcp.server:main"
+socialsci-mcp = "socialsci_mcp.server:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -80,6 +83,7 @@ where = ["src"]
 [tool.setuptools.package-data]
 # Ship the Theologian persona (served as the "theologian" MCP prompt).
 studybible_mcp = ["prompts/*.md"]
+socialsci_mcp = ["prompts/*.md"]
 
 [tool.ruff]
 line-length = 100

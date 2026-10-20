@@ -1,0 +1,16 @@
+[
+ {
+  "op": "replace",
+  "chapter": 1,
+  "find": "<p class=\"ex-first\"><br>\n<span>D</span>URING the whole of a dull, dar",
+  "with": "<p class=\"ex-first\"><span class=\"ex-lead\">During the whole</span> of a dull, dar",
+  "why": "source's decorative initial (span D + capitals) and stray break; set as our drop cap with small-capital lead-in"
+ },
+ {
+  "op": "replace",
+  "chapter": 1,
+  "find": "<span>F</span>EAR.”",
+  "with": "FEAR.”",
+  "why": "source's split initial on Poe's capitalised FEAR; letters rejoined"
+ }
+]

@@ -36,6 +36,8 @@ def _as_obj(out) -> dict:
 
 _MAX_BATCHES = 40          # cap total map calls even for enormous works
 _MIN_BATCH_WORDS = 40000   # ~a comfortable chunk per map call
+_MAX_WORDS = 1_500_000     # above this (e.g. Spurgeon's 24M-word sermon corpus) a whole-work pass is
+                           # neither affordable nor meaningful — callers fall back to the covered text
 _MAP_CONCURRENCY = 5
 
 
@@ -139,6 +141,8 @@ async def ensure(book: dict, rebuild: bool = False) -> dict | None:
     guard). Returns None if it can't be built (no LLM key / failure) so the caller can degrade."""
     key = book.get("slug") or ""
     total = book.get("word_count") or sum(c.get("words", 0) for c in (book.get("chapters") or []))
+    if total > _MAX_WORDS:
+        return None
     if not rebuild:
         cached = await get(key)
         if cached and cached.get("_word_count") == total:

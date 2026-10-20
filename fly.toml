@@ -14,6 +14,7 @@ swap_size_mb = 512
   THEOLOGY_DB = '/data/theology.db'
   BOOKS_DB = '/data/books.db'
   COVERS_DB = '/data/covers.db'
+  SOCIAL_SCIENCES_DB = '/data/social_sciences.db'
   HF_HUB_OFFLINE = '1'   # model2vec loads from the baked image cache — no HuggingFace at call time
 
 # Persistent volume for the theology grounding corpus (boot-fetched from R2, version-gated).
@@ -43,4 +44,4 @@ swap_size_mb = 512
 
 [[vm]]
   size = 'shared-cpu-1x'
-  memory = '1gb'
+  memory = '2gb'

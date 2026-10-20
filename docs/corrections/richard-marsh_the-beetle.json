@@ -1,0 +1,36 @@
+[
+ {
+  "op": "replace",
+  "chapter": 1,
+  "find": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Book</p><p class=\"ex-pt\">I The House with the Open Window</p>",
+  "with": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Book One</p><p class=\"ex-pt\">The House with the Open Window</p>",
+  "why": "division label read apart from its numeral at restore; set as house label"
+ },
+ {
+  "op": "replace",
+  "chapter": 10,
+  "find": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Book</p><p class=\"ex-pt\">II The Haunted Man</p>",
+  "with": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Book Two</p><p class=\"ex-pt\">The Haunted Man</p>",
+  "why": "division label read apart from its numeral at restore; set as house label"
+ },
+ {
+  "op": "replace",
+  "chapter": 23,
+  "find": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Book</p><p class=\"ex-pt\">III The Terror by Night and the Terror by Day</p>",
+  "with": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Book Three</p><p class=\"ex-pt\">The Terror by Night and the Terror by Day</p>",
+  "why": "division label read apart from its numeral at restore; set as house label"
+ },
+ {
+  "op": "replace",
+  "chapter": 33,
+  "find": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Book</p><p class=\"ex-pt\">IV In Pursuit</p>",
+  "with": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Book Four</p><p class=\"ex-pt\">In Pursuit</p>",
+  "why": "division label read apart from its numeral at restore; set as house label"
+ },
+ {
+  "op": "delete",
+  "chapter": 33,
+  "find": "<div class=\"ex-parthead\"><p class=\"ex-pl\">Book Four</p><p class=\"ex-pt\">In Pursuit</p><i class=\"ex-orn\" aria-hidden=\"true\"></i></div>",
+  "why": "Book Four already has its own part page (chapter 32); remove the duplicate part heading"
+ }
+]

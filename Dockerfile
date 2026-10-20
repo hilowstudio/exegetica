@@ -27,7 +27,15 @@ COPY webapp ./webapp
 COPY resource-generators.yaml ./resource-generators.yaml
 COPY docs ./docs
 
+# House cloth covers (Book Wrap), drawn on request in each reader's style: the renderer and its
+# title rules, plus the fonts, motif library, themes and font sets they read. Drawn covers are
+# cached on the volume (/data/cover-cache), so they survive deploys.
+COPY scripts/house_covers.py scripts/cover_text.py scripts/generate_motifs.py ./scripts/
+COPY assets ./assets
+
 ENV STUDY_BIBLE_DB=/data/study_bible.db \
+    COVER_SCALE=0.375 \
+    COVER_CACHE=/data/cover-cache \
     PORT=8100 \
     PYTHONUNBUFFERED=1
 # ANTHROPIC_API_KEY is provided at deploy time as a secret, never baked in.

@@ -14,11 +14,13 @@ Run:
     # then open http://127.0.0.1:8100
 """
 
+import asyncio
 import contextlib
 import json
 import logging
 import os
 import secrets
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -33,7 +35,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import auth, calendar_views, comprehension, course, course_views, curriculum, db, generator, library, library_store, memory, providers, r2, reader, safety, store
+from webapp import auth, calendar_views, comprehension, course, course_views, curriculum, db, generator, house_cover, library, library_store, memory, providers, r2, reader, safety, store
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("study-bible-web")
@@ -107,6 +109,43 @@ CONDUCT_FLOOR = (
 )
 
 
+# ---- Social Sciences Mode (socialsci_mcp): history, government and civics ----
+SOCIALSCI_PROMPTS_DIR = PROJECT_ROOT / "src" / "socialsci_mcp" / "prompts"
+
+HISTORY_RESEARCHER = (
+    "You are the Researcher, a careful and honest history assistant for a Christian high school's "
+    "U.S. History, Government and Street Law classes. Ground every fact, date and quotation in the "
+    "Social Sciences tools rather than memory, quote documents exactly, and cite the document, author "
+    "and date you draw on. Separate what the sources establish from interpretation. When the sources "
+    "do not settle a question, say so. Church history is history: use the Study Bible tools too "
+    "(lookup_verse for exact Scripture, search_theology for church history, the fathers and confessions)."
+)
+
+HISTORY_AIDE = (
+    "You are the Aide, a patient study guide for a Christian high school's history, government and "
+    "civics classes. Your goal is the student's own growth in reading sources and reasoning about the "
+    "past, not finished answers to copy.\n\n"
+    "- FACTS you may give directly: a date, a definition, what a document says, what a tool returns. "
+    "Name the source and ask how they would confirm it.\n"
+    "- INTERPRETATION you guide, not give. When they ask why something happened, what a document means, "
+    "or how to weigh evidence, walk them through it: who wrote this, when and why, what it actually "
+    "says, what other sources add. Give the next step, not the destination.\n"
+    "- Never write a graded essay or answer graded work for them. Help them research and think.\n"
+    "- For Constitution Test review, quiz one question at a time and explain each answer from the "
+    "exact text (get_constitution, get_flag_code).\n"
+    "- Ground everything in the tools rather than memory, and quote exactly: the Social Sciences tools for "
+    "history, and the Study Bible tools when the church or Scripture is part of the story."
+)
+
+
+def _historian_system() -> str:
+    try:
+        return (SOCIALSCI_PROMPTS_DIR / "historian.md").read_text(encoding="utf-8").strip()
+    except OSError:
+        logger.warning("historian.md not found; using the history researcher prompt")
+        return HISTORY_RESEARCHER
+
+
 def _theologian_system() -> str:
     try:
         return (PROMPTS_DIR / "theologian.md").read_text(encoding="utf-8").strip()
@@ -132,13 +171,17 @@ def _base_for(persona: str) -> str:
     return NEUTRAL_SYSTEM
 
 
-def _system_for(persona: str) -> str:
-    base = _base_for(persona)
+def _system_for(persona: str, subject: str = "bible") -> str:
+    if subject == "history":
+        base = {"professor": _historian_system(), "aide": HISTORY_AIDE}.get(persona, HISTORY_RESEARCHER)
+    else:
+        base = _base_for(persona)
     v = _voice()
     system = f"{base}\n\n---\n\n{v}" if v else base
-    # Curriculum awareness, then the shared conduct floor and the crisis-safeguarding
-    # note last, so the guardrails carry recency weight over the persona.
-    return system + curriculum.system_note() + CONDUCT_FLOOR + safety.safeguarding_note()
+    # Curriculum awareness (the John course, Bible only), then the shared conduct floor and the
+    # crisis-safeguarding note last, so the guardrails carry recency weight over the persona.
+    note = curriculum.system_note() if subject != "history" else ""
+    return system + note + CONDUCT_FLOOR + safety.safeguarding_note()
 
 
 # ---------------------------------------------------------------------------
@@ -147,7 +190,9 @@ def _system_for(persona: str) -> str:
 class MCPBridge:
     """Owns a long-lived MCP client session and exposes its tools."""
 
-    def __init__(self) -> None:
+    def __init__(self, module: str = "studybible_mcp.server", with_curriculum: bool = True) -> None:
+        self.module = module
+        self.with_curriculum = with_curriculum
         self.session: ClientSession | None = None
         self.tools: list[dict] = []
         self._stdio_cm = None
@@ -156,7 +201,7 @@ class MCPBridge:
     async def start(self) -> None:
         params = StdioServerParameters(
             command=sys.executable,
-            args=["-m", "studybible_mcp.server", "--transport", "stdio"],
+            args=["-m", self.module, "--transport", "stdio"],
             env={**os.environ},
             cwd=str(PROJECT_ROOT),
         )
@@ -173,11 +218,10 @@ class MCPBridge:
         # Aggregate the local, student-facing John curriculum tools alongside the
         # study-bible MCP tools. All providers read from self.tools and dispatch
         # through self.call, so this is the only wiring needed.
-        self.tools += curriculum.TOOLS
-        logger.info(
-            "MCP connected: %d tools (+%d curriculum)",
-            len(self.tools) - len(curriculum.TOOLS), len(curriculum.TOOLS),
-        )
+        extra = curriculum.TOOLS if self.with_curriculum else []
+        self.tools += extra
+        logger.info("MCP %s connected: %d tools (+%d curriculum)", self.module,
+                    len(self.tools) - len(extra), len(extra))
 
     async def stop(self) -> None:
         with contextlib.suppress(Exception):
@@ -191,7 +235,7 @@ class MCPBridge:
         """Call a tool; return (text, is_error)."""
         t0 = time.perf_counter()
         # Local curriculum tools are served in-process (no MCP round-trip).
-        if name in curriculum.HANDLER_NAMES:
+        if self.with_curriculum and name in curriculum.HANDLER_NAMES:
             try:
                 text = curriculum.handle(name, arguments or {})
             except Exception as e:  # noqa: BLE001
@@ -210,6 +254,29 @@ class MCPBridge:
         return text, bool(getattr(result, "isError", False))
 
 
+class CombinedTools:
+    """Several MCP bridges presented as one tool set, each call routed to the bridge that owns the
+    tool. The History mode uses it: its own Social Sciences tools plus the Study Bible's tools (Scripture,
+    the church fathers, the creeds and confessions, and the theology library's church history), because
+    church history is history. The John-course curriculum tools stay with the Bible mode."""
+
+    def __init__(self, *parts: tuple["MCPBridge", set[str]]) -> None:
+        self.tools: list[dict] = []
+        self._route: dict[str, MCPBridge] = {}
+        for bridge, exclude in parts:
+            for t in bridge.tools:
+                if t["name"] in exclude or t["name"] in self._route:
+                    continue
+                self.tools.append(t)
+                self._route[t["name"]] = bridge
+
+    async def call(self, name: str, arguments: dict) -> tuple[str, bool]:
+        bridge = self._route.get(name)
+        if bridge is None:
+            return f"Unknown tool: {name}", True
+        return await bridge.call(name, arguments)
+
+
 def _sse(obj: dict) -> str:
     return f"data: {json.dumps(obj, ensure_ascii=False)}\n\n"
 
@@ -218,6 +285,7 @@ async def chat(request):
     """Stream a response (with tool use) to the browser over SSE, via the chosen provider."""
     body = await request.json()
     persona = body.get("persona", "professor")
+    subject = "history" if body.get("subject") == "history" else "bible"
     provider = body.get("provider", "anthropic")
     model = body.get("model", "")
     api_key = (body.get("api_key") or "").strip() or None
@@ -236,7 +304,12 @@ async def chat(request):
         return JSONResponse({"error": "no messages"}, status_code=400)
 
     mcp: MCPBridge = request.app.state.mcp
-    system_text = _system_for(persona)
+    if subject == "history":
+        history = getattr(request.app.state, "mcp_history", None)
+        if history is None:
+            return JSONResponse({"error": "The Social Sciences tools are not available on this server yet."}, status_code=503)
+        mcp = CombinedTools((history, set()), (mcp, set(curriculum.HANDLER_NAMES)))
+    system_text = _system_for(persona, subject)
 
     # Stateless crisis pre-check on the person's own latest message. If it looks like a
     # cry for help, surface the verified "Need help now?" resources before the reply
@@ -245,7 +318,7 @@ async def chat(request):
     pre = safety.precheck(last_user)
 
     async def gen():
-        yield _sse({"type": "start", "persona": persona, "provider": provider})
+        yield _sse({"type": "start", "persona": persona, "subject": subject, "provider": provider})
         if pre["concern"]:
             yield _sse({"type": "safety", "category": pre["category"],
                         "resources": safety.get_crisis_resources(pre["category"])})
@@ -270,6 +343,8 @@ async def config(request):
     return JSONResponse({
         "tools": len(mcp.tools),
         "tool_names": [t["name"] for t in mcp.tools],
+        "history_tools": [t["name"] for t in request.app.state.mcp_history.tools]
+        if getattr(request.app.state, "mcp_history", None) else [],
         "default_model": MODEL,
         "providers": providers.public_providers(),
         # The server ships an Anthropic key, so Anthropic works with no BYOK.
@@ -560,55 +635,127 @@ _R2_DBS = [
     ("THEOLOGY_DB", "theology/theology.db"),
     ("BOOKS_DB", "books/books.db"),
     ("COVERS_DB", "covers/covers.db"),
+    ("SOCIAL_SCIENCES_DB", "social-sciences/social_sciences.db"),
 ]
 
 
-async def _fetch_db_if_stale(name: str, path: str, key: str):
-    """Download one R2-distributed DB to `path` if missing or a newer version exists. Version-gated
-    against a small marker object; non-fatal on failure (the feature degrades, the app still boots)."""
+def _remove_partial_downloads(path: str) -> None:
+    """Delete half-written downloads of `path`. boto writes to `<path>.tmp.<random>` and renames
+    on success, so an interrupted fetch leaves an orphan behind — three of them (15 GB) once
+    filled the volume and every later fetch failed with "No space left on device"."""
+    folder = os.path.dirname(path) or "."
+    stem = os.path.basename(path) + ".tmp"
+    with contextlib.suppress(FileNotFoundError):
+        for name in os.listdir(folder):
+            if name.startswith(stem):
+                with contextlib.suppress(OSError):
+                    os.remove(os.path.join(folder, name))
+                    logger.info("removed partial download %s", name)
+
+
+async def _stale_version(path: str, key: str) -> str | None:
+    """The R2 version to fetch for `path`, or None when the local copy is current / unpublished."""
     try:
         remote_ver = ((await r2.get_bytes_async(key + ".version")) or b"").decode().strip()
     except Exception:  # noqa: BLE001
         remote_ver = ""
     if not remote_ver:
-        return  # not published to R2 → leave whatever is on disk / in the image
-    ver_path = path + ".version"
+        return None  # not published to R2 → leave whatever is on disk / in the image
     local_ver = ""
     with contextlib.suppress(Exception):
-        if os.path.exists(path) and os.path.exists(ver_path):
-            with open(ver_path) as f:
+        if os.path.exists(path):
+            with open(path + ".version") as f:
                 local_ver = f.read().strip()
-    if local_ver == remote_ver and os.path.exists(path):
-        logger.info("%s up to date (v%s)", name, remote_ver)
+    return None if local_ver == remote_ver and os.path.exists(path) else remote_ver
+
+
+async def _fetch_db(name: str, path: str, key: str, remote_ver: str):
+    """Download one R2-distributed DB to `path` (temp file, then an atomic swap). Non-fatal: on
+    failure the partial file is deleted and the previous copy, if any, keeps serving."""
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    _remove_partial_downloads(path)
+    head = await r2.head_async(key)
+    need = (head or {}).get("size") or 0
+    free = shutil.disk_usage(os.path.dirname(path) or ".").free
+    if need and free < need + (256 << 20):
+        logger.warning("%s: v%s needs %.1f GB but only %.1f GB is free on the volume — not fetching",
+                       name, remote_ver, need / 1e9, free / 1e9)
         return
     logger.info("%s: fetching v%s from R2…", name, remote_ver)
+    tmp = path + ".tmp"
     try:
-        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-        tmp = path + ".tmp"
         await r2.download_file_async(key, tmp)
-        os.replace(tmp, path)
-        with open(ver_path, "w") as f:
+        os.replace(tmp, path)   # open read-only connections keep the old file until they close
+        with open(path + ".version", "w") as f:
             f.write(remote_ver)
         logger.info("%s ready (v%s)", name, remote_ver)
     except Exception as e:  # noqa: BLE001
         logger.warning("%s fetch failed: %s", name, e)
+        _remove_partial_downloads(path)
 
 
-async def _ensure_r2_dbs():
-    """Boot-fetch the R2-distributed SQLite DBs onto the volume before the MCP starts."""
+async def _ensure_r2_dbs() -> list[tuple[str, str, str, str]]:
+    """Make sure every R2-distributed DB exists before the MCP starts. A MISSING DB is fetched now
+    (first boot — the app can't serve without it). An OUT-OF-DATE one is returned for a background
+    fetch, so a big library update never keeps the app from answering while it downloads (an
+    8.5 GB books.db took ~9 minutes and the machine was auto-stopped as unhealthy mid-download)."""
     if not r2.configured():
-        return
+        return []
+    later = []
     for env_var, key in _R2_DBS:
         path = os.environ.get(env_var)
-        if path:
-            await _fetch_db_if_stale(env_var, path, key)
+        if not path:
+            continue
+        _remove_partial_downloads(path)
+        ver = await _stale_version(path, key)
+        if ver is None:
+            logger.info("%s up to date", env_var)
+        elif os.path.exists(path) or env_var in _OPTIONAL_DBS:
+            # Optional DBs (a Mode the app can run without) download in the background even on
+            # first boot, so a 3 GB fetch never holds the app's health check hostage.
+            later.append((env_var, path, key, ver))
+        else:
+            await _fetch_db(env_var, path, key, ver)
+    return later
+
+
+# DBs the app can serve without: their Mode stays off until the file arrives.
+_OPTIONAL_DBS = {"SOCIAL_SCIENCES_DB"}
+
+
+async def _refresh_dbs_in_background(stale: list[tuple[str, str, str, str]], app=None) -> None:
+    """Fetch newer DB versions while the app serves the current copies. books/covers are opened
+    per request, so they switch over immediately; the MCP's DBs take effect on its next start.
+    A Social Sciences DB that arrives this way (first boot) starts the history Mode when it lands."""
+    for name, path, key, ver in stale:
+        await _fetch_db(name, path, key, ver)
+        if name == "SOCIAL_SCIENCES_DB" and app is not None and getattr(app.state, "mcp_history", None) is None:
+            await _start_history(app)
+
+
+async def _start_history(app) -> None:
+    """Start the Social Sciences Mode's server (history, government, civics) if its DB is present.
+    Optional: without it the history subject is simply unavailable and the Bible chat is unaffected."""
+    ss_db = os.environ.get("SOCIAL_SCIENCES_DB") or str(PROJECT_ROOT / "db" / "social_sciences.db")
+    if not Path(ss_db).exists():
+        return
+    try:
+        bridge = MCPBridge("socialsci_mcp.server", with_curriculum=False)
+        await bridge.start()
+        app.state.mcp_history = bridge
+    except Exception:  # noqa: BLE001
+        logger.warning("Social Sciences MCP failed to start; history mode off", exc_info=True)
 
 
 @contextlib.asynccontextmanager
 async def lifespan(app: Starlette):
-    await _ensure_r2_dbs()   # before the MCP starts, so it can open/attach the DBs
+    stale = await _ensure_r2_dbs()   # missing DBs now, before the MCP starts; updates after
+    app.state.mcp_history = None
+    refresh = asyncio.create_task(_refresh_dbs_in_background(stale, app)) if stale else None
     app.state.mcp = MCPBridge()
     await app.state.mcp.start()
+    if app.state.mcp_history is None:
+        await _start_history(app)
     # Optional DB pool. A missing DATABASE_URL, or a connection failure, must never
     # take the app down — DB-backed features simply stay off until it's reachable.
     if db.dsn():
@@ -623,8 +770,12 @@ async def lifespan(app: Starlette):
     try:
         yield
     finally:
+        if refresh and not refresh.done():
+            refresh.cancel()   # an interrupted fetch's partial file is cleaned up on the next boot
         await db.close_pool()
         await app.state.mcp.stop()
+        if app.state.mcp_history:
+            await app.state.mcp_history.stop()
 
 
 SESSION_SECRET = os.environ.get("SESSION_SECRET") or secrets.token_urlsafe(32)
@@ -731,12 +882,21 @@ app = Starlette(
         Route("/api/shelves", reader.shelves),
         Route("/api/catalog", reader.catalog),
         Route("/api/cover/{slug}", reader.cover_image),
+        Route("/api/house-cover/options", house_cover.options),
+        Route("/api/house-cover/motif/{shelf}/{key}.png", house_cover.motif_swatch),
+        Route("/api/house-cover/font/{key}.png", house_cover.font_sample),
+        Route("/api/house-cover/{slug}", house_cover.cover),
+        Route("/api/cover-prefs", house_cover.prefs_get, methods=["GET"]),
+        Route("/api/cover-prefs", house_cover.prefs_put, methods=["PUT"]),
         Route("/api/books/{slug}", reader.book_detail),
         Route("/api/books/{slug}/chapter/{n}", reader.book_chapter),
         Route("/api/reading/position", reader.position_get, methods=["GET"]),
         Route("/api/reading/position", reader.position_put, methods=["PUT"]),
         Route("/api/reading/cover", reader.cover_put, methods=["PUT"]),
         Route("/api/reading/cover/search", reader.cover_search, methods=["GET"]),
+        Route("/api/reading/cover/review", reader.covers_review, methods=["GET"]),
+        Route("/api/reading/cover/preview", reader.cover_preview, methods=["GET"]),
+        Route("/read/admin/covers", reader.covers_review_page),
         Route("/api/config", config),
         Route("/auth/login", auth.login, name="auth_login"),
         Route("/auth/google/callback", auth.auth_callback, name="auth_callback"),

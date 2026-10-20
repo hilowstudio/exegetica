@@ -1,0 +1,9 @@
+[
+  {"op": "delete", "chapter": 1,
+   "find": "<h2 class=\"ex-sub\">by Washington Irving</h2><div class=\"ex-brk\" role=\"separator\"><i class=\"ex-o\"></i><i class=\"ex-o\"></i><i class=\"ex-o\"></i></div>",
+   "why": "source byline and rule left above the story; the title page carries the author"},
+  {"op": "replace", "chapter": 1,
+   "find": "<h2 class=\"ex-sub\">Found Among the Papers of the Late Diedrich Knickerbocker.</h2>",
+   "with": "<p class=\"ex-syn\">Found among the Papers of the late Diedrich Knickerbocker</p>",
+   "why": "Irving's subtitle set as the story's subtitle under the title"}
+]

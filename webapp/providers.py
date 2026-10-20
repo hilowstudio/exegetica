@@ -25,6 +25,41 @@ logger = logging.getLogger("study-bible-web.providers")
 
 MAX_TOOL_TURNS = 12
 
+# Tool results feed the model in full within a turn, and each later step of the tool loop
+# re-reads them. Most results run 1-8k chars and the big useful ones (a verse's commentary,
+# a long psalm, a theology search) 12-17k, so this cap only trims outliers such as
+# multi-chapter passages, and tells the model to ask for less.
+_LIVE_TOOL_CAP = 20000
+
+
+async def _call_tool(mcp, name: str, args: dict) -> tuple[str, bool]:
+    out, is_error = await mcp.call(name, args)
+    out = out or ""
+    if len(out) > _LIVE_TOOL_CAP:
+        out = (out[:_LIVE_TOOL_CAP] + f"\n\n[Result truncated: {len(out):,} characters, first "
+               f"{_LIVE_TOOL_CAP:,} shown. Request a narrower range if you need the rest.]")
+    return out, is_error
+
+
+# Per-turn token usage, logged so cost and cache health are visible in the Fly logs.
+# $ per million tokens: (input, output, cache-read multiplier); cache writes are 1.25x input.
+_PRICES = {"claude-opus-5-5": (4.0, 20.0, 0.05), "claude-sonnet-4-6": (3.0, 15.0, 0.10)}
+
+
+def _log_usage(model: str, u: dict) -> None:
+    if not u["requests"]:
+        return
+    cost = ""
+    if model in _PRICES:
+        inp, outp, read = _PRICES[model]
+        usd = (u["input"] * inp + u["cache_write"] * inp * 1.25 + u["cache_read"] * inp * read
+               + u["output"] * outp) / 1e6
+        cost = f" est=${usd:.4f}"
+    total_in = u["input"] + u["cache_write"] + u["cache_read"]
+    hit = f" cache_hit={u['cache_read'] / total_in:.0%}" if total_in else ""
+    logger.info("usage model=%s requests=%d input=%d cache_read=%d cache_write=%d output=%d%s%s",
+                model, u["requests"], u["input"], u["cache_read"], u["cache_write"], u["output"], hit, cost)
+
 # Registry. `kind` selects the code path; `base_url` overrides the OpenAI host.
 # default_model is a starting point the user can override in the UI (current
 # model IDs for non-Anthropic providers change; the field is editable).
@@ -298,8 +333,14 @@ async def _run_anthropic(api_key, model, system_text, history, mcp):
 
     # Thinking is always on for current models and counts toward max_tokens, so leave
     # room for it plus a long generated document (streaming, so no HTTP timeout risk).
+    # The explicit marker on the system prompt caches tools + system (shared by every chat);
+    # top-level automatic caching moves a second breakpoint to the end of the conversation
+    # on each request, so every step of the tool loop, and the next turn, re-reads the
+    # history from cache instead of at full price.
     params = dict(model=model, max_tokens=64000, system=system, tools=mcp.tools,
-                  thinking={"type": "adaptive", "display": "summarized"})
+                  thinking={"type": "adaptive", "display": "summarized"},
+                  cache_control={"type": "ephemeral"})
+    usage = {"requests": 0, "input": 0, "cache_read": 0, "cache_write": 0, "output": 0}
     if model in _EFFORT:
         params["output_config"] = {"effort": _EFFORT[model]}
     fallback = model.startswith(_REFUSAL_FALLBACK_PREFIXES)
@@ -321,6 +362,12 @@ async def _run_anthropic(api_key, model, system_text, history, mcp):
                         elif d.type == "thinking_delta":
                             yield {"type": "thinking", "text": d.thinking}
                 final = await stream.get_final_message()
+            u = final.usage
+            usage["requests"] += 1
+            usage["input"] += u.input_tokens or 0
+            usage["cache_read"] += getattr(u, "cache_read_input_tokens", 0) or 0
+            usage["cache_write"] += getattr(u, "cache_creation_input_tokens", 0) or 0
+            usage["output"] += u.output_tokens or 0
 
             if final.stop_reason == "refusal":   # declined, and any fallback declined too
                 yield {"type": "error",
@@ -334,7 +381,7 @@ async def _run_anthropic(api_key, model, system_text, history, mcp):
             for block in content:
                 if block.type != "tool_use":
                     continue
-                out, is_error = await mcp.call(block.name, block.input)
+                out, is_error = await _call_tool(mcp, block.name, block.input)
                 tool_results.append({"type": "tool_result", "tool_use_id": block.id,
                                      "content": out, "is_error": is_error})
                 yield {"type": "tool_done", "name": block.name, "input": block.input,
@@ -346,6 +393,7 @@ async def _run_anthropic(api_key, model, system_text, history, mcp):
         logger.exception("anthropic stream failed")
         yield {"type": "error", "message": str(e)}
     finally:
+        _log_usage(model, usage)
         import contextlib
         with contextlib.suppress(Exception):
             await client.close()
@@ -401,7 +449,7 @@ async def _run_openai_responses(cfg, api_key, model, system_text, history, mcp):
                     args = json.loads(it.arguments) if (it.arguments or "").strip() else {}
                 except json.JSONDecodeError:
                     args = {}
-                out, is_error = await mcp.call(it.name, args)
+                out, is_error = await _call_tool(mcp, it.name, args)
                 input_list.append({"type": "function_call_output",
                                    "call_id": it.call_id, "output": out})
                 yield {"type": "tool_done", "name": it.name, "input": args,
@@ -477,7 +525,7 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp):
                     args = json.loads(c["args"]) if c["args"].strip() else {}
                 except json.JSONDecodeError:
                     args = {}
-                out, is_error = await mcp.call(c["name"], args)
+                out, is_error = await _call_tool(mcp, c["name"], args)
                 messages.append({"role": "tool", "tool_call_id": c["id"], "content": out})
                 yield {"type": "tool_done", "name": c["name"], "input": args,
                        "output": _cap(out), "error": is_error}

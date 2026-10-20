@@ -1,0 +1,563 @@
+{
+ "_about": "House cover themes. The board is always the house cloth (parchment, or ink for dark themes); a theme colors only the pattern and outer border: foil, plus foil2 for a second pattern color alternating by column. The lettering is the foil 30% darker on parchment, 30% lighter on ink (house_covers._shift).",
+ "light": {
+  "exegetica-rose": {
+   "name": "Exegetica Rose",
+   "cloth": "#f0e8dc",
+   "foil": "#c05a64"
+  },
+  "oxblood-linen": {
+   "name": "Oxblood",
+   "cloth": "#f0e8dc",
+   "foil": "#7a2430"
+  },
+  "ink-parchment": {
+   "name": "Ink",
+   "cloth": "#f0e8dc",
+   "foil": "#2a2c33"
+  },
+  "sage": {
+   "name": "Sage",
+   "cloth": "#f0e8dc",
+   "foil": "#4f6447"
+  },
+  "duck-egg": {
+   "name": "Deep Teal",
+   "cloth": "#f0e8dc",
+   "foil": "#2f6a6a"
+  },
+  "wedgwood": {
+   "name": "Wedgwood Blue",
+   "cloth": "#f0e8dc",
+   "foil": "#3d5a84"
+  },
+  "lavender": {
+   "name": "Amethyst",
+   "cloth": "#f0e8dc",
+   "foil": "#5d4a78"
+  },
+  "saffron": {
+   "name": "Saffron",
+   "cloth": "#f0e8dc",
+   "foil": "#a0611a"
+  },
+  "terracotta-sand": {
+   "name": "Terracotta",
+   "cloth": "#f0e8dc",
+   "foil": "#b0563a"
+  },
+  "moss-oat": {
+   "name": "Moss",
+   "cloth": "#f0e8dc",
+   "foil": "#5b6b34"
+  },
+  "bottle-green-cream": {
+   "name": "Bottle Green",
+   "cloth": "#f0e8dc",
+   "foil": "#2f5a41"
+  },
+  "navy-linen": {
+   "name": "Navy",
+   "cloth": "#f0e8dc",
+   "foil": "#24345a"
+  },
+  "plum-blush": {
+   "name": "Plum",
+   "cloth": "#f0e8dc",
+   "foil": "#6c2f4a"
+  },
+  "gold-ivory": {
+   "name": "Gold",
+   "cloth": "#f0e8dc",
+   "foil": "#a8842e"
+  },
+  "copper-stone": {
+   "name": "Sky Blue",
+   "cloth": "#f0e8dc",
+   "foil": "#3f86b8"
+  },
+  "slate-dove": {
+   "name": "Slate",
+   "cloth": "#f0e8dc",
+   "foil": "#4a5560"
+  },
+  "cocoa-biscuit": {
+   "name": "Cocoa",
+   "cloth": "#f0e8dc",
+   "foil": "#5c3d2a"
+  },
+  "coral-shell": {
+   "name": "Coral",
+   "cloth": "#f0e8dc",
+   "foil": "#c8664e"
+  },
+  "teal-mist": {
+   "name": "Crimson",
+   "cloth": "#f0e8dc",
+   "foil": "#a8202e"
+  },
+  "mulberry-rose-quartz": {
+   "name": "Mulberry",
+   "cloth": "#f0e8dc",
+   "foil": "#8a2e52"
+  },
+  "ochre-wheat": {
+   "name": "Turquoise",
+   "cloth": "#f0e8dc",
+   "foil": "#12868c"
+  },
+  "forest-celadon": {
+   "name": "Indigo",
+   "cloth": "#f0e8dc",
+   "foil": "#3a3a8a"
+  },
+  "cornflower-chalk": {
+   "name": "Cornflower",
+   "cloth": "#f0e8dc",
+   "foil": "#4a63a8"
+  },
+  "verdigris-bone": {
+   "name": "Verdigris",
+   "cloth": "#f0e8dc",
+   "foil": "#4a8a78"
+  }
+ },
+ "dark": {
+  "exegetica-rose-dark": {
+   "name": "Exegetica Rose",
+   "cloth": "#1e2026",
+   "foil": "#dd8089"
+  },
+  "gold-navy": {
+   "name": "Gold",
+   "cloth": "#1e2026",
+   "foil": "#d4b062"
+  },
+  "silver-black": {
+   "name": "Silver",
+   "cloth": "#1e2026",
+   "foil": "#c9ccd1"
+  },
+  "gold-oxblood": {
+   "name": "Scarlet",
+   "cloth": "#1e2026",
+   "foil": "#e2675e"
+  },
+  "cream-forest": {
+   "name": "Cream",
+   "cloth": "#1e2026",
+   "foil": "#e8dcc0"
+  },
+  "copper-charcoal": {
+   "name": "Copper",
+   "cloth": "#1e2026",
+   "foil": "#d08a5e"
+  },
+  "gold-bottle-green": {
+   "name": "Emerald",
+   "cloth": "#1e2026",
+   "foil": "#5cc48e"
+  },
+  "rose-gold-plum": {
+   "name": "Rose Gold",
+   "cloth": "#1e2026",
+   "foil": "#e3a597"
+  },
+  "silver-midnight": {
+   "name": "Steel Blue",
+   "cloth": "#1e2026",
+   "foil": "#8fb0d8"
+  },
+  "gold-black": {
+   "name": "Pewter",
+   "cloth": "#1e2026",
+   "foil": "#9aa0a6"
+  },
+  "sage-pine": {
+   "name": "Sage",
+   "cloth": "#1e2026",
+   "foil": "#b9cbb0"
+  },
+  "ivory-burgundy": {
+   "name": "Claret",
+   "cloth": "#1e2026",
+   "foil": "#c8688a"
+  },
+  "turquoise-walnut": {
+   "name": "Turquoise",
+   "cloth": "#1e2026",
+   "foil": "#6fc1b6"
+  },
+  "brass-slate": {
+   "name": "Brass",
+   "cloth": "#1e2026",
+   "foil": "#c8a86a"
+  },
+  "blush-aubergine": {
+   "name": "Blush",
+   "cloth": "#1e2026",
+   "foil": "#e7b3bd"
+  },
+  "gold-teal": {
+   "name": "Chartreuse",
+   "cloth": "#1e2026",
+   "foil": "#c8d46a"
+  },
+  "silver-oxblood": {
+   "name": "Ice Blue",
+   "cloth": "#1e2026",
+   "foil": "#a8dce8"
+  },
+  "saffron-indigo": {
+   "name": "Saffron",
+   "cloth": "#1e2026",
+   "foil": "#e8b54a"
+  },
+  "cream-chocolate": {
+   "name": "Periwinkle",
+   "cloth": "#1e2026",
+   "foil": "#9aa3f0"
+  },
+  "coral-navy": {
+   "name": "Coral",
+   "cloth": "#1e2026",
+   "foil": "#f0907a"
+  },
+  "lavender-graphite": {
+   "name": "Lavender",
+   "cloth": "#1e2026",
+   "foil": "#b9a8d6"
+  },
+  "gold-purple": {
+   "name": "Violet",
+   "cloth": "#1e2026",
+   "foil": "#b08ae0"
+  },
+  "mint-charcoal": {
+   "name": "Mint",
+   "cloth": "#1e2026",
+   "foil": "#a8d8c0"
+  },
+  "bronze-olive": {
+   "name": "Fuchsia",
+   "cloth": "#1e2026",
+   "foil": "#e06ab0"
+  }
+ },
+ "pastel": {
+  "pastel-blush-sage": {
+   "name": "Blush & Sage",
+   "cloth": "#f0e8dc",
+   "foil": "#f4c2c2",
+   "foil2": "#b5d3b9"
+  },
+  "pastel-lavender-mint": {
+   "name": "Lavender & Mint",
+   "cloth": "#f0e8dc",
+   "foil": "#cdb4f0",
+   "foil2": "#bdebd5"
+  },
+  "pastel-baby-blue-peach": {
+   "name": "Baby Blue & Peach",
+   "cloth": "#f0e8dc",
+   "foil": "#b8d8f2",
+   "foil2": "#ffd1b3"
+  },
+  "pastel-coral-aqua": {
+   "name": "Coral & Aqua",
+   "cloth": "#f0e8dc",
+   "foil": "#ffb5a7",
+   "foil2": "#a8e0dc"
+  },
+  "pastel-sky-blue-blush": {
+   "name": "Sky Blue & Blush",
+   "cloth": "#f0e8dc",
+   "foil": "#bfe3f7",
+   "foil2": "#f8cdd8"
+  },
+  "pastel-apricot-sage": {
+   "name": "Apricot & Sage",
+   "cloth": "#f0e8dc",
+   "foil": "#ffcba4",
+   "foil2": "#c5ddb8"
+  },
+  "pastel-pistachio-blush": {
+   "name": "Pistachio & Blush",
+   "cloth": "#f0e8dc",
+   "foil": "#d5e8c0",
+   "foil2": "#f6cbd1"
+  },
+  "pastel-teal-lemon": {
+   "name": "Teal & Lemon",
+   "cloth": "#f0e8dc",
+   "foil": "#a9ded8",
+   "foil2": "#fff1a8"
+  },
+  "pastel-lilac-butter": {
+   "name": "Lilac & Butter",
+   "cloth": "#f0e8dc",
+   "foil": "#d9c2f0",
+   "foil2": "#ffefa5"
+  },
+  "pastel-periwinkle-butter": {
+   "name": "Periwinkle & Butter",
+   "cloth": "#f0e8dc",
+   "foil": "#c3c8f7",
+   "foil2": "#ffeea6"
+  },
+  "pastel-lavender-peach": {
+   "name": "Lavender & Peach",
+   "cloth": "#f0e8dc",
+   "foil": "#d3c4f2",
+   "foil2": "#ffcfb8"
+  },
+  "pastel-coral-lavender": {
+   "name": "Coral & Lavender",
+   "cloth": "#f0e8dc",
+   "foil": "#ffbfb0",
+   "foil2": "#d3c6f0"
+  },
+  "pastel-lime-lavender": {
+   "name": "Lime & Lavender",
+   "cloth": "#f0e8dc",
+   "foil": "#d8f0b0",
+   "foil2": "#d6c7f2"
+  },
+  "pastel-mauve-seafoam": {
+   "name": "Mauve & Seafoam",
+   "cloth": "#f0e8dc",
+   "foil": "#e3c4dd",
+   "foil2": "#bfe6d8"
+  },
+  "pastel-butter-powder-blue": {
+   "name": "Butter & Powder Blue",
+   "cloth": "#f0e8dc",
+   "foil": "#fff0a8",
+   "foil2": "#b3d4f0"
+  },
+  "pastel-mint-peach": {
+   "name": "Mint & Peach",
+   "cloth": "#f0e8dc",
+   "foil": "#c1ebd7",
+   "foil2": "#ffd3b6"
+  },
+  "pastel-seafoam-cream": {
+   "name": "Seafoam & Cream",
+   "cloth": "#f0e8dc",
+   "foil": "#b8e0d2",
+   "foil2": "#fff4e0"
+  },
+  "pastel-mint-baby-blue": {
+   "name": "Mint & Baby Blue",
+   "cloth": "#f0e8dc",
+   "foil": "#beebd9",
+   "foil2": "#bbddf5"
+  },
+  "pastel-pink-lavender": {
+   "name": "Pink & Lavender",
+   "cloth": "#f0e8dc",
+   "foil": "#f8c8e2",
+   "foil2": "#d4c6f5"
+  },
+  "pastel-peach-butter": {
+   "name": "Peach & Butter",
+   "cloth": "#f0e8dc",
+   "foil": "#ffd0b5",
+   "foil2": "#fff0b0"
+  },
+  "pastel-orchid-aqua": {
+   "name": "Orchid & Aqua",
+   "cloth": "#f0e8dc",
+   "foil": "#e6c8f0",
+   "foil2": "#b0e4e8"
+  },
+  "pastel-pink-baby-blue": {
+   "name": "Pink & Baby Blue",
+   "cloth": "#f0e8dc",
+   "foil": "#ffc4d6",
+   "foil2": "#bce0f7"
+  },
+  "pastel-periwinkle-pink": {
+   "name": "Periwinkle & Pink",
+   "cloth": "#f0e8dc",
+   "foil": "#c5caf5",
+   "foil2": "#f9c8dd"
+  },
+  "pastel-lemon-mint": {
+   "name": "Lemon & Mint",
+   "cloth": "#f0e8dc",
+   "foil": "#fff3b0",
+   "foil2": "#c4ebd3"
+  }
+ },
+ "dark-duo": {
+  "duo-navy-gold": {
+   "name": "Navy & Gold",
+   "cloth": "#1e2026",
+   "foil": "#d4a84f",
+   "foil2": "#5172b8",
+   "source": "#14213D / #D4A84F"
+  },
+  "duo-forest-brass": {
+   "name": "Forest & Brass",
+   "cloth": "#1e2026",
+   "foil": "#b8934a",
+   "foil2": "#58b18c",
+   "source": "#1B3A2D / #B8934A"
+  },
+  "duo-burgundy-champagne": {
+   "name": "Burgundy & Champagne",
+   "cloth": "#1e2026",
+   "foil": "#e3c9a0",
+   "foil2": "#b8516c",
+   "source": "#5C1A2B / #E3C9A0"
+  },
+  "duo-charcoal-copper": {
+   "name": "Charcoal & Copper",
+   "cloth": "#1e2026",
+   "foil": "#b87333",
+   "foil2": "#808089",
+   "source": "#2B2B2E / #B87333"
+  },
+  "duo-plum-rose-gold": {
+   "name": "Plum & Rose Gold",
+   "cloth": "#1e2026",
+   "foil": "#d9a38e",
+   "foil2": "#9351b8",
+   "source": "#3D1F4E / #D9A38E"
+  },
+  "duo-oxblood-bone": {
+   "name": "Oxblood & Bone",
+   "cloth": "#1e2026",
+   "foil": "#e8dfd0",
+   "foil2": "#b85167",
+   "source": "#4A1520 / #E8DFD0"
+  },
+  "duo-ink-amber": {
+   "name": "Ink & Amber",
+   "cloth": "#1e2026",
+   "foil": "#f2a630",
+   "foil2": "#737396",
+   "source": "#0F0F14 / #F2A630"
+  },
+  "duo-espresso-caramel": {
+   "name": "Espresso & Caramel",
+   "cloth": "#1e2026",
+   "foil": "#c68b59",
+   "foil2": "#b57654",
+   "source": "#2E1D14 / #C68B59"
+  },
+  "duo-midnight-cyan": {
+   "name": "Midnight & Cyan",
+   "cloth": "#1e2026",
+   "foil": "#4ad7e5",
+   "foil2": "#516bb8",
+   "source": "#0B132B / #3FE0F0"
+  },
+  "duo-teal-coral": {
+   "name": "Teal & Coral",
+   "cloth": "#1e2026",
+   "foil": "#ff7a6b",
+   "foil2": "#51b6b8",
+   "source": "#0F3D3E / #FF7A6B"
+  },
+  "duo-indigo-lime": {
+   "name": "Indigo & Lime",
+   "cloth": "#1e2026",
+   "foil": "#c0e640",
+   "foil2": "#5951b8",
+   "source": "#1F1B4D / #C6F135"
+  },
+  "duo-navy-hot-pink": {
+   "name": "Navy & Hot Pink",
+   "cloth": "#1e2026",
+   "foil": "#f45a9c",
+   "foil2": "#516ab8",
+   "source": "#101935 / #FF4F9A"
+  },
+  "duo-graphite-mint": {
+   "name": "Graphite & Mint",
+   "cloth": "#1e2026",
+   "foil": "#66e2b2",
+   "foil2": "#7b7e8e",
+   "source": "#25262B / #5EEAB4"
+  },
+  "duo-violet-electric-blue": {
+   "name": "Violet & Electric Blue",
+   "cloth": "#1e2026",
+   "foil": "#5890f4",
+   "foil2": "#7251b8",
+   "source": "#2A1458 / #4D8DFF"
+  },
+  "duo-slate-sunset": {
+   "name": "Slate & Sunset",
+   "cloth": "#1e2026",
+   "foil": "#f48e4d",
+   "foil2": "#6082aa",
+   "source": "#1E2A38 / #FF8C42"
+  },
+  "duo-black-ultraviolet": {
+   "name": "Black & Ultraviolet",
+   "cloth": "#1e2026",
+   "foil": "#8f65ed",
+   "foil2": "#6c6c9d",
+   "source": "#0A0A0F / #8B5CF6"
+  },
+  "duo-olive-rust": {
+   "name": "Olive & Rust",
+   "cloth": "#1e2026",
+   "foil": "#b5532a",
+   "foil2": "#a4ae5b",
+   "source": "#3B3F1F / #B5532A"
+  },
+  "duo-green-blush": {
+   "name": "Green & Blush",
+   "cloth": "#1e2026",
+   "foil": "#f2b5b5",
+   "foil2": "#59b08e",
+   "source": "#1C3B2F / #F2B5B5"
+  },
+  "duo-charcoal-sage": {
+   "name": "Charcoal & Sage",
+   "cloth": "#1e2026",
+   "foil": "#9cb59f",
+   "foil2": "#828785",
+   "source": "#2D2F2E / #9CB59F"
+  },
+  "duo-navy-terracotta": {
+   "name": "Navy & Terracotta",
+   "cloth": "#1e2026",
+   "foil": "#c8664a",
+   "foil2": "#527ab7",
+   "source": "#1B2A41 / #C8664A"
+  },
+  "duo-aubergine-mustard": {
+   "name": "Aubergine & Mustard",
+   "cloth": "#1e2026",
+   "foil": "#d9a520",
+   "foil2": "#a359b0",
+   "source": "#3A1E3F / #D9A520"
+  },
+  "duo-teal-sand": {
+   "name": "Teal & Sand",
+   "cloth": "#1e2026",
+   "foil": "#d8c3a5",
+   "foil2": "#51a6b8",
+   "source": "#12343B / #D8C3A5"
+  },
+  "duo-wine-forest": {
+   "name": "Wine & Forest",
+   "cloth": "#1e2026",
+   "foil": "#c15c7f",
+   "foil2": "#51b88e",
+   "source": "#5A1F33 / #1F4D3A"
+  },
+  "duo-midnight-silver": {
+   "name": "Midnight & Silver",
+   "cloth": "#1e2026",
+   "foil": "#c0c7d1",
+   "foil2": "#5573b5",
+   "source": "#111827 / #C0C7D1"
+  }
+ }
+}

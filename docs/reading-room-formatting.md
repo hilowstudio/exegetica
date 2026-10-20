@@ -1031,3 +1031,29 @@ Not on Gutenberg, Standard Ebooks, CCEL, or Wikisource; the only text is archive
 - **OCR-dropped blanks restored:** "Dr. ——— opened his mouth", "the Bishop of ——", "A—— was a great man", "Priest G—— of L——", "Arianism, and ———". Kept print spellings (Mästricht/Maestricht, Fenelon, *cachination*, *give* for gave) and æ ligatures as printed.
 - **Cover:** the decorated red-and-black title page (scan page n6), WebP'd into `covers.db` and finalized to `/api/cover/{slug}`.
 - Slug `john-duncan_colloquia-peripatetica-ia`, `source=archive.org`, `license=PD-US`, full title + edition in `title_backup`.
+
+## Pulp issue collections: Weird Tales and Fantastic Adventures (2026-10-04)
+
+**108 issue collections** (`weird-tales_YYYY-MM`, `fantastic-adventures_YYYY-MM`), one book per magazine issue, built by `scripts/seed_pulp_issues.py` from `docs/pulp-eligible-stories.csv` (`scripts/build_pulp_eligibility.py`: FictionMags contents + Online Books Page renewal records + Gutenberg catalog). Per Adam's calls:
+
+- **Every issue with at least one public-domain story in clean text** becomes a collection now (66 hold a single story); re-run the seeder as more stories are transcribed and issues fill in.
+- **Serialized novels:** the complete novel goes into every issue that carried an installment, with a note naming the part that issue ran. Included only when every installment's issue is public domain.
+- **Stories already in the library as standalone books stay standalone** and are also included in their issue.
+
+Structure: chapter 1 is **Contents**, the issue's full fiction and verse with each item marked (in this collection / public domain, not yet transcribed / public domain from 2027-01-01 / under copyright through YYYY). Each story opens with `<h2>` title and an italic byline; multi-chapter stories are named "Story: chapter". Cleanup at assembly: Gutenberg drop-cap images restored to their letter (fixed in `webapp/sources/gutenberg.py`, so all future Gutenberg imports get it), source bylines / repeated titles / "Transcribed from" notes / title-page chapters / page-number markers removed. Covers: each issue's own cover from Galactic Central, self-hosted via `build_covers_db.py` (+ `--finalize`; the seeder resets `cover_url`, so finalize after every run).
+
+Skipped (Gutenberg match was a different, longer work with the same title): *The Killer* (Feb 1924), *Dracula's Guest* (Dec 1927), *The Ruling Passion* (Jul 1930).
+
+## Dime novels from Project Gutenberg (2026-10-04)
+
+**284 English dime novels** added, one book per novel (each dime-novel issue was a single story), by `scripts/seed_dime_novels.py` from Gutenberg's catalog (subject/bookshelf "Dime novels", English; the 96 Dutch *Lord Lister* issues and writing *about* dime novels excluded). 14.6M words; Nick Carter, Frank Reade, Buffalo Bill, Frank Merriwell, Deadwood Dick, Old Sleuth, the Bradys, Bertha M. Clay's story-paper romances. Shelved from Gutenberg subject headings: Adventure 204 · Children's 63 · Science Fiction 52 · Mystery & Crime 48 · Romance 36 (multi-shelf). Covers self-hosted.
+
+Two `webapp/sources/gutenberg.py` fixes came out of it (help every future Gutenberg import): `<div class="chapter">` blocks are trusted only when they hold at least half the book's text (many dime novels, like *Varney*, wrap only the heading in the div, which kept headings and dropped the prose: 54 books first came in as 32–300 words), and files with no heading tags split on plain `<p>CHAPTER IV.</p>` paragraphs.
+
+**Root cause of the 20 chapterless horror books:** `seed_horror.py` and `seed_horror_multivol.py`'s `_store` never inserted `book_chapters` (only deleted them). Fixed in both; the importers now write chapters.
+
+## Pulp scans from the Internet Archive: pilot on Weird Tales, October 1927 (2026-10-04)
+
+`scripts/scan_pulp_issue.py "Weird Tales" 1927 10` recovers the issue's public-domain stories that have no clean text yet: ABBYY layout + IA's page-number map (`scripts/ia_pulp_ocr.py`) → cut by the FictionMags start pages (mid-page boundaries by title, or by the capitalized opening word when the title is decorative art) → follow "(Continued on page N)" jumps into the back pages, chained, misread-tolerant → drop running heads, folios, ornaments → conservative correction by Claude Sonnet 5 (numbered paragraphs in chunks of 60; a paragraph the model drops or reshapes keeps its raw text; ads/captions/teasers returned as [OMIT]) → `.seed_cache/pulp/scan/<issue>/`, which `seed_pulp_issues.py` uses only where Gutenberg and the library have nothing, adding a source note. Serial installments are skipped (a serialized novel goes in complete).
+
+Measured against Gutenberg's text of two stories from the same issue: raw scan text differs by ~1.8–2.1% of words after cleanup; after correction ~1%, almost all of which is Gutenberg's own additions (transcriber note, illustration captions) — about one real error per story left. Cost ≈ $1.10 per issue. October 1927 went from 4 to 12 of its 13 pieces.

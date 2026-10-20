@@ -7,7 +7,7 @@
 <meta name="description" content="Read public-domain classics in Exegetica — the Reading Room.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,0..100;1,9..144,300..800,0..100&family=Libre+Baskerville:ital@0;1&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root{
     --paper:#f0e8dc; --surface:#f8f2ea; --surface-2:#e9e0d1; --sunk:#e2d7c6; --ink:#1e2026;
@@ -20,7 +20,11 @@
     --page:#f8f2ea;
     --desk:#e3d8c5;
     --read-scale:1.15rem;
+    --book:"EB Garamond","Garamond",Georgia,serif; --face-k:1.13;
+    --display:"Fraunces",Georgia,serif; --caps:"Libre Baskerville",Georgia,serif;
+    --ex-foil:#c05a64; --ex-text:#86343d; --ex-orn:url('/api/house-cover/motif/library/universal.png');
   }
+  :root[data-face="literata"]{--book:"Literata",Georgia,serif;--face-k:1}
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
     --paper:#14151a; --surface:#1b1d23; --surface-2:#23252c; --sunk:#101116; --ink:#e9e7e0;
     --ink-soft:#a9aeb9; --ink-faint:#787d88; --rule:#2c2f37; --rule-strong:#3b3f49;
@@ -97,6 +101,9 @@
   .rcount b{color:var(--ink);font-weight:600}
   .rclear{font-family:var(--mono);font-size:12px;color:var(--iron);background:none;border:0;padding:0}
   .rtools{display:flex;align-items:center;gap:16px;margin-left:auto}
+  .rtools{flex-wrap:wrap;justify-content:flex-end;row-gap:8px}
+  .rtools .wrap-tog,.rtools .style-btn{white-space:nowrap}
+  @media (hover:none){#flipTog{display:none}}   /* no pointer to hover with */
   .wrap-tog{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.09em;
     text-transform:uppercase;color:var(--ink-faint);background:none;border:0;padding:0}
   .wrap-tog:hover{color:var(--ink-soft)}
@@ -121,7 +128,7 @@
   .cover::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;mix-blend-mode:overlay;
     background:repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 2px,transparent 2px 3px),
       repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 2px,transparent 2px 3px)}
-  .cover:hover{transform:translateY(-5px);box-shadow:0 20px 34px -16px rgba(20,14,6,.78), 0 2px 3px rgba(0,0,0,.3)}
+  .cover:hover,.cover.flip-in{transform:translateY(-5px);box-shadow:0 20px 34px -16px rgba(20,14,6,.78), 0 2px 3px rgba(0,0,0,.3)}
   .cover:hover{text-decoration:none}
   .cv-title{font-family:var(--serif);font-weight:600;font-size:1.02rem;line-height:1.2;letter-spacing:-.005em;
     color:#f7efdc;text-shadow:0 1px 1px rgba(0,0,0,.35);
@@ -136,14 +143,138 @@
     border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);opacity:0;transition:opacity .25s ease}
   .cv-img.ld{opacity:1}
   @media (prefers-reduced-motion:reduce){.cv-img{transition:none}}
+  /* hover flip: cover art turns over to the cloth wrap (title + author always legible). The tile
+     narrows edge-on, the image drops out at the midpoint, and it opens back up showing the wrap.
+     Mouse/trackpad only; touch keeps the art. Reduced motion gets a plain crossfade. */
+  @keyframes cvFlipIn{0%{scale:1 1}50%{scale:0 1}100%{scale:1 1}}
+  @keyframes cvFlipOut{0%{scale:1 1}50%{scale:0 1}100%{scale:1 1}}
+  @keyframes cvArtOff{0%,49.9%{opacity:1}50%,100%{opacity:0}}
+  @keyframes cvArtOn{0%,49.9%{opacity:0}50%,100%{opacity:1}}
+  .cover.wrapped .cv-img.ld{opacity:0}   /* book-wrap mode: the wrap faces out, the art is the reverse */
+  /* the Book Wrap toggle turns every visible book at once (any device, not just hover) */
+  @keyframes cvTurn{0%{scale:1 1}50%{scale:0 1}100%{scale:1 1}}
+  .cover.turn-to-wrap,.cover.turn-to-art{animation:cvTurn .4s ease-in-out}
+  .cover.has-img.turn-to-wrap .cv-img{animation:cvArtOff .4s ease-in-out}
+  .cover.has-img.turn-to-art .cv-img{animation:cvArtOn .4s ease-in-out}
+  @media (prefers-reduced-motion:reduce){
+    .cover.turn-to-wrap,.cover.turn-to-art,.cover.has-img.turn-to-wrap .cv-img,.cover.has-img.turn-to-art .cv-img{animation:none}
+  }
+  @media (hover:hover) and (pointer:fine){
+    .cover.has-img.flip-in{animation:cvFlipIn .34s ease-in-out}
+    .cover.has-img.flip-in .cv-img{animation:cvArtOff .34s ease-in-out forwards}
+    .cover.has-img.flip-out{animation:cvFlipOut .34s ease-in-out}
+    .cover.has-img.flip-out .cv-img{animation:cvArtOn .34s ease-in-out}
+    .cover.has-img.wrapped.flip-in .cv-img{animation:cvArtOn .34s ease-in-out forwards}
+    .cover.has-img.wrapped.flip-out .cv-img{animation:cvArtOff .34s ease-in-out}
+  }
+  @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:reduce){
+    .cover.has-img.flip-in,.cover.has-img.flip-out,.cover.has-img.flip-out .cv-img,
+    .cover.has-img.wrapped.flip-out .cv-img{animation:none}
+    .cover.has-img.flip-in .cv-img{animation:none;opacity:0;transition:opacity .2s ease}
+    .cover.has-img.wrapped.flip-in .cv-img{animation:none;opacity:1;transition:opacity .2s ease}
+  }
+  /* the house cloth cover (Book Wrap): under the art, over the CSS wrap it replaces */
+  .cv-house{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;border-radius:inherit;
+    opacity:0;transition:opacity .25s ease}
+  .cv-house.ld{opacity:1}
+  @media (prefers-reduced-motion:reduce){.cv-house{transition:none}}
+  /* per-book cover style (every reader) */
+  .cv-cog{position:absolute;right:6px;bottom:6px;z-index:4;width:26px;height:26px;display:none;place-items:center;
+    border:0;border-radius:7px;background:rgba(18,12,5,.74);color:#f4ecd8;padding:0;backdrop-filter:blur(2px);
+    box-shadow:0 1px 3px rgba(0,0,0,.4);cursor:pointer}
+  .cv-cog svg,.style-btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.7}
+  .cover:hover .cv-cog,.cover.flip-in .cv-cog,.cv-cog:focus-visible{display:grid}
+  @media (hover:none){.cv-cog{display:grid;opacity:.8}}
+  .cv-cog:hover{background:var(--accent);color:#fff}
+  .style-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--ink-faint);background:none;border:0;padding:0;cursor:pointer}
+  .style-btn:hover{color:var(--ink-soft)}
+  /* the cover-style picker */
+  .sd{width:min(1080px,calc(100vw - 32px))}
+  .sd-top{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px 16px;align-items:center;
+    padding:16px 22px 14px;border-bottom:1px solid var(--rule)}
+  .sd-top .cd-title{margin:0}
+  .sd-top .cd-x{grid-column:3;grid-row:1}
+  .sd-mode{display:inline-flex;padding:3px;border-radius:999px;background:var(--sunk);border:1px solid var(--rule)}
+  .sd-mode button{border:0;background:none;padding:7px 15px;border-radius:999px;font:500 13px var(--sans);color:var(--ink-soft);cursor:pointer}
+  .sd-mode button.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.18)}
+  .sd-scope{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+  .sd-scope-l{font:600 14px var(--sans);color:var(--ink)}
+  .sd-scope select{min-width:260px;max-width:100%;padding:8px 10px;border:1px solid var(--rule-strong);border-radius:8px;
+    background:var(--surface);color:var(--ink);font:14px var(--sans)}
+  .sd-scope-note{grid-column:1/-1;margin:-4px 0 0;font-size:12.5px;color:var(--ink-faint)}
+  .sd-body{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:330px minmax(0,1fr);overflow:hidden}
+  .sd-prev{padding:20px 24px;border-right:1px solid var(--rule);background:var(--surface-2);display:flex;flex-direction:column;
+    gap:10px;align-items:center}
+  .sd-prev img{width:100%;max-width:280px;aspect-ratio:2/3;border-radius:3px 7px 7px 3px;background:var(--sunk);
+    box-shadow:0 14px 26px -16px rgba(20,14,6,.75)}
+  .sd-prev-cap{font-size:12.5px;line-height:1.45;color:var(--ink-faint);text-align:center;max-width:280px}
+  .sd-prev-cap b{font-weight:600;color:var(--ink-soft)}
+  .sd-ctl{overflow-y:auto;padding:16px 22px 22px;display:flex;flex-direction:column;gap:20px;min-width:0}
+  .sd-step-h{display:flex;align-items:center;gap:10px;padding-bottom:8px;margin-bottom:10px;border-bottom:1px solid var(--rule)}
+  .sd-step-h h3{margin:0;font:600 15px var(--sans);color:var(--ink)}
+  .sd-n{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;
+    font:600 12px var(--sans);flex:none}
+  .sd-cur{margin-left:auto;font-size:12.5px;color:var(--ink-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sd-gh{font-size:12px;color:var(--ink-faint);margin:8px 0 5px}
+  .sd-row{display:flex;flex-wrap:wrap;gap:6px}
+  .sd-chip{width:32px;height:32px;padding:0;border-radius:50%;border:2px solid transparent;background:none;cursor:pointer;
+    display:grid;place-items:center}
+  .sd-chip .sd-sw{width:24px;height:24px;border-radius:50%}
+  .sd-chip.on{border-color:var(--ink)}
+  .sd-inh{display:inline-flex;align-items:center;height:32px;border-radius:999px;padding:0 13px;margin-bottom:6px;
+    border:1px solid var(--rule-strong);font:500 12.5px var(--sans);color:var(--ink-soft);background:var(--surface);cursor:pointer}
+  .sd-inh.on{border-color:var(--accent);color:var(--ink);box-shadow:inset 0 0 0 1px var(--accent)}
+  /* fonts and motifs are shown on the chosen board, in the chosen colors */
+  .sd-fonts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+  .sd-ft{display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:10px 10px 7px;border:1px solid var(--rule);
+    border-radius:9px;background:var(--board);cursor:pointer;min-width:0}
+  .sd-ft-img{height:26px;display:block;background:var(--ink-on-board);-webkit-mask:var(--src) center/contain no-repeat;
+    mask:var(--src) center/contain no-repeat}
+  .sd-ft-name{font:11px var(--sans);color:var(--board-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+  .sd-ft:hover,.sd-mt:hover{border-color:var(--ink-faint)}
+  .sd-ft.on,.sd-mt.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+  .sd-mt{width:58px;height:58px;padding:0;border-radius:9px;border:1px solid var(--rule);background:var(--board);
+    cursor:pointer;display:grid;place-items:center}
+  .sd-mt i{width:42px;height:42px;display:block;background:var(--f);-webkit-mask:var(--src) center/contain no-repeat;
+    mask:var(--src) center/contain no-repeat}
+  .sd-mt.txt{width:auto;padding:0 14px;font:500 12.5px var(--sans);color:var(--board-faint)}
+  .sd-ask{display:flex;flex-wrap:wrap;gap:10px;align-items:center;flex:1 1 auto}
+  .sd-ask[hidden]{display:none}
+  .sd-ask p{margin:0;flex:1 1 320px;font-size:13.5px;line-height:1.45;color:var(--ink)}
+  .sd-btns{display:flex;gap:10px;align-items:center;flex:1 1 auto;justify-content:flex-end}
+  .sd-btns[hidden]{display:none}
+  .sd-btns .cd-btn:first-child{margin-right:auto}
+  .sd-dirty{font-size:12.5px;color:var(--ink-faint);margin-right:6px}
+  .sd-dirty[hidden]{display:none}
+  @media (max-width:760px){
+    .sd-top{grid-template-columns:minmax(0,1fr) auto;padding:14px 16px 12px}
+    .sd-mode{grid-column:1/-1;grid-row:2;justify-self:start}
+    .sd-top .cd-x{grid-column:2}
+    .sd-scope select{min-width:0;flex:1 1 100%}
+    /* phones: a full-screen sheet; the sample book stays pinned at the top while the choices scroll under it */
+    .cd.sd{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}
+    .sd-top{gap:8px 12px;padding:calc(10px + env(safe-area-inset-top, 0px)) 16px 10px}
+    .sd-top .cd-kicker{display:none}
+    .sd-scope-l{font-size:13px}
+    .sd-scope-note{display:none}
+    .sd-body{display:flex;flex-direction:column;overflow:hidden}
+    .sd-prev{flex:none;flex-direction:row;align-items:center;justify-content:center;gap:14px;border-right:0;
+      border-bottom:1px solid var(--rule);padding:10px 16px}
+    .sd-prev img{width:104px;max-width:none;flex:none}
+    .sd-prev-cap{text-align:left;max-width:200px}
+    .sd-ctl{flex:1 1 auto;min-height:0;overflow-y:auto;padding:14px 16px 18px;-webkit-overflow-scrolling:touch}
+    .sd .cd-foot{padding-bottom:calc(12px + env(safe-area-inset-bottom, 0px))}
+  }
   .cv-flag{position:absolute;top:0;right:12px;width:16px;height:26px;background:var(--accent);z-index:3;
     clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%)}  /* "in progress" ribbon */
   /* admin-only: replace cover art (shown on hover when the grid has .admin) */
   .cv-edit{position:absolute;top:6px;left:6px;z-index:4;width:26px;height:26px;display:none;place-items:center;
     border:0;border-radius:7px;background:rgba(18,12,5,.74);color:#f4ecd8;font-size:13px;line-height:1;padding:0;
     backdrop-filter:blur(2px);box-shadow:0 1px 3px rgba(0,0,0,.4)}
-  .shelf-grid.admin .cover:hover .cv-edit,.cv-edit:focus{display:grid}
+  .shelf-grid.admin .cover:hover .cv-edit,.shelf-grid.admin .cover.flip-in .cv-edit,.cv-edit:focus{display:grid}
   .cv-edit:hover{background:var(--accent);color:#fff}
+  .admin-link{margin-left:14px;font-family:var(--sans);font-size:12.5px;letter-spacing:0;text-transform:none;color:var(--iron)}
   /* admin cover search: Google Images results in a modal, click one to make it the cover */
   .cd{width:min(980px,calc(100vw - 32px));max-height:min(88vh,900px);padding:0;border:1px solid var(--rule-strong);
     border-radius:14px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow);overflow:hidden}
@@ -163,6 +294,10 @@
   .cd-status.bad{color:var(--accent)}
   .cd-results{flex:1 1 auto;min-height:120px;overflow-y:auto;padding:16px 22px;display:grid;
     grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:16px 14px;align-content:start}
+  .cd-sec{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;padding-bottom:6px;border-bottom:1px solid var(--rule);
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .cd-sec:not(:first-child){margin-top:10px}
+  .cd-sec span{letter-spacing:.04em;text-transform:none;color:var(--ink-faint)}
   .cd-item{display:flex;flex-direction:column;gap:6px;padding:0;border:0;background:none;color:inherit;text-align:left;cursor:pointer;min-width:0}
   .cd-frame{aspect-ratio:2/3;display:grid;place-items:center;background:var(--sunk);border-radius:6px;overflow:hidden;
     box-shadow:inset 0 0 0 1px var(--rule)}
@@ -225,7 +360,7 @@
     .cover{padding:12px 8px 10px 13px;border-radius:2px 4px 4px 2px}
     .cover::before{background:linear-gradient(155deg,rgba(255,255,255,.14),rgba(255,255,255,0) 42%),
       linear-gradient(90deg,rgba(0,0,0,.34) 0 3px,rgba(0,0,0,.10) 3px 6px,transparent 6px)}
-    .cover:hover{transform:none}
+    .cover:hover,.cover.flip-in{transform:none}
     .cv-title{font-size:.78rem;line-height:1.18;-webkit-line-clamp:5}
     .cv-rule{width:16px;height:1.5px;margin:7px 0 6px}
     .cv-author{font-size:.66rem}
@@ -262,27 +397,159 @@
   .stage.twoup .gutter{display:block}
   .chapter{position:relative;height:100%;margin:0;padding:60px 0 40px;column-fill:auto;column-gap:76px;transform:translateX(0);transition:opacity .12s ease}
   .chapter.fading{opacity:0}
-  .ch-eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
-  .chapter :is(h1,h2,h3,h4){font-family:var(--serif);font-weight:600;color:var(--ink);line-height:1.18;text-wrap:balance;margin:1.4em 0 .6em;letter-spacing:-.01em;break-after:avoid}
-  .chapter h1,.chapter h2{font-size:1.55rem;margin-top:.1em}
-  .chapter h3{font-size:1.25rem}
-  .chapter p{font-family:var(--serif);font-size:var(--read-scale);line-height:1.72;color:var(--ink);margin:0 0 1em;hyphens:auto;orphans:2;widows:2;text-align:justify}
-  .chapter blockquote{margin:1.2em 0;padding:.2em 0 .2em 1.2em;border-left:3px solid var(--rule-strong);color:var(--ink-soft);font-style:italic}
-  .chapter blockquote p{color:var(--ink-soft)}
+  /* ===== Exegetica interior: every book set in one house design ===== */
+  .chapter{font-family:var(--book);font-size:calc(var(--read-scale) * var(--face-k));line-height:1.6;color:var(--ink);
+    font-variant-numeric:oldstyle-nums;font-kerning:normal;font-feature-settings:"liga","kern"}
+  .chapter p{font-size:1em;line-height:inherit;margin:0;text-indent:1.5em;text-align:justify;hyphens:manual;
+    orphans:2;widows:2;text-wrap:pretty}
+  .chapter :is(header,h2,h3,h4,.ex-brk,.ex-poem,blockquote,table,figure,ul,ol,hr) + p,
+  .chapter > p:first-child{text-indent:0}
   .chapter :is(em,i){font-style:italic}
-  .chapter hr{border:0;height:1px;background:var(--rule-strong);width:38%;margin:2em auto;break-inside:avoid}
-  .chapter ul,.chapter ol{font-family:var(--serif);font-size:var(--read-scale);line-height:1.7;padding-left:1.4em}
-  .chapter table{border-collapse:collapse;margin:1.1em 0;font-size:.92rem}
-  .chapter td,.chapter th{border:1px solid var(--rule);padding:6px 10px}
-  .chapter sup{font-size:.7em;color:var(--ink-faint)}
+  .chapter abbr{text-decoration:none}
+  /* chapter opener: sunk, labelled, titled, ornamented */
+  .ex-open{padding-top:13vh;margin:0 0 2.1em;text-align:center;break-inside:avoid;break-after:avoid}
+  .chapter .ex-lab{font-family:var(--caps);font-size:.66em;letter-spacing:.32em;text-transform:uppercase;color:var(--ex-text);
+    margin:0 0 .9em;text-indent:0 !important;text-align:center !important}
+  .ex-t{font-family:var(--display);font-weight:560;font-variation-settings:"opsz" 120,"SOFT" 40;font-size:2.05em;
+    line-height:1.08;letter-spacing:-.01em;margin:0 0 .55em;text-wrap:balance;color:var(--ink)}
+  .ex-t.ex-long{font-size:1.5em;line-height:1.15}
+  .ex-t.ex-num{font-size:2.9em;font-weight:500;letter-spacing:.02em}
+  .ex-orn,.ex-o{display:block;background:var(--ex-foil);-webkit-mask:var(--ex-orn) center/contain no-repeat;mask:var(--ex-orn) center/contain no-repeat}
+  .ex-orn{width:1.65em;height:1.65em;margin:0 auto}
+  /* the first paragraph: drop cap + small-capital lead-in */
+  .chapter p.ex-first{text-indent:0}
+  /* footnotes: a small numeral in the text, the note in a popover, the notes gathered at the end */
+  .chapter a.ex-ref{font-family:var(--display);font-size:.6em;font-weight:600;vertical-align:super;line-height:0;color:var(--ex-text);
+    text-decoration:none;padding:0 .12em;font-variant-numeric:lining-nums;cursor:pointer}
+  .chapter .ex-notes{margin-top:2.2em;padding-top:1em;border-top:1px solid var(--rule);font-size:.8em;line-height:1.5}
+  .chapter .ex-notes p.ex-note{text-indent:0;margin:0 0 .55em;text-align:left;hyphens:auto}
+  .chapter .ex-note-n{font-family:var(--display);font-weight:600;color:var(--ex-text);margin-right:.35em;font-variant-numeric:lining-nums}
+  .ex-pop{position:fixed;z-index:60;max-width:min(420px,calc(100vw - 32px));max-height:50vh;overflow:auto;background:var(--page);color:var(--ink);
+    border:1px solid var(--rule-strong);border-radius:6px;box-shadow:0 12px 32px -12px rgba(0,0,0,.45);padding:14px 16px;
+    font-family:var(--book);font-size:calc(var(--read-scale) * var(--face-k) * .82);line-height:1.5}
+  .ex-pop .ex-note-n{display:none}
+  /* a division restored before a chapter ('Book One · The House with the Open Window'): a page of its own */
+  .chapter .ex-parthead{height:100%;break-after:column;-webkit-column-break-after:always;display:flex;flex-direction:column;
+    justify-content:center;align-items:center;text-align:center;gap:.4em}
+  .chapter .ex-parthead p{text-indent:0 !important;margin:0;hyphens:none}
+  .chapter .ex-pl{font-family:var(--caps);font-size:.7em;letter-spacing:.32em;text-transform:uppercase;color:var(--ex-text)}
+  .chapter .ex-pt{font-family:var(--display);font-style:italic;font-weight:420;font-size:2em;line-height:1.15;text-wrap:balance;max-width:16em}
+  .chapter .ex-parthead .ex-orn{margin-top:.8em}
+  /* part-title page */
+  .chapter .ex-open.ex-part{height:100%;break-after:column;-webkit-column-break-after:always;display:flex;flex-direction:column;
+    justify-content:center;padding-top:0;margin:0}
+  .chapter .ex-open.ex-part .ex-t{font-style:italic;font-weight:420;font-size:2.3em}
+  /* epigraphs, letter heads */
+  .chapter .ex-epi{margin:0 auto .3em;max-width:24em;font-style:italic;font-size:.9em;line-height:1.5;text-align:center;text-indent:0;color:var(--ink-soft);hyphens:none}
+  .chapter .ex-epi-by{font-style:normal;font-variant-caps:all-small-caps;letter-spacing:.06em;margin-bottom:2em}
+  .chapter .ex-epi:not(.ex-epi-by):last-of-type{margin-bottom:2em}
+  .chapter blockquote.ex-epi{margin:0 auto 2em;font-size:.9em;max-width:26em}
+  .chapter blockquote.ex-epi p{text-indent:0;text-align:center;font-style:italic;margin:0 0 .3em;hyphens:none}
+  .chapter blockquote.ex-epi cite{display:block;text-align:center;font-style:normal;font-variant-caps:all-small-caps;letter-spacing:.06em;color:var(--ink-soft)}
+  .chapter blockquote.ex-epi cite i{font-variant-caps:normal;font-style:italic}
+  .chapter p.ex-arg{text-indent:0;text-align:center;font-style:italic;font-size:.88em;line-height:1.5;color:var(--ink-soft);
+    max-width:28em;margin:0 auto 1.8em;hyphens:auto}
+  .chapter p.ex-dateline{text-indent:0;text-align:right;font-style:italic;margin:0 0 .6em}
+  .chapter p.ex-salute{text-indent:0;margin:0 0 .4em}
+  .chapter p.ex-salute + p{text-indent:1.5em}
+  .chapter p.ex-ded{text-indent:0;text-align:center;font-style:italic;margin:0 0 1.8em;color:var(--ink-soft);hyphens:none}
+  .chapter blockquote.ex-epi{margin:0 auto 2em;max-width:28em;font-style:italic;font-size:.92em;color:var(--ink-soft);text-align:center}
+  .chapter blockquote.ex-epi p{text-indent:0;text-align:center}
+  .chapter p.ex-by{text-indent:0;text-align:center;font-style:italic;margin:-1em 0 1.6em;color:var(--ink-soft)}
+  .chapter p.ex-close{text-indent:0;text-align:right;hyphens:none}
+  .chapter p.ex-close + p.ex-close{margin-top:0}
+  .chapter p.ex-close:not(.ex-close + .ex-close){margin-top:.9em}
+  .chapter p.ex-first::first-letter{font-family:var(--display);font-weight:600;font-variation-settings:"opsz" 144;
+    -webkit-initial-letter:3;initial-letter:3;margin-right:.1em;color:var(--ex-text)}
+  .chapter p.ex-first.ex-nodrop::first-letter{-webkit-initial-letter:normal;initial-letter:normal;font:inherit;color:inherit;margin:0}
+  .ex-lead{font-variant-caps:all-small-caps;letter-spacing:.05em;font-size:1.04em}
+  /* scene break: three ornaments */
+  .ex-brk{display:flex;justify-content:center;gap:.8em;margin:1.25em 0;break-inside:avoid}
+  .ex-o{width:.85em;height:.85em}
+  /* inner headings */
+  .ex-sub{font-family:var(--display);font-weight:520;font-size:1.22em;line-height:1.2;text-align:center;text-wrap:balance;
+    margin:1.6em 0 .8em;break-after:avoid;color:var(--ink)}
+  /* verse */
+  .ex-poem{width:fit-content;max-width:100%;margin:1em auto 1.2em}
+  .ex-st{margin:0 0 .95em;break-inside:avoid}
+  .ex-l{display:block;padding-left:1.6em;text-indent:-1.6em;text-align:left}
+  .ex-l.ex-i1{padding-left:2.8em}.ex-l.ex-i2{padding-left:4em}
+  /* quotations, lists, tables, figures */
+  .chapter blockquote{margin:1em 1.4em;font-size:.95em}
+  .chapter blockquote p{text-indent:0}
+  .chapter blockquote p + p{text-indent:1.5em}
+  .chapter .ex-dochead{margin:1.5em 0 .7em;text-align:center;break-after:avoid;break-inside:avoid}
+  .chapter .ex-dochead p{text-indent:0 !important;text-align:center;font-family:var(--caps);font-size:.66em;letter-spacing:.16em;
+    text-transform:uppercase;line-height:1.6;color:var(--ink-soft);margin:0;hyphens:none}
+  .chapter .ex-dochead p + p{text-transform:none;letter-spacing:0;font-family:var(--book);font-style:italic;font-size:.82em}
+  .chapter blockquote.ex-doc{margin:0;font-size:1em}                 /* a journal or letter that is the chapter */
+  .chapter blockquote.ex-doc > p:first-child{text-indent:0}
+  .chapter ul,.chapter ol{line-height:1.55;padding-left:1.4em;margin:.8em 0}
+  .chapter table{border-collapse:collapse;margin:1.1em auto;font-size:.88em;font-variant-numeric:lining-nums tabular-nums}
+  .chapter td,.chapter th{border-bottom:1px solid var(--rule);padding:5px 10px;text-align:left;vertical-align:top}
+  .chapter sup{font-size:.68em;line-height:0;color:var(--ex-text)}
+  .chapter hr{border:0;height:0;margin:1.2em 0}
   .chapter :first-child{margin-top:0}
-  /* opening spread: a blank verso + a full-page title recto (chapter 1 only) */
-  .fp-blank{height:100%;-webkit-column-break-after:always;break-after:column}
-  .fp-title{height:100%;-webkit-column-break-after:always;break-after:column;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-  .fp-title .fp-inner{max-width:84%}
-  .fp-t{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.16;letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
-  .fp-rule{width:54px;height:2px;background:var(--brass);margin:22px auto}
-  .fp-a{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ink-soft)}
+  .chapter .katex{font-size:1.05em}
+  .chapter .math-np{white-space:nowrap}
+  .chapter .katex-display{margin:.9em 0;overflow-x:auto;overflow-y:hidden;break-inside:avoid;padding:2px 0}
+  .chapter img{display:block;max-width:100%;max-height:70vh;width:auto;height:auto;margin:1em auto;break-inside:avoid;border-radius:2px}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chapter img{filter:invert(.88) hue-rotate(180deg)}}
+  :root[data-theme="dark"] .chapter img{filter:invert(.88) hue-rotate(180deg)}
+  /* front matter: title page, colophon, contents */
+  .fm-page{height:100%;break-after:column;-webkit-column-break-after:always;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .fm-title{justify-content:space-between;padding:12vh 4% 2vh}
+  .fm-title h1{font-family:var(--display);font-weight:640;font-variation-settings:"opsz" 144,"SOFT" 50;font-size:2.55em;line-height:1.03;
+    letter-spacing:-.012em;margin:.55em 0 .4em;text-wrap:balance}
+  .fm-sub{font-family:var(--display);font-style:italic;font-weight:380;font-size:1em;line-height:1.4;color:var(--ink-soft);max-width:22em;text-wrap:balance}
+  .fm-rule{width:44px;height:1px;background:var(--ex-foil);margin:1.6em auto 1.4em}
+  .fm-by{font-family:var(--caps);font-size:.68em;letter-spacing:.26em;text-transform:uppercase}
+  .fm-imp{font-family:var(--display);font-weight:600;font-size:.64em;letter-spacing:.34em;text-transform:uppercase;color:var(--ex-text)}
+  .fm-colo{justify-content:flex-end;padding-bottom:9vh}
+  .fm-ded{justify-content:center;gap:2.6em;padding:0 8%}
+  .fm-ded p{text-indent:0;text-align:center;hyphens:none;margin:0 0 .5em}
+  .fm-ded .ex-dedication p{font-style:italic;font-size:1em;line-height:1.7}
+  .fm-ded .ex-dedication p i{font-style:normal}
+  .fm-ded .ex-epigraph{font-size:.92em;max-width:26em}
+  .fm-ded .ex-epigraph blockquote{margin:0}
+  .fm-ded .ex-epigraph p{font-style:italic;text-align:left;display:inline-block}
+  .fm-ded .ex-epigraph p span{display:block}
+  .fm-ded p:has(> span) br{display:none}             /* verse lines are block spans; the <br> would double them */
+  .fm-ded .ex-dedication h2{font-family:var(--caps);font-weight:500;font-size:.72em;letter-spacing:.18em;text-transform:uppercase;
+    line-height:1.6;margin:0 0 1.6em;text-wrap:balance;color:var(--ink-soft)}
+  .fm-ded .ex-dedication blockquote{margin:0}
+  .fm-ded .ex-dedication p:has(> span){display:inline-block;text-align:left;line-height:1.45;margin:0 0 .9em;font-size:.95em}
+  .fm-ded .ex-dedication p > span{display:block}
+  .fm-ded .ex-dedication .i1{padding-left:1.5em}
+  .fm-ded .ex-dedication footer p{font-style:normal;font-variant-caps:all-small-caps;letter-spacing:.08em;margin-top:.6em}
+  .fm-ded .ex-epigraph cite{display:block;margin-top:.8em;font-style:normal;font-variant-caps:all-small-caps;letter-spacing:.06em;
+    color:var(--ink-soft);text-align:right}
+  .fm-ded .ex-epigraph cite i{font-variant-caps:normal;font-style:italic}
+  .chapter .ex-epigraph{margin:0 auto 2em;max-width:26em;font-size:.9em;text-align:center}
+  .chapter .ex-epigraph p{text-indent:0;font-style:italic;text-align:center}
+  .chapter .ex-epigraph cite{display:block;font-style:normal;font-variant-caps:all-small-caps;color:var(--ink-soft)}
+  .fm-colo p{text-indent:0;text-align:center;font-size:.74em;line-height:1.7;color:var(--ink-soft);max-width:22em;margin:0 auto .8em;hyphens:none}
+  .fm-colo .fm-imp{margin:1em 0 1.2em}
+  .fm-toc{break-after:column;-webkit-column-break-after:always;padding-top:6vh}
+  .fm-toc h2{font-family:var(--display);font-style:italic;font-weight:420;font-size:1.65em;text-align:center;margin:0 0 .5em}
+  .fm-toc .fm-rule{margin:0 auto 1.8em}
+  .fm-toc ol{list-style:none;margin:0;padding:0}
+  .fm-toc li{break-inside:avoid}
+  .fm-toc button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,auto) 1fr;gap:0 1em;align-items:baseline;width:100%;
+    padding:.5em 0;border-bottom:1px solid var(--rule);cursor:pointer;font-family:var(--display);font-size:.9em;line-height:1.3;color:var(--ink)}
+  .fm-toc button:hover .fm-n{color:var(--ex-text)}
+  .fm-toc .fm-l{font-family:var(--caps);font-size:.62em;letter-spacing:.18em;text-transform:uppercase;color:var(--ex-text);white-space:nowrap}
+  .fm-toc .fm-l:empty{display:none}
+  .fm-toc .fm-l:empty + .fm-n{grid-column:1 / -1}
+  .fm-toc .fm-syn{display:block;font-family:var(--book);font-style:italic;font-size:.8em;line-height:1.35;color:var(--ink-soft);margin-top:.2em}
+  .fm-toc.fm-grid ol{display:grid;grid-template-columns:repeat(auto-fill,minmax(4.2em,1fr));gap:.3em .6em}
+  .fm-toc.fm-grid button{display:block;text-align:center;border:1px solid var(--rule);border-radius:3px;padding:.45em 0;font-size:.95em}
+  .chapter .ex-syn{text-indent:0 !important;text-align:center !important;font-style:italic;font-size:.88em;line-height:1.45;color:var(--ink-soft);
+    max-width:26em;margin:-.2em auto 1.1em;text-wrap:balance;hyphens:none}
+  /* running heads */
+  .runhead{position:absolute;left:0;right:0;top:0;height:52px;display:flex;align-items:center;justify-content:space-between;pointer-events:none;z-index:3;
+    font-family:var(--caps);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint)}
+  .runhead span{flex:1 1 0;min-width:0;text-align:center;padding:0 2em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
   /* page-turn edge zones (also the desktop click targets) */
   .edge{position:absolute;top:0;bottom:44px;width:15%;min-width:52px;max-width:150px;border:0;background:transparent;cursor:pointer;z-index:6;padding:0;display:grid;place-items:center;color:var(--ink-faint);transition:background .15s}
@@ -323,13 +590,14 @@
       <button class="iconbtn tb-toc" id="tocToggle" title="Contents" hidden>☰</button>
       <button class="iconbtn sm" id="fMinus" title="Smaller text" hidden>A−</button>
       <button class="iconbtn sm" id="fPlus" title="Larger text" hidden>A+</button>
+      <button class="iconbtn sm" id="fFace" title="Typeface: EB Garamond or Literata" hidden>Aa</button>
       <button class="iconbtn" id="theme" title="Toggle light / dark">◐</button>
     </div>
   </header>
 
   <main id="browse" hidden>
     <div class="wrap">
-      <div class="eyebrow">Reading Room</div>
+      <div class="eyebrow">Reading Room<a class="admin-link" id="adminCovers" href="/read/admin/covers" hidden>Review magazine covers →</a></div>
       <h1 class="title">The Library</h1>
       <label class="search">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -351,7 +619,10 @@
             <span class="rcount" id="count"></span>
             <div class="rtools">
               <button class="rclear" id="resetF" hidden>Reset filters</button>
-              <button class="wrap-tog" id="wrapTog" type="button" title="Show plain cloth wraps instead of cover art"><span class="sw"></span>Book Wrap</button>
+              <button class="style-btn" id="styleShelf" type="button" title="Cover style for this shelf" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/><circle cx="12" cy="12" r="6.6"/></svg><span id="styleShelfName">Shelf style</span></button>
+              <button class="style-btn" id="styleLib" type="button" title="Cover style for the whole library"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/><circle cx="12" cy="12" r="6.6"/></svg>Library style</button>
+              <button class="wrap-tog" id="flipTog" type="button" title="Turn a book over when you point at it"><span class="sw"></span>Flip on hover</button>
+              <button class="wrap-tog" id="wrapTog" type="button" title="Show the cloth editions instead of cover art"><span class="sw"></span>Book Wrap</button>
             </div>
           </div>
           <div class="shelf-grid" id="grid"></div>
@@ -373,7 +644,7 @@
       <div class="backdrop" id="backdrop"></div>
       <div class="stage" id="stage">
         <div class="book" id="book">
-          <div class="pageport" id="pageport"><article class="chapter" id="chapter"></article><div class="gutter" aria-hidden="true"></div></div>
+          <div class="pageport" id="pageport"><div class="runhead" id="runhead" aria-hidden="true"><span id="rhL"></span><span id="rhR"></span></div><article class="chapter" id="chapter" lang="en"></article><div class="gutter" aria-hidden="true"></div></div>
           <div class="pagebar" id="pagebar"><div class="pb-fill" id="pbFill"></div><span class="pb-l" id="pbL"></span><span class="pb-c" id="pbC"></span><span class="pb-r" id="pbR"></span></div>
         </div>
         <button class="edge prev" id="pgPrev" aria-label="Previous page"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
@@ -381,6 +652,59 @@
       </div>
     </div>
   </main>
+
+  <dialog class="cd sd" id="styleDlg" aria-labelledby="sdTitle">
+    <div class="sd-top">
+      <div class="sd-top-l">
+        <div class="cd-kicker">Book Wrap</div>
+        <h2 class="cd-title" id="sdTitle">Cover style</h2>
+      </div>
+      <div class="sd-mode" role="tablist" aria-label="Which mode to style">
+        <button type="button" role="tab" id="sdModeL" data-mode="light">Light mode</button>
+        <button type="button" role="tab" id="sdModeD" data-mode="dark">Dark mode</button>
+      </div>
+      <button class="cd-x" id="sdClose" type="button" aria-label="Close">×</button>
+      <label class="sd-scope">
+        <span class="sd-scope-l">Which shelf do you want to change?</span>
+        <select id="sdScope" aria-label="Which shelf to style"></select>
+      </label>
+      <p class="sd-scope-note" id="sdNote"></p>
+    </div>
+    <div class="sd-body">
+      <div class="sd-prev">
+        <img id="sdPrev" alt="Preview of the cover">
+        <div class="sd-prev-cap" id="sdPrevCap"></div>
+      </div>
+      <div class="sd-ctl">
+        <section class="sd-step">
+          <div class="sd-step-h"><span class="sd-n">1</span><h3>Color scheme</h3><span class="sd-cur" id="sdCurColor"></span></div>
+          <div id="sdColors"></div>
+        </section>
+        <section class="sd-step">
+          <div class="sd-step-h"><span class="sd-n">2</span><h3>Title font</h3><span class="sd-cur" id="sdCurFont"></span></div>
+          <div class="sd-fonts" id="sdFont" role="radiogroup" aria-label="Title font"></div>
+        </section>
+        <section class="sd-step">
+          <div class="sd-step-h"><span class="sd-n">3</span><h3>Pattern</h3><span class="sd-cur" id="sdCurMotif"></span></div>
+          <div id="sdMotif"></div>
+        </section>
+      </div>
+    </div>
+    <div class="cd-foot">
+      <div class="sd-btns" id="sdBtns">
+        <button class="cd-btn" id="sdReset" type="button" hidden>Clear this shelf's style</button>
+        <span class="sd-dirty" id="sdDirty" hidden></span>
+        <button class="cd-btn" id="sdCancel" type="button">Cancel</button>
+        <button class="cd-btn primary" id="sdSave" type="button">Save</button>
+      </div>
+      <div class="sd-ask" id="sdAsk" hidden>
+        <p id="sdAskText"></p>
+        <button class="cd-btn" id="sdBack" type="button">Back</button>
+        <button class="cd-btn" id="sdKeep" type="button">Only those without</button>
+        <button class="cd-btn primary" id="sdOverride" type="button">Apply to all</button>
+      </div>
+    </div>
+  </dialog>
 
   <dialog class="cd" id="coverDlg" aria-labelledby="cdTitle">
     <div class="cd-head">
@@ -418,7 +742,84 @@
     if(!cur){ cur = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
     var next = cur === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", next); lsSet("exeg-theme", next);
+    if(window.__exegRestyle) window.__exegRestyle();
   });
+  // ---- house cloth covers (Book Wrap): each reader's cover style ----
+  // A style is {light, dark, font, motif}. It can be set for the whole library, for a shelf (a book's
+  // first section) and for one book; for each field the most specific setting wins, then the house
+  // default. Signed-in readers keep their settings in Neon; everyone else in this browser.
+  function isDark(){
+    var t = root.getAttribute("data-theme");
+    return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+  var CS = (function(){
+    var FIELDS = ["light", "dark", "font", "motif"];
+    var KEY = "exeg-cover-prefs";
+    var HOUSE = {light: "exegetica-rose", dark: "exegetica-rose-dark", font: "house", motif: "universal"};
+    var prefs = {library: {}, shelves: {}, books: {}}, server = false, version = "r1", options = null, ready = null;
+    function blank(p){ p = p || {}; return {library: p.library || {}, shelves: p.shelves || {}, books: p.books || {}}; }
+    function local(){ try{ return JSON.parse(localStorage.getItem(KEY) || "null"); }catch(e){ return null; } }
+    function load(){
+      if(ready) return ready;
+      ready = fetch("/api/cover-prefs").then(function(r){
+        if(r.ok){ server = true; return r.json(); }
+        return null;
+      }).catch(function(){ return null; }).then(function(p){
+        var mine = local();
+        if(server && p && !Object.keys(p.library || {}).length && !Object.keys(p.shelves || {}).length &&
+           !Object.keys(p.books || {}).length && mine){   // first sign-in: bring this browser's style along
+          prefs = blank(mine); save(); return prefs;
+        }
+        prefs = blank(server ? p : mine); return prefs;
+      });
+      return ready;
+    }
+    function save(){
+      if(server){
+        return fetch("/api/cover-prefs", {method: "PUT", headers: {"Content-Type": "application/json"}, body: JSON.stringify(prefs)})
+          .catch(function(){});
+      }
+      try{ localStorage.setItem(KEY, JSON.stringify(prefs)); }catch(e){}
+      return Promise.resolve();
+    }
+    function getOptions(){
+      if(!options){
+        options = fetch("/api/house-cover/options").then(function(r){ return r.json(); })
+          .then(function(o){ version = o.version || version; HOUSE = o.house || HOUSE; return o; });
+      }
+      return options;
+    }
+    function shelfOf(b){ return (b.sections && b.sections[0]) || ""; }
+    // A book follows the first of its shelves (in its own section order) that sets a field. "Each shelf's
+    // own motif" means the shelf that chose it, or the book's first shelf when chosen for the library.
+    function resolve(b){
+      var out = {}, bk = prefs.books[b.slug] || {}, secs = b.sections || [];
+      FIELDS.forEach(function(f){
+        if(bk[f]){ out[f] = bk[f]; out[f + "From"] = shelfOf(b); return; }
+        for(var i = 0; i < secs.length; i++){
+          var sh = prefs.shelves[secs[i]];
+          if(sh && sh[f]){ out[f] = sh[f]; out[f + "From"] = secs[i]; return; }
+        }
+        out[f] = prefs.library[f] || HOUSE[f]; out[f + "From"] = shelfOf(b);
+      });
+      return out;
+    }
+    function motifParam(style){ return style.motif === "shelf" ? "shelf:" + (style.motifFrom || "") : style.motif; }
+    function textKey(b){                     // a short hash of the title and author, so a retitled book's cover refreshes
+      var s = (b.title || "") + "|" + (b.author || ""), h = 0;
+      for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+      return (h >>> 0).toString(36);
+    }
+    function url(slug, style, dark, x){
+      return "/api/house-cover/" + encodeURIComponent(slug) + "?t=" + encodeURIComponent(dark ? style.dark : style.light) +
+        "&f=" + encodeURIComponent(style.font) + "&m=" + encodeURIComponent(motifParam(style)) + "&v=" + version +
+        (x ? "&x=" + x : "");
+    }
+    function bookURL(b){ return url(b.slug, resolve(b), isDark(), textKey(b)); }
+    return {FIELDS: FIELDS, load: load, save: save, getOptions: getOptions, resolve: resolve, url: url, bookURL: bookURL,
+            shelfOf: shelfOf, prefs: function(){ return prefs; }, house: function(){ return HOUSE; }};
+  })();
+  try{ matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function(){ if(window.__exegRestyle) window.__exegRestyle(); }); }catch(e){}
   var SCALES = [1.0, 1.08, 1.15, 1.24, 1.34, 1.45];
   var scaleIdx = parseInt(lsGet("exeg-read-scale") || "2", 10);
   if(isNaN(scaleIdx) || scaleIdx < 0 || scaleIdx >= SCALES.length){ scaleIdx = 2; }
@@ -426,6 +827,11 @@
   $("fMinus").addEventListener("click", function(){ if(scaleIdx>0){ scaleIdx--; applyScale(); } });
   $("fPlus").addEventListener("click", function(){ if(scaleIdx<SCALES.length-1){ scaleIdx++; applyScale(); } });
   applyScale();
+  // book face: EB Garamond (house) or Literata (sturdier at small sizes)
+  function applyFace(f){ if(f === "literata"){ root.setAttribute("data-face", "literata"); } else { root.removeAttribute("data-face"); }
+    lsSet("exeg-face", f); if(relayout){ relayout(); } }
+  applyFace(lsGet("exeg-face") || "garamond");
+  $("fFace").addEventListener("click", function(){ applyFace(root.getAttribute("data-face") === "literata" ? "garamond" : "literata"); });
 
   function fmtWords(w){
     if(!w) return "";
@@ -454,7 +860,7 @@
     "Psychology":"#4a3f6b","Science & Nature":"#2c5140","Health & Medicine":"#7d3f3a",
     "Technology & How-To":"#3d5566","Cooking & Home":"#8a4030","Society, Politics & Economics":"#5a5a2e",
     "Art, Music & Performance":"#1f5a63","Sports & Recreation":"#2f4d33","Language & Reference":"#6a5230",
-    "Reference & Knowledge":"#4d4a44"
+    "Reference & Knowledge":"#4d4a44","Christmas Reading":"#24503a"
   };
   var LENGTHS = [
     {key:"s",label:"Short reads · under 20k",lo:0,hi:20000},
@@ -476,24 +882,309 @@
     var books = [], positions = {}, progress = {}, secList = [];
     var READ_MIN = 7;   // a book joins "Continue Reading" only after this many pages read
     function started(slug){ return (progress[slug] || 0) >= READ_MIN; }
-    var state = { q:"", section:null, length:null, sort:"author", reading:false, wrap: lsGet("exeg-book-wrap") === "1" };
+    var state = { q:"", section:null, length:null, sort:"author", reading:false, wrap: lsGet("exeg-book-wrap") !== "0", hoverFlip: lsGet("exeg-hover-flip") !== "0" };   // both on unless turned off
     var filtered = [], shown = 0, BATCH = 48;
 
     var bySlug = {}, isAdmin = false;
     function cloth(sec){ return CLOTH[sec] || "#4a4038"; }
     function cover(b){
       var a = document.createElement("a");
-      a.className = "cover"; a.href = "/read/" + encodeURIComponent(b.slug); a.dataset.slug = b.slug;
+      var art = !!b.cover;   // in book-wrap mode the art still loads, hidden, and the hover flip reveals it
+      a.className = "cover" + (art ? " has-img" : "") + (state.wrap ? " wrapped" : "");
+      a.href = "/read/" + encodeURIComponent(b.slug); a.dataset.slug = b.slug;
       a.style.setProperty("--cloth", cloth(b.sections[0]));
       a.innerHTML =
         '<span class="cv-title">' + esc(b.title) + '</span><span class="cv-rule"></span>' +
         (b.author ? '<span class="cv-author">' + esc(b.author) + '</span>' : "") +
         '<span class="cv-sec">' + esc(b.sections[0] || "") + '</span>' +
-        (!state.wrap && b.cover ? '<img class="cv-img" alt="" loading="lazy" src="' + esc(b.cover) + '" onload="this.classList.add(\'ld\')" onerror="this.remove()">' : "") +
+        '<img class="cv-house" alt="" loading="lazy" onload="this.classList.add(\'ld\')" onerror="this.remove()"' +
+          ((!art || state.wrap) ? ' src="' + esc(CS.bookURL(b)) + '"' : "") + '>' +
+        (art ? '<img class="cv-img" alt="" loading="lazy" src="' + esc(b.cover) + '" onload="this.classList.add(\'ld\')" onerror="var c=this.parentNode;c.classList.remove(\'has-img\');this.remove();if(window.__exegLoadHouse)window.__exegLoadHouse(c)">' : "") +
+        '<button class="cv-cog" type="button" title="Cover style for this book" aria-label="Cover style for this book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/><circle cx="12" cy="12" r="6.6"/></svg></button>' +
         (started(b.slug) ? '<span class="cv-flag" title="In progress"></span>' : "") +
         (isAdmin ? '<button class="cv-edit" type="button" title="Find cover art" aria-label="Find cover art">✎</button>' : "");
       return a;
     }
+
+    // ---- house covers on the shelf ----
+    // Every tile carries its house cover under the art. A book with no art shows it as its cover; for the
+    // rest it loads on demand, when Book Wrap is on or the tile turns over on hover.
+    function houseImg(a){ return a ? a.querySelector(".cv-house") : null; }
+    function loadHouse(a){
+      var img = houseImg(a), b = a && bySlug[a.dataset.slug];
+      if(!img || !b) return;
+      var u = CS.bookURL(b);
+      if(img.getAttribute("src") !== u){ img.classList.remove("ld"); img.setAttribute("src", u); }
+    }
+    function restyle(){            // a style or the light/dark mode changed: redraw what's been drawn
+      Array.prototype.forEach.call(document.querySelectorAll("#grid .cover"), function(a){
+        var img = houseImg(a);
+        if(img && (img.getAttribute("src") || state.wrap || !a.classList.contains("has-img"))) loadHouse(a);
+      });
+    }
+    window.__exegRestyle = restyle;
+
+    // ---- the cover-style picker ----
+    // One dialog: pick the mode (light/dark), pick what to style (the library, a shelf, or the book whose
+    // cog opened it), then 1 colors, 2 font, 3 pattern. Fonts and patterns are drawn in the chosen colors
+    // on the chosen board. Edits to several shelves can be made before saving; Save applies them all.
+    var sdlg = $("styleDlg"), sd = null;
+    function scopeOf(id){
+      if(id === "lib") return {level: "library", key: null};
+      var i = id.indexOf(":");
+      return {level: id.slice(0, i) === "shelf" ? "shelf" : "book", key: id.slice(i + 1)};
+    }
+    function stored(id){
+      var p = CS.prefs(), s = scopeOf(id);
+      return s.level === "library" ? p.library : s.level === "shelf" ? (p.shelves[s.key] || {}) : (p.books[s.key] || {});
+    }
+    function level(id){ return sd.drafts[id] || stored(id); }
+    function sampleFor(id){
+      var s = scopeOf(id);
+      if(s.level === "book") return bySlug[s.key];
+      if(s.level === "shelf"){
+        for(var i = 0; i < books.length; i++){ if((books[i].sections || [])[0] === s.key) return books[i]; }
+      }
+      return bySlug["kenneth-grahame_the-wind-in-the-willows"] || books[0];
+    }
+    function inherited(id){          // what this scope gets from above it, field by field
+      var H = CS.house(), s = scopeOf(id), out = {}, lib = level("lib");
+      CS.FIELDS.forEach(function(f){
+        var v = H[f];
+        if(s.level !== "library" && lib[f]) v = lib[f];
+        if(s.level === "book"){
+          var secs = (sd.book && sd.book.sections) || [];
+          for(var i = 0; i < secs.length; i++){ var sh = level("shelf:" + secs[i]); if(sh[f]){ v = sh[f]; break; } }
+        }
+        out[f] = v;
+      });
+      return out;
+    }
+    function effective(id){
+      var lv = level(id), par = inherited(id), out = {};
+      CS.FIELDS.forEach(function(f){ out[f] = lv[f] || par[f]; });
+      var s = scopeOf(id);
+      out.motifFrom = s.level === "shelf" ? s.key : CS.shelfOf(sampleFor(id) || {});
+      return out;
+    }
+    function edit(f, v){             // set (v) or clear (null) a field on the current scope
+      var d = sd.drafts[sd.scope] || (sd.drafts[sd.scope] = JSON.parse(JSON.stringify(stored(sd.scope))));
+      if(v) d[f] = v; else delete d[f];
+      paint();
+    }
+    function theme(key){ return (sd.opts.themes.filter(function(t){ return t.key === key; })[0]) || sd.opts.themes[0]; }
+    function nameOf(list, key){ var x = list.filter(function(o){ return o.key === key; })[0]; return x ? x.name : key; }
+    function motifName(key){
+      if(key === "shelf") return "each shelf's own";
+      var m = sd.opts.motifs.filter(function(o){ return o.key === key; })[0];
+      return m ? m.subject : key;
+    }
+    var prevT;
+    function paint(){
+      var o = sd.opts, id = sd.scope, s = scopeOf(id), mode = sd.mode;
+      var lv = level(id), par = inherited(id), eff = effective(id), th = theme(eff[mode]);
+      var inhLabel = s.level === "library" ? "" : s.level === "shelf" ? "Use the library's" : "Use the shelf's";
+      // header: mode, scope, note
+      $("sdModeL").classList.toggle("on", mode === "light"); $("sdModeD").classList.toggle("on", mode === "dark");
+      $("sdModeL").setAttribute("aria-selected", mode === "light"); $("sdModeD").setAttribute("aria-selected", mode === "dark");
+      $("sdScope").value = id;
+      $("sdNote").textContent = s.level === "library" ? "Every book, except shelves and books you style separately."
+        : s.level === "shelf" ? "Books on this shelf. Anything you leave on “" + inhLabel + "” follows the library."
+        : "Only this book. Anything you leave on “" + inhLabel + "” follows its shelf and the library.";
+      // the board the tiles sit on, in the chosen colors
+      sdlg.style.setProperty("--board", th.cloth);
+      sdlg.style.setProperty("--ink-on-board", th.text);
+      sdlg.style.setProperty("--board-faint", mode === "dark" ? "rgba(236,227,211,.6)" : "rgba(46,43,40,.55)");
+      // 1. colors for this mode
+      var cbox = $("sdColors"); cbox.innerHTML = "";
+      if(inhLabel){
+        var ci = document.createElement("button"); ci.type = "button"; ci.className = "sd-inh" + (!lv[mode] ? " on" : "");
+        ci.textContent = inhLabel + " (" + theme(par[mode]).name + ")";
+        ci.addEventListener("click", function(){ edit(mode, null); }); cbox.appendChild(ci);
+      }
+      var groups = {};
+      o.themes.filter(function(t){ return t.mode === mode; }).forEach(function(t){ (groups[t.groupName] = groups[t.groupName] || []).push(t); });
+      Object.keys(groups).forEach(function(g){
+        var h = document.createElement("div"); h.className = "sd-gh"; h.textContent = g; cbox.appendChild(h);
+        var row = document.createElement("div"); row.className = "sd-row";
+        groups[g].forEach(function(t){
+          var b = document.createElement("button"), on = eff[mode] === t.key && (lv[mode] || s.level === "library");
+          b.type = "button"; b.className = "sd-chip" + (on ? " on" : ""); b.title = t.name;
+          b.setAttribute("aria-pressed", on ? "true" : "false");
+          var sw = document.createElement("span"); sw.className = "sd-sw";
+          sw.style.background = t.foil2 ? "linear-gradient(90deg," + t.foil + " 50%," + t.foil2 + " 50%)" : t.foil;
+          sw.style.boxShadow = "inset 0 0 0 3px " + t.cloth;
+          b.appendChild(sw);
+          b.addEventListener("click", function(){ edit(mode, t.key); });
+          row.appendChild(b);
+        });
+        cbox.appendChild(row);
+      });
+      $("sdCurColor").textContent = th.name + (lv[mode] || s.level === "library" ? "" : " · inherited");
+      // 2. fonts, each in itself, in the chosen lettering color
+      var fs = $("sdFont"); fs.innerHTML = "";
+      if(inhLabel){
+        var fi = document.createElement("button"); fi.type = "button"; fi.className = "sd-inh" + (!lv.font ? " on" : "");
+        fi.style.gridColumn = "1/-1"; fi.style.justifySelf = "start";
+        fi.textContent = inhLabel + " (" + nameOf(o.fonts, par.font).replace(" (house)", "") + ")";
+        fi.addEventListener("click", function(){ edit("font", null); }); fs.appendChild(fi);
+      }
+      o.fonts.forEach(function(f){
+        var b = document.createElement("button"), on = eff.font === f.key && (lv.font || s.level === "library");
+        b.type = "button"; b.className = "sd-ft" + (on ? " on" : "");
+        b.setAttribute("role", "radio"); b.setAttribute("aria-checked", on ? "true" : "false");
+        b.title = f.name + (f.genres.length && f.key !== "house" ? " — " + f.genres.join(", ") : "");
+        b.innerHTML = '<span class="sd-ft-img" style="--src:url(\'/api/house-cover/font/' + encodeURIComponent(f.key) + '.png?v=' + esc(o.version) + '\')"></span>' +
+          '<span class="sd-ft-name">' + esc(f.name.replace(" (house)", "")) + (f.key === "house" ? " · house" : "") + '</span>';
+        b.addEventListener("click", function(){ edit("font", f.key); });
+        fs.appendChild(b);
+      });
+      $("sdCurFont").textContent = nameOf(o.fonts, eff.font).replace(" (house)", "") + (lv.font || s.level === "library" ? "" : " · inherited");
+      // 3. patterns, in the chosen foil (two-color schemes alternate, as on the cover)
+      var mbox = $("sdMotif"); mbox.innerHTML = "";
+      var top = document.createElement("div"); top.className = "sd-row";
+      if(inhLabel){
+        var mi = document.createElement("button"); mi.type = "button"; mi.className = "sd-inh" + (!lv.motif ? " on" : "");
+        mi.textContent = inhLabel + " (" + motifName(par.motif) + ")";
+        mi.addEventListener("click", function(){ edit("motif", null); }); top.appendChild(mi);
+      }
+      var ms = document.createElement("button"), mson = eff.motif === "shelf" && (lv.motif || s.level === "library");
+      ms.type = "button"; ms.className = "sd-mt txt" + (mson ? " on" : "");
+      ms.textContent = "Each shelf’s own pattern"; ms.addEventListener("click", function(){ edit("motif", "shelf"); });
+      top.appendChild(ms); mbox.appendChild(top);
+      var shelf = s.level === "shelf" ? s.key : (s.level === "book" ? CS.shelfOf(sd.book) : null);
+      var byShelf = {};
+      o.motifs.forEach(function(m){ (byShelf[m.shelf] = byShelf[m.shelf] || []).push(m); });
+      var order = Object.keys(byShelf);
+      if(shelf && byShelf[shelf]){ order.splice(order.indexOf(shelf), 1); order.splice(1, 0, shelf); }
+      order.forEach(function(sh){
+        var h = document.createElement("div"); h.className = "sd-gh"; h.textContent = sh; mbox.appendChild(h);
+        var row = document.createElement("div"); row.className = "sd-row";
+        byShelf[sh].forEach(function(m, i){
+          var parts = m.key === "universal" ? ["library", "universal"] : m.key.split("/");
+          var on = eff.motif === m.key && (lv.motif || s.level === "library");
+          var b = document.createElement("button");
+          b.type = "button"; b.className = "sd-mt" + (on ? " on" : ""); b.title = m.subject;
+          b.setAttribute("aria-pressed", on ? "true" : "false");
+          b.innerHTML = '<i style="--src:url(\'/api/house-cover/motif/' + parts[0] + '/' + parts[1] + '.png\');--f:' +
+            ((th.foil2 && i % 2) ? th.foil2 : th.foil) + '"></i>';
+          b.addEventListener("click", function(){ edit("motif", m.key); });
+          row.appendChild(b);
+        });
+        mbox.appendChild(row);
+      });
+      $("sdCurMotif").textContent = motifName(eff.motif) + (lv.motif || s.level === "library" ? "" : " · inherited");
+      // the preview: one book, in the mode being styled
+      clearTimeout(prevT);
+      prevT = setTimeout(function(){
+        if(!sd) return;
+        var smp = sampleFor(id) || sd.book;
+        $("sdPrev").src = CS.url(smp.slug, effective(id), mode === "dark");
+        var e2 = effective(id);
+        $("sdPrevCap").innerHTML = '<b>' + esc(smp.title) + '</b><br>' + (mode === "dark" ? "Dark" : "Light") + " mode · " +
+          esc(theme(e2[mode]).name) + " · " + esc(nameOf(sd.opts.fonts, e2.font).replace(" (house)", "")) + " · " + esc(motifName(e2.motif));
+      }, 120);
+      // footer
+      $("sdReset").hidden = s.level === "library" || !Object.keys(level(id)).length;
+      $("sdReset").textContent = s.level === "book" ? "Clear this book's style" : "Clear this shelf's style";
+      var n = changed().length;
+      $("sdDirty").hidden = n < 2;
+      $("sdDirty").textContent = n + " unsaved changes";
+    }
+    function buildScopes(){
+      var sel = $("sdScope"), p = CS.prefs(), html = '<option value="lib">Entire library (all shelves)</option>';
+      if(sd.book) html += '<option value="book:' + esc(sd.book.slug) + '">This book only: ' + esc(sd.book.title) + '</option>';
+      html += '<optgroup label="Shelves">' + secList.map(function(x){
+        var custom = Object.keys(p.shelves[x.name] || {}).length || sd.drafts["shelf:" + x.name];
+        return '<option value="shelf:' + esc(x.name) + '">' + esc(x.name) + (custom ? " · custom" : "") + '</option>';
+      }).join("") + '</optgroup>';
+      sel.innerHTML = html;
+    }
+    function openStyle(lvl, key, sample){
+      sd = {drafts: {}, mode: isDark() ? "dark" : "light", book: lvl === "book" ? sample : null,
+            scope: lvl === "library" ? "lib" : (lvl === "shelf" ? "shelf:" : "book:") + key};
+      $("sdAsk").hidden = true; $("sdBtns").hidden = false;
+      $("sdColors").innerHTML = $("sdFont").innerHTML = $("sdMotif").innerHTML = "";
+      buildScopes();
+      sdlg.showModal();
+      CS.getOptions().then(function(o){ if(!sd) return; sd.opts = o; paint(); });
+    }
+    $("sdModeL").addEventListener("click", function(){ if(sd){ sd.mode = "light"; paint(); } });
+    $("sdModeD").addEventListener("click", function(){ if(sd){ sd.mode = "dark"; paint(); } });
+    $("sdScope").addEventListener("change", function(e){ if(sd){ sd.scope = e.target.value; buildScopes(); paint(); } });
+    $("sdClose").addEventListener("click", function(){ sdlg.close(); });
+    $("sdCancel").addEventListener("click", function(){ sdlg.close(); });
+    sdlg.addEventListener("click", function(e){ if(e.target === sdlg) sdlg.close(); });
+    sdlg.addEventListener("close", function(){ sd = null; });
+    $("sdReset").addEventListener("click", function(){ if(sd){ sd.drafts[sd.scope] = {}; buildScopes(); paint(); } });
+
+    function changed(){              // [{id, fields}] for every scope edited in this session
+      var out = [];
+      Object.keys(sd.drafts).forEach(function(id){
+        var cur = stored(id), d = sd.drafts[id];
+        var fields = CS.FIELDS.filter(function(f){ return (cur[f] || "") !== (d[f] || ""); });
+        if(fields.length) out.push({id: id, fields: fields});
+      });
+      return out;
+    }
+    function below(ch){              // customized scopes beneath an edit that set any of its fields
+      var p = CS.prefs(), s = scopeOf(ch.id), out = [];
+      function sets(st){ return st && ch.fields.some(function(f){ return st[f]; }); }
+      if(s.level === "library"){
+        Object.keys(p.shelves).forEach(function(x){ if(!sd.drafts["shelf:" + x] && sets(p.shelves[x])) out.push("shelf:" + x); });
+        Object.keys(p.books).forEach(function(x){ if(!sd.drafts["book:" + x] && sets(p.books[x])) out.push("book:" + x); });
+      } else if(s.level === "shelf"){
+        Object.keys(p.books).forEach(function(x){
+          var b = bySlug[x]; if(b && (b.sections || []).indexOf(s.key) >= 0 && !sd.drafts["book:" + x] && sets(p.books[x])) out.push("book:" + x);
+        });
+      }
+      return out;
+    }
+    function commit(override, chs){
+      var p = CS.prefs();
+      chs.forEach(function(ch){
+        var s = scopeOf(ch.id), d = {};
+        CS.FIELDS.forEach(function(f){ if(sd.drafts[ch.id][f]) d[f] = sd.drafts[ch.id][f]; });
+        if(s.level === "library") p.library = d;
+        else if(s.level === "shelf"){ if(Object.keys(d).length) p.shelves[s.key] = d; else delete p.shelves[s.key]; }
+        else { if(Object.keys(d).length) p.books[s.key] = d; else delete p.books[s.key]; }
+      });
+      if(override){                  // the new settings win: drop those fields from the customized scopes beneath
+        chs.forEach(function(ch){
+          below(ch).forEach(function(id){
+            var s = scopeOf(id), map = s.level === "shelf" ? p.shelves : p.books;
+            if(!map[s.key]) return;
+            ch.fields.forEach(function(f){ delete map[s.key][f]; });
+            if(!Object.keys(map[s.key]).length) delete map[s.key];
+          });
+        });
+      }
+      CS.save(); restyle(); sdlg.close();
+    }
+    $("sdSave").addEventListener("click", function(){
+      if(!sd) return;
+      var chs = changed();
+      if(!chs.length){ sdlg.close(); return; }
+      chs.sort(function(a, b){ return "lsb".indexOf(scopeOf(a.id).level[0]) - "lsb".indexOf(scopeOf(b.id).level[0]); });
+      var seen = {}, shelves = 0, bks = 0;
+      chs.forEach(function(ch){ below(ch).forEach(function(id){ if(!seen[id]){ seen[id] = 1; if(id.indexOf("shelf:") === 0) shelves++; else bks++; } }); });
+      var n = shelves + bks;
+      if(!n){ commit(false, chs); return; }
+      var parts = [];
+      if(shelves) parts.push(shelves + (shelves === 1 ? " shelf" : " shelves"));
+      if(bks) parts.push(bks + (bks === 1 ? " book" : " books"));
+      $("sdAskText").textContent = parts.join(" and ") + (n === 1 ? " has its own" : " have their own") +
+        " settings for this. Apply your change to " + (n === 1 ? "it" : "them") + " as well, or only where there's no custom setting?";
+      $("sdBtns").hidden = true; $("sdAsk").hidden = false;
+      $("sdOverride").onclick = function(){ commit(true, chs); };
+      $("sdKeep").onclick = function(){ commit(false, chs); };
+    });
+    $("sdBack").addEventListener("click", function(){ $("sdAsk").hidden = true; $("sdBtns").hidden = false; });
+
+    // the cogs open the picker on the library, the selected shelf, or one book
+    $("styleLib").addEventListener("click", function(){ openStyle("library", null, null); });
+    $("styleShelf").addEventListener("click", function(){ if(state.section) openStyle("shelf", state.section, null); });
+    window.__exegLoadHouse = loadHouse;
 
     // ---- facet rail ----
     function fopt(label, count, active, onClick){
@@ -533,6 +1224,8 @@
         (state.q ? ' matching “' + esc(state.q) + '”' : "") +
         (state.section ? " in " + esc(state.section) : "");
       $("resetF").hidden = !(act || state.q);
+      $("styleShelf").hidden = !state.section;
+      if(state.section) $("styleShelfName").textContent = state.section + " style";
       var rb = $("readingOpt"); if(rb){ rb.classList.toggle("on", state.reading); }
     }
 
@@ -582,12 +1275,36 @@
     });
     $("wrapTog").classList.toggle("on", state.wrap);
     $("wrapTog").setAttribute("aria-pressed", state.wrap ? "true" : "false");
+    $("flipTog").classList.toggle("on", state.hoverFlip);
+    $("flipTog").setAttribute("aria-pressed", state.hoverFlip ? "true" : "false");
+    $("flipTog").addEventListener("click", function(){
+      state.hoverFlip = !state.hoverFlip; lsSet("exeg-hover-flip", state.hoverFlip ? "1" : "0");
+      $("flipTog").classList.toggle("on", state.hoverFlip);
+      $("flipTog").setAttribute("aria-pressed", state.hoverFlip ? "true" : "false");
+      if(!state.hoverFlip) unhover();
+    });
     $("wrapTog").addEventListener("click", function(){
       state.wrap = !state.wrap; lsSet("exeg-book-wrap", state.wrap ? "1" : "0");
       $("wrapTog").classList.toggle("on", state.wrap);
       $("wrapTog").setAttribute("aria-pressed", state.wrap ? "true" : "false");
-      render(true);   // re-render the current results with/without cover art
+      turnAll();
     });
+    // Turn every book on the page over at once (the art or the wrap swaps in at the midpoint).
+    // Books outside the viewport just swap, so a long page doesn't animate hundreds of tiles.
+    function turnAll(){
+      unhover();
+      var vh = window.innerHeight, tiles = Array.prototype.slice.call(document.querySelectorAll("#grid .cover"));
+      tiles.forEach(function(a){
+        if(state.wrap) loadHouse(a);
+        a.classList.remove("flip-in", "flip-out", "turn-to-wrap", "turn-to-art");
+        a.classList.toggle("wrapped", state.wrap);
+      });
+      void document.body.offsetWidth;            // one reflow, so a turn restarts if toggled mid-turn
+      tiles.forEach(function(a){
+        var r = a.getBoundingClientRect();
+        if(r.bottom > 0 && r.top < vh) a.classList.add(state.wrap ? "turn-to-wrap" : "turn-to-art");
+      });
+    }
     $("loadMore").addEventListener("click", function(){ render(false); });
     $("mSort").addEventListener("change", function(){ state.sort = this.value; compute(); });
     $("mLen").addEventListener("change", function(){ state.length = this.value || null; compute(); });
@@ -596,11 +1313,11 @@
     var dlg = $("coverDlg"), dlgBook = null;
     function jsonRes(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return {ok:r.ok, status:r.status, j:j}; }); }
     function cdStatus(msg, bad){ $("cdStatus").textContent = msg || ""; $("cdStatus").classList.toggle("bad", !!bad); }
-    function applyCover(url){
-      var b = dlgBook; if(!b) return;
+    function applyCover(url, meta){                     // meta: {source, page} for attribution
+      var b = dlgBook; if(!b) return; meta = meta || {};
       cdStatus(url ? "Downloading that image and saving it as the cover…" : "Restoring the original cover…");
       dlg.classList.add("busy");
-      fetch("/api/reading/cover", {method:"PUT", headers:{"Content-Type":"application/json"}, body: JSON.stringify({slug: b.slug, cover_url: url})})
+      fetch("/api/reading/cover", {method:"PUT", headers:{"Content-Type":"application/json"}, body: JSON.stringify({slug: b.slug, cover_url: url, source: meta.source || "", source_page: meta.page || ""})})
         .then(jsonRes)
         .then(function(res){
           dlg.classList.remove("busy");
@@ -628,11 +1345,18 @@
       img.alt = r.title || ""; img.loading = "lazy"; img.referrerPolicy = "no-referrer"; img.src = r.thumb;
       img.onerror = function(){ btn.remove(); };
       meta.className = "cd-meta";
-      dims.textContent = r.w && r.h ? r.w + "×" + r.h : "size unknown";
-      meta.appendChild(dims); meta.appendChild(document.createTextNode(r.domain ? " · " + r.domain : ""));
+      if(r.w && r.h){ dims.textContent = r.w + "×" + r.h; meta.appendChild(dims); }
+      meta.appendChild(document.createTextNode(r.domain ? (r.w && r.h ? " · " : "") + r.domain : ""));
       frame.appendChild(img); btn.appendChild(frame); btn.appendChild(meta);
-      btn.addEventListener("click", function(){ applyCover(r.image); });
+      btn.addEventListener("click", function(){
+        applyCover(r.image, {source: r.source || ("Image search: " + (r.domain || "")), page: r.page || ""});
+      });
       return btn;
+    }
+    function section(name, note){
+      var h = document.createElement("div"), n = document.createElement("span");
+      h.className = "cd-sec"; h.textContent = name; n.textContent = note; h.appendChild(n);
+      return h;
     }
     function openCoverSearch(b){
       dlgBook = b; dlg.classList.remove("busy");
@@ -648,15 +1372,67 @@
           if(!res.ok){ cdStatus(res.status === 403 ? "You're not signed in as a library admin." : "Couldn't find that book in the catalog.", true); return; }
           var j = res.j;
           $("cdQuery").textContent = j.query; $("cdGoogle").href = j.google_url; $("cdGoogle").hidden = false;
-          if(j.error === "no-key"){ cdStatus("Results can't show here until the server has a SERPER_API_KEY. Open the search in Google Images, right-click an image, choose “Copy image address”, and paste it below."); return; }
-          if(j.error === "search-failed"){ cdStatus("The image search didn't respond. Try again, or open it in Google Images and paste an image address below.", true); return; }
-          if(!j.results.length){ cdStatus("No images found. Try Google Images, or paste an image address below."); return; }
-          cdStatus(j.results.length + " results. Click one to make it the cover. Sizes in red are under 400px wide and will look soft.");
-          $("cdResults").replaceChildren.apply($("cdResults"), j.results.map(resultItem));
+          var mag = j.magazine, pulp = j.pulpcovers || [], cb = j.coverbrowser || [], g = j.results || [];
+          function count(n, one){ return n ? n + " " + (n === 1 ? one : one + "es") : "No match for this book"; }
+          var parts = [];
+          if(mag && mag.results.length){                 // the story's own magazine issue: shown first, only when known
+            parts.push(section("Original magazine issue", mag.issue), mag.results.map(resultItem));
+          }
+          parts.push(section("PulpCovers", count(pulp.length, "match")), pulp.map(resultItem));
+          if(j.error === "no-key"){
+            parts.push(section("Google Images", "needs a SERPER_API_KEY on the server; use “Open in Google Images” and paste an address below"));
+          } else if(j.error === "no-credits"){
+            parts.push(section("Google Images and CoverBrowser", "every search key is out of credits; top up Serper or Tavily, or use “Open in Google Images” and paste an address below"));
+          } else if(j.error === "search-failed"){
+            parts.push(section("Google Images", "the search didn't respond; try again, or open it in Google Images"));
+          } else {
+            var web = j.web_source === "tavily" ? "Web images (Tavily)" : "Google Images";
+            parts.push(section("CoverBrowser", count(cb.length, "match")), cb.map(resultItem),
+                       section(web, g.length + " results" + (j.fallback ? " · backup search key" : "")), g.map(resultItem));
+          }
+          cdStatus("Click a cover to use it. Sizes in red are under 400px wide and will look soft.");
+          $("cdResults").replaceChildren.apply($("cdResults"), [].concat.apply([], parts));
         })
         .catch(function(){ if(dlgBook === b) cdStatus("Couldn't reach the server to search.", true); });
     }
+    // hover flip to the cloth wrap (CSS does the motion; these just set which side faces out)
+    function flip(a, toWrap){
+      if(!a || !a.classList.contains("has-img")) return;
+      if(toWrap && !state.hoverFlip) return;
+      if(toWrap) loadHouse(a);
+      if(toWrap){ a.classList.remove("flip-out"); a.classList.add("flip-in"); }
+      else if(a.classList.contains("flip-in")){ a.classList.remove("flip-in"); a.classList.add("flip-out"); }
+    }
+    function tileOf(e){ return e.target.closest ? e.target.closest(".cover") : null; }
+    // Mid-flip the tile narrows to nothing, so the pointer "leaves" it and comes back, which would
+    // bounce the flip. So hover is judged against the tile's resting outline, captured on entry.
+    var hovered = null, hoverBox = null;
+    function unhover(){ if(hovered){ flip(hovered, false); hovered = null; hoverBox = null; } }
+    $("grid").addEventListener("mouseover", function(e){
+      var a = tileOf(e); if(!a || a === hovered) return;
+      unhover();
+      hovered = a; hoverBox = a.getBoundingClientRect(); flip(a, true);
+    });
+    document.addEventListener("mousemove", function(e){
+      if(!hoverBox) return;
+      var r = hoverBox;   // a few px of slack above for the hover lift
+      if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top - 8 || e.clientY > r.bottom) unhover();
+    }, {passive: true});
+    window.addEventListener("scroll", unhover, {passive: true});
+    document.documentElement.addEventListener("mouseleave", unhover);
+    $("grid").addEventListener("focusin", function(e){ var a = tileOf(e); if(a && a.matches(":focus-visible")) flip(a, true); });
+    $("grid").addEventListener("focusout", function(e){ var a = tileOf(e); if(a && !a.contains(e.relatedTarget)) flip(a, false); });
+    $("grid").addEventListener("animationend", function(e){
+      if(e.animationName === "cvFlipOut") e.target.classList.remove("flip-out");
+      if(e.animationName === "cvTurn") e.target.classList.remove("turn-to-wrap", "turn-to-art");
+    });
     $("grid").addEventListener("click", function(e){
+      var cog = e.target.closest ? e.target.closest(".cv-cog") : null;
+      if(cog){
+        e.preventDefault(); e.stopPropagation();
+        var ct = cog.closest(".cover"), cb = ct && bySlug[ct.dataset.slug]; if(cb) openStyle("book", cb.slug, cb);
+        return;
+      }
       var btn = e.target.closest ? e.target.closest(".cv-edit") : null; if(!btn) return;
       e.preventDefault(); e.stopPropagation();
       var a = btn.closest(".cover"), b = a && bySlug[a.dataset.slug]; if(b) openCoverSearch(b);
@@ -665,7 +1441,7 @@
     dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.close(); });   // backdrop
     dlg.addEventListener("close", function(){ dlgBook = null; });
     $("cdForm").addEventListener("submit", function(e){
-      e.preventDefault(); var url = $("cdUrl").value.trim(); if(url) applyCover(url);
+      e.preventDefault(); var url = $("cdUrl").value.trim(); if(url) applyCover(url, {source: "Pasted address"});
     });
     $("cdRevert").addEventListener("click", function(){
       if(window.confirm("Remove the custom cover and go back to the original?")) applyCover("");
@@ -679,6 +1455,7 @@
     // ---- load the whole catalog once, then everything is instant client-side ----
     Promise.all([
       fetch("/api/catalog").then(function(r){ return r.json(); }),
+      CS.load(), CS.getOptions().catch(function(){}),
       fetch("/api/reading/position").then(function(r){ return r.ok ? r.json() : {positions:{}}; }).catch(function(){ return {positions:{}}; })
     ]).then(function(res){
       var d = res[0];
@@ -687,10 +1464,11 @@
         $("browseEmpty").textContent = "The Reading Room is still being stocked — check back soon.";
         return;
       }
+      res.splice(1, 2);
       positions = (res[1] && res[1].positions) || {};
       progress = (res[1] && res[1].progress) || {};
       isAdmin = !!d.admin;
-      if(isAdmin){ $("grid").classList.add("admin"); }
+      if(isAdmin){ $("grid").classList.add("admin"); $("adminCovers").hidden = false; }
       books = d.items;
       books.forEach(function(b){ b._t = (b.title || "").toLowerCase(); b._a = (b.author_sort || "").toLowerCase(); b._s = b._t + " " + (b.author || "").toLowerCase(); bySlug[b.slug] = b; });
       var counts = {};
@@ -714,12 +1492,31 @@
   function initReader(slug){
     $("reader").hidden = false;
     document.body.classList.add("reading");
-    $("tocToggle").hidden = false; $("fMinus").hidden = false; $("fPlus").hidden = false;
+    $("tocToggle").hidden = false; $("fMinus").hidden = false; $("fPlus").hidden = false; $("fFace").hidden = false;
     $("back").href = "/read"; $("back").textContent = "‹ Library";
     var book = null, current = 0, savedPositions = {};   // `book` = fetched book DATA (toc, title…)
     var chapter = $("chapter"), pageport = $("pageport"), bookEl = $("book"), pagebar = $("pagebar");
     var stride = 1, pages = 1, page = 0, colGap = 56, numCols = 1, colsPer = 1, foliosBefore = 0, frontCols = 0, turnT, maxPage = 0;
     var pendingAnchor = null;   // child index to land on after (re)paginating
+    var chapterName = "", openerCol = -1;
+    // the inside follows the book's cover style: its ornament is the cover motif, its accents the cover foil
+    function applyInterior(){
+      if(!book){ return; }
+      CS.load().then(function(){ return CS.getOptions(); }).then(function(o){
+        var st = CS.resolve({slug: slug, sections: book.genres || []});
+        var key = isDark() ? st.dark : st.light, th = null;
+        (o.themes || []).forEach(function(t){ if(t.key === key){ th = t; } });
+        var m = st.motif || "universal", mk = m;
+        if(m === "shelf" || m.indexOf("shelf:") === 0){
+          var shelf = m === "shelf" ? st.motifFrom : m.slice(6); mk = "universal";
+          for(var i = 0; i < (o.motifs || []).length; i++){ if(o.motifs[i].shelf === shelf && o.motifs[i].key !== "universal"){ mk = o.motifs[i].key; break; } }
+        }
+        var src = mk === "universal" ? "/api/house-cover/motif/library/universal.png" : "/api/house-cover/motif/" + mk + ".png";
+        root.style.setProperty("--ex-orn", "url('" + src + "')");
+        if(th){ root.style.setProperty("--ex-foil", th.foil); root.style.setProperty("--ex-text", th.text || th.foil); }
+      }).catch(function(){});
+    }
+    window.__exegRestyle = applyInterior;
 
     var narrow = function(){ return matchMedia("(max-width:820px)").matches; };
     function setToc(open){
@@ -761,7 +1558,10 @@
       // gutter (two-up only) + continuous folio numbering estimated from word counts
       colsPer = cols;
       $("stage").classList.toggle("twoup", cols === 2);
-      frontCols = (current === 1) ? (narrow() ? 1 : 2) : 0;   // blank + title opening spread (blank hidden on mobile)
+      var opener = chapter.querySelector(".ex-open");
+      var firstBody = opener || chapter.querySelector(":scope > :not(.fm-page):not(.fm-toc)");
+      frontCols = (current === 1 && firstBody) ? Math.round(firstBody.offsetLeft / (colW + colGap)) : 0;   // title, colophon, contents
+      openerCol = opener ? Math.round(opener.offsetLeft / (colW + colGap)) : -1;
       numCols = Math.max(1, Math.round((chapter.scrollWidth + colGap) / (colW + colGap)));
       foliosBefore = 0;
       var curWords = (book.toc[current - 1] && book.toc[current - 1].words) || 0;
@@ -783,6 +1583,15 @@
       var title = (entry && entry.title) ? entry.title : ("Section " + current);
       var leftIdx = page * colsPer;                 // 0-based column (page) within this chapter
       var contentIdx = leftIdx - frontCols;         // < 0 → blank/title front matter: no folio, no header
+      var shortHead = function(t){ t = String(t || "").split(/:\s|;\s|,?\s+or,?\s+/i)[0]; return t.length > 46 ? t.slice(0, 44).replace(/\s+\S*$/, "") + "…" : t; };
+      var headFor = function(col){ return (col < frontCols || col === openerCol || col >= numCols) ? "" : null; };
+      if(colsPer === 2){
+        $("rhL").textContent = headFor(leftIdx) === "" ? "" : shortHead(book.title);
+        $("rhR").textContent = headFor(leftIdx + 1) === "" ? "" : shortHead(chapterName || book.title);
+      } else {
+        $("rhL").textContent = ""; $("rhR").textContent = headFor(leftIdx) === "" ? "" : shortHead(chapterName || book.title);
+      }
+      $("rhL").style.display = colsPer === 2 ? "" : "none";
       if(contentIdx < 0){
         $("pbL").textContent = ""; $("pbR").textContent = ""; $("pbC").textContent = "";
       } else {
@@ -795,7 +1604,7 @@
           $("pbL").textContent = "";
           $("pbR").textContent = folioL;
         }
-        $("pbC").textContent = title;
+        $("pbC").textContent = "";
       }
       var frac = pages > 1 ? page / (pages - 1) : 1;
       var overall = ((current - 1) + frac) / (book.chapter_count || 1);
@@ -805,6 +1614,7 @@
     }
     function goToPage(p, animate){
       page = Math.min(Math.max(p, 0), pages - 1);
+      closePop();
       var apply = function(){
         chapter.style.transform = "translateX(" + (-page * stride) + "px)";   // reposition while hidden
         updateBar();
@@ -840,6 +1650,7 @@
       $("tocBookTitle").textContent = book.title;
       $("tocBookAuthor").textContent = book.author || "";
       renderToc();
+      applyInterior();
       var fromHash = parseInt((location.hash || "").replace("#", ""), 10);
       var start = fromHash || savedPositions[slug] || parseInt(lsGet("read-pos:" + slug) || "0", 10) || 1;
       start = Math.min(Math.max(start, 1), book.chapter_count || 1);
@@ -851,7 +1662,7 @@
       (book.toc || []).forEach(function(c){
         var li = document.createElement("li"), a = document.createElement("a");
         a.href = "#" + c.section_number; a.dataset.n = c.section_number;
-        a.innerHTML = '<span class="n">' + c.section_number + '</span>' + esc(c.title || ("Section " + c.section_number));
+        a.innerHTML = '<span class="n">' + c.section_number + '</span>' + esc((c.label ? c.label + " · " : "") + (c.name || c.title || ("Section " + c.section_number)));
         a.addEventListener("click", function(ev){ ev.preventDefault(); loadChapter(c.section_number, "start"); if(narrow()){ setToc(false); } });
         li.appendChild(a); ol.appendChild(li);
       });
@@ -864,30 +1675,86 @@
       fetch("/api/books/" + encodeURIComponent(slug) + "/chapter/" + n).then(function(r){ return r.ok ? r.json() : null; }).then(function(c){
         if(!c){ return; }
         current = c.section_number;
-        var eyebrow = esc(book.title) + " · " + current + " / " + (book.chapter_count || "?");
+        chapterName = c.name || c.label || "";
         var front = "";
-        if(current === 1){                            // open the book on a blank verso + a title recto
-          front = '<div class="fp-blank" aria-hidden="true"></div>' +
-            '<div class="fp-title"><div class="fp-inner">' +
-              '<div class="fp-t">' + esc(book.title) + '</div><div class="fp-rule"></div>' +
-              (book.author ? '<div class="fp-a">' + esc(book.author) + '</div>' : '') +
-            '</div></div>';
+        if(current === 1){                            // title page, colophon, contents (Exegetica front matter)
+          var tparts = book.title.split(/:\s+/), main = tparts.shift(), sub = tparts.join(": ");
+          var face = root.getAttribute("data-face") === "literata" ? "Literata" : "EB Garamond";
+          front = (narrow() ? "" : '<div class="fm-page" aria-hidden="true"></div>') +
+            '<section class="fm-page fm-title"><div><i class="ex-orn"></i><h1>' + esc(main) + '</h1>' +
+              (sub ? '<div class="fm-sub">' + esc(sub) + '</div>' : '') +
+              '<div class="fm-rule"></div>' + (book.author ? '<div class="fm-by">' + esc(book.author) + '</div>' : '') +
+            '</div><div class="fm-imp">Exegetica</div></section>' +
+            '<section class="fm-page fm-colo"><i class="ex-orn"></i><div class="fm-imp">Exegetica</div>' +
+              '<p>This edition of <i>' + esc(main) + '</i> was set, corrected and designed for the Exegetica library.</p>' +
+              '<p>Its text is in the public domain and belongs to everyone.</p>' +
+              '<p>Set in ' + face + ' and Fraunces. Free to read; never for sale.</p></section>';
+          if(book.front_html){                          // the author's dedication / epigraph, on a page of its own
+            // a long dedication (a sonnet) and an epigraph each get a page; short ones share one
+            var parts = book.front_html.match(/<div class="ex-(?:dedication|epigraph)"[\s\S]*?<\/div>(?=<div class="ex-|$)/g) || [book.front_html];
+            var long = book.front_html.replace(/<[^>]+>/g, "").length > 500;
+            (long && parts.length > 1 ? parts : [book.front_html]).forEach(function(p){
+              front += '<section class="fm-page fm-ded">' + p + '</section>';
+            });
+          }
+          if((book.toc || []).length > 1){
+            // chapters known only by numerals set as a compact grid of numerals
+            var bare = book.toc.filter(function(t){ return !t.label && /^(?:[IVXLCDM]+|\d+)\.?$/i.test(t.name || ""); }).length;
+            var grid = bare === book.toc.length;
+            front += '<section class="fm-toc' + (grid ? ' fm-grid' : '') + '"><h2>Contents</h2><div class="fm-rule"></div><ol>' +
+              book.toc.map(function(t){
+                return '<li><button data-go="' + t.section_number + '"><span class="fm-l">' + esc(t.label || "") + '</span>' +
+                  '<span class="fm-n">' + esc(t.name || t.title || ("Section " + t.section_number)) +
+                  (t.syn ? '<span class="fm-syn">' + esc(t.syn) + '</span>' : '') + '</span></button></li>';
+              }).join("") + '</ol></section>';
+          }
         }
-        chapter.innerHTML = front + '<div class="ch-eyebrow">' + eyebrow + '</div>' + c.html;
-        markToc();
-        history.replaceState(null, "", "/read/" + encodeURIComponent(slug) + "#" + current);
-        var savedAnchor = parseInt(lsGet("read-anchor:" + slug + ":" + current) || "0", 10);
-        pendingAnchor = (landing === "restore" && savedAnchor > 0) ? savedAnchor : null;
-        paginate();
-        if(landing === "end"){ goToPage(pages - 1, false); }
-        // re-measure once layout/webfonts settle (metrics shift how columns fill)
-        var settle = function(){
-          if(landing === "end"){ pendingAnchor = null; paginate(); goToPage(pages - 1, false); }
-          else { pendingAnchor = firstVisibleBlockIndex(); paginate(); }
-        };
-        requestAnimationFrame(settle);
-        if(document.fonts && document.fonts.ready){ document.fonts.ready.then(settle); }
+        chapter.innerHTML = front + c.html;
+        typesetMath(chapter, c.html).then(function(){ laidOut(landing); });
       });
+    }
+    // Maths books store equations as TeX (\( \) inline, \[ \] display); KaTeX loads only when a
+    // chapter needs it, and typesets before pagination measures the columns.
+    var KATEX = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/";
+    var mathLoad = null;
+    function loadMath(){
+      if(mathLoad){ return mathLoad; }
+      function js(src){ return new Promise(function(ok, fail){ var s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = fail; document.head.appendChild(s); }); }
+      var css = document.createElement("link"); css.rel = "stylesheet"; css.href = KATEX + "katex.min.css"; document.head.appendChild(css);
+      mathLoad = js(KATEX + "katex.min.js").then(function(){ return js(KATEX + "contrib/auto-render.min.js"); })
+        .catch(function(){ mathLoad = null; });   // offline: show the raw TeX, retry on the next chapter
+      return mathLoad;
+    }
+    function typesetMath(el, html){
+      if(html.indexOf("\\(") < 0 && html.indexOf("\\[") < 0){ return Promise.resolve(); }
+      return loadMath().then(function(){
+        if(!window.renderMathInElement){ return; }
+        window.renderMathInElement(el, {delimiters: [{left: "\\[", right: "\\]", display: true}, {left: "\\(", right: "\\)", display: false}], throwOnError: false});
+        // keep trailing punctuation on the formula's line ("… size as dx." never strands the ".")
+        el.querySelectorAll(".katex").forEach(function(k){
+          var t = k.nextSibling, m = t && t.nodeType === 3 && !k.closest(".katex-display") && t.data.match(/^[.,;:!?)\]]+/);
+          if(!m){ return; }
+          var w = document.createElement("span"); w.className = "math-np";
+          k.parentNode.insertBefore(w, k); w.appendChild(k); w.appendChild(document.createTextNode(m[0]));
+          t.data = t.data.slice(m[0].length);
+        });
+        return document.fonts && document.fonts.ready;
+      });
+    }
+    function laidOut(landing){
+      markToc();
+      history.replaceState(null, "", "/read/" + encodeURIComponent(slug) + "#" + current);
+      var savedAnchor = parseInt(lsGet("read-anchor:" + slug + ":" + current) || "0", 10);
+      pendingAnchor = (landing === "restore" && savedAnchor > 0) ? savedAnchor : null;
+      paginate();
+      if(landing === "end"){ goToPage(pages - 1, false); }
+      // re-measure once layout/webfonts settle (metrics shift how columns fill)
+      var settle = function(){
+        if(landing === "end"){ pendingAnchor = null; paginate(); goToPage(pages - 1, false); }
+        else { pendingAnchor = firstVisibleBlockIndex(); paginate(); }
+      };
+      requestAnimationFrame(settle);
+      if(document.fonts && document.fonts.ready){ document.fonts.ready.then(settle); }
     }
     var saveT;
     function savePosition(){
@@ -900,6 +1767,26 @@
       }, 700);
     }
 
+    var pop = null;
+    function closePop(){ if(pop){ pop.remove(); pop = null; } }
+    chapter.addEventListener("click", function(e){
+      var go = e.target.closest && e.target.closest("[data-go]");
+      if(go){ e.preventDefault(); loadChapter(parseInt(go.dataset.go, 10), "start"); return; }
+      var ref = e.target.closest && e.target.closest("a.ex-ref");
+      if(ref){                                      // a footnote opens beside its marker, never turns the page
+        e.preventDefault(); e.stopPropagation(); closePop();
+        var note = chapter.querySelector("#fn" + ref.dataset.fn);
+        if(!note){ return; }
+        pop = document.createElement("div"); pop.className = "ex-pop"; pop.setAttribute("role", "note");
+        pop.innerHTML = note.innerHTML; document.body.appendChild(pop);
+        var r = ref.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight;
+        var x = Math.min(Math.max(16, r.left - w / 2), innerWidth - w - 16);
+        var y = (r.bottom + 10 + h < innerHeight - 50) ? r.bottom + 10 : Math.max(70, r.top - h - 10);
+        pop.style.left = x + "px"; pop.style.top = y + "px";
+      }
+    });
+    document.addEventListener("click", function(e){ if(pop && !pop.contains(e.target)){ closePop(); } });
+    document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closePop(); } });
     // ---- input: edge zones, keys, swipe ----
     $("pgNext").addEventListener("click", nextPage);
     $("pgPrev").addEventListener("click", prevPage);
