@@ -7,6 +7,7 @@ the Reading Room's history shelves). No tool calls an outside service at questio
 from __future__ import annotations
 
 import asyncio
+import contextlib
 import logging
 import os
 from pathlib import Path
@@ -33,6 +34,7 @@ SERVER_INSTRUCTIONS = (
 )
 server = Server("social-sciences", version="0.1.0", instructions=SERVER_INSTRUCTIONS)
 db: SocialSciencesDB | None = None
+db_stamp: int | None = None  # the file's mtime when it was opened
 
 SOURCE_ENUM = ["all", "documents", "speeches", "narratives", "books"]
 
@@ -452,13 +454,20 @@ async def list_tools() -> list[Tool]:
 
 @server.call_tool()
 async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
-    global db
+    global db, db_stamp
+    path = get_db_path()
+    # the web app swaps in a newer copy of the file while this server runs; reopen when it changes
+    stamp = path.stat().st_mtime_ns if path.exists() else None
+    if db is not None and stamp != db_stamp:
+        with contextlib.suppress(Exception):
+            await db.conn.close()
+        db = None
     if db is None:
-        path = get_db_path()
         if not path.exists():
             return text(f"Social sciences database not found at {path}. Run scripts/socialsci/build_social_sciences_db.py.")
         db = SocialSciencesDB(path)
         await db.connect()
+        db_stamp = stamp
     handler = HANDLERS.get(name)
     if not handler:
         return text(f"Unknown tool: {name}")
