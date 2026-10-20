@@ -11,7 +11,7 @@ import aiosqlite
 logger = logging.getLogger("socialsci-mcp")
 
 SOURCES = {
-    "documents": ("avalon", "nara", "ilga", "govinfo", "wikisource", "cap"),
+    "documents": ("avalon", "nara", "ilga", "govinfo", "wikisource", "cap", "gutenberg"),
     "speeches": ("miller-center",),
     "narratives": ("docsouth",),
     "books": ("reading-room",),

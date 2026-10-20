@@ -167,6 +167,10 @@ SUPPLEMENTS = [  # (Wikisource page file, title, author, date, collection)
     ("Cornerstone_Speech", "The Cornerstone Speech", "Alexander H. Stephens", "1861-03-21", "Speeches"),
     ("A_Model_of_Christian_Charity", "A Model of Christian Charity (\"A City upon a Hill\")", "John Winthrop", "1630", "Sermons"),
     ("The_American_Constitution_and_the_Slave", "The American Constitution and the Slave (Glasgow address)", "Frederick Douglass", "1860-03-26", "Speeches"),
+    ("Petition_of_Right", "The Petition of Right", "Parliament of England", "1628", "Founding influences"),
+]
+GUTENBERG_SUPPLEMENTS = [  # (file, title, author, date, collection)
+    ("locke-7370.txt", "Second Treatise of Government", "John Locke", "1690", "Founding influences"),
 ]
 
 
@@ -192,6 +196,21 @@ def supplements():
         yield ({"source": "wikisource", "collection": coll, "title": title, "author": author, "date": date,
                 "year": year_of(date), "url": "https://en.wikisource.org/wiki/" + page["title"].replace(" ", "_"),
                 "citation": f"{author}, {title} ({date}). Text: Wikisource (CC BY-SA 4.0).", "rights": "public domain text"}, text)
+    for fname, title, author, date, coll in GUTENBERG_SUPPLEMENTS:
+        p = base / fname
+        if not p.exists():
+            continue
+        raw = p.read_text(encoding="utf-8", errors="replace")
+        start = re.search(r"\*\*\* ?START OF (?:THE|THIS) PROJECT GUTENBERG EBOOK[^\n]*\n", raw)
+        end = re.search(r"\*\*\* ?END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK", raw)
+        body = raw[start.end() if start else 0: end.start() if end else len(raw)].strip()
+        body = re.sub(r"\r\n?", "\n", body)
+        ch1 = re.search(r"(?m)^CHAPTER\.? I\.", body)  # skip the digitizer's note and contents ahead of Chapter I
+        body = body[ch1.start():] if ch1 else body
+        body = re.sub(r"(?<!\n)\n(?!\n)", " ", body)  # unwrap hard-wrapped lines, keep paragraph breaks
+        yield ({"source": "gutenberg", "collection": coll, "title": title, "author": author, "date": date,
+                "year": year_of(date), "url": None, "citation": f"{author}, {title} ({date}).",
+                "rights": "public domain"}, body)
     zp = base / "worcester.zip"
     if zp.exists():
         import zipfile
