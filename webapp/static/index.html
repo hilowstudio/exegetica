@@ -169,7 +169,7 @@
   .empty{max-width:640px;margin:7vh auto 0;text-align:center;color:var(--ink-soft);padding:0 20px}
   .empty .eyebrow{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--iron-soft);margin-bottom:12px}
   .empty h1{font-family:var(--serif);font-weight:600;font-size:1.95rem;color:var(--ink);margin:0 0 .3em}
-  .empty > p{max-width:46ch;margin:0 auto}
+  .empty > div > p{max-width:46ch;margin:0 auto}
   .exgroups{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;text-align:left}
   @media(max-width:560px){.exgroups{grid-template-columns:1fr}.vlab{display:none}}
   .exg .exh{font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--iron-soft);margin-bottom:8px}
@@ -281,6 +281,7 @@
     <main class="scroll" id="main">
       <div class="thread" id="thread">
         <div class="empty" id="empty">
+          <div class="es-bible">
           <div class="eyebrow">Answers you can check</div>
           <h1>Begin a study</h1>
           <p>Ask about a passage, a word, a doctrine, or the historic church. Every answer is drawn from your own tools and cited.</p>
@@ -305,6 +306,34 @@
               <button type="button">Who was Nicodemus, and where does he appear in John?</button>
               <button type="button">Where was Jacob's well, where Jesus met the Samaritan woman?</button>
             </div>
+          </div>
+          </div>
+          <div class="es-history" hidden>
+          <div class="eyebrow">Answers you can check</div>
+          <h1>Begin an inquiry</h1>
+          <p>Ask about a document, an event, a court case, or a law. Every answer is drawn from the primary sources and cited.</p>
+          <div class="exgroups">
+            <div class="exg">
+              <div class="exh">Primary sources</div>
+              <button type="button">What reasons did the seceding states give for leaving the Union?</button>
+              <button type="button">How did Frederick Douglass learn to read, in his own words?</button>
+            </div>
+            <div class="exg">
+              <div class="exh">The Constitution</div>
+              <button type="button">Quiz me for the Constitution Test.</button>
+              <button type="button">What does the Fourteenth Amendment say, and why was it added?</button>
+            </div>
+            <div class="exg">
+              <div class="exh">The Court &amp; the law</div>
+              <button type="button">Can a school search a student's backpack? What has the Supreme Court said?</button>
+              <button type="button">What do I have to do if I'm in a car accident in Illinois?</button>
+            </div>
+            <div class="exg">
+              <div class="exh">Faith &amp; the founding</div>
+              <button type="button">Did the founders intend America to be a Christian nation?</button>
+              <button type="button">What did Jefferson mean by a "wall of separation"?</button>
+            </div>
+          </div>
           </div>
         </div>
       </div>
@@ -411,6 +440,10 @@ function setSubject(sj,fresh){
   document.getElementById("s-bible").setAttribute("aria-pressed",sj==="bible");
   document.getElementById("s-history").setAttribute("aria-pressed",sj==="history");
   document.getElementById("p-professor").textContent=personaName("professor");
+  const eb=document.querySelector("#empty .es-bible"),eh=document.querySelector("#empty .es-history");
+  if(eb&&eh){eb.hidden=sj==="history";eh.hidden=sj!=="history";}
+  const inp=document.getElementById("input");
+  if(inp)inp.placeholder=sj==="history"?"Ask a history question…":"Ask a question about the Gospel of John…";
 }
 document.getElementById("s-bible").onclick=()=>setSubject("bible",true);
 document.getElementById("s-history").onclick=()=>setSubject("history",true);
@@ -626,8 +659,8 @@ sendBtn.onclick=()=>{const t=input.value;input.value="";auto();send(t);};
 input.addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();sendBtn.click();}});
 function auto(){input.style.height="auto";input.style.height=Math.min(input.scrollHeight,180)+"px";}
 input.addEventListener("input",auto);
-document.getElementById("examples").addEventListener("click",e=>{
-  const b=e.target.closest("button");if(b){input.value=b.textContent;auto();sendBtn.click();}});
+document.getElementById("empty").addEventListener("click",e=>{
+  const b=e.target.closest(".exgroups button");if(b){input.value=b.textContent;auto();sendBtn.click();}});
 
 /* Account, Model & Key, and Appearance all live in the global Settings panel now
    (/static/settings.js, loaded at end of body — supersedes the old acct.js). */
