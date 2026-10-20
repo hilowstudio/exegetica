@@ -67,10 +67,13 @@ Social Sciences can be built almost entirely on owned data. Nearly every core so
 | CShapes 2.0 | World state borders 1886-2019, dated | CSV / GeoJSON | CC BY-NC-SA 4.0 | **Yes, non-commercial** |
 | historical-basemaps | World borders at snapshot years, 2000 BCE on | GitHub | GPL-3.0 | **Yes** (rough in places) |
 | Natural Earth | Base map | naturalearthdata.com | Public domain | **Yes** |
+| GeoNames | Places worldwide with coordinates, population, country and admin codes, alternate names | download.geonames.org dumps (allCountries.zip, cities500, countryInfo.txt); skip the live API | CC BY 4.0 | **Yes, with credit** |
+| mledoze/countries (the data behind REST Countries) | Every country: capitals, languages, currencies, borders, region, area | GitHub JSON | ODbL 1.0 | **Yes** (self-host the file; skip the restcountries.com API) |
 | BLS | CPI, wages, employment | download.bls.gov flat files (send a contact User-Agent) | Public domain | **Yes** |
 | Census + Historical Statistics (1975) | Population and economic tables, colonial times to 1970 | Census FTP; Historical Statistics as PDF | U.S. government work | **Yes** (Historical Statistics needs table extraction) |
 | Maddison Project 2023 | GDP and population, 169 countries | rug.nl (Excel) | CC BY 4.0 | **Yes** |
 | World Bank WDI | Development indicators since 1960 | Bulk ZIP (270 MB CSV) | CC BY 4.0 | **Yes** |
+| OECD | Economic and social statistics for member countries | OECD Data Explorer CSV exports | CC BY 4.0 | **Yes** |
 
 ### Excluded
 
@@ -83,6 +86,7 @@ Social Sciences can be built almost entirely on owned data. Nearly every core so
 | HathiTrust datasets | Research use only, no redistribution | LOC digitized books |
 | Fordham Sourcebooks | Asks that texts not be stored locally | Use as a finding aid; take PD originals |
 | NHGIS | No redistribution without permission | Newberry |
+| IMF data | Terms forbid automated bulk download without written permission | World Bank WDI, OECD, Maddison |
 
 ## Proposed v1 tools
 
@@ -127,7 +131,7 @@ From the 2026-27 catalog. Graduation requires 3.0 credits of Social Sciences (3.
 3. **People and events:** Wikidata harvest (U.S. and world history subset).
 4. **Reference:** Webster's 1828, Wikipedia excerpts if wanted.
 5. **World History:** Wikisource and LOC post-1400 primary sources, world borders by year (CShapes, historical-basemaps).
-6. **Economics and Geography:** BLS, Census, Historical Statistics, Maddison, WDI; Newberry county boundaries, Natural Earth; NBER Macrohistory if permission comes through.
+6. **Economics and Geography:** BLS, Census, Historical Statistics, Maddison, WDI; OECD; Newberry county boundaries, Natural Earth, GeoNames, the mledoze countries file; NBER Macrohistory if permission comes through.
 7. **Depth:** a curated Chronicling America slice, post-2018 Supreme Court terms from CourtListener, Psychology and Sociology data.
 
 ## Licensing notes

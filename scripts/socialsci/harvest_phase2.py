@@ -80,8 +80,16 @@ def _listing(url: str) -> list[str]:
     ctx = ssl.create_default_context()
     ctx.check_hostname, ctx.verify_mode = False, ssl.CERT_NONE  # ilga.gov's FTP host serves a mismatched certificate
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; " + UA + ")"})
-    with urllib.request.urlopen(req, timeout=60, context=ctx) as r:
-        html = r.read().decode("latin-1")
+    for attempt in range(4):  # the server sometimes drops a connection mid-response
+        try:
+            with urllib.request.urlopen(req, timeout=60, context=ctx) as r:
+                html = r.read().decode("latin-1")
+            break
+        except Exception:  # noqa: BLE001
+            if attempt == 3:
+                print(f"  listing FAILED {url}")
+                return []
+            time.sleep(5 * (attempt + 1))
     time.sleep(0.3)
     return [h for h in re.findall(r'HREF="([^"]+)"', html, re.I) if not h.rstrip("/").endswith("/ftp/ILCS") and h != "/ftp/"]
 

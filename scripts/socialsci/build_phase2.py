@@ -255,7 +255,8 @@ def statutes(con) -> None:
             continue
         ch, act, sec = cm.group(1), cm.group(2), cm.group(3)
         body = t[cm.end():].strip()
-        hm = re.match(r"\(?[^)\n]*\)?\s*\n?\s*Sec\.\s*[^\s.]+\.\s*([^.\n]{0,160}\.)", body)
+        # the section number can carry its own dots (11-501.2), so match it exactly; older acts have no heading
+        hm = re.match(r"\(?[^)\n]*\)?\s*\n?\s*Sec\.\s*" + re.escape(sec) + r"\.\s*(?!\()([^.\n]{0,160}\.)", body)
         heading = hm.group(1).strip() if hm else ""
         body = re.sub(r"\(Source: P\.A\.[^)]*\)\s*$", "", body).strip()
         con.execute("insert into statutes (code, title, section, heading, citation, text) values (?,?,?,?,?,?)",
