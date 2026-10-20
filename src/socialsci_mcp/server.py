@@ -112,6 +112,85 @@ TOOLS = [
         ),
         inputSchema={"type": "object", "properties": {}},
     ),
+    Tool(
+        name="search_cases",
+        description=(
+            "Search every U.S. Supreme Court opinion from 1791 through about 2018 (U.S. Reports, Caselaw Access "
+            "Project) by name, topic, or words in the opinions. Results show the citation, date, vote, who wrote "
+            "for the majority, the issue area, and whether a law was struck down or a precedent overruled "
+            "(Supreme Court Database coding). Landmark cases rank first. Open one with get_case."
+        ),
+        inputSchema={"type": "object", "properties": {
+            "query": {"type": "string", "description": "A case name or a topic (e.g. 'Miranda', 'school prayer', 'search of a student's locker')."},
+            "issue_area": {"type": "string", "description": "Optional: Criminal Procedure, Civil Rights, First Amendment, Due Process, Privacy, Federalism, Judicial Power, Economic Activity, and others."},
+            "year_from": {"type": "integer"}, "year_to": {"type": "integer"},
+            "limit": {"type": "integer", "default": 8, "maximum": 20},
+        }, "required": ["query"]},
+    ),
+    Tool(
+        name="get_case",
+        description=(
+            "Read a Supreme Court case by citation ('347 U.S. 483'), name ('Marbury v. Madison'), or id. Returns "
+            "the coding (date, vote, majority and dissenting justices, issue area, law struck down) and the "
+            "opinions: part='summary' (default: the header and the opening of the Court's opinion), "
+            "'majority', 'concurrence', 'dissent', or 'all', in pages."
+        ),
+        inputSchema={"type": "object", "properties": {
+            "case": {"type": "string"},
+            "part": {"type": "string", "enum": ["summary", "majority", "concurrence", "dissent", "all"]},
+            "page": {"type": "integer", "default": 1},
+        }, "required": ["case"]},
+    ),
+    Tool(
+        name="get_statute",
+        description=(
+            "The U.S. Code (current through Public Law 119-120) and the Illinois Compiled Statutes chapters on "
+            "elections, vehicles, courts, criminal law and procedure, corrections, civil procedure and "
+            "liability, families, estates, property and landlord-tenant, human rights, consumer fraud, and "
+            "employment. Give a citation ('18 U.S.C. § 1001', '720 ILCS 5/12-3') for the exact section, or a "
+            "query to search."
+        ),
+        inputSchema={"type": "object", "properties": {
+            "citation": {"type": "string"},
+            "query": {"type": "string"},
+            "code": {"type": "string", "enum": ["usc", "ilcs"], "description": "Limit a search to one code."},
+        }},
+    ),
+    Tool(
+        name="get_constitution_annotation",
+        description=(
+            "The Constitution Annotated (Congressional Research Service, 2022): clause-by-clause essays on how "
+            "each part of the Constitution has been understood and applied, with the leading cases. Give an "
+            "article/section/clause or an amendment (with optional section) to list its essays, an essay_id to "
+            "read one, or a query to search."
+        ),
+        inputSchema={"type": "object", "properties": {
+            "article": {"type": "string"}, "section": {"type": "string"}, "clause": {"type": "string"},
+            "amendment": {"type": "string"}, "essay_id": {"type": "string"}, "query": {"type": "string"},
+        }},
+    ),
+    Tool(
+        name="lookup_legislator",
+        description=(
+            "Every member of Congress since 1789 and every president and vice president: terms, chamber, state, "
+            "district, and party, by name (optionally a state)."
+        ),
+        inputSchema={"type": "object", "properties": {
+            "name": {"type": "string"}, "state": {"type": "string", "description": "Two-letter state code."},
+        }, "required": ["name"]},
+    ),
+    Tool(
+        name="define_term",
+        description=(
+            "Define a word as it was used in its time: Black's Law Dictionary (2nd ed., 1910) for legal terms, "
+            "and Webster's American Dictionary of the English Language (1828) for founding-era English. Use it "
+            "when an old document or opinion uses a word whose meaning has shifted."
+        ),
+        inputSchema={"type": "object", "properties": {
+            "term": {"type": "string"},
+            "source": {"type": "string", "enum": ["blacks", "webster", "both"]},
+        }, "required": ["term"]},
+    ),
 ]
 
 
@@ -218,8 +297,152 @@ async def h_guide(a: dict) -> list[TextContent]:
     return text("\n".join(parts))
 
 
+def _justice(name: str | None) -> str:
+    """Supreme Court Database short names ('EWarren', 'HLBlack') as people write them ('E. Warren', 'H.L. Black')."""
+    import re as _re
+    n = name or ""
+    suffix = " II" if n.endswith("2") else ""  # JHarlan2 is John Marshall Harlan II
+    m = _re.match(r"^([A-Z]+?)([A-Z][a-z].*?)\d?$", n)
+    return f"{'.'.join(m.group(1))}. {m.group(2)}{suffix}" if m else n
+
+
+def _justices(names: str | None) -> str:
+    return ", ".join(_justice(n.strip()) for n in (names or "").split(",") if n.strip())
+
+
+def _case_card(c: dict) -> str:
+    bits = [f"{c['short_name']}, {c['cite'] or 'U.S. Reports'} ({c['date'] or c['year']})"]
+    meta = []
+    if c.get("vote"):
+        meta.append(f"vote {c['vote']}")
+    if c.get("maj_writer"):
+        meta.append(f"opinion by {_justice(c['maj_writer'])}")
+    if c.get("issue_area"):
+        meta.append(c["issue_area"])
+    if c.get("struck_down"):
+        meta.append(f"struck down {c['struck_down']}")
+    if c.get("overruled_precedent"):
+        meta.append("overruled precedent")
+    if meta:
+        bits.append("  ·  ".join(meta))
+    bits.append(f"case id {c['id']}")
+    return "\n".join(bits)
+
+
+async def h_search_cases(a: dict) -> list[TextContent]:
+    rows = await db.search_cases(a["query"], a.get("issue_area"), a.get("year_from"), a.get("year_to"),
+                                 max(1, min(int(a.get("limit") or 8), 20)))
+    if not rows:
+        return text("No cases found. Try the case name, other words, or a wider date range.")
+    return text("Source: U.S. Reports via the Caselaw Access Project (Harvard Law School); coding from the "
+                "Supreme Court Database (Penn State).\n\n" + "\n\n".join(f"[{i}] " + _case_card(r) for i, r in enumerate(rows, 1)))
+
+
+async def h_get_case(a: dict) -> list[TextContent]:
+    c = await db.find_case(str(a["case"]))
+    if not c:
+        return text("No matching case. Try search_cases.")
+    part = a.get("part") or "summary"
+    page = max(1, int(a.get("page") or 1))
+    ops = await db.case_opinions(c["id"])
+    head = _case_card(c)
+    if c.get("majority"):
+        head += f"\nMajority: {_justices(c['majority'])}"
+    if c.get("dissent"):
+        head += f"\nDissent: {_justices(c['dissent'])}"
+    head += "\nSource: U.S. Reports via the Caselaw Access Project; coding from the Supreme Court Database."
+    if part == "summary":
+        first = ops[0]["text"][:3500] if ops else ""
+        others = ", ".join(f"{o['type']} ({o['author'] or 'unsigned'})" for o in ops)
+        return text(f"{head}\nOpinions: {others}\n\n{(c.get('head') or '')[:1200]}\n\n[Opening of the Court's opinion]\n{first}"
+                    "\n\n[Ask for part='majority', 'concurrence', 'dissent', or 'all' to read more.]")
+    pick = ops if part == "all" else [o for o in ops if o["type"] == part]
+    if not pick:
+        return text(f"{head}\n\nThis case has no {part} opinion.")
+    body = "\n\n".join(f"[{o['type'].title()} ({o['author'] or 'unsigned'})]\n{o['text']}" for o in pick)
+    size = 7000
+    pages = max(1, -(-len(body) // size))
+    chunk = body[(page - 1) * size: page * size]
+    return text(f"{head}\n\n{chunk}\n\n[page {page} of {pages}]")
+
+
+async def h_statute(a: dict) -> list[TextContent]:
+    if a.get("citation"):
+        rows = await db.statute(a["citation"])
+        if rows:
+            return text("\n\n".join(f"{r['citation']}. {r['heading']}\n{r['text']}" for r in rows))
+        if not a.get("query"):
+            return text("No section with that citation. Check the form ('18 U.S.C. § 1001', '720 ILCS 5/12-3') or search with query.")
+    rows = await db.search_statutes(a.get("query") or a.get("citation") or "", a.get("code"))
+    if not rows:
+        return text("No matching sections.")
+    return text("\n\n---\n\n".join(f"{r['citation']}. {r['heading']}\n{r['text']}" for r in rows))
+
+
+def _provision(a: dict) -> str | None:
+    if a.get("amendment"):
+        n = roman_or_int(a["amendment"])
+        return f"Amdt{n}" + (f".S{roman_or_int(a['section'])}" if a.get("section") else "")
+    if a.get("article"):
+        roman = {"1": "I", "2": "II", "3": "III", "4": "IV", "5": "V", "6": "VI", "7": "VII"}.get(roman_or_int(a["article"]), str(a["article"]).upper())
+        p = f"Art{roman}"
+        if a.get("section"):
+            p += f".S{roman_or_int(a['section'])}"
+        if a.get("clause"):
+            p += f".C{roman_or_int(a['clause'])}"
+        return p
+    return None
+
+
+async def h_conan(a: dict) -> list[TextContent]:
+    src = "Source: Constitution of the United States: Analysis and Interpretation (Congressional Research Service, 2022), govinfo.gov."
+    if a.get("essay_id"):
+        rows = await db.conan(essay_id=a["essay_id"])
+        return text(f"{rows[0]['essay_id']} {rows[0]['title']}\n{src}\n\n{rows[0]['text']}" if rows else "No essay with that id.")
+    prov = _provision(a)
+    if prov:
+        rows = await db.conan(provision=prov)
+        if rows:
+            return text(f"Essays on {prov} ({len(rows)}). Open one with essay_id.\n{src}\n\n" +
+                        "\n".join(f"- {r['essay_id']} {r['title']}" for r in rows[:60]))
+        if not a.get("query"):
+            return text(f"No essays found for {prov}. Try a query instead.")
+    rows = await db.conan(query=a.get("query") or "")
+    if not rows:
+        return text("No matching essays.")
+    return text(src + "\n\n" + "\n\n---\n\n".join(f"{r['essay_id']} {r['title']}\n{r['text']}" for r in rows))
+
+
+async def h_legislator(a: dict) -> list[TextContent]:
+    rows = await db.legislators(a["name"], a.get("state"))
+    if not rows:
+        return text("No one by that name in the congressional and executive records.")
+    out = []
+    for r in rows:
+        if "executive" in r:
+            out.append("Executive terms:\n" + "\n".join(f"- {e['name']}: {'President' if e['type'] == 'prez' else 'Vice President'}, "
+                                                        f"{e['start']} to {e['end']} ({e['party'] or 'no party'}){', ' + e['how'] if e.get('how') else ''}"
+                                                        for e in r["executive"]))
+            continue
+        terms = "\n".join(f"- {'Senator' if t['type'] == 'sen' else 'Representative'}, {t['state']}"
+                          f"{'-' + t['district'] if t['type'] == 'rep' and t['district'] not in ('', 'None') else ''}, "
+                          f"{t['party'] or 'no party'}, {t['start']} to {t['end']}" for t in r["terms"])
+        out.append(f"{r['name']} (born {r['birthday'] or 'unknown'}){' (current member)' if r['current'] else ''}\n{terms}")
+    return text("Source: @unitedstates/congress-legislators (public domain).\n\n" + "\n\n".join(out))
+
+
+async def h_define(a: dict) -> list[TextContent]:
+    src = None if (a.get("source") or "both") == "both" else a["source"]
+    rows = await db.define(a["term"], src)
+    if not rows:
+        return text("No entry found. Try the singular form or a related word.")
+    return text("\n\n".join(f"{r['term']} ({r['source']})\n{r['definition'][:2500]}" for r in rows))
+
+
 HANDLERS = {"search_history": h_search, "find_documents": h_find, "get_document": h_get,
-            "get_constitution": h_constitution, "get_flag_code": h_flag, "constitution_test_guide": h_guide}
+            "get_constitution": h_constitution, "get_flag_code": h_flag, "constitution_test_guide": h_guide,
+            "search_cases": h_search_cases, "get_case": h_get_case, "get_statute": h_statute,
+            "get_constitution_annotation": h_conan, "lookup_legislator": h_legislator, "define_term": h_define}
 
 
 @server.list_tools()

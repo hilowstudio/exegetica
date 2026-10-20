@@ -221,3 +221,184 @@ class SocialSciencesDB:
     async def stats(self) -> dict:
         rows = await self.all("select source, count(*) n from documents group by source")
         return {r["source"]: r["n"] for r in rows}
+
+    # ---- Phase 2: law (cases, statutes, Constitution Annotated, Congress, glossary) ----
+    async def has_table(self, name: str) -> bool:
+        return bool(await self.one("select 1 from sqlite_master where name=?", (name,)))
+
+    async def _vec(self, table: str, query: str, k: int) -> list[tuple[int, float]]:
+        if not self.has_vec or not await self.has_table(table):
+            return []
+        import numpy as np
+        v = self.model().encode([query])[0].astype(np.float32)
+        v /= float(np.linalg.norm(v)) or 1.0
+        q8 = np.clip(np.round(v * 127.0), -127, 127).astype(np.int8).tobytes()
+        rows = await self.all(f"select id, distance from {table} where emb match vec_int8(?) and k = ? order by distance", (q8, k))
+        return [(r["id"], r["distance"]) for r in rows]
+
+    CASE_COLS = ("c.id, c.name, c.short_name, c.cite, c.date, c.year, c.issue_area, c.vote, c.maj_writer, c.majority, "
+                 "c.dissent, c.struck_down, c.overruled_precedent, c.importance, c.words")
+
+    async def search_cases(self, query: str, issue_area=None, year_from=None, year_to=None, limit=8) -> list[dict]:
+        """Keyword (opinion text) + meaning (case summaries), fused, then nudged toward landmark cases
+        by the Caselaw Access Project's citation-importance percentile."""
+        if not await self.has_table("cases"):
+            return []
+        filt, fp = "", []
+        if issue_area:
+            filt += " and c.issue_area like ?"
+            fp.append(f"%{issue_area}%")
+        if year_from:
+            filt += " and c.year >= ?"
+            fp.append(int(year_from))
+        if year_to:
+            filt += " and c.year <= ?"
+            fp.append(int(year_to))
+        scores: dict[int, float] = {}
+        names = [t for t in re.findall(r"[A-Za-z0-9']+", query or "") if t.lower() not in STOPWORDS]
+        if names:  # a case named in the query ("Brown v. Board") is found by its name first
+            name_rows = await self.all(f"select {self.CASE_COLS} from cases c where " +
+                                       " and ".join("(c.short_name like ? or c.name like ?)" for _ in names) + filt +
+                                       " order by c.importance desc limit 5",
+                                       [x for n in names for x in (f"%{n}%", f"%{n}%")] + fp)
+            for r, row in enumerate(name_rows):
+                scores[row["id"]] = scores.get(row["id"], 0) + 1.0 / (1 + r)
+        expr = self._fts(query)
+        if expr:
+            # rank passages first (bm25 cannot run inside an aggregate), then take each case's best passage
+            kw = await self.all("select x.case_id as id, min(x.s) as s from ("
+                                "select p.case_id, bm25(case_passages_fts) as s from case_passages_fts "
+                                "join case_passages p on p.id = case_passages_fts.rowid "
+                                "where case_passages_fts match ? order by s limit 400) x "
+                                "join cases c on c.id = x.case_id where 1=1" + filt + " group by x.case_id order by s limit ?",
+                                [expr, *fp, limit * 4])
+            for r, row in enumerate(kw):
+                scores[row["id"]] = scores.get(row["id"], 0) + 1.0 / (60 + r)
+        for r, (cid, _d) in enumerate(await self._vec("case_vec", query, limit * 6)):
+            scores[cid] = scores.get(cid, 0) + 1.0 / (60 + r)
+        if not scores:
+            return []
+        ids = list(scores)
+        rows = await self.all(f"select {self.CASE_COLS} from cases c where c.id in ({','.join('?' * len(ids))})" + filt, [*ids, *fp])
+        for row in rows:  # landmark cases rise; importance is a percentile (0-1)
+            row["rank"] = scores[row["id"]] * (0.6 + 0.8 * (row["importance"] or 0))
+        return sorted(rows, key=lambda r: -r["rank"])[:limit]
+
+    async def find_case(self, ref: str) -> dict | None:
+        """A case by id, U.S. Reports citation ('347 U.S. 483'), or name ('Marbury v. Madison')."""
+        if not await self.has_table("cases"):
+            return None
+        ref = (ref or "").strip()
+        if ref.isdigit():
+            return await self.one(f"select {self.CASE_COLS}, c.head, c.scdb_id, c.chief, c.term from cases c where c.id=?", (int(ref),))
+        m = re.match(r"(\d+)\s*U\.?\s*S\.?\s*(\d+)", ref)
+        if m:
+            row = await self.one(f"select {self.CASE_COLS}, c.head, c.scdb_id, c.chief, c.term from cases c where c.cite = ?",
+                                 (f"{m.group(1)} U.S. {m.group(2)}",))
+            if row:
+                return row
+        words = [t for t in re.findall(r"[A-Za-z0-9']+", ref) if t.lower() not in STOPWORDS and t.lower() != "v"]
+        if not words:
+            return None
+        return await self.one(f"select {self.CASE_COLS}, c.head, c.scdb_id, c.chief, c.term from cases c where " +
+                              " and ".join("(c.short_name like ? or c.name like ?)" for _ in words) +
+                              " order by c.importance desc limit 1", [x for w in words for x in (f"%{w}%", f"%{w}%")])
+
+    async def case_opinions(self, case_id: int) -> list[dict]:
+        return await self.all("select seq, type, author, text from case_opinions where case_id=? order by seq", (case_id,))
+
+    async def statute(self, citation: str) -> list[dict]:
+        """Exact section by citation: '4 U.S.C. § 8', '18 USC 1001', '720 ILCS 5/12-3'."""
+        if not await self.has_table("statutes"):
+            return []
+        c = (citation or "").strip()
+        m = re.match(r"(\d+[A-Za-z]?)\s*U\.?\s*S\.?\s*C\.?\s*(?:§+|sec(?:tion)?\.?)?\s*([\w.-]+)", c, re.I)
+        if m:
+            return await self.all("select code, citation, heading, text from statutes where code='usc' and title=? and section=?",
+                                  (m.group(1).lstrip("0"), m.group(2)))
+        m = re.match(r"(\d+)\s*ILCS\s*([\d.]+)\s*/\s*([\w.-]+)", c, re.I)
+        if m:
+            return await self.all("select code, citation, heading, text from statutes where code='ilcs' and title=? and section=?",
+                                  (m.group(1), f"{m.group(2)}/{m.group(3)}"))
+        return []
+
+    async def search_statutes(self, query: str, code=None, limit=8) -> list[dict]:
+        if not await self.has_table("statutes"):
+            return []
+        expr = self._fts(query)
+        if not expr:
+            return []
+        sql = ("select s.code, s.citation, s.heading, substr(s.text, 1, 1200) as text from statutes_fts "
+               "join statutes s on s.id = statutes_fts.rowid where statutes_fts match ?")
+        extra, ep = "", []
+        if code in ("usc", "ilcs"):
+            extra = " and s.code = ?"
+            ep = [code]
+        # section headings name what a section is about, so heading matches come first; then the full text
+        head = await self.all(sql + extra + " order by bm25(statutes_fts, 2.0, 4.0, 1.0) limit ?",
+                              [f"heading : ({expr})", *ep, limit])
+        seen = {r["citation"] for r in head}
+        rest = await self.all(sql + extra + " order by bm25(statutes_fts, 2.0, 4.0, 1.0) limit ?", [expr, *ep, limit * 2])
+        return (head + [r for r in rest if r["citation"] not in seen])[:limit]
+
+    async def conan(self, provision: str | None = None, essay_id: str | None = None, query: str | None = None, limit=6) -> list[dict]:
+        if not await self.has_table("conan"):
+            return []
+        if essay_id:
+            return await self.all("select essay_id, provision, title, text from conan where essay_id = ?", (essay_id,))
+        if provision:
+            return await self.all("select essay_id, provision, title, substr(text, 1, 400) as text from conan "
+                                  "where provision = ? or provision like ? order by id", (provision, provision + ".%"))
+        expr = self._fts(query or "")
+        hits: dict[int, float] = {}
+        if expr:
+            for r, row in enumerate(await self.all("select rowid as id from conan_fts where conan_fts match ? "
+                                                   "order by bm25(conan_fts, 4.0, 1.0) limit ?", (expr, limit * 3))):
+                hits[row["id"]] = hits.get(row["id"], 0) + 1.0 / (60 + r)
+        for r, (i, _d) in enumerate(await self._vec("conan_vec", query or "", limit * 3)):
+            hits[i] = hits.get(i, 0) + 1.0 / (60 + r)
+        ids = sorted(hits, key=lambda i: -hits[i])[:limit]
+        if not ids:
+            return []
+        rows = await self.all(f"select id, essay_id, provision, title, substr(text, 1, 1200) as text from conan where id in ({','.join('?' * len(ids))})", ids)
+        return sorted(rows, key=lambda r: -hits[r["id"]])
+
+    async def legislators(self, name: str, state: str | None = None, limit=10) -> list[dict]:
+        if not await self.has_table("legislators"):
+            return []
+        words = re.findall(r"[A-Za-z'-]+", name or "")
+        sql = "select l.id, l.name, l.birthday, l.current from legislators l where " + " and ".join("l.name like ?" for _ in words)
+        params = [f"%{w}%" for w in words]
+        if state:
+            sql += " and exists (select 1 from legislator_terms t where t.legislator_id = l.id and t.state = ?)"
+            params.append(state.upper())
+        people = await self.all(sql + " limit ?", [*params, limit]) if words else []
+        for p in people:
+            p["terms"] = await self.all("select type, state, district, party, start, end from legislator_terms "
+                                        "where legislator_id = ? order by start", (p["id"],))
+        execs = await self.all("select name, type, party, start, end, how from executives where " +
+                               " and ".join("name like ?" for _ in words) + " order by start", [f"%{w}%" for w in words]) if words else []
+        return [{"executive": execs}] + people if execs else people
+
+    async def define(self, term: str, source: str | None = None, limit=4) -> list[dict]:
+        if not await self.has_table("glossary"):
+            return []
+        src = {"blacks": "Black%", "webster": "Webster%"}.get((source or "").lower())
+        sql = "select source, term, definition from glossary where term = ? collate nocase"
+        params: list = [term.strip()]
+        if src:
+            sql += " and source like ?"
+            params.append(src)
+        rows = await self.all(sql + " limit ?", [*params, limit])
+        if rows:
+            return rows
+        expr = self._fts(term)
+        if not expr:
+            return []
+        sql = ("select g.source, g.term, g.definition from glossary_fts join glossary g on g.id = glossary_fts.rowid "
+               "where glossary_fts match ?")
+        params = [f"term : ({expr})"]
+        if src:
+            sql += " and g.source like ?"
+            params.append(src)
+        return await self.all(sql + " order by bm25(glossary_fts) limit ?", [*params, limit])

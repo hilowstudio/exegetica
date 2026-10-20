@@ -28,7 +28,11 @@ The governing principle: a Christian historian's first duty is the ninth command
 - Corpus check: present are the four secession declarations, the Danbury letter (Miller Center), Lincoln's Second Inaugural, Washington's Farewell, and Jackson's Indian Removal message. Missing are Stephens's Cornerstone Speech, Winthrop's "Model of Christian Charity," the Treaty of Tripoli, Douglass's 1860 Glasgow speech, and Worcester v. Georgia. All are public domain and queued for the next build. "Letter from Birmingham Jail" is under copyright, and the persona's "name the gaps" rule covers it.
 - Not added, flagged for Adam: the handbook's Statement of Belief on Marriage, Gender and Sexuality. The Theologian did not read it, and Street Law, Psychology and Sociology will meet those questions.
 
-## Open items for Adam and the U.S. History teacher
+## Approval
+
+Adam approved the persona as it stands, 2026-10-20. The open items below were reviewed and left as written.
+
+## Items reviewed at approval
 
 - King's theology: raise only when asked (current), or teach it on purpose in Honors?
 - Political sensitivity: confirm "endorse no party or candidate," the "Christian nationalism" handling, and "genocide" for California with the continental debate.
