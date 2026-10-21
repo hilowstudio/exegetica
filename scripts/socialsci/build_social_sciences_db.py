@@ -291,6 +291,30 @@ def il_constitution():
     return "\n\n".join(parts), rows
 
 
+def amendment_documents(const_rows: list[tuple], titles: list[str]) -> list[tuple[dict, str]]:
+    """One searchable document per amendment that has no Milestone page of its own (the Bill of Rights
+    and the 13th-17th and 19th do), named like the Milestones and dated by ratification, so a search
+    limited to 1900-1930 finds Prohibition and each amendment gets its own passage and title."""
+    covered = set(range(1, 11)) | {int(m.group(1)) for t in titles
+                                   if (m := re.match(r"(\d+)(?:st|nd|rd|th) Amendment to the U\.S\. Constitution", t))}
+    out = []
+    for r in const_rows:
+        if r[1] != "amendment" or int(r[2]) in covered:
+            continue
+        n = int(r[2])
+        topic = r[4].split(":", 1)[1].strip() if ":" in r[4] else ""
+        rat = re.search(r"Ratified (\w+ \d{1,2}, (\d{4}))", r[5])
+        year = int(rat.group(2)) if rat else None
+        suffix = "th" if 10 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+        title = f"{n}{suffix} Amendment to the U.S. Constitution" + (f": {topic}" if topic else "") + (f" ({year})" if year else "")
+        out.append(({"source": "nara", "collection": "Founding documents", "title": title, "author": None,
+                     "date": rat.group(1) if rat else None, "year": year,
+                     "url": "https://www.archives.gov/founding-docs/amendments-11-27",
+                     "citation": f"The Constitution: Amendments 11-27, Amendment {n}. National Archives.", "rights": "public domain"},
+                    f"{r[4]}\n{r[5]}"))
+    return out
+
+
 def flag_code():
     s = (SEED / "uscode" / "t4ch1-2024.htm").read_text(encoding="utf-8", errors="replace")
     rows, parts = [], []
@@ -475,11 +499,7 @@ def main() -> None:
                       "author": None, "date": "1787-09-17", "year": 1787, "url": "https://www.archives.gov/founding-docs/constitution-transcript",
                       "citation": "The Constitution of the United States: A Transcription, National Archives.", "rights": "public domain"}, const_text))
     const_rows = us_constitution()
-    later = "\n\n".join(f"{r[4]}\n{r[5]}" for r in const_rows if r[1] == "amendment" and int(r[2]) >= 11)
-    if later:  # the Bill of Rights and several amendments have Milestone pages; 11-27 also come in whole here
-        docs.append(({"source": "nara", "collection": "Founding documents", "title": "The Constitution: Amendments 11-27",
-                      "author": None, "date": "1795-1992", "year": 1795, "url": "https://www.archives.gov/founding-docs/amendments-11-27",
-                      "citation": "The Constitution: Amendments 11-27, National Archives.", "rights": "public domain"}, later))
+    docs.extend(amendment_documents(const_rows, [m["title"] for m, _ in docs]))
     decl_text = nara_text("declaration-transcript", "In Congress, July 4, 1776", "Matthew Thornton")
     if decl_text:
         docs.append(({"source": "nara", "collection": "Founding documents", "title": "The Declaration of Independence",
