@@ -149,13 +149,14 @@ TOOLS = [
             "The U.S. Code (current through Public Law 119-120) and the Illinois Compiled Statutes chapters on "
             "elections, vehicles, courts, criminal law and procedure, corrections, civil procedure and "
             "liability, families, estates, property and landlord-tenant, human rights, consumer fraud, and "
-            "employment. Give a citation ('18 U.S.C. § 1001', '720 ILCS 5/12-3') for the exact section, or a "
-            "query to search."
+            "employment. Give a citation ('18 U.S.C. § 1001', '720 ILCS 5/12-3') for the exact section (long sections "
+            "come in pages), or a query to search."
         ),
         inputSchema={"type": "object", "properties": {
             "citation": {"type": "string"},
             "query": {"type": "string"},
             "code": {"type": "string", "enum": ["usc", "ilcs"], "description": "Limit a search to one code."},
+            "page": {"type": "integer", "default": 1, "description": "Page of a long section (about 7,000 characters each)."},
         }},
     ),
     Tool(
@@ -164,11 +165,12 @@ TOOLS = [
             "The Constitution Annotated (Congressional Research Service, 2022): clause-by-clause essays on how "
             "each part of the Constitution has been understood and applied, with the leading cases. Give an "
             "article/section/clause or an amendment (with optional section) to list its essays, an essay_id to "
-            "read one, or a query to search."
+            "read one, or a query to search. Long essays come in pages."
         ),
         inputSchema={"type": "object", "properties": {
             "article": {"type": "string"}, "section": {"type": "string"}, "clause": {"type": "string"},
             "amendment": {"type": "string"}, "essay_id": {"type": "string"}, "query": {"type": "string"},
+            "page": {"type": "integer", "default": 1, "description": "Page of a long essay (about 7,000 characters each)."},
         }},
     ),
     Tool(
@@ -368,11 +370,27 @@ async def h_get_case(a: dict) -> list[TextContent]:
     return text(f"{head}\n\n{chunk}\n\n[page {page} of {pages}]")
 
 
+PAGE = 7000
+
+
+def _paged(head: str, body: str, page) -> list[TextContent]:
+    """One page of a long record, with a footer that tells the model how to read on."""
+    pages = max(1, -(-len(body) // PAGE))
+    page = min(max(1, int(page or 1)), pages)
+    chunk = body[(page - 1) * PAGE: page * PAGE]
+    if pages == 1:
+        return text(f"{head}\n\n{chunk}")
+    more = f"; ask for page {page + 1} to continue" if page < pages else ""
+    return text(f"{head}\n\n{chunk}\n\n[page {page} of {pages}{more}]")
+
+
 async def h_statute(a: dict) -> list[TextContent]:
     if a.get("citation"):
         rows = await db.statute(a["citation"])
         if rows:
-            return text("\n\n".join(f"{r['citation']}. {r['heading']}\n{r['text']}" for r in rows))
+            # an Illinois section can have two texts (before and after a pending amendment): keep both
+            body = "\n\n---\n\n".join(r["text"] for r in rows)
+            return _paged(f"{rows[0]['citation']}. {rows[0]['heading']}", body, a.get("page"))
         if not a.get("query"):
             return text("No section with that citation. Check the form ('18 U.S.C. § 1001', '720 ILCS 5/12-3') or search with query.")
     rows = await db.search_statutes(a.get("query") or a.get("citation") or "", a.get("code"))
@@ -400,13 +418,16 @@ async def h_conan(a: dict) -> list[TextContent]:
     src = "Source: Constitution of the United States: Analysis and Interpretation (Congressional Research Service, 2022), govinfo.gov."
     if a.get("essay_id"):
         rows = await db.conan(essay_id=a["essay_id"])
-        return text(f"{rows[0]['essay_id']} {rows[0]['title']}\n{src}\n\n{rows[0]['text']}" if rows else "No essay with that id.")
+        if not rows:
+            return text("No essay with that id.")
+        return _paged(f"{rows[0]['essay_id']} {rows[0]['title']}\n{src}", rows[0]["text"], a.get("page"))
     prov = _provision(a)
     if prov:
         rows = await db.conan(provision=prov)
         if rows:
             return text(f"Essays on {prov} ({len(rows)}). Open one with essay_id.\n{src}\n\n" +
-                        "\n".join(f"- {r['essay_id']} {r['title']}" for r in rows[:60]))
+                        "\n".join(f"- {r['essay_id']} {r['title']}" for r in rows[:80]) +
+                        (f"\n(first 80 of {len(rows)}; name a narrower clause or search with query)" if len(rows) > 80 else ""))
         if not a.get("query"):
             return text(f"No essays found for {prov}. Try a query instead.")
     rows = await db.conan(query=a.get("query") or "")
