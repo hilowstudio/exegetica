@@ -66,11 +66,21 @@ Every answer carries the Wikidata id and a link for each fact. The persona treat
 - **Storage:** new tables in `social_sciences.db`, with full-text search over names and aliases and an index on every link. The link table is stored in both directions, so the path search never reloads it.
 - **Size:** likely a few hundred MB.
 
-## Decisions for Adam
+## Decisions
 
-1. **Living people:** include only those who hold or held public office or are otherwise public figures (presidents, justices, members of Congress). Leave out private individuals.
-2. **Notability cutoff:** looser for Americans and Illinoisans, stricter for the rest of the world.
-3. **Mentions:** the confident-match rule above, or a wider net that marks uncertain matches as uncertain.
+Counts from Wikidata (2026-10-20), by the number of Wikipedia language editions with an article on the person:
+
+| People | 3+ | 5+ | 10+ | 20+ |
+|---|---|---|---|---|
+| Everyone | 1.58M | 830k | 309k | 90k |
+| U.S. citizens | 266k | 142k | 56k | 19k |
+| Born in Illinois | 12k | 6.8k | 2.8k | 917 |
+| Living | 789k | 433k | 160k | 47k |
+| Living, holds or held public office | 103k | 52k | 18k | 5.8k |
+
+1. **Living people (decided 2026-10-20): office holders plus people with a historic public role.** Presidents, justices, members of Congress, governors, heads of state, plus a curated role list: civil-rights leaders, astronauts, Nobel laureates, military commanders, church leaders. Living athletes, entertainers, and private people are left out.
+2. **Notability (decided 2026-10-20): tiered, plus anyone with a role.** Born in Illinois at 3+ articles, Americans at 5+, everyone else at 10+ (20+ for those who died before 1400). Anyone else who holds an office, signed a document, or took part in an event in the graph also comes in. Roughly 200,000 people.
+3. **Mentions:** open; see the tagging estimate Adam asked for.
 4. **Diagrams:** draw Mermaid family trees, timelines, and connection paths like the Bible tools do.
 5. **Fix the Bible graph too:** give it the history graph's name disambiguation and dated, sourced edges. Two small bugs to fix along the way:
    - `graph_enriched_search` looks family up again by name, so it can show the wrong Mary's family.
