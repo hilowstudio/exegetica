@@ -281,6 +281,11 @@ def conan(con) -> None:
     r = pypdf.PdfReader(str(SEED / "conan" / "GPO-CONAN-2022.pdf"))
     pages = [(p.extract_text() or "") for p in r.pages]
     full = "\n".join(pages)
+    # pypdf's kerning leaves a space before punctuation after some letters: "ArtIV .S1.1", "U .S.",
+    # "v . Eldridge". Those essay ids went unrecognized, so all of Article IV and V ran on inside the
+    # Treason Clause essay. A space before . , ; : right after a letter is never right in this text
+    # (spaced ellipses ". . ." are left alone).
+    full = re.sub(r"(?<=[A-Za-z]) ([.,;:])(?! \.)", r"\1", full)
     heads = [m for m in re.finditer(r"(?m)^((?:Art|Amdt)[IVX0-9]+\.[A-Za-z0-9.]+)[ \t]+([^\n]{3,140})$", full)
              if "...." not in m.group(2) and not re.search(r"\d{2,4}\s*$", m.group(2))]
     found: dict[str, tuple] = {}
@@ -288,6 +293,10 @@ def conan(con) -> None:
         eid = m.group(1).rstrip(".")
         end = heads[k + 1].start() if k + 1 < len(heads) else len(full)
         body = full[m.end():end].strip()
+        # the last essay of an article or amendment runs into the next one's title page and contents
+        toc = re.search(r"\n(?:(?:ARTICLE|AMENDMENT) [IVXL0-9]+\n[^\n]*\n\s*)*(?:(?:ARTICLE|AMENDMENT) [^\n]*\n)?TABLE OF CONTENTS\n", body)
+        if toc:
+            body = body[:toc.start()].strip()
         body = re.sub(r"\n(?:[^\n]{0,80}—Literal Print|Constitution of the United States of America)\n?\d*\n", "\n", body)
         lines = [ln for ln in body.split("\n") if ln.strip()]
         if len(body) < 200 or (lines and sum("...." in ln for ln in lines) / len(lines) > 0.2):
