@@ -139,7 +139,7 @@ def miller():
 
 
 def milestones():
-    """The National Archives' 100 Milestone Documents: NARA's background essay plus the full
+    """The National Archives' Milestone Documents (96 on its current list): NARA's background essay plus the full
     transcript, both U.S. government works (public domain)."""
     for f in sorted((SEED / "nara" / "milestones").glob("*.html")):
         if f.stem in ("list", "constitution"):  # the Constitution comes in whole from the transcript pages
@@ -150,10 +150,16 @@ def milestones():
         lines = [ln.strip() for ln in _html.unescape(re.sub(r"(?s)<[^>]+>", "\n", s)).replace("\xa0", " ").split("\n") if ln.strip()]
         start = lines.index("View Transcript") + 1 if "View Transcript" in lines else None
         tr = lines.index("Transcript") if "Transcript" in lines else None
+        catalog = next((k for k, ln in enumerate(lines) if re.fullmatch(r"View in (?:the )?National Archives Catalog", ln)), None)
+        if start is None and tr is None and catalog is not None:
+            # an image with no transcript (the Cuba photograph, the cotton gin patent): the essay sits
+            # between the catalog link and "Teach with this document."
+            start = catalog + 1
+            tr = next((k for k in range(start, len(lines)) if lines[k].startswith("Teach with this document")), None)
         end = next((k for k in range(tr or 0, len(lines)) if lines[k].startswith("Contact us with questions")), len(lines))
         cite = next((ln for ln in lines if ln.startswith("Citation:")), "")
         background = " ".join(lines[start:tr]) if start and tr else ""
-        transcript = "\n".join(lines[tr + 1:end]) if tr else ""
+        transcript = "\n".join(lines[tr + 1:end]) if tr and lines[tr] == "Transcript" else ""
         if not transcript and len(background) < 200:
             continue
         text = (f"Background (National Archives): {background}\n\n" if background else "") + (f"Transcript:\n{transcript}" if transcript else "")
@@ -253,27 +259,34 @@ def docsouth():
 def il_constitution():
     """-> (document text, [section rows]) for the Illinois Constitution."""
     parts, rows, sort = [], [], 0
-    order = ["p"] + [str(i) for i in range(1, 15)] + ["s"]
+    order = ["p"] + [str(i) for i in range(1, 15)] + ["trans"]  # contrans.htm is the Transition Schedule
     for k in order:
         p = SEED / "ilga" / f"con{k}.htm"
         if not p.exists():
             continue
-        t = strip(p.read_text(encoding="latin-1"))
+        raw = p.read_text(encoding="latin-1")
+        if "HTTP Error 404" in raw:  # ilga.gov served an error page for this part (cons.htm, the Transition Schedule)
+            continue
+        t = strip(raw)
         t = re.sub(r"^.*?Constitution of the State of Illinois\s*", "", t, flags=re.S).strip()
+        # the site's navigation links ("to preceding Article", "to main Constitution page")
+        t = re.sub(r"(?m)^\s*to (?:preceding|next|following) Article\s*$|^\s*to (?:Transition Schedule|main Constitution page)\s*$", "", t)
+        t = re.sub(r"\n{3,}", "\n\n", t).strip()
         parts.append(t)
         if k == "p":
             sort += 1
             rows.append(("il-constitution", "preamble", "", "", "Preamble", t.replace("PREAMBLE", "").strip(), sort))
             continue
         art_m = re.match(r"(ARTICLE\s+([IVXL]+)|TRANSITION SCHEDULE)\s*\n?(.*?)\n", t)
-        art_no = str(roman(art_m.group(2))) if art_m and art_m.group(2) else ("schedule" if k == "s" else k)
-        art_title = (art_m.group(3).strip().title() if art_m else "")
+        art_no = str(roman(art_m.group(2))) if art_m and art_m.group(2) else ("schedule" if k == "trans" else k)
+        art_title = "" if k == "trans" else (art_m.group(3).strip().title() if art_m else "")
         for m in re.finditer(r"(?:SECTION|Paragraph)\s+(\d+[a-z]?)\.\s*([^\n]*)\n(.*?)(?=\n\s*(?:SECTION|Paragraph)\s+\d+[a-z]?\.|\Z)", t, re.S):
             sort += 1
             body = re.sub(r"\(Source: [^)]*\)\s*$", "", m.group(3).strip()).strip()
             body = re.sub(r"\s*\n\s*", " ", body)
             rows.append(("il-constitution", "article", art_no, m.group(1),
-                         f"Article {art_no}{' (' + art_title + ')' if art_title else ''}, Section {m.group(1)}: {m.group(2).strip().title()}",
+                         (f"Transition Schedule, Section {m.group(1)}: {m.group(2).strip().title()}" if k == "trans" else
+                          f"Article {art_no}{' (' + art_title + ')' if art_title else ''}, Section {m.group(1)}: {m.group(2).strip().title()}"),
                          body, sort))
     return "\n\n".join(parts), rows
 
@@ -461,12 +474,18 @@ def main() -> None:
         docs.append(({"source": "nara", "collection": "Founding documents", "title": "The Constitution of the United States",
                       "author": None, "date": "1787-09-17", "year": 1787, "url": "https://www.archives.gov/founding-docs/constitution-transcript",
                       "citation": "The Constitution of the United States: A Transcription, National Archives.", "rights": "public domain"}, const_text))
+    const_rows = us_constitution()
+    later = "\n\n".join(f"{r[4]}\n{r[5]}" for r in const_rows if r[1] == "amendment" and int(r[2]) >= 11)
+    if later:  # the Bill of Rights and several amendments have Milestone pages; 11-27 also come in whole here
+        docs.append(({"source": "nara", "collection": "Founding documents", "title": "The Constitution: Amendments 11-27",
+                      "author": None, "date": "1795-1992", "year": 1795, "url": "https://www.archives.gov/founding-docs/amendments-11-27",
+                      "citation": "The Constitution: Amendments 11-27, National Archives.", "rights": "public domain"}, later))
     decl_text = nara_text("declaration-transcript", "In Congress, July 4, 1776", "Matthew Thornton")
     if decl_text:
         docs.append(({"source": "nara", "collection": "Founding documents", "title": "The Declaration of Independence",
                       "author": "Thomas Jefferson et al.", "date": "1776-07-04", "year": 1776, "url": "https://www.archives.gov/founding-docs/declaration-transcript",
                       "citation": "Declaration of Independence: A Transcription, National Archives.", "rights": "public domain"}, decl_text))
-    rows = us_constitution() + il_rows + fc_rows
+    rows = const_rows + il_rows + fc_rows
     con.executemany("insert into sections (code, part, number, sub, heading, text, sort) values (?,?,?,?,?,?,?)", rows)
     print(f"  sections: {sum(r[0]=='us-constitution' for r in rows)} U.S. Constitution, "
           f"{sum(r[0]=='il-constitution' for r in rows)} Illinois, {sum(r[0]=='flag-code' for r in rows)} Flag Code", flush=True)
