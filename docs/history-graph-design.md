@@ -80,7 +80,12 @@ Counts from Wikidata (2026-10-20), by the number of Wikipedia language editions 
 
 1. **Living people (decided 2026-10-20): office holders plus people with a historic public role.** Presidents, justices, members of Congress, governors, heads of state, plus a curated role list: civil-rights leaders, astronauts, Nobel laureates, military commanders, church leaders. Living athletes, entertainers, and private people are left out.
 2. **Notability (decided 2026-10-20): tiered, plus anyone with a role.** Born in Illinois at 3+ articles, Americans at 5+, everyone else at 10+ (20+ for those who died before 1400). Anyone else who holds an office, signed a document, or took part in an event in the graph also comes in. Roughly 200,000 people.
-3. **Mentions:** open; see the tagging estimate Adam asked for.
+3. **Mentions (decided 2026-10-20): a hybrid.** Reading every document, opinion, and book with a model would take about 440M tokens (some $1,800 at Opus input rates), so mentions come in three layers:
+   - **Stated links, for everything:** Supreme Court Database justices on all 36,842 cases, parties from the case names, Miller Center speakers, Avalon authors, and Wikidata authors and signatories.
+   - **Confident automatic matches, for everything:** a full name or distinctive alias whose dates fit the document; uncertain matches are left out.
+   - **Hand tagging, for the core set students read:** Claude tags every person, place, and event (with roles) in NARA's 93 Milestone Documents and the Constitution Test documents, about 0.5M tokens, done in a working session with no API bill.
+
+   A paid model pass over the founding-era Avalon documents and the presidential speeches (about 10M tokens) was considered and declined.
 4. **Diagrams:** draw Mermaid family trees, timelines, and connection paths like the Bible tools do.
 5. **Fix the Bible graph too:** give it the history graph's name disambiguation and dated, sourced edges. Two small bugs to fix along the way:
    - `graph_enriched_search` looks family up again by name, so it can show the wrong Mary's family.
