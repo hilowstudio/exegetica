@@ -402,3 +402,236 @@ class SocialSciencesDB:
             sql += " and g.source like ?"
             params.append(src)
         return await self.all(sql + " order by bm25(glossary_fts) limit ?", [*params, limit])
+
+    # ---- people and events graph (Wikidata) --------------------------------------------------
+    PERSON_COLS = ("e.qid, e.name, e.description, e.aliases, e.sitelinks, e.enwiki, p.birth, p.birth_year, "
+                   "p.death, p.death_year, p.living, p.birthplace, p.deathplace")
+
+    async def find_entities(self, name: str, kind: str | None = None, limit: int = 8,
+                            kinds: tuple[str, ...] | None = None) -> list[dict]:
+        """Name, alias, or Q-id -> matching nodes, best first: exact name, then exact alias, then
+        full-text matches, each ordered by how many Wikipedias have an article on it."""
+        if not await self.has_table("h_entities"):
+            return []
+        name = (name or "").strip()
+        kinds = kinds or ((kind,) if kind else ("person", "event", "place", "item"))
+        ks = ",".join("?" * len(kinds))
+        cols = "e.qid, e.kind, e.name, e.description, e.aliases, e.sitelinks"
+        if re.fullmatch(r"Q\d+", name):
+            return await self.all(f"select {cols} from h_entities e where e.qid = ?", (name,))
+        exact = await self.all(f"select {cols} from h_entities e where e.name = ? collate nocase and e.kind in ({ks}) "
+                               "order by e.sitelinks desc limit ?", (name, *kinds, limit))
+        seen = {r["qid"] for r in exact}
+        out = list(exact)
+        expr = self._fts(name)
+        if expr and len(out) < limit:
+            alias_hits, rest = [], []
+            for r in await self.all(f"select {cols} from h_names_fts f join h_entities e on e.rowid = f.rowid "
+                                    f"where h_names_fts match ? and e.kind in ({ks}) order by e.sitelinks desc limit ?",
+                                    (expr, *kinds, limit * 3)):
+                if r["qid"] in seen:
+                    continue
+                seen.add(r["qid"])
+                al = [x.strip().lower() for x in (r.get("aliases") or "").split(";")]
+                (alias_hits if name.lower() in al else rest).append(r)
+            out = out + alias_hits + rest
+        return out[:limit]
+
+    async def person(self, qid: str) -> dict | None:
+        return await self.one(f"select {self.PERSON_COLS} from h_entities e join h_people p on p.qid = e.qid "
+                              "where e.qid = ?", (qid,))
+
+    async def links(self, qid: str, rels: tuple[str, ...], direction: str = "out", limit: int = 200) -> list[dict]:
+        """Edges from (out) or to (in) a node, with the other end's name, kind, and dates, oldest first."""
+        a, b = ("src", "dst") if direction == "out" else ("dst", "src")
+        rs = ",".join("?" * len(rels))
+        return await self.all(
+            f"select x.rel, x.start, x.end, x.via, n.qid, n.name, n.kind, n.description, n.sitelinks, "
+            f"p.birth_year, p.death_year, p.living, ev.start_year, ev.start as ev_start, ev.end as ev_end, ev.category, "
+            f"ev.kind as ev_kind, v.name as via_name "
+            f"from h_edges x join h_entities n on n.qid = x.{b} "
+            f"left join h_people p on p.qid = n.qid left join h_events ev on ev.qid = n.qid "
+            f"left join h_entities v on v.qid = x.via "
+            f"where x.{a} = ? and x.rel in ({rs}) "
+            f"order by coalesce(cast(substr(x.start, 1, 4) as integer), ev.start_year, p.birth_year), n.sitelinks desc limit ?",
+            (qid, *rels, limit))
+
+    async def ancestors(self, qid: str, generations: int) -> list[dict]:
+        return await self.all(
+            """with recursive up(qid, gen, rel, child) as (
+                 select ?, 0, null, null
+                 union select x.dst, up.gen + 1, x.rel, up.qid from up join h_edges x on x.src = up.qid
+                 where x.rel in ('father', 'mother') and up.gen < ?)
+               select up.gen, up.rel, up.child, e.qid, e.name, p.birth_year, p.death_year
+               from up join h_entities e on e.qid = up.qid left join h_people p on p.qid = e.qid
+               where up.gen > 0 order by up.gen, up.rel""", (qid, min(generations, 12)))
+
+    async def descendants(self, qid: str, generations: int) -> list[dict]:
+        g = min(generations, 8)
+        return await self.all(
+            """with recursive down(qid, gen, parent) as (
+                 select ?, 0, null
+                 union select x.dst, down.gen + 1, down.qid from down join h_edges x on x.src = down.qid
+                       where x.rel = 'child' and down.gen < ?
+                 union select x.src, down.gen + 1, down.qid from down join h_edges x on x.dst = down.qid
+                       where x.rel in ('father', 'mother') and down.gen < ?)
+               select min(down.gen) as gen, down.parent, e.qid, e.name, p.birth_year, p.death_year
+               from down join h_entities e on e.qid = down.qid left join h_people p on p.qid = e.qid
+               where down.gen > 0 group by e.qid order by gen, p.birth_year limit 400""", (qid, g, g))
+
+    async def event(self, qid: str) -> dict | None:
+        return await self.one("""select e.qid, e.name, e.description, e.aliases, e.sitelinks, e.enwiki, v.category,
+                                        v.categories, v.kind, v.start, v.start_year, v.end, v.end_year, v.lat, v.lon,
+                                        v.citation, v.case_id, l.name as location, c.name as country
+                                 from h_entities e join h_events v on v.qid = e.qid
+                                 left join h_entities l on l.qid = v.location left join h_entities c on c.qid = v.country
+                                 where e.qid = ?""", (qid,))
+
+    async def place(self, qid: str) -> dict | None:
+        return await self.one("""select e.qid, e.kind as node_kind, e.name, e.description, e.aliases, e.sitelinks, pl.lat, pl.lon,
+                                        k.name as kind, c.name as country, i.name as located_in
+                                 from h_entities e left join h_places pl on pl.qid = e.qid
+                                 left join h_entities k on k.qid = pl.kind left join h_entities c on c.qid = pl.country
+                                 left join h_entities i on i.qid = pl.located_in where e.qid = ?""", (qid,))
+
+    # '+x.dst' keeps SQLite on the per-event index; on the (dst, rel) index it walked every link to the country
+    _IN_COUNTRY = """(exists (select 1 from h_edges x where x.src = v.qid and x.rel = 'country' and +x.dst = ?)
+                      or exists (select 1 from h_edges x join h_places pl on pl.qid = x.dst
+                                 where x.src = v.qid and x.rel = 'located_at' and +pl.country = ?))"""
+
+    async def timeline(self, year_from: int, year_to: int, country: str | None = None, kind: str | None = None,
+                       limit: int = 40) -> list[dict]:
+        """The best-known events that began in a span of years (eras are listed separately)."""
+        sql = ("select e.qid, e.name, e.sitelinks, v.category, v.kind, v.start, v.start_year, v.end, c.name as country "
+               "from h_events v join h_entities e on e.qid = v.qid left join h_entities c on c.qid = v.country "
+               "where v.start_year between ? and ? and coalesce(v.category, '') != 'eras'")
+        params: list = [year_from, year_to]
+        if country:
+            sql += " and " + self._IN_COUNTRY
+            params += [country, country]
+        if kind:
+            sql += " and (v.category like ? or v.kind like ? or v.categories like ?)"
+            params += [f"%{kind}%"] * 3
+        rows = await self.all(sql + " order by e.sitelinks desc limit ?", [*params, limit])
+        return sorted(rows, key=lambda r: (r["start_year"], r["start"] or ""))
+
+    async def eras_during(self, year_from: int, year_to: int, country: str | None = None, limit: int = 8) -> list[dict]:
+        sql = ("select e.qid, e.name, v.start, v.start_year, v.end, v.end_year from h_events v join h_entities e on e.qid = v.qid "
+               "where (v.category = 'eras' or v.categories like '%eras%') and v.start_year <= ? "
+               "and coalesce(v.end_year, v.start_year) >= ?")
+        params: list = [year_to, year_from]
+        if country:
+            sql += " and " + self._IN_COUNTRY
+            params += [country, country]
+        return await self.all(sql + " order by e.sitelinks desc limit ?", [*params, limit])
+
+    async def notable_lives(self, year_from: int, year_to: int, country: str | None, limit: int = 12) -> list[dict]:
+        """The best-known people alive during a span; someone with no death date who isn't living is
+        assumed to have died within ninety years of birth."""
+        sql = ("select e.qid, e.name, e.description, p.birth_year, p.death_year, p.living from h_people p "
+               "join h_entities e on e.qid = p.qid where p.birth_year <= ? and "
+               "coalesce(p.death_year, case when p.living = 1 then 9999 else p.birth_year + 90 end) >= ?")
+        params: list = [year_to, year_from]
+        if country:
+            sql += " and exists (select 1 from h_edges x where x.src = p.qid and x.rel = 'citizen_of' and +x.dst = ?)"
+            params.append(country)
+        return await self.all(sql + " order by e.sitelinks desc limit ?", [*params, limit])
+
+    async def office_holders(self, office: str, limit: int = 150) -> list[dict]:
+        return await self.all("""select e.qid, e.name, x.start, x.end, p.birth_year, p.death_year
+                                 from h_edges x join h_entities e on e.qid = x.src left join h_people p on p.qid = e.qid
+                                 where x.dst = ? and x.rel = 'held'
+                                 order by coalesce(cast(substr(x.start, 1, 4) as integer), 9999), x.start, p.birth_year
+                                 limit ?""", (office, limit))
+
+    async def mentions_in(self, doc_type: str, doc_id: int) -> list[dict]:
+        if not await self.has_table("h_mentions"):
+            return []
+        return await self.all("""select m.how, m.role, e.qid, e.name, e.kind, e.description, p.birth_year, p.death_year
+                                 from h_mentions m join h_entities e on e.qid = m.qid left join h_people p on p.qid = e.qid
+                                 where m.doc_type = ? and m.doc_id = ?
+                                 group by e.qid, m.role
+                                 order by case m.how when 'stated' then 0 when 'hand' then 1 else 2 end, e.sitelinks desc""",
+                              (doc_type, doc_id))
+
+    async def mentions_of(self, qid: str, limit: int = 15) -> list[dict]:
+        if not await self.has_table("h_mentions"):
+            return []
+        return await self.all("""select m.doc_type, m.doc_id, m.how, m.role,
+                                        coalesce(d.title, c.name) as title, coalesce(d.year, c.year) as year, c.cite
+                                 from h_mentions m left join documents d on m.doc_type = 'document' and d.id = m.doc_id
+                                 left join cases c on m.doc_type = 'case' and c.id = m.doc_id
+                                 where m.qid = ? group by m.doc_type, m.doc_id
+                                 order by case m.how when 'stated' then 0 when 'hand' then 1 else 2 end,
+                                          coalesce(c.importance, 0) desc, year limit ?""", (qid, limit))
+
+    FAMILY_RELS = ("father", "mother", "child", "spouse", "sibling")
+    EVENT_RELS = ("participated_in", "fought_in", "signed", "gave", "won", "invented", "authored", "created")
+    CONNECT_RELS = FAMILY_RELS + ("student_of", "teacher_of", "influenced_by", "succeeded") + EVENT_RELS
+
+    async def connection_path(self, a: str, b: str, max_depth: int = 6, hub_limit: int = 300) -> list[dict] | None:
+        """Shortest path between two nodes over meaningful links (family, teachers, succession, shared
+        events, signed documents, co-authored works), searched from both ends a full level at a time. A path
+        steps only through people and events (and through relatives and written works on family and
+        authorship links), never through a country or an office, and skips events with more than
+        hub_limit people, so it is never just 'both fought in World War II'. None when nothing within reach."""
+        if a == b:
+            return []
+        rs = ",".join("?" * len(self.CONNECT_RELS))
+        prev: dict[str, dict] = {a: {a: None}, b: {b: None}}
+        dist: dict[str, dict] = {a: {a: 0}, b: {b: 0}}
+        frontier = {a: {a}, b: {b}}
+        hubs: dict[str, bool] = {}
+        er = ",".join("?" * len(self.EVENT_RELS))
+
+        async def is_hub(q: str) -> bool:
+            if q not in hubs:
+                r = await self.one(f"select count(*) as n from h_edges where dst = ? and rel in ({er})", (q, *self.EVENT_RELS))
+                hubs[q] = (r or {}).get("n", 0) > hub_limit
+            return hubs[q]
+
+        for _ in range(max_depth):
+            if not frontier[a] or not frontier[b]:
+                return None
+            side = a if len(frontier[a]) <= len(frontier[b]) else b
+            other = b if side == a else a
+            nxt: set[str] = set()
+            ids = list(frontier[side])
+            for i in range(0, len(ids), 400):
+                chunk = ids[i:i + 400]
+                qs = ",".join("?" * len(chunk))
+                edges = await self.all(
+                    f"select x.src, x.rel, x.dst, x.via, s.kind as sk, d.kind as dk from h_edges x "
+                    f"join h_entities s on s.qid = x.src join h_entities d on d.qid = x.dst "
+                    f"where x.rel in ({rs}) and (x.src in ({qs}) or x.dst in ({qs}))",
+                    (*self.CONNECT_RELS, *chunk, *chunk))
+                for x in edges:
+                    for here, there, tk in ((x["src"], x["dst"], x["dk"]), (x["dst"], x["src"], x["sk"])):
+                        if here not in frontier[side] or there in prev[side]:
+                            continue
+                        if tk not in ("person", "event") and x["rel"] not in self.FAMILY_RELS + ("authored",):
+                            continue
+                        if x["rel"] in self.EVENT_RELS and there == x["dst"] and await is_hub(there):
+                            continue
+                        prev[side][there] = (here, x["src"], x["rel"], x["dst"], x["via"])
+                        dist[side][there] = dist[side][here] + 1
+                        nxt.add(there)
+            frontier[side] = nxt
+            meet = [m for m in nxt if m in prev[other]]
+            if meet:
+                m = min(meet, key=lambda q: dist[other][q])
+                steps = []
+                for start in (a, b):
+                    node, seq = m, []
+                    while prev[start][node] is not None:
+                        here, src, rel, dst, via = prev[start][node]
+                        seq.append((src, rel, dst, via))
+                        node = here
+                    steps.append(seq)
+                path = list(reversed(steps[0])) + steps[1]
+                qids = {q for s, _, d, v in path for q in (s, d, v) if q}
+                names = {r["qid"]: r["name"] for r in await self.all(
+                    f"select qid, name from h_entities where qid in ({','.join('?' * len(qids))})", list(qids))}
+                return [{"src": s, "src_name": names.get(s, s), "rel": r, "dst": d, "dst_name": names.get(d, d),
+                         "via_name": names.get(v) if v else None} for s, r, d, v in path]
+        return None

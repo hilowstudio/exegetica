@@ -10,6 +10,7 @@ import asyncio
 import contextlib
 import logging
 import os
+import re
 from pathlib import Path
 from typing import Any
 
@@ -195,6 +196,105 @@ TOOLS = [
             "source": {"type": "string", "enum": ["blacks", "webster", "both"]},
         }, "required": ["term"]},
     ),
+    Tool(
+        name="lookup_person",
+        description=(
+            "Who someone in history was: dates, a one-line description, offices held, speeches given, inventions "
+            "and discoveries, writings, elections won, and the documents and Supreme Court cases where they appear. "
+            "When a name fits several people it lists them with dates and ids; call again with the id (e.g. 'Q91') "
+            "for the one meant. People and events come from Wikidata, kept on our server."
+        ),
+        inputSchema={"type": "object", "properties": {
+            "name": {"type": "string", "description": "A name ('John Adams', 'Tecumseh'), an alias, or a Wikidata id"},
+        }, "required": ["name"]},
+    ),
+    Tool(
+        name="explore_family",
+        description=(
+            "A historical person's family tree: ancestors, descendants, spouses, siblings (the Adamses, the "
+            "Roosevelts, royal houses). Draws a Mermaid diagram."
+        ),
+        inputSchema={"type": "object", "properties": {
+            "person": {"type": "string", "description": "Name or Wikidata id"},
+            "direction": {"type": "string", "enum": ["ancestors", "descendants", "both"], "default": "both"},
+            "generations": {"type": "integer", "default": 3},
+        }, "required": ["person"]},
+    ),
+    Tool(
+        name="explore_life",
+        description=(
+            "A person's life in order: birth, schooling, offices held, wars, expeditions, and other events taken "
+            "part in, speeches given, inventions, documents signed, works written, party and religion, death."
+        ),
+        inputSchema={"type": "object", "properties": {"person": {"type": "string"}}, "required": ["person"]},
+    ),
+    Tool(
+        name="explore_event",
+        description=(
+            "Any event in the graph: wars and battles, treaties, laws and Supreme Court decisions, elections, "
+            "speeches, expeditions and spaceflights, disasters and epidemics, inventions and discoveries, movements, "
+            "strikes and protests, economic crises, church councils and revivals, the Olympic Games, and historical "
+            "eras. Gives when and where, its category and kind, who took part (parties, signers, speakers, "
+            "inventors, winners), what it was part of, what came before and after, its causes and effects, and "
+            "where our documents and cases cover it. For the text of a creed or confession, use get_confession."
+        ),
+        inputSchema={"type": "object", "properties": {"event": {"type": "string"}}, "required": ["event"]},
+    ),
+    Tool(
+        name="explore_historic_place",
+        description=(
+            "A place in history (a city, a battlefield, a state, a country): what kind of place, where, the events "
+            "that happened there, and the notable people born or died there. (For places in the Bible, use "
+            "explore_place.)"
+        ),
+        inputSchema={"type": "object", "properties": {"place": {"type": "string"}}, "required": ["place"]},
+    ),
+    Tool(
+        name="find_historical_connection",
+        description=(
+            "How two historical people (or a person and an event) are connected: the shortest path through family, "
+            "teachers and students, succession in office, shared events, signed documents, and co-written works, "
+            "each link named. (For people in the Bible, use find_connection.)"
+        ),
+        inputSchema={"type": "object", "properties": {
+            "from": {"type": "string"}, "to": {"type": "string"},
+        }, "required": ["from", "to"]},
+    ),
+    Tool(
+        name="timeline",
+        description=(
+            "What was happening in a span of years: the eras it falls in, the best-known events (optionally in one "
+            "country, or of one kind), and the best-known people alive then. 'What else was going on in 1776?'"
+        ),
+        inputSchema={"type": "object", "properties": {
+            "year_from": {"type": "integer", "description": "Negative for BC"}, "year_to": {"type": "integer"},
+            "country": {"type": "string", "description": "e.g. 'United States', 'France'"},
+            "kind": {"type": "string", "description": "e.g. 'battle', 'treaty', 'law', 'election', 'speech', 'expedition', "
+                                                      "'disaster', 'invention', 'strike', 'council', 'Olympics'"},
+        }, "required": ["year_from"]},
+    ),
+    Tool(
+        name="succession",
+        description=(
+            "Who held an office in order ('President of the United States', 'Chief Justice of the United States', "
+            "'Governor of Illinois', 'monarch of England'), or, given a person, each office they held with who came "
+            "before and after."
+        ),
+        inputSchema={"type": "object", "properties": {
+            "office": {"type": "string"}, "person": {"type": "string"},
+        }},
+    ),
+    Tool(
+        name="people_in_document",
+        description=(
+            "The people and events in one of our documents or Supreme Court cases: speakers, signers, the justices "
+            "and how each voted, and people named in the text. Give a document id (from search_history or "
+            "find_documents) or a case citation or name."
+        ),
+        inputSchema={"type": "object", "properties": {
+            "document_id": {"type": "integer"}, "case": {"type": "string"},
+        }},
+    ),
 ]
 
 
@@ -294,7 +394,8 @@ async def h_guide(a: dict) -> list[TextContent]:
         "   Amendments: " + ", ".join(r["number"] for r in us if r["part"] == "amendment") if us else "   (loading)",
         "\n3. The Illinois Constitution (get_constitution constitution=illinois):",
         *sorted({f"   - {r['heading'].split(', Section')[0]}" for r in il if r["part"] == "article"},
-                key=lambda s: int(''.join(ch for ch in s.split('Article ')[1].split(' ')[0] if ch.isdigit()) or 99)),
+                key=lambda s: (int(''.join(ch for ch in s.split('Article ')[1].split(' ')[0] if ch.isdigit()) or 99)
+                               if "Article " in s else 999)),  # the Transition Schedule comes last
         "\n4. The U.S. Flag (get_flag_code):",
         *[f"   - {r['heading']}" for r in fc],
     ]
@@ -462,10 +563,415 @@ async def h_define(a: dict) -> list[TextContent]:
     return text("\n\n".join(f"{r['term']} ({r['source']})\n{r['definition'][:2500]}" for r in rows))
 
 
+# ---- people and events graph ------------------------------------------------------------------
+WD = "Source: Wikidata (CC0), kept on our server; each id opens at wikidata.org/wiki/<id>."
+PHRASE = {"father": "{a}'s father was {b}", "mother": "{a}'s mother was {b}", "child": "{a}'s child was {b}",
+          "spouse": "{a} married {b}", "sibling": "{a} and {b} were siblings", "student_of": "{a} studied under {b}",
+          "teacher_of": "{a} taught {b}", "influenced_by": "{a} was influenced by {b}", "succeeded": "{a} succeeded {b}",
+          "participated_in": "{a} took part in {b}", "fought_in": "{a} fought in {b}", "signed": "{a} signed {b}",
+          "gave": "{a} gave {b}", "won": "{a} won {b}", "invented": "{a} invented or discovered {b}",
+          "authored": "{a} wrote {b}", "created": "{a} created {b}"}
+SHORT = {"father": "father", "mother": "mother", "child": "child", "spouse": "married", "sibling": "sibling",
+         "student_of": "studied under", "teacher_of": "taught", "influenced_by": "influenced by", "succeeded": "succeeded",
+         "participated_in": "took part in", "fought_in": "fought in", "signed": "signed", "gave": "gave", "won": "won",
+         "invented": "invented", "authored": "wrote", "created": "created"}
+# councils and assemblies whose creed or confession is in the Study Bible's get_confession
+CONFESSION_FOR = {"First Council of Nicaea": "The Nicene Creed", "First Council of Constantinople": "The Nicene Creed",
+                  "Council of Chalcedon": "Chalcedonian Definition", "Second Council of Orange": "Council of Orange",
+                  "Council of Trent": "Council of Trent", "Synod of Dort": "Canons of Dort",
+                  "Westminster Assembly": "Westminster Confession of Faith", "Diet of Augsburg": "Augsburg Confession"}
+
+
+def _d(t) -> str:
+    """A stored date for display: '0450' -> '450'; '1861-03-04' and '100 BC' unchanged."""
+    return re.sub(r"^0+(?=\d)", "", str(t or ""))
+
+
+def _dt(t) -> str:
+    """A stored date for display, trimmed to the day only when it is a calendar date ('19th century' stays whole)."""
+    t = str(t or "")
+    return _d(t[:10] if re.match(r"\d{4}-\d\d", t) else t)
+
+
+def _sortkey(t: str) -> tuple:
+    t = t or ""
+    m = re.match(r"(\d+)(?:st|nd|rd|th) (century|millennium)( BC)?", t)
+    if m:
+        y = (int(m.group(1)) - 1) * (100 if m.group(2) == "century" else 1000) + 50
+        return (-y if m.group(3) else y, t)
+    m = re.match(r"(\d+)s?( BC)?", t)
+    return ((-int(m.group(1)) if m.group(2) else int(m.group(1))), t) if m else (99999, t)
+
+
+def _life(r: dict) -> str:
+    b, d = r.get("birth_year"), r.get("death_year")
+    fmt = lambda y: f"{-y} BC" if y < 0 else str(y)
+    if b is None and d is None:
+        return ""
+    if d is None:
+        return f" (born {fmt(b)}, living)" if r.get("living") else f" (born {fmt(b)})"
+    return f" ({fmt(b) if b is not None else '?'}-{fmt(d)})"
+
+
+def _year(v) -> str:
+    return "" if v is None else (f"{-v} BC" if v < 0 else str(v))
+
+
+def _span(s, e) -> str:
+    s, e = _dt(s), _dt(e)
+    return f" ({s} to {e})" if s and e and s != e else (f" ({s or e})" if s or e else "")
+
+
+def _when(x: dict) -> str:
+    return f" ({_dt(x.get('ev_start'))})" if x.get("ev_start") else ""
+
+
+def _m(label: str) -> str:
+    return (label or "").replace('"', "'")
+
+
+def _offices(rows: list[dict]) -> list[dict]:
+    """One entry per office: earliest start, latest end, number of terms."""
+    groups: dict[str, dict] = {}
+    for o in rows:
+        g = groups.setdefault(o["qid"], {"name": o["name"], "start": o["start"], "end": o["end"], "terms": 0})
+        g["terms"] += 1
+        if o["start"] and (not g["start"] or o["start"] < g["start"]):
+            g["start"] = o["start"]
+        if o["end"] and (not g["end"] or o["end"] > g["end"]):
+            g["end"] = o["end"]
+    return list(groups.values())
+
+
+async def _resolve(name: str, kind: str | None = None, kinds: tuple[str, ...] | None = None) -> tuple[dict | None, list[dict]]:
+    rows = await db.find_entities(name, kind, kinds=kinds)
+    return (rows[0] if rows else None), rows
+
+
+async def _others(label: str, rows: list[dict]) -> str:
+    """Others called by the same name (or alias), so the model can pick the right one by id."""
+    want = label.strip().lower()
+    same = [r for r in rows[1:] if r["name"].lower() == want
+            or want in [x.strip().lower() for x in (r.get("aliases") or "").split(";")]]
+    if not same:
+        return ""
+    lines = []
+    for r in same[:6]:
+        p = await db.person(r["qid"]) if r["kind"] == "person" else None
+        lines.append(f"- {r['qid']} {r['name']}{_life(p) if p else ''}: {r.get('description') or r['kind']}")
+    return (f"\n\nOther matches for '{label}' (this answer is about {rows[0]['qid']}). "
+            "If the question meant another, call again with its id:\n" + "\n".join(lines))
+
+
+async def _in_sources(qid: str, n: int = 10) -> str:
+    ms = await db.mentions_of(qid, n)
+    if not ms:
+        return ""
+    return "In our sources:\n" + "\n".join(
+        f"- {'case ' + m['cite'] + ' ' if m['doc_type'] == 'case' and m.get('cite') else ''}{m['title']}"
+        f"{' (' + str(m['year']) + ')' if m.get('year') and str(m['year']) not in (m['title'] or '') else ''}: "
+        f"{m['role'] or m['how']} [{m['doc_type']} {m['doc_id']}]" for m in ms)
+
+
+async def h_lookup_person(a: dict) -> list[TextContent]:
+    top, rows = await _resolve(a["name"], "person")
+    if not top:
+        top, rows = await _resolve(a["name"])
+        if not top:
+            return text(f"No one named '{a['name']}' in the graph.")
+    p = await db.person(top["qid"])
+    if not p:
+        return text(f"{top['name']} ({top['qid']}) is a {top['kind']}, not a person. {top.get('description') or ''}"
+                    + ("\nUse explore_event." if top["kind"] == "event" else ""))
+    q = p["qid"]
+    out = [f"{p['name']}{_life(p)} [{q}]", p.get("description") or ""]
+    if p.get("aliases"):
+        out.append("Also called: " + p["aliases"][:300])
+    for r in sorted(await db.links(q, ("born_in", "died_in")), key=lambda r: r["rel"] != "born_in"):
+        out.append(f"{'Born' if r['rel'] == 'born_in' else 'Died'} in {r['name']}")
+    offices = _offices(await db.links(q, ("held",), limit=80))
+    if offices:
+        out.append("Offices:\n" + "\n".join(f"- {o['name']}{_span(o['start'], o['end'])}"
+                                            + (f", {o['terms']} terms" if o["terms"] > 1 else "") for o in offices[:20]))
+    for rels, label in ((("gave",), "Speeches"), (("invented",), "Inventions and discoveries"), (("won",), "Won"),
+                        (("signed",), "Signed"), (("authored",), "Writings")):
+        xs = await db.links(q, rels, limit=12)
+        if xs:
+            out.append(f"{label}: " + "; ".join(f"{x['name']}{_when(x)}" for x in xs[:10]))
+    for rel, label in (("party", "Party"), ("religion", "Religion"), ("occupation", "Occupation")):
+        xs = await db.links(q, (rel,), limit=6)
+        if xs:
+            out.append(f"{label}: " + ", ".join(x["name"] for x in xs))
+    out.append(await _in_sources(q))
+    if p.get("enwiki"):
+        out.append(f"English Wikipedia: {p['enwiki']}")
+    return text("\n".join(x for x in out if x) + "\n\n" + WD + await _others(a["name"], rows))
+
+
+async def h_explore_family(a: dict) -> list[TextContent]:
+    top, rows = await _resolve(a["person"], "person")
+    if not top:
+        return text(f"No one named '{a['person']}' in the graph.")
+    q, gens, way = top["qid"], int(a.get("generations") or 3), a.get("direction") or "both"
+    p = await db.person(q)
+    out = [f"Family of {top['name']}{_life(p) if p else ''} [{q}]"]
+    names, edges = {q: top["name"]}, []
+    up = await db.ancestors(q, gens) if way in ("ancestors", "both") else []
+    if up:
+        out.append("Ancestors:\n" + "\n".join(f"- {'  ' * (r['gen'] - 1)}{r['name']}{_life(r)} ({r['rel']}, generation {r['gen']}) [{r['qid']}]" for r in up))
+        names.update({r["qid"]: r["name"] for r in up})
+        edges += [(r["qid"], r["child"]) for r in up]
+    for rel, label in (("spouse", "Spouses"), ("sibling", "Siblings")):
+        seen: dict[str, dict] = {}
+        for x in await db.links(q, (rel,)) + await db.links(q, (rel,), "in"):
+            seen.setdefault(x["qid"], x)
+        if seen:
+            out.append(f"{label}: " + ", ".join(f"{x['name']}{_life(x)} [{x['qid']}]" for x in seen.values()))
+    down = await db.descendants(q, gens) if way in ("descendants", "both") else []
+    if down:
+        out.append("Descendants:\n" + "\n".join(f"- {'  ' * (r['gen'] - 1)}{r['name']}{_life(r)} (generation {r['gen']}) [{r['qid']}]" for r in down[:150])
+                   + (f"\n(+{len(down) - 150} more)" if len(down) > 150 else ""))
+        names.update({r["qid"]: r["name"] for r in down})
+        edges += [(r["parent"], r["qid"]) for r in down[:60]]
+    if len(out) == 1:
+        out.append("No family links recorded for this person.")
+    lines = [f'  {x}["{_m(names[x])}"] --> {y}["{_m(names[y])}"]' for x, y in edges[:80] if x in names and y in names]
+    if lines:
+        out.append("\n".join(["```mermaid", "graph TD", *lines, "```"]))
+    return text("\n\n".join(out) + "\n\n" + WD + await _others(a["person"], rows))
+
+
+async def h_explore_life(a: dict) -> list[TextContent]:
+    top, rows = await _resolve(a["person"], "person")
+    if not top:
+        return text(f"No one named '{a['person']}' in the graph.")
+    q = top["qid"]
+    p = await db.person(q)
+    items = []
+    if p and p.get("birth"):
+        place = await db.links(q, ("born_in",))
+        items.append((p["birth"], f"Born{' in ' + place[0]['name'] if place else ''}"))
+    for r in await db.links(q, ("educated_at",)):
+        items.append((r["start"] or "", f"Educated at {r['name']}"))
+    for o in _offices(await db.links(q, ("held",), limit=80)):
+        items.append((o["start"] or "", f"Held office: {o['name']}{_span(o['start'], o['end'])}"
+                                         + (f", {o['terms']} terms" if o["terms"] > 1 else "")))
+    verbs = {"participated_in": "Took part in", "fought_in": "Fought in", "signed": "Signed", "gave": "Gave",
+             "invented": "Invented or discovered", "won": "Won"}
+    for r in await db.links(q, tuple(verbs), limit=80):
+        items.append((r["ev_start"] or "", f"{verbs[r['rel']]} {r['name']}{_when(r)} [{r['qid']}]"))
+    for r in await db.links(q, ("authored",), limit=15):
+        items.append((r["ev_start"] or "", f"Wrote {r['name']}"))
+    if p and p.get("death"):
+        place = await db.links(q, ("died_in",))
+        items.append((p["death"], f"Died{' in ' + place[0]['name'] if place else ''}"))
+    if not items:
+        return text(f"No life events recorded for {top['name']} [{q}].")
+    dated = sorted((x for x in items if x[0]), key=lambda x: _sortkey(x[0]))
+    out = [f"Life of {top['name']}{_life(p) if p else ''} [{q}]"]
+    out += [f"- {_dt(t)}: {what}" for t, what in dated] + [f"- {what}" for t, what in items if not t]
+    for rel, label in (("party", "Party"), ("religion", "Religion"), ("award", "Awards")):
+        xs = await db.links(q, (rel,), limit=8)
+        if xs:
+            out.append(f"{label}: " + ", ".join(x["name"] for x in xs))
+    return text("\n".join(out) + "\n\n" + WD + await _others(a["person"], rows))
+
+
+async def _item_card(top: dict, rows: list[dict], label: str) -> list[TextContent]:
+    """A law, document, or other item that isn't stored as an event: what links to it and where it appears."""
+    q = top["qid"]
+    out = [f"{top['name']} [{q}]", top.get("description") or ""]
+    for rel, lab in (("authored", "Written by"), ("signed", "Signed by"), ("gave", "Given by"), ("invented", "Invented by")):
+        xs = await db.links(q, (rel,), "in", limit=30)
+        if xs:
+            out.append(f"{lab}: " + "; ".join(f"{x['name']}{_life(x)}" for x in xs))
+    out.append(await _in_sources(q))
+    return text("\n".join(x for x in out if x) + "\n\n" + WD + await _others(label, rows))
+
+
+async def h_explore_event(a: dict) -> list[TextContent]:
+    top, rows = await _resolve(a["event"], "event")
+    if not top:
+        top, rows = await _resolve(a["event"], kinds=("item",))
+        if not top:
+            return text(f"No event named '{a['event']}' in the graph. Try search_history for documents about it.")
+        return await _item_card(top, rows, a["event"])
+    q = top["qid"]
+    e = await db.event(q)
+    if not e:
+        return await _item_card(top, rows, a["event"])
+    k = e.get("kind") or "event"
+    head = k[:1].upper() + k[1:] + (f" ({e['category']})" if e.get("category") and e["category"] != k else "")
+    out = [f"{e['name']} [{q}]", e.get("description") or "",
+           head + _span(e.get("start"), e.get("end"))
+           + (f"; at {e['location']}" if e.get("location") else "") + (f"; {e['country']}" if e.get("country") else "")]
+    if e.get("case_id"):
+        cite = next((c for c in (e.get("citation") or "").split("; ") if "U.S." in c or "U. S." in c), e.get("citation"))
+        out.append(f"This is a Supreme Court decision in our case collection: get_case with '{cite}'.")
+    if e["name"] in CONFESSION_FOR:
+        out.append(f"The text it produced is in the Study Bible's confessions: get_confession with '{CONFESSION_FOR[e['name']]}'.")
+    elif "church" in (e.get("categories") or ""):
+        out.append("For writings from and about it, use the Study Bible's search_theology and get_church_fathers.")
+    for rels, label, way in ((("part_of",), "Part of", "out"), (("part_of",), "Includes", "in"),
+                             (("follows",), "After", "out"), (("followed_by",), "Before", "out"),
+                             (("caused_by",), "Causes", "out"), (("led_to",), "Effects", "out"),
+                             (("party",), "Parties", "out")):
+        xs = await db.links(q, rels, way, limit=40)
+        if xs:
+            out.append(f"{label}: " + "; ".join(f"{x['name']}{_when(x)} [{x['qid']}]" for x in xs))
+    for rel, label in (("won", "Won by"), ("gave", "Given by"), ("invented", "Invented or discovered by"),
+                       ("authored", "Written by"), ("created", "Created by"), ("signed", "Signed by"),
+                       ("participated_in", "People who took part"), ("fought_in", "Fought in it")):
+        xs = await db.links(q, (rel,), "in", limit=400)
+        if xs:
+            xs.sort(key=lambda x: -(x["sitelinks"] or 0))
+            out.append(f"{label} ({len(xs)}): " + "; ".join(f"{x['name']}{_life(x)}" for x in xs[:40])
+                       + (f"; and {len(xs) - 40} more" if len(xs) > 40 else ""))
+    ms = await db.mentions_of(q, 10)
+    if ms:
+        out.append("In our sources: " + "; ".join(f"{m['title']} [{m['doc_type']} {m['doc_id']}]" for m in ms))
+    if e.get("enwiki"):
+        out.append(f"English Wikipedia: {e['enwiki']}")
+    return text("\n".join(x for x in out if x) + "\n\n" + WD + await _others(a["event"], rows))
+
+
+async def h_explore_place(a: dict) -> list[TextContent]:
+    top, rows = await _resolve(a["place"], "place")
+    if not top:
+        top, rows = await _resolve(a["place"], kinds=("item",))
+        if not top:
+            return text(f"No place named '{a['place']}' in the graph.")
+    q = top["qid"]
+    pl = await db.place(q)
+    out = [f"{pl['name']} [{q}]", pl.get("description") or "",
+           ", ".join(x for x in (pl.get("kind"), pl.get("located_in"), pl.get("country")) if x)]
+    if pl.get("lat") is not None:
+        out.append(f"Coordinates: {pl['lat']:.4f}, {pl['lon']:.4f}")
+    evs = await db.links(q, ("located_at",), "in", limit=400)
+    if evs:
+        evs = sorted(sorted(evs, key=lambda x: -(x["sitelinks"] or 0))[:60], key=lambda x: _sortkey(x["ev_start"] or ""))
+        out.append("Events here (the best known, in order):\n" + "\n".join(f"- {x['name']}{_when(x)} [{x['qid']}]" for x in evs))
+    for rel, label in (("born_in", "Born here"), ("died_in", "Died here")):
+        xs = await db.links(q, (rel,), "in", limit=400)
+        if xs:
+            xs.sort(key=lambda x: -(x["sitelinks"] or 0))
+            out.append(f"{label} ({len(xs)}): " + "; ".join(f"{x['name']}{_life(x)}" for x in xs[:25]))
+    return text("\n".join(x for x in out if x) + "\n\n" + WD + await _others(a["place"], rows))
+
+
+async def h_connection(a: dict) -> list[TextContent]:
+    async def pick(name):
+        top, rows = await _resolve(name, kinds=("person", "event"))
+        return (top, rows) if top else await _resolve(name)
+    (x, xr), (y, yr) = await pick(a["from"]), await pick(a["to"])
+    if not x or not y:
+        return text(f"Couldn't find {'either name' if not x and not y else repr(a['from'] if not x else a['to'])} in the graph.")
+    path = await db.connection_path(x["qid"], y["qid"])
+    others = await _others(a["from"], xr) + await _others(a["to"], yr)
+    if path is None:
+        return text(f"No connection within six links between {x['name']} [{x['qid']}] and {y['name']} [{y['qid']}] "
+                    "through family, teachers, succession, shared events, signed documents, or co-written works." + others)
+    lines = [f"{x['name']} to {y['name']}, {len(path)} link{'s' if len(path) != 1 else ''}:"]
+    mer = ["```mermaid", "graph LR"]
+    for s in path:
+        via = f" as {s['via_name']}" if s["rel"] == "succeeded" and s.get("via_name") else ""
+        lines.append("- " + PHRASE.get(s["rel"], "{a} " + s["rel"] + " {b}").format(
+            a=f"{s['src_name']} [{s['src']}]", b=f"{s['dst_name']} [{s['dst']}]") + via)
+        mer.append(f'  {s["src"]}["{_m(s["src_name"])}"] -- {SHORT.get(s["rel"], s["rel"])} --> {s["dst"]}["{_m(s["dst_name"])}"]')
+    mer.append("```")
+    return text("\n".join(lines) + "\n\n" + "\n".join(mer) + "\n\n" + WD + others)
+
+
+async def h_timeline(a: dict) -> list[TextContent]:
+    y0 = int(a["year_from"])
+    y1 = int(a.get("year_to") or y0)
+    if y1 < y0:
+        y0, y1 = y1, y0
+    country = None
+    if a.get("country"):
+        c = await db.find_entities(a["country"], kinds=("place", "item"), limit=3)
+        country = c[0]["qid"] if c else None
+    evs = await db.timeline(y0, y1, country, a.get("kind"), 40)
+    eras = await db.eras_during(y0, y1, country if a.get("country") else None) if not a.get("kind") else []
+    lives = await db.notable_lives(y0, y1, country, 12)
+    span = _year(y0) if y0 == y1 else f"{_year(y0)} to {_year(y1)}"
+    out = [f"{span}{' in ' + a['country'] if a.get('country') else ''}{', ' + a['kind'] if a.get('kind') else ''}"]
+    if eras:
+        out.append("Eras: " + "; ".join(f"{r['name']}{_span(r['start'], r['end'])}" for r in eras))
+    if evs:
+        out.append("Events (the 40 best known, in order):\n" + "\n".join(
+            f"- {_dt(r['start'] or _year(r['start_year']))}: {r['name']}"
+            f"{' (' + r['kind'] + ')' if r.get('kind') else ''}{', ' + r['country'] if r.get('country') else ''} [{r['qid']}]" for r in evs))
+    if lives:
+        out.append("Alive then, among the best known: " + "; ".join(f"{r['name']}{_life(r)}" for r in lives))
+    if len(out) == 1:
+        out.append("Nothing recorded for that span.")
+    return text("\n\n".join(out) + "\n\n" + WD)
+
+
+async def h_succession(a: dict) -> list[TextContent]:
+    if a.get("office"):
+        top, rows = await _resolve(a["office"], "item")
+        holders = await db.office_holders(top["qid"]) if top else []
+        if not holders:
+            for r in rows[1:]:
+                holders = await db.office_holders(r["qid"])
+                if holders:
+                    top = r
+                    break
+        if not holders:
+            return text(f"No holders recorded for '{a['office']}'. Try the full title ('Governor of Illinois').")
+        return text(f"{top['name']} [{top['qid']}], {len(holders)} terms recorded:\n" + "\n".join(
+            f"- {h['name']}{_life(h)}{_span(h['start'], h['end'])}" for h in holders) + "\n\n" + WD)
+    if a.get("person"):
+        top, rows = await _resolve(a["person"], "person")
+        if not top:
+            return text(f"No one named '{a['person']}' in the graph.")
+        q = top["qid"]
+        before = {r["via"]: r for r in await db.links(q, ("succeeded",)) if r.get("via")}
+        after = {r["via"]: r for r in await db.links(q, ("succeeded",), "in") if r.get("via")}
+        lines = []
+        for o in await db.links(q, ("held",), limit=80):
+            b, f = before.get(o["qid"]), after.get(o["qid"])
+            lines.append(f"- {o['name']}{_span(o['start'], o['end'])}"
+                         + (f"; before: {b['name']}" if b else "") + (f"; after: {f['name']}" if f else ""))
+        return text(f"Offices of {top['name']} [{q}]:\n" + ("\n".join(dict.fromkeys(lines)) or "none recorded") + "\n\n" + WD
+                    + await _others(a["person"], rows))
+    return text("Give an office or a person.")
+
+
+async def h_people_in_document(a: dict) -> list[TextContent]:
+    if a.get("case"):
+        c = await db.find_case(a["case"])
+        if not c:
+            return text("No case found by that citation or name.")
+        doc_type, doc_id, title = "case", c["id"], f"{c['name']}, {c['cite']} ({c['year']})"
+    elif a.get("document_id"):
+        d = await db.document(int(a["document_id"]))
+        if not d:
+            return text("No document with that id.")
+        doc_type, doc_id, title = "document", d["id"], _cite(d)
+    else:
+        return text("Give a document_id or a case.")
+    ms = await db.mentions_in(doc_type, doc_id)
+    if not ms:
+        return text(f"{title}: no people or events linked yet.")
+    how = {"stated": "stated in the record", "hand": "tagged by reading", "match": "name found in the text"}
+    groups: dict[str, list[str]] = {}
+    for m in ms:
+        groups.setdefault(how.get(m["how"], m["how"]), []).append(
+            f"- {m['name']}{_life(m)}{', ' + m['role'] if m.get('role') else ''} [{m['qid']}]")
+    return text(title + "\n\n" + "\n\n".join(f"{k}:\n" + "\n".join(v) for k, v in groups.items()) + "\n\n" + WD)
+
+
 HANDLERS = {"search_history": h_search, "find_documents": h_find, "get_document": h_get,
             "get_constitution": h_constitution, "get_flag_code": h_flag, "constitution_test_guide": h_guide,
             "search_cases": h_search_cases, "get_case": h_get_case, "get_statute": h_statute,
-            "get_constitution_annotation": h_conan, "lookup_legislator": h_legislator, "define_term": h_define}
+            "get_constitution_annotation": h_conan, "lookup_legislator": h_legislator, "define_term": h_define,
+            "lookup_person": h_lookup_person, "explore_family": h_explore_family, "explore_life": h_explore_life,
+            "explore_event": h_explore_event, "explore_historic_place": h_explore_place,
+            "find_historical_connection": h_connection, "timeline": h_timeline, "succession": h_succession,
+            "people_in_document": h_people_in_document}
 
 
 @server.list_tools()

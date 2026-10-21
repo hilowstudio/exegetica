@@ -90,3 +90,27 @@ Counts from Wikidata (2026-10-20), by the number of Wikipedia language editions 
 5. **Fix the Bible graph too:** give it the history graph's name disambiguation and dated, sourced edges. Two small bugs to fix along the way:
    - `graph_enriched_search` looks family up again by name, so it can show the wrong Mary's family.
    - `lookup_name` reads the wrong column, so its "Key References" line never appears.
+
+   Done 2026-10-20 (both bugs, plus a list of other matches with ids on every person answer).
+6. **Event scope (decided 2026-10-21): broad.** Adam widened the events beyond wars, treaties, and councils to legislation, speeches, expeditions, notable disasters, inventions, discoveries, and achievements; eras yes; inventions from every era to the present; significant Olympics yes. Each category has its own fame bar (the fewest Wikipedia language editions it needs, worldwide and in the United States; anything located in Illinois needs one). Claude set the bars from a count of each category, since Adam was away:
+
+   | Category | Classes (examples) | World | U.S. |
+   |---|---|---|---|
+   | Conflict | wars, battles, sieges, revolutions, massacres, assassinations, terrorist attacks, armistices | 5 | 2 |
+   | Law and government | treaties, legislation, constitutions, charters, declarations, trials, scandals, conferences and summits | 5 | 2 |
+   | U.S. law | Acts of Congress, amendments, executive orders, presidential proclamations, impeachments | 1 | 1 |
+   | Court | every Supreme Court decision | always | |
+   | Elections | elections and referendums (every U.S. presidential election) | 10 | 2 |
+   | Speeches and texts | speeches, inaugural addresses, sermons, manifestos, open letters, proclamations, edicts, political slogans | 5 | 2 |
+   | Exploration | expeditions, spaceflights, space probes, circumnavigations, first ascents | 5 | 2 |
+   | Disasters | earthquakes, storms, floods, eruptions, fires, famines, epidemics, shipwrecks, air, rail, mining, industrial, and nuclear disasters | 10 | 3 |
+   | Society | movements, strikes, protests, boycotts, riots, migrations, gold rushes, world's fairs, transfers of sovereignty | 5 | 2 |
+   | Economy | financial and economic crises, recessions | 5 | 2 |
+   | Eras | historical periods, eras, ages, cultural movements | 10 | 2 |
+   | Church | ecumenical councils, synods, Great Awakenings, schisms, persecutions, revivals, Imperial Diets | 3 | 2 |
+   | Olympics | every Summer and Winter Games | always | |
+   | Inventions and discoveries | anything with an inventor or discoverer or a date of invention (not stars, species, genes, proteins, or people) | 10 | 5 |
+
+   Classes were chosen from about 200 examples a Yorkville student would ask about, looked up to see how Wikidata classifies them; every class id was checked against its English label. Taking part in a conflict, a political event, an expedition, a reform movement, or a church council brings a person into the graph; an election, a disaster, an invention, an era, or the Olympics does not.
+7. **Church history (checked 2026-10-21):** the Study Bible's tools hold the texts (42 creeds and confessions, 308 church fathers in the catena, the theology library) and no events: its graph (Theographic) ends with Acts. So the history graph carries church-history events and people and points to the Study Bible's tools for the texts (a council's confession through get_confession, writings through search_theology and get_church_fathers), copying none of them.
+8. **Living roles, narrowed (2026-10-21) to match decision 1:** commanders (generals, admirals, flag officers, military commanders and leaders) and church leaders (bishops, cardinals, pastors, ministers, preachers, evangelists, religious leaders), with civil-rights and human-rights leaders, astronauts, and Nobel laureates. The first harvest had admitted every living military officer and theologian.
