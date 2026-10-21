@@ -12,7 +12,9 @@ import sys
 import time
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+_up = Path(__file__).resolve().parents
+if len(_up) > 2 and (_up[2] / "src").exists():  # the repo; on the server the package is installed
+    sys.path.insert(0, str(_up[2] / "src"))
 from socialsci_mcp import server  # noqa: E402
 
 CASES = [  # (tool, arguments, text the answer must contain)
