@@ -781,34 +781,56 @@ class StudyBibleDB:
     # =========================================================================
 
     async def graph_find_person(self, name: str) -> list[dict]:
-        """Find a person by name (fuzzy match).
+        """Find people by name, a name plus epithet ("Mary Magdalene", "John Mark"), or a graph id
+        ("mary_1943") taken from an earlier answer's list of matches.
 
-        Orders by: exact name match first, then by number of aliases
-        (more aliases = more prominent biblical figure), then family edges.
+        Orders by: exact name (or name plus epithet) first, then by how many verses mention the
+        person, so the Mary most of Scripture is about comes before a Mary named once. Each row
+        carries `mentions` and one `sample_ref` so callers can tell same-named people apart.
         """
+        name = (name or "").strip()
+        cols = """p.*,
+                  (SELECT COUNT(*) FROM graph_verse_mentions vm
+                    WHERE vm.entity_type = 'person' AND vm.entity_id = p.id) AS mentions,
+                  (SELECT vm.verse_ref FROM graph_verse_mentions vm
+                    WHERE vm.entity_type = 'person' AND vm.entity_id = p.id LIMIT 1) AS sample_ref"""
+        if re.fullmatch(r"[\w-]+_\d+", name):
+            return await self._fetchall(f"SELECT {cols} FROM graph_people p WHERE p.id = ?", (name,))
+        words = name.split()
+        # the id's name part is the name a person is known by (John Mark is name "John", id mark_1679)
+        slug = "(LOWER(p.id) LIKE LOWER(?) ESCAPE '\\')"
+        conds = ["LOWER(p.name) = LOWER(?)", "LOWER(p.also_called) LIKE LOWER(?)", slug]
+        params: list = [name, f"%{name}%", name.replace(" ", "\\_") + "\\_%"]
+        exact = f"(LOWER(p.name) = LOWER(?) OR {slug})"
+        exact_params: list = [name, name.replace(" ", "\\_") + "\\_%"]
+        if len(words) > 1:
+            # "Mary Magdalene": a name plus an epithet; "John Mark": a name plus the id's name part
+            epithet = ("(LOWER(p.name) = LOWER(?) AND (LOWER(p.also_called) LIKE LOWER(?) "
+                       "OR LOWER(p.id) LIKE LOWER(?) ESCAPE '\\'))")
+            epithet_params = [words[0], f"%{' '.join(words[1:])}%", words[-1] + "\\_%"]
+            conds.append(epithet)
+            params += epithet_params
+            exact = f"({exact} OR {epithet})"
+            exact_params += epithet_params
         return await self._fetchall(
-            """SELECT p.* FROM graph_people p
-               LEFT JOIN (
-                   SELECT from_person_id as pid, COUNT(*) as cnt FROM graph_family_edges GROUP BY from_person_id
-                   UNION ALL
-                   SELECT to_person_id, COUNT(*) FROM graph_family_edges GROUP BY to_person_id
-               ) fe ON fe.pid = p.id
-               WHERE LOWER(p.name) = LOWER(?)
-                  OR LOWER(p.also_called) LIKE LOWER(?)
-               GROUP BY p.id
-               ORDER BY
-                   CASE WHEN LOWER(p.name) = LOWER(?) THEN 0 ELSE 1 END,
-                   LENGTH(COALESCE(p.also_called, '')) DESC,
-                   COALESCE(SUM(fe.cnt), 0) DESC
-               LIMIT 10""",
-            (name, f"%{name}%", name),
+            f"""SELECT {cols} FROM graph_people p
+                WHERE {' OR '.join(conds)}
+                ORDER BY CASE WHEN {exact} THEN 0 ELSE 1 END, mentions DESC
+                LIMIT 10""",
+            (*params, *exact_params),
         )
 
     async def graph_find_place(self, name: str) -> list[dict]:
-        """Find a place by name (fuzzy match)."""
+        """Find a place by name: an exact name first, then the most-mentioned partial matches."""
         return await self._fetchall(
-            "SELECT * FROM graph_places WHERE LOWER(name) LIKE LOWER(?) LIMIT 10",
-            (f"%{name}%",),
+            """SELECT pl.*,
+                      (SELECT COUNT(*) FROM graph_verse_mentions vm
+                        WHERE vm.entity_type = 'place' AND vm.entity_id = pl.id) AS mentions
+               FROM graph_places pl
+               WHERE LOWER(pl.name) LIKE LOWER(?) OR pl.id = ?
+               ORDER BY CASE WHEN LOWER(pl.name) = LOWER(?) OR pl.id = ? THEN 0 ELSE 1 END, mentions DESC
+               LIMIT 10""",
+            (f"%{name}%", name, name, name),
         )
 
     async def graph_get_ancestors(
@@ -960,7 +982,7 @@ class StudyBibleDB:
                 (person_id,),
             ),
             "partners": await self._fetchall(
-                """SELECT p.* FROM graph_family_edges e
+                """SELECT DISTINCT p.* FROM graph_family_edges e
                    JOIN graph_people p ON p.id = CASE
                        WHEN e.from_person_id = ? THEN e.to_person_id
                        ELSE e.from_person_id END
@@ -969,7 +991,7 @@ class StudyBibleDB:
                 (person_id, person_id, person_id),
             ),
             "siblings": await self._fetchall(
-                """SELECT p.* FROM graph_family_edges e
+                """SELECT DISTINCT p.* FROM graph_family_edges e
                    JOIN graph_people p ON p.id = CASE
                        WHEN e.from_person_id = ? THEN e.to_person_id
                        ELSE e.from_person_id END
@@ -1047,7 +1069,7 @@ class StudyBibleDB:
 
         async with self.conn.execute(
             """SELECT vm.entity_type, vm.entity_id,
-                      COALESCE(p.name, pl.name, e.title) as entity_name
+                      COALESCE(p.name, pl.name, e.title) as entity_name, p.also_called
                FROM graph_verse_mentions vm
                LEFT JOIN graph_people p ON vm.entity_type = 'person' AND p.id = vm.entity_id
                LEFT JOIN graph_places pl ON vm.entity_type = 'place' AND pl.id = vm.entity_id

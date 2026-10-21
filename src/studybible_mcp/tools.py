@@ -426,7 +426,7 @@ immediate family without the traversal.""",
             "properties": {
                 "person": {
                     "type": "string",
-                    "description": "Name of the person (e.g., 'David', 'Abraham', 'Jesus')"
+                    "description": "Name of the person (e.g., 'David', 'Abraham', 'Mary Magdalene'), or a graph id such as 'mary_1943' from a list of other matches"
                 },
                 "direction": {
                     "type": "string",
@@ -481,7 +481,7 @@ lineage.""",
             "properties": {
                 "person": {
                     "type": "string",
-                    "description": "Name of the person (e.g., 'Moses', 'Paul', 'David')"
+                    "description": "Name of the person (e.g., 'Moses', 'Paul', 'John Mark'), or a graph id such as 'john_1679' from a list of other matches"
                 }
             },
             "required": ["person"]
@@ -530,11 +530,11 @@ path between two people.""",
             "properties": {
                 "person1": {
                     "type": "string",
-                    "description": "First person's name (e.g., 'Abraham')"
+                    "description": "First person's name (e.g., 'Abraham') or graph id"
                 },
                 "person2": {
                     "type": "string",
-                    "description": "Second person's name (e.g., 'David')"
+                    "description": "Second person's name (e.g., 'David') or graph id"
                 }
             },
             "required": ["person1", "person2"]
@@ -1087,7 +1087,7 @@ def format_name_entry(entry: dict, acai_data: dict | None = None) -> str:
                 lines.append(f"- {key.title()}: {value}")
         lines.append("")
 
-    refs = _parse_json_field(entry.get('references'))
+    refs = _parse_json_field(entry.get('refs') or entry.get('references'))
     if refs:
         lines.append("**Key References**: " + ", ".join(refs[:10]))
         if len(refs) > 10:
@@ -1326,7 +1326,7 @@ def format_enriched_verse(reference: str, verse: dict | None, entities: dict, fa
         reference: The verse reference string
         verse: The verse dict (or None)
         entities: Dict with 'people', 'places', 'events' lists
-        family_data: Map of person name -> family dict from graph_get_family
+        family_data: Map of person id (graph_verse_mentions.entity_id) -> family dict from graph_get_family
     """
     lines = [f"## {reference}\n"]
 
@@ -1345,8 +1345,10 @@ def format_enriched_verse(reference: str, verse: dict | None, entities: dict, fa
         lines.append("### People Mentioned")
         for p in people:
             name = p.get("entity_name", p.get("entity_id"))
-            lines.append(f"\n**{name}**")
-            family = family_data.get(name)
+            names = [a.strip() for a in (p.get("also_called") or "").split(",") if a.strip()]
+            alias = f" ({', '.join(names[:3])}{', ...' if len(names) > 3 else ''})" if names else ""
+            lines.append(f"\n**{name}**{alias} `{p.get('entity_id')}`")
+            family = family_data.get(p.get("entity_id")) or family_data.get(name)
             if family:
                 parts = []
                 if family["parents"]:

@@ -680,6 +680,22 @@ async def _check_graph_data() -> list[TextContent] | None:
     return None
 
 
+def _others_note(label: str, matches: list[dict]) -> str:
+    """When a name fits several people, say who else it could mean, with ids the model can pass back."""
+    if len(matches) < 2:
+        return ""
+    lines = []
+    for m in matches[1:]:
+        about = (m.get("description") or "").strip().replace("\n", " ")
+        about = (about[:90] + "...") if len(about) > 90 else about
+        if m.get("also_called"):
+            about = f"called {m['also_called']}" + (f"; {about}" if about else "")
+        where = f"; mentioned in {m.get('mentions') or 0} verse(s), e.g. {m['sample_ref']}" if m.get("sample_ref") else ""
+        lines.append(f"- `{m['id']}` {m['name']}" + (f": {about}" if about else "") + where)
+    return (f"\n\n### Other people named '{label}'\nThis answer is about `{matches[0]['id']}` "
+            f"({matches[0]['name']}). If the question meant someone else, call again with their id:\n" + "\n".join(lines))
+
+
 async def handle_explore_genealogy(args: dict[str, Any]) -> list[TextContent]:
     """Trace a person's family tree."""
     if err := await _check_graph_data():
@@ -718,7 +734,7 @@ async def handle_explore_genealogy(args: dict[str, Any]) -> list[TextContent]:
     diagram = mermaid_genealogy(person["name"], ancestors, descendants, family)
     if diagram:
         result += f"\n### Family Tree Diagram\n{diagram}\n"
-    return text(result)
+    return text(result + _others_note(person_name, matches))
 
 
 async def handle_people_in_passage(args: dict[str, Any]) -> list[TextContent]:
@@ -769,7 +785,7 @@ async def handle_explore_person_events(args: dict[str, Any]) -> list[TextContent
     diagram = mermaid_person_timeline(person["name"], events, event_places)
     if diagram:
         result += f"\n### Timeline Diagram\n{diagram}\n"
-    return text(result)
+    return text(result + _others_note(person_name, matches))
 
 
 async def handle_explore_place(args: dict[str, Any]) -> list[TextContent]:
@@ -819,7 +835,7 @@ async def handle_find_connection(args: dict[str, Any]) -> list[TextContent]:
     diagram = mermaid_connection_path(person1["name"], person2["name"], path)
     if diagram:
         result += f"\n### Relationship Diagram\n{diagram}\n"
-    return text(result)
+    return text(result + _others_note(name1, matches1) + _others_note(name2, matches2))
 
 
 async def handle_graph_enriched_search(args: dict[str, Any]) -> list[TextContent]:
@@ -835,12 +851,11 @@ async def handle_graph_enriched_search(args: dict[str, Any]) -> list[TextContent
     normalized = db._normalize_reference(reference)
     entities = await db.graph_get_verse_entities(normalized)
 
+    # the verse mention already names the exact person (mary_1943, not "a Mary"), so use its id
     family_data = {}
     for p in entities.get("people", []):
-        name = p.get("entity_name", p.get("entity_id"))
-        person_matches = await db.graph_find_person(name)
-        if person_matches:
-            family_data[name] = await db.graph_get_family(person_matches[0]["id"])
+        if p.get("entity_id"):
+            family_data[p["entity_id"]] = await db.graph_get_family(p["entity_id"])
 
     return text(format_enriched_verse(reference, verse, entities, family_data))
 
