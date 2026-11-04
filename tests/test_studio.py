@@ -713,6 +713,73 @@ def test_15_seconds_runs_on_your_gpu_only_and_from_words_alone_takes_the_shape(e
     assert "first_frame" not in gen and "1" not in wf
 
 
+def test_a_still_on_your_gpu_waits_like_a_video_and_comes_home_as_a_png(env):
+    env["keys"] = {"fal", "baseten"}
+    item = make(env, mode="create", model="h3-still", shape="landscape", steps=40).json()["image"]
+    assert (item["status"], item["service"], item["kind"]) == ("pending", "baseten", "image")
+    assert (item["width"], item["height"], item["steps"]) == (1152, 864, 40)
+    env["comfy_ready"] = True
+    check(env, item)
+    wf = env["comfy"][-1][1]
+    assert wf["16"]["class_type"] == "SaveImage" and wf["11"]["inputs"]["steps"] == 40
+    env["comfy_state"] = ("done", [{"filename": "h3_still_00001_.png", "subfolder": "studio", "type": "output"}], "")
+    done = check(env, item).json()["image"]
+    assert done["status"] == "ready" and done["ext"] == "png"
+    assert env["store"][f"studio/{ADMIN['id']}/{item['id']}.png"][1] == "image/png"
+    assert env["rows"][-1]["route"] == "studio" and env["rows"][-1]["outcome"] == "complete"
+
+
+def test_a_last_frame_runs_on_your_gpu_only(env):
+    env["keys"] = {"fal", "runware", "baseten"}
+    q = quote(env, mode="video", model="h3", seconds=5, ending=True)
+    reasons = {s["service"]: s["reason"] for s in q["services"]}
+    assert reasons["fal"] == reasons["runware"] == "takes no last frame" and q["choice"] is None
+    r = make(env, mode="video", model="wan-3", end={"data_url": png_data_url(64, 64)})
+    assert r.status_code == 400 and "takes no last frame" in r.json()["error"]
+
+    item = make(env, mode="video", model="h3", seconds=5, service="baseten",
+                source={"data_url": png_data_url(960, 640)}, end={"data_url": png_data_url(960, 640)}).json()["image"]
+    env["comfy_ready"] = True
+    check(env, item)
+    names = [c[2] for c in env["comfy"] if c[0] == "upload"]
+    assert names == [f"{item['id']}-source.png", f"{item['id']}-last.png"]   # each picture its own name
+    gen = env["comfy"][-1][1]["7"]["inputs"]
+    assert gen["first_frame"] == ["1", 0] and gen["last_frame"] == ["17", 0]
+
+
+def test_pictures_become_references_and_pinned_frames_and_go_when_the_video_goes(env):
+    env["keys"] = {"fal", "baseten"}
+    pic = {"data_url": png_data_url(800, 600)}
+    item = make(env, mode="video", model="h3-ref", seconds=5, shape="wide", prompt="picture 1 waves at Picture 2",
+                source=pic, end=pic, refs=[pic, pic], pins=[{"source": pic, "at": 2.5}]).json()["image"]
+    assert item["service"] == "baseten" and (item["width"], item["height"]) == (1344, 768)   # no pick needed
+    folder = f"studio/{ADMIN['id']}/{item['id']}"
+    assert {k for k in env["store"] if k.startswith(folder)} == {
+        f"{folder}-{s}.png" for s in ("source", "last", "ref1", "ref2", "at1")}
+
+    env["comfy_ready"] = True
+    check(env, item)
+    wf = env["comfy"][-1][1]
+    gen = wf["7"]["inputs"]
+    assert gen["prompt"] == "<Picture 1> waves at <Picture 2>"
+    assert gen["ref_images.ref_image_1"] == ["102", 0] and wf["102"]["inputs"]["image"] == f"{item['id']}-ref2.png"
+    assert [wf[n]["inputs"]["frame_idx"] for n in ("301", "302", "303")] == [0, 60, -1]   # first, 2.5 s, last
+
+    assert env["client"].delete(f"/api/studio/image/{item['id']}").status_code == 200
+    assert not [k for k in env["store"] if k.startswith(folder)]
+
+
+@pytest.mark.parametrize("extra, said", [
+    ({"pins": [{"source": {"data_url": "x"}, "at": 5}]}, "between 0 and 5"),
+    ({"refs": [{"data_url": "x"}] * 10}, "up to 9 pictures"),
+    ({"pins": [{"source": {"data_url": "x"}, "at": 1}] * 4}, "up to 3 pictures at set seconds"),
+])
+def test_pictures_beyond_what_the_model_takes_are_turned_back_before_anything_runs(env, extra, said):
+    env["keys"] = {"baseten"}
+    r = make(env, mode="video", model="h3-ref", seconds=5, **extra)
+    assert r.status_code == 400 and said in r.json()["error"] and env["comfy"] == []
+
+
 def test_a_workflow_comfyui_refuses_ends_the_job_instead_of_asking_again(env):
     env["keys"] = {"baseten"}
     item = make(env, mode="video", model="h3", seconds=5, service="baseten").json()["image"]

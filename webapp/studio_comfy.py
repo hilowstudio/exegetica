@@ -21,10 +21,12 @@ MODEL_ENV = "BASETEN_COMFY_MODEL_ID"
 COLD_START = 1300   # Baseten holds a request up to 1200 s while a replica wakes
 READY_WAIT = 8      # a readiness probe gives up this soon, so a check never waits out a cold start
 
-# MiniMax H3 from a first frame or from words alone, the files Comfy's own template loads
-# (baseten/comfyui/config.yaml).
+# MiniMax H3, the files Comfy's own templates load (baseten/comfyui/config.yaml): `model` makes a
+# video from words, first and last frames, or a still; `ref_model` makes one from reference pictures
+# and pictures pinned at set moments.
 H3_FILES = {
     "model": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "ref_model": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
     "turbo": "minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
     "text": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
     "video_vae": "minimax_h3_video_vae_int8_convrot.safetensors",
@@ -33,6 +35,8 @@ H3_FILES = {
 H3_FPS = 24
 H3_AREA = 1344 * 768  # the model's 768p frame
 H3_TURBO_STEPS = 8
+H3_REF_STEPS = 20     # Comfy's reference template; its only speed LoRA is a 0.1 preview
+H3_MAX_REFS = 9       # MiniMaxH3ReferenceToVideo takes ref_image_0 to ref_image_8
 
 
 def h3_frames(seconds: float) -> int:
@@ -49,27 +53,26 @@ def h3_size(width: int, height: int) -> tuple[int, int]:
     return max(256, round(w / 32) * 32), max(256, round(w / ratio / 32) * 32)
 
 
-def h3_video(prompt: str, image: str | None, width: int, height: int, seconds: float, seed: int) -> dict:
-    """The API-format workflow: Comfy's MiniMax H3 template with the 8-step Turbo LoRA on,
-    flattened. `image` is the name ComfyUI gave the uploaded first frame, or None for words alone."""
-    gen = {"prompt": prompt, "width": width, "height": height, "length": h3_frames(seconds),
-           "clip": ["4", 0], "vae": ["5", 0]}
-    wf = {
-        "2": {"class_type": "UNETLoader", "inputs": {"unet_name": H3_FILES["model"], "weight_dtype": "default"}},
-        "3": {"class_type": "LoraLoaderModelOnly",
-              "inputs": {"lora_name": H3_FILES["turbo"], "strength_model": 1.0, "model": ["2", 0]}},
+def _loaders(model: str) -> dict:
+    return {
+        "2": {"class_type": "UNETLoader", "inputs": {"unet_name": H3_FILES[model], "weight_dtype": "default"}},
         "4": {"class_type": "CLIPLoader", "inputs": {"clip_name": H3_FILES["text"], "type": "minimax", "device": "default"}},
         "5": {"class_type": "VAELoader", "inputs": {"vae_name": H3_FILES["video_vae"]}},
         "6": {"class_type": "VAELoader", "inputs": {"vae_name": H3_FILES["audio_vae"]}},
-        "7": {"class_type": "MiniMaxH3ImageToVideo", "inputs": gen},
+    }
+
+
+def _sample_and_save(model: list, conditioning: list, latent: list, steps: int, seed: int) -> dict:
+    """Sampling, decoding and the saved clip, shared by both video workflows (nodes 8 to 16)."""
+    return {
         "8": {"class_type": "RandomNoise", "inputs": {"noise_seed": seed}},
         "9": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "res_multistep"}},
         "10": {"class_type": "BasicScheduler",
-               "inputs": {"scheduler": "simple", "steps": H3_TURBO_STEPS, "denoise": 1.0, "model": ["3", 0]}},
-        "11": {"class_type": "BasicGuider", "inputs": {"model": ["3", 0], "conditioning": ["7", 0]}},
+               "inputs": {"scheduler": "simple", "steps": steps, "denoise": 1.0, "model": model}},
+        "11": {"class_type": "BasicGuider", "inputs": {"model": model, "conditioning": conditioning}},
         "12": {"class_type": "SamplerCustomAdvanced",
                "inputs": {"noise": ["8", 0], "guider": ["11", 0], "sampler": ["9", 0], "sigmas": ["10", 0],
-                          "latent_image": ["7", 1]}},
+                          "latent_image": latent}},
         "13": {"class_type": "VAEDecode", "inputs": {"samples": ["12", 0], "vae": ["5", 0]}},
         "14": {"class_type": "VAEDecodeAudio", "inputs": {"samples": ["12", 0], "vae": ["6", 0]}},
         "15": {"class_type": "CreateVideo",
@@ -79,10 +82,70 @@ def h3_video(prompt: str, image: str | None, width: int, height: int, seconds: f
                "inputs": {"filename_prefix": "studio/h3", "format": "auto", "format.codec": "auto", "codec": "auto",
                           "video": ["15", 0]}},
     }
+
+
+def h3_video(prompt: str, image: str | None, width: int, height: int, seconds: float, seed: int,
+             last: str | None = None) -> dict:
+    """The API-format workflow: Comfy's MiniMax H3 template with the 8-step Turbo LoRA on,
+    flattened. `image` and `last` are the names ComfyUI gave the uploaded first and last frames,
+    or None. With neither, the video comes from words alone."""
+    gen = {"prompt": prompt, "width": width, "height": height, "length": h3_frames(seconds),
+           "clip": ["4", 0], "vae": ["5", 0]}
+    wf = _loaders("model") | {
+        "3": {"class_type": "LoraLoaderModelOnly",
+              "inputs": {"lora_name": H3_FILES["turbo"], "strength_model": 1.0, "model": ["2", 0]}},
+        "7": {"class_type": "MiniMaxH3ImageToVideo", "inputs": gen},
+    } | _sample_and_save(["3", 0], ["7", 0], ["7", 1], H3_TURBO_STEPS, seed)
     if image:
         wf["1"] = {"class_type": "LoadImage", "inputs": {"image": image}}
         gen["first_frame"] = ["1", 0]
+    if last:
+        wf["17"] = {"class_type": "LoadImage", "inputs": {"image": last}}
+        gen["last_frame"] = ["17", 0]
     return wf
+
+
+def h3_refs(prompt: str, refs: list[str], pinned: list[tuple[str, int]], width: int, height: int,
+            seconds: float, seed: int) -> dict:
+    """Comfy's reference-to-video and multi-frame templates, flattened, at their full 20 steps.
+    `refs` are uploaded pictures the prompt names <Picture 1>, <Picture 2> and on. `pinned` holds
+    (uploaded picture, frame index) pairs that anchor the video at those frames, -1 being the last."""
+    gen = {"prompt": prompt, "width": width, "height": height, "length": h3_frames(seconds),
+           "ref_image_size": "match", "clip": ["4", 0], "vae": ["5", 0], "audio_vae": ["6", 0]}
+    wf = _loaders("ref_model") | {"7": {"class_type": "MiniMaxH3ReferenceToVideo", "inputs": gen}}
+    for i, name in enumerate(refs[:H3_MAX_REFS]):
+        wf[str(101 + i)] = {"class_type": "LoadImage", "inputs": {"image": name}}
+        gen[f"ref_images.ref_image_{i}"] = [str(101 + i), 0]
+    positive = ["7", 0]
+    for i, (name, frame) in enumerate(pinned):
+        wf[str(201 + i)] = {"class_type": "LoadImage", "inputs": {"image": name}}
+        wf[str(301 + i)] = {"class_type": "MiniMaxH3AddGuide",
+                            "inputs": {"positive": positive, "latent": ["7", 1], "vae": ["5", 0], "audio_vae": ["6", 0],
+                                       "image": [str(201 + i), 0], "frame_idx": frame}}
+        positive = [str(301 + i), 0]
+    return wf | _sample_and_save(["2", 0], positive, ["7", 1], H3_REF_STEPS, seed)
+
+
+def h3_still(prompt: str, width: int, height: int, steps: int, seed: int) -> dict:
+    """Comfy's MiniMax H3 text-to-image template, flattened: the video model draws one frame at
+    full steps, with no Turbo LoRA, and the frame is saved as a PNG."""
+    loaders = _loaders("model")
+    del loaders["6"]   # a still has no sound
+    return loaders | {
+        "7": {"class_type": "CLIPTextEncode", "inputs": {"text": prompt, "clip": ["4", 0]}},
+        "8": {"class_type": "EmptyLatentImage", "inputs": {"width": width, "height": height, "batch_size": 1}},
+        "9": {"class_type": "RandomNoise", "inputs": {"noise_seed": seed}},
+        "10": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "res_multistep"}},
+        "11": {"class_type": "BasicScheduler", "inputs": {"scheduler": "simple", "steps": steps, "denoise": 1.0,
+                                                          "model": ["2", 0]}},
+        "12": {"class_type": "BasicGuider", "inputs": {"model": ["2", 0], "conditioning": ["7", 0]}},
+        "13": {"class_type": "SamplerCustomAdvanced",
+               "inputs": {"noise": ["9", 0], "guider": ["12", 0], "sampler": ["10", 0], "sigmas": ["11", 0],
+                          "latent_image": ["8", 0]}},
+        "14": {"class_type": "LTXVSeparateAVLatent", "inputs": {"av_latent": ["13", 0]}},
+        "15": {"class_type": "VAEDecode", "inputs": {"samples": ["14", 0], "vae": ["5", 0]}},
+        "16": {"class_type": "SaveImage", "inputs": {"filename_prefix": "studio/h3_still", "images": ["15", 0]}},
+    }
 
 
 def _model() -> str:
@@ -137,7 +200,7 @@ async def ready() -> bool:
 
 
 async def upload(data: bytes, name: str) -> str:
-    """Put a first frame in ComfyUI's input folder. Waits out a cold start. Returns its name there."""
+    """Put a picture in ComfyUI's input folder. Waits out a cold start. Returns its name there."""
     if len(data) > MAX_IMAGE:
         raise StudioError("That image is too large.")
     r = await _call("POST", "/upload/image", timeout=COLD_START,
@@ -163,19 +226,22 @@ async def queue(workflow: dict) -> str:
 
 async def status(prompt_id: str) -> tuple[str, list[dict], str]:
     """(state, saved files, reason). State is running, done or failed. A job in neither the queue
-    nor the history was lost when the GPU restarted."""
+    nor the history was lost when the GPU restarted. The queue is asked first: ComfyUI moves a
+    finished job from the queue to the history in one step, so a job that ends between the two
+    questions is found in the history (asked the other way round, a still that renders in five
+    seconds was read as lost)."""
+    q = await _call("GET", "/queue")
+    if q.status_code != 200:
+        raise StudioError("ComfyUI could not be reached. Still waiting on the GPU.", 502)
+    jobs = (q.json().get("queue_running") or []) + (q.json().get("queue_pending") or [])
+    if any(len(j) > 1 and j[1] == prompt_id for j in jobs):
+        return "running", [], ""
     r = await _call("GET", f"/history/{prompt_id}")
     if r.status_code != 200:
-        raise StudioError("ComfyUI could not be reached. Still waiting on the video.", 502)
+        raise StudioError("ComfyUI could not be reached. Still waiting on the GPU.", 502)
     entry = r.json().get(prompt_id)
     if not entry:
-        q = await _call("GET", "/queue")
-        jobs = (q.json().get("queue_running") or []) + (q.json().get("queue_pending") or []) if q.status_code == 200 else None
-        if jobs is None:
-            raise StudioError("ComfyUI could not be reached. Still waiting on the video.", 502)
-        if any(len(j) > 1 and j[1] == prompt_id for j in jobs):
-            return "running", [], ""
-        return "failed", [], "The GPU restarted before the video finished."
+        return "failed", [], "The GPU restarted before the job finished."
     st = entry.get("status") or {}
     if st.get("status_str") == "error":
         reason = next((m[1].get("exception_message") for m in st.get("messages", [])

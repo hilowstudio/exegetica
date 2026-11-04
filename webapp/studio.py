@@ -20,8 +20,8 @@ parts that worked and fixing the one that did not:
   can (webapp/studio_services.py), and everything lands in the app's private R2 bucket, served
   only to the signed-in owner. Deleting an item deletes it from R2; deleting the account deletes
   the whole folder.
-- An image comes back in one request. A video takes minutes, so it is saved as pending with the
-  service's job id. The server follows it until the service is done, and the page asks /check
+- An image comes back in one request, except on the maker's own GPU, which may first have to wake.
+  A video takes minutes, so it (and a GPU still) is saved as pending with the service's job id. The server follows it until the service is done, and the page asks /check
   too, which picks the job up again after a restart. Then the file is copied into R2 like an
   image.
 - Who may use it is decided on the server (auth.is_admin), never by anything the browser sends.
@@ -68,6 +68,8 @@ KONTEXT_SIZES = {"square": (1024, 1024), "portrait": (880, 1184), "landscape": (
 VIDEO_RATIOS = {"wide": "16:9", "landscape": "4:3", "square": "1:1", "portrait": "3:4", "tall": "9:16"}
 H3_SIZES = {"wide": (1344, 768), "landscape": (1024, 768), "square": (768, 768),
             "portrait": (768, 1024), "tall": (768, 1344)}   # MiniMax H3's 768p sizes on Runware
+H3_STILL_SIZES = {"square": (1024, 1024), "portrait": (864, 1152), "landscape": (1152, 864),
+                  "tall": (768, 1344), "wide": (1344, 768)}   # about a megapixel, sides on H3's 32-pixel grid
 
 # A route's `price` is what the service listed when the route was written (2026-11-03): `unit` is
 # per image, per megapixel (`mp`), per 1024x1024 image scaled by size and steps (`1k`, Runware's
@@ -129,6 +131,19 @@ MODELS = {
             "runware": {"model": "alibaba:qwen-image@2.1-pro", "price": {"unit": "image", "usd": 0.075},
                         "quiet": {"settings": {"promptExtend": False}},
                         "source": {"runware": "alibaba-qwen-image-2-1-pro", "rate": ""}},
+        }},
+    "h3-still": {
+        "does": ("create",), "label": "MiniMax H3 still",
+        "note": "One frame from the H3 video model, drawn on your own GPU. A minute or two more when the GPU "
+                "is asleep.",
+        "steps": 30, "max_steps": 50,
+        "routes": {
+            # The maker's GPU (webapp/studio_comfy.py) is this model's only service, so it runs without
+            # being picked. Priced per 1024x1024 image at 30 steps from the time a warm GPU took to
+            # render and return one, measured 2026-11-04.
+            "baseten": {"model": "comfyui/minimax-h3-still", "sizes": H3_STILL_SIZES,
+                        "price": {"unit": "1k", "usd": 0.018, "ref_steps": 30},
+                        "source": {"usd_hour": 6.50, "render_seconds": 10, "clip_seconds": 1}},
         }},
     # ---------------------------------------------------------------- video
     "hunyuan-video": {
@@ -199,9 +214,9 @@ MODELS = {
     "h3": {
         "does": ("video",), "label": "MiniMax H3",
         "note": "Among the best-ranked video models, open or closed. 768p with sound. Leave \"Rewrite my words\" on, "
-                "since this model depends on a detailed prompt. 15 seconds runs on your own GPU only.",
+                "since this model depends on a detailed prompt. 15 seconds and a last frame run on your own GPU only.",
         "seconds": (5, 10, 15), "sizes": ("wide", "landscape", "square", "portrait", "tall"), "audio": None,
-        "start_image": True,
+        "start_image": True, "end_image": True,
         "routes": {
             "fal": {"model": "minimax/h3/text-to-video", "model_frame": "minimax/h3/image-to-video",
                     "frame_key": "image_url", "sizes": VIDEO_RATIOS, "seconds": (5, 10),
@@ -216,9 +231,24 @@ MODELS = {
             # when picked, since waking it adds a minute or two and its idle minutes are not in this
             # price. The price is the H100's hourly rate times the render time on a warm GPU, measured
             # 2026-11-04 for a 5-second clip. Longer clips take more per second.
-            "baseten": {"model": "comfyui/minimax-h3-fl2va", "sizes": H3_SIZES, "manual": True,
+            "baseten": {"model": "comfyui/minimax-h3-fl2va", "sizes": H3_SIZES, "manual": True, "end_image": True,
                         "price": {"unit": "second", "usd": 0.03},
                         "source": {"usd_hour": 6.50, "render_seconds": 80, "clip_seconds": 5}},
+        }},
+    "h3-ref": {
+        "does": ("video",), "label": "MiniMax H3 from pictures",
+        "note": "Your own GPU only. Give it up to nine pictures of people, things or places, and name them in your "
+                "words as Picture 1, Picture 2 and on. You can also set a first frame, a last frame, and pictures "
+                "the video passes through at set seconds. 768p with sound, about three minutes for 5 seconds.",
+        "seconds": (5, 10, 15), "sizes": ("wide", "landscape", "square", "portrait", "tall"), "audio": None,
+        "start_image": True, "end_image": True, "refs": comfy.H3_MAX_REFS, "pins": 3,
+        "routes": {
+            # The reference model at its full 20 steps: 188 seconds for a 5-second clip with two pictures
+            # and one pinned, measured 2026-11-04 on a GPU that had not yet loaded this model.
+            "baseten": {"model": "comfyui/minimax-h3-ref2va", "sizes": H3_SIZES, "end_image": True,
+                        "frame_sets_shape": False,
+                        "price": {"unit": "second", "usd": 0.07},
+                        "source": {"usd_hour": 6.50, "render_seconds": 188, "clip_seconds": 5}},
         }},
     "h3-max-turbo": {
         "does": ("video",), "label": "MiniMax H3 Max Turbo", "note": "The cheapest video here. A faster tuning of H3, 768p.",
@@ -306,9 +336,18 @@ REWRITE = {
         "starts from that image. Describe the motion to add: what moves and how, and how the camera "
         "moves. Say that the scene and its subjects stay as they are in the image. One to three "
         "sentences. Reply with the prompt only."),
+    "reference": (
+        "You turn a short video request into one detailed prompt for a video model that is shown "
+        "reference pictures named Picture 1, Picture 2 and on. Keep each such name exactly as written "
+        "wherever the request uses it, and keep the subject and intent exactly as asked. Describe what "
+        "happens over the few seconds of the clip: the action and movement, where the camera is and "
+        "how it moves, the setting, lighting, and style, and the sound if it fits. Add no words, "
+        "letters, logos, or people the request does not mention. Write one paragraph under 120 words. "
+        "Reply with the prompt only."),
 }
 
 _DATA_URL = re.compile(r"^data:(image/(?:png|jpeg|webp));base64,(.+)$", re.S)
+_PICTURE = re.compile(r"<?\b[Pp]icture\s+([1-9])\b>?")   # "Picture 2" becomes H3's <Picture 2>
 _EXT = {"image/png": "png", "image/jpeg": "jpg", "image/webp": "webp", "video/mp4": "mp4"}
 _TYPE = {v: k for k, v in _EXT.items()}
 _ID = re.compile(r"^[0-9a-f]{32}$")
@@ -363,12 +402,14 @@ def route_cost(model_id: str, service: str, shape: str = "square", steps: int | 
 
 
 def _fits(m: dict, route: dict, mode: str, shape: str, seconds: int | None, audio: bool | None,
-          framed: bool) -> str | None:
+          framed: bool, ending: bool = False) -> str | None:
     """Why a route cannot make what was asked, or None if it can."""
     if mode != "video":
         return None if mode in route.get("does", m["does"]) else "edits on another service only"
     if framed and not route.get("start_image", m.get("start_image")):
         return "starts from words only"
+    if ending and not route.get("end_image"):
+        return "takes no last frame"
     if not (framed and route.get("frame_sets_shape", True)) and shape not in route["sizes"]:
         return "makes other shapes"
     if seconds not in route.get("seconds", m["seconds"]):
@@ -379,13 +420,13 @@ def _fits(m: dict, route: dict, mode: str, shape: str, seconds: int | None, audi
 
 
 def candidates(model_id: str, mode: str, shape: str, seconds: int | None, audio: bool | None,
-               framed: bool, steps: int | None, book: dict) -> list[dict]:
+               framed: bool, steps: int | None, book: dict, ending: bool = False) -> list[dict]:
     """Every service for a model, cheapest first, each with its price and whether it can run."""
     m = MODELS[model_id]
     out = []
     for service, route in m["routes"].items():
         why = (None if svc._key(service) else "not set up") or _is_down(service) \
-            or _fits(m, route, mode, shape, seconds, audio, framed)
+            or _fits(m, route, mode, shape, seconds, audio, framed, ending)
         out.append({"service": service, "label": SERVICES[service]["label"], "route": route, "usable": why is None,
                     "reason": why, "frame_sets_shape": route.get("frame_sets_shape", True),
                     "auto": not route.get("manual"),
@@ -577,16 +618,73 @@ def _pixel_size(data: bytes) -> tuple[int, int] | None:
         return None
 
 
+async def _start_gpu(model_id: str, route: dict, prompt: str, shape: str, seconds: int | None, steps: int | None,
+                     source: dict | None, end: dict | None = None, refs: list[dict] = (),
+                     pins: list[tuple[dict, float]] = ()) -> dict:
+    """Wake the maker's GPU and note the job. From cold it takes a minute or two, so the first
+    check that finds it up hands ComfyUI the job (_poll_gpu). Pictures stay in R2 until then."""
+    await comfy.wake()
+    return {"service": "baseten", "workflow": model_id, "prompt": prompt, "seconds": seconds, "steps": steps,
+            "size": list(route["sizes"][shape]), "frame": source["key"] if source else None,
+            "end": end["key"] if end else None, "refs": [r["key"] for r in refs],
+            "pins": [[p["key"], at] for p, at in pins], "seed": secrets.randbelow(2 ** 48)}
+
+
+async def _send_picture(key: str, what: str) -> tuple[str, tuple[int, int]]:
+    """Copy one picture from R2 to ComfyUI. Returns its name there and its pixel size."""
+    data = await r2.get_bytes_async(key)
+    size = _pixel_size(data) if data else None
+    if not size:
+        raise StudioError(f"The {what} is gone or could not be read.", 422)
+    return await comfy.upload(data, key.rsplit("/", 1)[-1]), size
+
+
+async def _gpu_workflow(job: dict) -> dict:
+    """The ComfyUI workflow for a saved job, with its pictures uploaded."""
+    (w, h), kind = job["size"], job.get("workflow", "h3")
+    if kind == "h3-still":
+        return comfy.h3_still(job["prompt"], w, h, job["steps"], job["seed"])
+    first = await _send_picture(job["frame"], "first frame") if job.get("frame") else None
+    last = await _send_picture(job["end"], "last frame") if job.get("end") else None
+    if kind == "h3-ref":
+        refs = [(await _send_picture(key, f"Picture {n + 1}"))[0] for n, key in enumerate(job.get("refs") or [])]
+        frames = comfy.h3_frames(job["seconds"])
+        pinned = [(first[0], 0)] if first else []
+        for key, at in job.get("pins") or []:
+            pinned.append(((await _send_picture(key, "picture at a set second"))[0],
+                           min(max(1, round(at * comfy.H3_FPS)), frames - 2)))
+        if last:
+            pinned.append((last[0], -1))
+        return comfy.h3_refs(job["prompt"], refs, pinned, w, h, job["seconds"], job["seed"])
+    if first:
+        w, h = comfy.h3_size(*first[1])   # the canvas follows the first frame's shape
+    return comfy.h3_video(job["prompt"], first and first[0], w, h, job["seconds"], job["seed"], last and last[0])
+
+
+async def _poll_gpu(job: dict) -> dict:
+    """_poll_video for the maker's GPU, for videos and stills alike."""
+    if not job.get("comfy"):
+        if not await comfy.ready():
+            return {"status": "pending", "progress": None}   # the GPU is still waking
+        try:
+            prompt_id = await comfy.queue(await _gpu_workflow(job))
+        except StudioError as e:
+            if e.status == 422:
+                return {"status": "failed", "error": e.message}
+            raise   # ComfyUI was unreachable; the next check asks again
+        return {"status": "pending", "progress": None, "job": job | {"comfy": prompt_id}}
+    state, files, reason = await comfy.status(job["comfy"])
+    if state == "running":
+        return {"status": "pending", "progress": None}
+    if state == "failed":
+        return {"status": "failed", "error": reason}
+    return {"status": "done", "url": comfy.file_url(files[0]), "headers": comfy.headers(), "cost": None,
+            "ext": files[0]["filename"].rsplit(".", 1)[-1].lower()}
+
+
 async def _start_video(service: str, route: dict, prompt: str, shape: str, seconds: int, audio: bool | None,
                        source: dict | None) -> dict:
     """Send the job and return what is needed to ask about it later."""
-    if service == "baseten":
-        # Only wake the GPU here: from cold it takes a minute or two, so the first check that finds
-        # it up hands ComfyUI the job (_poll_video).
-        await comfy.wake()
-        return {"service": "baseten", "prompt": prompt, "seconds": seconds, "size": list(route["sizes"][shape]),
-                "frame": source["key"] if source else None, "seed": secrets.randbelow(2 ** 48)}
-
     if service == "runware":
         task_uuid = str(uuid.uuid4())
         task = {"taskType": "videoInference", "taskUUID": task_uuid, "model": route["model"], "positivePrompt": prompt,
@@ -655,30 +753,7 @@ async def _poll_video(job: dict) -> dict:
     itself changed and must be saved."""
     service = job["service"]
     if service == "baseten":
-        if not job.get("comfy"):
-            if not await comfy.ready():
-                return {"status": "pending", "progress": None}   # the GPU is still waking
-            (w, h), image = job["size"], None
-            try:
-                if job.get("frame"):
-                    data = await r2.get_bytes_async(job["frame"])
-                    size = _pixel_size(data) if data else None
-                    if not size:
-                        return {"status": "failed", "error": "The first frame is gone or could not be read."}
-                    w, h = comfy.h3_size(*size)
-                    image = await comfy.upload(data, "frame." + job["frame"].rsplit(".", 1)[-1])
-                prompt_id = await comfy.queue(comfy.h3_video(job["prompt"], image, w, h, job["seconds"], job["seed"]))
-            except StudioError as e:
-                if e.status == 422:
-                    return {"status": "failed", "error": e.message}
-                raise   # ComfyUI was unreachable; the next check asks again
-            return {"status": "pending", "progress": None, "job": job | {"comfy": prompt_id}}
-        state, files, reason = await comfy.status(job["comfy"])
-        if state == "running":
-            return {"status": "pending", "progress": None}
-        if state == "failed":
-            return {"status": "failed", "error": reason}
-        return {"status": "done", "url": comfy.file_url(files[0]), "headers": comfy.headers(), "cost": None}
+        return await _poll_gpu(job)
 
     if service == "runware":
         body = await svc.runware_call([{"taskType": "getResponse", "taskUUID": job["task"]}])
@@ -756,7 +831,8 @@ async def _forget_at_service(job: dict) -> None:
 
 
 def _record_video(item: dict, outcome: str) -> None:
-    metrics.record(metrics.row(route="studio:video", key_source="server", outcome=outcome,
+    route = "studio:video" if item.get("kind", "video") == "video" else "studio"   # a still from the GPU waits too
+    metrics.record(metrics.row(route=route, key_source="server", outcome=outcome,
                                est_usd=item.get("est_usd") or 0.0,
                                duration_ms=max(0, time.time() - item["created"]) * 1000))
 
@@ -794,8 +870,9 @@ async def check(user, item_id: str) -> dict | None:
             return public(item)
 
         data = await _download(state["url"], MAX_VIDEO, state.get("headers"))
-        key = f"{_folder(user)}{item_id}.mp4"
-        await r2.put_bytes_async(key, data, "video/mp4")
+        ext = state.get("ext") if state.get("ext") in _TYPE else "mp4" if item.get("kind") == "video" else "png"
+        key = f"{_folder(user)}{item_id}.{ext}"
+        await r2.put_bytes_async(key, data, _TYPE[ext])
         item = item | {"status": "ready", "key": key, "est_usd": paid, "bytes": len(data)}
         if state.get("prompt"):
             item["service_prompt"] = state["prompt"]
@@ -909,12 +986,13 @@ async def make(user, req: dict) -> dict:
     if not video:
         source_req = source_req if mode == "edit" else None
     shape, seconds, audio, steps = _settings(m, mode, req)
+    end_req, refs_req, pins_req = _more_pictures(m, req, seconds) if video else (None, [], [])
     book = await prices.load()
-    pinned = req.get("service") if req.get("service") in m["routes"] else None
-    options = candidates(model_id, mode, shape, seconds, audio, bool(source_req), steps, book)
-    usable = _runnable(options, pinned)
+    service_pin = req.get("service") if req.get("service") in m["routes"] else None
+    options = candidates(model_id, mode, shape, seconds, audio, bool(source_req), steps, book, bool(end_req))
+    usable = _runnable(options, service_pin)
     if not usable:
-        raise _no_service(m, options, pinned)
+        raise _no_service(m, options, service_pin)
     if not r2.configured():
         raise StudioError("Image Studio needs R2 storage on this server.", 503)
 
@@ -924,31 +1002,45 @@ async def make(user, req: dict) -> dict:
     usd = 0.0
     outcome = "provider_error"
     record = True
-    source = None
+    source, uploads = None, []
+
+    async def picture(asked, slot: str) -> dict:
+        got = await _source(user, asked, item_id, slot)
+        if got["uploaded"]:
+            uploads.append(got)
+        return got
     try:
-        if source_req:
-            source = await _source(user, source_req, item_id)
+        source = await picture(source_req, "source") if source_req else None
+        end = await picture(end_req, "last") if end_req else None
+        refs = [await picture(r, f"ref{n + 1}") for n, r in enumerate(refs_req)]
+        pins = [(await picture(p, f"at{n + 1}"), at) for n, (p, at) in enumerate(pins_req)]
 
         used = prompt
         if req.get("rewrite"):
-            used, rewrite_usd = await rewrite(prompt, ("animate" if source else "video") if video else mode)
+            purpose = "reference" if m.get("refs") else ("animate" if source else "video") if video else mode
+            used, rewrite_usd = await rewrite(prompt, purpose)
             usd += rewrite_usd
+        if m.get("refs"):
+            used = _PICTURE.sub(lambda p: f"<Picture {p.group(1)}>", used)
 
         base = {"id": item_id, "created": int(time.time()), "kind": "video" if video else "image",
                 "mode": {"create": "generate", "edit": "edit", "video": "video"}[mode],
                 "model_id": model_id, "engine": m["label"], "prompt": prompt, "prompt_used": used,
                 "rewritten": used != prompt, "shape": shape,
                 "source_id": source_req.get("id") if isinstance(source_req, dict) else None,
-                # an uploaded source belongs to this item and goes when it does; an earlier studio
-                # image used as the source stays
-                "source_key": source["key"] if source and source["uploaded"] else None}
+                # an uploaded picture belongs to this item and goes when it does; an earlier studio
+                # image used as a picture stays
+                "source_key": source["key"] if source and source["uploaded"] else None,
+                "upload_keys": [p["key"] for p in uploads if p is not source]}
 
         # The cheapest service first; one that turns the account away hands the run to the next.
         turned_away = None
         for option in usable:
             service, route = option["service"], option["route"]
             try:
-                if video:
+                if service == "baseten":
+                    job = await _start_gpu(model_id, route, used, shape, seconds, steps, source, end, refs, pins)
+                elif video:
                     job = await _start_video(service, route, used, shape, seconds, audio, source)
                 else:
                     made = await IMAGE_MAKERS[service](route, used, shape, steps, source)
@@ -966,14 +1058,15 @@ async def make(user, req: dict) -> dict:
             raise turned_away
         base |= {"service": service, "model": route["model"]}
 
-        if video:
+        if video or service == "baseten":
             size = route["sizes"][shape]
-            w, h = size if isinstance(size, tuple) and not source else (None, None)
-            item = base | {"status": "pending", "job": job, "seconds": seconds, "audio": audio,
-                           "width": w, "height": h, "rewrite_usd": round(usd, 6), "quoted_usd": option["usd"],
-                           "est_usd": round(usd + option["usd"], 4)}
+            framed = source and route.get("frame_sets_shape", True)
+            w, h = size if isinstance(size, tuple) and not framed else (None, None)
+            item = base | {"status": "pending", "job": job, "width": w, "height": h, "rewrite_usd": round(usd, 6),
+                           "quoted_usd": option["usd"], "est_usd": round(usd + option["usd"], 4)}
+            item |= {"seconds": seconds, "audio": audio} if video else {"steps": steps}
             await _save_item(user, item, new=True)
-            record = False   # the row is written when the video finishes (check)
+            record = False   # the row is written when the job finishes (check)
             _follow_later(user, item_id)
             return public(item)
 
@@ -988,8 +1081,8 @@ async def make(user, req: dict) -> dict:
         outcome = "complete"
         return public(item)
     except BaseException:
-        if source and source["uploaded"]:
-            await r2.delete_async(source["key"])   # an upload for an item that was never made
+        for upload in uploads:
+            await r2.delete_async(upload["key"])   # an upload for an item that was never made
         raise
     finally:
         if record:
@@ -998,9 +1091,36 @@ async def make(user, req: dict) -> dict:
                                        duration_ms=(time.monotonic() - started) * 1000))
 
 
-async def _source(user, source, item_id: str) -> dict:
+def _more_pictures(m: dict, req: dict, seconds: int) -> tuple[dict | None, list, list]:
+    """(last frame, reference pictures, pictures pinned at a second) asked for a video, each
+    checked against what the model takes. A pinned second falls strictly inside the clip."""
+    end, refs, pins = req.get("end") or None, req.get("refs") or [], req.get("pins") or []
+    if not isinstance(refs, list) or not isinstance(pins, list):
+        raise StudioError("Those pictures could not be read.")
+    if end and not m.get("end_image"):
+        raise StudioError(f"{m['label']} takes no last frame. Remove it or pick another model.")
+    if refs and len(refs) > m.get("refs", 0):
+        raise StudioError(f"{m['label']} takes no reference pictures." if not m.get("refs")
+                          else f"{m['label']} takes up to {m['refs']} pictures.")
+    if pins and len(pins) > m.get("pins", 0):
+        raise StudioError(f"{m['label']} takes no pictures at set seconds." if not m.get("pins")
+                          else f"{m['label']} takes up to {m['pins']} pictures at set seconds.")
+    timed = []
+    for pin in pins:
+        try:
+            at = float(pin.get("at")) if isinstance(pin, dict) else None
+        except (TypeError, ValueError):
+            at = None
+        if at is None or not 0 < at < seconds:
+            raise StudioError(f"Set each picture's second between 0 and {seconds}.")
+        timed.append((pin.get("source"), at))
+    return end, refs, timed
+
+
+async def _source(user, source, item_id: str, slot: str = "source") -> dict:
     """The image to edit or animate: one of the user's own studio images, or an upload. Returned
-    as its R2 key, its type, and a data URI for the services that take the image inline."""
+    as its R2 key, its type, and a data URI for the services that take the image inline. `slot`
+    names an uploaded copy, since one video can carry several pictures."""
     if not isinstance(source, dict):
         raise StudioError("Choose an image to start from.")
     if source.get("id"):
@@ -1024,7 +1144,7 @@ async def _source(user, source, item_id: str) -> dict:
         if len(data) > MAX_UPLOAD:
             raise StudioError("Upload an image under 8 MB.")
         content_type = m.group(1)
-        key, uploaded = f"{_folder(user)}{item_id}-source.{_EXT[content_type]}", True
+        key, uploaded = f"{_folder(user)}{item_id}-{slot}.{_EXT[content_type]}", True
         await r2.put_bytes_async(key, data, content_type)
     return {"key": key, "uploaded": uploaded, "content_type": content_type,
             "data_uri": f"data:{content_type};base64,{base64.b64encode(data).decode()}"}
@@ -1032,7 +1152,8 @@ async def _source(user, source, item_id: str) -> dict:
 
 def public(item: dict) -> dict:
     """An index entry as the page sees it: no storage keys or job ids."""
-    out = {k: v for k, v in item.items() if k not in ("key", "source_key", "job", "rewrite_usd", "quoted_usd")}
+    out = {k: v for k, v in item.items()
+           if k not in ("key", "source_key", "upload_keys", "job", "rewrite_usd", "quoted_usd")}
     out.setdefault("kind", "image")
     out.setdefault("status", "ready")
     out.setdefault("service", "fal")
@@ -1068,7 +1189,8 @@ def _menu_entry(model_id: str, m: dict) -> dict:
              "services": list(m["routes"])}
     if "video" in m["does"]:
         entry |= {"seconds": list(m["seconds"]), "sizes": list(m["sizes"]), "audio": m.get("audio"),
-                  "start_image": bool(m.get("start_image"))}
+                  "start_image": bool(m.get("start_image")), "end_image": bool(m.get("end_image")),
+                  "refs": m.get("refs", 0), "pins": m.get("pins", 0)}
     else:
         entry |= {"steps": m.get("steps"), "max_steps": m.get("max_steps")}
     return entry
@@ -1112,7 +1234,8 @@ async def quote(request):
     m = MODELS[model_id]
     shape, seconds, audio, steps = _settings(m, mode, req)
     book = await prices.load()
-    options = candidates(model_id, mode, shape, seconds, audio, bool(req.get("framed")), steps, book)
+    options = candidates(model_id, mode, shape, seconds, audio, bool(req.get("framed")), steps, book,
+                         bool(req.get("ending")) and mode == "video")
     pinned = req.get("service") if req.get("service") in m["routes"] else None
     choice = next(iter(_runnable(options, pinned)), None)
     shown = ("service", "label", "usd", "usable", "reason", "frame_sets_shape", "auto")
@@ -1225,7 +1348,8 @@ async def delete_image(request):
             return _not_found()
         if item.get("key"):
             await r2.delete_async(item["key"])
-        if item.get("source_key"):
-            await r2.delete_async(item["source_key"])
+        for key in [item.get("source_key"), *(item.get("upload_keys") or [])]:
+            if key:
+                await r2.delete_async(key)
         await _write_index(user, [i for i in items if i["id"] != image_id])
     return JSONResponse({"ok": True})

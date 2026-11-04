@@ -74,7 +74,7 @@ Each phase ships on its own. The order follows risk to students first and conven
 
 Built on 2026-11-03 after the first pass: the comprehension build on Inngest, the one-step retry, the "who reads this?" answer in `ABOUT_EXEGETICA`, and old studies opening read-only (decision F, docs/decisions/0015). The comprehension build has had no live test build, which costs money and waits on the maker.
 
-Still to do from Phases 2 to 4: self-hosted fonts.
+Phases 1 to 5 were committed and deployed on 2026-11-04. Self-hosted fonts, the last item from Phases 2 to 4, were built the same day after the deploy.
 
 Phase 5 is built except the cache-lifetime decision, which waits on two weeks of metrics. Built on 2026-11-03: tool descriptions that say when to call each tool, the citation hook (`webapp/citations.py`), the "No library source was consulted." label and the note on quotations no source holds, the Generator's source check, and paragraph locators on theology hits (docs/decisions/0016). The ESV fallback and the comprehension build were built earlier.
 

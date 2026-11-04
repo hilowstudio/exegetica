@@ -27,7 +27,8 @@ from pathlib import Path
 
 from starlette.applications import Starlette
 from starlette.concurrency import run_in_threadpool
-from starlette.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse, StreamingResponse
+from starlette.responses import (FileResponse, HTMLResponse, JSONResponse, PlainTextResponse, RedirectResponse,
+                                 StreamingResponse)
 from starlette.middleware import Middleware
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
@@ -475,6 +476,24 @@ async def chat(request):
             run.add_done_callback(finish)
 
     return StreamingResponse(gen(), media_type="text/event-stream", headers=_SSE_HEADERS)
+
+
+# Search engines may list the front door and the public statements. Everything else serves
+# signed-in students and teachers, so it stays out of search results. Allow wins over the
+# shorter Disallow for Google and Bing, and "$" pins the first rule to the home page alone.
+ROBOTS_TXT = """User-agent: *
+Allow: /$
+Allow: /position
+Allow: /quiet-standards
+Allow: /privacy
+Allow: /corpus
+Allow: /static/
+Disallow: /
+"""
+
+
+async def robots(request):
+    return PlainTextResponse(ROBOTS_TXT, headers={"Cache-Control": "public, max-age=86400"})
 
 
 async def health(request):
@@ -1065,6 +1084,7 @@ app = Starlette(
         Route("/position", about.position_page),
         Route("/quiet-standards", about.quiet_standards_page),
         Route("/privacy", about.privacy_page),
+        Route("/robots.txt", robots),
         Route("/ops", ops.page),
         # Image Studio: the maker's login only for now (webapp/studio.py, docs/decisions/0017)
         Route("/studio", studio.page),

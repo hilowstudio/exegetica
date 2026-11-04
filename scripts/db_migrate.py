@@ -2,7 +2,11 @@
 """
 Apply scripts/schema.sql to the database in DATABASE_URL (loaded from .env).
 
-Idempotent — every statement is CREATE ... IF NOT EXISTS, so re-running is safe.
+Safe to re-run: tables, columns and constraints are added only when missing. The schema
+also changes data. It drops eight retired tables (DROP TABLE IF EXISTS: memory_verses,
+memory_folders, chats and five library_* objective tables, CASCADE for those five) and
+clears every stored profile photo (UPDATE users SET picture = null). Read schema.sql's
+DROP and UPDATE lines before running it against a database that holds anything new.
 The connection string is read from the environment and never printed.
 
     .venv/Scripts/python.exe scripts/db_migrate.py

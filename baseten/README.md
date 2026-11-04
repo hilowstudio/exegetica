@@ -1,7 +1,8 @@
 # Baseten
 
 `comfyui/` is the Image Studio's self-hosted route: a plain ComfyUI server on one H100 that scales
-to zero when idle, with MiniMax H3 image-to-video mounted read-only. The studio talks to it through
+to zero when idle, with MiniMax H3 mounted read-only: the fl2va weights (words, first and last
+frames, stills) and the ref2va weights (reference pictures and pictures at set seconds). The studio talks to it through
 `webapp/studio_comfy.py`. See `docs/decisions/0017-image-studio.md`.
 
 ## Deploy

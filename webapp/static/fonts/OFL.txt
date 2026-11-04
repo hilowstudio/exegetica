@@ -1,16 +1,30 @@
 Self-hosted web fonts — licensing & attribution
 ================================================
 
-The .woff2 files in this directory are redistributed under the
+The .woff2 files in this directory and in pages/ are redistributed under the
 SIL Open Font License, Version 1.1 (https://openfontlicense.org).
-They were downloaded from Google Fonts' CDN by scripts/fetch_fonts.py.
+They were downloaded from Google Fonts' CDN by scripts/fetch_fonts.py
+(pages/ by scripts/fetch_fonts.py --pages).
 
   - Fraunces
-    Copyright The Fraunces Project Authors (https://github.com/undercasetype/Fraunces)
+    Copyright 2018 The Fraunces Project Authors (https://github.com/undercasetype/Fraunces)
   - Source Serif 4
     Copyright 2014–2021 Adobe (https://github.com/adobe-fonts/source-serif)
   - Inter
     Copyright The Inter Project Authors (https://github.com/rsms/inter)
+  - Spectral
+    Copyright 2017 The Spectral Project Authors (https://github.com/productiontype/Spectral)
+  - Public Sans
+    Copyright 2015 The Public Sans Project Authors (https://github.com/uswds/public-sans)
+  - IBM Plex Mono
+    Copyright © 2017 IBM Corp. with Reserved Font Name "Plex"
+  - EB Garamond
+    Copyright 2017 The EB Garamond Project Authors (https://github.com/octaviopardo/EBGaramond12)
+  - Literata
+    Copyright 2017 The Literata Project Authors (https://github.com/googlefonts/literata)
+  - Libre Baskerville
+    Copyright 2012 The Libre Baskerville Project Authors (https://github.com/impallari/Libre-Baskerville)
+    with Reserved Font Name Libre Baskerville.
 
 Each family is licensed under SIL OFL 1.1. Full license text:
 https://openfontlicense.org/open-font-license-official-text/

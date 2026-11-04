@@ -32,7 +32,7 @@ Exegetica keeps no profile of a student. A new study starts with no knowledge of
 ## Who else receives information
 
 - **Anthropic** receives each chat message, with the study so far, and writes the reply. Anthropic's commercial terms bar it from training its models on this data, and it keeps the data for a limited time under its own [privacy policy](https://www.anthropic.com/legal/privacy).
-- **Google** handles sign-in. Most pages load their typefaces from Google Fonts, which receives your browser's address and type as any website does. A teacher's library searches go to Google Books and YouTube.
+- **Google** handles sign-in. A teacher's library searches go to Google Books and YouTube. Exegetica serves its typefaces from its own server, so opening a page sends nothing to Google.
 - **Crossway** (the ESV) and **bible.org** (the NET Bible) receive Bible references when a tool looks up a passage. They never receive your messages.
 - **Fly.io** hosts the server and keeps its logs for a short time. **Neon** hosts the database. **Cloudflare** stores a teacher's uploaded file until it is processed, and serves a maths typesetting script to the Reading Room.
 - **Inngest** runs background jobs for the teachers' library. Its records hold a book's title and the uploading teacher's account number.

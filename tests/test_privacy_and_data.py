@@ -3,7 +3,9 @@ counters' keys, account export and delete, and the privacy page's retention line
 database; nothing touches Neon or R2."""
 import asyncio
 import datetime as dt
+import re
 import uuid
+from pathlib import Path
 
 import pytest
 
@@ -150,5 +152,16 @@ def test_privacy_page_states_the_purge_when_it_is_on(monkeypatch):
 def test_privacy_page_states_the_facts_the_faq_promises():
     page = _privacy()
     for fact in ("mandated reporter", "Anthropic", "internet connection", "pays the running costs",
-                 "Download my data", "Delete my account", "Clear this browser", "Google Fonts"):
+                 "Download my data", "Delete my account", "Clear this browser", "typefaces from its own server"):
         assert fact in page, fact
+
+
+def test_no_page_loads_anything_from_google_fonts():
+    """The privacy page says opening a page sends nothing to Google (decision 0013)."""
+    static = Path(__file__).resolve().parents[1] / "webapp" / "static"
+    loads = re.compile(r"(href=|src=|url\(|@import)\s*[\"']?(https?:)?//fonts\.(googleapis|gstatic)\.com")
+    for page in [*static.glob("*.html"), *static.glob("*.js"), *static.glob("*.css"), *static.glob("fonts/*.css")]:
+        assert not loads.search(page.read_text(encoding="utf-8")), page.name
+    for sheet in static.glob("fonts/*.css"):
+        for url in re.findall(r"url\(([^)]+)\)", sheet.read_text(encoding="utf-8")):
+            assert (static.parent / url.strip("'\"").lstrip("/")).exists(), f"{sheet.name}: {url}"

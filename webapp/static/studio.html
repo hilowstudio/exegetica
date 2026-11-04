@@ -8,9 +8,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png">
 <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/fonts/app.css">
 <link rel="stylesheet" href="/static/scrollbars.css">
 <style>
   :root{
@@ -68,6 +66,10 @@
   .source{display:flex;gap:10px;align-items:center}
   .source img{width:64px;height:64px;object-fit:cover;border-radius:8px;border:1px solid var(--rule)}
   .source .none{font-size:13px;color:var(--ink-faint)}
+  .thumbs{display:flex;flex-wrap:wrap;gap:10px}
+  .thumb{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;color:var(--ink-soft)}
+  .thumb img{width:64px;height:64px;object-fit:cover;border-radius:8px;border:1px solid var(--rule)}
+  .thumb input{width:64px;font:inherit;font-size:13px;border:1px solid var(--rule-strong);border-radius:6px;padding:3px 5px;background:var(--paper);color:var(--ink)}
   .row{display:flex;gap:8px;flex-wrap:wrap}
   .btn{font:inherit;font-size:13.5px;font-weight:600;border:1px solid var(--rule-strong);border-radius:8px;padding:7px 12px;background:var(--surface);color:var(--ink-soft);cursor:pointer;text-decoration:none}
   .btn:hover:not(:disabled){color:var(--ink);border-color:var(--ink-faint)}
@@ -152,6 +154,35 @@
       <input type="file" id="upload" accept="image/png,image/jpeg,image/webp" hidden>
     </div>
 
+    <div class="fld" id="end-fld" hidden>
+      <span class="lab">Last frame (optional)</span>
+      <div class="source">
+        <img id="end-img" alt="The chosen last frame" hidden>
+        <span class="none" id="end-none">The video ends on this picture. Your own GPU only.</span>
+      </div>
+      <div class="row">
+        <button class="btn" type="button" id="end-btn">Upload an image</button>
+        <button class="btn" type="button" id="clear-end" hidden>Remove</button>
+      </div>
+      <input type="file" id="end-upload" accept="image/png,image/jpeg,image/webp" hidden>
+    </div>
+
+    <div class="fld" id="refs-fld" hidden>
+      <span class="lab">Pictures</span>
+      <p class="hint">People, things or places to show. Name them in your description as Picture 1, Picture 2 and on.</p>
+      <div class="thumbs" id="refs"></div>
+      <div class="row"><button class="btn" type="button" id="refs-btn">Add pictures</button></div>
+      <input type="file" id="refs-upload" accept="image/png,image/jpeg,image/webp" multiple hidden>
+    </div>
+
+    <div class="fld" id="pins-fld" hidden>
+      <span class="lab">Pictures at set seconds</span>
+      <p class="hint">The video becomes each picture, whole, at the second under it.</p>
+      <div class="thumbs" id="pins"></div>
+      <div class="row"><button class="btn" type="button" id="pins-btn">Add a picture</button></div>
+      <input type="file" id="pins-upload" accept="image/png,image/jpeg,image/webp" hidden>
+    </div>
+
     <div class="fld">
       <label class="lab" for="prompt" id="prompt-lab">Describe the image</label>
       <textarea id="prompt" maxlength="2000" placeholder="An apple on a wooden table in morning light"></textarea>
@@ -208,7 +239,8 @@
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
 let CFG = null, images = [], current = null, busy = false, pollTimer = null, QUOTE = null, quoteTimer = null, quoteSeq = 0;
-const state = {mode: "create", model: {}, service: "", shape: {image: "square", video: "wide"}, seconds: null, source: null};
+const state = {mode: "create", model: {}, service: "", shape: {image: "square", video: "wide"}, seconds: null, source: null,
+               end: null, refs: [], pins: []};
 const VERB = {create: "Make image", edit: "Edit image", video: "Make video"};
 
 function money(x){ return x < 0.01 ? "under 1¢" : "about $" + x.toFixed(x < 0.1 ? 3 : 2); }
@@ -220,10 +252,13 @@ function price(){ return QUOTE && QUOTE.choice ? QUOTE.choice.usd : null; }
 
 function settings(){
   const video = state.mode === "video";
+  const m = model();
   return {mode: state.mode, model: state.model[state.mode], service: state.service,
           shape: video ? state.shape.video : state.shape.image, steps: Number($("steps").value),
-          seconds: state.seconds, audio: $("audio").checked, framed: video && !!state.source};
+          seconds: state.seconds, audio: $("audio").checked, framed: video && !!state.source,
+          ending: video && !!state.end && !!m && m.end_image};
 }
+function picture(p){ return p.id ? {id: p.id} : {data_url: p.data_url}; }
 function requote(){
   // today's price for these settings on each service, from the server's price book
   clearTimeout(quoteTimer);
@@ -327,6 +362,15 @@ function sync(){
   $("source-img").hidden = !state.source;
   $("source-none").hidden = !!state.source;
   if (state.source) $("source-img").src = state.source.preview;
+  $("end-fld").hidden = !(video && m && m.end_image);
+  $("end-img").hidden = !state.end;
+  $("end-none").hidden = !!state.end;
+  $("clear-end").hidden = !state.end;
+  if (state.end) $("end-img").src = state.end.preview;
+  $("refs-fld").hidden = !(video && m && m.refs);
+  $("pins-fld").hidden = !(video && m && m.pins);
+  $("refs-btn").disabled = !m || state.refs.length >= (m.refs || 0);
+  $("pins-btn").disabled = !m || state.pins.length >= (m.pins || 0);
   $("prompt-lab").textContent = video ? "Describe the video" : editing ? "Describe the change" : "Describe the image";
   $("prompt").placeholder = video ? (state.source ? "The steam rises and the camera slowly pushes in" : "Waves rolling onto a rocky shore at dawn")
                          : editing ? "Make the apple green" : "An apple on a wooden table in morning light";
@@ -344,6 +388,54 @@ function sync(){
   $("make").disabled = busy || !CFG || !CFG.storage || !choice || noFrame || !$("prompt").value.trim() || (editing && !state.source);
 }
 
+function renderPictures(){
+  // the reference pictures, named as the prompt names them, and the pictures pinned at a second
+  $("refs").innerHTML = "";
+  state.refs.forEach((p, n) => {
+    const d = document.createElement("div");
+    d.className = "thumb";
+    d.innerHTML = `<img src="${esc(p.preview)}" alt="Picture ${n + 1}"><span>Picture ${n + 1}</span><button class="linkbtn" type="button">Remove</button>`;
+    d.querySelector("button").onclick = () => { state.refs.splice(n, 1); renderPictures(); sync(); };
+    $("refs").appendChild(d);
+  });
+  $("pins").innerHTML = "";
+  state.pins.forEach((p, n) => {
+    const d = document.createElement("div");
+    d.className = "thumb";
+    d.innerHTML = `<img src="${esc(p.preview)}" alt="Picture at ${esc(p.at)} seconds">
+      <label>at <input type="number" min="0.5" step="0.5" value="${esc(p.at)}" aria-label="Second for this picture"> s</label>
+      <button class="linkbtn" type="button">Remove</button>`;
+    d.querySelector("input").onchange = e => { p.at = Number(e.target.value); };
+    d.querySelector("button").onclick = () => { state.pins.splice(n, 1); renderPictures(); sync(); };
+    $("pins").appendChild(d);
+  });
+}
+function shrink(file){
+  // a picture for the GPU is scaled down in the browser to 2048 pixels on its long side, since
+  // H3 uses no more, and a dozen full-size photos would make a very large request
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file), img = new Image();
+    img.onload = () => {
+      const s = Math.min(1, 2048 / Math.max(img.naturalWidth, img.naturalHeight));
+      const c = document.createElement("canvas");
+      c.width = Math.round(img.naturalWidth * s); c.height = Math.round(img.naturalHeight * s);
+      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(url);
+      const data_url = c.toDataURL("image/jpeg", 0.92);
+      resolve({data_url, preview: data_url});
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("unreadable")); };
+    img.src = url;
+  });
+}
+async function addPictures(files, list, limit, extra){
+  for (const f of files) {
+    if (list.length >= limit) break;
+    try { list.push(Object.assign(await shrink(f), extra ? extra() : {})); }
+    catch (e) { say("That picture could not be read.", true); }
+  }
+  renderPictures(); sync(); requote();
+}
 function sizeText(img){
   const size = img.width && img.height ? img.width + "×" + img.height : (CFG && CFG.shapes[img.shape] ? CFG.shapes[img.shape].label : "");
   if (img.kind === "video") return [size, img.seconds ? img.seconds + " seconds" : "", img.audio ? "with sound" : ""].filter(Boolean).join(", ");
@@ -357,13 +449,15 @@ function showImage(img){
   const what = [esc(img.engine) + " on " + esc(serviceLabel(img.service)) + (img.steps ? ", " + img.steps + " steps" : ""),
                 esc(sizeText(img)), money(img.est_usd || 0), esc(when)].filter(Boolean).join(" · ");
   let body;
+  const thing = img.kind === "video" ? "video" : "image";
   if (img.status === "pending") {
     const pct = typeof img.progress === "number" ? img.progress : null;
-    body = `<div class="waiting"><h2>Making the video</h2>
-      <p>${esc(img.engine)} usually takes a few minutes. You can leave this page and come back.</p>
+    body = `<div class="waiting"><h2>Making the ${thing}</h2>
+      <p>${img.service === "baseten" ? "Your GPU takes a minute or two to wake if it was asleep, then " + esc(img.engine) + " starts."
+          : esc(img.engine) + " usually takes a few minutes."} You can leave this page and come back.</p>
       <div class="bar"${pct == null ? "" : ` role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"`}><span style="width:${pct == null ? 8 : Math.max(8, pct)}%"></span></div></div>`;
   } else if (img.status === "failed") {
-    body = `<div class="waiting failed"><h2>This video was not made</h2><p>${esc(img.error || "The service gave no reason.")}</p></div>`;
+    body = `<div class="waiting failed"><h2>This ${thing} was not made</h2><p>${esc(img.error || "The service gave no reason.")}</p></div>`;
   } else if (img.kind === "video") {
     body = `<video src="${esc(img.url)}" controls playsinline preload="metadata" width="${img.width || ""}" height="${img.height || ""}"></video>`;
   } else {
@@ -375,12 +469,14 @@ function showImage(img){
      <div class="actions">
        ${done ? `<a class="btn" href="${esc(img.url)}" download="studio-${esc(img.id.slice(0, 8))}.${esc(img.ext || (img.kind === "video" ? "mp4" : "jpg"))}">Download</a>` : ""}
        ${still ? `<button class="btn" type="button" id="edit-this">Edit this</button><button class="btn" type="button" id="animate-this">Animate this</button>` : ""}
+       ${still && refModel() ? `<button class="btn" type="button" id="picture-this">Use as a picture</button>` : ""}
        <button class="btn" type="button" id="delete-this">Delete</button>
      </div>`;
   if (still) {
     $("edit-this").onclick = () => useAsSource(img, "edit");
     $("animate-this").onclick = () => useAsSource(img, "video");
   }
+  if (still && refModel()) $("picture-this").onclick = () => useAsPicture(img);
   $("delete-this").onclick = () => remove(img);
   renderGrid();
 }
@@ -388,6 +484,17 @@ function useAsSource(img, mode){
   state.source = {id: img.id, preview: img.url};
   setMode(mode);
   $("prompt").focus();
+}
+function refModel(){ return CFG && CFG.models.find(m => m.refs && ready(m)); }
+function useAsPicture(img){
+  // a studio image becomes the next reference picture for the video model that takes them
+  const m = refModel();
+  if (state.refs.length >= m.refs) { say(m.label + " takes up to " + m.refs + " pictures.", true); return; }
+  if (!state.refs.some(p => p.id === img.id)) state.refs.push({id: img.id, preview: img.url});
+  state.model.video = m.id;
+  setMode("video");
+  renderPictures();
+  say("Added as Picture " + state.refs.length + ".");
 }
 function renderGrid(){
   $("gallery").hidden = !images.length;
@@ -397,7 +504,7 @@ function renderGrid(){
     b.type = "button"; b.title = img.prompt;
     b.setAttribute("aria-label", (img.kind === "video" ? "Video: " : "Image: ") + img.prompt);
     if (current && current.id === img.id) b.setAttribute("aria-current", "true");
-    if (img.status === "pending") b.innerHTML = `<span class="word">Making the video…</span>`;
+    if (img.status === "pending") b.innerHTML = `<span class="word">Making the ${img.kind === "video" ? "video" : "image"}…</span>`;
     else if (img.status === "failed") b.innerHTML = `<span class="word">Not made</span>`;
     else if (img.kind === "video") b.innerHTML = `<video src="${esc(img.url)}#t=0.5" muted preload="metadata"></video><span class="tag">Video</span>`;
     else b.innerHTML = `<img src="${esc(img.url)}" alt="" loading="lazy">`;
@@ -407,7 +514,7 @@ function renderGrid(){
 }
 async function remove(img){
   const pending = img.status === "pending";
-  if (!confirm(pending ? "Stop waiting for this video and remove it? The service may still finish it and charge for it."
+  if (!confirm(pending ? "Stop waiting for this and remove it? The service may still finish it and charge for it."
                        : "Delete this? It cannot be recovered.")) return;
   const r = await fetch("/api/studio/image/" + img.id, {method: "DELETE"});
   if (!r.ok) { say("That could not be deleted.", true); return; }
@@ -435,10 +542,11 @@ function watch(){
         const r = await fetch("/api/studio/image/" + img.id + "/check");
         const d = await r.json().catch(() => ({}));
         if (r.status === 404) { images = images.filter(i => i.id !== img.id); renderGrid(); continue; }
-        if (!r.ok) { if (current && current.id === img.id) say(d.error || "Still waiting on the video.", true); continue; }
+        const thing = img.kind === "video" ? "video" : "image";
+        if (!r.ok) { if (current && current.id === img.id) say(d.error || "Still waiting on the " + thing + ".", true); continue; }
         if (d.image.status !== "pending" || d.image.progress !== img.progress) replace(d.image);
-        if (d.image.status === "ready" && current && current.id === img.id) say("The video is ready.");
-        if (d.image.status === "failed" && current && current.id === img.id) say("The video was not made.", true);
+        if (d.image.status === "ready" && current && current.id === img.id) say("The " + thing + " is ready.");
+        if (d.image.status === "failed" && current && current.id === img.id) say("The " + thing + " was not made.", true);
       } catch (e) { /* the next round tries again */ }
     }
     watch();
@@ -453,14 +561,17 @@ async function make(){
   const video = state.mode === "video";
   say(video ? "Starting the video…" : state.mode === "edit" ? "Editing the image…" : "Making the image…");
   const body = Object.assign(settings(), {prompt: $("prompt").value, model: m.id, rewrite: $("rewrite").checked});
-  if (state.source && state.mode !== "create") body.source = state.source.id ? {id: state.source.id} : {data_url: state.source.data_url};
+  if (state.source && state.mode !== "create") body.source = picture(state.source);
+  if (video && m.end_image && state.end) body.end = picture(state.end);
+  if (video && m.refs && state.refs.length) body.refs = state.refs.map(picture);
+  if (video && m.pins && state.pins.length) body.pins = state.pins.map(p => ({source: picture(p), at: p.at}));
   try {
     const r = await fetch("/api/studio/generate", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});
     const d = await r.json().catch(() => ({}));
     if (!r.ok) { say(d.error || "That could not be made.", true); return; }
     images.unshift(d.image);
     showImage(d.image);
-    say(d.image.status === "pending" ? "The video has started on " + d.image.service_label + ". It shows here when it is done."
+    say(d.image.status === "pending" ? "The " + (video ? "video" : "image") + " has started on " + d.image.service_label + ". It shows here when it is done."
                                      : "Done on " + d.image.service_label + ".");
     watch();
   } catch (e) {
@@ -496,6 +607,22 @@ $("upload").onchange = () => {
   const reader = new FileReader();
   reader.onload = () => { state.source = {data_url: reader.result, preview: reader.result}; say(""); sync(); requote(); };
   reader.readAsDataURL(f);
+};
+$("end-btn").onclick = () => $("end-upload").click();
+$("clear-end").onclick = () => { state.end = null; $("end-upload").value = ""; sync(); requote(); };
+$("end-upload").onchange = async () => {
+  const f = $("end-upload").files[0];
+  if (!f) return;
+  try { state.end = await shrink(f); say(""); } catch (e) { say("That picture could not be read.", true); }
+  sync(); requote();
+};
+$("refs-btn").onclick = () => $("refs-upload").click();
+$("refs-upload").onchange = () => { const m = model(); addPictures([...$("refs-upload").files], state.refs, m ? m.refs : 0); $("refs-upload").value = ""; };
+$("pins-btn").onclick = () => $("pins-upload").click();
+$("pins-upload").onchange = () => {
+  const m = model();
+  addPictures([...$("pins-upload").files], state.pins, m ? m.pins : 0, () => ({at: Math.max(0.5, Math.round((state.seconds || 5) / 2 * 2) / 2)}));
+  $("pins-upload").value = "";
 };
 $("prompt").addEventListener("input", sync);
 $("audio").addEventListener("change", () => { sync(); requote(); });
