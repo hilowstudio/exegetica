@@ -1,5 +1,5 @@
 """
-The outside services Image Studio calls (docs/decisions/0017): their keys, their errors, and one
+The outside services Media Studio calls (docs/decisions/0017): their keys, their errors, and one
 small client each. Every client asks its service to keep as little as it can.
 
 - fal: no request history, generated files deleted after ten minutes (images) or two hours

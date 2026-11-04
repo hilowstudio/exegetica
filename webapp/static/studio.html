@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Image Studio · Exegetica</title>
+<title>Media Studio · Exegetica</title>
 <link rel="icon" href="/static/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png">
@@ -45,7 +45,6 @@
 
   .controls{border-right:1px solid var(--rule);background:var(--surface);display:flex;flex-direction:column;min-height:0;overflow-y:auto;padding:18px 20px;gap:16px}
   .controls h1{font-family:var(--serif);font-weight:600;font-size:1.25rem;margin:0}
-  .sub{font-size:13px;color:var(--ink-faint);margin:2px 0 0}
   .fld{display:flex;flex-direction:column;gap:6px}
   .lab{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
   .hint{font-size:13px;color:var(--ink-faint);margin:0}
@@ -136,6 +135,41 @@
   .fcard:hover .fmore,.fcard:focus-within .fmore,.fmore[aria-expanded="true"]{opacity:1}
   @media (pointer:coarse){.fmore{opacity:1}}
   dialog.wide{width:min(760px,calc(100vw - 32px))}
+  /* the model card: what a model is for, from sources, with its own pictures */
+  .mcard{margin-top:4px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);padding:11px 12px;display:flex;flex-direction:column;gap:8px;font-size:13px}
+  .mcard .best{font-family:var(--serif);font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.35}
+  .mcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px;color:var(--ink-soft)}
+  .mcard li{display:flex;gap:7px;align-items:baseline}
+  .mcard li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;transform:translateY(-1px)}
+  .mcard li.good::before{background:#4f8a5b}
+  .mcard li.weak::before{background:var(--err)}
+  .mcard .facts{display:flex;flex-wrap:wrap;gap:4px 12px;color:var(--ink-faint);font-size:12.5px}
+  .mcard .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+  .mcard .strip button{padding:0;border:0;border-radius:6px;overflow:hidden;aspect-ratio:1;cursor:zoom-in;background:var(--sunk)}
+  .mcard .strip img{width:100%;height:100%;object-fit:cover;display:block}
+  .mcard .foot{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .mcard details{color:var(--ink-faint);font-size:12px}
+  .mcard details a{color:var(--ink-soft)}
+  /* the comparison: one request, every model's answer */
+  dialog.compare{width:min(1180px,calc(100vw - 32px));max-height:calc(100vh - 40px);overflow:auto;padding:20px 24px 22px}
+  .cmp-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+  .cmp-head h2{margin:0}
+  .cmp-kind{max-width:360px;margin-bottom:12px}
+  .cmp-prompts{margin-bottom:8px}
+  .cmp-text{font-family:var(--serif);font-size:15px;color:var(--ink);margin:4px 0 14px;max-width:820px}
+  .cmp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+  .cmp-card{display:flex;flex-direction:column;gap:7px;min-width:0}
+  .cmp-card button.pic{padding:0;border:0;border-radius:9px;overflow:hidden;aspect-ratio:1;background:var(--sunk);cursor:zoom-in;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .cmp-card button.pic img{width:100%;height:100%;object-fit:cover;display:block}
+  .cmp-card .gap{display:grid;place-items:center;aspect-ratio:1;border-radius:9px;border:1px dashed var(--rule-strong);color:var(--ink-faint);font-size:13px;text-align:center;padding:10px}
+  .cmp-card .who{display:flex;flex-direction:column;gap:1px}
+  .cmp-card .who b{font-size:14px}
+  .cmp-card .who span,.cmp-card .use{font-size:12.5px;color:var(--ink-faint)}
+  .cmp-card .use{align-self:flex-start;padding:0}
+  .cmp-card.base .pic{outline:2px dashed var(--rule-strong);outline-offset:2px}
+  .lightbox{position:fixed;inset:0;z-index:5;background:rgba(10,10,14,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px}
+  .lightbox img{max-width:min(92vw,1100px);max-height:78vh;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+  .lightbox p{color:#f1ece4;margin:0;font-size:14px;text-align:center;max-width:760px}
   .palette{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:14px}
   @media(max-width:700px){.palette{grid-template-columns:1fr}}
   .palette h3{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 8px;display:flex;justify-content:space-between;align-items:baseline}
@@ -206,15 +240,14 @@
     <a class="railbtn" href="/read" title="Reading Room" aria-label="Reading Room"><svg viewBox="0 0 24 24"><path d="M12 6.6C10.2 5.3 7.3 5 4.8 5.6v12.3c2.5-.6 5.4-.3 7.2 1 1.8-1.3 4.7-1.6 7.2-1V5.6C16.7 5 13.8 5.3 12 6.6z"/><path d="M12 6.6v11.7"/></svg></a>
     <a class="railbtn teach" href="/generate" style="display:none" title="Generator" aria-label="Generator"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/></svg></a>
     <a class="railbtn teach" href="/library" style="display:none" title="Living Library" aria-label="Living Library"><svg viewBox="0 0 24 24"><rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/><path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/></svg></a>
-    <a class="railbtn admin active" href="/studio" title="Image Studio" aria-label="Image Studio" aria-current="page"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4.5 17.5l5-5 3.5 3.5 2.5-2.5 4 4"/></svg></a>
+    <a class="railbtn admin active" href="/studio" title="Media Studio" aria-label="Media Studio" aria-current="page"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4.5 17.5l5-5 3.5 3.5 2.5-2.5 4 4"/></svg></a>
     <span class="sp"></span>
     <button id="open-settings" type="button" title="Settings" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.2 7l2.6 1.5M17.2 15.5l2.6 1.5M4.2 17l2.6-1.5M17.2 8.5l2.6-1.5"/></svg></button>
   </nav>
 
   <aside class="controls" aria-label="Studio settings">
     <div>
-      <h1>Image Studio</h1>
-      <p class="sub">Only you can see this page. Everything you make stays in your private folder.</p>
+      <h1>Media Studio</h1>
     </div>
     <div class="notready" id="notready" hidden></div>
 
@@ -284,10 +317,16 @@
       <label class="check"><input type="checkbox" id="rewrite" checked><span>Rewrite my words into a detailed prompt first. You'll see the rewrite.</span></label>
     </div>
 
+    <div class="fld" id="task-fld" hidden>
+      <span class="lab" id="task-lab">What are you making?</span>
+      <div class="chips" role="group" aria-labelledby="task-lab" id="tasks"></div>
+    </div>
+
     <div class="fld">
       <label class="lab" for="model">Model</label>
       <select id="model"></select>
       <p class="hint" id="model-note"></p>
+      <div class="mcard" id="mcard" hidden></div>
     </div>
 
     <div class="fld">
@@ -345,6 +384,25 @@
       <div class="grid" id="grid"></div>
       <p class="empty-note" id="empty-folder" hidden></p>
     </section>
+    <dialog id="compare" class="compare" aria-labelledby="compare-title">
+      <div class="cmp-head">
+        <h2 id="compare-title">Same request, every model</h2>
+        <button class="iconbtn" type="button" id="compare-close" aria-label="Close"></button>
+      </div>
+      <div class="seg cmp-kind" role="group" aria-label="What to compare" id="cmp-kind">
+        <button type="button" data-v="create" aria-pressed="true">Pictures from words</button>
+        <button type="button" data-v="edit" aria-pressed="false">Edits</button>
+      </div>
+      <div class="chips cmp-prompts" role="group" aria-label="Request" id="cmp-prompts"></div>
+      <p class="cmp-text" id="cmp-text"></p>
+      <div class="cmp-grid" id="cmp-grid"></div>
+      <p class="hint cmp-foot" id="cmp-foot"></p>
+      <div class="lightbox" id="lightbox" hidden>
+        <img id="lightbox-img" alt="">
+        <p id="lightbox-cap"></p>
+        <button class="btn" type="button" id="lightbox-close">Back to the comparison</button>
+      </div>
+    </dialog>
     <div class="menu" id="menu" role="menu" hidden></div>
     <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
     <dialog id="dlg" aria-labelledby="dlg-title">
@@ -372,7 +430,8 @@ let CFG = null, images = [], current = null, busy = false, pollTimer = null, QUO
 let folders = [], view = "root", anchor = null, renaming = false;
 const picked = new Set();
 const state = {mode: "create", model: {}, service: "", shape: {image: "square", video: "wide"}, seconds: null, source: null,
-               end: null, refs: [], pins: [], extend: null};
+               end: null, refs: [], pins: [], extend: null,
+               task: {}, auto: {create: true, edit: true}};   // what is being made, and whether Auto picks the model
 const VERB = {create: "Make image", edit: "Edit image", video: "Make video"};
 
 function money(x){ return x < 0.01 ? "under 1¢" : "about $" + x.toFixed(x < 0.1 ? 3 : 2); }
@@ -448,6 +507,13 @@ function chips(id, values, labelOf, current, onPick){
 function fillModels(){
   const sel = $("model");
   sel.innerHTML = "";
+  const auto = tasks(state.mode).length ? autoModel(state.mode) : null;
+  if (auto) {
+    const o = document.createElement("option");
+    o.value = "auto";
+    o.textContent = "Auto: " + CFG.models.find(m => m.id === auto).label;   // the task chips above say what it is best for
+    sel.appendChild(o);
+  }
   models(state.mode).forEach(m => {
     const o = document.createElement("option");
     o.value = m.id;
@@ -455,10 +521,11 @@ function fillModels(){
     o.disabled = !ready(m);
     sel.appendChild(o);
   });
-  sel.value = state.model[state.mode];
+  sel.value = auto && state.auto[state.mode] ? "auto" : state.model[state.mode];
 }
 function fitModel(){
-  // the chosen model, or the mode's default, or the first one whose service is set up
+  // Auto's pick for what is being made, or the chosen model, or the mode's default, or the first set up
+  if (state.auto[state.mode] && autoModel(state.mode)) { state.model[state.mode] = autoModel(state.mode); return; }
   const list = models(state.mode);
   let m = list.find(x => x.id === state.model[state.mode]);
   if (!ready(m)) m = list.find(x => x.id === CFG.defaults[state.mode] && ready(x)) || list.find(ready) || list[0];
@@ -466,8 +533,11 @@ function fitModel(){
 }
 function layout(){
   // the controls that depend on the mode and the model
+  fitModel();
   const m = model(), video = state.mode === "video";
+  renderTasks();
   fillModels();
+  renderCard();
   $("model-note").textContent = m ? m.note : "";
   $("steps-fld").hidden = video || !m || !m.max_steps;
   if (m && m.max_steps) {
@@ -1202,6 +1272,116 @@ async function remove(img){
   toast("Deleted.");
   sync();
 }
+// ---------------------------------------------------------------- choosing a model without guessing
+// "What are you making?" picks the model (Auto) from CFG.tasks; the card under the menu says what the
+// chosen model is for, from sources, and shows its own pictures from the sample set; the comparison
+// shows one request answered by every model.
+let SAMPLES = null;
+const cmp = {kind: "create", key: null};
+function tasks(mode){ return (CFG && CFG.tasks && CFG.tasks[mode]) || []; }
+function task(mode){ return tasks(mode).find(t => t.key === state.task[mode]) || tasks(mode)[0]; }
+function autoModel(mode){ const t = task(mode); return t && CFG.models.find(m => m.id === t.model && ready(m)) ? t.model : null; }
+function renderTasks(){
+  const list = tasks(state.mode);
+  $("task-fld").hidden = !list.length;
+  if (!list.length) return;
+  chips("tasks", list.map(t => t.key), k => list.find(t => t.key === k).label, task(state.mode).key, v => {
+    state.task[state.mode] = v;
+    if (state.auto[state.mode] && autoModel(state.mode)) state.model[state.mode] = autoModel(state.mode);
+    layout();
+  });
+}
+function samplesOf(id, kind){
+  const r = (SAMPLES && SAMPLES.results && SAMPLES.results[id]) || {};
+  const keys = kind === "edit" ? (SAMPLES ? SAMPLES.edits.map(e => "edit-" + e.key) : []) : (SAMPLES ? SAMPLES.prompts.map(p => p.key) : []);
+  return keys.filter(k => r[k]).map(k => ({key: k, ...r[k]}));
+}
+function typical(list){
+  const s = list.map(x => x.seconds).sort((a, b) => a - b);
+  return s.length ? s[Math.floor(s.length / 2)] : null;
+}
+function renderCard(){
+  const m = model(), box = $("mcard");
+  const kind = state.mode === "edit" ? "edit" : "create";
+  box.hidden = state.mode === "video" || !m || !m.card;
+  if (box.hidden) return;
+  const c = m.card, mine = samplesOf(m.id, kind);
+  const four = (SAMPLES && SAMPLES.strip) || [];   // the person, words, details and imagination prompts
+  const strip = kind === "edit" ? mine : four.map(k => mine.find(x => x.key === k)).filter(Boolean);
+  const secs = typical(mine);
+  const facts = [secs != null ? "about " + (secs < 10 ? secs.toFixed(0) : Math.round(secs)) + " seconds" : null,
+                 m.max_size ? "up to " + m.max_size : null].filter(Boolean);
+  const pick = k => kind === "edit" && c[k + "_edit"] ? c[k + "_edit"] : c[k];   // a model that does both has edit points
+  box.innerHTML = `<div class="best">${esc(pick("best"))}</div>
+    <ul>${(pick("good") || []).map(g => `<li class="good">${esc(g)}</li>`).join("")}${(pick("weak") || []).map(w => `<li class="weak">${esc(w)}</li>`).join("")}</ul>
+    <div class="facts">${facts.map(esc).join("<span aria-hidden='true'>·</span>")}</div>
+    ${strip.length ? `<div class="strip">${strip.slice(0, 4).map(x => `<button type="button" data-key="${esc(x.key)}" aria-label="See ${esc(m.label)}'s sample next to the other models"><img src="/static/studio-samples/${esc(x.file)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
+    <div class="foot"><button class="linkbtn" type="button" id="card-compare">Compare every model on the same requests</button></div>
+    ${(c.sources || []).length ? `<details><summary>Where this comes from</summary>${c.sources.map(s => `<div><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></div>`).join("")}</details>` : ""}`;
+  box.querySelectorAll(".strip button").forEach(b => b.onclick = () => openCompare(kind, b.dataset.key.replace(/^edit-/, "")));
+  $("card-compare").onclick = () => openCompare(kind);
+}
+function openCompare(kind, key){
+  cmp.kind = kind || "create";
+  cmp.key = key || null;
+  renderCompare();
+  if (!$("compare").open) $("compare").showModal();
+}
+function renderCompare(){
+  pressed("cmp-kind", cmp.kind);
+  const list = !SAMPLES ? [] : cmp.kind === "edit" ? SAMPLES.edits : SAMPLES.prompts;
+  if (!list.some(p => p.key === cmp.key)) cmp.key = list.length ? list[0].key : null;
+  chips("cmp-prompts", list.map(p => p.key), k => list.find(p => p.key === k).label, cmp.key, v => { cmp.key = v; renderCompare(); });
+  const p = list.find(x => x.key === cmp.key);
+  $("cmp-text").textContent = p ? "“" + p.text + "”" : "The sample set has not been made yet.";
+  const grid = $("cmp-grid");
+  grid.innerHTML = "";
+  if (!p) return;
+  const sampleKey = cmp.kind === "edit" ? "edit-" + p.key : p.key;
+  const cards = [];
+  if (cmp.kind === "edit") {
+    const base = (SAMPLES.results[SAMPLES.base_model] || {})[p.base];
+    if (base) cards.push({base: true, label: "Before the edit", file: base.file, note: "the picture every model was given"});
+  }
+  CFG.models.filter(m => m.does.includes(cmp.kind)).forEach(m => {
+    const s = (SAMPLES.results[m.id] || {})[sampleKey];
+    cards.push({id: m.id, label: m.label, file: s && s.file,
+                note: s ? (s.seconds < 10 ? s.seconds.toFixed(0) : Math.round(s.seconds)) + " s · " + money(s.usd) : "no sample"});
+  });
+  cards.forEach(c => {
+    const d = document.createElement("div");
+    d.className = "cmp-card" + (c.base ? " base" : "");
+    d.innerHTML = (c.file ? `<button class="pic" type="button" aria-label="Enlarge ${esc(c.label)}"><img src="/static/studio-samples/${esc(c.file)}" alt="" loading="lazy"></button>`
+                          : `<div class="gap">The service refused or failed this one.</div>`)
+      + `<div class="who"><b>${esc(c.label)}</b><span>${esc(c.note)}</span></div>`
+      + (c.id ? `<button class="linkbtn use" type="button" aria-label="Use ${esc(c.label)}">Use this model</button>` : "");
+    if (c.file) d.querySelector(".pic").onclick = () => {
+      $("lightbox-img").src = "/static/studio-samples/" + c.file;
+      $("lightbox-img").alt = c.label;
+      $("lightbox-cap").textContent = c.label + " · " + c.note;
+      $("lightbox").hidden = false;
+      $("lightbox-close").focus();
+    };
+    if (c.id) d.querySelector(".use").onclick = () => {
+      $("compare").close();
+      setMode(cmp.kind);
+      state.auto[cmp.kind] = false;
+      state.model[cmp.kind] = c.id;
+      layout();
+      say("Switched to " + c.label + ".");
+    };
+    grid.appendChild(d);
+  });
+  $("cmp-foot").textContent = SAMPLES ? "Each model was given exactly these words" + (cmp.kind === "edit" ? " and the same picture" : "")
+    + ", once, on " + SAMPLES.made + ". Times and prices are what that one run took." : "";
+}
+$("cmp-kind").querySelectorAll("button").forEach(b => b.onclick = () => { cmp.kind = b.dataset.v; cmp.key = null; renderCompare(); });
+$("compare-close").innerHTML = ICON.x;
+$("compare-close").onclick = () => $("compare").close();
+$("lightbox-close").onclick = () => { $("lightbox").hidden = true; };
+$("lightbox").onclick = e => { if (e.target === $("lightbox")) $("lightbox").hidden = true; };
+$("compare").addEventListener("cancel", e => { if (!$("lightbox").hidden) { e.preventDefault(); $("lightbox").hidden = true; } });
+
 function say(text, err){ $("status").textContent = text; $("status").classList.toggle("err", !!err); }
 
 function replace(img){
@@ -1270,7 +1450,13 @@ function setMode(mode){
   layout();
 }
 $("mode").querySelectorAll("button").forEach(b => b.onclick = () => setMode(b.dataset.v));
-$("model").onchange = () => { state.model[state.mode] = $("model").value; state.service = ""; layout(); };
+$("model").onchange = () => {
+  const v = $("model").value;
+  state.auto[state.mode] = v === "auto";   // a model picked by hand stays until Auto is picked again
+  if (v !== "auto") state.model[state.mode] = v;
+  state.service = "";
+  layout();
+};
 $("service").onchange = () => { state.service = $("service").value; requote(); };
 $("check-prices").onclick = async () => {
   $("check-prices").disabled = true;
@@ -1319,11 +1505,13 @@ $("prompt").addEventListener("keydown", e => { if (e.key === "Enter" && (e.ctrlK
     CFG = await (await fetch("/api/studio/config")).json();
     if (!CFG.ready) {
       const keys = Object.values(CFG.services).map(s => s.env).join(", ");
-      $("notready").textContent = CFG.storage ? "Image Studio needs at least one of " + keys + " on this server."
-                                              : "Image Studio needs R2 storage on this server.";
+      $("notready").textContent = CFG.storage ? "Media Studio needs at least one of " + keys + " on this server."
+                                              : "Media Studio needs R2 storage on this server.";
       $("notready").hidden = false;
     }
     Object.keys(CFG.defaults).forEach(mode => state.model[mode] = CFG.defaults[mode]);
+    Object.entries(CFG.tasks || {}).forEach(([mode, list]) => { if (list.length) state.task[mode] = list[0].key; });
+    try { SAMPLES = await (await fetch("/static/studio-samples/samples.json", {cache: "no-cache"})).json(); } catch (e) { SAMPLES = null; }
     ["create", "edit", "video"].forEach(mode => { state.mode = mode; fitModel(); });
     state.mode = "create";
     const q = CFG.models.find(m => m.max_steps);
@@ -1333,7 +1521,7 @@ $("prompt").addEventListener("keydown", e => { if (e.key === "Enter" && (e.ctrlK
     const newest = images.find(i => { const f = folderOf(i.folder_id); return !f || !f.protected; });
     if (newest) showImage(newest); else renderLibrary();
     watch();
-  } catch (e) { say("Image Studio could not load.", true); }
+  } catch (e) { say("Media Studio could not load.", true); }
   if (CFG) layout(); else sync();
 })();
 </script>

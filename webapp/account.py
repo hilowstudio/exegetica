@@ -77,7 +77,7 @@ async def remove(user_id: uuid.UUID, email: str | None) -> dict:
     files = 0
     if r2.configured():
         files = await r2.delete_prefix_async(f"uploads/{user_id}/")
-        files += await r2.delete_prefix_async(f"studio/{user_id}/")   # Image Studio (webapp/studio.py)
+        files += await r2.delete_prefix_async(f"studio/{user_id}/")   # Media Studio (webapp/studio.py)
     async with db.pool().acquire() as conn:
         async with conn.transaction():
             await conn.execute(

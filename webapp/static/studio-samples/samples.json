@@ -1,0 +1,1006 @@
+{
+ "prompts": [
+  {
+   "key": "person",
+   "label": "A person, hands busy",
+   "text": "A woman sitting on a porch step, tying the laces of her running shoes, morning light."
+  },
+  {
+   "key": "words",
+   "label": "Words in the picture",
+   "text": "A hand-painted wooden sign above a bakery storefront that reads \"FRESH BREAD DAILY\", rustic lettering, a quiet morning street."
+  },
+  {
+   "key": "details",
+   "label": "Many details at once",
+   "text": "A red bicycle leaning against a green door, a black cat sitting in the bicycle's front basket, a potted sunflower to the left of the door, and three blue windows above it."
+  },
+  {
+   "key": "imagination",
+   "label": "Imagination in a style",
+   "text": "An alien screaming at a grocery store cashier, painted as a 1950s pulp magazine cover."
+  },
+  {
+   "key": "portrait",
+   "label": "A face",
+   "text": "Close-up portrait photograph of an elderly fisherman with weathered skin and a grey beard, wearing a yellow raincoat, soft overcast light, a harbor softly blurred behind him."
+  },
+  {
+   "key": "hands",
+   "label": "Hands",
+   "text": "Photograph of two hands kneading bread dough on a floured wooden table, flour dust in the air, warm morning window light."
+  },
+  {
+   "key": "landscape",
+   "label": "A landscape",
+   "text": "Wide photograph of a misty pine valley at sunrise, a river winding through it, golden light breaking through the fog."
+  },
+  {
+   "key": "illustration",
+   "label": "An illustration",
+   "text": "Children's book watercolor illustration of a fox reading a book under a large mushroom in a rainy forest, soft pastel colors."
+  },
+  {
+   "key": "product",
+   "label": "A product shot",
+   "text": "Studio product photograph of a ceramic coffee mug with a speckled blue glaze on a white background, soft shadow, crisp detail."
+  },
+  {
+   "key": "painting",
+   "label": "A painting style",
+   "text": "Oil painting in the manner of a 17th-century Dutch master: a shepherd boy resting with his sheep on a hillside at dusk, warm low light."
+  }
+ ],
+ "edits": [
+  {
+   "key": "night",
+   "label": "Day to night",
+   "base": "words",
+   "text": "Make it night, with warm light glowing from the bakery windows. Keep everything else the same."
+  },
+  {
+   "key": "recolor",
+   "label": "Change one thing",
+   "base": "portrait",
+   "text": "Change the yellow raincoat to a dark green raincoat. Keep everything else the same."
+  },
+  {
+   "key": "sketch",
+   "label": "Change the style",
+   "base": "landscape",
+   "text": "Turn this photograph into a pencil sketch."
+  },
+  {
+   "key": "remove",
+   "label": "Take something out",
+   "base": "details",
+   "text": "Remove the cat from the bicycle basket. Keep everything else the same."
+  }
+ ],
+ "base_model": "qwen-pro",
+ "made": "2026-11-04",
+ "results": {
+  "flux-schnell": {
+   "portrait": {
+    "file": "flux-schnell/portrait.webp",
+    "seconds": 3.6,
+    "usd": 0.0013,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "hands": {
+    "file": "flux-schnell/hands.webp",
+    "seconds": 3.1,
+    "usd": 0.0013,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "words": {
+    "file": "flux-schnell/words.webp",
+    "seconds": 2.9,
+    "usd": 0.0013,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "landscape": {
+    "file": "flux-schnell/landscape.webp",
+    "seconds": 3.3,
+    "usd": 0.0013,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "illustration": {
+    "file": "flux-schnell/illustration.webp",
+    "seconds": 2.9,
+    "usd": 0.0013,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "product": {
+    "file": "flux-schnell/product.webp",
+    "seconds": 2.4,
+    "usd": 0.0013,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "details": {
+    "file": "flux-schnell/details.webp",
+    "seconds": 3.1,
+    "usd": 0.0013,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "painting": {
+    "file": "flux-schnell/painting.webp",
+    "seconds": 3.0,
+    "usd": 0.0013,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "person": {
+    "file": "flux-schnell/person.webp",
+    "seconds": 3.1,
+    "usd": 0.0013,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "imagination": {
+    "file": "flux-schnell/imagination.webp",
+    "seconds": 3.2,
+    "usd": 0.0013,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   }
+  },
+  "flux-dev": {
+   "portrait": {
+    "file": "flux-dev/portrait.webp",
+    "seconds": 7.4,
+    "usd": 0.0038,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "hands": {
+    "file": "flux-dev/hands.webp",
+    "seconds": 8.1,
+    "usd": 0.0038,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "words": {
+    "file": "flux-dev/words.webp",
+    "seconds": 7.2,
+    "usd": 0.0038,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "landscape": {
+    "file": "flux-dev/landscape.webp",
+    "seconds": 6.5,
+    "usd": 0.0038,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "illustration": {
+    "file": "flux-dev/illustration.webp",
+    "seconds": 6.9,
+    "usd": 0.0038,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "product": {
+    "file": "flux-dev/product.webp",
+    "seconds": 7.0,
+    "usd": 0.0038,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "details": {
+    "file": "flux-dev/details.webp",
+    "seconds": 7.7,
+    "usd": 0.0038,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "painting": {
+    "file": "flux-dev/painting.webp",
+    "seconds": 7.2,
+    "usd": 0.0038,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "person": {
+    "file": "flux-dev/person.webp",
+    "seconds": 7.1,
+    "usd": 0.0038,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "imagination": {
+    "file": "flux-dev/imagination.webp",
+    "seconds": 7.1,
+    "usd": 0.0038,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   }
+  },
+  "flux2-klein": {
+   "portrait": {
+    "file": "flux2-klein/portrait.webp",
+    "seconds": 2.4,
+    "usd": 0.0008,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "hands": {
+    "file": "flux2-klein/hands.webp",
+    "seconds": 3.3,
+    "usd": 0.0008,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "words": {
+    "file": "flux2-klein/words.webp",
+    "seconds": 3.2,
+    "usd": 0.0008,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "landscape": {
+    "file": "flux2-klein/landscape.webp",
+    "seconds": 2.8,
+    "usd": 0.0008,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "illustration": {
+    "file": "flux2-klein/illustration.webp",
+    "seconds": 2.7,
+    "usd": 0.0008,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "product": {
+    "file": "flux2-klein/product.webp",
+    "seconds": 2.7,
+    "usd": 0.0008,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "details": {
+    "file": "flux2-klein/details.webp",
+    "seconds": 2.7,
+    "usd": 0.0008,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "painting": {
+    "file": "flux2-klein/painting.webp",
+    "seconds": 2.8,
+    "usd": 0.0008,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-night": {
+    "file": "flux2-klein/edit-night.webp",
+    "seconds": 6.0,
+    "usd": 0.0017,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-recolor": {
+    "file": "flux2-klein/edit-recolor.webp",
+    "seconds": 5.9,
+    "usd": 0.0017,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-sketch": {
+    "file": "flux2-klein/edit-sketch.webp",
+    "seconds": 6.4,
+    "usd": 0.0017,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-remove": {
+    "file": "flux2-klein/edit-remove.webp",
+    "seconds": 5.7,
+    "usd": 0.0017,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "person": {
+    "file": "flux2-klein/person.webp",
+    "seconds": 2.3,
+    "usd": 0.0008,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "imagination": {
+    "file": "flux2-klein/imagination.webp",
+    "seconds": 2.6,
+    "usd": 0.0008,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   }
+  },
+  "qwen-turbo": {
+   "portrait": {
+    "file": "qwen-turbo/portrait.webp",
+    "seconds": 8.2,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "hands": {
+    "file": "qwen-turbo/hands.webp",
+    "seconds": 7.0,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "words": {
+    "file": "qwen-turbo/words.webp",
+    "seconds": 7.5,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "landscape": {
+    "file": "qwen-turbo/landscape.webp",
+    "seconds": 7.5,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "illustration": {
+    "file": "qwen-turbo/illustration.webp",
+    "seconds": 7.4,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "product": {
+    "file": "qwen-turbo/product.webp",
+    "seconds": 6.5,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "details": {
+    "file": "qwen-turbo/details.webp",
+    "seconds": 7.5,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "painting": {
+    "file": "qwen-turbo/painting.webp",
+    "seconds": 7.0,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-night": {
+    "file": "qwen-turbo/edit-night.webp",
+    "seconds": 15.3,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-recolor": {
+    "file": "qwen-turbo/edit-recolor.webp",
+    "seconds": 15.1,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-sketch": {
+    "file": "qwen-turbo/edit-sketch.webp",
+    "seconds": 14.9,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-remove": {
+    "file": "qwen-turbo/edit-remove.webp",
+    "seconds": 13.5,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "person": {
+    "file": "qwen-turbo/person.webp",
+    "seconds": 7.4,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "imagination": {
+    "file": "qwen-turbo/imagination.webp",
+    "seconds": 7.7,
+    "usd": 0.0141,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   }
+  },
+  "qwen-pro": {
+   "portrait": {
+    "file": "qwen-pro/portrait.webp",
+    "seconds": 12.9,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "hands": {
+    "file": "qwen-pro/hands.webp",
+    "seconds": 11.9,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "words": {
+    "file": "qwen-pro/words.webp",
+    "seconds": 12.3,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "landscape": {
+    "file": "qwen-pro/landscape.webp",
+    "seconds": 10.8,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "illustration": {
+    "file": "qwen-pro/illustration.webp",
+    "seconds": 12.2,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "product": {
+    "file": "qwen-pro/product.webp",
+    "seconds": 13.7,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "details": {
+    "file": "qwen-pro/details.webp",
+    "seconds": 10.7,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "painting": {
+    "file": "qwen-pro/painting.webp",
+    "seconds": 11.0,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-night": {
+    "file": "qwen-pro/edit-night.webp",
+    "seconds": 19.2,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-recolor": {
+    "file": "qwen-pro/edit-recolor.webp",
+    "seconds": 19.2,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-sketch": {
+    "file": "qwen-pro/edit-sketch.webp",
+    "seconds": 19.0,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-remove": {
+    "file": "qwen-pro/edit-remove.webp",
+    "seconds": 21.4,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "person": {
+    "file": "qwen-pro/person.webp",
+    "seconds": 12.0,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "imagination": {
+    "file": "qwen-pro/imagination.webp",
+    "seconds": 11.9,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   }
+  },
+  "h3-still": {
+   "portrait": {
+    "file": "h3-still/portrait.webp",
+    "seconds": 53.1,
+    "usd": 0.018,
+    "service": "baseten",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "hands": {
+    "file": "h3-still/hands.webp",
+    "seconds": 10.2,
+    "usd": 0.018,
+    "service": "baseten",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "words": {
+    "file": "h3-still/words.webp",
+    "seconds": 10.7,
+    "usd": 0.018,
+    "service": "baseten",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "landscape": {
+    "file": "h3-still/landscape.webp",
+    "seconds": 9.9,
+    "usd": 0.018,
+    "service": "baseten",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "illustration": {
+    "file": "h3-still/illustration.webp",
+    "seconds": 9.1,
+    "usd": 0.018,
+    "service": "baseten",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "product": {
+    "file": "h3-still/product.webp",
+    "seconds": 9.4,
+    "usd": 0.018,
+    "service": "baseten",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "details": {
+    "file": "h3-still/details.webp",
+    "seconds": 9.6,
+    "usd": 0.018,
+    "service": "baseten",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "painting": {
+    "file": "h3-still/painting.webp",
+    "seconds": 9.5,
+    "usd": 0.018,
+    "service": "baseten",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "person": {
+    "file": "h3-still/person.webp",
+    "seconds": 32.1,
+    "usd": 0.018,
+    "service": "baseten",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "imagination": {
+    "file": "h3-still/imagination.webp",
+    "seconds": 11.5,
+    "usd": 0.018,
+    "service": "baseten",
+    "size": [
+     1024,
+     1024
+    ]
+   }
+  },
+  "p-h3-image": {
+   "portrait": {
+    "file": "p-h3-image/portrait.webp",
+    "seconds": 31.3,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     2912,
+     2912
+    ]
+   },
+   "hands": {
+    "file": "p-h3-image/hands.webp",
+    "seconds": 20.2,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     2912,
+     2912
+    ]
+   },
+   "words": {
+    "file": "p-h3-image/words.webp",
+    "seconds": 17.4,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     2912,
+     2912
+    ]
+   },
+   "landscape": {
+    "file": "p-h3-image/landscape.webp",
+    "seconds": 18.2,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     2912,
+     2912
+    ]
+   },
+   "illustration": {
+    "file": "p-h3-image/illustration.webp",
+    "seconds": 19.5,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     2912,
+     2912
+    ]
+   },
+   "product": {
+    "file": "p-h3-image/product.webp",
+    "seconds": 18.5,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     2912,
+     2912
+    ]
+   },
+   "details": {
+    "file": "p-h3-image/details.webp",
+    "seconds": 19.5,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     2912,
+     2912
+    ]
+   },
+   "painting": {
+    "file": "p-h3-image/painting.webp",
+    "seconds": 19.9,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     2912,
+     2912
+    ]
+   },
+   "edit-night": {
+    "file": "p-h3-image/edit-night.webp",
+    "seconds": 23.2,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     1984,
+     1984
+    ]
+   },
+   "edit-recolor": {
+    "file": "p-h3-image/edit-recolor.webp",
+    "seconds": 21.8,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     1984,
+     1984
+    ]
+   },
+   "edit-sketch": {
+    "file": "p-h3-image/edit-sketch.webp",
+    "seconds": 22.6,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     1984,
+     1984
+    ]
+   },
+   "edit-remove": {
+    "file": "p-h3-image/edit-remove.webp",
+    "seconds": 22.9,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     1984,
+     1984
+    ]
+   },
+   "person": {
+    "file": "p-h3-image/person.webp",
+    "seconds": 31.8,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     2912,
+     2912
+    ]
+   },
+   "imagination": {
+    "file": "p-h3-image/imagination.webp",
+    "seconds": 21.2,
+    "usd": 0.045,
+    "service": "baseten",
+    "size": [
+     2912,
+     2912
+    ]
+   }
+  },
+  "flux-kontext": {
+   "edit-recolor": {
+    "file": "flux-kontext/edit-recolor.webp",
+    "seconds": 22.2,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-sketch": {
+    "file": "flux-kontext/edit-sketch.webp",
+    "seconds": 12.2,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-remove": {
+    "file": "flux-kontext/edit-remove.webp",
+    "seconds": 9.7,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "edit-night": {
+    "file": "flux-kontext/edit-night.webp",
+    "seconds": 9.1,
+    "usd": 0.04,
+    "service": "runware",
+    "size": [
+     1024,
+     1024
+    ]
+   }
+  }
+ },
+ "strip": [
+  "person",
+  "words",
+  "details",
+  "imagination"
+ ]
+}

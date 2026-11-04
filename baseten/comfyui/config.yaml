@@ -1,4 +1,4 @@
-# ComfyUI on Baseten for the Image Studio's self-hosted route (docs/decisions/0017-image-studio.md).
+# ComfyUI on Baseten for the Media Studio's self-hosted route (docs/decisions/0017-image-studio.md).
 # One H100 that scales to zero when idle. Requests reach ComfyUI's own API through
 # https://model-<id>.api.baseten.co/environments/production/sync/<comfy route>.
 # Deploy: baseten/README.md
@@ -51,7 +51,7 @@ weights:
       - loras/p-h3-image_lora_bf16.safetensors
       - text_encoders/p-h3-image_text_encoder_int8_convrot.safetensors
       - vae/p-h3-image_vae_int8_convrot.safetensors
-  # The prompt rewriter for runs on this GPU: Qwen3-8B with refusals removed (abliterated), 16 GB.
+  # The prompt rewriter for runs on this GPU: a Qwen3-8B, 16 GB.
   - source: hf://Goekdeniz-Guelmez/Josiefied-Qwen3-8B-abliterated-v1@2d21f18902f23a729934a9631373297e22e1ff25
     mount_location: /models/rewriter
     allow_patterns:

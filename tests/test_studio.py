@@ -1,4 +1,4 @@
-"""Image Studio (webapp/studio.py): the maker's login only; each run on the cheapest service that is
+"""Media Studio (webapp/studio.py): the maker's login only; each run on the cheapest service that is
 set up and able, handed to the next when one turns the account away; each service called in the
 shape its docs give, with the least retention each allows; images and videos kept in a private R2
 folder; videos followed until done; cleanup when a run fails or an item is deleted. Every
@@ -213,6 +213,39 @@ def test_the_menu_lists_each_model_once_with_its_services(env):
     assert cfg["prices"]["checked"] is None and cfg["prices"]["stale"] is True
 
 
+def test_every_image_model_has_a_sourced_card_and_every_task_a_model_that_does_it(env):
+    images = {k for k, m in studio.MODELS.items() if "video" not in m["does"]}
+    assert set(studio.CARDS) == images
+    for model_id, card in studio.CARDS.items():
+        assert card["best"] and card["good"] and card["weak"] and card["sources"], model_id
+        assert all(s["url"].startswith("https://") and s["label"] for s in card["sources"]), model_id
+        both = set(studio.MODELS[model_id]["does"]) == {"create", "edit"}
+        assert both == all(k in card for k in ("best_edit", "good_edit", "weak_edit")), model_id
+    for mode, tasks in studio.TASKS.items():
+        assert tasks and len({t["key"] for t in tasks}) == len(tasks)
+        assert all(mode in studio.MODELS[t["model"]]["does"] for t in tasks), mode
+    cfg = env["client"].get("/api/studio/config").json()
+    assert cfg["tasks"] == studio.TASKS
+    menu = {m["id"]: m for m in cfg["models"]}
+    assert menu["qwen-pro"]["card"] == studio.CARDS["qwen-pro"] and menu["qwen-pro"]["max_size"]
+    assert not menu["wan-3"].get("card")
+
+
+def test_the_sample_set_covers_every_image_model():
+    import pathlib
+    root = pathlib.Path(__file__).resolve().parents[1] / "webapp" / "static" / "studio-samples"
+    samples = json.loads((root / "samples.json").read_text(encoding="utf-8"))
+    for model_id, m in studio.MODELS.items():
+        if "video" in m["does"]:
+            continue
+        made = samples["results"][model_id]
+        if "create" in m["does"]:
+            assert all(k in made for k in samples["strip"]), model_id
+        if "edit" in m["does"]:
+            assert all("edit-" + e["key"] in made for e in samples["edits"]), model_id
+        assert all((root / x["file"]).is_file() for x in made.values()), model_id
+
+
 # ---------------------------------------------------------------- choosing the service
 def test_each_run_goes_to_the_cheapest_set_up_service(env):
     env["keys"] = ALL
@@ -371,6 +404,19 @@ def test_runware_flags_a_blocked_image(env):
                                                      "NSFWContent": True}]}
     r = make(env, model="flux-dev", service="runware")
     assert r.status_code == 422 and not [k for k in env["store"] if k.endswith(".jpg")]
+
+
+def test_an_all_black_image_counts_as_blocked(env):
+    # Runware's FLUX schnell once sent a black frame with no flag set (2026-11-04)
+    buf = io.BytesIO()
+    Image.new("RGB", (64, 64), "black").save(buf, "JPEG")
+    black = base64.b64encode(buf.getvalue()).decode()
+    env["runware_reply"] = lambda tasks: {"data": [{"taskUUID": tasks[0]["taskUUID"], "imageBase64Data": black,
+                                                     "NSFWContent": False}]}
+    r = make(env, model="flux-schnell", service="runware")
+    assert r.status_code == 422 and "safety check" in r.json()["error"]
+    assert not [k for k in env["store"] if k.endswith(".jpg")]
+    assert env["rows"][-1]["outcome"] == "refused"
 
 
 def test_runware_says_why_it_would_not_make_an_image(env):

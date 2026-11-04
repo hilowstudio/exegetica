@@ -1,4 +1,4 @@
-"""Image Studio's daily price book (webapp/studio_prices.py): one reader per service, each fed the
+"""Media Studio's daily price book (webapp/studio_prices.py): one reader per service, each fed the
 shape that service publishes; a price that cannot be read or lands far from the listed one keeps
 the last good price; the book lives in R2 and goes stale after a day; Inngest runs it each
 morning. Every page, API, and R2 are stand-ins; no network, no cost."""

@@ -788,7 +788,7 @@ def build_cover(title: str, author: str, motif: Image.Image, edition: str = "lig
     return Image.fromarray(out)
 
 
-# ---------------------------------------------------------------- Image Studio folders
+# ---------------------------------------------------------------- Media Studio folders
 # A studio folder is the house cover laid landscape (COVER_ASPECT below 1, COVER_AUTHOR_BAND 0): its
 # name engraved as the title and no other words. A protected folder adds a diary lock in the same
 # material: a strap in the binding's color, dyed deep like leather, raised off the cloth with pressed

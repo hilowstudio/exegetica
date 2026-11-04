@@ -97,7 +97,7 @@ def _cover_sync(slug: str, theme: str, font: str, motif: str) -> bytes | None:
     return _drawn(slug, title, author, theme, font, motif)
 
 
-# ---------------------------------------------------------------- Image Studio folders
+# ---------------------------------------------------------------- Media Studio folders
 # A studio folder is the house cover laid landscape (scripts/house_covers.py, build_folder): its name
 # engraved as the title and nothing else, and on a protected folder a diary lock in the same material.
 # The renderer's board is set when it loads, so folders use a second copy of it, loaded landscape and

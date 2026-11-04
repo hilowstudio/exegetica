@@ -89,7 +89,7 @@ def test_delete_removes_files_first_then_scrubs_and_deletes_in_one_transaction(m
         return 2
     monkeypatch.setattr(r2, "delete_prefix_async", fake_prefix)
     out = asyncio.run(account.remove(UID, "t@school.test"))
-    assert log[:2] == [("r2", f"uploads/{UID}/"), ("r2", f"studio/{UID}/")]   # uploads, then Image Studio
+    assert log[:2] == [("r2", f"uploads/{UID}/"), ("r2", f"studio/{UID}/")]   # uploads, then Media Studio
     assert log[2] == ("begin",) and log[-1] == ("commit",)
     sql = [entry[1] for entry in log if entry[0] == "sql"]
     assert sql[0].startswith("update library_extractions set canonical_source = 'upload:removed'")

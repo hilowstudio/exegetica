@@ -216,7 +216,7 @@
           document.querySelectorAll(".rail .teach").forEach(function (e) { e.style.display = ""; });
           $("#set-tab-model").style.display = "";
         }
-        // Admin-only modules (Image Studio). The server checks again on every request.
+        // Admin-only modules (Media Studio). The server checks again on every request.
         if (d.admin) {
           document.querySelectorAll(".rail .admin").forEach(function (e) { e.style.display = ""; });
         }

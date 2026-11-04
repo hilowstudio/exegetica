@@ -166,7 +166,7 @@ async def _studio_prices() -> dict:
     retries=1,
 )
 async def studio_prices_fn(ctx) -> dict:
-    """Image Studio's daily price check (webapp/studio_prices.py, docs/decisions/0017): each
+    """Media Studio's daily price check (webapp/studio_prices.py, docs/decisions/0017): each
     morning at 5:00 Central, read every service's price so each model runs on the cheapest."""
     return await ctx.step.run("read-prices", _studio_prices)
 

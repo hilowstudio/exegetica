@@ -1,8 +1,7 @@
-"""The Image Studio's own ComfyUI nodes on the maker's GPU (docs/decisions/0017-image-studio.md).
+"""The Media Studio's own ComfyUI nodes on the maker's GPU (docs/decisions/0017-image-studio.md).
 
-ExegeticaRewrite turns a short request into a detailed prompt with an abliterated Qwen3-8B
-(Josiefied), which does not refuse. It runs as the first step of the same ComfyUI job as the
-image or video, so ComfyUI's one-job-at-a-time queue keeps it from competing with a render for
+ExegeticaRewrite turns a short request into a detailed prompt with a Qwen3-8B. It runs as the
+first step of the same ComfyUI job as the image or video, so ComfyUI's one-job-at-a-time queue keeps it from competing with a render for
 GPU memory. Its output feeds the generation node's prompt and is also returned in the job's
 history, so the studio can show the rewrite beside the maker's own words. The model loads once
 into CPU memory, moves to the GPU only while it writes, and moves back after.

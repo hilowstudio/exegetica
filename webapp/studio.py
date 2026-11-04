@@ -1,9 +1,6 @@
 """
-Image Studio: images and short videos, each run on whichever service is cheapest that day, for
+Media Studio: images and short videos, each run on whichever service is cheapest that day, for
 the maker's login only for now (docs/decisions/0017).
-
-Its shape follows what tbio.ai's image tool turned out to do (studied 2026-11-02), keeping the
-parts that worked and fixing the one that did not:
 
 - Every model is one entry in MODELS: what it can do (create, edit, video), what it accepts, and
   the services that run it (`routes`). Each route says how that service is asked, what it
@@ -12,13 +9,12 @@ parts that worked and fixing the one that did not:
   cheapest service that is set up, not turned away today, and able to make what was asked. If
   that service turns the account away (no credit, a refused key), the run moves to the next.
   The maker can also pick a service himself.
-- "Rewrite my prompt" expands a short request into a detailed one with one cheap text-model call
-  before drawing, as tbio's text model did ("an apple on a table" became about 700 characters).
-  The rewritten prompt is shown, never hidden, so a model's own unseen prompt expansion is
-  switched off wherever its service allows.
-- tbio kept images at public, unsigned links. Here each service is asked to keep as little as it
-  can (webapp/studio_services.py), and everything lands in the app's private R2 bucket, served
-  only to the signed-in owner. Deleting an item deletes it from R2; deleting the account deletes
+- "Rewrite my words" expands a short request into a detailed one with one cheap text-model call
+  before drawing ("an apple on a table" becomes a paragraph). The rewritten prompt is shown,
+  never hidden, so a model's own unseen prompt expansion is switched off wherever its service
+  allows.
+- Each service is asked to keep as little as it can (webapp/studio_services.py), and everything
+  lands in the app's private R2 bucket, served only to the signed-in owner. Deleting an item deletes it from R2; deleting the account deletes
   the whole folder.
 - An image comes back in one request, except on the maker's own GPU, which may first have to wake.
   A video takes minutes, so it (and a GPU still) is saved as pending with the service's job id. The server follows it until the service is done, and the page asks /check
@@ -123,7 +119,7 @@ MODELS = {
         }},
     "qwen-turbo": {
         "does": ("create", "edit"), "label": "Qwen-Image 2.1 Turbo",
-        "note": "The model behind tbio's \"Image 2\", quick version. Also edits.",
+        "note": "Alibaba's image model, quick version. Also edits.",
         "routes": {
             "runware": {"model": "alibaba:qwen-image@2.1-turbo", "price": {"unit": "image", "usd": 0.0141},
                         "quiet": {"settings": {"promptExtend": False}},
@@ -131,7 +127,7 @@ MODELS = {
         }},
     "qwen-pro": {
         "does": ("create", "edit"), "label": "Qwen-Image 2.1 Pro",
-        "note": "The model behind tbio's \"Image 2\" at full quality. About a minute.",
+        "note": "Alibaba's image model at full quality. About a minute.",
         "routes": {
             "runware": {"model": "alibaba:qwen-image@2.1-pro", "price": {"unit": "image", "usd": 0.075},
                         "quiet": {"settings": {"promptExtend": False}},
@@ -165,7 +161,7 @@ MODELS = {
     # ---------------------------------------------------------------- video
     "hunyuan-video": {
         "does": ("video",), "label": "Hunyuan Video 1.5",
-        "note": "Tencent's video model, from the makers of tbio's engine. 480p, no sound.",
+        "note": "Tencent's video model. 480p, no sound.",
         "seconds": (5, 8), "sizes": ("wide", "tall"), "audio": None, "start_image": True,
         "routes": {
             "fal": {"model": "fal-ai/hunyuan-video-v1.5/text-to-video",
@@ -320,6 +316,123 @@ MODELS = {
 }
 DEFAULTS = {"create": "flux-schnell", "edit": "flux-kontext", "video": "h3-max-turbo"}
 
+# "What are you making?": each task names the model Auto picks for it, chosen from the sample set
+# (scripts/studio_samples.py) and the sources on each model's card.
+TASKS: dict[str, list[dict]] = {
+    "create": [
+        {"key": "anything", "label": "Anything", "model": "qwen-turbo"},
+        {"key": "words", "label": "Words in the picture", "model": "qwen-pro"},
+        {"key": "print", "label": "Large prints", "model": "p-h3-image"},
+        {"key": "draft", "label": "Quick drafts", "model": "flux2-klein"},
+    ],
+    "edit": [
+        {"key": "anything", "label": "Any edit", "model": "qwen-turbo"},
+        {"key": "words", "label": "Changing words", "model": "qwen-pro"},
+        {"key": "cleanup", "label": "Photo cleanup", "model": "flux2-klein"},
+        {"key": "combine", "label": "Combining pictures", "model": "p-h3-image"},
+    ],
+}
+
+# What each image model is for, in plain words, every claim from a leaderboard, the maker's own
+# notes, or the sample set, with its sources: "best", "good" and "weak" (and "best_edit", "good_edit"
+# and "weak_edit" for a model that also edits), "sources" [{label, url}]. Leaderboard ranks were read 2026-11-04, the samples made the same day.
+_AA_PICTURES = {"label": "Artificial Analysis, text-to-image leaderboard (blind votes, read 2026-11-04)",
+                "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image"}
+_AA_EDITS = {"label": "Artificial Analysis, image editing leaderboard (blind votes, read 2026-11-04)",
+             "url": "https://artificialanalysis.ai/image/leaderboard/editing"}
+CARDS: dict[str, dict] = {
+    "flux-schnell": {
+        "best": "Rough ideas in about 3 seconds.",
+        "good": ["Fast enough to try many ideas in a row",
+                 "Handled a single face and a landscape well in the samples"],
+        "weak": ["Ranked last of these models in blind votes",
+                 "Misspelled the bakery sign and left the cashier out of the alien scene in the samples",
+                 "FLUX.2 klein is as fast, costs less, and ranked higher"],
+        "sources": [_AA_PICTURES, {"label": "Black Forest Labs, FLUX.1 [schnell] model card",
+                                   "url": "https://huggingface.co/black-forest-labs/FLUX.1-schnell"}]},
+    "flux-dev": {
+        "best": "Cheap everyday pictures, a step up from FLUX schnell.",
+        "good": ["Got who was doing what right in the alien scene, where most models swapped the roles",
+                 "Spelled the bakery sign right in the samples"],
+        "weak": ["Second to last of these models in blind votes",
+                 "Left out the three windows in the busy street scene"],
+        "sources": [_AA_PICTURES, {"label": "Black Forest Labs, FLUX.1 [dev] model card",
+                                   "url": "https://huggingface.co/black-forest-labs/FLUX.1-dev"}]},
+    "flux-kontext": {
+        "best": "Edits to a photo of a person who has to stay recognizable.",
+        "good": ["Its maker says it keeps a person recognizable across edits",
+                 "Made all four sample edits cleanly"],
+        "weak": ["In the lower third of the editing leaderboard in blind votes",
+                 "Its maker says quality slips after several rounds of edits on one picture",
+                 "Costs 4 cents, more than the higher-ranked Qwen-Image Turbo and FLUX.2 klein"],
+        "sources": [_AA_EDITS, {"label": "Black Forest Labs, FLUX.1 Kontext announcement",
+                                "url": "https://bfl.ai/announcements/flux-1-kontext"}]},
+    "flux2-klein": {
+        "best": "Quick drafts, about 3 seconds each for under a tenth of a cent.",
+        "best_edit": "Quick, cheap edits, and cleaning up or restoring photos.",
+        "good": ["Ranked above both FLUX.1 models in blind votes",
+                 "Got most of the busy street scene right in the samples"],
+        "weak": ["Its maker says lettering can come out wrong",
+                 "Made the alien the cashier in the samples"],
+        "good_edit": ["Photo cleanup and restoration is its strongest kind of edit in blind votes",
+                      "Made all four sample edits cleanly"],
+        "weak_edit": ["Changing the words in a picture is its weakest kind of edit"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Black Forest Labs, FLUX.2 [klein] 9B model card",
+                                              "url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-9B"}]},
+    "qwen-turbo": {
+        "best": "Good all-round pictures at a low price.",
+        "best_edit": "Good all-round edits at a low price.",
+        "good": ["Ranked near the top of these models in blind votes, for pictures and for edits",
+                 "Strong at designs and screen layouts in blind votes",
+                 "Got every part of the busy street scene right in the samples"],
+        "weak": ["Made the alien the cashier in the samples",
+                 "Its lowest blind-vote scores are for casual snapshots and for things in motion"],
+        "good_edit": ["Ranked near the top of these models for edits in blind votes",
+                      "Made all four sample edits cleanly"],
+        "weak_edit": ["Ranked a little below Qwen-Image Pro for edits in blind votes"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Qwen, Qwen-Image 2.1 model card",
+                                              "url": "https://huggingface.co/Qwen/Qwen-Image-2.1"}]},
+    "qwen-pro": {
+        "best": "The highest-ranked all-rounder here, and strong with words in the picture.",
+        "best_edit": "Edits that have to get the details right, words included.",
+        "good": ["Ranked highest of these models in blind votes, for pictures and for edits",
+                 "Strong at designs and lettering in blind votes",
+                 "Got every part of the busy street scene right in the samples"],
+        "weak": ["About 12 seconds and 4 cents a picture",
+                 "Made the alien the cashier in the samples",
+                 "Cartoon and game art is its weakest kind of picture in blind votes"],
+        "good_edit": ["Ranked highest of these models for edits in blind votes",
+                      "Made all four sample edits cleanly"],
+        "weak_edit": ["About 20 seconds and 4 cents an edit"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Qwen, Qwen-Image 2.1 model card",
+                                              "url": "https://huggingface.co/Qwen/Qwen-Image-2.1"}]},
+    "h3-still": {
+        "best": "One subject against a simple background.",
+        "good": ["Got every part of the busy street scene right in the samples",
+                 "Got who was doing what right in the alien scene"],
+        "weak": ["Small words come out as nonsense, like the bakery's awning in the samples",
+                 "Sometimes draws a border or a frame around the picture",
+                 "Not on the public leaderboards yet"],
+        "sources": [{"label": "ComfyUI, MiniMax H3 text-to-image template",
+                     "url": "https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_t2i.json"}]},
+    "p-h3-image": {
+        "best": "Large, sharp photographs, up to 8 megapixels.",
+        "best_edit": "Edits at full size, and putting up to seven more pictures into one scene.",
+        "good": ["Its maker says skin and texture come out real in photographs",
+                 "Short headlines in quotes came out right in the samples",
+                 "Got who was doing what right in the alien scene"],
+        "weak": ["Its maker says small or crowded text turns into fake lettering",
+                 "Its maker says hands and small figures in the background can come out wrong",
+                 "A minute or two more when the GPU is asleep"],
+        "good_edit": ["Puts up to seven more pictures into one scene",
+                      "Made all four sample edits cleanly"],
+        "weak_edit": ["An edit can redraw the whole picture unless you say what to keep",
+                      "Not on the public leaderboards yet",
+                      "A minute or two more when the GPU is asleep"],
+        "sources": [{"label": "Pruna AI, P-H3-Image model card", "url": "https://huggingface.co/PrunaAI/P-H3-Image"},
+                    {"label": "Pruna AI, P-H3-Image launch post", "url": "https://www.pruna.ai/blog/oss-p-h3-image-launch"}]},
+}
+
 MAX_PROMPT = 2000
 MAX_UPLOAD = 8 * 1024 * 1024
 SOURCE_SECONDS = 3600          # how long a queued video job may read its first frame from R2
@@ -371,8 +484,6 @@ REWRITE = {
         "prompt only."),
 }
 
-# Runs on the maker's GPU are rewritten there by an abliterated Qwen3-8B, which does not refuse
-# (baseten/comfyui/data/custom_nodes), with the same instructions plus this one line.
 GPU_REWRITE_RULE = (" Any nude or sexual scene has adults only, and nothing sexualizes a child or anyone "
                     "described as young.")
 GPU_REWRITE_SECONDS = 20   # GPU time one rewrite takes on a warm H100, measured 2026-11-04
@@ -603,7 +714,10 @@ async def _image_fal(route: dict, prompt: str, shape: str, steps: int | None, so
     if any(result.get("has_nsfw_concepts") or []):
         raise Refused()
     image = images[0]
-    return {"data": await _download(image["url"]), "content_type": image.get("content_type") or "image/jpeg",
+    data = await _download(image["url"])
+    if _blank(data):
+        raise Refused()
+    return {"data": data, "content_type": image.get("content_type") or "image/jpeg",
             "width": image.get("width"), "height": image.get("height"), "seed": result.get("seed"), "cost": None}
 
 
@@ -635,8 +749,20 @@ async def _image_runware(route: dict, prompt: str, shape: str, steps: int | None
         data = base64.b64decode(row["imageBase64Data"], validate=True)
     except (binascii.Error, ValueError):
         raise StudioError("Runware returned an image that could not be read.", 502) from None
+    if _blank(data):
+        raise Refused()
     return {"data": data, "content_type": "image/jpeg", "width": w, "height": h, "seed": row.get("seed"),
             "cost": row.get("cost")}
+
+
+def _blank(data: bytes) -> bool:
+    """An all-black picture, which is what a safety check hands back when it blocks an image
+    without saying so (Runware's FLUX schnell on kneading hands, 2026-11-04)."""
+    from PIL import Image
+    try:
+        return Image.open(io.BytesIO(data)).convert("L").getextrema()[1] <= 8
+    except Exception:  # noqa: BLE001
+        return False
 
 
 IMAGE_MAKERS = {"fal": _image_fal, "runware": _image_runware}
@@ -1081,7 +1207,7 @@ async def make(user, req: dict, closed: set[str] = frozenset()) -> dict:
     if not usable:
         raise _no_service(m, options, service_pin)
     if not r2.configured():
-        raise StudioError("Image Studio needs R2 storage on this server.", 503)
+        raise StudioError("Media Studio needs R2 storage on this server.", 503)
 
     item_id = uuid.uuid4().hex
     folder = _folder(user)
@@ -1321,7 +1447,10 @@ def _menu_entry(model_id: str, m: dict) -> dict:
                   "start_image": bool(m.get("start_image")), "end_image": bool(m.get("end_image")),
                   "refs": m.get("refs", 0), "pins": m.get("pins", 0), "extends": bool(m.get("extends"))}
     else:
-        entry |= {"steps": m.get("steps"), "max_steps": m.get("max_steps"), "refs": m.get("refs", 0)}
+        sizes = [s for r in m["routes"].values() for s in (r.get("sizes") or {}).values() if isinstance(s, tuple)]
+        big = max(sizes or [SHAPES[k]["size"] for k in SHAPES], key=lambda s: s[0] * s[1])
+        entry |= {"steps": m.get("steps"), "max_steps": m.get("max_steps"), "refs": m.get("refs", 0),
+                  "max_size": f"{big[0]}×{big[1]}", "card": CARDS.get(model_id)}
     return entry
 
 
@@ -1344,6 +1473,7 @@ async def config(request):
         "services": services,
         "models": [_menu_entry(k, v) for k, v in MODELS.items()],
         "defaults": DEFAULTS,
+        "tasks": TASKS,
         "shapes": {k: {"label": v["label"], "size": v["size"]} for k, v in SHAPES.items()},
         "prices": _book_summary(book),
     })

@@ -1,5 +1,5 @@
 """
-Today's price at every service that runs an Image Studio model (docs/decisions/0017).
+Today's price at every service that runs an Media Studio model (docs/decisions/0017).
 
 Each morning the studio asks each service what it charges, in whatever form that service
 publishes, and keeps the answers in R2 beside the studio's folders (studio/prices.json). A model

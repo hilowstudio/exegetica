@@ -1086,7 +1086,7 @@ app = Starlette(
         Route("/privacy", about.privacy_page),
         Route("/robots.txt", robots),
         Route("/ops", ops.page),
-        # Image Studio: the maker's login only for now (webapp/studio.py, docs/decisions/0017)
+        # Media Studio: the maker's login only for now (webapp/studio.py, docs/decisions/0017)
         Route("/studio", studio.page),
         Route("/api/studio/config", studio.config),
         Route("/api/studio/quote", studio.quote, methods=["POST"]),

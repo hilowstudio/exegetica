@@ -223,8 +223,8 @@ def ph3_image(prompt: str, width: int, height: int, seed: int, pictures: list[st
 
 
 def rewritten(wf: dict, system: str, prompt: str, picture_tags: bool, seed: int) -> dict:
-    """The workflow with the GPU's own prompt rewriter (node ExegeticaRewrite, an abliterated
-    Qwen3-8B in baseten/comfyui/data/custom_nodes) as its first step: the rewrite feeds node 7's
+    """The workflow with the GPU's own prompt rewriter (node ExegeticaRewrite, a Qwen3-8B
+    in baseten/comfyui/data/custom_nodes) as its first step: the rewrite feeds node 7's
     prompt and comes back in the job's history."""
     wf["20"] = {"class_type": "ExegeticaRewrite",
                 "inputs": {"system": system, "prompt": prompt, "picture_tags": picture_tags, "seed": seed}}
