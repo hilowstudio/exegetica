@@ -16,8 +16,8 @@ API key and never load-bearing: the server works fully without them.
 ## Status
 
 Early construction. See the build plan and the self-hostable resource catalog for the roadmap.
-Data sources are public-domain or openly licensed (PD / CC0 / CC-BY / CC-BY-SA); see [NOTICE](NOTICE)
-for attributions.
+Data sources are public-domain or openly licensed (mostly PD / CC0 / CC BY / CC BY-SA, with some
+pieces under Apache-2.0, MIT, ISC, GPL-3.0, or the Unlicense); see [NOTICE](NOTICE) for attributions.
 
 ## Development
 
@@ -39,12 +39,13 @@ python scripts/download_theologai.py                 # creeds/confessions/catech
 python scripts/build_database.py --rebuild          # lexicon, verses, morphology, names, aquifer, ACAI
 python scripts/import_theographic.py                # people/place/genealogy graph (CC BY-SA)
 python scripts/import_cross_references.py           # OpenBible.info cross-references (CC BY)
-python scripts/import_lxx.py                        # Greek Septuagint text + LXX<->standard versification
 python scripts/import_translations.py               # readable modern translations
+python scripts/import_lxx.py                        # Greek Septuagint + Brenton + versification (reads the KJV)
 python scripts/import_commentaries.py               # public-domain commentaries
 python scripts/import_catena.py                      # patristic catena (public-domain fathers)
 python scripts/import_theologai.py                   # creeds/confessions/catechisms + UBS parallels
 python scripts/build_word_frequency.py               # reader-mode vocabulary (from owned tags; no download)
+python scripts/import_hebrew_glosses.py              # Hebrew short definitions + entries BDB lacks, from TBESH
 python scripts/download_dictionaries.py && python scripts/import_dictionaries.py   # PD dictionaries (Easton's)
 python scripts/download_confessions.py && python scripts/import_confessions.py     # confession proof-texts (verse<->confession)
 python scripts/download_devotionals.py && python scripts/import_devotionals.py     # verse-keyed devotionals (Spurgeon)
@@ -79,7 +80,7 @@ Anthropic tool-use loop; the API key never leaves the server. See
 ```sh
 ./.venv/Scripts/python -m pip install -e ".[webapp]"
 export ANTHROPIC_API_KEY=sk-ant-...        # Windows: setx ANTHROPIC_API_KEY ...
-python -m uvicorn webapp.app:app --port 8100   # then open http://127.0.0.1:8100
+python -m uvicorn webapp.app:app --port 8100   # then open http://localhost:8100 (Google sign-in is registered for localhost)
 ```
 
 A [Dockerfile](Dockerfile) bakes the read-only DB into a stateless container for
@@ -109,4 +110,4 @@ sync when you edit the persona.
 
 ## License
 
-Code: MIT. Bundled data: per-source (PD / CC0 / CC-BY / CC-BY-SA) — see [NOTICE](NOTICE).
+Code: MIT. Bundled data: per-source (mostly PD / CC0 / CC BY / CC BY-SA) — see [NOTICE](NOTICE).

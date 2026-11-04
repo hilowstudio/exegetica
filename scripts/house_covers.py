@@ -98,7 +98,9 @@ def _si(v: float) -> int:
     return max(1, round(v * S))
 
 
-W, H = round(1600 * S), round(2400 * S)
+# COVER_ASPECT (height / width, default 2:3) lets a printed book use the same design at its page
+# shape, e.g. 1.294 for US Letter; grid rows, title band and author band all follow H.
+W, H = round(1600 * S), round(1600 * S * float(_os.environ.get("COVER_ASPECT", "1.5")))
 INSET = _si(80)                 # border inset, 5% of the width
 AUTHOR_BAND = 0.09              # clear band at the bottom of the inner frame for the author line
 TITLE_AT = 0.5                  # the title panel's center, as a share of the cover height from the bottom
@@ -342,6 +344,7 @@ def layout_title(t: str, box_w: float, box_h: float):
         small = [False] * len(words)
     tr, lh, sc = TITLE_STYLE["track"], TITLE_STYLE["lh"], TITLE_STYLE.get("scale", 1.0)
     ratio = SMALL_RATIO[SMALL_WORDS]
+    out = None
     for size in range(int(_s(230) * sc), int(_s(64) * sc), -_si(4)):
         big, sm = _title_font(size), _small_font(max(_si(20), round(size * ratio)))
         f = [sm if s else big for s in small]
@@ -404,7 +407,24 @@ def layout_title(t: str, box_w: float, box_h: float):
         widest = max(sum(_width(fi, w, tr) for w, fi in segs) + sp * (len(segs) - 1) for segs, _, _ in out)
         if widest <= box_w and total <= box_h * sc and len(out) <= 7:
             return out, total
-    return out, total
+    if out is not None:
+        return out, total
+    # no layout at any size (titles over 14 words skip the search): fill lines greedily at the smallest size
+    size = int(_s(64) * sc)
+    big, sm = _title_font(size), _small_font(max(_si(20), round(size * ratio)))
+    sp = big.getlength(" ") + 2 * tr * size
+    lines, cur, cw = [], [], 0.0
+    for w, fi in zip(words, [sm if s else big for s in small]):
+        ww = _width(fi, w, tr)
+        if cur and cw + sp + ww > box_w:
+            lines.append(cur)
+            cur, cw = [], 0.0
+        cw += (sp if cur else 0) + ww
+        cur.append((w, fi))
+    if cur:
+        lines.append(cur)
+    out = [(segs, max(fi.size for _, fi in segs) * lh, max(fi.size for _, fi in segs)) for segs in lines]
+    return out, sum(h for _, h, _ in out)
 
 
 def draw_title(d: ImageDraw.ImageDraw, lines, cx: float, y: float) -> None:
@@ -1002,6 +1022,14 @@ def cmd_review(args):
     print("review sheet:", p)
 
 
+def cmd_one(args):
+    im = render(args.title, args.author, args.theme, args.font, args.motif).convert("RGB")
+    out = pathlib.Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    im.save(out, quality=92) if out.suffix.lower() in (".jpg", ".jpeg") else im.save(out)
+    print(f"[cover] {out}  {im.size[0]}x{im.size[1]}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -1014,8 +1042,13 @@ def main():
     b = sub.add_parser("build"); b.add_argument("--limit", type=int, default=0)
     b.add_argument("--workers", type=int, default=8); b.add_argument("--force", action="store_true")
     sub.add_parser("review")
+    o = sub.add_parser("one", help="one cover for any title (e.g. a printed book); set COVER_ASPECT for its page shape")
+    o.add_argument("--title", required=True); o.add_argument("--author", default="")
+    o.add_argument("--theme", default="light"); o.add_argument("--font", default="house")
+    o.add_argument("--motif", default="universal"); o.add_argument("--out", required=True)
     args = ap.parse_args()
-    {"motif": cmd_motif, "adopt": cmd_adopt, "render": cmd_render, "build": cmd_build, "review": cmd_review}[args.cmd](args)
+    {"motif": cmd_motif, "adopt": cmd_adopt, "render": cmd_render, "build": cmd_build, "review": cmd_review,
+     "one": cmd_one}[args.cmd](args)
 
 
 if __name__ == "__main__":

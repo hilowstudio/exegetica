@@ -53,3 +53,7 @@ Thumbs.db
 # Local source EPUBs fed to the ingestion scripts (Ryle/Hodge/Owen, etc.) — public-domain
 # working copies, not repo source; the derived data ships via the R2-hosted SQLite DBs.
 *.epub
+
+# Local only: Claude API billing exports and the cover-art download cache
+/claude_api_cost_*.csv
+/db/cover-cache/

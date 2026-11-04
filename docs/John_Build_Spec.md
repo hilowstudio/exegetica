@@ -74,7 +74,7 @@ Every lesson: **Quiet time with the Lord (7 min)** → **Hear the Word (read alo
 
 ## 7. Production via the app (the pipeline)
 
-**The generator** (`webapp/generator.py`): builds a system prompt from a format's `structure` spec + injects the voice rules + grounds Scripture in the co-located **Study Bible MCP** (27 tools; ESV fetched live via the **Crossway `BIBLE_API_KEY`**). Standards spine in `resource-generators.yaml` (`formats`) + `webapp/standards/` (BIB subject = Bible & Theology, the course's home).
+**The generator** (`webapp/generator.py`): builds a system prompt from a format's `structure` spec + injects the voice rules + grounds Scripture in the co-located **Study Bible MCP** (28 tools; ESV fetched live via the **Crossway `BIBLE_API_KEY`**). Standards spine in `resource-generators.yaml` (`formats`) + `webapp/standards/` (BIB subject = Bible & Theology, the course's home).
 
 **Formats for this course** (`resource-generators.yaml`):
 - **Bespoke (authored for this course):** `bible_lesson_guide` (the 5-move governed teacher guide), `bible_reading_guide` (per-unit student guide), `student_devotional`.
