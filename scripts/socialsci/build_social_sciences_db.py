@@ -244,6 +244,8 @@ def docsouth():
                 toc[Path(row["Filename"]).stem] = row
         for f in sorted((base / "texts").glob("*.txt")):
             row = toc.get(f.stem, {})
+            if (row.get("Title") or "").startswith("Fields's Observation"):
+                continue   # the one DocSouth text its readme leaves out of CC BY ("no known rights"); a 1980 edition
             text = f.read_text(encoding="utf-8", errors="replace").strip()
             if len(text) < 200:
                 continue
@@ -252,7 +254,7 @@ def docsouth():
                     "date": (row.get("Date") or "").strip() or None, "year": year_of(row.get("Date") or ""),
                     "url": row.get("URL") or None,
                     "citation": f"Documenting the American South, University of North Carolina at Chapel Hill ({coll}).",
-                    "rights": "DocSouth Data: available for use without restriction (credit UNC)"}, text)
+                    "rights": "DocSouth Data, University Library, UNC-Chapel Hill. CC BY 4.0"}, text)
 
 
 # ------------------------------------------------- Constitution Test texts

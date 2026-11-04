@@ -481,6 +481,170 @@ def parse_bdb_lexicon(filepath: Path) -> Iterator[dict]:
 
 
 # =========================================================================
+# TBESH glosses for the BDB entries
+# =========================================================================
+#
+# _extract_bdb_headword often lands on a grammar label ("noun masculine plural" for elohim) or a
+# stray phrase ("constantly, as more precise designation" for ben), and BDB lacks some common
+# words outright (H5921 'al, H6944 qodesh). TBESH, STEPBible's brief Hebrew lexicon, gives every
+# number a translator's gloss, so the short definition leads with those glosses and keeps only
+# the BDB senses that TBESH's own definitions confirm.
+
+_GRAMMAR_WORDS = {
+    "noun", "verb", "adjective", "adverb", "adverbial", "substantive", "masculine", "feminine",
+    "plural", "singular", "dual", "collective", "proper", "name", "denominative", "verbal",
+    "particle", "pronoun", "preposition", "conjunction", "interjection", "demonstrative",
+    "interrogative", "relative", "construct", "absolute", "imperfect", "perfect", "infinitive",
+    "participle", "imperative", "qal", "pi`el", "hiph`il", "niph`al", "pu`al", "hoph`al",
+    "hithpa`el", "pa`el", "haph`el", "po`el", "po`lel", "pilpel", "ithpa`al", "ithpe`el", "aph`el",
+    "pe`al", "hithpo`el", "hishtaph`el", "pe`il",
+}
+# words that also appear in labels ("proper name, of a location") but are glosses on their own
+_LABEL_WORDS = _GRAMMAR_WORDS | {
+    "of", "a", "the", "and", "in", "or", "only", "common", "number", "numeral", "cardinal",
+    "ordinal", "negation", "aramaic", "location", "people", "territory", "river", "divinity",
+    "deity", "mountain", "city", "region",
+}
+_SENSE_STOPWORDS = {"a", "an", "the", "of", "and", "or", "to", "in", "on", "as", "by", "be", "so"}
+
+
+def _words(text: str) -> list[str]:
+    return re.findall(r"[a-z`]+", text.lower())
+
+
+def _is_label(text: str) -> bool:
+    """True when the text is only grammar ("noun [masculine] plural", "proper name, of a location 1.")."""
+    words = _words(text)
+    return (bool(words) and all(w in _LABEL_WORDS for w in words)
+            and any(w in _GRAMMAR_WORDS for w in words))
+
+
+def _strip_label_words(sense: str) -> str:
+    """Drop leading grammar words: "verb confirm" -> "confirm"."""
+    words = sense.split()
+    while words and words[0].lower().strip("[].") in _GRAMMAR_WORDS:
+        words.pop(0)
+    return " ".join(words).strip(" .")
+
+
+def parse_tbesh_glosses(filepath: Path) -> dict[str, dict]:
+    """Group TBESH rows by base Strong's number (H0430 for H0430G, H1254 for H1254a).
+
+    Each value holds the first row's word and transliteration, and a list of rows as
+    (extended number, kind, part of speech, gloss, definition). The kind is what follows the
+    '=' in the second column: '' for the word itself, 'a Meaning of', 'a Part of', and so on.
+    """
+    out: dict[str, dict] = {}
+    with open(filepath, encoding="utf-8") as f:
+        for line in f:
+            parts = line.rstrip("\n").split("\t")
+            m = re.match(r"^H(\d+)", parts[0])
+            if not m or len(parts) < 7:
+                continue
+            base = "H" + m.group(1).zfill(4)
+            ext = re.match(r"\s*H(\d+)([A-Za-z]?)\s*=\s*(.*)", parts[1])
+            extended = "H" + ext.group(1).zfill(4) + ext.group(2).upper() if ext else base
+            kind = ext.group(3).strip() if ext else ""
+            definition = re.sub(r"(?i)<br\s*/?>", "\n", parts[7] if len(parts) > 7 else "")
+            definition = re.sub(r"<[^>]+>", "", definition)
+            definition = "\n".join(" ".join(ln.split()) for ln in definition.splitlines() if ln.strip())
+            entry = out.setdefault(base, {"word": parts[3].strip(), "transliteration": parts[4].strip(),
+                                          "rows": []})
+            entry["rows"].append((extended, kind, parts[5].strip(), parts[6].strip(), definition))
+    return out
+
+
+def tbesh_entry(base: str, info: dict, counts: dict[str, int] | None = None) -> dict:
+    """A lexicon row for a number BDB lacks, built from its TBESH rows (compound uses left out)."""
+    rows = [r for r in info["rows"] if "Part of" not in r[1] and "combination of" not in r[1]] or info["rows"]
+    definition = "\n\n".join(f"{r[3]}: {r[4]}" if len(rows) > 1 else r[4] for r in rows if r[4])
+    return {
+        "strongs": base,
+        "language": "hebrew",
+        "word": info["word"],
+        "transliteration": info["transliteration"].replace(".", ""),
+        "pronunciation": info["transliteration"],
+        "short_definition": hebrew_short_definition("", info, counts),
+        "full_definition": definition,
+        "etymology": "",
+        "usage_count": 0,
+        "semantic_domain": "[]",
+        "related_words": "[]",
+    }
+
+
+def tbesh_head_glosses(info: dict, counts: dict[str, int] | None = None) -> list[str]:
+    """The glosses that name the word itself, most frequent sense first.
+
+    Rows that only use the word inside a compound ('a Part of', 'combination of') are left out,
+    and so are personal and place names when the number is also a common word. A gloss is cut to
+    its head ("to give: put" -> "to give"). With occurrence counts by extended number, a
+    homograph that is under 2% as frequent as the main one drops out (H5892 "excitement" beside
+    "city").
+    """
+    counts = counts or {}
+    rows = [r for r in info["rows"] if "Part of" not in r[1] and "combination of" not in r[1]] or info["rows"]
+    if any(not r[2].startswith("N:") for r in rows):
+        rows = [r for r in rows if not r[2].startswith("N:")]
+    tally: dict[str, list] = {}
+    for order, (extended, _kind, _pos, gloss, _d) in enumerate(rows):
+        head = gloss.split(":")[0].strip().strip("`").strip()
+        if not head:
+            continue
+        key = re.sub(r"^to ", "", head.lower())
+        slot = tally.setdefault(key, [head, 0, order])
+        slot[1] += counts.get(extended, 0)
+    ranked = sorted(tally.values(), key=lambda s: (-s[1], s[2]))
+    top = ranked[0][1] if ranked else 0
+    heads = [h for h, n, _ in ranked if not (top >= 20 and n * 50 < top)]
+    # names folded into a gloss ("El (Berith)", "(Sea of) Egypt") read as noise beside a plain gloss,
+    # and so does a capitalized title after the main sense (H1697 "word", then "Chronicles")
+    plain = [h for h in heads if not re.search(r"\(.*[A-Z]|[A-Z].*\(", h)] or heads
+    if any(h[:1].islower() for h in plain):
+        plain = plain[:1] + [h for h in plain[1:] if not h[:1].isupper()]
+    return plain
+
+
+def hebrew_short_definition(bdb_short: str, info: dict | None, counts: dict[str, int] | None = None) -> str:
+    """The short definition for a Hebrew entry: TBESH glosses first, then the BDB senses TBESH confirms.
+
+    A proper name keeps BDB's label ("David, proper name, masculine"). Without a TBESH entry the BDB
+    gloss stands as it is.
+    """
+    bdb_short = (bdb_short or "").replace("&amp;", "&").strip()
+    if not info:
+        return bdb_short
+    heads = tbesh_head_glosses(info, counts)
+    if not heads:
+        return bdb_short
+    label = re.sub(r"\s*\d+\.?$", "", bdb_short) if _is_label(bdb_short) else ""
+    if "proper name" in bdb_short.lower() or all(r[2].startswith("N:") for r in info["rows"]):
+        name_label = bdb_short[bdb_short.lower().find("proper name"):] if "proper name" in bdb_short.lower() else ""
+        name_label = re.sub(r"\s*\d+\.?$", "", name_label)
+        return ", ".join(heads + ([name_label] if name_label and _is_label(name_label) else []))
+
+    confirm = " ".join(r[4] + " " + r[3] for r in info["rows"]).lower()
+    senses = []
+    if not label:
+        for raw in re.split(r"[,;]", bdb_short):
+            sense = _strip_label_words(raw.strip())
+            # usage notes ("of place", "with stress on a particular word") are not glosses
+            if not sense or _is_label(sense) or sense.startswith("of ") or len(sense.split()) > 4:
+                continue
+            content = [w for w in _words(sense) if w not in _SENSE_STOPWORDS and len(w) > 2] or _words(sense)
+            if any(re.search(rf"\b{re.escape(w)}", confirm) for w in content):
+                senses.append(sense)
+
+    out, seen = [], set()
+    for s in heads + senses:
+        keys = {re.sub(r"^to | of$", "", k.strip()) for k in [s.lower(), *s.lower().split("/")]}
+        if not keys & seen:
+            out.append(s)
+        seen |= keys
+    return ", ".join(out)
+
+
+# =========================================================================
 # Abbott-Smith - Manual Greek Lexicon of the New Testament (TEI XML)
 # =========================================================================
 

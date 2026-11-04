@@ -65,22 +65,9 @@ TOOLS = [
     Tool(
         name="word_study",
         annotations=ToolAnnotations(title="Word Study", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Look up the lexicon entry for a Strong's number, or for a Greek, Hebrew, or English word.
+        description="""Call when a question turns on one Greek or Hebrew word: its meaning, its range of senses, or the term behind an English rendering. Give a Strong's number, or an English word or transliteration to get its best match.
 
-Given a Strong's number (G26, H430) the entry is returned directly; given an
-English word, the most relevant Greek or Hebrew term is resolved first.
-
-Returns:
-- The word in its original script (e.g. ἀγάπη, אֱלֹהִים)
-- Transliteration and pronunciation
-- Strong's number
-- Brief and full definitions (LSJ for Greek, BDB for Hebrew, plus Abbott-Smith
-  for NT Greek where available)
-- Etymology, semantic range, and related words
-- Occurrence counts and representative passages
-
-Relevant for questions about a specific original-language term, a theological
-term's underlying vocabulary, or the semantic range behind an English rendering.""",
+Returns the full lexicon entry (original script, transliteration, definitions from LSJ or BDB and Abbott-Smith where held, etymology, related words) and up to five example verses. To see every word behind an English term, use search_lexicon. For more verses that use the word, use search_by_strongs.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -90,12 +77,12 @@ term's underlying vocabulary, or the semantic range behind an English rendering.
                 },
                 "word": {
                     "type": "string",
-                    "description": "English word to study (e.g., 'love', 'faith'). Will find the most relevant Greek/Hebrew term."
+                    "description": "An English word ('love', 'faith') or a transliteration ('agape', 'shalom', 'hesed'). An exact transliteration or gloss match wins."
                 },
                 "language": {
                     "type": "string",
                     "enum": ["greek", "hebrew"],
-                    "description": "Language to search if using 'word' parameter. Default: greek"
+                    "description": "Language to search if using 'word'. Leave it out to search both, Greek first."
                 }
             }
         }
@@ -103,21 +90,9 @@ term's underlying vocabulary, or the semantic range behind an English rendering.
     Tool(
         name="lookup_verse",
         annotations=ToolAnnotations(title="Lookup Verse", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Look up a Bible verse in a readable modern translation, with the original language available.
+        description="""Call to quote or examine one verse ('John 3:16', 'Jude 3').
 
-Returns:
-- The verse in a readable translation (default: BSB — Berean Standard Bible;
-  also WEB, KJV, ASV, YLT via the `translation` argument)
-- The original Greek/Hebrew text (optional, on by default)
-- An optional word-by-word interlinear (Strong's + gloss + parsing) via include_morphology
-- Genre-specific interpretive background for the passage's literary type
-- An alternate-versification note where the verse is numbered differently in the Hebrew tradition
-
-Accepts references such as 'John 3:16', 'Gen 1:1', or 'Jude 3'. For a multi-verse
-passage or a whole chapter use `get_passage`; to see several translations at once
-use `compare_translations`.
-
-Relevant whenever the wording of a passage, or its original-language form, is needed.""",
+Returns the verse in a readable translation (BSB by default), its Greek or Hebrew text, a note on reading its genre where one applies, and on request a word-by-word interlinear with Strong's numbers and parsing codes. For a verse range or a chapter, use get_passage. For several translations side by side, use compare_translations. For the Septuagint's Greek of an Old Testament verse, use get_septuagint.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -127,7 +102,7 @@ Relevant whenever the wording of a passage, or its original-language form, is ne
                 },
                 "translation": {
                     "type": "string",
-                    "description": "Translation for the readable text: BSB (default), WEB, KJV, ASV, YLT (bundled), or ESV / NET (fetched live; ESV needs an ESV_API_KEY, NET is keyless)."
+                    "description": "BSB (default), WEB, KJV, ASV or YLT, all held here. ESV and NET are fetched live, and the BSB stands in, with a note, when they can't be reached."
                 },
                 "include_original": {
                     "type": "boolean",
@@ -152,23 +127,15 @@ Relevant whenever the wording of a passage, or its original-language form, is ne
     Tool(
         name="get_passage",
         annotations=ToolAnnotations(title="Get Passage", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Return a readable passage — a verse range or a whole chapter — in one translation.
+        description="""Call to read more than one verse: a verse range or a whole chapter.
 
-Gives the running text of a passage (each verse numbered) in a readable
-translation. Use this for reading a pericope or chapter rather than a single
-verse; use `lookup_verse` for one verse with original-language detail.
-
-Accepts 'Romans 3:21-26', 'Psalm 23' (whole chapter), 'John 3:16', or 'Jude 3-5'.
-Also serves the deuterocanon / apocrypha (Tobit, Judith, Wisdom, Sirach, Baruch,
-1-4 Maccabees, 1-2 Esdras, Prayer of Manasseh, Greek Esther, Psalm 151, and the
-additions Susanna / Bel and the Dragon / Letter of Jeremiah) from the WEB text,
-which it selects automatically for those books.""",
+Returns the numbered verses in one translation (BSB by default). The deuterocanon (Tobit, Judith, Wisdom, Sirach, Baruch, 1-4 Maccabees, 1-2 Esdras, Prayer of Manasseh, Greek Esther, Psalm 151, Susanna, Bel and the Dragon, Letter of Jeremiah) comes from the WEB automatically. For one verse with its Greek or Hebrew, use lookup_verse.""",
         inputSchema={
             "type": "object",
             "properties": {
                 "reference": {
                     "type": "string",
-                    "description": "Passage reference (e.g., 'Romans 3:21-26', 'Psalm 23')"
+                    "description": "A chapter ('Psalm 23') or a verse range inside one chapter ('Romans 3:21-26')."
                 },
                 "translation": {
                     "type": "string",
@@ -189,14 +156,9 @@ which it selects automatically for those books.""",
     Tool(
         name="compare_translations",
         annotations=ToolAnnotations(title="Compare Translations", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Show a single verse across several English translations side by side.
+        description="""Call to compare how translations render a verse, or to check a literal rendering (YLT, ASV) against a readable one.
 
-Displays the verse in each requested translation (or all bundled translations if
-none are named), for comparing renderings. Bundled translations: BSB, WEB, KJV,
-ASV, YLT (all public domain).
-
-Relevant for comparing how translations render a verse, or checking a literal
-(YLT/ASV) against a readable (BSB/WEB) rendering.""",
+Returns one verse in each translation named, or in all the bundled ones (BSB, WEB, KJV, ASV, YLT) when none are named. ESV and NET can be named too. For a passage longer than one verse, use get_passage.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -216,16 +178,9 @@ Relevant for comparing how translations render a verse, or checking a literal
     Tool(
         name="vocabulary_list",
         annotations=ToolAnnotations(title="Vocabulary List", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""List the rarest original-language words in a passage (reader-mode vocabulary).
+        description="""Call to prepare a passage for reading in Hebrew or Greek, or to build a vocabulary list.
 
-For a passage, returns the Hebrew/Greek words whose corpus frequency is at or
-below a threshold — the words a reader is least likely to know — each with its
-gloss, Strong's number, and how many times it occurs in the whole tagged Bible,
-rarest first. Frequency is computed from the owned STEPBible tags.
-
-Relevant for preparing to read a passage in the original language, building a
-vocabulary list for study, or gauging which words in a text are uncommon.
-Covers the Hebrew Old Testament and Greek New Testament (the tagged corpus).""",
+Returns the passage's rarest original-language words, rarest first, each with its gloss, Strong's number, and how often it occurs in the tagged Hebrew Old Testament and Greek New Testament.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -244,15 +199,9 @@ Covers the Hebrew Old Testament and Greek New Testament (the tagged corpus).""",
     Tool(
         name="search_lexicon",
         annotations=ToolAnnotations(title="Search Lexicon", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Search the Greek and Hebrew lexicons by English word, transliteration, or concept.
+        description="""Call to find which Greek or Hebrew words lie behind an English word or concept, or to tell near-synonyms apart ('love' gives agapaō, agapē, phileō and more).
 
-Returns the matching lexicon entries ranked by relevance — typically several
-distinct original-language words that an English term covers (e.g. "love" →
-agapē, phileō, erōs), each with its Strong's number, definition, and semantic
-range.
-
-Relevant for identifying which original-language terms lie behind an English
-word or a biblical concept, and for distinguishing between near-synonyms.""",
+Returns the matching lexicon entries, best match first, each with its Strong's number, transliteration, and short definition. Open one in full with word_study.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -276,27 +225,9 @@ word or a biblical concept, and for distinguishing between near-synonyms.""",
     Tool(
         name="get_cross_references",
         annotations=ToolAnnotations(title="Cross References", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Retrieve the cross-references for a Bible reference — the passages traditionally read alongside it — or a curated chain of passages for a doctrinal theme.
+        description="""Call to find the verses usually read alongside a verse, or a short chain of key passages for a doctrine.
 
-**By reference** (most common): `reference="John 3:16"`. Rows come ranked in three tiers:
-  - Tier 3, consensus and curated: CH (Harrison & Romhild, hand-vetted, leans NT-quotes-OT),
-    Gage "parallel" (John ↔ Revelation typology), and TSK pairs with ≥100 votes.
-  - Tier 2, argued and acknowledged: Burnett's Gen 15:5 / Rom 4:18 chain (one scholar's
-    published argument, JSPL 5.2), Gage "chiastic" (looser echoes), TSK 20–99 votes.
-  - Tier 1, long tail: TSK under 20 votes; suppressed by default when the verse has 3+ stronger rows.
-
-**By theme**: `theme="atonement"` (or salvation_by_grace, deity_of_christ, resurrection,
-holy_spirit, justification) returns a hand-curated chain of foundational passages.
-
-**Reading the scores.** Each row has `type` (dataset), `relevance`, and for TSK `tsk_votes`:
-≥100 very strong, 20–99 solid, 5–19 moderate to weak, under 5 mostly noise. CH rows are all
-hand-curated ("canonical direction" marks the stronger ones); Gage relevance 3 = tight
-parallel, 1 = loose echo; Burnett rows are a single scholarly proposal, not consensus.
-
-**Limits of the data.** TSK (Torrey) indexes topical links, not quotations or allusions, so few
-rows does not mean few biblical echoes (Revelation's OT imagery is under-indexed). For those,
-try `source="ch"` or `find_similar_passages`. `limit` (default 8) is a cap, not a target; for
-the long tail use `source="tsk"` or `min_strength=0` with `limit` 20–30.""",
+With reference, returns OpenBible.info cross-references ranked by reader votes, each with its vote count. More votes mean a closer link. With theme, returns a curated chain of passages for one of six doctrines. For true parallels (the Synoptic accounts of one event, an Old Testament text quoted in the New), use get_parallel_passages.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -308,18 +239,13 @@ the long tail use `source="tsk"` or `min_strength=0` with `limit` 20–30.""",
                     "type": "string",
                     "description": "Theological theme. One of: salvation_by_grace, deity_of_christ, atonement, resurrection, holy_spirit, justification."
                 },
-                "source": {
-                    "type": "string",
-                    "enum": ["ch", "tsk", "gage", "burnett"],
-                    "description": "Optional dataset filter when using `reference`. 'ch' = Harrison/Romhild curated; 'tsk' = Treasury of Scripture Knowledge; 'gage' = Gage/Bradley John↔Revelation typology; 'burnett' = Burnett's Gen 15:5 / Rom 4:18 deification chain (JSPL 5.2). Default: all four, ranked CH/Gage > Burnett > TSK."
-                },
                 "limit": {
                     "type": "integer",
-                    "description": "Cap on rows returned (not a target). Default 8. The returned count may be smaller when the verse has fewer rows above the noise floor. Values of 20–30 combined with `source='tsk'` or `min_strength=0` return the long tail."
+                    "description": "Most rows to return, highest votes first. Default 8. Use 20-30 for the long tail."
                 },
                 "min_strength": {
                     "type": "integer",
-                    "description": "Strength floor for TSK refs (vote count). TSK pairs below this are excluded; CH/Gage/Burnett refs are exempt from this floor, being hand-curated or scholarly-argued. Setting this also disables the default tier-1 suppression, since it specifies an explicit floor. Sensible thresholds: 0 (include long-tail), 5 (drops bottom ~75%% of TSK), 20 (top ~5%% only). Default: tier-1 suppressed when verse is signal-rich."
+                    "description": "Fewest votes a row needs. Default 0, which leaves out links readers voted down. Votes run to over 1,000, and rows under about 5 votes are weak links."
                 }
             }
         }
@@ -327,21 +253,9 @@ the long tail use `source="tsk"` or `min_strength=0` with `limit` 20–30.""",
     Tool(
         name="lookup_name",
         annotations=ToolAnnotations(title="Lookup Name", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Look up general information about a biblical person, place, or thing by name — Abraham, David, Bethlehem, and so on.
+        description="""Call to identify a person or place named in the Bible (Abraham, Bethlehem). Covers biblical names only.
 
-Covers 4,000+ biblical persons and 1,000+ places. Returns the entry's original-language
-name, description, key verse references, ACAI annotations where available (variant
-names, roles, reference and speech counts), and its immediate relationships:
-
-- **Parents** — one generation back (e.g. David → Jesse)
-- **Children** — one generation forward (e.g. Abraham → Isaac)
-- **Siblings** (e.g. Moses ↔ Aaron ↔ Miriam)
-- **Spouse** (e.g. Ruth ↔ Boaz)
-
-Relevant for identifying a named figure or location and for the immediate
-family and reference context around it. Multi-generation lineages are covered by
-`explore_genealogy`, a person's life events by `explore_person_events`, and a
-location's full history by `explore_place`.""",
+Returns every entry whose name contains the text given, each with its original-language name, a description, key references, and parents, children, siblings and spouse, plus ACAI's roles and other names where an ACAI record matches that entry. For a lineage over several generations, use explore_genealogy. For a life in order, use explore_person_events. For a place's history, use explore_place.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -351,8 +265,8 @@ location's full history by `explore_place`.""",
                 },
                 "type": {
                     "type": "string",
-                    "enum": ["person", "place", "thing"],
-                    "description": "Filter by type. Omit to search all types."
+                    "enum": ["person", "place"],
+                    "description": "'person' or 'place'. Omit for both."
                 }
             },
             "required": ["name"]
@@ -361,13 +275,9 @@ location's full history by `explore_place`.""",
     Tool(
         name="parse_morphology",
         annotations=ToolAnnotations(title="Parse Morphology", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Explain a morphological/grammatical parsing code.
+        description="""Call to explain a parsing code, such as one in lookup_verse's interlinear. Greek codes are Robinson style ('V-AAI-3S'), Hebrew codes STEPBible style ('HVqp3ms').
 
-For Greek: Robinson codes (e.g., 'V-AAI-3S' = Verb, Aorist, Active, Indicative, 3rd person, Singular)
-For Hebrew: Westminster/OpenScriptures codes
-
-Returns full grammatical explanation including part of speech, 
-person, number, tense, voice, mood, case, and gender where applicable.""",
+Returns the part of speech and, as they apply, tense or stem, voice, mood, person, number, case and gender.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -378,7 +288,7 @@ person, number, tense, voice, mood, case, and gender where applicable.""",
                 "language": {
                     "type": "string",
                     "enum": ["greek", "hebrew"],
-                    "description": "Language of the code. Default: greek"
+                    "description": "Language of the code. Default greek, so pass 'hebrew' for a Hebrew code."
                 }
             },
             "required": ["code"]
@@ -387,12 +297,9 @@ person, number, tense, voice, mood, case, and gender where applicable.""",
     Tool(
         name="search_by_strongs",
         annotations=ToolAnnotations(title="Search by Strong's Number", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Search by Strong's number for every verse where that word appears.
+        description="""Call to see how a word is used across Scripture once you have its Strong's number (from word_study or search_lexicon).
 
-Takes a Strong's number (typically obtained from `word_study` or
-`search_lexicon`) and returns the passages containing that Greek or Hebrew word,
-showing how biblical authors used it in context and the range of senses it
-carries across occurrences.""",
+Returns the word's short definition and the first verses that contain it, in Bible order, each in a literal word-for-word English gloss.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -411,16 +318,9 @@ carries across occurrences.""",
     Tool(
         name="explore_genealogy",
         annotations=ToolAnnotations(title="Explore Genealogy", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Trace a genealogy: a biblical person's ancestors and/or descendants across multiple generations of lineage.
+        description="""Call to trace a biblical lineage over several generations: a person's ancestors, descendants, or both (the line from Abraham to David, a tribal ancestry). Covers people in the Bible only.
 
-Traverses genealogical data covering 1,100+ biblical persons. Returns a family
-tree with generation numbers and relationship types, plus a Mermaid diagram of
-the tree.
-
-Covers questions such as tracing the line from Abraham to David, a person's
-tribal ancestry, the Messianic lineage, or how a figure connects into a known
-line. For a single generation (e.g. one person's father), `lookup_name` returns
-immediate family without the traversal.""",
+Returns the tree with generation numbers, the person's spouses and siblings, and a Mermaid diagram. When the name fits several people, it answers for the closest, most-mentioned match and lists the others with ids to call again with. For one generation, lookup_name is enough. For how two people are related, use find_connection.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -444,15 +344,9 @@ immediate family without the traversal.""",
     Tool(
         name="people_in_passage",
         annotations=ToolAnnotations(title="People in Passage", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""List the people, places, and events mentioned in a Bible passage.
+        description="""Call to establish the cast and setting of a passage: who and what appears in a chapter ('Genesis 22') or a verse.
 
-Returns the entities recorded for a chapter or verse in the Theographic Bible
-Metadata — for example, Genesis 22 returns Abraham, Isaac, the angel of the LORD,
-and Moriah; Acts 15 returns Paul, Barnabas, James, Jerusalem, and Antioch.
-
-Relevant for establishing the cast and setting of a narrative passage. Related
-tools: `graph_enriched_search` is verse-level only but adds the verse text and
-family relationships for each person found.""",
+Returns the people, places and events recorded for it, by name. For one verse with its text and each person's family, use graph_enriched_search.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -467,15 +361,9 @@ family relationships for each person found.""",
     Tool(
         name="explore_person_events",
         annotations=ToolAnnotations(title="Explore Person Events", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Retrieve the recorded events of a biblical person's life in chronological order.
+        description="""Call for the course of a biblical person's life: what happened, in order, and when.
 
-Returns each event with its location and date where known, plus a Mermaid
-timeline diagram. Moses returns birth, burning bush, exodus, Sinai, and death on
-Nebo; Paul returns conversion, missionary journeys, imprisonment, and Rome.
-
-This is the only tool covering event sequence and dating for a person. Related
-tools: `lookup_name` for identity and relationships, `explore_genealogy` for
-lineage.""",
+Returns the recorded events in order, each with its place and date where known, and a Mermaid timeline. When the name fits several people, it lists the others with ids to call again with. For identity and family, use lookup_name. For lineage, use explore_genealogy.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -490,17 +378,9 @@ lineage.""",
     Tool(
         name="explore_place",
         annotations=ToolAnnotations(title="Explore Place", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Retrieve the full biblical history of a place.
+        description="""Call for a biblical place's history and significance across the Bible (Jerusalem, Mount Sinai). Covers places in the Bible only.
 
-Returns the events recorded there, the people born or who died there, and
-geographic data, spanning all biblical periods — plus a Mermaid network diagram.
-Jerusalem returns events from Salem/Melchizedek through David, Solomon, the
-exile, and Jesus; Mount Sinai returns the burning bush, the giving of the law,
-the golden calf, and Elijah.
-
-Relevant for questions about biblical geography or a location's significance
-across salvation history. Related tool: `lookup_name` with type="place" returns
-basic place info and immediate connections only.""",
+Returns its type and coordinates where known, the events recorded there, the people born or who died there, and a Mermaid diagram. For a short identification, lookup_name with type 'place' is enough.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -515,16 +395,9 @@ basic place info and immediate connections only.""",
     Tool(
         name="find_connection",
         annotations=ToolAnnotations(title="Find Connection", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Trace the shortest family relationship path between two biblical people.
+        description="""Call to find how two people in the Bible are related by family (Ruth and David).
 
-Walks parent, child, sibling, and spouse relationships in the biblical
-genealogies to find a connecting path, and returns it as a Mermaid flowchart.
-Ruth and David return Ruth → Obed → Jesse → David; Abraham and Moses trace
-through Levi. Where no family connection exists, that is reported.
-
-Relevant for questions about how two named figures relate. Related tool:
-`explore_genealogy` returns one person's ancestors or descendants rather than a
-path between two people.""",
+Returns the shortest path through parent, child, sibling and spouse links, with a Mermaid flowchart, or says that no family link was found. For one person's whole line, use explore_genealogy.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -543,16 +416,9 @@ path between two people.""",
     Tool(
         name="graph_enriched_search",
         annotations=ToolAnnotations(title="Graph Enriched Search", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Retrieve a comprehensive enriched view of a single verse: its text plus all people, places, events, and family relationships.
+        description="""Call for one verse together with the people in it and their families ('Matthew 1:1'). Takes a single verse.
 
-Returns the verse text, the people, places, and events mentioned in it, and the
-family relationships of each person found. For 'Matthew 1:1' that is the verse
-text, Jesus, David, and Abraham with their relationships, and the associated
-places and events.
-
-Combines what `lookup_verse` and `people_in_passage` return separately. Verse
-level only; `people_in_passage` also accepts chapters but returns entity lists
-without verse text or relationships.""",
+Returns the verse in a literal English gloss and in the original language, the people, places and events it mentions, and each person's parents, spouse and children. For a chapter's cast, use people_in_passage. For a readable translation, use lookup_verse.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -570,17 +436,9 @@ without verse text or relationships.""",
     Tool(
         name="get_study_notes",
         annotations=ToolAnnotations(title="Study Notes", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Get scholarly study notes and translation notes for a Bible verse or chapter.
+        description="""Call for modern study notes on a verse or a chapter: a hard phrase, translation questions, or cultural background.
 
-Returns combined commentary from:
-- **Tyndale Study Notes**: Concise, verse-level scholarly commentary (66 books)
-- **UW Translation Notes**: Translator-focused commentary with linguistic insights
-- **SIL Translator Notes**: Additional translation and cultural context
-
-Relevant for published commentary on a specific verse, difficult passages,
-translation and cultural background, and chapter-level overviews of themes and
-context. The content is published scholarship, quoted as-is with source
-attribution.""",
+Returns Tyndale Study Notes, unfoldingWord translation notes and SIL translator notes, grouped by source. A chapter reference ('Genesis 1') or chapter_only gives the whole chapter's notes. For classic commentaries, use get_commentary.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -599,20 +457,9 @@ attribution.""",
     Tool(
         name="get_bible_dictionary",
         annotations=ToolAnnotations(title="Bible Dictionary", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Look up a topic in the Tyndale Bible Dictionary.
+        description="""Call for a background article on a biblical topic: a person, place, custom, institution or idea (Pharisees, baptism, covenant).
 
-Contains 500+ topical articles covering:
-- Biblical people and places
-- Theological concepts and doctrines
-- Cultural practices and customs
-- Historical background
-- Archaeological findings
-
-Relevant for background on a biblical topic, historical or cultural context, a
-detailed article on a person, place, or concept, or a published definition of a
-theological term.
-
-Returns the full dictionary article with cross-references.""",
+Returns the matching articles from the Tyndale Bible Dictionary and Easton's Bible Dictionary. For a short definition of a theological term, use get_key_terms. To identify a name quickly, use lookup_name.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -627,17 +474,9 @@ Returns the full dictionary article with cross-references.""",
     Tool(
         name="get_key_terms",
         annotations=ToolAnnotations(title="Key Terms", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Look up a key theological term in the FIA Key Terms database.
+        description="""Call for a precise definition of a biblical or theological term (atonement, justification, grace) and how Scripture uses it.
 
-Contains 200+ carefully defined theological and biblical terms with:
-- Clear definitions accessible to translators
-- Biblical usage and context
-- Cross-references to related terms
-- Translation guidance
-
-Relevant for a precise definition of a theological term (agape, atonement,
-justification, and similar), how a concept is used across Scripture, a
-translation-oriented explanation, or cross-references to related concepts.""",
+Returns the matching FIA Key Terms entries, written for Bible translators. For a longer background article, use get_bible_dictionary. For the Greek or Hebrew word itself, use word_study.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -652,17 +491,9 @@ translation-oriented explanation, or cross-references to related concepts.""",
     Tool(
         name="get_commentary",
         annotations=ToolAnnotations(title="Get Commentary", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Get public-domain commentary on a specific verse.
+        description="""Call for what the classic commentators said about one verse.
 
-Returns classic verse-level or section-level commentary from bundled
-public-domain works. Available sources: Matthew Henry, John Gill (verse-by-verse),
-Jamieson-Fausset-Brown, Adam Clarke, John Calvin, and Keil & Delitzsch (Old
-Testament). Name one or more in `sources` (e.g. ['Matthew Henry','Gill']), or omit
-to get every source that covers the verse.
-
-Section-level commentaries (e.g. Matthew Henry) note the verse range the comment
-covers. Distinct from `get_study_notes`, which returns the Tyndale/SIL/unfoldingWord
-translation-oriented notes.""",
+Returns the comment from each public-domain commentary that covers the verse, with the verse range it spans: Matthew Henry, John Gill, Jamieson-Fausset-Brown, Adam Clarke, John Calvin, Keil & Delitzsch (Old Testament), Charles Hodge (Romans), J.C. Ryle (Gospels) and Spurgeon's Treasury of David (Psalms). For the church fathers, use get_church_fathers. For modern study notes, use get_study_notes.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -682,16 +513,9 @@ translation-oriented notes.""",
     Tool(
         name="get_church_fathers",
         annotations=ToolAnnotations(title="Church Fathers", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Return a catena of public-domain church-father comments on a verse.
+        description="""Call for how the church fathers and other writers before 1900 read one verse.
 
-Gathers how the church fathers and later pre-1900 writers commented on a verse —
-excerpts from Ante-Nicene, Nicene/Post-Nicene, Eastern/Byzantine, Syriac, and
-medieval writers, each with author, approximate date, and source. Popular verses
-have many; the earliest are shown first. Restrict to one writer with `father`
-(e.g. 'Chrysostom', 'Augustine', 'Irenaeus').
-
-Distinct from `get_commentary` (continuous, mostly Reformation-era commentaries)
-and `get_study_notes` (modern translation-oriented notes).""",
+Returns excerpts, earliest first, each with author, approximate date and source, and the count on file. Name one writer with father. For Reformation and later commentaries, use get_commentary. To search the fathers' full works by topic, use search_theology.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -714,25 +538,14 @@ and `get_study_notes` (modern translation-oriented notes).""",
     Tool(
         name="search_theology",
         annotations=ToolAnnotations(title="Theology Library (grounding)", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Full-text search the church's public-domain theological treasury for grounding.
+        description="""Call to ground a doctrinal or church-history claim in what the tradition wrote ('propitiation', 'union with Christ', 'mortification of sin').
 
-A local corpus of ~965 complete public-domain works — the Ante-Nicene and
-Nicene/Post-Nicene Fathers, Reformers and Puritans (Owen, Edwards, Manton, Flavel,
-Watson, Shepard), Reformed systematics (Hodge, Boyce), Aquinas' Summa, Schaff's
-church history, Edersheim, Josephus, and Philo — indexed for keyword/BM25 retrieval.
-
-Use it to GROUND a claim in what the tradition actually wrote: search a term or
-phrase ('propitiation', 'federal headship', 'union with Christ', 'effectual
-calling') and get the most relevant passages, each with author and work to cite.
-Restrict to one writer with `author` (e.g. 'owen', 'edwards', 'schaff').
-
-Distinct from `get_commentary` (verse-keyed commentary) and `get_church_fathers`
-(verse-keyed patristic catena): this searches the full continuous texts by topic.""",
+Searches nearly 1,000 public-domain works (the Ante-Nicene and Nicene Fathers, Aquinas, Luther, Owen and the Puritans, Edwards, Hodge, Spurgeon, Schaff's church history, Edersheim, Josephus, Philo) by keyword and by meaning. A Bible book or verse named in the query also brings up the works written on it. Returns passages with the author and work to cite, and the paragraph for keyword and verse matches. For comments keyed to one verse, use get_commentary or get_church_fathers.""",
         inputSchema={
             "type": "object",
             "properties": {
                 "query": {"type": "string", "description": "A theological term, phrase, or question (e.g., 'mortification of sin')."},
-                "author": {"type": "string", "description": "Optional: restrict to one author's works (e.g., 'owen', 'aquinas', 'schaff')."},
+                "author": {"type": "string", "description": "Optional: one author's works, by surname (e.g., 'owen', 'aquinas', 'schaff')."},
                 "limit": {"type": "integer", "description": "Max passages to return (default 8, max 25)."}
             },
             "required": ["query"]
@@ -741,39 +554,24 @@ Distinct from `get_commentary` (verse-keyed commentary) and `get_church_fathers`
     Tool(
         name="get_confession",
         annotations=ToolAnnotations(title="Creeds & Confessions", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Retrieve or search the historical creeds, confessions, and catechisms.
+        description="""Call to read or search the creeds, confessions and catechisms: the ecumenical creeds, the Reformed and Baptist standards (Westminster, Heidelberg, Belgic, Dort, 1689), and Lutheran, Anglican, Catholic and Orthodox documents.
 
-Bundled documents span the Christian traditions (all public domain): ecumenical
-creeds (Apostles', Nicene, Athanasian, Chalcedon); Reformed/Protestant confessions
-(Westminster Confession + Larger/Shorter Catechisms, Belgic, Canons of Dort,
-Heidelberg, 1689 London Baptist, 39 Articles, Augsburg); Catholic (Council of
-Trent, Baltimore Catechism); and Orthodox (Confession of Dositheus, Philaret's
-Catechism).
-
-Usage: no arguments lists the documents; `document` retrieves one (or its section
-index if long); `document` + `section` returns a specific chapter/article/question;
-`topic` searches every document for a keyword or theme.""",
+With no arguments, lists the documents. document returns one, or its list of sections when it is long. document with section returns one part. topic searches every document. For the proof texts behind an article, use get_confession_proofs. For the articles that cite a verse, use find_confessions_by_verse.""",
         inputSchema={
             "type": "object",
             "properties": {
                 "document": {"type": "string", "description": "Document name (e.g., 'Nicene Creed', 'Westminster Confession', 'Heidelberg Catechism')"},
-                "section": {"type": "string", "description": "A section/article/question within the document (e.g., 'Q1', 'God the Father')"},
-                "topic": {"type": "string", "description": "Search all documents for a keyword or theme (e.g., 'justification', 'baptism')"}
+                "section": {"type": "string", "description": "A catechism question ('Q1') or words from a chapter or article title ('Of Creation', 'God the Father')."},
+                "topic": {"type": "string", "description": "A word or short phrase, matched as written (e.g., 'justification'). Returns up to 12 sections."}
             }
         }
     ),
     Tool(
         name="find_confessions_by_verse",
         annotations=ToolAnnotations(title="Confessions Citing a Verse", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Find which confession or catechism articles cite a verse as a proof text.
+        description="""Call to see how the confessions use a verse: which articles cite it as a proof text.
 
-Given a verse, returns every Reformed confession/catechism article that lists it
-among its Scripture proofs (Westminster Confession, Larger & Shorter Catechisms,
-Heidelberg, 1689, Savoy, Scots, Keach, ...), with the article's text. The
-inverse of get_confession_proofs.
-
-Relevant for tracing how the confessional tradition grounds a doctrine in a
-given text, or building a verse-to-confession map for study.""",
+Returns each citing article's label and opening text from the Westminster Confession and Catechisms, Heidelberg, the 1689 London Baptist Confession, Savoy, and Keach's Catechism. To go from an article to its proofs, use get_confession_proofs.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -785,20 +583,14 @@ given text, or building a verse-to-confession map for study.""",
     Tool(
         name="get_confession_proofs",
         annotations=ToolAnnotations(title="Confession Proof Texts", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Show the Scripture proof texts behind a confession or catechism article.
+        description="""Call to see the Scripture behind a confession or catechism article (Westminster Confession 1.1, Shorter Catechism Q1).
 
-For a document (and optionally one article/question), returns each article with
-its cited proof texts resolved to the actual verse text. E.g. the proofs behind
-Westminster Confession 1.1, or Shorter Catechism Q1. The inverse of
-find_confessions_by_verse.
-
-Documents include the Westminster Standards (wcf, wlc, wsc), Heidelberg, 1689,
-Savoy, Second Helvetic, Scots, Keach, and more.""",
+Returns the article with its proof texts and the BSB text of each verse. Without a section, returns the list of articles with their proof counts, to choose from. Covers the Westminster Confession and Catechisms (wcf, wlc, wsc, wsc-pca), Heidelberg, the 1689 London Baptist Confession, Savoy, and Keach's Catechism. For other documents, or an article's full text, use get_confession.""",
         inputSchema={
             "type": "object",
             "properties": {
                 "document": {"type": "string", "description": "Document name or id (e.g., 'Westminster Confession', 'wcf', 'Shorter Catechism', 'wsc')"},
-                "section": {"type": "string", "description": "Optional article/question label: 'Q1' (catechism) or '1.2' = chapter.article (confession)"}
+                "section": {"type": "string", "description": "A question ('Q1' or '1'), an article ('1.2', chapter 1, article 2), or a whole chapter of a confession ('1'). Leave it out to list the articles."}
             },
             "required": ["document"]
         }
@@ -806,15 +598,9 @@ Savoy, Second Helvetic, Scots, Keach, and more.""",
     Tool(
         name="get_devotional",
         annotations=ToolAnnotations(title="Get Devotional", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Retrieve a verse-keyed public-domain devotional reading.
+        description="""Call when a devotional reflection on a verse is wanted, or the reading for a calendar day.
 
-Returns a daily devotional meditation anchored to a Bible verse, by verse
-reference or by calendar date. Currently Spurgeon's "Morning and Evening"
-(public domain). This is devotional/homiletical reflection, distinct from the
-exegesis, commentary, and study-note tools.
-
-Relevant for a devotional reflection on a passage, or the reading for a given
-day. Not a substitute for exegesis.""",
+Returns readings from Spurgeon's Morning and Evening keyed to that verse or its chapter, or to that date. Read it alongside the exegesis tools.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -826,13 +612,9 @@ day. Not a substitute for exegesis.""",
     Tool(
         name="get_parallel_passages",
         annotations=ToolAnnotations(title="Parallel Passages", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Find the passages that run parallel to a verse (UBS Parallel Passage Database).
+        description="""Call to find true parallels to a verse: the Synoptic accounts of one event, an Old Testament text quoted in the New, or a repeated narrative.
 
-Given a verse, returns the editorially-grouped parallel references — Synoptic
-Gospel parallels, Old Testament quotations in the New Testament, and repeated
-narratives (e.g. Genesis 2:24 = Matthew 19:5 = Mark 10:7-8 = 1 Corinthians 6:16 =
-Ephesians 5:31). Complements `get_cross_references` (thematically related verses)
-with curated, genuinely parallel passages.""",
+Returns the UBS Parallel Passage groups the verse belongs to (Genesis 2:24 = Matthew 19:5 = Mark 10:7-8 = 1 Corinthians 6:16 = Ephesians 5:31). For verses on a related theme, use get_cross_references.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -844,19 +626,9 @@ with curated, genuinely parallel passages.""",
     Tool(
         name="get_septuagint",
         annotations=ToolAnnotations(title="Septuagint (LXX)", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Look up the Greek Septuagint (LXX) text of a verse, with automatic versification mapping.
+        description="""Call for the Septuagint's Greek wording of an Old Testament or deuterocanonical verse, or to compare it with the Hebrew.
 
-Returns the Greek text of H.B. Swete's edition (the whole Greek Old Testament in
-LXX numbering, including the deuterocanon and Psalm 151), and reconciles the
-LXX's divergent numbering with the standard Hebrew/English numbering.
-
-By default the reference is read in standard (English) numbering and the
-matching LXX verse is returned — e.g. 'Psalm 51:1' returns LXX Psalm 50:1, and
-'Jeremiah 46:1' returns LXX Jeremiah 26:1. Set numbering='lxx' to give the
-reference in the Septuagint's own numbering instead.
-
-Relevant for the Greek wording of an Old Testament verse, the LXX Psalm or
-Jeremiah renumbering, or comparing the Septuagint with the Hebrew/English text.""",
+Returns Swete's Greek text with Brenton's English, and both Greek texts (Old Greek and Theodotion) for Daniel, Susanna and Bel. The reference is read in English numbering and mapped to the LXX verse ('Psalm 51:1' gives LXX Psalm 50:3), and the answer names both numbers. Set numbering 'lxx' to give Swete's numbering instead. For the Hebrew text, use lookup_verse.""",
         inputSchema={
             "type": "object",
             "properties": {

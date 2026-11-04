@@ -1,90 +1,206 @@
-Study Bible MCP
-Copyright (c) 2026
+Exegetica
+Copyright (c) 2026 Hi-Low Studio
 
-This product bundles openly-licensed biblical-studies data. Each source retains its
-own license; attributions required by those licenses are listed below. This file is
-maintained as data sources are added (Phase by phase per the build plan).
+Exegetica serves openly licensed and public-domain data through its Study Bible
+tools, its History tools, and its Reading Room. Each source keeps its own license.
+This file credits every source the way its license asks, and lists the public-domain
+sources too, so the record is complete. scripts/corpus_manifest.py --check compares
+this file with the databases.
 
 Code
 ----
 This project's own source code is licensed under the MIT License (see LICENSE).
 
-Bundled data (attributions added as each source is ingested)
-------------------------------------------------------------
-- STEPBible-Data (Tyndale House, Cambridge) — CC BY 4.0.
-  Tagged Hebrew OT (TAHOT), tagged Greek NT (TAGNT), lexicons (TBESH/TBESG/TFLSJ),
-  proper names (TIPNR), versification (TVTMS), morphology code expansions.
-  Credit: "STEP Bible" — https://www.STEPBible.org
-- Brown-Driver-Briggs Hebrew Lexicon — Public Domain (1906); machine-readable edition
-  via openscriptures/HebrewLexicon (CC BY 4.0 for the coded layer).
-- Abbott-Smith Manual Greek Lexicon — Public Domain.
-- Theographic Bible Metadata (Robert Rouse / viz.bible) — CC BY-SA 4.0.
+Changes we make to the data
+---------------------------
+Unless an entry says more, our changes are changes of form. We load each source into
+SQLite tables and search indexes, keep a plain-text copy of HTML or USFM markup, and
+serve excerpts through the chat tools. Data under CC BY-SA 4.0, and our changes to it,
+remain under CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Data under
+CC BY 4.0 is used under https://creativecommons.org/licenses/by/4.0/.
+
+Study Bible data (bundled in db/study_bible.db and db/theology.db)
+------------------------------------------------------------------
+Scripture texts
+- STEPBible-Data, by Tyndale House, Cambridge. CC BY 4.0.
+  Tagged Hebrew OT (TAHOT), tagged Greek NT (TAGNT), lexicons (TBESH, TBESG, TFLSJ),
+  proper names (TIPNR), and morphology code expansions (TEHMC, TEGMC).
+  Credit: "STEP Bible", https://www.STEPBible.org
+  Source: https://github.com/STEPBible/STEPBible-Data
+- Readable English translations, all public domain, as USFM from eBible.org
+  (https://ebible.org). They power lookup_verse, get_passage, and compare_translations.
+  Footnotes and cross-reference notes are removed. The verse text is unchanged.
+    * Berean Standard Bible (BSB), from BSB Publishing.
+    * World English Bible (WEB). "World English Bible" is a trademark of eBible.org.
+      We serve the text verbatim, and modified text must not be called the WEB.
+    * King James Version (KJV, 1769 standardized text). Public domain outside the UK.
+      In the UK it is under Crown letters patent.
+    * American Standard Version (ASV, 1901).
+    * Young's Literal Translation (YLT), by Robert Young.
+- Greek Septuagint. H.B. Swete, "The Old Testament in Greek according to the
+  Septuagint" (Cambridge, 1909-1930). Public domain. Greek word forms only.
+  Machine-readable digitization via https://github.com/eliranwong/LXX-Swete-1930
+  (that repository is GPL-3.0, and the underlying Swete text is public domain).
+  Powers get_septuagint.
+- English Septuagint. Sir Lancelot C.L. Brenton, "The Septuagint version of the
+  Old Testament, with an English translation" (1851). Public domain. Verse-by-verse
+  English of the Greek LXX, in LXX versification, paired to the Greek in get_septuagint.
+  Machine-readable USFM via eBible.org (eng-Brenton).
+- Versification mappings. Copenhagen Alliance, versification-specification
+  (standard-mappings lxx.json and eng.json). Data CC BY-SA 4.0. Maps LXX verse numbers
+  to standard numbering. We load the two mapping files into one table.
+  Source: https://github.com/Copenhagen-Alliance/versification-specification
+
+Lexicons
+- Brown-Driver-Briggs, "A Hebrew and English Lexicon of the Old Testament" (1906).
+  Public domain. Machine-readable JSON (DictBDB.json) formatted by Eliran Wong from a
+  file provided by Tim Morton (Bible Analyzer). The repository states it is a public
+  domain document. Source: https://github.com/eliranwong/unabridged-BDB-Hebrew-lexicon
+- Abbott-Smith, "A Manual Greek Lexicon of the New Testament". Public domain. TEI
+  edition via https://github.com/translatable-exegetical-tools/Abbott-Smith (the
+  repository states the lexicon and its markup are public domain).
+
+People, places, and events
+- Theographic Bible Metadata, by Robert Rouse (viz.bible). CC BY-SA 4.0.
   People, places, events, genealogy, and verse-entity mentions powering the
   graph tools. Source: https://github.com/robertrouse/theographic-bible-metadata
-  (ShareAlike: this data and derivatives of it remain under CC BY-SA 4.0.)
-- OpenBible.info cross-references — CC BY 4.0.
+- ACAI Biblical Entity Data. Copyright 2025 Mission Mutual (the license file credits
+  the 2024 release to BiblioNexus). CC BY-SA 4.0. People, places, groups, and key
+  terms. We keep selected fields (names, descriptions, roles, family links, and up to
+  20 references per entity). Source: https://github.com/BibleAquifer/ACAI
+
+Cross-references and parallels
+- OpenBible.info cross-references. CC BY 4.0.
   ~344k community-voted cross-references (TSK-derived). Powers get_cross_references.
   Source: https://www.openbible.info/labs/cross-references/
-- Greek Septuagint — H.B. Swete, "The Old Testament in Greek according to the
-  Septuagint" (Cambridge, 1909-1930) — Public Domain. Greek word forms only;
-  machine-readable digitization via https://github.com/eliranwong/LXX-Swete-1930
-  (that repo is GPL-3.0; the underlying Swete text is public domain). Powers get_septuagint.
-- English Septuagint — Sir Lancelot C.L. Brenton, "The Septuagint version of the
-  Old Testament, with an English translation" (1851) — Public Domain. Verse-by-verse
-  English of the Greek LXX, in LXX versification; paired to the Greek in get_septuagint.
-  Machine-readable USFM via eBible.org (eng-Brenton).
-- Public-domain commentaries, via the HelloAO Free Use Bible API (each marked
-  Public Domain) — power get_commentary: Matthew Henry's Commentary, John Gill's
+- UBS Parallel Passage Database. (c) 2023 United Bible Societies. CC BY-SA 4.0.
+  Editorial parallel-passage groups, from TheologAI's vendored snapshot. Powers
+  get_parallel_passages. Source: https://github.com/ubsicap/ubs-open-license
+
+Study notes and reference
+- Aquifer Open Study Notes. (c) 2026 Mission Mutual (https://missionmutual.org).
+  CC BY-SA 4.0. An adaptation of Tyndale Open Study Notes, (c) 2023 Tyndale House
+  Publishers, CC BY-SA 4.0. Powers get_study_notes.
+  Source: https://github.com/BibleAquifer/AquiferOpenStudyNotes
+- Aquifer Open Bible Dictionary. (c) 2026 Mission Mutual (https://missionmutual.org).
+  CC BY-SA 4.0. An adaptation of Tyndale Open Bible Dictionary, (c) 2023 Tyndale House
+  Publishers, CC BY-SA 4.0. Powers get_bible_dictionary.
+  Source: https://github.com/BibleAquifer/AquiferOpenBibleDictionary
+- unfoldingWord(R) Translation Notes. (c) 2022 unfoldingWord (https://unfoldingword.org).
+  CC BY-SA 4.0. Powers get_study_notes.
+  Source: https://github.com/BibleAquifer/UWTranslationNotes
+- Open Translator's Notes (SIL). (c) 2024 SIL International (https://opentn.bible).
+  CC BY-SA 4.0. Powers get_study_notes.
+  Source: https://github.com/BibleAquifer/SILOpenTranslatorsNotes
+- Familiarization, Internalization, Articulation (FIA) Key Terms. (c) 2025 Word
+  Collective (https://wordcollective.com). CC BY-SA 4.0. Powers get_key_terms.
+  Source: https://github.com/BibleAquifer/FIAKeyTerms
+- Easton's Bible Dictionary. M.G. Easton, "Illustrated Bible Dictionary" (1897).
+  Public domain. ~3,960 headword articles powering get_bible_dictionary, alongside the
+  Aquifer Open Bible Dictionary. Machine-readable JSON via
+  https://github.com/garydavenport73/eastons-bible-dictionary-json (an MIT-licensed
+  repository, and the underlying text is public domain).
+- Spurgeon's "Morning and Evening". C.H. Spurgeon (1865). Public domain.
+  366 verse-keyed daily devotional readings (morning and evening). Powers
+  get_devotional. Machine-readable JSON via
+  https://github.com/dwahrens/morning-and-evening (an Apache-2.0 wrapper, and the
+  underlying text is public domain).
+- Word-frequency index. Derived data, computed at build time from the bundled
+  STEPBible tagged text (no external source). Corpus occurrence counts per Strong's
+  number. Powers reader-mode vocabulary (vocabulary_list, reader_mode).
+
+Commentaries and the historic church
+- Public-domain commentaries via the HelloAO Free Use Bible API (each marked public
+  domain). They power get_commentary: Matthew Henry's Commentary, John Gill's
   Exposition, Jamieson-Fausset-Brown, Adam Clarke's Commentary, Calvin's
   Commentaries, and Keil & Delitzsch (Old Testament). Source: https://bible.helloao.org
-- Patristic catena — HistoricalChristianFaith Commentaries-Database. ~85,600
-  public-domain church-father comment excerpts (authors pre-1900 only; later
+- C.H. Spurgeon, "The Treasury of David". Public domain. Spurgeon's own exposition of
+  the Psalms only, verse-keyed for get_commentary. Markdown edition via
+  https://github.com/lyteword/chspurgeon-tod (CC0 1.0).
+- Charles Hodge, "A Commentary on the Epistle to the Romans". Public domain (Hodge
+  died in 1878). Passage-keyed for get_commentary from an EPUB of the public-domain text.
+- J.C. Ryle, "Expository Thoughts on the Gospels". Public domain (Ryle died in 1900).
+  Passage-keyed for get_commentary from an EPUB of the public-domain text.
+- Patristic catena, from the HistoricalChristianFaith Commentaries-Database (released
+  to the public domain by its compilers). ~85,600
+  public-domain church-father comment excerpts (authors before 1900 only, and later
   fair-use excerpts are excluded at import). Powers get_church_fathers.
   Source: https://github.com/HistoricalChristianFaith/Commentaries-Database
-- Historical documents (creeds, confessions, catechisms) — public-domain texts,
+- Patristic quotations. SermonIndex, "Early Church Fathers: Scripture Citation Index"
+  (2026). CC BY 4.0 for the verse alignment and name normalization. The patristic
+  translations themselves are public domain. We add only the excerpts the
+  HistoricalChristianFaith catena lacks, and fill in each author's date and category
+  from that catena. Powers get_church_fathers.
+  Source: https://huggingface.co/datasets/sermonindex/early-church-fathers
+- Historical documents (creeds, confessions, catechisms). Public-domain texts,
   compiled by TJ-Frederick/TheologAI (ISC-licensed compilation). 17 documents
   across the Ecumenical, Reformed, Lutheran, Anglican, Catholic, and Orthodox
-  traditions. Power get_confession. Source: https://github.com/TJ-Frederick/TheologAI
-- UBS Parallel Passage Database — © 2023 United Bible Societies, CC BY-SA 4.0.
-  Editorial parallel-passage groups (via TheologAI's vendored snapshot). Powers
-  get_parallel_passages. Source: https://github.com/ubsicap/ubs-open-license
-- Easton's Bible Dictionary — M.G. Easton, "Illustrated Bible Dictionary" (1897)
-  — Public Domain. ~3,960 headword articles powering get_bible_dictionary
-  (alongside the Aquifer Bible dictionary). Machine-readable JSON via
-  https://github.com/garydavenport73/eastons-bible-dictionary-json
-- Word-frequency index — derived data, computed at build time from the bundled
-  STEPBible tagged text (no external source). Corpus occurrence counts per
-  Strong's number; powers reader-mode vocabulary (vocabulary_list, reader_mode).
-- Reformed Standards Compendium (confessional.tech / reformed-standards) —
-  Apache License 2.0. Confession & catechism texts WITH structured Scripture
-  proof-texts (OSIS). Powers the verse<->confession graph
-  (find_confessions_by_verse, get_confession_proofs) and adds net-new standards
-  (Savoy, Westminster PCA, catechism for young children, ...) to get_confession.
+  traditions. They power get_confession. Source: https://github.com/TJ-Frederick/TheologAI
+- Reformed Standards Compendium (confessional.tech / reformed-standards). Apache
+  License 2.0. Confession and catechism texts with structured Scripture proof-texts
+  (OSIS). Powers the verse-to-confession graph (find_confessions_by_verse,
+  get_confession_proofs) and adds net-new standards (Savoy, Westminster PCA, a
+  catechism for young children, Keach) to get_confession.
   Source: https://github.com/reformed-standards/compendium
-- Spurgeon's "Morning and Evening" — C.H. Spurgeon (1865) — Public Domain.
-  366 verse-keyed daily devotional readings (morning + evening); powers
-  get_devotional. Machine-readable JSON via
-  https://github.com/dwahrens/morning-and-evening (Apache-2.0 wrapper; the
-  underlying text is public domain).
+- Creeds.json, by NonlinearFruit. Public-domain texts. The compilation is under the
+  Unlicense, and we take only documents it marks public domain: 21 confessions,
+  catechisms, and rules of faith that the sources above lack. They power
+  get_confession. Source: https://github.com/NonlinearFruit/Creeds.json
+- Theology grounding corpus. Public-domain works from the Christian Classics Ethereal
+  Library (CCEL, https://www.ccel.org), taken from "CCEL Paragraphs" by Jon Craton,
+  CC BY-SA 4.0. We keep a curated set of public-domain theology as paragraphs with
+  keyword and meaning search, for search_theology.
+  Source: https://huggingface.co/datasets/jncraton/ccel-paragraphs
+  CCEL's copyright policy: https://ccel.org/about/copyright.html
 
-Optional live-proxied translations (NOT bundled; fetched at request time via the
-user's own access, and never stored):
-- ESV — English Standard Version, © Crossway, via api.esv.org. Requires the
-  user's own ESV_API_KEY (free, non-commercial only).
-- NET — NET Bible®, © Biblical Studies Press, via bible.org/labs (keyless,
+History data (bundled in db/social_sciences.db)
+-----------------------------------------------
+- Documenting the American South (DocSouth). University Library, The University of
+  North Carolina at Chapel Hill, which made this material available. DocSouth Data
+  packages: North American Slave Narratives, First-Person Narratives of the American
+  South, and The Church in the Southern Black Community. CC BY 4.0. We use the plain
+  texts, skip texts under 200 characters, and split each text into passages for search.
+  Source: https://docsouth.unc.edu
+- Wikisource. Public-domain texts: "The Cornerstone Speech" (Alexander H. Stephens),
+  "A Model of Christian Charity" (John Winthrop), "The American Constitution and the
+  Slave" (Frederick Douglass), and the Petition of Right (1628). Wikisource's
+  transcriptions are shared under CC BY-SA 4.0. We keep the plain text.
+  Source: https://en.wikisource.org
+- Supreme Court Database coding (vote, issue area, chief justice, and each justice's
+  vote). Cited as its makers ask: Harold J. Spaeth, Lee Epstein, Michael J. Nelson,
+  Andrew D. Martin, et al. Supreme Court Database, Version 2026 Release 01 (terms from
+  1946) and Legacy Release 07 (1791-1945). URL: https://scdb.psu.edu. Downloaded from
+  https://scdb.la.psu.edu, which states no license. We join the coding to the case
+  texts by SCDB case id.
+- Presidential speeches. Cited as its makers ask: Miller Center of Public Affairs,
+  University of Virginia. "Presidential Speeches: Downloadable Data."
+  data.millercenter.org. The Miller Center states that the speeches are in the public
+  domain and offers the data "for the use of the research and academic communities."
+  We keep the speech transcripts only, not the Miller Center's introductions.
+- Public domain and CC0, listed for completeness: Avalon Project documents (Yale Law
+  School), National Archives founding and milestone documents, Supreme Court opinions (Caselaw Access
+  Project, Harvard Law School), the Constitution Annotated (Congressional Research
+  Service), the U.S. Constitution, the United States Code, the Illinois Constitution
+  and Illinois Compiled Statutes, the U.S. Flag Code, Black's Law Dictionary (2nd ed., 1910), Webster's
+  American Dictionary of the English Language (1828), a Wikidata slice of historical
+  people, events, and places (CC0), and the congress-legislators data (CC0).
+
+Reading Room (bundled in db/books.db)
+-------------------------------------
+- Reading Room theology books (CCEL). Public-domain works from the Christian Classics
+  Ethereal Library, rebuilt into chapters from "CCEL Paragraphs" by Jon Craton,
+  CC BY-SA 4.0, with chapter titles from CCEL's own tables of contents. We format the
+  text for reading and drop front matter.
+  Source: https://huggingface.co/datasets/jncraton/ccel-paragraphs
+- Wikisource. Ann Radcliffe, "The Italian". Public domain. Wikisource's transcription
+  is shared under CC BY-SA 4.0. Source: https://en.wikisource.org
+- Public domain and CC0, listed for completeness: Project Gutenberg, Standard Ebooks
+  (CC0 1.0), Internet Archive scans, and Project Gutenberg Australia (only titles
+  public domain in the U.S.).
+
+Optional live-proxied translations (NOT bundled, fetched at request time through the
+publisher's API and never stored):
+- ESV. English Standard Version, (c) Crossway, via api.esv.org. Requires an
+  ESV_API_KEY (free, non-commercial only).
+- NET. NET Bible(R), (c) Biblical Studies Press, via bible.org/labs (keyless,
   non-commercial). Quotations are marked "(NET)" and link to https://netbible.org.
-- Readable English translations (all Public Domain), USFM via eBible.org — power
-  lookup_verse / get_passage / compare_translations:
-    * Berean Standard Bible (BSB)
-    * World English Bible (WEB) — "World English Bible" is a trademark of eBible.org;
-      redistribute the text verbatim and do not relabel modified text as the WEB.
-    * King James Version (KJV, 1769) — Public Domain outside the UK (UK: Crown patent).
-    * American Standard Version (ASV, 1901)
-    * Young's Literal Translation (YLT)
-- Versification mappings — Copenhagen Alliance versification-specification
-  (standard-mappings lxx.json/eng.json), open-licensed. Maps LXX<->standard verse
-  numbering. Source: https://github.com/Copenhagen-Alliance/versification-specification
-
-Additional sources (HelloAO Free Use Bible API translations, public-domain commentaries,
-OpenBible.info cross-references, Theographic Bible Metadata, etc.) will be credited here
-as they are ingested, per the resource catalog in the build plan.

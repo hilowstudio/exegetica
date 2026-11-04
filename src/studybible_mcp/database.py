@@ -8,6 +8,7 @@ import json
 import os
 import re
 import sqlite3
+import unicodedata
 from collections import deque
 from pathlib import Path
 from typing import Any
@@ -40,7 +41,7 @@ BOOK_ABBREV_MAP = {
     "psalms": "Psa", "psalm": "Psa", "ps": "Psa",
     "proverbs": "Pro", "prov": "Pro", "pr": "Pro",
     "ecclesiastes": "Ecc", "eccl": "Ecc",
-    "song of solomon": "Sng", "song": "Sng", "sos": "Sng",
+    "song of solomon": "Sng", "song of songs": "Sng", "canticles": "Sng", "song": "Sng", "sos": "Sng",
     "isaiah": "Isa", "isa": "Isa",
     "jeremiah": "Jer", "jer": "Jer",
     "lamentations": "Lam", "lam": "Lam",
@@ -191,12 +192,48 @@ def resolve_folded_ref(reference: str) -> tuple[str, int, int, int] | None:
     return None
 
 
+def base_strongs(strongs: str) -> str:
+    """Drop a STEPBible sense letter: 'H3068G' -> 'H3068'. The lexicon keys the plain number,
+    while the tagged text gives most words a letter."""
+    m = re.match(r"^([GH]\d+)[A-Za-z]$", strongs or "")
+    return m.group(1) if m else strongs
+
+
+# Spelling equivalences for the Hebrew transliterations in the lexicon, which write samekh as a
+# lone 'c' (checed), heth as 'ch', and some long vowels as 'ow' or 'uw'. Applied to both sides, so
+# 'hesed', 'chesed' and 'checed' meet, as do 'kabod' and 'kabowd', 'tzedek' and 'tsedeq'.
+_HEBREW_FOLDS = ((re.compile(r"c(?!h)"), "s"), (re.compile(r"ch"), "h"), (re.compile(r"tz"), "ts"),
+                 (re.compile(r"ow"), "o"), (re.compile(r"uw"), "u"), (re.compile(r"iy"), "i"),
+                 (re.compile(r"th"), "t"), (re.compile(r"q"), "k"))
+
+
+def fold_transliteration(text: str, language: str | None = None) -> str:
+    """A transliteration reduced for matching: accents dropped, lowercase letters only
+    ('agapē' -> 'agape'), plus the Hebrew spelling equivalences above for Hebrew words."""
+    plain = "".join(c for c in unicodedata.normalize("NFKD", text or "") if not unicodedata.combining(c))
+    out = re.sub(r"[^a-z]", "", plain.lower())
+    if language == "hebrew":
+        for pattern, repl in _HEBREW_FOLDS:
+            out = pattern.sub(repl, out)
+    elif language == "greek":
+        out = out.replace("y", "u")  # the lexicon writes upsilon as u: dikaiosunē
+    return out
+
+
+def _senses(short_definition: str | None) -> set[str]:
+    """The separate glosses in a short definition: 'faith: faithfulness' -> {'faith', 'faithfulness'}."""
+    return {s.strip() for s in re.split(r"[,;:]", (short_definition or "").lower()) if s.strip()}
+
+
 class StudyBibleDB:
     """Async SQLite database interface for Bible study data."""
 
     def __init__(self, db_path: Path | str):
         self.db_path = Path(db_path)
         self.conn: aiosqlite.Connection | None = None
+        self._lexicon_index: list[tuple] | None = None  # built on the first word lookup
+        self._lxx_routes: bool | None = None  # whether lxx_routes has rows, checked once
+        self._acai_index: dict | None = None  # ACAI people and places by name, built on first use
 
     async def connect(self):
         """Open a tuned, read-only connection to the prebuilt database.
@@ -295,7 +332,7 @@ class StudyBibleDB:
         if not expr:
             return []
         sql = (
-            "select w.author, w.title, t.text, t.refs, t.work_id, "
+            "select w.author, w.title, t.text, t.refs, t.work_id, t.seq, w.n_paragraphs, "
             "snippet(theology_fts, 0, '', '', ' … ', 18) as snippet "
             "from theology.theology_fts "
             "join theology.theology_texts t on t.id = theology_fts.rowid "
@@ -358,8 +395,8 @@ class StudyBibleDB:
         # (whose title names the book) first.
         book_word = _OSIS_TO_NAME.get(osis_book, osis_book).lower()
         sql = (
-            "select w.author, w.title, t.text, t.refs, t.work_id from ("
-            "  select id, work_id, text, refs, "
+            "select w.author, w.title, t.text, t.refs, t.work_id, t.seq, w.n_paragraphs from ("
+            "  select id, work_id, seq, text, refs, "
             "         row_number() over (partition by work_id order by id) rn "
             "  from theology.theology_texts where refs like ?"
             ") t join theology.theology_works w on w.work_id = t.work_id "
@@ -383,46 +420,132 @@ class StudyBibleDB:
     
     @staticmethod
     def _normalize_strongs(strongs: str) -> str:
-        """Normalize Strong's number to match DB format (e.g., G26 -> G0026)."""
+        """Normalize Strong's number to match DB format (e.g., G26 -> G0026, h1254a -> H1254A)."""
         strongs = strongs.upper().strip()
+        m = re.match(r"^([GH])(\d+)([A-Z]?)$", strongs)
+        if m:
+            return m.group(1) + m.group(2).zfill(4) + m.group(3)
         if len(strongs) >= 2 and strongs[0] in ("G", "H"):
             num = strongs[1:]
             return strongs[0] + num.zfill(4)
         return strongs
 
     async def get_lexicon_entry(self, strongs: str) -> dict | None:
-        """Get a single lexicon entry by Strong's number."""
-        strongs = self._normalize_strongs(strongs)
+        """Get a single lexicon entry by Strong's number (a sense letter, as in H1254A, is ignored)."""
+        strongs = base_strongs(self._normalize_strongs(strongs))
         return await self._fetchone("SELECT * FROM lexicon WHERE strongs = ?", (strongs,))
-    
+
+    async def _word_index(self) -> list[tuple]:
+        """(strongs, language, folded transliteration, glosses, occurrences) for every lexicon
+        entry, built once. Occurrences add up a number's lettered forms in the tagged text."""
+        if self._lexicon_index is None:
+            counts: dict[str, int] = {}
+            if await self._table_has_rows("word_frequency"):
+                for r in await self._fetchall("SELECT strongs, count FROM word_frequency"):
+                    key = base_strongs(r["strongs"])
+                    counts[key] = counts.get(key, 0) + (r["count"] or 0)
+            rows = await self._fetchall("SELECT strongs, language, transliteration, short_definition FROM lexicon")
+            self._lexicon_index = [
+                (r["strongs"], r["language"], fold_transliteration(r["transliteration"], r["language"]),
+                 _senses(r["short_definition"]), counts.get(r["strongs"], 0))
+                for r in rows
+            ]
+        return self._lexicon_index
+
+    async def _rank_words(self, query: str, language: str | None, limit: int,
+                          pick_one: bool) -> list[str]:
+        """Strong's numbers matching a query, best first, for find_word and search_lexicon.
+
+        An exact transliteration, word, or gloss comes first: 'shalom' is H7965, where a substring
+        search finds Abishalom first, and 'agape' finds agapē. Next comes a whole-word match in a
+        short gloss, then in a full definition, then any substring. Within the gloss steps the more
+        frequent word comes first. In the definition steps the entry that names the query most often
+        comes first ('atonement': kaphar before shabbath), since a long entry for a common word
+        mentions many things in passing.
+
+        pick_one is find_word's order: Greek before Hebrew within a step, and a verb gloss ("to
+        love") is not an exact match, so "love" stays agapē. Otherwise both languages mix and "to
+        love" counts as exact. The full definitions are read only when the glosses give fewer than
+        `limit` matches.
+        """
+        query = " ".join((query or "").lower().split())
+        if not query:
+            return []
+        langs = [language.lower()] if language else ["greek", "hebrew"]
+        whole = re.compile(rf"\b{re.escape(query)}\b")
+        folded = {lang: fold_transliteration(query, lang) for lang in langs}
+        exact = {query} if pick_one else {query, f"to {query}"}
+        index = await self._word_index()
+
+        found: dict[str, tuple[int, str, int]] = {}
+        for strongs, lang, translit, glosses, _count in index:
+            if lang not in langs:
+                continue
+            if (folded[lang] and translit == folded[lang]) or exact & glosses:
+                found[strongs] = (0, lang, 0)
+            elif any(whole.search(g) for g in glosses):
+                found[strongs] = (1, lang, 0)
+
+        if len(found) < limit:  # too few glosses name it: look through the full definitions
+            like = f"%{query}%"
+            sql = ("SELECT strongs, language, word, full_definition, abbott_smith_def FROM lexicon "
+                   "WHERE (LOWER(short_definition) LIKE ? OR LOWER(full_definition) LIKE ? "
+                   "OR LOWER(abbott_smith_def) LIKE ? OR LOWER(transliteration) LIKE ? "
+                   "OR LOWER(word) LIKE ?)")
+            params: list = [like] * 5
+            if language:
+                sql += " AND language = ?"
+                params.append(language.lower())
+            for r in await self._fetchall(sql, params):
+                if r["strongs"] in found or r["language"] not in langs:
+                    continue
+                text = " ".join((r[k] or "") for k in ("full_definition", "abbott_smith_def")).lower()
+                mentions = len(whole.findall(text))
+                if (r["word"] or "").lower() == query:
+                    found[r["strongs"]] = (0, r["language"], 0)
+                elif mentions:
+                    found[r["strongs"]] = (2, r["language"], mentions)
+                else:
+                    found[r["strongs"]] = (3, r["language"], text.count(query))
+
+        counts = {s: c for s, _, _, _, c in index}
+
+        def key(strongs: str) -> tuple:
+            step, lang, mentions = found[strongs]
+            return (step, langs.index(lang) if pick_one else 0, -mentions, -counts.get(strongs, 0), strongs)
+
+        return sorted(found, key=key)[:limit]
+
+    async def find_word(self, word: str, language: str | None = None) -> dict | None:
+        """The lexicon entry a word names, for word_study (ranked by _rank_words).
+
+        Without a language, Greek comes before Hebrew within each step, since the tool has always
+        defaulted to Greek for English words.
+        """
+        best = await self._rank_words(word, language, 1, pick_one=True)
+        if not best:
+            return None
+        return await self._fetchone("SELECT * FROM lexicon WHERE strongs = ?", (best[0],))
+
     async def search_lexicon(
         self,
         query: str,
         language: str | None = None,
         limit: int = 10
     ) -> list[dict]:
-        """Search lexicon by definition, transliteration, or word."""
-        query_lower = f"%{query.lower()}%"
-        
-        sql = """
-            SELECT * FROM lexicon
-            WHERE (
-                LOWER(short_definition) LIKE ?
-                OR LOWER(full_definition) LIKE ?
-                OR LOWER(transliteration) LIKE ?
-                OR LOWER(word) LIKE ?
-                OR LOWER(abbott_smith_def) LIKE ?
-            )
+        """Search the lexicon by English meaning, transliteration, or word, best match first.
+
+        Ranked by _rank_words, with both languages mixed by frequency within each step, so the words
+        glossed "love" or "to love" come ahead of words that only mention love in a long definition.
+        (The lexicon's usage_count column is 0 throughout, so it cannot rank.)
         """
-        params = [query_lower, query_lower, query_lower, query_lower, query_lower]
-        
-        if language:
-            sql += " AND language = ?"
-            params.append(language.lower())
-        
-        sql += " ORDER BY usage_count DESC LIMIT ?"
-        params.append(limit)
-        return await self._fetchall(sql, params)
+        ranked = await self._rank_words(query, language, limit, pick_one=False)
+        if not ranked:
+            return []
+        marks = ",".join("?" * len(ranked))
+        rows = await self._fetchall(f"SELECT * FROM lexicon WHERE strongs IN ({marks})", ranked)
+        by_strongs = {r["strongs"]: r for r in rows}
+        return [by_strongs[s] for s in ranked if s in by_strongs]
     
     async def get_related_words(self, strongs: str) -> list[dict]:
         """Get words related to a Strong's number."""
@@ -461,18 +584,18 @@ class StudyBibleDB:
             code, chap, v1, _ = folded
             return f"{code}.{chap}.{v1}"
 
-        # Chapter:verse form, e.g. "John 3:16", "1 Corinthians 13:4-7".
-        match = re.match(r'^(\d?\s*[a-zA-Z]+)\s*(\d+):(\d+)(?:-\d+)?$', ref)
+        # Chapter:verse form, e.g. "John 3:16", "1 Corinthians 13:4-7", "Song of Solomon 2:1".
+        match = re.match(r'^(\d?\s*[a-zA-Z]+(?:\s+[a-zA-Z]+)*)\s*(\d+):(\d+)(?:-\d+)?$', ref)
         if match:
             book, chapter, verse_start = match.group(1), match.group(2), match.group(3)
-            book_abbr = BOOK_ABBREV_MAP.get(book.lower().strip(), book[:3].title())
+            book_abbr = BOOK_ABBREV_MAP.get(" ".join(book.lower().split()), book[:3].title())
             return f"{book_abbr}.{chapter}.{verse_start}"
 
         # Verse-only form of a single-chapter book, e.g. "Jude 3", "Philemon 6".
-        match = re.match(r'^(\d?\s*[a-zA-Z]+)\s*(\d+)(?:-\d+)?$', ref)
+        match = re.match(r'^(\d?\s*[a-zA-Z]+(?:\s+[a-zA-Z]+)*)\s*(\d+)(?:-\d+)?$', ref)
         if match:
             book, num = match.group(1), match.group(2)
-            book_abbr = BOOK_ABBREV_MAP.get(book.lower().strip(), book[:3].title())
+            book_abbr = BOOK_ABBREV_MAP.get(" ".join(book.lower().split()), book[:3].title())
             if book_abbr in SINGLE_CHAPTER_BOOKS:
                 return f"{book_abbr}.1.{num}"
 
@@ -492,8 +615,19 @@ class StudyBibleDB:
         )
     
     async def get_verses_with_strongs(self, strongs: str, limit: int = 20) -> list[dict]:
-        """Find verses containing a specific Strong's number."""
+        """Find verses containing a specific Strong's number.
+
+        The tagged text gives most words a STEPBible sense letter (YHWH is H3068G, bara is
+        H1254A, nearly every Hebrew word has one), so a plain number also matches its lettered
+        forms. A lettered number matches only itself.
+        """
         strongs = self._normalize_strongs(strongs)
+        if re.match(r"^[GH]\d+$", strongs):
+            # The number followed by its closing quote or by a letter: "H3068" or "H3068G".
+            return await self._fetchall(
+                "SELECT * FROM verses WHERE word_data GLOB ? LIMIT ?",
+                (f'*"{strongs}[A-Za-z"]*', limit),
+            )
         return await self._fetchall(
             "SELECT * FROM verses WHERE word_data LIKE ? LIMIT ?",
             (f'%"{strongs}"%', limit),
@@ -507,26 +641,21 @@ class StudyBibleDB:
     async def get_cross_references(
         self,
         reference: str,
-        source_filter: str | None = None,
         limit: int = 8,
         min_strength: int | None = None,
     ) -> list[dict]:
         """Cross-references for a verse, from OpenBible.info (CC BY 4.0), ranked
         by community-vote weight (OpenBible's vote count is stored as `relevance`).
+        OpenBible is the only set loaded, so there is no source to choose.
 
         Args:
             reference: verse reference, e.g. "John 3:16".
-            source_filter: optional `type` to restrict to (currently only
-                'openbible' is loaded).
             limit: max rows returned, highest-voted first.
             min_strength: if set, drop rows with relevance below this vote floor.
         """
         normalized = self._normalize_reference(reference)
         params: list = [normalized]
         clauses = ["source = ?"]
-        if source_filter:
-            clauses.append("type = ?")
-            params.append(source_filter)
         if min_strength is not None:
             clauses.append("relevance >= ?")
             params.append(int(min_strength))
@@ -582,18 +711,82 @@ class StudyBibleDB:
         )
 
     async def lxx_to_standard(self, lxx_ref: str) -> str | None:
-        """Map an LXX reference to its standard (English) reference, if it differs."""
+        """Map an LXX reference to its standard (English) reference, if it differs.
+        A verse of a psalm heading maps to verse 0 ('Psa.51.0'), the heading English Bibles
+        leave unnumbered."""
+        if lxx_ref.startswith("Psa."):
+            english = await self._lxx_to_psalm(lxx_ref)
+            if english:
+                return english
+        if await self._has_lxx_routes():
+            row = await self._fetchone(
+                "SELECT standard_ref FROM lxx_routes WHERE lxx_ref = ? ORDER BY score DESC LIMIT 1", (lxx_ref,))
+            if row:
+                return row["standard_ref"]
         row = await self._fetchone(
             "SELECT standard_ref FROM versification_map WHERE lxx_ref = ?", (lxx_ref,)
         )
         return row["standard_ref"] if row else None
 
     async def standard_to_lxx(self, standard_ref: str) -> str | None:
-        """Map a standard (English) reference to its LXX reference, if it differs."""
+        """Map a standard (English) reference to its LXX reference, if it differs.
+        A route found by content (lxx_routes) comes before Copenhagen's map."""
+        if standard_ref.startswith("Psa."):
+            return await self._psalm_to_lxx(standard_ref)
+        if await self._has_lxx_routes():
+            row = await self._fetchone("SELECT lxx_ref FROM lxx_routes WHERE standard_ref = ?", (standard_ref,))
+            if row:
+                return row["lxx_ref"]
         row = await self._fetchone(
             "SELECT lxx_ref FROM versification_map WHERE standard_ref = ?", (standard_ref,)
         )
         return row["lxx_ref"] if row else None
+
+    async def _has_lxx_routes(self) -> bool:
+        """Whether this database has content routes (one built before them does not)."""
+        if self._lxx_routes is None:
+            self._lxx_routes = await self._table_has_rows("lxx_routes")
+        return self._lxx_routes
+
+    # Psalms go through the Hebrew numbering, which the LXX shares: both count a psalm's heading
+    # as its first verse or two, where English Bibles leave it unnumbered (English 51:1 is Hebrew
+    # 51:3 and LXX 50:3). English to Hebrew comes from the tagged Hebrew text (verses.ref_alt holds
+    # the Hebrew number where it differs), Hebrew to LXX from Copenhagen's map (its base_ref is the
+    # Hebrew number). The map's own standard_ref is wrong here: a heading verse with no English
+    # number fell back to its Hebrew one, so English 51:1 matched the LXX heading 50:1. And a psalm
+    # numbered alike in Hebrew and LXX (3, 9:1-21, 148-150) has no rows, so its heading offset was lost.
+
+    async def _psalm_to_lxx(self, english_ref: str) -> str:
+        row = await self._fetchone("SELECT ref_alt FROM verses WHERE reference = ?", (english_ref,))
+        hebrew = (row or {}).get("ref_alt") or english_ref
+        # Two Hebrew verses also map to an LXX verse 0 (116:10, 147:12): prefer the one in the text.
+        row = await self._fetchone(
+            "SELECT m.lxx_ref FROM versification_map m LEFT JOIN lxx_verses v ON v.reference = m.lxx_ref "
+            "WHERE m.base_ref = ? ORDER BY v.reference IS NULL LIMIT 1", (hebrew,))
+        return row["lxx_ref"] if row else hebrew
+
+    async def _lxx_to_psalm(self, lxx_ref: str) -> str | None:
+        row = await self._fetchone("SELECT base_ref FROM versification_map WHERE lxx_ref = ?", (lxx_ref,))
+        hebrew = row["base_ref"] if row else lxx_ref
+        m = re.match(r"^Psa\.(\d+)\.(\d+)$", hebrew)
+        if not m:  # LXX Psalm 151 is the separate book Ps2
+            return None
+        chapter, verse = int(m.group(1)), int(m.group(2))
+        rows = await self._fetchall(
+            "SELECT verse, COALESCE(ref_alt, reference) AS hebrew FROM verses WHERE book = 'Psa' AND chapter = ?",
+            (chapter,))
+        # The English verse(s) holding this Hebrew verse: those starting at the last Hebrew number
+        # at or before it. Two English verses can share one (13:5-6 are Hebrew 13:6), and a heading
+        # that shares its Hebrew verse with verse 1 (Psalm 23) counts as verse 1.
+        starts = [(int(r["hebrew"].rsplit(".", 1)[1]), r["verse"]) for r in rows]
+        at = max((h for h, _ in starts if h <= verse), default=None)
+        if at is None:
+            return hebrew
+        english = sorted(v for h, v in starts if h == at)
+        if len(english) > 1 and english[0] == 0:
+            english = english[1:]
+        first, last = f"Psa.{chapter}.{english[0]}", f"Psa.{chapter}.{english[-1]}"
+        return first if first == last else f"{first}-{last}"
 
     # =========================================================================
     # Readable translations
@@ -1245,19 +1438,35 @@ class StudyBibleDB:
         )
 
     async def get_confession_proofs(
-        self, doc_id: str, section_label: str | None = None,
+        self, doc_id: str, section_labels: list[str] | None = None,
     ) -> list[dict]:
-        """Proof texts for a confession document (optionally one article)."""
+        """Proof texts for a confession document, in document order (optionally some articles)."""
         sql = (
             "SELECT doc_id, doc_title, section_label, section_text, marker, osis_ref, "
             "book, chapter, verse_start, verse_end FROM confession_proof_texts WHERE doc_id = ?"
         )
         params: list = [doc_id]
-        if section_label:
-            sql += " AND section_label = ?"
-            params.append(section_label)
-        sql += " ORDER BY section_label, marker, id"
+        if section_labels:
+            sql += f" AND section_label IN ({','.join('?' * len(section_labels))})"
+            params.extend(section_labels)
+        sql += " ORDER BY id"
         return await self._fetchall(sql, params)
+
+    async def confession_proof_outline(self, doc_id: str) -> list[dict]:
+        """Each article of a document that carries proof texts, in document order, with its count."""
+        return await self._fetchall(
+            "SELECT section_label, COUNT(*) AS n, MIN(id) AS first_id, MAX(section_text) AS section_text "
+            "FROM confession_proof_texts WHERE doc_id = ? GROUP BY section_label ORDER BY first_id",
+            (doc_id,))
+
+    async def get_translation_verses(self, translation: str, refs: list[str]) -> dict[str, str]:
+        """{reference: text} for many verses of one translation, in one query."""
+        if not refs:
+            return {}
+        rows = await self._fetchall(
+            f"SELECT reference, text FROM translations WHERE translation = ? AND reference IN "
+            f"({','.join('?' * len(refs))})", [translation.upper(), *refs])
+        return {r["reference"]: r["text"] for r in rows}
 
     async def confession_proof_docs(self) -> list[dict]:
         """Distinct documents that carry proof texts (id + title)."""
@@ -1339,6 +1548,49 @@ class StudyBibleDB:
     async def has_acai_data(self) -> bool:
         """Check if acai_entities table exists and has data."""
         return await self._table_has_rows("acai_entities")
+
+    async def acai_for_names(self, entries: list[dict]) -> dict:
+        """{names row id: ACAI record} for the name entries a record can be tied to.
+
+        ACAI keys each individual on its own ('person:David', 'person:David.2'). A record is tied to
+        a name entry only when it carries the same name (spacing and case aside, so 'place:CityOfDavid'
+        is 'City of David') and the entry's first verse is among its key references. Each record goes
+        to one entry at most, the one whose verse comes earliest in the record's references, so the
+        pillar called Boaz (1 Kings 7:21) does not take Ruth's Boaz. An entry with no such record gets
+        none, so four people named John never share one John's record.
+        """
+        if not entries or not await self.has_acai_data():
+            return {}
+        if self._acai_index is None:
+            index: dict[tuple[str, str], list[dict]] = {}
+            rows = await self._fetchall(
+                "SELECT * FROM acai_entities WHERE entity_type IN ('person', 'place')")
+            for r in rows:
+                base = (r["name"] or "").split(":", 1)[-1].split(".", 1)[0]
+                index.setdefault((r["entity_type"], re.sub(r"[^a-z0-9]", "", base.lower())), []).append(r)
+            self._acai_index = index
+        candidates = []   # (where the entry's verse sits in the record's references, entry id, record)
+        for e in entries:
+            try:
+                refs = json.loads(e.get("refs") or "[]")
+            except (TypeError, ValueError):
+                refs = []
+            verses = {v for v in (self._to_aquifer_ref(r) for r in refs if isinstance(r, str)) if v}
+            key = (e.get("type"), re.sub(r"[^a-z0-9]", "", (e.get("name") or "").lower()))
+            for r in self._acai_index.get(key, []):
+                try:
+                    keyrefs = json.loads(r.get("key_references") or "[]")
+                except (TypeError, ValueError):
+                    keyrefs = []
+                where = next((i for i, v in enumerate(keyrefs) if v in verses), None)
+                if where is not None:
+                    candidates.append((where, e["id"], r))
+        out, taken = {}, set()
+        for _where, entry_id, r in sorted(candidates, key=lambda c: c[0]):
+            if entry_id not in out and r["id"] not in taken:
+                out[entry_id] = r
+                taken.add(r["id"])
+        return out
 
     async def get_acai_entity(self, name: str) -> dict | None:
         """Get an ACAI entity by name (case-insensitive, fuzzy)."""
@@ -1635,11 +1887,20 @@ def create_schema(conn: sqlite3.Connection):
         -- =====================================================================
 
         CREATE TABLE IF NOT EXISTS versification_map (
-            lxx_ref TEXT PRIMARY KEY,   -- LXX-scheme reference
+            lxx_ref TEXT PRIMARY KEY,   -- LXX reference, in Swete's numbering (matches lxx_verses.reference)
             standard_ref TEXT,          -- English-scheme reference (matches verses.reference)
             base_ref TEXT               -- common base (Hebrew/original) reference
         );
         CREATE INDEX IF NOT EXISTS idx_versemap_std ON versification_map(standard_ref);
+
+        -- English verses whose Swete verse was found by content, where the map's route misses it
+        -- (see parsers.lxx.content_routes). Checked before versification_map.
+        CREATE TABLE IF NOT EXISTS lxx_routes (
+            standard_ref TEXT PRIMARY KEY,  -- English-scheme reference
+            lxx_ref TEXT,                   -- the Swete verse that holds it
+            score REAL                      -- how closely Brenton's English there matches the English text
+        );
+        CREATE INDEX IF NOT EXISTS idx_lxx_routes_lxx ON lxx_routes(lxx_ref);
 
         -- =====================================================================
         -- Readable modern translations (public-domain / open),

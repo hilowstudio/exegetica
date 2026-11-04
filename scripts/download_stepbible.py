@@ -16,6 +16,7 @@ This script downloads the following datasets:
 
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 import click
 import httpx
@@ -303,10 +304,21 @@ def download_aquifer(data_dir: Path, force: bool = False) -> bool:
     return True
 
 
+def acai_json_paths(tree: dict, entity_type: str) -> list[str]:
+    """The {entity_type}/json/*.json paths in a GitHub git-tree listing of the ACAI repo."""
+    prefix = f"{entity_type}/json/"
+    return sorted(item["path"] for item in tree.get("tree", [])
+                  if item.get("type") == "blob" and item["path"].startswith(prefix)
+                  and item["path"].endswith(".json") and "/" not in item["path"][len(prefix):])
+
+
 def download_acai(data_dir: Path, force: bool = False) -> bool:
     """Download ACAI entity annotation files.
 
     ACAI repo structure: BibleAquifer/ACAI/{entity_type}/json/{EntityName}.json
+
+    The files are listed with one recursive git-tree request. GitHub's contents API, used before,
+    returns at most 1,000 entries per folder, so people stopped at "Ezra" and places at 1,000.
     """
     console.print("\n[bold]Downloading ACAI Entity Annotations[/bold]")
 
@@ -314,6 +326,20 @@ def download_acai(data_dir: Path, force: bool = False) -> bool:
     total_count = 0
 
     with httpx.Client(timeout=timeout, follow_redirects=True) as client:
+        try:
+            repo = client.get(f"https://api.github.com/repos/{ACAI_REPO}")
+            branch = repo.json().get("default_branch", "main") if repo.status_code == 200 else "main"
+            listing = client.get(f"https://api.github.com/repos/{ACAI_REPO}/git/trees/{branch}?recursive=1")
+            if listing.status_code != 200:
+                console.print(f"  [yellow]Could not list the ACAI repository (HTTP {listing.status_code})[/yellow]")
+                return False
+            tree = listing.json()
+            if tree.get("truncated"):
+                console.print("  [yellow]GitHub truncated the ACAI listing; some files may be missing.[/yellow]")
+        except Exception as e:
+            console.print(f"  [yellow]Error listing the ACAI repository: {e}[/yellow]")
+            return False
+
         for entity_type in ACAI_ENTITY_TYPES:
             dest_dir = data_dir / "acai" / entity_type
             dest_dir.mkdir(parents=True, exist_ok=True)
@@ -322,34 +348,24 @@ def download_acai(data_dir: Path, force: bool = False) -> bool:
 
             downloaded = 0
             skipped = 0
-
-            try:
-                # GitHub API to list JSON files in {entity_type}/json/
-                api_url = f"https://api.github.com/repos/{ACAI_REPO}/contents/{entity_type}/json"
-                response = client.get(api_url)
-                if response.status_code == 200:
-                    files = response.json()
-                    json_files = [f for f in files if f["name"].endswith(".json")]
-                    for file_info in json_files:
-                        filepath = dest_dir / file_info["name"]
-                        if filepath.exists() and not force:
-                            skipped += 1
-                            continue
-
-                        try:
-                            dl_url = file_info["download_url"]
-                            dl_response = client.get(dl_url)
-                            if dl_response.status_code == 200:
-                                filepath.write_bytes(dl_response.content)
-                                downloaded += 1
-                        except Exception:
-                            pass
-
-                    total_count += downloaded + skipped
-                else:
-                    console.print(f"  [yellow]Could not list {entity_type} (HTTP {response.status_code})[/yellow]")
-            except Exception as e:
-                console.print(f"  [yellow]Error listing {entity_type}: {e}[/yellow]")
+            failed = 0
+            for path in acai_json_paths(tree, entity_type):
+                filepath = dest_dir / path.rsplit("/", 1)[1]
+                if filepath.exists() and not force:
+                    skipped += 1
+                    continue
+                try:
+                    dl = client.get(f"https://raw.githubusercontent.com/{ACAI_REPO}/{branch}/{quote(path)}")
+                    if dl.status_code == 200:
+                        filepath.write_bytes(dl.content)
+                        downloaded += 1
+                    else:
+                        failed += 1
+                except Exception:
+                    failed += 1
+            total_count += downloaded + skipped
+            if failed:
+                console.print(f"  [red]{failed} failed[/red]")
 
             parts = []
             if downloaded:

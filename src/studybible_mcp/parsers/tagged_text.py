@@ -243,10 +243,15 @@ def parse_hebrew_word(parts: list[str]) -> dict | None:
     elif 'H9018' in strongs_field:
         section_end = 'setumah'  # Minor section break (ס)
 
-    # Extract the primary Strong's number
+    # Extract the primary Strong's number: the root, which TAHOT marks with braces. In
+    # H9003/{H7225G} the first number is the prefix "in" and the word is reshit. Taking the
+    # first number lost the root of about 38% of Hebrew words.
     strongs = ''
-    if strongs_field:
-        # Remove braces and take first number
+    root = re.search(r'\{([HG]\d+[A-Za-z]?)\}', strongs_field)
+    if root:
+        strongs = normalize_strongs(root.group(1))
+    elif strongs_field:
+        # No braces: take the first number that is not a section marker
         strongs_clean = re.sub(r'[{}]', '', strongs_field)
         strongs_parts = re.split(r'[/,\\\\]', strongs_clean)
         for s in strongs_parts:

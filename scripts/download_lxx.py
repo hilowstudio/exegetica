@@ -49,7 +49,7 @@ FILES = {
 def main(force: bool, data_dir: str | None):
     """Download Greek LXX (Swete) text + Copenhagen versification mappings."""
     console.print("[bold blue]Study Bible MCP - LXX Data Downloader[/bold blue]")
-    console.print("Sources: Swete LXX (Public Domain) + Copenhagen versification (CC BY)\n")
+    console.print("Sources: Swete LXX (Public Domain) + Copenhagen versification (CC BY-SA 4.0)\n")
 
     base = Path(data_dir) if data_dir else (Path(__file__).parent.parent / "data")
     ok = 0

@@ -53,11 +53,17 @@ class SocialSciencesDB:
         self.path = path
         self.conn: aiosqlite.Connection | None = None
         self.has_vec = False
+        self.date_alts = False  # the graph lists the other dates given (built 2026-10-21 on)
 
     async def connect(self) -> None:
         uri = f"file:{self.path.resolve().as_posix()}?mode=ro&immutable=1"
         self.conn = await aiosqlite.connect(uri, uri=True)
         self.conn.row_factory = aiosqlite.Row
+        try:
+            async with self.conn.execute("select birth_alt from h_people limit 0"):
+                self.date_alts = True
+        except Exception:  # noqa: BLE001
+            self.date_alts = False
         try:
             import sqlite_vec
             await self.conn.enable_load_extension(True)
@@ -438,7 +444,8 @@ class SocialSciencesDB:
         return out[:limit]
 
     async def person(self, qid: str) -> dict | None:
-        return await self.one(f"select {self.PERSON_COLS} from h_entities e join h_people p on p.qid = e.qid "
+        alts = ", p.birth_alt, p.death_alt" if self.date_alts else ""
+        return await self.one(f"select {self.PERSON_COLS}{alts} from h_entities e join h_people p on p.qid = e.qid "
                               "where e.qid = ?", (qid,))
 
     async def links(self, qid: str, rels: tuple[str, ...], direction: str = "out", limit: int = 200) -> list[dict]:
@@ -447,7 +454,7 @@ class SocialSciencesDB:
         rs = ",".join("?" * len(rels))
         return await self.all(
             f"select x.rel, x.start, x.end, x.via, n.qid, n.name, n.kind, n.description, n.sitelinks, "
-            f"p.birth_year, p.death_year, p.living, ev.start_year, ev.start as ev_start, ev.end as ev_end, ev.category, "
+            f"p.birth_year, p.death_year, p.birth, p.death, p.living, ev.start_year, ev.start as ev_start, ev.end as ev_end, ev.category, "
             f"ev.kind as ev_kind, v.name as via_name "
             f"from h_edges x join h_entities n on n.qid = x.{b} "
             f"left join h_people p on p.qid = n.qid left join h_events ev on ev.qid = n.qid "
@@ -462,7 +469,7 @@ class SocialSciencesDB:
                  select ?, 0, null, null
                  union select x.dst, up.gen + 1, x.rel, up.qid from up join h_edges x on x.src = up.qid
                  where x.rel in ('father', 'mother') and up.gen < ?)
-               select up.gen, up.rel, up.child, e.qid, e.name, p.birth_year, p.death_year
+               select up.gen, up.rel, up.child, e.qid, e.name, p.birth_year, p.death_year, p.birth, p.death
                from up join h_entities e on e.qid = up.qid left join h_people p on p.qid = e.qid
                where up.gen > 0 order by up.gen, up.rel""", (qid, min(generations, 12)))
 
@@ -475,14 +482,15 @@ class SocialSciencesDB:
                        where x.rel = 'child' and down.gen < ?
                  union select x.src, down.gen + 1, down.qid from down join h_edges x on x.dst = down.qid
                        where x.rel in ('father', 'mother') and down.gen < ?)
-               select min(down.gen) as gen, down.parent, e.qid, e.name, p.birth_year, p.death_year
+               select min(down.gen) as gen, down.parent, e.qid, e.name, p.birth_year, p.death_year, p.birth, p.death
                from down join h_entities e on e.qid = down.qid left join h_people p on p.qid = e.qid
                where down.gen > 0 group by e.qid order by gen, p.birth_year limit 400""", (qid, g, g))
 
     async def event(self, qid: str) -> dict | None:
-        return await self.one("""select e.qid, e.name, e.description, e.aliases, e.sitelinks, e.enwiki, v.category,
+        alts = "v.start_alt, v.end_alt," if self.date_alts else ""
+        return await self.one(f"""select e.qid, e.name, e.description, e.aliases, e.sitelinks, e.enwiki, v.category,
                                         v.categories, v.kind, v.start, v.start_year, v.end, v.end_year, v.lat, v.lon,
-                                        v.citation, v.case_id, l.name as location, c.name as country
+                                        v.citation, v.case_id, {alts} l.name as location, c.name as country
                                  from h_entities e join h_events v on v.qid = e.qid
                                  left join h_entities l on l.qid = v.location left join h_entities c on c.qid = v.country
                                  where e.qid = ?""", (qid,))
@@ -528,7 +536,7 @@ class SocialSciencesDB:
     async def notable_lives(self, year_from: int, year_to: int, country: str | None, limit: int = 12) -> list[dict]:
         """The best-known people alive during a span; someone with no death date who isn't living is
         assumed to have died within ninety years of birth."""
-        sql = ("select e.qid, e.name, e.description, p.birth_year, p.death_year, p.living from h_people p "
+        sql = ("select e.qid, e.name, e.description, p.birth_year, p.death_year, p.birth, p.death, p.living from h_people p "
                "join h_entities e on e.qid = p.qid where p.birth_year <= ? and "
                "coalesce(p.death_year, case when p.living = 1 then 9999 else p.birth_year + 90 end) >= ?")
         params: list = [year_to, year_from]
@@ -538,7 +546,7 @@ class SocialSciencesDB:
         return await self.all(sql + " order by e.sitelinks desc limit ?", [*params, limit])
 
     async def office_holders(self, office: str, limit: int = 150) -> list[dict]:
-        return await self.all("""select e.qid, e.name, x.start, x.end, p.birth_year, p.death_year
+        return await self.all("""select e.qid, e.name, x.start, x.end, p.birth_year, p.death_year, p.birth, p.death
                                  from h_edges x join h_entities e on e.qid = x.src left join h_people p on p.qid = e.qid
                                  where x.dst = ? and x.rel = 'held'
                                  order by coalesce(cast(substr(x.start, 1, 4) as integer), 9999), x.start, p.birth_year
@@ -547,7 +555,7 @@ class SocialSciencesDB:
     async def mentions_in(self, doc_type: str, doc_id: int) -> list[dict]:
         if not await self.has_table("h_mentions"):
             return []
-        return await self.all("""select m.how, m.role, e.qid, e.name, e.kind, e.description, p.birth_year, p.death_year
+        return await self.all("""select m.how, m.role, e.qid, e.name, e.kind, e.description, p.birth_year, p.death_year, p.birth, p.death
                                  from h_mentions m join h_entities e on e.qid = m.qid left join h_people p on p.qid = e.qid
                                  where m.doc_type = ? and m.doc_id = ?
                                  group by e.qid, m.role

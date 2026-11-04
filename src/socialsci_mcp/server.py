@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import asyncio
 import contextlib
+import importlib
 import logging
 import os
 import re
@@ -17,7 +18,7 @@ from typing import Any
 import click
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
-from mcp.types import GetPromptResult, Prompt, PromptArgument, PromptMessage, TextContent, Tool
+from mcp.types import CallToolResult, GetPromptResult, Prompt, PromptArgument, PromptMessage, TextContent, Tool
 
 from .database import SocialSciencesDB, get_db_path, roman_or_int
 
@@ -36,6 +37,10 @@ SERVER_INSTRUCTIONS = (
 server = Server("social-sciences", version="0.1.0", instructions=SERVER_INSTRUCTIONS)
 db: SocialSciencesDB | None = None
 db_stamp: int | None = None  # the file's mtime when it was opened
+_db_lock = asyncio.Lock()  # one opener at a time, so two first calls can't both open the file
+# Every tool call ends within this many seconds. The web app stops waiting at 30, so the server
+# gives up first and can still answer with a clean error.
+TOOL_DEADLINE = 25.0
 
 SOURCE_ENUM = ["all", "documents", "speeches", "narratives", "books"]
 
@@ -43,54 +48,65 @@ TOOLS = [
     Tool(
         name="search_history",
         description=(
-            "Search the history corpus by keyword and by meaning: founding documents, charters, treaties and "
-            "statutes (Avalon Project), every major presidential speech (Miller Center), slave narratives and "
-            "first-person Southern accounts (DocSouth), and public-domain history books from the Reading Room. "
-            "Returns cited passages. Use it to find what a primary source actually says before answering."
+            "Call to find what the primary sources and history books say on a question, or where a quotation comes "
+            "from. Searches founding documents, treaties and statutes (Avalon Project, National Archives), "
+            "presidential speeches (Miller Center), slave narratives and first-person Southern accounts (DocSouth), "
+            "and the Reading Room's history books, by keyword, meaning and exact phrase. Returns passages, at most "
+            "two per document, each with its citation and a document id for get_document. For a document by title "
+            "or author, use find_documents. For court cases, use search_cases. For theology and church history, "
+            "use search_theology."
         ),
         inputSchema={"type": "object", "properties": {
             "query": {"type": "string", "description": "What to look for, in plain words or exact phrases."},
             "source": {"type": "string", "enum": SOURCE_ENUM,
-                       "description": "documents = founding/government documents; speeches = presidential speeches; "
-                                      "narratives = slave narratives and first-person accounts; books = history books. Default all."},
+                       "description": "documents (founding and government documents), speeches (presidential), "
+                                      "narratives (slave narratives and first-person accounts), books (history books), "
+                                      "or all (default, primary sources and books in turn)."},
             "year_from": {"type": "integer", "description": "Earliest year of the document."},
             "year_to": {"type": "integer", "description": "Latest year of the document."},
-            "limit": {"type": "integer", "default": 8, "maximum": 20},
+            "limit": {"type": "integer", "default": 8, "maximum": 20, "description": "Passages to return. Default 8, at most 20."},
         }, "required": ["query"]},
     ),
     Tool(
         name="find_documents",
         description=(
-            "Find documents by title, author or source (e.g. 'Declaration of Independence', 'Federalist 10', "
-            "'Gettysburg', author 'Lincoln', source 'speeches'). Returns ids to open with get_document."
+            "Call when you know a document's title or author and need its id ('Declaration of Independence', "
+            "'Federalist 10', 'Gettysburg', author 'Lincoln'). Returns matching documents with ids, citations, "
+            "collections and word counts, the official National Archives texts first. Open one with get_document. "
+            "To search by what a document says, use search_history."
         ),
         inputSchema={"type": "object", "properties": {
-            "title": {"type": "string"}, "author": {"type": "string"},
-            "source": {"type": "string", "enum": SOURCE_ENUM},
-            "year_from": {"type": "integer"}, "year_to": {"type": "integer"},
-            "limit": {"type": "integer", "default": 15, "maximum": 50},
+            "title": {"type": "string", "description": "Words from the title. Every word must appear."},
+            "author": {"type": "string", "description": "Part of the author's name."},
+            "source": {"type": "string", "enum": SOURCE_ENUM,
+                       "description": "One collection: documents, speeches, narratives or books. Default all."},
+            "year_from": {"type": "integer", "description": "Earliest year of the document."},
+            "year_to": {"type": "integer", "description": "Latest year of the document."},
+            "limit": {"type": "integer", "default": 15, "maximum": 50, "description": "Documents to return. Default 15, at most 50."},
         }},
     ),
     Tool(
         name="get_document",
         description=(
-            "Read a document's full text by id (from find_documents or search_history), in pages. "
-            "Returns title, author, date, citation and the text."
+            "Call to read a document in full once search_history or find_documents has given its id. Returns "
+            "title, author, date, citation and rights, then the text in pages of about 6,000 characters. A Reading "
+            "Room book comes four passages to a page, with a link to read it whole."
         ),
         inputSchema={"type": "object", "properties": {
-            "id": {"type": "integer"},
+            "id": {"type": "integer", "description": "Document id from search_history or find_documents."},
             "page": {"type": "integer", "default": 1, "description": "Page of about 6,000 characters."},
         }, "required": ["id"]},
     ),
     Tool(
         name="get_constitution",
         description=(
-            "Exact text of the U.S. Constitution or the Illinois Constitution (1970), by part. U.S.: article "
-            "and section, or amendment number (Roman or Arabic). Illinois: article and section. Omit the "
-            "numbers to list the headings. Use it for the Constitution Test and any constitutional question."
+            "Call for the exact words of the U.S. Constitution or the Illinois Constitution of 1970, for the "
+            "Constitution Test or any constitutional question. Give an article and section, a U.S. amendment "
+            "(Roman or Arabic), or preamble. With only the constitution named, returns its list of headings. For "
+            "how a clause has been interpreted, use get_constitution_annotation."
         ),
         inputSchema={"type": "object", "properties": {
-            "constitution": {"type": "string", "enum": ["us", "illinois"]},
+            "constitution": {"type": "string", "enum": ["us", "illinois"], "description": "us or illinois."},
             "article": {"type": "string", "description": "Article number, e.g. 'I' or '1'."},
             "section": {"type": "string", "description": "Section number within the article."},
             "amendment": {"type": "string", "description": "U.S. only: amendment number, e.g. 'XIV' or '14'."},
@@ -100,62 +116,64 @@ TOOLS = [
     Tool(
         name="get_flag_code",
         description=(
-            "The U.S. Flag Code (4 U.S.C. §§ 1-10): design, the Pledge, when and how to display the flag, "
-            "respect for the flag, conduct during the anthem and pledge. Give a section number, or omit it "
-            "for the list of sections. Part of the Illinois Constitution Test."
+            "Call for questions about the U.S. flag: its design, the Pledge, when and how to display it, respect "
+            "for it, and conduct during the anthem and pledge. Returns a section of the U.S. Flag Code (4 U.S.C. "
+            "§§ 1-10), or the list of sections when none is given. The flag is part of the Illinois Constitution Test."
         ),
-        inputSchema={"type": "object", "properties": {"section": {"type": "string"}}},
+        inputSchema={"type": "object", "properties": {"section": {"type": "string", "description": "Section number, 1 to 10."}}},
     ),
     Tool(
         name="constitution_test_guide",
         description=(
-            "What the Illinois Constitution Test covers (the Declaration of Independence, the U.S. Constitution, "
-            "the Illinois Constitution, and proper use of the flag) and where each part lives in these tools, "
-            "with the headings of every article, amendment and flag-code section. Start here for test review."
+            "Call first when someone is reviewing for the Illinois Constitution Test. Returns what the test covers "
+            "(the Declaration of Independence, the U.S. Constitution, the Illinois Constitution, and proper use of "
+            "the flag), the tool for each part, and the headings of every article, amendment and Flag Code section."
         ),
         inputSchema={"type": "object", "properties": {}},
     ),
     Tool(
         name="search_cases",
         description=(
-            "Search every U.S. Supreme Court opinion from 1791 through about 2018 (U.S. Reports, Caselaw Access "
-            "Project) by name, topic, or words in the opinions. Results show the citation, date, vote, who wrote "
-            "for the majority, the issue area, and whether a law was struck down or a precedent overruled "
-            "(Supreme Court Database coding). Landmark cases rank first. Open one with get_case."
+            "Call to find Supreme Court cases on a topic or by name. Searches the opinions in U.S. Reports "
+            "(Caselaw Access Project) through June 2014 by case name, words and meaning, landmark cases first. "
+            "Returns each case's citation, date, vote, majority author, issue area, and whether it struck down a "
+            "law or overruled a precedent (Supreme Court Database coding). Open one with get_case."
         ),
         inputSchema={"type": "object", "properties": {
             "query": {"type": "string", "description": "A case name or a topic (e.g. 'Miranda', 'school prayer', 'search of a student's locker')."},
             "issue_area": {"type": "string", "description": "Optional: Criminal Procedure, Civil Rights, First Amendment, Due Process, Privacy, Federalism, Judicial Power, Economic Activity, and others."},
-            "year_from": {"type": "integer"}, "year_to": {"type": "integer"},
-            "limit": {"type": "integer", "default": 8, "maximum": 20},
+            "year_from": {"type": "integer", "description": "Earliest year of decision."},
+            "year_to": {"type": "integer", "description": "Latest year of decision."},
+            "limit": {"type": "integer", "default": 8, "maximum": 20, "description": "Cases to return. Default 8, at most 20."},
         }, "required": ["query"]},
     ),
     Tool(
         name="get_case",
         description=(
-            "Read a Supreme Court case by citation ('347 U.S. 483'), name ('Marbury v. Madison'), or id. Returns "
-            "the coding (date, vote, majority and dissenting justices, issue area, law struck down) and the "
-            "opinions: part='summary' (default: the header and the opening of the Court's opinion), "
-            "'majority', 'concurrence', 'dissent', or 'all', in pages."
+            "Call to read a Supreme Court case once you have its citation, name or id. Returns the coding (date, "
+            "vote, majority and dissenting justices, issue area, law struck down) and the opinions. The default "
+            "summary gives the case header and the opening of the Court's opinion. Ask for another part to read "
+            "on, in pages of about 7,000 characters."
         ),
         inputSchema={"type": "object", "properties": {
-            "case": {"type": "string"},
-            "part": {"type": "string", "enum": ["summary", "majority", "concurrence", "dissent", "all"]},
-            "page": {"type": "integer", "default": 1},
+            "case": {"type": "string", "description": "A citation ('347 U.S. 483'), a name ('Marbury v. Madison'), or a case id from search_cases."},
+            "part": {"type": "string", "enum": ["summary", "majority", "concurrence", "dissent", "all"],
+                     "description": "summary (default), majority, concurrence, dissent, or all."},
+            "page": {"type": "integer", "default": 1, "description": "Page of the chosen part. The summary has one page."},
         }, "required": ["case"]},
     ),
     Tool(
         name="get_statute",
         description=(
-            "The U.S. Code (current through Public Law 119-120) and the Illinois Compiled Statutes chapters on "
-            "elections, vehicles, courts, criminal law and procedure, corrections, civil procedure and "
-            "liability, families, estates, property and landlord-tenant, human rights, consumer fraud, and "
-            "employment. Give a citation ('18 U.S.C. § 1001', '720 ILCS 5/12-3') for the exact section (long sections "
-            "come in pages), or a query to search."
+            "Call for the words of a law. Covers the U.S. Code (current through Public Law 119-120) and the "
+            "Illinois Compiled Statutes chapters on elections, vehicles, courts, criminal law and procedure, "
+            "corrections, civil procedure and liability, families, estates, property and landlord-tenant, human "
+            "rights, consumer fraud, and employment. Give a citation for the exact section (long sections come in "
+            "pages), or a query to search. For the Flag Code, get_flag_code is simpler."
         ),
         inputSchema={"type": "object", "properties": {
-            "citation": {"type": "string"},
-            "query": {"type": "string"},
+            "citation": {"type": "string", "description": "A section citation, e.g. '18 U.S.C. § 1001' or '720 ILCS 5/12-3'."},
+            "query": {"type": "string", "description": "Words to search for. Returns up to 8 sections, heading matches first."},
             "code": {"type": "string", "enum": ["usc", "ilcs"], "description": "Limit a search to one code."},
             "page": {"type": "integer", "default": 1, "description": "Page of a long section (about 7,000 characters each)."},
         }},
@@ -163,46 +181,54 @@ TOOLS = [
     Tool(
         name="get_constitution_annotation",
         description=(
-            "The Constitution Annotated (Congressional Research Service, 2022): clause-by-clause essays on how "
-            "each part of the Constitution has been understood and applied, with the leading cases. Give an "
-            "article/section/clause or an amendment (with optional section) to list its essays, an essay_id to "
-            "read one, or a query to search. Long essays come in pages."
+            "Call for how a part of the U.S. Constitution has been understood and applied, with the leading cases. "
+            "Reads the Constitution Annotated (Congressional Research Service, 2022), clause-by-clause essays. Give "
+            "an article (with section and clause) or an amendment to list its essays, an essay_id to read one, or a "
+            "query to search. Long essays come in pages. For the text itself, use get_constitution."
         ),
         inputSchema={"type": "object", "properties": {
-            "article": {"type": "string"}, "section": {"type": "string"}, "clause": {"type": "string"},
-            "amendment": {"type": "string"}, "essay_id": {"type": "string"}, "query": {"type": "string"},
+            "article": {"type": "string", "description": "Article number, e.g. 'I' or '1'."},
+            "section": {"type": "string", "description": "Section within the article or amendment."},
+            "clause": {"type": "string", "description": "Clause within the article's section."},
+            "amendment": {"type": "string", "description": "Amendment number, e.g. 'XIV' or '14'."},
+            "essay_id": {"type": "string", "description": "An essay id from a list this tool returned."},
+            "query": {"type": "string", "description": "Words to search the essays for. Returns the six best matches."},
             "page": {"type": "integer", "default": 1, "description": "Page of a long essay (about 7,000 characters each)."},
         }},
     ),
     Tool(
         name="lookup_legislator",
         description=(
-            "Every member of Congress since 1789 and every president and vice president: terms, chamber, state, "
-            "district, and party, by name (optionally a state)."
+            "Call for the terms in office of a member of Congress (since 1789), a president or a vice president: "
+            "chamber, state, district, party and dates. For a fuller life, use lookup_person. For everyone who held "
+            "one office in order, use succession."
         ),
         inputSchema={"type": "object", "properties": {
-            "name": {"type": "string"}, "state": {"type": "string", "description": "Two-letter state code."},
+            "name": {"type": "string", "description": "The person's name. Every word must match."},
+            "state": {"type": "string", "description": "Two-letter state code."},
         }, "required": ["name"]},
     ),
     Tool(
         name="define_term",
         description=(
-            "Define a word as it was used in its time: Black's Law Dictionary (2nd ed., 1910) for legal terms, "
-            "and Webster's American Dictionary of the English Language (1828) for founding-era English. Use it "
-            "when an old document or opinion uses a word whose meaning has shifted."
+            "Call when an old document or opinion uses a word whose meaning has shifted. Returns the word as it was "
+            "used in its time: Black's Law Dictionary (2nd ed., 1910) for legal terms, and Webster's American "
+            "Dictionary of the English Language (1828) for founding-era English. For a biblical or theological "
+            "term, use get_key_terms."
         ),
         inputSchema={"type": "object", "properties": {
-            "term": {"type": "string"},
-            "source": {"type": "string", "enum": ["blacks", "webster", "both"]},
+            "term": {"type": "string", "description": "The word or phrase. The singular form matches best."},
+            "source": {"type": "string", "enum": ["blacks", "webster", "both"], "description": "blacks, webster, or both (default)."},
         }, "required": ["term"]},
     ),
     Tool(
         name="lookup_person",
         description=(
-            "Who someone in history was: dates, a one-line description, offices held, speeches given, inventions "
-            "and discoveries, writings, elections won, and the documents and Supreme Court cases where they appear. "
-            "When a name fits several people it lists them with dates and ids; call again with the id (e.g. 'Q91') "
-            "for the one meant. People and events come from Wikidata, kept on our server."
+            "Call to identify someone in history: dates, a one-line description, offices held, speeches, inventions "
+            "and discoveries, writings, what they won, and the documents and Supreme Court cases where they appear. "
+            "When a name fits several people, it answers for the best known and lists the others with dates and ids "
+            "(e.g. 'Q91') to call again with. People and events come from Wikidata, kept on our server. For a person "
+            "in the Bible, use lookup_name. For family, use explore_family. For a life in order, use explore_life."
         ),
         inputSchema={"type": "object", "properties": {
             "name": {"type": "string", "description": "A name ('John Adams', 'Tecumseh'), an alias, or a Wikidata id"},
@@ -211,63 +237,74 @@ TOOLS = [
     Tool(
         name="explore_family",
         description=(
-            "A historical person's family tree: ancestors, descendants, spouses, siblings (the Adamses, the "
-            "Roosevelts, royal houses). Draws a Mermaid diagram."
+            "Call for a historical person's family tree: ancestors, descendants, spouses and siblings (the Adamses, "
+            "the Roosevelts, royal houses), with a Mermaid diagram. For a family in the Bible, use explore_genealogy."
         ),
         inputSchema={"type": "object", "properties": {
             "person": {"type": "string", "description": "Name or Wikidata id"},
-            "direction": {"type": "string", "enum": ["ancestors", "descendants", "both"], "default": "both"},
-            "generations": {"type": "integer", "default": 3},
+            "direction": {"type": "string", "enum": ["ancestors", "descendants", "both"], "default": "both",
+                          "description": "ancestors, descendants, or both (default)."},
+            "generations": {"type": "integer", "default": 3,
+                            "description": "Generations to trace. Default 3, at most 12 back and 8 forward."},
         }, "required": ["person"]},
     ),
     Tool(
         name="explore_life",
         description=(
-            "A person's life in order: birth, schooling, offices held, wars, expeditions, and other events taken "
-            "part in, speeches given, inventions, documents signed, works written, party and religion, death."
+            "Call for the course of a historical person's life. Returns, in date order, birth, schooling, offices "
+            "held, wars, expeditions and other events taken part in, speeches given, inventions, documents signed, "
+            "works written and death, then party, religion and awards. For a person in the Bible, use "
+            "explore_person_events."
         ),
-        inputSchema={"type": "object", "properties": {"person": {"type": "string"}}, "required": ["person"]},
+        inputSchema={"type": "object", "properties": {"person": {"type": "string", "description": "Name or Wikidata id."}},
+                     "required": ["person"]},
     ),
     Tool(
         name="explore_event",
         description=(
-            "Any event in the graph: wars and battles, treaties, laws and Supreme Court decisions, elections, "
-            "speeches, expeditions and spaceflights, disasters and epidemics, inventions and discoveries, movements, "
-            "strikes and protests, economic crises, church councils and revivals, the Olympic Games, and historical "
-            "eras. Gives when and where, its category and kind, who took part (parties, signers, speakers, "
-            "inventors, winners), what it was part of, what came before and after, its causes and effects, and "
-            "where our documents and cases cover it. For the text of a creed or confession, use get_confession."
+            "Call for one event: a war or battle, treaty, law or Supreme Court decision, election, speech, "
+            "expedition or spaceflight, disaster or epidemic, invention, movement, strike, economic crisis, church "
+            "council or revival, Olympic Games, or historical era. Returns when and where, its category and kind, "
+            "who took part (parties, signers, speakers, inventors, winners), what it was part of, what came before "
+            "and after, its causes and effects, and where our documents and cases cover it. For the text of a creed "
+            "or confession, use get_confession. For everything in a span of years, use timeline."
         ),
-        inputSchema={"type": "object", "properties": {"event": {"type": "string"}}, "required": ["event"]},
+        inputSchema={"type": "object", "properties": {"event": {"type": "string", "description": "The event's name or Wikidata id."}},
+                     "required": ["event"]},
     ),
     Tool(
         name="explore_historic_place",
         description=(
-            "A place in history (a city, a battlefield, a state, a country): what kind of place, where, the events "
-            "that happened there, and the notable people born or died there. (For places in the Bible, use "
-            "explore_place.)"
+            "Call for a place in history (a city, a battlefield, a state, a country). Returns what kind of place it "
+            "is and where, the best-known events there in order, and notable people born or died there. For a place "
+            "in the Bible, use explore_place."
         ),
-        inputSchema={"type": "object", "properties": {"place": {"type": "string"}}, "required": ["place"]},
+        inputSchema={"type": "object", "properties": {"place": {"type": "string", "description": "The place's name or Wikidata id."}},
+                     "required": ["place"]},
     ),
     Tool(
         name="find_historical_connection",
         description=(
-            "How two historical people (or a person and an event) are connected: the shortest path through family, "
-            "teachers and students, succession in office, shared events, signed documents, and co-written works, "
-            "each link named. (For people in the Bible, use find_connection.)"
+            "Call to find how two historical people, or a person and an event, are linked. Returns the shortest path "
+            "within six links through family, teachers and students, succession in office, shared events, signed "
+            "documents and co-written works, each link named, with a Mermaid diagram. For people in the Bible, use "
+            "find_connection."
         ),
         inputSchema={"type": "object", "properties": {
-            "from": {"type": "string"}, "to": {"type": "string"},
+            "from": {"type": "string", "description": "A person or event: name or Wikidata id."},
+            "to": {"type": "string", "description": "A person or event: name or Wikidata id."},
         }, "required": ["from", "to"]},
     ),
     Tool(
         name="timeline",
         description=(
-            "What was happening in a span of years: the eras it falls in, the best-known events (optionally in one "
-            "country, or of one kind), and the best-known people alive then. 'What else was going on in 1776?'"
+            "Call for what was happening in a year or span of years ('What else was going on in 1776?'). Returns the "
+            "eras it falls in, the 40 best-known events that began then (optionally in one country, or of one kind), "
+            "and the best-known people alive then. For one event in detail, use explore_event."
         ),
         inputSchema={"type": "object", "properties": {
-            "year_from": {"type": "integer", "description": "Negative for BC"}, "year_to": {"type": "integer"},
+            "year_from": {"type": "integer", "description": "Negative for BC"},
+            "year_to": {"type": "integer", "description": "Last year of the span. Defaults to year_from."},
             "country": {"type": "string", "description": "e.g. 'United States', 'France'"},
             "kind": {"type": "string", "description": "e.g. 'battle', 'treaty', 'law', 'election', 'speech', 'expedition', "
                                                       "'disaster', 'invention', 'strike', 'council', 'Olympics'"},
@@ -276,23 +313,25 @@ TOOLS = [
     Tool(
         name="succession",
         description=(
-            "Who held an office in order ('President of the United States', 'Chief Justice of the United States', "
-            "'Governor of Illinois', 'monarch of England'), or, given a person, each office they held with who came "
-            "before and after."
+            "Call for who held an office, in order ('President of the United States', 'Chief Justice of the United "
+            "States', 'Governor of Illinois', 'monarch of England'), or, given a person, each office they held with "
+            "who came before and after. For one member of Congress's terms, use lookup_legislator."
         ),
         inputSchema={"type": "object", "properties": {
-            "office": {"type": "string"}, "person": {"type": "string"},
+            "office": {"type": "string", "description": "The office's full title."},
+            "person": {"type": "string", "description": "A person's name or Wikidata id, for the offices they held."},
         }},
     ),
     Tool(
         name="people_in_document",
         description=(
-            "The people and events in one of our documents or Supreme Court cases: speakers, signers, the justices "
-            "and how each voted, and people named in the text. Give a document id (from search_history or "
-            "find_documents) or a case citation or name."
+            "Call to see who appears in one of our documents or Supreme Court cases: speakers, signers, the justices "
+            "and how each voted, and the people and events named in the text, grouped by how each link was made. "
+            "Give document_id or case. For the sources one person appears in, use lookup_person."
         ),
         inputSchema={"type": "object", "properties": {
-            "document_id": {"type": "integer"}, "case": {"type": "string"},
+            "document_id": {"type": "integer", "description": "A document id from search_history or find_documents."},
+            "case": {"type": "string", "description": "A case citation ('347 U.S. 483') or name."},
         }},
     ),
 ]
@@ -300,6 +339,20 @@ TOOLS = [
 
 def text(s: str) -> list[TextContent]:
     return [TextContent(type="text", text=s)]
+
+
+def failed(s: str) -> CallToolResult:
+    """A failed tool call: isError true, so the client sees the failure as one."""
+    return CallToolResult(content=[TextContent(type="text", text=s)], isError=True)
+
+
+class NotInstalled(Exception):
+    """The database this server reads is missing: a failure, not an empty answer. The build hint goes
+    to the log for the operator; the model gets only the plain sentence."""
+
+    def __init__(self, what: str, fix: str):
+        super().__init__(f"{what} not installed ({fix})")
+        self.what = what
 
 
 def _cite(r: dict) -> str:
@@ -583,8 +636,10 @@ CONFESSION_FOR = {"First Council of Nicaea": "The Nicene Creed", "First Council 
 
 
 def _d(t) -> str:
-    """A stored date for display: '0450' -> '450'; '1861-03-04' and '100 BC' unchanged."""
-    return re.sub(r"^0+(?=\d)", "", str(t or ""))
+    """A stored date for display: a bare year loses its leading zeros ('0450' -> '450'); a calendar date keeps
+    them, so '0030-04-07' can't be read as 2030 ('1861-03-04' and '100 BC' are unchanged)."""
+    t = str(t or "")
+    return t.lstrip("0") or "0" if t.isdigit() else t
 
 
 def _dt(t) -> str:
@@ -594,7 +649,7 @@ def _dt(t) -> str:
 
 
 def _sortkey(t: str) -> tuple:
-    t = t or ""
+    t = re.sub(r"^c\. ", "", t or "")
     m = re.match(r"(\d+)(?:st|nd|rd|th) (century|millennium)( BC)?", t)
     if m:
         y = (int(m.group(1)) - 1) * (100 if m.group(2) == "century" else 1000) + 50
@@ -603,14 +658,30 @@ def _sortkey(t: str) -> tuple:
     return ((-int(m.group(1)) if m.group(2) else int(m.group(1))), t) if m else (99999, t)
 
 
+def _life_date(label, year) -> str:
+    """The year of a birth or death, or its whole label when the date is only known roughly ('c. 428 BC',
+    '6th century BC', '1860s'), so a century never passes for a year."""
+    if label and re.search(r"century|millennium|^c\. |\ds\b", str(label)):
+        return str(label)
+    return f"{-year} BC" if year < 0 else str(year)
+
+
 def _life(r: dict) -> str:
     b, d = r.get("birth_year"), r.get("death_year")
-    fmt = lambda y: f"{-y} BC" if y < 0 else str(y)
     if b is None and d is None:
         return ""
+    born = _life_date(r.get("birth"), b) if b is not None else None
     if d is None:
-        return f" (born {fmt(b)}, living)" if r.get("living") else f" (born {fmt(b)})"
-    return f" ({fmt(b) if b is not None else '?'}-{fmt(d)})"
+        return f" (born {born}, living)" if r.get("living") else f" (born {born})"
+    died = _life_date(r.get("death"), d)
+    if born == died and born != _year(b):  # the Buddha: both only known as the 1st millennium BC
+        return f" ({born})"
+    return f" ({born or '?'}-{died})"
+
+
+def _also(alts) -> str:
+    """The other dates sources give, after the one shown."""
+    return f" (also given as {', '.join(_d(x) for x in alts.split('; '))})" if alts else ""
 
 
 def _year(v) -> str:
@@ -687,8 +758,15 @@ async def h_lookup_person(a: dict) -> list[TextContent]:
     out = [f"{p['name']}{_life(p)} [{q}]", p.get("description") or ""]
     if p.get("aliases"):
         out.append("Also called: " + p["aliases"][:300])
-    for r in sorted(await db.links(q, ("born_in", "died_in")), key=lambda r: r["rel"] != "born_in"):
-        out.append(f"{'Born' if r['rel'] == 'born_in' else 'Died'} in {r['name']}")
+    places = {"born_in": [], "died_in": []}
+    for r in await db.links(q, ("born_in", "died_in")):
+        if r["name"] not in places[r["rel"]]:
+            places[r["rel"]].append(r["name"])
+    for rel, word, when, alts in (("born_in", "Born", p.get("birth"), p.get("birth_alt")),
+                                  ("died_in", "Died", p.get("death"), p.get("death_alt"))):
+        if when or places[rel]:
+            out.append(f"{word}{' ' + _dt(when) if when else ''}{' in ' + ' or '.join(places[rel]) if places[rel] else ''}"
+                       + _also(alts))
     offices = _offices(await db.links(q, ("held",), limit=80))
     if offices:
         out.append("Offices:\n" + "\n".join(f"- {o['name']}{_span(o['start'], o['end'])}"
@@ -750,7 +828,7 @@ async def h_explore_life(a: dict) -> list[TextContent]:
     items = []
     if p and p.get("birth"):
         place = await db.links(q, ("born_in",))
-        items.append((p["birth"], f"Born{' in ' + place[0]['name'] if place else ''}"))
+        items.append((p["birth"], f"Born{' in ' + place[0]['name'] if place else ''}{_also(p.get('birth_alt'))}"))
     for r in await db.links(q, ("educated_at",)):
         items.append((r["start"] or "", f"Educated at {r['name']}"))
     for o in _offices(await db.links(q, ("held",), limit=80)):
@@ -764,7 +842,7 @@ async def h_explore_life(a: dict) -> list[TextContent]:
         items.append((r["ev_start"] or "", f"Wrote {r['name']}"))
     if p and p.get("death"):
         place = await db.links(q, ("died_in",))
-        items.append((p["death"], f"Died{' in ' + place[0]['name'] if place else ''}"))
+        items.append((p["death"], f"Died{' in ' + place[0]['name'] if place else ''}{_also(p.get('death_alt'))}"))
     if not items:
         return text(f"No life events recorded for {top['name']} [{q}].")
     dated = sorted((x for x in items if x[0]), key=lambda x: _sortkey(x[0]))
@@ -805,6 +883,9 @@ async def h_explore_event(a: dict) -> list[TextContent]:
     out = [f"{e['name']} [{q}]", e.get("description") or "",
            head + _span(e.get("start"), e.get("end"))
            + (f"; at {e['location']}" if e.get("location") else "") + (f"; {e['country']}" if e.get("country") else "")]
+    for word, alts in (("Began", e.get("start_alt")), ("Ended", e.get("end_alt"))):
+        if alts:
+            out.append(f"{word}: also given as {', '.join(_d(x) for x in alts.split('; '))}")
     if e.get("case_id"):
         cite = next((c for c in (e.get("citation") or "").split("; ") if "U.S." in c or "U. S." in c), e.get("citation"))
         out.append(f"This is a Supreme Court decision in our case collection: get_case with '{cite}'.")
@@ -979,30 +1060,68 @@ async def list_tools() -> list[Tool]:
     return TOOLS
 
 
-@server.call_tool()
-async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
+def _stamp(path: Path) -> int | None:
+    return path.stat().st_mtime_ns if path.exists() else None
+
+
+async def _open_db() -> None:
+    """Open the database on first use, and reopen it when the web app swaps in a newer copy of the
+    file while this server runs. One opener at a time; the new connection replaces the old only once
+    it is open, so no call sees a half-open or missing database."""
     global db, db_stamp
     path = get_db_path()
-    # the web app swaps in a newer copy of the file while this server runs; reopen when it changes
-    stamp = path.stat().st_mtime_ns if path.exists() else None
-    if db is not None and stamp != db_stamp:
-        with contextlib.suppress(Exception):
-            await db.conn.close()
-        db = None
-    if db is None:
-        if not path.exists():
-            return text(f"Social sciences database not found at {path}. Run scripts/socialsci/build_social_sciences_db.py.")
-        db = SocialSciencesDB(path)
-        await db.connect()
-        db_stamp = stamp
+    if db is not None and _stamp(path) == db_stamp:
+        return
+    async with _db_lock:
+        stamp = _stamp(path)
+        if db is not None and stamp == db_stamp:
+            return  # another call opened it while this one waited
+        if stamp is None:
+            raise NotInstalled("social sciences database", f"no file at {path}; run scripts/socialsci/build_social_sciences_db.py")
+        fresh = SocialSciencesDB(path)
+        await fresh.connect()
+        old, db, db_stamp = db, fresh, stamp
+        if old is not None:
+            with contextlib.suppress(Exception):
+                await old.conn.close()
+
+
+async def _stop_queries() -> None:
+    """Stop the query a timed-out call left running. Every call shares one connection whose queries run
+    in turn on aiosqlite's worker thread, so a runaway query would hold up all later calls. interrupt()
+    stops whichever statement is running (rarely another call's, which then fails cleanly). The cursor()
+    that follows has the worker drop any cursor the timed-out call left open; while one stays open, SQLite
+    keeps the interrupt in force for every later query."""
+    if db is None or db.conn is None:
+        return
+    with contextlib.suppress(Exception):
+        await db.conn.interrupt()
+        async with asyncio.timeout(1):  # the cursor() runs even if this wait gives up
+            await db.conn.cursor()
+
+
+@server.call_tool()
+async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent] | CallToolResult:
+    """Every failure comes back with isError true and a plain sentence; the details (stack trace, SQL,
+    paths) go to the log only. "No results" answers stay ordinary results."""
     handler = HANDLERS.get(name)
     if not handler:
-        return text(f"Unknown tool: {name}")
+        return failed(f"Unknown tool: {name}")
     try:
-        return await handler(arguments or {})
-    except Exception as e:  # noqa: BLE001
+        async with asyncio.timeout(TOOL_DEADLINE):
+            await _open_db()
+            return await handler(arguments or {})
+    except TimeoutError:
+        logger.warning("tool %s stopped at its %g s deadline", name, TOOL_DEADLINE)
+        await _stop_queries()
+        return failed(f"The {name} tool took too long (over {TOOL_DEADLINE:g} seconds) and was stopped. "
+                      "Try a narrower request.")
+    except NotInstalled as e:
+        logger.error("tool %s: %s", name, e)
+        return failed(f"The {e.what} is not installed on this server.")
+    except Exception:  # noqa: BLE001
         logger.exception("tool %s failed", name)
-        return text(f"Error in {name}: {e}")
+        return failed(f"The {name} tool failed on this request. Try different arguments or another tool.")
 
 
 @server.list_prompts()
@@ -1019,7 +1138,18 @@ async def get_prompt(name: str, arguments: dict[str, str] | None) -> GetPromptRe
     return GetPromptResult(messages=[PromptMessage(role="user", content=TextContent(type="text", text=msg))])
 
 
+def _preload_native_modules() -> None:
+    """Import the native extensions tool calls need before stdio starts reading. On Windows, loading a
+    native module (numpy, through sqlite-vec and model2vec) while the stdin reader thread waits on the pipe
+    stalls until the next message arrives, so the first tool call would hang and its deadline could not
+    fire. Both are optional; a missing one only turns its feature off."""
+    for module in ("sqlite_vec", "model2vec"):
+        with contextlib.suppress(ImportError):
+            importlib.import_module(module)
+
+
 async def run_stdio_server() -> None:
+    _preload_native_modules()
     async with stdio_server() as (read_stream, write_stream):
         await server.run(read_stream, write_stream, server.create_initialization_options())
 

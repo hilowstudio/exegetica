@@ -12,6 +12,7 @@ data-owning core.
 
 import asyncio
 import contextlib
+import importlib
 import json
 import logging
 import os
@@ -24,6 +25,7 @@ import click
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import (
+    CallToolResult,
     GetPromptResult,
     Prompt,
     PromptArgument,
@@ -47,7 +49,8 @@ from .tools import (
 )
 from .hermeneutics import get_genre_from_reference, format_genre_guidance
 from .parsers.commentaries import COMMENTARIES
-from .clients import OPTIONAL_TRANSLATIONS, ATTRIBUTION, fetch_optional
+from .parsers.lxx import swete_ref
+from .clients import OPTIONAL_TRANSLATIONS, ATTRIBUTION, Unavailable, fetch_optional
 
 logging.basicConfig(
     level=logging.INFO,
@@ -62,9 +65,12 @@ _PROMPTS_DIR = Path(__file__).parent / "prompts"
 
 
 def _load_persona() -> str:
-    """Load the full Theologian persona text (falls back to a stub if missing)."""
+    """Load the full Theologian persona: theologian.md (the voice) followed by doctrine.md (the
+    tradition's doctrine, shared with the student chat). Falls back to a stub if missing."""
     try:
-        return (_PROMPTS_DIR / "theologian.md").read_text(encoding="utf-8").strip()
+        persona = (_PROMPTS_DIR / "theologian.md").read_text(encoding="utf-8").strip()
+        doctrine = (_PROMPTS_DIR / "doctrine.md").read_text(encoding="utf-8").strip()
+        return f"{persona}\n\n---\n\n{doctrine}"
     except OSError:
         logger.warning("theologian.md not found in %s", _PROMPTS_DIR)
         return (
@@ -92,8 +98,14 @@ SERVER_INSTRUCTIONS = (
 
 server = Server("study-bible", version="0.1.0", instructions=SERVER_INSTRUCTIONS)
 
-# Database connection (initialized lazily on first tool call)
+# Database connection (initialized lazily on first tool call, under _db_lock so two
+# concurrent first calls can't both open it)
 db: StudyBibleDB | None = None
+_db_lock = asyncio.Lock()
+
+# Every tool call ends within this many seconds. The web app stops waiting at 30, so the
+# server gives up first and can still answer with a clean error.
+TOOL_DEADLINE = 25.0
 
 
 @server.list_prompts()
@@ -140,6 +152,20 @@ async def get_prompt(name: str, arguments: dict[str, str] | None) -> GetPromptRe
 def text(msg: str) -> list[TextContent]:
     """Wrap a string in a single-element TextContent list."""
     return [TextContent(type="text", text=msg)]
+
+
+def failed(msg: str) -> CallToolResult:
+    """A failed tool call: isError true, so the client sees the failure as one."""
+    return CallToolResult(content=[TextContent(type="text", text=msg)], isError=True)
+
+
+class NotInstalled(Exception):
+    """A dataset this server was built without: a failure, not an empty answer. The build
+    hint goes to the log for the operator; the model gets only the plain sentence."""
+
+    def __init__(self, what: str, fix: str):
+        super().__init__(f"{what} not installed ({fix})")
+        self.what = what
 
 
 def _book_abbr(book_str: str) -> str:
@@ -219,6 +245,16 @@ def _format_vocabulary(rows: list[tuple[int, dict]], threshold: int, heading: st
     return "\n".join(lines)
 
 
+# When ESV or NET can't be reached, the bundled BSB is served with a note naming the substitution
+# (docs/harness-maturity-proposal.md, Layer 2, step 5). That is a served answer, so it stays an
+# ordinary result. Only when no text can be served at all is the call a failure.
+FALLBACK_TRANSLATION = "BSB"
+
+
+def _stand_in_note(e: Unavailable, translation: str) -> str:
+    return f"*{e} This is the {translation} in its place. Name the {translation} when quoting it.*"
+
+
 def _route_deutero(reference: str, book: str, requested: str) -> str:
     """Deuterocanon text is bundled only in WEB, so route those references there.
 
@@ -275,30 +311,61 @@ async def list_tools() -> list[Tool]:
     return TOOLS
 
 
-@server.call_tool()
-async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
-    """Dispatch a tool call to its handler, initializing the DB on first use."""
+async def _open_db() -> None:
+    """Open the database once. The lock makes a second first call wait for the first, and
+    `db` is set only after connect() finishes, so no call sees a half-open connection."""
     global db
+    async with _db_lock:
+        if db is None:
+            db_path = get_db_path()
+            if not db_path.exists():
+                raise NotInstalled("Bible database", f"no file at {db_path}; run scripts/build_database.py")
+            fresh = StudyBibleDB(db_path)
+            await fresh.connect()
+            db = fresh
 
-    if db is None:
-        db_path = get_db_path()
-        if not db_path.exists():
-            return text(
-                f"Database not found at {db_path}. "
-                "Run 'python scripts/build_database.py' first."
-            )
-        db = StudyBibleDB(db_path)
-        await db.connect()
 
+async def _stop_queries() -> None:
+    """Stop the query a timed-out call left running. Every call shares one connection whose
+    queries run in turn on aiosqlite's worker thread, so a runaway query would hold up all later
+    calls. interrupt() stops whichever statement is running (rarely another call's, which then
+    fails cleanly). The cursor() that follows has the worker drop any cursor the timed-out call
+    left open; while one stays open, SQLite keeps the interrupt in force for every later query."""
+    if db is None or db.conn is None:
+        return
+    with contextlib.suppress(Exception):
+        await db.conn.interrupt()
+        async with asyncio.timeout(1):  # the cursor() runs even if this wait gives up
+            await db.conn.cursor()
+
+
+@server.call_tool()
+async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent] | CallToolResult:
+    """Dispatch a tool call to its handler, initializing the DB on first use.
+
+    Every failure comes back with isError true and a plain sentence; the details (stack trace,
+    SQL, paths) go to the log only. "No results" answers stay ordinary results.
+    """
     handler = _TOOL_HANDLERS.get(name)
     if not handler:
-        return text(f"Unknown tool: {name}")
+        return failed(f"Unknown tool: {name}")
 
     try:
-        return await handler(arguments)
-    except Exception as e:
-        logger.exception(f"Error in tool {name}")
-        return text(f"Error: {str(e)}")
+        async with asyncio.timeout(TOOL_DEADLINE):
+            if db is None:
+                await _open_db()
+            return await handler(arguments)
+    except TimeoutError:
+        logger.warning("tool %s stopped at its %g s deadline", name, TOOL_DEADLINE)
+        await _stop_queries()
+        return failed(f"The {name} tool took too long (over {TOOL_DEADLINE:g} seconds) and was "
+                      "stopped. Try a narrower request.")
+    except NotInstalled as e:
+        logger.error("tool %s: %s", name, e)
+        return failed(f"The {e.what} is not installed on this server.")
+    except Exception:
+        logger.exception("tool %s failed", name)
+        return failed(f"The {name} tool failed on this request. Try different arguments or another tool.")
 
 
 # =========================================================================
@@ -309,13 +376,12 @@ async def handle_word_study(args: dict[str, Any]) -> list[TextContent]:
     """Deep dive into a Greek or Hebrew word."""
     strongs = args.get("strongs")
     word = args.get("word")
-    language = args.get("language", "greek")
+    language = args.get("language")  # None: Greek first, then Hebrew
 
     if strongs:
         entry = await db.get_lexicon_entry(strongs)
     elif word:
-        entries = await db.search_lexicon(word, language=language, limit=1)
-        entry = entries[0] if entries else None
+        entry = await db.find_word(word, language=language)
     else:
         return text("Please provide either 'strongs' number or 'word' to study.")
 
@@ -333,7 +399,7 @@ async def handle_word_study(args: dict[str, Any]) -> list[TextContent]:
     return text(result)
 
 
-async def handle_lookup_verse(args: dict[str, Any]) -> list[TextContent]:
+async def handle_lookup_verse(args: dict[str, Any]) -> list[TextContent] | CallToolResult:
     """Get a verse in a readable translation, with optional original + interlinear."""
     reference = args.get("reference", "")
     translation = (args.get("translation") or "BSB").upper()
@@ -349,13 +415,20 @@ async def handle_lookup_verse(args: dict[str, Any]) -> list[TextContent]:
 
     readable_text = None
     readable_note = None
+    stand_in = None
     if translation in OPTIONAL_TRANSLATIONS:
-        readable_text, readable_note = await fetch_optional(translation, reference)
-    elif await db.has_translations():
+        try:
+            readable_text, readable_note = await fetch_optional(translation, reference)
+        except Unavailable as e:
+            stand_in = e
+            translation = _route_deutero(reference, normalized.split(".")[0], FALLBACK_TRANSLATION)
+    if translation not in OPTIONAL_TRANSLATIONS and await db.has_translations():
         row = await db.get_translation_verse(translation, normalized)
         readable_text = row["text"] if row else None
 
     if not verse and not readable_text:
+        if stand_in:
+            return failed(f"{stand_in} The {translation} has no text for {reference} either.")
         return text(readable_note or f"Verse not found: {reference}")
 
     if verse:
@@ -368,10 +441,15 @@ async def handle_lookup_verse(args: dict[str, Any]) -> list[TextContent]:
             if translation in OPTIONAL_TRANSLATIONS and readable_note:
                 result += f"\n*{readable_note}*\n"
             else:
+                if stand_in:
+                    result += f"\n*{stand_in}*"
                 result += f"\n*No {translation} text for this verse — showing the STEPBible word-gloss.*\n"
     else:
         # Translation-only verse (e.g. a deuterocanon verse absent from the tagged text).
         result = f"## {_format_xref_target(normalized)}\n\n**{translation}:** {readable_text}\n"
+
+    if stand_in and readable_text:
+        result += f"\n{_stand_in_note(stand_in, translation)}\n"
 
     if readable_text and translation in ATTRIBUTION:
         result += f"\n{ATTRIBUTION[translation]}\n"
@@ -392,24 +470,30 @@ async def handle_lookup_verse(args: dict[str, Any]) -> list[TextContent]:
     return text(result)
 
 
-async def handle_get_passage(args: dict[str, Any]) -> list[TextContent]:
+async def handle_get_passage(args: dict[str, Any]) -> list[TextContent] | CallToolResult:
     """Return a readable passage (verse range or whole chapter) in a translation."""
     reference = args.get("reference", "")
     translation = (args.get("translation") or "BSB").upper()
     if not reference:
         return text("Please provide a passage reference (e.g., 'Romans 3:21-26' or 'Psalm 23').")
 
+    stand_in = None
     if translation in OPTIONAL_TRANSLATIONS:
-        live, err = await fetch_optional(translation, reference)
-        if not live:
+        try:
+            live, err = await fetch_optional(translation, reference)
+        except Unavailable as e:
+            live, err, stand_in = None, None, e
+        if live:
+            out = f"## {reference} ({translation})\n\n{live}\n"
+            if translation in ATTRIBUTION:
+                out += f"\n{ATTRIBUTION[translation]}\n"
+            return text(out)
+        if not stand_in:
             return text(err or f"No {translation} text for {reference}.")
-        out = f"## {reference} ({translation})\n\n{live}\n"
-        if translation in ATTRIBUTION:
-            out += f"\n{ATTRIBUTION[translation]}\n"
-        return text(out)
+        translation = FALLBACK_TRANSLATION
 
     if not await db.has_translations():
-        return text("Translations not available. Run the translation download/import scripts.")
+        raise NotInstalled("translation library", "run the translation download/import scripts")
 
     parsed = _parse_passage(reference)
     if not parsed:
@@ -418,10 +502,14 @@ async def handle_get_passage(args: dict[str, Any]) -> list[TextContent]:
     translation = _route_deutero(reference, book, translation)
     verses = await db.get_translation_passage(translation, book, chapter, v1, v2)
     if not verses:
+        if stand_in:
+            return failed(f"{stand_in} The {translation} has no text for {reference} either.")
         avail = ", ".join(await db.available_translations())
         return text(f"No {translation} text found for {reference}. Available: {avail}.")
 
     lines = [f"## {reference} ({translation})", ""]
+    if stand_in:
+        lines += [_stand_in_note(stand_in, translation), ""]
     for v in verses:
         lines.append(f"**{v['verse']}** {v['text']}")
 
@@ -434,14 +522,14 @@ async def handle_get_passage(args: dict[str, Any]) -> list[TextContent]:
     return text("\n".join(lines))
 
 
-async def handle_compare_translations(args: dict[str, Any]) -> list[TextContent]:
+async def handle_compare_translations(args: dict[str, Any]) -> list[TextContent] | CallToolResult:
     """Show one verse across several translations side by side."""
     reference = args.get("reference", "")
     requested = args.get("translations")
     if not reference:
         return text("Please provide a verse reference (e.g., 'John 3:16').")
     if not await db.has_translations():
-        return text("Translations not available. Run the translation download/import scripts.")
+        raise NotInstalled("translation library", "run the translation download/import scripts")
 
     normalized = db._normalize_reference(reference)
     tr_list = [t.upper() for t in requested] if requested else await db.available_translations()
@@ -452,9 +540,14 @@ async def handle_compare_translations(args: dict[str, Any]) -> list[TextContent]
     lines = [f"## {reference} — Translation Comparison", ""]
     found = False
     attributions: set[str] = set()
+    unreached: list[Unavailable] = []
     for tr in tr_list:
         if tr in OPTIONAL_TRANSLATIONS:
-            live, err = await fetch_optional(tr, reference)
+            try:
+                live, err = await fetch_optional(tr, reference)
+            except Unavailable as e:
+                live, err = None, str(e)
+                unreached.append(e)
             if live:
                 lines.append(f"**{tr}:** {live}\n")
                 found = True
@@ -467,7 +560,16 @@ async def handle_compare_translations(args: dict[str, Any]) -> list[TextContent]
             if row:
                 lines.append(f"**{tr}:** {row['text']}\n")
                 found = True
+    if unreached and FALLBACK_TRANSLATION not in tr_list:
+        row = await db.get_translation_verse(FALLBACK_TRANSLATION, normalized)
+        if row:
+            missing = " and ".join(f"the {e.translation}" for e in unreached)
+            lines.append(f"**{FALLBACK_TRANSLATION}:** {row['text']}\n")
+            lines.append(f"*The {FALLBACK_TRANSLATION} is shown in place of {missing}.*\n")
+            found = True
     if not found:
+        if unreached:
+            return failed(f"{unreached[0]} The {FALLBACK_TRANSLATION} has no text for {reference} either.")
         return text(f"No translation text found for {reference}.")
     lines.extend(sorted(attributions))
     return text("\n".join(lines))
@@ -480,7 +582,7 @@ async def handle_vocabulary_list(args: dict[str, Any]) -> list[TextContent]:
     if not reference:
         return text("Please provide a passage reference (e.g., 'Romans 3:21-26').")
     if not await db.has_word_frequency():
-        return text("Word-frequency data not available. Run scripts/build_word_frequency.py.")
+        raise NotInstalled("word-frequency data", "run scripts/build_word_frequency.py")
 
     parsed = _parse_passage(reference)
     if not parsed:
@@ -596,11 +698,11 @@ async def handle_get_cross_references(args: dict[str, Any]) -> list[TextContent]
     """Find related passages by reference or theme."""
     reference = args.get("reference")
     theme = args.get("theme")
-    source_filter = args.get("source")
     limit_raw = args.get("limit")
     limit = int(limit_raw) if limit_raw is not None else 8
+    # Rows readers voted below zero are links they judged wrong, so the floor starts at 0.
     min_strength_raw = args.get("min_strength")
-    min_strength = int(min_strength_raw) if min_strength_raw is not None else None
+    min_strength = int(min_strength_raw) if min_strength_raw is not None else 0
 
     if theme:
         refs = await db.get_thematic_references(theme)
@@ -612,14 +714,9 @@ async def handle_get_cross_references(args: dict[str, Any]) -> list[TextContent]
         return text(result)
 
     if reference:
-        refs = await db.get_cross_references(
-            reference, source_filter=source_filter, limit=limit, min_strength=min_strength,
-        )
+        refs = await db.get_cross_references(reference, limit=limit, min_strength=min_strength)
         if not refs:
-            return text(
-                f"No cross-references found for {reference}."
-                + (f" (source filter: {source_filter})" if source_filter else "")
-            )
+            return text(f"No cross-references found for {reference}.")
 
         result = f"## Cross-References for {reference}\n\n"
         for ref in refs:
@@ -653,16 +750,16 @@ async def handle_lookup_name(args: dict[str, Any]) -> list[TextContent]:
     if not entries:
         return text(f"No entries found for '{name}'.")
 
-    acai_data = None
+    # Each entry gets the ACAI record for that same person or place, or none (see acai_for_names).
     try:
-        if await db.has_acai_data():
-            acai_data = await db.get_acai_entity(name)
-    except Exception:
-        pass
+        acai = await db.acai_for_names(entries)
+    except Exception:  # noqa: BLE001  (ACAI only enriches; the entries stand without it)
+        logger.exception("ACAI enrichment failed")
+        acai = {}
 
     result = f"## Biblical Names: {name}\n\n"
     for entry in entries:
-        result += format_name_entry(entry, acai_data=acai_data)
+        result += format_name_entry(entry, acai_data=acai.get(entry.get("id")))
         result += "\n---\n\n"
     return text(result)
 
@@ -671,13 +768,9 @@ async def handle_lookup_name(args: dict[str, Any]) -> list[TextContent]:
 # Graph handlers (Theographic Bible Metadata)
 # =========================================================================
 
-async def _check_graph_data() -> list[TextContent] | None:
+async def _require_graph_data() -> None:
     if not await db.graph_has_data():
-        return text(
-            "Graph data not available. Run 'python scripts/import_theographic.py' "
-            "to import Theographic Bible Metadata."
-        )
-    return None
+        raise NotInstalled("people-and-places graph", "run scripts/import_theographic.py")
 
 
 def _others_note(label: str, matches: list[dict]) -> str:
@@ -698,8 +791,7 @@ def _others_note(label: str, matches: list[dict]) -> str:
 
 async def handle_explore_genealogy(args: dict[str, Any]) -> list[TextContent]:
     """Trace a person's family tree."""
-    if err := await _check_graph_data():
-        return err
+    await _require_graph_data()
 
     person_name = args.get("person", "")
     direction = args.get("direction", "both")
@@ -739,8 +831,7 @@ async def handle_explore_genealogy(args: dict[str, Any]) -> list[TextContent]:
 
 async def handle_people_in_passage(args: dict[str, Any]) -> list[TextContent]:
     """Find entities mentioned in a verse or chapter."""
-    if err := await _check_graph_data():
-        return err
+    await _require_graph_data()
 
     reference = args.get("reference", "")
     if not reference:
@@ -762,8 +853,7 @@ async def handle_people_in_passage(args: dict[str, Any]) -> list[TextContent]:
 
 async def handle_explore_person_events(args: dict[str, Any]) -> list[TextContent]:
     """Timeline of a person's life events."""
-    if err := await _check_graph_data():
-        return err
+    await _require_graph_data()
 
     person_name = args.get("person", "")
     if not person_name:
@@ -790,8 +880,7 @@ async def handle_explore_person_events(args: dict[str, Any]) -> list[TextContent
 
 async def handle_explore_place(args: dict[str, Any]) -> list[TextContent]:
     """Biblical history of a location."""
-    if err := await _check_graph_data():
-        return err
+    await _require_graph_data()
 
     place_name = args.get("place", "")
     if not place_name:
@@ -814,8 +903,7 @@ async def handle_explore_place(args: dict[str, Any]) -> list[TextContent]:
 
 async def handle_find_connection(args: dict[str, Any]) -> list[TextContent]:
     """Find a relationship path between two people."""
-    if err := await _check_graph_data():
-        return err
+    await _require_graph_data()
 
     name1 = args.get("person1", "")
     name2 = args.get("person2", "")
@@ -840,8 +928,7 @@ async def handle_find_connection(args: dict[str, Any]) -> list[TextContent]:
 
 async def handle_graph_enriched_search(args: dict[str, Any]) -> list[TextContent]:
     """Verse text plus graph context (people/places and their families)."""
-    if err := await _check_graph_data():
-        return err
+    await _require_graph_data()
 
     reference = args.get("reference", "")
     if not reference:
@@ -864,13 +951,10 @@ async def handle_graph_enriched_search(args: dict[str, Any]) -> list[TextContent
 # Open study-notes handlers (Aquifer: unfoldingWord / Tyndale / SIL / FIA)
 # =========================================================================
 
-async def _check_aquifer_data() -> list[TextContent] | None:
+async def _require_aquifer_data() -> None:
     if not await db.has_aquifer_data():
-        return text(
-            "Study-notes data not available. Run "
-            "'python scripts/download_stepbible.py --aquifer' and rebuild the database."
-        )
-    return None
+        raise NotInstalled("study-notes library",
+                           "run scripts/download_stepbible.py --aquifer and rebuild the database")
 
 
 async def handle_get_study_notes(args: dict[str, Any]) -> list[TextContent]:
@@ -880,8 +964,7 @@ async def handle_get_study_notes(args: dict[str, Any]) -> list[TextContent]:
     if not reference:
         return text("Please provide a Bible reference (e.g., 'John 3:16' or 'Genesis 1').")
 
-    if err := await _check_aquifer_data():
-        return err
+    await _require_aquifer_data()
 
     ref_stripped = reference.strip()
     m = re.match(r'^(\d?\s*[a-zA-Z]+)\s+(\d+)$', ref_stripped)
@@ -926,12 +1009,14 @@ async def handle_get_key_terms(args: dict[str, Any]) -> list[TextContent]:
     term = args.get("term", "")
     if not term:
         return text("Please provide a term to look up.")
-    if err := await _check_aquifer_data():
-        return err
+    await _require_aquifer_data()
     terms = await db.get_key_terms(term)
     if not terms:
         return text(f"No key term found for '{term}'.")
     return text(format_key_terms(terms))
+
+
+THEODOTION = {"Dan": "Dat", "Sus": "Sut", "Bel": "Bet"}  # Swete's Old Greek book -> its Theodotion text
 
 
 async def handle_get_septuagint(args: dict[str, Any]) -> list[TextContent]:
@@ -941,21 +1026,23 @@ async def handle_get_septuagint(args: dict[str, Any]) -> list[TextContent]:
     if not reference:
         return text("Please provide a Bible reference (e.g., 'Psalm 51:1').")
     if not await db.has_lxx_data():
-        return text(
-            "Septuagint data not available. Run 'python scripts/download_lxx.py' "
-            "then 'python scripts/import_lxx.py'."
-        )
+        raise NotInstalled("Septuagint", "run scripts/download_lxx.py then scripts/import_lxx.py")
 
     normalized = db._normalize_reference(reference)
     if numbering == "lxx":
-        lxx_ref = normalized
-        standard_ref = await db.lxx_to_standard(lxx_ref) or lxx_ref
+        lxx_ref = swete_ref(normalized)  # 2 Esdras 11:1 is Swete's Nehemiah 1:1
+        standard_ref = await db.lxx_to_standard(lxx_ref) or normalized
     else:
         standard_ref = normalized
-        lxx_ref = await db.standard_to_lxx(standard_ref) or standard_ref
+        lxx_ref = swete_ref(await db.standard_to_lxx(standard_ref) or standard_ref)  # Susanna 5 is Sus 1:5
+    if standard_ref.startswith("Ps2.1."):  # the WEB files Psalm 151 as its own book; it is Psalm 151 to a reader
+        standard_ref = f"Psa.151.{standard_ref.rsplit('.', 1)[1]}"
 
     verse = await db.get_lxx_verse(lxx_ref)
-    if not verse:
+    # Swete prints two Greek texts of Daniel, Susanna, and Bel; Brenton translated Theodotion's
+    book, _, rest = lxx_ref.partition(".")
+    theodotion = await db.get_lxx_verse(f"{THEODOTION[book]}.{rest}") if book in THEODOTION else None
+    if not verse and not theodotion:
         return text(
             f"No Septuagint text found for {reference} "
             f"(resolved to LXX {_format_xref_target(lxx_ref)}). It may be outside the "
@@ -964,21 +1051,35 @@ async def handle_get_septuagint(args: dict[str, Any]) -> list[TextContent]:
 
     lxx_disp = _format_xref_target(lxx_ref)
     std_disp = _format_xref_target(standard_ref)
-    result = f"## Septuagint (LXX): {lxx_disp}\n\n"
-    if verse.get("text_greek"):
-        result += f"**Greek (Swete):** {verse['text_greek']}\n\n"
-    if verse.get("text_english"):
-        result += f"**English (Brenton):** {verse['text_english']}\n\n"
-    if lxx_ref != standard_ref:
+    heading = standard_ref.endswith(".0")  # verse 0: a psalm heading, unnumbered in English Bibles
+    differs = lxx_ref != standard_ref
+    result = f"## Septuagint (LXX): {lxx_disp}"
+    result += f" (English {std_disp})\n\n" if differs and not heading else "\n\n"
+    for row, greek_label, english_label in (
+        (verse, "Greek (Swete, Old Greek)" if theodotion else "Greek (Swete)", "English (Brenton)"),
+        (theodotion, "Greek (Swete, Theodotion)", "English (Brenton, from Theodotion)"),
+    ):
+        if not row:
+            continue
+        if row.get("text_greek"):
+            result += f"**{greek_label}:** {row['text_greek']}\n\n"
+        elif row.get("text_english"):
+            result += ("*Swete's Greek text, used here, has no Greek for this verse. Brenton's English "
+                       "translates a Greek text that has it.*\n\n")
+        if row.get("text_english"):
+            result += f"**{english_label}:** {row['text_english']}\n\n"
+    if heading:
         result += (
-            f"*Versification: this is **LXX {lxx_disp}**, which corresponds to "
-            f"**{std_disp}** in the Hebrew/English numbering.*\n"
+            f"*Versification: **LXX {lxx_disp}** is part of the heading of {std_disp.rsplit(':', 1)[0]}, "
+            "which English Bibles print without a verse number.*\n"
         )
+    elif differs:
+        result += f"*Versification: this is **LXX {lxx_disp}**, which is **{std_disp}** in English Bibles.*\n"
     else:
-        result += "*LXX and Hebrew/English numbering agree for this verse.*\n"
+        result += "*LXX and English numbering agree for this verse.*\n"
     result += (
         "\n*Greek: Swete LXX (Public Domain). English: Brenton 1851 (Public Domain). "
-        "Mapping: Copenhagen Alliance (CC BY).*\n"
+        "Mapping: Copenhagen Alliance (CC BY-SA 4.0).*\n"
     )
     return text(result)
 
@@ -990,10 +1091,8 @@ async def handle_get_commentary(args: dict[str, Any]) -> list[TextContent]:
     if not reference:
         return text("Please provide a verse reference (e.g., 'Romans 3:23').")
     if not await db.has_commentaries():
-        return text(
-            "Commentaries not available. Run 'python scripts/download_commentaries.py' "
-            "then 'python scripts/import_commentaries.py'."
-        )
+        raise NotInstalled("commentary library",
+                           "run scripts/download_commentaries.py then scripts/import_commentaries.py")
 
     normalized = db._normalize_reference(reference)
     parts = normalized.split(".")
@@ -1039,10 +1138,7 @@ async def handle_get_church_fathers(args: dict[str, Any]) -> list[TextContent]:
     if not reference:
         return text("Please provide a verse reference (e.g., 'John 1:1').")
     if not await db.has_catena():
-        return text(
-            "Patristic catena not available. Run 'python scripts/download_catena.py' "
-            "then 'python scripts/import_catena.py'."
-        )
+        raise NotInstalled("church-fathers catena", "run scripts/download_catena.py then scripts/import_catena.py")
 
     normalized = db._normalize_reference(reference)
     parts = normalized.split(".")
@@ -1117,10 +1213,8 @@ async def handle_search_theology(args: dict[str, Any]) -> list[TextContent]:
     if not query:
         return text("Please provide a query (a theological term, phrase, or question).")
     if not getattr(db, "has_theology", False):
-        return text(
-            "The theology grounding corpus (theology.db) is not attached. Build it with "
-            "'python scripts/build_theology_grounding.py' (and set THEOLOGY_DB if it lives elsewhere)."
-        )
+        raise NotInstalled("theology library", "theology.db is not attached; build it with "
+                           "scripts/build_theology_grounding.py, and set THEOLOGY_DB if it lives elsewhere")
     fts = await db.search_theology(query, author=author, limit=limit)
     sem = await db.semantic_theology(query, limit=limit)
     if author:  # the vec KNN doesn't filter by author, so post-filter
@@ -1151,7 +1245,11 @@ async def handle_search_theology(args: dict[str, Any]) -> list[TextContent]:
             passage = (r.get("text") or "").strip()
             if len(passage) > 1400:
                 passage = passage[:1400].rstrip() + " …"
-            out.append(f"### {r.get('author', '?')} — *{r.get('title', '')}*")
+            # The locator: the paragraph's place in the work, so a citation can point to it. Passages
+            # found by meaning come from a chunked copy that keeps no paragraph number.
+            seq, total = r.get("seq"), r.get("n_paragraphs")
+            where = f" (paragraph {seq + 1:,} of {total:,})" if seq is not None and total else ""
+            out.append(f"### {r.get('author', '?')} — *{r.get('title', '')}*{where}")
             out.append(passage)
             refs = r.get("refs") if refs_ok else None
             if refs and refs not in ("[]", "null"):
@@ -1174,7 +1272,8 @@ async def handle_search_theology(args: dict[str, Any]) -> list[TextContent]:
     if sem:
         lines.append("### Related by meaning")
         lines += _blocks(sem, False)
-    lines.append("*Full public-domain texts, housed locally (CCEL and other PD editions). Cite the author and work.*")
+    lines.append("*Full public-domain texts, housed locally (CCEL and other PD editions). Cite the author and "
+                 "work, with the paragraph where one is given.*")
     return text("\n".join(lines))
 
 
@@ -1184,10 +1283,8 @@ async def handle_get_confession(args: dict[str, Any]) -> list[TextContent]:
     topic = args.get("topic")
     section = args.get("section")
     if not await db.has_historical_documents():
-        return text(
-            "Historical documents not available. Run 'python scripts/download_theologai.py' "
-            "then 'python scripts/import_theologai.py'."
-        )
+        raise NotInstalled("creeds and confessions library",
+                           "run scripts/download_theologai.py then scripts/import_theologai.py")
 
     if topic and not document:
         rows = await db.search_historical_documents(topic)
@@ -1250,8 +1347,8 @@ async def handle_find_confessions_by_verse(args: dict[str, Any]) -> list[TextCon
     if not reference:
         return text("Please provide a verse reference (e.g., 'Romans 1:20').")
     if not await db.has_confession_proofs():
-        return text("Confession proof-texts not available. Run scripts/download_confessions.py "
-                    "then scripts/import_confessions.py.")
+        raise NotInstalled("confession proof-text index",
+                           "run scripts/download_confessions.py then scripts/import_confessions.py")
     normalized = db._normalize_reference(reference)
     try:
         book, chapter, verse = normalized.split(".")[0], int(normalized.split(".")[1]), int(normalized.split(".")[2])
@@ -1285,8 +1382,8 @@ async def handle_get_confession_proofs(args: dict[str, Any]) -> list[TextContent
     if not document:
         return text("Please name a document (e.g., 'Westminster Confession' or 'wsc').")
     if not await db.has_confession_proofs():
-        return text("Confession proof-texts not available. Run scripts/download_confessions.py "
-                    "then scripts/import_confessions.py.")
+        raise NotInstalled("confession proof-text index",
+                           "run scripts/download_confessions.py then scripts/import_confessions.py")
 
     docs = await db.confession_proof_docs()
     key = document.strip().lower()
@@ -1296,13 +1393,34 @@ async def handle_get_confession_proofs(args: dict[str, Any]) -> list[TextContent
         avail = ", ".join(f"{d['doc_title']} ({d['doc_id']})" for d in docs)
         return text(f"No proof-text document matched '{document}'. Available: {avail}.")
 
-    rows = await db.get_confession_proofs(match["doc_id"], str(section) if section else None)
-    if not rows:
-        return text(f"No proof texts for {match['doc_title']}"
-                    + (f", section {section}" if section else "") + ".")
+    outline = await db.confession_proof_outline(match["doc_id"])
+    if not section:
+        # A whole document runs to thousands of verses (2,568 in the Larger Catechism), so list the
+        # articles to choose from.
+        total = sum(o["n"] for o in outline)
+        lines = [f"## {match['doc_title']}: proof texts by article", "",
+                 f"{len(outline)} articles carry {total:,} proof texts. Call again with a section to see one "
+                 "article's proofs with the verse text.", ""]
+        for o in outline:
+            body = " ".join((o["section_text"] or "").split())
+            lines.append(f"- **{o['section_label']}** ({o['n']}): {body[:70].rstrip()}{'…' if len(body) > 70 else ''}")
+        return text("\n".join(lines))
 
-    lines = [f"## {match['doc_title']} — Proof Texts"
-             + (f" ({section})" if section else ""), ""]
+    labels = _proof_sections(str(section), [o["section_label"] for o in outline])
+    rows = await db.get_confession_proofs(match["doc_id"], labels) if labels else []
+    if not rows:
+        return text(f"No proof texts for {match['doc_title']}, section {section}. Leave the section out "
+                    "to list the articles.")
+
+    # The readable text of every cited verse, a range up to eight verses, in one query per translation.
+    refs: dict[str, list[str]] = {}
+    for r in rows:
+        last = min(r["verse_end"] or r["verse_start"], r["verse_start"] + 7)
+        tr = "WEB" if r["book"] in DEUTERO_BOOKS else "BSB"
+        refs.setdefault(tr, []).extend(f"{r['book']}.{r['chapter']}.{v}" for v in range(r["verse_start"], last + 1))
+    texts = {tr: await db.get_translation_verses(tr, sorted(set(rs))) for tr, rs in refs.items()}
+
+    lines = [f"## {match['doc_title']} — Proof Texts ({section})", ""]
     current_label = None
     for r in rows:
         if r["section_label"] != current_label:
@@ -1311,16 +1429,31 @@ async def handle_get_confession_proofs(args: dict[str, Any]) -> list[TextContent
             body = (r["section_text"] or "").strip()
             lines.append(body[:900].rstrip() + (" …" if len(body) > 900 else ""))
             lines.append("\n**Proof texts:**")
-        # Resolve the cited verse's readable text.
-        ref_norm = f"{r['book']}.{r['chapter']}.{r['verse_start']}"
         tr = "WEB" if r["book"] in DEUTERO_BOOKS else "BSB"
-        vrow = await db.get_translation_verse(tr, ref_norm)
-        disp = _format_xref_target(ref_norm)
-        if r["verse_end"] != r["verse_start"]:
+        last = min(r["verse_end"] or r["verse_start"], r["verse_start"] + 7)
+        verse_text = " ".join(t for t in (texts[tr].get(f"{r['book']}.{r['chapter']}.{v}")
+                                          for v in range(r["verse_start"], last + 1)) if t)
+        disp = _format_xref_target(f"{r['book']}.{r['chapter']}.{r['verse_start']}")
+        if r["verse_end"] and r["verse_end"] != r["verse_start"]:
             disp += f"-{r['verse_end']}"
-        vtext = f" — {vrow['text']}" if vrow else ""
-        lines.append(f"- [{r['marker']}] **{disp}**{vtext}")
+        if last < (r["verse_end"] or r["verse_start"]):
+            verse_text += " …"
+        lines.append(f"- [{r['marker']}] **{disp}**" + (f" — {verse_text}" if verse_text else ""))
     return text("\n".join(lines))
+
+
+def _proof_sections(section: str, labels: list[str]) -> list[str]:
+    """The article labels a section names: an exact label ('Q1', '1.2'), a bare question number
+    ('1' is 'Q1' in a catechism), or a confession chapter ('1' is articles 1.1, 1.2, ...)."""
+    s = section.strip()
+    if s in labels:
+        return [s]
+    number = s[1:] if s[:1] in "Qq" else s
+    if number.isdigit() and f"Q{number}" in labels:
+        return [f"Q{number}"]
+    if s.isdigit():
+        return [label for label in labels if label.startswith(f"{s}.")]
+    return []
 
 
 _MONTH_NAMES = {m: i for i, m in enumerate(
@@ -1349,8 +1482,7 @@ async def handle_get_devotional(args: dict[str, Any]) -> list[TextContent]:
     reference = args.get("reference")
     date = args.get("date")
     if not await db.has_devotionals():
-        return text("Devotionals not available. Run scripts/download_devotionals.py "
-                    "then scripts/import_devotionals.py.")
+        raise NotInstalled("devotional library", "run scripts/download_devotionals.py then scripts/import_devotionals.py")
 
     if reference:
         normalized = db._normalize_reference(reference)
@@ -1390,10 +1522,7 @@ async def handle_get_parallel_passages(args: dict[str, Any]) -> list[TextContent
     if not reference:
         return text("Please provide a verse reference (e.g., 'Matthew 19:5').")
     if not await db.has_parallel_passages():
-        return text(
-            "Parallel passages not available. Run 'python scripts/download_theologai.py' "
-            "then 'python scripts/import_theologai.py'."
-        )
+        raise NotInstalled("parallel-passage index", "run scripts/download_theologai.py then scripts/import_theologai.py")
     normalized = db._normalize_reference(reference)
     parts = normalized.split(".")
     if len(parts) != 3 or not parts[1].isdigit() or not parts[2].isdigit():
@@ -1451,8 +1580,19 @@ _TOOL_HANDLERS = {
 # Transports
 # =========================================================================
 
+def _preload_native_modules() -> None:
+    """Import the native extensions tool calls need before stdio starts reading. On Windows, loading
+    a native module (numpy, through sqlite-vec and model2vec) while the stdin reader thread waits on
+    the pipe stalls until the next message arrives, so the first tool call would hang and its
+    deadline could not fire. Both are optional; a missing one only turns its feature off."""
+    for module in ("sqlite_vec", "model2vec"):
+        with contextlib.suppress(ImportError):
+            importlib.import_module(module)
+
+
 async def run_stdio_server():
     """Run the MCP server over stdio."""
+    _preload_native_modules()
     async with stdio_server() as (read_stream, write_stream):
         await server.run(read_stream, write_stream, server.create_initialization_options())
 
