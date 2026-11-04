@@ -1034,7 +1034,10 @@ async def handle_get_septuagint(args: dict[str, Any]) -> list[TextContent]:
         standard_ref = await db.lxx_to_standard(lxx_ref) or normalized
     else:
         standard_ref = normalized
-        lxx_ref = swete_ref(await db.standard_to_lxx(standard_ref) or standard_ref)  # Susanna 5 is Sus 1:5
+        routed = await db.standard_to_lxx(standard_ref)
+        if routed == "":
+            return text(f"The Septuagint has no verse for {reference}: the Greek text lacks it.")
+        lxx_ref = swete_ref(routed or standard_ref)  # Susanna 5 is Sus 1:5
     if standard_ref.startswith("Ps2.1."):  # the WEB files Psalm 151 as its own book; it is Psalm 151 to a reader
         standard_ref = f"Psa.151.{standard_ref.rsplit('.', 1)[1]}"
 

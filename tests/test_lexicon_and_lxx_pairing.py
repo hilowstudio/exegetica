@@ -9,7 +9,9 @@ import pytest
 from studybible_mcp import server as bible
 from studybible_mcp.database import StudyBibleDB
 from studybible_mcp.parsers.lexicon import hebrew_short_definition
-from studybible_mcp.parsers.lxx import align_verses, content_routes, parse_brenton, swete_ref
+from studybible_mcp.parsers.lxx import (
+    _english_stems, _greek_stems, align_verses, content_routes, learn_translations, parse_brenton, swete_ref,
+)
 
 DB_PATH = bible.get_db_path()
 needs_db = pytest.mark.skipif(not DB_PATH.exists(), reason="no study_bible.db here")
@@ -86,6 +88,31 @@ def test_a_verse_with_no_greek_takes_english_only_at_its_own_number():
     assert align_verses(greek, english) == {0: [0], 1: [1], 2: [2]}
 
 
+def test_translations_are_learned_from_paired_verses_and_common_words_left_out():
+    letters = "αβγδεζηθ"
+    pairs = [(_greek_stems(f"καὶ {a}{b}ματα"), _english_stems(f"and {chr(97 + i)}{chr(97 + j)}thing"))
+             for i, a in enumerate(letters) for j, b in enumerate(letters)]
+    for k in range(3):  # the king turns up in three pairs; καί in every one
+        pairs[k] = (pairs[k][0] | _greek_stems("βασιλεύς"), pairs[k][1] | _english_stems("king"))
+    assert learn_translations(pairs) == {"βασιλ": frozenset({"king"})}
+
+
+def test_word_evidence_keeps_a_stretch_from_slipping_a_verse():
+    # Swete prints a title and the first verse as one, as in the Letter of Jeremiah, so each later Greek
+    # verse is the next English verse. The lengths cannot tell where the extra English verse goes, and
+    # equal verse numbers pull it a verse late; the words put it with the title.
+    greek = [g(1, 1, "ἐπιστολὴ ἁμαρτίαι"), g(1, 2, "Βαβυλῶνα δουλεύσετε"), g(1, 3, "θεοὺς ἀργυροῦς"),
+             g(1, 4, "φοβηθῆτε ἀγγέλους"), g(1, 5, "ψυχὰς φυλάσσει")]
+    english = [e(1, 1, "An epistle"), e(1, 2, "for sins"), e(1, 3, "Babylon serve"), e(1, 4, "gods silver"),
+               e(1, 5, "fear angels"), e(1, 6, "guard souls")]
+    words = [("ἐπιστολὴ", "epistle"), ("ἁμαρτίαι", "sins"), ("Βαβυλῶνα", "Babylon"), ("δουλεύσετε", "serve"),
+             ("θεοὺς", "gods"), ("ἀργυροῦς", "silver"), ("φοβηθῆτε", "fear"), ("ἀγγέλους", "angels"),
+             ("ψυχὰς", "souls"), ("φυλάσσει", "guard")]
+    translations = learn_translations([(_greek_stems(a), _english_stems(b)) for a, b in words] * 3, common=1.0)
+    assert align_verses(greek, english)[1] == [1, 2]  # without the words, "for sins" lands a verse late
+    assert align_verses(greek, english, translations=translations) == {0: [0, 1], 1: [2], 2: [3], 3: [4], 4: [5]}
+
+
 def test_brenton_keeps_lettered_verses_and_drops_notes(tmp_path):
     usfm = ("\\id PSA\n\\c 144\n\\v 13 Thy kingdom \\f + \\fr 144:13 \\ft Gr. of all ages.\\f*is everlasting.\n"
             "\\v 13a The Lord is faithful in his words.\n\\v 14 The Lord supports all.\n")
@@ -160,6 +187,24 @@ def test_a_renumbered_block_moves_together():
     assert {e: r for e, (r, _) in routes.items()} == {"Dan.4.4": "Dan.4.6", "Dan.4.5": "Dan.4.7", "Dan.4.6": "Dan.4.8"}
 
 
+def test_a_verse_swete_numbers_otherwise_moves_and_the_heading_it_displaces_has_no_greek():
+    # Copenhagen gives English Jeremiah 49:34 its LXX 25:14 and 25:20; Swete numbers 25:20 as 26:1, the
+    # number the map gives English 46:1, a heading the Greek lacks
+    english = {"Jer.46.1": "The word of the LORD which came to Jeremiah the prophet against the Gentiles;",
+               "Jer.49.34": "The word of the LORD that came to Jeremiah the prophet against Elam in the beginning "
+                            "of the reign of Zedekiah king of Judah, saying,"}
+    brenton = {"Jer.25.14": "The Prophecies of Jeremias against the Nations of Ælam.",
+               "Jer.25.19": "But it shall come to pass at the end of days, that I will turn the captivity of Ælam, "
+                            "saith the Lord.",
+               "Jer.26.1": "In the beginning of the reign of king Sedekias, there came this word concerning Ælam.",
+               "Jer.26.2": "For Egypt, against the Power of Pharao Nechao King of Egypt, who was by the river "
+                           "Euphrates in Charmis."}
+    routed = {"Jer.46.1": "Jer.26.1", "Jer.49.34": "Jer.25.14"}
+    assert content_routes(english, routed, brenton, set(brenton)) == {}
+    routes = content_routes(english, routed, brenton, set(brenton), {"Jer.49.34": ["Jer.25.20"]})
+    assert {e: r for e, (r, _) in routes.items()} == {"Jer.49.34": "Jer.26.1", "Jer.46.1": None}
+
+
 @pytest.mark.parametrize("reference,normalized", [
     ("Song of Solomon 2:1", "Sng.2.1"), ("Song of Songs 1:1", "Sng.1.1"), ("Wisdom of Solomon 7:26", "Wis.7.26"),
     ("1 John 3:16", "1Jn.3.16"), ("John 3:16", "Jhn.3.16"), ("Jude 3", "Jud.1.3"),
@@ -198,6 +243,12 @@ async def test_hebrew_entries_have_glosses(db, strongs, short):
     ("Jer.9.1", "Τίς δώσει", "water to my head"),       # Brenton numbers this 8:23
     ("Psa.144.14", "πιστὸς", "faithful in his words"),  # Brenton's 13a sits in Swete's 14
     ("Dat.1.1", "τρίτῳ", "third year"),                 # Theodotion's Daniel, which Brenton translated
+    ("Epj.1.1", "ἁμαρτίας", "Because of the sins"),     # Swete prints the Letter's title and first verse as one
+    ("Epj.1.2", "εἰσελθόντες", "So when ye be come unto Babylon"),
+    ("Epj.1.6", "ἄγγελός", "mine angel is with you"),
+    ("Lev.8.20", "ἐκρεανόμησεν", "divided the ram"),    # Brenton's 8:18 holds Swete's 8:18-19
+    ("Job.16.6", "ἰσχὺς", "strength in my mouth"),
+    ("Job.41.18", "σίδηρον", "iron as chaff"),
 ])
 async def test_brenton_sits_beside_its_greek(db, ref, greek, english):
     row = await db.get_lxx_verse(ref)
@@ -213,8 +264,10 @@ def plain(text: str) -> str:
 @pytest.mark.parametrize("english,lxx", [
     ("Mal.4.4", "Mal.4.6"), ("Mal.4.5", "Mal.4.4"), ("Mal.4.6", "Mal.4.5"),  # Swete's Malachi order
     ("Dan.3.24", "Dan.3.91"),                                                # after the Prayer of Azariah
-    ("Job.41.27", "Job.41.19"),
+    ("Job.41.27", "Job.41.18"),                                              # "iron as straw"
     ("Neh.1.1", "Neh.1.1"), ("Est.1.1", "Est.1.1"),                          # Copenhagen's Ezr 11 and Esg
+    ("Bar.6.3", "Epj.1.2"), ("Bar.6.73", "Epj.1.72"),                        # the Letter of Jeremiah
+    ("Jer.49.34", "Jer.26.1"),                                               # Copenhagen's LXX 25:20
 ])
 async def test_english_verses_route_to_the_swete_verse_that_holds_them(db, english, lxx):
     assert swete_ref(await db.standard_to_lxx(english) or english) == lxx
@@ -224,6 +277,15 @@ async def test_english_verses_route_to_the_swete_verse_that_holds_them(db, engli
 @needs_db
 async def test_a_reordered_verse_maps_back(db):
     assert await db.lxx_to_standard("Mal.4.6") == "Mal.4.4"
+    assert await db.lxx_to_standard("Jer.26.1") == "Jer.49.34"
+
+
+@needs_db
+async def test_a_verse_the_greek_lacks_says_so(db, monkeypatch):
+    assert await db.standard_to_lxx("Jer.46.1") == ""
+    monkeypatch.setattr(bible, "db", db)
+    reply = (await bible.handle_get_septuagint({"reference": "Jeremiah 46:1"}))[0].text
+    assert "no verse for Jeremiah 46:1" in reply and "Ælam" not in reply
 
 
 @needs_db

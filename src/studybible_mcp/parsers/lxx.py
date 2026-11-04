@@ -264,7 +264,12 @@ def parse_brenton(zip_path: Path) -> Iterator[dict]:
 # English beside the Greek, a verse or more off for whole chapters. align_brenton pairs them by
 # content instead, one book at a time: a dynamic-programming alignment, after Gale and Church's
 # sentence alignment, on text length, the proper names both sides share, and a small preference
-# for matching verse numbers.
+# for matching verse numbers. Length and names alone left stretches a verse off wherever Swete
+# divides verses differently and the lengths could not tell (the Letter of Jeremiah, whose title
+# and first verse Swete prints as one; Leviticus 8; Job 16 and 41): summed over a run, the number
+# preference outweighed them. So a second pass, after Moore's bilingual sentence alignment, adds
+# the words: the first pass's pairs teach which English words translate which Greek ones, and the
+# second pass scores each pairing by how many of its words translate each other.
 
 # Swete book -> the Brenton book that translates it, where the codes differ. Swete prints both
 # Greek texts of Daniel, Susanna, and Bel (Dan, Sus, Bel the Old Greek; Dat, Sut, Bet Theodotion),
@@ -328,9 +333,52 @@ _MERGE = 1.5             # each extra verse joined into a pair
 _SUBVERSE_MERGE = 0.2    # joining lettered parts (12a, 12b) to the verse they belong to
 _MAX_RUN = 4             # verses joined in an ordinary merge
 _SAME_NUMBER = 0.3       # the preference for pairing verses that carry the same number
+_WORDS = 4.0             # weight of the word evidence in the second pass
+_WORDS_EVEN = 0.38       # the word score where it neither helps nor hurts: a verse's own English scores
+                         # 0.66 on average and its neighbour's 0.11
+_SECOND_BAND = 8         # how far the second pass looks from the first pass's pairing
 
 
-def align_verses(greek: list[dict], english: list[dict], band: int = 100, max_greek: int = 2) -> dict[int, list[int]]:
+def _greek_stems(text: str) -> frozenset:
+    """A Greek verse's words of four letters or more, unaccented and cut to five letters."""
+    plain = "".join(c for c in unicodedata.normalize("NFD", (text or "").lower()) if not unicodedata.combining(c))
+    return frozenset(w[:5] for w in re.findall(r"[α-ω]+", plain.replace("ς", "σ")) if len(w) >= 4)
+
+
+def _english_stems(text: str) -> frozenset:
+    return frozenset(w[:5] for w in _route_words(text))
+
+
+def learn_translations(pairs: list[tuple[frozenset, frozenset]], min_count: int = 3, min_dice: float = 0.25,
+                       common: float = 0.08) -> dict[str, frozenset]:
+    """{Greek stem: the English stems that translate it}, from verses already paired.
+
+    A Greek and an English stem translate each other when they turn up in the same pairs often
+    (Dice coefficient min_dice, at least min_count times). Stems in more than `common` of all pairs
+    (καί, αὐτός, Lord, people) say nothing about which verse is which and are left out.
+    """
+    in_g: dict[str, int] = {}
+    in_e: dict[str, int] = {}
+    both: dict[tuple[str, str], int] = {}
+    for g, e in pairs:
+        for x in g:
+            in_g[x] = in_g.get(x, 0) + 1
+        for y in e:
+            in_e[y] = in_e.get(y, 0) + 1
+        for x in g:
+            for y in e:
+                both[(x, y)] = both.get((x, y), 0) + 1
+    limit = len(pairs) * common
+    found: dict[str, set] = {}
+    for (x, y), k in both.items():
+        if k >= min_count and in_g[x] <= limit and in_e[y] <= limit and 2 * k / (in_g[x] + in_e[y]) >= min_dice:
+            found.setdefault(x, set()).add(y)
+    return {x: frozenset(ys) for x, ys in found.items()}
+
+
+def align_verses(greek: list[dict], english: list[dict], band: int = 100, max_greek: int = 2,
+                 translations: dict[str, frozenset] | None = None,
+                 centre: list[int] | None = None) -> dict[int, list[int]]:
     """Align one book: {index into greek: [indexes into english]}.
 
     greek rows carry chapter, verse, and text_greek ('' where Swete has the verse number but no
@@ -338,7 +386,8 @@ def align_verses(greek: list[dict], english: list[dict], band: int = 100, max_gr
     A pair can join up to max_greek Greek verses (the English goes to the first) and up to
     _MAX_RUN English verses, or any run of lettered parts of one verse. A Greek verse with no
     words takes English only at its own number. The search stays within `band` verses of the
-    diagonal.
+    diagonal, or of centre[i] (the English index reached at Greek index i) where centre is given.
+    With translations (learn_translations), a pairing whose words translate each other costs less.
     """
     n, m = len(greek), len(english)
     if not n or not m:
@@ -353,6 +402,29 @@ def align_verses(greek: list[dict], english: list[dict], band: int = 100, max_gr
         gsum.append(gsum[-1] + x)
     for x in elen:
         esum.append(esum[-1] + x)
+    if translations:
+        rendered: dict[str, set] = {}  # English stem -> the Greek stems it translates
+        for x, ys in translations.items():
+            for y in ys:
+                rendered.setdefault(y, set()).add(x)
+        gwords = [_greek_stems(g["text_greek"]) for g in greek]
+        ewords = [_english_stems(e["text_english"]) for e in english]
+        gknown = [frozenset(x for x in w if x in translations) for w in gwords]
+        eknown = [frozenset(y for y in w if y in rendered) for w in ewords]
+
+    def words(i0: int, i1: int, j0: int, j1: int) -> float:
+        """The word evidence: below 0 where the words translate each other, above 0 where they don't."""
+        def union(rows, a, b):
+            return rows[a] if b - a == 1 else frozenset().union(*rows[a:b])
+        gk, ek = union(gknown, i0, i1), union(eknown, j0, j1)
+        if not gk or not ek:
+            return 0.0
+        gw, ew = union(gwords, i0, i1), union(ewords, j0, j1)
+        from_greek = sum(1 for x in gk if translations[x] & ew) / len(gk)
+        from_english = sum(1 for y in ek if rendered[y] & gw) / len(ek)
+        score = 2 * from_greek * from_english / (from_greek + from_english) if from_greek + from_english else 0.0
+        sure = min(1.0, min(len(gk), len(ek)) / 3)  # a verse with one known word says little
+        return _WORDS * sure * (_WORDS_EVEN - score)
 
     def number(row):
         return row["chapter"], row["verse"]
@@ -379,6 +451,8 @@ def align_verses(greek: list[dict], english: list[dict], band: int = 100, max_gr
             c += 1.0
         if same:
             c -= _SAME_NUMBER
+        if translations:
+            c += words(i0, i1, j0, j1)
         if j1 - j0 > 1:
             run = english[j0 + 1:j1]
             lettered = all(e.get("letter") and number(e) == number(english[j0]) for e in run)
@@ -390,7 +464,7 @@ def align_verses(greek: list[dict], english: list[dict], band: int = 100, max_gr
     cost: dict[tuple[int, int], float] = {(0, 0): 0.0}
     back: dict[tuple[int, int], tuple[int, int]] = {}
     for i in range(n + 1):
-        mid = i * m // n
+        mid = centre[i] if centre else i * m // n
         for j in range(max(0, mid - band), min(m, mid + band) + 1):
             if i == 0 and j == 0:
                 continue
@@ -417,7 +491,7 @@ def align_verses(greek: list[dict], english: list[dict], band: int = 100, max_gr
                 back[(i, j)] = arg
     if (n, m) not in cost:
         if band < max(n, m):
-            return align_verses(greek, english, band * 3, max_greek)
+            return align_verses(greek, english, band * 3, max_greek, translations, centre)
         return {}
     pairs: dict[int, list[int]] = {}
     i, j = n, m
@@ -456,13 +530,33 @@ def align_brenton(greek: list[dict], brenton_rows: list[dict]) -> dict[str, str]
     for e in brenton_rows:
         by_book_e.setdefault(e["book"], []).append(e)
 
-    out: dict[str, str] = {}
+    first: dict[str, tuple[list[dict], list[dict], dict[int, list[int]]]] = {}
     for book, rows in by_book_g.items():
         english = brenton_for(book, by_book_e)
-        found = align_verses(rows, english, max_greek=4 if book == "Sip" else 2)
+        first[book] = (rows, english, align_verses(rows, english, max_greek=4 if book == "Sip" else 2))
+    translations = learn_translations([
+        (_greek_stems(rows[gi]["text_greek"]), _english_stems(" ".join(english[j]["text_english"] for j in ejs)))
+        for rows, english, found in first.values() for gi, ejs in found.items()])
+
+    out: dict[str, str] = {}
+    for book, (rows, english, found) in first.items():
+        found = align_verses(rows, english, _SECOND_BAND, 4 if book == "Sip" else 2, translations,
+                             _reached(found, len(rows), len(english))) or found
         for gi, ejs in found.items():
             out[rows[gi]["reference"]] = " ".join(english[j]["text_english"] for j in ejs)
     return out
+
+
+def _reached(found: dict[int, list[int]], n: int, m: int) -> list[int]:
+    """For each Greek index 0..n, the English index an alignment had reached when that Greek verse began."""
+    out, at = [], 0
+    for i in range(n):
+        if i in found:
+            at = found[i][0]
+        out.append(at)
+        if i in found:
+            at = found[i][-1] + 1
+    return out + [m]
 
 
 # ---------------------------------------------------------------------------
@@ -504,20 +598,25 @@ _FLAG = (0.3, 0.15)     # a nearby verse scores at least 0.3, and 0.15 above the
 _STRONG = (0.6, 0.3)    # enough on its own
 _NEIGHBOURS = 2         # or this many English verses within three share the same shift
 _MERGED = 0.45          # or the routed verse is not in Swete, and the text sits a verse or two away
+_ABSENT = 0.3           # below this at a routed verse a further map row took, a verse has no Greek
 
 
 def content_routes(english: dict[str, str], routed: dict[str, str], greek_english: dict[str, str],
-                   swete_refs: set[str]) -> dict[str, tuple[str, float]]:
+                   swete_refs: set[str],
+                   also: dict[str, list[str]] | None = None) -> dict[str, tuple[str | None, float]]:
     """{English verse: (Swete verse, score)} where content finds a better Swete verse than the route.
 
     english holds the English text by English reference; routed the Swete verse the map gives each
     (identity where it gives none); greek_english Brenton's English by Swete reference; swete_refs every
-    Swete reference. Candidates are the Swete verses in the routed verse's book, in its chapter and the
-    English verse's chapter and those beside them. A candidate replaces the route when it scores _STRONG,
-    when the English verses around it shift by the same amount (a renumbered block, as in Daniel 3-4),
-    when the routed verse is not in Swete and the text sits in a verse beside it, or when another English
-    verse has taken the routed verse (a reordering, as in Malachi 4). A single look-alike (one tribe in a
-    list, a repeated refrain) stays put.
+    Swete reference; also any further Swete verses the map gives an English verse (Copenhagen splits a
+    few, as English Jeremiah 49:34 into its LXX 25:14 and 25:20). Candidates are the Swete verses in the
+    routed verse's book, in its chapter and the English verse's chapter and those beside them. A candidate
+    replaces the route when it scores _STRONG, when the English verses around it shift by the same amount
+    (a renumbered block, as in Daniel 3-4), when the routed verse, or a further one, is not in Swete and
+    the text sits in a verse beside it, or when another English verse has taken the routed verse (a
+    reordering, as in Malachi 4). A single look-alike (one tribe in a list, a repeated refrain) stays put.
+    The Swete verse is None for an English verse the Greek lacks: another English verse has taken its
+    routed verse, which reads unlike it, and nothing beside it reads like it.
     """
     order: dict[str, list[tuple[int, int, str]]] = {}
     for ref in greek_english:
@@ -542,6 +641,9 @@ def content_routes(english: dict[str, str], routed: dict[str, str], greek_englis
         return bisect.bisect_left(keys.get(book, []), (int(ch), int(v))) - 0.5
 
     flagged: dict[str, tuple[str, float, float, int]] = {}
+    own: dict[str, float] = {}  # how the routed verse reads, where it has English
+    out: dict[str, tuple[str | None, float]] = {}
+    split: set[str] = set()  # Swete verses found by a further map row
     for eref, text in english.items():
         lref = routed.get(eref, eref)
         book, lch, _ = lref.split(".")
@@ -549,6 +651,8 @@ def content_routes(english: dict[str, str], routed: dict[str, str], greek_englis
             continue
         ewords = _route_words(text)
         here = _overlap(ewords, words[lref]) if lref in words else 0.0
+        if lref in words:
+            own[eref] = here
         ech = eref.split(".")[1]
         best, best_ref = 0.0, None
         for ch in {int(lch) - 1, int(lch), int(lch) + 1, int(ech) - 1, int(ech), int(ech) + 1}:
@@ -558,19 +662,39 @@ def content_routes(english: dict[str, str], routed: dict[str, str], greek_englis
                     best, best_ref = s, ref
         if best_ref and best_ref != lref and best >= _FLAG[0] and best - here >= _FLAG[1]:
             flagged[eref] = (best_ref, best, here, round(place(best_ref) - place(lref)))
+        # A further verse the map gives it that Swete numbers otherwise, with the text beside it: Copenhagen's
+        # LXX Jeremiah 25:20, the close of the Elam oracle, is Swete's 26:1.
+        for extra in (also or {}).get(eref, ()):
+            if extra in swete_refs or extra.split(".")[0] != book:
+                continue
+            xch, at = int(extra.split(".")[1]), place(extra)
+            s, ref = max(((_overlap(ewords, words[r]), r) for ch in (xch - 1, xch, xch + 1)
+                          for r in by_chapter.get((book, ch), ()) if abs(round(position[r] - at)) <= 2),
+                         default=(0.0, None))
+            if ref and s >= _MERGED and s - here >= _FLAG[1]:
+                out[eref] = (ref, round(s, 3))
+                split.add(ref)
 
-    out: dict[str, tuple[str, float]] = {}
     for eref, (ref, best, here, shift) in flagged.items():
         book, ch, v = eref.rsplit(".", 2)
         near = [f"{book}.{ch}.{int(v) + d}" for d in (-3, -2, -1, 1, 2, 3)]
         same = sum(1 for n in near if n in flagged and flagged[n][3] == shift)
         merged = routed.get(eref, eref) not in swete_refs and abs(shift) <= 2 and best >= _MERGED
-        if (best >= _STRONG[0] and best - here >= _STRONG[1]) or same >= _NEIGHBOURS or merged:
+        if eref not in out and ((best >= _STRONG[0] and best - here >= _STRONG[1]) or same >= _NEIGHBOURS or merged):
             out[eref] = (ref, round(best, 3))
     # A verse whose routed Greek verse now belongs to another English verse moves on lighter evidence:
     # Swete puts Malachi's "Remember the law" (English 4:4) last, and English 4:5 takes Swete 4:4.
+    # Where a further map row took it, the verse moves only a verse or two, and one that reads unlike the
+    # taken verse otherwise has no Greek: English Jeremiah 46:1, a heading the Greek lacks, is routed to
+    # the Swete 26:1 that 49:34 takes.
     taken = {ref for ref, _ in out.values()}
-    for eref, (ref, best, here, shift) in flagged.items():
-        if eref not in out and routed.get(eref, eref) in taken and best >= _MERGED:
+    for eref, here in own.items():
+        lref = routed.get(eref, eref)
+        if eref in out or lref not in taken:
+            continue
+        ref, best, _here, shift = flagged.get(eref, (None, 0.0, here, 0))
+        if best >= _MERGED and (lref not in split or abs(shift) <= 2):
             out[eref] = (ref, round(best, 3))
+        elif lref in split and here < _ABSENT:
+            out[eref] = (None, round(here, 3))
     return out

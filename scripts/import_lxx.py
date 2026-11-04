@@ -129,7 +129,10 @@ def main(db_path: str | None, data_dir: str | None):
                           "to check the routes by content.[/yellow]")
         elif english:
             routed: dict[str, str] = {}
+            also: dict[str, list[str]] = {}  # the map's further rows for an English verse it splits
             for lxx_ref, standard_ref, _ in batch:  # the server takes the first row for a standard_ref
+                if standard_ref in routed:
+                    also.setdefault(standard_ref, []).append(lxx_ref)
                 routed.setdefault(standard_ref, lxx_ref)
             routed = {e: swete_ref(routed.get(e, e)) for e in bible}
             # Daniel, Susanna, and Bel are looked up under the Old Greek's code, with Theodotion's English
@@ -139,12 +142,13 @@ def main(db_path: str | None, data_dir: str | None):
                 return f"{as_looked_up.get(book, book)}.{rest}"
             greek_english = {looked_up(ref): text for ref, text in english.items()}
             swete_refs = {looked_up(r[0]) for r in rows}
-            found = content_routes(bible, routed, greek_english, swete_refs)
+            found = content_routes(bible, routed, greek_english, swete_refs, also)
             conn.executemany("INSERT INTO lxx_routes (standard_ref, lxx_ref, score) VALUES (?, ?, ?)",
                              [(e, ref, score) for e, (ref, score) in found.items()])
             conn.commit()
-            console.print(f"  [green]✓[/green] {len(found):,} English verses re-routed to the Swete verse "
-                          "that holds them")
+            absent = sum(1 for ref, _ in found.values() if ref is None)
+            console.print(f"  [green]✓[/green] {len(found) - absent:,} English verses re-routed to the Swete verse "
+                          f"that holds them, {absent:,} found to have none")
 
         conn.execute("ANALYZE"); conn.commit()
         console.print("\n[bold green]✓ LXX import complete![/bold green]")

@@ -1,6 +1,6 @@
 {
   "about": "Every source the app serves from its SQLite corpora, with counts, licenses, and fingerprints. Written by scripts/corpus_manifest.py; compare with --check.",
-  "generated": "2026-11-03",
+  "generated": "2026-11-04",
   "fingerprint": "First 16 hex digits of a SHA-256 over each source's identity query (row count and rowid range, per source key). It changes when rows are added, removed, or regrouped, and does not see an in-place edit of a row's text.",
   "databases": {
     "study_bible": "db/study_bible.db",
@@ -124,20 +124,20 @@
       "license": "Public domain (digitization GPL-3.0)",
       "url": "https://github.com/eliranwong/LXX-Swete-1930",
       "credit_in_notice": true,
-      "fingerprint": "sha256:680d6999a3654ca7"
+      "fingerprint": "sha256:6cf2a4f16083c64e"
     },
     {
       "id": "lxx-brenton",
       "name": "English Septuagint (L.C.L. Brenton, 1851)",
       "database": "study_bible",
       "table": "lxx_verses",
-      "count": 28272,
+      "count": 28255,
       "unit": "verses",
-      "rows": 28272,
+      "rows": 28255,
       "license": "Public domain",
       "url": "https://ebible.org (eng-Brenton)",
       "credit_in_notice": true,
-      "fingerprint": "sha256:e62da3f46c759846"
+      "fingerprint": "sha256:3eccf857210543a4"
     },
     {
       "id": "versification",

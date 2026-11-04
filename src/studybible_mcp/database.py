@@ -730,13 +730,14 @@ class StudyBibleDB:
 
     async def standard_to_lxx(self, standard_ref: str) -> str | None:
         """Map a standard (English) reference to its LXX reference, if it differs.
-        A route found by content (lxx_routes) comes before Copenhagen's map."""
+        A route found by content (lxx_routes) comes before Copenhagen's map. '' means the
+        Septuagint has no verse for it (a route with no lxx_ref, as for Jeremiah 46:1)."""
         if standard_ref.startswith("Psa."):
             return await self._psalm_to_lxx(standard_ref)
         if await self._has_lxx_routes():
             row = await self._fetchone("SELECT lxx_ref FROM lxx_routes WHERE standard_ref = ?", (standard_ref,))
             if row:
-                return row["lxx_ref"]
+                return row["lxx_ref"] or ""
         row = await self._fetchone(
             "SELECT lxx_ref FROM versification_map WHERE standard_ref = ?", (standard_ref,)
         )
@@ -1897,7 +1898,7 @@ def create_schema(conn: sqlite3.Connection):
         -- (see parsers.lxx.content_routes). Checked before versification_map.
         CREATE TABLE IF NOT EXISTS lxx_routes (
             standard_ref TEXT PRIMARY KEY,  -- English-scheme reference
-            lxx_ref TEXT,                   -- the Swete verse that holds it
+            lxx_ref TEXT,                   -- the Swete verse that holds it, NULL where the Greek has none
             score REAL                      -- how closely Brenton's English there matches the English text
         );
         CREATE INDEX IF NOT EXISTS idx_lxx_routes_lxx ON lxx_routes(lxx_ref);
