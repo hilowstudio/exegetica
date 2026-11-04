@@ -323,3 +323,58 @@ create table if not exists library_comprehension (
     word_count   integer,                     -- invalidation guard (rebuild if the text changed)
     built_at     timestamptz not null default now()
 );
+
+
+-- ===========================================================================
+-- Harness Phase 3-4 (docs/harness-maturity-proposal.md, docs/decisions/0011-0013).
+-- The app runs without these tables (metrics and caps stay off until they exist).
+-- ===========================================================================
+
+-- One row per model run: numbers and fixed labels only (webapp/metrics.py). No text, no
+-- account, no session, no IP. The time is cut to the hour. Deleted after 90 days.
+create table if not exists turn_metrics (
+    hour             timestamptz not null,
+    route            text not null,
+    key_source       text not null,
+    model_req        text,
+    model_served     text,
+    prefix_hash      text,
+    outcome          text not null,
+    http_status      integer,
+    refusal_category text,
+    steps            integer,
+    tool_errors      integer,
+    input            integer,
+    cache_read       integer,
+    cache_write      integer,
+    output           integer,
+    first_read       integer,
+    first_write      integer,
+    est_usd          double precision not null default 0,
+    duration_ms      integer,
+    checks_dropped   integer,
+    checks_stopped   integer
+);
+create index if not exists turn_metrics_hour_idx on turn_metrics(hour);
+
+-- Daily operational counters and flags (the spend alert's once-a-day mark). Deleted after 90 days.
+create table if not exists ops_daily (
+    day   date not null,
+    name  text not null,
+    value double precision not null default 0,
+    primary key (day, name)
+);
+
+-- Daily chat caps (webapp/usage.py). `who` is a keyed hash of account id and date, or 'school'
+-- for all students together, so rows join to nothing. Deleted after two days.
+create table if not exists usage_daily (
+    day     date not null,
+    who     text not null,
+    turns   integer not null default 0,
+    est_usd double precision not null default 0,
+    primary key (day, who)
+);
+
+-- QSF DAT-07: the Google profile photo is no longer stored. Nulling (instead of dropping the
+-- column) keeps sign-in working if this runs before the code that stops writing it is deployed.
+update users set picture = null where picture is not null;

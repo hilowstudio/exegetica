@@ -58,13 +58,13 @@
     ".set-tab{border:none;background:none;color:var(--ink-soft,#54596a);font:inherit;font-size:13.5px;font-weight:600;" +
       "cursor:pointer;padding:8px 12px;border-bottom:2px solid transparent;margin-bottom:-1px}" +
     ".set-tab:hover{color:var(--ink,#1e2026)}" +
-    ".set-tab.on{color:var(--accent,#c05a64);border-bottom-color:var(--accent,#c05a64)}" +
+    ".set-tab.on{color:var(--accent,#9f4751);border-bottom-color:var(--accent,#9f4751)}" +
     ".set-pane{display:none}.set-pane.on{display:block}" +
     ".set-fld{display:block;margin-bottom:14px;font-size:13px;font-weight:600;color:var(--ink-soft,#54596a)}" +
     ".set-fld select,.set-fld input{display:block;width:100%;margin-top:6px;padding:9px 11px;font:inherit;font-weight:400;" +
       "color:var(--ink,#1e2026);background:var(--paper,#fff);border:1px solid var(--rule-strong,#c9bda6);border-radius:9px}" +
-    ".set-hint{display:block;font-weight:400;font-size:12px;color:var(--ink-faint,#8b8f9b);margin-top:5px}" +
-    ".set-hint a{color:var(--iron,#42718a)}" +
+    ".set-hint{display:block;font-weight:400;font-size:12px;color:var(--ink-faint,#5f636f);margin-top:5px}" +
+    ".set-hint a{color:var(--iron,#3d6980)}" +
     ".set-row{display:flex;align-items:center;gap:10px;margin-top:4px}" +
     ".set-ghost{border:1px solid var(--rule-strong,#c9bda6);background:none;color:var(--ink-soft,#54596a);font:inherit;" +
       "font-size:13px;cursor:pointer;padding:8px 12px;border-radius:9px}" +
@@ -75,7 +75,7 @@
     ".set-seg button{border:none;background:var(--paper,#fff);color:var(--ink-soft,#54596a);font:inherit;font-size:13px;" +
       "cursor:pointer;padding:8px 16px;border-right:1px solid var(--rule,#ddd3c1)}" +
     ".set-seg button:last-child{border-right:none}" +
-    ".set-seg button.on{background:var(--accent,#c05a64);color:#fff}" +
+    ".set-seg button.on{background:var(--accent,#9f4751);color:var(--on-accent,#fff)}" +
     ".set-acct{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 14px;border:1px solid var(--rule,#ddd3c1);" +
       "border-radius:10px;background:var(--paper,#fff)}" +
     ".set-acct .acct-who{flex:1;min-width:150px}" +
@@ -84,8 +84,24 @@
     ".set-acct .acct-rl{display:inline-block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--iron-soft,#5f8698);" +
       "border:1px solid var(--rule,#ddd3c1);border-radius:999px;padding:2px 8px;margin-top:8px}" +
     ".set-acct a{flex-shrink:0;text-decoration:none;padding:9px 14px;border-radius:9px;font-size:13.5px;font-weight:600}" +
-    ".set-acct a.act-in{background:var(--accent,#c05a64);color:#fff}" +
-    ".set-acct a.act-out{border:1px solid var(--rule-strong,#c9bda6);color:var(--ink-soft,#54596a)}";
+    ".set-acct a.act-in{background:var(--accent,#9f4751);color:var(--on-accent,#fff)}" +
+    ".set-acct a.act-out{border:1px solid var(--rule-strong,#c9bda6);color:var(--ink-soft,#54596a)}" +
+    ".set-data{margin-top:18px;border-top:1px solid var(--rule,#ddd3c1);padding-top:14px}" +
+    ".set-data h3{margin:0 0 4px;font-size:14px;color:var(--ink,#1e2026)}" +
+    ".set-data p{margin:0 0 10px;font-size:12.5px;line-height:1.5;color:var(--ink-soft,#54596a)}" +
+    ".set-data p a{color:var(--iron,#3d6980)}" +
+    ".set-data .set-row{flex-wrap:wrap}" +
+    ".set-data a.set-ghost{text-decoration:none;display:inline-flex;align-items:center}" +
+    ".set-del{margin-top:10px;padding:12px;border:1px solid var(--rule-strong,#c9bda6);border-radius:10px;background:var(--paper,#fff)}" +
+    ".set-del input{width:100%;margin:6px 0 8px;padding:8px 10px;font:inherit;color:var(--ink,#1e2026);background:var(--surface,#fff);" +
+      "border:1px solid var(--rule-strong,#c9bda6);border-radius:8px}" +
+    ".set-danger{border:0;background:var(--err,#a34919);color:var(--on-accent,#fff);font:inherit;font-size:13px;font-weight:600;" +
+      "cursor:pointer;padding:8px 14px;border-radius:9px}" +
+    ".set-danger:disabled{opacity:.45;cursor:default}" +
+    ".set-msg{font-size:12.5px;color:var(--ink-soft,#54596a);margin-top:8px}" +
+    ".set-x:focus-visible,.set-tab:focus-visible,.set-ghost:focus-visible,.set-danger:focus-visible,.set-seg button:focus-visible," +
+      ".set-acct a:focus-visible{outline:2px solid var(--accent,#9f4751);outline-offset:2px}" +
+    "@media (pointer:coarse){.set-x{min-width:44px;min-height:44px}.set-tab,.set-ghost,.set-danger,.set-seg button,.set-acct a{min-height:44px}}";
   document.head.appendChild(css);
 
   // ---- modal DOM ----
@@ -96,10 +112,28 @@
       '<div class="set-head"><h2>Settings</h2><button class="set-x" type="button" aria-label="Close">×</button></div>' +
       '<div class="set-tabs">' +
         '<button class="set-tab on" type="button" data-p="account">Account</button>' +
-        '<button class="set-tab" type="button" data-p="model">Model &amp; Key</button>' +
+        '<button class="set-tab" type="button" data-p="model" id="set-tab-model" style="display:none">Model &amp; Key</button>' +
         '<button class="set-tab" type="button" data-p="appearance">Appearance</button>' +
       '</div>' +
-      '<div class="set-pane on" id="setp-account"><div class="set-acct" id="set-acct"><div class="acct-em">Loading…</div></div></div>' +
+      '<div class="set-pane on" id="setp-account"><div class="set-acct" id="set-acct"><div class="acct-em">Loading…</div></div>' +
+        '<div class="set-data">' +
+          '<h3>Your data</h3>' +
+          '<p>What Exegetica keeps, and who can read it, is on the <a href="/privacy">privacy page</a>.</p>' +
+          '<div class="set-row" id="set-mine" hidden>' +
+            '<a class="set-ghost" href="/api/account/export" download>Download my data</a>' +
+            '<button class="set-ghost" id="set-del-open" type="button">Delete my account</button>' +
+          '</div>' +
+          '<div class="set-del" id="set-del" hidden>' +
+            '<p>This deletes your account and everything saved in it: studies, verses, reading places, and any library shelf. It cannot be undone. Type <b>delete</b> to confirm.</p>' +
+            '<label for="set-del-in" class="set-hint" style="margin:0">Confirmation</label>' +
+            '<input id="set-del-in" type="text" autocomplete="off" spellcheck="false">' +
+            '<div class="set-row"><button class="set-danger" id="set-del-go" type="button" disabled>Delete my account</button>' +
+            '<button class="set-ghost" id="set-del-cancel" type="button">Cancel</button></div>' +
+          '</div>' +
+          '<div class="set-row" style="margin-top:10px"><button class="set-ghost" id="set-clear" type="button">Clear this browser</button></div>' +
+          '<p class="set-msg" id="set-data-msg" role="status" aria-live="polite"></p>' +
+        '</div>' +
+      '</div>' +
       '<div class="set-pane" id="setp-model">' +
         '<p class="set-hint" style="margin:0 0 14px">Bring your own key. It is stored only in this browser and sent to the app only to make your request — the server never saves it. Chat and Generator share this.</p>' +
         '<label class="set-fld">Provider<select id="set-prov"></select></label>' +
@@ -176,14 +210,59 @@
           (u.email ? '<div class="acct-em">' + esc(u.email) + "</div>" : "") +
           '<span class="acct-rl">' + (u.role === "teacher" ? "Teacher" : "Student") + "</span></div>" +
           '<a class="act-out" href="/auth/logout?next=' + encodeURIComponent(here) + '">Sign out</a>';
-        if (u.role === "teacher") document.querySelectorAll(".rail .teach").forEach(function (e) { e.style.display = ""; });
+        // Teacher-only: the rail's teacher modules and bringing a model or key (the server
+        // ignores both for students).
+        if (u.role === "teacher") {
+          document.querySelectorAll(".rail .teach").forEach(function (e) { e.style.display = ""; });
+          $("#set-tab-model").style.display = "";
+        }
+        // Admin-only modules (Image Studio). The server checks again on every request.
+        if (d.admin) {
+          document.querySelectorAll(".rail .admin").forEach(function (e) { e.style.display = ""; });
+        }
+        $("#set-mine").hidden = false;
       } else {
+        $("#set-mine").hidden = true;
+        $("#set-del").hidden = true;
         box.innerHTML = '<div class="acct-who"><div class="acct-nm">Not signed in</div>' +
-          '<div class="acct-em">Sign in to sync your studies across devices.</div></div>' +
+          '<div class="acct-em">Sign in with your school Google account to use chat and keep your studies.</div></div>' +
           '<a class="act-in" href="/auth/login?next=' + encodeURIComponent(here) + '">Sign in with Google</a>';
       }
     }).catch(function () { box.innerHTML = '<div class="acct-em">Account unavailable right now.</div>'; });
   }
+
+  // ---- Your data: Delete my account, Clear this browser ----
+  var delBox = $("#set-del"), delIn = $("#set-del-in"), delGo = $("#set-del-go"), dataMsg = $("#set-data-msg");
+  $("#set-del-open").onclick = function () { delBox.hidden = false; delIn.value = ""; delGo.disabled = true; delIn.focus(); };
+  $("#set-del-cancel").onclick = function () { delBox.hidden = true; };
+  delIn.addEventListener("input", function () { delGo.disabled = delIn.value.trim().toLowerCase() !== "delete"; });
+  delGo.onclick = function () {
+    delGo.disabled = true; dataMsg.textContent = "Deleting…";
+    fetch("/api/account/delete", { method: "POST", credentials: "same-origin",
+      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ confirm: "delete" }) })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (x) {
+        if (!x.ok) { dataMsg.textContent = (x.d && x.d.error) || "The account could not be deleted."; delGo.disabled = false; return; }
+        clearBrowser();
+        dataMsg.textContent = "Your account is deleted.";
+        setTimeout(function () { location.href = "/"; }, 1200);
+      })
+      .catch(function () { dataMsg.textContent = "The account could not be deleted. Try again later."; delGo.disabled = false; });
+  };
+  // Everything Exegetica keeps in this browser uses one of these prefixes.
+  function clearBrowser() {
+    [localStorage, sessionStorage].forEach(function (store) {
+      try {
+        Object.keys(store).forEach(function (k) { if (/^(studybible\.|exeg-)/.test(k)) store.removeItem(k); });
+      } catch (e) {}
+    });
+  }
+  $("#set-clear").onclick = function () {
+    if (!confirm("Remove everything Exegetica keeps in this browser: settings, any API key, and anything saved before sign-in? Your account is not affected.")) return;
+    clearBrowser();
+    dataMsg.textContent = "This browser is cleared.";
+    setTimeout(function () { location.reload(); }, 900);
+  };
 
   // ---- boot ----
   var gear = document.getElementById("open-settings");

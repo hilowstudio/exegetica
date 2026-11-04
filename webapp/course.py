@@ -40,6 +40,19 @@ COURSE_DOC_TITLES = {
 # Order course docs sensibly on the landing page.
 COURSE_DOC_ORDER = list(COURSE_DOC_TITLES)
 
+# The only file stems in john-materials/ that students may open. Everything else there (answer
+# keys, both finals, anything added later) is teacher-only until a pattern here says otherwise.
+_STUDENT_FILE = re.compile("(?:" + "|".join([
+    r"GEN_(?:U\d+|CHK-\d+)_reading-guide",
+    r"GEN_(?:U\d+|CHK-\d+)-L\d+_daily-page",
+    r"GEN_U\d+_[\w-]+-card",
+    r"GEN_project-\d+-[\w-]+-guide",
+    r"GEN_review-\d+-[\w-]+-study-guide",
+    r"GEN_(?:reading|quiet-time)-journal(?:-guide)?",
+    r"U\d+-[\w-]+-reading",
+    *(re.escape(stem) for stem in COURSE_DOC_TITLES),
+]) + ")")
+
 # Locked unit -> memory-verse reference (the 16-verse anchor set). The full ESV
 # text lives in the Memory Verse master sheet; here we surface just the reference
 # as a call-out on the unit/day pages.
@@ -104,7 +117,8 @@ def scan_artifacts() -> list[dict]:
                 rec["unit_key"] = head.group(1)
         arts.append(rec)
 
-    # Student + course docs (john-materials/)
+    # Student + course docs (john-materials/). Default-deny: a file is shown to students only
+    # if it matches a known student pattern, so a new answer key or exam stays teacher-only.
     for p in sorted(STUDENT_DIR.glob("*.md")):
         name, stem = p.name, p.stem
         if name.endswith("_TEACHER-KEY.md"):
@@ -112,6 +126,11 @@ def scan_artifacts() -> list[dict]:
                          "unit_key": "", "lesson_in_unit": None, "passage_slug": "",
                          "title": _h1(p) or "Teacher Key",
                          "base": stem[: -len("_TEACHER-KEY")]})
+            continue
+        if not _STUDENT_FILE.fullmatch(stem):
+            arts.append({"path": p, "file": name, "audience": "teacher", "kind": "teacher_material",
+                         "unit_key": "", "lesson_in_unit": None, "passage_slug": "",
+                         "title": _h1(p) or stem, "stem": stem})
             continue
         rg = re.match(r"GEN_(U\d+|CHK-\d+)_reading-guide$", stem)
         if rg:

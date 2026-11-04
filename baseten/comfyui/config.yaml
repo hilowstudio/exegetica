@@ -1,0 +1,39 @@
+# ComfyUI on Baseten for the Image Studio's self-hosted route (docs/decisions/0017-image-studio.md).
+# One H100 that scales to zero when idle. Requests reach ComfyUI's own API through
+# https://model-<id>.api.baseten.co/environments/production/sync/<comfy route>.
+# Deploy: baseten/README.md
+model_name: exegetica-comfyui
+python_version: py312
+base_image:
+  image: python:3.12-slim-bookworm
+  python_executable_path: /usr/local/bin/python3
+# Triton compiles small GPU kernels while a job runs and needs a C compiler for them.
+system_packages:
+  - build-essential
+build_commands:
+  - curl -fsSL https://github.com/Comfy-Org/ComfyUI/archive/refs/tags/v0.44.0.tar.gz | tar -xz -C /app && mv /app/ComfyUI-0.44.0 /app/ComfyUI
+  - pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
+  - pip install --no-cache-dir -r /app/ComfyUI/requirements.txt
+  - sed -i 's/\r$//' /app/data/start.sh /app/data/extra_model_paths.yaml
+docker_server:
+  start_command: sh /app/data/start.sh
+  server_port: 8188
+  predict_endpoint: /prompt
+  readiness_endpoint: /system_stats
+  liveness_endpoint: /system_stats
+resources:
+  accelerator: H100
+  use_gpu: true
+runtime:
+  # ComfyUI queues the work itself. This only lets status checks through while a video renders.
+  predict_concurrency: 8
+# MiniMax H3 image-to-video, the files Comfy's own template loads. About 42 GB, read-only at runtime.
+weights:
+  - source: hf://Comfy-Org/MiniMax-H3@54472221d27c695fca9621b0c3ed52f06c4af707
+    mount_location: /models/minimax-h3
+    allow_patterns:
+      - diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors
+      - text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors
+      - vae/minimax_h3_video_vae_int8_convrot.safetensors
+      - vae/minimax_h3_audio_vae_fp32.safetensors
+      - loras/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors

@@ -18,8 +18,12 @@ The API key is supplied per request and used to build a throwaway client; it is
 never stored or logged server-side.
 """
 
+import asyncio
 import json
 import logging
+import re
+
+from webapp import policy
 
 logger = logging.getLogger("study-bible-web.providers")
 
@@ -43,18 +47,24 @@ async def _call_tool(mcp, name: str, args: dict) -> tuple[str, bool]:
 
 # Per-turn token usage, logged so cost and cache health are visible in the Fly logs.
 # $ per million tokens: (input, output, cache-read multiplier); cache writes are 1.25x input.
-_PRICES = {"claude-opus-5-5": (4.0, 20.0, 0.05), "claude-sonnet-4-6": (3.0, 15.0, 0.10)}
+_PRICES = {"claude-opus-5-5": (4.0, 20.0, 0.05), "claude-sonnet-5-5": (2.0, 10.0, 0.05),
+           "claude-sonnet-5": (2.0, 10.0, 0.10), "claude-haiku-5-5": (0.10, 0.50, 0.10),
+           "claude-sonnet-4-6": (3.0, 15.0, 0.10)}
+
+
+def _usd(model: str, u: dict) -> float:
+    """Estimated dollars for the usage so far; 0 for a model without a price here."""
+    if model not in _PRICES:
+        return 0.0
+    inp, outp, read = _PRICES[model]
+    return (u["input"] * inp + u["cache_write"] * inp * 1.25 + u["cache_read"] * inp * read
+            + u["output"] * outp) / 1e6
 
 
 def _log_usage(model: str, u: dict) -> None:
     if not u["requests"]:
         return
-    cost = ""
-    if model in _PRICES:
-        inp, outp, read = _PRICES[model]
-        usd = (u["input"] * inp + u["cache_write"] * inp * 1.25 + u["cache_read"] * inp * read
-               + u["output"] * outp) / 1e6
-        cost = f" est=${usd:.4f}"
+    cost = f" est=${_usd(model, u):.4f}" if model in _PRICES else ""
     total_in = u["input"] + u["cache_write"] + u["cache_read"]
     hit = f" cache_hit={u['cache_read'] / total_in:.0%}" if total_in else ""
     logger.info("usage model=%s requests=%d input=%d cache_read=%d cache_write=%d output=%d%s%s",
@@ -250,42 +260,61 @@ def _chat_messages(history: list[dict]) -> list[dict]:
     return msgs
 
 
-def _attempt(cfg, api_key, model, system_text, history, mcp):
+def _attempt(cfg, api_key, model, system_text, history, mcp, limits=None, stats=None):
     """One streaming attempt on a single model (returns an async generator)."""
     kind = cfg["kind"]
     if kind == "anthropic":
-        return _run_anthropic(api_key, model, system_text, history, mcp)
+        return _run_anthropic(api_key, model, system_text, history, mcp, limits, stats)
     if kind == "responses":                       # OpenAI: reasoning + tools
         return _run_openai_responses(cfg, api_key, model, system_text, history, mcp)
     return _run_openai(cfg, api_key, model, system_text, history, mcp)  # Grok / Gemini
 
 
+OUTCOMES = ("complete", "cut_off", "step_limit", "budget", "tools_failed", "refused",
+            "provider_error", "cancelled")
+
+
 async def run(provider: str, api_key: str | None, model: str,
-              system_text: str, history: list[dict], mcp) -> "AsyncIterator[dict]":
+              system_text: str, history: list[dict], mcp, limits=None, stats=None) -> "AsyncIterator[dict]":
     """Dispatch a streaming, tool-using conversation, with a stable-model fallback.
 
     Tries the requested model first. If it fails with a model-availability error
     *before* anything has streamed to the user, it retries once on the provider's
     stable fallback model and emits a notice. A failure after content has begun,
     or an auth / rate-limit / server error, is passed through unchanged.
+
+    `limits` (webapp/policy.RunLimits) bounds steps, output, and spend; a locked run
+    (student chat) never falls back to another model.
+
+    Every run ends with one {"type": "end", "outcome": ...} event naming how it ended (OUTCOMES).
+    `stats`, if given, is filled as the run goes with numbers for webapp/metrics.py, so a caller
+    still has them when the browser closes mid-run. The Anthropic path fills all of it; the
+    bring-your-own-key paths report the outcome only.
     """
+    stats = {} if stats is None else stats
+    stats.setdefault("model_req", (model or "").strip() or None)
     cfg = PROVIDERS.get(provider)
     if not cfg:
+        stats["outcome"] = "provider_error"
         yield {"type": "error", "message": f"Unknown provider: {provider}"}
+        yield {"type": "end", "outcome": "provider_error"}
         return
     if cfg["kind"] != "anthropic" and not api_key:
+        stats["outcome"] = "provider_error"
         yield {"type": "error", "message": f"An API key is required for {cfg['label']}."}
+        yield {"type": "end", "outcome": "provider_error"}
         return
 
     requested = (model or "").strip() or cfg["default_model"]
-    fallback = cfg.get("fallback_model")
+    fallback = None if limits and limits.locked else cfg.get("fallback_model")
     candidates = [requested] + ([fallback] if fallback and fallback != requested else [])
 
+    errored = False
     for i, current in enumerate(candidates):
         last = i == len(candidates) - 1
         emitted = False
         fell_back = False
-        async for ev in _attempt(cfg, api_key, current, system_text, history, mcp):
+        async for ev in _attempt(cfg, api_key, current, system_text, history, mcp, limits, stats):
             if ev["type"] in ("text", "tool_call", "tool_done", "thinking"):
                 emitted = True
             if ev["type"] == "error" and not emitted and not last and _is_model_error(ev.get("message", "")):
@@ -293,9 +322,13 @@ async def run(provider: str, api_key: str | None, model: str,
                        "message": f"Model “{current}” is unavailable — falling back to “{candidates[i + 1]}”."}
                 fell_back = True
                 break
+            errored = errored or ev["type"] == "error"
             yield ev
         if not fell_back:
-            return
+            break
+    if stats.get("outcome") in (None, "cancelled"):   # the BYOK paths don't set one
+        stats["outcome"] = "provider_error" if errored else "complete"
+    yield {"type": "end", "outcome": stats["outcome"]}
 
 
 # ---------------------------------------------------------------------------
@@ -323,10 +356,45 @@ def _after_fallback(content: list) -> list:
     return kept + list(content[last + 1:])
 
 
-async def _run_anthropic(api_key, model, system_text, history, mcp):
+def _step_usage(u) -> dict:
+    return {"input": getattr(u, "input_tokens", 0) or 0,
+            "cache_read": getattr(u, "cache_read_input_tokens", 0) or 0,
+            "cache_write": getattr(u, "cache_creation_input_tokens", 0) or 0,
+            "output": getattr(u, "output_tokens", 0) or 0}
+
+
+_CATEGORY = re.compile(r"^[a-z_]{1,40}$")
+
+
+def _refusal_category(final) -> str | None:
+    """The refusal's category label, if the API gave one in a recognisable shape."""
+    cat = getattr(getattr(final, "stop_details", None), "category", None)
+    return cat if isinstance(cat, str) and _CATEGORY.match(cat) else None
+
+
+RETRY_WAIT = 2.0   # seconds before the one retry of a failed step
+_RETRY_ERROR_TYPES = {"overloaded_error", "api_error", "rate_limit_error", "timeout_error"}
+
+
+def _retryable(e: Exception) -> bool:
+    """A failure that a second try can fix: overload, rate limit, a server error, or a dropped
+    connection. An error sent mid-stream arrives with the stream's 200 status, so its body decides."""
+    import anthropic
+    if isinstance(e, getattr(anthropic, "APIConnectionError", ())):
+        return True
+    if isinstance(e, getattr(anthropic, "APIStatusError", ())):
+        if e.status_code in (408, 409, 429) or e.status_code >= 500:
+            return True
+        err = e.body.get("error") if isinstance(e.body, dict) else None
+        return isinstance(err, dict) and err.get("type") in _RETRY_ERROR_TYPES
+    return type(e).__module__.split(".")[0] in ("httpx", "httpx2", "httpcore")
+
+
+async def _run_anthropic(api_key, model, system_text, history, mcp, limits=None, stats=None):
     import anthropic
     from anthropic import AsyncAnthropic
 
+    stats = {} if stats is None else stats
     client = AsyncAnthropic(api_key=api_key) if api_key else AsyncAnthropic()
     system = [{"type": "text", "text": system_text, "cache_control": {"type": "ephemeral"}}]
     messages = _anthropic_messages(history)
@@ -337,62 +405,135 @@ async def _run_anthropic(api_key, model, system_text, history, mcp):
     # top-level automatic caching moves a second breakpoint to the end of the conversation
     # on each request, so every step of the tool loop, and the next turn, re-reads the
     # history from cache instead of at full price.
-    params = dict(model=model, max_tokens=64000, system=system, tools=mcp.tools,
-                  thinking={"type": "adaptive", "display": "summarized"},
+    params = dict(model=model, max_tokens=limits.max_tokens if limits else 64000, system=system,
+                  tools=mcp.tools, thinking={"type": "adaptive", "display": "summarized"},
                   cache_control={"type": "ephemeral"})
     usage = {"requests": 0, "input": 0, "cache_read": 0, "cache_write": 0, "output": 0}
     if model in _EFFORT:
         params["output_config"] = {"effort": _EFFORT[model]}
-    fallback = model.startswith(_REFUSAL_FALLBACK_PREFIXES)
+    # A locked run (student chat) ends on a refusal; no other model answers in its place.
+    fallback = model.startswith(_REFUSAL_FALLBACK_PREFIXES) and not (limits and limits.locked)
     if fallback:
         params.update(betas=[_FALLBACK_BETA], fallbacks="default")
     stream_fn = client.beta.messages.stream if fallback else client.messages.stream
 
-    try:
-        for _turn in range(MAX_TOOL_TURNS):
-            async with stream_fn(messages=messages, **params) as stream:
-                async for event in stream:
-                    if event.type == "content_block_start" and \
-                            getattr(event.content_block, "type", None) == "tool_use":
-                        yield {"type": "tool_call", "name": event.content_block.name}
-                    elif event.type == "content_block_delta":
-                        d = event.delta
-                        if d.type == "text_delta":
-                            yield {"type": "text", "text": d.text}
-                        elif d.type == "thinking_delta":
-                            yield {"type": "thinking", "text": d.thinking}
-                final = await stream.get_final_message()
-            u = final.usage
+    max_steps = limits.max_steps if limits else MAX_TOOL_TURNS
+    locked = bool(limits and limits.locked)
+    spent = 0.0          # estimated dollars, priced per step at the model that served it
+    cur = None           # usage of the step in flight, tallied from stream events
+    failed_steps = 0     # consecutive steps whose every tool call failed
+    retried = False      # one retry per run, for a step that failed before any text reached the reader
+    outcome = None
+    stats.update(model_req=model, steps=0, tool_errors=0)
+
+    def tally_partial():
+        nonlocal cur, spent
+        if cur is not None:   # a step cut short: count what it used
             usage["requests"] += 1
-            usage["input"] += u.input_tokens or 0
-            usage["cache_read"] += getattr(u, "cache_read_input_tokens", 0) or 0
-            usage["cache_write"] += getattr(u, "cache_creation_input_tokens", 0) or 0
-            usage["output"] += u.output_tokens or 0
+            for k, v in cur.items():
+                usage[k] += v
+            spent += _usd(model, cur)
+            cur = None
+
+    try:
+        for step in range(max_steps):
+            # The last allowed step, or the first one past the spend ceiling, must answer with what
+            # it has rather than call more tools, so a run never ends without a reply.
+            over_budget = limits is not None and spent >= limits.max_usd
+            final_step = step == max_steps - 1 or over_budget
+            call = dict(params, tool_choice={"type": "none"}) if final_step and step else params
+            while True:
+                shown = False   # text from this step has reached the reader
+                try:
+                    async with stream_fn(messages=messages, **call) as stream:
+                        async for event in stream:
+                            if event.type == "message_start":
+                                cur = _step_usage(event.message.usage)
+                            elif event.type == "message_delta" and cur is not None and getattr(event, "usage", None):
+                                cur["output"] = getattr(event.usage, "output_tokens", 0) or cur["output"]
+                            elif event.type == "content_block_start" and \
+                                    getattr(event.content_block, "type", None) == "tool_use":
+                                yield {"type": "tool_call", "name": event.content_block.name}
+                            elif event.type == "content_block_delta":
+                                d = event.delta
+                                if d.type == "text_delta":
+                                    shown = True
+                                    yield {"type": "text", "text": d.text}
+                                elif d.type == "thinking_delta":
+                                    yield {"type": "thinking", "text": d.thinking}
+                        final = await stream.get_final_message()
+                    break
+                except Exception as e:  # noqa: BLE001
+                    # Once text has reached the reader it stays, and the run ends with a notice below.
+                    if shown or retried or not _retryable(e):
+                        raise
+                    retried = True
+                    logger.warning("anthropic step %d failed (%s), retrying once", step, type(e).__name__)
+                    tally_partial()
+                    await asyncio.sleep(RETRY_WAIT)
+            cur = None
+            served = getattr(final, "model", None) or model
+            su = _step_usage(final.usage)
+            if not usage["requests"]:
+                stats.update(first_read=su["cache_read"], first_write=su["cache_write"])
+            usage["requests"] += 1
+            for k, v in su.items():
+                usage[k] += v
+            spent += _usd(served if served in _PRICES else model, su)
+            stats.update(steps=usage["requests"], model_served=served)
 
             if final.stop_reason == "refusal":   # declined, and any fallback declined too
-                yield {"type": "error",
-                       "message": "Claude declined to answer this request. Try rephrasing it, or ask it a different way."}
-                return
+                stats["refusal_category"] = _refusal_category(final)
+                yield {"type": "error", "message": policy.REFUSAL_TEXT if locked else
+                       "Claude declined to answer this request. Try rephrasing it, or ask it a different way."}
+                outcome = "refused"
+                break
             content = _after_fallback(final.content)
             messages.append({"role": "assistant", "content": content})
+            if final.stop_reason == "max_tokens":
+                yield {"type": "notice", "incomplete": True,
+                       "message": "This answer was cut off at its length limit. Ask for a shorter piece."}
+                outcome = "cut_off"
+                break
             if final.stop_reason != "tool_use":
-                return
+                outcome = "budget" if over_budget else "step_limit" if final_step and step else "complete"
+                break
+            if final_step:   # tool_choice "none" should prevent this; never run tools past the limit
+                yield {"type": "notice", "incomplete": True,
+                       "message": "This answer reached its step limit. Ask a narrower question to go further."}
+                outcome = "step_limit"
+                break
             tool_results = []
             for block in content:
                 if block.type != "tool_use":
                     continue
                 out, is_error = await _call_tool(mcp, block.name, block.input)
+                stats["tool_errors"] += bool(is_error)
                 tool_results.append({"type": "tool_result", "tool_use_id": block.id,
                                      "content": out, "is_error": is_error})
                 yield {"type": "tool_done", "name": block.name, "input": block.input,
                        "output": _cap(out), "error": is_error}
             messages.append({"role": "user", "content": tool_results})
+            failed_steps = failed_steps + 1 if tool_results and all(r["is_error"] for r in tool_results) else 0
+            if failed_steps >= 2:   # the library is down; stop paying for steps that can't ground an answer
+                yield {"type": "notice", "incomplete": True, "message": policy.TOOLS_DOWN}
+                outcome = "tools_failed"
+                break
     except anthropic.APIStatusError as e:
-        yield {"type": "error", "message": f"Anthropic API error {e.status_code}: {getattr(e, 'message', str(e))}"}
-    except Exception as e:  # noqa: BLE001
+        # The raw error can echo the request, so it stays out of the reply and the metrics.
+        logger.warning("anthropic API error status=%s type=%s", e.status_code, type(e).__name__)
+        stats["http_status"] = e.status_code
+        outcome = "provider_error"
+        yield {"type": "error", "message": policy.PROVIDER_ERROR if locked else
+               f"{policy.PROVIDER_ERROR} (Anthropic API error {e.status_code})"}
+    except Exception:  # noqa: BLE001
         logger.exception("anthropic stream failed")
-        yield {"type": "error", "message": str(e)}
+        outcome = "provider_error"
+        yield {"type": "error", "message": policy.PROVIDER_ERROR}
     finally:
+        tally_partial()       # a step cut short (closed browser, failure): count what it used
+        stats.update({k: usage[k] for k in ("input", "cache_read", "cache_write", "output")},
+                     est_usd=round(spent, 6), outcome=outcome or "cancelled")
         _log_usage(model, usage)
         import contextlib
         with contextlib.suppress(Exception):

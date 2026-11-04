@@ -56,6 +56,12 @@ def presign_put(object_key: str, content_type: str, expires: int = 600) -> str:
     )
 
 
+def presign_get(object_key: str, expires: int = 600) -> str:
+    """A presigned GET URL, so an outside service can read one private object for a short time."""
+    return _get_client().generate_presigned_url(
+        "get_object", Params={"Bucket": _bucket(), "Key": object_key}, ExpiresIn=expires)
+
+
 def _head(object_key: str) -> dict | None:
     try:
         r = _get_client().head_object(Bucket=_bucket(), Key=object_key)
@@ -134,3 +140,21 @@ async def get_bytes_async(object_key: str) -> bytes | None:
 
 async def delete_async(object_key: str) -> None:
     await asyncio.to_thread(_delete, object_key)
+
+
+def _delete_prefix(prefix: str) -> int:
+    """Delete every object under `prefix`; returns how many. Raises on failure, so account
+    deletion can stop before it removes the database rows that point here."""
+    client, bucket, n = _get_client(), _bucket(), 0
+    for page in client.get_paginator("list_objects_v2").paginate(Bucket=bucket, Prefix=prefix):
+        keys = [{"Key": o["Key"]} for o in page.get("Contents") or []]
+        if keys:
+            client.delete_objects(Bucket=bucket, Delete={"Objects": keys, "Quiet": True})
+            n += len(keys)
+    return n
+
+
+async def delete_prefix_async(prefix: str) -> int:
+    if not prefix or not prefix.endswith("/"):
+        raise ValueError("prefix must name a folder")
+    return await asyncio.to_thread(_delete_prefix, prefix)

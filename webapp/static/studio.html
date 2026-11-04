@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image Studio · Exegetica</title>
+<link rel="icon" href="/static/icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/scrollbars.css">
+<style>
+  :root{
+    --paper:#f0e8dc;--surface:#f8f2ea;--surface-2:#e8dfd0;--sunk:#e2d7c6;--ink:#1e2026;
+    --ink-soft:#54596a;--ink-faint:#5f636f;--rule:#ddd3c1;--rule-strong:#c9bda6;
+    --accent:#9f4751;--accent-soft:#8c414b;--iron:#3d6980;--err:#a34919;--on-accent:#fff;
+    --serif:"Spectral",Georgia,serif;--sans:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#14151a;--surface:#1b1d23;--surface-2:#23252c;--sunk:#101116;--ink:#e9e7e0;
+    --ink-soft:#a9aeb9;--ink-faint:#888c96;--rule:#2c2f37;--rule-strong:#3b3f49;
+    --accent:#dd8089;--accent-soft:#c0777f;--iron:#7fb0c2;--err:#e8895a;--on-accent:#14151a;
+  }}
+  :root[data-theme="dark"]{
+    --paper:#14151a;--surface:#1b1d23;--surface-2:#23252c;--sunk:#101116;--ink:#e9e7e0;
+    --ink-soft:#a9aeb9;--ink-faint:#888c96;--rule:#2c2f37;--rule-strong:#3b3f49;
+    --accent:#dd8089;--accent-soft:#c0777f;--iron:#7fb0c2;--err:#e8895a;--on-accent:#14151a;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html,body{height:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  .app{display:grid;grid-template-columns:58px 360px 1fr;height:100%}
+  .rail{background:var(--surface);border-right:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;gap:3px;padding:12px 0;z-index:20}
+  .rail button,.rail a.railbtn{width:42px;height:42px;border-radius:10px;border:1px solid transparent;background:none;color:var(--ink-soft);display:grid;place-items:center;cursor:pointer;text-decoration:none}
+  .rail button:hover,.rail a.railbtn:hover{background:var(--surface-2);color:var(--ink)}
+  .rail a.railbtn.active{background:var(--accent);color:var(--on-accent)}
+  .rail .sp{flex:1}
+  .rail svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+  .controls{border-right:1px solid var(--rule);background:var(--surface);display:flex;flex-direction:column;min-height:0;overflow-y:auto;padding:18px 20px;gap:16px}
+  .controls h1{font-family:var(--serif);font-weight:600;font-size:1.25rem;margin:0}
+  .sub{font-size:13px;color:var(--ink-faint);margin:2px 0 0}
+  .fld{display:flex;flex-direction:column;gap:6px}
+  .lab{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
+  .hint{font-size:13px;color:var(--ink-faint);margin:0}
+  .hint.warn{color:var(--err)}
+  .linkbtn{font:inherit;font-size:13px;border:0;background:none;padding:0;color:var(--accent);text-decoration:underline;cursor:pointer}
+  .linkbtn:disabled{color:var(--ink-faint);cursor:default;text-decoration:none}
+  .seg{display:flex;gap:4px;padding:3px;background:var(--surface-2);border:1px solid var(--rule);border-radius:9px}
+  .seg button{flex:1;font:inherit;font-size:13.5px;font-weight:600;border:0;border-radius:7px;padding:7px 8px;background:none;color:var(--ink-soft);cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chips button{font:inherit;font-size:13px;border:1px solid var(--rule-strong);border-radius:999px;padding:5px 12px;background:var(--surface);color:var(--ink-soft);cursor:pointer}
+  .chips button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);font-weight:600}
+  textarea{font:inherit;font-size:15px;min-height:120px;resize:vertical;border:1px solid var(--rule-strong);border-radius:10px;padding:10px 12px;background:var(--paper);color:var(--ink)}
+  select{font:inherit;font-size:14.5px;border:1px solid var(--rule-strong);border-radius:9px;padding:8px 10px;background:var(--paper);color:var(--ink);width:100%}
+  .check{display:flex;gap:9px;align-items:flex-start;font-size:14px;color:var(--ink-soft)}
+  .check input{margin-top:3px;accent-color:var(--accent)}
+  input[type=range]{width:100%;accent-color:var(--accent)}
+  .source{display:flex;gap:10px;align-items:center}
+  .source img{width:64px;height:64px;object-fit:cover;border-radius:8px;border:1px solid var(--rule)}
+  .source .none{font-size:13px;color:var(--ink-faint)}
+  .row{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{font:inherit;font-size:13.5px;font-weight:600;border:1px solid var(--rule-strong);border-radius:8px;padding:7px 12px;background:var(--surface);color:var(--ink-soft);cursor:pointer;text-decoration:none}
+  .btn:hover:not(:disabled){color:var(--ink);border-color:var(--ink-faint)}
+  .make{font:inherit;font-weight:600;font-size:15px;border:0;border-radius:10px;padding:12px 16px;background:var(--accent);color:var(--on-accent);cursor:pointer}
+  .make:disabled{opacity:.5;cursor:default}
+  .status{font-size:13.5px;color:var(--ink-soft);min-height:1.4em}
+  .status.err{color:var(--err)}
+  .notready{font-size:14px;background:var(--surface-2);border:1px solid var(--rule);border-radius:10px;padding:10px 12px}
+
+  .canvas{overflow-y:auto;padding:24px 28px;display:flex;flex-direction:column;gap:22px}
+  .stage{display:flex;flex-direction:column;align-items:center;gap:12px}
+  .stage .empty{color:var(--ink-faint);text-align:center;margin:14vh auto;max-width:420px}
+  .stage .empty h2{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.4rem;margin:0 0 6px}
+  .stage img,.stage video{width:auto;height:auto;max-width:100%;max-height:68vh;object-fit:contain;border-radius:10px;box-shadow:0 2px 14px rgba(0,0,0,.14);background:var(--sunk)}
+  .waiting{max-width:520px;width:100%;background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:22px 24px;text-align:center}
+  .waiting h2{font-family:var(--serif);font-weight:600;font-size:1.25rem;margin:0 0 6px}
+  .waiting p{margin:0;color:var(--ink-soft);font-size:14px}
+  .waiting .bar{height:6px;border-radius:3px;background:var(--surface-2);margin:14px 0 0;overflow:hidden}
+  .waiting .bar span{display:block;height:100%;background:var(--accent);width:0;transition:width .6s}
+  .waiting.failed h2{color:var(--err)}
+  .meta{max-width:760px;width:100%;font-size:13.5px;color:var(--ink-soft)}
+  .meta .used{font-family:var(--serif);font-size:15px;color:var(--ink);margin:0 0 4px}
+  .meta details{margin-top:4px}
+  .meta summary{cursor:pointer;color:var(--ink-faint)}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .gallery h3{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 10px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+  .grid button{position:relative;padding:0;border:2px solid transparent;border-radius:9px;background:var(--sunk);cursor:pointer;aspect-ratio:1;overflow:hidden;color:var(--ink-soft);font:inherit;font-size:13px}
+  .grid button[aria-current="true"]{border-color:var(--accent)}
+  .grid img,.grid video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+  .grid .tag{position:absolute;left:6px;bottom:6px;font-size:11px;font-weight:600;letter-spacing:.03em;background:rgba(20,21,26,.72);color:#fff;border-radius:5px;padding:2px 6px}
+  .grid .word{display:grid;place-items:center;height:100%;padding:8px;text-align:center}
+  @media(max-width:900px){
+    .app{grid-template-columns:1fr;height:auto;min-height:100%}
+    .rail{flex-direction:row;border-right:0;border-bottom:1px solid var(--rule);width:100%;padding:8px 12px;gap:4px}
+    .controls{border-right:0;border-bottom:1px solid var(--rule);overflow:visible}
+    .canvas{overflow:visible;padding:20px 16px}
+  }
+  @media (pointer:coarse){.rail button,.rail a.railbtn{width:44px;height:44px}.seg button,.chips button,.btn,.make,select{min-height:44px}}
+</style>
+</head>
+<body>
+<script>try{var _t=localStorage.getItem("studybible.theme");if(_t)document.documentElement.setAttribute("data-theme",_t);}catch(e){}</script>
+<div class="app">
+  <nav class="rail" aria-label="Primary">
+    <a class="railbtn" href="/" title="Chat" aria-label="Chat"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg></a>
+    <a class="railbtn" href="/memory" title="Scripture Memory" aria-label="Scripture Memory"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/><path d="M6.5 11h6M6.5 14h4"/></svg></a>
+    <a class="railbtn" href="/read" title="Reading Room" aria-label="Reading Room"><svg viewBox="0 0 24 24"><path d="M12 6.6C10.2 5.3 7.3 5 4.8 5.6v12.3c2.5-.6 5.4-.3 7.2 1 1.8-1.3 4.7-1.6 7.2-1V5.6C16.7 5 13.8 5.3 12 6.6z"/><path d="M12 6.6v11.7"/></svg></a>
+    <a class="railbtn teach" href="/generate" style="display:none" title="Generator" aria-label="Generator"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/></svg></a>
+    <a class="railbtn teach" href="/library" style="display:none" title="Living Library" aria-label="Living Library"><svg viewBox="0 0 24 24"><rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/><path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/></svg></a>
+    <a class="railbtn admin active" href="/studio" title="Image Studio" aria-label="Image Studio" aria-current="page"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4.5 17.5l5-5 3.5 3.5 2.5-2.5 4 4"/></svg></a>
+    <span class="sp"></span>
+    <button id="open-settings" type="button" title="Settings" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.2 7l2.6 1.5M17.2 15.5l2.6 1.5M4.2 17l2.6-1.5M17.2 8.5l2.6-1.5"/></svg></button>
+  </nav>
+
+  <aside class="controls" aria-label="Studio settings">
+    <div>
+      <h1>Image Studio</h1>
+      <p class="sub">Only you can see this page. Everything you make stays in your private folder.</p>
+    </div>
+    <div class="notready" id="notready" hidden></div>
+
+    <div class="fld">
+      <span class="lab" id="mode-lab">Mode</span>
+      <div class="seg" role="group" aria-labelledby="mode-lab" id="mode">
+        <button type="button" data-v="create" aria-pressed="true">Create</button>
+        <button type="button" data-v="edit" aria-pressed="false">Edit</button>
+        <button type="button" data-v="video" aria-pressed="false">Video</button>
+      </div>
+    </div>
+
+    <div class="fld" id="source-fld" hidden>
+      <span class="lab" id="source-lab">Image to edit</span>
+      <div class="source">
+        <img id="source-img" alt="The chosen image" hidden>
+        <span class="none" id="source-none">Upload an image, or pick one below and choose Edit this.</span>
+      </div>
+      <div class="row">
+        <button class="btn" type="button" id="upload-btn">Upload an image</button>
+        <button class="btn" type="button" id="clear-source" hidden>Remove</button>
+      </div>
+      <input type="file" id="upload" accept="image/png,image/jpeg,image/webp" hidden>
+    </div>
+
+    <div class="fld">
+      <label class="lab" for="prompt" id="prompt-lab">Describe the image</label>
+      <textarea id="prompt" maxlength="2000" placeholder="An apple on a wooden table in morning light"></textarea>
+      <label class="check"><input type="checkbox" id="rewrite" checked><span>Rewrite my words into a detailed prompt first. You'll see the rewrite.</span></label>
+    </div>
+
+    <div class="fld">
+      <label class="lab" for="model">Model</label>
+      <select id="model"></select>
+      <p class="hint" id="model-note"></p>
+    </div>
+
+    <div class="fld">
+      <label class="lab" for="service">Service</label>
+      <select id="service"><option value="">Cheapest today</option></select>
+      <p class="hint" id="prices-line"><span id="prices-when"></span> <button class="linkbtn" type="button" id="check-prices">Check prices now</button></p>
+    </div>
+
+    <div class="fld" id="steps-fld" hidden>
+      <label class="lab" for="steps">Steps: <span id="steps-n">28</span></label>
+      <input type="range" id="steps" min="10" max="50" step="1" value="28">
+    </div>
+
+    <div class="fld" id="shape-fld">
+      <span class="lab" id="shape-lab">Shape</span>
+      <div class="chips" role="group" aria-labelledby="shape-lab" id="shape"></div>
+      <p class="hint" id="shape-note" hidden>The first frame sets the video's shape.</p>
+    </div>
+
+    <div class="fld" id="seconds-fld" hidden>
+      <span class="lab" id="seconds-lab">Length</span>
+      <div class="chips" role="group" aria-labelledby="seconds-lab" id="seconds"></div>
+    </div>
+
+    <label class="check" id="audio-fld" hidden><input type="checkbox" id="audio"><span>With sound</span></label>
+
+    <button class="make" id="make" type="button" disabled>Make image</button>
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+  </aside>
+
+  <main class="canvas">
+    <section class="stage" id="stage" aria-live="polite">
+      <div class="empty"><h2>Nothing made yet</h2><p>Describe what you want at left and choose Make. Images take seconds. A video takes a few minutes, and you can leave the page while it is made.</p></div>
+    </section>
+    <section class="gallery" id="gallery" hidden>
+      <h3>Your work</h3>
+      <div class="grid" id="grid"></div>
+    </section>
+  </main>
+</div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+let CFG = null, images = [], current = null, busy = false, pollTimer = null, QUOTE = null, quoteTimer = null, quoteSeq = 0;
+const state = {mode: "create", model: {}, service: "", shape: {image: "square", video: "wide"}, seconds: null, source: null};
+const VERB = {create: "Make image", edit: "Edit image", video: "Make video"};
+
+function money(x){ return x < 0.01 ? "under 1¢" : "about $" + x.toFixed(x < 0.1 ? 3 : 2); }
+function models(mode){ return CFG ? CFG.models.filter(m => m.does.includes(mode)) : []; }
+function model(){ return CFG && CFG.models.find(m => m.id === state.model[state.mode]); }
+function ready(m){ return !!(m && m.services.some(s => CFG.services[s].ready)); }
+function serviceLabel(s){ return CFG && CFG.services[s] ? CFG.services[s].label : s; }
+function price(){ return QUOTE && QUOTE.choice ? QUOTE.choice.usd : null; }
+
+function settings(){
+  const video = state.mode === "video";
+  return {mode: state.mode, model: state.model[state.mode], service: state.service,
+          shape: video ? state.shape.video : state.shape.image, steps: Number($("steps").value),
+          seconds: state.seconds, audio: $("audio").checked, framed: video && !!state.source};
+}
+function requote(){
+  // today's price for these settings on each service, from the server's price book
+  clearTimeout(quoteTimer);
+  quoteTimer = setTimeout(async () => {
+    const seq = ++quoteSeq;
+    try {
+      const r = await fetch("/api/studio/quote", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(settings())});
+      const d = await r.json();
+      if (seq !== quoteSeq || !r.ok) return;
+      QUOTE = d;
+      fillServices();
+      sync();
+    } catch (e) { /* the next change asks again */ }
+  }, 120);
+}
+function fillServices(){
+  const sel = $("service");
+  sel.innerHTML = "";
+  const opts = (QUOTE && QUOTE.services) || [];
+  const cheapest = opts.find(o => o.usable && o.auto);
+  const first = document.createElement("option");
+  first.value = "";
+  first.textContent = "Cheapest today" + (cheapest ? " · " + cheapest.label : "");
+  sel.appendChild(first);
+  opts.forEach(o => {
+    const el = document.createElement("option");
+    el.value = o.service;
+    el.disabled = !o.usable;
+    el.textContent = o.label + " · " + (o.usable ? money(o.usd)
+      : o.reason === "not set up" ? "needs " + CFG.services[o.service].env : o.reason);
+    sel.appendChild(el);
+  });
+  sel.value = opts.some(o => o.service === state.service && o.usable) ? state.service : "";
+  const p = QUOTE && QUOTE.prices;
+  $("prices-when").textContent = !p || !p.checked ? "Prices are the listed ones until the first daily check."
+    : "Prices checked " + new Date(p.checked).toLocaleString() + "." + (p.kept && p.kept.length ? " " + p.kept.length + " could not be read and use the last good price." : "");
+}
+function pressed(id, v){ $(id).querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v === String(v)))); }
+function chips(id, values, labelOf, current, onPick){
+  $(id).innerHTML = "";
+  values.forEach(v => {
+    const b = document.createElement("button");
+    b.type = "button"; b.dataset.v = v; b.textContent = labelOf(v);
+    b.setAttribute("aria-pressed", String(String(v) === String(current)));
+    b.onclick = () => { onPick(v); pressed(id, v); sync(); requote(); };
+    $(id).appendChild(b);
+  });
+}
+
+function fillModels(){
+  const sel = $("model");
+  sel.innerHTML = "";
+  models(state.mode).forEach(m => {
+    const o = document.createElement("option");
+    o.value = m.id;
+    o.textContent = m.label + (ready(m) ? "" : " · needs a key for " + m.services.map(serviceLabel).join(" or "));
+    o.disabled = !ready(m);
+    sel.appendChild(o);
+  });
+  sel.value = state.model[state.mode];
+}
+function fitModel(){
+  // the chosen model, or the mode's default, or the first one whose service is set up
+  const list = models(state.mode);
+  let m = list.find(x => x.id === state.model[state.mode]);
+  if (!ready(m)) m = list.find(x => x.id === CFG.defaults[state.mode] && ready(x)) || list.find(ready) || list[0];
+  state.model[state.mode] = m ? m.id : null;
+}
+function layout(){
+  // the controls that depend on the mode and the model
+  const m = model(), video = state.mode === "video";
+  fillModels();
+  $("model-note").textContent = m ? m.note : "";
+  $("steps-fld").hidden = video || !m || !m.max_steps;
+  if (m && m.max_steps) {
+    $("steps").max = m.max_steps;
+    if (Number($("steps").value) > m.max_steps) $("steps").value = m.steps;
+    $("steps-n").textContent = $("steps").value;
+  }
+  if (video && m) {
+    if (!m.sizes.includes(state.shape.video)) state.shape.video = m.sizes[0];
+    chips("shape", m.sizes, k => CFG.shapes[k].label, state.shape.video, v => state.shape.video = v);
+    if (!m.seconds.includes(state.seconds)) state.seconds = m.seconds[0];
+    chips("seconds", m.seconds, s => s + " seconds", state.seconds, v => state.seconds = v);
+    $("audio").checked = !!m.audio;
+  } else if (CFG) {
+    chips("shape", Object.keys(CFG.shapes), k => CFG.shapes[k].label, state.shape.image, v => state.shape.image = v);
+  }
+  $("seconds-fld").hidden = !video;
+  $("audio-fld").hidden = !video || !m || m.audio === null;
+  sync();
+  requote();
+}
+function sync(){
+  const editing = state.mode === "edit", video = state.mode === "video", m = model();
+  $("source-fld").hidden = !(editing || video);
+  $("source-lab").textContent = video ? "First frame (optional)" : "Image to edit";
+  $("source-none").textContent = video ? "Leave empty to make the video from words alone, or upload an image or pick one below and choose Animate this."
+                                       : "Upload an image, or pick one below and choose Edit this.";
+  $("clear-source").hidden = !state.source;
+  $("source-img").hidden = !state.source;
+  $("source-none").hidden = !!state.source;
+  if (state.source) $("source-img").src = state.source.preview;
+  $("prompt-lab").textContent = video ? "Describe the video" : editing ? "Describe the change" : "Describe the image";
+  $("prompt").placeholder = video ? (state.source ? "The steam rises and the camera slowly pushes in" : "Waves rolling onto a rocky shore at dawn")
+                         : editing ? "Make the apple green" : "An apple on a wooden table in morning light";
+  const choice = QUOTE && QUOTE.model === state.model[state.mode] ? QUOTE.choice : null;
+  const framed = video && !!state.source && !!choice && choice.frame_sets_shape;
+  $("shape").hidden = framed;
+  $("shape-note").hidden = !framed;
+  const noFrame = video && !!state.source && m && !m.start_image;
+  const why = noFrame ? m.label + " starts from a description only. Remove the first frame or pick another model."
+            : (QUOTE && !QUOTE.choice ? QUOTE.why : null);
+  $("model-note").textContent = why || (m ? m.note : "");
+  $("model-note").classList.toggle("warn", !!why);
+  const p = choice ? choice.usd : null;
+  $("make").textContent = VERB[state.mode] + (p != null ? " · " + money(p) + " on " + choice.label : "");
+  $("make").disabled = busy || !CFG || !CFG.storage || !choice || noFrame || !$("prompt").value.trim() || (editing && !state.source);
+}
+
+function sizeText(img){
+  const size = img.width && img.height ? img.width + "×" + img.height : (CFG && CFG.shapes[img.shape] ? CFG.shapes[img.shape].label : "");
+  if (img.kind === "video") return [size, img.seconds ? img.seconds + " seconds" : "", img.audio ? "with sound" : ""].filter(Boolean).join(", ");
+  return size;
+}
+function showImage(img){
+  current = img;
+  const when = new Date(img.created * 1000).toLocaleString();
+  const words = (img.rewritten ? `<details><summary>Your words</summary>${esc(img.prompt)}</details>` : "")
+    + (img.service_prompt ? `<details><summary>The prompt ${esc(img.engine)} used</summary>${esc(img.service_prompt)}</details>` : "");
+  const what = [esc(img.engine) + " on " + esc(serviceLabel(img.service)) + (img.steps ? ", " + img.steps + " steps" : ""),
+                esc(sizeText(img)), money(img.est_usd || 0), esc(when)].filter(Boolean).join(" · ");
+  let body;
+  if (img.status === "pending") {
+    const pct = typeof img.progress === "number" ? img.progress : null;
+    body = `<div class="waiting"><h2>Making the video</h2>
+      <p>${esc(img.engine)} usually takes a few minutes. You can leave this page and come back.</p>
+      <div class="bar"${pct == null ? "" : ` role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"`}><span style="width:${pct == null ? 8 : Math.max(8, pct)}%"></span></div></div>`;
+  } else if (img.status === "failed") {
+    body = `<div class="waiting failed"><h2>This video was not made</h2><p>${esc(img.error || "The service gave no reason.")}</p></div>`;
+  } else if (img.kind === "video") {
+    body = `<video src="${esc(img.url)}" controls playsinline preload="metadata" width="${img.width || ""}" height="${img.height || ""}"></video>`;
+  } else {
+    body = `<img src="${esc(img.url)}" alt="${esc(img.prompt)}" width="${img.width || ""}" height="${img.height || ""}">`;
+  }
+  const done = img.status === "ready", still = done && img.kind !== "video";
+  $("stage").innerHTML = `${body}
+     <div class="meta"><p class="used">${esc(img.prompt_used)}</p>${words}<div>${what}</div></div>
+     <div class="actions">
+       ${done ? `<a class="btn" href="${esc(img.url)}" download="studio-${esc(img.id.slice(0, 8))}.${esc(img.ext || (img.kind === "video" ? "mp4" : "jpg"))}">Download</a>` : ""}
+       ${still ? `<button class="btn" type="button" id="edit-this">Edit this</button><button class="btn" type="button" id="animate-this">Animate this</button>` : ""}
+       <button class="btn" type="button" id="delete-this">Delete</button>
+     </div>`;
+  if (still) {
+    $("edit-this").onclick = () => useAsSource(img, "edit");
+    $("animate-this").onclick = () => useAsSource(img, "video");
+  }
+  $("delete-this").onclick = () => remove(img);
+  renderGrid();
+}
+function useAsSource(img, mode){
+  state.source = {id: img.id, preview: img.url};
+  setMode(mode);
+  $("prompt").focus();
+}
+function renderGrid(){
+  $("gallery").hidden = !images.length;
+  $("grid").innerHTML = "";
+  images.forEach(img => {
+    const b = document.createElement("button");
+    b.type = "button"; b.title = img.prompt;
+    b.setAttribute("aria-label", (img.kind === "video" ? "Video: " : "Image: ") + img.prompt);
+    if (current && current.id === img.id) b.setAttribute("aria-current", "true");
+    if (img.status === "pending") b.innerHTML = `<span class="word">Making the video…</span>`;
+    else if (img.status === "failed") b.innerHTML = `<span class="word">Not made</span>`;
+    else if (img.kind === "video") b.innerHTML = `<video src="${esc(img.url)}#t=0.5" muted preload="metadata"></video><span class="tag">Video</span>`;
+    else b.innerHTML = `<img src="${esc(img.url)}" alt="" loading="lazy">`;
+    b.onclick = () => showImage(img);
+    $("grid").appendChild(b);
+  });
+}
+async function remove(img){
+  const pending = img.status === "pending";
+  if (!confirm(pending ? "Stop waiting for this video and remove it? The service may still finish it and charge for it."
+                       : "Delete this? It cannot be recovered.")) return;
+  const r = await fetch("/api/studio/image/" + img.id, {method: "DELETE"});
+  if (!r.ok) { say("That could not be deleted.", true); return; }
+  images = images.filter(i => i.id !== img.id);
+  if (state.source && state.source.id === img.id) state.source = null;
+  if (images.length) showImage(images[0]);
+  else { current = null; $("stage").innerHTML = '<div class="empty"><h2>Nothing made yet</h2></div>'; renderGrid(); }
+  say("Deleted.");
+  sync();
+}
+function say(text, err){ $("status").textContent = text; $("status").classList.toggle("err", !!err); }
+
+function replace(img){
+  const at = images.findIndex(i => i.id === img.id);
+  if (at >= 0) images[at] = img;
+  if (current && current.id === img.id) showImage(img); else renderGrid();
+}
+function watch(){
+  // ask about each pending video until none is left
+  clearTimeout(pollTimer);
+  if (!images.some(i => i.status === "pending")) return;
+  pollTimer = setTimeout(async () => {
+    for (const img of images.filter(i => i.status === "pending")) {
+      try {
+        const r = await fetch("/api/studio/image/" + img.id + "/check");
+        const d = await r.json().catch(() => ({}));
+        if (r.status === 404) { images = images.filter(i => i.id !== img.id); renderGrid(); continue; }
+        if (!r.ok) { if (current && current.id === img.id) say(d.error || "Still waiting on the video.", true); continue; }
+        if (d.image.status !== "pending" || d.image.progress !== img.progress) replace(d.image);
+        if (d.image.status === "ready" && current && current.id === img.id) say("The video is ready.");
+        if (d.image.status === "failed" && current && current.id === img.id) say("The video was not made.", true);
+      } catch (e) { /* the next round tries again */ }
+    }
+    watch();
+  }, 8000);
+}
+
+async function make(){
+  if (busy) return;
+  const m = model(), p = price();
+  if (p != null && p >= 1 && !confirm("This will cost " + money(p) + ". Make it?")) return;
+  busy = true; sync();
+  const video = state.mode === "video";
+  say(video ? "Starting the video…" : state.mode === "edit" ? "Editing the image…" : "Making the image…");
+  const body = Object.assign(settings(), {prompt: $("prompt").value, model: m.id, rewrite: $("rewrite").checked});
+  if (state.source && state.mode !== "create") body.source = state.source.id ? {id: state.source.id} : {data_url: state.source.data_url};
+  try {
+    const r = await fetch("/api/studio/generate", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok) { say(d.error || "That could not be made.", true); return; }
+    images.unshift(d.image);
+    showImage(d.image);
+    say(d.image.status === "pending" ? "The video has started on " + d.image.service_label + ". It shows here when it is done."
+                                     : "Done on " + d.image.service_label + ".");
+    watch();
+  } catch (e) {
+    say("The connection dropped. Try again.", true);
+  } finally { busy = false; sync(); requote(); }
+}
+
+function setMode(mode){
+  state.mode = mode;
+  state.service = "";
+  pressed("mode", mode);
+  fitModel();
+  layout();
+}
+$("mode").querySelectorAll("button").forEach(b => b.onclick = () => setMode(b.dataset.v));
+$("model").onchange = () => { state.model[state.mode] = $("model").value; state.service = ""; layout(); };
+$("service").onchange = () => { state.service = $("service").value; requote(); };
+$("check-prices").onclick = async () => {
+  $("check-prices").disabled = true;
+  $("prices-when").textContent = "Checking every service's price…";
+  try {
+    const r = await fetch("/api/studio/prices", {method: "POST"});
+    if (!r.ok) say("The prices could not be checked.", true);
+  } catch (e) { say("The prices could not be checked.", true); }
+  finally { $("check-prices").disabled = false; requote(); }
+};
+$("upload-btn").onclick = () => $("upload").click();
+$("clear-source").onclick = () => { state.source = null; $("upload").value = ""; sync(); requote(); };
+$("upload").onchange = () => {
+  const f = $("upload").files[0];
+  if (!f) return;
+  if (f.size > 8 * 1024 * 1024) { say("Upload an image under 8 MB.", true); return; }
+  const reader = new FileReader();
+  reader.onload = () => { state.source = {data_url: reader.result, preview: reader.result}; say(""); sync(); requote(); };
+  reader.readAsDataURL(f);
+};
+$("prompt").addEventListener("input", sync);
+$("audio").addEventListener("change", () => { sync(); requote(); });
+$("steps").addEventListener("input", () => { $("steps-n").textContent = $("steps").value; requote(); });
+$("make").onclick = make;
+$("prompt").addEventListener("keydown", e => { if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) make(); });
+
+(async function boot(){
+  try {
+    CFG = await (await fetch("/api/studio/config")).json();
+    if (!CFG.ready) {
+      const keys = Object.values(CFG.services).map(s => s.env).join(", ");
+      $("notready").textContent = CFG.storage ? "Image Studio needs at least one of " + keys + " on this server."
+                                              : "Image Studio needs R2 storage on this server.";
+      $("notready").hidden = false;
+    }
+    Object.keys(CFG.defaults).forEach(mode => state.model[mode] = CFG.defaults[mode]);
+    ["create", "edit", "video"].forEach(mode => { state.mode = mode; fitModel(); });
+    state.mode = "create";
+    const q = CFG.models.find(m => m.max_steps);
+    if (q) { $("steps").value = q.steps; $("steps-n").textContent = q.steps; }
+    images = (await (await fetch("/api/studio/images")).json()).images || [];
+    if (images.length) showImage(images[0]);
+    watch();
+  } catch (e) { say("Image Studio could not load.", true); }
+  if (CFG) layout(); else sync();
+})();
+</script>
+<script src="/static/settings.js"></script>
+</body>
+</html>

@@ -2,10 +2,13 @@
 
 Large works can't be fed to the model whole, so we pre-build an analytical understanding of the
 ENTIRE work — summary, arc, themes, significant (load-bearing) elements, and a cumulative recap
-ladder — via a batched map-reduce over the text, cached in Neon (library_comprehension). Built
-lazily on first generation against a large book, using the server ANTHROPIC key (a shared, cached
-artifact, not per-teacher BYOK). Small books never need this — they're read whole at generation
-time. See docs/living-library-generation-plan.md.
+ladder — via a batched map-reduce over the text, cached in Neon (library_comprehension). The build
+runs on Inngest (webapp/inngest_app.py, `build-comprehension`): one memoized step per batch, one
+build per book at a time, so a closed browser or a crash loses no paid work and a retry re-runs only
+the failed batch. The first generation against a large book requests it and tells the teacher the
+book is being prepared. Uses the server ANTHROPIC key (a shared, cached artifact, not per-teacher
+BYOK). Small books never need this — they're read whole at generation time. See
+docs/living-library-generation-plan.md.
 
 Also provides covered-range passage selection (semantic retrieval via webapp.embed) for when the
 covered range itself is too large to include verbatim.
@@ -13,10 +16,11 @@ covered range itself is too large to include verbatim.
 from __future__ import annotations
 
 import asyncio
+import datetime as dt
 import logging
 import math
 
-from webapp import db, embed, extraction
+from webapp import db, embed, extraction, reader
 
 logger = logging.getLogger("study-bible-web.comprehension")
 
@@ -38,7 +42,9 @@ _MAX_BATCHES = 40          # cap total map calls even for enormous works
 _MIN_BATCH_WORDS = 40000   # ~a comfortable chunk per map call
 _MAX_WORDS = 1_500_000     # above this (e.g. Spurgeon's 24M-word sermon corpus) a whole-work pass is
                            # neither affordable nor meaningful — callers fall back to the covered text
-_MAP_CONCURRENCY = 5
+MAP_CONCURRENCY = 5       # map steps in flight per build (Inngest also caps the function at this)
+FAILED_MODEL = "build-failed"   # model column of a failed build's marker row
+RETRY_AFTER = dt.timedelta(hours=24)   # a failed build is tried again after this
 
 
 def _batches(chapters: list[dict], total_words: int) -> list[list[dict]]:
@@ -91,38 +97,25 @@ def _recap_ladder(notes: list[dict]) -> list[dict]:
     return ladder
 
 
-async def build(book: dict) -> dict:
-    """Map-reduce the whole work into a comprehension dict (server LLM key; bounded to ~40 map calls)."""
-    chapters = book.get("chapters") or []
-    total = book.get("word_count") or sum(c.get("words", 0) for c in chapters)
-    batches = _batches(chapters, total)
-    sem = asyncio.Semaphore(_MAP_CONCURRENCY)
-
-    async def one(i, b):
-        async with sem:
-            return await _map_batch(book["title"], b, i, len(batches))
-
-    notes = list(await asyncio.gather(*[one(i, b) for i, b in enumerate(batches)]))
-    reduced = await _reduce(book["title"], notes)
-    reduced["recap"] = _recap_ladder(notes)
-    reduced["_word_count"] = total
-    return reduced
+def _total(book: dict) -> int:
+    return book.get("word_count") or sum(c.get("words", 0) for c in (book.get("chapters") or []))
 
 
 async def get(book_key: str) -> dict | None:
     if not db.ready():
         return None
     row = await db.fetchrow(
-        "select summary, arc, themes, significance, recap, word_count from library_comprehension where book_key=$1",
+        "select summary, arc, themes, significance, recap, model, word_count, built_at "
+        "from library_comprehension where book_key=$1",
         book_key)
     if not row:
         return None
     return {"summary": row["summary"], "arc": row["arc"] or [], "themes": row["themes"] or [],
             "significance": row["significance"] or [], "recap": row["recap"] or [],
-            "_word_count": row["word_count"]}
+            "_model": row["model"], "_word_count": row["word_count"], "_built_at": row["built_at"]}
 
 
-async def _store(book_key: str, title: str, comp: dict, word_count: int) -> None:
+async def _store(book_key: str, title: str, comp: dict, word_count: int, model: str | None = None) -> None:
     if not db.ready():
         return
     await db.execute(
@@ -133,32 +126,77 @@ async def _store(book_key: str, title: str, comp: dict, word_count: int) -> None
              arc=excluded.arc, themes=excluded.themes, significance=excluded.significance,
              recap=excluded.recap, model=excluded.model, word_count=excluded.word_count, built_at=now()""",
         book_key, title, comp.get("summary", ""), comp.get("arc", []), comp.get("themes", []),
-        comp.get("significance", []), comp.get("recap", []), extraction._MODEL, word_count)
+        comp.get("significance", []), comp.get("recap", []), model or extraction._MODEL, word_count)
 
 
-async def ensure(book: dict, rebuild: bool = False) -> dict | None:
-    """Cached comprehension for this book, building + caching it if missing or stale (word_count
-    guard). Returns None if it can't be built (no LLM key / failure) so the caller can degrade."""
-    key = book.get("slug") or ""
-    total = book.get("word_count") or sum(c.get("words", 0) for c in (book.get("chapters") or []))
+async def status(book: dict) -> tuple[str, dict | None]:
+    """Where this book's comprehension stands, for the generate endpoint:
+    ("ready", comp) when a build for the current text is cached; ("failed", None) when the last
+    build failed within RETRY_AFTER; ("too_large", None) above _MAX_WORDS; else ("missing", None).
+    A missing table or database reads as missing."""
+    total = _total(book)
     if total > _MAX_WORDS:
-        return None
-    if not rebuild:
-        cached = await get(key)
-        if cached and cached.get("_word_count") == total:
-            return cached
+        return "too_large", None
     try:
-        comp = await build(book)
+        cached = await get(book.get("slug") or "")
     except Exception:  # noqa: BLE001
-        logger.exception("comprehension build failed for %s", key)
-        return None
-    if not comp.get("summary"):
-        return None
-    try:                                       # caching is best-effort — a store failure (e.g. the
-        await _store(key, book.get("title", ""), comp, total)   # table not migrated yet) must not
-    except Exception:  # noqa: BLE001          # break generation; we just use the fresh (uncached) comp
-        logger.exception("comprehension store failed for %s", key)
-    return comp
+        logger.exception("comprehension lookup failed")
+        return "missing", None
+    if not cached or cached.get("_word_count") != total:
+        return "missing", None
+    if cached.get("_model") == FAILED_MODEL:
+        built = cached.get("_built_at")
+        fresh = built and dt.datetime.now(dt.timezone.utc) - built < RETRY_AFTER
+        return ("failed", None) if fresh else ("missing", None)
+    return ("ready", cached) if cached.get("summary") else ("missing", None)
+
+
+# --------------------------------------------------------------------------- #
+# Inngest steps (webapp/inngest_app.py). Each loads the book itself from books.db, so only
+# small JSON (span ranges, span notes) crosses a step boundary.
+# --------------------------------------------------------------------------- #
+async def _load(book_key: str) -> dict | None:
+    return await asyncio.to_thread(reader._gen_book_sync, book_key)
+
+
+async def step_plan(book_key: str) -> dict:
+    """Decide whether a build is needed and split the work into spans of section numbers."""
+    book = await _load(book_key)
+    if not book or not book.get("chapters"):
+        return {"status": "no_book"}
+    state, _ = await status(book)
+    if state != "missing":
+        return {"status": state}
+    total = _total(book)
+    spans = [[b[0]["n"], b[-1]["n"]] for b in _batches(book["chapters"], total)]
+    return {"status": "build", "title": book["title"], "total": total, "spans": spans}
+
+
+async def step_map(book_key: str, span: list, i: int, n: int) -> dict:
+    """One map call over sections span[0]..span[1]."""
+    book = await _load(book_key)
+    batch = [c for c in (book or {}).get("chapters") or [] if span[0] <= c["n"] <= span[1]]
+    if not batch:
+        raise RuntimeError(f"span {span} of {book_key} has no sections")
+    return await _map_batch(book["title"], batch, i, n)
+
+
+async def step_reduce(book_key: str, title: str, total: int, notes: list[dict]) -> dict:
+    """Synthesize the span notes and cache the result. An empty synthesis raises so Inngest retries it."""
+    reduced = await _reduce(title, notes)
+    if not reduced.get("summary"):
+        raise RuntimeError(f"comprehension reduce for {book_key} returned no summary")
+    reduced["recap"] = _recap_ladder(notes)
+    await _store(book_key, title, reduced, total)
+    return {"status": "built", "spans": len(notes)}
+
+
+async def mark_failed(book_key: str) -> None:
+    """After the build has used its retries: a marker row, so generation degrades to the
+    covered text for RETRY_AFTER instead of telling the teacher to wait for a build that failed."""
+    book = await _load(book_key)
+    if book:
+        await _store(book_key, book.get("title", ""), {}, _total(book), model=FAILED_MODEL)
 
 
 # --------------------------------------------------------------------------- #

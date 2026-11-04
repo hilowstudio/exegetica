@@ -1,6 +1,7 @@
 """
-Google OAuth sign-in. Optional by design — the app works fully signed-out; signing
-in just moves a person's data to their Neon account.
+Google OAuth sign-in. Chat needs a signed-in school account; most of the rest of the app
+works signed out. Only accounts in the school's Google Workspace may sign in, plus the
+teacher and admin allowlists (docs/decisions/0005-sign-in-required.md).
 
 Identity is Google SSO for everyone (no passwords). On callback we upsert the user
 into Neon and keep a small profile in the signed session cookie. Role
@@ -73,6 +74,22 @@ def is_admin(user) -> bool:
     return bool(user) and (user.get("email") or "").lower() in _admin_emails()
 
 
+def is_teacher(user) -> bool:
+    """Checked live against TEACHER_EMAILS (not the role cached in the session cookie), so
+    removing a teacher takes effect on their next request."""
+    return bool(user) and (user.get("email") or "").lower() in _teacher_emails()
+
+
+SCHOOL_DOMAIN = (os.environ.get("SCHOOL_DOMAIN") or "yorkvillechristian.com").strip().lower()
+
+
+def _may_sign_in(userinfo: dict) -> bool:
+    email = (userinfo.get("email") or "").lower()
+    if email in _teacher_emails() or email in _admin_emails():
+        return True
+    return bool(userinfo.get("email_verified")) and email.endswith("@" + SCHOOL_DOMAIN)
+
+
 def current_user(request):
     """The signed-in user's profile dict, or None."""
     return request.session.get("user")
@@ -113,27 +130,29 @@ async def auth_callback(request):
     sub = userinfo.get("sub")
     email = userinfo.get("email")
     name = userinfo.get("name") or (email.split("@")[0] if email else "Friend")
-    picture = userinfo.get("picture")
     if not sub:
         return RedirectResponse("/?auth=error")
+    if not _may_sign_in(userinfo):
+        logger.info("Sign-in refused for an account outside %s", SCHOOL_DOMAIN)
+        return RedirectResponse("/?auth=domain")
 
     if not db.ready():
         # We can authenticate but not persist/scope data without the DB. Fail soft.
         logger.warning("Sign-in attempted but the database is unavailable")
         return RedirectResponse("/?auth=nodb")
 
+    # The Google profile photo is never stored (QSF DAT-07): nothing in the app shows it.
     row = await db.fetchrow(
         """insert into users (google_sub, email, name, picture, role, last_login_at)
-           values ($1, $2, $3, $4, $5, now())
+           values ($1, $2, $3, null, $4, now())
            on conflict (google_sub) do update
-             set email=excluded.email, name=excluded.name, picture=excluded.picture,
+             set email=excluded.email, name=excluded.name, picture=null,
                  role=excluded.role, last_login_at=now()
            returning id, role""",
-        sub, email, name, picture, _role_for(email),
+        sub, email, name, _role_for(email),
     )
     request.session["user"] = {
-        "id": str(row["id"]), "email": email, "name": name,
-        "picture": picture, "role": row["role"],
+        "id": str(row["id"]), "email": email, "name": name, "role": row["role"],
     }
     nxt = request.session.pop("next", "/")
     return RedirectResponse(nxt if nxt.startswith("/") else "/")

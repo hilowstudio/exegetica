@@ -92,7 +92,7 @@ providers are editable in the panel, since they change over time.
 ./.venv/Scripts/python -m pip install -e ".[webapp]"     # POSIX: .venv/bin/python
 export ANTHROPIC_API_KEY=sk-ant-...                       # Windows: setx ANTHROPIC_API_KEY ...
 python -m uvicorn webapp.app:app --port 8100
-# open http://127.0.0.1:8100
+# open http://localhost:8100 (Google sign-in is registered for localhost)
 ```
 
 Optional: `export ESV_API_KEY=...` so the tools can serve live ESV.

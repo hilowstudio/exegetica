@@ -15,44 +15,46 @@
 <style>
   :root{
     --paper:#f0e8dc;--surface:#f8f2ea;--surface-2:#e8dfd0;--sunk:#e2d7c6;--ink:#1e2026;
-    --ink-soft:#54596a;--ink-faint:#8b8f9b;--rule:#ddd3c1;--rule-strong:#c9bda6;
-    --accent:#c05a64;--accent-soft:#a84a55;
-    --iron:#42718a;--iron-soft:#5f8698;--brass:#9a7c3d;
-    --ok:#3f7a52;--warn:#9a6a1a;--err:#c85a1f;
-    --code-bg:#efe7d8;
+    --ink-soft:#54596a;--ink-faint:#5f636f;--rule:#ddd3c1;--rule-strong:#c9bda6;
+    --accent:#9f4751;--accent-soft:#8c414b;
+    --iron:#3d6980;--iron-soft:#496775;--brass:#9a7c3d;
+    --ok:#396e4a;--warn:#8c6018;--err:#a34919;
+    --code-bg:#efe7d8;--on-accent:#fff;   /* text and icons on accent, iron, err fills */
     --serif:"Spectral",Georgia,serif;--sans:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   }
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
     --paper:#14151a;--surface:#1b1d23;--surface-2:#23252c;--sunk:#101116;--ink:#e9e7e0;
-    --ink-soft:#a9aeb9;--ink-faint:#787d88;--rule:#2c2f37;--rule-strong:#3b3f49;
-    --accent:#dd8089;--accent-soft:#b0555f;
-    --iron:#7fb0c2;--iron-soft:#5c8494;--brass:#c7a45f;
+    --ink-soft:#a9aeb9;--ink-faint:#888c96;--rule:#2c2f37;--rule-strong:#3b3f49;
+    --accent:#dd8089;--accent-soft:#c0777f;
+    --iron:#7fb0c2;--iron-soft:#6a92a2;--brass:#c7a45f;
     --ok:#6bbf86;--warn:#d5a24a;--err:#e8895a;
-    --code-bg:#22242b;
+    --code-bg:#22242b;--on-accent:#14151a;
   }}
   :root[data-theme="dark"]{
     --paper:#14151a;--surface:#1b1d23;--surface-2:#23252c;--sunk:#101116;--ink:#e9e7e0;
-    --ink-soft:#a9aeb9;--ink-faint:#787d88;--rule:#2c2f37;--rule-strong:#3b3f49;
-    --accent:#dd8089;--accent-soft:#b0555f;
-    --iron:#7fb0c2;--iron-soft:#5c8494;--brass:#c7a45f;
+    --ink-soft:#a9aeb9;--ink-faint:#888c96;--rule:#2c2f37;--rule-strong:#3b3f49;
+    --accent:#dd8089;--accent-soft:#c0777f;
+    --iron:#7fb0c2;--iron-soft:#6a92a2;--brass:#c7a45f;
     --ok:#6bbf86;--warn:#d5a24a;--err:#e8895a;
-    --code-bg:#22242b;
+    --code-bg:#22242b;--on-accent:#14151a;
   }
   *{box-sizing:border-box}
   html,body{height:100%}
   h1,h2,h3{text-wrap:balance}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
-  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+  /* reduced motion: one near-instant pass, so infinite spinners and pulses stop instead of strobing */
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
   /* ---------- app shell (shared with Chat) ---------- */
   .app{display:grid;grid-template-columns:58px 384px 1fr;height:100%}
   .rail{background:var(--surface);border-right:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;gap:3px;padding:12px 0;z-index:20}
-  .rail .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:10px;text-decoration:none;overflow:hidden}
+  .rail .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:10px;text-decoration:none;overflow:hidden}
   .rail .mark img{width:100%;height:100%;object-fit:cover;border-radius:9px;display:block}
   .rail button,.rail a.railbtn{width:42px;height:42px;border-radius:10px;border:1px solid transparent;background:none;color:var(--ink-soft);display:grid;place-items:center;cursor:pointer;text-decoration:none}
   .rail button:hover,.rail a.railbtn:hover{background:var(--surface-2);color:var(--ink)}
-  .rail a.railbtn.active{background:var(--accent);color:#fff}
+  .rail a.railbtn.active{background:var(--accent);color:var(--on-accent)}
   .rail .sp{flex:1}
   .rail svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
   .rail .glyph{font-size:18px;line-height:1}
@@ -72,7 +74,7 @@
   .acc-h{display:flex;align-items:center;gap:11px;width:100%;background:none;border:0;padding:13px 20px;cursor:pointer;text-align:left;font-family:var(--sans)}
   .acc-h:hover{background:var(--surface-2)}
   .acc-n{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--ink-soft);background:var(--rule-strong);width:20px;height:20px;border-radius:6px;display:grid;place-items:center;flex:none}
-  .acc-sec.done .acc-n{background:var(--iron);color:#fff}
+  .acc-sec.done .acc-n{background:var(--iron);color:var(--on-accent)}
   .acc-t{font-family:var(--serif);font-weight:600;font-size:1rem;color:var(--ink);flex:none}
   .acc-sum{flex:1;font-size:12px;color:var(--ink-faint);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .chev{color:var(--ink-faint);transition:transform .15s ease;flex:none;font-size:15px;line-height:1}
@@ -97,11 +99,11 @@
   .searchbox input{width:100%}
   .sresults{position:absolute;left:0;right:0;top:calc(100% + 5px);background:var(--surface);border:1px solid var(--rule-strong);border-radius:11px;box-shadow:0 14px 40px rgba(30,26,20,.2);max-height:366px;overflow-y:auto;z-index:16;display:none}
   .sresults.open{display:block}
-  .sitem{display:block;width:100%;text-align:left;border:0;background:none;border-bottom:1px solid var(--rule);padding:9px 12px;cursor:pointer}
+  .sitem{display:block;width:100%;text-align:left;border:0;background:none;font-family:inherit;border-bottom:1px solid var(--rule);padding:9px 12px;cursor:pointer}
   .sitem:last-child{border-bottom:0}
   .sitem:hover,.sitem.active{background:var(--surface-2)}
   .si-top{display:flex;align-items:center;gap:8px}
-  .si-lvl{font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--iron);border-radius:99px;padding:2px 7px;flex:none}
+  .si-lvl{font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--on-accent);background:var(--iron);border-radius:99px;padding:2px 7px;flex:none}
   .si-lvl.objective{background:var(--accent)}
   .si-lab{font-size:13.5px;color:var(--ink);font-weight:500;line-height:1.35}
   .si-g{font-family:var(--mono);font-size:10px;color:var(--iron-soft);margin-left:auto;flex:none;white-space:nowrap}
@@ -116,10 +118,10 @@
   .obj .og{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint)}
   .recs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
   .rec{font-family:var(--sans);font-size:12px;font-weight:600;border:1px solid var(--rule-strong);background:var(--paper);color:var(--ink-soft);border-radius:999px;padding:5px 11px;cursor:pointer}
-  .rec.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .rec.on{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .rec:not(.on):hover{border-color:var(--accent-soft);color:var(--ink)}
   .fmtdef{font-size:12.5px;color:var(--ink-soft);margin-top:6px;font-style:italic;font-family:var(--serif)}
-  .gen{margin-top:18px;width:100%;font-family:var(--sans);font-weight:600;font-size:15px;border:0;border-radius:10px;background:var(--accent);color:#fff;padding:12px;cursor:pointer}
+  .gen{margin-top:18px;width:100%;font-family:var(--sans);font-weight:600;font-size:15px;border:0;border-radius:10px;background:var(--accent);color:var(--on-accent);padding:12px;cursor:pointer}
   .gen:hover:not(:disabled){background:var(--accent-soft)}
   .gen:disabled{opacity:.45;cursor:default}
   .note{font-size:11.5px;color:var(--ink-faint);margin-top:8px}
@@ -132,12 +134,16 @@
   .obtn{font-family:var(--sans);font-weight:600;font-size:13px;border:1px solid var(--rule-strong);background:var(--surface);color:var(--ink-soft);border-radius:8px;padding:7px 13px;cursor:pointer}
   .obtn:hover:not(:disabled){color:var(--ink);border-color:var(--ink-faint)}
   .obtn:disabled{opacity:.4;cursor:default}
-  .obtn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .obtn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
   .tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
   .tool{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:4px 9px}
   .tool .ic{width:6px;height:6px;border-radius:50%;background:var(--accent)}
   .tool.running .ic{animation:pulse 1s infinite}.tool.done .ic{background:var(--iron)}.tool.error .ic{background:var(--err)}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .report{font-family:var(--sans);font-size:12.5px;line-height:1.5;color:var(--ink-soft);background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:9px 12px;margin-bottom:12px}
+  .report h3{font-size:12.5px;font-weight:600;color:var(--ink);margin:0 0 3px}
+  .report p{margin:2px 0}
+  @media print{.report{display:none}}
   .placeholder{color:var(--ink-faint);text-align:center;margin:12vh auto;max-width:440px}
   .placeholder h1{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.5rem}
   .caret{display:inline-block;width:.5em;height:1.05em;background:var(--accent);vertical-align:text-bottom;animation:pulse 1s infinite}
@@ -157,10 +163,10 @@
   .prose table{border-collapse:collapse;font-size:.9em}
   .prose th,.prose td{border:1px solid var(--rule);padding:6px 10px;text-align:left;vertical-align:top}
   .prose th{background:var(--surface-2);font-weight:600}
-  .banner{background:var(--err);color:#fff;font-size:13px;padding:8px 20px;text-align:center}
+  .banner{background:var(--err);color:var(--on-accent);font-size:13px;padding:8px 20px;text-align:center}
   .seg{display:inline-flex;border:1px solid var(--rule-strong);border-radius:8px;overflow:hidden}
   .seg button{font-family:var(--sans);font-weight:600;font-size:12.5px;border:0;background:var(--surface);color:var(--ink-soft);padding:6px 11px;cursor:pointer}
-  .seg button.on{background:var(--accent);color:#fff}
+  .seg button.on{background:var(--accent);color:var(--on-accent)}
   .seg button:disabled{opacity:.4;cursor:default}
   .seg button:not(.on):not(:disabled):hover{color:var(--ink);background:var(--surface-2)}
   .modrow{display:flex;gap:8px;margin-bottom:12px}
@@ -215,7 +221,7 @@
   .about p{font-size:14px;color:var(--ink-soft);margin:0 0 2px;line-height:1.55}
   .about .caveat{font-size:13px;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--rule);border-radius:9px;padding:11px 13px;margin-top:16px}
   .modal-actions{display:flex;align-items:center;gap:10px;margin-top:18px}.modal-actions .spacer{flex:1}
-  .btn-solid{font-family:var(--sans);font-weight:600;font-size:14px;border:0;border-radius:9px;background:var(--accent);color:#fff;padding:9px 18px;cursor:pointer}
+  .btn-solid{font-family:var(--sans);font-weight:600;font-size:14px;border:0;border-radius:9px;background:var(--accent);color:var(--on-accent);padding:9px 18px;cursor:pointer}
   .btn-ghost{font-family:var(--sans);font-weight:600;font-size:14px;border:1px solid var(--rule-strong);border-radius:9px;background:var(--surface);color:var(--ink-soft);padding:9px 14px;cursor:pointer}
   .btn-ghost:hover{color:var(--ink);border-color:var(--ink-faint)}
   .tabs{display:flex;gap:4px;border-bottom:1px solid var(--rule);margin:2px 0 16px}
@@ -235,6 +241,11 @@
     .builder{border-right:0;border-bottom:1px solid var(--rule);overflow:visible}
     .output{overflow:visible}
   }
+  /* touch: every control gets at least a 44px target */
+  @media (pointer:coarse){
+    .rail button,.rail a.railbtn{width:44px;height:44px}
+    .srcbtn,.seg button,.obtn,.gen,.rec,.btn-solid,.btn-ghost,.tab,.sitem,.obj,select,input:not([type=checkbox]){min-height:44px}
+  }
 </style>
 </head>
 <body>
@@ -247,6 +258,7 @@
     <a class="railbtn" href="/read" title="Reading Room" aria-label="Reading Room"><svg viewBox="0 0 24 24"><path d="M12 6.6C10.2 5.3 7.3 5 4.8 5.6v12.3c2.5-.6 5.4-.3 7.2 1 1.8-1.3 4.7-1.6 7.2-1V5.6C16.7 5 13.8 5.3 12 6.6z"/><path d="M12 6.6v11.7"/></svg></a>
     <a class="railbtn teach active" href="/generate" style="display:none" title="Generator" aria-label="Generator"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/></svg></a>
     <a class="railbtn teach" href="/library" style="display:none" title="Living Library" aria-label="Living Library"><svg viewBox="0 0 24 24"><rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/><path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/></svg></a>
+    <a class="railbtn admin" href="/studio" style="display:none" title="Image Studio" aria-label="Image Studio"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4.5 17.5l5-5 3.5 3.5 2.5-2.5 4 4"/></svg></a>
     <span class="sp"></span>
     <button id="open-settings" type="button" title="Settings" aria-label="Settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.2 7l2.6 1.5M17.2 15.5l2.6 1.5M4.2 17l2.6-1.5M17.2 8.5l2.6-1.5"/></svg></button>
   </nav>
@@ -259,7 +271,7 @@
       <button class="srcbtn" type="button" data-src="standard" role="tab">From standards</button>
     </div>
     <div class="bsearch" id="stdsearchwrap" style="display:none">
-      <span class="lbl">Find a standard</span>
+      <label class="lbl" for="stdsearch">Find a standard</label>
       <div class="searchbox">
         <input id="stdsearch" type="text" autocomplete="off" spellcheck="false" placeholder="Search a subject, topic, or objective…">
         <div class="sresults" id="sresults"></div>
@@ -269,20 +281,20 @@
       <section class="acc-sec open" data-sec="book">
         <button class="acc-h" type="button"><span class="acc-n">1</span><span class="acc-t">Book</span><span class="acc-sum" id="sum-book">None</span><span class="chev">›</span></button>
         <div class="acc-body">
-          <div class="fld"><label>Find a book</label>
+          <div class="fld"><label for="booksearch">Find a book</label>
             <div class="searchbox"><input id="booksearch" type="text" autocomplete="off" spellcheck="false" placeholder="Search title or author…"><div class="sresults" id="bookresults"></div></div>
           </div>
-          <div class="fld" id="coverwrap" style="display:none"><label>Assign through (students have read up to and including)</label><select id="sel-cover"></select></div>
+          <div class="fld" id="coverwrap" style="display:none"><label for="sel-cover">Assign through (students have read up to and including)</label><select id="sel-cover"></select></div>
         </div>
       </section>
       <section class="acc-sec" data-sec="standard" style="display:none">
         <button class="acc-h" type="button"><span class="acc-n">1</span><span class="acc-t">Standard</span><span class="acc-sum" id="sum-standard">Not chosen</span><span class="chev">›</span></button>
         <div class="acc-body">
           <div class="crumb" id="crumb"></div>
-          <div class="fld"><label>Subject</label><select id="sel-subject"></select></div>
-          <div class="fld"><label>Sub-subject</label><select id="sel-subsubject" disabled></select></div>
-          <div class="fld"><label>Topic</label><select id="sel-topic" disabled></select></div>
-          <div class="fld"><label>Sub-topic</label><select id="sel-subtopic" disabled></select></div>
+          <div class="fld"><label for="sel-subject">Subject</label><select id="sel-subject"></select></div>
+          <div class="fld"><label for="sel-subsubject">Sub-subject</label><select id="sel-subsubject" disabled></select></div>
+          <div class="fld"><label for="sel-topic">Topic</label><select id="sel-topic" disabled></select></div>
+          <div class="fld"><label for="sel-subtopic">Sub-topic</label><select id="sel-subtopic" disabled></select></div>
         </div>
       </section>
       <section class="acc-sec" data-sec="objectives" style="display:none">
@@ -295,14 +307,14 @@
         <button class="acc-h" type="button"><span class="acc-n">2</span><span class="acc-t">Resource Kind</span><span class="acc-sum" id="sum-format">None</span><span class="chev">›</span></button>
         <div class="acc-body">
           <div class="recs" id="recs"></div>
-          <div class="fld"><select id="sel-format"></select><span class="fmtdef" id="fmtdef"></span></div>
+          <div class="fld"><select id="sel-format" aria-label="Resource kind"></select><span class="fmtdef" id="fmtdef"></span></div>
         </div>
       </section>
       <section class="acc-sec" data-sec="audience">
         <button class="acc-h" type="button"><span class="acc-n">3</span><span class="acc-t">Audience</span><span class="acc-sum" id="sum-audience">Secondary</span><span class="chev">›</span></button>
         <div class="acc-body">
-          <div class="fld"><label>Grade band (who you're teaching)</label><select id="sel-band"></select></div>
-          <div class="fld"><label>Optional instructions</label><textarea id="brief" placeholder="e.g. 12 items, focus on the Greek, make it a one-pager"></textarea></div>
+          <div class="fld"><label for="sel-band">Grade band (who you're teaching)</label><select id="sel-band"></select></div>
+          <div class="fld"><label for="brief">Optional instructions</label><textarea id="brief" placeholder="e.g. 12 items, focus on the Greek, make it a one-pager"></textarea></div>
         </div>
       </section>
     </div>
@@ -324,10 +336,11 @@
       <button class="obtn primary" id="pdf" disabled>PDF</button>
     </div>
     <div class="modrow" id="modrow" style="display:none">
-      <input id="modin" placeholder="Modify without regenerating. For example: “add 3 harder items”, “make the reading shorter”, “change the theme to autumn”">
+      <input id="modin" aria-label="Change this document" placeholder="Modify without regenerating. For example: “add 3 harder items”, “make the reading shorter”, “change the theme to autumn”">
       <button class="obtn" id="modbtn">Apply</button>
     </div>
     <div class="tools" id="tools"></div>
+    <section class="report" id="report" aria-label="Source check" hidden></section>
     <div class="paperwrap" id="paperwrap" style="display:none"><div class="paper prose" id="paper"></div></div>
     <textarea class="editor" id="editor" style="display:none" spellcheck="false"></textarea>
     <div class="placeholder" id="placeholder"><h1>Generate a resource</h1><p>Build from a book — pick the title and the chapters your class has read, and the document lands where your students are — or from an academic standard. Choose the source at left. Switch between Teacher and Student, edit it directly, or revise it with a plain instruction.</p></div>
@@ -531,7 +544,7 @@ $("booksearch").addEventListener("input",()=>{clearTimeout(_bkTimer);const q=$("
   _bkTimer=setTimeout(()=>bookSearch(q),180);});
 function bookSearch(q){fetch("/api/books?q="+encodeURIComponent(q)+"&limit=12").then(r=>r.json()).then(d=>{
   const box=$("bookresults");box.innerHTML="";
-  (d.items||[]).forEach(b=>{const it=document.createElement("div");it.className="sitem";
+  (d.items||[]).forEach(b=>{const it=document.createElement("button");it.type="button";it.className="sitem";
     it.innerHTML="<div class='si-top'><span class='si-lab'>"+esc(b.title)+"</span></div>"
       +"<div class='si-path'>"+esc(b.author||"")+" · "+b.chapter_count+" ch</div>";
     it.onclick=()=>chooseBook(b);box.appendChild(it);});
@@ -571,9 +584,29 @@ $("mode").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)
   if(b.dataset.m==="view"&&mode==="edit")rawDoc=editor.value;mode=b.dataset.m;syncMode();});
 editor.addEventListener("input",()=>{rawDoc=editor.value;});
 
+// The source check sent after a finished document (webapp/citations.py). It reports what was found where,
+// and never holds up the download.
+function showReport(r){
+  const el=$("report"),q=s=>"“"+esc(s)+"”";
+  const lines=[];
+  if(!r.references&&!r.quotations){lines.push("No Scripture references or quotations to check.");}
+  else{
+    let refs=r.references+" Scripture reference"+(r.references===1?"":"s")+" checked against the bundled Bible.";
+    if((r.missing_references||[]).length)refs+=" Not found there: "+r.missing_references.map(esc).join(", ")+".";
+    lines.push(refs);
+    let quo=r.quotations+" quotation"+(r.quotations===1?"":"s")+" checked.";
+    const nf=r.quotations_not_found||[];
+    if(nf.length)quo+=" Not found in this run's sources or the bundled Bible text: "+nf.map(q).join(", ")+".";
+    lines.push(quo);
+  }
+  if(r.quotations)lines.push("A quotation not found here may still be accurate, such as ESV wording, which Exegetica does not store.");
+  el.innerHTML="<h3>Source check</h3>"+lines.map(l=>"<p>"+l+"</p>").join("");el.hidden=false;
+}
 async function streamInto(url,body){
   tools.innerHTML="";const toolEls={};paper.innerHTML="<span class='caret'></span>";setOutButtons(false);
+  $("report").hidden=true;$("report").innerHTML="";
   function live(){if(mode==="view")paper.innerHTML=md(shown())+"<span class='caret'></span>";}
+  let ok=true;   // false on an error, a dropped connection, or a cut-off reply
   try{
     const resp=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(!resp.ok||!resp.body)throw new Error("HTTP "+resp.status);
@@ -584,12 +617,14 @@ async function streamInto(url,body){
         if(ev.type==="text"){rawDoc+=ev.text;live();}
         else if(ev.type==="tool_call"){if(!toolEls[ev.name]){const t=document.createElement("div");t.className="tool running";t.innerHTML="<span class='ic'></span>"+ev.name;tools.appendChild(t);toolEls[ev.name]=t;}}
         else if(ev.type==="tool_done"){const t=toolEls[ev.name];if(t)t.className="tool "+(ev.error?"error":"done");}
-        else if(ev.type==="notice"){const n=document.createElement("div");n.className="tool";n.textContent=ev.message;tools.appendChild(n);}
-        else if(ev.type==="error"){rawDoc+="\n\n**Error:** "+ev.message;live();}
+        else if(ev.type==="notice"){const n=document.createElement("div");n.className="tool";n.textContent=ev.message;tools.appendChild(n);if(ev.incomplete)ok=false;}
+        else if(ev.type==="error"){ok=false;rawDoc+="\n\n**Error:** "+ev.message;live();}
+        else if(ev.type==="report"){showReport(ev);}
       }}
-  }catch(e){rawDoc+="\n\n**Connection error:** "+e.message;}
+  }catch(e){ok=false;rawDoc+="\n\n**Connection error:** "+e.message;}
   if(mode==="view")render();else editor.value=rawDoc;
   setOutButtons(!!rawDoc.trim());
+  return ok;
 }
 
 $("gen").addEventListener("click",generate);
@@ -623,10 +658,14 @@ async function applyMod(){
   if(needsKey()){updateKeyBanner();AppSettings.open();return;}
   if(mode==="edit"){rawDoc=editor.value;mode="view";syncMode();}
   busy=true;refreshGen();$("modbtn").textContent="Applying…";
-  const prev=rawDoc;
+  const prev=rawDoc,prevReport=$("report").innerHTML;
   const body={document:rawDoc,instruction:instr,provider:curProvider(),model:curModel(),api_key:curKey()};
-  rawDoc="";await streamInto("/api/revise",body);
-  if(!rawDoc.trim()){rawDoc=prev;render();setOutButtons(true);}
+  rawDoc="";const ok=await streamInto("/api/revise",body);
+  // Any failure or cut-off keeps the teacher's document exactly as it was, with its source check.
+  // A finished revision gets no source check, since its sources were the first run's.
+  if(!ok||!rawDoc.trim()){rawDoc=prev;render();setOutButtons(true);
+    if(prevReport){$("report").innerHTML=prevReport;$("report").hidden=false;}
+    const n=document.createElement("div");n.className="tool";n.textContent="The change didn't finish, so your document was left as it was.";tools.appendChild(n);}
   else $("modin").value="";
   $("modbtn").textContent="Apply";busy=false;refreshGen();
 }

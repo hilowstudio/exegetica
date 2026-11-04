@@ -333,6 +333,8 @@ async def extract_request(request):
     user = auth.current_user(request)
     if not user:
         return JSONResponse({"error": "authentication required"}, status_code=401)
+    if not _is_teacher(user):   # extraction spends the server's model budget
+        return JSONResponse({"error": "Adding books is for teachers."}, status_code=403)
     if not db.ready():
         return JSONResponse({"error": "database unavailable"}, status_code=503)
     try:
@@ -426,6 +428,8 @@ async def upload_presign(request):
     user = auth.current_user(request)
     if not user:
         return JSONResponse({"error": "authentication required"}, status_code=401)
+    if not _is_teacher(user):
+        return JSONResponse({"error": "Adding books is for teachers."}, status_code=403)
     from webapp import r2
 
     if not r2.configured():
@@ -454,6 +458,8 @@ async def upload_complete(request):
     user = auth.current_user(request)
     if not user:
         return JSONResponse({"error": "authentication required"}, status_code=401)
+    if not _is_teacher(user):
+        return JSONResponse({"error": "Adding books is for teachers."}, status_code=403)
     if not db.ready():
         return JSONResponse({"error": "database unavailable"}, status_code=503)
     from webapp import extraction, inngest_app, r2
@@ -505,7 +511,7 @@ async def upload_complete(request):
 # Reviewers see quality SIGNALS only, never the private source text.
 # --------------------------------------------------------------------------- #
 def _is_teacher(user) -> bool:
-    return bool(user) and (user or {}).get("role") == "teacher"
+    return auth.is_teacher(user)
 
 
 async def reviews_list(request):

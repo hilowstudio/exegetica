@@ -200,7 +200,7 @@ def _book_sync(slug: str) -> dict | None:
     try:
         b = con.execute(
             """select id, slug, title, author, author_sort, genres, language, subjects,
-                      chapter_count, word_count, front_html from books where slug=?""",
+                      chapter_count, word_count, front_html, source, license from books where slug=?""",
             (slug,),
         ).fetchone()
         if not b:

@@ -337,5 +337,5 @@ def not_found(msg: str, *, view: str, here: str) -> str:
 def forbidden(*, view: str, here: str) -> str:
     body = (_crumbs([("Overview", "/course")], view)
             + '<h1>Teacher material</h1>'
-            '<p class="empty">This is a teacher guide or answer key. Switch to the Teacher view to open it.</p>')
+            '<p class="empty">This is teacher material. Sign in with a teacher account to open it.</p>')
     return _page("Teacher material", body, here=here, view=view)

@@ -4,29 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Study Bible Corpus</title>
-<meta name="description" content="Everything the study-Bible MCP connector serves from owned data — translations, lexicons, 9 commentaries, a 308-author church-fathers catena, 42 creeds and confessions, and a 985-work full-text grounding corpus.">
+<meta name="description" content="Everything the study-Bible MCP connector serves from owned data: translations, lexicons, 9 commentaries, a 308-author church-fathers catena, 42 creeds and confessions, and a 985-work full-text grounding corpus.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root{
     --paper:#f0e8dc; --surface:#f8f2ea; --surface-2:#e9e0d1; --sunk:#e2d7c6; --ink:#1e2026;
-    --ink-soft:#54596a; --ink-faint:#8b8f9b; --rule:#ddd3c1; --rule-strong:#c9bda6;
-    --accent:#c05a64; --accent-soft:#a84a55; --iron:#42718a; --brass:#9a7c3d;
+    --ink-soft:#54596a; --ink-faint:#5f636f; --rule:#ddd3c1; --rule-strong:#c9bda6;
+    --accent:#9f4751; --accent-soft:#8c414b; --iron:#3d6980; --brass:#7e6632;
     --serif:"Spectral",Georgia,serif; --sans:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
     --shadow:0 14px 40px -22px rgba(40,32,22,.55);
   }
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
     --paper:#14151a; --surface:#1b1d23; --surface-2:#23252c; --sunk:#101116; --ink:#e9e7e0;
-    --ink-soft:#a9aeb9; --ink-faint:#787d88; --rule:#2c2f37; --rule-strong:#3b3f49;
-    --accent:#dd8089; --accent-soft:#b0555f; --iron:#7fb0c2; --brass:#c7a45f;
+    --ink-soft:#a9aeb9; --ink-faint:#888c96; --rule:#2c2f37; --rule-strong:#3b3f49;
+    --accent:#dd8089; --accent-soft:#c0777f; --iron:#7fb0c2; --brass:#c7a45f;
     --shadow:0 16px 44px -22px rgba(0,0,0,.7);
   }}
   :root[data-theme="dark"]{
     --paper:#14151a; --surface:#1b1d23; --surface-2:#23252c; --sunk:#101116; --ink:#e9e7e0;
-    --ink-soft:#a9aeb9; --ink-faint:#787d88; --rule:#2c2f37; --rule-strong:#3b3f49;
-    --accent:#dd8089; --accent-soft:#b0555f; --iron:#7fb0c2; --brass:#c7a45f;
+    --ink-soft:#a9aeb9; --ink-faint:#888c96; --rule:#2c2f37; --rule-strong:#3b3f49;
+    --accent:#dd8089; --accent-soft:#c0777f; --iron:#7fb0c2; --brass:#c7a45f;
     --shadow:0 16px 44px -22px rgba(0,0,0,.7);
   }
   *{box-sizing:border-box}
@@ -35,6 +35,7 @@
   .page{max-width:940px;margin:0 auto;padding:48px 24px 90px}
   h1,h2,h3{text-wrap:balance}
   a{color:var(--iron)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500}
   h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,3rem);line-height:1.08;margin:.35em 0 .18em;letter-spacing:-.01em}
   .lead{font-size:1.06rem;color:var(--ink-soft);max-width:66ch;margin:0 0 26px}
@@ -61,6 +62,7 @@
   .search{flex:1;min-width:220px;display:flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--rule-strong);border-radius:10px;padding:9px 13px}
   .search svg{width:16px;height:16px;stroke:var(--ink-faint);fill:none;stroke-width:2;flex:none}
   .search input{flex:1;border:0;background:none;font-family:var(--sans);font-size:14.5px;color:var(--ink);outline:none}
+  .search:focus-within{border-color:var(--brass);outline:1px solid var(--brass)}   /* the input drops its own ring */
   .fcount{font-family:var(--mono);font-size:12px;color:var(--ink-faint);flex:none}
   .fathers{columns:3 210px;column-gap:26px}
   .fentry{break-inside:avoid;display:flex;align-items:baseline;gap:8px;padding:4px 0;border-bottom:1px solid var(--rule);line-height:1.35}
@@ -88,8 +90,18 @@
   .persona b{color:var(--ink);font-weight:600}
   .item .tool{font-family:var(--mono);font-size:.92rem;font-weight:600;color:var(--ink);line-height:1.3;word-break:break-word}
   .persona + .sec-note{margin-top:16px}
+  .modeh{font-family:var(--serif);font-weight:600;font-size:1.15rem;color:var(--ink);margin:30px 0 4px;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+  .modeh span{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--iron)}
+  .modeh + .sec-note{margin:4px 0 0}
   .backlink{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--iron);text-decoration:none;padding:16px 24px 0;letter-spacing:.05em}
   .backlink:hover{text-decoration:underline}
+  /* touch: every control gets at least a 44px target */
+  @media (pointer:coarse){
+    .backlink{display:inline-flex;align-items:center;min-height:44px;padding-top:6px}
+    .search{padding-top:0;padding-bottom:0}
+    .search input{min-height:44px}
+    .corpus-disc summary{padding:12px 0}
+  }
 </style>
 </head>
 <body>
@@ -98,76 +110,18 @@
   <header>
     <div class="eyebrow">Study-Bible MCP &middot; source corpus</div>
     <h1>Everything the connector can cite</h1>
-    <p class="lead">The complete inventory of texts the study-Bible MCP serves from owned data &mdash; translations, tagged original languages, lexicons, <b>9 public-domain commentaries</b>, a <b>308-author church-fathers catena</b>, the historic creeds and confessions, and a <b>985-work full-text grounding corpus</b> searched at call time. Every answer is grounded in owned data &mdash; no runtime call to a third-party API. Distinct from the teacher-facing Living Library catalog.</p>
+    <p class="lead">The complete inventory of texts the study-Bible MCP serves from owned data: translations, tagged original languages, lexicons, <b>9 public-domain commentaries</b>, a <b>308-author church-fathers catena</b>, the historic creeds and confessions, and a <b>985-work full-text grounding corpus</b> searched at call time. Apart from the optional ESV and NET texts, every tool answers from owned data, with no runtime call to a third-party API. Distinct from the teacher-facing Living Library catalog.</p>
     <div class="stats" id="stats"></div>
   </header>
 
   <section>
-    <div class="sec-h"><h2>About the chat system</h2><span class="k">persona &middot; 32 tools</span></div>
+    <div class="sec-h"><h2>About the chat system</h2><span class="k" id="tkey">persona</span></div>
     <div class="persona">
       <p>Exegetica's default voice is <b>exegesis-first</b>: it establishes a text in its grammatical, historical, and literary context, then reads Scripture christotelically as one story culminating in Christ, with a special focus on the Christian life as an expression of a reality established by <b>union with Christ</b>.</p>
-      <p>It is <b>grounded, not recalled</b>. Instead of reciting from training data memory, it calls the connector tools below to fetch owned data &mdash; the passage, the lexicon entry, the commentary, the father, the confession &mdash; and cites what it used, so every claim can be checked against the text.</p>
+      <p>It is <b>grounded, not recalled</b>. Instead of reciting from training data memory, it calls the connector tools below to fetch owned data (the passage, the lexicon entry, the commentary, the father, the confession) and cites what it used, so every claim can be checked against the text.</p>
     </div>
-    <p class="sec-note">The tools the persona can call &mdash; all read-only, run against owned data, none requiring an external API. The first six groups ground answers in Scripture and the historic church; the last serves Exegetica’s built-in Gospel of John course.</p>
-
-    <div class="subh">Scripture text</div>
-    <div class="grid">
-      <div class="item"><div class="tool">lookup_verse</div><div class="d">A verse in a readable modern translation, with the original language available.</div></div>
-      <div class="item"><div class="tool">get_passage</div><div class="d">A verse range or a whole chapter in one translation.</div></div>
-      <div class="item"><div class="tool">compare_translations</div><div class="d">One verse across several English translations, side by side.</div></div>
-      <div class="item"><div class="tool">get_septuagint</div><div class="d">The Greek Septuagint (LXX) text of a verse, with versification mapping.</div></div>
-    </div>
-
-    <div class="subh">Original languages &amp; words</div>
-    <div class="grid">
-      <div class="item"><div class="tool">word_study</div><div class="d">The lexicon entry for a Strong's number or a Greek, Hebrew, or English word.</div></div>
-      <div class="item"><div class="tool">search_lexicon</div><div class="d">Search the Greek and Hebrew lexicons by English word, transliteration, or concept.</div></div>
-      <div class="item"><div class="tool">search_by_strongs</div><div class="d">Every verse where a given Strong's-numbered word appears.</div></div>
-      <div class="item"><div class="tool">parse_morphology</div><div class="d">Explain a morphological / grammatical parsing code.</div></div>
-      <div class="item"><div class="tool">vocabulary_list</div><div class="d">The rarest original-language words in a passage (reader mode).</div></div>
-    </div>
-
-    <div class="subh">Cross-references &amp; parallels</div>
-    <div class="grid">
-      <div class="item"><div class="tool">get_cross_references</div><div class="d">Passages traditionally read alongside a reference, or a doctrinal chain.</div></div>
-      <div class="item"><div class="tool">get_parallel_passages</div><div class="d">Passages that run parallel to a verse (UBS Parallel Passage Database).</div></div>
-    </div>
-
-    <div class="subh">People, places &amp; events</div>
-    <div class="grid">
-      <div class="item"><div class="tool">lookup_name</div><div class="d">Information about a biblical person, place, or thing by name.</div></div>
-      <div class="item"><div class="tool">people_in_passage</div><div class="d">The people, places, and events mentioned in a passage.</div></div>
-      <div class="item"><div class="tool">explore_person_events</div><div class="d">A person's recorded life events in chronological order.</div></div>
-      <div class="item"><div class="tool">explore_place</div><div class="d">The full biblical history of a place.</div></div>
-      <div class="item"><div class="tool">explore_genealogy</div><div class="d">A person's ancestors and/or descendants across generations.</div></div>
-      <div class="item"><div class="tool">find_connection</div><div class="d">The shortest family-relationship path between two biblical people.</div></div>
-      <div class="item"><div class="tool">graph_enriched_search</div><div class="d">A verse plus all of its people, places, events, and relationships.</div></div>
-    </div>
-
-    <div class="subh">Study notes &amp; reference</div>
-    <div class="grid">
-      <div class="item"><div class="tool">get_study_notes</div><div class="d">Scholarly study and translation notes for a verse or chapter.</div></div>
-      <div class="item"><div class="tool">get_bible_dictionary</div><div class="d">Look up a topic in the Tyndale Bible Dictionary.</div></div>
-      <div class="item"><div class="tool">get_key_terms</div><div class="d">Look up a key theological term in the FIA Key Terms database.</div></div>
-      <div class="item"><div class="tool">get_devotional</div><div class="d">A verse-keyed public-domain devotional reading.</div></div>
-    </div>
-
-    <div class="subh">Commentary &amp; the historic church</div>
-    <div class="grid">
-      <div class="item"><div class="tool">get_commentary</div><div class="d">Public-domain verse commentary (the nine sets above).</div></div>
-      <div class="item"><div class="tool">get_church_fathers</div><div class="d">A catena of church-father comments on a verse.</div></div>
-      <div class="item"><div class="tool">search_theology</div><div class="d">Full-text + semantic search of the grounding treasury (the 985 works).</div></div>
-      <div class="item"><div class="tool">get_confession</div><div class="d">Retrieve or search the creeds, confessions, and catechisms.</div></div>
-      <div class="item"><div class="tool">find_confessions_by_verse</div><div class="d">Which confession or catechism articles cite a verse as a proof text.</div></div>
-      <div class="item"><div class="tool">get_confession_proofs</div><div class="d">The Scripture proof texts behind a confession or catechism article.</div></div>
-    </div>
-    <div class="subh">Gospel of John curriculum</div>
-    <div class="grid">
-      <div class="item"><div class="tool">list_john_curriculum</div><div class="d">List the built-in Gospel of John course: every unit reading guide, the four quarter projects, and the memory-verse set.</div></div>
-      <div class="item"><div class="tool">get_reading_guide</div><div class="d">The reading guide for one unit (1–28): its passage, big question, and observe / interpret / respond prompts.</div></div>
-      <div class="item"><div class="tool">get_project</div><div class="d">The student guide for one of the four quarter projects: the assignment, options, and due dates.</div></div>
-      <div class="item"><div class="tool">get_memory_verses</div><div class="d">The course memory-verse master sheet: the 16 verses, which unit introduces each, and the review schedule.</div></div>
-    </div>
+    <p class="sec-note">The tools the chat can call. Each one is read-only and runs against owned data. This list comes from the running app, so it shows exactly the tools each mode registers.</p>
+    <div id="tool-groups" aria-live="polite"><p class="fnone">Loading the tool list&hellip;</p></div>
   </section>
 
 
@@ -213,15 +167,15 @@
       <div class="item"><div class="t">Calvin&#x27;s Commentaries</div><div class="d">Calvin's Commentaries.</div></div>
       <div class="item"><div class="t">Keil &amp; Delitzsch (Old Testament)</div><div class="d">Commentary on the Old Testament.</div></div>
       <div class="item"><div class="t">Matthew Henry&#x27;s Commentary</div><div class="d">Complete devotional commentary on the whole Bible.</div></div>
-      <div class="item"><div class="t">Spurgeon — Treasury of David</div><div class="d">Verse-by-verse exposition of the Psalms.</div></div>
-      <div class="item"><div class="t">Charles Hodge — Romans</div><div class="d">Verse-level commentary on Romans.</div></div>
-      <div class="item"><div class="t">J.C. Ryle — Gospels</div><div class="d">Expository Thoughts on the four Gospels.</div></div>
+      <div class="item"><div class="t">Spurgeon, <i>Treasury of David</i></div><div class="d">Verse-by-verse exposition of the Psalms.</div></div>
+      <div class="item"><div class="t">Charles Hodge on Romans</div><div class="d">Verse-level commentary on Romans.</div></div>
+      <div class="item"><div class="t">J.C. Ryle on the Gospels</div><div class="d">Expository Thoughts on the four Gospels.</div></div>
     </div>
   </section>
 
   <section>
     <div class="sec-h"><h2>Theology grounding corpus</h2><span class="k" id="gkey">985 works</span></div>
-    <p class="sec-note">A full-text public-domain theological treasury &mdash; <b>985 works</b>, 1.6M paragraphs &mdash; searched at call time by keyword (BM25) and by meaning (local embeddings), with <b>no external API</b>. It is reference-aware: a question about a book or verse surfaces the works devoted to it (a Hebrews question grounds on Owen's <i>Exposition</i>). Served through <span style="font-family:var(--mono);font-size:12.5px">search_theology</span>; a few of the marquee holdings:</p>
+    <p class="sec-note">A full-text public-domain theological treasury of <b>985 works</b>, 1.6M paragraphs, searched at call time by keyword (BM25) and by meaning (local embeddings), with <b>no external API</b>. It is reference-aware: a question about a book or verse surfaces the works devoted to it (a Hebrews question grounds on Owen's <i>Exposition</i>). Served through <span style="font-family:var(--mono);font-size:12.5px">search_theology</span>. A few of the marquee holdings:</p>
     <div class="grid">
       <div class="item"><div class="t">John Owen</div><div class="d">Collected works, including the 7-volume <i>Exposition of the Epistle to the Hebrews</i>.</div></div>
       <div class="item"><div class="t">C.H. Spurgeon</div><div class="d">60+ volumes of sermons, the <i>Treasury of David</i>, <i>Morning &amp; Evening</i>.</div></div>
@@ -237,11 +191,11 @@
       <div class="fbar" style="margin-top:14px">
         <label class="search">
           <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-          <input id="csearch" type="text" placeholder="Filter the full corpus — title or author" aria-label="Filter grounding corpus">
+          <input id="csearch" type="text" placeholder="Filter the full corpus by title or author" aria-label="Filter grounding corpus">
         </label>
         <span class="fcount" id="ccount"></span>
       </div>
-      <div class="corpuslist" id="corpuslist"></div>
+      <div class="corpuslist" id="corpuslist" tabindex="0" aria-label="Full grounding corpus"></div>
       <div class="fnone" id="cnone" hidden>No work matches that filter.</div>
     </details>
   </section>
@@ -301,9 +255,10 @@
       <div class="item"><div class="t">Morning &amp; Evening</div><div class="d">Spurgeon's daily devotional.</div></div>
       <div class="item"><div class="t">Septuagint</div><div class="d">Brenton (English), Swete (Greek), Copenhagen (LXX + English).</div></div>
       <div class="item"><div class="t">Cross-references</div><div class="d">Treasury of Scripture Knowledge / OpenBible.</div></div>
-      <div class="item"><div class="t">Parallel passages</div><div class="d">Gospel &amp; synoptic parallels (TheologAI).</div></div>
+      <div class="item"><div class="t">Parallel passages</div><div class="d">UBS Parallel Passage Database (United Bible Societies).</div></div>
       <div class="item"><div class="t">People, places &amp; events</div><div class="d">ACAI + Theographic + TIPNR proper-names spine.</div></div>
-      <div class="item"><div class="t">unfoldingWord notes</div><div class="d">Translation notes, key terms, study notes, dictionary.</div></div>
+      <div class="item"><div class="t">Study &amp; translation notes</div><div class="d">Aquifer Open Study Notes (adapted from Tyndale Open Study Notes), unfoldingWord Translation Notes, and SIL's Open Translator's Notes.</div></div>
+      <div class="item"><div class="t">Bible dictionary &amp; key terms</div><div class="d">Aquifer Open Bible Dictionary (adapted from Tyndale Open Bible Dictionary) and FIA Key Terms.</div></div>
     </div>
   </section>
 
@@ -313,7 +268,7 @@
     <div class="fbar">
       <label class="search">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        <input id="fsearch" type="text" placeholder="Filter authors — e.g. Augustine, Syrian, Chrysostom" aria-label="Filter church fathers">
+        <input id="fsearch" type="text" placeholder="Filter authors, e.g. Augustine, Syrian, Chrysostom" aria-label="Filter church fathers">
       </label>
       <span class="fcount" id="fcount"></span>
     </div>
@@ -321,8 +276,31 @@
     <div class="fnone" id="fnone" hidden>No author matches that filter.</div>
   </section>
 
+  <section id="credits">
+    <div class="sec-h"><h2>Credits &amp; licenses</h2><span class="k">CC BY &middot; CC BY-SA</span></div>
+    <p class="sec-note">These sources are shared under Creative Commons licenses that ask for credit. Unless a card says more, our changes are changes of form: we load the data into a database and serve excerpts of it. Material under CC BY-SA 4.0, and our changes to it, stay under CC BY-SA 4.0. Public-domain sources need no credit.</p>
+    <div class="grid">
+      <div class="item"><div class="t">STEPBible Data</div><div class="d">Tyndale House, Cambridge (<a href="https://www.STEPBible.org">STEP Bible</a>). Tagged Hebrew and Greek texts, lexicons, proper names, and morphology codes. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. <a href="https://github.com/STEPBible/STEPBible-Data">Source</a>.</div></div>
+      <div class="item"><div class="t">OpenBible.info cross-references</div><div class="d">OpenBible.info. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. <a href="https://www.openbible.info/labs/cross-references/">Source</a>.</div></div>
+      <div class="item"><div class="t">Theographic Bible Metadata</div><div class="d">Robert Rouse (viz.bible). <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://github.com/robertrouse/theographic-bible-metadata">Source</a>.</div></div>
+      <div class="item"><div class="t">ACAI Biblical Entity Data</div><div class="d">&copy; 2025 Mission Mutual (first released by BiblioNexus). We keep selected fields. <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://github.com/BibleAquifer/ACAI">Source</a>.</div></div>
+      <div class="item"><div class="t">UBS Parallel Passage Database</div><div class="d">&copy; 2023 United Bible Societies. <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://github.com/ubsicap/ubs-open-license">Source</a>.</div></div>
+      <div class="item"><div class="t">Versification mappings</div><div class="d">Copenhagen Alliance. <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://github.com/Copenhagen-Alliance/versification-specification">Source</a>.</div></div>
+      <div class="item"><div class="t">Aquifer Open Study Notes</div><div class="d">&copy; 2026 Mission Mutual, adapted from <i>Tyndale Open Study Notes</i>, &copy; 2023 Tyndale House Publishers. <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://github.com/BibleAquifer/AquiferOpenStudyNotes">Source</a>.</div></div>
+      <div class="item"><div class="t">Aquifer Open Bible Dictionary</div><div class="d">&copy; 2026 Mission Mutual, adapted from <i>Tyndale Open Bible Dictionary</i>, &copy; 2023 Tyndale House Publishers. <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://github.com/BibleAquifer/AquiferOpenBibleDictionary">Source</a>.</div></div>
+      <div class="item"><div class="t">unfoldingWord&reg; Translation Notes</div><div class="d">&copy; 2022 unfoldingWord. <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://github.com/BibleAquifer/UWTranslationNotes">Source</a>.</div></div>
+      <div class="item"><div class="t">Open Translator's Notes</div><div class="d">&copy; 2024 SIL International. <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://github.com/BibleAquifer/SILOpenTranslatorsNotes">Source</a>.</div></div>
+      <div class="item"><div class="t">FIA Key Terms</div><div class="d"><i>Familiarization, Internalization, Articulation (FIA) Key Terms</i>, &copy; 2025 Word Collective. <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://github.com/BibleAquifer/FIAKeyTerms">Source</a>.</div></div>
+      <div class="item"><div class="t">Early Church Fathers: Scripture Citation Index</div><div class="d">SermonIndex. We add only the excerpts the main catena lacks. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. <a href="https://huggingface.co/datasets/sermonindex/early-church-fathers">Source</a>.</div></div>
+      <div class="item"><div class="t">CCEL Paragraphs</div><div class="d">Jon Craton, from the <a href="https://www.ccel.org">Christian Classics Ethereal Library</a>. The source of the theology grounding corpus and the Reading Room's theology books. <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://huggingface.co/datasets/jncraton/ccel-paragraphs">Source</a>.</div></div>
+      <div class="item"><div class="t">Documenting the American South</div><div class="d">University Library, The University of North Carolina at Chapel Hill, which made this material available. History mode. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. <a href="https://docsouth.unc.edu">Source</a>.</div></div>
+      <div class="item"><div class="t">Wikisource</div><div class="d">Public-domain texts in History mode and the Reading Room. Wikisource's transcriptions are <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://en.wikisource.org">Source</a>.</div></div>
+      <div class="item"><div class="t">Supreme Court Database</div><div class="d">Harold J. Spaeth, Lee Epstein, Michael J. Nelson, Andrew D. Martin, et al. Version 2026 Release 01 and Legacy Release 07. Vote and issue coding in History mode. <a href="https://scdb.la.psu.edu">Source</a>.</div></div>
+    </div>
+  </section>
+
   <div class="foot">
-    The connector answers from its own built-in database &mdash; no runtime call to a third-party API. This corpus is separate from the <b>Living Library</b>, the teacher-facing catalog of full-length works.
+    The connector answers from its own built-in database, with no runtime call to a third-party API apart from the optional ESV and NET texts. This corpus is separate from the <b>Living Library</b>, the teacher-facing catalog of full-length works.
   </div>
 </div>
 
@@ -382,6 +360,46 @@
     var built=false;
     det.addEventListener("toggle", function(){ if(det.open && !built){ crender(""); built=true; } });
     inp.addEventListener("input", function(e){ crender(e.target.value); });
+  })();
+</script>
+
+<script>
+  /* The tool list comes from /api/config, which builds it with webapp/tool_catalog.py from the
+     tools each chat mode registers, so the page cannot fall behind the app. */
+  (function(){
+    var host = document.getElementById("tool-groups"), key = document.getElementById("tkey");
+    function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+    function count(groups){ return groups.reduce(function(n,g){ return n + g.tools.length; }, 0); }
+    function groupsHtml(groups){
+      return groups.map(function(g){
+        var cards = g.tools.map(function(t){
+          return '<div class="item"><div class="tool">' + esc(t.name) + '</div><div class="d">' + esc(t.desc) + '</div></div>';
+        }).join("");
+        return '<div class="subh">' + esc(g.group) + '</div><div class="grid">' + cards + '</div>';
+      }).join("");
+    }
+    function fail(){ host.innerHTML = '<p class="fnone">The tool list did not load. Reload the page to try again.</p>'; }
+    fetch("/api/config", {headers: {"Accept": "application/json"}, credentials: "same-origin"})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(cfg){
+        var cat = (cfg && cfg.catalog) || {}, bible = cat.bible || [], hist = cat.history || [];
+        if(!bible.length){ fail(); return; }
+        var nb = count(bible), nh = count(hist);
+        key.textContent = "persona · " + nb + " tools";
+        var html = '<h3 class="modeh">Bible mode <span>' + nb + ' tools</span></h3>' + groupsHtml(bible);
+        if(nh){
+          var shared = {};
+          bible.forEach(function(g){ shared[g.group] = true; });
+          var own = hist.filter(function(g){ return !shared[g.group]; });
+          var reach = nh - count(own);
+          html += '<h3 class="modeh">History mode <span>' + nh + ' tools</span></h3>'
+               + '<p class="sec-note">History mode has the ' + count(own) + ' history tools below. It also reaches '
+               + reach + ' Study Bible tools from the list above, every one except the Gospel of John course.</p>'
+               + groupsHtml(own);
+        }
+        host.innerHTML = html;
+      })
+      .catch(fail);
   })();
 </script>
 

@@ -20,6 +20,8 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    env:
+      OPS_FLAG_TOKEN: ${{ secrets.OPS_FLAG_TOKEN }}   # job level, so a step's `if` can read it
     steps:
       - name: Ping /api/config (wakes + warms the machine)
         run: |
@@ -27,3 +29,19 @@ jobs:
           curl -fsS --retry 6 --retry-all-errors --retry-delay 15 --max-time 120 \
             -o /dev/null -w "warmed: HTTP %{http_code} in %{time_total}s\n" \
             https://exegetica.app/api/config
+
+      # The libraries answer a ping (webapp/app.py health). A machine still waking can take a while,
+      # so this retries; a failure that outlasts the retries fails the run, and GitHub emails.
+      - name: Check the libraries (/api/health)
+        run: |
+          curl -fsS --retry 4 --retry-all-errors --retry-delay 15 --max-time 60 \
+            -o /dev/null -w "health: HTTP %{http_code}\n" \
+            https://exegetica.app/api/health
+
+      # Once a UTC day, if estimated spend passes $5, /ops/flag answers 500 and this run fails,
+      # so GitHub emails the maker (webapp/ops.py). It also drives the metrics purge. Skipped
+      # until the OPS_FLAG_TOKEN secret is set here and on Fly.
+      - name: Spend alert (/ops/flag)
+        if: ${{ env.OPS_FLAG_TOKEN != '' }}
+        run: |
+          curl -fsS --max-time 60 -H "X-Ops-Token: $OPS_FLAG_TOKEN" https://exegetica.app/ops/flag
