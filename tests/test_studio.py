@@ -11,6 +11,8 @@ import httpx
 import pytest
 from PIL import Image
 from starlette.applications import Starlette
+from starlette.middleware import Middleware
+from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Route
 from starlette.testclient import TestClient
 
@@ -123,7 +125,7 @@ def env(monkeypatch):
     monkeypatch.setattr(studio, "rewrite", fake_rewrite)
 
     # The maker's GPU: ComfyUI on Baseten, awake once `comfy_ready` is set.
-    seen.update(comfy=[], comfy_ready=False, comfy_state=("running", [], ""))
+    seen.update(comfy=[], comfy_ready=False, comfy_state=("running", [], "", []))
 
     async def comfy_call(name, *args):
         seen["comfy"].append((name,) + args)
@@ -134,7 +136,7 @@ def env(monkeypatch):
     async def ready():
         return seen["comfy_ready"]
 
-    async def upload(data, name):
+    async def upload(data, name, limit=svc.MAX_IMAGE):
         await comfy_call("upload", data, name)
         return name
 
@@ -152,7 +154,15 @@ def env(monkeypatch):
     monkeypatch.setattr(comfy, "headers", lambda: {"Authorization": "Bearer test-key"})
     monkeypatch.setattr(comfy, "file_url", lambda f: "https://model-x.api.baseten.co/sync/view/" + f["filename"])
 
-    app = Starlette(routes=[
+    app = Starlette(middleware=[Middleware(SessionMiddleware, secret_key="test")], routes=[
+        Route("/api/studio/folders", studio.create_folder, methods=["POST"]),
+        Route("/api/studio/folders/{folder_id}", studio.change_folder, methods=["PATCH"]),
+        Route("/api/studio/folders/{folder_id}", studio.delete_folder, methods=["DELETE"]),
+        Route("/api/studio/folders/{folder_id}/unlock", studio.unlock_folder, methods=["POST"]),
+        Route("/api/studio/folders/{folder_id}/lock", studio.lock_folder, methods=["POST"]),
+        Route("/api/studio/folders/{folder_id}/cover", studio.folder_cover),
+        Route("/api/studio/items/move", studio.move_items, methods=["POST"]),
+        Route("/api/studio/items/delete", studio.delete_items, methods=["POST"]),
         Route("/studio", studio.page),
         Route("/api/studio/config", studio.config),
         Route("/api/studio/quote", studio.quote, methods=["POST"]),
@@ -692,7 +702,7 @@ def test_your_gpu_wakes_then_takes_the_job_and_the_video_comes_home(env):
     check(env, item)   # the saved job is not sent twice
     assert [c[0] for c in env["comfy"]].count("queue") == 1
 
-    env["comfy_state"] = ("done", [{"filename": "h3_00001_.mp4", "subfolder": "studio", "type": "output"}], "")
+    env["comfy_state"] = ("done", [{"filename": "h3_00001_.mp4", "subfolder": "studio", "type": "output"}], "", [])
     done = check(env, item).json()["image"]
     assert done["status"] == "ready" and done["est_usd"] == 0.3
     assert env["downloads"][-1] == ("https://model-x.api.baseten.co/sync/view/h3_00001_.mp4",
@@ -722,11 +732,105 @@ def test_a_still_on_your_gpu_waits_like_a_video_and_comes_home_as_a_png(env):
     check(env, item)
     wf = env["comfy"][-1][1]
     assert wf["16"]["class_type"] == "SaveImage" and wf["11"]["inputs"]["steps"] == 40
-    env["comfy_state"] = ("done", [{"filename": "h3_still_00001_.png", "subfolder": "studio", "type": "output"}], "")
+    env["comfy_state"] = ("done", [{"filename": "h3_still_00001_.png", "subfolder": "studio", "type": "output"}], "", [])
     done = check(env, item).json()["image"]
     assert done["status"] == "ready" and done["ext"] == "png"
     assert env["store"][f"studio/{ADMIN['id']}/{item['id']}.png"][1] == "image/png"
     assert env["rows"][-1]["route"] == "studio" and env["rows"][-1]["outcome"] == "complete"
+
+
+def test_a_run_on_your_gpu_is_rewritten_there_and_claude_is_not_asked(env):
+    env["keys"] = {"fal", "baseten"}
+    item = make(env, mode="video", model="h3-ref", seconds=5, prompt="picture 1 naps", rewrite=True,
+                refs=[{"data_url": png_data_url(64, 64)}]).json()["image"]
+    assert env["rewrites"] == [] and item["rewrite_on_gpu"] is True and item["prompt_used"] == "<Picture 1> naps"
+    env["comfy_ready"] = True
+    check(env, item)
+    node = env["comfy"][-1][1]["20"]["inputs"]
+    assert node["prompt"] == "<Picture 1> naps" and node["picture_tags"] is True
+    assert node["system"].startswith(studio.REWRITE["reference"]) and "adults only" in node["system"]
+
+    env["comfy_state"] = ("done", [{"filename": "h3_00001_.mp4", "subfolder": "studio", "type": "output"}], "",
+                          ["<Picture 1> curls up asleep on a sunlit rug, the camera drifting closer."])
+    done = check(env, item).json()["image"]
+    assert done["prompt_used"].startswith("<Picture 1> curls up") and done["rewritten"] is True
+    # no Claude call; the rewrite's GPU seconds are counted with the clip
+    assert env["rewrites"] == [] and done["est_usd"] == item["est_usd"] == round(0.35 + 6.5 / 3600 * 20, 4)
+
+    other = make(env, mode="video", model="h3", seconds=5, rewrite=True).json()["image"]   # fal: Claude rewrites
+    assert other["service"] == "fal" and env["rewrites"] and other["rewrite_on_gpu"] is False
+
+
+def test_p_h3_image_draws_and_edits_on_your_gpu(env):
+    env["keys"] = {"fal", "runware", "baseten"}
+    item = make(env, mode="create", model="p-h3-image", shape="wide").json()["image"]
+    assert item["service"] == "baseten" and (item["width"], item["height"]) == (3872, 2176)
+    env["comfy_ready"] = True
+    check(env, item)
+    gen = env["comfy"][-1][1]["7"]["inputs"]
+    assert (gen["width"], gen["height"]) == (3872, 2176)
+
+    edit = make(env, mode="edit", model="p-h3-image", prompt="put the hat from picture 2 on him",
+                source={"data_url": png_data_url(1000, 750)}, refs=[{"data_url": png_data_url(64, 64)}]).json()["image"]
+    assert edit["prompt_used"] == "put the hat from <Picture 2> on him" and edit["width"] is None
+    check(env, edit)
+    uploads = [c for c in env["comfy"] if c[0] == "upload"]
+    assert Image.open(io.BytesIO(uploads[-2][1])).size == (2304, 1728)   # the image to edit, at about 4 MP
+    assert uploads[-1][2] == f"{edit['id']}-ref1.png"
+    gen = env["comfy"][-1][1]["7"]["inputs"]
+    assert (gen["width"], gen["height"]) == (0, 0) and gen["images.image_2"] == ["102", 0]
+
+    r = make(env, mode="edit", model="flux-kontext", source={"data_url": png_data_url(64, 64)},
+             refs=[{"data_url": png_data_url(64, 64)}])
+    assert r.status_code == 400 and "takes no reference pictures" in r.json()["error"]
+
+
+def h3_clip(env, seconds=5):
+    """A finished MiniMax H3 clip in the studio, made on the GPU."""
+    item = make(env, mode="video", model="h3", seconds=seconds, shape="wide", service="baseten").json()["image"]
+    env["comfy_ready"] = True
+    check(env, item)
+    env["comfy_state"] = ("done", [{"filename": "h3_00001_.mp4", "subfolder": "studio", "type": "output"}], "", [])
+    done = check(env, item).json()["image"]
+    env["comfy_state"] = ("running", [], "", [])
+    return done
+
+
+def test_an_h3_clip_is_extended_on_your_gpu_into_one_longer_clip(env):
+    env["keys"] = {"fal", "runware", "baseten"}
+    clip = h3_clip(env)
+    q = quote(env, mode="video", model="h3", seconds=5, extending=True)
+    reasons = {s["service"]: s["reason"] for s in q["services"]}
+    assert reasons["fal"] == reasons["runware"] == "cannot extend a clip"
+
+    item = make(env, mode="video", model="h3", seconds=5, service="baseten", prompt="it runs on",
+                extend={"id": clip["id"]}).json()["image"]
+    assert item["extends_id"] == clip["id"] and item["seconds"] == round(5 + 5 - 22 / 24, 1)
+    assert (item["width"], item["height"]) == (clip["width"], clip["height"])
+    check(env, item)
+    upload = [c for c in env["comfy"] if c[0] == "upload"][-1]
+    assert upload[1] == b"mp4 bytes 0123456789" and upload[2] == f"{clip['id']}.mp4"   # the old clip itself
+    wf = env["comfy"][-1][1]
+    assert wf["29"]["inputs"]["file"] == upload[2] and wf["7"]["inputs"]["length"] == 124
+
+
+@pytest.mark.parametrize("why", ["not h3", "too long", "with a frame"])
+def test_only_an_h3_clip_with_room_left_can_be_extended(env, why):
+    env["keys"] = {"fal", "baseten"}
+    clip = h3_clip(env, seconds=15)
+    body = {"mode": "video", "model": "h3", "seconds": 15, "service": "baseten", "extend": {"id": clip["id"]}}
+    if why == "not h3":
+        body["model"] = "h3-ref"
+    if why == "too long":
+        studio_index = env["store"][f"studio/{ADMIN['id']}/index.json"][0]
+        items = json.loads(studio_index)
+        items[0]["seconds"] = 50
+        env["store"][f"studio/{ADMIN['id']}/index.json"] = (json.dumps(items).encode(), "application/json")
+    if why == "with a frame":
+        body["source"] = {"data_url": png_data_url(64, 64)}
+    r = make(env, **body)
+    said = {"not h3": "cannot extend a clip", "too long": "can reach 60 seconds", "with a frame": "Remove the other"}
+    assert r.status_code in (400, 404) and said[why] in r.json()["error"]
 
 
 def test_a_last_frame_runs_on_your_gpu_only(env):
@@ -778,6 +882,151 @@ def test_pictures_beyond_what_the_model_takes_are_turned_back_before_anything_ru
     env["keys"] = {"baseten"}
     r = make(env, mode="video", model="h3-ref", seconds=5, **extra)
     assert r.status_code == 400 and said in r.json()["error"] and env["comfy"] == []
+
+
+# ---------------------------------------------------------------- folders, password locks, many at once
+def folder(env, name="Trip", password=None):
+    body = {"name": name} | ({"password": password} if password else {})
+    r = env["client"].post("/api/studio/folders", json=body)
+    assert r.status_code == 200, r.text
+    return r.json()["created"]
+
+
+def listed(env):
+    return env["client"].get("/api/studio/images").json()
+
+
+def test_new_work_lands_in_the_folder_asked_for_and_moves_and_goes_many_at_once(env):
+    trip = folder(env)
+    a = make(env, folder=trip).json()["image"]
+    b = make(env).json()["image"]
+    c = make(env).json()["image"]
+    assert a["folder_id"] == trip and b["folder_id"] is None
+    shown = listed(env)
+    assert [{k: f[k] for k in ("id", "name", "protected", "open", "count")} for f in shown["folders"]] == [
+        {"id": trip, "name": "Trip", "protected": False, "open": True, "count": 1}]
+
+    c_ = env["client"]
+    assert c_.post("/api/studio/items/move", json={"ids": [b["id"], c["id"]], "folder": trip}).json() == {"moved": 2}
+    assert {i["id"]: i["folder_id"] for i in listed(env)["images"]} == {a["id"]: trip, b["id"]: trip, c["id"]: trip}
+    assert c_.post("/api/studio/items/move", json={"ids": [c["id"]], "folder": None}).json() == {"moved": 1}
+
+    files = {k for k in env["store"] if k.endswith(".jpg")}
+    assert c_.post("/api/studio/items/delete", json={"ids": [a["id"], b["id"]]}).json() == {"deleted": 2}
+    assert [i["id"] for i in listed(env)["images"]] == [c["id"]]
+    assert {k for k in env["store"] if k.endswith(".jpg")} == files - {f"studio/{ADMIN['id']}/{a['id']}.jpg",
+                                                                      f"studio/{ADMIN['id']}/{b['id']}.jpg"}
+
+    assert c_.delete(f"/api/studio/folders/{trip}").status_code == 200   # its items stay, outside any folder
+    assert listed(env)["folders"] == []
+    assert c_.post("/api/studio/items/move", json={"ids": [c["id"]], "folder": trip}).status_code == 404
+
+
+def test_a_protected_folder_hides_everything_in_it_until_opened_with_its_password(env):
+    c = env["client"]
+    vault = folder(env, "Vault", password="correct horse")
+    inside = make(env, folder=vault).json()["image"]
+    outside = make(env).json()["image"]
+    raw = env["store"][f"studio/{ADMIN['id']}/folders.json"][0].decode()
+    assert "correct horse" not in raw and '"hash"' in raw and '"salt"' in raw   # only a salted hash is kept
+
+    assert c.post(f"/api/studio/folders/{vault}/lock").status_code == 200
+    shown = listed(env)
+    assert [i["id"] for i in shown["images"]] == [outside["id"]]
+    assert {k: shown["folders"][0][k] for k in ("id", "name", "protected", "open", "count")} == {
+        "id": vault, "name": "Vault", "protected": True, "open": False, "count": None}
+    # closed: no file, no check, no use as a picture, nothing moved in or out, nothing deleted, no new work
+    assert c.get(f"/api/studio/image/{inside['id']}").status_code == 404
+    assert c.get(f"/api/studio/image/{inside['id']}/check").status_code == 404
+    assert make(env, mode="edit", model="flux-kontext", source={"id": inside["id"]}).status_code == 404
+    assert c.post("/api/studio/items/move", json={"ids": [outside["id"]], "folder": vault}).status_code == 403
+    assert c.post("/api/studio/items/move", json={"ids": [inside["id"]], "folder": None}).json() == {"moved": 0}
+    assert c.post("/api/studio/items/delete", json={"ids": [inside["id"]]}).json() == {"deleted": 0}
+    assert make(env, folder=vault).status_code == 403
+    assert c.patch(f"/api/studio/folders/{vault}", json={"remove_password": True}).status_code == 403
+    assert c.delete(f"/api/studio/folders/{vault}").status_code == 403
+
+    assert c.post(f"/api/studio/folders/{vault}/unlock", json={"password": "wrong"}).status_code == 403
+    assert c.post(f"/api/studio/folders/{vault}/unlock", json={"password": "correct horse"}).status_code == 200
+    assert {i["id"] for i in listed(env)["images"]} == {inside["id"], outside["id"]}
+    assert c.get(f"/api/studio/image/{inside['id']}").status_code == 200
+
+    # another browser session starts with every protected folder closed
+    other = TestClient(c.app)
+    assert [i["id"] for i in other.get("/api/studio/images").json()["images"]] == [outside["id"]]
+
+
+def test_wrong_passwords_are_slowed_after_five(env, monkeypatch):
+    monkeypatch.setattr(studio, "_misses", {})
+    c = env["client"]
+    vault = folder(env, "Vault", password="right one")
+    c.post(f"/api/studio/folders/{vault}/lock")
+    for _ in range(studio.TRIES):
+        assert c.post(f"/api/studio/folders/{vault}/unlock", json={"password": "nope"}).status_code == 403
+    r = c.post(f"/api/studio/folders/{vault}/unlock", json={"password": "right one"})
+    assert r.status_code == 429 and "Too many" in r.json()["error"]
+
+
+def test_a_folders_cover_shows_its_name_and_its_lock_as_this_session_has_it(env, monkeypatch):
+    from webapp import house_cover
+    drawn = []
+    monkeypatch.setattr(house_cover, "folder_cover_sync",
+                        lambda fid, name, mode, state, theme=None: drawn.append((name, mode, state, theme)) or b"RIFF webp")
+    c = env["client"]
+    rome = folder(env, "Rome")
+    vault = folder(env, "Vault", password="correct horse")   # made open in this session
+    for fid in (rome, vault):
+        r = c.get(f"/api/studio/folders/{fid}/cover?mode=dark")
+        assert r.status_code == 200 and r.headers["content-type"] == "image/webp"
+    c.post(f"/api/studio/folders/{vault}/lock")
+    c.get(f"/api/studio/folders/{vault}/cover")
+    assert [d[:3] for d in drawn] == [("Rome", "dark", "plain"), ("Vault", "dark", "open"), ("Vault", "light", "locked")]
+    assert c.get(f"/api/studio/folders/{'f' * 32}/cover").status_code == 404
+    assert house_cover.folder_theme("a" * 32, "light") == house_cover.folder_theme("a" * 32, "light")   # the same every time
+    assert len({house_cover.folder_theme(f"{n:032x}", "light") for n in range(12)}) > 4   # and neighbors differ
+
+
+def test_a_folders_cover_color_is_chosen_from_the_house_cloths_for_each_page_mode(env, monkeypatch):
+    from webapp import house_cover
+    drawn = []
+    monkeypatch.setattr(house_cover, "folder_cover_sync",
+                        lambda fid, name, mode, state, theme=None: drawn.append((mode, theme)) or b"RIFF webp")
+    c = env["client"]
+    rome = folder(env, "Rome")
+    light, dark = house_cover.folder_themes("light")[3], house_cover.folder_themes("dark")[5]
+    r = c.patch(f"/api/studio/folders/{rome}", json={"themes": {"light": light, "dark": dark}})
+    assert r.status_code == 200
+    f = r.json()["folders"][0]
+    assert f["themes"] == {"light": light, "dark": dark} and f["themes_chosen"] == {"light": True, "dark": True}
+    c.get(f"/api/studio/folders/{rome}/cover?mode=dark")                    # drawn in the chosen cloth
+    c.get(f"/api/studio/folders/{rome}/cover?mode=light&theme=auto")        # the picker's preview of the folder's own pick
+    assert drawn == [("dark", dark), ("light", None)]
+    # back to the folder's own pick for light pages; a dark cloth is refused for light pages
+    f = c.patch(f"/api/studio/folders/{rome}", json={"themes": {"light": None}}).json()["folders"][0]
+    assert f["themes"]["light"] == house_cover.folder_theme(rome, "light") and f["themes_chosen"]["light"] is False
+    assert c.patch(f"/api/studio/folders/{rome}", json={"themes": {"light": dark}}).status_code == 400
+
+
+def test_a_folder_cover_is_the_house_cover_laid_landscape_and_books_stay_as_they_were(monkeypatch, tmp_path):
+    from PIL import Image
+
+    from webapp import house_cover
+    monkeypatch.setenv("COVER_CACHE", str(tmp_path))
+    folders, books = house_cover._folder_renderer(), house_cover._renderer()
+    assert folders.W > folders.H and books.H > books.W
+    assert folders.AUTHOR_BAND == 0 and books.AUTHOR_BAND > 0   # a folder carries its name and no other words
+    for state in ("plain", "locked", "open"):
+        im = Image.open(io.BytesIO(house_cover.folder_cover_sync("a" * 32, "Studies in light", "dark", state)))
+        assert im.format == "WEBP" and im.width > im.height
+
+
+def test_a_folder_needs_a_name_and_a_real_password(env):
+    c = env["client"]
+    assert c.post("/api/studio/folders", json={"name": "  "}).status_code == 400
+    assert c.post("/api/studio/folders", json={"name": "x", "password": "abc"}).status_code == 400
+    plain = folder(env, "Plain")
+    r = c.patch(f"/api/studio/folders/{plain}", json={"name": "Renamed", "password": "four"})
+    assert r.status_code == 200 and r.json()["folders"][0]["protected"] is True and r.json()["folders"][0]["name"] == "Renamed"
 
 
 def test_a_workflow_comfyui_refuses_ends_the_job_instead_of_asking_again(env):

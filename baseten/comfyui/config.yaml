@@ -14,6 +14,10 @@ build_commands:
   - curl -fsSL https://github.com/Comfy-Org/ComfyUI/archive/refs/tags/v0.44.0.tar.gz | tar -xz -C /app && mv /app/ComfyUI-0.44.0 /app/ComfyUI
   - pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
   - pip install --no-cache-dir -r /app/ComfyUI/requirements.txt
+  # The studio's own nodes (data/custom_nodes/exegetica): the prompt rewriter, which loads its
+  # model with accelerate, and the clip tail and join that extend a video.
+  - pip install --no-cache-dir accelerate
+  - cp -r /app/data/custom_nodes/exegetica /app/ComfyUI/custom_nodes/
   - sed -i 's/\r$//' /app/data/start.sh /app/data/extra_model_paths.yaml
 docker_server:
   start_command: sh /app/data/start.sh
@@ -39,3 +43,19 @@ weights:
       - vae/minimax_h3_video_vae_int8_convrot.safetensors
       - vae/minimax_h3_audio_vae_fp32.safetensors
       - loras/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors
+  # P-H3-Image, H3's image model, as a LoRA on the fl2va weights above plus its own text encoder
+  # and VAE: text-to-image and edits with up to eight pictures. About 10 GB.
+  - source: hf://PrunaAI/P-H3-Image-Comfy@44a0fb73f299da1bb715bdb5ff59ce3fd3c6f543
+    mount_location: /models/p-h3-image
+    allow_patterns:
+      - loras/p-h3-image_lora_bf16.safetensors
+      - text_encoders/p-h3-image_text_encoder_int8_convrot.safetensors
+      - vae/p-h3-image_vae_int8_convrot.safetensors
+  # The prompt rewriter for runs on this GPU: Qwen3-8B with refusals removed (abliterated), 16 GB.
+  - source: hf://Goekdeniz-Guelmez/Josiefied-Qwen3-8B-abliterated-v1@2d21f18902f23a729934a9631373297e22e1ff25
+    mount_location: /models/rewriter
+    allow_patterns:
+      - "*.safetensors"
+      - "*.json"
+      - merges.txt
+      - vocab.json

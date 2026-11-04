@@ -102,7 +102,7 @@ def _si(v: float) -> int:
 # shape, e.g. 1.294 for US Letter; grid rows, title band and author band all follow H.
 W, H = round(1600 * S), round(1600 * S * float(_os.environ.get("COVER_ASPECT", "1.5")))
 INSET = _si(80)                 # border inset, 5% of the width
-AUTHOR_BAND = 0.09              # clear band at the bottom of the inner frame for the author line
+AUTHOR_BAND = float(_os.environ.get("COVER_AUTHOR_BAND", "0.09"))   # clear band at the bottom for the author line (0: none)
 TITLE_AT = 0.5                  # the title panel's center, as a share of the cover height from the bottom
 COLS = 9                        # half-drop grid columns (odd, so the pattern is symmetric); rows follow
 MOTIF_FILL = 0.72               # motif size as a share of the grid cell
@@ -711,13 +711,15 @@ def _base(motif: Image.Image, edition: str, gap: tuple[int, int] | None = None) 
     return _BASES[key]
 
 
-def build_cover(title: str, author: str, motif: Image.Image, edition: str = "light") -> Image.Image:
+def build_cover(title: str, author: str, motif: Image.Image, edition: str = "light", inset: float = 0.0) -> Image.Image:
+    """`inset` narrows the title's box on both sides, so it stays centered and clear of anything
+    stamped near an edge (a studio folder's clasp)."""
     mat = _material(edition)
 
     # the title sits in a band where the pattern stops, between a faint rule above and below; the band
     # is snapped to the pattern's own rows so no motif is ever cut
     t, a = title, ((author or "").upper() if AUTHOR_STYLE["upper"] else (author or ""))   # already resolved by cover_text
-    px0, px1 = int(_G + _s(24)), int(W - _G - _s(24))
+    px0, px1 = int(_G + _s(24) + inset), int(W - _G - _s(24) - inset)
     pad_x, pad_y = _s(70), _s(56)
     if TITLE_STYLE["upper"]:
         t = t.upper()
@@ -784,6 +786,72 @@ def build_cover(title: str, author: str, motif: Image.Image, edition: str = "lig
         col = _text_pass(region, -DEBOSS * _blur(aa, _s(1.2)), aa, mat["text"][ay0:ay1, ax0:ax1], edition)
         out[ay0:ay1, ax0:ax1] = np.clip(col, 0, 255).astype(np.uint8)
     return Image.fromarray(out)
+
+
+# ---------------------------------------------------------------- Image Studio folders
+# A studio folder is the house cover laid landscape (COVER_ASPECT below 1, COVER_AUTHOR_BAND 0): its
+# name engraved as the title and no other words. A protected folder adds a diary lock in the same
+# material: a strap in the binding's color, dyed deep like leather, raised off the cloth with pressed
+# stitching, running off the fore-edge into a foil clasp plate with the keyhole cut into it. While the
+# folder is open the clasp is undone: the strap is gone over the edge and only the foil catch remains.
+CLASP_X, CLASP_W, CLASP_H, STRAP_H = 0.905, 0.07, 0.30, 0.15   # the plate's center and size, the strap's height (of W, H)
+
+
+def _mask(draw) -> np.ndarray:
+    im = Image.new("L", (W, H), 0)
+    draw(ImageDraw.Draw(im))
+    return np.asarray(im, dtype=np.float32) / 255
+
+
+def build_folder(title: str, edition: str, state: str = "plain") -> Image.Image:
+    """state: "plain", "locked" (strap fastened) or "open" (a protected folder, unfastened)."""
+    px, pw, ph, sh, cy = CLASP_X * W, CLASP_W * W, CLASP_H * H, STRAP_H * H, H * 0.5
+    inset = 0.0 if state == "plain" else max(0.0, (W - _G - _s(24)) - (px - pw / 2) + _s(20))   # title clear of the clasp
+    base = np.asarray(build_cover(title, "", motif_image("universal"), edition, inset), dtype=np.float32)
+    if state == "plain":
+        return Image.fromarray(base.astype(np.uint8))
+    mat = _material(edition)
+    spec = TUNE[_mode(edition)]["spec"]
+    if state == "open":                                  # only the catch: a small foil keeper with a slot
+        kw, kh = pw * 0.62, ph * 0.46
+        keeper = _mask(lambda d: d.rounded_rectangle((px - kw / 2, cy - kh / 2, px + kw / 2, cy + kh / 2), radius=kw * 0.3, fill=255))
+        slot = _mask(lambda d: d.rounded_rectangle((px - kw * 0.14, cy - kh * 0.30, px + kw * 0.14, cy + kh * 0.30), radius=kw * 0.1, fill=255))
+        shadow = np.zeros_like(keeper)
+        shadow[5:, 4:] = keeper[:-5, :-4]
+        base = base * (1 - 0.30 * _blur(shadow, 4) * (1 - keeper))[..., None]
+        height = _s(9) * _blur(keeper, _s(1.6)) - _s(8) * _blur(slot, _s(0.8))
+        out = _stamp(base, height, [(keeper, mat["foil"], spec), (slot, np.full_like(mat["foil"], 22.0), 0.0)], edition)
+        return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
+    strap = _mask(lambda d: d.rounded_rectangle((px, cy - sh / 2, W + 40, cy + sh / 2), radius=sh * 0.2, fill=255))
+    stitch = _mask(lambda d: [d.line((x, y, x + W * 0.012, y), fill=255, width=2)
+                              for y in (cy - sh * 0.32, cy + sh * 0.32)
+                              for x in np.arange(px + pw * 0.6, W, W * 0.022)])
+    plate = _mask(lambda d: d.rounded_rectangle((px - pw / 2, cy - ph / 2, px + pw / 2, cy + ph / 2), radius=pw * 0.28, fill=255))
+    bevel = _mask(lambda d: d.rounded_rectangle((px - pw / 2 + 5, cy - ph / 2 + 5, px + pw / 2 - 5, cy + ph / 2 - 5),
+                                                radius=pw * 0.22, outline=255, width=2))
+    r = pw * 0.16
+    key = _mask(lambda d: (d.ellipse((px - r, cy - ph * 0.10 - r, px + r, cy - ph * 0.10 + r), fill=255),
+                           d.polygon([(px - r * 0.55, cy - ph * 0.10), (px + r * 0.55, cy - ph * 0.10),
+                                      (px + r * 0.95, cy + ph * 0.20), (px - r * 0.95, cy + ph * 0.20)], fill=255)))
+    strap = strap * (1 - plate)
+    raised = np.maximum(strap, plate)                    # strap and plate stand off the board and cast a shadow
+    shadow = np.zeros_like(raised)
+    shadow[7:, 5:] = raised[:-7, :-5]
+    base = base * (1 - 0.38 * _blur(shadow, 5) * (1 - raised))[..., None]
+    height = (_s(10) * _blur(strap, _s(2.5)) + _s(14) * _blur(plate, _s(2.0)) - _s(4) * _blur(bevel, 1.2)
+              - _s(10) * _blur(key, _s(1.0)) - _s(2.5) * _blur(stitch, 0.8))
+    leather = mat["foil"] * 0.42 + mat["cloth"] * 0.18
+    out = _stamp(base, height, [(strap, leather, 18.0), (stitch * strap, mat["foil"], 30.0),
+                                (plate, mat["foil"], spec), (key, np.full_like(leather, 22.0), 0.0)], edition)
+    return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
+
+
+def render_folder(title: str, theme: str, state: str = "plain") -> Image.Image:
+    if theme not in THEMES or state not in ("plain", "locked", "open"):
+        raise KeyError((theme, state))
+    with _RENDER_LOCK:
+        use_fonts("house")
+        return build_folder(title, theme, state)
 
 
 # ---------------------------------------------------------------- the web renderer

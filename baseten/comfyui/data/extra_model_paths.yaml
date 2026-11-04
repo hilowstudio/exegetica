@@ -4,3 +4,8 @@ minimax_h3:
   text_encoders: text_encoders
   vae: vae
   loras: loras
+p_h3_image:
+  base_path: /models/p-h3-image
+  text_encoders: text_encoders
+  vae: vae
+  loras: loras

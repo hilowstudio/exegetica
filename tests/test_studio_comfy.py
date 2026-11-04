@@ -17,7 +17,11 @@ OUTPUTS = {"LoadImage": 2, "UNETLoader": 1, "LoraLoaderModelOnly": 1, "CLIPLoade
            "MiniMaxH3ImageToVideo": 2, "MiniMaxH3ReferenceToVideo": 2, "MiniMaxH3AddGuide": 1,
            "RandomNoise": 1, "KSamplerSelect": 1, "BasicScheduler": 1, "BasicGuider": 1,
            "SamplerCustomAdvanced": 2, "VAEDecode": 1, "VAEDecodeAudio": 1, "CreateVideo": 1, "SaveVideo": 1,
-           "CLIPTextEncode": 1, "EmptyLatentImage": 1, "LTXVSeparateAVLatent": 2, "SaveImage": 0}
+           "CLIPTextEncode": 1, "EmptyLatentImage": 1, "LTXVSeparateAVLatent": 2, "SaveImage": 0,
+           "ExegeticaRewrite": 1, "LoraLoaderBypassModelOnly": 1, "MiniMaxH3SigmaShift": 1,
+           "PH3ImageConditioning": 2, "ManualSigmas": 1, "LoadVideo": 1, "GetVideoComponents": 5,
+           "ExegeticaTail": 4, "ExegeticaJoin": 2}
+NODES = CONFIG.parent / "data" / "custom_nodes" / "exegetica" / "__init__.py"
 
 
 def wired_whole(wf: dict) -> None:
@@ -90,9 +94,61 @@ def test_a_still_is_one_frame_at_full_steps_saved_as_a_picture():
     assert wf["16"]["class_type"] == "SaveImage" and "6" not in wf   # no sound, no audio decoder
 
 
+@pytest.mark.parametrize("build, words", [
+    (lambda: comfy.h3_still("x", 1024, 1024, 30, 1), "text"),
+    (lambda: comfy.h3_video("x", None, 1344, 768, 5, 1), "prompt"),
+    (lambda: comfy.h3_refs("x", ["a.png"], [], 1344, 768, 5, 1), "prompt"),
+])
+def test_the_gpus_rewriter_runs_first_and_its_words_feed_the_drawing(build, words):
+    wf = comfy.rewritten(build(), "Rewrite this.", "a dog on a porch", True, 42)
+    wired_whole(wf)
+    assert wf["7"]["inputs"][words] == ["20", 0]
+    assert wf["20"]["inputs"] == {"system": "Rewrite this.", "prompt": "a dog on a porch", "picture_tags": True, "seed": 42}
+
+
+def test_the_studios_own_nodes_are_built_into_the_deployment():
+    config = CONFIG.read_text(encoding="utf-8")
+    assert "custom_nodes/exegetica " in config and "/models/rewriter" in config
+    nodes = NODES.read_text(encoding="utf-8")
+    assert all(f'"{n}": {n}' in nodes for n in ("ExegeticaRewrite", "ExegeticaTail", "ExegeticaJoin"))
+
+
+def test_p_h3_image_draws_from_words_at_the_size_asked():
+    wf = comfy.ph3_image("a lighthouse", 2912, 2912, 3)
+    wired_whole(wf)
+    gen = wf["7"]["inputs"]
+    assert (gen["width"], gen["height"]) == (2912, 2912) and not any(k.startswith("images.") for k in gen)
+    assert wf["3"]["inputs"]["lora_name"] == comfy.PH3_FILES["lora"] and wf["2"]["inputs"]["unet_name"] == comfy.H3_FILES["model"]
+    assert wf["6"]["inputs"]["shift_video"] == wf["6"]["inputs"]["shift_audio"] == 1.0   # Pruna's 1.0/1.0
+    assert wf["10"]["inputs"]["sigmas"].count(",") == 8 and wf["9"]["inputs"]["sampler_name"] == "euler"
+
+
+def test_p_h3_image_edits_the_first_picture_with_the_rest_as_references():
+    wf = comfy.ph3_image("Put the hat from <Picture 2> on him", 0, 0, 3, ["man.png", "hat.png"])
+    wired_whole(wf)
+    gen = wf["7"]["inputs"]
+    assert (gen["width"], gen["height"]) == (0, 0)   # the edit takes the first picture's size
+    assert gen["images.image_1"] == ["101", 0] and gen["images.image_2"] == ["102", 0]
+    assert wf["101"]["inputs"]["image"] == "man.png"
+    assert comfy.ph3_size(1000, 750) == (2304, 1728)   # scaled up to about 4 megapixels, sides on the grid
+
+
+def test_an_extension_anchors_the_old_clips_end_and_joins_the_two():
+    wf = comfy.h3_extend("the dog keeps running", "old.mp4", 5, 8)
+    wired_whole(wf)
+    assert wf["29"]["inputs"]["file"] == "old.mp4"
+    assert wf["31"]["inputs"]["frames"] == wf["33"]["inputs"]["overlap"] == comfy.H3_OVERLAP
+    assert comfy.H3_OVERLAP % 17 == 5   # a clip length the guide node keeps whole
+    gen = wf["7"]["inputs"]
+    assert (gen["width"], gen["height"], gen["length"]) == (["31", 2], ["31", 3], 124)   # the old clip's size
+    assert wf["32"]["inputs"]["image"] == ["31", 0] and wf["32"]["inputs"]["audio"] == ["31", 1]
+    assert wf["32"]["inputs"]["frame_idx"] == 0 and wf["11"]["inputs"]["conditioning"] == ["32", 0]
+    assert wf["15"]["inputs"]["images"] == ["33", 0] and wf["15"]["inputs"]["audio"] == ["33", 1]
+
+
 def test_every_file_the_workflow_loads_is_one_the_deployment_mounts():
     mounted = CONFIG.read_text(encoding="utf-8")
-    assert all(name in mounted for name in comfy.H3_FILES.values())
+    assert all(name in mounted for name in [*comfy.H3_FILES.values(), *comfy.PH3_FILES.values()])
 
 
 @pytest.fixture
@@ -111,24 +167,29 @@ def replies(monkeypatch):
 
 def test_history_reads_as_running_done_or_failed(replies):
     replies["by_path"]["/queue"] = httpx.Response(200, json={"queue_running": [[0, "p1", {}]], "queue_pending": []})
-    assert asyncio.run(comfy.status("p1")) == ("running", [], "")
+    assert asyncio.run(comfy.status("p1")) == ("running", [], "", [])
 
     replies["by_path"]["/queue"] = httpx.Response(200, json={"queue_running": [], "queue_pending": []})
     saved = {"filename": "h3_00001_.mp4", "subfolder": "studio", "type": "output"}
     replies["by_path"]["/history/p1"] = httpx.Response(200, json={"p1": {
         "status": {"status_str": "success", "completed": True},
         "outputs": {"16": {"images": [saved], "animated": [True]}}}})
-    assert asyncio.run(comfy.status("p1")) == ("done", [saved], "")
+    assert asyncio.run(comfy.status("p1")) == ("done", [saved], "", [])
+
+    replies["by_path"]["/history/p1"] = httpx.Response(200, json={"p1": {
+        "status": {"status_str": "success", "completed": True},
+        "outputs": {"20": {"text": ["A detailed prompt"]}, "16": {"images": [saved]}}}})
+    assert asyncio.run(comfy.status("p1")) == ("done", [saved], "", ["A detailed prompt"])   # the GPU's rewrite
 
     replies["by_path"]["/history/p1"] = httpx.Response(200, json={"p1": {"status": {
         "status_str": "error", "completed": False,
         "messages": [["execution_start", {}], ["execution_error", {"exception_message": "CUDA out of memory"}]]}}})
-    assert asyncio.run(comfy.status("p1")) == ("failed", [], "CUDA out of memory")
+    assert asyncio.run(comfy.status("p1")) == ("failed", [], "CUDA out of memory", [])
 
 
 def test_a_job_the_gpu_lost_on_restart_is_failed_not_waited_on(replies):
     replies["by_path"]["/queue"] = httpx.Response(200, json={"queue_running": [], "queue_pending": []})
-    state, _, reason = asyncio.run(comfy.status("p1"))
+    state, _, reason, _ = asyncio.run(comfy.status("p1"))
     assert state == "failed" and "restarted" in reason
 
 
@@ -139,7 +200,7 @@ def test_a_job_that_finishes_between_the_two_questions_is_done_not_lost(replies)
     saved = {"filename": "h3_still_00001_.png", "subfolder": "studio", "type": "output"}
     replies["by_path"]["/history/p1"] = httpx.Response(200, json={"p1": {
         "status": {"status_str": "success", "completed": True}, "outputs": {"16": {"images": [saved]}}}})
-    assert asyncio.run(comfy.status("p1")) == ("done", [saved], "")
+    assert asyncio.run(comfy.status("p1")) == ("done", [saved], "", [])
     assert replies["calls"] == [("GET", "/queue"), ("GET", "/history/p1")]
 
 

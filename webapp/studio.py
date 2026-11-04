@@ -33,6 +33,8 @@ from __future__ import annotations
 import asyncio
 import base64
 import binascii
+import hashlib
+import hmac
 import json
 import logging
 import os
@@ -70,6 +72,9 @@ H3_SIZES = {"wide": (1344, 768), "landscape": (1024, 768), "square": (768, 768),
             "portrait": (768, 1024), "tall": (768, 1344)}   # MiniMax H3's 768p sizes on Runware
 H3_STILL_SIZES = {"square": (1024, 1024), "portrait": (864, 1152), "landscape": (1152, 864),
                   "tall": (768, 1344), "wide": (1344, 768)}   # about a megapixel, sides on H3's 32-pixel grid
+PH3_SIZES = {"square": (2912, 2912), "portrait": (2496, 3360), "landscape": (3360, 2496),
+             "tall": (2176, 3872), "wide": (3872, 2176)}   # Pruna's 8-megapixel sizes for P-H3-Image
+MAX_EXTENDED = 60   # seconds an extended clip may reach, so the joined frames fit the GPU server's memory
 
 # A route's `price` is what the service listed when the route was written (2026-11-03): `unit` is
 # per image, per megapixel (`mp`), per 1024x1024 image scaled by size and steps (`1k`, Runware's
@@ -145,6 +150,18 @@ MODELS = {
                         "price": {"unit": "1k", "usd": 0.018, "ref_steps": 30},
                         "source": {"usd_hour": 6.50, "render_seconds": 10, "clip_seconds": 1}},
         }},
+    "p-h3-image": {
+        "does": ("create", "edit"), "label": "P-H3-Image",
+        "note": "H3's image model, on your own GPU. Draws 8-megapixel images, and edits an image from an instruction "
+                "with up to seven more pictures, named in your words as Picture 2, Picture 3 and on.",
+        "refs": comfy.PH3_MAX_REFS,
+        "routes": {
+            # Pruna's LoRA on the H3 weights already mounted (baseten/comfyui), 8 steps. On 2026-11-04 a
+            # 4-megapixel edit took 13 s on a warm GPU after its rewrite; an 8-megapixel image is put at 25 s.
+            "baseten": {"model": "comfyui/p-h3-image", "sizes": PH3_SIZES,
+                        "price": {"unit": "image", "usd": 0.045},
+                        "source": {"usd_hour": 6.50, "render_seconds": 25, "clip_seconds": 1}},
+        }},
     # ---------------------------------------------------------------- video
     "hunyuan-video": {
         "does": ("video",), "label": "Hunyuan Video 1.5",
@@ -214,9 +231,10 @@ MODELS = {
     "h3": {
         "does": ("video",), "label": "MiniMax H3",
         "note": "Among the best-ranked video models, open or closed. 768p with sound. Leave \"Rewrite my words\" on, "
-                "since this model depends on a detailed prompt. 15 seconds and a last frame run on your own GPU only.",
+                "since this model depends on a detailed prompt. 15 seconds, a last frame, and extending a clip "
+                "run on your own GPU only.",
         "seconds": (5, 10, 15), "sizes": ("wide", "landscape", "square", "portrait", "tall"), "audio": None,
-        "start_image": True, "end_image": True,
+        "start_image": True, "end_image": True, "extends": True,
         "routes": {
             "fal": {"model": "minimax/h3/text-to-video", "model_frame": "minimax/h3/image-to-video",
                     "frame_key": "image_url", "sizes": VIDEO_RATIOS, "seconds": (5, 10),
@@ -232,6 +250,7 @@ MODELS = {
             # price. The price is the H100's hourly rate times the render time on a warm GPU, measured
             # 2026-11-04 for a 5-second clip. Longer clips take more per second.
             "baseten": {"model": "comfyui/minimax-h3-fl2va", "sizes": H3_SIZES, "manual": True, "end_image": True,
+                        "extends": True,
                         "price": {"unit": "second", "usd": 0.03},
                         "source": {"usd_hour": 6.50, "render_seconds": 80, "clip_seconds": 5}},
         }},
@@ -344,7 +363,20 @@ REWRITE = {
         "how it moves, the setting, lighting, and style, and the sound if it fits. Add no words, "
         "letters, logos, or people the request does not mention. Write one paragraph under 120 words. "
         "Reply with the prompt only."),
+    "extend": (
+        "You turn a short request for what happens next into one prompt for a video model that carries "
+        "on from the last moment of an existing clip. Describe what happens next over the few seconds: "
+        "the action and movement, how the camera moves, and the sound if it fits. Say that the scene, "
+        "its subjects, and the style carry on as they are. One to three sentences. Reply with the "
+        "prompt only."),
 }
+
+# Runs on the maker's GPU are rewritten there by an abliterated Qwen3-8B, which does not refuse
+# (baseten/comfyui/data/custom_nodes), with the same instructions plus this one line.
+GPU_REWRITE_RULE = (" Any nude or sexual scene has adults only, and nothing sexualizes a child or anyone "
+                    "described as young.")
+GPU_REWRITE_SECONDS = 20   # GPU time one rewrite takes on a warm H100, measured 2026-11-04
+GPU_EXTEND_SECONDS = 40    # more GPU time an extension takes to read the old clip and join the two (2026-11-04)
 
 _DATA_URL = re.compile(r"^data:(image/(?:png|jpeg|webp));base64,(.+)$", re.S)
 _PICTURE = re.compile(r"<?\b[Pp]icture\s+([1-9])\b>?")   # "Picture 2" becomes H3's <Picture 2>
@@ -401,15 +433,19 @@ def route_cost(model_id: str, service: str, shape: str = "square", steps: int | 
     return round(usd, 4)
 
 
+NEEDS = {"end_image": "takes no last frame", "extends": "cannot extend a clip"}   # route flags a run may need
+
+
 def _fits(m: dict, route: dict, mode: str, shape: str, seconds: int | None, audio: bool | None,
-          framed: bool, ending: bool = False) -> str | None:
+          framed: bool, needs: tuple = ()) -> str | None:
     """Why a route cannot make what was asked, or None if it can."""
     if mode != "video":
         return None if mode in route.get("does", m["does"]) else "edits on another service only"
     if framed and not route.get("start_image", m.get("start_image")):
         return "starts from words only"
-    if ending and not route.get("end_image"):
-        return "takes no last frame"
+    for need in needs:
+        if not route.get(need):
+            return NEEDS[need]
     if not (framed and route.get("frame_sets_shape", True)) and shape not in route["sizes"]:
         return "makes other shapes"
     if seconds not in route.get("seconds", m["seconds"]):
@@ -420,13 +456,13 @@ def _fits(m: dict, route: dict, mode: str, shape: str, seconds: int | None, audi
 
 
 def candidates(model_id: str, mode: str, shape: str, seconds: int | None, audio: bool | None,
-               framed: bool, steps: int | None, book: dict, ending: bool = False) -> list[dict]:
+               framed: bool, steps: int | None, book: dict, needs: tuple = ()) -> list[dict]:
     """Every service for a model, cheapest first, each with its price and whether it can run."""
     m = MODELS[model_id]
     out = []
     for service, route in m["routes"].items():
         why = (None if svc._key(service) else "not set up") or _is_down(service) \
-            or _fits(m, route, mode, shape, seconds, audio, framed, ending)
+            or _fits(m, route, mode, shape, seconds, audio, framed, needs)
         out.append({"service": service, "label": SERVICES[service]["label"], "route": route, "usable": why is None,
                     "reason": why, "frame_sets_shape": route.get("frame_sets_shape", True),
                     "auto": not route.get("manual"),
@@ -620,14 +656,18 @@ def _pixel_size(data: bytes) -> tuple[int, int] | None:
 
 async def _start_gpu(model_id: str, route: dict, prompt: str, shape: str, seconds: int | None, steps: int | None,
                      source: dict | None, end: dict | None = None, refs: list[dict] = (),
-                     pins: list[tuple[dict, float]] = ()) -> dict:
+                     pins: list[tuple[dict, float]] = (), rewrite_for: str | None = None,
+                     extend: dict | None = None) -> dict:
     """Wake the maker's GPU and note the job. From cold it takes a minute or two, so the first
-    check that finds it up hands ComfyUI the job (_poll_gpu). Pictures stay in R2 until then."""
+    check that finds it up hands ComfyUI the job (_poll_gpu). Pictures stay in R2 until then.
+    `rewrite_for` names the REWRITE instruction the GPU's own rewriter follows, if any, and
+    `extend` the earlier clip the job carries on."""
     await comfy.wake()
     return {"service": "baseten", "workflow": model_id, "prompt": prompt, "seconds": seconds, "steps": steps,
             "size": list(route["sizes"][shape]), "frame": source["key"] if source else None,
             "end": end["key"] if end else None, "refs": [r["key"] for r in refs],
-            "pins": [[p["key"], at] for p, at in pins], "seed": secrets.randbelow(2 ** 48)}
+            "pins": [[p["key"], at] for p, at in pins], "rewrite": rewrite_for,
+            "extend": extend["key"] if extend else None, "seed": secrets.randbelow(2 ** 48)}
 
 
 async def _send_picture(key: str, what: str) -> tuple[str, tuple[int, int]]:
@@ -640,10 +680,43 @@ async def _send_picture(key: str, what: str) -> tuple[str, tuple[int, int]]:
 
 
 async def _gpu_workflow(job: dict) -> dict:
-    """The ComfyUI workflow for a saved job, with its pictures uploaded."""
+    """The ComfyUI workflow for a saved job, with its pictures uploaded, and the GPU's rewriter in
+    front when the job asks for a rewrite."""
+    wf = await _gpu_drawing(job)
+    if job.get("rewrite") in REWRITE:
+        wf = comfy.rewritten(wf, REWRITE[job["rewrite"]] + GPU_REWRITE_RULE, job["prompt"],
+                             bool(MODELS.get(job.get("workflow"), {}).get("refs")), job["seed"])
+    return wf
+
+
+def _scaled_png(data: bytes, size: tuple[int, int]) -> bytes:
+    from PIL import Image
+    buf = io.BytesIO()
+    Image.open(io.BytesIO(data)).convert("RGB").resize(size, Image.LANCZOS).save(buf, "PNG")
+    return buf.getvalue()
+
+
+async def _gpu_drawing(job: dict) -> dict:
     (w, h), kind = job["size"], job.get("workflow", "h3")
     if kind == "h3-still":
         return comfy.h3_still(job["prompt"], w, h, job["steps"], job["seed"])
+    if kind == "p-h3-image":
+        if not job.get("frame"):
+            return comfy.ph3_image(job["prompt"], w, h, job["seed"])
+        data = await r2.get_bytes_async(job["frame"])
+        size = _pixel_size(data) if data else None
+        if not size:
+            raise StudioError("The image to edit is gone or could not be read.", 422)
+        stem = job["frame"].rsplit("/", 1)[-1].rsplit(".", 1)[0]
+        pictures = [await comfy.upload(_scaled_png(data, comfy.ph3_size(*size)), f"{stem}-4mp.png")]
+        pictures += [(await _send_picture(key, f"Picture {n + 2}"))[0] for n, key in enumerate(job.get("refs") or [])]
+        return comfy.ph3_image(job["prompt"], 0, 0, job["seed"], pictures)
+    if job.get("extend"):
+        data = await r2.get_bytes_async(job["extend"])
+        if not data:
+            raise StudioError("The clip to extend is gone from your studio.", 422)
+        clip = await comfy.upload(data, job["extend"].rsplit("/", 1)[-1], MAX_VIDEO)
+        return comfy.h3_extend(job["prompt"], clip, job["seconds"], job["seed"])
     first = await _send_picture(job["frame"], "first frame") if job.get("frame") else None
     last = await _send_picture(job["end"], "last frame") if job.get("end") else None
     if kind == "h3-ref":
@@ -673,13 +746,14 @@ async def _poll_gpu(job: dict) -> dict:
                 return {"status": "failed", "error": e.message}
             raise   # ComfyUI was unreachable; the next check asks again
         return {"status": "pending", "progress": None, "job": job | {"comfy": prompt_id}}
-    state, files, reason = await comfy.status(job["comfy"])
+    state, files, reason, texts = await comfy.status(job["comfy"])
     if state == "running":
         return {"status": "pending", "progress": None}
     if state == "failed":
         return {"status": "failed", "error": reason}
     return {"status": "done", "url": comfy.file_url(files[0]), "headers": comfy.headers(), "cost": None,
-            "ext": files[0]["filename"].rsplit(".", 1)[-1].lower()}
+            "ext": files[0]["filename"].rsplit(".", 1)[-1].lower(),
+            "prompt_used": texts[0] if texts and job.get("rewrite") else None}
 
 
 async def _start_video(service: str, route: dict, prompt: str, shape: str, seconds: int, audio: bool | None,
@@ -876,6 +950,8 @@ async def check(user, item_id: str) -> dict | None:
         item = item | {"status": "ready", "key": key, "est_usd": paid, "bytes": len(data)}
         if state.get("prompt"):
             item["service_prompt"] = state["prompt"]
+        if state.get("prompt_used"):   # rewritten on the GPU as the job began
+            item |= {"prompt_used": state["prompt_used"], "rewritten": state["prompt_used"] != item["prompt"]}
         if not await _save_item(user, item):
             await r2.delete_async(key)   # deleted while it was being fetched
             _job_locks.pop(item_id, None)
@@ -967,9 +1043,10 @@ def _need_key_error(service: str) -> StudioError:
     return StudioError(f"{SERVICES[service]['label']} is not available.", 503)
 
 
-async def make(user, req: dict) -> dict:
+async def make(user, req: dict, closed: set[str] = frozenset()) -> dict:
     """Make one image, or start one video, on the cheapest service that can, and return its
-    index entry."""
+    index entry. It lands in the folder asked for. `closed` holds the protected folders this
+    session has not opened: nothing in them can be used, and nothing new lands in them."""
     prompt = " ".join(str(req.get("prompt") or "").split())
     if not prompt:
         raise StudioError("Describe what you want.")
@@ -986,10 +1063,20 @@ async def make(user, req: dict) -> dict:
     if not video:
         source_req = source_req if mode == "edit" else None
     shape, seconds, audio, steps = _settings(m, mode, req)
-    end_req, refs_req, pins_req = _more_pictures(m, req, seconds) if video else (None, [], [])
+    end_req, refs_req, pins_req = _more_pictures(m, req, seconds, mode)
+    extend = await _clip_to_extend(user, m, req, seconds, closed) if video and req.get("extend") else None
+    folder_id = req.get("folder") or None
+    if folder_id is not None:
+        if not any(f["id"] == folder_id for f in await _read_folders(user)):
+            raise StudioError("That folder is gone.", 404)
+        if folder_id in closed:
+            raise StudioError("Open the folder first.", 403)
+    if extend and (source_req or end_req or refs_req or pins_req):
+        raise StudioError("A clip carried on starts from its own last moment. Remove the other pictures.")
     book = await prices.load()
     service_pin = req.get("service") if req.get("service") in m["routes"] else None
-    options = candidates(model_id, mode, shape, seconds, audio, bool(source_req), steps, book, bool(end_req))
+    needs = tuple(n for n, asked in (("end_image", end_req), ("extends", extend)) if asked)
+    options = candidates(model_id, mode, shape, seconds, audio, bool(source_req), steps, book, needs)
     usable = _runnable(options, service_pin)
     if not usable:
         raise _no_service(m, options, service_pin)
@@ -1003,9 +1090,11 @@ async def make(user, req: dict) -> dict:
     outcome = "provider_error"
     record = True
     source, uploads = None, []
+    if extend:
+        usd += round(usable[0]["route"]["source"]["usd_hour"] / 3600 * GPU_EXTEND_SECONDS, 4)
 
     async def picture(asked, slot: str) -> dict:
-        got = await _source(user, asked, item_id, slot)
+        got = await _source(user, asked, item_id, slot, closed)
         if got["uploaded"]:
             uploads.append(got)
         return got
@@ -1015,18 +1104,24 @@ async def make(user, req: dict) -> dict:
         refs = [await picture(r, f"ref{n + 1}") for n, r in enumerate(refs_req)]
         pins = [(await picture(p, f"at{n + 1}"), at) for n, (p, at) in enumerate(pins_req)]
 
-        used = prompt
+        used, gpu_rewrite = prompt, None
         if req.get("rewrite"):
-            purpose = "reference" if m.get("refs") else ("animate" if source else "video") if video else mode
-            used, rewrite_usd = await rewrite(prompt, purpose)
-            usd += rewrite_usd
+            purpose = (("extend" if extend else "reference" if m.get("refs") else "animate" if source else "video")
+                       if video else mode)
+            if all(o["service"] == "baseten" for o in usable):
+                gpu_rewrite = purpose   # the GPU rewrites as the first step of the job (_gpu_workflow)
+                usd += round(usable[0]["route"]["source"]["usd_hour"] / 3600 * GPU_REWRITE_SECONDS, 4)
+            else:
+                used, rewrite_usd = await rewrite(prompt, purpose)
+                usd += rewrite_usd
         if m.get("refs"):
             used = _PICTURE.sub(lambda p: f"<Picture {p.group(1)}>", used)
 
         base = {"id": item_id, "created": int(time.time()), "kind": "video" if video else "image",
                 "mode": {"create": "generate", "edit": "edit", "video": "video"}[mode],
                 "model_id": model_id, "engine": m["label"], "prompt": prompt, "prompt_used": used,
-                "rewritten": used != prompt, "shape": shape,
+                "rewritten": used != prompt, "rewrite_on_gpu": bool(gpu_rewrite), "shape": shape,
+                "folder_id": folder_id,
                 "source_id": source_req.get("id") if isinstance(source_req, dict) else None,
                 # an uploaded picture belongs to this item and goes when it does; an earlier studio
                 # image used as a picture stays
@@ -1039,7 +1134,8 @@ async def make(user, req: dict) -> dict:
             service, route = option["service"], option["route"]
             try:
                 if service == "baseten":
-                    job = await _start_gpu(model_id, route, used, shape, seconds, steps, source, end, refs, pins)
+                    job = await _start_gpu(model_id, route, used, shape, seconds, steps, source, end, refs, pins,
+                                           gpu_rewrite, extend)
                 elif video:
                     job = await _start_video(service, route, used, shape, seconds, audio, source)
                 else:
@@ -1065,6 +1161,11 @@ async def make(user, req: dict) -> dict:
             item = base | {"status": "pending", "job": job, "width": w, "height": h, "rewrite_usd": round(usd, 6),
                            "quoted_usd": option["usd"], "est_usd": round(usd + option["usd"], 4)}
             item |= {"seconds": seconds, "audio": audio} if video else {"steps": steps}
+            if mode == "edit":
+                item |= {"width": None, "height": None}   # an edit takes the size of the image it edits
+            if extend:   # the joined clip: the old one, then what the GPU adds after the overlap
+                item |= {"seconds": extend["seconds"], "width": extend["width"], "height": extend["height"],
+                         "extends_id": extend["id"]}
             await _save_item(user, item, new=True)
             record = False   # the row is written when the job finishes (check)
             _follow_later(user, item_id)
@@ -1091,10 +1192,36 @@ async def make(user, req: dict) -> dict:
                                        duration_ms=(time.monotonic() - started) * 1000))
 
 
-def _more_pictures(m: dict, req: dict, seconds: int) -> tuple[dict | None, list, list]:
-    """(last frame, reference pictures, pictures pinned at a second) asked for a video, each
-    checked against what the model takes. A pinned second falls strictly inside the clip."""
+async def _clip_to_extend(user, m: dict, req: dict, seconds: int, closed: set[str] = frozenset()) -> dict:
+    """The earlier clip to carry on: one of the user's own finished MiniMax H3 videos, outside any
+    closed folder, short enough that the joined clip stays under MAX_EXTENDED seconds."""
+    if not m.get("extends"):
+        raise StudioError(f"{m['label']} cannot extend a clip. Pick MiniMax H3.")
+    asked = req.get("extend")
+    clip_id = str(asked.get("id") or "") if isinstance(asked, dict) else ""
+    found = next((i for i in await _read_index(user) if i["id"] == clip_id), None)
+    if found and found.get("folder_id") in closed:
+        found = None
+    if not found or found.get("kind") != "video" or found.get("status", "ready") != "ready" or not found.get("key"):
+        raise StudioError("That video is not in your studio.", 404)
+    if not str(found.get("model_id") or "").startswith("h3"):
+        raise StudioError("Only a clip MiniMax H3 made can be extended, so the new frames match the old ones.")
+    total = (found.get("seconds") or 0) + seconds - comfy.H3_OVERLAP / comfy.H3_FPS
+    if total > MAX_EXTENDED:
+        raise StudioError(f"An extended clip can reach {MAX_EXTENDED} seconds, and this one would be {total:.0f}.")
+    return {"id": clip_id, "key": found["key"], "seconds": round(total, 1),
+            "width": found.get("width"), "height": found.get("height")}
+
+
+def _more_pictures(m: dict, req: dict, seconds: int | None, mode: str) -> tuple[dict | None, list, list]:
+    """(last frame, reference pictures, pictures pinned at a second) asked for, each checked
+    against what the model takes. A video takes all three, an edit only the reference pictures, and
+    an image from words none. A pinned second falls strictly inside the clip."""
+    if mode == "create":
+        return None, [], []
     end, refs, pins = req.get("end") or None, req.get("refs") or [], req.get("pins") or []
+    if mode == "edit":
+        end, pins = None, []
     if not isinstance(refs, list) or not isinstance(pins, list):
         raise StudioError("Those pictures could not be read.")
     if end and not m.get("end_image"):
@@ -1117,15 +1244,17 @@ def _more_pictures(m: dict, req: dict, seconds: int) -> tuple[dict | None, list,
     return end, refs, timed
 
 
-async def _source(user, source, item_id: str, slot: str = "source") -> dict:
-    """The image to edit or animate: one of the user's own studio images, or an upload. Returned
-    as its R2 key, its type, and a data URI for the services that take the image inline. `slot`
-    names an uploaded copy, since one video can carry several pictures."""
+async def _source(user, source, item_id: str, slot: str = "source", closed: set[str] = frozenset()) -> dict:
+    """The image to edit or animate: one of the user's own studio images outside any closed
+    folder, or an upload. Returned as its R2 key, its type, and a data URI for the services that
+    take the image inline. `slot` names an uploaded copy, since one video can carry several pictures."""
     if not isinstance(source, dict):
         raise StudioError("Choose an image to start from.")
     if source.get("id"):
         sid = str(source["id"])
         found = next((i for i in await _read_index(user) if i["id"] == sid), None)
+        if found and found.get("folder_id") in closed:
+            found = None
         if not found or found.get("kind", "image") != "image" or found.get("status", "ready") != "ready":
             raise StudioError("That image is not in your studio.", 404)
         data = await r2.get_bytes_async(found["key"])
@@ -1190,9 +1319,9 @@ def _menu_entry(model_id: str, m: dict) -> dict:
     if "video" in m["does"]:
         entry |= {"seconds": list(m["seconds"]), "sizes": list(m["sizes"]), "audio": m.get("audio"),
                   "start_image": bool(m.get("start_image")), "end_image": bool(m.get("end_image")),
-                  "refs": m.get("refs", 0), "pins": m.get("pins", 0)}
+                  "refs": m.get("refs", 0), "pins": m.get("pins", 0), "extends": bool(m.get("extends"))}
     else:
-        entry |= {"steps": m.get("steps"), "max_steps": m.get("max_steps")}
+        entry |= {"steps": m.get("steps"), "max_steps": m.get("max_steps"), "refs": m.get("refs", 0)}
     return entry
 
 
@@ -1234,8 +1363,9 @@ async def quote(request):
     m = MODELS[model_id]
     shape, seconds, audio, steps = _settings(m, mode, req)
     book = await prices.load()
-    options = candidates(model_id, mode, shape, seconds, audio, bool(req.get("framed")), steps, book,
-                         bool(req.get("ending")) and mode == "video")
+    needs = tuple(n for n, asked in (("end_image", req.get("ending")), ("extends", req.get("extending")))
+                  if asked and mode == "video")
+    options = candidates(model_id, mode, shape, seconds, audio, bool(req.get("framed")), steps, book, needs)
     pinned = req.get("service") if req.get("service") in m["routes"] else None
     choice = next(iter(_runnable(options, pinned)), None)
     shown = ("service", "label", "usd", "usable", "reason", "frame_sets_shape", "auto")
@@ -1258,10 +1388,15 @@ async def refresh_prices_now(request):
 
 
 async def list_images(request):
+    """Everything the page may show now: every item outside a closed folder, and the folders."""
     user = _user_or_404(request)
     if not user:
         return _not_found()
-    return JSONResponse({"images": [public(i) for i in await _read_index(user)]})
+    folders = await _read_folders(user)
+    closed = _closed(request, folders)
+    items = await _read_index(user)
+    return JSONResponse({"images": [public(i) for i in items if i.get("folder_id") not in closed],
+                         "folders": [_folder_view(f, items, closed) for f in folders]})
 
 
 async def generate(request):
@@ -1275,7 +1410,7 @@ async def generate(request):
     if not isinstance(req, dict):
         return JSONResponse({"error": "malformed request"}, status_code=400)
     try:
-        return JSONResponse({"image": await make(user, req)})
+        return JSONResponse({"image": await make(user, req, _closed(request, await _read_folders(user)))})
     except StudioError as e:
         return JSONResponse({"error": e.message}, status_code=e.status)
     except Exception:  # noqa: BLE001
@@ -1296,7 +1431,10 @@ async def check_job(request):
     except Exception:  # noqa: BLE001
         logger.exception("studio check failed")
         return JSONResponse({"error": "Something went wrong checking on that video."}, status_code=500)
-    return JSONResponse({"image": item}) if item else _not_found()
+    # the job runs on whatever the page may see, but an item in a closed folder answers as not found
+    if not item or item.get("folder_id") in _closed(request, await _read_folders(user)):
+        return _not_found()
+    return JSONResponse({"image": item})
 
 
 def _byte_range(header: str | None, size: int) -> tuple[int, int] | None | bool:
@@ -1319,6 +1457,8 @@ async def image(request):
     if not user or not _ID.match(image_id):
         return _not_found()
     item = next((i for i in await _read_index(user) if i["id"] == image_id), None)
+    if item and item.get("folder_id") in _closed(request, await _read_folders(user)):
+        item = None
     got = await r2.get_object_async(item["key"]) if item and item.get("key") else None
     if not got:
         return _not_found()
@@ -1334,22 +1474,321 @@ async def image(request):
     return Response(data, media_type=content_type, headers=headers)
 
 
+async def _delete_items(user, ids: set[str], closed: set[str]) -> int:
+    """Delete these items and their files, skipping any in a closed folder. A video still being
+    made is dropped from the studio; the service may still finish it, and charge for it."""
+    async with _lock(user):
+        items = await _read_index(user)
+        gone = [i for i in items if i["id"] in ids and i.get("folder_id") not in closed]
+        for item in gone:
+            for key in [item.get("key"), item.get("source_key"), *(item.get("upload_keys") or [])]:
+                if key:
+                    await r2.delete_async(key)
+        if gone:
+            dropped = {i["id"] for i in gone}
+            await _write_index(user, [i for i in items if i["id"] not in dropped])
+    return len(gone)
+
+
 async def delete_image(request):
-    """Delete one item. A video still being made is dropped from the studio; the service may
-    still finish it, and charge for it."""
+    """Delete one item."""
     user = _user_or_404(request)
     image_id = request.path_params["image_id"]
     if not user or not _ID.match(image_id):
         return _not_found()
+    closed = _closed(request, await _read_folders(user))
+    if not await _delete_items(user, {image_id}, closed):
+        return _not_found()
+    return JSONResponse({"ok": True})
+
+
+# -------------------------------------------------------------------------------------------
+# Folders. Each item may sit in one folder (its `folder_id`). A folder may have a password:
+# then its items stay out of every list, file, check and new run until the folder is opened
+# with the password in this browser session, for UNLOCK_FOR seconds or until locked again.
+# Only a salted scrypt hash of the password is kept. The files themselves are not encrypted;
+# the lock keeps them from anyone using the maker's signed-in browser.
+# -------------------------------------------------------------------------------------------
+
+UNLOCK_FOR = 30 * 60
+TRIES = 5                 # wrong passwords allowed for one folder within TRY_WINDOW
+TRY_WINDOW = 10 * 60
+MAX_FOLDERS = 100
+MAX_NAME = 60
+_SCRYPT = {"n": 2 ** 14, "r": 8, "p": 1, "dklen": 32}
+_misses: dict[str, list[float]] = {}
+
+
+async def _read_folders(user) -> list[dict]:
+    raw = await r2.get_bytes_async(_folder(user) + "folders.json")
+    try:
+        return json.loads(raw) if raw else []
+    except ValueError:
+        logger.warning("studio folders unreadable; starting a new list")
+        return []
+
+
+async def _write_folders(user, folders: list[dict]) -> None:
+    await r2.put_bytes_async(_folder(user) + "folders.json", json.dumps(folders).encode(), "application/json")
+
+
+def _hash(password: str, salt: bytes | None = None) -> dict:
+    salt = salt or secrets.token_bytes(16)
+    digest = hashlib.scrypt(password.encode(), salt=salt, **_SCRYPT)
+    return {"salt": salt.hex(), "hash": digest.hex()}
+
+
+def _matches(password: str, kept: dict) -> bool:
+    return hmac.compare_digest(_hash(password, bytes.fromhex(kept["salt"]))["hash"], kept["hash"])
+
+
+def _opened(request) -> dict[str, float]:
+    """Folders this browser session has opened, and until when."""
+    now = time.time()
+    return {fid: until for fid, until in (request.session.get("studio_open") or {}).items() if until > now}
+
+
+def _closed(request, folders: list[dict]) -> set[str]:
+    opened = _opened(request)
+    return {f["id"] for f in folders if f.get("password") and f["id"] not in opened}
+
+
+def _folder_view(f: dict, items: list[dict], closed: set[str]) -> dict:
+    from webapp import house_cover
+    shut = f["id"] in closed
+    chosen = f.get("themes") or {}
+    return {"id": f["id"], "name": f["name"], "protected": bool(f.get("password")), "open": not shut,
+            "count": None if shut else sum(1 for i in items if i.get("folder_id") == f["id"]),
+            # the cover's house theme in each page mode: the one chosen, or the one the folder's id picks
+            "themes": {m: chosen.get(m) or house_cover.folder_theme(f["id"], m) for m in ("light", "dark")},
+            "themes_chosen": {m: bool(chosen.get(m)) for m in ("light", "dark")}}
+
+
+def _themes(value, current: dict) -> dict:
+    """The folder's chosen cover themes after a change: a theme key for a mode sets it, null returns
+    that mode to the folder's own pick, and a key from the other mode's themes is refused."""
+    from webapp import house_cover
+    if not isinstance(value, dict):
+        raise StudioError("Those colors could not be read.")
+    themes = dict(current or {})
+    for mode in ("light", "dark"):
+        if mode not in value:
+            continue
+        key = value[mode]
+        if key is None:
+            themes.pop(mode, None)
+        elif key in house_cover.folder_themes(mode):
+            themes[mode] = key
+        else:
+            raise StudioError(f"That is not one of the {mode} cover colors.")
+    return themes
+
+
+def _name(value) -> str:
+    name = " ".join(str(value or "").split())
+    if not name:
+        raise StudioError("Give the folder a name.")
+    if len(name) > MAX_NAME:
+        raise StudioError(f"Keep folder names under {MAX_NAME} characters.")
+    return name
+
+
+def _password(value) -> str:
+    password = str(value or "")
+    if not 4 <= len(password) <= 200:
+        raise StudioError("Use a password of at least 4 characters.")
+    return password
+
+
+async def _folder_request(request):
+    """(user, body, folders, None) for a folder route, or (None, None, None, the response to return)."""
+    user = _user_or_404(request)
+    if not user:
+        return None, None, None, _not_found()
+    try:
+        body = await request.json() if request.method != "DELETE" else {}
+    except Exception:  # noqa: BLE001
+        body = {}
+    if not isinstance(body, dict):
+        return None, None, None, JSONResponse({"error": "malformed request"}, status_code=400)
+    return user, body, await _read_folders(user), None
+
+
+def _find(folders: list[dict], request) -> dict | None:
+    fid = request.path_params.get("folder_id", "")
+    return next((f for f in folders if f["id"] == fid), None) if _ID.match(fid) else None
+
+
+async def _folders_now(request, user, **extra) -> JSONResponse:
+    folders = await _read_folders(user)
+    closed = _closed(request, folders)
+    items = await _read_index(user)
+    return JSONResponse({"folders": [_folder_view(f, items, closed) for f in folders]} | extra)
+
+
+async def create_folder(request):
+    user, body, folders, fail = await _folder_request(request)
+    if fail:
+        return fail
+    try:
+        name = _name(body.get("name"))
+        password = _password(body["password"]) if body.get("password") else None
+    except StudioError as e:
+        return JSONResponse({"error": e.message}, status_code=e.status)
+    if len(folders) >= MAX_FOLDERS:
+        return JSONResponse({"error": f"The studio holds up to {MAX_FOLDERS} folders."}, status_code=400)
+    folder = {"id": uuid.uuid4().hex, "name": name, "created": int(time.time())}
+    if password:
+        folder["password"] = _hash(password)
+        request.session["studio_open"] = _opened(request) | {folder["id"]: time.time() + UNLOCK_FOR}
+    async with _lock(user):
+        await _write_folders(user, [*await _read_folders(user), folder])
+    return await _folders_now(request, user, created=folder["id"])
+
+
+async def change_folder(request):
+    """Rename a folder, choose its cover colors, or set, change, or remove its password. A protected
+    folder must be open."""
+    user, body, folders, fail = await _folder_request(request)
+    if fail:
+        return fail
+    folder = _find(folders, request)
+    if not folder:
+        return _not_found()
+    if folder["id"] in _closed(request, folders):
+        return JSONResponse({"error": "Open the folder first."}, status_code=403)
+    try:
+        if "name" in body:
+            folder["name"] = _name(body["name"])
+        if "themes" in body:
+            folder["themes"] = _themes(body["themes"], folder.get("themes"))
+        if body.get("remove_password"):
+            folder.pop("password", None)
+        elif body.get("password"):
+            folder["password"] = _hash(_password(body["password"]))
+            request.session["studio_open"] = _opened(request) | {folder["id"]: time.time() + UNLOCK_FOR}
+    except StudioError as e:
+        return JSONResponse({"error": e.message}, status_code=e.status)
+    async with _lock(user):
+        current = await _read_folders(user)
+        await _write_folders(user, [folder if f["id"] == folder["id"] else f for f in current])
+    return await _folders_now(request, user)
+
+
+async def delete_folder(request):
+    """Delete a folder. Its items stay, and move back out to the main view."""
+    user, _, folders, fail = await _folder_request(request)
+    if fail:
+        return fail
+    folder = _find(folders, request)
+    if not folder:
+        return _not_found()
+    if folder["id"] in _closed(request, folders):
+        return JSONResponse({"error": "Open the folder first."}, status_code=403)
     async with _lock(user):
         items = await _read_index(user)
-        item = next((i for i in items if i["id"] == image_id), None)
-        if not item:
-            return _not_found()
-        if item.get("key"):
-            await r2.delete_async(item["key"])
-        for key in [item.get("source_key"), *(item.get("upload_keys") or [])]:
-            if key:
-                await r2.delete_async(key)
-        await _write_index(user, [i for i in items if i["id"] != image_id])
-    return JSONResponse({"ok": True})
+        await _write_index(user, [i | {"folder_id": None} if i.get("folder_id") == folder["id"] else i for i in items])
+        await _write_folders(user, [f for f in await _read_folders(user) if f["id"] != folder["id"]])
+    request.session["studio_open"] = {k: v for k, v in _opened(request).items() if k != folder["id"]}
+    return await _folders_now(request, user)
+
+
+async def unlock_folder(request):
+    user, body, folders, fail = await _folder_request(request)
+    if fail:
+        return fail
+    folder = _find(folders, request)
+    if not folder or not folder.get("password"):
+        return _not_found()
+    misses = [t for t in _misses.get(folder["id"], []) if t > time.monotonic() - TRY_WINDOW]
+    if len(misses) >= TRIES:
+        return JSONResponse({"error": "Too many wrong passwords. Try again in a few minutes."}, status_code=429)
+    if not _matches(str(body.get("password") or ""), folder["password"]):
+        _misses[folder["id"]] = [*misses, time.monotonic()]
+        return JSONResponse({"error": "That password is not right."}, status_code=403)
+    _misses.pop(folder["id"], None)
+    request.session["studio_open"] = _opened(request) | {folder["id"]: time.time() + UNLOCK_FOR}
+    return await _folders_now(request, user)
+
+
+async def folder_cover(request):
+    """A folder's cover: the house cover laid landscape with the folder's name as its title, bound in
+    the house theme its id picks for the page's mode (webapp/house_cover.py). A protected folder
+    carries a diary lock, clasped while this session has it locked and undone while it is open. The
+    cover shows the name only, never the work inside."""
+    user = _user_or_404(request)
+    if not user:
+        return _not_found()
+    folders = await _read_folders(user)
+    folder = _find(folders, request)
+    if not folder:
+        return _not_found()
+    mode = "dark" if request.query_params.get("mode") == "dark" else "light"
+    state = "plain" if not folder.get("password") else "locked" if folder["id"] in _closed(request, folders) else "open"
+    # the color picker previews a theme before it is saved ("auto": the one the folder's id picks);
+    # otherwise the folder's chosen theme, or its id's pick
+    asked = request.query_params.get("theme")
+    theme = None if asked == "auto" else asked or (folder.get("themes") or {}).get(mode)
+    from starlette.concurrency import run_in_threadpool
+
+    from webapp import house_cover
+    try:
+        data = await run_in_threadpool(house_cover.folder_cover_sync, folder["id"], folder["name"], mode, state, theme)
+    except Exception:  # noqa: BLE001
+        logger.exception("studio folder cover failed")
+        return JSONResponse({"error": "The cover could not be drawn."}, status_code=500)
+    # the page puts the name and state in the address, so a rename or a lock fetches the new cover
+    return Response(data, media_type="image/webp", headers={"Cache-Control": "private, max-age=604800"})
+
+
+async def lock_folder(request):
+    user, _, folders, fail = await _folder_request(request)
+    if fail:
+        return fail
+    if not _find(folders, request):
+        return _not_found()
+    request.session["studio_open"] = {k: v for k, v in _opened(request).items()
+                                      if k != request.path_params["folder_id"]}
+    return await _folders_now(request, user)
+
+
+async def _chosen(request):
+    """(user, ids, body, closed, None) for a route that acts on several items, or Nones and the
+    response to return."""
+    user, body, folders, fail = await _folder_request(request)
+    if fail:
+        return None, None, None, None, fail
+    ids = body.get("ids")
+    if not isinstance(ids, list) or not ids or not all(isinstance(i, str) and _ID.match(i) for i in ids):
+        return None, None, None, None, JSONResponse({"error": "Choose something first."}, status_code=400)
+    return user, set(ids), body, _closed(request, folders), None
+
+
+async def move_items(request):
+    """Move items into a folder, or out of every folder (folder null). A protected folder must be open."""
+    user, ids, body, closed, fail = await _chosen(request)
+    if fail:
+        return fail
+    target = body.get("folder")
+    if target is not None:
+        folders = await _read_folders(user)
+        if not any(f["id"] == target for f in folders):
+            return JSONResponse({"error": "That folder is gone."}, status_code=404)
+        if target in closed:
+            return JSONResponse({"error": "Open the folder first."}, status_code=403)
+    async with _lock(user):
+        items = await _read_index(user)
+        moved = 0
+        for n, item in enumerate(items):
+            if item["id"] in ids and item.get("folder_id") not in closed:
+                items[n] = item | {"folder_id": target}
+                moved += 1
+        await _write_index(user, items)
+    return JSONResponse({"moved": moved})
+
+
+async def delete_items(request):
+    user, ids, _, closed, fail = await _chosen(request)
+    if fail:
+        return fail
+    return JSONResponse({"deleted": await _delete_items(user, ids, closed)})

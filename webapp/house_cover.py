@@ -94,7 +94,82 @@ def _cover_sync(slug: str, theme: str, font: str, motif: str) -> bytes | None:
     if motif == "shelf" or motif.startswith("shelf:"):          # a shelf's own motif: the named shelf, or the book's first
         motif = hc.shelf_motif(motif[6:] or shelves.get(slug))
     title, author = texts[slug]                               # the text is in the key, so a retitled book redraws
-    key = hashlib.sha1(f"{slug}|{title}|{author}|{theme}|{font}|{motif}|{hc.RENDER_VERSION}|{hc.S}|{OUT_W}".encode()).hexdigest()
+    return _drawn(slug, title, author, theme, font, motif)
+
+
+# ---------------------------------------------------------------- Image Studio folders
+# A studio folder is the house cover laid landscape (scripts/house_covers.py, build_folder): its name
+# engraved as the title and nothing else, and on a protected folder a diary lock in the same material.
+# The renderer's board is set when it loads, so folders use a second copy of it, loaded landscape and
+# with no author band.
+FOLDER_BOARD = {"COVER_ASPECT": "0.68", "COVER_AUTHOR_BAND": "0"}
+_folders_hc = None
+
+
+def _folder_renderer():
+    global _folders_hc
+    if _folders_hc is None:
+        with _hc_lock:
+            if _folders_hc is None:
+                import importlib.util  # noqa: PLC0415
+                spec = importlib.util.spec_from_file_location("house_covers_folders", _ROOT / "scripts" / "house_covers.py")
+                module = importlib.util.module_from_spec(spec)
+                before = {k: os.environ.get(k) for k in FOLDER_BOARD}
+                os.environ.update(FOLDER_BOARD)                  # read once, as the module loads
+                try:
+                    spec.loader.exec_module(module)
+                finally:
+                    for k, v in before.items():
+                        if v is None:
+                            os.environ.pop(k, None)
+                        else:
+                            os.environ[k] = v
+                _folders_hc = module
+    return _folders_hc
+
+
+def folder_themes(mode: str) -> list[str]:
+    hc = _renderer()
+    return sorted(k for k, t in hc.THEMES.items() if t["mode"] == mode and k not in ("light", "dark"))
+
+
+def folder_theme(folder_id: str, mode: str) -> str:
+    """The house theme a studio folder is bound in, the same every time: its id picks among the
+    themes for the page's light or dark mode, so neighbors are bound differently."""
+    keys = folder_themes(mode)
+    return keys[int(hashlib.sha1(folder_id.encode()).hexdigest(), 16) % len(keys)]
+
+
+def folder_cover_sync(folder_id: str, name: str, mode: str, state: str, theme: str | None = None) -> bytes:
+    """A studio folder's cover in the page's mode: plain, locked (clasped) or open (unclasped), in the
+    theme chosen for it, or the one its id picks. Cached on disk by name, theme and state, so a
+    rename, a new color or a lock draws a new one."""
+    hc = _folder_renderer()
+    if theme is None or theme not in folder_themes(mode):
+        theme = folder_theme(folder_id, mode)
+    board = "|".join(FOLDER_BOARD.values())
+    key = hashlib.sha1(f"studio-folder|{name}|{theme}|{state}|{hc.RENDER_VERSION}|{hc.S}|{board}|{OUT_W}".encode()).hexdigest()
+    path = _cache_dir() / key[:2] / f"{key}.webp"
+    if path.exists():
+        return path.read_bytes()
+    im = hc.render_folder(name, theme, state)
+    if im.width > OUT_W:
+        from PIL import Image  # noqa: PLC0415
+        im = im.resize((OUT_W, round(im.height * OUT_W / im.width)), Image.LANCZOS)
+    out = io.BytesIO()
+    im.save(out, "WEBP", quality=82, method=4)
+    data = out.getvalue()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".tmp")
+    tmp.write_bytes(data)
+    os.replace(tmp, path)
+    return data
+
+
+def _drawn(owner: str, title: str, author: str, theme: str, font: str, motif: str) -> bytes:
+    """One cover, from the disk cache or drawn now and cached."""
+    hc = _renderer()
+    key = hashlib.sha1(f"{owner}|{title}|{author}|{theme}|{font}|{motif}|{hc.RENDER_VERSION}|{hc.S}|{OUT_W}".encode()).hexdigest()
     path = _cache_dir() / key[:2] / f"{key}.webp"
     if path.exists():
         return path.read_bytes()

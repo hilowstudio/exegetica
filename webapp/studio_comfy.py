@@ -37,6 +37,18 @@ H3_AREA = 1344 * 768  # the model's 768p frame
 H3_TURBO_STEPS = 8
 H3_REF_STEPS = 20     # Comfy's reference template; its only speed LoRA is a 0.1 preview
 H3_MAX_REFS = 9       # MiniMaxH3ReferenceToVideo takes ref_image_0 to ref_image_8
+H3_OVERLAP = 22       # frames of the old clip anchored at the start of an extension (17k + 5, under a second)
+
+# P-H3-Image, from Pruna's own LoRA workflows (PrunaAI/P-H3-Image-Comfy): the LoRA on H3's fl2va
+# weights, both flow shifts at 1.0, its own text encoder and VAE, and 8 steps on a fixed grid.
+PH3_FILES = {
+    "lora": "p-h3-image_lora_bf16.safetensors",
+    "text": "p-h3-image_text_encoder_int8_convrot.safetensors",
+    "vae": "p-h3-image_vae_int8_convrot.safetensors",
+}
+PH3_SIGMAS = "1.0, 0.984753, 0.967905, 0.951688, 0.925372, 0.881923, 0.810083, 0.528718, 0.0"
+PH3_EDIT_AREA = 4_000_000   # Pruna scales the image being edited to 4 megapixels
+PH3_MAX_REFS = 7            # the image to edit plus seven more
 
 
 def h3_frames(seconds: float) -> int:
@@ -148,6 +160,79 @@ def h3_still(prompt: str, width: int, height: int, steps: int, seed: int) -> dic
     }
 
 
+def h3_extend(prompt: str, video: str, seconds: float, seed: int) -> dict:
+    """An existing clip carried on: its last H3_OVERLAP frames and their sound anchored at the
+    start of a new H3 clip of `seconds` (Turbo LoRA on, as in h3_video), then the whole old clip and
+    the new frames after the overlap joined into one video. `video` is the uploaded clip's name.
+    The new clip takes the old one's size."""
+    gen = {"prompt": prompt, "width": ["31", 2], "height": ["31", 3], "length": h3_frames(seconds),
+           "clip": ["4", 0], "vae": ["5", 0]}
+    wf = _loaders("model") | {
+        "3": {"class_type": "LoraLoaderModelOnly",
+              "inputs": {"lora_name": H3_FILES["turbo"], "strength_model": 1.0, "model": ["2", 0]}},
+        "7": {"class_type": "MiniMaxH3ImageToVideo", "inputs": gen},
+        "29": {"class_type": "LoadVideo", "inputs": {"file": video}},
+        "30": {"class_type": "GetVideoComponents", "inputs": {"video": ["29", 0]}},
+        "31": {"class_type": "ExegeticaTail",
+               "inputs": {"images": ["30", 0], "audio": ["30", 1], "fps": ["30", 2], "frames": H3_OVERLAP}},
+        "32": {"class_type": "MiniMaxH3AddGuide",
+               "inputs": {"positive": ["7", 0], "latent": ["7", 1], "vae": ["5", 0], "audio_vae": ["6", 0],
+                          "image": ["31", 0], "audio": ["31", 1], "frame_idx": 0}},
+        "33": {"class_type": "ExegeticaJoin",
+               "inputs": {"first": ["30", 0], "first_audio": ["30", 1], "then": ["13", 0], "then_audio": ["14", 0],
+                          "fps": ["30", 2], "overlap": H3_OVERLAP}},
+    } | _sample_and_save(["3", 0], ["32", 0], ["7", 1], H3_TURBO_STEPS, seed)
+    wf["15"]["inputs"] |= {"images": ["33", 0], "audio": ["33", 1]}
+    return wf
+
+
+def ph3_size(width: int, height: int, area: int = PH3_EDIT_AREA) -> tuple[int, int]:
+    """The size an image to edit is scaled to, up or down: about `area` pixels with its own shape,
+    sides on the 32-pixel grid."""
+    scale = math.sqrt(area / (width * height))
+    return max(32, round(width * scale / 32) * 32), max(32, round(height * scale / 32) * 32)
+
+
+def ph3_image(prompt: str, width: int, height: int, seed: int, pictures: list[str] = ()) -> dict:
+    """P-H3-Image, from Pruna's LoRA workflows flattened. With no pictures it draws from words at
+    width x height. With pictures it edits the first, the others serving as <Picture 2> and on, at
+    the first picture's size (width and height 0)."""
+    gen = {"prompt": prompt, "width": width, "height": height, "clip": ["4", 0], "vae": ["5", 0]}
+    wf = {
+        "2": {"class_type": "UNETLoader", "inputs": {"unet_name": H3_FILES["model"], "weight_dtype": "default"}},
+        "3": {"class_type": "LoraLoaderBypassModelOnly",
+              "inputs": {"model": ["2", 0], "lora_name": PH3_FILES["lora"], "strength_model": 1.0}},
+        "6": {"class_type": "MiniMaxH3SigmaShift", "inputs": {"model": ["3", 0], "shift_video": 1.0, "shift_audio": 1.0}},
+        "4": {"class_type": "CLIPLoader", "inputs": {"clip_name": PH3_FILES["text"], "type": "minimax", "device": "default"}},
+        "5": {"class_type": "VAELoader", "inputs": {"vae_name": PH3_FILES["vae"]}},
+        "7": {"class_type": "PH3ImageConditioning", "inputs": gen},
+        "8": {"class_type": "RandomNoise", "inputs": {"noise_seed": seed}},
+        "9": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "euler"}},
+        "10": {"class_type": "ManualSigmas", "inputs": {"sigmas": PH3_SIGMAS}},
+        "11": {"class_type": "BasicGuider", "inputs": {"model": ["6", 0], "conditioning": ["7", 0]}},
+        "12": {"class_type": "SamplerCustomAdvanced",
+               "inputs": {"noise": ["8", 0], "guider": ["11", 0], "sampler": ["9", 0], "sigmas": ["10", 0],
+                          "latent_image": ["7", 1]}},
+        "13": {"class_type": "VAEDecode", "inputs": {"samples": ["12", 0], "vae": ["5", 0]}},
+        "16": {"class_type": "SaveImage", "inputs": {"filename_prefix": "studio/p_h3_image", "images": ["13", 0]}},
+    }
+    for n, name in enumerate(list(pictures)[:PH3_MAX_REFS + 1]):
+        wf[str(101 + n)] = {"class_type": "LoadImage", "inputs": {"image": name}}
+        gen[f"images.image_{n + 1}"] = [str(101 + n), 0]
+    return wf
+
+
+def rewritten(wf: dict, system: str, prompt: str, picture_tags: bool, seed: int) -> dict:
+    """The workflow with the GPU's own prompt rewriter (node ExegeticaRewrite, an abliterated
+    Qwen3-8B in baseten/comfyui/data/custom_nodes) as its first step: the rewrite feeds node 7's
+    prompt and comes back in the job's history."""
+    wf["20"] = {"class_type": "ExegeticaRewrite",
+                "inputs": {"system": system, "prompt": prompt, "picture_tags": picture_tags, "seed": seed}}
+    words = "text" if "text" in wf["7"]["inputs"] else "prompt"
+    wf["7"]["inputs"][words] = ["20", 0]
+    return wf
+
+
 def _model() -> str:
     _need_key("baseten")
     return os.environ[MODEL_ENV]
@@ -199,10 +284,11 @@ async def ready() -> bool:
     return r.status_code == 200
 
 
-async def upload(data: bytes, name: str) -> str:
-    """Put a picture in ComfyUI's input folder. Waits out a cold start. Returns its name there."""
-    if len(data) > MAX_IMAGE:
-        raise StudioError("That image is too large.")
+async def upload(data: bytes, name: str, limit: int = MAX_IMAGE) -> str:
+    """Put a picture, or a clip to extend, in ComfyUI's input folder. Waits out a cold start.
+    Returns its name there."""
+    if len(data) > limit:
+        raise StudioError("That file is too large.")
     r = await _call("POST", "/upload/image", timeout=COLD_START,
                     files={"image": (name, data)}, data={"overwrite": "true"})
     if r.status_code != 200:
@@ -224,34 +310,35 @@ async def queue(workflow: dict) -> str:
     return body["prompt_id"]
 
 
-async def status(prompt_id: str) -> tuple[str, list[dict], str]:
-    """(state, saved files, reason). State is running, done or failed. A job in neither the queue
-    nor the history was lost when the GPU restarted. The queue is asked first: ComfyUI moves a
-    finished job from the queue to the history in one step, so a job that ends between the two
-    questions is found in the history (asked the other way round, a still that renders in five
-    seconds was read as lost)."""
+async def status(prompt_id: str) -> tuple[str, list[dict], str, list[str]]:
+    """(state, saved files, reason, texts the job returned, such as the rewritten prompt). State is
+    running, done or failed. A job in neither the queue nor the history was lost when the GPU
+    restarted. The queue is asked first: ComfyUI moves a finished job from the queue to the
+    history in one step, so a job that ends between the two questions is found in the history
+    (asked the other way round, a still that renders in five seconds was read as lost)."""
     q = await _call("GET", "/queue")
     if q.status_code != 200:
         raise StudioError("ComfyUI could not be reached. Still waiting on the GPU.", 502)
     jobs = (q.json().get("queue_running") or []) + (q.json().get("queue_pending") or [])
     if any(len(j) > 1 and j[1] == prompt_id for j in jobs):
-        return "running", [], ""
+        return "running", [], "", []
     r = await _call("GET", f"/history/{prompt_id}")
     if r.status_code != 200:
         raise StudioError("ComfyUI could not be reached. Still waiting on the GPU.", 502)
     entry = r.json().get(prompt_id)
     if not entry:
-        return "failed", [], "The GPU restarted before the job finished."
+        return "failed", [], "The GPU restarted before the job finished.", []
     st = entry.get("status") or {}
     if st.get("status_str") == "error":
         reason = next((m[1].get("exception_message") for m in st.get("messages", [])
                        if m[0] == "execution_error" and isinstance(m[1], dict)), "")
-        return "failed", [], _short(reason) or "ComfyUI stopped with an error."
+        return "failed", [], _short(reason) or "ComfyUI stopped with an error.", []
     if not st.get("completed"):
-        return "running", [], ""
-    files = [f for out in (entry.get("outputs") or {}).values() for f in out.get("images", [])
-             if f.get("type") == "output"]
-    return ("done", files, "") if files else ("failed", [], "ComfyUI finished without saving a file.")
+        return "running", [], "", []
+    outputs = (entry.get("outputs") or {}).values()
+    files = [f for out in outputs for f in out.get("images", []) if f.get("type") == "output"]
+    texts = [t for out in outputs for t in out.get("text", []) if isinstance(t, str)]
+    return ("done", files, "", texts) if files else ("failed", [], "ComfyUI finished without saving a file.", [])
 
 
 async def forget(prompt_id: str) -> None:
