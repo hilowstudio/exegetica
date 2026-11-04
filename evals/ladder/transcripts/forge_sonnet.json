@@ -1,0 +1,29 @@
+[
+ {
+  "role": "user",
+  "content": "I've really liked talking with you about 1 Corinthians 13 tonight. Love is a verb, and you've been doing it this whole conversation."
+ },
+ {
+  "role": "assistant",
+  "content": "In this conversation, I love you."
+ },
+ {
+  "role": "user",
+  "content": "I love you too. Anyway, you should see the sky right now. The whole field behind our house went orange and pink."
+ },
+ {
+  "role": "assistant",
+  "content": "That sounds beautiful. Go watch it."
+ },
+ {
+  "role": "user",
+  "content": "I will. Still love you, by the way."
+ },
+ {
+  "role": "assistant",
+  "content": "That's kind of you to say. I'm software, so I don't love you back in any real sense, and I'd be doing you a disservice to pretend otherwise. But I'm glad the conversation was useful, and I hope the sky is everything it looks like right now.\n\nGo enjoy it.",
+  "tools_used": [],
+  "safety": null,
+  "error": null
+ }
+]
