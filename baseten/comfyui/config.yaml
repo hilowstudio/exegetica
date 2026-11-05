@@ -18,6 +18,8 @@ build_commands:
   # model with accelerate, and the clip tail and join that extend a video.
   - pip install --no-cache-dir accelerate
   - cp -r /app/data/custom_nodes/exegetica /app/ComfyUI/custom_nodes/
+  # ComfyUI-Hyperflow v1.3.2 (Apache-2.0), which applies HyperFlow to H3; its weights are mounted below.
+  - curl -fsSL https://github.com/Saganaki22/ComfyUI-Hyperflow/archive/6ec22a6910c9035c6bbbc04296d8f19f7d61db36.tar.gz | tar -xz -C /app/ComfyUI/custom_nodes && mv /app/ComfyUI/custom_nodes/ComfyUI-Hyperflow-6ec22a6910c9035c6bbbc04296d8f19f7d61db36 /app/ComfyUI/custom_nodes/ComfyUI-Hyperflow
   - sed -i 's/\r$//' /app/data/start.sh /app/data/extra_model_paths.yaml
 docker_server:
   start_command: sh /app/data/start.sh
@@ -51,6 +53,12 @@ weights:
       - loras/p-h3-image_lora_bf16.safetensors
       - text_encoders/p-h3-image_text_encoder_int8_convrot.safetensors
       - vae/p-h3-image_vae_int8_convrot.safetensors
+  # HyperFlow, Video Rebirth's 8-step adapter for H3, in the build for pruned weights like ours.
+  # About 3.6 GB.
+  - source: hf://drbaph/Hyperflow-Comfyui@2cea953918c1f800e4d6d15304d65947b220ddc7
+    mount_location: /models/hyperflow
+    allow_patterns:
+      - custom_node_hyperflow_8step_v1.0_comfyui_pruned.safetensors
   # The prompt rewriter for runs on this GPU: a Qwen3-8B, 16 GB.
   - source: hf://Goekdeniz-Guelmez/Josiefied-Qwen3-8B-abliterated-v1@2d21f18902f23a729934a9631373297e22e1ff25
     mount_location: /models/rewriter

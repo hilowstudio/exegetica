@@ -9,3 +9,6 @@ p_h3_image:
   text_encoders: text_encoders
   vae: vae
   loras: loras
+hyperflow:
+  base_path: /models
+  hyperflow: hyperflow

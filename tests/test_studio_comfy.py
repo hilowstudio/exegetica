@@ -20,7 +20,7 @@ OUTPUTS = {"LoadImage": 2, "UNETLoader": 1, "LoraLoaderModelOnly": 1, "CLIPLoade
            "CLIPTextEncode": 1, "EmptyLatentImage": 1, "LTXVSeparateAVLatent": 2, "SaveImage": 0,
            "ExegeticaRewrite": 1, "LoraLoaderBypassModelOnly": 1, "MiniMaxH3SigmaShift": 1,
            "PH3ImageConditioning": 2, "ManualSigmas": 1, "LoadVideo": 1, "GetVideoComponents": 5,
-           "ExegeticaTail": 4, "ExegeticaJoin": 2}
+           "ExegeticaTail": 4, "ExegeticaJoin": 2, "ApplyHyperFlow": 2}
 NODES = CONFIG.parent / "data" / "custom_nodes" / "exegetica" / "__init__.py"
 
 
@@ -66,18 +66,24 @@ def test_a_last_frame_ends_the_clip_with_or_without_a_first():
     assert gen["last_frame"] == ["17", 0] and wf["17"]["inputs"]["image"] == "end.png" and "first_frame" not in gen
 
 
-def test_reference_pictures_and_pinned_frames_ride_the_reference_model_at_full_steps():
+def test_reference_pictures_and_pinned_frames_ride_the_reference_model_with_hyperflow():
     wf = comfy.h3_refs("<Picture 1> waves at <Picture 2>", ["ann.png", "dog.png"],
                        [("start.png", 0), ("mid.png", 60), ("end.png", -1)], 1344, 768, 5, 9)
     wired_whole(wf)
-    assert wf["2"]["inputs"]["unet_name"] == comfy.H3_FILES["ref_model"] and "3" not in wf   # no speed LoRA
+    assert wf["2"]["inputs"]["unet_name"] == comfy.H3_FILES["ref_model"] and "3" not in wf   # no 8-step LoRA
+    hf = wf["40"]["inputs"]
+    assert hf["model"] == ["2", 0] and hf["hyperflow_file"] == comfy.H3_HYPERFLOW and hf["variant"] == "pruned"
+    assert hf["experimental_curve_refit"] is True and hf["download_if_missing"] is False   # the GPU runs offline
+    # HyperFlow's own schedule and Euler stand in for the scheduler
+    assert wf["11"]["inputs"]["model"] == ["40", 0] and wf["12"]["inputs"]["sigmas"] == ["40", 1] and "10" not in wf
+    assert wf["9"]["inputs"]["sampler_name"] == "euler"
     gen = wf["7"]["inputs"]
     assert gen["ref_images.ref_image_0"] == ["101", 0] and gen["ref_images.ref_image_1"] == ["102", 0]
     assert wf["101"]["inputs"]["image"] == "ann.png" and gen["length"] == 124
     # each pinned frame chains onto the last, and the guider samples from the end of the chain
     assert [wf[n]["inputs"]["frame_idx"] for n in ("301", "302", "303")] == [0, 60, -1]
     assert wf["301"]["inputs"]["positive"] == ["7", 0] and wf["303"]["inputs"]["positive"] == ["302", 0]
-    assert wf["11"]["inputs"]["conditioning"] == ["303", 0] and wf["10"]["inputs"]["steps"] == comfy.H3_REF_STEPS
+    assert wf["11"]["inputs"]["conditioning"] == ["303", 0]
 
 
 def test_pictures_alone_need_no_pinned_frames():
@@ -148,7 +154,10 @@ def test_an_extension_anchors_the_old_clips_end_and_joins_the_two():
 
 def test_every_file_the_workflow_loads_is_one_the_deployment_mounts():
     mounted = CONFIG.read_text(encoding="utf-8")
-    assert all(name in mounted for name in [*comfy.H3_FILES.values(), *comfy.PH3_FILES.values()])
+    assert all(name in mounted for name in [*comfy.H3_FILES.values(), *comfy.PH3_FILES.values(), comfy.H3_HYPERFLOW])
+    assert "ComfyUI-Hyperflow" in mounted   # the node pack that loads it
+    paths = (CONFIG.parent / "data" / "extra_model_paths.yaml").read_text(encoding="utf-8")
+    assert "hyperflow: hyperflow" in paths
 
 
 @pytest.fixture

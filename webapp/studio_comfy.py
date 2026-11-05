@@ -35,7 +35,11 @@ H3_FILES = {
 H3_FPS = 24
 H3_AREA = 1344 * 768  # the model's 768p frame
 H3_TURBO_STEPS = 8
-H3_REF_STEPS = 20     # Comfy's reference template; its only speed LoRA is a 0.1 preview
+# HyperFlow (Video Rebirth's 8-step adapter for H3, the build for pruned weights) speeds up the
+# reference model, which otherwise needs Comfy's full 20 steps. Tested 2026-11-05 on a warm H100:
+# a 5-second clip from pictures took 90 s against 154 s, and looked as good. On the words model it
+# was slower than the 8-step LoRA (88 s against 66 s), so that model keeps the LoRA.
+H3_HYPERFLOW = "custom_node_hyperflow_8step_v1.0_comfyui_pruned.safetensors"
 H3_MAX_REFS = 9       # MiniMaxH3ReferenceToVideo takes ref_image_0 to ref_image_8
 H3_OVERLAP = 22       # frames of the old clip anchored at the start of an extension (17k + 5, under a second)
 
@@ -74,16 +78,16 @@ def _loaders(model: str) -> dict:
     }
 
 
-def _sample_and_save(model: list, conditioning: list, latent: list, steps: int, seed: int) -> dict:
-    """Sampling, decoding and the saved clip, shared by both video workflows (nodes 8 to 16)."""
-    return {
+def _sample_and_save(model: list, conditioning: list, latent: list, steps: int, seed: int,
+                     sigmas: list | None = None) -> dict:
+    """Sampling, decoding and the saved clip, shared by both video workflows (nodes 8 to 16).
+    `sigmas` is a fixed schedule (HyperFlow's, sampled with Euler) in place of the scheduler."""
+    wf = {
         "8": {"class_type": "RandomNoise", "inputs": {"noise_seed": seed}},
-        "9": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "res_multistep"}},
-        "10": {"class_type": "BasicScheduler",
-               "inputs": {"scheduler": "simple", "steps": steps, "denoise": 1.0, "model": model}},
+        "9": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "euler" if sigmas else "res_multistep"}},
         "11": {"class_type": "BasicGuider", "inputs": {"model": model, "conditioning": conditioning}},
         "12": {"class_type": "SamplerCustomAdvanced",
-               "inputs": {"noise": ["8", 0], "guider": ["11", 0], "sampler": ["9", 0], "sigmas": ["10", 0],
+               "inputs": {"noise": ["8", 0], "guider": ["11", 0], "sampler": ["9", 0], "sigmas": sigmas or ["10", 0],
                           "latent_image": latent}},
         "13": {"class_type": "VAEDecode", "inputs": {"samples": ["12", 0], "vae": ["5", 0]}},
         "14": {"class_type": "VAEDecodeAudio", "inputs": {"samples": ["12", 0], "vae": ["6", 0]}},
@@ -94,6 +98,10 @@ def _sample_and_save(model: list, conditioning: list, latent: list, steps: int, 
                "inputs": {"filename_prefix": "studio/h3", "format": "auto", "format.codec": "auto", "codec": "auto",
                           "video": ["15", 0]}},
     }
+    if not sigmas:
+        wf["10"] = {"class_type": "BasicScheduler",
+                    "inputs": {"scheduler": "simple", "steps": steps, "denoise": 1.0, "model": model}}
+    return wf
 
 
 def h3_video(prompt: str, image: str | None, width: int, height: int, seconds: float, seed: int,
@@ -119,12 +127,20 @@ def h3_video(prompt: str, image: str | None, width: int, height: int, seconds: f
 
 def h3_refs(prompt: str, refs: list[str], pinned: list[tuple[str, int]], width: int, height: int,
             seconds: float, seed: int) -> dict:
-    """Comfy's reference-to-video and multi-frame templates, flattened, at their full 20 steps.
-    `refs` are uploaded pictures the prompt names <Picture 1>, <Picture 2> and on. `pinned` holds
-    (uploaded picture, frame index) pairs that anchor the video at those frames, -1 being the last."""
+    """Comfy's reference-to-video and multi-frame templates, flattened, with HyperFlow's 8 steps
+    (ComfyUI-Hyperflow's ApplyHyperFlow, node 40) in place of the templates' 20. `refs` are
+    uploaded pictures the prompt names <Picture 1>, <Picture 2> and on. `pinned` holds (uploaded
+    picture, frame index) pairs that anchor the video at those frames, -1 being the last."""
     gen = {"prompt": prompt, "width": width, "height": height, "length": h3_frames(seconds),
            "ref_image_size": "match", "clip": ["4", 0], "vae": ["5", 0], "audio_vae": ["6", 0]}
-    wf = _loaders("ref_model") | {"7": {"class_type": "MiniMaxH3ReferenceToVideo", "inputs": gen}}
+    wf = _loaders("ref_model") | {
+        "7": {"class_type": "MiniMaxH3ReferenceToVideo", "inputs": gen},
+        # the curve refit restores most of HyperFlow's timing signal on the pruned weights mounted here
+        "40": {"class_type": "ApplyHyperFlow",
+               "inputs": {"model": ["2", 0], "hyperflow_file": H3_HYPERFLOW, "strength": 1.0, "lora_mode": "bypass",
+                          "variant": "pruned", "download_if_missing": False, "verbose": False,
+                          "experimental_curve_refit": True}},
+    }
     for i, name in enumerate(refs[:H3_MAX_REFS]):
         wf[str(101 + i)] = {"class_type": "LoadImage", "inputs": {"image": name}}
         gen[f"ref_images.ref_image_{i}"] = [str(101 + i), 0]
@@ -135,7 +151,7 @@ def h3_refs(prompt: str, refs: list[str], pinned: list[tuple[str, int]], width: 
                             "inputs": {"positive": positive, "latent": ["7", 1], "vae": ["5", 0], "audio_vae": ["6", 0],
                                        "image": [str(201 + i), 0], "frame_idx": frame}}
         positive = [str(301 + i), 0]
-    return wf | _sample_and_save(["2", 0], positive, ["7", 1], H3_REF_STEPS, seed)
+    return wf | _sample_and_save(["40", 0], positive, ["7", 1], H3_TURBO_STEPS, seed, sigmas=["40", 1])
 
 
 def h3_still(prompt: str, width: int, height: int, steps: int, seed: int) -> dict:

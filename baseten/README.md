@@ -5,7 +5,9 @@ to zero when idle, with MiniMax H3 mounted read-only: the fl2va weights (words, 
 frames, stills) and the ref2va weights (reference pictures and pictures at set seconds). The
 studio's own ComfyUI nodes are in `comfyui/data/custom_nodes/exegetica`: the prompt rewriter, with
 its own model (a Qwen3-8B, mounted at `/models/rewriter`), and the clip tail and
-join that extend a video. P-H3-Image's LoRA, text encoder and VAE are mounted at `/models/p-h3-image`. The studio talks to it through
+join that extend a video. P-H3-Image's LoRA, text encoder and VAE are mounted at `/models/p-h3-image`. HyperFlow, the 8-step
+adapter that H3 from pictures runs with, is mounted at `/models/hyperflow` and applied by the
+ComfyUI-Hyperflow node pack (installed at build time, pinned). The studio talks to it through
 `webapp/studio_comfy.py`. See `docs/decisions/0017-image-studio.md`.
 
 ## Deploy

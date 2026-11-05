@@ -135,6 +135,16 @@ def test_refresh_keeps_the_last_good_price_when_a_reading_fails_or_looks_wrong(p
     assert not prices.stale(book)
 
 
+def test_a_route_billed_by_tokens_keeps_its_listed_price_without_asking(pages):
+    routes = {"gpt-sunburst:fal": ("fal", route("gpt-sunburst", "fal")),
+              "gpt-sunburst:runware": ("runware", route("gpt-sunburst", "runware"))}
+    pages["keys"] = {"fal"}
+    book = asyncio.run(prices.refresh(routes))
+    for rid in routes:
+        assert book["routes"][rid] == {"usd": 0.053, "usd_audio": None, "status": "listed", "checked": book["checked"]}
+    assert studio._book_summary(book)["kept"] == []   # not counted as a price that could not be read
+
+
 def test_the_book_overrides_the_listed_price_only_where_it_has_one():
     book = {"routes": {"a:x": {"usd": 0.05, "usd_audio": None}, "b:x": {"usd": None}}}
     assert prices.current(book, "a:x", {"unit": "second", "usd": 0.1, "usd_audio": 0.15}) == \

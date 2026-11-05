@@ -68,6 +68,8 @@ H3_SIZES = {"wide": (1344, 768), "landscape": (1024, 768), "square": (768, 768),
             "portrait": (768, 1024), "tall": (768, 1344)}   # MiniMax H3's 768p sizes on Runware
 H3_STILL_SIZES = {"square": (1024, 1024), "portrait": (864, 1152), "landscape": (1152, 864),
                   "tall": (768, 1344), "wide": (1344, 768)}   # about a megapixel, sides on H3's 32-pixel grid
+NANO_SIZES = {"square": (1024, 1024), "portrait": (896, 1200), "landscape": (1200, 896),
+              "tall": (768, 1376), "wide": (1376, 768)}   # Nano Banana's 1K sizes
 PH3_SIZES = {"square": (2912, 2912), "portrait": (2496, 3360), "landscape": (3360, 2496),
              "tall": (2176, 3872), "wide": (3872, 2176)}   # Pruna's 8-megapixel sizes for P-H3-Image
 MAX_EXTENDED = 60   # seconds an extended clip may reach, so the joined frames fit the GPU server's memory
@@ -117,6 +119,31 @@ MODELS = {
             "runware": {"model": "runware:400@2", "price": {"unit": "1k", "usd": 0.00078, "ref_steps": 4},
                         "source": {"runware": "bfl-flux-2-klein-9b", "measured": "1024x1024 · 4 steps"}},
         }},
+    "flux3-klein": {
+        "does": ("create", "edit"), "label": "FLUX 3 Klein",
+        "note": "Black Forest Labs' small FLUX 3 model. Quick and under a cent. Also edits.", "steps": 16,
+        "routes": {
+            # fal has one endpoint for pictures from words and another for edits (`model_edit`), and
+            # takes its own request shape (`body`, see _fal_body).
+            "fal": {"model": "blackforestlabs/flux-3/klein/text-to-image",
+                    "model_edit": "blackforestlabs/flux-3/klein/edit-image",
+                    "body": {"enable_prompt_expansion": False, "enable_safety_checker": True, "output_format": "jpeg",
+                             "num_images": 1},
+                    "price": {"unit": "mp", "usd": 0.009},
+                    "source": {"fal": "blackforestlabs/flux-3/klein/text-to-image"}},
+            "runware": {"model": "bfl:flux@3-image-klein", "price": {"unit": "1k", "usd": 0.006, "ref_steps": 16},
+                        "source": {"runware": "bfl-flux-3-image-klein", "measured": "1024×1024 · steps 16"}},
+        }},
+    "fibo-2": {
+        "does": ("create", "edit"), "label": "Bria FIBO 2.0",
+        "note": "Bria's image model. Also edits.",
+        "routes": {
+            "fal": {"model": "bria/fibo-2/generate", "model_edit": "bria/fibo-2/edit",
+                    "body": {}, "size": "aspect_ratio", "edit_prompt": "instruction", "seed": True,
+                    "price": {"unit": "image", "usd": 0.04}, "source": {"fal": "bria/fibo-2/generate"}},
+            "runware": {"model": "bria:20@1", "model_edit": "bria:21@1", "price": {"unit": "image", "usd": 0.04},
+                        "source": {"runware": "bria-fibo-2-0", "rate": ""}},
+        }},
     "qwen-turbo": {
         "does": ("create", "edit"), "label": "Qwen-Image 2.1 Turbo",
         "note": "Alibaba's image model, quick version. Also edits.",
@@ -127,11 +154,97 @@ MODELS = {
         }},
     "qwen-pro": {
         "does": ("create", "edit"), "label": "Qwen-Image 2.1 Pro",
-        "note": "Alibaba's image model at full quality. About a minute.",
+        "note": "Alibaba's image model at full quality.",
         "routes": {
             "runware": {"model": "alibaba:qwen-image@2.1-pro", "price": {"unit": "image", "usd": 0.075},
                         "quiet": {"settings": {"promptExtend": False}},
                         "source": {"runware": "alibaba-qwen-image-2-1-pro", "rate": ""}},
+        }},
+    # The closed models added 2026-11-05. GPT Image and Nano Banana bill by tokens, and fal names
+    # several prices in abstract units, so those routes keep the listed price (`"listed": True`)
+    # and each run records what Runware says it charged. Runware comes first where both list the
+    # same price, since it reports the charge.
+    "qwen3-pro": {
+        "does": ("create", "edit"), "label": "Qwen-Image 3.0 Pro",
+        "note": "Alibaba's newest image model at full quality. Also edits.",
+        "routes": {
+            "runware": {"model": "alibaba:qwen-image@3.0-pro", "price": {"unit": "image", "usd": 0.04},
+                        "quiet": {"settings": {"promptExtend": False}},
+                        "source": {"runware": "alibaba-qwen-image-3-0-pro", "rate": "1K output image"}},
+        }},
+    "gpt-sunburst": {
+        "does": ("create", "edit"), "label": "GPT Image 2.5 Sunburst",
+        "note": "OpenAI's top image model, run at high quality. Also edits.",
+        "routes": {
+            "runware": {"model": "openai:gpt-image@2.5-sunburst", "price": {"unit": "image", "usd": 0.053},
+                        "quiet": {"settings": {"quality": "high"}}, "source": {"listed": True}},
+            "fal": {"model": "openai/gpt-image-2.5/sunburst/text-to-image", "model_edit": "openai/gpt-image-2.5/sunburst/edit",
+                    "body": {"quality": "high", "output_format": "jpeg", "num_images": 1, "enable_safety_checker": True},
+                    "price": {"unit": "image", "usd": 0.053}, "source": {"listed": True}},
+        }},
+    "gpt-flare": {
+        "does": ("create", "edit"), "label": "GPT Image 2.5 Flare",
+        "note": "OpenAI's quicker, cheaper image model, run at high quality. Also edits.",
+        "routes": {
+            "runware": {"model": "openai:gpt-image@2.5-flare", "price": {"unit": "image", "usd": 0.053},
+                        "quiet": {"settings": {"quality": "high"}}, "source": {"listed": True}},
+            "fal": {"model": "openai/gpt-image-2.5/flare/text-to-image", "model_edit": "openai/gpt-image-2.5/flare/edit",
+                    "body": {"quality": "high", "output_format": "jpeg", "num_images": 1, "enable_safety_checker": True},
+                    "price": {"unit": "image", "usd": 0.053}, "source": {"listed": True}},
+        }},
+    "nano-banana": {
+        "does": ("create", "edit"), "label": "Nano Banana 2.1",
+        "note": "Google's image model. Also edits.",
+        "routes": {
+            "runware": {"model": "google:nano-banana@2.1", "sizes": NANO_SIZES, "price": {"unit": "image", "usd": 0.034},
+                        "source": {"listed": True}},
+            "fal": {"model": "google/nano-banana-2.1", "model_edit": "google/nano-banana-2.1/edit",
+                    "body": {"resolution": "1K", "output_format": "jpeg", "num_images": 1}, "size": "aspect_ratio",
+                    "price": {"unit": "image", "usd": 0.034}, "source": {"listed": True}},
+        }},
+    "grok-imagine": {
+        "does": ("create", "edit"), "label": "Grok Imagine Image 2.0",
+        "note": "xAI's image model, run at medium quality. Also edits.",
+        "routes": {
+            "fal": {"model": "xai/grok-imagine-image/v2.0/text-to-image", "model_edit": "xai/grok-imagine-image/v2.0/edit",
+                    "body": {"quality": "medium", "resolution": "1k", "output_format": "jpeg", "num_images": 1,
+                             "enable_safety_checker": True}, "size": "aspect_ratio",
+                    "price": {"unit": "image", "usd": 0.06}, "source": {"listed": True}},
+        }},
+    "muse-image": {
+        "does": ("create", "edit"), "label": "Muse Image",
+        "note": "Meta's image model. Also edits.",
+        "routes": {
+            "fal": {"model": "meta/muse-image/text-to-image", "model_edit": "meta/muse-image/edit",
+                    "body": {"output_format": "jpeg", "num_images": 1}, "size": "aspect_ratio",
+                    "price": {"unit": "image", "usd": 0.01}, "source": {"fal": "meta/muse-image/text-to-image"}},
+        }},
+    "ideogram-4q": {
+        "does": ("create",), "label": "Ideogram 4.0 Quality",
+        "note": "Ideogram's open model at its quality setting.",
+        "routes": {
+            "fal": {"model": "ideogram/v4",
+                    "body": {"rendering_speed": "QUALITY", "expansion_model": "None", "output_format": "jpeg",
+                             "num_images": 1, "enable_safety_checker": True},
+                    "price": {"unit": "mp", "usd": 0.025}, "source": {"listed": True}},
+        }},
+    "flux3-image": {
+        "does": ("create", "edit"), "label": "FLUX 3 Image",
+        "note": "Black Forest Labs' full FLUX 3 model. Also edits.",
+        "routes": {
+            "fal": {"model": "blackforestlabs/flux-3/text-to-image", "model_edit": "blackforestlabs/flux-3/edit-image",
+                    "body": {"resolution": "1k", "output_format": "jpeg", "enable_prompt_expansion": False},
+                    "size": "aspect_ratio", "price": {"unit": "image", "usd": 0.048}, "source": {"listed": True}},
+        }},
+    "seedream-5-pro": {
+        "does": ("create", "edit"), "label": "Seedream 5.0 Pro",
+        "note": "ByteDance's image model. Also edits.",
+        "routes": {
+            "runware": {"model": "bytedance:seedream@5.0-pro", "price": {"unit": "image", "usd": 0.04815},
+                        "source": {"runware": "bytedance-seedream-5-0-pro", "rate": "1.5K"}},
+            "fal": {"model": "bytedance/seedream/v5/pro/text-to-image", "model_edit": "bytedance/seedream/v5/pro/edit",
+                    "body": {"output_format": "jpeg", "num_images": 1, "enable_safety_checker": True, "watermark": False},
+                    "price": {"unit": "image", "usd": 0.0675}, "source": {"listed": True}},
         }},
     "h3-still": {
         "does": ("create",), "label": "MiniMax H3 still",
@@ -254,16 +367,16 @@ MODELS = {
         "does": ("video",), "label": "MiniMax H3 from pictures",
         "note": "Your own GPU only. Give it up to nine pictures of people, things or places, and name them in your "
                 "words as Picture 1, Picture 2 and on. You can also set a first frame, a last frame, and pictures "
-                "the video passes through at set seconds. 768p with sound, about three minutes for 5 seconds.",
+                "the video passes through at set seconds. 768p with sound, about a minute and a half for 5 seconds.",
         "seconds": (5, 10, 15), "sizes": ("wide", "landscape", "square", "portrait", "tall"), "audio": None,
         "start_image": True, "end_image": True, "refs": comfy.H3_MAX_REFS, "pins": 3,
         "routes": {
-            # The reference model at its full 20 steps: 188 seconds for a 5-second clip with two pictures
-            # and one pinned, measured 2026-11-04 on a GPU that had not yet loaded this model.
+            # The reference model with HyperFlow's 8 steps (webapp/studio_comfy.py): 90 seconds for a
+            # 5-second clip on a warm GPU, measured 2026-11-05, against 154 at the template's 20 steps.
             "baseten": {"model": "comfyui/minimax-h3-ref2va", "sizes": H3_SIZES, "end_image": True,
                         "frame_sets_shape": False,
-                        "price": {"unit": "second", "usd": 0.07},
-                        "source": {"usd_hour": 6.50, "render_seconds": 188, "clip_seconds": 5}},
+                        "price": {"unit": "second", "usd": 0.0325},
+                        "source": {"usd_hour": 6.50, "render_seconds": 90, "clip_seconds": 5}},
         }},
     "h3-max-turbo": {
         "does": ("video",), "label": "MiniMax H3 Max Turbo", "note": "The cheapest video here. A faster tuning of H3, 768p.",
@@ -302,6 +415,78 @@ MODELS = {
                         "audio_at": ("settings", "audio"), "price": {"unit": "second", "usd": 0.13},
                         "source": {"runware": "bytedance-seedance-2-0-fast", "rate": "720p"}},
         }},
+    # Added 2026-11-05 at the maker's request, from Artificial Analysis's video boards. fal reads some
+    # of these at launch discounts that have ended, or in abstract units, so those routes keep the
+    # price fal lists for the resolution used (`"listed": True`).
+    "heygen-video": {
+        "does": ("video",), "label": "HeyGen Video 1",
+        "note": "HeyGen's video model, 768p. Among the cheapest video here.",
+        "seconds": (5, 10, 15), "sizes": ("wide", "landscape", "square", "portrait", "tall"), "audio": None,
+        "start_image": True,
+        "routes": {
+            "fal": {"model": "heygen/heygen-video/text-to-video", "model_frame": "heygen/heygen-video/image-to-video",
+                    "frame_key": "image_url", "sizes": VIDEO_RATIOS,
+                    "extra": {"resolution": "768p", "prompt_enhancement": "disabled", "enable_safety_checker": True},
+                    "price": {"unit": "second", "usd": 0.02}, "source": {"fal": "heygen/heygen-video/text-to-video"}},
+        }},
+    "flux3-max-video": {
+        "does": ("video",), "label": "FLUX 3 Max",
+        "note": "Black Forest Labs' video model, 720p with sound, at fal's introductory price for now.",
+        "seconds": (5, 10, 15), "sizes": ("wide", "landscape", "square", "portrait", "tall"), "audio": True,
+        "start_image": True,
+        "routes": {
+            "fal": {"model": "blackforestlabs/flux-3-max/text-to-video",
+                    "model_frame": "blackforestlabs/flux-3-max/image-to-video", "frame_key": "image_url",
+                    "sizes": VIDEO_RATIOS, "audio_at": ("generate_audio",), "extra": {"resolution": "720p"},
+                    "price": {"unit": "second", "usd": 0.0425},
+                    "source": {"fal": "blackforestlabs/flux-3-max/text-to-video", "factor": 2}},   # read at half the 720p rate
+        }},
+    "h3-max": {
+        "does": ("video",), "label": "MiniMax H3 Max", "note": "MiniMax's top tuning of H3. 768p with sound.",
+        "seconds": (5, 10, 15), "sizes": ("wide", "landscape", "square", "portrait", "tall"), "audio": None,
+        "start_image": True,
+        "routes": {
+            "runware": {"model": "minimax:h3@max", "resolution": "768p", "sizes": H3_SIZES,
+                        "quiet": {"settings": {"promptExpansion": "disabled"}},
+                        "price": {"unit": "second", "usd": 0.08}, "source": {"runware": "minimax-h3-max", "rate": "768p"}},
+            "fal": {"model": "minimax/h3-max/text-to-video", "model_frame": "minimax/h3-max/image-to-video",
+                    "frame_key": "image_url", "sizes": VIDEO_RATIOS,
+                    "extra": {"resolution": "768P", "prompt_expansion_mode": "disabled", "enable_safety_checker": True},
+                    "price": {"unit": "second", "usd": 0.08}, "source": {"listed": True}},
+        }},
+    "grok-video": {
+        "does": ("video",), "label": "Grok Imagine Video 1.5", "note": "xAI's video model, 720p with sound.",
+        "seconds": (5, 10, 15), "sizes": ("wide", "landscape", "square", "portrait", "tall"), "audio": None,
+        "start_image": True,
+        "routes": {
+            "runware": {"model": "xai:grok-imagine@video-1.5", "resolution": "720p", "no_safety_field": True,
+                        "sizes": {"wide": (1280, 720), "landscape": (960, 720), "square": (720, 720),
+                                  "portrait": (720, 960), "tall": (720, 1280)},
+                        "price": {"unit": "second", "usd": 0.14},
+                        "source": {"runware": "xai-grok-imagine-video-1-5", "rate": "720p"}},
+            "fal": {"model": "xai/grok-imagine-video/v1.5/text-to-video",
+                    "model_frame": "xai/grok-imagine-video/v1.5/image-to-video", "frame_key": "image_url",
+                    "sizes": VIDEO_RATIOS, "extra": {"resolution": "720p", "enable_safety_checker": True},
+                    "price": {"unit": "second", "usd": 0.14}, "source": {"listed": True}},
+        }},
+    "seedance-2-5": {
+        "does": ("video",), "label": "Seedance 2.5",
+        "note": "ByteDance's video model, first for image to video on the public leaderboard. 720p, sound at no "
+                "extra cost. About 23 cents a second.",
+        "seconds": (5, 10, 15), "sizes": ("wide", "landscape", "square", "portrait", "tall"), "audio": True,
+        "start_image": True,
+        "routes": {
+            "runware": {"model": "bytedance:seedance@2.5", "resolution": "720p",
+                        "sizes": {"wide": (1280, 720), "landscape": (1112, 834), "square": (960, 960),
+                                  "portrait": (834, 1112), "tall": (720, 1280)},
+                        "audio_at": ("settings", "audio"), "price": {"unit": "second", "usd": 0.2304},
+                        "source": {"runware": "bytedance-seedance-2-5", "rate": "Text/Image to Video · 720p"}},
+            "fal": {"model": "bytedance/seedance-2.5/us/text-to-video",
+                    "model_frame": "bytedance/seedance-2.5/us/image-to-video", "frame_key": "image_url",
+                    "sizes": VIDEO_RATIOS, "audio_at": ("generate_audio",), "duration_text": True,
+                    "extra": {"resolution": "720p"}, "price": {"unit": "second", "usd": 0.473},
+                    "source": {"listed": True}},
+        }},
     "veo-fast": {
         "does": ("video",), "label": "Veo 3.1 Fast",
         "note": "Google's Veo, 720p. Google always rewrites the prompt for this one.",
@@ -320,15 +505,14 @@ DEFAULTS = {"create": "flux-schnell", "edit": "flux-kontext", "video": "h3-max-t
 # (scripts/studio_samples.py) and the sources on each model's card.
 TASKS: dict[str, list[dict]] = {
     "create": [
-        {"key": "anything", "label": "Anything", "model": "qwen-turbo"},
+        {"key": "anything", "label": "Anything", "model": "flux3-klein"},
         {"key": "words", "label": "Words in the picture", "model": "qwen-pro"},
         {"key": "print", "label": "Large prints", "model": "p-h3-image"},
-        {"key": "draft", "label": "Quick drafts", "model": "flux2-klein"},
     ],
     "edit": [
-        {"key": "anything", "label": "Any edit", "model": "qwen-turbo"},
+        {"key": "anything", "label": "Any edit", "model": "flux3-klein"},
         {"key": "words", "label": "Changing words", "model": "qwen-pro"},
-        {"key": "cleanup", "label": "Photo cleanup", "model": "flux2-klein"},
+        {"key": "cleanup", "label": "Photo cleanup", "model": "fibo-2"},
         {"key": "combine", "label": "Combining pictures", "model": "p-h3-image"},
     ],
 }
@@ -379,33 +563,157 @@ CARDS: dict[str, dict] = {
         "weak_edit": ["Changing the words in a picture is its weakest kind of edit"],
         "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Black Forest Labs, FLUX.2 [klein] 9B model card",
                                               "url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-9B"}]},
+    "flux3-klein": {
+        "best": "Good all-round pictures for a fraction of a cent.",
+        "best_edit": "Everyday edits for a fraction of a cent.",
+        "good": ["Ranked just above Qwen-Image Turbo in blind votes, for far less",
+                 "Got the bakery sign, the fisherman's face and the kneading hands right in the samples"],
+        "weak": ["Drew a man in place of the alien in the samples",
+                 "Left out the three windows in the busy street scene",
+                 "Materials and shop displays are its weakest kinds of picture in blind votes"],
+        "good_edit": ["Ranked level with Qwen-Image Pro for edits in blind votes, for a small fraction of the price",
+                      "Made all four sample edits cleanly"],
+        "weak_edit": ["Keeping a person looking the same is one of its weaker kinds of edit in blind votes"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Black Forest Labs, FLUX 3 Image Klein model card",
+                                              "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein"}]},
+    "fibo-2": {
+        "best": "Detailed pictures of people, products and story scenes.",
+        "best_edit": "Restoring and cleaning up photos, and careful edits of any kind.",
+        "good": ["Got who was doing what right in the alien scene, and the only pulp cover with real words on it",
+                 "Product shots and people's bodies are its strongest kinds of picture in blind votes"],
+        "weak": ["4 cents a picture, and one of the slower models here",
+                 "Put the cat in a basket on the back of the bicycle, where the request said the front",
+                 "Lettering, lighting and screen designs are among its weaker kinds of picture in blind votes"],
+        "good_edit": ["Ranked highest of the editors here in blind votes",
+                      "Ranked 7th of 77 for restoring and cleaning up photos",
+                      "Made all four sample edits cleanly, with the most detailed sketch"],
+        "weak_edit": ["4 cents an edit, and one of the slower editors here",
+                      "Edits that take reasoning are its weakest kind in blind votes"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Bria, FIBO 2.0 model card",
+                                              "url": "https://huggingface.co/briaai/Fibo-2.0-dev"}]},
     "qwen-turbo": {
         "best": "Good all-round pictures at a low price.",
         "best_edit": "Good all-round edits at a low price.",
-        "good": ["Ranked near the top of these models in blind votes, for pictures and for edits",
-                 "Strong at designs and screen layouts in blind votes",
+        "good": ["Strong at designs and screen layouts in blind votes",
                  "Got every part of the busy street scene right in the samples"],
         "weak": ["Made the alien the cashier in the samples",
                  "Its lowest blind-vote scores are for casual snapshots and for things in motion"],
-        "good_edit": ["Ranked near the top of these models for edits in blind votes",
-                      "Made all four sample edits cleanly"],
-        "weak_edit": ["Ranked a little below Qwen-Image Pro for edits in blind votes"],
+        "good_edit": ["Made all four sample edits cleanly"],
+        "weak_edit": ["Ranked below FLUX 3 Klein for edits in blind votes, at more than five times the price"],
         "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Qwen, Qwen-Image 2.1 model card",
                                               "url": "https://huggingface.co/Qwen/Qwen-Image-2.1"}]},
     "qwen-pro": {
         "best": "The highest-ranked all-rounder here, and strong with words in the picture.",
         "best_edit": "Edits that have to get the details right, words included.",
-        "good": ["Ranked highest of these models in blind votes, for pictures and for edits",
+        "good": ["Ranked highest of these models in blind votes for pictures from words",
                  "Strong at designs and lettering in blind votes",
                  "Got every part of the busy street scene right in the samples"],
-        "weak": ["About 12 seconds and 4 cents a picture",
+        "weak": ["4 cents a picture, among the priciest here",
                  "Made the alien the cashier in the samples",
                  "Cartoon and game art is its weakest kind of picture in blind votes"],
-        "good_edit": ["Ranked highest of these models for edits in blind votes",
-                      "Made all four sample edits cleanly"],
-        "weak_edit": ["About 20 seconds and 4 cents an edit"],
+        "good_edit": ["Made all four sample edits cleanly"],
+        "weak_edit": ["4 cents an edit, among the priciest here",
+                      "FLUX 3 Klein ranked level with it for edits, and Bria FIBO 2.0 above it"],
         "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Qwen, Qwen-Image 2.1 model card",
                                               "url": "https://huggingface.co/Qwen/Qwen-Image-2.1"}]},
+    "qwen3-pro": {
+        "best": "Layouts, designs and story scenes, a step up from Qwen-Image 2.1.",
+        "best_edit": "Changing words and designs in a picture.",
+        "good": ["Ranked 17th of 106 in blind votes, above every Qwen-Image 2.1",
+                 "Layouts are its strongest kind of picture in blind votes"],
+        "weak": ["Drew two aliens and no human cashier in the samples, and no magazine title",
+                 "4 cents a picture"],
+        "good_edit": ["Changing words and designs are its strongest kinds of edit in blind votes",
+                      "Made all four sample edits cleanly"],
+        "weak_edit": ["Restoring old photos is its weakest kind of edit in blind votes"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Runware, Qwen-Image 3.0 Pro",
+                                              "url": "https://runware.ai/docs/models/alibaba-qwen-image-3-0-pro"}]},
+    "gpt-sunburst": {
+        "best": "The best pictures here when it matters, for about 5 cents.",
+        "best_edit": "The best edits here, for about 6 cents.",
+        "good": ["Ranked first of 106 in blind votes, and second for lettering",
+                 "Gave the pulp cover a real title with the alien and cashier in the right places"],
+        "weak": ["About 40 seconds a picture, slower than Flare for the same price",
+                 "Ranked at its maker's highest setting, one step above the high setting the studio uses"],
+        "good_edit": ["Ranked first of 77 for edits in blind votes", "Made all four sample edits cleanly"],
+        "weak_edit": ["About 6 cents an edit"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Runware, GPT Image 2.5 Sunburst",
+                                              "url": "https://runware.ai/docs/models/openai-gpt-image-2-5-sunburst"}]},
+    "gpt-flare": {
+        "best": "Near-best pictures, quicker than Sunburst at the same price.",
+        "best_edit": "Near-best edits, quicker than Sunburst.",
+        "good": ["Ranked second of 106 in blind votes, and third for lettering",
+                 "Gave the pulp cover a real title with the alien and cashier in the right places"],
+        "weak": ["About 5 cents a picture, the same as Sunburst, which ranked higher",
+                 "Ranked at its maker's highest setting, one step above the high setting the studio uses"],
+        "good_edit": ["Ranked third of 77 for edits in blind votes", "Made all four sample edits cleanly"],
+        "weak_edit": ["About 6 cents an edit"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Runware, GPT Image 2.5 Flare",
+                                              "url": "https://runware.ai/docs/models/openai-gpt-image-2-5-flare"}]},
+    "nano-banana": {
+        "best": "Top-tier pictures and words in the picture, for about 3 cents.",
+        "best_edit": "Top-tier edits for about 3 cents.",
+        "good": ["Ranked 4th of 106 in blind votes, and 5th for lettering",
+                 "Gave the pulp cover a real title and tagline"],
+        "weak": ["Its windows in the busy street scene came out tan, where the request said blue",
+                 "Screen designs are its weakest kind of picture in blind votes, though still 7th"],
+        "good_edit": ["Ranked 5th of 77 for edits in blind votes", "Made all four sample edits cleanly"],
+        "weak_edit": ["Restoring old photos is its weakest kind of edit in blind votes"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Runware, Nano Banana 2.1",
+                                              "url": "https://runware.ai/docs/models/google-nano-banana-2-1"}]},
+    "grok-imagine": {
+        "best": "Bold, lettered pictures like posters and covers.",
+        "best_edit": "Changing a picture's style or mood.",
+        "good": ["Ranked 5th of 106 in blind votes, and 4th for lettering",
+                 "Gave the pulp cover a real title, tagline and the right roles"],
+        "weak": ["About 75 seconds a picture, the slowest here", "6 cents a picture"],
+        "good_edit": ["Changing the style of a picture is its strongest kind of edit in blind votes",
+                      "Made all four sample edits cleanly"],
+        "weak_edit": ["Ranked 17th of 77 for edits, below the cheaper Muse Image and Nano Banana"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "fal, Grok Imagine Image 2.0",
+                                              "url": "https://fal.ai/models/xai/grok-imagine-image/v2.0/text-to-image"}]},
+    "muse-image": {
+        "best": "Near top-tier pictures and edits for a cent.",
+        "best_edit": "Changing a picture's style, and designs, for a cent.",
+        "good": ["Ranked 8th of 106 in blind votes, the best value here",
+                 "Gave the pulp cover a real title with the alien and cashier in the right places"],
+        "weak": ["Lettering and advertising are its weakest kinds of picture in blind votes, though still 15th"],
+        "good_edit": ["Ranked 10th of 77 for edits, and 5th for changing a picture's style",
+                      "Made all four sample edits cleanly"],
+        "weak_edit": ["Restoring old photos is its weakest kind of edit in blind votes"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "fal, Muse Image",
+                                              "url": "https://fal.ai/models/meta/muse-image/text-to-image"}]},
+    "ideogram-4q": {
+        "best": "Simple photographs of people and things.",
+        "good": ["Its maker's open model, run at its quality setting",
+                 "Got the face, the kneading hands and the bakery sign right in the samples"],
+        "weak": ["Turned down 3 of the 10 harmless sample requests every time it was asked",
+                 "Drew the busy street scene as flat clip art, and wrote nonsense across the landscape",
+                 "Ranked 30th of 106 in blind votes, below FLUX 3 Klein at a fraction of the price"],
+        "sources": [_AA_PICTURES, {"label": "Ideogram 4.0 weights", "url": "https://huggingface.co/collections/ideogram-ai/ideogram-4"},
+                    {"label": "fal, Ideogram 4.0", "url": "https://fal.ai/models/ideogram/v4"}]},
+    "flux3-image": {
+        "best": "Designs, illustration and game art, with real words on covers.",
+        "best_edit": "Reframing a picture and changing designs.",
+        "good": ["Ranked 12th of 106 in blind votes, strongest at screen designs and game art",
+                 "Gave the pulp cover a real title and tagline"],
+        "weak": ["About 5 cents a picture", "Layouts are its weakest kind of picture in blind votes, though still 16th"],
+        "good_edit": ["Ranked 4th of 77 for editing screen designs, and 6th for reframing",
+                      "Made all four sample edits cleanly"],
+        "weak_edit": ["Keeping a person looking the same is its weakest kind of edit in blind votes"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "fal, FLUX 3 Image",
+                                              "url": "https://fal.ai/models/blackforestlabs/flux-3/text-to-image"}]},
+    "seedream-5-pro": {
+        "best": "Careful pictures that keep every part of a busy request.",
+        "best_edit": "Product and shop pictures, and social posts.",
+        "good": ["Got every part of the busy street scene right in the samples",
+                 "Ranked 16th of 106 in blind votes, strongest at work and office pictures"],
+        "weak": ["About 35 seconds a picture", "Screen designs are its weakest kind of picture in blind votes"],
+        "good_edit": ["Ranked 9th of 77 for edits, and 6th for product and shop pictures",
+                      "Made all four sample edits cleanly"],
+        "weak_edit": ["Changing a picture's style is its weakest kind of edit in blind votes"],
+        "sources": [_AA_PICTURES, _AA_EDITS, {"label": "Runware, Seedream 5.0 Pro",
+                                              "url": "https://runware.ai/docs/models/bytedance-seedream-5-0-pro"}]},
     "h3-still": {
         "best": "One subject against a simple background.",
         "good": ["Got every part of the busy street scene right in the samples",
@@ -698,17 +1006,35 @@ def _merge(task: dict, extra: dict) -> None:
 # One image, on the chosen service
 # -------------------------------------------------------------------------------------------
 
+def _fal_body(route: dict, prompt: str, shape: str, steps: int | None, url: str | None) -> dict:
+    """The request one fal image endpoint takes; `url` is the picture an edit starts from. FLUX 1
+    and Kontext share the old shape. A route with `body` declares its own: those fixed fields, the
+    shape as `size` ("image_size" in pixels or "aspect_ratio"), the edit's words under
+    `edit_prompt` ("prompt" unless named), the picture in `image_urls`, and a fresh `seed` where
+    the endpoint's default seed is fixed."""
+    w, h = _image_size(route, shape)
+    if "body" in route:
+        body = dict(route["body"])
+        if route.get("size", "image_size") == "image_size":
+            body["image_size"] = {"width": w, "height": h}
+        else:
+            body["aspect_ratio"] = SHAPES[shape]["ratio"]
+        if route.get("seed"):
+            body["seed"] = secrets.randbelow(2 ** 31)
+        body[route.get("edit_prompt", "prompt") if url else "prompt"] = prompt
+        return body | ({"image_urls": [url]} if url else {})
+    if url:
+        return {"prompt": prompt, "image_url": url, "aspect_ratio": SHAPES[shape]["ratio"],
+                "safety_tolerance": EDIT_SAFETY, "output_format": "jpeg", "num_images": 1}
+    return {"prompt": prompt, "image_size": {"width": w, "height": h}, "num_inference_steps": steps,
+            "num_images": 1, "enable_safety_checker": True, "output_format": "jpeg"}
+
+
 async def _image_fal(route: dict, prompt: str, shape: str, steps: int | None, source: dict | None) -> dict:
-    if source:
-        body = {"prompt": prompt, "image_url": r2.presign_get(source["key"], svc.FAL_KEEP_SECONDS),
-                "aspect_ratio": SHAPES[shape]["ratio"], "safety_tolerance": EDIT_SAFETY,
-                "output_format": "jpeg", "num_images": 1}
-    else:
-        w, h = _image_size(route, shape)
-        body = {"prompt": prompt, "image_size": {"width": w, "height": h}, "num_inference_steps": steps,
-                "num_images": 1, "enable_safety_checker": True, "output_format": "jpeg"}
-    result = await svc.fal_run(route["model"], body)
-    images = result.get("images") or []
+    url = r2.presign_get(source["key"], svc.FAL_KEEP_SECONDS) if source else None
+    result = await svc.fal_run(route.get("model_edit", route["model"]) if source else route["model"],
+                               _fal_body(route, prompt, shape, steps, url))
+    images = result.get("images") or ([result["image"]] if result.get("image") else [])   # Bria returns one `image`
     if not images:
         raise StudioError("The image service returned no image.", 502)
     if any(result.get("has_nsfw_concepts") or []):
@@ -725,7 +1051,8 @@ async def _image_runware(route: dict, prompt: str, shape: str, steps: int | None
     """Runware returns the image inline (base64), so it never hosts a copy to expire."""
     w, h = _image_size(route, shape)
     task_uuid = str(uuid.uuid4())
-    task = {"taskType": "imageInference", "taskUUID": task_uuid, "model": route["model"], "positivePrompt": prompt,
+    model = route.get("model_edit", route["model"]) if source else route["model"]   # Bria edits with another model
+    task = {"taskType": "imageInference", "taskUUID": task_uuid, "model": model, "positivePrompt": prompt,
             "width": w, "height": h, "outputType": "base64Data", "outputFormat": "JPG", "includeCost": True,
             "safety": {"checkContent": True}}
     if steps and route["price"].get("ref_steps"):
@@ -756,13 +1083,15 @@ async def _image_runware(route: dict, prompt: str, shape: str, steps: int | None
 
 
 def _blank(data: bytes) -> bool:
-    """An all-black picture, which is what a safety check hands back when it blocks an image
-    without saying so (Runware's FLUX schnell on kneading hands, 2026-11-04)."""
+    """A flat picture of one shade, which is what a safety check hands back when it blocks an
+    image without saying so: all black from Runware's FLUX schnell (2026-11-04), all gray from
+    fal's Ideogram (2026-11-05)."""
     from PIL import Image
     try:
-        return Image.open(io.BytesIO(data)).convert("L").getextrema()[1] <= 8
+        low, high = Image.open(io.BytesIO(data)).convert("L").getextrema()
     except Exception:  # noqa: BLE001
         return False
+    return high - low <= 8
 
 
 IMAGE_MAKERS = {"fal": _image_fal, "runware": _image_runware}
@@ -889,7 +1218,9 @@ async def _start_video(service: str, route: dict, prompt: str, shape: str, secon
         task_uuid = str(uuid.uuid4())
         task = {"taskType": "videoInference", "taskUUID": task_uuid, "model": route["model"], "positivePrompt": prompt,
                 "duration": seconds, "deliveryMethod": "async", "includeCost": True, "ttl": RUNWARE_VIDEO_TTL,
-                "outputFormat": "MP4", "safety": {"checkContent": True}}
+                "outputFormat": "MP4"}
+        if not route.get("no_safety_field"):   # Runware refuses the field for a few models (Grok Imagine Video)
+            task["safety"] = {"checkContent": True}
         if source:
             task["inputs"] = {"frameImages": [source["data_uri"]]}   # the image's own shape sets the video's
             if route.get("resolution"):
@@ -930,8 +1261,8 @@ async def _start_video(service: str, route: dict, prompt: str, shape: str, secon
                 "get": (data.get("urls") or {}).get("get") or f"{svc.REPLICATE_API}/predictions/{data['id']}"}
 
     body = {"prompt": prompt} | (route.get("extra") or {})   # fal
-    if route.get("duration_key", "duration"):
-        body[route.get("duration_key", "duration")] = seconds
+    if route.get("duration_key", "duration"):   # Seedance 2.5 on fal takes its length as text
+        body[route.get("duration_key", "duration")] = str(seconds) if route.get("duration_text") else seconds
     if source:
         # the queue may hold the job a while before a runner reads the frame
         body[route["frame_key"]] = r2.presign_get(source["key"], SOURCE_SECONDS)

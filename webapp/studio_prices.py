@@ -111,6 +111,10 @@ async def refresh(routes: dict[str, tuple[str, dict]]) -> dict:
             listed, prev = route["price"], old["routes"].get(route_id) or {}
             kept = {"usd": prev.get("usd"), "usd_audio": prev.get("usd_audio"), "status": "kept",
                     "checked": prev.get("checked")}
+            if (route.get("source") or {}).get("listed"):   # billed by tokens or abstract units: nothing to read
+                new["routes"][route_id] = {"usd": listed["usd"], "usd_audio": listed.get("usd_audio"),
+                                           "status": "listed", "checked": now}
+                return
             async with limit:
                 try:
                     got = await READERS[service](route.get("source") or {}, route)

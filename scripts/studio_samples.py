@@ -4,8 +4,9 @@ The Media Studio's sample set: every image model on the same prompts, and every 
 the same edits, so the page can show what each model does instead of describing it. Writes small
 WebP files and a manifest (time and cost per image) to webapp/static/studio-samples/.
 
-Each image costs what the service charges (about $3 for the whole set on 2026-11-04), and the two
-GPU models wake the maker's Baseten GPU. Run it again when a model is added or changed:
+Each image costs what the service charges (about $3 for the first eight models on 2026-11-04, and
+most of $10 by the time the closed models joined on 2026-11-05), and the two GPU models wake the
+maker's Baseten GPU. Run it again for a model that is added or changed:
 
     .venv/Scripts/python.exe scripts/studio_samples.py [--only model,model] [--skip-gpu]
 """
@@ -19,6 +20,7 @@ import json
 import random
 import sys
 import time
+import uuid
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,7 +30,7 @@ from dotenv import load_dotenv  # noqa: E402
 load_dotenv(ROOT / ".env")
 from PIL import Image  # noqa: E402
 
-from webapp import studio  # noqa: E402
+from webapp import r2, studio  # noqa: E402
 from webapp import studio_comfy as comfy  # noqa: E402
 from webapp import studio_prices as prices  # noqa: E402
 from webapp import studio_services as svc  # noqa: E402
@@ -99,16 +101,24 @@ def _png_uri(data: bytes) -> str:
 
 async def _paid(model_id: str, mode: str, prompt: str, source_png: bytes | None, book: dict) -> tuple[bytes, float, str]:
     """One image from the cheapest service that runs this model, through the studio's own clients.
-    Edits go to Runware, which takes the picture inline."""
+    Runware takes an edit's picture inline; fal reads it from R2 for the few minutes the edit takes."""
     m = studio.MODELS[model_id]
     shape, _, _, steps = studio._settings(m, mode, {"shape": "square"})
     options = [o for o in studio.candidates(model_id, mode, shape, None, None, bool(source_png), steps, book)
-               if o["usable"] and o["service"] in studio.IMAGE_MAKERS and (not source_png or o["service"] == "runware")]
+               if o["usable"] and o["service"] in studio.IMAGE_MAKERS]
     if not options:
         raise RuntimeError(f"no service for {model_id} {mode}")
     o = options[0]
-    source = {"key": None, "data_uri": _png_uri(source_png)} if source_png else None
-    made = await studio.IMAGE_MAKERS[o["service"]](o["route"], prompt, shape, steps, source)
+    key = None
+    if source_png and o["service"] == "fal":
+        key = f"studio/_samples/{uuid.uuid4().hex}.png"
+        await r2.put_bytes_async(key, base64.b64decode(_png_uri(source_png).split(",", 1)[1]), "image/png")
+    source = {"key": key, "data_uri": _png_uri(source_png)} if source_png else None
+    try:
+        made = await studio.IMAGE_MAKERS[o["service"]](o["route"], prompt, shape, steps, source)
+    finally:
+        if key:
+            await r2.delete_async(key)
     cost = made.get("cost") if isinstance(made.get("cost"), (int, float)) and made["cost"] > 0 else o["usd"]
     return made["data"], round(cost, 4), o["service"]
 
@@ -163,9 +173,22 @@ async def main(only: set[str], skip_gpu: bool, wanted: set[str] = frozenset(), n
         path.write_bytes(small)
         results.setdefault(model_id, {})[key] = {"file": f"{model_id}/{key}.webp", "seconds": round(seconds, 1),
                                                  "usd": usd, "service": service, "size": list(full)}
+        refused = manifest.get("refused", {}).get(model_id) or []
+        if key in refused:
+            refused.remove(key)
         spent += usd
         print(f"{model_id:12} {key:12} {seconds:5.1f} s  ${usd:.4f}  {service}", flush=True)
         manifest_path.write_text(json.dumps(manifest, indent=1), encoding="utf-8")
+
+    def missed(model_id: str, key: str, err: Exception) -> None:
+        """A failure leaves a gap. A refusal is written down, so the page can say so and a rerun
+        need not try it again by hand."""
+        print(f"{model_id:12} {key:12} FAILED {type(err).__name__}: {str(err)[:160]}", flush=True)
+        if isinstance(err, svc.Refused):
+            keys = manifest.setdefault("refused", {}).setdefault(model_id, [])
+            if key not in keys:
+                keys.append(key)
+            manifest_path.write_text(json.dumps(manifest, indent=1), encoding="utf-8")
 
     for model_id in creators:
         for p in prompts:
@@ -184,7 +207,7 @@ async def main(only: set[str], skip_gpu: bool, wanted: set[str] = frozenset(), n
                     data, usd, service = await _paid(model_id, "create", p["text"], None, book)
                     took = time.monotonic() - t
             except Exception as e:  # noqa: BLE001  one refused or failed image leaves a gap, not a stop
-                print(f"{model_id:12} {p['key']:12} FAILED {type(e).__name__}: {str(e)[:160]}", flush=True)
+                missed(model_id, p["key"], e)
                 continue
             if model_id == BASE_MODEL:
                 bases[p["key"]] = data
@@ -213,7 +236,7 @@ async def main(only: set[str], skip_gpu: bool, wanted: set[str] = frozenset(), n
                     data, usd, service = await _paid(model_id, "edit", e["text"], base, book)
                     took = time.monotonic() - t
             except Exception as err:  # noqa: BLE001
-                print(f"{model_id:12} {e['key']:12} FAILED {type(err).__name__}: {str(err)[:160]}", flush=True)
+                missed(model_id, "edit-" + e["key"], err)
                 continue
             await save(model_id, "edit-" + e["key"], data, took, usd, service)
     print(f"spent about ${spent:.2f}", flush=True)

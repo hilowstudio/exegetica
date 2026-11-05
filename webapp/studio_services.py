@@ -156,6 +156,8 @@ async def fal_run(model: str, body: dict) -> dict:
     async with httpx.AsyncClient(timeout=httpx.Timeout(180.0, connect=20.0)) as client:
         r = await client.post(f"{FAL_RUN}/{model}", headers=headers, json=body)
     _fal_account_trouble(r)
+    if r.status_code == 422 and "content_policy_violation" in r.text:
+        raise Refused()   # fal's own check blocked the picture after making it
     if r.status_code >= 400:
         logger.warning("fal %s returned %s", model, r.status_code)   # the body can echo the prompt
         raise StudioError("The image service could not make this image.", 502)

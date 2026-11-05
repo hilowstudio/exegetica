@@ -239,8 +239,9 @@ def test_the_sample_set_covers_every_image_model():
         if "video" in m["does"]:
             continue
         made = samples["results"][model_id]
-        if "create" in m["does"]:
-            assert all(k in made for k in samples["strip"]), model_id
+        refused = set((samples.get("refused") or {}).get(model_id) or [])
+        if "create" in m["does"]:   # a picture the service turned down is recorded instead
+            assert all(k in made or k in refused for k in samples["strip"]), model_id
         if "edit" in m["does"]:
             assert all("edit-" + e["key"] in made for e in samples["edits"]), model_id
         assert all((root / x["file"]).is_file() for x in made.values()), model_id
@@ -324,6 +325,46 @@ def test_quality_takes_the_steps_asked_within_its_limit(env):
     make(env, model="flux-dev", service="fal", steps=80)
     model, body = env["fal"][0]
     assert model == "fal-ai/flux/dev" and body["num_inference_steps"] == 50
+
+
+def test_flux3_klein_on_fal_draws_and_edits_at_two_endpoints_with_its_expansion_off(env):
+    make(env, model="flux3-klein", service="fal", shape="wide")
+    make(env, mode="edit", model="flux3-klein", service="fal", prompt="make it green", source={"data_url": PNG})
+    (draw, body), (edit, ebody) = env["fal"]
+    assert draw == "blackforestlabs/flux-3/klein/text-to-image" and edit == "blackforestlabs/flux-3/klein/edit-image"
+    assert body["image_size"] == {"width": 1024, "height": 576} and body["enable_prompt_expansion"] is False
+    assert "num_inference_steps" not in body and "image_urls" not in body
+    assert ebody["image_urls"][0].startswith("https://r2.test/studio/") and ebody["prompt"] == "make it green"
+
+
+def test_bria_on_fal_takes_an_instruction_and_returns_one_image(env):
+    env["fal_reply"] = lambda model, body: {"image": {"url": "https://fal.media/b.jpg", "content_type": "image/jpeg"}}
+    assert make(env, model="fibo-2", service="fal", shape="tall").status_code == 200
+    make(env, mode="edit", model="fibo-2", service="fal", prompt="make it green", source={"data_url": PNG})
+    (draw, body), (edit, ebody) = env["fal"]
+    assert draw == "bria/fibo-2/generate" and body["prompt"] == "an apple on a table" and body["aspect_ratio"] == "9:16"
+    assert edit == "bria/fibo-2/edit" and ebody["instruction"] == "make it green" and "prompt" not in ebody
+    assert isinstance(body["seed"], int) and isinstance(ebody["seed"], int)   # sent, so fal's fixed default is never used
+
+
+def test_the_closed_models_send_their_own_settings(env):
+    make(env, model="gpt-sunburst", service="runware", shape="wide")
+    make(env, model="nano-banana", service="runware", shape="tall")
+    gpt, nano = env["runware"][0][0], env["runware"][1][0]
+    assert gpt["model"] == "openai:gpt-image@2.5-sunburst" and gpt["settings"] == {"quality": "high"}
+    assert (gpt["width"], gpt["height"]) == (1024, 576) and (nano["width"], nano["height"]) == (768, 1376)
+    make(env, model="nano-banana", service="fal", shape="wide")
+    make(env, mode="edit", model="muse-image", service="fal", prompt="make it green", source={"data_url": PNG})
+    (nmodel, nbody), (mmodel, mbody) = env["fal"]
+    assert nmodel == "google/nano-banana-2.1" and nbody["aspect_ratio"] == "16:9" and nbody["resolution"] == "1K"
+    assert "image_size" not in nbody and mmodel == "meta/muse-image/edit" and mbody["image_urls"]
+
+
+def test_bria_on_runware_edits_with_its_edit_model(env):
+    make(env, model="fibo-2", service="runware")
+    make(env, mode="edit", model="fibo-2", service="runware", prompt="make it green", source={"data_url": PNG})
+    assert [t[0]["model"] for t in env["runware"]] == ["bria:20@1", "bria:21@1"]
+    assert env["runware"][1][0]["inputs"] == {"referenceImages": [PNG]} and "steps" not in env["runware"][1][0]
 
 
 def test_the_rewrite_is_used_and_shown_beside_the_original(env):
@@ -417,6 +458,34 @@ def test_an_all_black_image_counts_as_blocked(env):
     assert r.status_code == 422 and "safety check" in r.json()["error"]
     assert not [k for k in env["store"] if k.endswith(".jpg")]
     assert env["rows"][-1]["outcome"] == "refused"
+
+
+def test_a_flat_gray_image_counts_as_blocked_and_a_real_one_does_not():
+    # fal's Ideogram once sent a flat gray square as a finished picture (2026-11-05)
+    def jpeg(im):
+        buf = io.BytesIO()
+        im.save(buf, "JPEG")
+        return buf.getvalue()
+    assert studio._blank(jpeg(Image.new("RGB", (64, 64), (128, 128, 128))))
+    picture = Image.new("RGB", (64, 64), "white")
+    picture.paste((20, 60, 160), (10, 10, 40, 40))
+    assert not studio._blank(jpeg(picture)) and not studio._blank(b"not an image")
+
+
+def test_fals_own_block_reads_as_a_safety_block(monkeypatch):
+    import asyncio
+    monkeypatch.setenv("FAL_API_KEY", "test-key")
+    replies = [httpx.Response(422, json={"detail": [{"type": "content_policy_violation"}]}),
+               httpx.Response(422, json={"detail": [{"type": "value_error"}]})]
+
+    async def post(self, url, **kw):
+        return replies.pop(0)
+    monkeypatch.setattr(httpx.AsyncClient, "post", post)
+    with pytest.raises(svc.Refused):
+        asyncio.run(svc.fal_run("ideogram/v4", {"prompt": "x"}))
+    with pytest.raises(svc.StudioError) as other:   # any other refusal of the request stays a plain failure
+        asyncio.run(svc.fal_run("ideogram/v4", {"prompt": "x"}))
+    assert not isinstance(other.value, svc.Refused)
 
 
 def test_runware_says_why_it_would_not_make_an_image(env):
@@ -539,6 +608,29 @@ def test_minimax_h3_goes_to_fal_at_768p_with_its_own_rewriting_off(env):
     url, body = env["queue"][-1][1:]
     assert url == f"{svc.FAL_QUEUE}/minimax/h3/image-to-video"
     assert body["image_url"].startswith("https://r2.test/") and "aspect_ratio" not in body
+
+
+def test_seedance_2_5_on_fal_takes_its_length_as_text_and_flux3_max_its_sound_switch(env):
+    make(env, mode="video", model="seedance-2-5", service="fal", shape="wide", seconds=10, audio=False)
+    make(env, mode="video", model="flux3-max-video", service="fal", shape="square", seconds=5, audio=True)
+    (_, s_url, s_body), (_, f_url, f_body) = env["queue"][0], env["queue"][1]
+    assert s_url == f"{svc.FAL_QUEUE}/bytedance/seedance-2.5/us/text-to-video"
+    assert s_body["duration"] == "10" and s_body["generate_audio"] is False and s_body["resolution"] == "720p"
+    assert f_url == f"{svc.FAL_QUEUE}/blackforestlabs/flux-3-max/text-to-video"
+    assert f_body["duration"] == 5 and f_body["generate_audio"] is True and f_body["aspect_ratio"] == "1:1"
+
+
+def test_the_new_video_models_go_to_runware_first_where_it_lists_the_same_price(env):
+    env["keys"] = ALL
+    assert quote(env, mode="video", model="h3-max")["choice"]["service"] == "runware"
+    assert quote(env, mode="video", model="grok-video")["choice"]["service"] == "runware"
+    assert quote(env, mode="video", model="seedance-2-5")["choice"]["service"] == "runware"   # half fal's price
+    make(env, mode="video", model="grok-video", service="runware", shape="tall")
+    (task,) = env["runware"][0]
+    assert task["model"] == "xai:grok-imagine@video-1.5" and (task["width"], task["height"]) == (720, 1280)
+    assert "safety" not in task   # Runware refuses the field for Grok Imagine Video (2026-11-05)
+    make(env, mode="video", model="h3-max", service="runware", shape="tall")
+    assert env["runware"][-1][0]["safety"] == {"checkContent": True}
 
 
 def test_minimax_h3_on_runware_takes_its_own_sizes(env):
@@ -801,7 +893,7 @@ def test_a_run_on_your_gpu_is_rewritten_there_and_claude_is_not_asked(env):
     done = check(env, item).json()["image"]
     assert done["prompt_used"].startswith("<Picture 1> curls up") and done["rewritten"] is True
     # no Claude call; the rewrite's GPU seconds are counted with the clip
-    assert env["rewrites"] == [] and done["est_usd"] == item["est_usd"] == round(0.35 + 6.5 / 3600 * 20, 4)
+    assert env["rewrites"] == [] and done["est_usd"] == item["est_usd"] == round(0.1625 + 6.5 / 3600 * 20, 4)
 
     other = make(env, mode="video", model="h3", seconds=5, rewrite=True).json()["image"]   # fal: Claude rewrites
     assert other["service"] == "fal" and env["rewrites"] and other["rewrite_on_gpu"] is False
