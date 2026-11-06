@@ -1,4 +1,4 @@
-# Our Position Statement on the Wise and Ethical Use of LLMs in Christian Schooling
+# Our Position Statement on the Wise & Ethical Use of AI in Christian Education
 
 Every generation of the church must decide what to do with the work of its own hands. Ours must decide about Large Language Models ("LLMs," commonly called "Artificial Intelligence"). They bring real opportunity and real danger to the Christian school and the families it serves, and discerning parents and teachers are right to ask what they will do to our classrooms and our homes. With Scripture as our rule and the good of our students as our aim, we set down these principles for the use of AI in Christian schooling, worship, and discipleship.
 

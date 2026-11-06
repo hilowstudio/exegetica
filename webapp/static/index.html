@@ -122,6 +122,10 @@
   .faq summary{cursor:pointer;font-size:14px;font-weight:600;line-height:1.4;color:var(--ink);padding:9px 2px}
   .faq summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .faq p{margin:0 2px 11px;font-size:13.5px;line-height:1.55;color:var(--ink-soft)}
+  .faq ul,.faq ol{margin:0 2px 11px;padding-left:20px;font-size:13.5px;line-height:1.55;color:var(--ink-soft)}
+  .faq li{margin:0 0 5px}.faq li>ul,.faq li>ol{margin:5px 0 0}.faq li p{margin:0}
+  .faq strong{color:var(--ink);font-weight:600}
+  .faq-h{font-size:12.5px;font-weight:700;color:var(--ink);margin:16px 2px 4px}
   .faq a{color:var(--iron)}
   @media (pointer:coarse){.faq summary{padding:13px 2px}}
   /* crisis help affordance */
@@ -411,17 +415,169 @@
         <h3 id="src-title">About Exegetica</h3>
         <div id="faq">
           <div class="src-h">FAQ</div>
-          <details class="faq"><summary>Who made Exegetica?</summary><p>A. James Vega of Hi Low Studio LLC.</p></details>
-          <details class="faq"><summary>Is this AI?</summary><p>Yes. Replies are written by a large language model, software trained on text to predict the next word. They can be wrong, so check them against the sources.</p></details>
-          <details class="faq"><summary>Does it have feelings?</summary><p>No. Exegetica is software. It has no feelings, no self, and no soul.</p></details>
-          <details class="faq"><summary>Why doesn't it say "I"?</summary><p>No one is speaking. It writes the way a reference work does, so the only voices in a reply are its sources.</p></details>
-          <details class="faq"><summary>Does it follow instructions?</summary><p>Yes. Hi Low Studio writes them. They set how it writes and what it will not do.</p></details>
-          <details class="faq"><summary>Which model does it run on?</summary><p>An outside provider builds and runs the language model. Exegetica is designed to run on models from several providers, so the model is interchangeable and is not named here.</p></details>
-          <details class="faq"><summary>Where do the answers come from?</summary><p>From a library of public-domain and openly licensed works that Exegetica hosts itself, listed below. The ESV and NET are fetched live when enabled.</p></details>
-          <details class="faq"><summary>Who can read what I type?</summary><p>Everything typed here is sent to the outside model provider to produce a reply, and that provider keeps it for a limited time under its own terms. A smaller model from the same provider also reads your last few messages, and opens Need help now if they suggest you or someone else may be in danger. Your chats are saved under your school account, and Exegetica's maker, A. James Vega, is the one person who can read them. As a teacher at the school, he is a mandated reporter. <a href="/privacy">Read the privacy page.</a></p></details>
-          <details class="faq"><summary>What is it for?</summary><p>Research, preparation, and study, under the authority of parents and teachers. Hi Low Studio holds that a language model must never be the teacher, lead worship, or be a companion. <a href="/position">Read the full statement.</a></p></details>
-          <details class="faq"><summary>How is it different from other Bible apps?</summary><p>It hosts its own library, it can change models without changing its library or rules, and it has no ads, analytics, notifications, streaks, or gamification. It is built toward Hi Low Studio's Quiet Standards Framework and is not certified under it. <a href="/quiet-standards">Read about the framework.</a></p></details>
-          <details class="faq"><summary>Who pays for it?</summary><p>It is free. Its creator pays the running costs.</p></details>
+<!-- FAQ:start (built by scripts/build_faq.py from docs/faq.md) -->
+<div class="faq-h">Students</div>
+<details class="faq"><summary>Is using Exegetica cheating?</summary><p>It depends on your teacher. The Student Handbook does not allow AI tools on coursework unless your teacher approves them in advance, and it treats AI use without permission or credit as academic dishonesty. So ask first, and when your teacher says yes, say that you used Exegetica. It will help you find sources, understand a passage, and check facts. It will not write an essay or answer graded work for you.</p>
+<p><strong>Honorable:</strong> your teacher allows Exegetica for a paper on John 3. You ask what &quot;born again&quot; meant to Nicodemus, read the commentaries it cites, write your answer in your own words, and note that you used Exegetica.</p>
+<p><strong>Dishonorable:</strong> you copy its explanation of John 3 into your homework as your own words, or you open it during a quiz without your teacher's permission.</p></details>
+<details class="faq"><summary>Can my teacher see what I ask it?</summary><p>Yes, it's possible. Right now only Bible classes use Exegetica, and your Bible teacher, Mr. Vega, built it. Your studies are saved under your school account, and he is able to read them. Inside Exegetica, he is the only person who can. He is a mandated reporter, so if he reads something that suggests a child is being abused or neglected, Illinois law requires him to report it.</p>
+<p>You also use Exegetica on a school-issued Chromebook, so the school's Acceptable Use Policy applies. It says students should have no expectation of privacy on school technology, and that the school may monitor how you use it. Assume that anything you type on a school device can be seen. <a href="/privacy">Read the privacy page.</a></p></details>
+<details class="faq"><summary>Why did it stop answering me?</summary><p>Exegetica shows a short message that tells you why. Here is what each one means.</p>
+<ul>
+<li><strong>&quot;Exegetica doesn't discuss itself in chat...&quot;</strong> Exegetica answers questions about itself only to tell you which tools and sources it has. Asked anything else about itself, such as who made it, how it works, or who can read what you type, it gives this one reply every time, however the question is put. This FAQ covers those questions, and anything it doesn't cover can go to hello@hilowstudio.dev.</li>
+<li><strong>&quot;That's too many messages in one minute,&quot; or &quot;...reached today's chat limit.&quot;</strong> Exegetica has a rate limit per minute and per day to prevent overuse. Wait a moment and try again, or come back tomorrow.</li>
+<li><strong>&quot;This study began more than a day ago.&quot;</strong> A study takes new messages for one day. After that you can read it but not add to it. Start a new study.</li>
+<li><strong>&quot;This study has reached its length limit.&quot;</strong> A study holds up to 48 messages. Start a new study.</li>
+<li><strong>&quot;Exegetica answers study questions from its library.&quot;</strong> After several answers in a row that never used the library, it brings you back to study. Ask about a passage, a word, a person, or an event.</li>
+<li><strong>&quot;Exegetica stopped this reply.&quot;</strong> A sentence broke one of Exegetica's writing rules, so the reply stopped. Ask again, or start a new study.</li>
+<li><strong>&quot;Exegetica could not finish this reply&quot; or &quot;The library is not responding.&quot;</strong> Something failed on the server. Try again in a minute.</li>
+</ul></details>
+<details class="faq"><summary>Why won&#x27;t it write a prayer or a devotion for me?</summary><p>A prayer or a devotion generated by Exegetica would be soulless pattern-matching: a sequence of words shaped to fit a request, written by no person and addressed to no God. Prayer and worship are real people communing with the living God, so Exegetica does not write prayers, devotions, or worship for anyone. It will show you prayers Scripture already gives, such as the Psalms and the Lord's Prayer, and explain what they mean. The Reading Room holds prayers from church history, such as the devotions of Lancelot Andrewes and the prayers of Anselm. To pray with someone, go to your pastor, your parents, or a teacher. <a href="/position">Read Exegetica's position statement.</a></p></details>
+<details class="faq"><summary>Can I trust what it says?</summary><p>Check anything that matters. AI writes Exegetica's replies from its library, and AI makes mistakes: it can misread a source, mix up details, or sound more certain than the evidence allows. Each reply names the sources it drew on so you can look them up, and the library tools it used appear above the reply. Two notes under a reply deserve extra care:</p>
+<ul>
+<li><strong>&quot;No library resource was consulted for this response.&quot;</strong> The reply came only from the AI's general training, so check it against Scripture or a source your teacher trusts.</li>
+<li><strong>&quot;Not found in the library results or the bundled Bible text.&quot;</strong> The reply quotes words that no source in the study contains. Treat the quotation as unverified.</li>
+</ul>
+<p>Use Exegetica the way you would use a reference book that can be wrong: let it point you to sources, then read them yourself. When Exegetica and your teacher disagree, ask your teacher.</p></details>
+<details class="faq"><summary>What should I do when Exegetica gets something wrong?</summary><p>Take it as a good sign. Your own study of Scripture has equipped you to recognize the error, the way the Bereans tested what they were taught, &quot;examining the Scriptures daily to see if these things were so&quot; (Acts 17:11).</p>
+<p>Then tell us. Use the <strong>Copy</strong> button under the reply, and email it with the question you asked to hello@hilowstudio.dev. Every report is read, and a fix to the library, the tools, or Exegetica's instructions reaches everyone who uses it.</p>
+<p>Check the answer against its sources too. Each reply names what it drew on, so you can open the passage or commentary and see what it says. If the mistake touches your schoolwork, tell your teacher.</p></details>
+<details class="faq"><summary>Which Bible does it use?</summary><p>Exegetica quotes the English Standard Version (ESV), the translation your Bible class uses, unless you ask for another. If the ESV can't be reached, it shows the Berean Standard Bible (BSB) instead and says so. It can also show the New English Translation (NET), the King James Version (KJV), the World English Bible, the American Standard Version, and Young's Literal Translation. Ask for one by name, for example &quot;Show John 3:16 in the KJV,&quot; or ask it to compare translations side by side. It can also show the Hebrew and Greek words behind a verse.</p></details>
+<details class="faq"><summary>Why did a help window pop up?</summary><p>Exegetica opens the <strong>Need help now?</strong> window when a message sounds like you or someone you know may be in danger: thoughts of suicide or self-harm, being hurt or abused, a threat to hurt others, or another emergency. The window lists people who can help right away, free and private: the 988 Suicide &amp; Crisis Lifeline, the Childhelp hotline, Crisis Text Line, and 911.</p>
+<p>The <strong>Need help now?</strong> window does not automatically alert any service line or resource. Your study is saved like any other, and it can be monitored or reviewed. Exegetica errs toward offering help, so the window sometimes opens on a joke or a question about a hard topic. If that happens, close it and keep studying. You can open it yourself any time with <strong>Need help now?</strong> under the message box.</p>
+<p>If you are in danger, or someone you know is, tell a parent, pastor, teacher, or friend you trust today.</p></details>
+<details class="faq"><summary>Can I talk to it about personal stuff?</summary><p>Exegetica is a study tool. It isn't a counselor, a pastor, or a friend, and it is unfit for personal connection. If you bring it something personal, such as grief, a hard decision, a struggle with sin, or doubts about your faith, it will show you what Scripture says and then point you to people who know you: a parent, your pastor, a teacher you trust, or a good friend. Those conversations belong with them, because they can know you, pray with you, and walk with you over time.</p></details>
+<details class="faq"><summary>Why can&#x27;t I sign in with my personal Gmail?</summary><p>Exegetica is currently built for use at Yorkville Christian School, so chat accepts only school Google accounts, the ones ending in @yorkvillechristian.com. If you sign in with a personal account, you'll see &quot;That Google account isn't a school account.&quot; Choose <strong>Sign in with Google</strong> again and pick your school account in Google's window. On a school Chromebook, that's usually the account you're already using.</p>
+<p>Scripture Memory and the Reading Room work without signing in. Signing in saves your verses and your place in each book to your account, so they follow you to another computer.</p></details>
+<details class="faq"><summary>How do I download or delete my data?</summary><p>Open <strong>Settings</strong> in the left rail. On the <strong>Account</strong> tab, under <strong>Your data</strong>:</p>
+<ul>
+<li><strong>Download my data</strong> saves everything Exegetica keeps for your account as one file: your studies, memory verses, reading places, and cover choices.</li>
+<li><strong>Delete my account</strong> removes your account and everything saved in it. To confirm, you type <strong>delete</strong>. It can't be undone, so download your data first if you want a copy.</li>
+<li><strong>Clear this browser</strong> removes what Exegetica keeps in this browser, such as your settings. Your account isn't affected.</li>
+</ul>
+<p>To delete a single study, choose the <strong>×</strong> beside it in your list of studies.</p></details>
+<details class="faq"><summary>Does it work on my phone?</summary><p>Yes. Exegetica is a web app with responsive design, so it adapts to any screen size, whether a phone, a tablet, or a computer, and there is nothing to install. It needs an internet connection, and chat needs your school account. During the school day, the Student Handbook allows only your school-issued Chromebook.</p>
+<p>To open it from your home screen like an app:</p>
+<ul>
+<li><strong>iPhone or iPad:</strong> open exegetica.app in Safari, tap the <strong>Share</strong> button (the square with an arrow pointing up), tap <strong>Add to Home Screen</strong>, then tap <strong>Add</strong>.</li>
+<li><strong>Android:</strong> open exegetica.app in Chrome, tap the <strong>⋮</strong> menu at the top right, tap <strong>Add to home screen</strong>, then tap <strong>Add</strong>.</li>
+</ul></details>
+<details class="faq"><summary>What is the Reading Room?</summary><p>The Reading Room is a gift from Mr. Vega to his students and to anyone else who loves to read. It holds over 15,000 public-domain books, with more added regularly, shelved by genre the way a library is, from theology and church history to novels, poetry, and history. Anyone can read them, free, without signing in.</p>
+<p>Its aim is to become the most beautiful library of public-domain books online. Many free editions on the web, from Project Gutenberg and scanned archives, are garbled by scanning errors and broken formatting. In the Reading Room, books are being hand-corrected and typeset one at a time, each with cover art you can customize, so that someday every book in it will be the cleanest and most beautiful edition available anywhere. The hope is for our beautiful books to invite a lifetime of reading of every kind.</p>
+<p>The Reading Room remembers your place in each book, and you can change the text size and switch between light and dark.</p></details>
+<details class="faq"><summary>How does Scripture Memory work?</summary><p>Scripture Memory takes a verse from first reading to full recall in eight steps. Each step uses a different way of taking in the words: seeing, hearing, saying, and writing. Each step also takes away a little more help, until you can say and type the verse with nothing on the screen.</p>
+<ol>
+<li><strong>Read silently.</strong> Read the verse on the screen.</li>
+<li><strong>Listen.</strong> Hear it read aloud from the ESV audio Bible.</li>
+<li><strong>Read aloud.</strong> Say it while you read it. The microphone checks your words.</li>
+<li><strong>Type.</strong> Type it with the verse in view.</li>
+<li><strong>Speak with first letters.</strong> Only the first letter of each word shows. Say the verse.</li>
+<li><strong>Type with first letters.</strong> Type it with the same first-letter prompts.</li>
+<li><strong>Speak from memory.</strong> The verse is hidden. Say it.</li>
+<li><strong>Type from memory.</strong> Type it with the verse still hidden.</li>
+</ol>
+<p>The speaking and typing steps check your words against the ESV and count them correct when they match at least 85 percent, ignoring punctuation and capital letters. If the check misses something you got right, or your microphone doesn't work, you can mark the step done yourself. Exegetica remembers the step you reached, so you can stop and pick up later.</p>
+<p>After step 8, the verse is marked <strong>Mastered</strong> with the date. To keep it fresh, use <strong>Refresh</strong> now and then. It runs the last three steps, from first letters to full recall. If a mastered verse has slipped, choose <strong>I need practice</strong> to move it back to Learning and start over.</p>
+<p>Your list starts with the sixteen memory verses of the John course. You can add any verse or passage by reference, choose from a library of classic passages, and sort your verses into folders.</p>
+<p><strong>Why it works.</strong> Scripture Memory is built on some of the best-tested findings in memory research. Recalling words from memory fixes them far better than rereading them, so most steps ask you to recall. The help fades step by step, from the full verse to first letters to nothing, until you recall the verse on your own. Saying, hearing, and typing the words gives your memory several ways back to them. And recall keeps working long after you think you know a verse: in one well-known study, students who kept recalling what they had learned remembered about 80 percent a week later, while students who stopped remembered about a third. That's why Bible class asks you to recite every earlier memory verse before the new one, and why <strong>Refresh</strong> is there for verses you have mastered.</p></details>
+<div class="faq-h">Teachers</div>
+<details class="faq"><summary>Can I see what my students asked Exegetica?</summary><p>No, there is no student monitoring feature for teachers in Exegetica at this time. It has no class view, and teachers cannot open a student's studies. Studies are saved under each student's school account, and only a database administrator has the ability to access stored data. If you need to see how a student used Exegetica, ask the student to open the study and show you.</p></details>
+<details class="faq"><summary>How can I tell if a student used Exegetica on an assignment?</summary><p>Exegetica's replies carry no mark, and it keeps no record a teacher can search at this time. Exegetica is built to decline writing essays or answering graded work for students, but a student could still copy one of its explanations. The surest safeguard is to set expectations first. The Student Handbook allows AI on coursework only with your approval in advance and with credit, so tell students whether Exegetica is allowed for an assignment, and ask them to say when they used it. If you have a concern, ask the student to open the study and show you.</p></details>
+<details class="faq"><summary>What is the Prep Room?</summary><p>The Prep Room is for teachers only. It drafts teaching materials from Exegetica's library: lesson and unit plans, quizzes and answer keys, worksheets, study guides, rubrics, slide decks, and over 70 other formats. <a href="/prep-room/formats">See every format, sorted by subject.</a> Start from a book your class is reading, and it works from the chapters your students have reached. Or start from the academic standards, nearly 15,000 learning objectives across 14 subjects, and it writes toward the ones you choose. <a href="/prep-room/standards">Browse the standards.</a> Every draft names its sources and is yours to check and change before students see it.</p></details>
+<details class="faq"><summary>What is the Living Library?</summary><p>The Living Library is your own shelf of teaching resources, for teachers only. Search for books, podcasts, and videos and add them to your shelf. For a book, Exegetica can build study materials from the text itself: a summary, its themes, and a reading level, which you can print or save as a PDF. If a book isn't in the public domain, you can bring in your own copy, one you own, have borrowed, or may use under the accessibility exception for print disabilities. That copy stays private and encrypted, and only the study materials built from it are shared with other teachers.</p>
+<p>Podcasts and videos work much the same way. Add a podcast by searching for the show or pasting its feed, or add a YouTube video or channel, and new episodes arrive on your shelf as they are published. Choose <strong>Process</strong> on an episode or video, and in a minute or two Exegetica prepares it for teaching:</p>
+<ul>
+<li>a full transcript that follows along as you listen or watch, taken from the publisher's own when one exists and otherwise transcribed with each speaker marked</li>
+<li>a short summary, five key takeaways, and chapters with timestamps</li>
+<li>the people, books, and ideas it discusses, and the books and links it mentions</li>
+</ul>
+<p>Save highlights from the transcript, ask questions about an episode, or gather episodes on one topic into a collection, where Exegetica compares what they say and answers questions across all of them. An episode is processed once for everyone, so when one teacher processes it, it is ready for every teacher.</p></details>
+<details class="faq"><summary>What theology does Exegetica teach, and who decided it?</summary><p>Exegetica's library follows the historic Reformed tradition, held under Scripture, and affirms every article of Yorkville Christian's Statement of Faith. It confesses the ecumenical creeds and the Reformed confessions (the Westminster Standards, the Three Forms of Unity, and the 1689 Baptist Confession). Mr. Vega, who built Exegetica, set its doctrine, with these emphases:</p>
+<ul>
+<li><strong>The five solas:</strong> Scripture alone, grace alone, faith alone, Christ alone, and the glory of God alone.</li>
+<li><strong>One story of the covenants:</strong> the covenants with Adam, Noah, Abraham, Moses, and David progress toward Christ and the New Covenant. Exegetica reads that story through progressive covenantalism (Wellum and Gentry, <em>Kingdom Through Covenant</em>) and presents classical covenant theology, as in the Westminster Confession, with respect.</li>
+<li><strong>Sanctification received in Christ:</strong> with Walter Marshall, holiness flows from union with Christ by faith, and assurance of God's love fuels obedience. With John Murray, conversion is a once-for-all break with sin's dominion (Romans 6). Effort is real and draws its strength from Christ, which guards against both legalism and passivity.</li>
+</ul>
+<p>Its study tools draw charitably on the whole church, so teachers from many traditions will find their own teachers quoted in their own words, among them:</p>
+<ul>
+<li><strong>Early church:</strong> Athanasius, Augustine, John Chrysostom</li>
+<li><strong>Orthodox:</strong> John of Damascus, Maximus the Confessor</li>
+<li><strong>Catholic:</strong> Thomas Aquinas, Thomas à Kempis, Francis de Sales</li>
+<li><strong>Lutheran:</strong> Martin Luther, Keil and Delitzsch</li>
+<li><strong>Reformed and Puritan:</strong> John Calvin, Matthew Henry, John Owen, Jonathan Edwards</li>
+<li><strong>Anglican:</strong> Thomas Cranmer, J. C. Ryle</li>
+<li><strong>Baptist:</strong> John Bunyan, Charles Spurgeon</li>
+<li><strong>Arminian and Wesleyan:</strong> Jacobus Arminius, John Wesley, Adam Clarke</li>
+<li><strong>Revival and missions:</strong> George Whitefield, D. L. Moody, Hudson Taylor</li>
+<li><strong>Quaker:</strong> George Fox, William Penn</li>
+</ul>
+<p>Where Scripture is plain, Exegetica says so plainly and shows the evidence. Where faithful churches truly differ, as on baptism or the Lord's Supper, it gives what the text says and notes briefly who reads it how. When a student asks how the views compare, it sets them side by side charitably and fairly. It leaves each student's response of faith to the student.</p>
+<p><a href="/position">Read Exegetica's position statement.</a> <a href="/corpus">See every tool and source Exegetica draws on.</a></p></details>
+<details class="faq"><summary>What should I do when Exegetica gets something wrong?</summary><p>Exegetica's library spans two thousand years of church history, including writers who took opposing sides on contested doctrines. Just as people make errors, so can Exegetica. When it gets something wrong, tell us at hello@hilowstudio.dev. Use the <strong>Copy</strong> button under the reply, or above a Prep Room draft, and send it with the question that was asked. Every report is read, and a fix to the library, the tools, or Exegetica's instructions reaches every user. A draft from the Prep Room is yours to correct before students see it. When a student brings you an error, let it become part of the lesson: the sources a reply cites let the student check it against the text.</p></details>
+<details class="faq"><summary>Can I keep my students from using Exegetica in my class?</summary><p>Yes. The school provides Chromebook control and monitoring software that limits which websites students can reach, and you are welcome to block Exegetica in your class just as you would any other website. For help with Chromebook monitoring and control, contact the school's IT administrator or your teacher support resources. The Student Handbook also allows AI on coursework only with a teacher's approval in advance, so you can simply tell students when Exegetica is off limits.</p></details>
+<div class="faq-h">Parents</div>
+<details class="faq"><summary>Is Exegetica safe for my child?</summary><p>Exegetica was built for students first, with these protections:</p>
+<ul>
+<li>Only students and teachers signed in with a Yorkville Christian school account can use chat.</li>
+<li>Exegetica is a study tool and never acts as a friend. It does not speak as a person, claim feelings, or express affection, and it checks every sentence before your child sees it.</li>
+<li>It answers from its own library of Bible study resources, cites its sources, and brings students back to study when a conversation drifts.</li>
+<li>It will not write a student's graded work, prayers, or devotions.</li>
+<li>If a message suggests your child or someone they know may be in danger, a <strong>Need help now?</strong> window lists free and private help lines, and Exegetica points your child to a parent, pastor, or teacher.</li>
+<li>Daily limits keep use in proportion.</li>
+<li>Your child's studies are saved under their school account, where Mr. Vega, who built Exegetica and is a mandated reporter, can read them, and school Chromebooks are monitored under the school's Acceptable Use Policy.</li>
+</ul>
+<p>No tool is perfect, so talk with your child about how they use it.</p></details>
+<details class="faq"><summary>Can I see what my child asks Exegetica?</summary><p>Exegetica has no parent view at this time. Your child can open any of their studies and show you, and <strong>Download my data</strong> in Settings saves everything Exegetica keeps for their account as one file you can read together.</p></details>
+<details class="faq"><summary>What is the engine behind Exegetica&#x27;s responses?</summary><p>Every AI tool has two parts. The <strong>model</strong> is the brain: it reasons and writes. The <strong>harness</strong> is the software around the model: it decides what the model sees, what it may do, and what reaches the reader. A general chatbot's harness is built to talk about anything. Exegetica's harness is built for one job: helping students study Scripture well.</p>
+<p>Ask a general chatbot about John 3, and it answers from what it remembers. Ask Exegetica, and the harness first opens John 3, the Greek behind it, and the commentaries, then checks the answer before it reaches the screen.</p>
+<p><strong>The model.</strong> Exegetica's model is <a href="https://developer.nvidia.com/topics/ai/nemotron">Nemotron 3.5 Super VL</a>, an open-weight model made by NVIDIA, an American company. NVIDIA has published the model itself, the 120 billion numbers learned in its training, for anyone to download, run, and study. It also publishes the training data behind its Nemotron models and a technical report on how this one was built.</p>
+<p><strong>The harness.</strong> Exegetica's harness has seven layers:</p>
+<ol>
+<li><strong>Execution: a closed room.</strong> The model can't browse the web, run code, or change anything. It can only read from Exegetica's library, through servers that restart themselves if a lookup stalls.</li>
+<li><strong>Tooling: a theological library at hand.</strong> Thirty-three study tools reach Exegetica's own library. It holds:
+<ul>
+<li>seven English translations</li>
+<li>the Hebrew and Greek texts with their lexicons and grammar, and the Greek Old Testament</li>
+<li>cross-references</li>
+<li>commentaries from Calvin and Matthew Henry to Spurgeon and Ryle</li>
+<li>the church fathers</li>
+<li>the creeds, confessions, and catechisms with their proof texts</li>
+<li>985 classic works of theology</li>
+</ul>
+</li>
+<li><strong>Context: the right pages open.</strong> Before the model writes a word, the harness looks up the passages and sources the question names. It gives the model a theologian's method of study and the school's Statement of Faith, and it trims each lookup so the model stays focused. A study carries what it has already looked up from one question to the next.</li>
+<li><strong>Loop: study, then answer.</strong> The model works in rounds: read, look something up, weigh the result, decide what's next. If it tries to answer from memory, the harness sets that answer aside and sends it back to the library. Each reply has a set number of rounds, and the last one must answer.</li>
+<li><strong>Observability: every reply measured.</strong> Each reply leaves a record of numbers: how long it took, which tools it used, what it cost, and how it ended. The record holds no message and no name. Exegetica's maker reads these records to find and fix problems.</li>
+<li><strong>Verification: checked before it's shown.</strong>
+<ul>
+<li>Every sentence passes a check before it reaches the screen. Sentences that speak as a person, claim feelings, or narrate the work are removed or stop the reply.</li>
+<li>Every quotation is checked against the sources the study pulled. A note marks any quotation it can't find, and any reply that used no library source at all.</li>
+<li>Changes are tested before they ship. An automated test suite runs on every release, the maker tests every change to the student instructions or model by hand, and candidate models and instructions are compared in blind reviews of dozens of real study questions.</li>
+</ul>
+</li>
+<li><strong>Governance: built for a school.</strong>
+<ul>
+<li>Only school accounts can use chat, and no one can change the model or its instructions from the browser.</li>
+<li>Daily limits keep use in proportion.</li>
+<li>Exegetica won't write a student's graded work, prayers, or devotions, and it keeps no profile of a student.</li>
+<li>Three separate checks watch for a student in danger and open the <strong>Need help now?</strong> window.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Why an open model?</strong> Most popular AI systems are black boxes. Their makers keep the model and its training private, can change it at any time, and offer it only through their own service. An open-weight model lets Exegetica see under the hood:</p>
+<ul>
+<li><strong>Inspect it.</strong> Anyone can read the <a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4">model card</a>, the <a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf">technical report</a>, and the <a href="https://huggingface.co/collections/nvidia/nemotron-pre-training-datasets">training data</a>, and test the model for themselves.</li>
+<li><strong>Keep it.</strong> The model is released under an <a href="https://openmdw.ai/license/1-1/">open license</a>, so Exegetica can keep using the version it has tested for as long as it chooses.</li>
+<li><strong>Fine-tune it.</strong> Exegetica has the option to train the model further on its own library, so its answers follow the school's teaching more closely.</li>
+<li><strong>Self-host it.</strong> Exegetica can run the model on servers it controls, so students' messages would stay with Exegetica.</li>
+</ul>
+<p>Today Nemotron runs on DeepInfra, a hosting service. Under its terms, DeepInfra keeps no message or reply once it has answered, apart from records the law or abuse prevention may require. <a href="/privacy">Read the privacy page.</a></p></details>
+<details class="faq"><summary>Who made Exegetica, and why?</summary><p>Adam Vega built Exegetica. He teaches high school Bible at Yorkville Christian School and runs Hi Low Studio LLC, an AI automation design studio.</p>
+<p>Mr. Vega is a former pastor and church planter. He completed studies in Bible and theology at Moody Bible Institute, Covenant Baptist Theological Seminary, and Forge Theological Seminary. He also holds a degree in Business Administration and Entrepreneurship, with a minor in Technology, and spent a long career in business and technology operations alongside pastoral ministry. Teaching Bible is his labor of love for the next generation.</p>
+<p>Students are meeting AI everywhere, and Mr. Vega wanted them to have a reliable tool made for studying Scripture. Exegetica works from a trusted library of public-domain and open-license sources, shows what it referenced, checks its own quotations, and leaves the thinking to the student. It can't search the web, and it is steered away from answering from memory without citing sources or drifting into non-study tasks. He made it for the school's students and teachers, and it is free to them. He pays its running costs himself, and Exegetica shows no advertising, takes no payment, and sells no data.</p>
+<p>Two documents guide its design. Mr. Vega's <a href="/position">position statement on the Wise &amp; Ethical Use of AI in Christian Education</a> sets out what AI may and may not do in a Christian school, and the elders of his church reviewed and endorsed it. His design standards, <a href="/quiet-standards">the Quiet Standards Framework</a>, come from his conviction that the attention economy Big Tech has built needs a counterweight. Exegetica is built in keeping with them, and his studio designs within the principles of the Calm Tech movement.</p>
+<p>Questions this FAQ doesn't answer can go to hello@hilowstudio.dev.</p></details>
+<!-- FAQ:end -->
         </div>
         <div class="src-h">Tools and sources</div>
         <p id="src-lead" class="help-lead"></p>

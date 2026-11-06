@@ -1,4 +1,4 @@
-# Our Position Statement on the Wise and Ethical Use of LLMs in Christian Schooling
+# Our Position Statement on the Wise & Ethical Use of AI in Christian Education
 
 *Hi Low Studio LLC. Adapted for Christian schools from our statement on Christian home education.*
 
