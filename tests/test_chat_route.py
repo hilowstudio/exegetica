@@ -119,8 +119,21 @@ def test_a_tool_in_the_last_replies_resets_drift():
 def test_students_are_locked_to_the_student_model(env):
     _events(env, _study("Who was Nicodemus?"), provider="openai", model="gpt-5.6", api_key="sk-x")
     run = env["runs"][0]
-    assert (run["provider"], run["model"], run["key"]) == ("anthropic", policy.STUDENT_MODEL, None)
+    assert (run["provider"], run["model"], run["key"]) == (policy.STUDENT_PROVIDER, policy.STUDENT_MODEL, None)
     assert run["limits"] is policy.STUDENT_CHAT
+
+
+def test_the_model_check_reads_a_student_chat_whichever_model_replies(env):
+    # 2026-11-06: students moved off Anthropic (0024), and the check had run only on chats sent there.
+    assert policy.STUDENT_PROVIDER != "anthropic"
+    _events(env, _study("Who was Nicodemus?"))
+    assert env["checked"] == [["Who was Nicodemus?"]]
+
+
+def test_a_teacher_on_another_provider_is_not_sent_to_the_model_check(env):
+    env["user"]["who"] = TEACHER
+    _events(env, _study("Who was Nicodemus?"), provider="openai", model="gpt-5.6", api_key="sk-x")
+    assert env["runs"][0]["provider"] == "openai" and not env["checked"]
 
 
 def test_a_capped_student_in_crisis_still_gets_the_help_panel(env):

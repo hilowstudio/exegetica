@@ -1,6 +1,6 @@
 # 0004: Student chat runs on one model, and a refusal ends the reply
 
-Decided by A. James Vega, 2026-11-02.
+Decided by A. James Vega, 2026-11-02. The model and the no-fallback rule were replaced on 2026-11-06 by docs/decisions/0024: students now run on Nemotron 3.5 Super on DeepInfra, with GLM-5.3-Flash when Nemotron can't be reached. The rest stands: one model chosen by the server, a refusal ends the reply, and the maker probes a model before it serves students.
 
 **Decision.** Every student chat request runs on `claude-opus-5-5`. The provider, model, and API key a browser sends are ignored for students. Student chat has no model fallback of any kind: no retry on another model after an error, and no server-side refusal fallback. When the model declines a student's message, the reply ends with a fixed line pointing the student to a trusted adult and the Need help now panel. Teachers keep the provider choice, their own keys, and the fallbacks.
 

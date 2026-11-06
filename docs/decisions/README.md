@@ -7,7 +7,7 @@ Each file records one decision about how Exegetica behaves: what was decided, wh
 | [0001](0001-bot-identity.md) | The bot never speaks as a person, and discusses itself only to list its tools and sources |
 | [0002](0002-no-knowledge-of-students.md) | The machine holds no knowledge of a student |
 | [0003](0003-public-statements.md) | The position statement and the Quiet Standards statement are separate public pages |
-| [0004](0004-student-chat-model.md) | Student chat runs on one model, and a refusal ends the reply |
+| [0004](0004-student-chat-model.md) | Student chat runs on one model, and a refusal ends the reply (model and fallback replaced by 0024) |
 | [0005](0005-sign-in-required.md) | Chat requires a school Google account |
 | [0006](0006-chat-modes.md) | The mode toggle is hidden and replies are labeled Exegetica |
 | [0007](0007-teacher-only-surfaces.md) | The Prep Room, Revise, library jobs, and exam materials are teacher-only |
@@ -27,3 +27,4 @@ Each file records one decision about how Exegetica behaves: what was decided, wh
 | [0021](0021-prompt-method-and-disputed-questions.md) | The student prompt separates what the tradition holds from how a disputed question is answered (its procedure replaced by 0022) |
 | [0022](0022-study-order-and-plain-teaching.md) | Exegetica studies a passage the way a theologian does, and says plainly what Scripture plainly teaches |
 | [0023](0023-history-withheld.md) | History chat is withheld from the site until a broader release |
+| [0024](0024-students-on-nemotron.md) | Students' replies come from Nemotron 3.5 Super on DeepInfra, and from GLM-5.3-Flash when Nemotron can't be reached |

@@ -39,6 +39,7 @@ RESULTS = HERE / "results"
 OPENROUTER = "https://openrouter.ai/api/v1"
 DEEPINFRA = "https://api.deepinfra.com/v1/openai"
 BASELINE = "opus-5.5"
+OPUS = "claude-opus-5-5"   # the student model until 2026-11-06 (0024), the baseline of the opus-* runs
 # (label, OpenRouter model, the one host it may run on). Hosts were checked on 2026-11-05: each keeps
 # no data, serves tool calls, and runs the model at bf16, fp8, or the maker's own release.
 MODELS = [
@@ -252,7 +253,7 @@ async def ask_baseline(system: str, question: str, tools) -> dict:
     from webapp import policy, providers
 
     text, calls, stats = [], [], {}
-    async for ev in providers.run("anthropic", None, policy.STUDENT_MODEL, system,
+    async for ev in providers.run("anthropic", None, OPUS, system,
                                   [{"role": "user", "content": question}], tools,
                                   limits=policy.STUDENT_CHAT, stats=stats):
         if ev["type"] == "text":
@@ -264,7 +265,7 @@ async def ask_baseline(system: str, question: str, tools) -> dict:
             "steps": stats.get("steps"), "usd": stats.get("est_usd"),
             "tokens_in": (stats.get("input") or 0) + (stats.get("cache_read") or 0) + (stats.get("cache_write") or 0),
             "tokens_out": stats.get("output"), "tokens_reasoning": None,
-            "served_by": [stats.get("model_served") or policy.STUDENT_MODEL]}
+            "served_by": [stats.get("model_served") or OPUS]}
 
 
 async def ask_app(model: str | None, pin: str | None, system: str, question: str, tools) -> dict:
@@ -290,7 +291,7 @@ async def ask_app(model: str | None, pin: str | None, system: str, question: str
                                                "reasoning": {"effort": EFFORT}}}}
         events = providers._run_openai(cfg, _key(), model, system, history, tools, policy.STUDENT_CHAT, stats)
     else:
-        events = providers.run("anthropic", None, policy.STUDENT_MODEL, system, history, tools,
+        events = providers.run("anthropic", None, OPUS, system, history, tools,
                                limits=policy.STUDENT_CHAT, stats=stats)
     async for ev in events:
         if ev["type"] == "text":
@@ -307,7 +308,7 @@ async def ask_app(model: str | None, pin: str | None, system: str, question: str
             "steps": stats.get("steps"), "usd": stats.get("est_usd"),
             "tokens_in": (stats.get("input") or 0) + (stats.get("cache_read") or 0) + (stats.get("cache_write") or 0),
             "tokens_out": stats.get("output"), "tokens_reasoning": None,
-            "served_by": [stats.get("model_served") or model or policy.STUDENT_MODEL],
+            "served_by": [stats.get("model_served") or model or OPUS],
             "prompt_sha": hashlib.sha256(system.encode("utf-8")).hexdigest()[:12],
             "live_dropped": gate.dropped, "live_stopped": gate.stopped, "em_dashes_raw": "".join(raw).count("—"),
             "prefetched": stats.get("prefetched", 0), "lookup_nudges": stats.get("lookup_nudges", 0),

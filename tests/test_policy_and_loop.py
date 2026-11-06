@@ -147,21 +147,90 @@ def test_student_output_cap_is_applied(monkeypatch):
     assert calls[0]["max_tokens"] == policy.STUDENT_CHAT.max_tokens
 
 
-def test_locked_run_never_tries_the_fallback_model(monkeypatch):
-    monkeypatch.setattr(providers, "_attempt", lambda cfg, k, m, *a: _one_error(m))
+LOCKED = policy.RunLimits(max_steps=8, max_tokens=16000, max_usd=1.0, locked=True)   # no fallback model
+
+
+def _dispatch(provider, model, limits, api_key=None):
     seen = []
 
     async def _collect():
-        async for ev in providers.run("anthropic", None, "claude-opus-5-5", "s",
-                                      [{"role": "user", "content": "hi"}], _MCP(), limits=policy.STUDENT_CHAT):
+        async for ev in providers.run(provider, api_key, model, "s", [{"role": "user", "content": "hi"}], _MCP(),
+                                      limits=limits, stats={}):
             seen.append(ev)
     asyncio.run(_collect())
+    return seen
+
+
+def test_locked_run_never_tries_the_providers_fallback_model(monkeypatch):
+    monkeypatch.setattr(providers, "_attempt", lambda cfg, k, m, *a: _one_error(m))
+    seen = _dispatch("anthropic", "claude-opus-5-5", LOCKED)
     assert [e["type"] for e in seen] == ["error", "end"]   # no "notice" about falling back
     assert seen[-1]["outcome"] == "provider_error"
 
 
 async def _one_error(model):
     yield {"type": "error", "message": f"model {model} not found (404)"}
+
+
+def _scripted(scripts, tried):
+    """_attempt stand-in: each model plays its own list of events; stats as the real loops fill them."""
+    def attempt(cfg, key, model, system, history, mcp, limits, stats):
+        async def gen():
+            tried.append((model, key))
+            stats.update(est_usd=0.001)
+            try:
+                for ev in scripts[model]:
+                    yield ev
+            finally:
+                stats["outcome"] = "provider_error" if scripts[model][-1]["type"] == "error" else "complete"
+        return gen()
+    return attempt
+
+
+def test_a_student_reply_comes_from_the_fallback_model_when_the_first_cannot_be_reached(monkeypatch):
+    tried = []
+    monkeypatch.setenv("DEEPINFRA_API_KEY", "server-key")
+    monkeypatch.setattr(providers, "_attempt", _scripted({
+        policy.STUDENT_MODEL: [{"type": "tool_call", "name": "lookup_verse"},
+                               {"type": "error", "message": policy.PROVIDER_ERROR}],
+        policy.STUDENT_FALLBACK_MODEL: [{"type": "text", "text": "The Word was God."}]}, tried))
+    seen = _dispatch(policy.STUDENT_PROVIDER, policy.STUDENT_MODEL, policy.STUDENT_CHAT)
+    assert tried == [(policy.STUDENT_MODEL, "server-key"), (policy.STUDENT_FALLBACK_MODEL, "server-key")]
+    assert [e["type"] for e in seen] == ["tool_call", "text", "end"]   # no error, no notice
+    assert seen[-1]["outcome"] == "complete"
+
+
+def test_a_student_reply_never_switches_models_once_text_is_shown(monkeypatch):
+    tried = []
+    monkeypatch.setenv("DEEPINFRA_API_KEY", "server-key")
+    monkeypatch.setattr(providers, "_attempt", _scripted({
+        policy.STUDENT_MODEL: [{"type": "text", "text": "The Word "}, {"type": "error", "message": policy.PROVIDER_ERROR}],
+        policy.STUDENT_FALLBACK_MODEL: [{"type": "text", "text": "Other."}]}, tried))
+    seen = _dispatch(policy.STUDENT_PROVIDER, policy.STUDENT_MODEL, policy.STUDENT_CHAT)
+    assert [m for m, _k in tried] == [policy.STUDENT_MODEL]
+    assert seen[-2] == {"type": "error", "message": policy.PROVIDER_ERROR}
+
+
+def test_a_refusal_is_never_handed_to_the_fallback_model(monkeypatch):
+    tried = []
+    monkeypatch.setenv("DEEPINFRA_API_KEY", "server-key")
+    monkeypatch.setattr(providers, "_attempt", _scripted({
+        policy.STUDENT_MODEL: [{"type": "error", "message": policy.REFUSAL_TEXT}],
+        policy.STUDENT_FALLBACK_MODEL: [{"type": "text", "text": "Sure."}]}, tried))
+    seen = _dispatch(policy.STUDENT_PROVIDER, policy.STUDENT_MODEL, policy.STUDENT_CHAT)
+    assert [m for m, _k in tried] == [policy.STUDENT_MODEL]
+    assert {"type": "error", "message": policy.REFUSAL_TEXT} in seen
+
+
+def test_without_the_server_key_a_student_sees_the_fixed_error(monkeypatch):
+    monkeypatch.delenv("DEEPINFRA_API_KEY", raising=False)
+    seen = _dispatch(policy.STUDENT_PROVIDER, policy.STUDENT_MODEL, policy.STUDENT_CHAT)
+    assert seen[0] == {"type": "error", "message": policy.PROVIDER_ERROR}
+
+
+def test_the_student_provider_is_not_offered_in_settings():
+    assert policy.STUDENT_PROVIDER not in {p["id"] for p in providers.public_providers()}
+    assert policy.STUDENT_FALLBACK_MODEL in providers._PRICES and policy.STUDENT_MODEL in providers._PRICES
 
 
 # ---------------------------------------------------------------- transcript validation

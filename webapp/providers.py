@@ -21,6 +21,7 @@ never stored or logged server-side.
 import asyncio
 import json
 import logging
+import os
 import re
 
 from webapp import policy
@@ -58,7 +59,9 @@ _PRICES = {"claude-opus-5-5": (4.0, 20.0, 0.05), "claude-sonnet-5-5": (2.0, 10.0
            "claude-sonnet-5": (2.0, 10.0, 0.10), "claude-haiku-5-5": (0.10, 0.50, 0.10),
            "claude-sonnet-4-6": (3.0, 15.0, 0.10),
            # DeepInfra's Nemotron 3.5 Super, checked 2026-11-05: cached input is $0.02 of $0.15.
-           "nvidia/NVIDIA-Nemotron-3.5-Super-VL": (0.15, 0.50, 0.02 / 0.15)}
+           "nvidia/NVIDIA-Nemotron-3.5-Super-VL": (0.15, 0.50, 0.02 / 0.15),
+           # DeepInfra's GLM-5.3-Flash, the student fallback, checked 2026-11-06: cached input $0.03.
+           "zai-org/GLM-5.3-Flash": (0.15, 0.50, 0.20)}
 
 
 def _usd(model: str, u: dict) -> float:
@@ -112,6 +115,20 @@ PROVIDERS = {
         "base_url": "https://api.x.ai/v1",
         "key_url": "https://console.x.ai",
     },
+    # Student chat (docs/decisions/0024): open models on DeepInfra, which keeps no prompts or replies
+    # under its terms, paid with the server's key. Settings doesn't offer it to teachers.
+    "deepinfra": {
+        "label": "DeepInfra", "kind": "openai",
+        "default_model": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+        "base_url": "https://api.deepinfra.com/v1/openai",
+        "key_url": "https://deepinfra.com/dash/api_keys",
+        "key_env": "DEEPINFRA_API_KEY",
+        "extra_params": {"reasoning_effort": "medium"},
+        # A stalled host gives way to the fallback model within about a minute, with no SDK retries
+        # stacked under the loop's own one retry.
+        "timeout": 60, "max_retries": 0,
+        "server_only": True,
+    },
 }
 
 
@@ -120,7 +137,7 @@ def public_providers() -> list[dict]:
     return [
         {"id": pid, "label": p["label"], "default_model": p["default_model"],
          "fallback_model": p.get("fallback_model"), "key_url": p["key_url"]}
-        for pid, p in PROVIDERS.items()
+        for pid, p in PROVIDERS.items() if not p.get("server_only")
     ]
 
 
@@ -292,8 +309,9 @@ async def run(provider: str, api_key: str | None, model: str,
     stable fallback model and emits a notice. A failure after content has begun,
     or an auth / rate-limit / server error, is passed through unchanged.
 
-    `limits` (webapp/policy.RunLimits) bounds steps, output, and spend; a locked run
-    (student chat) never falls back to another model.
+    `limits` (webapp/policy.RunLimits) bounds steps, output, and spend. A locked run (student chat)
+    never uses the provider's fallback. It turns, without a notice, to its own `fallback_model` when
+    the first model ends in an error before any text was shown (docs/decisions/0024).
 
     Every run ends with one {"type": "end", "outcome": ...} event naming how it ended (OUTCOMES).
     `stats`, if given, is filled as the run goes with numbers for webapp/metrics.py, so a caller
@@ -308,33 +326,51 @@ async def run(provider: str, api_key: str | None, model: str,
         yield {"type": "error", "message": f"Unknown provider: {provider}"}
         yield {"type": "end", "outcome": "provider_error"}
         return
+    locked = bool(limits and limits.locked)
+    if not api_key and cfg.get("key_env"):   # a provider the server pays for (student chat)
+        api_key = os.environ.get(cfg["key_env"])
     if cfg["kind"] != "anthropic" and not api_key:
         stats["outcome"] = "provider_error"
-        yield {"type": "error", "message": f"An API key is required for {cfg['label']}."}
+        yield {"type": "error", "message": policy.PROVIDER_ERROR if locked else
+               f"An API key is required for {cfg['label']}."}
         yield {"type": "end", "outcome": "provider_error"}
         return
 
     requested = (model or "").strip() or cfg["default_model"]
-    fallback = None if limits and limits.locked else cfg.get("fallback_model")
+    # A locked run's fallback model lives on the student provider, so it applies only there.
+    fallback = (limits.fallback_model if provider == policy.STUDENT_PROVIDER else None) if locked \
+        else cfg.get("fallback_model")
     candidates = [requested] + ([fallback] if fallback and fallback != requested else [])
 
     errored = False
+    carried = 0.0   # spend on a model that gave way to the fallback
     for i, current in enumerate(candidates):
         last = i == len(candidates) - 1
-        emitted = False
+        emitted = wrote = False
         fell_back = False
-        async for ev in _attempt(cfg, api_key, current, system_text, history, mcp, limits, stats):
+        attempt = _attempt(cfg, api_key, current, system_text, history, mcp, limits, stats)
+        async for ev in attempt:
             if ev["type"] in ("text", "tool_call", "tool_done", "thinking"):
                 emitted = True
-            if ev["type"] == "error" and not emitted and not last and _is_model_error(ev.get("message", "")):
-                yield {"type": "notice",
-                       "message": f"Model “{current}” is unavailable — falling back to “{candidates[i + 1]}”."}
+            wrote = wrote or ev["type"] == "text"
+            if ev["type"] == "error" and not last and (   # a refusal ends a locked run (0004)
+                    not wrote and ev.get("message") != policy.REFUSAL_TEXT if locked
+                    else not emitted and _is_model_error(ev.get("message", ""))):
+                if locked:   # the student sees one reply, from whichever model wrote it
+                    logger.warning("%s could not answer; falling back to %s", current, candidates[i + 1])
+                else:
+                    yield {"type": "notice",
+                           "message": f"Model “{current}” is unavailable — falling back to “{candidates[i + 1]}”."}
                 fell_back = True
                 break
             errored = errored or ev["type"] == "error"
             yield ev
         if not fell_back:
             break
+        await attempt.aclose()   # its cleanup fills stats now, before the next model's run starts
+        carried += stats.get("est_usd") or 0.0
+    if carried:
+        stats["est_usd"] = round((stats.get("est_usd") or 0.0) + carried, 6)
     if stats.get("outcome") in (None, "cancelled"):   # the BYOK paths don't set one
         stats["outcome"] = "provider_error" if errored else "complete"
     yield {"type": "end", "outcome": stats["outcome"]}
@@ -662,7 +698,8 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
     from webapp import prefetch
 
     stats = {} if stats is None else stats
-    client = AsyncOpenAI(api_key=api_key, base_url=cfg["base_url"])
+    client = AsyncOpenAI(api_key=api_key, base_url=cfg["base_url"],
+                         **{k: cfg[k] for k in ("timeout", "max_retries") if k in cfg})
     tools = _openai_tools(mcp.tools)
     messages = [{"role": "system", "content": system_text}]
     messages += _chat_messages(history)
