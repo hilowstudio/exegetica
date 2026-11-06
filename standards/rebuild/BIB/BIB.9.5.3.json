@@ -1,0 +1,321 @@
+{
+ "sub_topic": "BIB.9.5.3",
+ "name": "Proverbs",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Wisdom Literature"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Proverbs as a book in the Old Testament that gives wise sayings for everyday life",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Proverbs 1:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that King Solomon asked God for wisdom and wrote many proverbs",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "1 Kings 3:5-12",
+    "1 Kings 4:29-32",
+    "Proverbs 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall proverbs that teach children to listen to the instruction of their father and mother",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Proverbs 1:8-9",
+    "Proverbs 6:20-22",
+    "Proverbs 10:1"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q64"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the difference between a wise person and a fool using examples from Proverbs",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 10:1",
+    "Proverbs 12:15",
+    "Proverbs 13:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Proverbs means when it teaches that the fear of the Lord is the beginning of wisdom",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 1:7",
+    "Proverbs 9:10",
+    "Proverbs 3:5-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the sluggard with the ant to explain what Proverbs teaches about diligent work",
+   "grade": 4,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 6:6-11",
+    "Proverbs 24:30-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between knowledge and wisdom as Proverbs presents them",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 1:2-5",
+    "Proverbs 2:1-6",
+    "Proverbs 4:5-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply proverbs about speech and anger to everyday situations in class role plays or case studies",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "Proverbs 15:1",
+    "Proverbs 12:18",
+    "Proverbs 18:21",
+    "Proverbs 29:11"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q112"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Classify two-line proverbs as synonymous, antithetic, or comparative parallelism",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 10:1",
+    "Proverbs 16:18",
+    "Proverbs 15:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Outline the main collections of Proverbs using the headings that introduce each section",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 1:1",
+    "Proverbs 10:1",
+    "Proverbs 22:17",
+    "Proverbs 25:1",
+    "Proverbs 30:1",
+    "Proverbs 31:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how chapters 1 to 9 alternate between a father's instruction to his son and the speeches of Woman Wisdom",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 1:8-9",
+    "Proverbs 1:20-33",
+    "Proverbs 4:1-9",
+    "Proverbs 8:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the invitations of Woman Wisdom with the warnings against the adulterous woman and Woman Folly",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 5:1-23",
+    "Proverbs 7:6-27",
+    "Proverbs 9:1-6",
+    "Proverbs 9:13-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze why proverbs are read as general observations of how life ordinarily works rather than unconditional promises",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 26:4-5",
+    "Proverbs 22:6",
+    "Proverbs 10:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Proverbs connects wisdom with the order God built into creation",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 3:19-20",
+    "Proverbs 8:22-31"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Proverbs teaches that the Lord governs human plans and their outcomes",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 16:1",
+    "Proverbs 16:9",
+    "Proverbs 16:33",
+    "Proverbs 19:21",
+    "Proverbs 21:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Proverbs ties wisdom to righteousness and to keeping God's law",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 3:1-4",
+    "Proverbs 28:9",
+    "Proverbs 29:18",
+    "Deuteronomy 4:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a topical study that traces a theme such as wealth, speech, or friendship across the collections of Proverbs",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Proverbs 3:9-10",
+    "Proverbs 11:24-25",
+    "Proverbs 17:17",
+    "Proverbs 18:24",
+    "Proverbs 22:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how New Testament writers quote and apply passages from Proverbs",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 3:11-12",
+    "Hebrews 12:5-6",
+    "Proverbs 25:21-22",
+    "Romans 12:20",
+    "Proverbs 3:34",
+    "James 4:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the sayings of the wise in Proverbs with Ancient Near Eastern wisdom such as the Instruction of Amenemope",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 22:17-21",
+    "Proverbs 23:10-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate interpretations of the personified Wisdom of Proverbs 8, including the church's reading in light of Christ as the wisdom of God",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Proverbs 8:22-31",
+    "1 Corinthians 1:24",
+    "1 Corinthians 1:30",
+    "Colossians 2:3",
+    "John 1:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the acrostic poem of the excellent wife as a portrait of wisdom lived out that echoes Woman Wisdom",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 31:10-31",
+    "Proverbs 9:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the teaching of Proverbs applies to contemporary moral questions when read alongside the rest of Scripture",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Proverbs 1:2-7",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (book identity, Solomon, listening to parents, wise vs fool, fear of the Lord, knowledge vs wisdom, sluggard and ant, speech and anger, chapters 1 to 9 structure, proverbs as general truths, wisdom and creation, Woman Folly, topical study, Proverbs 8, Proverbs 31, modern ethics). Replaced vague 'defend practical value' with an evaluation tied to Scripture as a whole. Added parallelism forms, the book's collections, God's sovereignty over plans, wisdom and the law, New Testament use of Proverbs, and Ancient Near Eastern comparison. Added verse-level references and confession anchors where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1919,
+  "output": 4958
+ }
+}

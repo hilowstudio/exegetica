@@ -1,0 +1,204 @@
+{
+ "sub_topic": "AGR.3.2.3",
+ "name": "Hydraulics & Pneumatics",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Power, Engines & Machinery"
+ ],
+ "grades": [
+  6,
+  7,
+  8,
+  9,
+  10,
+  11
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the basic components of a hydraulic system, including the reservoir, pump, control valve, hoses, and cylinder or motor",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why liquids resist compression while gases compress and how this difference shapes the behavior of hydraulic and pneumatic systems",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Pascal's law and how it allows a hydraulic system to multiply force between pistons of different sizes",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the basic components of a pneumatic system, including the compressor, receiver tank, filter, regulator, lubricator, and actuator",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the function of directional control, pressure relief, flow control, and check valves in a fluid power circuit",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Diagram the flow of fluid through a basic hydraulic circuit from the reservoir through the pump, control valve, and actuator and back through the return line",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate force, pressure, or piston area for a hydraulic cylinder and determine the mechanical advantage of a hydraulic system",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.02.01.b"
+   ]
+  },
+  {
+   "text": "Interpret standard hydraulic and pneumatic schematic symbols for pumps, valves, actuators, and lines on a circuit diagram",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.03.01.b"
+   ]
+  },
+  {
+   "text": "Apply safety practices when operating and working around hydraulic and pneumatic equipment, including relieving stored pressure, blocking raised implements, and avoiding fluid injection injuries",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.02.02.02.b"
+   ]
+  },
+  {
+   "text": "Perform routine service on hydraulic and pneumatic systems, such as checking fluid levels, replacing filters, inspecting hoses and couplers, and draining moisture from air tanks, according to the operator's manual",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.02.01.02.a",
+    "PST.02.01.02.b"
+   ]
+  },
+  {
+   "text": "Compare gear, vane, and piston pumps and contrast open-center and closed-center hydraulic systems used on agricultural equipment",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.03.01.a"
+   ]
+  },
+  {
+   "text": "Compare the applications of hydraulic and pneumatic systems on the farm, such as loaders, three-point hitches, remote cylinders, air brakes, and air tools, and justify which suits a given task",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.03.01.a"
+   ]
+  },
+  {
+   "text": "Calculate cylinder speed from pump flow rate, hydraulic horsepower from flow and pressure, and overall system efficiency",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.03.02.b"
+   ]
+  },
+  {
+   "text": "Construct a working hydraulic or pneumatic circuit on a trainer from a schematic diagram and verify its operation",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.03.01.b"
+   ]
+  },
+  {
+   "text": "Diagnose hydraulic and pneumatic system faults, such as a slow or drifting cylinder, low pressure, or a leaking fitting, using manufacturer's guidelines and pressure and flow testing",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.03"
+   ]
+  },
+  {
+   "text": "Recommend and justify repairs to faulty hydraulic and pneumatic components based on diagnostic results and cost of repair",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.03.01.c"
+   ]
+  },
+  {
+   "text": "Design a hydraulic system for an agricultural application by sizing the cylinder and pump and drawing a schematic to meet a required force and speed",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.03.01.b",
+    "PST.01.02.01.b"
+   ]
+  }
+ ],
+ "changes": "Kept all six original competencies, rewording several (component identification widened to include valves and actuators, the force calculation now ties to mechanical advantage, and the troubleshooting objective was split into diagnosis and repair recommendation). Added objectives on fluid compressibility, pneumatic components, valve functions, schematic symbols, fluid power safety, routine hydraulic and pneumatic service, pump types and open-center versus closed-center systems, farm applications, flow rate, hydraulic horsepower and efficiency, circuit construction on a trainer, and system design. Assigned AFNR codes only to objectives at grades 9 to 11 where a standard is directly taught.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "PST.01.02.01.b",
+  "PST.02",
+  "PST.02.01.02.a",
+  "PST.02.01.02.b",
+  "PST.02.02.02.b",
+  "PST.03.02",
+  "PST.03.03",
+  "PST.03.03.01.a",
+  "PST.03.03.01.b",
+  "PST.03.03.01.c",
+  "PST.03.03.02.a",
+  "PST.03.03.02.b",
+  "PST.03.03.02.c",
+  "PST.03.03.03.a",
+  "PST.03.03.03.b"
+ ],
+ "usage": {
+  "input": 2469,
+  "output": 3119
+ }
+}

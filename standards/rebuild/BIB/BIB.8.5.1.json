@@ -1,0 +1,351 @@
+{
+ "sub_topic": "BIB.8.5.1",
+ "name": "The Incarnation and Nativity Narratives",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "The Gospels and the Life of Christ"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Retell the story of Jesus being born in Bethlehem and laid in a manger, naming Mary, Joseph, and baby Jesus",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:4-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall the good news the angels told the shepherds and what the shepherds did after hearing it",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:8-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the angel's announcements to Mary and to Joseph and explain that the name Jesus was given because he would save his people from their sins",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Luke 1:26-33",
+    "Matthew 1:20-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the visit of the wise men who followed the star and the gifts they brought to Jesus",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 2:1-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the church's teaching that Jesus was conceived by the Holy Spirit and born of the virgin Mary",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Luke 1:34-35",
+    "Matthew 1:18-25"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q35",
+    "Westminster Shorter Catechism Q22"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that the name Immanuel means God with us and connect it to Isaiah's prophecy",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 1:22-23",
+    "Isaiah 7:14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why the Son of God became truly human to save his people",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 2:14-17",
+    "Galatians 4:4-5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21",
+    "Heidelberg Catechism Q16"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the boy Jesus in the temple and explain how Luke 2:52 shows that Jesus grew as a true human being",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Luke 2:41-52"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the humble circumstances of Jesus' birth with the glory announced by the angels and explain what this shows about his humiliation",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Luke 2:7",
+    "Luke 2:13-14",
+    "Philippians 2:6-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Locate Bethlehem and Nazareth on a map and explain why Bethlehem as the city of David matters for the Messiah's birth",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Luke 2:4",
+    "1 Samuel 16:1",
+    "Micah 5:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Simeon and Anna recognized the infant Jesus in the temple as the promised salvation for Israel and the Gentiles",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Luke 2:22-38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the Old Testament prophecies Matthew cites in his birth narrative and explain what each claims about Jesus",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 1:22-23",
+    "Matthew 2:5-6",
+    "Matthew 2:15",
+    "Matthew 2:17-18",
+    "Isaiah 7:14",
+    "Micah 5:2",
+    "Hosea 11:1",
+    "Jeremiah 31:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the nativity accounts of Matthew and Luke, identifying the events and emphases unique to each Gospel",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 1:18-2:23",
+    "Luke 1:5-2:40"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the genealogies in Matthew and Luke to explain how each presents Jesus as son of David and son of Abraham or son of Adam",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 1:1-17",
+    "Luke 3:23-38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Matthew's use of Hosea 11:1 in the flight to Egypt presents Jesus as the true Son who relives Israel's story",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 2:13-15",
+    "Hosea 11:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the Magnificat by comparing its themes of reversal and covenant faithfulness with Hannah's song",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Luke 1:46-55",
+    "1 Samuel 2:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Zechariah's Benedictus links the births of John and Jesus to God's covenant promises to David and Abraham",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Luke 1:67-79"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the prologue of John's Gospel presents the eternal Word who became flesh",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "John 1:1-5",
+    "John 1:14-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the doctrine of the hypostatic union as two whole natures joined in one person without conversion, composition, or confusion",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "John 1:14",
+    "Colossians 2:9",
+    "Romans 1:3-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Shorter Catechism Q21",
+    "Belgic Confession Article 19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the church's confession of Christ's person from early errors such as Docetism, Arianism, Nestorianism, and Eutychianism using Scripture",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 John 4:2-3",
+    "John 1:1",
+    "Colossians 2:9",
+    "Hebrews 2:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Belgic Confession Article 19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Scripture and the catechisms the Reformed teaching that the Mediator had to be both truly human and truly God",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 2:14-17",
+    "Hebrews 4:15",
+    "1 Timothy 2:5"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q16",
+    "Heidelberg Catechism Q17",
+    "Westminster Larger Catechism Q38",
+    "Westminster Larger Catechism Q39"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Virgin Birth and its significance for Christ's sinless human nature as taught in the Reformed confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Luke 1:35",
+    "Matthew 1:18-20",
+    "Hebrews 7:26"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q35",
+    "Heidelberg Catechism Q36",
+    "Westminster Shorter Catechism Q22",
+    "Belgic Confession Article 18"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the historical questions surrounding Luke's census under Quirinius using ancient evidence and proposed scholarly resolutions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Luke 2:1-5",
+    "Luke 1:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate kenotic interpretations of Philippians 2:5-11 in light of the Reformed confession that Christ remained fully God in taking human nature",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Philippians 2:5-11",
+    "Colossians 2:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a study tracing the promised seed and Davidic king from Genesis through the prophets to their fulfillment in the nativity accounts",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 3:15",
+    "2 Samuel 7:12-16",
+    "Isaiah 9:6-7",
+    "Isaiah 7:14",
+    "Micah 5:2",
+    "Luke 1:31-33",
+    "Galatians 4:4-5"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (manger story, angels and shepherds, wise men, Virgin Birth, reason for the incarnation, humility versus glory, Bethlehem as city of David, genealogies, Magnificat, Hosea 11:1, hypostatic union, John 1:14, Quirinius census, Virgin Birth and sinlessness, fulfillment of Isaiah 7:14 and Micah 5:2). Dropped the bare 'Name Mary and Joseph' and 'Observe the star' as filler and merged them into retelling objectives. Added missing content: annunciations and the meaning of Jesus' name, Immanuel, the boy Jesus in the temple, Simeon and Anna, Matthew's prophecy citations, a Matthew and Luke comparison, the Benedictus, early Christological errors, why the Mediator must be God and man, kenosis, and a redemptive-historical synthesis. Replaced vague 'to be like us' with the confessional rationale, added verse-level references throughout, and corrected confession citations to full numbered forms (Westminster Confession of Faith 8.2, Heidelberg Catechism Q35-36, Westminster Shorter Catechism Q21-22 and Q27, Belgic Confession Articles 18-19, Westminster Larger Catechism Q38-39).",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1970,
+  "output": 5516
+ }
+}

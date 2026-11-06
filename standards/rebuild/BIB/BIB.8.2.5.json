@@ -1,0 +1,308 @@
+{
+ "sub_topic": "BIB.8.2.5",
+ "name": "The Roman World at the Time of Christ",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "Prolegomena and Backgrounds (Foundations)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify a Roman soldier or centurion in a Bible story such as the centurion who asked Jesus to heal his servant",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 8:5-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Caesar Augustus ruled the Roman Empire and ordered the census that brought Mary and Joseph to Bethlehem",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Roman roads and sea routes helped travelers like Paul move from city to city",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Acts 27:1-2",
+    "Acts 28:13-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Jesus taught when he was shown a Roman coin bearing Caesar's image",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 22:15-22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 23.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Pax Romana and describe how it made travel and trade safer across the empire",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Jewish tax collectors working for Rome were despised, using the account of Zacchaeus",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Luke 19:1-10",
+    "Luke 3:12-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe crucifixion as a Roman punishment and identify the Roman officials and soldiers involved in Jesus' death",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Mark 15:15-20",
+    "Mark 15:39"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the roles of Pilate as Roman governor and Herod Antipas as a client ruler in the trial of Jesus",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Luke 23:1-12",
+    "John 19:10-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the members of the Herodian family who appear in the New Testament and their relationship to Rome",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 2:1-16",
+    "Mark 6:14-29",
+    "Acts 12:1-23",
+    "Acts 25:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Koine Greek as a common language of the Roman world helped the gospel spread among many peoples",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "John 19:19-20",
+    "Acts 21:37"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Greco-Roman polytheism and identify the pagan gods and temple practices the apostles encountered in Acts",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Acts 14:8-18",
+    "Acts 19:23-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that God in his providence prepared the Roman world for the coming of Christ in the fullness of time",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 4:4-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Heidelberg Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Roman roads, peace, and law contributed to the course of Paul's missionary journeys",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 18:12-17",
+    "Romans 15:23-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Luke dates the events of Jesus' life by naming Roman rulers and officials",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Luke 2:1-2",
+    "Luke 3:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the imperial cult and why refusing to honor Caesar as divine placed early Christians in danger",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:6-7",
+    "Revelation 2:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul used his Roman citizenship and legal rights in the course of his ministry",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Acts 16:35-39",
+    "Acts 22:25-29",
+    "Acts 25:8-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the social hierarchy of the Roman world, including citizens, freedmen, and slaves, and how apostolic teaching addressed it",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 3:28",
+    "1 Corinthians 7:21-23",
+    "Philemon 1:10-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul engaged Stoic and Epicurean philosophers at Athens",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Acts 17:16-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct an annotated map of the Roman provinces where key New Testament events took place",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Acts 2:9-11",
+    "Luke 3:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Roman destruction of Jerusalem in AD 70 and how Jesus foretold it",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Luke 19:41-44",
+    "Luke 21:20-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how apostolic commands to submit to governing authorities applied to Christians living under Roman rule",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 13:1-7",
+    "1 Peter 2:13-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 23.1",
+    "Westminster Confession of Faith 23.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Roman patronage system and its bearing on New Testament teaching about benefactors and service",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Luke 22:24-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the conflict between the Christian confession that Jesus is Lord and the claims of Caesar",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 19:12-15",
+    "Acts 5:29",
+    "Philippians 2:9-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26",
+    "Westminster Confession of Faith 20.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Write an analysis of how Roman political, social, and religious structures shape the narrative of a Gospel or Acts",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Luke 3:1-2",
+    "Acts 28:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: soldiers, Caesar, roads, the coin, Pax Romana, tax collectors, Pilate and Herod, Greek, infrastructure, imperial cult, citizenship, social hierarchy, map, Jesus is Lord versus Caesar, patronage, and the synthesis. Turned the observation and research tasks into assessable competencies. Added objectives on crucifixion, the Herodian family, Greco-Roman religion, providential preparation (Galatians 4:4), Luke's Roman dating, Paul at Athens, the fall of Jerusalem in AD 70, and submission to authorities under Rome. Anchored each to specific verses and added confessional references only where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1977,
+  "output": 4932
+ }
+}

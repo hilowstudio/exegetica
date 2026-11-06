@@ -1,0 +1,385 @@
+{
+ "sub_topic": "BIB.3.1.2",
+ "name": "Creation to the Flood (Genesis 1-11)",
+ "path": [
+  "Bible & Theology",
+  "Biblical Survey & Redemptive History",
+  "Chronological Bible Narrative"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify God as the maker of everything in the creation account, including the first man and woman, Adam and Eve",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:1",
+    "Genesis 1:26-28",
+    "Genesis 2:7",
+    "Genesis 2:21-22"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Noah and the ark in order using pictures or toys",
+   "grade": 0,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 6:13-22",
+    "Genesis 7:1-24",
+    "Genesis 8:1-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name what God made on each of the six days of creation and that He rested on the seventh day",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:3-2:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the rainbow as the sign of God's promise never again to destroy the earth by a flood",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 9:8-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Adam and Eve disobeyed God in the garden, naming the command God gave and what they chose to do",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:15-17",
+    "Genesis 3:1-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q12",
+    "Westminster Shorter Catechism Q13"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe what happened between the brothers Cain and Abel and how God responded to Cain",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 4:1-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the consequences God announced after the Fall changed life for people and for the world",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:14-24"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how God formed the woman and joined her to the man as the first marriage",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:18-25",
+    "Matthew 19:4-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Sequence the major events of Genesis 1-11 from Creation through the Fall, Cain and Abel, the Flood, and Babel",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1-11:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why God sent the Flood as judgment on human wickedness and why He spared Noah and his family",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 6:5-8",
+    "Genesis 6:9-22",
+    "Hebrews 11:7"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the events at the Tower of Babel and explain why God confused the languages and scattered the people",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 11:1-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Genesis teaches about humans being made in the image of God, using both the creation account and the command after the Flood",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:26-27",
+    "Genesis 9:6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10",
+    "Westminster Confession of Faith 4.2",
+    "Heidelberg Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify Shem, Ham, and Japheth as the sons of Noah from whom the nations of the earth descended",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 9:18-19",
+    "Genesis 10:1",
+    "Genesis 10:32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare God's commands to Adam with His commands to Noah to show how the creation mandate is renewed after the Flood",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:28-30",
+    "Genesis 9:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the repeated pattern in the genealogy from Adam to Noah, including the refrain of death and the exception of Enoch",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 5:1-32",
+    "Hebrews 11:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the covenant God made with Noah by identifying its parties, promises, and sign",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 8:20-22",
+    "Genesis 9:8-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the spread of sin across the narratives of Genesis 3-11 from the garden to Babel",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 3:1-7",
+    "Genesis 4:8",
+    "Genesis 4:23-24",
+    "Genesis 6:5",
+    "Genesis 11:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.2",
+    "Westminster Confession of Faith 6.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Contrast the line of Cain with the line of Seth as presented in Genesis 4-5",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 4:17-26",
+    "Genesis 5:1-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the Table of Nations as an account of the common descent of all peoples from Noah's family",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 10:1-32",
+    "Acts 17:26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect the scattering of languages at Babel with the gathering of the nations at Pentecost and in the Great Commission",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 11:1-9",
+    "Acts 2:1-11",
+    "Matthew 28:18-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Genesis 3:15 as the first gospel promise and trace its fulfillment in Christ through the New Testament",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 3:15",
+    "Galatians 4:4",
+    "Romans 16:20",
+    "Hebrews 2:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the repeated heading these are the generations organizes Genesis 1-11 and links Adam to Abraham",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:4",
+    "Genesis 5:1",
+    "Genesis 6:9",
+    "Genesis 10:1",
+    "Genesis 11:10",
+    "Genesis 11:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Flood narrative presents an undoing and renewal of creation by tracing its parallels with Genesis 1",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:2",
+    "Genesis 1:9",
+    "Genesis 7:11",
+    "Genesis 8:1-3",
+    "Genesis 9:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Genesis creation and flood accounts with ancient Near Eastern accounts such as Enuma Elish and Gilgamesh to identify how Genesis presents God and humanity differently",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:1-2:3",
+    "Genesis 6:5-9:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the major interpretations of the sons of God and the daughters of man in Genesis 6 using the text and its context",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 6:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate interpretations of the days of creation held within the Reformed tradition in light of the text and the confession's statement of creation in the space of six days",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 1:1-2:3",
+    "Exodus 20:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an argument for the tradition's historical reading of Adam and the Flood using how later Scripture refers to these events",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Luke 3:38",
+    "Romans 5:12-19",
+    "1 Corinthians 15:21-22",
+    "Matthew 24:37-39",
+    "2 Peter 3:5-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the themes of creation, judgment, and grace in Genesis 1-11 into an account of how these chapters prepare for God's call of Abraham",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:1-11:9",
+    "Genesis 12:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.3"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (creator, Noah retelling, Cain and Abel, consequences of sin, sequence, reason for the Flood, sons of Noah, spread of sin, Table of Nations, Babel and Pentecost, Genesis 3:15, sons of God, historicity, synthesis). Dropped the vague before-and-after Flood comparison and the genealogy timeline, replacing them with a creation-mandate comparison and a Genesis 5 pattern analysis. Added days of creation, rainbow sign, the Fall narrative, marriage, image of God, Noahic covenant, Cain and Seth lines, toledot structure, de-creation in the Flood, ancient Near Eastern comparison, and Reformed views of the creation days. Replaced whole-chapter or vague references with specific verses and added only confessional articles that state each doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2221,
+  "output": 5850
+ }
+}

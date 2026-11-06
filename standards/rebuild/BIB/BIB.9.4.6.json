@@ -1,0 +1,336 @@
+{
+ "sub_topic": "BIB.9.4.6",
+ "name": "Numbers",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Torah (The Pentateuch)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Numbers as the book that tells how God led Israel through the wilderness from Mount Sinai toward the promised land",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Numbers 10:11-13",
+    "Numbers 33:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God led Israel through the wilderness with a cloud by day and fire by night",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Numbers 9:15-23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite the blessing God gave Aaron and his sons to speak over Israel",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Numbers 6:22-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Joshua and Caleb trusted God's promise when the other spies were afraid",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 13:30",
+    "Numbers 14:6-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Israel complained about food in the wilderness and how God answered with manna and quail",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 11:1-9",
+    "Numbers 11:31-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that the book of Numbers is named for the two times Israel's people were counted",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 1:1-3",
+    "Numbers 26:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the report of the twelve spies and Israel's refusal to enter the land at Kadesh",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 13:25-33",
+    "Numbers 14:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of the bronze serpent and explain that the bitten people lived by looking to the remedy God provided",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 21:4-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why God sentenced Israel to forty years of wandering, one year for each day the land was spied out",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 14:26-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the faith of Joshua and Caleb with the unbelief of the ten spies and the people who followed them",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Numbers 14:6-10",
+    "Numbers 14:24",
+    "Numbers 14:30",
+    "Hebrews 3:16-19"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q86"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the arrangement of the tribes and Levites around the tabernacle to explain what it showed about God dwelling in the midst of his people",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Numbers 2:1-34",
+    "Numbers 3:5-10",
+    "Numbers 5:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace on a map Israel's route from Sinai to Kadesh and on to the plains of Moab",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Numbers 10:11-12",
+    "Numbers 13:26",
+    "Numbers 20:1",
+    "Numbers 22:1",
+    "Numbers 33:1-49"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Moses and Aaron were not permitted to enter the land after striking the rock at Meribah",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 20:2-13",
+    "Numbers 20:24"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q82"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the Nazirite vow and explain its purpose of setting a person apart to the Lord",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 6:1-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Korah's rebellion and the budding of Aaron's staff show that God himself appointed the priesthood",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 16:1-35",
+    "Numbers 17:1-11",
+    "Hebrews 5:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the account of Balaam to explain how God turned an intended curse into a blessing on Israel",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Numbers 22:21-35",
+    "Numbers 23:7-12",
+    "Numbers 23:19-20",
+    "Deuteronomy 23:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Israel's grumbling in Numbers why the Reformed tradition teaches that discontent breaks the tenth commandment",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 11:4-6",
+    "Numbers 14:1-4",
+    "1 Corinthians 10:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q81"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Numbers records the passing of the generation that left Egypt and the preparation of a new generation under Joshua to enter the land",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 26:63-65",
+    "Numbers 27:15-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the request of Zelophehad's daughters and the Lord's ruling to explain how each family's inheritance in the land was protected",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Numbers 27:1-11",
+    "Numbers 36:1-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a timeline of the major events of Numbers from the census at Sinai to Israel's arrival on the plains of Moab",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Numbers 1:1",
+    "Numbers 10:11",
+    "Numbers 20:1",
+    "Numbers 33:38",
+    "Numbers 36:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the cities of refuge distinguished accidental killing from murder and protected the land from bloodguilt",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 35:9-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the prophecy of a star from Jacob and a scepter from Israel points forward to a coming king",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Numbers 24:15-19",
+    "Matthew 2:1-2",
+    "Revelation 22:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Jesus' use of the bronze serpent interprets Numbers 21 as a picture of salvation through faith in the lifted up Son of Man",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Numbers 21:8-9",
+    "John 3:14-15"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q86",
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the New Testament uses the wilderness generation of Numbers as a warning to the church against unbelief and idolatry",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 10:1-11",
+    "Hebrews 3:7-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Create a written synthesis showing how the wilderness journey in Numbers serves as a type of the church's pilgrimage toward the rest God has promised",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Corinthians 10:1-6",
+    "Hebrews 4:1-11",
+    "1 Peter 2:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: the census name, the cloud guidance, the spies' rebellion, the forty years, the comparison of Joshua and Caleb with the ten spies, the camp layout, Balaam, discontent, the generational transition, the timeline, Moses at Meribah, the map work, and the wilderness typology. Dropped naming all twelve spies as trivia. Turned the vague items (observing the cloud, applying the bronze serpent, judging Moses' character flaws) into assessable objectives tied to the text. Added missing Numbers content: the Aaronic blessing, manna and quail, the Nazirite vow, Korah and Aaron's budding staff, Zelophehad's daughters, the cities of refuge, the star from Jacob, Jesus' use of the bronze serpent in John 3, and the warning passages in Hebrews 3 and 1 Corinthians 10. Added precise verse anchors and Westminster references only where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1976,
+  "output": 5742
+ }
+}

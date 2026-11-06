@@ -1,0 +1,309 @@
+{
+ "sub_topic": "BIB.11.7.3",
+ "name": "Total Depravity and the Bondage of the Will",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Hamartiology: The Doctrine of Sin"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from Scripture that sin affects every part of a person, including the heart, thoughts, words, and actions",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 6:5",
+    "Romans 3:10-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that the Bible describes people apart from God as dead in their sins",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Ephesians 2:1",
+    "Colossians 2:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall from Scripture that no one can save himself by being good enough",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Ephesians 2:8-9",
+    "Romans 3:10-12"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe what Genesis 6:5 and Jeremiah 17:9 teach about the natural condition of the human heart",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 6:5",
+    "Jeremiah 17:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed meaning of total depravity as the corruption of every human faculty rather than people being as wicked as they could possibly be",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:10-18",
+    "Ephesians 4:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.2",
+    "Canons of Dort 3/4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Romans 8:7-8 why the natural person cannot please God",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:7-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.7",
+    "Heidelberg Catechism Q8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the biblical picture of the sinner as spiritually dead with the idea that the sinner is merely sick or weak",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:1-5",
+    "Colossians 2:13"
+   ],
+   "confessions": [
+    "Canons of Dort 3/4.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish total depravity from utter depravity by explaining how unregenerate people can still perform outwardly good civil acts",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Romans 2:14-15",
+    "Luke 6:33"
+   ],
+   "confessions": [
+    "Canons of Dort 3/4.4",
+    "Westminster Confession of Faith 16.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the sinner's inability means that salvation must be entirely of God's grace",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:4-9",
+    "Romans 9:16",
+    "John 1:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 9.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the bondage of the will as the slavery of the fallen person to sin using the words of Jesus and Paul",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "John 8:34",
+    "Romans 6:16-20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 9.3",
+    "Westminster Confession of Faith 6.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jeremiah 17:9 within its surrounding passage to explain what it teaches about self-deception and the heart",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Jeremiah 17:5-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze John 6:44 and 6:65 to show how spiritual inability prevents anyone from coming to Christ unless drawn by the Father",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "John 6:44",
+    "John 6:65"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 10.1",
+    "Canons of Dort 3/4.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the noetic effects of sin by describing from Scripture how sin darkens the mind's understanding of God",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 2:14",
+    "Ephesians 4:17-18",
+    "Romans 1:21"
+   ],
+   "confessions": [
+    "Canons of Dort 3/4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the natural liberty of the will, which is not forced, from the moral inability of the fallen will to choose spiritual good",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "John 5:40",
+    "Romans 8:7-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 9.1",
+    "Westminster Confession of Faith 9.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the fourfold state of the human will in innocence, in sin, in grace, and in glory",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 7:29",
+    "Romans 6:18-22",
+    "Philippians 2:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 9.2",
+    "Westminster Confession of Faith 9.3",
+    "Westminster Confession of Faith 9.4",
+    "Westminster Confession of Faith 9.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the historical debates over the will between Augustine and Pelagius and between Luther and Erasmus",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 8:34",
+    "Romans 9:16"
+   ],
+   "confessions": [
+    "Canons of Dort 3/4.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical argument for human inability that draws on texts from both Testaments",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 6:5",
+    "Jeremiah 13:23",
+    "Romans 3:10-18",
+    "Ephesians 2:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.4",
+    "Westminster Confession of Faith 9.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Pelagian, Semi-Pelagian, and Arminian accounts of free will against the Reformed doctrine of total depravity",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 6:44",
+    "Romans 9:16",
+    "Ephesians 2:1-5"
+   ],
+   "confessions": [
+    "Canons of Dort 3/4.3",
+    "Canons of Dort 3/4.4",
+    "Westminster Confession of Faith 9.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the doctrine of depravity against the claim that people are basically good using Scripture and reasoned argument",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 3:10-18",
+    "Jeremiah 17:9",
+    "Mark 7:21-23"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q8",
+    "Westminster Confession of Faith 6.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how total depravity functions as the foundation for the other doctrines of grace, such as unconditional election and effectual calling",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:1-10",
+    "John 6:44",
+    "Romans 9:16"
+   ],
+   "confessions": [
+    "Canons of Dort 3/4.3",
+    "Westminster Confession of Faith 10.2"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept real competencies (every part affected, dead in sin, cannot save oneself, natural heart, defining total depravity, cannot please God, sick versus dead, grace alone, bondage of the will, Jeremiah 17:9, John 6:44, noetic effects, argument for inability, evaluating free-will views, defending against basic goodness) and reworded them as observable student actions. Recast the grade 3 'observe' item as describing specific texts. Moved Jeremiah 17:9 interpretation to a contextual reading of verses 5-10. Dropped the vague grade 12 'dark backdrop' synthesis and replaced it with analysis of depravity's role among the doctrines of grace. Added total versus utter depravity with civil good, natural liberty versus moral inability, the fourfold state of the will, and the Augustine-Pelagius and Luther-Erasmus debates. Updated confession citations to full names and added WCF 6.4, 9.1-9.5, 10.1-10.2, 16.7, Heidelberg Q8, and Canons of Dort 3/4.1 and 3/4.4. Avoided origin, imputation, and consequences material that belongs to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2112,
+  "output": 4254
+ }
+}

@@ -1,0 +1,390 @@
+{
+ "sub_topic": "BIB.3.1.7",
+ "name": "Judges and Cycles of Sin",
+ "path": [
+  "Bible & Theology",
+  "Biblical Survey & Redemptive History",
+  "Chronological Bible Narrative"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Retell how God gave Gideon's small army of 300 men victory over the Midianites",
+   "grade": 0,
+   "bloom": 2,
+   "scripture": [
+    "Judges 7:2-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Samson as a judge whose great strength was a gift from God",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Judges 13:24-25",
+    "Judges 16:28-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the judges as leaders God raised up to rescue his people from their enemies",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Judges 2:16-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Deborah, Barak, and Jael and how God defeated Sisera's army",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Judges 4:4-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how a new generation of Israel forgot the Lord and served other gods",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Judges 2:10-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how God called Gideon to lead Israel even though Gideon saw himself as weak",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Judges 6:11-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Ruth stayed loyal to Naomi and chose to follow Naomi's God during the time of the judges",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Ruth 1:1",
+    "Ruth 1:16-17",
+    "Ruth 2:8-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sequence the repeating cycle of sin, oppression, crying out, deliverance, and rest using the account of Othniel as a model",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Judges 2:11-19",
+    "Judges 3:7-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from the text that God rescued Israel out of his own compassion and not because the people deserved it",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Judges 2:18",
+    "Judges 10:13-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why God reduced Gideon's army to 300 men",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Judges 7:2-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply the cycle of Judges to the account of Ehud by labeling each stage in the story",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [
+    "Judges 3:12-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify the nations that oppressed Israel by the judge God raised up against each one",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Judges 3:12-15",
+    "Judges 4:1-3",
+    "Judges 6:1-6",
+    "Judges 10:6-9",
+    "Judges 13:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Israel's failure to drive out the Canaanites led to intermarriage and idolatry",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Judges 1:27-36",
+    "Judges 2:1-3",
+    "Judges 3:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Deborah and Samson as judges by examining their obedience to God and their effect on Israel",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Judges 4:4-9",
+    "Judges 5:1-31",
+    "Judges 14:1-3",
+    "Judges 16:1-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the genealogy at the end of Ruth links the period of the judges to King David and to Jesus",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ruth 4:13-22",
+    "Matthew 1:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the role of the kinsman-redeemer and how Boaz fulfilled it for Ruth and Naomi",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 25:25",
+    "Ruth 3:9-13",
+    "Ruth 4:1-10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Hebrews 11 names Gideon, Barak, Samson, and Jephthah as examples of faith despite their failings",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 11:32-34",
+    "Judges 6:36-40",
+    "Judges 16:28-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the refrain that there was no king in Israel and everyone did what was right in his own eyes",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Judges 17:6",
+    "Judges 18:1",
+    "Judges 19:1",
+    "Judges 21:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a chart that traces the downward spiral in the character of the judges from Othniel to Samson",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Judges 3:9-11",
+    "Judges 8:24-27",
+    "Judges 11:30-31",
+    "Judges 16:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jephthah's vow in light of the Mosaic law and the influence of Canaanite religion",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Judges 11:30-40",
+    "Leviticus 27:1-8",
+    "Deuteronomy 12:31",
+    "Deuteronomy 18:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 22.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Abimelech's reign and Jotham's fable as a picture of false kingship in contrast to Gideon's confession that the Lord rules Israel",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Judges 8:22-23",
+    "Judges 9:1-21",
+    "Judges 9:56-57"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the closing chapters of Judges show Israel's religious and moral collapse, including the parallel between Gibeah and Sodom",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Judges 17:1-13",
+    "Judges 18:30-31",
+    "Judges 19:22-30",
+    "Genesis 19:4-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect the moral decline in Judges to Israel's need for a righteous king and explain how the Reformed tradition sees that need fulfilled in Christ",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Judges 21:25",
+    "Deuteronomy 17:14-20",
+    "Isaiah 9:6-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26",
+    "Heidelberg Catechism Q31"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the literary structure of Judges with its double introduction, cycle accounts, and double conclusion",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Judges 1:1-2",
+    "Judges 2:6-23",
+    "Judges 3:7-11",
+    "Judges 17:6",
+    "Judges 21:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the worsening pattern of Judges illustrates the Reformed doctrine of the corruption of human nature",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Judges 2:19",
+    "Judges 2:20-23",
+    "Romans 3:10-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.4",
+    "Westminster Shorter Catechism Q18"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish genuine repentance from crying out merely for relief by examining God's response to Israel in Judges 10",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Judges 10:10-16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q87",
+    "Westminster Confession of Faith 15.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the portrayal of women in Judges, from Deborah and Jael to the Levite's concubine, marks Israel's spiritual condition",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Judges 4:4-5",
+    "Judges 4:17-22",
+    "Judges 11:34-40",
+    "Judges 16:4-21",
+    "Judges 19:22-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend from Judges the Reformed teaching that God sovereignly works through flawed and sinful leaders without approving their sin",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Judges 9:23-24",
+    "Judges 14:4",
+    "Judges 16:28-30"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Produce a thematic study of apostasy that traces the pattern of Judges through later Scripture",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Judges 2:11-19",
+    "Psalm 106:34-46",
+    "Nehemiah 9:26-28",
+    "Hebrews 3:12-13"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Gideon's 300, Samson, judges as deliverers, the cycle, Deborah vs Samson, enemies, the refrain, Jephthah's vow, need for a king, kinsman-redeemer, decline chart, women in Judges, sovereignty over flawed leaders, apostasy study). Corrected the claim that God always forgave when they prayed into an objective on God's compassion and a later one distinguishing genuine repentance (Judges 10). Dropped vague 'people kept forgetting God' in favor of Judges 2:10-13. Added Gideon's call, Ruth's loyalty and genealogy, Ehud as cycle application, causes of the cycle (incomplete conquest), Hebrews 11 on the judges' faith, Abimelech and Jotham, the epilogue chapters, literary structure, and the doctrine of corruption. Replaced whole-chapter references with verse ranges and added confession anchors only where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2085,
+  "output": 6538
+ }
+}

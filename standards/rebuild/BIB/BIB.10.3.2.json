@@ -1,0 +1,364 @@
+{
+ "sub_topic": "BIB.10.3.2",
+ "name": "Elements of Corporate Worship (Word, Sacrament, Prayer)",
+ "path": [
+  "Bible & Theology",
+  "Practical Theology & Christian Living",
+  "Worship and Liturgy"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the main things God's people do when they gather for worship, such as hearing the Bible, praying, and singing",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:42",
+    "Psalm 95:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the sermon as the part of worship when the pastor explains God's Word to the congregation",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Nehemiah 8:8",
+    "2 Timothy 4:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Christians gather together on the Lord's Day to worship God as one church family",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 20:7",
+    "Hebrews 10:24-25"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q103"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe what the congregation does during the public reading of Scripture in worship",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:3-6",
+    "1 Timothy 4:13"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q156"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite the Aaronic blessing and identify it as words from Scripture used to bless God's people in worship",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Numbers 6:24-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the pattern of worship in which God speaks to His people through His Word and they respond with prayer and praise",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 95:1-7",
+    "Nehemiah 8:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the kinds of prayer offered in corporate worship, including praise, confession, thanksgiving, and intercession",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "1 Timothy 2:1-2",
+    "Philippians 4:6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of the Call to Worship as God's summons that opens the gathered service",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 95:6-7",
+    "Psalm 100:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Lord's Prayer serves as a pattern for the prayers of the congregation",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 6:9-13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q99"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how baptism and the Lord's Supper take their place in corporate worship as visible signs of the promises proclaimed in the Word",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 28:19",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q66",
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of congregational singing as praising God and teaching and admonishing one another",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 3:16",
+    "Ephesians 5:19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Benediction as God's blessing pronounced on His people at the close of worship",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 6:22-27",
+    "2 Corinthians 13:14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the offering functions as an act of worship in which God's people give thanks and support the ministry and the poor",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 16:1-2",
+    "2 Corinthians 9:7-12"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q103"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze why the reading and preaching of the Word stand at the center of Reformed corporate worship",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 10:14-17",
+    "2 Timothy 4:1-2"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q89",
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how the catechism directs a congregation to hear the preached Word with preparation, attention, and testing by Scripture",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:11",
+    "James 1:21-22"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q90",
+    "Westminster Larger Catechism Q160"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the function of the Confession of Sin and the Assurance of Pardon within the order of worship",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 6:5-7",
+    "Psalm 32:5",
+    "1 John 1:8-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the elements of worship described in the early church with the elements of a present-day order of service",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:42",
+    "1 Corinthians 14:26",
+    "1 Timothy 4:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Westminster teaching that Word, sacraments, and prayer are the ordinary means of grace made effective by the Holy Spirit",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:41-42",
+    "1 Corinthians 3:6-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q88",
+    "Westminster Shorter Catechism Q89",
+    "Westminster Shorter Catechism Q91"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Westminster Confession directs that public prayer be made in the name of Christ, by the help of the Spirit, and in a known tongue",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "John 14:13-14",
+    "Romans 8:26",
+    "1 Corinthians 14:14-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Reformed teaching that the sacrament is joined to and depends on the preached Word of promise",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 4:11",
+    "Acts 2:38-42"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q65",
+    "Westminster Confession of Faith 27.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a scriptural explanation of why God gathers His people as an assembly to worship Him together",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Deuteronomy 4:10",
+    "Hebrews 10:24-25",
+    "Hebrews 12:22-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Reformation changes to corporate worship, such as preaching and singing in the common language, with late medieval practice",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 14:9",
+    "1 Corinthians 14:16-19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate congregational songs by whether their words teach sound doctrine and serve the Word",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Colossians 3:16",
+    "1 Corinthians 14:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the necessity of preaching in corporate worship from Scripture and the Westminster standards",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 10:14-17",
+    "1 Corinthians 1:21",
+    "2 Timothy 4:2"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q155",
+    "Westminster Larger Catechism Q159"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the order of a Reformed service as a pattern of covenant renewal moving from call and confession through Word and sacrament to blessing",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 24:3-8",
+    "Nehemiah 9:1-3",
+    "Joshua 24:14-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Design an order of corporate worship and justify the purpose and placement of each element from Scripture",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 2:42",
+    "Numbers 6:24-26",
+    "Psalm 95:6-7",
+    "1 Timothy 4:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (worship elements, sermon, gathering together, Scripture reading, dialogical pattern, Call to Worship, Benediction, offering, centrality of the Word, Confession and Assurance, ordinary means of grace, gathered assembly, music, preaching, covenant renewal). Dropped the private vs corporate prayer comparison as belonging to the Private Devotion sibling and kept sacrament coverage to its place in the service, leaving baptism and communion doctrine to that sibling. Moved the offering earlier. Added objectives on kinds of corporate prayer, the Lord's Prayer as a pattern, singing's purpose, hearing the preached Word, early church elements, Westminster directives on public prayer, Word and sacrament relationship, Reformation worship changes, and designing an order of worship. Recast the music objective around doctrinal content rather than feeling and replaced 1 Corinthians 16:2 and 1 John 1:9 with fuller verse ranges and added confessional anchors.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1923,
+  "output": 5805
+ }
+}

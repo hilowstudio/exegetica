@@ -1,0 +1,341 @@
+{
+ "sub_topic": "BIB.11.4.3",
+ "name": "The States of Humiliation and Exaltation",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Christology: The Doctrine of Christ"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that Jesus, the Son of God, came down from heaven and became a baby to save His people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "John 6:38",
+    "Luke 2:7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how Jesus was born into a poor family and laid in a manger",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:7",
+    "2 Corinthians 8:9"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q47"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall examples from the Gospels of Jesus obeying His earthly parents and His heavenly Father",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:51",
+    "John 8:29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "List the steps of Christ's humiliation named in the Shorter Catechism, from His lowly birth to His burial",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Galatians 4:4",
+    "Philippians 2:8",
+    "Matthew 27:59-60"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe events from the Gospels that show Jesus was hungry, tired, tempted, and rejected during His earthly life",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 4:1-2",
+    "John 4:6",
+    "Matthew 8:20",
+    "Isaiah 53:3"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q48"
+   ],
+   "standards": []
+  },
+  {
+   "text": "List the steps of Christ's exaltation named in the Shorter Catechism",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:24",
+    "Acts 1:9-11",
+    "Ephesians 1:20",
+    "Acts 17:31"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Philippians 2 what it means that the Son emptied Himself by taking the form of a servant",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 2:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Christ's state of humiliation with His state of exaltation using Philippians 2:5-11",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Philippians 2:5-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q27",
+    "Westminster Shorter Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what it means that Christ was made under the law and obeyed it perfectly on behalf of His people",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 4:4-5",
+    "Matthew 3:15"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q48"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe practical ways to follow Christ's example of humble service as taught in Philippians 2 and John 13",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Philippians 2:3-5",
+    "John 13:12-15",
+    "Mark 10:45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition teaches that Christ's humiliation spanned His whole earthly life and not only His death",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 2:17",
+    "Hebrews 4:15",
+    "Hebrews 5:8"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q46",
+    "Westminster Larger Catechism Q48"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the phrase emptied himself as the Son veiling His glory by taking a human nature rather than surrendering His divine attributes",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Philippians 2:6-7",
+    "Colossians 2:9",
+    "John 17:5",
+    "Hebrews 1:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the word therefore in Philippians 2:9 presents Christ's exaltation as the Father's reward for the Son's obedience",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 2:8-9",
+    "Hebrews 12:2",
+    "Acts 2:36"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q51"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the catechism's teaching that Christ was buried and continued in the state of the dead and under the power of death until the third day",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 12:40",
+    "Acts 2:24-27"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q50",
+    "Westminster Shorter Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the main interpretations of the creedal phrase he descended into hell with the Reformed readings given in the Heidelberg Catechism and the Larger Catechism",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 27:46",
+    "Acts 2:27",
+    "1 Peter 3:18-19"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q44",
+    "Westminster Larger Catechism Q50"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Christ's willing obedience unto death fulfilled the covenant of redemption between the Father and the Son",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "John 10:18",
+    "John 17:4",
+    "Hebrews 10:5-7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.1",
+    "Westminster Confession of Faith 8.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the pattern of suffering followed by glory from Old Testament prophecy to its fulfillment in Christ",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Luke 24:25-27",
+    "1 Peter 1:10-11",
+    "Isaiah 52:13-15",
+    "Isaiah 53:3-12",
+    "Psalm 22:1",
+    "Psalm 22:16-18",
+    "Psalm 22:27-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition teaches that Christ was exalted in His human nature, the same body in which He suffered",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:39",
+    "Acts 2:32-33",
+    "Hebrews 2:9"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q51",
+    "Westminster Larger Catechism Q52"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate kenotic theories which claim the Son gave up divine attributes in the incarnation against Scripture and the Reformed confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Philippians 2:6-7",
+    "Colossians 2:9",
+    "Hebrews 1:3",
+    "Hebrews 13:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a two-states framework that sets each step of Christ's humiliation beside the corresponding step of His exaltation",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Philippians 2:5-11",
+    "Luke 24:26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.4",
+    "Westminster Shorter Catechism Q27",
+    "Westminster Shorter Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Reformed tradition applies the pattern of Christ's suffering and glory to believers through their union with Him",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Romans 8:17-18",
+    "2 Corinthians 4:17",
+    "1 Peter 4:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Write a synthesis explaining how Christ's humiliation accomplished redemption and His exaltation secures its application to His people",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Luke 24:26",
+    "Hebrews 5:8-9",
+    "Romans 4:25",
+    "Hebrews 7:25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.4",
+    "Westminster Confession of Faith 8.8"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (lowly birth, obedience, steps of humiliation, emptying, comparison of states, humble service, kenosis as veiling, burial and power of death, covenant of redemption, steps of exaltation, two-states framework, kenotic error, synthesis). Dropped the bodily resurrection defense as belonging to the Resurrection, Ascension, and Session sibling, and dropped the bare observation of the cross as covered by the humiliation steps and the Atonement sibling. Added objectives on Christ's sufferings throughout His life, being made under the law, the therefore of Philippians 2:9, interpretations of the descent into hell, the Old Testament suffering then glory pattern, exaltation in the human nature, and the application of the pattern to believers. Anchored to Westminster Shorter and Larger Catechisms, Westminster Confession chapter 8, and Heidelberg Q44 with verse-level Scripture.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2181,
+  "output": 6412
+ }
+}

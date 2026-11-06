@@ -1,0 +1,330 @@
+{
+ "sub_topic": "BIB.11.2.2",
+ "name": "The Constitution of Humanity (Body and Soul)",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Anthropology: The Doctrine of Humanity"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God made each person with a body and a soul",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:7",
+    "Matthew 10:28"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q17"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how God formed Adam's body from the dust and breathed into him the breath of life",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:7"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q17"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that the human body God made is good and not something bad or shameful",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:31",
+    "1 Timothy 4:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe from a Gospel account how Jesus cared for both a person's body and soul",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Mark 2:1-12",
+    "Matthew 9:35-36"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe what Scripture teaches happens to the body and to the soul when a person dies",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 12:7",
+    "Genesis 3:19",
+    "Luke 23:43"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q37",
+    "Westminster Confession of Faith 32.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Reformed teaching that a human being is one person made of a material body and an immaterial soul",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:7",
+    "Matthew 10:28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2",
+    "Westminster Larger Catechism Q17"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from the Gospels that Jesus took to himself a true human body and a reasonable soul",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 26:38",
+    "Luke 23:46",
+    "Luke 24:39",
+    "Hebrews 2:14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q22"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the intermediate state, in which the believer's soul is with Christ, with the final resurrection of the body",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "2 Corinthians 5:8",
+    "Philippians 1:23",
+    "John 5:28-29",
+    "1 Corinthians 15:42-44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1",
+    "Westminster Confession of Faith 32.2",
+    "Westminster Shorter Catechism Q37",
+    "Westminster Shorter Catechism Q38"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Heidelberg Catechism's teaching that a believer belongs to Christ in body and soul, in life and in death",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 6:19-20",
+    "Romans 14:7-9"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply Paul's call to glorify God in the body to everyday choices about work, rest, food, and care of the body",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "1 Corinthians 6:19-20",
+    "Romans 12:1",
+    "1 Corinthians 10:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the dichotomist and trichotomist views of human nature using the biblical evidence each side cites",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:7",
+    "Ecclesiastes 12:7",
+    "Matthew 10:28",
+    "1 Thessalonians 5:23",
+    "Hebrews 4:12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret 1 Thessalonians 5:23 and Hebrews 4:12 in their literary context to determine whether they divide the person into separate parts",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "1 Thessalonians 5:23",
+    "Hebrews 4:12",
+    "Mark 12:30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Christian hope centers on the resurrection of the body and not on the soul's survival alone",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:12-19",
+    "Romans 8:23",
+    "Job 19:25-27"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q57",
+    "Westminster Confession of Faith 32.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare creationism and traducianism as Reformed accounts of the origin of each individual soul",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 12:9",
+    "Zechariah 12:1",
+    "Ecclesiastes 12:7",
+    "Genesis 5:3",
+    "Hebrews 7:9-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how sin has corrupted the whole person in all the faculties of soul and body",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:10-18",
+    "Jeremiah 17:9",
+    "Romans 6:12-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze biblical examples showing how the condition of the body and the life of the soul affect one another",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 32:3-4",
+    "Proverbs 17:22",
+    "1 Kings 19:4-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the faculties of the soul as the Reformed tradition has identified them, including mind, will, and affections",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Mark 12:30",
+    "Romans 12:2",
+    "Philippians 2:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2",
+    "Westminster Confession of Faith 9.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a written account of the human person as a unity of body and soul supported by Scripture and the Westminster Standards",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 2:7",
+    "Matthew 10:28",
+    "2 Corinthians 5:8",
+    "1 Corinthians 15:42-44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2",
+    "Westminster Confession of Faith 32.1",
+    "Westminster Larger Catechism Q17"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate materialism, the view that a person is only a physical body, in light of Scripture's teaching on the soul",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 10:28",
+    "Luke 23:43",
+    "2 Corinthians 5:8",
+    "Revelation 6:9-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate gnostic dualism and other body-denying spiritualities against Scripture's affirmation of the body",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Timothy 4:1-5",
+    "Colossians 2:20-23",
+    "John 1:14",
+    "1 John 4:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize how Christ's incarnation, bodily resurrection, and return together accomplish the redemption of the whole person, soul and body",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Hebrews 2:14-17",
+    "Romans 8:23",
+    "1 Corinthians 15:20-23",
+    "Philippians 3:20-21",
+    "1 Thessalonians 5:23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.3",
+    "Westminster Shorter Catechism Q38",
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (body and soul, formation from dust, goodness of the body, intermediate state versus resurrection, glorifying God in the body, dichotomy versus trichotomy, 1 Thessalonians 5:23, resurrection hope, soul's origin, whole-person theology, materialism, body-denying spiritualities, whole-person redemption). Split the grade 11 evaluation into separate objectives on materialism and on gnostic or ascetic dualism. Folded 'God cares about both body and soul' into a Gospel-based objective on Jesus' ministry. Dropped the vague 'soul lives on after death' item in favor of a fuller objective on what happens to body and soul at death. Added objectives on Christ's true body and reasonable soul, Heidelberg Q1, sin's corruption of soul and body, the interplay of body and soul, and the faculties of the soul. Dropped WLC Q93 and WCF 13.1, which address the covenant of works and sanctification, and anchored objectives to WCF 4.2, 6.2, 9.1, 32.1-3, WSC Q22, Q37, Q38, and HC Q1 and Q57. Image-of-God and sanctity-of-life content is left to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2125,
+  "output": 5572
+ }
+}

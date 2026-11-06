@@ -1,0 +1,244 @@
+{
+ "sub_topic": "AGR.2.2.1",
+ "name": "Soil Formation & Properties",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Plant & Horticultural Science",
+  "Soil Science & Plant Nutrition"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify sand, silt, and clay as different kinds of soil particles by how they look and feel",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the main parts of soil, including rock particles, organic matter, water, air, and living things",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how earthworms, insects, and other soil organisms mix soil and break down dead plants and animals",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the weathering of rock and the decay of organic matter form soil over time",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Separate a soil sample into layers of sand, silt, clay, and organic matter using a jar settling test and record the results",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify soil samples by texture using the feel of sand, silt, and clay particles",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Determine the textural class of a soil from its percentages of sand, silt, and clay using the soil textural triangle",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what soil color reveals about organic matter content and how well a soil drains",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Diagram a soil profile and label the O, A, E, B, and C horizons and bedrock",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how physical, chemical, and biological weathering processes such as frost wedging, oxidation, hydrolysis, and root action break parent rock into soil",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.02.02.a"
+   ]
+  },
+  {
+   "text": "Identify the physical characteristics of soil water, including gravitational water, field capacity, plant available water, and permanent wilting point, and relate each to soil texture",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.02.a"
+   ]
+  },
+  {
+   "text": "Describe the types of soil structure, including granular, blocky, platy, prismatic, and columnar, and the characteristics used to identify soil types",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.02.05.a"
+   ]
+  },
+  {
+   "text": "Analyze how soil structure, texture, and pore space affect water infiltration, permeability, and root growth",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.02.a"
+   ]
+  },
+  {
+   "text": "Calculate bulk density and total pore space from a soil core sample and explain the effects of compaction",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe a soil pit in the field by recording horizon depth, surface texture, structure, permeability, and slope as in the FFA Land Evaluation event",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.02.a"
+   ]
+  },
+  {
+   "text": "Analyze how parent material and rock type determine the mineral composition and chemical makeup of a soil",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.02.02.b"
+   ]
+  },
+  {
+   "text": "Explain how clay minerals and humus create cation exchange capacity and contrast the pH and cation exchange capacity of mineral soil with soilless growing media",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.02.b"
+   ]
+  },
+  {
+   "text": "Interpret mottling, gleying, and other redoximorphic features to infer a soil's drainage class and identify hydric soils associated with wetland formation",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.03.04.b"
+   ]
+  },
+  {
+   "text": "Assess the physical qualities of a soil that determine its ability to filter groundwater and its likelihood of flooding",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.02.03.b"
+   ]
+  },
+  {
+   "text": "Evaluate how the five factors of soil formation, parent material, climate, organisms, topography, and time, shaped the soils of a given region",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.02.02.a"
+   ]
+  },
+  {
+   "text": "Classify soils into the major soil orders using diagnostic horizons and key soil properties",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.02.05.a"
+   ]
+  },
+  {
+   "text": "Compare measurements of soil quality such as horizon development, texture, organic matter, and soil respiration to judge their effectiveness and limitations",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.05.02.02.b"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives, rewording a few: added the E horizon and bedrock to the profile objective and permeability to the grade 10 analysis. Added early objectives on soil components, soil organisms, and the jar settling test. Added middle grade objectives on the textural triangle and soil color. Added high school objectives on weathering processes, soil water properties, soil structure types, bulk density and porosity, and FFA Land Evaluation pit description. Also added parent material and mineral composition, cation exchange capacity compared with soilless media, redoximorphic features and hydric soils, filtration and flooding potential, soil orders, and comparing soil quality measurements. Each high school objective is anchored to the AFNR standards it teaches. Fertilizer, irrigation, soil testing labs, and erosion management are left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ESS.03.02.01.b",
+  "ESS.03.02.02.a",
+  "ESS.03.02.02.b",
+  "ESS.03.02.03.b",
+  "ESS.03.03.01.b",
+  "ESS.03.03.04.b",
+  "ESS.05.02.02.a",
+  "ESS.05.02.02.b",
+  "NRS.01.02.05.a",
+  "NRS.01.05.04.a",
+  "NRS.01.05.04.b",
+  "NRS.01.05.04.c",
+  "PS.01.02.02.a",
+  "PS.01.04.02.b",
+  "PS.01.04.03.b"
+ ],
+ "usage": {
+  "input": 2437,
+  "output": 3531
+ }
+}

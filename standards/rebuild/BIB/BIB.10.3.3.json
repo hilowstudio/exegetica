@@ -1,0 +1,401 @@
+{
+ "sub_topic": "BIB.10.3.3",
+ "name": "The Sacraments/Ordinances: Baptism and Communion",
+ "path": [
+  "Bible & Theology",
+  "Practical Theology & Christian Living",
+  "Worship and Liturgy"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify water as the sign used in baptism and bread and the cup as the signs used in the Lord's Supper",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 28:19",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q93"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Jesus sharing bread and the cup with his disciples on the night he was betrayed",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Luke 22:14-20",
+    "1 Corinthians 11:23-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Jesus commanded his church to baptize and to eat the Lord's Supper in remembrance of him",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 28:18-20",
+    "Luke 22:19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 28.1",
+    "Westminster Confession of Faith 29.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell New Testament accounts of people being baptized in the early church",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:38-41",
+    "Acts 8:35-38",
+    "Acts 16:30-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the words, actions, and signs used when a church administers baptism and the Lord's Supper, including baptism in the name of the Father, Son, and Holy Spirit",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 28:19",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 28.2",
+    "Westminster Confession of Faith 29.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that baptism signifies washing from sin and marks a person as belonging to God and his people",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 22:16",
+    "Titus 3:5",
+    "Matthew 28:19"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q94",
+    "Heidelberg Catechism Q69"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that the Lord's Supper remembers and proclaims Christ's death until he comes again",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 11:24-26",
+    "Matthew 26:29"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q96",
+    "Heidelberg Catechism Q75"
+   ],
+   "standards": []
+  },
+  {
+   "text": "State the Westminster Shorter Catechism definition of a sacrament and explain each of its parts in their own words",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 4:11",
+    "1 Corinthians 10:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q92",
+    "Heidelberg Catechism Q66"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish between a sign and the thing it signifies using the water of baptism and the bread and cup of the Supper as examples",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Romans 4:11",
+    "1 Corinthians 10:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 27.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition recognizes only two sacraments instituted by Christ in the New Testament",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 28:19",
+    "1 Corinthians 11:23-25"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q93",
+    "Westminster Confession of Faith 27.4",
+    "Heidelberg Catechism Q68"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture connects baptism to union with Christ in his death and resurrection",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 6:3-5",
+    "Galatians 3:27",
+    "Colossians 2:12"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q94",
+    "Westminster Confession of Faith 28.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe whom the Reformed tradition teaches should come to the Lord's Supper and explain the biblical call to self-examination before coming",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 11:27-29"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q97",
+    "Westminster Confession of Faith 29.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that sacraments become effective means of grace through the blessing of Christ and the work of the Spirit rather than through power in the elements or the minister",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "1 Peter 3:21",
+    "1 Corinthians 3:7",
+    "1 Corinthians 12:13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q91",
+    "Westminster Confession of Faith 27.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Lord's Supper expresses believers' communion with Christ and their unity with one another as one body",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 10:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 29.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the terms sacrament and ordinance and analyze what each emphasizes about baptism and the Lord's Supper",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 4:11",
+    "1 Corinthians 11:24-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 27.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Scripture connects circumcision as an Old Testament covenant sign to baptism",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 17:9-14",
+    "Romans 4:11",
+    "Colossians 2:11-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 27.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jesus' words \"This is my body\" in their context by comparing them with other figurative statements in Scripture",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 26:26-28",
+    "John 15:1",
+    "1 Corinthians 10:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 29.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Passover meal anticipates and shapes the meaning of the Lord's Supper",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 12:1-14",
+    "Luke 22:7-20",
+    "1 Corinthians 5:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 27.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition administers baptism once while the Lord's Supper is repeated and how it relates baptism's efficacy to the time of administration",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 4:5",
+    "1 Corinthians 11:26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 28.6",
+    "Westminster Confession of Faith 28.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Examine the biblical evidence used in debates over the mode of baptism and state the Westminster Confession's position on sprinkling, pouring, and immersion",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Ezekiel 36:25",
+    "Acts 2:17-18",
+    "Acts 8:38-39",
+    "Hebrews 9:19-22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 28.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical argument for infant baptism as the Reformed tradition holds it and summarize the credobaptist case accurately and fairly",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 17:7-12",
+    "Acts 2:38-39",
+    "Acts 16:14-15",
+    "Acts 16:31-33",
+    "1 Corinthians 7:14",
+    "Colossians 2:11-12"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q95",
+    "Westminster Confession of Faith 28.4",
+    "Heidelberg Catechism Q74"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what the Westminster Larger Catechism means by improving one's baptism and describe practices it recommends",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Romans 6:3-11",
+    "Galatians 3:26-27"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q167"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate transubstantiation, the Lutheran view, the memorial view, and the Reformed view of Christ's spiritual presence in the Lord's Supper against Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 10:16-17",
+    "John 6:53-63",
+    "Matthew 26:26-29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 29.6",
+    "Westminster Confession of Faith 29.7",
+    "Heidelberg Catechism Q78",
+    "Heidelberg Catechism Q79"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Reformed critique of the Mass as a sacrifice in light of the once-for-all sacrifice of Christ",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 9:25-28",
+    "Hebrews 10:10-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 29.2",
+    "Heidelberg Catechism Q80"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's warning against eating and drinking in an unworthy manner within the context of Corinthian divisions and explain its bearing on the church's practice of guarding the Table",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 11:17-22",
+    "1 Corinthians 11:27-34"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 29.8",
+    "Westminster Larger Catechism Q173"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a teaching presentation that explains how baptism and the Lord's Supper function as visible words that sign and seal the gospel promise",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 4:11",
+    "Acts 2:38-39",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 27.1",
+    "Heidelberg Catechism Q66"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (signs of each sacrament, Christ's command, meaning of baptism and the Supper, sign versus thing signified, who should come, sacrament versus ordinance, This is my body, circumcision and Passover connections, infant baptism debate, views of presence, 1 Corinthians 11 warning, visible words). Dropped the observation objective because seeing a service is not an assessable competency and replaced it with describing the words and actions used. Added missing competencies: the institution narrative, Acts baptism accounts, the catechism definition of a sacrament, why only two sacraments, union with Christ in baptism, efficacy through the Spirit, communion and unity in the Supper, once-for-all baptism versus a repeated Supper, mode of baptism, improving one's baptism, and the critique of the Mass. Anchored each to verse-level Scripture and specific Westminster and Heidelberg articles and left general worship elements to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2023,
+  "output": 6795
+ }
+}

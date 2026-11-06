@@ -1,0 +1,214 @@
+{
+ "sub_topic": "AGR.1.4.4",
+ "name": "Animal Industry Careers & Ethics",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Animal Science",
+  "Companion, Aquaculture & Emerging Industries"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Name people who work with animals, such as a farmer, veterinarian, and 4-H or FFA member, and tell one job each person does",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe why it is important to treat farm animals with care and respect",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what it means for an animal caretaker to be a good steward of the animals and resources entrusted to them",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the responsibilities of animal science careers, such as veterinarian, livestock nutritionist, or farm manager",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the Five Freedoms of animal welfare and give an example of how a caretaker meets each one",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the employability skills animal industry employers value, such as work ethic, communication, and safe animal handling",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify career pathways in the animal industry by the level of education, training, and certification each requires",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish between animal welfare and animal rights viewpoints and explain how each shapes beliefs about the use of animals",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the major segments of the animal industry, such as livestock, companion animal, research, and aquaculture, and the careers found in each",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.01.02.a"
+   ]
+  },
+  {
+   "text": "Develop a supervised agricultural experience plan in animal science that connects to a chosen career interest and includes goals and record keeping",
+   "grade": 9,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how laws and agencies such as the USDA, APHIS, FDA, and the Animal Welfare Act regulate the care and use of animals",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.03.01.b",
+    "AS.01.03"
+   ]
+  },
+  {
+   "text": "Analyze the economic contribution of animal industry sectors to local and state economies and the employment they support",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.01.02.b"
+   ]
+  },
+  {
+   "text": "Analyze a current ethical issue in animal agriculture, such as housing systems or antibiotic use, from multiple stakeholder perspectives",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.03",
+    "AS.01.02.01.b"
+   ]
+  },
+  {
+   "text": "Apply a professional code of conduct, such as the veterinarian's oath or a livestock exhibition ethics code, to a case involving animal care or show ring practices",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how welfare audits and quality assurance programs such as Beef Quality Assurance influence production practices and consumer confidence in animal products",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.02.01.b",
+    "AS.02"
+   ]
+  },
+  {
+   "text": "Analyze how media coverage and consumer perceptions shape public trust in animal agriculture and its practices",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.02.01.b"
+   ]
+  },
+  {
+   "text": "Create a speech or presentation that accurately explains an animal agriculture practice to a nonfarm audience",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Develop a personal career plan for an animal industry pathway that includes education, certifications, SAE, and FFA experiences",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the ethical, economic, and stewardship considerations involved in a career decision or policy issue within the animal industry and justify a position",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.03",
+    "AS.06.01.02.b"
+   ]
+  }
+ ],
+ "changes": "Kept and lightly reworded all six existing objectives as real competencies. Added stewardship, the Five Freedoms, welfare versus rights, and employability skills in the middle grades. Added high school objectives on industry segments, SAE planning, regulation and agencies, economic impact, professional codes of conduct, quality assurance and audits, public perception, agricultural communication, and personal career planning. Aligned AFNR codes only where the objective teaches the standard, and left the lower grades without codes.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.01.01.02.a",
+  "AS.01.02.01.b",
+  "AS.01.02.02.c",
+  "AS.01.03",
+  "AS.01.03.01.b",
+  "AS.01.03.02.c",
+  "AS.02",
+  "AS.02.01.02.c",
+  "AS.03.01",
+  "AS.06.01.02.b",
+  "AS.06.03.02.b",
+  "AS.06.03.02.c",
+  "AS.07.01.02.c",
+  "AS.07.02.01.b",
+  "AS.08.01"
+ ],
+ "usage": {
+  "input": 2308,
+  "output": 3174
+ }
+}

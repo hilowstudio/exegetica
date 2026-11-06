@@ -1,0 +1,289 @@
+{
+ "sub_topic": "BIB.6.1.2",
+ "name": "Structural Analysis",
+ "path": [
+  "Bible & Theology",
+  "Hermeneutics (The Art of Interpretation)",
+  "Exegesis and Application"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the beginning, middle, and end of a Bible story",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Mark 4:35-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the events of a Bible narrative in the order they happen",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1-31",
+    "Genesis 2:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "State the main point of a short Bible story or parable in their own words",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Luke 15:3-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Find repeated words or phrases in a passage and explain what the repetition emphasizes",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 136:1-9",
+    "Genesis 1:10-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize a chapter by dividing it into its main sections and giving each a short title",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Mark 4:1-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how paragraphs and section breaks group related ideas within a passage",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 2:1-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the standard parts of a New Testament letter such as the greeting, thanksgiving, body, and closing",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [
+    "Philippians 1:1-11",
+    "Philippians 4:21-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the line-based structure of a psalm with the paragraph-based structure of a letter",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 1:1-6",
+    "Philippians 1:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify synonymous and antithetical parallelism in Hebrew poetry and explain how paired lines build meaning",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 19:1-2",
+    "Proverbs 10:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the plot of a Bible narrative through its setting, conflict, climax, and resolution",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "1 Samuel 17:1-58"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "State the big idea of a passage in one sentence and support it from the passage's structure",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Psalm 23:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why careful attention to how a passage is put together is part of handling God's word rightly",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 2:15",
+    "Nehemiah 8:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze a chiasm by mapping its matching parts and identifying the central element it highlights",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 67:1-7",
+    "Mark 2:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret logical connecting words such as therefore, but, for, and so that to trace the flow of an argument",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Romans 12:1",
+    "Romans 6:1-14",
+    "Ephesians 2:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the main clause of a sentence from the clauses and phrases that support or modify it",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 3:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how an inclusio uses matching statements at the start and end to frame a section",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 8:1-9",
+    "Matthew 4:23",
+    "Matthew 9:35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul structures a letter so that commands for Christian living follow from and rest on what God has done in Christ",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 1:3-14",
+    "Ephesians 4:1-3",
+    "Romans 12:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a phrase diagram of a complex Pauline sentence that shows how its clauses relate to the main verb",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Ephesians 1:3-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how a Gospel writer sandwiches one story inside another so that each interprets the other",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Mark 5:21-43",
+    "Mark 11:12-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the structural markers of a book shape and convey its message",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:4",
+    "Genesis 5:1",
+    "Genesis 6:9",
+    "Genesis 11:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate proposed outlines of a book's macro-structure using the structural signals in the text",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 7:28-29",
+    "Matthew 11:1",
+    "Matthew 13:53",
+    "Matthew 19:1",
+    "Matthew 26:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend an interpretation of a passage by appealing to its grammatical structure",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Ephesians 2:8-10",
+    "Romans 6:1-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Create an exegetical outline of a passage that shows its structure, its main point, and how the structure supports the passage's theological claim",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 5:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (story shape, repeated words, chapter outline, paragraphs, poem versus letter, big idea, chiasm, logical connectors, inclusio, sentence diagram, macro-structure, grammatical defense) and tied each to specific passages. Dropped filler duplicates such as naming the main idea and recalling that stories have a shape. Moved connecting book structure to message to grade 10 with Genesis toledot markers and replaced the vague synthesis objective with creating an exegetical outline. Added Hebrew parallelism, NT letter form, narrative plot structure, main versus subordinate clauses, Pauline indicative and imperative ordering, Markan intercalation, and a Scripture basis for careful structural reading anchored to WCF 1.7.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1875,
+  "output": 4109
+ }
+}

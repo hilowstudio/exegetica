@@ -1,0 +1,267 @@
+{
+ "sub_topic": "AGR.6.1.3",
+ "name": "Biodiversity & Wildlife",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Natural Resources & Environmental Science",
+  "Ecology & Ecosystems"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify common wildlife in the local area and describe the food, water, shelter, and space each animal needs to survive",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort local animals into groups such as mammals, birds, reptiles, amphibians, fish, and insects using features you can observe",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify signs of wildlife such as tracks, scat, nests, and browsed plants in a schoolyard, field, or farm setting",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why an ecosystem with many different kinds of plants and animals is better able to withstand and recover from change than one with only a few",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe physical and behavioral adaptations that help a local wildlife species survive in its habitat",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use a dichotomous key or field guide to identify local wildlife and plant species",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare species richness and abundance between two habitats using quadrat or transect sampling",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify local wildlife as native, invasive, threatened, or endangered and explain the meaning of each category",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how farm practices such as hedgerows, field borders, cover crops, and pollinator plantings provide wildlife habitat on working land",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the importance of biodiversity to ecosystem function and to natural resources and services such as pollination, pest control, and soil health",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.01.03.a",
+    "ESS.03.05.01.a"
+   ]
+  },
+  {
+   "text": "Identify invasive plant, animal, and insect species of the local region and describe how each was introduced and spreads",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.06.02.a"
+   ]
+  },
+  {
+   "text": "Categorize the primary human causes of species extinction including habitat loss, invasive species, pollution, and overharvesting",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.02.02.a"
+   ]
+  },
+  {
+   "text": "Calculate a biodiversity measure such as species richness or Simpson's diversity index from field data and interpret what it shows about an ecosystem",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.05.01.a"
+   ]
+  },
+  {
+   "text": "Analyze the interdependence of wildlife in an ecosystem including niches and the impact of keystone species on community structure",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.01.02.b"
+   ]
+  },
+  {
+   "text": "Analyze how habitat loss, an invasive species, or overharvesting reduces biodiversity in a specific ecosystem",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.02.02.a"
+   ]
+  },
+  {
+   "text": "Examine how the activities of soil microorganisms affect ecosystem biodiversity and environmental sustainability",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.04.01.b"
+   ]
+  },
+  {
+   "text": "Classify the causes of disease in wildlife and aquatic species and explain how disease can pass between wildlife and livestock",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.02.02.a"
+   ]
+  },
+  {
+   "text": "Evaluate the tree, herbaceous plant, wildlife, and insect species present at a field site to assess the status of the ecosystem",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.02.01.c",
+    "NRS.01.02.02.c",
+    "NRS.01.02.03.c"
+   ]
+  },
+  {
+   "text": "Use GIS or other mapping tools to evaluate wildlife population movement, invasive species spread, or biodiversity differences between habitat edge and interior",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.03.02.01.c"
+   ]
+  },
+  {
+   "text": "Analyze local wildlife populations, the challenges they pose to livestock and crop production, and the ecological measures producers use to manage them",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.02.04.b"
+   ]
+  },
+  {
+   "text": "Evaluate how regulated hunting, trapping, and fishing seasons and harvest limits are used to manage wildlife populations",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Devise a strategy to prevent the ecological damage that would result from the introduction or spread of a harmful species",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.03.02.c"
+   ]
+  },
+  {
+   "text": "Devise a strategy for preventing the loss of a species that addresses the primary human causes of extinction affecting it",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.02.02.c"
+   ]
+  },
+  {
+   "text": "Design a habitat improvement plan that increases biodiversity on a plot of land while accounting for existing agricultural and other land uses",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.01.03.c"
+   ]
+  }
+ ],
+ "changes": "Replaced the grade 2 food matching objective with wildlife needs, since feeding relationships belong to Nutrient Cycles & Energy Flow. Dropped the grade 6 food web objective and moved interdependence and keystone species to grade 10 aligned to NRS.01.01.02.b. Kept and lightly reworded the grade 4, 8, 10, and 12 objectives. Added early field skills (wildlife sign, animal groups, adaptations, dichotomous keys, quadrat and transect sampling), farm wildlife habitat, and high school competencies for biodiversity value, invasive species, extinction causes, diversity indices, soil microbes, wildlife disease, site species assessment, GIS mapping, wildlife and production conflicts, harvest regulation, and invasive species and species loss prevention strategies, each tied to the matching AFNR standards where one fits.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.01.02.04.b",
+  "ESS.03.04.01.b",
+  "ESS.03.05.01.a",
+  "NRS.01.01.02.b",
+  "NRS.01.01.03.a",
+  "NRS.01.01.03.c",
+  "NRS.01.02.01.c",
+  "NRS.01.02.02.c",
+  "NRS.01.02.03.c",
+  "NRS.01.06.02.a",
+  "NRS.02.02.02.a",
+  "NRS.02.02.02.c",
+  "NRS.03.02.01.c",
+  "NRS.04.02.02.a",
+  "NRS.04.03.02.c"
+ ],
+ "usage": {
+  "input": 2525,
+  "output": 4346
+ }
+}

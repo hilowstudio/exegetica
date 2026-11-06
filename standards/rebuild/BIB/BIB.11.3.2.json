@@ -1,0 +1,316 @@
+{
+ "sub_topic": "BIB.11.3.2",
+ "name": "Inerrancy and Authority",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Bibliology: The Doctrine of Scripture"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from Bible stories and verses that God always tells the truth and cannot lie",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Numbers 23:19",
+    "Titus 1:2",
+    "Hebrews 6:18"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that the Bible is God's word and so everything it says is true",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 12:6",
+    "Proverbs 30:5",
+    "John 17:17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that because the Bible is God's word, God's people are called to believe what it teaches and obey what it commands",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "James 1:22",
+    "Psalm 119:9-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how Jesus treated the Old Testament as true and authoritative, using examples from his temptation and teaching",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 4:1-11",
+    "Matthew 5:17-18",
+    "John 10:35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define inerrancy as the teaching that Scripture in its original writings is without error in all that it affirms",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 19:7",
+    "Proverbs 30:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition teaches that Scripture has authority over a person's feelings, opinions, and human traditions",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 8:20",
+    "Acts 17:11",
+    "Mark 7:8-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish infallibility, meaning Scripture cannot fail or mislead, from inerrancy, meaning Scripture is without error",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 5:18",
+    "1 Peter 1:24-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Westminster Confession's teaching that Scripture's authority depends on God its author and not on the testimony of any person or church",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "1 Thessalonians 2:13",
+    "2 Peter 1:19-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that Scripture is sufficient, containing all that is needed for God's glory and for faith and life",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "Psalm 19:7-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply a clear command or principle of Scripture to a realistic moral decision, citing the passage that governs the choice",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "Psalm 119:105"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main affirmations and denials of the Chicago Statement on Biblical Inerrancy",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "John 17:17",
+    "2 Timothy 3:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Westminster Confession distinguishes the evidences of Scripture's divine authority from the inward work of the Holy Spirit that brings full persuasion of it",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 2:14",
+    "1 John 2:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret passages that use ordinary observational language, round numbers, or loose quotation and explain why these do not count as errors",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Joshua 10:13",
+    "Ecclesiastes 1:5",
+    "Psalm 19:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the authority of Scripture is connected to the lordship of Christ, who speaks through the apostolic and prophetic word",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 28:18-20",
+    "Ephesians 2:20",
+    "John 14:23-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish an error in the original text from a textual variant in later copies and explain why inerrancy is affirmed of the original writings",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 5:18",
+    "1 Peter 1:24-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze an apparent discrepancy between parallel biblical accounts and propose a reasonable harmonization",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 8:5-13",
+    "Luke 7:1-10",
+    "Mark 10:46-52",
+    "Luke 18:35-43"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct an argument for inerrancy from the truthful character of God and the self-testimony of Scripture",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Numbers 23:19",
+    "Titus 1:2",
+    "John 17:17",
+    "2 Timothy 3:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate common objections to the truthfulness of Scripture drawn from science, history, and alleged contradictions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Psalm 19:7",
+    "John 10:35"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed doctrine of sola scriptura as Scripture being the supreme judge of all controversies, distinguishing it from a rejection of creeds and tradition",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 8:20",
+    "Acts 17:11",
+    "Mark 7:8-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10",
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate views of limited inerrancy and views that Scripture merely contains or becomes the word of God against the Reformed confession of Scripture's full truthfulness",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "John 10:35",
+    "2 Timothy 3:16",
+    "2 Peter 1:20-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4",
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose an essay on the relationship between the ministerial authority of the church, its councils, and its creeds and the supreme authority of Scripture",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 15:6-29",
+    "Ephesians 2:20",
+    "Acts 17:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 31.4",
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Removed every Chicago Statement article citation from the confessions field because that document is not in the library. The Chicago Statement now appears only in the text of the grade 7 summary objective. Confession anchors use Westminster Confession of Faith and Shorter Catechism numbering instead. Kept and reworded the real competencies from the old set: God's truthfulness, Christ's view of Scripture, defining inerrancy, infallible versus inerrant, moral application, ordinary language, Christ's lordship, variants, the argument from God's character, objections, sola scriptura, and the church authority essay. Turned the passive 'observe' objective into a describing task. Added objectives on authority resting on God as author (WCF 1.4), sufficiency (WCF 1.6), evidences and the Spirit's persuasion (WCF 1.5), harmonizing parallel accounts, and evaluating limited inerrancy and neo-orthodox views. Left inspiration, canon, and interpretation method to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 4631,
+  "output": 10270
+ }
+}

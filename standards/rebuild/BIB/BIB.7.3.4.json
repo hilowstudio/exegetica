@@ -1,0 +1,269 @@
+{
+ "sub_topic": "BIB.7.3.4",
+ "name": "Messianic Expectations and Apocalyptic Hopes",
+ "path": [
+  "Bible & Theology",
+  "Historical & Cultural Context",
+  "Jewish Culture and Tradition (Intertestamental)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God promised to send a King to rescue his people and that many people were waiting for him",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "2 Samuel 7:12-16",
+    "Luke 2:25-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that the words Messiah and Christ both mean anointed one and name Jesus as the promised Messiah",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "John 1:41",
+    "Luke 2:11"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q31"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how Simeon and Anna waited in the temple for the promised one and recognized the baby Jesus",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Luke 2:25-38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why many people expected the Messiah to defeat the Romans and why Jesus riding into Jerusalem on a donkey surprised them",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Zechariah 9:9",
+    "Matthew 21:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the title Son of David and connect it to God's covenant promise of an everlasting throne",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "2 Samuel 7:12-16",
+    "Matthew 1:1",
+    "Matthew 20:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the popular hope for a warrior king with the suffering servant described in Isaiah",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 53:1-12",
+    "Mark 10:45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the Old Testament anointing of prophets, priests, and kings shaped the hope for a Messiah who would fulfill all three offices",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 18:15",
+    "Psalm 110:1-4",
+    "1 Samuel 16:13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q23",
+    "Heidelberg Catechism Q31",
+    "Westminster Confession of Faith 8.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the hope of bodily resurrection at the end of the age in Daniel and in Martha's words to Jesus",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 12:2",
+    "John 11:23-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize how the Maccabean revolt and the later Roman conquest of Judea intensified political hopes for a deliverer",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 11:31-32",
+    "Luke 2:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish canonical Scripture from intertestamental writings such as 1 Maccabees and 1 Enoch and explain how the Reformed tradition uses the latter as historical sources rather than as Scripture",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:1-2",
+    "Luke 24:44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Westminster Confession of Faith 1.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the main features of apocalyptic literature such as visions, symbolic beasts, cosmic conflict, and God's final triumph using examples from Daniel",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 7:1-14",
+    "Daniel 2:31-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the Son of Man figure in Daniel and analyze how Jesus applied the title to himself at his trial",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 7:13-14",
+    "Mark 14:61-62"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Jewish framework of the present age and the age to come and identify where the New Testament uses it",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 12:32",
+    "Mark 10:29-30",
+    "Ephesians 1:20-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Daniel's seventy weeks prophecy fed first century expectations and how the Reformed tradition reads it as fulfilled in Christ",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 9:24-27",
+    "Mark 1:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the different figures first century Jews expected, including a Davidic king, a prophet like Moses, and a returning Elijah",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 1:19-25",
+    "John 6:14-15",
+    "Malachi 4:5-6",
+    "Deuteronomy 18:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the disciples' hope for the restoration of Israel's kingdom and how the risen Jesus responded to it",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Luke 24:19-27",
+    "Acts 1:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Examine accounts of revolutionary leaders such as Theudas and Judas the Galilean and explain what they reveal about popular messianic movements",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Acts 5:34-39",
+    "Acts 21:38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Jesus redefined messiahship through suffering, death, and exaltation using the Gospel accounts and Isaiah's servant songs",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Mark 8:27-33",
+    "Luke 24:25-27",
+    "Isaiah 53:1-12",
+    "Philippians 2:6-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.4",
+    "Westminster Shorter Catechism Q27",
+    "Westminster Shorter Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize how Jewish hopes for resurrection, judgment, and new creation are taken up in the Reformed confession of Christ's return and the last things",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Corinthians 15:20-28",
+    "Isaiah 65:17-19",
+    "Revelation 21:1-4",
+    "Acts 17:31"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.2",
+    "Westminster Confession of Faith 33.1",
+    "Heidelberg Catechism Q52"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies: waiting for a King, Messiah as anointed one, the expectation of victory over Rome and the surprise of Jesus' humility, Son of David, warrior king versus suffering servant, resurrection hope, Son of Man, Daniel's prophecies, the age to come, the profile of expectations, Jesus' redefinition of messiahship, and the Jewish roots of eschatology. Dropped the filler objective about observing people praying and the speculative objective about Judas's motives. Recast the analysis of Enoch and Maccabees as distinguishing canon from intertestamental writings, anchored to WCF 1.3, and added a separate historical objective on the Maccabean and Roman setting. Added objectives on Simeon and Anna, the threefold office, the apocalyptic genre, the seventy weeks, the disciples' kingdom question, and first century revolutionary movements. Anchored the objectives to specific verses and confession articles, and left material on sects, the synagogue, and the feasts to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1978,
+  "output": 4522
+ }
+}

@@ -1,0 +1,217 @@
+{
+ "sub_topic": "AGR.1.2.4",
+ "name": "Livestock Evaluation & Judging",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Animal Science",
+  "Genetics, Reproduction & Breeding"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the main external body parts of a cow, pig, sheep, and goat such as the head, shoulder, back, loin, rump, and legs",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify signs that a farm animal is healthy and well fed such as bright eyes, a smooth coat, good body fill, and steady walking",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common breeds of beef cattle, swine, sheep, and goats by color pattern, ear set, head shape, and other breed characteristics",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how an animal's structure, including its feet, legs, pasterns, and topline, affects its ability to move freely and stay sound",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare two animals for muscling by observing thickness through the forearm, loin, stifle, and hindquarter",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify livestock by frame size, degree of muscling, and body condition score",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use standard livestock evaluation terminology to describe the differences between two animals in a pair",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Place a class of four livestock animals from most to least desirable and give at least one reason for each pair in the placing",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the ideal market type for steers, barrows, market lambs, and market goats in terms of muscle, finish, balance, and structural correctness based on industry standards",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.03.02.c"
+   ]
+  },
+  {
+   "text": "Record organized judging notes on a class that capture the key comparisons and grants for each pair",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate breeding females and males for reproductive soundness, including udder and underline quality, testicular development, and structural correctness",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.01",
+    "AS.04.01.02.c"
+   ]
+  },
+  {
+   "text": "Justify the selection of a project animal for a supervised agricultural experience based on evaluation criteria, project goals, and budget",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.01.02.b"
+   ]
+  },
+  {
+   "text": "Estimate carcass traits such as backfat thickness, loin eye area, and yield grade from visual appraisal of live market animals",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.03.02.c"
+   ]
+  },
+  {
+   "text": "Analyze an animal's structural correctness, muscling, finish, and breed character to develop a set of oral reasons defending a judging placement",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.03.02.c"
+   ]
+  },
+  {
+   "text": "Answer a judge's questions about a livestock class by recalling specific observed differences among the animals",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how differences in muscling, finish, soundness, and reproductive potential affect the economic value of market and breeding animals",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.01.02.b"
+   ]
+  },
+  {
+   "text": "Rank a class of breeding animals by combining visual appraisal with performance data such as expected progeny differences and weights",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03",
+    "AS.04.02.02.c"
+   ]
+  },
+  {
+   "text": "Evaluate a class of market or breeding animals using industry evaluation criteria and deliver organized oral reasons that justify the final placing",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.03.02.c",
+    "AS.04.01"
+   ]
+  },
+  {
+   "text": "Design a practice livestock judging class with an official placing, cuts, and a model set of oral reasons",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.03.02.c"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded all six original objectives. Added competencies for anatomy, breed identification, muscling comparison, judging terminology, ideal market type, note taking, reproductive soundness of breeding stock, SAE project selection, live carcass estimation, questions classes, economic value, performance data classes, and designing practice classes. Linked standards only for grades 9 to 12 where they fit.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.01.01.02.a",
+  "AS.01.02.02.c",
+  "AS.02",
+  "AS.02.02.03.a",
+  "AS.03.01",
+  "AS.04.01",
+  "AS.04.01.02.c",
+  "AS.04.01.03.b",
+  "AS.04.01.03.c",
+  "AS.04.02.02.c",
+  "AS.04.03",
+  "AS.06.01.02.b",
+  "AS.06.02.01.c",
+  "AS.06.02.02.a",
+  "AS.06.03.02.c"
+ ],
+ "usage": {
+  "input": 2245,
+  "output": 3219
+ }
+}

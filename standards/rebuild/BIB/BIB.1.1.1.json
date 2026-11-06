@@ -1,0 +1,267 @@
+{
+ "sub_topic": "BIB.1.1.1",
+ "name": "Arguments for God’s Existence",
+ "path": [
+  "Bible & Theology",
+  "Apologetics and Worldviews",
+  "Classical Apologetics"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify things in the world that show order and beauty and tell that the Bible says God made them",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:1",
+    "Psalm 19:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain in simple words that everything that is made has a maker and that God is the maker of all things",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 3:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare a made object such as a house or a watch to the world to show how a made thing points to a maker",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 3:4",
+    "Psalm 19:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe cause and effect with everyday examples and explain why the universe, which had a beginning, needs a cause",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1",
+    "Hebrews 11:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the argument from design using examples of complexity and purpose in living things",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 104:24",
+    "Psalm 139:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the premises and conclusion in a simple argument for God's existence such as the argument from cause or design",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Romans 1 teaches about God's eternal power and divine nature being clearly seen in creation and why this leaves people without excuse",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 1:19-20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Belgic Confession Article 2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the moral argument that a shared human sense of right and wrong points to a moral Lawgiver",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 2:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the premises of the Kalam cosmological argument and explain how its conclusion follows from them",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:1",
+    "Psalm 90:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish what arguments from nature can show about God from what is known only through Scripture, such as the Trinity and the way of salvation, as the Reformed confessions teach",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 1:20",
+    "Romans 10:14-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Belgic Confession Article 2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the fine-tuning argument by explaining how the precise physical conditions needed for life point to an intelligent designer",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 45:18",
+    "Jeremiah 33:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the claim that objective moral values require a moral Lawgiver by comparing it with relativist and naturalist accounts of morality",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 2:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize Thomas Aquinas's Five Ways and identify which kind of argument each represents",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why an infinite regress of causes cannot account for the existence of things and why this points to an uncaused first cause",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 90:2",
+    "Colossians 1:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul reasons from creation and providence to the true God in his addresses at Lystra and Athens",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Acts 14:15-17",
+    "Acts 17:22-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Anselm's ontological argument and Plantinga's modal version and assess Gaunilo's objection to it",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Psalm 14:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Formulate a response to the objection asking who made God using the doctrine of God's self-existence",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Exodus 3:14",
+    "Psalm 90:2",
+    "Acts 17:24-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Leibniz's argument from contingency as an answer to the question of why there is something rather than nothing",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 17:24-28",
+    "Colossians 1:16-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the God of the gaps objection and explain why arguments grounded in what is known differ from appeals to ignorance",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Psalm 19:1",
+    "Romans 1:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the classical use of theistic arguments with the presuppositional approach associated with Cornelius Van Til and explain the Reformed debate over their role",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 1:7",
+    "1 Peter 3:15",
+    "Romans 1:18-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a cumulative case for theism that combines cosmological, design, moral, and ontological arguments and anticipates major objections",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Peter 3:15",
+    "Romans 1:19-20"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (maker, cause and effect, design, moral, Kalam, fine-tuning, infinite regress, ontological, contingency, God of the gaps, cumulative case). Merged the repeated maker comparisons at grades 2, 3 and 5 into one comparison objective and dropped the filler recall item. Reframed the moral argument so it states the argument rather than asserting it as an applied claim. Added argument structure (premises and conclusion), Romans 1 and the confessional limits of natural knowledge, Aquinas's Five Ways, Paul's reasoning at Lystra and Athens, the 'who made God' objection tied to God's self-existence, Gaunilo's objection, and the Reformed classical versus presuppositional debate. Left general revelation itself to the Natural Theology sibling. Added verse-specific Scripture and confession anchors only where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1931,
+  "output": 3777
+ }
+}

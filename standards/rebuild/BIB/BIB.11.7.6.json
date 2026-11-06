@@ -1,0 +1,243 @@
+{
+ "sub_topic": "BIB.11.7.6",
+ "name": "The Extent and Gravity of Sin",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Hamartiology: The Doctrine of Sin"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from the Bible that all people everywhere have sinned against God",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Romans 3:23",
+    "1 Kings 8:46"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall from David's prayer that every sin is first of all a sin against God",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 51:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite Romans 3:23 and explain in their own words what it teaches about every person",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize Paul's teaching that Jew and Gentile alike are under sin and the whole world is accountable to God",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:9-12",
+    "Romans 3:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the catechism's teaching that every sin deserves God's wrath and curse",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 3:10",
+    "Romans 6:23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q84",
+    "Westminster Larger Catechism Q152"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why James teaches that breaking one command makes a person guilty of breaking the whole law",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "James 2:10-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare biblical examples showing that some sins are more heinous in the sight of God than others",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "John 19:11",
+    "Luke 12:47-48",
+    "Ezekiel 8:6"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q150"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why universal guilt means no one can be declared righteous before God by their own works of the law",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:19-20",
+    "Galatians 2:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how encounters with God's holiness in Scripture reveal the seriousness of sin",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 6:1-5",
+    "Habakkuk 1:13",
+    "Luke 5:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the person sinning, the party offended, the nature of the act, and its circumstances aggravate the heinousness of a sin",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Luke 12:47-48",
+    "James 3:1",
+    "2 Samuel 12:7-14"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q151"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed reasoning that the gravity of sin is measured by the holiness and majesty of the God against whom it is committed",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 51:4",
+    "Isaiah 6:3-5",
+    "Genesis 39:9"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q152"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jesus' warning about blasphemy against the Holy Spirit within its context in the Gospels",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Mark 3:22-30",
+    "Matthew 12:22-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the confessional teaching that no sin is so great it brings damnation on those who truly repent, using Paul as an example",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 1:15",
+    "1 John 1:9",
+    "Isaiah 1:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 15.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate claims of sinless perfection in this life using the teaching of First John",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [
+    "1 John 1:8-10",
+    "Ecclesiastes 7:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the Reformed teaching that every sin deserves damnation while sins differ in degree from the Roman Catholic division of mortal and venial sins",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 6:23",
+    "James 2:10",
+    "John 19:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 15.4",
+    "Westminster Larger Catechism Q150"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate common cultural ways of minimizing sin against the biblical account of its extent and gravity",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 5:20",
+    "Romans 1:32",
+    "Proverbs 14:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct an explanation of how universal guilt and the varied gravity of sin together show the need for the gospel offered to all",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 3:21-26",
+    "1 Timothy 1:15",
+    "Romans 5:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 15.4"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Merged redundant early-grade universality items (whole world guilty, no one without sin) into a K item, a grade 1 item on sin as against God, and a grade 2 recitation of Romans 3:23. Dropped 'best deeds stained by sin' as belonging to Total Depravity. Reworded 'apply the truth' and 'connect' items into observable explanations anchored in Romans 3:20 and WLC Q152. Added objectives on James 2:10, God's holiness revealing sin's seriousness, perfectionism claims, and the mortal/venial distinction, which absorbed the 'defend the biblical scale' item. Folded the grade 10 'construct a theology' item into the grade 12 synthesis. Corrected confession citations, including WLC Q150 to Q152 and WCF 15.4, and expanded the unpardonable sin passages to their full context.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2143,
+  "output": 3531
+ }
+}

@@ -1,0 +1,330 @@
+{
+ "sub_topic": "BIB.11.6.2",
+ "name": "The Return of Christ",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Eschatology: The Doctrine of Last Things"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from the Bible that Jesus promised he will come back",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "John 14:2-3",
+    "Acts 1:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Jesus as the King who will return in glory with his angels",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 25:31",
+    "Revelation 22:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Jesus' ascension and the angels' promise that he will come again in the same way",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Acts 1:9-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite the line of the Apostles' Creed that confesses Christ will come to judge the living and the dead",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Acts 10:42"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q52"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the parable of the ten virgins and explain what it teaches about being ready for Christ's return",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 25:1-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe what Jesus means by watching and being ready using the example of the faithful servant",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 24:42-46",
+    "Matthew 24:44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture that Christ will return personally, bodily, and visibly",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 1:11",
+    "Revelation 1:7",
+    "1 Thessalonians 4:16",
+    "Matthew 24:30"
+   ],
+   "confessions": [
+    "Belgic Confession Article 37",
+    "Westminster Larger Catechism Q56"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why no one but the Father knows the day or hour of Christ's return",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 24:36",
+    "Mark 13:32-33",
+    "Acts 1:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Christ's first coming in humility with his second coming in glory as part of his exaltation",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 9:28",
+    "Philippians 2:8-11",
+    "Matthew 25:31"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q27",
+    "Westminster Shorter Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what New Testament images such as the thief in the night and the days of Noah teach about the suddenness of Christ's return",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 24:37-44",
+    "1 Thessalonians 5:2-6",
+    "2 Peter 3:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the apostles used the promise of Christ's return to call believers to holy living",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "2 Peter 3:11-14",
+    "1 John 3:2-3",
+    "Titus 2:11-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the parable of the talents as teaching faithful stewardship while awaiting the master's return",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 25:14-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Jesus' teaching in the Olivet Discourse about the events that precede his coming",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 24:3-14",
+    "Matthew 24:29-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul used Christ's return to comfort the Thessalonians about fellow believers who had died",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Thessalonians 4:13-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the New Testament calls the appearing of Christ the blessed hope of the church",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Titus 2:13",
+    "Philippians 3:20-21",
+    "1 John 3:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Jesus applied Daniel's vision of the Son of Man coming with the clouds to his own return",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 7:13-14",
+    "Matthew 26:64",
+    "Revelation 1:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the comfort the Heidelberg Catechism draws from Christ's return for the suffering church",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "2 Thessalonians 1:6-10",
+    "Revelation 22:12",
+    "Revelation 22:20"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q52"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the prayer Maranatha and the Lord's Supper proclaimed until he comes express the church's expectation of Christ's return in worship",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 16:22",
+    "1 Corinthians 11:26",
+    "Revelation 22:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's correction of the claim that the day of the Lord had already come",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "2 Thessalonians 2:1-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Westminster Confession explains God's purpose in keeping the day of Christ's return unknown",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Mark 13:35-37",
+    "Luke 12:35-36"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the promise of Christ's return frames the church's mission of proclaiming the gospel to the nations",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 24:14",
+    "Acts 1:6-11",
+    "2 Peter 3:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate historical attempts to set the date of Christ's return in light of Scripture's teaching",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 24:36",
+    "Acts 1:7",
+    "2 Thessalonians 2:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the personal, bodily, and visible return of Christ against views that treat it as merely spiritual or as already fully past",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 1:11",
+    "Revelation 1:7",
+    "Hebrews 9:28",
+    "Matthew 24:30"
+   ],
+   "confessions": [
+    "Belgic Confession Article 37",
+    "Westminster Larger Catechism Q56"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a theological account of Christ's return as judge and redeemer that draws on Scripture and the Reformed confessions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 1:11",
+    "Titus 2:13",
+    "Hebrews 9:28",
+    "2 Thessalonians 1:6-10"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q52",
+    "Westminster Larger Catechism Q56",
+    "Belgic Confession Article 37"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept the real competencies (promise of return, King returning, angels' promise, readiness, visible bodily return, first vs second coming, holy living, signs, unknown hour, blessed hope, comfort for the suffering church, date-setting, defense against a spiritual coming, synthesis) and reworded them to observable verbs. Dropped the vague 'summarize the Second Coming' and the generic 'construct a theology' in favor of one capstone composition objective. Removed the feeling-based phrasing of hope and comfort so these are things students explain. Added missing competencies: the Apostles' Creed article, the parables of the ten virgins and talents, images of suddenness, Paul's comfort in 1 Thessalonians 4, Daniel 7 and the Son of Man, Maranatha and the Lord's Supper, 2 Thessalonians 2, the purpose of the hidden day in WCF 33.3, and the link to mission. Judgment details, resurrection, and millennial schemes are left to sibling sub-topics. Added Belgic Confession Article 37, WSC Q27, and WCF 33.3 where they state the doctrine, and replaced whole-passage citations with verse ranges.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2100,
+  "output": 5521
+ }
+}

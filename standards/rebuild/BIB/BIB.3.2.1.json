@@ -1,0 +1,353 @@
+{
+ "sub_topic": "BIB.3.2.1",
+ "name": "Sacrifice and Atonement (The Lamb of God)",
+ "path": [
+  "Bible & Theology",
+  "Biblical Survey & Redemptive History",
+  "Redemptive Historical Themes"
+ ],
+ "grades": [
+  0,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Jesus as the one John the Baptist called the Lamb of God who takes away the sin of the world",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "John 1:29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Jesus said that as the Good Shepherd he would lay down his life for his sheep",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "John 10:11",
+    "John 10:17-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how God made garments of skin to clothe Adam and Eve after they sinned",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:7",
+    "Genesis 3:21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture that sin separates people from God and deserves his judgment",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:17",
+    "Isaiah 59:2",
+    "Romans 6:23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q19",
+    "Westminster Shorter Catechism Q84"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Abraham and Isaac and identify the ram God provided in Isaac's place",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 22:1-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the animal sacrifices offered by Abel and Noah in the early chapters of Genesis",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 4:3-5",
+    "Genesis 8:20-21",
+    "Hebrews 11:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the first Passover and explain why the blood on the doorposts spared the Israelite households",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 12:1-13",
+    "Exodus 12:21-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define atonement as God's provision for covering sin and reconciling sinners to himself",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 4:35",
+    "Romans 5:10-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Leviticus and Hebrews why the shedding of blood was required for atonement under the law",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 17:11",
+    "Hebrews 9:22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Passover lamb with Jesus as the unblemished lamb whose blood redeems his people",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 12:5-7",
+    "Exodus 12:46",
+    "John 19:36",
+    "1 Corinthians 5:7",
+    "1 Peter 1:18-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the main Levitical offerings and the purpose Scripture gives for each",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 1:3-4",
+    "Leviticus 2:1-2",
+    "Leviticus 3:1-5",
+    "Leviticus 4:27-31",
+    "Leviticus 5:14-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the roles of the two goats on the Day of Atonement and what each pictured about the removal of sin",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 16:7-10",
+    "Leviticus 16:15-16",
+    "Leviticus 16:20-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Lord's Supper proclaims Christ's once-for-all sacrifice as the Reformed tradition confesses it",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Luke 22:19-20",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 29.2",
+    "Heidelberg Catechism Q75",
+    "Westminster Shorter Catechism Q96"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain substitution as Christ bearing the curse and penalty of sin in the place of sinners",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "2 Corinthians 5:21",
+    "Galatians 3:13",
+    "1 Peter 3:18"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25",
+    "Westminster Confession of Faith 8.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Isaiah 53 presents the Suffering Servant as a substitute who bears the sins of others",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 53:4-7",
+    "Isaiah 53:10-12",
+    "1 Peter 2:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the repeated Levitical sacrifices with Christ's once-for-all sacrifice as Hebrews 10 presents them",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 10:1-14",
+    "Hebrews 9:11-14",
+    "Hebrews 9:25-28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the New Testament describes believers offering themselves as living sacrifices and sacrifices of praise in response to Christ's atonement",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 12:1",
+    "Hebrews 13:15-16",
+    "1 Peter 2:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the biblical terms propitiation, expiation, reconciliation, and redemption as aspects of Christ's atoning work",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:24-25",
+    "1 John 2:2",
+    "1 John 4:10",
+    "2 Corinthians 5:18-19",
+    "Mark 10:45"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q37",
+    "Westminster Confession of Faith 8.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul presents the cross as showing God to be both just and the justifier of those who have faith in Jesus",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:21-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the Lamb theme from the Old Testament to Revelation and explain how each passage develops it",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 22:7-8",
+    "Exodus 12:3-7",
+    "Isaiah 53:7",
+    "John 1:29",
+    "1 Peter 1:19",
+    "Revelation 5:6-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate why animal sacrifices could not take away sin yet were ordained by God as types pointing to Christ",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 10:1-4",
+    "Hebrews 9:9-10",
+    "Psalm 51:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate moral influence, governmental, and Christus Victor accounts of the atonement against the Reformed confession of penal substitution using Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 53:5-6",
+    "Romans 3:25-26",
+    "Galatians 3:13",
+    "Colossians 2:13-15",
+    "1 Peter 2:24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.5",
+    "Heidelberg Catechism Q40",
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the passages the Reformed tradition uses to teach definite atonement and explain how its confessions state the doctrine",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "John 10:11",
+    "John 10:14-15",
+    "Ephesians 5:25-27",
+    "Revelation 5:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.8",
+    "Canons of Dort 2.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a written or visual synthesis tracing the theme of sacrifice from Eden to the worship of the Lamb in the new creation",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 3:21",
+    "Genesis 22:8",
+    "Leviticus 17:11",
+    "Isaiah 53:4-6",
+    "Hebrews 10:11-14",
+    "Revelation 5:9-12"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Dropped the filler K objective (identify a lamb) and replaced it with identifying Jesus as the Lamb of God. Rewrote vague items: 'recall that sin needs forgiveness' now explains sin's separation and judgment, and 'observe that blood was used' became an explanation of Leviticus 17:11 with Hebrews 9:22. Kept and reworded Abraham and Isaac, the definition of atonement, the Passover comparison, the scapegoat (expanded to both Day of Atonement goats), substitution, Leviticus and Hebrews 10, propitiation (broadened to distinguish the related atonement terms), the Lamb study (now a tracing objective), the inadequacy of animal sacrifices, penal substitution (now evaluated against alternative views), and the Eden to Heaven synthesis. Dropped the tearing of the Temple curtain, which is left to The Temple and the Presence of God sibling. Added objectives on Genesis 3:21, John 10, the sacrifices of Abel and Noah, the first Passover, the Levitical offerings, the Lord's Supper, Isaiah 53, living sacrifices, Romans 3:21-26, and definite atonement. Corrected confession citations to articles that state each doctrine (WCF 7.5, 8.4, 8.5, 8.8, 11.3, 29.2, WSC Q19, Q25, Q84, Q96, HC Q37, Q40, Q75, Canons of Dort 2.8).",
+ "problems": [],
+ "old_count": 15,
+ "candidates": [],
+ "usage": {
+  "input": 1977,
+  "output": 5848
+ }
+}

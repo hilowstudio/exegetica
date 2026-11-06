@@ -1,0 +1,348 @@
+{
+ "sub_topic": "BIB.2.2.4",
+ "name": "Apocalyptic Literature: Hope in Persecution",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "New Testament Overview"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Revelation as the last book of the Bible, which tells that Jesus is coming again and that God will make all things new",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 21:5",
+    "Revelation 22:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name John as the follower of Jesus who wrote down the vision while he was sent away to the island of Patmos for telling about Jesus",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 1:1",
+    "Revelation 1:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the promise that God will wipe away every tear and end death, crying, and pain in the new heaven and new earth",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 21:1-4"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q38",
+    "Heidelberg Catechism Q58"
+   ],
+   "standards": []
+  },
+  {
+   "text": "State that Revelation shows Jesus as the King of kings who defeats evil and wins in the end",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 17:14",
+    "Revelation 19:11-16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite one of the songs of praise sung around God's throne in Revelation and identify who is being praised",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 4:8",
+    "Revelation 4:11",
+    "Revelation 5:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how John saw the risen Jesus in glory in his first vision and what Jesus told him not to fear",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 1:12-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that Revelation uses picture language such as dragons, beasts, and a Lamb to show real truths about God, Christ, and evil",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 5:6",
+    "Revelation 12:9",
+    "Revelation 13:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that apocalypse means an unveiling and that Revelation uncovers the heavenly reality behind earthly events",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 1:1",
+    "Revelation 4:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Lion of Judah and the slain Lamb in John's vision to explain how Christ conquers through his death",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 5:5-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify an encouragement, a warning, and a promise that Jesus gives to one of the seven churches",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 2:8-11",
+    "Revelation 3:7-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the features of apocalyptic writing, including visions, angelic guides, symbolic numbers and creatures, cosmic conflict, and God's final triumph, in Daniel and Revelation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 7:1-14",
+    "Revelation 1:10-11",
+    "Revelation 12:7-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the first readers' situation of persecution and pressure to worship the emperor shapes Revelation's message of hope and endurance",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 1:9",
+    "Revelation 2:10",
+    "Revelation 2:13",
+    "Revelation 13:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the symbolic meaning of numbers such as 7, 12, and 666 in Revelation by tracing how these numbers are used elsewhere in Scripture",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 1:20",
+    "Revelation 7:4-8",
+    "Revelation 13:18",
+    "Revelation 21:12-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect images in Revelation to their Old Testament sources in Daniel, Ezekiel, and Zechariah to show how Scripture interprets Scripture",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 7:13-14",
+    "Revelation 1:13-14",
+    "Ezekiel 1:4-28",
+    "Revelation 4:6-8",
+    "Ezekiel 47:1-12",
+    "Revelation 22:1-2",
+    "Zechariah 4:1-14",
+    "Revelation 11:3-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Jesus' teaching in the Olivet Discourse as apocalyptic instruction that calls disciples to watchfulness and endurance rather than speculation",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Mark 13:1-37"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed confession of Christ's visible return and the last judgment and relate it to John's vision of the great white throne",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 20:11-15",
+    "Matthew 25:31-46"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1",
+    "Westminster Confession of Faith 33.2",
+    "Heidelberg Catechism Q52",
+    "Belgic Confession Article 37"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the garden of Genesis with the new Jerusalem of Revelation to show how the Bible's story ends in restored creation and God dwelling with his people",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:8-10",
+    "Genesis 3:22-24",
+    "Revelation 21:1-3",
+    "Revelation 22:1-5"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q58"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the preterist, historicist, futurist, and idealist approaches to reading Revelation and the strengths and weaknesses of each",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 1:1-3",
+    "Revelation 1:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the amillennial, postmillennial, and premillennial readings of the thousand years, noting which views have been common in the Reformed tradition",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 20:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the structure of Revelation, including how the cycles of seals, trumpets, and bowls may retell the same period with increasing intensity",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 6:12-17",
+    "Revelation 11:15-19",
+    "Revelation 16:17-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a study of the throne room vision that explains how heavenly worship reframes the suffering of the church on earth",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Revelation 4:1-11",
+    "Revelation 5:1-14",
+    "Revelation 6:9-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the practice of setting dates for Christ's return in light of Jesus' teaching that no one knows the day or hour",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Mark 13:32-33",
+    "Acts 1:7",
+    "1 Thessalonians 5:1-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Revelation the Reformed doctrine that God governs all of history, including the actions of persecutors, for his purposes",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Revelation 1:8",
+    "Revelation 13:5-7",
+    "Revelation 17:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Revelation's call to faithful witness and patient endurance applies to Christians facing persecution today",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Revelation 2:10",
+    "Revelation 12:11",
+    "Revelation 13:10",
+    "Revelation 14:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Create a presentation tracing the theme of the Lamb from the Passover and the prophets to the worship of the Lamb as the climax of Revelation",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Exodus 12:1-13",
+    "Isaiah 53:7",
+    "John 1:29",
+    "Revelation 5:9-14",
+    "Revelation 21:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (identifying Revelation, John on Patmos, Jesus' victory, wiping away tears, meaning of apocalypse, Lion and Lamb, numbers, purpose for suffering Christians, Old Testament connections, four interpretive approaches, throne room study, date-setting, God's sovereignty, worship of the Lamb). Dropped 'observe strange creatures' and 'heaven as a place with no more pain' as filler or duplicates and folded them into objectives on picture language and the new creation. Added the risen Christ vision, the songs of praise, the letters to the seven churches, apocalyptic genre features, historical setting, the Olivet Discourse, the last judgment, Genesis and Revelation compared, millennial views, Revelation's structure, and application to persecution today. Supplied verse-level Scripture and confessional anchors (WCF 1.9, 5.1, 33; WSC Q11, Q26, Q38; HC Q52, Q58; Belgic 37) where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1951,
+  "output": 5476
+ }
+}

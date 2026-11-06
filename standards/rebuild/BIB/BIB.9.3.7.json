@@ -1,0 +1,294 @@
+{
+ "sub_topic": "BIB.9.3.7",
+ "name": "Malachi",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Minor Prophets"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Malachi as the last book of the Old Testament in the order of the English Bible",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Malachi 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that in Malachi God calls himself a Father and Master who deserves honor from his people",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Malachi 1:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how God told the people they were robbing him by holding back their tithes and offerings",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Malachi 3:8-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God promised to send the prophet Elijah before the great day of the Lord",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Malachi 4:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main complaints God brings against the people and the questions they ask in reply",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Malachi 1:2",
+    "Malachi 1:6-7",
+    "Malachi 2:17",
+    "Malachi 3:7-8",
+    "Malachi 3:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Gospels identify John the Baptist as the messenger God promised to send ahead of the Lord",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Malachi 3:1",
+    "Matthew 11:10",
+    "Mark 1:2-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the blemished sacrifices and careless attitude of the priests with the honoring worship God required",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Malachi 1:6-14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q54",
+    "Westminster Shorter Catechism Q55"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the book of remembrance and what it shows about God's care for those who fear him",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Malachi 3:16-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the principle behind God's command about tithes and offerings and the promise attached to it",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Malachi 3:8-12",
+    "2 Corinthians 9:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Place Malachi in its post-exilic setting by relating its concerns to the problems Nehemiah confronted",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Malachi 1:8",
+    "Nehemiah 13:10-13",
+    "Nehemiah 13:23-29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the disputation pattern of statement, objection, and reply that structures the book",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Malachi 1:2-5",
+    "Malachi 2:17",
+    "Malachi 3:13-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the images of the refiner's fire and fuller's soap and what they teach about the Lord's coming to purify his people",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Malachi 3:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the statement I have loved Jacob but Esau I have hated in light of its covenant context and Paul's use of it",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Malachi 1:2-5",
+    "Romans 9:10-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Connect the promise of the sun of righteousness rising with healing to the coming of Jesus Christ",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Malachi 4:2",
+    "Luke 1:76-79"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Malachi's teaching on intermarriage with idolaters and on divorce as faithlessness to the covenant",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Malachi 2:10-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1",
+    "Westminster Confession of Faith 24.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the covenant with Levi and how the priests failed in their calling to teach true instruction",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Malachi 2:1-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Malachi's promise that God's name will be great among the nations anticipates worship of God by the Gentiles",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Malachi 1:11",
+    "Malachi 1:14",
+    "John 4:21-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a profile of the spiritual complacency of the post-exilic community using evidence from the text",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Malachi 1:13",
+    "Malachi 2:17",
+    "Malachi 3:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Malachi presents the day of the Lord as both judgment on the wicked and deliverance for the righteous",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Malachi 4:1-3",
+    "Malachi 3:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1",
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claim that the promised Elijah was fulfilled in John the Baptist using Jesus' own words",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Malachi 4:5-6",
+    "Luke 1:17",
+    "Matthew 11:13-14",
+    "Matthew 17:10-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed doctrine of God's immutability from Malachi's declaration I the Lord do not change",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Malachi 3:6",
+    "James 1:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1",
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize how Malachi's closing call to remember the law of Moses and await Elijah links the Old Testament canon to the opening of the New Testament",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Malachi 4:4-6",
+    "Mark 1:1-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept all sixteen original competencies with rewording: changed tithes from personal application to explaining the principle, and reframed the 400 years of silence as the canonical link between Malachi and the Gospels. Added objectives on the book of remembrance, the post-exilic setting with Nehemiah, the refiner's fire, the covenant with Levi, God's name among the nations, and the day of the Lord, which are major sections of the book that were missing. Anchored each objective to specific verses and added New Testament fulfillment texts and fitting Westminster references.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1939,
+  "output": 3315
+ }
+}

@@ -1,0 +1,253 @@
+{
+ "sub_topic": "BIB.10.3.1",
+ "name": "The Regulative vs. Normative Principles of Worship",
+ "path": [
+  "Bible & Theology",
+  "Practical Theology & Christian Living",
+  "Worship and Liturgy"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Bible as the book where God tells his people how he wants to be worshiped",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Deuteronomy 12:32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Nadab and Abihu and state what God said about the unauthorized fire they offered",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Leviticus 10:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of the golden calf and explain why calling it a feast to the LORD did not make it acceptable worship",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 32:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the second commandment teaches that God is to be worshiped only in the ways he has appointed in his Word",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:4-6",
+    "Deuteronomy 12:32"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q50",
+    "Westminster Shorter Catechism Q51",
+    "Heidelberg Catechism Q96"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the regulative principle of worship as the Reformed teaching that public worship includes only what God commands in Scripture",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 12:32"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the normative principle of worship as the teaching that churches may include in worship whatever Scripture does not forbid",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [
+    "Thirty-Nine Articles 20"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the regulative and normative principles by showing how each one decides whether a new practice may be added to a worship service",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 12:32"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.1",
+    "Thirty-Nine Articles 20"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Old Testament accounts of worship devised by human initiative to identify what made each one displeasing to God",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "1 Kings 12:28-33",
+    "1 Samuel 13:8-14",
+    "1 Samuel 15:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus rebuked worship shaped by human traditions in place of the commandments of God",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Mark 7:6-9",
+    "Matthew 15:8-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jesus' teaching on worship in spirit and truth within the context of his conversation with the Samaritan woman",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "John 4:19-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the elements of worship that Scripture commands from the circumstances of worship that the church orders by Christian prudence",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 14:26",
+    "1 Corinthians 14:40"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what Paul means by self-made religion and why the Reformed tradition applies it to human additions in worship",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 2:20-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed confessions connect the regulative principle with the liberty of conscience from commandments of men in worship",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 15:9",
+    "Galatians 5:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.2",
+    "Belgic Confession 32"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace how Reformed, Lutheran, and Anglican churches of the Reformation era came to hold different principles of worship",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [
+    "Westminster Confession of Faith 21.1",
+    "Belgic Confession 32",
+    "Thirty-Nine Articles 20"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate arguments within Reformed churches over applying the regulative principle to questions such as exclusive psalmody, musical instruments, and holy days",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Colossians 3:16",
+    "Galatians 4:9-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate a contemporary worship practice by applying both the regulative and normative principles and stating the conclusion each would reach",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Deuteronomy 12:32",
+    "John 4:23-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an order of service that justifies each element from Scripture and identifies which features are circumstances rather than elements",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Timothy 4:13",
+    "1 Corinthians 14:40"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a written argument that states the regulative principle and responds to the strongest objections raised by proponents of the normative principle",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Deuteronomy 12:32",
+    "Colossians 2:20-23",
+    "Leviticus 10:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.1",
+    "Thirty-Nine Articles 20"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Bible as guide, Nadab and Abihu, regulative and normative definitions, spirit and truth, will worship, order of service, evaluating trends, liberty of conscience). Dropped filler or off-topic items: observing order in the service, fun versus holy service, listing commanded elements (belongs to the Elements sibling), the vague Reformed view item, glory versus entertainment, and synthesizing reverence and joy. Added the golden calf, the second commandment with catechism anchors, a direct comparison of the two principles, Old Testament narratives of invented worship, Jesus on human traditions, elements versus circumstances (WCF 1.6), Reformation history, intra-Reformed application debates, and a capstone argument. Added the Thirty-Nine Articles 20 as the confessional statement of the normative view, and replaced whole-passage citations with verse ranges.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1925,
+  "output": 4005
+ }
+}

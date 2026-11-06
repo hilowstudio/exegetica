@@ -1,0 +1,309 @@
+{
+ "sub_topic": "BIB.7.1.2",
+ "name": "Cosmology/Worldview (Contrasted with Biblical Creation)",
+ "path": [
+  "Bible & Theology",
+  "Historical & Cultural Context",
+  "Ancient Near Eastern Background (OT)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify God as the one who made everything by speaking",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:1",
+    "Genesis 1:3",
+    "Psalm 33:6-9"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the sun, moon, and stars as lights God made to give light and mark time, not gods to be worshiped",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:14-18",
+    "Deuteronomy 4:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how many ancient peoples told stories of gods fighting to make the world, while Genesis tells of one God who made everything good",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1",
+    "Genesis 1:31"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the difference between belief in one God (monotheism) and belief in many gods (polytheism)",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "Isaiah 45:5-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q5",
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that Genesis presents humans as made in God's image to rule and care for creation, while ancient myths described humans as made to do the gods' labor",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:26-28",
+    "Genesis 2:15",
+    "Psalm 8:3-6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10",
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the orderly creation by God's word in Genesis with the violent conflict found in other ancient creation stories",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:1-31",
+    "Psalm 33:6-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the ancient picture of the cosmos as heavens, earth, and waters and identify where Scripture uses this everyday language",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:6-10",
+    "Exodus 20:4",
+    "Psalm 104:2-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Scripture forbids astrology and divination by showing that the stars are creatures governed by God rather than controllers of human fate",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:16",
+    "Deuteronomy 18:10-12",
+    "Isaiah 47:13-14",
+    "Jeremiah 10:2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Heidelberg Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Enuma Elish by summarizing its account of Marduk and Tiamat and contrasting its view of God, matter, and humanity with Genesis 1",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:1-10",
+    "Genesis 1:26-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Egyptian creation accounts such as those of Atum and Ptah with the Genesis account of creation by one God",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:1-3",
+    "Psalm 33:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret details of Genesis 1, such as the unnamed greater and lesser lights and the great sea creatures, as a polemic against pagan worldviews",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:16",
+    "Genesis 1:21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the doctrine of creation out of nothing and contrast it with ancient myths in which the world is formed from preexisting matter or a slain god",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1",
+    "Hebrews 11:3",
+    "Romans 4:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1",
+    "Westminster Shorter Catechism Q9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the ancient idea of the cosmos as a temple and identify temple and rest imagery in the creation account",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:1-3",
+    "Isaiah 66:1-2",
+    "Psalm 132:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the biblical view of nature as an orderly creation distinct from God has been argued to support scientific inquiry",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 19:1-4",
+    "Genesis 8:22",
+    "Jeremiah 33:25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Genesis flood account with the Atrahasis and Gilgamesh flood stories in terms of the reason for the flood and the character of the deity",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 6:5-8",
+    "Genesis 9:8-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a comparison of ancient paganism, biblical theism, and modern materialism on the origin of the world, the nature of the divine, and the purpose of humanity",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:1",
+    "Genesis 1:26-28",
+    "Romans 1:20-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Scripture uses the chaos monster imagery of Leviathan and Rahab differently from its use in ancient Near Eastern mythology",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Psalm 74:13-14",
+    "Job 26:12-13",
+    "Isaiah 27:1",
+    "Isaiah 51:9-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed teaching of God's transcendence and immanence against pantheism and nature worship",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 57:15",
+    "Jeremiah 23:23-24",
+    "Acts 17:24-28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate scholarly explanations for similarities between Genesis and ancient Near Eastern texts in light of the Reformed doctrine of the inspiration of Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Timothy 3:16",
+    "2 Peter 1:21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul applies the doctrine of creation to a pagan audience in his speech at the Areopagus",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Acts 17:22-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Produce an essay explaining how the biblical teaching that every person bears God's image, rather than only the king, dignifies humanity in contrast to ancient Near Eastern thought",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:26-28",
+    "Genesis 9:6",
+    "Psalm 8:3-6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10",
+    "Heidelberg Catechism Q6"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (God as speaking creator, lights not gods, monotheism vs polytheism, human dignity vs slave labor, Enuma Elish, polemic, cosmic temple, science, worldview comparison, chaos monster, transcendence and immanence, human dignity essay). Dropped the affective 'express thanks' objective and recast the 'scary stories' item. Added creation out of nothing, the ancient three-tiered cosmos language, astrology and divination, Egyptian creation accounts, flood narrative comparison, approaches to ANE parallels and inspiration, and Paul's Areopagus speech. Added verse-specific scripture and corrected confession citations.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2113,
+  "output": 4707
+ }
+}

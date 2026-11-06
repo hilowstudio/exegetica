@@ -1,0 +1,404 @@
+{
+ "sub_topic": "BIB.11.10.1",
+ "name": "Existence and Attributes",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Theology Proper: The Doctrine of God"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify God as the one true God who made all things",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "Isaiah 45:5",
+    "Genesis 1:1"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that the things God made show that He is real and great",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 19:1",
+    "Acts 14:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name God as all-powerful and give an example of His power from a Bible story",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 32:17",
+    "Genesis 18:14",
+    "Revelation 19:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name God as all-knowing and give an example of something God knows that people cannot",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 139:1-4",
+    "Psalm 147:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God is present everywhere at the same time",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 139:7-10",
+    "Jeremiah 23:23-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe God as good, loving, and faithful using Bible verses that say so",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 100:5",
+    "1 John 4:8",
+    "Lamentations 3:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that God is spirit and does not have a body like ours",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 4:24",
+    "Luke 24:39",
+    "1 Timothy 1:17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4",
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that God is eternal, having no beginning and no end",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 90:2",
+    "Revelation 1:8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite the Westminster Shorter Catechism definition of God and explain each attribute it names in their own words",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "John 4:24",
+    "Psalm 90:2",
+    "Malachi 3:6",
+    "Exodus 34:6-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare God's holiness with human sinfulness using Isaiah's vision of God",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 6:1-5",
+    "Habakkuk 1:13",
+    "1 Peter 1:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify God's attributes as incommunicable (belonging to God alone) or communicable (reflected in people made in His image) and justify each choice",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 46:9",
+    "Malachi 3:6",
+    "Leviticus 19:2",
+    "Ephesians 4:24"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4",
+    "Westminster Larger Catechism Q7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how creation reveals God's existence and power and why Scripture says this leaves people without excuse",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Romans 1:19-20",
+    "Psalm 19:1-4",
+    "Acts 14:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Belgic Confession Article 2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how God's justice and mercy are both fully true of Him using God's self-description to Moses",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 34:6-7",
+    "Romans 3:25-26",
+    "Psalm 89:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how God's wisdom is displayed in creation and in redemption",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 104:24",
+    "Romans 11:33-36",
+    "1 Corinthians 1:24-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the aseity of God by explaining what it means that God is self-existent and needs nothing from His creatures",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 3:14",
+    "John 5:26",
+    "Acts 17:24-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze what Scripture means by God's omnipotence, including why God cannot lie or deny Himself",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Jeremiah 32:17",
+    "Titus 1:2",
+    "Hebrews 6:18",
+    "2 Timothy 2:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the immutability of God, including passages that describe God as relenting",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Malachi 3:6",
+    "James 1:17",
+    "Numbers 23:19",
+    "1 Samuel 15:29",
+    "Jonah 3:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1",
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the doctrine of divine simplicity and connect it to the unity of God",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "1 John 4:8",
+    "1 John 1:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1",
+    "Belgic Confession Article 1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the biblical teaching of God's infinity and omnipresence from pantheism",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "1 Kings 8:27",
+    "Jeremiah 23:24",
+    "Acts 17:24-28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed doctrine of divine impassibility and interpret biblical passages that describe God with human emotions",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Numbers 23:19",
+    "Hosea 11:8-9",
+    "Genesis 6:6",
+    "Malachi 3:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the incomprehensibility of God and how Scripture's language about God is true though not exhaustive",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Job 11:7-9",
+    "Isaiah 55:8-9",
+    "Psalm 145:3",
+    "Deuteronomy 29:29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the cosmological, teleological, and moral arguments for God's existence in light of Scripture's teaching on general revelation and human suppression of the truth",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Romans 1:18-21",
+    "Psalm 14:1",
+    "Acts 17:24-28",
+    "Hebrews 11:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Belgic Confession Article 2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed position that God can be known truly though not fully",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 17:3",
+    "Deuteronomy 29:29",
+    "1 Corinthians 13:12",
+    "Romans 11:33"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Belgic Confession Article 2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Open Theism against classical theism using biblical teaching on God's knowledge and immutability",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 46:9-10",
+    "Psalm 139:4",
+    "Psalm 147:5",
+    "Malachi 3:6",
+    "James 1:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the transcendence and immanence of God in a written account that draws on key biblical texts",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Isaiah 57:15",
+    "Acts 17:27-28",
+    "Psalm 113:4-6",
+    "Jeremiah 23:23-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an integrated account of the divine perfections that shows how God's attributes cohere in His one simple being",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Exodus 34:6-7",
+    "1 Timothy 1:17",
+    "Psalm 90:2",
+    "Malachi 3:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1",
+    "Westminster Confession of Faith 2.2",
+    "Belgic Confession Article 1",
+    "Westminster Larger Catechism Q7"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (one true God, power and knowledge, omnipresence, spirit, communicable vs incommunicable, holiness, aseity, immutability, simplicity, impassibility, knowability, Open Theism, transcendence and immanence, divine perfections). Dropped the grade 4 infinite and eternal item and the grade 6 omni-categorizing item as restatements, folding eternity into grade 3 and infinity into a grade 9 objective against pantheism. Added the missing existence strand (creation's witness at grade 1, general revelation at grade 5, theistic arguments at grade 10) and missing attributes (goodness, love, faithfulness, justice and mercy, wisdom, the meaning of omnipotence, incomprehensibility) plus a catechism recitation objective. Split omnipotence and omniscience. Left decrees and the Trinity to sibling sub-topics. Normalized confession names, added Belgic Confession Articles 1 and 2 and WCF 1.1, and gave every objective verse-level anchors.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2132,
+  "output": 5359
+ }
+}

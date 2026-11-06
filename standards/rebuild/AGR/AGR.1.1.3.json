@@ -1,0 +1,257 @@
+{
+ "sub_topic": "AGR.1.1.3",
+ "name": "Animal Health, Disease & Biosecurity",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Animal Science",
+  "Animal Anatomy, Physiology & Health"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify signs that an animal is healthy versus signs that it may be sick, such as bright eyes, normal appetite, droopy posture, or coughing",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why washing hands and changing clothes after handling animals helps keep both people and animals healthy",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe simple daily care practices that prevent illness in animals, such as clean pens, fresh water, dry shelter, and watching animals for changes",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how germs can travel between animals through direct contact, air, water, insects, people, and shared equipment",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify common livestock diseases as caused by bacteria, viruses, fungi, parasites, or noninfectious factors",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the life cycle of a common internal or external livestock parasite and identify the stage where control measures can break the cycle",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply biosecurity practices for exhibiting animals at fairs and shows, including health papers, avoiding shared equipment, and isolating animals when they return home",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Investigate how a specific livestock disease spreads and identify the biosecurity practices that limit its transmission",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how vaccination protects individual animals and a whole herd or flock and why following a vaccination schedule matters",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the characteristics of causal agents and vectors of animal diseases, such as ticks, flies, mosquitoes, rodents, and wild birds",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01.04.a"
+   ]
+  },
+  {
+   "text": "Summarize the characteristics of wounds, common diseases, parasites, and physiological disorders in a major livestock species",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01.03.a"
+   ]
+  },
+  {
+   "text": "Explain methods of determining animal health, including visual observation, vital signs, body condition, and laboratory tests such as fecal egg counts",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01.02.a"
+   ]
+  },
+  {
+   "text": "Summarize the importance of biosecurity to the animal industry at the local, state, national, and global levels",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.02.01.a",
+    "AS.07.02"
+   ]
+  },
+  {
+   "text": "Create a health record system for an SAE animal project that tracks observations, vaccinations, deworming, and treatments",
+   "grade": 9,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze a set of livestock symptoms against a reference chart to identify the most likely illness or disorder and an appropriate response",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01.03.b"
+   ]
+  },
+  {
+   "text": "Determine when an animal health concern needs to be referred to a veterinarian or other animal health professional",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01.02.c"
+   ]
+  },
+  {
+   "text": "Analyze the health risk of common zoonotic diseases to humans and identify methods to prevent their transmission",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.02.02.b",
+    "AS.07.02"
+   ]
+  },
+  {
+   "text": "Analyze local, state, and national biosecurity procedures such as premises identification, animal disease traceability, interstate health certificates, and foreign animal disease response",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.02.01.b",
+    "AS.07.02"
+   ]
+  },
+  {
+   "text": "Analyze herd or flock health data to evaluate how well preventive measures are controlling the spread of diseases, parasites, and disorders",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01.04.b"
+   ]
+  },
+  {
+   "text": "Explain how overuse or misuse of antibiotics and dewormers leads to resistance and describe judicious use practices that slow it",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the economic and trade impact of a major animal disease outbreak, such as highly pathogenic avian influenza or African swine fever, on producers and the industry",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.02"
+   ]
+  },
+  {
+   "text": "Design a herd or flock health maintenance and disease prevention plan that includes vaccination, parasite control, and monitoring for a natural or confined environment",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01.04.c",
+    "AS.07.01"
+   ]
+  },
+  {
+   "text": "Design a biosecurity plan for an animal operation that addresses quarantine, sanitation, traffic control, pest control, and recordkeeping",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.02.01.c",
+    "AS.07.02"
+   ]
+  }
+ ],
+ "changes": "I kept all six original competencies. Two were reworded: the grade 4 objective now leaves out feeding, which belongs to Animal Nutrition & Feed Science, and the grade 10 diagnosis objective is now framed as analysis. I changed the grade 6 classification so it no longer centers nutritional deficiency, keeping it on disease causes. I added early hygiene and zoonosis awareness at grade 3 and disease transmission routes at grade 5. I added parasite life cycles and fair and show biosecurity in the middle grades, and vaccination and herd immunity at grade 8. For grades 9 to 12 I added objectives tied to the standards: causal agents and vectors, characteristics of diseases and disorders, health assessment methods, biosecurity importance across levels, referral decisions, zoonotic risk, regulatory biosecurity procedures, and analysis of prevention data. I also added an SAE health record system, antimicrobial resistance, and the economic impact of outbreaks. Treatment administration and welfare were left out because they belong to Veterinary Practices & Animal Welfare.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.03.01.01.a",
+  "AS.07.01",
+  "AS.07.01.02.a",
+  "AS.07.01.02.c",
+  "AS.07.01.03.a",
+  "AS.07.01.03.b",
+  "AS.07.01.03.c",
+  "AS.07.01.04.a",
+  "AS.07.01.04.b",
+  "AS.07.01.04.c",
+  "AS.07.02",
+  "AS.07.02.01.a",
+  "AS.07.02.01.b",
+  "AS.07.02.01.c",
+  "AS.07.02.02.b"
+ ],
+ "usage": {
+  "input": 2417,
+  "output": 3903
+ }
+}

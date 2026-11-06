@@ -1,0 +1,296 @@
+{
+ "sub_topic": "BIB.9.3.9",
+ "name": "Nahum",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Minor Prophets"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Nahum as a prophet God sent with a message about the city of Nineveh",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Nahum 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite Nahum 1:7 and tell what it says God is like for those who trust Him",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Nahum 1:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell in your own words that the LORD is slow to anger and great in power and will not leave the guilty unpunished",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Nahum 1:3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Locate Nineveh on a map as the capital of Assyria and recognize it as the same city Jonah preached to",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Nahum 1:1",
+    "Jonah 3:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main message of each of Nahum's three chapters",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Nahum 1:2-8",
+    "Nahum 2:1-10",
+    "Nahum 3:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that the name Nahum means comfort and describe how his message offered comfort to Judah",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Nahum 1:12-13",
+    "Nahum 1:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Nineveh turned back to wickedness after repenting in Jonah's day by naming the sins listed in Nahum 3",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Jonah 3:10",
+    "Nahum 3:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the images from nature in Nahum 1:3-6 and explain what each shows about God's power",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Nahum 1:3-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the picture of God as a stronghold with the picture of God as an overflowing flood and explain how the same God is refuge to some and judgment to others",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Nahum 1:7-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Assyrian empire's conquest of Israel and threat to Judah as the historical background to Nahum",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "2 Kings 17:5-6",
+    "2 Kings 18:13",
+    "Nahum 1:12-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Nahum and Romans why vengeance belongs to God and how the Reformed tradition teaches believers to respond to wrongs without seeking revenge",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Nahum 1:2",
+    "Romans 12:17-19"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q105"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the poetic devices Nahum uses to portray the siege of Nineveh, such as vivid imagery, rapid commands, the lion metaphor, and the taunt",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Nahum 2:3-10",
+    "Nahum 2:11-13",
+    "Nahum 3:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace how Nahum 1:3 echoes God's self-description in Exodus 34:6-7 and explain which part of that description Nahum emphasizes",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Nahum 1:2-3",
+    "Exodus 34:6-7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Connect Nahum's description of Nineveh's fall to historical records of its destruction in 612 BC such as the Babylonian Chronicle",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Nahum 2:6-10",
+    "Nahum 3:13-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the comparison between Nineveh and Thebes in Nahum 3:8-10 and explain the argument it makes against Nineveh's pride",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Nahum 3:8-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Nahum displays the Reformed doctrine of God's providential rule over the rise and fall of nations",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Nahum 1:12-14",
+    "Daniel 2:21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why God's patience toward the unrepentant eventually ends, using Nahum and Paul's teaching on stored-up wrath",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Nahum 1:3",
+    "Romans 2:4-5"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Jonah and Nahum to show how both books reveal the same God's mercy and justice toward Nineveh",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Jonah 3:10",
+    "Jonah 4:2",
+    "Nahum 1:3",
+    "Nahum 1:7-8"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the use of Nahum 1:15 in Isaiah 52:7 and Romans 10:15 and explain how the announcement of deliverance points forward to the gospel",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Nahum 1:15",
+    "Isaiah 52:7",
+    "Romans 10:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how scholars identify a partial alphabetic acrostic in Nahum 1:2-8 and how its structure frames the poem about God's character",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Nahum 1:2-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate objections to the violent imagery of Nahum and defend the Reformed teaching that God's wrath against cruelty expresses His justice",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Nahum 3:1-4",
+    "Nahum 3:19",
+    "Nahum 1:2-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1",
+    "Heidelberg Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Write an explanation of how Nahum's message of judgment on oppressors brings comfort to God's people and anticipates the final judgment",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Nahum 1:7",
+    "Nahum 1:15",
+    "Nahum 3:19",
+    "Revelation 19:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Nahum's identity, Nineveh after Jonah, slow to anger, stronghold vs flood, siege poetry, character of God, historical records, end of patience, Jonah and Nahum comparison, justice of wrath, comfort to the oppressed). Dropped vague filler ('Name Nineveh again', 'Apply the truth that God judges evil') and merged the overlapping 'defend justice' and 'moral necessity' items into one evaluation. Added missing content: chapter summaries, meaning of Nahum's name, nature imagery in 1:3-6, Assyrian background, vengeance belongs to God, Exodus 34 echo, Thebes comparison, providence over nations, Nahum 1:15 in Isaiah and Romans, the acrostic structure of chapter 1, and a link to final judgment. Added verse-level scripture anchors and confession references (WSC Q4, WCF 2.1, 5.1, 33.2, Heidelberg Q10, Q11, Q105) where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1896,
+  "output": 5596
+ }
+}

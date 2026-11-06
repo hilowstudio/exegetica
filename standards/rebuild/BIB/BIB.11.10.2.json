@@ -1,0 +1,322 @@
+{
+ "sub_topic": "BIB.11.10.2",
+ "name": "God’s Decrees and Sovereignty",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Theology Proper: The Doctrine of God"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify God as the King who rules over all things",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 103:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Jesus says God feeds the birds and clothes the flowers to describe God's care for his creation",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 6:26-30"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall from Scripture that nothing happens by chance apart from God, not even the fall of a sparrow",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Proverbs 16:33",
+    "Matthew 10:29-30"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q1",
+    "Heidelberg Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Joseph and explain how God used his brothers' evil actions for good",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 50:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define providence as God's most holy, wise, and powerful preserving and governing of all his creatures and all their actions",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Colossians 1:17",
+    "Hebrews 1:3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11",
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture that God rules over both good times and hard times",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Job 2:10",
+    "Isaiah 45:7"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q27",
+    "Heidelberg Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the idea of luck or chance with the biblical teaching of providence",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 16:33"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Nebuchadnezzar's confession in Daniel shows God's rule over kings and nations",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 4:34-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed confessions describe the comfort that the doctrine of providence offers believers in suffering",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:28",
+    "Romans 8:31-32"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q28",
+    "Heidelberg Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Define God's decree as his eternal purpose according to the counsel of his will by which he has foreordained whatever comes to pass",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [
+    "Ephesians 1:11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q7",
+    "Westminster Confession of Faith 3.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how God carries out his decrees in the works of creation and providence",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 33:6-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish God's secret decretive will from his revealed moral will using passages that teach each",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 29:29",
+    "1 Thessalonians 4:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the apostles' preaching about the cross holds together God's definite plan and the real guilt of those who crucified Jesus",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:23",
+    "Acts 4:27-28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that God's decree establishes rather than removes the liberty of creatures and the working of second causes, and that God is not the author of sin",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 50:20",
+    "James 1:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.1",
+    "Westminster Confession of Faith 5.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the doctrines of election and predestination as taught in Paul's letters and the Reformed confessions",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 1:4-5",
+    "Romans 8:29-30"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.5",
+    "Canons of Dort 1.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Romans 9 within Paul's argument about God's faithfulness to Israel, including his use of Malachi on Jacob and Esau",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 9:6-16",
+    "Malachi 1:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that election is unconditional and not based on foreseen faith or works",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Romans 9:16",
+    "Ephesians 1:4"
+   ],
+   "confessions": [
+    "Canons of Dort 1.9",
+    "Canons of Dort 1.10",
+    "Westminster Confession of Faith 3.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed confessions state the doctrine of reprobation and why they urge that it be handled with special prudence and care",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Romans 9:22-23",
+    "Deuteronomy 29:29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.7",
+    "Westminster Confession of Faith 3.8",
+    "Canons of Dort 1.15"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a structured summary of the doctrine of the decrees that traces God's eternal purpose through its execution in creation, providence, and redemption",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Ephesians 1:11",
+    "Isaiah 46:9-10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q7",
+    "Westminster Shorter Catechism Q8",
+    "Westminster Confession of Faith 3.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Arminian and Reformed views of election by testing each against key biblical passages",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 6:37-44",
+    "Romans 9:16",
+    "Ephesians 1:4-5"
+   ],
+   "confessions": [
+    "Canons of Dort 1.9",
+    "Canons of Dort 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate major responses to the problem of evil and defend the goodness of God as the Reformed tradition confesses it",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 50:20",
+    "Acts 2:23",
+    "Romans 8:28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a written argument showing how Scripture presents God's sovereignty as a basis for evangelism and prayer rather than a reason to neglect them",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 18:9-10",
+    "John 6:37",
+    "Romans 10:14-15"
+   ],
+   "confessions": [
+    "Canons of Dort 2.5",
+    "Westminster Confession of Faith 5.3"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (God as King, providence, Joseph, luck versus providence, sovereign versus moral will, Romans 9, compatibilism, election, decrees, Arminian versus Reformed, evil, evangelism and prayer). Dropped the near-duplicate 'one who decides what happens' and replaced 'apply trust in God's plan', an inner-experience goal, with explaining the comfort the confessions attach to providence. Added objectives on Daniel 4 and God's rule over nations, the definition of the decree, how God executes his decrees, the cross in Acts as a case of sovereignty and responsibility, unconditional election, and reprobation as confessed with its caution. Moved the decree definition to grade 7, the reading of Romans 9 to grade 10, and placed Romans 9 within Paul's argument about Israel. Corrected confession citations to the standard document names and added Heidelberg Catechism, Canons of Dort, and further Westminster references where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2077,
+  "output": 4591
+ }
+}

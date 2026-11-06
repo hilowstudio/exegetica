@@ -1,0 +1,332 @@
+{
+ "sub_topic": "BIB.2.1.4",
+ "name": "The Kingdom of God: Already and Not Yet",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "Biblical Narrative Structure"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Jesus as the King whom the Bible says rules over all things",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Zechariah 9:9",
+    "Matthew 21:5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the Bible story of Jesus announcing that the kingdom of God has come near",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Mark 1:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Jesus went up to heaven and now reigns at the right hand of God the Father",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Acts 1:9-11",
+    "Ephesians 1:20-22"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q50"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe what the Bible says the world will be like when Jesus returns and makes all things new",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why sadness, sickness, and death still exist even though Jesus is King",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:22-25",
+    "Revelation 21:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the parables of the mustard seed, the leaven, the hidden treasure, and the pearl and state what each teaches about the kingdom",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 13:31-33",
+    "Matthew 13:44-46"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that Christ defeated sin and Satan at the cross while believers still struggle against sin until he returns",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 John 3:8",
+    "Colossians 2:15",
+    "Galatians 5:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of the petition Your kingdom come in the Lord's Prayer using the catechism's answer",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 6:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q102",
+    "Heidelberg Catechism Q123"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the kingdom of God with earthly kingdoms in its king, its people, the way it grows, and how long it lasts",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 2:44",
+    "John 18:36",
+    "Colossians 1:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Old Testament prophecies of an everlasting kingdom and explain how the Gospels present Jesus as their fulfillment",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 9:6-7",
+    "Daniel 7:13-14",
+    "Luke 1:32-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the New Testament teaches about how a person enters the kingdom of God through new birth, repentance, and faith",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Mark 1:15",
+    "John 3:3-5",
+    "Colossians 1:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define the already and not yet of the kingdom and classify New Testament kingdom statements as describing its present or future aspect",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Luke 17:20-21",
+    "Luke 11:20",
+    "Matthew 25:31-34",
+    "1 Corinthians 15:24-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jesus' miracles and exorcisms as signs that the kingdom of God was breaking into the present age",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Matthew 11:2-6",
+    "Matthew 12:28",
+    "Luke 11:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul presents Christ's resurrection as the firstfruits of the coming resurrection and the beginning of the new creation",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:20-23",
+    "2 Corinthians 5:17"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q45"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the New Testament describes the Holy Spirit as the down payment and guarantee of the inheritance still to come",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 1:13-14",
+    "2 Corinthians 1:22",
+    "Romans 8:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the New Testament letters frame believers' present suffering in light of future glory",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Romans 8:18-25",
+    "1 Peter 1:3-7",
+    "2 Corinthians 4:16-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Reformed confessions relate the church to the kingdom, including the visible church as the kingdom of the Lord Jesus Christ",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 16:18-19",
+    "Colossians 1:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching on Christ's kingly office in subduing, ruling, and defending his people and restraining his enemies",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 110:1-2",
+    "1 Corinthians 15:25",
+    "Ephesians 1:22"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26",
+    "Westminster Larger Catechism Q45"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical and confessional teaching on the consummation of the kingdom at Christ's return, the final judgment, and the handing over of the kingdom to the Father",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 25:31-34",
+    "1 Corinthians 15:24-28",
+    "2 Peter 3:10-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1",
+    "Heidelberg Catechism Q52"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblically grounded account of Christian engagement in culture shaped by the already and not yet of the kingdom",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Jeremiah 29:7",
+    "Matthew 5:13-16",
+    "1 Peter 2:11-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the errors of an over-realized view that expects perfection now and an under-realized view that treats the kingdom as wholly future",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 4:8",
+    "2 Timothy 2:17-18",
+    "Philippians 3:12",
+    "Luke 17:20-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend from the Gospels and Acts the spiritual nature of Christ's kingdom against expectations of a political or nationalistic kingdom",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 6:15",
+    "John 18:36",
+    "Acts 1:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the amillennial, postmillennial, and premillennial readings of Revelation 20 and how each relates the present and future kingdom",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 20:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the hope of the final consummation with the call to present faithfulness in a written argument drawn from Scripture and the confessions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Corinthians 15:58",
+    "Titus 2:11-14",
+    "2 Peter 3:11-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.3"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (Jesus as King, present reign, lingering sadness, kingdom parables, sin defeated yet fought, Your kingdom come, kingdoms compared, already and not yet, miracles as signs, resurrection as firstfruits, living between the times, cultural engagement, over-realized error, spiritual kingdom, consummation and faithfulness). Dropped 'Name Heaven as God's home' as off-topic and replaced it with retelling Jesus' kingdom announcement. Added ascension reign, new creation picture, Old Testament kingdom prophecies, entering the kingdom, the Spirit as down payment, church and kingdom in WCF 25.2, Christ's kingly office, consummation and judgment, under-realized error, and millennial views. Anchored each objective to specific verses and confessional articles, with covenant and typology material left to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2019,
+  "output": 5548
+ }
+}

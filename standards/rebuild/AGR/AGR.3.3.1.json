@@ -1,0 +1,256 @@
+{
+ "sub_topic": "AGR.3.3.1",
+ "name": "Agricultural Electricity & Wiring",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Electricity, Plumbing & Structures"
+ ],
+ "grades": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  11
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the basic components of an electrical circuit, including the source, conductor, load, and switch",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify common materials as electrical conductors or insulators and explain why wire is built with both",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the electrical hazards found on farms, such as overhead power lines, wet locations, and damaged cords, and the safe practices that prevent shock and fire",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the relationship between voltage, current, and resistance in a simple circuit",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Diagram a series and a parallel circuit and predict how current and voltage divide in each",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how electricity travels from the utility to farm loads through the transformer, meter, service entrance, and distribution panel",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate the safe use of a multimeter to measure voltage, current, resistance, and continuity",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare volts, amps, watts, and ohms and use Ohm's Law and the power formula to solve for unknown circuit values",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.02.01.a"
+   ]
+  },
+  {
+   "text": "Measure the voltage and amperage draw of operating agricultural loads such as motors, heaters, and lighting using a multimeter and clamp meter",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.02.01.b"
+   ]
+  },
+  {
+   "text": "Calculate the cost of operating an electrical load such as a heat lamp, stock tank heater, or motor from its wattage, hours of use, and utility rate",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.05.02.b"
+   ]
+  },
+  {
+   "text": "Select the appropriate cable type, boxes, connectors, and tools for wiring in dry, damp, and wet agricultural locations",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.05"
+   ]
+  },
+  {
+   "text": "Calculate the wire gauge and circuit breaker size required for a given electrical load and circuit length",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.02.01.c",
+    "PST.04.05"
+   ]
+  },
+  {
+   "text": "Explain the purpose of grounding, bonding, overcurrent protection, and GFCI devices in protecting people, livestock, and buildings",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.05"
+   ]
+  },
+  {
+   "text": "Install single pole switch, three-way switch, and duplex receptacle circuits using correct conductor stripping, termination, and color coding",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.05.02.c",
+    "PST.04.05.02.a"
+   ]
+  },
+  {
+   "text": "Interpret electrical wiring diagrams and standard symbols to plan the installation of a circuit",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.02"
+   ]
+  },
+  {
+   "text": "Contrast the characteristics and functions of electronic components such as batteries, resistors, diodes, transistors, and capacitors",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.02.02.a"
+   ]
+  },
+  {
+   "text": "Identify electrical control components used in agricultural systems, such as relays, contactors, timers, thermostats, and logic controllers, and classify the uses of sensors and controls",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.02.01.a",
+    "PST.03.02.03.a"
+   ]
+  },
+  {
+   "text": "Troubleshoot a faulty circuit by using a wiring diagram and meter readings to locate opens, shorts, and ground faults",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.02",
+    "PST.03.02.01.b"
+   ]
+  },
+  {
+   "text": "Interpret electric motor nameplate data to select a motor and its overload protection for an agricultural application",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.05"
+   ]
+  },
+  {
+   "text": "Build an electrical control circuit, such as a thermostat-controlled ventilation fan or photocell-controlled light, using selected materials and verify its proper operation",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.02.03.c",
+    "PST.03.02.03.b"
+   ]
+  },
+  {
+   "text": "Design and wire a code-compliant branch circuit for a farm outbuilding, including load calculation, grounding, and overload protection",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.02.01.c",
+    "PST.04.05"
+   ]
+  },
+  {
+   "text": "Evaluate an existing barn or shop electrical system for code violations and safety hazards and recommend corrections",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.05"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives as real competencies, lightly expanding the series/parallel, multimeter, wire sizing, and branch circuit items. Added conductors and insulators, farm electrical safety, utility to panel distribution, Ohm's Law and power calculations, load measurement, operating cost, material selection for agricultural locations, grounding and GFCI, switch and receptacle installation, wiring diagrams, electronic components, control components and sensors, troubleshooting, motor selection, control circuit construction, and system evaluation. Left fencing and welding standards unused since they belong to sibling sub-topics or other topics. Objectives below grade 9 carry no standards.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "PST.01.03.02.b",
+  "PST.03.02.01.a",
+  "PST.03.02.01.b",
+  "PST.03.02.01.c",
+  "PST.03.02.02.a",
+  "PST.03.02.03.a",
+  "PST.03.02.03.b",
+  "PST.03.02.03.c",
+  "PST.04.04.05.c",
+  "PST.04.05",
+  "PST.04.05.02.a",
+  "PST.04.05.02.b",
+  "PST.04.05.02.c",
+  "PST.05.02",
+  "PST.05.02.01.a"
+ ],
+ "usage": {
+  "input": 2478,
+  "output": 3406
+ }
+}

@@ -1,0 +1,339 @@
+{
+ "sub_topic": "BIB.10.2.2",
+ "name": "The Dominion Mandate and Christian Vocation",
+ "path": [
+  "Bible & Theology",
+  "Practical Theology & Christian Living",
+  "Family, Vocation, and Stewardship"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God made people to work and that work is a good gift from him",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:15",
+    "Genesis 1:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the things God made during the days of creation and recall that he rested from his work",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:1",
+    "Genesis 2:2-3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify ways Adam was asked to care for the garden and name the animals",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:15",
+    "Genesis 2:19-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God made people in his image and gave them the job of ruling over and caring for the earth and its creatures",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:26-28",
+    "Psalm 8:6-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how people in different jobs in a community serve and help their neighbors",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 22:39",
+    "Galatians 6:10"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q111"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the command in Genesis 1 to be fruitful, fill the earth, subdue it, and have dominion",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Proverbs why diligence in work is wise and laziness is foolish and sinful",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 6:6-11",
+    "Proverbs 10:4"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q142"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of vocation as God's calling to serve him and others in every area of life",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 7:17-24",
+    "Ephesians 4:1"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q141"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how the curse in Genesis 3 brought toil and frustration into work without making work itself evil",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:17-19"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the pattern of six days of work and one day of rest is grounded in God's own work in creation",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:2-3",
+    "Exodus 20:8-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare working to please people or only to earn pay with working heartily as for the Lord",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 3:22-24",
+    "Ephesians 6:5-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish faithful dominion that tends and keeps creation from domination that exploits it",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:15",
+    "Proverbs 12:10",
+    "Leviticus 25:23-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical reasons Christians are called to work, including providing for themselves, serving neighbors, and sharing with those in need",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 4:28",
+    "2 Thessalonians 3:10-12",
+    "1 Thessalonians 4:11-12"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q111"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how human work has value as a reflection of the image of a working God apart from what it earns",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:26-28",
+    "John 5:17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret 1 Corinthians 10:31 in its context and apply it to ordinary tasks of school, home, and work",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "1 Corinthians 10:31",
+    "Colossians 3:17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how God equipped Bezalel and Oholiab for skilled work and apply this example to how gifts relate to a calling",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Exodus 31:1-6",
+    "1 Peter 4:10-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how redemption in Christ renews the purpose of work so that labor done in the Lord is not in vain",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:10",
+    "1 Corinthians 15:58"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jeremiah's letter instructed exiled Israel to seek the welfare of the city through ordinary work and apply its principle to Christians today",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [
+    "Jeremiah 29:4-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Tolkien's concept of sub-creation as an account of human creativity flowing from bearing God's image",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:27",
+    "Exodus 35:30-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a theology of work that traces its place in creation, fall, redemption, and consummation",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:28",
+    "Genesis 3:17-19",
+    "Colossians 3:23-24",
+    "Isaiah 65:21-23",
+    "Revelation 21:24-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the sacred and secular divide in light of the Reformation teaching that every lawful calling can serve God",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 7:17-24",
+    "Colossians 3:17"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q141"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the dignity of all honest labor using the examples of Jesus the carpenter and Paul the tentmaker",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Mark 6:3",
+    "Acts 18:1-3",
+    "2 Thessalonians 3:7-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed understanding of the cultural mandate with other historic Christian views of the relationship between Christ and culture",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:28",
+    "Matthew 5:13-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the cultural mandate and the Great Commission relate as Christians engage culture through their vocations",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 1:28",
+    "Matthew 28:18-20",
+    "Matthew 5:13-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Create a reasoned account of how a chosen field of work can carry out the dominion mandate and serve neighbors",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:28",
+    "Genesis 2:15",
+    "Colossians 3:23-24"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (work as good, God as Worker, care of earth, summary of Genesis 1:28, vocation, motives for work, laziness, intrinsic value, 1 Corinthians 10:31, sub-creation, theology of work, sacred and secular divide, dignity of labor, cultural engagement). Dropped the vague 'observe people helping' in favor of a describable objective on neighbor service. Reframed 'connect skills and talents' around Bezalel and calling to avoid the talent stewardship sibling, and reframed 'money vs God' as motives to avoid the economics sibling. Added objectives on the image of God and dominion, the curse on work, the work and rest pattern, dominion versus exploitation, reasons for working, redemption of work, Jeremiah 29, Christ and culture views, the Great Commission relationship, and a capstone vocational account. Added confessional anchors from the Westminster Standards and Heidelberg Catechism where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1886,
+  "output": 5667
+ }
+}

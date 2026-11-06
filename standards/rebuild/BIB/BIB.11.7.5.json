@@ -1,0 +1,304 @@
+{
+ "sub_topic": "BIB.11.7.5",
+ "name": "The Consequences of Sin",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Hamartiology: The Doctrine of Sin"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from the story of Adam and Eve hiding in the garden that sin separates people from God",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 3:8-10",
+    "Isaiah 59:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how sin brought pain, hard work, and thorns into God's good world",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:16-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name death as the result and wages of sin",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:17",
+    "Romans 6:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how sin broke relationships between people, using Adam blaming Eve and Eve blaming the serpent as an example",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:12-13",
+    "Genesis 3:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that sin makes every person guilty and accountable before God",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Romans 3:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the misery of the fallen estate as loss of communion with God, being under His wrath and curse, the miseries of this life, death, and the pains of hell",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:23-24",
+    "Ephesians 2:3",
+    "Galatians 3:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q19",
+    "Westminster Larger Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between the guilt that makes a sinner liable to punishment and the pollution that defiles the sinner's nature",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:19",
+    "Ephesians 2:1-3",
+    "Isaiah 64:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how the whole created order has been placed under a curse and groans because of human sin",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:17-18",
+    "Romans 8:20-22"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare physical, spiritual, and eternal death as Scripture describes them",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:17",
+    "Ephesians 2:1",
+    "Romans 5:12",
+    "Revelation 20:14-15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture describes fallen people as held captive under the power of Satan and the fear of death",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:2",
+    "2 Timothy 2:26",
+    "Hebrews 2:14-15"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from biblical examples that sin brings real consequences in this life even when the sinner is forgiven",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 6:7-8",
+    "2 Samuel 12:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Romans 1 presents the wrath of God as already revealed in the present through His giving people over to their sinful desires",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 1:18",
+    "Romans 1:24-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the inward punishments of sin such as blindness of mind and hardness of heart from its outward punishments such as the curse on creation and death itself",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 1:28",
+    "Ephesians 4:17-19",
+    "Genesis 3:17-19",
+    "Romans 2:5"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Scripture presents physical death as an enemy and a penalty that entered through sin rather than a natural part of God's original creation",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:12",
+    "1 Corinthians 15:21",
+    "1 Corinthians 15:26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace how Christ's redemptive work answers each consequence of sin, including guilt, curse, death, and wrath",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 3:13",
+    "Romans 5:8-9",
+    "Hebrews 9:22",
+    "1 Corinthians 15:54-57"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q20",
+    "Heidelberg Catechism Q12"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching on hell as everlasting separation from God and conscious punishment, the just penalty for sin",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 25:41",
+    "Matthew 25:46",
+    "2 Thessalonians 1:9",
+    "Mark 9:43-48"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q29",
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish God's fatherly discipline of believers who sin from the penal condemnation that falls on the unrepentant",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 12:5-11",
+    "Romans 8:1",
+    "Psalm 89:30-34"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.5",
+    "Westminster Confession of Faith 17.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a written synthesis organizing the consequences of sin under guilt, corruption, death, and wrath with supporting Scripture and confessional references",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Romans 3:19",
+    "Ephesians 2:1-3",
+    "Romans 6:23",
+    "Romans 1:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.6",
+    "Westminster Shorter Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate universalism and annihilationism against the biblical teaching on final judgment",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 25:46",
+    "Revelation 14:11",
+    "Revelation 20:10",
+    "Romans 2:5-8",
+    "John 3:36"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed position that eternal punishment is just because sin is committed against the infinite majesty and holiness of God",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Romans 2:5-8",
+    "2 Thessalonians 1:6-9",
+    "Habakkuk 1:13"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q10",
+    "Heidelberg Catechism Q11",
+    "Westminster Larger Catechism Q152",
+    "Westminster Shorter Catechism Q84"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies on separation, death, guilt, the misery of the fallen estate, guilt and pollution, kinds of death, wrath in Romans 1, inward and outward punishments, death as penalty, hell, the fourfold synthesis, universalism and annihilationism, and the justice of eternal punishment. Replaced the vague grade 3 sorrow item with a concrete Genesis 3 retelling at grade 1, and merged the grade 6 cross item and grade 12 synthesis into one objective tracing how Christ answers each consequence. Added missing competencies on broken human relationships, the curse on creation, bondage to Satan, temporal consequences of forgiven sin, and fatherly discipline versus condemnation. Corrected confessional anchors to WLC Q27, Q28, Q29, WCF 6.6, 11.5, 17.3, 33.2, and Heidelberg Q10 to Q12, and kept origin, depravity, and gravity of sin for the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2172,
+  "output": 5399
+ }
+}

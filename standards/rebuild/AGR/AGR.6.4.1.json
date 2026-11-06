@@ -1,0 +1,260 @@
+{
+ "sub_topic": "AGR.6.4.1",
+ "name": "Outdoor Recreation & Safety",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Natural Resources & Environmental Science",
+  "Outdoor Skills & Creation Care"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Name items that belong in a basic outdoor safety kit, such as water, a hat, sunscreen, and a whistle",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why outdoor helpers stay with a buddy and a trusted adult and what to do if separated from the group",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common outdoor hazards in the local area, such as poison ivy, ticks, stinging insects, and venomous snakes",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the safety rules for a common outdoor activity, such as hiking, fishing, or camping",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain basic water safety rules, including wearing a properly fitted life jacket on and near the water",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate the safe handling, passing, and storage of a pocketknife and other basic camp tools",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the seven Leave No Trace principles and give an outdoor example of each",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate how to read a trail map and use a compass to plan and follow a safe route outdoors",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Tie and use basic outdoor knots, such as the square knot, bowline, and two half hitches, for camp and shelter tasks",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate safe campfire site selection, building, tending, and complete extinguishing",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use a GPS unit or mapping app together with a topographic map to locate and record waypoints",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how to prepare for and respond to weather hazards such as lightning, flash floods, and high winds during an outdoor outing",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate basic first aid for common outdoor injuries, such as cuts, blisters, sprains, and insect stings",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recognize the signs of heat exhaustion, heat stroke, dehydration, and hypothermia and describe the proper field response to each",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate hunter education firearm and archery safety practices, including safe carries, zones of fire, and tree stand safety",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.03.04"
+   ]
+  },
+  {
+   "text": "Explain the state hunting, fishing, and boating license and safety requirements and how they protect participants and wildlife",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.03.01.01.b",
+    "NRS.02.01"
+   ]
+  },
+  {
+   "text": "Select and inspect personal protective and safety gear, such as life jackets, blaze orange, helmets, and harnesses, for proper fit and condition",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.03.04"
+   ]
+  },
+  {
+   "text": "Apply Leave No Trace principles while planning a multi-day outdoor recreation trip",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.04",
+    "FPS.04.01.01.a"
+   ]
+  },
+  {
+   "text": "Describe the economic impact of outdoor recreation such as hunting, fishing, and agritourism on local and state economies",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.04.02.a"
+   ]
+  },
+  {
+   "text": "Assess options for improving the sustainability of a local outdoor recreation site based on resource impact and likelihood of user acceptance",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.03.01.07.b"
+   ]
+  },
+  {
+   "text": "Recommend changes that make an outdoor recreation activity more sustainable while keeping it accessible and equitable for all participants",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.03.01.07.c"
+   ]
+  },
+  {
+   "text": "Evaluate management techniques, such as trail design, access control, and habitat improvement, for improving outdoor recreation opportunities on public or private land",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.01.05.b"
+   ]
+  },
+  {
+   "text": "Manage the planning and risk assessment for a group outdoor excursion, including gear, route, weather contingencies, and emergency procedures",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.03.02",
+    "FPS.03.03.04.c"
+   ]
+  },
+  {
+   "text": "Develop a safety and compliance checklist to evaluate an outdoor recreation enterprise or SAE, such as a guiding or hunting lease operation, against required regulations",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.03.01.02.c",
+    "FPS.03.02.01.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six original competencies, rewording a few for precision. Added a buddy system objective at grade 2, local hazards, water safety, knife safety, Leave No Trace basics, knots, campfire safety, GPS navigation, first aid, and heat and cold illness for the younger grades. For high school, added hunter education safety, licensing and safety requirements, protective gear inspection, the economics of outdoor recreation, recreation sustainability and management assessments, and an SAE compliance checklist. Each high school objective is anchored to the matching AFNR codes, and stewardship theology, policy ethics, and careers are left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.08.02.01.a",
+  "FPS.03.01",
+  "FPS.03.01.01.b",
+  "FPS.03.01.02.c",
+  "FPS.03.02",
+  "FPS.03.02.01.c",
+  "FPS.03.03.04.c",
+  "FPS.03.04",
+  "FPS.04",
+  "FPS.04.01.01.a",
+  "NRS.02.01",
+  "NRS.02.04.02.a",
+  "NRS.03.01.07.b",
+  "NRS.03.01.07.c",
+  "NRS.04.01.05.b"
+ ],
+ "usage": {
+  "input": 2489,
+  "output": 3825
+ }
+}

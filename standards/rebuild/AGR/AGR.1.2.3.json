@@ -1,0 +1,216 @@
+{
+ "sub_topic": "AGR.1.2.3",
+ "name": "Breeding Systems & Artificial Insemination",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Animal Science",
+  "Genetics, Reproduction & Breeding"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that farmers choose which male and female animals are mated to produce baby animals",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe why farmers choose particular male and female animals to breed together to get young with traits they want",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish purebred animals from crossbred animals using familiar livestock breed examples",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how artificial insemination differs from natural service in process and in the number of offspring one sire can produce",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how crossbreeding produces hybrid vigor in traits such as growth, fertility, and offspring survival",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify natural and artificial breeding methods including pasture breeding, hand mating, artificial insemination, estrous synchronization, embryo transfer, and cloning",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.01.a"
+   ]
+  },
+  {
+   "text": "Describe the process and equipment used in artificial insemination from semen collection, evaluation, and extension through liquid nitrogen storage and straw thawing",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.02.a"
+   ]
+  },
+  {
+   "text": "Evaluate purebreeding systems such as inbreeding, linebreeding, outcrossing, and grading up based on their effects on uniformity, homozygosity, and inbreeding depression",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.01.c"
+   ]
+  },
+  {
+   "text": "Compare crossbreeding systems such as two-breed rotation, terminal sire, and composite programs for heterosis retained and use of maternal and paternal breeds",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.01.c"
+   ]
+  },
+  {
+   "text": "Demonstrate artificial insemination technique on a reproductive tract model including tank handling, straw thawing, gun loading, and semen placement in the uterine body",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.02.b"
+   ]
+  },
+  {
+   "text": "Determine bull-to-female ratios and breeding season length for natural service and use breeding soundness exam results to select herd sires",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.01.01.c"
+   ]
+  },
+  {
+   "text": "Select artificial insemination sires from a sire directory to meet a breeding goal such as calving ease for first-calf heifers",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.02.c",
+    "AS.04.03.04.a"
+   ]
+  },
+  {
+   "text": "Explain how superovulation, flushing, and embryo transfer multiply the offspring of a genetically superior female",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.01.a"
+   ]
+  },
+  {
+   "text": "Apply estrous synchronization protocols and heat-detection methods to plan a timed artificial insemination breeding program",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.03.c"
+   ]
+  },
+  {
+   "text": "Calculate the economic return of natural service versus artificial insemination using bull ownership costs, semen and labor costs, and calf value",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate the effectiveness of an artificial insemination program using breeding records to calculate conception rate and cost per pregnancy",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.02.c"
+   ]
+  },
+  {
+   "text": "Evaluate the costs, genetic benefits, and labor demands of artificial insemination and embryo transfer compared with natural service for a given operation",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.01.c"
+   ]
+  },
+  {
+   "text": "Create a breeding plan for a herd or SAE enterprise that specifies the mating system, synchronization protocol, AI or embryo transfer use, cleanup sire, and target calving or farrowing season",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.03.c",
+    "AS.04.02.02.c"
+   ]
+  }
+ ],
+ "changes": "Replaced the grade 2 family-group objective, which was off topic, with one on farmers choosing mates. Kept and reworded the grade 4, 6, 10 (moved to 11), and 12 objectives. Moved semen collection and storage to grade 9 and expanded it to cover the full AI process. Added objectives on purebred versus crossbred animals, hybrid vigor, identifying breeding methods, evaluating purebreeding systems, comparing crossbreeding systems, hands-on AI technique, natural service management with breeding soundness exams, AI sire selection, embryo transfer, economic calculations, evaluating AI programs from records, and an SAE breeding plan capstone. Heredity, EPD theory, reproductive anatomy and cycles, and evaluation are left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.04.01.01.c",
+  "AS.04.02.01.c",
+  "AS.04.02.02.c",
+  "AS.04.02.04.b",
+  "AS.04.02.04.c",
+  "AS.04.03.01.a",
+  "AS.04.03.01.b",
+  "AS.04.03.01.c",
+  "AS.04.03.02.a",
+  "AS.04.03.02.b",
+  "AS.04.03.02.c",
+  "AS.04.03.03.c",
+  "AS.04.03.04.a",
+  "BS.03.04",
+  "BS.03.04.01.a"
+ ],
+ "usage": {
+  "input": 2378,
+  "output": 3724
+ }
+}

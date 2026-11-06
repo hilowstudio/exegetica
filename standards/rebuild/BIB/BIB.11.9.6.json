@@ -1,0 +1,336 @@
+{
+ "sub_topic": "BIB.11.9.6",
+ "name": "Sanctification",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Soteriology: The Doctrine of Salvation"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God makes His people holy and helps them grow to be more like Jesus",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "1 Thessalonians 4:3",
+    "1 Peter 1:15-16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q35"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the Holy Spirit as the one who helps God's people grow in holiness",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Galatians 5:22-23",
+    "Philippians 2:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that holy means set apart for God and that God calls His people to be holy because He is holy",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "1 Peter 1:15-16",
+    "Leviticus 11:44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "List the fruit of the Spirit and give an everyday example of each one",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 5:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite the Westminster Shorter Catechism definition of sanctification and explain its key phrases in your own words",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "2 Thessalonians 2:13",
+    "Ephesians 4:23-24"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q35"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition teaches that growth in holiness continues throughout life and is not completed in this life",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 3:12-14",
+    "1 John 1:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what Scripture means by dying to sin and living to righteousness",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 6:11-13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q35",
+    "Westminster Confession of Faith 13.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition teaches that believers do good works as the fruit of faith and gratitude rather than to earn salvation",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:8-10",
+    "Titus 2:11-14"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q86",
+    "Westminster Confession of Faith 16.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare justification as a once-for-all act of God with sanctification as an ongoing work of God",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:1",
+    "2 Corinthians 3:18"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33",
+    "Westminster Shorter Catechism Q35",
+    "Westminster Larger Catechism Q77"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply the command to put off the old self and put on the new self to concrete situations in school and family life",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Ephesians 4:22-24",
+    "Colossians 3:5-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how God's working and the believer's working relate in sanctification using Philippians 2:12-13",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 2:12-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition understands God's moral law as a rule of life that guides believers in holy living",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:1-17",
+    "Romans 7:12",
+    "Psalm 119:105"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish definitive sanctification as a decisive break with sin's dominion from progressive sanctification as lifelong growth",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 6:11",
+    "Romans 6:4-6",
+    "2 Corinthians 3:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how sanctification extends to the whole person including mind, will, affections, and body",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "1 Thessalonians 5:23",
+    "Romans 12:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Romans 7 and Galatians 5 to describe the ongoing conflict between the Spirit and the flesh in the believer",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 7:15-25",
+    "Galatians 5:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.2",
+    "Westminster Confession of Faith 13.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Romans 6 grounds sanctification in the believer's sharing in Christ's death and resurrection",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 6:4-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Word, prayer, sacraments, and fellowship serve as ordinary means God uses in sanctification",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "John 17:17",
+    "Acts 2:42",
+    "1 Peter 2:2"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q88"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical account of the mortification of sin that identifies the Spirit's power and the practical means Scripture commands",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Romans 8:13",
+    "Colossians 3:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition teaches that believers' good works remain imperfect yet are accepted by God through Christ",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 64:6",
+    "1 Peter 2:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.5",
+    "Westminster Confession of Faith 16.6",
+    "Heidelberg Catechism Q62"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate perfectionism and antinomianism as opposite errors in light of Scripture and the Reformed confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 John 1:8",
+    "Romans 6:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.2",
+    "Westminster Confession of Faith 19.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Scripture the necessity of holiness in the Christian life",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 12:14",
+    "1 Thessalonians 4:3-7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed distinction between justification and sanctification with the Roman Catholic view of justification as infused righteousness",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Romans 4:4-5",
+    "Philippians 3:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Westminster Larger Catechism Q77"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the biblical teaching on sanctification into an account of growth toward conformity to the image of Christ",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 8:29",
+    "2 Corinthians 3:18",
+    "Colossians 3:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q35",
+    "Westminster Confession of Faith 13.3"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (God makes His people holy, Spirit as helper, lifelong growth, WSC Q35 summary, dying to sin, justification vs sanctification, put off/put on, definitive vs progressive, Spirit vs flesh, Romans 6 basis, means of grace, mortification, perfectionism vs antinomianism, necessity of holiness, image of Christ). Replaced the vague grade 2 'turn away from sin' (overlaps Conversion) with the meaning of holiness, and recast 'observe' as an assessable explanation. Added fruit of the Spirit, good works as gratitude, imperfect good works accepted in Christ, God's working and ours in Philippians 2, the law as rule of life, sanctification of the whole person, and a comparison with the Roman Catholic view. Corrected confession citations to full document names and added WSC Q33, Q88, WLC Q77, WCF 11, 16, 19.6, and Heidelberg Q62 and Q86 where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2193,
+  "output": 4930
+ }
+}

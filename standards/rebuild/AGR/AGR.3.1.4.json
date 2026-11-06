@@ -1,0 +1,228 @@
+{
+ "sub_topic": "AGR.3.1.4",
+ "name": "Woodworking & Construction",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Shop Safety, Tools & Fabrication"
+ ],
+ "grades": [
+  5,
+  6,
+  7,
+  8,
+  10,
+  11
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify common lumber species, nominal and actual dimensions, and grades used in agricultural construction",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Measure to the nearest sixteenth of an inch and mark square layout lines on lumber using a tape measure, combination square, and pencil",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how grain direction, moisture content, and defects such as knots, checks, and warp affect the strength and use of a board",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common wood joints such as butt, lap, dado, rabbet, and mortise and tenon and describe where each is used",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Select appropriate nails, screws, bolts, and wood adhesives for a given joint and explain the choice",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate the board footage and quantity of materials needed for a simple wood-framed project",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret a simple project drawing by reading its views, scale, and dimensions",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Cut, join, and fasten a simple wood project so that its finished dimensions match the drawing within a stated tolerance",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Draw a project plan showing joints, fasteners, and dimensions before beginning construction",
+   "grade": 8,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Prepare and apply a wood finish by sanding in sequence and choosing a stain, paint, or sealer suited to indoor or outdoor exposure",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Select pressure-treated, naturally rot-resistant, or untreated lumber for a project based on ground contact, moisture, livestock exposure, and material quality",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04.01.c"
+   ]
+  },
+  {
+   "text": "Explain how sills, studs, joists, rafters, headers, and trusses carry and transfer loads in a wood-framed agricultural building",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify and select the tools and equipment needed for each stage of a wood construction project",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.03.02.a",
+    "PST.04.03.02.b",
+    "PST.01.02.02.a"
+   ]
+  },
+  {
+   "text": "Analyze a set of project plans to prepare a complete bill of materials",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.02.01.b"
+   ]
+  },
+  {
+   "text": "Prepare a cost estimate including materials and labor for a wood agricultural structure",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.02.01.c"
+   ]
+  },
+  {
+   "text": "Lay out a building site by squaring corners with the 3-4-5 method, setting batter boards, and establishing level",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.03.01.a",
+    "PST.04.03.01.b",
+    "PST.04.03.01.c"
+   ]
+  },
+  {
+   "text": "Construct a load-bearing wood structure such as a feeder, hay rack, or shed by following plans and applying appropriate framing and fastening methods",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04",
+    "PST.04.04.03.c",
+    "PST.04.03.02.c"
+   ]
+  },
+  {
+   "text": "Design an agricultural wood structure using the design process and produce its plans and bill of materials",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.01.01.c"
+   ]
+  },
+  {
+   "text": "Manage a small-group construction project from plan to finished structure by sequencing tasks and checking work against specifications",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04"
+   ]
+  },
+  {
+   "text": "Evaluate an existing farm wood structure for rot, damage, and structural weakness and recommend a repair or maintenance plan",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04"
+   ]
+  }
+ ],
+ "changes": "Kept and lightly reworded the lumber identification, board footage, project plan, load-bearing construction, and project management objectives. Dropped the circular, miter, and table saw operation objective because it belongs to the Hand & Power Tools and Agricultural Shop Safety siblings. Added missing woodworking competencies: measuring and layout, wood properties and defects, joint identification, fastener and adhesive selection, reading drawings, building to tolerance, finishing, treated lumber selection, framing load paths, tool selection for construction stages, bill of materials, cost estimating, site layout, structure design, and evaluating and repairing existing structures. AFNR standards are attached only from grade 9 up where the objective teaches them. Welding blueprint and timber stand standards were left unused as off-topic.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "NRS.04.01.02.c",
+  "PST.01.02.02.a",
+  "PST.01.03.03.a",
+  "PST.04.01.01.c",
+  "PST.04.02.01.b",
+  "PST.04.02.01.c",
+  "PST.04.03.01.a",
+  "PST.04.03.01.b",
+  "PST.04.03.01.c",
+  "PST.04.03.02.a",
+  "PST.04.03.02.b",
+  "PST.04.03.02.c",
+  "PST.04.04",
+  "PST.04.04.01.c",
+  "PST.04.04.03.c"
+ ],
+ "usage": {
+  "input": 2438,
+  "output": 3438
+ }
+}

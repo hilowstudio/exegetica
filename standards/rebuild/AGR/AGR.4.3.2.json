@@ -1,0 +1,227 @@
+{
+ "sub_topic": "AGR.4.3.2",
+ "name": "Marketing, Advertising & Branding",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agribusiness & Marketing",
+  "Sales, Marketing & Communication"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify ways a farm or agricultural business tells people about its products",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why farmers and agricultural businesses need to market their products to consumers",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the four P's of marketing (product, price, place, and promotion) using a local agricultural product as an example",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how packaging and labels help promote an agricultural product to shoppers",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish between direct marketing outlets such as farmers markets, roadside stands, and CSAs and commodity marketing through elevators and sale barns",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the target market for an agricultural product based on consumer age, location, interests, and buying habits",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare advertising methods used by agricultural businesses, such as signage, print, radio, and social media",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how a brand name, logo, and slogan build customer recognition and loyalty for an agricultural business",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain marketing principles used in AFNR businesses, including the four P's and the attention, interest, desire, and action model",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.01.a"
+   ]
+  },
+  {
+   "text": "Define marketing strategies used by AFNR businesses, such as Internet sales, direct to customer sales, and social media promotion",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.02.a"
+   ]
+  },
+  {
+   "text": "Analyze how market conditions, competition, and price influence the marketing decisions of an agribusiness",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.01"
+   ]
+  },
+  {
+   "text": "Compare and contrast marketing strategies for agricultural products and services, including conventional, commodity, niche, and locally grown markets",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.02.b",
+    "AS.01.02.02.a"
+   ]
+  },
+  {
+   "text": "Apply branding principles to design a logo and message that represent an agricultural product or SAE enterprise",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the purpose, components, and development process of a marketing plan for an AFNR business",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.03.a"
+   ]
+  },
+  {
+   "text": "Assess alternative marketing strategies such as value-adding, branding, and niche marketing for an SAE or local agribusiness",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.01.b"
+   ]
+  },
+  {
+   "text": "Perform a market analysis that examines competitors, customers, and regulations affecting an agricultural product",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.03.b"
+   ]
+  },
+  {
+   "text": "Develop criteria for evaluating marketing strategies used for agricultural products and services",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.02.c"
+   ]
+  },
+  {
+   "text": "Evaluate the effectiveness of an existing marketing plan or campaign for an agricultural product or business",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate agricultural advertising claims and label terms such as natural, organic, and locally grown for accuracy and honesty",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Develop a complete marketing plan for an agribusiness or SAE enterprise that includes market analysis, branding, advertising, and promotion",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03",
+    "ABS.05",
+    "AS.01.02.02.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six original objectives, rewording some and aligning the upper-grade ones to AFNR codes. Added foundational objectives for grades 5 to 8: why farms market, packaging as promotion, direct versus commodity marketing, target markets, and how brands build recognition. Added high school objectives tied to specific ABS.05.03 standards: marketing principles including the AIDA model, defining strategies, the market, competition and price context, comparing market types, summarizing marketing plans, assessing alternative strategies, market analysis, and evaluation criteria. Also added an objective on honesty in advertising claims. Sales, product development, and media production were left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.05",
+  "ABS.05.01",
+  "ABS.05.02.02.b",
+  "ABS.05.03",
+  "ABS.05.03.01.a",
+  "ABS.05.03.01.b",
+  "ABS.05.03.01.c",
+  "ABS.05.03.02.a",
+  "ABS.05.03.02.b",
+  "ABS.05.03.02.c",
+  "ABS.05.03.03.a",
+  "ABS.05.03.03.b",
+  "AS.01.02.02.a",
+  "AS.01.02.02.c",
+  "FPP.04.01.02.c"
+ ],
+ "usage": {
+  "input": 2507,
+  "output": 2930
+ }
+}

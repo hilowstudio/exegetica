@@ -1,0 +1,234 @@
+{
+ "sub_topic": "AGR.4.3.3",
+ "name": "Product Development & Value-Added Agriculture",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agribusiness & Marketing",
+  "Sales, Marketing & Communication"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify examples of value-added agricultural products, such as jam, cheese, or baked goods, and name the raw commodity each one comes from",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort a set of agricultural products into raw commodities and value-added products and explain the difference",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the steps in turning a raw agricultural product into a value-added product, such as milk into cheese or apples into cider",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe value-added products made from non-food agricultural and natural resources, such as lumber, wool, leather, compost, or biofuels",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Outline the stages of the product development process from idea generation through research, prototype, testing, and launch",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how processing, packaging, storage, and transport add form, time, and place value to a raw commodity and increase its price",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how value-added enterprises can increase a producer's share of the consumer food dollar and support rural communities",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the regulatory, economic, and creative factors involved in planning and developing a new value-added food product",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.02.a"
+   ]
+  },
+  {
+   "text": "Summarize market demands such as local, organic, and non-GMO and explain how each creates value-added opportunities for producers",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.03.a"
+   ]
+  },
+  {
+   "text": "Identify the food safety, labeling, licensing, and cottage food requirements that apply to selling a value-added food product",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.02.a"
+   ]
+  },
+  {
+   "text": "Explain how biochemical processes such as fermentation, emulsification, and preservation are used to develop value-added food products",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.03.a",
+    "FPP.02.02.03.b"
+   ]
+  },
+  {
+   "text": "Analyze how the quality and grade of a raw commodity affect its suitability and yield for a value-added product",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.01.a",
+    "FPP.03.01.01.b"
+   ]
+  },
+  {
+   "text": "Compare the nutritional value and food constituents of a raw commodity with a value-added product made from it",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01.01.c"
+   ]
+  },
+  {
+   "text": "Analyze the costs and benefits of adding value to a raw agricultural product before selling it compared with selling it as a commodity",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.01.b"
+   ]
+  },
+  {
+   "text": "Assess alternative production systems, such as organic, grass-fed, or pasture-raised, as strategies for adding value to a specific agricultural product",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.02.02.b"
+   ]
+  },
+  {
+   "text": "Conduct a sensory evaluation of a prototype value-added product and use the results to recommend improvements",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate the feasibility of a current or emerging processing technology for improving a value-added food product",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.02.03.c"
+   ]
+  },
+  {
+   "text": "Evaluate a proposed value-added product idea for market demand, production cost, and regulatory requirements",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.01.b",
+    "FPP.02.03.02.a"
+   ]
+  },
+  {
+   "text": "Design a new value-added food product that meets consumer trends, nutritional needs, and regulatory requirements for a specific market",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.02.c",
+    "FPP.04.01.02.c"
+   ]
+  },
+  {
+   "text": "Develop a value-added enterprise plan for a supervised agricultural experience, including processing steps, packaging, pricing, and distribution",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.03.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives, rewording several. Grade 4 now pairs each product with its raw commodity, grade 8 names form, time, and place value, and grade 12 adds distribution and frames the plan as an SAE. Added objectives on sorting raw versus value-added products, non-food value-added products, the stages of product development, and producer share of the food dollar. Further additions cover the regulatory and planning factors, market demands such as local and organic, labeling and cottage food rules, and food biochemistry. The rest address raw commodity quality and grade, nutritional comparison, alternative production systems, sensory evaluation of prototypes, technology feasibility, and full product design. Left branding, advertising, sales, and communication to the sibling sub-topics. Mapped AFNR standards only to grade 9 to 12 objectives they actually teach.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.04.02.02.b",
+  "ABS.05.03.01.b",
+  "FPP.02.01.01.c",
+  "FPP.02.02.03.a",
+  "FPP.02.02.03.b",
+  "FPP.02.03.02.a",
+  "FPP.02.03.02.c",
+  "FPP.03.01.01.a",
+  "FPP.03.01.01.b",
+  "FPP.03.03.03.a",
+  "FPP.03.03.03.b",
+  "FPP.03.03.03.c",
+  "FPP.04",
+  "FPP.04.01.02.c",
+  "FPP.04.02.03.c"
+ ],
+ "usage": {
+  "input": 2366,
+  "output": 3414
+ }
+}

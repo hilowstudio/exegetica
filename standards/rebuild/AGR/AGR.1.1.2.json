@@ -1,0 +1,257 @@
+{
+ "sub_topic": "AGR.1.1.2",
+ "name": "Animal Nutrition & Feed Science",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Animal Science",
+  "Animal Anatomy, Physiology & Health"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Sort common livestock feeds, such as hay, grain, and pasture grass, by the animals that eat them",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why animals need a constant supply of clean, fresh water every day",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish roughages such as hay, pasture, and silage from concentrates such as corn and oats by their appearance, texture, and fiber content",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the six major classes of nutrients animals need: water, protein, carbohydrates, fats, vitamins, and minerals",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the main job of each nutrient class in an animal's body, such as supplying energy, building muscle, or forming bone",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify livestock feeds and feeding strategies as suited to ruminant or monogastric animals",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Group common feedstuffs as roughages, energy concentrates, protein supplements, or mineral and vitamin supplements",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the guaranteed analysis values for crude protein, crude fat, and crude fiber on a commercial feed tag",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Assign a body condition score to a livestock animal and recommend whether its feeding level should increase, decrease, or stay the same",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate the daily feed intake an animal needs based on its body weight and a given feeding rate",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate feed conversion and cost of gain from supervised agricultural experience records of feed fed and weight gained",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the role of each essential nutrient, including specific vitamins and macro and trace minerals, in animal growth and performance",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.01.01.a",
+    "AS.03.01"
+   ]
+  },
+  {
+   "text": "Differentiate the nutrient requirements of animals for maintenance, growth, gestation, lactation, and work across species and production systems",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.01.01.b",
+    "AS.03.01"
+   ]
+  },
+  {
+   "text": "Interpret the components of a feed label and apply its feeding directions to feed a project animal",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.03.02.a",
+    "AS.03.03.02.b"
+   ]
+  },
+  {
+   "text": "Convert feedstuff nutrient values between an as-fed basis and a dry matter basis",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.02"
+   ]
+  },
+  {
+   "text": "Explain how feed processing methods such as grinding, rolling, pelleting, and ensiling affect palatability and nutrient digestibility",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Balance a ration with the Pearson square or a spreadsheet so it meets an animal's protein and energy requirements for its stage of production",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.01.01.c",
+    "AS.03.01"
+   ]
+  },
+  {
+   "text": "Compare feeds using energy measures such as total digestible nutrients and net energy",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.02"
+   ]
+  },
+  {
+   "text": "Evaluate forage quality from a hay or silage test report using values such as crude protein, ADF, NDF, and relative feed value",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.02.01.b",
+    "AS.03.02"
+   ]
+  },
+  {
+   "text": "Evaluate the adequacy of an existing ration using feedstuff analysis, animal requirements, and performance data",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.02.01.b",
+    "AS.03.02"
+   ]
+  },
+  {
+   "text": "Select feedstuffs for a ration based on cost per unit of nutrient, digestive system, nutritional needs, and local availability",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.02.01.c"
+   ]
+  },
+  {
+   "text": "Recommend whether to use feed additives and growth promotants based on scientific evidence, Veterinary Feed Directive rules, production goals, and industry standards",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.02.03.c"
+   ]
+  },
+  {
+   "text": "Design a complete feeding program for a livestock enterprise that balances ration cost, nutrient requirements, and feed availability across production stages",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.01.01.c",
+    "AS.03.02.01.c"
+   ]
+  }
+ ],
+ "changes": "I kept all six existing objectives, rewording two of them lightly. I filled gaps across the grade span: water, roughages versus concentrates, nutrient functions, feedstuff groups, reading feed tags, body condition scoring, feed conversion and cost of gain from SAE records, as-fed versus dry matter conversion, feed processing, energy measures, forage testing, ration evaluation, feedstuff selection, and feed additives with the VFD. The Pearson square ration objective gained a spreadsheet option. I attached AFNR Animal Systems standards only to grade 9 to 12 objectives that teach them. I left out the FPP human-nutrition standards and digestive anatomy, disease, and welfare content because those belong to other sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.03.01",
+  "AS.03.01.01.a",
+  "AS.03.01.01.b",
+  "AS.03.01.01.c",
+  "AS.03.02",
+  "AS.03.02.01.b",
+  "AS.03.02.01.c",
+  "AS.03.02.03.c",
+  "AS.03.03.02.a",
+  "AS.03.03.02.b",
+  "FPP.02.01",
+  "FPP.02.01.01.a",
+  "FPP.02.01.02.a",
+  "FPP.02.01.02.c",
+  "FPP.03.01.04.a"
+ ],
+ "usage": {
+  "input": 2475,
+  "output": 3813
+ }
+}

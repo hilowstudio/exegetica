@@ -1,0 +1,311 @@
+{
+ "sub_topic": "BIB.9.1.9",
+ "name": "Ruth",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Historical Books"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Name Naomi, Ruth, and Boaz as the main people in the book of Ruth and tell one thing each person did",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Ruth 1:1-5",
+    "Ruth 1:14-18",
+    "Ruth 2:8-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall Ruth's promise to go with Naomi and to make Naomi's people and God her own",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Ruth 1:16-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Boaz showed kindness to Ruth while she gathered grain in his field",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Ruth 2:8-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify actions in Ruth's story that show loyal kindness and give examples of similar actions toward family and friends",
+   "grade": 1,
+   "bloom": 3,
+   "scripture": [
+    "Ruth 1:16-17",
+    "Ruth 2:11-12",
+    "Ruth 2:17-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Ruth in order from the famine and Naomi's return to Bethlehem through the birth of Obed",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Ruth 1:1-22",
+    "Ruth 2:1-23",
+    "Ruth 3:1-18",
+    "Ruth 4:1-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how God's law about gleaning provided food for poor people and foreigners like Ruth",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 19:9-10",
+    "Deuteronomy 24:19-22",
+    "Ruth 2:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Obed, the son of Ruth and Boaz, as the grandfather of King David",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Ruth 4:13-17",
+    "Ruth 4:21-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Orpah's choice to return to Moab with Ruth's choice to stay with Naomi using details from the text",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ruth 1:8-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what a kinsman redeemer was in Israel and how Boaz filled that role for Naomi and Ruth",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 25:25",
+    "Ruth 2:20",
+    "Ruth 3:9-13",
+    "Ruth 4:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace how Naomi moves from emptiness and bitterness at her return to fullness at the birth of Obed",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ruth 1:20-21",
+    "Ruth 4:14-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of the Hebrew word hesed and identify where Ruth, Boaz, and the LORD each show it in the book",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ruth 1:8",
+    "Ruth 2:20",
+    "Ruth 3:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate Moab and Bethlehem on a map and explain why Ruth's identity as a Moabite mattered in Israel",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 23:3",
+    "Ruth 1:1-4",
+    "Ruth 2:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect the setting of Ruth to the period of the judges and contrast its faithful characters with the disorder of that time",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Ruth 1:1",
+    "Judges 21:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the literary structure of Ruth by outlining its four scenes and showing how the opening and closing sections mirror each other",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Ruth 1:1-5",
+    "Ruth 4:13-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the levirate marriage custom and how it relates to Boaz's redemption of Elimelech's land and name",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 25:5-10",
+    "Ruth 4:5-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the significance of a Moabite woman appearing in the genealogy of Jesus Christ",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Ruth 4:13-17",
+    "Matthew 1:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the legal proceedings at the city gate including the elders, the witnesses, and the sandal exchange",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Ruth 4:1-12",
+    "Deuteronomy 25:7-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Ruth's place among the Writings in the Hebrew canon and its traditional reading at the Feast of Weeks compared with its place in English Bibles",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ruth 1:22",
+    "Ruth 2:23",
+    "Leviticus 23:15-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Ruth's words and actions present her as a Gentile who takes refuge under the wings of Israel's God",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Ruth 1:16-17",
+    "Ruth 2:12",
+    "Ruth 3:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the ways Boaz as kinsman redeemer foreshadows Christ as the Redeemer of God's people and where the comparison has limits",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Ruth 3:9-13",
+    "Ruth 4:9-10",
+    "Galatians 4:4-5",
+    "Titus 2:14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the book of Ruth displays God's providence working through ordinary events and human choices while rarely describing God acting directly",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Ruth 1:6",
+    "Ruth 2:3",
+    "Ruth 4:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Westminster Confession of Faith 5.3",
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Ruth and related Scripture the Reformed teaching that God's saving purpose includes people from the nations",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 12:3",
+    "Ruth 2:12",
+    "Ruth 4:13-17",
+    "Ephesians 2:11-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the book of Ruth as a bridge from the period of the judges to the Davidic monarchy using its setting and closing genealogy",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Ruth 1:1",
+    "Ruth 4:17-22",
+    "Judges 21:25",
+    "2 Samuel 7:12-16"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (characters, gleaning, David's ancestry, Orpah and Ruth, kinsman redeemer, structure, Moabite in Christ's line, judges timeline, levirate marriage, Boaz as type of Christ, providence, Gentile inclusion, bridge to monarchy). Reframed the friendship application as an observable task of identifying and giving examples of loyal kindness. Merged the Naomi summary into a full ordered retelling. Added Ruth's vow, Boaz's kindness, gleaning law, Naomi's empty to full arc, hesed, Moab geography, the city gate proceedings, canonical placement and Feast of Weeks, and Ruth's refuge under God's wings. Replaced whole-chapter style references with verse ranges, added confessional anchors for providence, Christ as Redeemer, and the catholic church, and noted limits of typology.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1960,
+  "output": 4294
+ }
+}

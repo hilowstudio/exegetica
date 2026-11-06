@@ -1,0 +1,250 @@
+{
+ "sub_topic": "AGR.4.1.4",
+ "name": "Agricultural Law, Taxes & Risk",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agribusiness & Marketing",
+  "Agribusiness Management"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify basic rules that protect people, animals, and property on a farm, such as safety rules, fences, and no-trespassing signs",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify things that can go wrong for a farm family, such as bad weather, animal sickness, injuries, and falling prices",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why governments collect taxes and name taxes a farm commonly pays, such as property tax and sales tax",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe common types of insurance used to protect an agricultural business, such as property, liability, and crop insurance",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify examples of agricultural risk into production, market, financial, legal, and human risk",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of contracts in agricultural transactions, such as land leases and sales agreements",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how government regulations on pesticide use, water quality, animal welfare, and food safety affect agricultural producers",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define and classify the types of taxes paid by agricultural businesses, including income, property, sales, employment, and estate taxes",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.03.a"
+   ]
+  },
+  {
+   "text": "Identify the risks in a personal SAE and select practical ways to reduce each one",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.03",
+    "ABS.04.03.01.c"
+   ]
+  },
+  {
+   "text": "Explain the elements of a legally binding contract and compare common agricultural lease arrangements, such as cash rent, crop share, and flexible leases",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Draft a written agreement for an SAE, such as a land lease or animal care agreement, that states terms, responsibilities, and payment",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain property rights and land use laws that affect agricultural land, such as easements, water rights, mineral rights, zoning, and right-to-farm laws",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze sources of legal liability for an agricultural operation, such as livestock at large, visitor injuries, agritourism, and product liability",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.03.02.b"
+   ]
+  },
+  {
+   "text": "Analyze how property, income, and sales taxes affect an agricultural business's net income",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.03.a"
+   ]
+  },
+  {
+   "text": "Compare crop and livestock insurance options, such as yield protection, revenue protection, and livestock risk protection, for a given operation",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.03.02.b"
+   ]
+  },
+  {
+   "text": "Analyze the reporting requirements and deadlines for income, property, sales, and employment taxes paid by an agricultural business",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.03.b"
+   ]
+  },
+  {
+   "text": "Analyze how depreciation and the timing of a major asset purchase, such as a tractor, affect an agricultural business's taxable income",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.01.02.b"
+   ]
+  },
+  {
+   "text": "Explain the legal and tax obligations of employing agricultural labor, such as wage laws, child labor rules, worker safety requirements, and payroll taxes",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.03.b"
+   ]
+  },
+  {
+   "text": "Explain how estate taxes and legal tools such as wills and trusts affect the transfer of a farm to the next generation",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.03.a"
+   ]
+  },
+  {
+   "text": "Explain how forward contracts, futures hedging, and options reduce price risk for agricultural commodities",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.03",
+    "ABS.04.03.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate risk management strategies, such as insurance, diversification, and hedging, for a given agricultural enterprise",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.03.01.b",
+    "ABS.04.03.01.c",
+    "ABS.04.03.02.b"
+   ]
+  },
+  {
+   "text": "Prepare a comprehensive risk management and contingency plan for an agribusiness that addresses legal liability, tax obligations, production risk, and market risk",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.03",
+    "ABS.04.03.01.c",
+    "ABS.04.03.02.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six original competencies, rewording the grade 12 plan objective as a create-level comprehensive risk and contingency plan. Added early objectives on recognizing farm risks and the purpose of taxes, a classification of the five types of agricultural risk, and regulations affecting producers. Added high school objectives on tax classification and reporting, depreciation and asset purchase timing, employment law and payroll taxes, estate taxes and farm transfer, contract elements and lease types, drafting an SAE agreement, property and land use law, liability sources, insurance product comparison, price risk tools, and SAE risk assessment. Business ownership structures, bookkeeping, and credit were left to sibling sub-topics. Standards were attached only where an objective directly teaches the listed AFNR standard.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.01.01.03.c",
+  "ABS.02.02.03.a",
+  "ABS.02.02.03.b",
+  "ABS.03.01.02.b",
+  "ABS.04.01.02.a",
+  "ABS.04.01.02.b",
+  "ABS.04.02.02.b",
+  "ABS.04.03",
+  "ABS.04.03.01.b",
+  "ABS.04.03.01.c",
+  "ABS.04.03.02.b",
+  "ABS.04.03.02.c",
+  "ABS.05.02.02.c",
+  "ABS.05.03.02.c",
+  "ABS.05.03.03.b"
+ ],
+ "usage": {
+  "input": 2524,
+  "output": 3451
+ }
+}

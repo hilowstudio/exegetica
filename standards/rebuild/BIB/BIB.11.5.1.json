@@ -1,0 +1,332 @@
+{
+ "sub_topic": "BIB.11.5.1",
+ "name": "The Nature of the Church (Visible and Invisible)",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Ecclesiology: The Doctrine of the Church"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the church as God's people rather than a building",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "1 Peter 2:9-10",
+    "1 Corinthians 1:2"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q54"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name believers together as the family of God who belong to one household",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Ephesians 2:19",
+    "Galatians 6:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall from Jesus' words to Peter that Jesus builds His church and keeps it safe",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 16:18"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q54"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe what the first Christians did together when they gathered as the church",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:42-47"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul's picture of the body shows that every member of the church belongs and is needed",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 12:12-27",
+    "Romans 12:4-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Christ as the only head of the church using passages from Paul's letters",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Colossians 1:18",
+    "Ephesians 1:22-23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between the invisible church of all the elect and the visible church of all who profess the true faith",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 2:19",
+    "Ephesians 5:25-27",
+    "1 Corinthians 1:2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.1",
+    "Westminster Confession of Faith 25.2",
+    "Westminster Larger Catechism Q62",
+    "Westminster Larger Catechism Q64"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare a local congregation with the universal or catholic church spread through all times and places",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 1:2",
+    "Revelation 7:9-10",
+    "Ephesians 3:20-21"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q54",
+    "Belgic Confession Article 27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition teaches that the visible church includes the children of believers",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 17:7",
+    "Acts 2:39",
+    "1 Corinthians 7:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe biblical ways members of a local church are called to serve and build one another up",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 10:24-25",
+    "Ephesians 4:15-16",
+    "Romans 12:9-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 26.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze what the biblical images of the church as body, bride, temple, and flock each teach about its nature",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 12:27",
+    "Ephesians 5:25-27",
+    "1 Peter 2:4-5",
+    "John 10:14-16",
+    "Acts 20:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Jesus' parables why the visible church on earth contains both true believers and those who only profess faith",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 13:24-30",
+    "Matthew 13:47-50",
+    "1 John 2:19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the continuity of the one people of God from Israel to the New Testament church",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 19:5-6",
+    "1 Peter 2:9-10",
+    "Romans 11:17-24",
+    "Galatians 3:29",
+    "Galatians 6:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the unity of the church rests on the union of its members with Christ their head",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 4:4-6",
+    "John 17:20-23",
+    "Ephesians 2:19-22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 26.1",
+    "Westminster Larger Catechism Q66"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching on the communion of the saints including the shared gifts and mutual duties of believers",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 12:26",
+    "Acts 2:44-45",
+    "1 John 3:14-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 26.1",
+    "Westminster Confession of Faith 26.2",
+    "Heidelberg Catechism Q55"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the visible and invisible distinction guards against both equating church membership with salvation and dismissing the visible church",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 2:19",
+    "Matthew 7:21-23",
+    "Acts 2:47"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.1",
+    "Westminster Confession of Faith 25.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the confessional teaching that outside the visible church there is no ordinary possibility of salvation and the duty to join it",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:47",
+    "Romans 10:14-17",
+    "Hebrews 10:24-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.2",
+    "Belgic Confession Article 28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed doctrine of the nature of the church with Roman Catholic and broadly individualistic evangelical views",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 16:18",
+    "Colossians 1:18",
+    "Ephesians 4:11-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.6",
+    "Belgic Confession Article 27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claim that a Christian can live faithfully apart from the church using Scripture and the confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 10:24-25",
+    "1 Corinthians 12:21",
+    "Ephesians 4:15-16"
+   ],
+   "confessions": [
+    "Belgic Confession Article 28",
+    "Westminster Confession of Faith 25.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture and the Heidelberg Catechism how Christ gathers, defends, and preserves His church throughout history",
+   "grade": 12,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 16:18",
+    "John 10:27-29",
+    "Ephesians 5:25-27"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q54",
+    "Westminster Confession of Faith 25.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a structured essay presenting a biblical and confessional doctrine of the church as visible and invisible, local and catholic",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Ephesians 1:22-23",
+    "2 Timothy 2:19",
+    "1 Corinthians 1:2",
+    "1 Peter 2:9-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.1",
+    "Westminster Confession of Faith 25.2",
+    "Heidelberg Catechism Q54"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (people not building, family of God, Jesus builds His church, body of Christ, visible and invisible, local and catholic, biblical images, covenant people, union with Christ, communion of saints, individualism, gathering and preserving). Replaced the vague observe objective with a text-based Acts 2 description, and recast the apply call to belong and love as describing biblical duties of members so it no longer targets feelings. Merged the construct and defend items into one evaluation objective and one capstone composition. Added missing competencies: Christ as sole head, children of believers in the visible church, the mixed visible church from the parables, the distinction's role against opposite errors, no ordinary salvation outside the visible church, and comparison with other traditions' views. Narrowed scripture to verse ranges and added precise confessional anchors (WCF 25.1, 25.2, 25.5, 25.6, 26.1, 26.2, 7.6, WLC Q62, Q64, Q66, HC Q54, Q55, Belgic 27, 28). Left marks, government, sacraments, worship, and mission to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2136,
+  "output": 4904
+ }
+}

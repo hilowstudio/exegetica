@@ -1,0 +1,205 @@
+{
+ "sub_topic": "AGR.4.1.1",
+ "name": "Business Ownership & Organization",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agribusiness & Marketing",
+  "Agribusiness Management"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify different ways a farm or agricultural business can be owned, such as by one family or by several people working together",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe what an entrepreneur does and give examples of agricultural entrepreneurs in the local community",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the main types of business ownership used in agriculture, including sole proprietorship, partnership, cooperative, and corporation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how an agricultural cooperative is owned and controlled by its member-patrons, including how patronage refunds are distributed",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the advantages and disadvantages of sole proprietorships, partnerships, and corporations for an agricultural business",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Categorize sole proprietorships, partnerships, cooperatives, limited liability companies, and corporations by ownership, management control, and life of the business",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01.02.a"
+   ]
+  },
+  {
+   "text": "Analyze the characteristics of successful entrepreneurs in agricultural businesses, including FFA members with entrepreneurship SAEs",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01.01.a",
+    "ABS.04.01.01.b"
+   ]
+  },
+  {
+   "text": "Identify management skills and organizational structures used to organize an agribusiness, such as chain of command, boards of directors, and departmental divisions",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.01.03.01.a"
+   ]
+  },
+  {
+   "text": "Analyze how owner liability, taxation of profits, and decision-making control differ across agricultural business ownership structures",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01.02.a"
+   ]
+  },
+  {
+   "text": "Write a statement of purpose and measurable business goals for an agricultural enterprise or entrepreneurship SAE",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.01.02"
+   ]
+  },
+  {
+   "text": "Explain the purpose of a written partnership or operating agreement and identify the key terms it should include for an agricultural business",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.01.03.01.a"
+   ]
+  },
+  {
+   "text": "Compare the governance of an agricultural cooperative with that of an investor-owned corporation, including voting rights, board elections, and distribution of earnings",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01.02.a"
+   ]
+  },
+  {
+   "text": "Analyze business plans for agribusinesses organized under different ownership structures",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01.02.b",
+    "ABS.04.01"
+   ]
+  },
+  {
+   "text": "Evaluate which business ownership structure best fits a given agricultural enterprise based on its size, risk, capital needs, and owner goals",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01"
+   ]
+  },
+  {
+   "text": "Evaluate the successes and failures of agricultural businesses in the global economy in relation to their ownership structure",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01.02.c"
+   ]
+  },
+  {
+   "text": "Design an ownership arrangement for bringing a student or next generation into an SAE or family farm operation, such as a parent and child partnership",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Develop a business plan for a new agribusiness that justifies the chosen ownership structure and organizational design",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04",
+    "ABS.04.01.03.b"
+   ]
+  }
+ ],
+ "changes": "Kept and lightly reworded all six original objectives, adding cooperatives to the grade 6 list and capital needs to the grade 11 evaluation. Merged the grade 12 recommendation into a full business plan objective. Added competencies missing from the old template: entrepreneurship at grades 5 and 9, cooperative ownership and patronage at grade 7, cooperative versus corporate governance at grade 11, LLCs within a grade 9 categorization, organizational structure and management skills, statements of purpose and goals, partnership and operating agreements, analysis of business plans across structures, global successes and failures tied to structure, and an SAE or family farm ownership transition design. Records, credit, and legal, tax, and risk detail were left to the sibling sub-topics. AFNR codes were attached only at grades 9 to 12 and only where the objective teaches the standard.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.01.01",
+  "ABS.01.02",
+  "ABS.01.03.01.a",
+  "ABS.03.01.02.b",
+  "ABS.04",
+  "ABS.04.01",
+  "ABS.04.01.01.a",
+  "ABS.04.01.01.b",
+  "ABS.04.01.02.a",
+  "ABS.04.01.02.b",
+  "ABS.04.01.02.c",
+  "ABS.04.01.03.b",
+  "ABS.05",
+  "ABS.05.03",
+  "ABS.05.03.02.c"
+ ],
+ "usage": {
+  "input": 2400,
+  "output": 3030
+ }
+}

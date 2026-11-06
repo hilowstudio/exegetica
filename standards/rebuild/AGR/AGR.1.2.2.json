@@ -1,0 +1,249 @@
+{
+ "sub_topic": "AGR.1.2.2",
+ "name": "Reproductive Systems & Cycles",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Animal Science",
+  "Genetics, Reproduction & Breeding"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that farm animals are born or hatched as young and grow into adults, and match young and adult livestock pairs such as calf and cow, piglet and sow, lamb and ewe, and chick and hen",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort common farm animals into those that give birth to live young and those that hatch from eggs",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the stages of a livestock animal's life cycle from birth through growth and maturity to producing its own offspring",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use correct industry terms for the newborn, immature female, mature female, intact male, and castrated male of cattle, swine, sheep, goats, and horses",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Label a diagram of the main structures of the male and female reproductive systems of a common livestock species and state the basic job of each structure",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how sperm and egg unite at fertilization and how the embryo develops into a fetus during gestation",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how a hen's reproductive tract forms and lays an egg and contrast it with reproduction in mammals",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the stages of the estrous cycle and identify the behavioral and physical signs of heat in a female animal",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare estrous cycle length and gestation length among cattle, swine, sheep, goats, and horses",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the male and female reproductive organs of ruminant, swine, equine, and avian species and explain how differences in anatomy relate to function",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.01.01.a",
+    "AS.06.01.03.a"
+   ]
+  },
+  {
+   "text": "Explain how age, weight, nutrition, breed, and season influence the onset of puberty and reproductive maturity in male and female livestock",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.01.02.b",
+    "AS.04.01.02.a"
+   ]
+  },
+  {
+   "text": "Explain how reproductive hormones such as FSH, LH, estrogen, progesterone, testosterone, prostaglandin, and oxytocin regulate the estrous cycle, ovulation, pregnancy, and parturition",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Relate the processes of spermatogenesis and oogenesis and the structures of sperm and egg cells to fertility and embryo development",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.02.01.c"
+   ]
+  },
+  {
+   "text": "Explain how photoperiod and seasonal breeding patterns affect the reproductive cycles of sheep, goats, and horses",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.01.02.a"
+   ]
+  },
+  {
+   "text": "Calculate expected due dates from breeding records and species gestation lengths for animals in a livestock enterprise or SAE",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.04.a"
+   ]
+  },
+  {
+   "text": "Describe the stages of parturition, recognize signs of approaching birth, and identify when dystocia requires assistance",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.04.a"
+   ]
+  },
+  {
+   "text": "Analyze the nutrition, housing, and health care needs of breeding stock and newborns during prebreeding, gestation, parturition, and lactation",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.04.b",
+    "AS.04.02.04.a",
+    "AS.03.01.01.b"
+   ]
+  },
+  {
+   "text": "Explain common methods of pregnancy diagnosis in livestock, including rectal palpation, ultrasound, and blood or milk tests, and the advantages of each",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate breeding animals for reproductive readiness and soundness using body condition score, scrotal circumference, semen quality, and breeding soundness exam results",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.01",
+    "AS.04.01.02.c",
+    "AS.04.01.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate common reproductive disorders such as retained placenta, cystic ovaries, prolapse, and infectious causes of abortion and recommend prevention or treatment",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.01.03.b"
+   ]
+  },
+  {
+   "text": "Evaluate reproductive records such as conception rate, calving or farrowing interval, and weaning percentage to recommend management changes that improve reproductive efficiency",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.01.02.a"
+   ]
+  },
+  {
+   "text": "Create a reproductive management plan for a breeding herd or SAE that differentiates care of females, males, and offspring across each reproductive stage",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.04.c",
+    "AS.04.02.04.b"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing competencies, rewording several (the grade 2 pairs now use livestock terms, grade 6 diagram adds function, grade 10 due date ties to SAE records, grade 12 records evaluation broadened to multiple species). Added competencies missing from the old template: live birth versus hatching, livestock sex and age terminology, fertilization and gestation, avian reproduction, species comparison of cycle and gestation lengths, comparative anatomy across species, puberty and maturity factors, reproductive hormones, gametogenesis, seasonal breeding, parturition and dystocia, care of breeding stock by stage, pregnancy diagnosis, breeding soundness evaluation, reproductive disorders, and a capstone reproductive management plan. Left estrous synchronization, AI, and breeding methods to Breeding Systems & Artificial Insemination, inheritance to Principles of Heredity & Selection, and conformation judging to Livestock Evaluation & Judging. AFNR codes are applied only from grade 9 up where the objective directly teaches the standard.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.03.01.01.b",
+  "AS.04.01",
+  "AS.04.01.01.a",
+  "AS.04.01.01.c",
+  "AS.04.01.02.a",
+  "AS.04.01.02.b",
+  "AS.04.01.02.c",
+  "AS.04.01.03.b",
+  "AS.04.02.04.a",
+  "AS.04.02.04.b",
+  "AS.04.02.04.c",
+  "AS.04.03.01.c",
+  "AS.04.03.03.c",
+  "AS.06.01.03.a",
+  "AS.06.02.01.c"
+ ],
+ "usage": {
+  "input": 2379,
+  "output": 3865
+ }
+}

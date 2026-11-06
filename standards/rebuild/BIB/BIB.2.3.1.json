@@ -1,0 +1,396 @@
+{
+ "sub_topic": "BIB.2.3.1",
+ "name": "The Pentateuch (Torah): Law and Foundation",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "Old Testament Overview"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Name the five books of the Pentateuch in order",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 24:44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the creation account in the order of the six days and the seventh day of rest",
+   "grade": 0,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1-2:3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the main events in the lives of Abraham, Isaac, Jacob, and Joseph",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Genesis 22:1-14",
+    "Genesis 28:10-15",
+    "Genesis 50:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Moses as the leader God called to bring Israel out of Egypt and to give them his law",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 3:1-10",
+    "Deuteronomy 34:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the Exodus account including the plagues, the Passover, and the crossing of the Red Sea",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 12:1-13",
+    "Exodus 14:21-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite the Ten Commandments in order",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 20:1-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q41"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that the Hebrew word Torah means instruction or law and that it names the first five books of the Bible",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 4:44",
+    "Deuteronomy 31:9-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the fall of Adam and Eve and the first promise of a Savior given in Genesis",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:1-15"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q15",
+    "Westminster Confession of Faith 7.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main content and storyline of each book of the Pentateuch",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1",
+    "Exodus 19:1-6",
+    "Leviticus 1:1-2",
+    "Numbers 1:1-3",
+    "Deuteronomy 1:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of the tabernacle as the place where God chose to dwell among his people",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 25:8-9",
+    "Exodus 40:34-38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the preface to the Ten Commandments shows that God gave his law to a people he had already redeemed",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:1-2"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q44",
+    "Westminster Larger Catechism Q101"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the narrative sections of Genesis with the law sections of Leviticus in form and purpose",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 22:1-14",
+    "Leviticus 19:1-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the wilderness wanderings and explain from the text why Israel spent forty years in the desert",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 14:20-35",
+    "Deuteronomy 8:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of the Shema and its command to love God and teach his words to the next generation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 6:4-9",
+    "Mark 12:29-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the covenant identity God gave Israel at Sinai as his treasured possession and a kingdom of priests",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 19:4-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the promises of land, offspring, and blessing given to Abraham through their partial fulfillment in the nation of Israel",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Genesis 15:5-6",
+    "Genesis 17:7-8",
+    "Exodus 2:24",
+    "Exodus 6:2-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the structure of Deuteronomy in light of ancient suzerain vassal treaties",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 1:1-5",
+    "Deuteronomy 4:44",
+    "Deuteronomy 29:1",
+    "Deuteronomy 30:15-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the moral, ceremonial, and judicial laws of the Pentateuch as the Reformed tradition classifies them",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Leviticus 18:5",
+    "Deuteronomy 10:12-13",
+    "Hebrews 10:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.3",
+    "Westminster Confession of Faith 19.4",
+    "Westminster Confession of Faith 19.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the holiness theme of Leviticus and explain how the New Testament applies it to God's people in Christ",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Leviticus 11:44-45",
+    "Leviticus 19:2",
+    "1 Peter 1:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of the main offerings in the Levitical sacrificial system",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 1:1-9",
+    "Leviticus 17:11",
+    "Hebrews 9:22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the rituals of the Day of Atonement and how Hebrews presents them as fulfilled in Christ",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 16:1-34",
+    "Hebrews 9:11-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Passover as a type that the New Testament applies to Jesus as the Lamb of God",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 12:1-13",
+    "John 1:29",
+    "1 Corinthians 5:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a timeline of the major events of the Pentateuch from creation to the death of Moses",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Exodus 12:40-41",
+    "Numbers 33:1-2",
+    "Deuteronomy 34:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the generations formula organizes the book of Genesis",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:4",
+    "Genesis 5:1",
+    "Genesis 6:9",
+    "Genesis 11:27",
+    "Genesis 37:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition describes the continuing uses of the moral law summarized at Sinai",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:1-17",
+    "Romans 3:20",
+    "Galatians 3:24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6",
+    "Heidelberg Catechism Q3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Documentary Hypothesis and the case for Mosaic authorship using internal biblical evidence",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Exodus 24:4",
+    "Deuteronomy 31:24-26",
+    "John 5:46-47"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate arguments concerning the historical reliability of the patriarchal and Exodus narratives",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 14:1-16",
+    "Exodus 1:8-11",
+    "Deuteronomy 26:5-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how New Testament writers interpret the Pentateuch as pointing to Christ, including the promise of a prophet like Moses",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 18:15-18",
+    "Acts 3:22-23",
+    "Luke 24:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the Pentateuch's foundational teaching about God, humanity, and covenant into a coherent written account",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:26-28",
+    "Genesis 3:15",
+    "Exodus 34:6-7",
+    "Deuteronomy 7:6-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2",
+    "Westminster Confession of Faith 7.1",
+    "Westminster Confession of Faith 7.3"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (five books, Ten Commandments, Torah meaning, tabernacle, genre comparison, Shema, treaty structure, holiness code, patriarchal promises, Day of Atonement, timeline, Documentary Hypothesis, synthesis). Merged Mosaic authorship into the Documentary Hypothesis evaluation and made historicity its own objective. Replaced 'Observe Creation and Exodus' with separate retelling objectives, and replaced 'Name Jesus as the Lamb of God' with a Passover typology analysis at grade 9. Moved Moses from 'main writer' at grade 1 to his role as leader and lawgiver. Added creation, patriarchs, the fall and first promise, book summaries, the preface to the law, wilderness wanderings, the Sinai covenant identity, the sacrificial system, the threefold division of the law, the uses of the law, the generations structure of Genesis, and New Testament use of the Pentateuch. Anchored each to specific verses and fitting Westminster and Heidelberg references.",
+ "problems": [],
+ "old_count": 17,
+ "candidates": [],
+ "usage": {
+  "input": 2014,
+  "output": 5457
+ }
+}

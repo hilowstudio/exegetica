@@ -1,0 +1,327 @@
+{
+ "sub_topic": "BIB.3.2.4",
+ "name": "The Remnant and the People of God",
+ "path": [
+  "Bible & Theology",
+  "Biblical Survey & Redemptive History",
+  "Redemptive Historical Themes"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Retell how God saved Noah and his family in the ark when the flood came on the earth",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 6:17-18",
+    "Genesis 7:1",
+    "Genesis 7:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify God's promise to Abraham to make his family into a great people through whom all nations would be blessed",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Genesis 15:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Joshua and Caleb trusted God when most of Israel refused to enter the land",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 14:6-9",
+    "Numbers 14:30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the account of Elijah in which God tells him of 7,000 in Israel who had not bowed to Baal",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 19:9-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe John's vision of a great multitude from every nation worshiping God as the whole people of God gathered together",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 7:9-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical meaning of remnant as the part of God's people whom He preserves through judgment",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 1:9",
+    "Isaiah 10:20-22",
+    "Genesis 45:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how God preserved a remnant of Judah through the exile and brought them back to rebuild Jerusalem",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 1:1-5",
+    "Ezra 9:8",
+    "Jeremiah 23:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the crowds who left Jesus with the disciples who stayed when His teaching became hard",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "John 6:60-69"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify biblical names and images for the people of God such as flock, vine, holy nation, and bride",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 19:5-6",
+    "Psalm 100:3",
+    "John 10:14-16",
+    "John 15:5",
+    "1 Peter 2:9-10",
+    "Ephesians 5:25-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that Christ gathers, defends, and preserves His church as the people called out by Him",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 16:18",
+    "1 Peter 2:9-10",
+    "John 10:27-29"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q54"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the covenant promise I will be their God and they will be my people runs through the whole Bible",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 17:7",
+    "Exodus 6:7",
+    "Jeremiah 31:33",
+    "2 Corinthians 6:16",
+    "Revelation 21:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the prophets join warnings of judgment on unfaithful Israel with promises of a preserved remnant",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 6:11-13",
+    "Micah 2:12",
+    "Zephaniah 3:12-13",
+    "Amos 9:8-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul uses the example of Elijah to show that the remnant exists by God's election of grace",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 11:1-6",
+    "Romans 9:27"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Paul's olive tree metaphor to explain how Gentile believers are grafted into the one people of God",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Romans 11:17-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the New Testament presents Jesus as the faithful Israel in whom the people of God are gathered",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Hosea 11:1",
+    "Matthew 2:15",
+    "Isaiah 49:3-6",
+    "John 15:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the invisible church from the visible church as the Westminster Confession defines them",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 2:19",
+    "Matthew 13:24-30",
+    "Ephesians 1:22-23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.1",
+    "Westminster Confession of Faith 25.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that the visible church consists of those who profess the true religion together with their children",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 17:7",
+    "Acts 2:39",
+    "1 Corinthians 7:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the marks of the true church as the Reformed confessions state them and their basis in Scripture",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:42",
+    "Matthew 28:19-20",
+    "1 Corinthians 11:23-26",
+    "Matthew 18:15-17"
+   ],
+   "confessions": [
+    "Belgic Confession Article 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a timeline of the remnant theme from Genesis to Revelation that cites key passages and explains each stage",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 7:23",
+    "Genesis 45:7",
+    "1 Kings 19:18",
+    "Isaiah 10:20-22",
+    "Romans 11:5",
+    "Revelation 7:9-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate episodes from church history in light of the confessional teaching that Christ will always preserve a church on earth despite error and decline",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 16:18",
+    "Matthew 28:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Scripture the faithfulness of God to His covenant promises in times of widespread apostasy",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 11:1-2",
+    "Romans 11:29",
+    "2 Timothy 2:13",
+    "Lamentations 3:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed covenantal view of the continuity of Israel and the church with the dispensational view using key texts",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 3:7-9",
+    "Galatians 3:29",
+    "Galatians 6:16",
+    "Ephesians 2:11-22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the main interpretations of Paul's statement that all Israel will be saved within the argument of Romans 9 to 11",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Romans 11:25-27",
+    "Romans 9:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Replaced vague early items (God always has friends, not everyone listens, God keeps His people safe) with concrete, assessable story objectives on Noah, Abraham, Joshua and Caleb, and Elijah. Kept and reworded the remnant definition, crowds vs disciples, olive tree, election, visible/invisible church, remnant history, preservation of the church, God's faithfulness, and Israel/church continuity, anchoring each to specific verses and accurate confessional articles (added WCF 25.2, 25.5, 7.5-7.6, Heidelberg Q54, Belgic 29). Moved the Galatians 6:16 reference to the continuity objective. Added missing competencies: exile and return, Revelation 7 multitude, biblical images for God's people, the covenant formula, prophetic judgment and remnant, Christ as true Israel, covenant children in the visible church, marks of the church, and interpretations of Romans 11:26. Dropped the vague faithful minority item, now covered by the prophetic and Pauline analysis objectives.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1938,
+  "output": 4829
+ }
+}

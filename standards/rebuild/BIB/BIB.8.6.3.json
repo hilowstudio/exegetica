@@ -1,0 +1,303 @@
+{
+ "sub_topic": "BIB.8.6.3",
+ "name": "Christology: The Prison Epistles (Eph, Phil, Col, Phm)",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "The Pauline Epistles"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Jesus as the head of the church using Paul's picture of a head and its body",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Ephesians 1:22-23",
+    "Colossians 1:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how Jesus humbled himself to become a servant and die on the cross",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Philippians 2:5-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite Philippians 4:4 and explain that Paul told believers to rejoice in the Lord even while he was in prison",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 4:4",
+    "Philippians 1:12-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Onesimus and identify how Paul asked Philemon to welcome him as a brother in Christ",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Philemon 1:10-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify from Colossians that Jesus made all things and holds all things together",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Colossians 1:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the pieces of the armor of God and explain that believers stand firm in the strength of the Lord",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 6:10-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Paul as the author of the four Prison Epistles, describe his circumstances in prison, and name the recipients of each letter",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Ephesians 3:1",
+    "Philippians 1:12-13",
+    "Colossians 4:18",
+    "Philemon 1:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the two movements of Christ's humiliation and exaltation in Philippians 2",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 2:5-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q27",
+    "Westminster Shorter Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what Paul means by being in Christ by listing the spiritual blessings he names in Ephesians 1",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 1:3-14"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q66"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the old self and the new self and explain how Paul grounds the new life in being raised with Christ",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 4:22-24",
+    "Colossians 3:1-4",
+    "Colossians 3:9-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Paul's comparison between his former credentials and the surpassing worth of knowing Christ",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 3:4-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the titles and claims Paul makes about Christ in the Colossian hymn, including image, firstborn, head, and fullness",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 1:15-20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Larger Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Philippians 4:13 within its context of contentment in every circumstance",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Philippians 4:10-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the mystery revealed in Christ brings Jews and Gentiles together into one new humanity through the cross",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:13-18",
+    "Ephesians 3:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul presents Christ's victory over the rulers and authorities through his cross, resurrection, and ascension",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 2:13-15",
+    "Ephesians 1:19-22"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul answers the false teaching at Colossae by asserting the fullness and sufficiency of Christ",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 2:8-10",
+    "Colossians 2:16-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the structure of Ephesians moves from what God has done in Christ to how believers are to walk",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:10",
+    "Ephesians 4:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the ascended Christ gives gifts to build up his body in unity and maturity",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 4:1-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 26.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul applies the lordship of Christ to household relationships, including the case of Philemon and Onesimus",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 5:21-6:9",
+    "Colossians 3:18-4:1",
+    "Philemon 1:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate kenotic Christology in light of Philippians 2 and Colossians 2 and the Reformed confession of Christ's two natures",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Philippians 2:6-7",
+    "Colossians 2:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a scriptural argument from the Prison Epistles for the full deity and true humanity of Christ in one person",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Colossians 1:15-20",
+    "Colossians 2:9",
+    "Philippians 2:6-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Larger Catechism Q11",
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the Christology of the four Prison Epistles into a summary of Christ's person and his offices as prophet, priest, and king",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Ephesians 1:20-23",
+    "Philippians 2:9-11",
+    "Colossians 1:18-20",
+    "Colossians 2:3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q23",
+    "Westminster Shorter Catechism Q24",
+    "Westminster Shorter Catechism Q25",
+    "Westminster Shorter Catechism Q26"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (head of the church, rejoicing, Philemon, supremacy, humility, old and new self, Colossian hymn, Philippians 4:13 in context, Gentile inclusion, sufficiency over philosophy, Christian walk, kenosis, deity of Christ, armor of God), anchoring each to Christ. Dropped Ephesians 2:8-9 summary as it belongs to the Soteriology sibling. Replaced the vague unity synthesis with Christ's ascension gifts in Ephesians 4. Added authorship and setting, union with Christ, humiliation and exaltation, Philippians 3, Christ's victory over the powers, household codes under Christ's lordship, the indicative and imperative structure of Ephesians, and a capstone on Christ's person and offices. Added verse-level references and fitting confession citations, replacing loose ones.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2045,
+  "output": 4917
+ }
+}

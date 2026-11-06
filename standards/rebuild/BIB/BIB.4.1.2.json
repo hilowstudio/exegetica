@@ -1,0 +1,309 @@
+{
+ "sub_topic": "BIB.4.1.2",
+ "name": "Persecutions and Martyrdoms",
+ "path": [
+  "Bible & Theology",
+  "Church History",
+  "The Early Church (Apostolic to Nicene)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that some of the first Christians were treated badly or hurt because they followed Jesus",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 5:10-12",
+    "Acts 5:40-42"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Stephen as the first Christian killed for his witness to Jesus",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Acts 6:8-15",
+    "Acts 7:54-60"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall Jesus' teaching that the world would hate His followers as it first hated Him",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "John 15:18-20",
+    "2 Timothy 3:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the catacombs as underground burial places outside Rome where early Christians buried their dead and remembered the martyrs",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the apostles answered the authorities who ordered them to stop preaching about Jesus",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 4:18-20",
+    "Acts 5:27-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Hebrews 13:3 calls Christians to remember and pray for believers who are persecuted and lead such a prayer in class",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [
+    "Hebrews 13:3",
+    "1 Timothy 2:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize Nero's persecution of Christians after the fire of Rome in AD 64 and the tradition of the deaths of Peter and Paul",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 4:6-8",
+    "John 21:18-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Romans accused Christians of atheism, cannibalism, and hatred of mankind",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Peter 2:12",
+    "1 Peter 4:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the martyrdom of Polycarp and explain the meaning of his refusal to curse Christ",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 2:10",
+    "Matthew 10:32-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Acts how persecution scattered believers and spread the gospel to new places",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Acts 8:1-4",
+    "Acts 11:19-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that the word martyr means witness and how the New Testament uses it for those who testify to Christ",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 1:8",
+    "Acts 22:20",
+    "Revelation 2:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the account of Perpetua and Felicity and identify how their testimony expressed Christian convictions about Christ and eternal life",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 10:28",
+    "Romans 8:35-39"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why refusing to sacrifice to the gods or to confess Caesar as Lord was treated by Rome as disloyalty to the empire",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:6-7",
+    "1 Corinthians 12:3",
+    "Revelation 13:4-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how early Christians honored and prayed for rulers while refusing to give them worship that belongs to God alone",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Romans 13:1-7",
+    "Acts 5:29",
+    "1 Peter 2:13-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.2",
+    "Westminster Confession of Faith 23.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Roman policy described in the letters of Pliny and Trajan for how accused Christians were to be tried and punished",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Tertullian's saying that the blood of the martyrs is the seed of the church using evidence from church growth during persecution",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "John 12:24",
+    "Acts 8:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how 1 Peter and Paul's letters connect the sufferings of believers to the sufferings of Christ",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Peter 4:12-16",
+    "Philippians 3:10",
+    "Colossians 1:24",
+    "Romans 8:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Decian persecution and its sacrifice certificates with the Great Persecution under Diocletian and its attacks on Scripture and clergy",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the controversy over restoring Christians who denied the faith or surrendered Scriptures during persecution",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Luke 22:61-62",
+    "John 21:15-17",
+    "Galatians 6:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the legal status of Christianity changed from an unlawful superstition to a tolerated religion through the Edict of Galerius and the Edict of Milan",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical theology of martyrdom that addresses witness, suffering, faithfulness, and the hope of the resurrection",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Revelation 6:9-11",
+    "Revelation 12:11",
+    "Matthew 10:28",
+    "Luke 9:23-24",
+    "2 Timothy 4:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate early church debates over whether Christians should seek martyrdom or flee persecution in light of Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 10:23",
+    "Acts 9:23-25",
+    "Philippians 1:21-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the reliability and purpose of sources on persecution such as Tacitus, the martyr acts, and Eusebius",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how early Christian writers used the endurance of the martyrs as evidence for the truth of the faith",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Peter 3:14-16",
+    "Acts 4:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Write an essay comparing the persecution of the early church with the persecution of Christians in later and present times in light of Jesus' teaching on the cost of discipleship",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Luke 9:23-26",
+    "Luke 14:27-33",
+    "Matthew 5:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (early Christians hurt for following Jesus, Jesus' warning in John 15, Nero, the hatred-of-mankind charge, Perpetua and Felicity, Tertullian's saying, the Caesar is Lord conflict, suffering with Christ, Decius and Diocletian, legal status, theology of martyrdom, martyrs as apologetic, cost of discipleship). Corrected the catacombs objective, since they were burial places rather than hiding places. Dropped the vague 'observe the church grew' and the 'compare our safety' objectives and replaced them with an Acts-based objective on persecution spreading the gospel. Changed the cost-of-discipleship reflection into a comparative essay, and replaced 'apply the courage' with knowledge-based wording so that no objective targets inner experience. Added Stephen, apostolic responses in Acts, prayer for the persecuted as a class practice, Polycarp's martyrdom, the meaning of martyr, honoring rulers without worshiping them (WCF 20.2, 23.4), Pliny and Trajan, the lapsed controversy, debates over seeking martyrdom, and source evaluation. Added verse-level Scripture anchors throughout and cited confessions only where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1991,
+  "output": 4674
+ }
+}

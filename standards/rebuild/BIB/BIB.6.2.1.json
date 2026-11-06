@@ -1,0 +1,274 @@
+{
+ "sub_topic": "BIB.6.2.1",
+ "name": "Analogy of Scripture",
+ "path": [
+  "Bible & Theology",
+  "Hermeneutics (The Art of Interpretation)",
+  "Principles of Interpretation"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Bible as one book from God that tells one true story from beginning to end",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 119:160",
+    "2 Timothy 3:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the Bible itself as the best helper for understanding other parts of the Bible",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 119:130"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that the parts of the Bible always agree with each other because God, who gave it, always tells the truth",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 23:19",
+    "Psalm 119:160",
+    "John 10:35"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Match a short Bible verse with another verse that teaches the same truth",
+   "grade": 2,
+   "bloom": 3,
+   "scripture": [
+    "Genesis 1:1",
+    "John 1:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "State the rule that Scripture interprets Scripture in your own words and give an example of one passage explaining another",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:27",
+    "Luke 24:44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Locate related passages using the cross-reference notes in a study Bible",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Reformed interpreters use clearer passages to help understand passages that are harder to understand",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "2 Peter 3:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.7",
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare two passages on the same subject and write a summary that includes what each contributes",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 6:9-13",
+    "Luke 11:2-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Jesus answered a misused Scripture by setting it beside another Scripture during his temptation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 4:5-7",
+    "Psalm 91:11-12",
+    "Deuteronomy 6:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Gather passages with a concordance on a key word and explain why a shared word does not always carry the same meaning in every passage",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare parallel Gospel accounts of the same event and explain how the details fit together into a fuller picture",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 20:29-34",
+    "Mark 10:46-52",
+    "Luke 18:35-43"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the apparent contradiction between Paul and James on justification by comparing how each uses the words faith, works, and justify",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:28",
+    "Galatians 2:16",
+    "James 2:14-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition grounds the analogy of Scripture in the single divine authorship of the whole Bible",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "2 Peter 1:20-21",
+    "2 Timothy 3:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4",
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate an interpretation that builds a teaching on one isolated verse against the wider testimony of Scripture",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 4:5-7",
+    "2 Peter 3:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Differentiate the analogy of Scripture from the analogy of faith and explain how creeds summarize the rule of faith drawn from Scripture",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 12:6",
+    "2 Timothy 1:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a doctrinal summary on a topic such as the Trinity by gathering, comparing, and ordering passages from across the Bible",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "Matthew 28:19",
+    "2 Corinthians 13:14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how a New Testament author interprets an Old Testament passage by comparing the original text with its apostolic use",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Psalm 16:8-11",
+    "Acts 2:25-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition treats Scripture as the supreme judge over councils, traditions, and private interpretations",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:11",
+    "Isaiah 8:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate a common claim that the Bible contradicts itself and defend its internal consistency using the principles of the analogy of Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 10:35",
+    "Psalm 119:160"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Produce a written study that reconciles a difficult set of parallel passages such as the accounts of David's census in Samuel and Chronicles",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "2 Samuel 24:1-25",
+    "1 Chronicles 21:1-30"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (one story, Bible as its own interpreter, noncontradiction, Scripture interprets Scripture, clear interprets unclear, comparing passages, cross-references, Paul and James, apostolic use of the OT, internal consistency, systematic summary, parallel passages). Dropped typology and 'unity of the Bible' as better suited to Progressive Revelation, and 'interpret obscure passages in light of systematic theology' as vague. Added Jesus's use of Scripture in the temptation, concordance use with word-meaning caution, parallel Gospel harmonization, the doctrine's basis in divine authorship, evaluating isolated proof-texting, analogy of Scripture versus analogy of faith, and Scripture as supreme judge (WCF 1.10). Anchored references to specific verses and to WCF 1.4, 1.5, 1.7, 1.9, 1.10, 11.2 and WSC Q6.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1983,
+  "output": 4305
+ }
+}

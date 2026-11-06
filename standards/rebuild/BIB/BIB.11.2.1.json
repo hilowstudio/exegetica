@@ -1,0 +1,272 @@
+{
+ "sub_topic": "BIB.11.2.1",
+ "name": "Creation and the Imago Dei",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Anthropology: The Doctrine of Humanity"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify people as a special creation that God made on purpose",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 1:31"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how God formed Adam from the dust, breathed life into him, and then made Eve",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:7",
+    "Genesis 2:21-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that the Bible says God made people in his own image",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:26-27"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain in simple words that being made in God's image means people were made to reflect what God is like",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:26-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the account of the sixth day sets the creation of humans apart from the creation of the animals, including God's words Let us make man",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:24-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that God created humans in his image with knowledge, righteousness, and holiness",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 4:24",
+    "Colossians 3:10",
+    "Genesis 1:27"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10",
+    "Westminster Confession of Faith 4.2",
+    "Westminster Larger Catechism Q17",
+    "Heidelberg Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare humans and animals using Genesis and Psalm 8 to identify what Scripture says sets humans apart as image bearers",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:26-28",
+    "Genesis 2:19-20",
+    "Psalm 8:4-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from the Heidelberg Catechism why God made humans in his image so that they might truly know him and live with him",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 2:15-17"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q6",
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the words image and likeness in Genesis 1:26 and explain why Reformed interpreters generally read them as one idea",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:26",
+    "Genesis 5:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the substantive, relational, and functional views of the image of God by testing each against Genesis 1:26-28",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:26-28",
+    "Psalm 8:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Fall defaced the image of God and use later passages to show that fallen humans are still called image bearers",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:6-8",
+    "Genesis 5:3",
+    "Genesis 9:6",
+    "James 3:9",
+    "Romans 3:23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the New Testament presents Jesus Christ as the perfect image of the invisible God",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 1:15",
+    "2 Corinthians 4:4",
+    "Hebrews 1:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture describes believers being renewed after the image of God through union with Christ",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 3:10",
+    "Ephesians 4:24",
+    "2 Corinthians 3:18",
+    "Romans 8:29"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q35"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the image of God in the broader sense from the image in the narrower sense and explain what Reformed theology says was lost and retained at the Fall",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 9:6",
+    "James 3:9",
+    "Ephesians 4:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the image of God across the storyline of Scripture from creation through fall and redemption to final glorification",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:26-27",
+    "Genesis 5:3",
+    "Romans 8:29",
+    "1 Corinthians 15:49",
+    "1 John 3:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed view of the image of God with the Roman Catholic distinction between natural image and superadded gift and explain how each shapes its account of the Fall",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:31",
+    "Ecclesiastes 7:29",
+    "Ephesians 4:24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2",
+    "Westminster Confession of Faith 6.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate materialist and reductionist accounts of human nature against the biblical teaching that humans are created in the image of God",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 1:26-27",
+    "Genesis 2:7",
+    "Psalm 8:4-5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a written theological account of the image of God as created, marred, renewed, and glorified, supported by Scripture and the Reformed confessions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:26-27",
+    "Genesis 9:6",
+    "Colossians 3:10",
+    "2 Corinthians 3:18",
+    "1 John 3:2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2",
+    "Westminster Shorter Catechism Q10",
+    "Heidelberg Catechism Q6"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (special creation, Adam and Eve, made in God's image, knowledge righteousness and holiness, humans versus animals, views of the image, marring at the Fall, renewal in Christ, reductionism, final synthesis). Dropped 'every person is valuable', 'apply dignity to how we treat others', 'connect to sanctity of life', and 'defend dignity not usefulness' because they belong to The Sanctity and Dignity of Human Life. The image as dominion is now treated only as one interpretive view, leaving vocation to The Cultural Mandate and Vocation. Replaced the vague 'construct a biblical anthropology' with a storyline tracing objective. Added the sixth day account, the purpose of the image (Heidelberg Q6), the terms image and likeness, Christ as the perfect image, the image persisting after the Fall, the broader and narrower senses, and the Reformed versus Roman Catholic comparison. Removed references to Matthew 10:28 and Psalm 139 as better suited to sibling sub-topics, and added Colossians 1:15, 2 Corinthians 4:4, Hebrews 1:3, 1 Corinthians 15:49, 1 John 3:2, Heidelberg Catechism Q6, WSC Q1, WSC Q35, and WCF 6.2.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2082,
+  "output": 4140
+ }
+}

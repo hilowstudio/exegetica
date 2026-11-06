@@ -1,0 +1,355 @@
+{
+ "sub_topic": "BIB.10.1.3",
+ "name": "Prayer (Means of Grace)",
+ "path": [
+  "Bible & Theology",
+  "Practical Theology & Christian Living",
+  "Christian Living and Spiritual Disciplines"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify prayer as speaking to God our Father in heaven",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 6:9",
+    "Philippians 4:6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite the Lord's Prayer and name it as the prayer Jesus taught his disciples",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 6:9-13",
+    "Luke 11:1-4"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q99",
+    "Heidelberg Catechism Q119"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify Bible passages that teach God hears the prayers of his people",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 65:2",
+    "Psalm 34:15",
+    "1 John 5:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe times in the Gospels when Jesus prayed and what he prayed about",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Mark 1:35",
+    "Luke 5:16",
+    "Luke 6:12",
+    "Luke 22:41-42",
+    "John 17:1-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Give an example of each part of prayer: adoration, confession, thanksgiving, and supplication",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 95:6",
+    "1 John 1:9",
+    "Psalm 100:4",
+    "Philippians 4:6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Christians pray in the name of Jesus",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "John 14:13-14",
+    "John 16:23-24",
+    "1 Timothy 2:5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98",
+    "Westminster Confession of Faith 21.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of the preface and each of the six petitions of the Lord's Prayer",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 6:9-13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q100",
+    "Westminster Shorter Catechism Q101",
+    "Westminster Shorter Catechism Q102",
+    "Westminster Shorter Catechism Q103",
+    "Westminster Shorter Catechism Q104",
+    "Westminster Shorter Catechism Q105",
+    "Westminster Shorter Catechism Q106",
+    "Westminster Shorter Catechism Q107"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare private prayer with family and corporate prayer using examples from Scripture",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 6:5-6",
+    "Acts 2:42",
+    "Acts 4:23-31",
+    "Acts 12:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition names prayer, with the Word and sacraments, as an ordinary means of grace",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:42",
+    "1 Thessalonians 5:17",
+    "James 4:2"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q88",
+    "Westminster Shorter Catechism Q98",
+    "Heidelberg Catechism Q116"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a prayer of intercession for others, including those who oppose or mistreat them, following Jesus' command",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Matthew 5:44",
+    "1 Timothy 2:1-2",
+    "Luke 23:34"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the requests Paul makes in his prayers for the churches and what they show about his priorities",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 1:15-19",
+    "Ephesians 3:14-19",
+    "Philippians 1:9-11",
+    "Colossians 1:9-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze psalms of lament and confession as models for bringing sorrow and sin to God in prayer",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 13:1-6",
+    "Psalm 51:1-12",
+    "Psalm 42:5-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the role of the Holy Spirit and of Christ in interceding for believers",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:26-27",
+    "Romans 8:34",
+    "Hebrews 7:25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition teaches that God ordains prayer as a means through which he accomplishes his purposes",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "James 5:16-18",
+    "Ezekiel 36:37",
+    "Matthew 6:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.2",
+    "Westminster Confession of Faith 5.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical practice of fasting and its relationship to prayer",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 6:16-18",
+    "Ezra 8:21-23",
+    "Acts 13:2-3",
+    "Acts 14:23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the conditions Scripture gives for acceptable prayer, such as asking in faith, according to God's will, and with confession of sin",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 John 5:14",
+    "James 1:5-7",
+    "James 4:3",
+    "Psalm 66:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.3",
+    "Heidelberg Catechism Q117"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture accounts for prayers that God answers differently than requested",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "2 Corinthians 12:7-10",
+    "Luke 22:42",
+    "Romans 8:28"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q103"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an account of the believer's access to God in prayer grounded in Christ's high priesthood and the priesthood of believers",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Hebrews 4:14-16",
+    "Hebrews 10:19-22",
+    "1 Peter 2:5",
+    "1 Peter 2:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed teaching that prayer is directed to God alone through Christ alone with the practice of praying to saints or angels",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 4:10",
+    "1 Timothy 2:5",
+    "Revelation 19:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the difference between mystical contemplation and biblical meditation on God's Word",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Joshua 1:8",
+    "Psalm 1:2",
+    "Psalm 119:15-16",
+    "Matthew 6:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate deistic and fatalistic objections to petitionary prayer using the Reformed doctrine of providence",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "James 5:16-18",
+    "Matthew 7:7-11",
+    "Proverbs 16:9",
+    "Acts 4:24-31"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Westminster Confession of Faith 5.2",
+    "Westminster Confession of Faith 5.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Design a plan for regular personal and family prayer structured by the petitions of the Lord's Prayer and the parts of prayer",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Matthew 6:9-13",
+    "1 Thessalonians 5:17",
+    "Daniel 6:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q99",
+    "Westminster Confession of Faith 21.6"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies: prayer as speaking to God, the Lord's Prayer, God hearing prayer, Jesus' prayer life, the parts of prayer, praying in Jesus' name, private versus corporate prayer, praying for enemies (now composing an intercessory prayer), Paul's prayers, the Spirit's intercession (now with Christ's), fasting, and priesthood of believers. Reframed 'God always hears us' as identifying passages so it is a knowledge objective. Merged the overlapping sovereignty, providence, and anti-deism objectives into a grade 9 explanation of prayer as an ordained means and a grade 12 evaluation of deistic and fatalistic objections. Added missing competencies: explaining the six petitions, prayer as an ordinary means of grace, psalms of lament and confession as models, conditions of acceptable prayer, unanswered prayer, prayer to God alone versus to saints, and designing a personal and family prayer plan. Replaced chapter-level references with verse ranges and anchored confessions to WSC Q88 and Q98-107, WCF 5 and 21, and Heidelberg Q116-119.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1973,
+  "output": 4950
+ }
+}

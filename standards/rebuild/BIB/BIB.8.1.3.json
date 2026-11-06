@@ -1,0 +1,320 @@
+{
+ "sub_topic": "BIB.8.1.3",
+ "name": "Paul’s Missionary Journeys and Strategy",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "Acts and the Founding of the Church"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Paul as a man God sent to travel to many places to tell people about Jesus",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Acts 9:15",
+    "Acts 13:2-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Barnabas, Silas, Timothy, and Luke as helpers who traveled with Paul",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 13:2",
+    "Acts 15:40",
+    "Acts 16:1-3",
+    "Colossians 4:14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Paul's shipwreck and how God kept everyone on the ship alive as He had promised",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Acts 27:21-26",
+    "Acts 27:39-44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Paul and Silas prayed and sang in the Philippian jail and how the jailer and his household came to believe",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Acts 16:25-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace on a map the cities Paul and Barnabas visited on the first missionary journey",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [
+    "Acts 13:4-14:26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Paul's pattern of preaching first in the synagogue and then turning to the Gentiles",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 13:5",
+    "Acts 13:14-16",
+    "Acts 13:46-48",
+    "Acts 17:1-3",
+    "Romans 1:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul and Barnabas responded when the crowd at Lystra tried to worship them as gods",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 14:8-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Paul often stayed and preached in large cities such as Corinth and Ephesus",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 18:1-11",
+    "Acts 19:8-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Paul worked as a tentmaker to support himself so he would not burden the churches",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 18:1-4",
+    "Acts 20:33-35",
+    "1 Thessalonians 2:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare how the Jews of Berea and Thessalonica responded to Paul's preaching, including the Bereans' daily examination of the Scriptures",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Acts 17:1-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Holy Spirit called Paul and Barnabas and how the church at Antioch sent them out with prayer and fasting",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Acts 13:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Spirit closed doors in Asia and Bithynia and how the Macedonian vision directed Paul into Europe",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 16:6-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Paul returned to strengthen new churches and appointed elders to lead them",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 14:21-23",
+    "Acts 15:36",
+    "Acts 15:41",
+    "Titus 1:5"
+   ],
+   "confessions": [
+    "Belgic Confession 30"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a map of Paul's three missionary journeys and his voyage to Rome with key events labeled",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Acts 13:4-14:26",
+    "Acts 15:36-18:22",
+    "Acts 18:23-21:17",
+    "Acts 27:1-28:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul's Areopagus speech moves from creation and the Athenians' own altar and poets to the call to repent and the resurrection",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 17:22-31"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the riot at Ephesus shows the gospel confronting idolatry and the trade built around it",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Acts 19:23-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect the founding of churches in Acts to the letters Paul later wrote to those same churches",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Acts 16:11-15",
+    "Philippians 1:3-5",
+    "Acts 17:1-4",
+    "1 Thessalonians 1:9-10",
+    "Acts 18:1-11",
+    "1 Corinthians 2:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul used his Roman citizenship and appeals to Roman law to protect the mission and bring the gospel before rulers",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Acts 16:37-39",
+    "Acts 22:25-29",
+    "Acts 25:10-12",
+    "Acts 9:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's farewell address to the Ephesian elders as a summary of his ministry aims and methods",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Acts 20:17-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Luke's account of Paul's journeys shows the gospel advancing from Jerusalem to Rome as Jesus foretold",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 1:8",
+    "Acts 23:11",
+    "Acts 28:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition relates God's sovereign election to Paul's urgent preaching, using texts where God's choosing and the preaching of the gospel appear together",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 13:48",
+    "Acts 18:9-10",
+    "Romans 10:13-15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.6",
+    "Canons of Dort 2.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Paul adapted his approach for Jewish and Gentile audiences while keeping the message of the cross and resurrection unchanged",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 13:16-41",
+    "Acts 17:22-31",
+    "1 Corinthians 9:19-23",
+    "1 Corinthians 2:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate which features of Paul's strategy, such as urban centers, teams, and local elders, can guide missions today, distinguishing what Acts describes from what it commands",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 14:23",
+    "Acts 19:8-10",
+    "Romans 15:20-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Develop a written theological account of suffering in Christian mission drawn from Paul's hardships and his own explanation of them",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 9:16",
+    "Acts 14:19-22",
+    "2 Corinthians 11:23-28",
+    "Philippians 1:12-14"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (boat travel became Paul's calling to travel, helpers, shipwreck, map tracing, synagogue pattern, big cities, Berea vs Thessalonica, Macedonian call, Areopagus, Ephesus riot, churches and letters, Spirit's direction, map construction, contextualization, urban strategy, suffering). Moved the Spirit's role earlier and split it into the Antioch sending and the Macedonian redirection, moved the three-journey map from grade 10 to 6, and reframed the strategy defense as evaluating descriptive vs prescriptive application. Recast the cost of discipleship objective as a written theological account so it rests on what students know rather than personal experience. Added Philippian jail, Lystra, tentmaking, appointing elders, Roman citizenship, Miletus farewell, Acts 1:8 trajectory, and election and missions with Reformed confessional anchors. Gave every objective verse-level references, replacing the whole-section citation of Acts 13-14 with precise ranges, and avoided Pentecost, Jerusalem church, and Council material left to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1982,
+  "output": 5252
+ }
+}

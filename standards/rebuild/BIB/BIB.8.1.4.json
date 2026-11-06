@@ -1,0 +1,283 @@
+{
+ "sub_topic": "BIB.8.1.4",
+ "name": "The Council of Jerusalem and Gentile Inclusion",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "Acts and the Founding of the Church"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from the story of Cornelius that people who were not Jewish believed in Jesus and received the Holy Spirit",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Acts 10:44-48"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell Peter's vision of the sheet filled with animals and what God taught Peter through it",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Acts 10:9-16",
+    "Acts 10:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall God's promise to Abraham that all the families of the earth would be blessed through him",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Galatians 3:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the church at Antioch grew as believers shared the good news about Jesus with Greeks",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 11:19-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the question the Council met to settle about whether Gentile believers had to be circumcised and keep the law of Moses to be saved",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 15:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Peter, Barnabas, Paul, and James as speakers at the Council and state what each one contributed",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Acts 15:7-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Peter's conclusion that Jews and Gentiles are saved in the same way, through the grace of the Lord Jesus",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 15:7-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Peter's report about Cornelius led the Jerusalem believers to conclude that God had granted repentance to the Gentiles",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Acts 11:1-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the Council's decision was carried to the churches and how the Gentile believers received it",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 15:22-35",
+    "Acts 16:4-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Old Testament ceremonial laws on food and circumcision with their fulfillment in Christ using the Reformed distinction among moral, ceremonial, and judicial laws",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 2:16-17",
+    "Acts 15:10",
+    "Hebrews 10:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.3",
+    "Westminster Confession of Faith 19.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how James uses Amos 9:11-12 to show that the inclusion of the Gentiles fulfills Old Testament prophecy",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 15:13-18",
+    "Amos 9:11-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Council weighed reports of God's work among the Gentiles alongside the testimony of the Scriptures in reaching its decision",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Acts 15:8-9",
+    "Acts 15:12",
+    "Acts 15:15-19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the four requests in the Council's letter and explain why they were asked of Gentile believers living among Jewish neighbors",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Acts 15:19-21",
+    "Acts 15:28-29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching on Christian liberty and the call to limit one's liberty so as not to cause a fellow believer to stumble",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 14:13-21",
+    "1 Corinthians 8:9-13",
+    "Galatians 5:1",
+    "Galatians 5:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.1",
+    "Westminster Confession of Faith 20.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the account of the Council in Acts 15 with Paul's account of the circumcision controversy and Peter's withdrawal at Antioch in Galatians 2",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 15:1-29",
+    "Galatians 2:1-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct an argument from Acts 15 and Galatians for justification by grace through faith apart from works of the law as the Reformed confessions teach",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Acts 15:1",
+    "Acts 15:10-11",
+    "Galatians 2:16",
+    "Galatians 3:10-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Council as a model for how the church resolves doctrinal disputes in light of the Reformed teaching on synods and councils",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 15:2",
+    "Acts 15:6",
+    "Acts 15:22-23",
+    "Acts 15:28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 31.3",
+    "Westminster Confession of Faith 31.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Scripture the unity of Jewish and Gentile believers in one body and apply it to the church's unity across ethnic lines today",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Ephesians 2:11-22",
+    "Galatians 3:26-29",
+    "Acts 15:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.1",
+    "Heidelberg Catechism Q54"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the significance of the Council's decision for the church's mission to make disciples of all nations",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 28:19-20",
+    "Acts 1:8",
+    "Acts 15:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Develop an explanation of how believers are free from the Mosaic law as a covenant of works yet remain under the law of Christ",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Corinthians 9:20-21",
+    "Galatians 6:2",
+    "Romans 6:14-15",
+    "Acts 15:10-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.5",
+    "Westminster Confession of Faith 19.6"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Gentile believers, Peter's vision, the Council's question, Peter's grace conclusion, ceremonial law fulfilled in Christ, Amos 9 prophecy, the letter, Christian liberty, the grace argument, global significance, ethnic unity, Mosaic law and law of Christ). Dropped vague filler such as 'observe the argument about rules' and 'God loves everyone'. Folded the item naming James into a fuller objective on all the Council's speakers. Added the Abrahamic promise, the Antioch church, Peter's report in Acts 11, the reception of the decree, how the Council weighed testimony against Scripture, a comparison with Galatians 2, and the Council as a model for church assemblies. Replaced loose references with verse-level passages and confession articles that state each doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1963,
+  "output": 4830
+ }
+}

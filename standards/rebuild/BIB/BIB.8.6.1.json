@@ -1,0 +1,420 @@
+{
+ "sub_topic": "BIB.8.6.1",
+ "name": "Soteriology: Romans and Galatians",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "The Pauline Epistles"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from Romans 3:23 that every person has sinned against God",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Romans 3:23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q14"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name eternal life in Christ as a free gift from God that no one can earn",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Romans 6:23",
+    "Romans 3:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall from Galatians that God saves people through faith in Jesus and not by their good works",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Galatians 2:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q86"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how God showed his love by sending Christ to die for people while they were still sinners",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite the Roman Road verses in order and explain what each one teaches about salvation",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:23",
+    "Romans 6:23",
+    "Romans 5:8",
+    "Romans 10:9-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain justification as God declaring a sinner righteous because of Christ and not because of the sinner's goodness",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:23-24",
+    "Romans 5:1"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33",
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Paul calls the gospel the power of God for salvation to everyone who believes",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 1:16-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the works of the flesh with the fruit of the Spirit using examples from Galatians 5",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 5:16-24"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q35"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize Paul's account in Galatians of receiving the gospel by revelation and confronting Peter at Antioch",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 1:11-17",
+    "Galatians 2:11-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the tradition's teaching that saving faith receives and rests on Christ alone for salvation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 10:9-13",
+    "Galatians 2:20"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q86",
+    "Westminster Confession of Faith 14.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how Romans 12:1-2 calls those saved by God's mercy to respond with whole-life worship",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 12:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's argument in Romans 1 to 3 that both Gentiles and Jews stand guilty before God",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 1:18-21",
+    "Romans 2:1-5",
+    "Romans 3:9-20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Outline the overall structure of Romans and locate its major sections on sin, justification, new life, Israel, and Christian living",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 1:16-17",
+    "Romans 3:21-26",
+    "Romans 6:1-4",
+    "Romans 9:1-5",
+    "Romans 12:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul uses Abraham to show that righteousness has always been credited by faith",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 4:1-5",
+    "Romans 4:9-12",
+    "Galatians 3:6-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the work of Adam and the work of Christ as Paul presents them in Romans 5",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:12-21"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q16",
+    "Westminster Confession of Faith 6.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Romans 8 to explain what Paul teaches about no condemnation and life in the Spirit",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Romans 8:1-4",
+    "Romans 8:9-11",
+    "Romans 8:31-39"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain adoption as Romans and Galatians present it, including the believer's status as God's child and heir",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:14-17",
+    "Galatians 4:4-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q34",
+    "Westminster Confession of Faith 12.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Romans 6 grounds the believer's new life in union with Christ in his death and resurrection",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 6:1-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish justification from sanctification using Romans and the Westminster Standards",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:1",
+    "Romans 6:19-22"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33",
+    "Westminster Shorter Catechism Q35",
+    "Westminster Larger Catechism Q77"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Romans 3:25-26 presents Christ's death as a propitiation that shows God to be both just and the justifier",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:21-26"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25",
+    "Westminster Confession of Faith 8.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the doctrine of imputation as Paul develops it in Romans 4 and 5",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 4:6-8",
+    "Romans 4:22-25",
+    "Romans 5:18-19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a definition of the gospel drawn from the opening of Romans and Galatians",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Romans 1:1-4",
+    "Romans 1:16-17",
+    "Galatians 1:3-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare major interpretations of the struggle with sin described in Romans 7",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Romans 7:14-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Romans 8 and 9 present God's sovereign purpose in salvation as the Reformed tradition confesses it",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Romans 8:28-30",
+    "Romans 9:10-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.5",
+    "Canons of Dort 1.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Paul's teaching in Romans 9 to 11 on the place of Israel and the Gentiles in God's saving plan",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Romans 9:6-8",
+    "Romans 11:11-24",
+    "Romans 11:25-36"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Judaizers' teaching in Galatia using Paul's arguments against adding works of the law to faith",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 2:15-21",
+    "Galatians 3:1-5",
+    "Galatians 5:1-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformation doctrine of justification by faith alone from Romans and Galatians in contrast to the Council of Trent",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 3:28",
+    "Romans 4:4-5",
+    "Galatians 2:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Westminster Confession of Faith 11.2",
+    "Heidelberg Catechism Q61"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul's teaching on justification in Romans 4 harmonizes with James 2 on faith and works",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Romans 4:2-3",
+    "James 2:21-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize Paul's teaching on the purposes of the law and its relationship to grace in Romans and Galatians",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 3:20",
+    "Romans 7:7-12",
+    "Romans 13:8-10",
+    "Galatians 3:19-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Paul's teaching on Christian freedom and how it guards against both legalism and license",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 5:1",
+    "Galatians 5:13-14",
+    "Romans 6:15-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.1"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (universal sin, free gift, faith not works, God's love for sinners, Roman Road, justification, flesh and Spirit, Romans 1 to 3, Romans 8, Abraham, adoption, defining the gospel, legalism, sola fide, law and grace) with verse-level anchors. Dropped the redundant grade 6 'faith as trusting Jesus' and rebuilt it as the confessional definition of saving faith. Added missing competencies: Paul's gospel in Galatians 1 to 2, response in Romans 12:1-2, structure of Romans, Adam and Christ, union with Christ in Romans 6, justification versus sanctification, propitiation, imputation, Romans 7, election in Romans 8 to 9, Israel in Romans 9 to 11, Paul and James, and Christian freedom. Removed any wording about personal feeling or profession.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2005,
+  "output": 5335
+ }
+}

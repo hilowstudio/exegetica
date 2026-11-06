@@ -1,0 +1,265 @@
+{
+ "sub_topic": "BIB.11.2.3",
+ "name": "Male and Female by Design",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Anthropology: The Doctrine of Humanity"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from Genesis 1:27 that God created people male and female",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:27"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of God forming Adam from the dust and making Eve from Adam's side",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:7",
+    "Genesis 2:21-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that boys and girls, men and women, are both made in God's image and are equal in worth before Him",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:27",
+    "1 Corinthians 11:11-12"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q17"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify that God called His whole creation, including man and woman, very good",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why God said it was not good for the man to be alone and how He provided the woman as a fitting helper",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:18-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe marriage as God's design of one man and one woman joined together for life using Genesis 2:24",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:24",
+    "Mark 10:6-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the biblical pattern of man and woman as equal yet different with the idea that the sexes are simply the same",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 2:18",
+    "1 Corinthians 11:11-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Hebrew word ezer, translated helper, is also used of God and what this shows about the dignity of the woman's role",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:18",
+    "Exodus 18:4",
+    "Psalm 33:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the purposes of marriage taught in Scripture and summarized in the Westminster Confession, including mutual help, children, and purity",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:28",
+    "Genesis 2:18",
+    "1 Corinthians 7:2-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how the fall distorted the relationship between man and woman according to Genesis 3",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:12",
+    "Genesis 3:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jesus' appeal to what was so from the beginning in His teaching on marriage and divorce",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 19:3-9",
+    "Mark 10:6-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture honors singleness as a calling using the teaching of Jesus and Paul",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 19:11-12",
+    "1 Corinthians 7:7-8",
+    "1 Corinthians 7:32-35"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q108"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what the seventh commandment requires and forbids and how it guards God's design for man and woman",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:14",
+    "Matthew 5:27-28",
+    "1 Thessalonians 4:3-5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q71",
+    "Westminster Shorter Catechism Q72",
+    "Heidelberg Catechism Q109"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Paul's teaching that marriage between husband and wife pictures the union of Christ and the church",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 5:22-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Galatians 3:28 in its context, distinguishing equal standing in Christ from the removal of the distinction between male and female",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 3:26-29",
+    "1 Peter 3:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul in Romans 1 connects the exchange of God's created design to the exchange of the truth of God for idolatry",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 1:18-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate contemporary claims about gender and marriage against the creation pattern of Genesis and the teaching of Jesus",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 2:24",
+    "Matthew 19:4-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a written or spoken response to a question about sex and gender that presents the Reformed position with both truth and gentleness",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Ephesians 4:15",
+    "Colossians 4:6",
+    "1 Peter 3:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize a biblical theology of manhood and womanhood that traces creation, fall, redemption, and consummation",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 3:16",
+    "Ephesians 5:31-32",
+    "Matthew 22:30",
+    "Revelation 19:7-9"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: male and female in Genesis 1:27, equal image-bearing, very good, marriage as one man and one woman, complementarity versus sameness, Jesus' appeal to the beginning, marriage as a picture of Christ and the church, evaluating cultural redefinitions, a compassionate response, and the creation-fall-redemption synthesis. Merged the summary and Adam and Eve items into one retelling objective. Dropped the vague 'apply respect' item and the redundant covenant and family item, and replaced the broad 'construct a biblical theology' item with focused text work. Added the ezer word study, the purposes of marriage from WCF 24.2, the fall's distortion in Genesis 3:16, singleness as a calling, the seventh commandment, Galatians 3:28 in context, and Romans 1 in context. Replaced 1689 LBC 25.2 with WCF 24.1 and 24.2, and added WLC Q17, WSC Q71 and Q72, and Heidelberg Q108 and Q109 where they state the doctrine. Removed the ending periods and gave every passage verse references.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2059,
+  "output": 4061
+ }
+}

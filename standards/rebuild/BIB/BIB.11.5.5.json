@@ -1,0 +1,384 @@
+{
+ "sub_topic": "BIB.11.5.5",
+ "name": "Worship and the Regulative Principle",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Ecclesiology: The Doctrine of the Church"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the one true God as the only one people are to worship",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 20:3",
+    "Matthew 4:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q46"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the things God's people do when the church gathers to worship, such as praying, singing, hearing the Bible read and preached, and giving",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:42",
+    "Colossians 3:16",
+    "1 Timothy 4:13",
+    "1 Corinthians 16:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite the second commandment and explain in simple words that God tells us how He is to be worshiped",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:4-6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q49"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of the golden calf and explain why God was displeased even though the people called it a feast to the LORD",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 32:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe ways Scripture shows God's people expressing reverence in worship, such as bowing, kneeling, standing for the reading of the Word, and singing together",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 95:6",
+    "Nehemiah 8:5-6",
+    "Hebrews 12:28-29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Jesus meant when He said God seeks worshipers who worship in spirit and in truth",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 4:23-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Isaiah and Jesus' teaching why God rejects worship offered with the lips while the heart is far from Him",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 29:13",
+    "Matthew 15:8-9",
+    "1 Samuel 15:22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Nadab and Abihu and explain what it teaches about offering God worship He has not commanded",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 10:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Match each part of a Lord's Day service, such as the call to worship, confession of sin, Scripture reading, sermon, prayer, singing, offering, and benediction, to a passage of Scripture that supports it",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "Psalm 95:1-7",
+    "1 John 1:9",
+    "1 Timothy 4:13",
+    "2 Timothy 4:2",
+    "1 Timothy 2:1-2",
+    "Colossians 3:16",
+    "1 Corinthians 16:1-2",
+    "Numbers 6:24-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Christians gather for public worship on the first day of the week, using New Testament evidence",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Acts 20:7",
+    "1 Corinthians 16:2",
+    "Revelation 1:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.7",
+    "Westminster Shorter Catechism Q59"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that worship is to be given to the triune God alone through the one Mediator Jesus Christ and not to angels, saints, or images",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 22:8-9",
+    "1 Timothy 2:5",
+    "Hebrews 10:19-22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Define the regulative principle of worship as the Reformed teaching that God may be worshiped only in the ways He has appointed in Scripture",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [
+    "Deuteronomy 12:32"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.1",
+    "Heidelberg Catechism Q96",
+    "Westminster Shorter Catechism Q51"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between offering all of life to God as worship and the gathered public worship of the church",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Romans 12:1",
+    "Hebrews 10:24-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Old Testament passages in which God rejects worship He did not command and identify the principle they share",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 12:29-32",
+    "Jeremiah 7:31",
+    "Leviticus 10:1-3",
+    "1 Samuel 15:22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the second commandment as the catechisms do, forbidding both images and any manner of worship not appointed in God's Word",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:4-6",
+    "Deuteronomy 4:15-19"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q50",
+    "Westminster Shorter Catechism Q51",
+    "Westminster Larger Catechism Q109",
+    "Heidelberg Catechism Q96",
+    "Heidelberg Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the elements of worship from its circumstances, such as time, place, and order of service, and explain how each is to be determined",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 14:26",
+    "1 Corinthians 14:40"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 21.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the ordinary and occasional elements of worship listed in the Westminster Confession and support each with New Testament texts",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [
+    "Acts 2:42",
+    "1 Timothy 4:13",
+    "2 Timothy 4:2",
+    "Colossians 3:16",
+    "Ephesians 5:19",
+    "Matthew 28:19",
+    "1 Corinthians 11:23-26",
+    "Matthew 6:16-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.3",
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Paul describes humanly devised religious rules as self-made religion and how this supports the regulative principle",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 2:20-23",
+    "Matthew 15:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the regulative principle with the normative principle of worship held in the Lutheran and Anglican traditions",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 12:32",
+    "Colossians 2:23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.1",
+    "Belgic Confession 32"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the regulative principle protects the conscience of worshipers from being bound by the commandments of men",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 15:8-9",
+    "Galatians 5:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how Reformers such as Calvin and Knox reformed public worship and summarize the biblical reasons they gave for removing medieval practices",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 12:32",
+    "John 4:23-24"
+   ],
+   "confessions": [
+    "Belgic Confession 32"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical and confessional defense of the regulative principle of worship that answers common objections",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Deuteronomy 12:32",
+    "Leviticus 10:1-3",
+    "Jeremiah 7:31",
+    "John 4:23-24",
+    "Colossians 2:20-23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.1",
+    "Heidelberg Catechism Q96",
+    "Westminster Larger Catechism Q108",
+    "Westminster Larger Catechism Q109"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate pragmatic and entertainment-driven worship practices by the standard of what God has commanded in Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 12:28-29",
+    "Colossians 2:23",
+    "1 Corinthians 14:23-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the arguments made within the Reformed tradition about exclusive psalmody, hymns, and musical instruments in public worship",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Ephesians 5:19",
+    "Colossians 3:16",
+    "Psalm 150:3-5",
+    "1 Corinthians 14:26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Design an order of worship for a Lord's Day service and justify each element and circumstance from Scripture and the Reformed confessions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 2:42",
+    "1 Timothy 4:13",
+    "Colossians 3:16",
+    "1 Corinthians 14:40",
+    "Numbers 6:24-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (only God is worshiped, naming acts of worship, second commandment, spirit and truth, commanded elements, regulative vs normative comparison, Lord's Day, Colossians 2 self-made religion, defense of the principle, evaluating pragmatism). Recast the heart-worship and reverence items as knowledge and describable practice rather than inner experience. Merged the duplicate elements objectives into a grade 5 service-matching task and a grade 9 confessional task. Dropped the vague grade 11 defense duplicate and the grade 12 synthesis filler. Added the golden calf, Nadab and Abihu, Old Testament rejections of uncommanded worship, worship through the Mediator alone, life worship vs gathered worship, elements vs circumstances, liberty of conscience, Reformation history, the psalmody and instruments debate, and a capstone order of worship. Added verse-level references and confession citations (WCF 1.6, 20.2, 21.1-21.7, WSC Q46-Q59, WLC Q108-Q109, HC Q96 and Q98, Belgic 32) and left sacramental doctrine to its sibling sub-topic.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2119,
+  "output": 6827
+ }
+}

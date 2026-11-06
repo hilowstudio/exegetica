@@ -1,0 +1,233 @@
+{
+ "sub_topic": "AGR.7.3.2",
+ "name": "Planning & Setting SAE Goals",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "FFA Leadership & SAE",
+  "Supervised Agricultural Experience (SAE)"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify personal interests in plants, animals, food, or the outdoors that could become a simple agricultural project",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "List the steps involved in starting a simple agricultural project at home or school",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish between short-term and long-term goals for an agricultural project",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how setting goals gives direction to an SAE project and helps measure success",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the resources an SAE project requires, including time, money, space, equipment, and adult help",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Write SAE goals that are specific, measurable, attainable, realistic, and time-bound",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Create a timeline of tasks and milestones that leads to completing an SAE goal",
+   "grade": 8,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Supervised Agricultural Experience is and why careful planning makes an SAE a valuable work-based learning experience",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.07.01.01.a",
+    "FPS.11.04",
+    "FPS.07"
+   ]
+  },
+  {
+   "text": "Analyze how SAE goals can connect personal interests to an AFNR career pathway and develop lifelong career skills",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.07.02.01.b",
+    "FPS.11.04.01.a",
+    "FPS.07.01.01.b"
+   ]
+  },
+  {
+   "text": "Assess personal resources and constraints to determine whether a proposed SAE is feasible",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.07.01"
+   ]
+  },
+  {
+   "text": "Identify the information needed to complete an SAE plan, including SMART goals, a needs assessment, and a projected budget",
+   "grade": 10,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01.03.a"
+   ]
+  },
+  {
+   "text": "Apply goal-setting steps to draft a one-year SAE plan with goals, action steps, and a timeline",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01.03.a"
+   ]
+  },
+  {
+   "text": "Design a safety plan that identifies hazards and safe practices for a planned SAE",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.08.04.01.c"
+   ]
+  },
+  {
+   "text": "Develop a training agreement that defines the responsibilities of the student, parent or guardian, employer, and agriculture teacher in an SAE",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Develop a written SAE plan with goals, a projected budget, and a method for tracking progress and defend its feasibility",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01.03.a",
+    "FPS.07.01.01.c"
+   ]
+  },
+  {
+   "text": "Develop a multi-year SAE growth plan aligned with FFA degree and proficiency award requirements",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Develop production goals for a plant-based SAE that account for environmental factors",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01"
+   ]
+  },
+  {
+   "text": "Evaluate input from the agriculture teacher, parents, and employers to improve an SAE plan",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.06.03.02.c"
+   ]
+  },
+  {
+   "text": "Evaluate progress toward SAE goals and revise goals in response to changing circumstances",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.06.03.02.c",
+    "FPS.07.01"
+   ]
+  },
+  {
+   "text": "Justify how SAE goals prepare a student for post-secondary education and a future AFNR career",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.07.01.01.c",
+    "FPS.11.04.01.c"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded all six existing objectives, made the grade 8 one a SMART goal writing competency, changed the grade 11 plan to track progress instead of building a record-keeping system to avoid overlapping the record keeping sibling, and made grade 12 revision an evaluation objective. Added interest identification, short- versus long-term goals, resource identification, timelines, the value of SAE planning, career pathway alignment, feasibility assessment, plan components, safety planning, training agreements, multi-year growth tied to FFA degrees and proficiencies, plant production goals, stakeholder input, and post-secondary justification. Tagged AFNR standards only on grade 9 to 12 objectives where they fit.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.04.01.03.a",
+  "CRP.06.03.02.c",
+  "ECL.02.01.01.a",
+  "FPS.07",
+  "FPS.07.01",
+  "FPS.07.01.01.a",
+  "FPS.07.01.01.b",
+  "FPS.07.01.01.c",
+  "FPS.07.02.01.b",
+  "FPS.08.04.01.c",
+  "FPS.09.02.01.c",
+  "FPS.11.04",
+  "FPS.11.04.01.a",
+  "FPS.11.04.01.c",
+  "PS.01"
+ ],
+ "usage": {
+  "input": 2276,
+  "output": 2780
+ }
+}

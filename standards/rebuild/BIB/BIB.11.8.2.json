@@ -1,0 +1,305 @@
+{
+ "sub_topic": "BIB.11.8.2",
+ "name": "The Spirit in Creation, Revelation, and Inspiration",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Pneumatology: The Doctrine of the Holy Spirit"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from Genesis 1:2 that the Spirit of God was present and at work when God made the world",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that the Holy Spirit moved the prophets and apostles to speak and write God's words in the Bible",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "2 Peter 1:21",
+    "2 Timothy 3:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell from Job and the Psalms how the Spirit gives breath and life to people and creatures",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Job 33:4",
+    "Psalm 104:30",
+    "Genesis 2:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite Psalm 119:18 as a class prayer asking God for understanding before reading Scripture together",
+   "grade": 2,
+   "bloom": 3,
+   "scripture": [
+    "Psalm 119:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain in simple words what it means that all Scripture is breathed out by God",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify Old Testament passages that show the Spirit speaking through prophets and leaders",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "2 Samuel 23:2",
+    "Nehemiah 9:30",
+    "Ezekiel 2:2",
+    "Micah 3:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the Spirit continues to sustain and renew creation as part of God's providence",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 104:27-30",
+    "Psalm 33:6",
+    "Job 26:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Spirit filled Bezalel with skill for crafting the tabernacle and what this shows about the Spirit's work in human abilities",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 31:1-5",
+    "Exodus 35:30-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus' promise that the Spirit would remind the apostles of his words and guide them into truth relates to the writing of the New Testament",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "John 14:26",
+    "John 16:12-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish general revelation from special revelation and describe the Spirit's role in giving special revelation",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 19:1-4",
+    "Romans 1:19-20",
+    "Hebrews 1:1-2",
+    "1 Peter 1:10-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare inspiration, the Spirit's giving of the Word, with illumination, the Spirit's enabling of readers to understand it",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 3:16",
+    "1 Corinthians 2:10-14",
+    "Psalm 119:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how New Testament writers introduce Old Testament quotations as the speech of the Holy Spirit",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 4:24-25",
+    "Acts 28:25",
+    "Hebrews 3:7",
+    "Hebrews 10:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret 2 Peter 1:20-21 in its context to explain how human authors were carried along by the Spirit while their own personalities and styles remained",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "2 Peter 1:16-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition grounds the authority, infallibility, and inerrancy of Scripture in the Spirit's inspiration",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16",
+    "John 10:35",
+    "2 Peter 1:21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4",
+    "Westminster Larger Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the inward testimony of the Spirit as the Westminster Confession describes it and distinguish it from the external evidences for Scripture",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 2:4-5",
+    "1 Thessalonians 1:5",
+    "1 John 2:20",
+    "1 John 2:27"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5",
+    "Westminster Larger Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare verbal plenary inspiration with dictation and partial inspiration views and explain why the Reformed tradition holds the first",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 3:16",
+    "Matthew 5:18",
+    "1 Corinthians 2:13",
+    "2 Peter 3:15-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Westminster Confession of Faith 1.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a written account of the Spirit's work in creation, providence, and revelation that shows how it fits within the shared work of the Father, Son, and Spirit",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:1-3",
+    "Psalm 33:6",
+    "Psalm 104:30",
+    "Hebrews 1:1-2",
+    "2 Peter 1:21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1",
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Reformed claim that the Holy Spirit speaking in Scripture is the supreme judge over church councils, traditions, and private claims to revelation",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 22:29-32",
+    "Acts 28:25",
+    "Acts 17:11",
+    "Galatians 1:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10",
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Holy Spirit as the ultimate Author of Scripture against common objections such as human authorship and alleged errors",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "2 Peter 1:21",
+    "2 Timothy 3:16",
+    "Acts 1:16",
+    "Hebrews 3:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Reformed teaching that the Spirit's testimony, rather than church authority or rational proofs alone, is the final ground of certainty that Scripture is God's Word",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 2:4-5",
+    "1 Corinthians 2:10-14",
+    "1 John 5:6-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4",
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Spirit in creation, Spirit moving the prophets, inspiration, inspiration versus illumination, 2 Peter 1:21, authority and inerrancy, inward testimony, the theology of creation and revelation, the Spirit as Author, the ground of certainty). I dropped 'Explain how the Spirit guides believers into truth' as a general claim about believers and refocused it on Jesus' promise to the apostles. I turned 'Apply dependence on the Spirit' into a classroom prayer practice based on Psalm 119:18. I recast 'Analyze the Spirit's inward witness' and the grade 9 internal testimony item as one explanation tied to WCF 1.5, and moved the certainty synthesis into an evaluation. I reframed the new revelation claim around WCF 1.10 as the supreme judge so it does not overlap the gifts and cessationism sibling. I limited 'Spirit gives life' to creation to avoid overlapping the regeneration sibling. I added objectives on the Spirit speaking through Old Testament prophets, providence, Bezalel's skill, general versus special revelation, New Testament citation formulas, organic inspiration in 2 Peter 1:20-21, and verbal plenary inspiration compared with rival views. All references are now verse-specific, and confessions are cited only where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2143,
+  "output": 5286
+ }
+}

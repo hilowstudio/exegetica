@@ -1,0 +1,372 @@
+{
+ "sub_topic": "BIB.3.2.3",
+ "name": "The Messiah: Prophet, Priest, and King",
+ "path": [
+  "Bible & Theology",
+  "Biblical Survey & Redemptive History",
+  "Redemptive Historical Themes"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Jesus as the King promised in the Bible who rules over all things",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 1:31-33",
+    "Matthew 2:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe a priest as someone who goes to God on behalf of the people and prays for them",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 5:1",
+    "Hebrews 7:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that a prophet is someone God sends to speak His words to people",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Deuteronomy 18:18",
+    "Jeremiah 1:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Samuel anointed David with oil to show that God had chosen him to be king",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "1 Samuel 16:1-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that the Hebrew word Messiah and the Greek word Christ both mean Anointed One",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 1:41",
+    "John 4:25-26"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q31",
+    "Westminster Larger Catechism Q42"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the three offices of prophet, priest, and king that the Reformed tradition confesses Jesus fulfills",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Acts 3:22",
+    "Hebrews 4:14",
+    "Revelation 19:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q23",
+    "Heidelberg Catechism Q31"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus does the work of a prophet by revealing God and His will through His teaching",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "John 1:18",
+    "Matthew 7:28-29",
+    "Hebrews 1:1-2"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q24"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus does the work of a priest by standing before God for His people and interceding for them",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 7:24-25",
+    "Romans 8:34"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus does the work of a king by ruling, protecting, and defending His people and conquering His enemies",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 28:18",
+    "1 Corinthians 15:24-25",
+    "Isaiah 9:6-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize key Old Testament promises of a coming prophet, priest, and king",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 18:15-19",
+    "2 Samuel 7:12-16",
+    "Psalm 110:1-4",
+    "Isaiah 9:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Moses as prophet, Aaron as priest, and David as king with Jesus, noting both likenesses and the ways Jesus is greater",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 18:15",
+    "Hebrews 3:1-6",
+    "Exodus 28:1",
+    "Hebrews 5:1-6",
+    "2 Samuel 7:12-16",
+    "Luke 1:32-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Peter applies the promise of a prophet like Moses to Jesus in his sermon in Acts",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 18:15-19",
+    "Acts 3:22-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the anointing of prophets, priests, and kings in the Old Testament and what the anointing signified",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 29:7",
+    "1 Samuel 10:1",
+    "1 Samuel 16:13",
+    "1 Kings 19:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus' anointing with the Spirit at His baptism and His reading of Isaiah 61 in Nazareth mark Him as the Anointed One",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Luke 3:21-22",
+    "Luke 4:16-21",
+    "Isaiah 61:1-2",
+    "Acts 10:38"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q42"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze why the offices of priest and king were kept separate in Israel and how the prophets anticipated their union in one person",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "2 Chronicles 26:16-21",
+    "Zechariah 6:12-13",
+    "Psalm 110:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect the priest-king Melchizedek to the eternal priesthood of Jesus as Hebrews explains it",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 14:18-20",
+    "Psalm 110:4",
+    "Hebrews 7:1-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jesus' high priestly prayer as an example of His intercession for His people",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "John 17:1-26",
+    "Hebrews 7:25"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q44"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the kingship of Christ over the nations and all creation from the Psalms and the New Testament",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 2:6-9",
+    "Ephesians 1:20-22",
+    "Philippians 2:9-11",
+    "Revelation 11:15"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q45"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the political messianic expectations of Jesus' day from the kingdom Jesus proclaimed",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "John 6:14-15",
+    "John 18:33-37",
+    "Acts 1:6-8",
+    "Mark 8:27-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a profile of the threefold office of Christ using Scripture and the Reformed confessions",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Hebrews 1:1-3",
+    "Hebrews 4:14-16",
+    "Psalm 2:6-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.1",
+    "Westminster Larger Catechism Q43",
+    "Westminster Larger Catechism Q44",
+    "Westminster Larger Catechism Q45"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Reformed tradition relates each office of Christ to a human need, such as ignorance, guilt, and bondage",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 1:18",
+    "Hebrews 7:26-27",
+    "Colossians 1:13"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q31",
+    "Westminster Larger Catechism Q42"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the church is described as sharing in Christ's anointing as prophets, priests, and kings",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Peter 2:9",
+    "Revelation 1:5-6",
+    "1 John 2:20",
+    "1 John 2:27"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q32"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Hebrews and Revelation the claim that Jesus is the final Word, the final High Priest, and the final King",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 1:1-3",
+    "Hebrews 7:23-28",
+    "Revelation 19:11-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate views that present Jesus in only one office, such as a moral teacher alone, against the biblical portrait of the Messiah",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 16:13-17",
+    "John 14:6",
+    "Hebrews 8:1"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q23"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Write a synthesis tracing the offices of prophet, priest, and king from the Old Testament to their fulfillment in Christ",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Luke 24:27",
+    "Luke 24:44",
+    "Deuteronomy 18:15",
+    "Psalm 110:1-4",
+    "2 Samuel 7:12-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.1",
+    "Heidelberg Catechism Q31"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: King, priest, prophet, Messiah meaning, the three offices, Jesus as Prophet, the Moses and David comparison, OT anointing, John 17, Melchizedek, Kingship over the nations, the threefold office profile, the church's share in the offices, final Word and Authority, and the OT synthesis. Merged the Christ as Greek word item into the Messiah meaning objective. Replaced the vague observe item with identifying the three offices. Recast final Sacrifice as final High Priest so atonement stays with the Sacrifice and Atonement sibling. Added parallel priest and king work objectives keyed to WSC Q24-26. Added new objectives on David's anointing, OT messianic promises, Acts 3 and Deuteronomy 18, Jesus' Spirit anointing and Luke 4, the separation and promised union of priest and king, first-century political expectations, how each office meets a human need, and one-office distortions. Added confessional anchors from WCF 8.1, WLC Q42-45, and HC Q32.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1965,
+  "output": 5403
+ }
+}

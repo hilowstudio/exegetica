@@ -1,0 +1,239 @@
+{
+ "sub_topic": "AGR.5.4.2",
+ "name": "Food Product Development",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Systems & Innovation"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe the basic steps food developers follow to turn an idea into a new food product",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the job common ingredients such as flour, sugar, fat, and eggs do in a simple recipe",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare two versions of a food product to identify differences in ingredients, appearance, texture, and taste",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the appearance, aroma, texture, and flavor of a food sample using sensory vocabulary",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how a value-added product such as jam, cheese, or jerky increases the worth of a raw agricultural commodity",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Conduct a simple taste test or consumer preference survey and summarize the results to guide a new food product idea",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Modify a basic recipe by changing one ingredient and record how the change affects the finished product",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the factors that shape the planning of a new food product, including creativity, cost, nutrition, and regulation",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.02.a"
+   ]
+  },
+  {
+   "text": "Classify current consumer market demands such as local, organic, non-GMO, plant-based, and convenience foods that drive new product ideas",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.03.a"
+   ]
+  },
+  {
+   "text": "Conduct a sensory evaluation using a hedonic scale or triangle test and interpret the panel results",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.04.b",
+    "FPP.03.01.04.c"
+   ]
+  },
+  {
+   "text": "Explain how reactions such as Maillard browning, fermentation, emulsification, and gelatinization determine the quality of a formulated food product",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.03.a",
+    "FPP.02.02.03.b"
+   ]
+  },
+  {
+   "text": "Analyze the nutritional composition of a formulation and adjust ingredients to meet a target such as reduced sodium or added protein",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01.01.c",
+    "FPP.02.01"
+   ]
+  },
+  {
+   "text": "Develop a standardized formula with ingredient weights and baker's or formula percentages that scales from a bench-top batch to a larger run",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify how pH, water activity, and preservatives in a formulation affect the safety and shelf stability of a new food product",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01"
+   ]
+  },
+  {
+   "text": "Plan a supervised agricultural experience project that develops and test-markets a value-added food product from a farm or home commodity",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the regulatory requirements a new food product must meet, including the ingredient statement, allergen declaration, Nutrition Facts panel, and permitted claims",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.01.a"
+   ]
+  },
+  {
+   "text": "Calculate ingredient cost per unit and a suggested price to judge the economic feasibility of a product concept",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.02.a"
+   ]
+  },
+  {
+   "text": "Analyze how food companies apply innovations such as alternative proteins, functional ingredients, or novel processing methods to create new products",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04",
+    "FPP.02.02.03.b"
+   ]
+  },
+  {
+   "text": "Evaluate a prototype food product against sensory, nutritional, market, and regulatory targets and recommend reformulation",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.04.c"
+   ]
+  },
+  {
+   "text": "Design a new food product from concept through prototype, including formulation, sensory testing, nutrition labeling, and costing, that meets a specific consumer trend",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.02.c",
+    "FPP.04.01.02.c"
+   ]
+  },
+  {
+   "text": "Defend product development decisions with test data when presenting a food product concept to a judging panel such as the FFA Food Science and Technology CDE",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept all six original competencies, rewording some for precision (sensory comparison, consumer testing, prototype evaluation, capstone design). Replaced the vague grade 9 prototype objective with distinct skills in planning factors, market demand types, and formal sensory evaluation. Added missing competencies: ingredient functions, value-added concepts, recipe modification, food chemistry, nutritional reformulation, standardized formulas and scale-up, shelf stability, regulatory labeling, costing, industry innovation, an SAE product project, and an FFA CDE style defense. Left supply chains, packaging, distribution, and careers to sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.02.01",
+  "FPP.02.01.01.c",
+  "FPP.02.02.03.a",
+  "FPP.02.02.03.b",
+  "FPP.02.03.01.a",
+  "FPP.02.03.02.a",
+  "FPP.02.03.02.c",
+  "FPP.03.01.04.b",
+  "FPP.03.01.04.c",
+  "FPP.03.02.02.a",
+  "FPP.03.03.03.a",
+  "FPP.03.03.03.b",
+  "FPP.03.03.03.c",
+  "FPP.04",
+  "FPP.04.01.02.c"
+ ],
+ "usage": {
+  "input": 2298,
+  "output": 3559
+ }
+}

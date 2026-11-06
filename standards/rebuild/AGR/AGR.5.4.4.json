@@ -1,0 +1,192 @@
+{
+ "sub_topic": "AGR.5.4.4",
+ "name": "Careers in Food Science",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Systems & Innovation"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify jobs that people do to grow, process, inspect, and sell food",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how people in food careers help keep food safe, healthy, and available for families and communities",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the daily work of a food scientist, food inspector, or dietitian",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the tools, workplaces, and tasks of food careers in laboratories, processing plants, and commercial kitchens",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Investigate the education, certifications, and skills required for a career in food science or food safety",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how school subjects such as chemistry, biology, and math are used on the job by food science professionals",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze career pathways available in food production, processing, quality control, and product development",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the role of quality assurance and food safety professionals and the purpose of the tests they perform on food products",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.04.a"
+   ]
+  },
+  {
+   "text": "Describe how research and development food scientists apply biochemistry to create new and value added food products",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.03.a"
+   ]
+  },
+  {
+   "text": "Explain how FFA Career Development Events such as Food Science and Technology and Meats Evaluation build competencies used in food industry careers",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Design a supervised agricultural experience plan that builds skills toward a chosen food science career",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the roles of food science professionals working in government regulatory agencies, private industry, and university research and extension",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze labor market information such as salary ranges, job demand, and regional employers for food science careers",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Conduct an informational interview or job shadow with a food industry professional and report on the responsibilities and outlook of the career",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the qualifications needed for a specific food science career of personal interest against current personal skills and experience",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how food science professionals serve others through honesty, safety, and stewardship in their daily work",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Create a resume and portfolio that document SAE, FFA, and coursework accomplishments for a food science position or scholarship",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Formulate a career plan that outlines the education, credentials, and experience needed to enter a chosen food science profession",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and lightly reworded all six existing objectives because each names a real career competency. Added grade 4, 6, and 8 objectives to fill gaps on the purpose of food careers, the settings where food professionals work, and how school subjects are used on the job. Added high school objectives on quality assurance and R&D roles, aligned to FPP.01.02.04.a and FPP.02.02.03.a. Also added objectives on FFA CDE connections, SAE planning, comparing government, industry, and academic roles, labor market analysis, informational interviews and job shadowing, vocational ethics, and a resume and portfolio. The other candidate standards cover product development, packaging, and distribution content that belongs to sibling sub-topics, so they were not used.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.01.02.04.a",
+  "FPP.01.03",
+  "FPP.02",
+  "FPP.02.01",
+  "FPP.02.01.01.c",
+  "FPP.02.02",
+  "FPP.02.02.02.b",
+  "FPP.02.02.03.a",
+  "FPP.02.02.03.b",
+  "FPP.02.03.01.b",
+  "FPP.03.01.04.b",
+  "FPP.03.01.04.c",
+  "FPP.03.02.04.b",
+  "FPP.03.03.03.b",
+  "FPP.04.04.01.c"
+ ],
+ "usage": {
+  "input": 2296,
+  "output": 2625
+ }
+}

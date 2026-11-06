@@ -1,0 +1,306 @@
+{
+ "sub_topic": "BIB.9.2.1",
+ "name": "Daniel",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Major Prophets"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Retell how Daniel kept praying to God and how God shut the lions' mouths to protect him",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Daniel 6:10-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Shadrach, Meshach, and Abednego and recall that they would not bow down to the king's golden statue",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Daniel 3:1-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall from Daniel that God rules over all kings and kingdoms",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Daniel 2:20-21",
+    "Daniel 4:34-35"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how Daniel and his friends refused the king's food and how God blessed them with health and wisdom",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 1:8-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the story of the fiery furnace, including the fourth figure in the fire and the king's response",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 3:19-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of the writing on the wall and explain what the words meant for King Belshazzar",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 5:5-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Nebuchadnezzar's dream of the statue made of metals, including the four kingdoms and the stone that becomes God's everlasting kingdom",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 2:31-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the historical setting of Daniel, including the exile of Judah to Babylon and Daniel's service under Babylonian and Persian kings",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 1:1-7",
+    "2 Kings 24:1-2",
+    "Daniel 6:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the pride and humbling of Nebuchadnezzar with Daniel's humility in giving credit to God",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 2:27-30",
+    "Daniel 4:28-37"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Daniel and his friends served faithfully in a pagan government while refusing to compromise their worship of God",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 1:8",
+    "Daniel 3:16-18",
+    "Daniel 6:4-10",
+    "Jeremiah 29:4-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the structure of Daniel as court narratives followed by visions and note the shift between Hebrew and Aramaic",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [
+    "Daniel 2:4",
+    "Daniel 7:1",
+    "Daniel 8:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the theme of God's sovereignty over the nations is developed across the narratives of Daniel",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 2:21",
+    "Daniel 4:17",
+    "Daniel 4:34-35",
+    "Daniel 5:21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the vision of the four beasts and the Ancient of Days and compare it with the statue dream of chapter 2",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 7:1-28",
+    "Daniel 2:31-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus identified himself with the Son of Man of Daniel 7 and how this reveals his kingship",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 7:13-14",
+    "Mark 14:61-62",
+    "Matthew 26:64"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the main features of apocalyptic literature using examples from the visions of Daniel",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 7:2-8",
+    "Daniel 8:1-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Daniel's prayer of confession as a response to God's covenant promises spoken through Jeremiah",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 9:1-19",
+    "Jeremiah 25:11-12",
+    "Jeremiah 29:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the vision of the ram and the goat using the angel's explanation and identify the historical kingdoms it describes",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 8:1-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a timeline of the seventy weeks prophecy that compares the traditional messianic reading with other major interpretations",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 9:24-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Daniel 12 teaches the bodily resurrection and final judgment and connect it to the teaching of Jesus",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 12:1-3",
+    "John 5:28-29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.2",
+    "Westminster Confession of Faith 33.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the portrayal of heavenly conflict and the role of angels such as Michael in Daniel's final vision",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 10:12-21",
+    "Daniel 12:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate arguments for a sixth-century and a Maccabean dating of Daniel, including the role of assumptions about predictive prophecy",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Daniel 1:1",
+    "Daniel 11:2-4",
+    "Matthew 24:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace how the book of Revelation draws on the imagery of Daniel's visions",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 7:3-7",
+    "Daniel 7:9-14",
+    "Revelation 1:13-14",
+    "Revelation 13:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Create a study on living faithfully as exiles that draws on Daniel and connects it to New Testament teaching for believers",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Daniel 1:8-21",
+    "Daniel 6:4-10",
+    "Jeremiah 29:4-7",
+    "1 Peter 2:11-12"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (lions' den, three friends, God's rule, fiery furnace, writing on the wall, statue dream, pride vs humility, sovereignty, four beasts, Son of Man, apocalyptic genre, seventy weeks, dating, exile study). Replaced the affective 'apply courage' objective with an observable one on faithful service without compromise. Merged the dating and 'defend supernatural prediction' objectives into one evaluation. Added Daniel 1 food test, historical setting, book structure and languages, Daniel 9 prayer, ram and goat vision, resurrection in Daniel 12, heavenly conflict in Daniel 10, and Daniel's use in Revelation. Anchored objectives to verse ranges and added confessional references only where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1910,
+  "output": 4684
+ }
+}

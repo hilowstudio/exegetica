@@ -1,0 +1,254 @@
+{
+ "sub_topic": "BIB.5.3.1",
+ "name": "Core Concepts and Texts",
+ "path": [
+  "Bible & Theology",
+  "Comparative Religious Studies & Ethics",
+  "Hinduism: Dharma, Karma & Samsara"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Hinduism as an ancient religion that began in India and is followed by many people around the world today",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify karma as the Hindu teaching that a person's actions bring good or bad results in this life or a future life",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe samsara as the Hindu belief that the soul is reborn into new bodies again and again in a cycle",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Bible's teaching that each person lives once and then faces judgment differs from the Hindu belief in reincarnation",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 9:27",
+    "2 Corinthians 5:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q37"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the major Hindu sacred texts including the Vedas, the Upanishads, the Bhagavad Gita, the Ramayana, and the Mahabharata",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain dharma as the Hindu idea of duty and right order that depends on a person's place and stage in life",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the origin and authority Hindus give their sacred texts with the Reformed teaching that the Bible is God's inspired and sufficient written word",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "2 Peter 1:20-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Westminster Confession of Faith 1.4",
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the four traditional Hindu goals of life of dharma, artha, kama, and moksha and how they relate to one another",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the traditional varna and caste system was justified by dharma and karma and compare it with the biblical teaching that all people bear God's image and share one origin",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:27",
+    "Acts 17:26",
+    "Galatians 3:28"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish Brahman as ultimate reality from Atman as the inner self and explain the Upanishadic claim that Atman is Brahman",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain moksha as release from samsara and describe the paths of knowledge, devotion, and action presented in the Bhagavad Gita",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Hindu pursuit of moksha through effort and knowledge with the Reformed teaching of salvation as God's free gift of grace through faith in Christ",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:8-9",
+    "Romans 3:23-24",
+    "Titus 3:5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33",
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Contrast the Hindu cyclical view of time and ages with the biblical linear view of history from creation to new creation",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:1",
+    "Hebrews 9:27",
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the major Hindu philosophical schools of Advaita, Vishishtadvaita, and Dvaita by their teaching on the relationship between Brahman and the self",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze a primary source passage from the Upanishads or the Bhagavad Gita to identify its teaching on dharma, karma, or the self in its literary and historical context",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate pantheism and monism in light of the biblical distinction between the Creator and his creation",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 1:1",
+    "Isaiah 44:6",
+    "Acts 17:24-28",
+    "Romans 1:25"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4",
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the explanation of suffering given by karma against the biblical account of the Fall and God's work of redemption",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 3:16-19",
+    "Romans 5:12",
+    "John 9:1-3",
+    "Romans 8:18-23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q19",
+    "Westminster Confession of Faith 6.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Hindu concepts such as karma, reincarnation, and monism have shaped Western culture and New Age spirituality",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 2:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a written argument for the distinct personhood of God and of individual humans in contrast with Hindu teaching that the self is ultimately one with Brahman",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "Genesis 1:27",
+    "Exodus 3:14",
+    "Psalm 139:13-16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10",
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a respectful dialogue that accurately represents Hindu beliefs about karma and samsara and explains the Christian gospel's answer to them",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 17:22-31",
+    "1 Peter 3:15",
+    "Colossians 4:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies on Hinduism's origin, karma, reincarnation, the Vedas, caste, Brahman and Atman, moksha, cyclical time, pantheism, suffering, personhood of God, and Western influence. Dropped the statues and Yoga objectives and the many-gods comparison as belonging to the Deities and Practices sibling. Added dharma, the wider canon of Hindu texts including the Upanishads and Bhagavad Gita, the four goals of life, the paths to moksha, the major philosophical schools, primary source analysis, a comparison of scriptural authority, a comparison of moksha with salvation by grace, and a respectful dialogue capstone. Anchored biblical comparisons to specific passages and to Westminster Standards where they state the doctrine, and left purely descriptive objectives unanchored.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1927,
+  "output": 4073
+ }
+}

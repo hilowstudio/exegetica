@@ -1,0 +1,273 @@
+{
+ "sub_topic": "AGR.2.2.2",
+ "name": "Soil Fertility & Fertilizers",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Plant & Horticultural Science",
+  "Soil Science & Plant Nutrition"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Name the things a plant needs from soil to grow well",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how adding compost or fertilizer changes plant growth by comparing plants grown with and without it in a class experiment",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify nitrogen, phosphorus, and potassium as the three primary nutrients plants need",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how decomposing plant residue and animal manure return nutrients to the soil for new plants to use",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the N-P-K numbers on a fertilizer label and what each nutrient does for a plant",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify common fertilizer sources such as manure, compost, bone meal, and commercial granular fertilizer as organic or inorganic",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how legumes add nitrogen to the soil through their partnership with rhizobia bacteria in root nodules",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate the pounds of actual nitrogen, phosphate, and potash in a bag of fertilizer given its N-P-K analysis",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the major functions of primary macronutrients, secondary macronutrients, and micronutrients such as iron, sulfur, and zinc in plant growth and development",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.01.a"
+   ]
+  },
+  {
+   "text": "Diagnose common nutrient deficiencies in crop and horticultural plants from visual symptoms such as chlorosis, purpling, and marginal leaf scorch",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.01.b"
+   ]
+  },
+  {
+   "text": "Distinguish mobile from immobile nutrients by where deficiency symptoms first appear on the plant",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.01.a",
+    "PS.01.04.01.b"
+   ]
+  },
+  {
+   "text": "Explain how legume rotations and cover crops build soil fertility and reduce the need for purchased nitrogen",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.05.a"
+   ]
+  },
+  {
+   "text": "Maintain accurate fertilizer application records for an SAE crop, garden, or greenhouse project",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04"
+   ]
+  },
+  {
+   "text": "Compare the formulations of organic and inorganic fertilizers including analysis, physical form, and nutrient release rate",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.04.a"
+   ]
+  },
+  {
+   "text": "Calculate the amount of fertilizer product to apply per acre or per 1,000 square feet from a nutrient recommendation and fertilizer analysis",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.04.b"
+   ]
+  },
+  {
+   "text": "Analyze how soil pH affects the availability of nutrients to plant roots",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.02.a"
+   ]
+  },
+  {
+   "text": "Explain how cation exchange capacity and electrical conductivity influence nutrient retention, nutrient availability, and crop growth",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.02.a"
+   ]
+  },
+  {
+   "text": "Contrast pH and cation exchange capacity between mineral field soil and soilless growing media used in greenhouse production",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.02.b"
+   ]
+  },
+  {
+   "text": "Recommend amendments such as lime, elemental sulfur, or leaching to adjust the pH and soluble salts of a growing medium based on test results for a specific crop",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.02.c",
+    "PS.03.02.02.b"
+   ]
+  },
+  {
+   "text": "Interpret laboratory soil and plant tissue analyses to determine whether nutrient levels are deficient, sufficient, or excessive",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.03.b"
+   ]
+  },
+  {
+   "text": "Prescribe fertilizer applications based on the results of a laboratory analysis of soil and plant tissue samples",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.03.c"
+   ]
+  },
+  {
+   "text": "Calculate a nutrient budget that credits manure, legume, and residual soil nitrogen against crop nutrient removal",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04"
+   ]
+  },
+  {
+   "text": "Evaluate fertilizer practices using 4R nutrient stewardship of right source, right rate, right time, and right place for efficiency and environmental impact",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04",
+    "PS.01.04.04.a"
+   ]
+  },
+  {
+   "text": "Design a fertilization plan for a specific crop using soil test data, cation exchange capacity, and nutrient budgeting",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04",
+    "PS.01.04.03.c",
+    "PS.01.04.04.b"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives because each names a real competency, and expanded the N-P-K calculation at grade 8 to include phosphate and potash. Added early-grade objectives on compost and fertilizer effects, nutrient cycling, organic versus inorganic sources, and legume nitrogen fixation. Added high school objectives aligned to PS.01.04: macro and micronutrient functions, deficiency diagnosis, mobile versus immobile nutrients, fertilizer formulations, application rate calculations, CEC and EC, soilless media, pH and salt correction, interpreting and prescribing from lab analyses, nutrient budgeting, 4R stewardship, and SAE fertilizer record keeping. Soil sampling procedures, soil formation, irrigation, and conservation practices were left to sibling sub-topics. PS.03.01.01.b was not used because it concerns plant pollination and fertilization rather than soil fertility.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ESS.05.02.02.b",
+  "PS.01.04",
+  "PS.01.04.01.a",
+  "PS.01.04.01.b",
+  "PS.01.04.02.a",
+  "PS.01.04.02.b",
+  "PS.01.04.02.c",
+  "PS.01.04.03.a",
+  "PS.01.04.03.b",
+  "PS.01.04.03.c",
+  "PS.01.04.04.a",
+  "PS.01.04.04.b",
+  "PS.01.04.05.a",
+  "PS.03.01.01.b",
+  "PS.03.02.02.b"
+ ],
+ "usage": {
+  "input": 2410,
+  "output": 4122
+ }
+}

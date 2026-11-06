@@ -1,0 +1,177 @@
+{
+ "sub_topic": "AGR.5.1.3",
+ "name": "Food Additives & Ingredients",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Chemistry & Nutrition"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the ingredient list on a food package and point out added ingredients such as preservatives, colorings, and flavorings",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the purpose of common types of food additives, including preservatives, colorings, sweeteners, and emulsifiers",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace common processed food ingredients such as cornstarch, soy lecithin, and pectin back to the farm crops or livestock they come from",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that ingredients are listed in descending order by weight and use that order to estimate the main components of a product",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Investigate the function of a specific additive, such as an emulsifier or stabilizer, by comparing a food made with and without it",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish naturally derived from synthetic additives and explain why the source of an additive does not by itself determine its safety",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify food additives by function, including preservatives, antioxidants, buffers, stabilizers, colors, and flavors, and describe the key properties of each class",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.02"
+   ]
+  },
+  {
+   "text": "Analyze the ingredient lists of a variety of food products to determine which additives are used and why each was included in the formulation",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.02.c",
+    "FPP.02.02.02.b"
+   ]
+  },
+  {
+   "text": "Explain how selected additives change food chemistry, such as antioxidants slowing lipid oxidation, acidulants lowering pH, and hydrocolloids binding water",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.02.b"
+   ]
+  },
+  {
+   "text": "Conduct a laboratory test measuring the effect of an additive on a food quality, such as ascorbic acid on enzymatic browning or a stabilizer on syneresis",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.02.b",
+    "FPP.02.02"
+   ]
+  },
+  {
+   "text": "Explain how food additives are regulated, including FDA approval, GRAS status, and labeling requirements for ingredients and major allergens",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.01.b",
+    "FPP.01.02.04.a"
+   ]
+  },
+  {
+   "text": "Evaluate the scientific evidence and consumer concerns surrounding a debated additive and defend a reasoned position on its use",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.02.b"
+   ]
+  },
+  {
+   "text": "Analyze how market demands such as clean label, organic, and non-GMO claims influence the ingredients and additives processors choose",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.03.a"
+   ]
+  },
+  {
+   "text": "Formulate a new or reformulated value-added food product and justify each ingredient and additive choice for function, safety, cost, and labeling",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.03.a",
+    "FPP.02.02.03.b",
+    "FPP.02.02"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded the grade 3, 5, 7, 9, and 11 objectives as real competencies. Split the old grade 11 regulation objective into a clearer regulation and labeling objective and added a separate evidence-based evaluation of a debated additive. Replaced the grade 12 justification objective with a full product formulation task that fits SAE and the FFA Food Science CDE. Added objectives on tracing ingredients to their agricultural sources, reading ingredient order by weight, natural versus synthetic additives, classifying additives by function, the chemistry of how additives work, a lab test of an additive's effect, and how market demand shapes ingredient choices. Left nutrition, food composition, and sensory evaluation to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.01.02.04.a",
+  "FPP.02.01.01.c",
+  "FPP.02.02",
+  "FPP.02.02.02",
+  "FPP.02.02.02.b",
+  "FPP.02.02.02.c",
+  "FPP.02.02.03.a",
+  "FPP.02.02.03.b",
+  "FPP.02.03.01.b",
+  "FPP.03.01.04.b",
+  "FPP.03.01.04.c",
+  "FPP.03.02.02.a",
+  "FPP.03.02.04.b",
+  "FPP.03.03.03.a",
+  "FPP.03.03.03.b"
+ ],
+ "usage": {
+  "input": 2370,
+  "output": 2676
+ }
+}

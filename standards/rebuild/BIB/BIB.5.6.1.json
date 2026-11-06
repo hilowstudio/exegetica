@@ -1,0 +1,357 @@
+{
+ "sub_topic": "BIB.5.6.1",
+ "name": "Birth, Coming of Age, and Marriage",
+ "path": [
+  "Bible & Theology",
+  "Comparative Religious Studies & Ethics",
+  "Life Events, Rituals & Identity"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify a wedding as a time when a man and a woman make promises before God to be husband and wife",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that the Bible teaches that children are a gift from God",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 127:3",
+    "Psalm 139:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name baptism as the sign the church gives to believers and their children to mark them as belonging to God's people",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 28:19",
+    "Acts 2:38-39"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q95"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how Hannah brought Samuel to the house of the Lord and how Mary and Joseph presented Jesus at the temple",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "1 Samuel 1:24-28",
+    "Luke 2:22-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe ways families in different cultures and religions celebrate the birth of a baby",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that every person is made in the image of God and why Christians therefore treat each new life as valuable",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:27",
+    "Psalm 139:13-16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Reformed teaching that baptism is a sign and seal of being joined to Christ and washed from sin",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Romans 6:3-4",
+    "Matthew 28:19"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q94"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of the Jewish rites of circumcision and Bar or Bat Mitzvah",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 17:9-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Jesus in the temple at age twelve and explain what it shows about growing in wisdom and favor with God",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Luke 2:41-52"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe birth and naming customs in Islam and Hinduism such as whispering the call to prayer to a newborn and the Hindu naming ceremony",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare a Christian wedding vow made before God with an ordinary legal contract",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Malachi 2:14",
+    "Matthew 19:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Categorize rites of passage from several religions by the life stage they mark and the purpose they serve",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that children of believers belong to the covenant community and receive baptism as circumcision's New Testament counterpart",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 17:7",
+    "Colossians 2:11-12",
+    "Acts 2:39"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q74",
+    "Westminster Confession of Faith 28.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the covenantal nature of Christian marriage as presented in Genesis, Proverbs, and Malachi",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:18-24",
+    "Proverbs 2:17",
+    "Malachi 2:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare coming of age rites such as Bar and Bat Mitzvah, the Hindu sacred thread ceremony, Sikh Amrit initiation, and Christian confirmation by what each signifies",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the symbolism of water in Christian baptism and contrast it with washing rites in other religions",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 6:3-4",
+    "Titus 3:5",
+    "1 Peter 3:21"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q94"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed practice of public profession of faith and its connection to admission to the Lord's Supper",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 10:9-10",
+    "1 Corinthians 11:27-29"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q97",
+    "Heidelberg Catechism Q81"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how rituals mark changes in identity and bind communities together using biblical and other religious examples",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 6:20-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast the Roman Catholic view of confirmation and marriage as sacraments with the Reformed teaching of two sacraments",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 28:19",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q93",
+    "Westminster Confession of Faith 27.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the purposes of marriage named in the Reformed confessions including mutual help, the bearing of children, and purity",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:18",
+    "Genesis 1:28",
+    "1 Corinthians 7:2-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical theology of the family based on Genesis 2, Deuteronomy 6, and Ephesians 5 and 6",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 2:24",
+    "Deuteronomy 6:6-7",
+    "Ephesians 5:22-33",
+    "Ephesians 6:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the structure and meaning of Jewish, Islamic, and Hindu weddings including the ketubah, the nikah contract, and the seven steps of the Hindu ceremony",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture presents singleness as a gift and calling alongside marriage",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 7:7-8",
+    "1 Corinthians 7:32-35",
+    "Matthew 19:11-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Ephesians 5 presents marriage as a picture of Christ and the church and connect it to the marriage supper of the Lamb",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 5:31-32",
+    "Revelation 19:7-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the secular view of marriage as a contract against the biblical view of marriage as a covenant",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Malachi 2:14",
+    "Matthew 19:4-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the historic Christian definition of marriage as the union of one man and one woman using Scripture and the confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 2:24",
+    "Matthew 19:4-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate sociological accounts of ritual such as those of Durkheim and van Gennep in light of the theological meaning Scripture gives to covenant signs",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 17:11",
+    "Romans 4:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 27.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a respectful presentation explaining the Christian meaning of baptism and marriage to someone from another religious tradition",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Peter 3:15"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (wedding as promise, baptism meaning, Bar Mitzvah, vow vs contract, rites of passage categories, covenantal marriage, water symbolism, ritual and community, theology of family, contract vs covenant, definition of marriage, sociology of ritual). Corrected the grade 1 baptism objective to reflect Reformed baptism of believers and their children. Replaced the profession of faith objective, which centered on personal ownership of belief, with an explanation of the Reformed practice and its link to the Lord's Supper. Dropped the vague grade 3 objective about different parties and folded it into concrete birth and naming customs. Added objectives on children as God's gift and the image of God, Hannah and the presentation of Jesus, Jesus at twelve, covenant children and circumcision, Islamic and Hindu birth customs, comparative coming of age rites, Catholic and Reformed sacramental views, the confessional purposes of marriage, comparative weddings, singleness, Christ and the church imagery, and a capstone explanatory presentation. Added scripture and confession anchors, left death material to the sibling sub-topic.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1906,
+  "output": 6327
+ }
+}

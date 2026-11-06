@@ -1,0 +1,341 @@
+{
+ "sub_topic": "BIB.5.6.2",
+ "name": "Death and Afterlife",
+ "path": [
+  "Bible & Theology",
+  "Comparative Religious Studies & Ethics",
+  "Life Events, Rituals & Identity"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from the Easter account that Jesus died and rose again, defeating death",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 24:1-7",
+    "1 Corinthians 15:3-4"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name heaven as the place where, Scripture teaches, believers will be with Jesus",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "John 14:1-3",
+    "Philippians 1:23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q37"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how Jesus wept with Mary and Martha and then raised Lazarus from the dead",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "John 11:25-26",
+    "John 11:35",
+    "John 11:43-44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Genesis and Romans the biblical teaching that death entered the world through sin",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:17",
+    "Genesis 3:19",
+    "Romans 5:12",
+    "Romans 6:23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the main parts of a Christian funeral and explain how each expresses both grief and hope",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Thessalonians 4:13-14",
+    "John 11:35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Christian teaching that believers will be raised bodily when Christ returns",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:20-23",
+    "1 Thessalonians 4:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q38",
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Hindu and Buddhist idea of reincarnation differs from the biblical teaching of one life followed by judgment and resurrection",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 9:27",
+    "Daniel 12:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the funeral and mourning practices of Judaism, Islam, Hinduism, and Christianity and identify the belief about the afterlife that each practice expresses",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "John 19:40-42",
+    "1 Thessalonians 4:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how 1 Thessalonians 4:13-18 shapes the way Christians are taught to grieve and to comfort one another",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "1 Thessalonians 4:13-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture that the final Christian hope is a renewed creation with resurrected bodies and not only a heavenly existence",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 21:1-5",
+    "Isaiah 65:17",
+    "Romans 8:19-23"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q58"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Reformed teaching on the intermediate state in contrast with the doctrines of purgatory and soul sleep",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Luke 23:43",
+    "2 Corinthians 5:6-8",
+    "Philippians 1:21-23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1",
+    "Westminster Shorter Catechism Q37",
+    "Westminster Larger Catechism Q86"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the terms Sheol and Hades in their Old and New Testament contexts and distinguish them from the final states of heaven and hell",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Psalm 16:10",
+    "Acts 2:27",
+    "Luke 16:22-26",
+    "Revelation 20:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture presents the resurrection of Christ as the firstfruits and guarantee of the future resurrection of believers",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:20-23",
+    "Romans 8:11"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q45"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare a secular naturalist view of death as final extinction with the Christian hope of resurrection and the reasons each gives for how to live",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 15:17-19",
+    "1 Corinthians 15:32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the doctrine of the last judgment as taught in Scripture and the Westminster Confession",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 25:31-46",
+    "2 Corinthians 5:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1",
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Reformed churches do not pray for the dead and contrast this with practices of prayer for the dead and ancestor veneration in other traditions",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 9:27",
+    "Luke 16:26",
+    "Deuteronomy 18:10-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare annihilationism with eternal conscious punishment, the view of the Reformed confessions, by examining the key passages each view cites",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 25:46",
+    "2 Thessalonians 1:9",
+    "Mark 9:48",
+    "Revelation 14:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Islamic teaching on death, the grave, and judgment by deeds in comparison with the Christian teaching that believers are judged as justified in Christ",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 5:24",
+    "Romans 8:1",
+    "Ephesians 2:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical theology of death as an enemy that Christ has defeated and will finally destroy",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 3:19",
+    "Hebrews 2:14-15",
+    "1 Corinthians 15:26",
+    "1 Corinthians 15:54-57",
+    "Revelation 21:4"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q42"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate claims drawn from near-death experiences by the standard of Scripture's sufficiency",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Luke 16:29-31",
+    "2 Corinthians 12:2-4",
+    "Deuteronomy 18:10-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate common objections to the doctrine of hell and defend its consistency with the justice of God as the Reformed tradition teaches it",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 18:25",
+    "Romans 2:5-8",
+    "Revelation 20:12-13"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q29",
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate arguments for euthanasia and assisted suicide in light of the sixth commandment and the biblical teaching that God governs life and death",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Exodus 20:13",
+    "Job 1:21",
+    "Psalm 31:15"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q68",
+    "Westminster Shorter Catechism Q69"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a short funeral meditation that expounds 1 Corinthians 15:54-57 for a grieving congregation",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Corinthians 15:54-57"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q1"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Christ's victory over death, heaven, resurrection hope, funerals, reincarnation contrast, 1 Thessalonians 4 grief, intermediate state, Sheol and Hades, firstfruits, annihilationism, death as enemy, NDEs, hell and justice, 1 Corinthians 15:55). Replaced 'observe that funerals are sad' with describing funeral elements, removed feeling-based wording, and turned the final reflection into an expository funeral meditation. Changed the 'pagan funeral' comparison into a comparison of named world religions. Added death through sin, Lazarus, new creation, secular naturalism, last judgment, prayer for the dead and ancestor veneration, Islamic judgment, and end-of-life ethics. Corrected references to Westminster Confession 32 and 33 and added Heidelberg and Shorter Catechism anchors where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2012,
+  "output": 5546
+ }
+}

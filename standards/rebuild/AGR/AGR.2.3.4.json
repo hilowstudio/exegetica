@@ -1,0 +1,253 @@
+{
+ "sub_topic": "AGR.2.3.4",
+ "name": "Integrated Pest Management",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Plant & Horticultural Science",
+  "Horticulture & Crop Production"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify common garden pests such as aphids, caterpillars, slugs, and beetles",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish helpful garden organisms such as lady beetles, spiders, and bees from organisms that harm plants",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the damage that common insect pests and weeds cause to plants, such as chewed leaves, holes in fruit, and stunted growth",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how weeds compete with crop plants for light, water, space, and nutrients",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify plant problems as insect pests, weeds, diseases, or nonliving disorders such as frost injury or nutrient deficiency and describe a basic control for each",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how a susceptible host, a pathogen, and a favorable environment combine to cause plant disease using the disease triangle",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Diagram the life cycle of a common crop pest and identify the stages most vulnerable to control",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Scout plants using a hand lens, sticky cards, or a sweep net and record pest counts in a field log",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify and categorize local weeds, insect pests, and fungal, bacterial, viral, and noninfectious plant disorders from samples and symptoms using keys and extension resources",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03.01.a",
+    "PS.03.03.01.b"
+   ]
+  },
+  {
+   "text": "Explain why starting with pest-free and disease-free seed, cuttings, and transplants prevents later pest problems",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.02.01.a"
+   ]
+  },
+  {
+   "text": "Describe the cultural, biological, mechanical, and chemical control tactics used in integrated pest management",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03.03.a"
+   ]
+  },
+  {
+   "text": "Determine from scouting data whether a pest population has reached the economic threshold that justifies treatment",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03.03.a"
+   ]
+  },
+  {
+   "text": "Predict pest and disease outbreaks using weather data, growing degree days, and pest life cycles",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03.02.a",
+    "PS.03.03.02.b"
+   ]
+  },
+  {
+   "text": "Interpret a pesticide label to determine target pests, signal word, required protective equipment, restricted entry interval, and preharvest interval",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03.03.b",
+    "PS.03.03.04.a"
+   ]
+  },
+  {
+   "text": "Calculate pesticide mixing and application rates for organic and synthetic active ingredients for a given tank size or treatment area",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03.03.b"
+   ]
+  },
+  {
+   "text": "Explain how leaf structure and weather conditions affect spray coverage and when adjuvants improve pesticide performance",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.02.02.04.c"
+   ]
+  },
+  {
+   "text": "Explain how pests develop resistance to pesticides and plan a rotation of modes of action to delay resistance",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03.04.a"
+   ]
+  },
+  {
+   "text": "Evaluate the risks and benefits of cultural, biological, mechanical, and chemical controls for a specific pest problem",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03.04.a"
+   ]
+  },
+  {
+   "text": "Evaluate environmental and consumer concerns about pest management such as pollinator protection, spray drift, water quality, and food residues",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03.04.c"
+   ]
+  },
+  {
+   "text": "Evaluate how pest-resistant and genetically modified crops such as Bt corn change pest management practices",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.01.05.c"
+   ]
+  },
+  {
+   "text": "Design an integrated pest management plan for a crop that sets thresholds and justifies control methods chosen to minimize chemical use and environmental impact",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03",
+    "PS.03.03.03.a"
+   ]
+  },
+  {
+   "text": "Implement an integrated pest management plan in an SAE or school greenhouse, assess its effectiveness from monitoring records, and adjust the plan as needed",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03",
+    "PS.03.03.03.c"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded all six original objectives: the grade 2, 4, and 6 identification, damage, and classification objectives, plus the grade 8 life cycle, grade 11 strategy evaluation (moved from grade 10 and refocused on risks and benefits), and grade 12 plan design objectives. Added beneficial organisms, weed competition, the disease triangle, and scouting for the lower grades. Added AFNR-aligned competencies for local pest categorization, pest-free propagation material, control tactic categories, economic threshold, outbreak prediction, label interpretation, pesticide rate calculation, spray adjuvants, resistance management, environmental and consumer concerns, effects of GM crops, and SAE-based implementation and adjustment.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "BS.03",
+  "PS.01.04",
+  "PS.02.02.04.c",
+  "PS.03.01.05.c",
+  "PS.03.02.01.a",
+  "PS.03.03",
+  "PS.03.03.01.a",
+  "PS.03.03.01.b",
+  "PS.03.03.02.a",
+  "PS.03.03.02.b",
+  "PS.03.03.03.a",
+  "PS.03.03.03.b",
+  "PS.03.03.03.c",
+  "PS.03.03.04.a",
+  "PS.03.03.04.c"
+ ],
+ "usage": {
+  "input": 2370,
+  "output": 3586
+ }
+}

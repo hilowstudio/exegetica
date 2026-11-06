@@ -1,0 +1,237 @@
+{
+ "sub_topic": "BIB.8.2.3",
+ "name": "The Formation of the Canon",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "Prolegomena and Backgrounds (Foundations)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Bible as God's Word given to his people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 3:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the two main parts of the Bible as the Old Testament and the New Testament",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that God moved human writers, including apostles such as Paul, Peter, and John, to write the books of the New Testament",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "2 Peter 1:20-21",
+    "2 Peter 3:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the 27 books of the New Testament and sort them into Gospels, Acts, Letters, and Revelation",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Belgic Confession Article 4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that the word canon means a measuring rule and why the church calls the books of Scripture its rule of faith and life",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 6:16",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how the apostles' letters were read aloud in the churches and shared from one congregation to another",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 4:16",
+    "1 Thessalonians 5:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture differs from other helpful Christian books in its inspiration and authority",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "John 10:35"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Categorize the New Testament books by author and describe how early collections such as Paul's letters were gathered",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "2 Peter 3:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the marks the early church used to recognize canonical books, including apostolic origin, agreement with apostolic teaching, and widespread use in the churches",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:20",
+    "1 Timothy 5:18",
+    "Jude 1:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that the church recognized the canon rather than created it, because Scripture's authority rests on God its author",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Thessalonians 2:13",
+    "2 Peter 1:20-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4",
+    "Belgic Confession Article 5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how Athanasius' Festal Letter of 367 and the councils of Hippo and Carthage confirmed books the churches were already using",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze why the Gnostic gospels were not received by the church by comparing their teaching with the apostolic witness to Christ",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "1 John 1:1-3",
+    "1 John 4:1-3",
+    "Galatians 1:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Reformed churches do not receive the Apocrypha as part of the canon",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.3",
+    "Belgic Confession Article 6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a defense of the closed canon from the finality of God's revelation in Christ and the apostolic foundation of the church",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Hebrews 1:1-2",
+    "Ephesians 2:20",
+    "Jude 1:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Muratorian Fragment and other early lists as evidence for how the canon was recognized, including the books once disputed such as Hebrews, James, and 2 Peter",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed, Roman Catholic, and Eastern Orthodox accounts of how the canon relates to the authority of the church",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "1 Thessalonians 2:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4",
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Write a study that explains and evaluates the Reformed doctrine that Scripture is self-attesting and that the Holy Spirit's witness through the Word is the final ground for receiving the canon",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "John 10:27",
+    "1 Corinthians 2:14",
+    "1 Thessalonians 2:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5",
+    "Belgic Confession Article 5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Fixed the scripture reference format to Jude 1:3. Kept the real competencies and reworded them: Word of God, apostolic authors, the meaning of canon, Scripture compared with other books, categorizing by author, canonicity criteria, councils, Gnostic gospels, closed canon, early lists, and self-attestation. Dropped the filler items 'true and special' and 'one big book'. Dropped the vague 'summarize how we got the 27 books' because the later objectives cover it in detail. Moved textual transmission and preservation to other topics because they concern the text rather than the canon. Added objectives on the two Testaments, the 27 books and their genres, letters circulating among the churches, the church recognizing rather than creating the canon, Athanasius, the Apocrypha, disputed books, and a comparison of Reformed, Catholic, and Orthodox views. Anchored the objectives to the Westminster Confession of Faith, the Westminster Shorter Catechism, and the Belgic Confession.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 4022,
+  "output": 8098
+ }
+}

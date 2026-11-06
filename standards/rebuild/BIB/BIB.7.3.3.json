@@ -1,0 +1,356 @@
+{
+ "sub_topic": "BIB.7.3.3",
+ "name": "Feasts, Festivals, and the Jewish Calendar",
+ "path": [
+  "Bible & Theology",
+  "Historical & Cultural Context",
+  "Jewish Culture and Tradition (Intertestamental)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Passover as the meal God commanded Israel to eat to remember how He rescued them from Egypt",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 12:1-14",
+    "Exodus 12:24-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell that God gave Israel a weekly day of rest called the Sabbath",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 20:8-11",
+    "Genesis 2:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God commanded Israel's feasts so His people would remember His works and give thanks to Him",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Deuteronomy 16:3",
+    "Deuteronomy 16:11-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Israelites lived in booths during the Feast of Tabernacles and tell what the booths helped them remember",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 23:39-43"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Jesus traveled with His family to Jerusalem to keep the Passover as a boy",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Luke 2:41-43"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Hanukkah as the Feast of Dedication that celebrated the rededication of the temple and recall that Jesus was in the temple during this feast",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "John 10:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the parts of the first Passover, including the lamb, the blood on the doorposts, the unleavened bread, and the bitter herbs, and explain what each recalled",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 12:3-13",
+    "Exodus 12:15-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Jews celebrate Purim using the account in the book of Esther",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Esther 9:20-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the three pilgrimage feasts and explain why Israelites traveled to Jerusalem to keep them",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 16:16-17",
+    "Psalm 122:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Feast of Weeks as a harvest festival of firstfruits held fifty days after the Passover season",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 23:15-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the weekly Sabbath with Israel's yearly festivals in purpose and practice",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 20:8-11",
+    "Leviticus 23:3-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the Jewish calendar follows the moon, beginning each month at the new moon and the religious year in the spring month of Abib or Nisan",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 12:2",
+    "Exodus 13:4",
+    "Numbers 10:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the rituals of the Day of Atonement, including the high priest entering the Most Holy Place and the sending away of the scapegoat",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 16:1-34",
+    "Leviticus 23:26-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the commands for the Feast of Firstfruits and the Feast of Trumpets",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 23:9-14",
+    "Leviticus 23:23-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a calendar of Israel's appointed feasts showing their months, agricultural seasons, and the events of redemption each recalled",
+   "grade": 7,
+   "bloom": 6,
+   "scripture": [
+    "Leviticus 23:4-44",
+    "Deuteronomy 16:1-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the sabbatical year and the Year of Jubilee and how Jesus applied jubilee language to His ministry",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 25:1-12",
+    "Luke 4:16-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Hanukkah arose from the Maccabean revolt against Antiochus IV, treating 1 Maccabees as a useful historical source that is not inspired Scripture",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "John 10:22-23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jesus as the fulfillment of the Passover by connecting the Last Supper and the apostolic teaching that Christ is our Passover lamb",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Luke 22:7-20",
+    "1 Corinthians 5:7",
+    "John 1:29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the outpouring of the Spirit at Pentecost connects to the Feast of Weeks as a firstfruits harvest",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:1-13",
+    "Leviticus 23:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Jesus used the water and light imagery of the Feast of Tabernacles to reveal who He is",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "John 7:2",
+    "John 7:37-39",
+    "John 8:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Hebrews presents Christ's priestly work as the fulfillment of the Day of Atonement",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 9:6-14",
+    "Hebrews 9:24-28",
+    "Hebrews 10:1-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the feast commands of the Torah with practices that developed by the Second Temple period, such as Passover Seder customs and the water-pouring rite at Tabernacles",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 12:14-20",
+    "Leviticus 23:39-43",
+    "John 7:37-38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that Israel's feasts belonged to the ceremonial law, foreshadowed Christ, and are now fulfilled and abrogated",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 2:16-17",
+    "Hebrews 10:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 19.3",
+    "Belgic Confession Article 25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition understands the Lord's Supper in relation to the Passover and the Lord's Day in relation to the Sabbath",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 26:26-29",
+    "Acts 20:7",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q59",
+    "Westminster Shorter Catechism Q96",
+    "Westminster Confession of Faith 21.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate interpretations of feast typology by distinguishing types the New Testament itself establishes from speculative prophetic schemes",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 5:7",
+    "1 Corinthians 15:20-23",
+    "Hebrews 8:5",
+    "Colossians 2:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate arguments about whether Christians are bound to keep the Jewish feasts using Paul's teaching and the Reformed confession on Christian liberty",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 4:9-11",
+    "Romans 14:5-6",
+    "Colossians 2:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a presentation or essay tracing how Israel's cycle of feasts retells the history of redemption and points to its completion in the new creation",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Deuteronomy 16:12",
+    "Zechariah 14:16",
+    "Revelation 21:3-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Passover, Hanukkah, purpose of feasts, Seder/first Passover, Weeks, Sabbath vs festivals, Tabernacles, Day of Atonement, calendar construction, Maccabean context, Passover and Pentecost fulfillment, typology, cycle of remembrance). Dropped 'Observe a Menorah' as not assessable and folded 'prophetic meaning' into a grounded typology evaluation. Added Purim, pilgrimage feasts, lunar calendar, Firstfruits and Trumpets, Jubilee, Jesus at feasts in Luke and John, Second Temple developments, Hebrews on Atonement, Reformed teaching on ceremonial law, Lord's Supper and Lord's Day, and Christian liberty. Replaced whole-chapter references with verse ranges and added confessional anchors only where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1981,
+  "output": 6463
+ }
+}

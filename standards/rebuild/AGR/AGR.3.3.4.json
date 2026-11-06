@@ -1,0 +1,218 @@
+{
+ "sub_topic": "AGR.3.3.4",
+ "name": "Fencing & Site Layout",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Electricity, Plumbing & Structures"
+ ],
+ "grades": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify common fencing materials and styles used to contain livestock, exclude predators, or mark property lines",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify basic fencing tools such as post hole diggers, fence pliers, wire stretchers, and post drivers and describe the job each one does",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why corner and end posts must be braced to hold wire tension and identify common brace assemblies such as the H-brace",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate the correct technique for setting a wood or steel post plumb and at the proper depth",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate how to stretch, splice, and tie off woven or barbed wire at a braced corner",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how a grounded electric fence circuit delivers a safe and effective shock to livestock",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe fence building hazards such as wire recoil, barbed wire injuries, and buried utilities and the precautions that prevent them",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Measure and lay out a straight fence line using stakes, string, and a measuring wheel",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply the 3-4-5 method to lay out a square corner for a pen, fence, or building site",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare fence types suited to containing different livestock species such as cattle, sheep, goats, horses, and hogs",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast fencing materials by durability, cost, maintenance, and applicable regulations such as boundary fence laws and installation codes",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04.05.a"
+   ]
+  },
+  {
+   "text": "Calculate the posts, wire, braces, and gates needed to fence a given field perimeter at a specified post spacing",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04"
+   ]
+  },
+  {
+   "text": "Calculate the total cost of fencing materials for a project from a materials list and current supplier prices",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04.05.b"
+   ]
+  },
+  {
+   "text": "Select and use fencing tools and equipment to construct or repair a fence section with a braced corner, line posts, and wire",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04.05.c",
+    "PST.04.03.02.b",
+    "PST.04.03.02.c"
+   ]
+  },
+  {
+   "text": "Install and troubleshoot an electric fence system including the energizer, ground rods, insulators, and voltage testing",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04.05.c"
+   ]
+  },
+  {
+   "text": "Identify, select, and use surveying tools such as a builder's level, laser level, or GPS to establish elevations and stake out a site",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.03.01.a",
+    "PST.04.03.01.b",
+    "PST.04.03.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate a proposed site for a livestock facility based on slope, drainage, soil, prevailing wind, access, and water availability",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04"
+   ]
+  },
+  {
+   "text": "Plan a paddock layout for rotational grazing that places cross fences, gates, and water access for efficient livestock movement",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04"
+   ]
+  },
+  {
+   "text": "Design a scaled site layout plan showing fencing, gates, alleys, and access lanes for a livestock operation",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.04"
+   ]
+  }
+ ],
+ "changes": "Kept all six original competencies, rewording several. Split post setting and wire stretching into separate objectives, and split material quantities from material cost. Kept the electric fence circuit at grade 7 and added grade 9 electric fence installation and troubleshooting, since fence energizers belong to fencing rather than general wiring. Added objectives on fencing tools, corner bracing, safety, 3-4-5 squaring, matching fence types to livestock species, comparing materials and fence laws, surveying tools, site evaluation, and rotational grazing paddock layout. Building construction, wiring, and water systems are left to the sibling sub-topics. Standards are attached only from grade 9 up.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.05.01.02.a",
+  "PS.01.02.02.b",
+  "PS.04.02.01.c",
+  "PST.01.03.02.b",
+  "PST.03.02.03.b",
+  "PST.04.03.01.a",
+  "PST.04.03.01.b",
+  "PST.04.03.01.c",
+  "PST.04.03.02.b",
+  "PST.04.03.02.c",
+  "PST.04.04",
+  "PST.04.04.05.a",
+  "PST.04.04.05.b",
+  "PST.04.04.05.c",
+  "PST.04.05.02.c"
+ ],
+ "usage": {
+  "input": 2552,
+  "output": 3068
+ }
+}

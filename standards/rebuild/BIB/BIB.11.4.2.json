@@ -1,0 +1,373 @@
+{
+ "sub_topic": "BIB.11.4.2",
+ "name": "The Incarnation and Hypostatic Union",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Christology: The Doctrine of Christ"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from the Christmas account that God the Son was born as a real baby named Jesus to Mary",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:4-7",
+    "Luke 1:30-32"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q22"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name Jesus as both truly God and truly man",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "1 Timothy 2:5",
+    "John 1:14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the angel's announcements to Mary and to Joseph about the coming birth of Jesus",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Luke 1:26-35",
+    "Matthew 1:18-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe from the Gospels ways Jesus showed a true human body and soul, such as growing, getting tired, being hungry, and weeping",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Luke 2:52",
+    "John 4:6",
+    "Matthew 4:2",
+    "John 11:35"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q22",
+    "Heidelberg Catechism Q35"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite John 1:14 and explain in your own words what it means that the Word became flesh and dwelt among us",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 1:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of the name Immanuel and show how Matthew presents Jesus' birth as the fulfillment of Isaiah's prophecy",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 7:14",
+    "Matthew 1:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the creed's confession that Jesus was conceived by the Holy Spirit and born of the virgin Mary",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Luke 1:34-35",
+    "Matthew 1:20"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q35",
+    "Westminster Shorter Catechism Q22"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Classify actions in a Gospel passage as showing Jesus' humanity or his deity, such as sleeping in the boat and calming the storm",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "Mark 4:38-39",
+    "John 11:35-44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Scripture teaches that the Son took a true body and a reasonable soul rather than only appearing to be human",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 2:14-17",
+    "1 John 4:2-3",
+    "Luke 24:39"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q22",
+    "Heidelberg Catechism Q16"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus shared fully in human nature yet was without sin",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 4:15",
+    "Hebrews 2:17",
+    "1 Peter 2:22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Larger Catechism Q37"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the virgin conception by the Holy Spirit secures both Christ's true descent from Mary and the holiness of his human nature",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Luke 1:34-35",
+    "Matthew 1:18-20",
+    "Galatians 4:4"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q37",
+    "Heidelberg Catechism Q35",
+    "Belgic Confession 18"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the catechisms' reasons why the Mediator had to be true man, true God, and both in one person",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "1 Timothy 2:5",
+    "Hebrews 2:14-17",
+    "Acts 20:28"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q16",
+    "Heidelberg Catechism Q17",
+    "Heidelberg Catechism Q18",
+    "Westminster Larger Catechism Q38",
+    "Westminster Larger Catechism Q39",
+    "Westminster Larger Catechism Q40"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the phrases form of God and form of a servant in Philippians 2 as describing the true deity and true humanity of the one Christ",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Philippians 2:6-7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the theological terms person and nature as the church uses them to describe Christ",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "John 1:14",
+    "Colossians 2:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Larger Catechism Q36"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the hypostatic union as the Reformed tradition confesses it, two whole and distinct natures joined in the one person of the eternal Son",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "John 1:14",
+    "Colossians 2:9",
+    "Romans 1:3-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Larger Catechism Q36",
+    "Belgic Confession 19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the church's teaching that the Son remains God and man in one person forever and did not lay aside his human nature",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 2:5",
+    "Hebrews 7:24-25",
+    "Acts 1:11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21",
+    "Westminster Larger Catechism Q36"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the controversies over Christ's person raised by Apollinaris, Nestorius, and Eutyches that led to the Council of Chalcedon",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [
+    "Chalcedonian Definition"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Chalcedonian Definition phrase by phrase, especially its confession of two natures without confusion, change, division, or separation",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 1:14",
+    "Hebrews 2:14"
+   ],
+   "confessions": [
+    "Chalcedonian Definition",
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Apollinarianism, Nestorianism, and Eutychianism against Scripture and the Chalcedonian Definition",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Luke 2:52",
+    "Acts 20:28",
+    "Hebrews 2:17"
+   ],
+   "confessions": [
+    "Chalcedonian Definition",
+    "Belgic Confession 19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Gospel texts that show Jesus' human knowledge and human will, such as his not knowing the hour and his prayer in Gethsemane, in light of two natures in one person",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Mark 13:32",
+    "Luke 2:52",
+    "Matthew 26:39",
+    "John 6:38"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the sinlessness and impeccability of Christ from Scripture and the doctrine of the hypostatic union",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 4:15",
+    "2 Corinthians 5:21",
+    "1 Peter 2:22",
+    "John 8:46"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Larger Catechism Q37"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the terms anhypostasia and enhypostasia and how they describe Christ's human nature as subsisting in the person of the Son",
+   "grade": 12,
+   "bloom": 2,
+   "scripture": [
+    "John 1:14",
+    "Hebrews 2:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Scripture ascribes the properties of either nature to the one person in the communicatio idiomatum",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Acts 20:28",
+    "1 Corinthians 2:8",
+    "John 3:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed and Lutheran accounts of the communication of properties, including the Reformed teaching that the Son is not confined to his human nature",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Colossians 2:9",
+    "Acts 3:21",
+    "John 3:13"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q47",
+    "Heidelberg Catechism Q48",
+    "Westminster Confession of Faith 8.7"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (born of Mary, God and man, true humanity, John 1:14, Immanuel, classifying the natures, virgin conception, Philippians 2, why the Mediator is God and man, hypostatic union, Chalcedon, the heresies, sinlessness, communicatio idiomatum). Replaced the vague 'construct the Chalcedonian formula' with a phrase-by-phrase analysis and the vague 'compare without mixing' with a classification task. Added the creedal line on conception and birth, the need for a true body and soul, sinless humanity, the person and nature distinction, the permanence of the union, the historical controversies before Chalcedon, Christ's human knowledge and will, anhypostasia and enhypostasia, and the Reformed and Lutheran comparison. Corrected confession citations to numbered forms such as Westminster Confession of Faith 8.2 and 8.7, and added Heidelberg Q16-18 and Q47-48, WLC Q37 and Q40, WSC Q21-22, and Belgic Confession 18-19. Expanded the scripture citations to verse ranges. Left preexistence, kenosis as humiliation, offices, and atonement to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2184,
+  "output": 5643
+ }
+}

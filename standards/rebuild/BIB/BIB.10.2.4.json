@@ -1,0 +1,403 @@
+{
+ "sub_topic": "BIB.10.2.4",
+ "name": "Stewardship of Time, Talent, and the Body",
+ "path": [
+  "Bible & Theology",
+  "Practical Theology & Christian Living",
+  "Family, Vocation, and Stewardship"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify time, abilities, and our bodies as good gifts from God who made us",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 1:31",
+    "James 1:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall from Psalm 139 that God formed each person's body and made it wonderfully",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 139:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe everyday ways to care for the body God made, such as sleeping, eating well, washing, and playing actively",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 10:31",
+    "Psalm 139:13-14"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q135"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the parable of the talents and explain that God expects us to use what He gives us faithfully",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 25:14-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "State the fourth commandment and describe the pattern of six days of work and one day of rest that God set at creation",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 20:8-11",
+    "Genesis 2:2-3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q57",
+    "Westminster Shorter Catechism Q58"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition keeps the first day of the week as the Lord's Day and describe activities that keep it holy",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 20:7",
+    "Revelation 1:10",
+    "Hebrews 10:24-25"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q59",
+    "Westminster Shorter Catechism Q60",
+    "Heidelberg Catechism Q103"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what Paul means by making the best use of the time by reading Ephesians 5:15-16 in its context",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 5:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the difference between diligence and laziness using the wisdom of Proverbs",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 6:6-11",
+    "Proverbs 24:30-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from 1 Corinthians 6:19-20 why the Reformed tradition teaches that a believer's body belongs to God and is a temple of the Holy Spirit",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 6:19-20"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the spiritual gifts listed in the New Testament and explain that they are given to serve others in the church",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Romans 12:4-8",
+    "1 Corinthians 12:4-11",
+    "1 Peter 4:10-11"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q55",
+    "Westminster Confession of Faith 26.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish busyness from fruitfulness using the accounts of Martha and Mary and the vine and the branches",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Luke 10:38-42",
+    "John 15:4-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the sixth commandment requires lawful care of one's own life and forbids harming one's own body",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:13",
+    "Ephesians 5:29"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q68",
+    "Westminster Shorter Catechism Q69",
+    "Heidelberg Catechism Q105"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply the principle of doing all to the glory of God to choices about eating, drinking, sleep, work, and recreation",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "1 Corinthians 10:31",
+    "Colossians 3:17"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q135",
+    "Westminster Larger Catechism Q136"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Psalm 90 to explain how the brevity of life calls for wise use of time",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 90:10-12",
+    "James 4:13-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Jesus' Sabbath controversies to explain the tradition's teaching that works of necessity and mercy are fitting on the Lord's Day",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 12:1-13",
+    "Mark 2:27-28"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q60",
+    "Westminster Confession of Faith 21.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain biblical teaching against gluttony and drunkenness as misuse of the body and identify self-control as fruit of the Spirit",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 23:20-21",
+    "Ephesians 5:18",
+    "Galatians 5:22-23"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q136"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Romans 6 and Romans 12 to explain how the body is to be presented as an instrument of righteousness and an act of worship",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 6:12-13",
+    "Romans 12:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Sabbath rest expresses dependence on God's provision and points to the rest fulfilled in Christ",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 16:22-30",
+    "Psalm 127:2",
+    "Hebrews 4:9-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul grounds sexual purity in the truth that the body is a temple of the Holy Spirit",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 6:13-20"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q109",
+    "Westminster Shorter Catechism Q71"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify personal abilities and propose specific ways to use them in service to the church and neighbor",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [
+    "1 Peter 4:10-11",
+    "Romans 12:3-8",
+    "Exodus 31:1-6"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q55"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the biblical teaching that gifts are given for the common good with attitudes that treat gifts as marks of status or reasons for envy",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 12:4-7",
+    "1 Corinthians 12:12-26",
+    "1 Corinthians 4:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 26.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a weekly schedule that balances work, worship, rest, service, and care for the body and justify its choices from Scripture",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Exodus 20:9-10",
+    "Ephesians 5:15-16",
+    "Mark 6:31"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate habits of technology and entertainment use as matters of time stewardship using biblical principles",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Philippians 4:8",
+    "Ephesians 5:15-16",
+    "1 Corinthians 6:12"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q136"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the idolatry of health and appearance against neglect of the body using Paul's teaching on bodily training and false asceticism",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Timothy 4:7-8",
+    "Colossians 2:20-23",
+    "1 Corinthians 9:24-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the goodness of the physical body against Gnostic views using the doctrines of creation, incarnation, and resurrection",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 1:31",
+    "John 1:14",
+    "1 Timothy 4:1-5",
+    "1 Corinthians 15:42-44"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q57",
+    "Westminster Confession of Faith 32.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the historic Reformed position on the cessation of revelatory gifts and the continuing call to use ordinary gifts",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 1:1-2",
+    "Ephesians 2:20",
+    "1 Peter 4:10-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the hope of bodily resurrection shapes the present stewardship of the body and of one's labor",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Philippians 3:20-21",
+    "Romans 8:23",
+    "1 Corinthians 15:58"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate approaches to self-discipline in light of the Reformed teaching that holy living flows from grace rather than earning God's favor",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Titus 2:11-12",
+    "Philippians 2:12-13",
+    "Ephesians 2:8-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.3",
+    "Heidelberg Catechism Q86"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (time as gift, body as temple, using gifts, redeeming the time, Sabbath rest, busyness vs fruitfulness, Psalm 90, instrument of righteousness, rest and trust, spiritual gifts, weekly schedule, health idolatry vs neglect, anti-Gnostic defense, discipline and grace). Recast 'Observe resting on the Sabbath' as describing Lord's Day practice, and dropped 'Explain why we shouldn't waste our lives' and 'Identify healthy habits as worship' as vague, replacing them with diligence vs laziness from Proverbs and applying 1 Corinthians 10:31 to daily choices. Added missing competencies: God forming the body, the parable of the talents, the fourth commandment and creation pattern, works of necessity and mercy, sixth-commandment care of one's own life, gluttony and drunkenness, sexual purity grounded in the body as temple, gifts for the common good, technology and entertainment, the Reformed view on cessation of revelatory gifts, and resurrection hope shaping stewardship. Anchored each objective to specific verses and to the Westminster Standards and Heidelberg Catechism where they state the doctrine. Left money, vocation, and marriage to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1911,
+  "output": 7051
+ }
+}

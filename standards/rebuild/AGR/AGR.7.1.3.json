@@ -1,0 +1,178 @@
+{
+ "sub_topic": "AGR.7.1.3",
+ "name": "Degrees, Awards & Proficiencies",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "FFA Leadership & SAE",
+  "FFA Organization & Heritage"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "List the five degrees of FFA membership in order from Discovery to American",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Match each FFA degree to the level of the organization that awards it, whether chapter, state, or national",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the requirements for earning the Discovery and Greenhand FFA Degrees",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish among FFA degrees, proficiency awards, and Star awards as different forms of member recognition",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of proficiency awards in recognizing SAE achievement",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Honorary FFA Degree recognizes supporters of agricultural education and FFA",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify an SAE into the appropriate proficiency award area and entrepreneurship or placement category",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.11.03.01.a"
+   ]
+  },
+  {
+   "text": "Explain how the Star Farmer, Star in Agribusiness, Star in Agricultural Placement, and Star in Agriscience awards advance from chapter to state to national recognition",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.11.03.01.a"
+   ]
+  },
+  {
+   "text": "Apply for the Chapter FFA Degree by documenting required activities, SAE earnings, and hours",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Complete a proficiency award application that includes a financial summary, skills record, and SAE narrative",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze a proficiency award scoring rubric to identify strengths and gaps in an SAE record",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Plan a pathway toward earning the State FFA Degree that meets required scholastic, leadership, and SAE benchmarks",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate whether SAE earnings, productive investment, and hours meet the thresholds for the American FFA Degree",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Prepare for a proficiency or Star award interview by explaining SAE decisions, records, and skills gained",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate a peer's American FFA Degree application against national requirements",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the FFA degree and award programs motivate member growth in leadership, personal development, and career success",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.11.03.01.b"
+   ]
+  }
+ ],
+ "changes": "Kept and lightly reworded all six original objectives, moving the Chapter Degree application to grade 9 where members typically earn it. Added objectives on matching degrees to awarding levels, Discovery Degree requirements, distinguishing types of recognition, the Honorary Degree, classifying SAEs into proficiency areas, the Star award progression, completing and analyzing proficiency applications, calculating American Degree thresholds, award interview preparation, and evaluating the motivational impact of recognition programs. Standards attached only where objectives identify FFA programs or evaluate FFA's impact on student learning.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPS.10",
+  "FPS.10.01.01.a",
+  "FPS.10.01.01.b",
+  "FPS.11.01.01.a",
+  "FPS.11.03",
+  "FPS.11.03.01.a",
+  "FPS.11.03.01.b",
+  "FPS.11.03.01.c",
+  "FPS.12",
+  "FPS.12.01.01.c",
+  "FPS.12.02",
+  "FPS.12.02.01.c",
+  "FPS.12.03",
+  "FPS.12.03.01.b",
+  "FPS.12.03.01.c"
+ ],
+ "usage": {
+  "input": 2237,
+  "output": 2794
+ }
+}

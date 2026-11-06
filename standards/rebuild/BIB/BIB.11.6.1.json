@@ -1,0 +1,330 @@
+{
+ "sub_topic": "BIB.11.6.1",
+ "name": "Death and the Intermediate State",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Eschatology: The Doctrine of Last Things"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from the Bible that every person will die one day",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Hebrews 9:27",
+    "Ecclesiastes 3:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the Bible's teaching that believers go to be with Jesus when they die",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Philippians 1:23",
+    "2 Corinthians 5:8",
+    "Luke 23:43"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Genesis and Romans that death entered the world because of sin",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:16-17",
+    "Genesis 3:19",
+    "Romans 5:12",
+    "Romans 6:23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell Jesus' words to Martha that whoever believes in him will live even though he dies",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "John 11:25-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Paul says Christians grieve at death differently from those who have no hope",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Thessalonians 4:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Paul means when he says Jesus has taken away the sting of death",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:55-57",
+    "Hebrews 2:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Westminster Shorter Catechism's answer about what believers receive from Christ at death",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 12:23",
+    "2 Corinthians 5:8",
+    "Revelation 14:13",
+    "1 Thessalonians 4:14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q37",
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Heidelberg Catechism's answer to why believers still die even though Christ died for them",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "John 5:24",
+    "Philippians 1:21-23",
+    "Romans 14:8"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q42"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that Scripture describes death as the separation of the soul from the body",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 12:7",
+    "Genesis 35:18",
+    "Matthew 10:28",
+    "James 2:26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Psalm 90 teaches God's people to number their days in light of death",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 90:10-12",
+    "James 4:13-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Paul considers departing to be with Christ far better than remaining in the body",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 1:21-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the state of the righteous and the wicked immediately after death as taught in Scripture and the Westminster Confession",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Luke 16:22-26",
+    "Hebrews 12:23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jesus' promise to the thief on the cross in its context to show that believers are with Christ immediately at death",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [
+    "Luke 23:39-43"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed practice of Christian burial reflects the teaching that believers' bodies remain united to Christ as they rest in the grave",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "1 Thessalonians 4:14",
+    "Romans 8:11",
+    "John 19:38-42"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q37"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze New Testament passages that portray departed souls as conscious and active before the resurrection",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 6:9-11",
+    "Luke 16:22-25",
+    "Hebrews 12:22-23",
+    "Matthew 17:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why a person's eternal destiny is fixed at death with no second chance afterward",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 9:27",
+    "Luke 16:26",
+    "2 Corinthians 5:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the intermediate state is not the believer's final hope by connecting the disembodied soul to the future resurrection of the body",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "2 Corinthians 5:1-8",
+    "Romans 8:23",
+    "Philippians 3:20-21",
+    "1 Corinthians 15:52"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1",
+    "Westminster Confession of Faith 32.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why God forbids attempts to contact or consult the dead",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 18:10-12",
+    "Isaiah 8:19-20",
+    "1 Samuel 28:6-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Old Testament language about Sheol and being gathered to one's people to trace how the hope beyond death unfolds across Scripture",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 25:8",
+    "Psalm 16:9-11",
+    "Psalm 49:14-15",
+    "Psalm 73:23-26",
+    "2 Timothy 1:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the doctrine of soul sleep against Scripture by interpreting the biblical metaphor of death as sleep",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 11:11-14",
+    "1 Thessalonians 4:13-14",
+    "Philippians 1:23",
+    "2 Corinthians 5:8",
+    "Luke 23:43"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Roman Catholic doctrine of purgatory against Scripture and the Reformed confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 10:14",
+    "Hebrews 9:27",
+    "1 John 1:7",
+    "Luke 23:43",
+    "Romans 8:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1",
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a theological essay on death and the intermediate state that integrates the key passages and confessional statements and distinguishes the intermediate state from the final state",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "2 Corinthians 5:1-8",
+    "Philippians 1:21-23",
+    "Luke 23:43",
+    "Hebrews 12:23",
+    "1 Corinthians 15:55-57"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q37",
+    "Westminster Confession of Faith 32.1",
+    "Heidelberg Catechism Q42",
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (death is universal, believers with Jesus, sting of death removed, WSC Q37 summary, believer vs unbeliever, Philippians 1, the thief on the cross, intermediate state not final hope, soul sleep and purgatory). Split the combined grade 11 evaluation into separate soul sleep and purgatory objectives, and turned the soul-sleep item into an interpretation of the sleep metaphor. Folded 'connect to future resurrection' and 'analyze the soul apart from the body' into the grade 9 and grade 8 objectives, and merged 'construct a theology' and 'synthesize the hope' into one grade 12 capstone. Dropped 'defend conscious existence' as covered by the grade 8 analysis and the soul sleep evaluation. Reframed 'apply the comfort' as explaining Paul's reasoning so no objective targets a student's feelings. Added death as the result of sin, John 11:25-26, grieving with hope, Heidelberg Q42 on why believers die, death as soul-body separation, numbering our days, Christian burial, no change of destiny after death, the prohibition on consulting the dead, and Old Testament Sheol language. Added WCF 32.1, Heidelberg Q42 and Q57, and WSC Q19 as anchors.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2103,
+  "output": 4641
+ }
+}

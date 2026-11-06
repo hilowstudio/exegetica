@@ -1,0 +1,252 @@
+{
+ "sub_topic": "BIB.5.4.1",
+ "name": "Founding and Core Beliefs",
+ "path": [
+  "Bible & Theology",
+  "Comparative Religious Studies & Ethics",
+  "Islam: Submission & The Five Pillars"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Muslims as people who follow the religion of Islam",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Muslims worship one god whom they call Allah",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Mecca in Arabia as the city where Islam began and the most holy city for Muslims",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that Christians also confess one God but confess this one God as Father, Son, and Holy Spirit",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "Matthew 28:19"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q5",
+    "Westminster Shorter Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main events of Muhammad's life including his claimed revelations, the Hijra to Medina, and his return to Mecca",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that the word Islam means submission and that a Muslim is understood as one who submits to Allah",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Islamic view of Isa as a human prophet with the Bible's teaching that Jesus is the eternal Son of God made flesh",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "John 1:1-3",
+    "John 1:14",
+    "Colossians 1:15-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21",
+    "Heidelberg Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "List the six articles of Islamic faith concerning Allah, angels, revealed books, prophets, the Day of Judgment, and divine decree",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the Islamic doctrine of tawhid and explain why Muslims regard belief in the Trinity as shirk",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish what Genesis records about Ishmael from later Islamic and Arab traditions that link Abraham and Ishmael to Mecca",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 16:1-16",
+    "Genesis 17:18-21",
+    "Genesis 21:8-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the early Muslim community spread under the first caliphs after Muhammad's death",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Sunni and Shia division arose from the dispute over succession after Muhammad and identify key differences between them",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Islamic claim that Muhammad is the seal of the prophets in light of the biblical teaching that God has spoken finally in his Son",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 1:1-3",
+    "John 14:6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q24"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Contrast the Islamic view of human nature and sin with the Reformed doctrine of original sin",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:12",
+    "Psalm 51:5",
+    "Ephesians 2:1-3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q18",
+    "Heidelberg Catechism Q7",
+    "Westminster Confession of Faith 6.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Islamic hope of judgment by the weighing of deeds with the Reformed doctrine of justification by grace through faith",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:8-9",
+    "Romans 3:23-26",
+    "Galatians 2:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33",
+    "Heidelberg Catechism Q60",
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Islamic denial of Jesus' crucifixion using the New Testament eyewitness testimony and the Reformed teaching on why Christ's death was necessary",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 15:3-8",
+    "Mark 15:37-39",
+    "Luke 1:1-4"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q37",
+    "Heidelberg Catechism Q40",
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Islamic charge that the Trinity is polytheism using Scripture and the Reformed confession of one God in three persons",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "Matthew 3:16-17",
+    "2 Corinthians 13:14",
+    "John 1:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Heidelberg Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Develop a respectful explanation of the gospel that answers a core Islamic objection to Christian belief",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "1 Peter 3:15",
+    "Colossians 4:5-6",
+    "John 3:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose an argument comparing the Islamic emphasis on God's sovereign will with the Christian confession that God is love eternally within the Trinity",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 John 4:8-10",
+    "John 17:24",
+    "John 3:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4",
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Removed the Nicene Creed citations and anchored Trinity and Christology objectives to Westminster and Heidelberg references instead. Dropped mosque, prayer mats, Shahada, Bible corruption, and Gospel reliability objectives as belonging to the Five Pillars and Sacred Texts siblings. Kept and reworded Muslims, Allah, Mecca, Muhammad, submission, Isa, Ishmael, Sunni and Shia, crucifixion, Trinity, and nature of God objectives. Added six articles of faith, tawhid, early caliphate, seal of the prophets, sin and human nature, judgment versus justification, and respectful gospel engagement.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 3970,
+  "output": 8334
+ }
+}

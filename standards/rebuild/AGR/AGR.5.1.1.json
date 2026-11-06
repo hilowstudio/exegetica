@@ -1,0 +1,232 @@
+{
+ "sub_topic": "AGR.5.1.1",
+ "name": "Composition & Biochemistry of Foods",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Chemistry & Nutrition"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify water, carbohydrates, proteins, and fats as the main components that make up foods",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort common agricultural products such as grain, milk, meat, eggs, and vegetable oil by the main component each contains",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use simple tests such as iodine for starch and brown paper for fat to detect components in food samples",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how crops build sugars and starches through photosynthesis and how livestock store proteins and fats in meat, milk, and eggs",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the amount of free water in a food, measured as water activity, determines how quickly the food spoils",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify food carbohydrates as monosaccharides, disaccharides, or polysaccharides and give an agricultural source of each",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how proteins are built from amino acids and identify major food proteins such as casein in milk, gluten in wheat, and myosin in meat",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the chemical structure and properties of carbohydrates, proteins, lipids, vitamins, and minerals as food constituents",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01.01.a"
+   ]
+  },
+  {
+   "text": "Analyze a nutrition facts panel to determine the proportion of carbohydrates, proteins, and lipids in a food product",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.01.b",
+    "FPP.02.01.01.c"
+   ]
+  },
+  {
+   "text": "Distinguish saturated and unsaturated fatty acids by structure and relate each to whether a fat is solid or liquid at room temperature",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Explain how starch gelatinization and retrogradation change the texture of grain products during cooking and storage",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Explain how protein denaturation, coagulation, gelation, and emulsification give eggs, milk, and meat their functional properties in foods",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Compare Maillard browning, caramelization, and enzymatic browning by their reactants, conditions, and effects on food quality",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Explain how naturally occurring enzymes drive changes such as fruit ripening, meat tenderization, and cheese ripening",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Analyze how postmortem glycolysis, pH decline, and rigor mortis convert muscle to meat and affect carcass quality",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Analyze how heat, light, oxygen, and metal ions drive lipid oxidation and rancidity in fats, oils, and meat products",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Perform proximate analysis procedures for moisture, ash, fat, and protein on a food sample from an agricultural commodity",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate laboratory results for the water activity and moisture content of a food sample to judge its shelf stability",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01.01.c"
+   ]
+  },
+  {
+   "text": "Analyze how food processors apply biochemistry such as fermentation and enzyme technology to develop value-added food products from raw commodities",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.03.a",
+    "FPP.02.02.03.b"
+   ]
+  },
+  {
+   "text": "Design an experiment that tests how altering a food's water activity changes its microbial stability",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.01.c"
+   ]
+  }
+ ],
+ "changes": "Reframed the grade 3 food groups objective and the grade 5 energy objective around food composition, since nutrition belongs to the sibling sub-topic Nutrition & Food Quality. Kept the water activity, nutrition label, lab evaluation, and hypothesis objectives. The hypothesis objective is now an experimental design task. Added a progression of composition competencies: simple tests for components, agricultural origins of constituents, carbohydrate classes, amino acids and food proteins, and fatty acid saturation. Added food biochemistry topics: starch gelatinization, protein functionality, browning reactions, enzymes, postmortem muscle to meat conversion, lipid oxidation, proximate analysis, and biochemistry in value-added processing. Linked these to commodity, SAE, and Food Science CDE contexts. Additives and sensory work were left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.02",
+  "FPP.02.01",
+  "FPP.02.01.01.a",
+  "FPP.02.01.01.c",
+  "FPP.02.02.01.b",
+  "FPP.02.02.01.c",
+  "FPP.02.02.02.b",
+  "FPP.02.02.03.a",
+  "FPP.02.02.03.b",
+  "FPP.02.03.01.a",
+  "FPP.02.03.01.b",
+  "FPP.03.01.04.b",
+  "FPP.03.01.04.c",
+  "FPP.03.02.04.b",
+  "FPP.03.03.03.b"
+ ],
+ "usage": {
+  "input": 2309,
+  "output": 3495
+ }
+}

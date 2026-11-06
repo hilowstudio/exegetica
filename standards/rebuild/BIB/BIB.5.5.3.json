@@ -1,0 +1,310 @@
+{
+ "sub_topic": "BIB.5.5.3",
+ "name": "Key Practices (Shabbat, Festivals, Kosher)",
+ "path": [
+  "Bible & Theology",
+  "Comparative Religious Studies & Ethics",
+  "Judaism: Covenant, Law & Peoplehood"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Shabbat as the weekly day of rest that Jewish families keep from Friday sunset to Saturday sunset",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:2-3",
+    "Exodus 20:8-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Passover and Hanukkah as Jewish celebrations and tell one thing each one remembers",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 12:1-14",
+    "John 10:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe common Shabbat home practices such as lighting candles, blessing bread and wine, and sharing a family meal",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Jewish dietary laws called kosher permit some foods and forbid others such as pork",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Leviticus 11:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Jewish families celebrate Hanukkah by lighting the menorah and Purim by reading the book of Esther",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Esther 9:20-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the items on a Passover Seder plate and explain what each represents in the Exodus story",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 12:1-14",
+    "Exodus 12:24-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main kosher rules including permitted animals, the separation of meat and dairy, and the draining of blood",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 11:1-23",
+    "Deuteronomy 14:3-21",
+    "Leviticus 17:10-14",
+    "Exodus 23:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the High Holy Days of Rosh Hashanah and Yom Kippur and the practices of repentance and fasting connected with them",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 23:23-32",
+    "Leviticus 16:29-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Bar and Bat Mitzvah as the point at which a Jewish young person takes on responsibility for keeping the commandments",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the synagogue as a place of prayer, Torah reading, and community life and identify its main features",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Luke 4:16-21",
+    "Acts 15:21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Jewish seventh-day Sabbath with the Christian Lord's Day in timing, purpose, and practice",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 20:8-11",
+    "Acts 20:7",
+    "Revelation 1:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.7",
+    "Westminster Shorter Catechism Q59"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Categorize the biblical pilgrimage festivals and the later festivals of Hanukkah and Purim by their origin and the events they remember",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Leviticus 23:4-8",
+    "Leviticus 23:15-21",
+    "Leviticus 23:33-43",
+    "Deuteronomy 16:16",
+    "Esther 9:20-28",
+    "John 10:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Levitical dietary laws marked Israel's separation from the nations as a holy people",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Leviticus 11:44-45",
+    "Leviticus 20:24-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how practices such as Sabbath, circumcision, and dietary laws have preserved Jewish identity through exile and diaspora",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 20:12",
+    "Daniel 1:8",
+    "Genesis 17:9-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the symbolism of the Passover Seder in light of Exodus 12 and Jesus' Last Supper as a Passover meal",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Exodus 12:1-14",
+    "Luke 22:14-20",
+    "1 Corinthians 5:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify occasions in the Gospels when Jesus took part in Jewish festivals and explain what he taught at them",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Luke 2:41-42",
+    "John 7:2",
+    "John 7:37-39",
+    "John 10:22-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the significance of the Western Wall and how Jewish practice shifted to prayer and synagogue worship after the destruction of the Temple",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare how Orthodox, Conservative, and Reform Jewish communities differ in their observance of Shabbat and kashrut",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Sabbath-keeping for Christians using the Reformed teaching that the Sabbath continues as the Lord's Day on the first day of the week",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Mark 2:27-28",
+    "Colossians 2:16-17",
+    "Hebrews 4:9-10",
+    "Acts 20:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.7",
+    "Westminster Confession of Faith 21.8",
+    "Westminster Shorter Catechism Q58",
+    "Westminster Shorter Catechism Q60",
+    "Heidelberg Catechism Q103"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the difference between legalism and devotion in religious observance using Jesus' Sabbath teaching and the prophets' critique of empty ritual",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Mark 2:23-28",
+    "Mark 3:1-6",
+    "Isaiah 1:13-17",
+    "Isaiah 58:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed position that Christians are free from the ceremonial law using the Jerusalem Council and related New Testament texts",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 15:6-11",
+    "Acts 15:19-20",
+    "Acts 10:9-16",
+    "Mark 7:18-19",
+    "Colossians 2:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.3",
+    "Westminster Confession of Faith 20.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an account of how the Reformed tradition reads the Levitical feasts as types fulfilled in Christ's death, resurrection, and gift of the Spirit",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Corinthians 5:7",
+    "1 Corinthians 15:20",
+    "Acts 2:1-4",
+    "Hebrews 10:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 19.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Design a respectful approach to conversation with Jewish neighbors that represents their observances accurately and explains Christian convictions graciously",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Peter 3:15",
+    "Colossians 4:5-6",
+    "Romans 10:1"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Shabbat, festivals, kosher, Seder, Bar/Bat Mitzvah, Sabbath vs Lord's Day, holiday categories, dietary separation, Seder symbolism, Jesus at the festivals, Western Wall, Christian Sabbath evaluation, legalism vs devotion, Acts 15 freedom, feasts fulfilled). Replaced the passive 'Observe a Seder plate' with identifying and explaining its items. Added missing practices: Shabbat home rituals, Hanukkah and Purim customs, High Holy Days, synagogue worship, practice as identity in diaspora, variation across Jewish movements, and respectful engagement. Narrowed whole-chapter citations to specific verses, added WCF 21.7-21.8, 20.1, WSC Q58-60 and Heidelberg Q103 where they state the doctrine, and kept WCF 7.5 and 19.3 for typology and ceremonial law.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2007,
+  "output": 5316
+ }
+}

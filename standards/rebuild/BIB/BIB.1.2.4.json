@@ -1,0 +1,331 @@
+{
+ "sub_topic": "BIB.1.2.4",
+ "name": "Roman Catholic Distinctives (Gospel Critique)",
+ "path": [
+  "Bible & Theology",
+  "Apologetics and Worldviews",
+  "Cults and Unique Systems"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from Scripture that God saves people by his grace through faith in Jesus and not by the good things they do",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Ephesians 2:8-9"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name Jesus as the one mediator between God and people and the one through whom Christians pray to God",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "1 Timothy 2:5",
+    "John 14:13-14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that the Bible is God's Word and the highest authority for what Christians believe, above any church leader",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how to speak kindly and truthfully with Roman Catholic neighbors while naming that Protestants and Catholics disagree about how a person is saved",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Peter 3:15",
+    "Ephesians 4:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify beliefs that Protestants and Roman Catholics hold in common, such as the Trinity and the deity and resurrection of Christ, using the Apostles' Creed",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 28:19",
+    "1 Corinthians 15:3-4"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q23"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the five solas of the Reformation and a Scripture passage that supports each one",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:28",
+    "Ephesians 2:8-9",
+    "2 Timothy 3:16-17",
+    "1 Timothy 2:5",
+    "Romans 11:36"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between salvation by grace alone and salvation by grace plus works using Paul's argument in Romans",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Romans 11:6",
+    "Romans 4:4-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the repeated sacrifices of the Old Testament priests with the once-for-all sacrifice of Jesus as High Priest",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 7:23-27",
+    "Hebrews 10:10-14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the main events of the Protestant Reformation, including Martin Luther's protest against indulgences and his recovery of justification by faith",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 1:16-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply the sufficiency of Scripture by testing a church teaching against what the Bible says",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Acts 17:11",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the difference between the Reformed view of Scripture as the supreme authority and the Roman Catholic view of Scripture, Tradition, and the Magisterium together",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Mark 7:8-9",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Roman Catholic view of justification as a lifelong process with the Reformed view of justification as God's once-for-all legal declaration",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:28",
+    "Romans 4:4-5",
+    "Romans 5:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Roman Catholic teaching on the Mass as a sacrifice and on transubstantiation with Reformed teaching on the Lord's Supper as a remembrance and sign of Christ's finished work",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 10:10-14",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 29.2",
+    "Westminster Confession of Faith 29.6",
+    "Heidelberg Catechism Q80"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the seven sacraments of Roman Catholic teaching with the two sacraments confessed in the Reformed tradition",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 28:19",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 27.4",
+    "Westminster Shorter Catechism Q93"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition does not receive the Apocrypha as part of the canon of Scripture",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:1-2",
+    "Luke 24:44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Roman Catholic doctrines of purgatory and indulgences in light of the sufficiency of Christ's atonement",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 10:14",
+    "Romans 8:1",
+    "1 John 1:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the historical context and main decrees of the Council of Trent on Scripture, tradition, and justification",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Roman Catholic practice of praying to Mary and the saints, including the distinction between veneration and worship, in light of Christ's sole mediation",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 Timothy 2:5",
+    "Hebrews 4:14-16",
+    "Matthew 4:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the doctrines of papal primacy and papal infallibility, including the interpretation of Jesus' words to Peter",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 16:18-19",
+    "Ephesians 2:20",
+    "1 Peter 5:1-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed doctrine of the imputation of Christ's righteousness against the Roman Catholic doctrine of infused righteousness",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Corinthians 5:21",
+    "Romans 4:5-6",
+    "Philippians 3:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Marian dogmas of the Immaculate Conception and the Assumption against the teaching of Scripture",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Luke 1:46-47",
+    "Romans 3:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate whether modern ecumenical statements such as the 1999 Joint Declaration on the Doctrine of Justification resolve the Reformation disagreement over the gospel",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 1:6-9",
+    "Galatians 2:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a gracious plan for a conversation with a Roman Catholic friend that explains justification by faith alone from Scripture",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Peter 3:15",
+    "Colossians 4:5-6",
+    "Romans 5:1"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (grace vs works, Christ as mediator, Scripture's authority, five solas, priesthood in Hebrews, authority, justification, Mass, purgatory, Trent, papal infallibility, imputation, Marian dogmas). Recast childish phrasing (chores, Bible as boss) into accurate statements. Merged the vague 'apply sola scriptura' into a concrete task of testing teaching against Scripture. Replaced the 'observe we love our neighbors' item with a describable skill of gracious, truthful conversation. Added missing competencies: shared creedal beliefs, Reformation history, seven vs two sacraments, the Apocrypha and canon, prayer to Mary and saints, modern ecumenical statements, and a culminating conversation plan. Corrected confession citations to full document names and added fitting Westminster and Heidelberg references only where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2068,
+  "output": 5381
+ }
+}

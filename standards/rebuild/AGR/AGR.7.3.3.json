@@ -1,0 +1,233 @@
+{
+ "sub_topic": "AGR.7.3.3",
+ "name": "Record Keeping & Financial Management",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "FFA Leadership & SAE",
+  "Supervised Agricultural Experience (SAE)"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Explain why keeping accurate records of a project's activities, time, and money helps a person learn and make good decisions",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Record the date, activity, and hours worked on a project in a simple daily log",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify project transactions as income or expenses",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Record basic income and expenses for a class or chapter project and calculate whether it made or lost money",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Organize receipts, invoices, and pay stubs as documentation that supports each recorded transaction",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Enter SAE hours, income, and expenses into AET or another agricultural record-keeping system",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Implement a consistent record-keeping routine suited to a specific entrepreneurship, placement, or research SAE",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.09.02.01.c"
+   ]
+  },
+  {
+   "text": "Distinguish cash and non-cash transactions and operating and capital expenses in SAE records",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.01"
+   ]
+  },
+  {
+   "text": "Prepare beginning and ending inventories of current and noncurrent SAE assets",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.01"
+   ]
+  },
+  {
+   "text": "Record wages, hours, and non-cash compensation earned in a placement SAE",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.09.02.01.c"
+   ]
+  },
+  {
+   "text": "Calculate depreciation on SAE capital assets such as breeding livestock, equipment, and facilities",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.01"
+   ]
+  },
+  {
+   "text": "Prepare an SAE income statement and calculate net profit or loss for the year",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Prepare an SAE balance sheet that shows assets, liabilities, and net worth",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Compare the purposes of income statements, balance sheets, and cash flow statements and how often each is used to monitor an SAE",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.01.a"
+   ]
+  },
+  {
+   "text": "Explain how credit, loans, and interest affect SAE liabilities and profitability",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.01"
+   ]
+  },
+  {
+   "text": "Analyze an SAE budget against actual income and expenses to explain variances",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02"
+   ]
+  },
+  {
+   "text": "Interpret SAE financial measures such as return on investment, labor efficiency, break-even price, and change in net worth",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate the accuracy, completeness, and appropriateness of SAE records before submitting a proficiency award or FFA degree application",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.01.01.b"
+   ]
+  },
+  {
+   "text": "Explain the income tax and reporting obligations that apply to earnings from an SAE",
+   "grade": 12,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02"
+   ]
+  },
+  {
+   "text": "Evaluate SAE financial records to justify a business decision such as expanding, reinvesting, or changing an enterprise",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02",
+    "ABS.02.02.01.c"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded all six existing objectives, splitting the grade 10 and 12 items into distinct competencies (income statement, balance sheet, depreciation, financial measures such as labor efficiency). Added competencies for daily logs, income and expense classification, source documentation, inventories, cash and non-cash and capital transactions, placement wages, financial report comparison, credit and interest, budget variance analysis, tax obligations, and record-based decision making. SAE type selection, goal setting, and portfolio presentation were left to sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.01.04.01.c",
+  "ABS.02.01",
+  "ABS.02.01.01.b",
+  "ABS.02.02",
+  "ABS.02.02.01.a",
+  "ABS.02.02.01.b",
+  "ABS.02.02.01.c",
+  "FPS.07",
+  "FPS.07.01",
+  "FPS.07.01.01.a",
+  "FPS.07.01.01.b",
+  "FPS.09.02.01.c",
+  "FPS.11.04",
+  "FPS.11.04.01.a",
+  "FPS.11.04.01.c"
+ ],
+ "usage": {
+  "input": 2496,
+  "output": 2430
+ }
+}

@@ -1,0 +1,267 @@
+{
+ "sub_topic": "AGR.6.3.1",
+ "name": "Pollution & Waste Management",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Natural Resources & Environmental Science",
+  "Environmental Stewardship & Sustainability"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Sort classroom trash into items that can be recycled, composted, or thrown away",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify examples of litter and pollution on a farm, schoolyard, or neighborhood and describe how they can harm plants and animals",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how reducing, reusing, and recycling materials lowers the amount of waste a home, school, or farm sends to a landfill",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe where household trash and wastewater go after they leave a home",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how composting turns food scraps, crop residue, and manure into a useful soil amendment through decomposition",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how a pollutant such as fertilizer runoff, litter, or exhaust can enter soil, water, or air",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish point source pollution from nonpoint source pollution using agricultural and community examples",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how excess nitrogen and phosphorus from fertilizer and manure cause eutrophication and low oxygen conditions in ponds, streams, and coastal waters",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Test a local water sample for indicators such as pH, dissolved oxygen, nitrates, and turbidity and interpret what the results show about pollution",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Investigate a local pollution source and trace its likely path into a waterway, field, or airshed",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate safe storage and disposal practices for farm chemicals and fluids such as pesticides, fuel, and used oil, including triple rinsing empty containers",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the methods commonly used to treat wastewater and septic waste and the steps required before it can be safely released into the environment",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.04.03.02.a",
+    "ESS.04.03.02.b"
+   ]
+  },
+  {
+   "text": "Describe the conditions that cause a waste to be labeled hazardous and identify hazardous wastes commonly found on farms and in agribusinesses",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.04.01.03.a"
+   ]
+  },
+  {
+   "text": "Describe how livestock manure and other animal agriculture wastes affect water and air quality and explain manure management practices such as covered storage, lagoons, and nutrient management plans",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.08.01.01.a"
+   ]
+  },
+  {
+   "text": "Analyze the environmental hazards created by different types of solid waste, solid waste accumulation, and solid waste management methods",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.04.02.01.b",
+    "ESS.04.02"
+   ]
+  },
+  {
+   "text": "Evaluate sanitary landfill procedures for their environmental, economic, and social sustainability",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.04.02.02.c",
+    "ESS.04.02"
+   ]
+  },
+  {
+   "text": "Evaluate examples of wastewater and septic waste for their potential to cause environmental, economic, and social problems",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.04.03.02.c"
+   ]
+  },
+  {
+   "text": "Explain how the carrying capacity of a watershed or ecosystem limits its ability to process waste and absorb pollution",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.05.03.a"
+   ]
+  },
+  {
+   "text": "Evaluate how soil microorganisms in composting and bioremediation can be used to minimize waste and recycle nutrients",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.04.01.c"
+   ]
+  },
+  {
+   "text": "Operate and monitor an environmental service system such as a compost operation or water treatment process, recording data to judge how well it controls pollution",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.04",
+    "ESS.04.02"
+   ]
+  },
+  {
+   "text": "Analyze how local, state, and federal laws such as the Clean Water Act, Clean Air Act, and Superfund are developed and applied to regulate pollution and waste from agriculture",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.02.01.01.b",
+    "ESS.02.02.02.a"
+   ]
+  },
+  {
+   "text": "Construct a plan for handling, storing, and disposing of hazardous waste on a local farm or agribusiness",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.04.01.03.c"
+   ]
+  },
+  {
+   "text": "Create a pollution prevention or remediation plan for a given area such as a field edge, feedlot, or stream reach",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.04.01.02.c"
+   ]
+  },
+  {
+   "text": "Design a waste reduction plan for a farm, school, or community that lowers pollution while remaining practical to carry out",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.04.02"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives as real competencies. The grade 10 systems objective was split into targeted landfill, solid waste hazard, and wastewater evaluations aligned to AFNR codes. Added early objectives on litter, the reduce reuse recycle idea, and composting. Added middle grade objectives on point versus nonpoint sources, nutrient pollution and eutrophication, water quality testing, and farm chemical disposal. Added high school objectives on wastewater treatment, hazardous waste, livestock manure management, carrying capacity, microbial waste processing, operating a service system for SAE or lab work, environmental law, and hazardous waste and remediation plans. Energy, climate, and broad sustainable farming practices were left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.08.01.01.a",
+  "ESS.02.01.01.b",
+  "ESS.02.02.02.a",
+  "ESS.03.04.01.c",
+  "ESS.03.05.03.a",
+  "ESS.04",
+  "ESS.04.01.02.c",
+  "ESS.04.01.03.a",
+  "ESS.04.01.03.c",
+  "ESS.04.02",
+  "ESS.04.02.01.b",
+  "ESS.04.02.02.c",
+  "ESS.04.03.02.a",
+  "ESS.04.03.02.b",
+  "ESS.04.03.02.c"
+ ],
+ "usage": {
+  "input": 2566,
+  "output": 3949
+ }
+}

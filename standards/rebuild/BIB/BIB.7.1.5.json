@@ -1,0 +1,260 @@
+{
+ "sub_topic": "BIB.7.1.5",
+ "name": "Mesopotamian and Egyptian Civilizations",
+ "path": [
+  "Bible & Theology",
+  "Historical & Cultural Context",
+  "Ancient Near Eastern Background (OT)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Egypt as a land along the Nile River where Joseph and Moses lived",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 41:41-43",
+    "Exodus 2:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Ur of the Chaldeans as Abraham's first home and retell how God called him to leave it",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 11:31",
+    "Genesis 12:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how people in Abraham's world built cities and towers out of baked mud bricks",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 11:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe what a Mesopotamian ziggurat looked like and explain how the tower of Babel account reflects this kind of building",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 11:1-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate the Fertile Crescent, the Tigris and Euphrates Rivers, and the Nile River on a map",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:14",
+    "Genesis 15:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the yearly flooding of the Nile supplied Egypt with food and why famine sent Jacob's family to Egypt",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 41:53-57",
+    "Genesis 42:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the life of an Israelite shepherd with the life of an Egyptian city dweller using details from the Joseph narrative",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 46:31-34",
+    "Genesis 47:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Egyptian court customs in the Joseph narrative such as the signet ring, linen garments, chariots, and Egyptian names",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 41:14",
+    "Genesis 41:42-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate Egypt, Assyria, Babylon, and Persia on a Bible map and explain why Israel's location placed it between these powers",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 10:8-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the role of Pharaoh as a king regarded as divine and explain how Exodus presents the conflict between Pharaoh and the LORD",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 5:1-2",
+    "Exodus 9:13-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Egyptian forced labor and royal building projects as background to Israel's bondage",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 1:8-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the struggle between the northern empires of Assyria and Babylon and the southern power of Egypt and how Judah's kings were pulled between them",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "2 Kings 18:19-21",
+    "Isaiah 30:1-3",
+    "Jeremiah 46:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the plagues of Egypt are presented as the LORD's judgment on the gods of Egypt",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 12:12",
+    "Numbers 33:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Assyrian policy of deporting and resettling conquered peoples and how it shaped the fall of Samaria",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "2 Kings 17:5-6",
+    "2 Kings 17:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Babylon deported and retrained the leading people of Judah as background to the book of Daniel",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "2 Kings 24:14-16",
+    "Daniel 1:3-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Sennacherib's campaign against Judah by comparing the biblical account with Assyrian royal records",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "2 Kings 18:13-16",
+    "2 Kings 19:35-37"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the prophets describe Assyria and Babylon as instruments in God's hand who are still accountable for their pride and cruelty",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 10:5-15",
+    "Nahum 3:1-7",
+    "Habakkuk 1:5-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the archaeological and textual evidence bearing on Israel's sojourn in Egypt",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 47:11",
+    "Exodus 1:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Mesopotamian records such as the Babylonian Chronicles, the Jehoiachin ration tablets, and the Cyrus Cylinder relate to the biblical accounts",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Kings 24:10-12",
+    "2 Kings 25:27-30",
+    "Ezra 1:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct an account of the rise and fall of the ancient Near Eastern empires that connects them to the Reformed reading of God's sovereignty in Daniel's visions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Daniel 2:36-45",
+    "Daniel 7:1-8",
+    "Daniel 4:34-35"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (Egypt and the Nile, Ur, ziggurats, Fertile Crescent, Nile agriculture, shepherd versus city life, map work, northern and southern empires, plagues and Egyptian gods, Assyrian warfare, evidence for Israel in Egypt, Daniel and the empires). Dropped the clay writing objective as belonging to Languages, the Code of Hammurabi as belonging to Law Codes, and the vague cradle of civilization item. Replaced the defend reliability objective with a specific evaluation of named Mesopotamian records. Added objectives on Joseph's Egyptian court setting, Pharaoh's divine kingship, Egyptian forced labor, Assyrian deportation, Babylonian exile practice, Sennacherib's campaign, and the prophets' view of empires under God's providence, with scripture and confession anchors where they apply.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2021,
+  "output": 4174
+ }
+}

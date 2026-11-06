@@ -1,0 +1,423 @@
+{
+ "sub_topic": "BIB.9.4.3",
+ "name": "Genesis",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Torah (The Pentateuch)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Genesis as the first book of the Bible and the book that tells how the world began",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God made everything out of nothing and called what he made good",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:1",
+    "Genesis 1:31"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q9",
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell in order what God made on each of the six days of creation and his rest on the seventh day",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1-2:3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name Adam and Eve as the first man and woman and explain that God made them in his image",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:26-27",
+    "Genesis 2:7",
+    "Genesis 2:21-23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10",
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Adam and Eve's disobedience in the garden and the consequences God announced",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:15-17",
+    "Genesis 3:1-24"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q15",
+    "Westminster Confession of Faith 6.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Noah, the ark, and the flood, including God's rainbow promise",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 6:9-8:22",
+    "Genesis 9:8-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how sin spread after the fall through the accounts of Cain and Abel and the tower of Babel",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 4:1-16",
+    "Genesis 6:5",
+    "Genesis 11:1-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main events in the lives of Abraham, Isaac, Jacob, and Joseph",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 12:1-9",
+    "Genesis 21:1-7",
+    "Genesis 28:10-22",
+    "Genesis 37:1-36",
+    "Genesis 45:1-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the work God gave humans in the garden and the purpose of the seventh day rest",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:28",
+    "Genesis 2:2-3",
+    "Genesis 2:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the two main sections of Genesis, the primeval history of chapters 1 to 11 and the patriarchal history of chapters 12 to 50",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 11:27-12:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the promises God made to Abraham of land, descendants, and blessing to all nations",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Genesis 15:1-21",
+    "Genesis 17:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Genesis 2 teaches about marriage as God's design for one man and one woman",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:18-25",
+    "Matthew 19:4-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1",
+    "Westminster Confession of Faith 24.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the condition of humanity at creation with its condition after the fall",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:26-31",
+    "Genesis 3:7-19"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q6",
+    "Heidelberg Catechism Q7",
+    "Westminster Shorter Catechism Q13"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Abraham was counted righteous by believing God's promise and how the New Testament uses this text",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 15:6",
+    "Romans 4:1-5",
+    "Galatians 3:6-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the beginnings recorded in Genesis lay the foundation for themes developed in the rest of the Bible",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:15",
+    "Genesis 12:3",
+    "Revelation 22:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the repeated toledot heading, these are the generations of, organizes the book of Genesis",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:4",
+    "Genesis 5:1",
+    "Genesis 6:9",
+    "Genesis 11:27",
+    "Genesis 25:19",
+    "Genesis 37:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the testing of Abraham with Isaac in light of its New Testament interpretation",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [
+    "Genesis 22:1-19",
+    "Hebrews 11:17-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the promise of the seed of the woman through the family lines of Genesis to the promised ruler from Judah",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 3:15",
+    "Genesis 22:17-18",
+    "Genesis 49:10",
+    "Galatians 3:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.6",
+    "Westminster Confession of Faith 7.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the significance of the Abrahamic covenant and its sign of circumcision as the Reformed tradition understands the covenant of grace",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Genesis 17:1-14",
+    "Galatians 3:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.3",
+    "Heidelberg Catechism Q74"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the covenant God made with Noah to the covenant he made with Abraham",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 9:8-17",
+    "Genesis 15:7-21",
+    "Genesis 17:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed doctrine of election as illustrated in God's choice of Jacob over Esau",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 25:21-26",
+    "Malachi 1:2-3",
+    "Romans 9:10-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Genesis portrays the patriarchs as flawed people through whom God keeps his promises",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 12:10-20",
+    "Genesis 27:1-29",
+    "Genesis 32:22-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the theological significance of the image of God in Genesis for human dignity",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:26-28",
+    "Genesis 9:6",
+    "James 3:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate arguments for and against Mosaic authorship of Genesis, including the Documentary Hypothesis",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Luke 24:27",
+    "John 5:46"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Contrast the theology of Genesis 1 to 11 with ancient Near Eastern creation and flood accounts",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:1-2:3",
+    "Genesis 6:5-9:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate major interpretive views of the creation days in Genesis 1, including the literal six day view and the framework view, using principles of interpreting Scripture by Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 1:1-2:3",
+    "Exodus 20:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.1",
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Research the cultural background of patriarchal customs and explain how it illuminates passages in Genesis",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [
+    "Genesis 16:1-4",
+    "Genesis 25:29-34",
+    "Genesis 31:19-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Genesis teaches the Reformed doctrine of original sin and its transmission from Adam to all humanity",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:16-17",
+    "Genesis 3:1-19",
+    "Genesis 5:3",
+    "Romans 5:12-19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.3",
+    "Westminster Shorter Catechism Q16",
+    "Westminster Confession of Faith 7.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the theme of God's providence in the Joseph narrative into a written argument drawing on the text and the confessions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 45:5-8",
+    "Genesis 50:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Westminster Confession of Faith 5.4",
+    "Heidelberg Catechism Q27"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (book of beginnings, Adam and Eve, Noah, patriarchs, two sections, toledot, Abrahamic covenant, seed of the woman, election, Mosaic authorship, creation views, cultural background, Joseph and providence). Replaced vague items (observe God made everything good, categorize Genesis as foundation, compare creation with fall) with assessable versions. Added creation days, spread of sin, work and Sabbath, marriage, justification by faith, testing of Abraham, Noahic covenant, flawed patriarchs, image of God, ancient Near Eastern comparison, and original sin. Corrected confession citations to full names and added specific verse anchors.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2023,
+  "output": 4497
+ }
+}

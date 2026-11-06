@@ -1,0 +1,373 @@
+{
+ "sub_topic": "BIB.9.3.1",
+ "name": "Amos",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Minor Prophets"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Amos as a shepherd and fig farmer whom God called to carry his message to Israel",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Amos 1:1",
+    "Amos 7:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell that God sent Amos to warn people who were cheating the poor and treating them unkindly",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Amos 2:6-7",
+    "Amos 5:11-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that God sees whether people treat others fairly, using the example of sellers who cheated with dishonest scales",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Amos 8:4-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate Tekoa in Judah and Bethel in Israel on a map of the divided kingdom and explain that Amos traveled from the south to preach in the north",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Amos 1:1",
+    "Amos 7:10-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize Amos's warnings to the wealthy who lived in luxury while they oppressed the needy",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Amos 4:1-3",
+    "Amos 6:4-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of let justice roll down like waters by comparing it to a stream that never runs dry",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Amos 5:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the call to seek the LORD and live required of Israel according to Amos",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Amos 5:4-6",
+    "Amos 5:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Israel's festivals, offerings, and songs with the obedience God required of his people in Amos",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Amos 4:4-5",
+    "Amos 5:21-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the conflict between Amos and Amaziah the priest at Bethel and explain why Amos said his authority came from God's call",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Amos 7:10-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe practical ways of honest dealing and care for the needy that obey the commands Amos says Israel broke",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Amos 8:4-6",
+    "Leviticus 19:35-36",
+    "Deuteronomy 24:14-15"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q74",
+    "Westminster Shorter Catechism Q75"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the five visions of Amos and state what each one reveals about God's dealings with Israel",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Amos 7:1-9",
+    "Amos 8:1-3",
+    "Amos 9:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the repeated pattern for three transgressions and for four in the oracles against the nations builds toward the judgment on Judah and Israel",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Amos 1:3-2:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the hymns in Amos present the LORD as the Creator who rules nature and history and therefore has the right to judge",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Amos 4:13",
+    "Amos 5:8-9",
+    "Amos 9:5-6",
+    "Amos 4:7-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11",
+    "Heidelberg Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the vision of the plumb line as an image of God measuring Israel against his own standard",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Amos 7:7-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Amos teaches that Israel's special relationship with God brought greater accountability rather than protection from judgment",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Amos 3:1-2",
+    "Amos 9:7-8",
+    "Luke 12:48"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze why Amos treats injustice toward neighbors as making Israel's worship unacceptable, relating his message to love of God and love of neighbor in the law",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Amos 2:6-8",
+    "Amos 5:21-24",
+    "Matthew 22:37-40"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q42"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the famine of hearing the words of the LORD as a judgment on a people who silenced God's prophets",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Amos 8:11-12",
+    "Amos 2:11-12",
+    "Amos 7:12-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Amos's warning that the Day of the LORD would bring darkness rather than light to those who presumed upon it",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Amos 5:18-20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify literary forms in Amos such as the funeral lament, woe oracle, ironic call to worship, and vision report and explain how each shapes the message",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Amos 4:4-5",
+    "Amos 5:1-3",
+    "Amos 6:1-7",
+    "Amos 7:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the refrain yet you did not return to me as a record of God's disciplines meant to call Israel to repentance",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Amos 4:6-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 15.2",
+    "Westminster Shorter Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Amos 3 why a true prophet must speak when the LORD speaks and how God reveals his purposes through his prophets",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Amos 3:3-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Relate Amos's prophecies of exile to their fulfillment in Assyria's conquest of the northern kingdom",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Amos 5:27",
+    "Amos 7:11",
+    "2 Kings 17:6-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Israel's economic prosperity under Jeroboam II masked moral and spiritual decline according to Amos",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Kings 14:23-29",
+    "Amos 3:15",
+    "Amos 6:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Reformed tradition reads the statements that the LORD relented in Amos alongside its confession that God is unchanging",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Amos 7:1-6",
+    "Numbers 23:19",
+    "Malachi 3:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the promise to raise up the fallen booth of David and explain how James applies it to the inclusion of the Gentiles",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Amos 9:11-15",
+    "Acts 15:13-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize Amos's teaching on courts, markets, and the poor into an account of the duties and sins the Reformed tradition confesses under the eighth commandment",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Amos 5:10-15",
+    "Amos 8:4-6"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q141",
+    "Westminster Larger Catechism Q142"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Amos's indictment of corrupt courts and bribery applies to the pursuit of righteousness in public life today",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Amos 5:7",
+    "Amos 5:10-12",
+    "Amos 6:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose an essay on the danger of religious hypocrisy that draws evidence from Amos and from the New Testament",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Amos 5:21-24",
+    "Matthew 23:23",
+    "James 1:26-27"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.7"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies such as Amos as shepherd, warnings to the rich, justice rolling down like waters, worship versus obedience, the oracles against the nations, the plumb line, the famine of the Word, prosperity and decay, and the hypocrisy essay. Replaced vague items like naming justice as fairness, observing that God sees, applying care for the needy, constructing a theology of social justice, and defending righteousness with anchored, assessable objectives tied to specific texts and the eighth commandment. Added missing content: Amos's geography and call, the Amaziah conflict, the five visions, the creation hymns and providence, Israel's greater accountability, the Day of the LORD, literary forms, the refrain of unheeded discipline, the prophetic word in Amos 3, fulfillment in the Assyrian exile, the meaning of God relenting, and the restoration promise in Acts 15. Added confessional anchors only where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1854,
+  "output": 7376
+ }
+}

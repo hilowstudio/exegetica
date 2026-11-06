@@ -1,0 +1,204 @@
+{
+ "sub_topic": "AGR.3.4.3",
+ "name": "Drones & Agricultural Sensors",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Surveying, Technology & Precision Ag"
+ ],
+ "grades": [
+  6,
+  7,
+  8,
+  9,
+  10,
+  11
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the basic components of an agricultural drone and the safe operating rules for flying it",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common agricultural sensors such as soil moisture probes, weather stations, and livestock monitors and state what each one measures",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how a drone-mounted camera captures reflected light from a crop canopy to show plant health from the air",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how an in-field sensor collects readings and sends the data to a phone or computer to support a management decision such as when to irrigate",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate a pre-flight inspection and a basic grid flight pattern for a mapping mission over a field",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the FAA rules that apply to recreational and Part 107 commercial drone flights, including airspace limits, altitude, and visual line of sight",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between visible-light, multispectral, and thermal sensor imagery and what each reveals during crop scouting",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.01.a",
+    "PST.05.01.02.a"
+   ]
+  },
+  {
+   "text": "Classify the electrical sensors and controls used in agricultural systems by what they measure and the action they trigger",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.02.03.a"
+   ]
+  },
+  {
+   "text": "Identify the sensors and automated controls used in modern livestock facilities, such as climate controllers, activity collars, and automated feeders",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.05.01.02.a"
+   ]
+  },
+  {
+   "text": "Collect and record sensor data over time for a supervised agricultural experience project and interpret the trends it shows",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.01"
+   ]
+  },
+  {
+   "text": "Calculate NDVI from multispectral reflectance values and interpret what the index indicates about crop vigor",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.01.b"
+   ]
+  },
+  {
+   "text": "Analyze drone-collected imagery to identify a crop stress pattern and determine its likely cause through ground-truthing",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.01.b"
+   ]
+  },
+  {
+   "text": "Install, calibrate, and troubleshoot a field sensor or drone sensor payload so that it records accurate data",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.02.c"
+   ]
+  },
+  {
+   "text": "Compare drone-based spray application with ground and aerial application in terms of coverage, drift, labor, and terrain access",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.01.02.a"
+   ]
+  },
+  {
+   "text": "Evaluate the economic return of adopting drones and agricultural sensors on a farm or ranch using a cost-benefit analysis",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.02.b"
+   ]
+  },
+  {
+   "text": "Analyze how drone and sensor technologies support or fall short of USDA sustainable practices criteria for reducing inputs and protecting soil and water",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.04.01.b"
+   ]
+  },
+  {
+   "text": "Design a drone-based scouting plan for a farm that specifies flight schedule, sensors, data analysis steps, and follow-up actions",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.03.02.c",
+    "PST.05.01"
+   ]
+  }
+ ],
+ "changes": "Kept all six original objectives as real competencies, lightly reworded (added grid pattern, ground-truthing, data analysis steps) and anchored them to fitting standards. Added in-field and livestock sensor objectives so the sub-topic covers sensors beyond drones, FAA Part 107 rules, sensor classification, SAE sensor data logging, NDVI calculation, sensor installation and troubleshooting, spray drone comparison, economic evaluation, and sustainability analysis. Left GPS guidance, GIS mapping, and surveying to sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.05.01.02.a",
+  "BS.03",
+  "FPP.03.01.03.c",
+  "PS.01.04.05.a",
+  "PS.03.01.05.c",
+  "PS.03.03.02.c",
+  "PS.03.04.01.b",
+  "PS.03.05.02.b",
+  "PST.03.02.03.a",
+  "PST.05.01",
+  "PST.05.01.02.a",
+  "PST.05.03.01.a",
+  "PST.05.03.01.b",
+  "PST.05.03.02.b",
+  "PST.05.03.02.c"
+ ],
+ "usage": {
+  "input": 2586,
+  "output": 2743
+ }
+}

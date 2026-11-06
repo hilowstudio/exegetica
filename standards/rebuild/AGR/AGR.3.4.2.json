@@ -1,0 +1,255 @@
+{
+ "sub_topic": "AGR.3.4.2",
+ "name": "GPS, GIS & Precision Agriculture",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Surveying, Technology & Precision Ag"
+ ],
+ "grades": [
+  6,
+  7,
+  8,
+  9,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe how a GPS receiver determines a field location using signals from multiple satellites",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate points on a farm map or GPS display using latitude and longitude coordinates",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between a GPS point location and a GIS map layer showing field data",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common precision agriculture tools such as GPS guidance, auto-steer, yield monitors, and variable-rate controllers and the job each performs",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate the use of a GPS device to record field boundaries and calculate acreage",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare GPS correction sources such as WAAS, subscription satellite correction, and RTK by accuracy, cost, and suitable field tasks",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.01.a",
+    "PST.05.03.01.b"
+   ]
+  },
+  {
+   "text": "Explain how GPS guidance and auto-steer reduce overlap, skips, operator fatigue, and input waste in field operations",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.01.b"
+   ]
+  },
+  {
+   "text": "Analyze a GIS-generated yield map to identify variation in field productivity and suggest likely causes",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02.01.01.b",
+    "PST.05.03.01.c"
+   ]
+  },
+  {
+   "text": "Use GPS and GIS records to map and document a crop or land-based SAE enterprise",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02.01.01.b"
+   ]
+  },
+  {
+   "text": "Build a multi-layer GIS map of a field combining boundaries, soil types, topography, and yield data",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02.01.01.b",
+    "PST.05.03.01.c"
+   ]
+  },
+  {
+   "text": "Explain how automatic section control and machine telematics use GPS position to manage implements and fleet data",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.01.a",
+    "PST.05.03.01.b"
+   ]
+  },
+  {
+   "text": "Explain how georeferenced grid and zone soil sampling support site-specific nutrient management",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04",
+    "PST.05.03.01.b"
+   ]
+  },
+  {
+   "text": "Delineate management zones within a field by analyzing soil, yield, and elevation layers in GIS",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.01.c",
+    "NRS.03.02.02.b"
+   ]
+  },
+  {
+   "text": "Create a variable-rate seeding or fertilizer prescription map for the management zones of a field",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04",
+    "PST.05.03.01.c"
+   ]
+  },
+  {
+   "text": "Calibrate, install, and troubleshoot a GPS receiver, yield monitor, or variable-rate controller on farm equipment",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.02.c"
+   ]
+  },
+  {
+   "text": "Analyze results of a georeferenced on-farm strip trial to compare hybrids, varieties, or input rates",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.01.c",
+    "FPS.02.01.01.b"
+   ]
+  },
+  {
+   "text": "Analyze the natural resources of a farm or watershed with GIS to plan conservation practices such as buffer strips, waterways, and protection of erosion-prone areas",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.03.02.02.a",
+    "NRS.03.02.02.b",
+    "NRS.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate the return on investment of a precision agriculture technology for a given farm operation",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.02.b"
+   ]
+  },
+  {
+   "text": "Evaluate how precision agriculture practices align with USDA sustainable practices criteria and affect stewardship of soil, water, and inputs",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.04.01.b",
+    "NRS.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate questions of farm data ownership, privacy, and sharing when precision agriculture data is stored with equipment dealers or cloud platforms",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Design a complete precision agriculture plan for an SAE plot or farm that integrates GPS guidance, GIS analysis, prescriptions, and economic justification",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.05.03.01.b",
+    "PST.05.03.02.b",
+    "PS.01.04"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives, rewording the yield map objective to add likely causes. Replaced the generic variable-rate objective with a sequence: georeferenced soil sampling (10), management zone delineation (10), and a created prescription map (11). Added coordinate reading (6), identifying precision ag tools (7), GPS correction sources (9), guidance and auto-steer (9), GPS and GIS records for SAE (9), multi-layer GIS map building (10), section control and telematics (10), equipment calibration and troubleshooting (11), on-farm strip trial analysis (11), and GIS conservation planning (11). At grade 12 added sustainability alignment, farm data ownership, and a capstone SAE precision plan. Left surveying, drone, sensor, and emerging technology content to the sibling sub-topics. Standards are assigned only at grades 9 to 12.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.05.01.02.a",
+  "BS.03",
+  "FPS.02.01.01.b",
+  "NRS.02.02.01.b",
+  "NRS.03.02.01.a",
+  "NRS.03.02.01.b",
+  "NRS.03.02.02.a",
+  "NRS.03.02.02.b",
+  "PS.01.04",
+  "PS.03.04.01.b",
+  "PST.05.03.01.a",
+  "PST.05.03.01.b",
+  "PST.05.03.01.c",
+  "PST.05.03.02.b",
+  "PST.05.03.02.c"
+ ],
+ "usage": {
+  "input": 2593,
+  "output": 3521
+ }
+}

@@ -1,0 +1,201 @@
+{
+ "sub_topic": "AGR.7.1.2",
+ "name": "FFA Creed, Emblem & Ceremonies",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "FFA Leadership & SAE",
+  "FFA Organization & Heritage"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the five symbols of the official FFA emblem and the words that appear on it",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the official FFA colors and explain what national blue and corn gold represent",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite the FFA motto and explain the meaning of each of its four lines",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite and explain in your own words the meaning of the first paragraph of the FFA Creed",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the symbolism of each element of the FFA emblem",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify each chapter officer station, its symbol, and its place in the meeting room, and explain what the symbol stands for in the opening ceremony",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the components of FFA official dress and explain the code of conduct for wearing the FFA jacket",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the central idea of each of the five paragraphs of the FFA Creed and explain why the Creed is important to members",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12.01"
+   ]
+  },
+  {
+   "text": "Deliver the full FFA Creed from memory with accurate wording, clear diction, and appropriate expression to Creed Speaking standards",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Perform an assigned officer part in the chapter opening and closing ceremonies using correct ritual wording and procedure",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the FFA Creed in the context of when E. M. Tiffany wrote it and compare its message with agriculture today",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12.01.01.b"
+   ]
+  },
+  {
+   "text": "Interpret the FFA emblem and each of its parts in the context of when it was designed and what it means to members today",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12.02.01.b",
+    "FPS.12.02"
+   ]
+  },
+  {
+   "text": "Respond to judges' questions about the meaning and personal application of the FFA Creed in a Creed Speaking interview",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12.01"
+   ]
+  },
+  {
+   "text": "Lead a chapter opening or closing ceremony as presiding officer using correct ritual procedure and parliamentary courtesy",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Plan and conduct a chapter degree or officer installation ceremony with correct ritual, roles, and room setup",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the impact of the FFA Creed on the National FFA Organization and its members and justify its relevance to modern agricultural life",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12.01.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate the impact of the FFA emblem and its proper use on the identity of the National FFA Organization and its members",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12.02.01.c"
+   ]
+  },
+  {
+   "text": "Coach a younger member in memorizing and delivering the FFA Creed and give feedback using a Creed Speaking rubric",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the emblem symbols, emblem symbolism (moved to grade 7), opening Creed lines, full Creed recitation, leading ceremonies, and Creed relevance objectives. Changed 'practice reciting' to an assessable delivery-from-memory objective. Added the FFA colors, motto, officer stations and symbols, official dress and jacket conduct, a Creed paragraph summary, historical interpretation of the Creed and emblem, Creed Speaking questions, performing officer parts, planning degree and installation ceremonies, evaluating the emblem's impact, and coaching younger Creed speakers. Mission statement and history standards were left to the sibling sub-topic.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPS.10.01.01.a",
+  "FPS.10.01.01.b",
+  "FPS.11.03",
+  "FPS.11.03.01.a",
+  "FPS.11.03.01.b",
+  "FPS.11.03.01.c",
+  "FPS.12.01",
+  "FPS.12.01.01.b",
+  "FPS.12.01.01.c",
+  "FPS.12.02",
+  "FPS.12.02.01.b",
+  "FPS.12.02.01.c",
+  "FPS.12.03",
+  "FPS.12.03.01.b",
+  "FPS.12.03.01.c"
+ ],
+ "usage": {
+  "input": 2207,
+  "output": 2990
+ }
+}

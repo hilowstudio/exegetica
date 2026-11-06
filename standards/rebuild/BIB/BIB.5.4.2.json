@@ -1,0 +1,287 @@
+{
+ "sub_topic": "BIB.5.4.2",
+ "name": "Sacred Texts and The Five Pillars",
+ "path": [
+  "Bible & Theology",
+  "Comparative Religious Studies & Ethics",
+  "Islam: Submission & The Five Pillars"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Quran as the holy book of Islam and the Bible as the holy book of Christians",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name prayer and giving to the poor as practices Muslims carry out",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Muslims fast from food and drink during daylight hours in the month of Ramadan and celebrate Eid when it ends",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "List the Five Pillars of Islam (shahada, salat, zakat, sawm, hajj) and describe each in a simple sentence",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Arabic calligraphy of Quranic verses is used to decorate mosques and books in place of pictures",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the Hajj is, including the journey to Mecca and the role of the Kaaba",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the practice of salat, including the five daily times, the call to prayer, facing Mecca, and ritual washing beforehand",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the structure of the Quran, with its 114 suras arranged mostly by length, to the structure of the Bible, with its 66 books written by many authors across two testaments",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 1:1-2",
+    "2 Peter 1:20-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Muslim belief that the Quran is authentic only in Arabic and contrast it with the Christian practice of translating Scripture into every language",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:5-11",
+    "Revelation 7:9-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the form and purpose of salat with the Christian teaching on prayer found in the Lord's Prayer",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 6:5-13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "State the content of the shahada and explain the two claims it makes about God and Muhammad",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how zakat is calculated and used and compare it with biblical teaching on generous giving",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 6:1-4",
+    "2 Corinthians 9:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Ramadan fast with Jesus's teaching on fasting",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 6:16-18",
+    "Isaiah 58:3-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the role of the Hadith and Sunna as a second source of authority alongside the Quran in Muslim practice",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare ritual washing (wudu) with Old Testament ceremonial washings and explain how Hebrews presents Christ as the one who truly cleanses",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Leviticus 16:4",
+    "Mark 7:14-23",
+    "Hebrews 9:13-14",
+    "Hebrews 10:22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the meaning Muslims give to Hajj rituals and their link to Abraham and compare this with the Genesis account of Abraham and Isaac",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 22:1-14",
+    "Hebrews 11:17-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Islamic reliance on Hadith tradition with the Reformed doctrine of the sufficiency and supreme authority of Scripture",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "Mark 7:8-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Muslims interpret the Quran through tafsir and the principle of abrogation and contrast this with the Reformed principle that Scripture interprets Scripture",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 17:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Quranic passages about Jesus, including the denial of his crucifixion, with the Gospel accounts of his death and resurrection",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 19:16-30",
+    "1 Corinthians 15:3-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Quran's claim that earlier scriptures were corrupted in light of the Bible's own claims about its preservation and the manuscript evidence",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 40:8",
+    "Matthew 24:35",
+    "2 Peter 1:19-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Sharia is derived from the Quran, Hadith, consensus, and analogy and evaluate its implications for law and freedom of conscience",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 5:29",
+    "Romans 13:1-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the place of the Five Pillars in Muslim hope of divine favor in light of the Reformed doctrine of justification by grace through faith",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Ephesians 2:8-9",
+    "Galatians 2:16",
+    "Titus 3:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Westminster Shorter Catechism Q33",
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Write a gracious, Scripture-based response to a Muslim neighbor's question about why Christians do not keep fixed rules of ritual prayer, fasting, and pilgrimage",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Colossians 2:16-17",
+    "Romans 10:14-17",
+    "1 Peter 3:15"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Quran as holy book, prayer and giving, Ramadan fasting, calligraphy, the Five Pillars, Hajj, comparing Bible and Quran structure, Hadith, wudu and ceremonial law, Sharia, grace versus works) and recast the early ones to describe Muslim practice rather than the student's own. Dropped Paradise, the God of the Quran versus the Bible, and the salvation scales item as Founding and Core Beliefs material. Dropped jihad as off topic. Narrowed the evangelism essay to responding to questions about the Pillars. Added the shahada, salat in detail, zakat and fasting compared with Jesus's teaching, prayer compared with the Lord's Prayer, Arabic-only recitation versus translation, Hajj and Abraham, tafsir and abrogation, Quranic passages on Jesus, the corruption charge, and sufficiency of Scripture. Replaced the loose confession citation with specific Westminster Confession, Shorter Catechism, and Heidelberg references and attached only verse-level Scripture.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1965,
+  "output": 5210
+ }
+}

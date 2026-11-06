@@ -1,0 +1,276 @@
+{
+ "sub_topic": "BIB.5.5.2",
+ "name": "Judaism’s Relationship to the Old Testament",
+ "path": [
+  "Bible & Theology",
+  "Comparative Religious Studies & Ethics",
+  "Judaism: Covenant, Law & Peoplehood"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that Jesus was a Jewish man who read and taught from the Old Testament",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 4:16-21",
+    "Matthew 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the Old Testament as the holy book that both Jewish people and Christians read",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Romans 3:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how God called Abraham and promised to make his family a great nation that would bless the world",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 12:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the Torah as the first five books of the Bible from Genesis through Deuteronomy",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Deuteronomy 31:24-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the three parts of the Hebrew Bible called Torah, Prophets, and Writings and explain that together they are called the Tanakh",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that many Jewish people today still wait for the promised Messiah while the church confesses that Jesus is that Messiah",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:25-27",
+    "Matthew 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the order of books in the Tanakh with the Christian Old Testament and show that both contain the same books",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Luke 11:50-51"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus and the apostles read the Old Testament as pointing to Christ",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "John 5:39-40",
+    "Luke 24:44-47",
+    "Acts 3:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how Jewish scribes preserved the Hebrew text and why the Masoretic text is the basis of modern Old Testament translations",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the Oral Torah and how the Mishnah and Talmud function in Judaism as authoritative interpretation alongside the written Torah",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Mark 7:8-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the destruction of the Temple in AD 70 led rabbinic Judaism to reinterpret Old Testament sacrifice and priesthood",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 24:1-2",
+    "Hebrews 8:13",
+    "Hosea 14:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast the Reformed distinction among moral, ceremonial, and judicial law with the Jewish view of the commandments of the Torah as continuing obligations",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 5:17-18",
+    "Hebrews 10:1",
+    "Colossians 2:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.3",
+    "Westminster Confession of Faith 19.4",
+    "Westminster Confession of Faith 19.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare how Jewish and Christian interpreters read key messianic passages such as Isaiah 53 and Psalm 22",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 53:3-6",
+    "Psalm 22:16-18",
+    "Acts 8:32-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Orthodox, Conservative, and Reform Judaism differ in their views of the authority of the Torah",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the Septuagint is and how the New Testament writers used it in quoting the Old Testament",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 10:5-7",
+    "Matthew 1:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching of one covenant of grace under two administrations and how it shapes the Christian reading of the Old Testament",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 11:13",
+    "Galatians 3:7-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare covenant theology and dispensationalism on the relationship between Israel and the church",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 11:17-24",
+    "Galatians 3:29",
+    "Ephesians 2:11-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a case from the Hebrew Bible for the Messiahship of Jesus that answers common Jewish objections",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Isaiah 53:5",
+    "Micah 5:2",
+    "Daniel 9:24-26",
+    "Acts 17:2-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Christians should speak about and to Jewish people in light of Romans 9-11 and the church's history of antisemitism",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Romans 9:1-5",
+    "Romans 11:25-27",
+    "Romans 11:28-29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize a written comparison of how Judaism and Reformed Christianity each receive and interpret the Hebrew Scriptures, noting shared heritage and key divergences",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Luke 24:44",
+    "2 Corinthians 3:14-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies: Jesus as Jewish, Old Testament as the shared book, Abraham, Torah, Messianic expectation, AD 70 transition, moral and ceremonial law, the three branches of Judaism (refocused on Torah authority), Israel and the church, defending Jesus' Messiahship, and the final synthesis. Dropped the menorah, synagogue service, One True God, and Trinity or Shema items because they belong to the sibling sub-topics on practices and beliefs about God. Split the vague prophecy item into a comparison of how Isaiah 53 and Psalm 22 are read. Added the Tanakh's structure and book order, Jesus' Christ-centered reading, scribal transmission and the Masoretic text, Oral Torah and Talmud, the Septuagint, the covenant of grace framework, and Christian posture toward Jewish people from Romans 9-11. Replaced the WCF 8.4 citation with confession articles that state the doctrines taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2022,
+  "output": 4545
+ }
+}

@@ -1,0 +1,295 @@
+{
+ "sub_topic": "BIB.2.4.6",
+ "name": "The Lectio Divina Method (Historical Approach)",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "Systematic Reading of Scripture"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Listen to a short Bible passage read aloud slowly and retell one thing God said or did in it",
+   "grade": 0,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:3",
+    "1 Samuel 3:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify a word or phrase that is repeated or important in a short passage read aloud more than once",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 119:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Christians pray for God's help to understand the Bible before they read it",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 119:18",
+    "Luke 24:45"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q90"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a short prayer that uses words or ideas taken from a passage just read",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [
+    "Psalm 19:14",
+    "Psalm 119:97"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the four steps of lectio divina as reading, meditation, prayer, and contemplation along with their Latin names",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Carry out the steps of lectio divina with a short psalm during a guided class reading",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [
+    "Psalm 23:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the Bible means by meditating on God's Word and connect it to the meditation step of lectio divina",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 1:2",
+    "Joshua 1:8",
+    "Psalm 119:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how slow, prayerful reading of Scripture developed in the early church and in monasteries that followed the Rule of Benedict",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Guigo II's Ladder of Monks organized lectio divina into four ordered steps",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how reading a passage slowly and repeatedly brings out details that a quick reading misses",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 119:18",
+    "Acts 17:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the reading step must keep a passage in its context so that meditation stays tied to what the text actually means",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:8",
+    "2 Timothy 2:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare reading Scripture to gather information with the aim of lectio divina to respond in prayer to God speaking in His Word",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 3:16",
+    "James 1:22-25"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q89"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the meaning of Psalm 46:10 in its context and contrast it with its common use as a call to wordless contemplative silence",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 46:8-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how meditation on a text leads into prayer whose content is shaped by that text",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 119:97-104",
+    "Psalm 19:14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q90"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformers critiqued the medieval fourfold sense of Scripture and how this shaped Protestant approaches to meditative reading",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the four steps of lectio divina with the Reformed and Puritan pattern of reading, hearing, meditating, and praying over Scripture",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 1:2",
+    "Colossians 3:16"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q157"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claim that God speaks through private impressions during contemplation using the Reformed teaching that the Spirit speaks in and through Scripture",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "Hebrews 1:1-2",
+    "John 16:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the contemplation step as taught in medieval mysticism from the Reformed teaching on communion with God through the Word and prayer",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 119:15-16",
+    "John 15:7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q88",
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate modern practices such as centering prayer and mantra repetition against the biblical pattern of intelligible prayer",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 6:7-13",
+    "1 Corinthians 14:15"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the benefits and limits of slow meditative reading for students living in a distracted digital culture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Psalm 1:2",
+    "Ephesians 5:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend a position on whether and how lectio divina may be used within the Reformed tradition using historical sources, Scripture, and the confessions",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Psalm 119:15",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Larger Catechism Q157"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Design a guided, Scripture-bound plan of slow reading and prayer that a small group could follow and justify each step from Scripture",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Nehemiah 8:8",
+    "Colossians 3:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q90"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (listening, noticing a word, praying back the text, naming the four steps, applying to a psalm, slow reading, study versus prayerful reading, meditation leading to prayer, digital age evaluation, defending use in the Protestant tradition). Dropped the feeling-based objective about what listening to God feels like, the generic participation objective, the modern quiet time and personal rhythm objectives (these belong to Daily Reading Habits and Reading for Devotion), and the journal of moving into contemplation. Added the historical sources (Benedict, Guigo II), the Reformers' critique of the fourfold sense, a contextual reading of Psalm 46:10, Reformed appraisal of contemplatio and private impressions, evaluation of centering prayer, comparison with the Reformed pattern of reading, and a Scripture-bound group plan. Anchored objectives to verse-specific passages and to Westminster standards on Scripture, its reading, and prayer.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2009,
+  "output": 4960
+ }
+}

@@ -1,0 +1,328 @@
+{
+ "sub_topic": "BIB.1.2.3",
+ "name": "New Age/Occult",
+ "path": [
+  "Bible & Theology",
+  "Apologetics and Worldviews",
+  "Cults and Unique Systems"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify God as a living Person who knows, speaks, and loves rather than a force or energy",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 3:14",
+    "Psalm 139:1-4",
+    "1 John 4:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that God forbids fortune-telling, magic spells, and asking spirits for help",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Deuteronomy 18:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Christians pray to God alone instead of trusting lucky charms, crystals, or the stars",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 6:9-13",
+    "Jeremiah 10:2",
+    "Isaiah 47:13-14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that God made the sun, moon, and stars to serve as lights and signs so they cannot rule a person's life the way horoscopes claim",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:14-18",
+    "Deuteronomy 4:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe what Jesus meant by calling himself the light of the world and why Christians look to him rather than to an inner light for truth",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 8:12",
+    "John 1:4-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Christians avoid Ouija boards, séances, and other attempts to contact the dead using the account of Saul and the medium at Endor",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Samuel 28:7-19",
+    "1 Chronicles 10:13-14",
+    "Leviticus 19:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize pantheism and contrast it with the biblical teaching that God created all things and is distinct from his creation",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1",
+    "Isaiah 44:6",
+    "Acts 17:24-25",
+    "Romans 1:25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1",
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the New Age claim that humans are divine with the serpent's promise in Eden and God's refusal to share his glory",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 3:4-5",
+    "Isaiah 42:8",
+    "Romans 1:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply the first commandment to occult practices such as astrology, tarot, and spirit guides",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Exodus 20:3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q46",
+    "Westminster Shorter Catechism Q47",
+    "Heidelberg Catechism Q94"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify common New Age and occult practices in popular media and match each to the biblical warning that addresses it",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Galatians 5:19-21",
+    "Acts 19:18-19",
+    "Deuteronomy 18:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how monism, the belief that all is one, erases the distinctions between God and creation and between good and evil",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 5:20",
+    "Isaiah 45:5-7",
+    "Romans 1:25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Contrast the doctrine of reincarnation with the biblical teaching of one life followed by judgment and bodily resurrection",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 9:27",
+    "1 Corinthians 15:42-44",
+    "John 5:28-29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1",
+    "Westminster Confession of Faith 32.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the New Age idea of a Christ consciousness from the historical, incarnate Person of Jesus Christ",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "John 1:14",
+    "Colossians 2:9",
+    "1 John 4:2-3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21",
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Connect the ancient Gnostic claim to secret saving knowledge with similar claims in New Age spirituality and Paul's response to them",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 2:8",
+    "Colossians 2:18-19",
+    "1 Timothy 6:20-21",
+    "1 John 1:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Deuteronomy 18 why God forbids divination and how he instead provides guidance through his prophets and now his completed Word",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 18:9-22",
+    "Hebrews 1:1-2",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the apostles confronted sorcery and spirit possession in Acts and what these accounts show about Christ's authority",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Acts 8:9-24",
+    "Acts 13:6-12",
+    "Acts 16:16-18",
+    "Acts 19:13-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast the New Age concept of karma with the biblical doctrine of salvation by grace through faith",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:23-24",
+    "Romans 6:23",
+    "Ephesians 2:8-9"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the moral relativism of New Age spirituality against the biblical teaching of objective truth and God's moral law",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "John 17:17",
+    "Romans 2:14-15",
+    "Isaiah 5:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Eastern mystical roots of popular meditation and yoga practices by contrasting emptying the mind with biblical meditation on God's Word",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Psalm 1:2",
+    "Joshua 1:8",
+    "Philippians 4:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a defense of the personal, triune God against impersonal views of the divine by showing how eternal love and communication require Persons",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Matthew 3:16-17",
+    "John 17:24",
+    "John 1:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Westminster Shorter Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Develop a biblical account of spiritual warfare regarding the occult that rests on Christ's victory and avoids both fear and fascination",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Colossians 2:15",
+    "Ephesians 6:10-18",
+    "James 4:7",
+    "1 John 4:4"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Design a respectful gospel conversation with someone who holds New Age beliefs modeled on Paul's address at Athens",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 17:22-31",
+    "1 Peter 3:15",
+    "Colossians 4:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (God as Person, forbidden divination, prayer to God alone, Jesus as light, Ouija and spirits, pantheism, humans as gods, first commandment, monism, Christ consciousness, Gnosticism, Deuteronomy 18, moral relativism, Eastern mysticism, personal God, spiritual warfare). Merged the pantheism summary and Creator and creature comparison, and reframed the 'we are all gods' item around Genesis 3. Sharpened the grade 11 defense of God's personality around the Trinity so it no longer repeats the grade 5 pantheism item. Added missing competencies: astrology and creation, identifying occult practices in media, reincarnation versus resurrection, karma versus grace, Acts encounters with sorcery, and a capstone gospel conversation. Added precise scripture and confession anchors throughout.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1993,
+  "output": 5130
+ }
+}

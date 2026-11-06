@@ -1,0 +1,353 @@
+{
+ "sub_topic": "BIB.11.10.3",
+ "name": "The Trinity",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Theology Proper: The Doctrine of God"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the one true God as the Father, the Son, and the Holy Spirit",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 28:19",
+    "Deuteronomy 6:4"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "State the church's confession that there is one God in three persons",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "2 Corinthians 13:14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q5",
+    "Westminster Shorter Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Jesus' baptism and identify what the Father, the Son, and the Spirit each do in it",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 3:16-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the names of the three persons in the baptism command and in the apostolic benediction",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 28:19",
+    "2 Corinthians 13:14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q95"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the biblical pattern of praying to the Father in the name of the Son by the help of the Spirit and use it to compose a short class prayer",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [
+    "Ephesians 2:18",
+    "John 16:23-24",
+    "Romans 8:26"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q180",
+    "Westminster Larger Catechism Q182"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Shield of the Trinity diagram to show that each person is God and that the persons are distinct from one another",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 3:16-17",
+    "John 1:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Belgic Confession 8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify Bible passages that show the Son and the Holy Spirit are fully God",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "John 1:1",
+    "Colossians 2:9",
+    "Acts 5:3-4",
+    "Hebrews 1:8"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why the three persons are not three gods",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "1 Corinthians 8:4-6",
+    "Isaiah 44:6"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q8",
+    "Westminster Larger Catechism Q9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze common analogies for the Trinity such as water, an egg, or a shamrock and explain how each one misrepresents the doctrine",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 40:18",
+    "Isaiah 46:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the eternal love among the Father, the Son, and the Spirit shows that God's love did not begin with or depend on creation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "John 17:5",
+    "John 17:24",
+    "1 John 4:8",
+    "Acts 17:24-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the personal properties of the Father who begets, the Son who is begotten, and the Spirit who proceeds",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "John 1:14",
+    "John 15:26",
+    "Psalm 2:7"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q10",
+    "Westminster Confession of Faith 2.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the persons are equal in power and glory while the Son humbly submits to the Father in his saving mission",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "John 10:30",
+    "John 14:28",
+    "Philippians 2:5-8",
+    "1 Corinthians 15:28"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q6",
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the distinct work of the Father, the Son, and the Spirit in redemption through Ephesians 1",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 1:3-14",
+    "Titus 3:4-6"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q24"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the historical setting of the Council of Nicaea and the meaning of the claim that the Son is of one substance with the Father",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "John 1:1-3",
+    "Hebrews 1:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Belgic Confession 10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the Athanasian Creed's rule that the church neither confuses the persons nor divides the one divine substance",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 28:19",
+    "John 17:21"
+   ],
+   "confessions": [
+    "Athanasian Creed 4",
+    "Westminster Confession of Faith 2.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare modalism, Arianism, and tritheism with the orthodox doctrine and identify the Scripture each error contradicts",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 3:16-17",
+    "John 17:5",
+    "John 1:1",
+    "Deuteronomy 6:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Belgic Confession 8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an argument from Old Testament passages that anticipate plurality within the one God while explaining how progressive revelation shapes their reading",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:1-2",
+    "Genesis 1:26",
+    "Isaiah 6:8",
+    "Psalm 110:1",
+    "Isaiah 48:16"
+   ],
+   "confessions": [
+    "Belgic Confession 9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Trinitarian doctrine shapes elements of Reformed worship such as baptism, the benediction, and the doxology",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 28:19",
+    "2 Corinthians 13:14",
+    "Jude 1:20-21"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q94"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the filioque controversy between Eastern and Western churches using the biblical texts on the sending of the Spirit",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 15:26",
+    "John 14:26",
+    "Galatians 4:6",
+    "Romans 8:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Belgic Confession 11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Unitarian, Jehovah's Witness, and Latter-day Saint teachings about God against Scripture and the Reformed confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 1:1",
+    "Isaiah 43:10",
+    "Isaiah 44:6",
+    "John 20:28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Westminster Larger Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the doctrine of inseparable operations that the three persons act together in every outward work while each acts in his own proper manner",
+   "grade": 12,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1-2",
+    "John 1:3",
+    "John 5:19",
+    "Luke 1:35"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Belgic Confession 9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate claims that the Trinity is a model for human relationships by weighing the texts offered against the tradition's teaching on divine simplicity and the Creator and creature distinction",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "John 17:21",
+    "Isaiah 40:18",
+    "Isaiah 55:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1",
+    "Westminster Confession of Faith 2.3"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (persons, unity, baptism of Jesus, prayer pattern, Shield, tritheism, analogies, eternal love, roles, redemption, Athanasian Creed, modalism, Old Testament case, filioque, cults, social Trinity). Turned the analogy item into an analysis task, and recast the social Trinity reflection as a critical evaluation in line with Reformed caution about it. Reframed economic subordination as equality of being alongside the Son's submission in his mission. Added objectives on the Trinitarian baptism formula and benediction, the deity of the Son and Spirit, personal properties (begetting and procession), Nicaea and homoousios, Arianism alongside modalism, Trinitarian worship, and inseparable operations. Dropped 1 John 5:7 as textually disputed and 1 Corinthians 11:3 as not central. Replaced unnumbered creed citations with numbered Westminster, Heidelberg, and Belgic references.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2115,
+  "output": 5616
+ }
+}

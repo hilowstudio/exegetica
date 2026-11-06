@@ -1,0 +1,335 @@
+{
+ "sub_topic": "BIB.11.4.6",
+ "name": "Resurrection, Ascension, and Session",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Christology: The Doctrine of Christ"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Retell the Easter account of the women finding the tomb empty and hearing the angel say that Jesus is risen",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 28:1-7",
+    "Luke 24:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that the risen Jesus went up into heaven while his disciples watched and that he is alive there now",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 1:9-11"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q46"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name people who saw Jesus alive after he rose, such as Mary Magdalene, Thomas, and the disciples",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "John 20:11-18",
+    "John 20:24-29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe what the risen Jesus did to show his disciples that he had a real body, such as eating fish and showing his wounds",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:36-43",
+    "John 20:27"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q52"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize how Jesus rose on the third day just as he and the Scriptures had said beforehand",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 16:21",
+    "1 Corinthians 15:3-4"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Christians gather for worship on the first day of the week by connecting it to the day of Christ's resurrection",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 20:19",
+    "Acts 20:7",
+    "Revelation 1:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the ascension account in Acts 1 including the angels' promise that Jesus will return in the same way",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 1:9-11"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q46"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that being seated at the right hand of God is biblical language for Christ's place of honor and authority rather than a description of a physical chair",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 110:1",
+    "Hebrews 1:3"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q50"
+   ],
+   "standards": []
+  },
+  {
+   "text": "List the witnesses of the risen Christ in 1 Corinthians 15 and explain why Paul appeals to living eyewitnesses",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:3-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Gospel account of the empty tomb with the report that the disciples stole the body",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 27:62-66",
+    "Matthew 28:11-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish Christ's resurrection to glorified life that never dies again from the restoring of Lazarus to ordinary mortal life",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "John 11:43-44",
+    "Romans 6:9",
+    "Revelation 1:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the three benefits of Christ's resurrection as the Heidelberg Catechism states them",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Romans 4:25",
+    "Romans 6:4-5",
+    "1 Corinthians 15:20"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q45"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the firstfruits imagery of 1 Corinthians 15 in light of the Old Testament harvest offering to show how the tradition sees Christ's resurrection as the pledge of believers' bodily resurrection",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Leviticus 23:10-11",
+    "1 Corinthians 15:20-23"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q45"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Psalm 110:1 and explain how the apostles apply it to Christ's ascension and session",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 110:1",
+    "Acts 2:32-36",
+    "Hebrews 1:13"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q54"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition connects Christ's session at the right hand with his continual intercession for his people",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:34",
+    "Hebrews 7:25",
+    "1 John 2:1"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q55"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Peter uses Psalm 16 to argue that the Old Testament anticipated the Messiah's resurrection",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 16:8-11",
+    "Acts 2:24-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace Paul's argument about the consequences for preaching, faith, and forgiveness if Christ has not been raised",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 15:12-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why Christ's ascension was the occasion for his pouring out of the Holy Spirit",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "John 16:7",
+    "Acts 2:33"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q49"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Ephesians presents the seated Christ as ruling over all things for the sake of the church",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 1:20-23",
+    "1 Corinthians 15:25"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q50",
+    "Westminster Larger Catechism Q54"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the continuity and transformation of Christ's risen body as the tradition confesses it, the same body now glorified",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:39",
+    "1 Corinthians 15:42-44",
+    "Philippians 3:20-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.4",
+    "Westminster Larger Catechism Q52"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed teaching that Christ's human nature is now in heaven with the Lutheran teaching on the ubiquity of his body",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 3:21",
+    "Matthew 28:20"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q47"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a historical case for the resurrection from the burial, the empty tomb, the appearances, and the rise of the early church's proclamation",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "1 Corinthians 15:3-8",
+    "Acts 2:32",
+    "Matthew 28:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate naturalistic theories such as the swoon, hallucination, and wrong tomb theories against the biblical and historical evidence",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 19:33-35",
+    "1 Corinthians 15:5-8",
+    "Mark 16:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul grounds the believer's union with the risen and ascended Christ and the call to seek the things above in Christ's session",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:4-6",
+    "Colossians 3:1-4"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q49"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and sharpened the real competencies (empty tomb, ascension account, Psalm 110 and session, intercession, firstfruits, the historical case, naturalistic theories, rule from the right hand). Reworded the faith-application objective so students explain the tradition's teaching rather than apply it personally. Folded the 'Jesus is alive and reigning' item into the early ascension objective. Dropped the closing synthesis of exaltation because it belongs to the States of Humiliation and Exaltation sibling. Added objectives on the eyewitnesses, Christ's real and glorified body, the Lord's Day, the benefits in Heidelberg Q45, resurrection versus resuscitation, Psalm 16 in Acts 2, Paul's argument in 1 Corinthians 15:12-19, the ascension and Pentecost, the location of Christ's human nature, and union with the ascended Christ. Updated the anchors to verse-specific passages and to the matching Heidelberg and Westminster articles.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2244,
+  "output": 5366
+ }
+}

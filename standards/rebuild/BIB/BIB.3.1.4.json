@@ -1,0 +1,338 @@
+{
+ "sub_topic": "BIB.3.1.4",
+ "name": "Early Church and Apostolic Age",
+ "path": [
+  "Bible & Theology",
+  "Biblical Survey & Redemptive History",
+  "Chronological Bible Narrative"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Holy Spirit as the Helper whom Jesus promised and sent to his followers at Pentecost",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "John 14:16-17",
+    "Acts 1:8",
+    "Acts 2:1-4"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q53"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name Peter and Paul as apostles who preached the good news about Jesus to many people",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:14",
+    "Acts 2:36",
+    "Acts 9:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall Jesus' command for his followers to be his witnesses in Jerusalem, Judea, Samaria, and to the end of the earth",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 1:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the first believers gathered for the apostles' teaching, fellowship, the breaking of bread, prayer, and sharing with those in need",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:42-47",
+    "Acts 4:32-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Philip explaining Isaiah to the Ethiopian official and baptizing him",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Acts 8:26-39"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the events of Pentecost, including the wind, the tongues of fire, the many languages, Peter's sermon, and the baptism of about three thousand people",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:1-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the healing of the lame man at the temple and explain why Peter and John kept speaking about Jesus when the council ordered them to stop",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 3:1-10",
+    "Acts 4:1-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Saul changed from a persecutor of the church to an apostle sent by Christ to the Gentiles",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 9:1-19",
+    "Galatians 1:13-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the choosing of the seven servants and the witness and death of Stephen",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 6:1-7",
+    "Acts 7:54-60"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Outline the book of Acts using the pattern of Acts 1:8 to show the gospel moving from Jerusalem to Judea and Samaria and on toward Rome",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "Acts 1:8",
+    "Acts 8:4-8",
+    "Acts 13:1-3",
+    "Acts 28:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Peter's vision and the conversion of Cornelius showed the church that Gentiles receive the gospel without first becoming Jews",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Acts 10:9-16",
+    "Acts 10:34-48",
+    "Acts 11:15-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate on a map the routes and major cities of Paul's missionary journeys",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Acts 13:4-14",
+    "Acts 16:9-12",
+    "Acts 18:1",
+    "Acts 19:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Paul's arrest, his trials before Roman officials, and his voyage to Rome as the way the gospel reached the empire's capital",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 21:27-33",
+    "Acts 25:10-12",
+    "Acts 27:21-26",
+    "Acts 28:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the pattern of Paul's mission work, including preaching first in synagogues, turning to Gentiles, and appointing elders in new churches",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Acts 13:46-48",
+    "Acts 14:21-23",
+    "Acts 17:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the dispute at the Jerusalem Council by identifying the question raised, the arguments of Peter and James, and the decision sent to the Gentile churches",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 15:1-29",
+    "Galatians 2:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how persecution in Jerusalem scattered believers and carried the gospel to new regions",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Acts 8:1-4",
+    "Acts 11:19-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Roman roads, the common Greek language, Roman peace, and Jewish synagogues across the empire shaped the spread of the gospel",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 4:4",
+    "Acts 2:5-11",
+    "Acts 17:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Place selected letters of Paul within the narrative of Acts by matching each letter to the founding of its church",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [
+    "Acts 17:1-10",
+    "1 Thessalonians 1:5-9",
+    "Acts 18:1-11",
+    "1 Corinthians 2:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the apostolic sermons in Acts to identify the common themes of their preaching, including fulfilled prophecy, Christ's death and resurrection, his exaltation, and the call to repent and believe",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:22-39",
+    "Acts 3:13-26",
+    "Acts 13:26-39",
+    "1 Corinthians 15:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the foundational role of the apostles as eyewitnesses of the risen Christ commissioned by him to lay the church's foundation",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Acts 1:21-26",
+    "1 Corinthians 15:7-9",
+    "Ephesians 2:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the significance of the destruction of the temple in AD 70 in light of Jesus' prophecy and the church's separation from the temple system",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 24:1-2",
+    "Luke 21:20-24",
+    "Hebrews 8:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the early church moved from a movement within Judaism to a multiethnic body of Jews and Gentiles, using evidence from Acts and the epistles",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 11:19-26",
+    "Ephesians 2:11-22",
+    "Galatians 3:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate accounts of the apostles' deaths by distinguishing what Scripture records from later church tradition",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 12:1-2",
+    "John 21:18-19",
+    "2 Timothy 4:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Reformed approach to distinguishing what Acts describes from what it prescribes for church practice, using examples such as shared possessions, tongues, and the appointing of elders",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Acts 2:44-45",
+    "Acts 5:4",
+    "Acts 14:23",
+    "Acts 20:28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create an annotated timeline and map of the apostolic age from Pentecost to the close of the first century that integrates Acts, the epistles, and key Roman events",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 2:1-4",
+    "Acts 18:2",
+    "Acts 28:30-31",
+    "2 Peter 1:14"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Holy Spirit as Helper, Peter and Paul, shared life of the first church, Pentecost, Saul's conversion, Jerusalem Council, persecution and spread, Roman geography, AD 70, Jewish-Gentile transition, apostles' deaths, apostolic preaching, and mapping). Dropped 'observe how the church grew' as vague, and the application of apostolic boldness to sharing faith today because it centered on personal profession. Replaced the Jerusalem-versus-journeys comparison with a mission-pattern objective. Reframed the martyrdom research as evaluating Scripture against tradition. Moved apostolic preaching to grade 10 as analysis of the Acts sermons. Added Acts 1:8 as the book's outline, Philip and the Ethiopian, the lame man and the council, Stephen and the seven, Cornelius, Paul's trials and voyage to Rome, placing Paul's letters within Acts, the foundational apostolic office, and the descriptive versus prescriptive reading of Acts. Anchored each objective to verse-level passages, with confessions cited only where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2060,
+  "output": 5928
+ }
+}

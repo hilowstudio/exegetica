@@ -1,0 +1,343 @@
+{
+ "sub_topic": "BIB.9.1.6",
+ "name": "Joshua",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Historical Books"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Joshua as the leader God chose after Moses to bring Israel into the promised land",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Joshua 1:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how the walls of Jericho fell when Israel followed God's instructions to march and shout",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Joshua 6:1-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Rahab hid the spies and that she and her family were saved when Jericho fell",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Joshua 2:1-21",
+    "Joshua 6:22-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Israel crossed the Jordan on dry ground and set up twelve stones to remember what God had done",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Joshua 3:14-17",
+    "Joshua 4:1-9",
+    "Joshua 4:20-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Joshua how God kept His promise to give Israel the land He had sworn to Abraham",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 12:7",
+    "Joshua 21:43-45"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how God's command to Joshua to be strong and courageous rests on God's presence and on meditating on His Law",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Joshua 1:6-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Achan's sin and how it brought defeat at Ai and judgment on his household",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Joshua 7:1-26",
+    "Joshua 8:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Outline the four main sections of Joshua as entering the land, conquering the land, dividing the land, and renewing the covenant",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Joshua 1:1-2",
+    "Joshua 11:23",
+    "Joshua 13:1-7",
+    "Joshua 24:1-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the report of the spies in Joshua 2 with the report of the spies in Numbers 13 and 14",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Numbers 13:25-33",
+    "Numbers 14:6-9",
+    "Joshua 2:8-11",
+    "Joshua 2:23-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Israel was circumcised and kept the Passover at Gilgal before the conquest began",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Joshua 5:2-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Joshua's encounter with the commander of the LORD's army and what it shows about who leads Israel's battles",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Joshua 5:13-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Gibeonites deceived Israel and why the text faults Israel for not asking counsel of the LORD",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Joshua 9:3-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the central, southern, and northern campaigns of the conquest using a map of Canaan",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Joshua 6:1-27",
+    "Joshua 8:1-29",
+    "Joshua 10:1-43",
+    "Joshua 11:1-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Rahab's confession of the LORD and how the New Testament presents her as an example of faith and an ancestor of Christ",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Joshua 2:9-11",
+    "Matthew 1:5",
+    "Hebrews 11:31",
+    "James 2:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the account of the sun standing still in its literary context and compare ways Reformed interpreters have explained it",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Joshua 10:12-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Connect the allotment of tribal territories to God's promises to the patriarchs and to Caleb's inheritance",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 15:18-21",
+    "Joshua 13:1-7",
+    "Joshua 14:1-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of the cities of refuge and the Levitical cities in Israel's life in the land",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Joshua 20:1-9",
+    "Joshua 21:1-3",
+    "Numbers 35:9-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of herem, things devoted to destruction, from its commands in Deuteronomy and its use in Joshua",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 7:1-6",
+    "Deuteronomy 20:16-18",
+    "Joshua 6:17-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the dispute over the altar of witness and how the tribes resolved it to preserve the unity of worship",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Joshua 22:10-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Joshua's statements of total conquest relate to its notices of land that remained unconquered",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Joshua 10:40-42",
+    "Joshua 11:23",
+    "Joshua 13:1",
+    "Joshua 15:63",
+    "Joshua 17:12-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate arguments about the justice of the Canaanite conquest using the biblical reasons given for judgment and the sparing of Rahab and Gibeon",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 15:16",
+    "Leviticus 18:24-28",
+    "Deuteronomy 9:4-5",
+    "Joshua 6:25",
+    "Joshua 9:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the covenant renewals at Mount Ebal and Shechem and Joshua's charge to choose whom Israel will serve",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Joshua 8:30-35",
+    "Joshua 24:1-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how archaeological evidence from sites such as Jericho, Ai, and Hazor bears on the dating and history of the conquest",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Joshua 6:24",
+    "Joshua 8:28",
+    "Joshua 11:10-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how ancient Near Eastern sources such as the Amarna Letters and their references to the Habiru inform the setting of Joshua",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Joshua 10:1-5",
+    "Joshua 11:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze ways the Reformed tradition reads Joshua as a type of Christ who leads His people into their inheritance",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Joshua 1:1-6",
+    "Matthew 1:21",
+    "Hebrews 4:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the theme of rest from Joshua with its development in the Psalms and Hebrews in a written argument",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Joshua 21:44-45",
+    "Joshua 23:1",
+    "Psalm 95:7-11",
+    "Hebrews 3:16-4:11"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q103"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Joshua as leader, Jericho, Rahab, Jordan crossing, God's promise, Achan, spies comparison, campaigns, sun standing still, allotment, herem, morality of conquest, Hazor archaeology, Amarna Letters, rest). Replaced 'Apply the verse' with an explanation of the command's basis in God's presence and the Law, and turned the conquest defense into an evaluation of arguments from the text. Added missing competencies: book structure, Gilgal circumcision and Passover, commander of the LORD's army, Gibeonite deception, Rahab in the NT, cities of refuge and Levitical cities, altar of witness, total conquest versus remaining land, covenant renewals at Ebal and Shechem, and Joshua as a type of Christ. Split the Jordan crossing from Jericho, added verse-level anchors throughout, and cited confessions only where they state the doctrine (WCF 5.1, 5.3, 7.5, HC Q103).",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1965,
+  "output": 4954
+ }
+}

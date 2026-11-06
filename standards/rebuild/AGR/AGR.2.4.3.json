@@ -1,0 +1,261 @@
+{
+ "sub_topic": "AGR.2.4.3",
+ "name": "Floral Design & Floriculture",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Plant & Horticultural Science",
+  "Landscape & Floriculture Design"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify common flowers used in bouquets and arrangements, such as roses, carnations, daisies, and lilies",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe ways people use flowers to mark occasions such as birthdays, holidays, weddings, and funerals",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Label the main parts of a flower, including petals, sepals, stem, stamen, and pistil",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how to care for cut flowers to keep them fresh, including recutting stems, removing lower leaves, and changing the water",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort flowers and foliage by their role in an arrangement as line, mass, form, or filler material",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the elements and principles of floral design, including line, form, color, texture, balance, proportion, and focal point",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use the color wheel to plan monochromatic, analogous, and complementary color harmonies for a floral arrangement",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common floral design tools and supplies, such as floral knives, shears, foam, tape, and wire, and use them safely",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a simple round arrangement or hand-tied bouquet using basic floral design techniques",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common cut flowers, foliages, and flowering potted plants by common and scientific name as used in the FFA Floriculture Career Development Event",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.04.01.01.a"
+   ]
+  },
+  {
+   "text": "Describe the components of a flower and their functions and explain how flower structure affects the use and vase life of cut flowers",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.02.02.05.a",
+    "PS.02.02.05.c"
+   ]
+  },
+  {
+   "text": "Differentiate among flower types and inflorescences, such as spike, raceme, umbel, and composite head, and relate each to its use as line, mass, or filler material",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.02.02.05.b",
+    "PS.04.01.01.b"
+   ]
+  },
+  {
+   "text": "Apply proper conditioning, hydration, and floral preservative techniques to extend the vase life of cut flowers and foliage",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.06.03.a"
+   ]
+  },
+  {
+   "text": "Analyze causes of postharvest decline in cut flowers, including ethylene exposure, bacterial stem blockage, air embolism, and Botrytis",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.06.03.a",
+    "PS.02.02.05.c"
+   ]
+  },
+  {
+   "text": "Construct arrangements in standard geometric styles, such as symmetrical triangle, asymmetrical triangle, crescent, vertical, and Hogarth curve, using focal and filler flowers correctly",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.04.02",
+    "PS.04.02.01.b",
+    "PS.04.02.02.b",
+    "PS.04.01.01.b"
+   ]
+  },
+  {
+   "text": "Construct wearable floral designs, such as boutonnieres and corsages, using proper wiring and taping methods",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.04.02",
+    "PS.04.02.02.b"
+   ]
+  },
+  {
+   "text": "Evaluate floral arrangements against a judging scorecard and propose specific improvements to the design",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.04.02.01.c"
+   ]
+  },
+  {
+   "text": "Explain the structure of the floriculture industry from grower and importer through wholesaler to retail florist and identify related careers",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.04.02.01.a",
+    "PS.03.06.03.a"
+   ]
+  },
+  {
+   "text": "Explain how growers use photoperiod, temperature, and growth regulators to schedule flowering of potted crops such as poinsettias and chrysanthemums",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how breeders use controlled pollination to develop new floral cultivars with traits such as novel color, form, and longer vase life",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.01.01.a",
+    "PS.02.02.05.c"
+   ]
+  },
+  {
+   "text": "Calculate the retail price of a floral arrangement using cost of goods, markup, and labor as practiced in a retail flower shop",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Design and justify a floral arrangement for a specific occasion and client budget, evaluating color harmony, proportion, flower selection, and cost of materials",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.04",
+    "PS.04.02.01.b",
+    "PS.04.01.01.c"
+   ]
+  },
+  {
+   "text": "Develop a plan for a floriculture supervised agricultural experience, such as a retail floral enterprise or cut flower production project, including goals, budget, and record keeping",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept all six existing objectives, rewording several for precision (flower parts, care steps, full list of design elements and principles, round bouquet). Split the grade 12 objective so pricing became its own grade 11 retail skill, while the grade 12 design kept occasion and budget. Added missing competencies: flower uses by occasion, flower parts, sorting materials by line, mass, form, and filler, and color harmonies. Also added tool safety, FFA Floriculture CDE identification, and flower structure and inflorescence types. Further additions were postharvest decline, geometric design styles, corsages and boutonnieres, and scorecard judging with improvements. The rest were the floriculture industry and careers, potted crop scheduling, cultivar breeding, and a floriculture SAE plan. Left landscape, turf, and controlled-environment production to the sibling sub-topics. Anchored grade 9 to 12 objectives to the AFNR codes they actually teach.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "PS.02.02.05.a",
+  "PS.02.02.05.b",
+  "PS.02.02.05.c",
+  "PS.03.01.01.a",
+  "PS.03.01.01.b",
+  "PS.03.06.03.a",
+  "PS.04",
+  "PS.04.01.01.a",
+  "PS.04.01.01.b",
+  "PS.04.01.01.c",
+  "PS.04.02",
+  "PS.04.02.01.a",
+  "PS.04.02.01.b",
+  "PS.04.02.01.c",
+  "PS.04.02.02.b"
+ ],
+ "usage": {
+  "input": 2280,
+  "output": 4337
+ }
+}

@@ -1,0 +1,246 @@
+{
+ "sub_topic": "BIB.4.2.1",
+ "name": "Precursors to the Reformation",
+ "path": [
+  "Bible & Theology",
+  "Church History",
+  "The Medieval Period"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Recognize that long ago most people could not read or hear the Bible in their own language and that some faithful men worked to change this",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 119:105"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name John Wycliffe and Jan Hus as preachers who taught that the Bible should guide the church",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Wycliffe and his helpers translating and copying the Bible into English by hand",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 119:105"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Jan Hus was put to death for refusing to take back his teaching and connect his story to what Jesus said about those persecuted for righteousness",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 5:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Gutenberg's printing press changed how quickly and cheaply copies of the Bible could be made",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Wycliffe believed ordinary people should read Scripture in their own language, using the Bereans as a biblical example and the Reformed confession of vernacular translation",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:11",
+    "Nehemiah 8:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe Peter Waldo and the Waldensians as lay preachers who spread Scripture in the common language and endured persecution",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Acts 5:29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the simple lives of Wycliffe's poor preachers with the wealth of many church leaders and explain the criticism Wycliffe drew from Jesus' sending of his disciples",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Luke 9:1-6",
+    "Luke 10:1-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a timeline of key people and events in medieval dissent from the Waldensians through Wycliffe, Hus, and the printing press to 1517",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Wycliffe's teaching that Scripture is the highest authority above popes and councils and relate it to the Reformed confession of Scripture as supreme judge",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Hus's teaching that Christ, not the pope, is the head of the church, using the passages Reformed churches cite for this doctrine",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 1:22-23",
+    "Colossians 1:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Avignon papacy and the Western Schism weakened confidence in church leadership and gave openings to critics like Wycliffe and Hus",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Council of Constance's actions against Hus and Wycliffe, including the broken safe-conduct and the posthumous condemnation of Wycliffe",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Hus's appeal to Scripture and conscience before the council reflects the biblical teaching that God must be obeyed rather than men",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Acts 5:29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze excerpts from Wycliffe or Hus to identify their scriptural arguments against indulgences and transubstantiation",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:8-9",
+    "Hebrews 10:10-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 29.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Luther came to recognize continuity between his own teaching and the earlier work of Hus",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the humanist call to return to the sources and Erasmus's 1516 Greek New Testament prepared the way for the Reformation",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish between moral reform movements such as Savonarola's preaching and doctrinal reform rooted in the authority of Scripture",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the influence and suppression of the Lollard movement in England, including the 1401 law for burning heretics",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how fully the precursors anticipated Reformation doctrine, distinguishing their clear stand on Scripture's authority from their less developed teaching on justification by faith alone",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 3:23-28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10",
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose an argumentative essay on the cost of reforming the church that draws on the precursors' cases and on Scripture's teaching about faithfulness under persecution",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "2 Timothy 3:12",
+    "Revelation 2:10"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Wycliffe and Hus identification, vernacular Bible, Hus's death, poor preachers comparison, Council of Constance, connection to Luther, timeline, Lollards, essay on cost of reform). Dropped the 'Morning Star' label recall, the vague 'apply the courage' objective, the loaded 'why the church didn't want people reading the Bible' and the advocacy 'defend' item, folding their content into analytic objectives. Replaced the anachronistic 'Sola Scriptura before the Reformation' with Wycliffe's teaching on Scripture's supreme authority. Added missing content: Waldensians, printing press, Avignon papacy and Western Schism as context, Hus's doctrine of Christ as head of the church, primary source analysis on indulgences and transubstantiation, conscience before the council, humanism and Erasmus, moral versus doctrinal reform, and an evaluation of how far the precursors anticipated Reformation doctrine. Anchored to specific passages and to WCF 1.6, 1.8, 1.10, 11.1, 20.2, 25.6, and 29.6 where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1902,
+  "output": 4333
+ }
+}

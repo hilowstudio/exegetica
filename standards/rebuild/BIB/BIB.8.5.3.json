@@ -1,0 +1,284 @@
+{
+ "sub_topic": "BIB.8.5.3",
+ "name": "Miracles as Signs of the Coming Kingdom",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "The Gospels and the Life of Christ"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Retell the account of Jesus giving sight to a man born blind",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "John 9:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Jesus walking on the water and name what the disciples said about him afterward",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 14:22-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall how Jesus fed more than five thousand people with a boy's five loaves and two fish and had food left over",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "John 6:1-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Jesus raised Lazarus from the tomb and what Jesus said about himself before doing it",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 11:25-26",
+    "John 11:38-44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize two reasons the Gospels give for Jesus' miracles, his compassion for people and his revealing of who he is",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 14:14",
+    "Mark 1:40-42",
+    "John 20:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Jesus calming the storm shows about his authority over wind and sea",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Mark 4:35-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish a miracle as God's direct work above ordinary means from a magic trick that relies on deception or hidden technique",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 7:10-12",
+    "Acts 8:9-13",
+    "John 3:2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus used the healing of the paralyzed man to show his authority to forgive sins",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Mark 2:1-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus pointed to his miracles to show John the Baptist that Isaiah's promises of the coming kingdom were being fulfilled",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 35:4-6",
+    "Isaiah 61:1-2",
+    "Matthew 11:2-6",
+    "Luke 4:16-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Jesus' healings and nature miracles reverse effects of the fall such as sickness, hunger, and death",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 3:17-19",
+    "Romans 8:19-21",
+    "Mark 1:40-42",
+    "Luke 7:11-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the signs in John's Gospel by tracing how each one reveals Jesus' glory and serves John's stated purpose for writing",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "John 2:1-11",
+    "John 4:46-54",
+    "John 5:1-9",
+    "John 20:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus' casting out of demons demonstrates that the kingdom of God has come and that Satan is being overthrown",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Luke 11:20-22",
+    "Matthew 12:28-29",
+    "Mark 1:23-27",
+    "1 John 3:8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the transfiguration as a preview of the King's glory and connect it to Jesus' promise that some would see the kingdom come in power",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Mark 9:1-8",
+    "Matthew 17:1-8",
+    "2 Peter 1:16-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Jesus refused to perform signs on demand and how the Gospels relate miracles to faith",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 12:38-40",
+    "Mark 6:5-6",
+    "Mark 8:11-12",
+    "John 4:48"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify Jesus' miracles as nature miracles, healings, exorcisms, and raisings from the dead and explain what each category reveals about his kingdom",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Mark 4:35-41",
+    "Mark 5:1-20",
+    "Mark 5:21-43",
+    "Luke 7:11-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Jesus' miracles with miracles performed through Moses, Elijah, and Elisha to show how the Gospels present Jesus as greater than the prophets",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 16:13-15",
+    "1 Kings 17:17-24",
+    "2 Kings 4:42-44",
+    "Luke 7:11-16",
+    "John 6:14",
+    "John 6:30-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the responses of the Pharisees, the crowds, and the disciples to Jesus' miracles and what those responses reveal about unbelief and faith",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Mark 3:22-30",
+    "John 9:13-41",
+    "John 11:45-53",
+    "John 12:37-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate common naturalistic objections to the Gospel miracles and defend their historicity using eyewitness testimony and the public nature of the events",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Luke 1:1-4",
+    "Acts 2:22",
+    "Acts 26:26",
+    "1 Corinthians 15:3-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed position that miracles chiefly attested Christ and the apostolic message and relate it to the tradition's teaching that former ways of revealing God's will have ceased",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 2:3-4",
+    "2 Corinthians 12:12",
+    "Acts 14:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a theological argument presenting Jesus' miracles as a foretaste of the new heavens and new earth, drawing on Old Testament promises and the Bible's closing vision",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Isaiah 35:5-10",
+    "Matthew 11:4-5",
+    "Romans 8:19-23",
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies in the early-grade retellings, the purposes of miracles, the calming of the storm, the paralytic, restoration of creation, John's signs, exorcisms, the transfiguration, categorization, responses to miracles, historicity, and the new-creation synthesis. Rewrote observe and name stems as retell or describe so they are observable. Recast magic versus miracle as a distinction grounded in the tradition's definition of a miracle (WCF 5.3). Added competencies that were missing: Jesus' miracles as fulfillment of Isaiah's kingdom promises (Matthew 11:2-6), why Jesus refused signs on demand and how miracles relate to faith, comparison with the miracles of Moses, Elijah, and Elisha, and the Reformed view of miracles as attesting the apostolic message. Tied exorcisms to Christ's kingly office (WSC Q26). Replaced whole-account references with verse ranges and added passages where the objectives rest on them. Kept Lazarus as a miracle account and left the resurrection narrative itself to the Passion Week sibling.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1940,
+  "output": 4353
+ }
+}

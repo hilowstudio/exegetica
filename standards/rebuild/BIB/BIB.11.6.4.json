@@ -1,0 +1,282 @@
+{
+ "sub_topic": "BIB.11.6.4",
+ "name": "Heaven and the New Creation",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Eschatology: The Doctrine of Last Things"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify heaven as God's promise that his people will live with him forever",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 21:3",
+    "John 14:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the things God promises will be gone in the new creation, such as tears, death, sadness, and pain",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 21:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell Jesus' promise that he is preparing a place for his people and will bring them to be with him",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "John 14:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the river of the water of life and the tree of life in Revelation 22 as pictures of the life God gives his people",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 22:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Revelation 21 that God promises to make all things new, including a new heaven and a new earth",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe ways the new creation restores the garden of Eden and ways it is even greater",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:8-10",
+    "Revelation 22:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that worshiping and serving God will be at the center of life in the new creation",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 7:9-10",
+    "Revelation 22:3-5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Romans 8 that creation itself groans under the curse and will be set free from its bondage to decay",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:19-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the present creation with the renewed creation by identifying effects of the curse that God will remove",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 3:17-19",
+    "Revelation 22:3",
+    "Revelation 21:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture connects the hope of the new creation to patterns of holy living in the present",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 3:1-5",
+    "2 Peter 3:11-14",
+    "1 John 3:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze what will continue and what will be transformed in the new creation, including the embodied life of God's people in a renewed physical world",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "2 Peter 3:10-13",
+    "Romans 8:21",
+    "1 Corinthians 15:42-44"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q90"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace how the New Jerusalem fulfills the tabernacle and temple as the place where God dwells with his people",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 25:8",
+    "Ezekiel 37:27",
+    "1 Kings 6:20",
+    "Revelation 21:3",
+    "Revelation 21:16",
+    "Revelation 21:22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that the full enjoyment of God, including seeing his face, is the chief blessedness of the redeemed",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 5:8",
+    "1 Corinthians 13:12",
+    "1 John 3:2",
+    "Revelation 22:4"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q38",
+    "Westminster Larger Catechism Q90",
+    "Heidelberg Catechism Q58"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical teaching on the eternal rest and the gracious rewards God gives his people",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 4:9-11",
+    "Matthew 25:21-23",
+    "1 Corinthians 3:12-14"
+   ],
+   "confessions": [
+    "Belgic Confession Article 24"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Revelation 21 and 22 take up the imagery of Isaiah's prophecy of new heavens and a new earth",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 65:17-25",
+    "Isaiah 66:22",
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical theology of the new creation that traces the theme from Genesis to Revelation",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:1",
+    "Genesis 1:31",
+    "Genesis 2:8-10",
+    "Isaiah 65:17-25",
+    "Romans 8:19-22",
+    "Revelation 21:1-5",
+    "Revelation 22:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze what Scripture means when it says the glory and honor of the nations will be brought into the New Jerusalem",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 60:3-11",
+    "Revelation 21:24-26",
+    "Revelation 22:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate popular pictures of heaven, such as disembodied souls floating on clouds, against the biblical teaching of a renewed earth and embodied life",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Revelation 21:1-4",
+    "Romans 8:21",
+    "1 Corinthians 15:42-44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the view that God will annihilate and replace the present creation against the Reformed view that he will renew it",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "2 Peter 3:10-13",
+    "Romans 8:19-22",
+    "Acts 3:21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose an account of the new creation as the goal of redemption in which God is all in all",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Corinthians 15:28",
+    "Ephesians 1:10",
+    "Revelation 21:3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q38"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (being with God, no more tears, Jesus preparing a place, Eden comparison, all things new, present versus renewed creation, continuity and renewal, New Jerusalem as temple, beatific vision, rest and reward, Genesis to Revelation biblical theology, popular pictures of heaven, God all in all). Recast 'apply the hope of heaven' as explaining Scripture's link between hope and holy living, avoiding an inner-experience objective. Merged the embodied-hope defense into the continuity and popular-pictures objectives so resurrection itself stays with its sibling. Added the river and tree of life, worship at the center of the new creation, Romans 8 creation groaning, Isaiah 65 prophecy, the glory of the nations, and renewal versus annihilation. Added confessional anchors (WLC Q90, HC Q58, WSC Q1, Belgic 24) and supplied verse-level references.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2136,
+  "output": 5144
+ }
+}

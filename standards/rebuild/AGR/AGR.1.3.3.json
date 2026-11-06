@@ -1,0 +1,283 @@
+{
+ "sub_topic": "AGR.1.3.3",
+ "name": "Poultry & Egg Production",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Animal Science",
+  "Livestock Species & Production Systems"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the external parts of a chicken, such as the comb, wattle, beak, feathers, and shanks",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name food and other products that come from poultry, such as eggs, meat, and feathers",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare chickens, turkeys, ducks, and geese by appearance and the products each provides",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the daily needs of a backyard flock for feed, water, shelter, and gentle handling",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the stages of chick development from fertile egg to hatchling over 21 days, including incubator temperature, humidity, and egg turning",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how a brooder supplies heat, feed, and water to young chicks and how chick behavior shows whether the temperature is correct",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish laying, meat, and dual-purpose chicken breeds by body type and production purpose",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Label the parts of an egg, such as the shell, membranes, air cell, albumen, chalazae, and yolk, and explain the function of each",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how candling an egg reveals fertility and embryo development during incubation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the formation of an egg through each section of the hen's reproductive tract",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify eggs into USDA size categories using minimum weight per dozen",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain biosecurity practices that protect a flock from diseases such as avian influenza and Newcastle disease",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare conventional cage, enriched colony, cage-free, free-range, and pastured egg production systems for bird welfare, cost, and labor",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Grade shell eggs to USDA standards for interior quality by candling and exterior quality by shell condition, as in the FFA Poultry Evaluation CDE",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.01.c"
+   ]
+  },
+  {
+   "text": "Describe the market forms of poultry meat, egg products, and byproducts such as liquid eggs, further processed meats, and feather meal",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.04.a"
+   ]
+  },
+  {
+   "text": "Analyze the information required on egg cartons and poultry product labels, including grade, size, pack date, and safe handling statements",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.01.b"
+   ]
+  },
+  {
+   "text": "Differentiate the nutritional needs of chicks, pullets, laying hens, and broilers, including protein and calcium levels in starter, grower, layer, and finisher rations",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.01.01.b"
+   ]
+  },
+  {
+   "text": "Apply information from a poultry feed label and feeding directions to select and feed the correct ration for a flock",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.03.02.b"
+   ]
+  },
+  {
+   "text": "Evaluate live hens for laying condition using comb, vent, pubic bone spread, abdominal capacity, and pigmentation loss to separate productive layers from culls",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.01",
+    "AS.04.01.01.c"
+   ]
+  },
+  {
+   "text": "Analyze flock records, such as hen-day egg production, feed conversion, and mortality, to evaluate the productivity of a laying or broiler flock",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how lighting programs control the onset of lay, production persistence, and molting in laying hens",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Grade ready-to-cook poultry carcasses and parts for USDA quality defects such as discoloration, missing parts, and exposed flesh",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.01.c"
+   ]
+  },
+  {
+   "text": "Explain the structure of the vertically integrated poultry industry from primary breeder and hatchery through contract grow-out and processing",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how primary breeders use crossbreeding, performance records, and pedigree lines to develop commercial layer and broiler strains",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.04.a",
+    "AS.04.03.01.c"
+   ]
+  },
+  {
+   "text": "Analyze the care needs of breeder flocks through rearing, lay, and hatching egg collection stages",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.04.a",
+    "AS.04.02.04.b"
+   ]
+  },
+  {
+   "text": "Design a poultry production system that selects housing, lighting, and feeding programs to optimize egg or broiler output for a target market",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03"
+   ]
+  },
+  {
+   "text": "Create a budget and record plan for a poultry SAE that projects costs, income, and performance for a laying or broiler enterprise",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded all six original competencies, moving shell egg grading to grade 9 with interior and exterior quality and keeping egg sizing at grade 7. Split the grade 2 objective into anatomy and products. Added poultry species, flock care, brooding, breed types, egg structure, egg formation, biosecurity, production system comparison, egg and poultry products and labels, nutrition by stage, feed labels, live hen evaluation for culling, lighting and molting, ready-to-cook carcass grading, vertical integration, commercial breeding, breeder flock care, and a poultry SAE plan. Standards were attached only to grade 9 to 12 objectives that teach them.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.03",
+  "AS.03.01.01.b",
+  "AS.03.03.02.b",
+  "AS.04.01",
+  "AS.04.01.01.c",
+  "AS.04.02.02.c",
+  "AS.04.02.04.a",
+  "AS.04.02.04.b",
+  "AS.04.02.04.c",
+  "AS.04.03.01.c",
+  "AS.04.03.04.a",
+  "FPP.02.02.03.a",
+  "FPP.02.03.01.b",
+  "FPP.03.01.01.c",
+  "FPP.03.01.04.a"
+ ],
+ "usage": {
+  "input": 2415,
+  "output": 4506
+ }
+}

@@ -1,0 +1,289 @@
+{
+ "sub_topic": "BIB.9.3.5",
+ "name": "Joel",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Minor Prophets"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Retell how a huge swarm of locusts ate the crops of Judah and left the land empty",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Joel 1:4",
+    "Joel 1:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God told His people to tell their children and grandchildren what He had done",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Joel 1:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify God's call through Joel for His people to return to Him with all their heart",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Joel 2:12-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God promised to give back to His people the years the locusts had eaten",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Joel 2:25-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe God's promise to pour out His Spirit on all kinds of people, including sons and daughters, old and young, and servants",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Joel 2:28-29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the movement of the book of Joel from disaster, to a call to repent, to promises of restoration and the Spirit",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Joel 1:4",
+    "Joel 2:12-13",
+    "Joel 2:18-19",
+    "Joel 2:28-29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Write a short prayer asking God for help in a time of trouble, modeled on Joel's cry to the Lord",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [
+    "Joel 1:19-20",
+    "Joel 2:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what rend your hearts and not your garments means by contrasting outward signs of sorrow with true inward repentance",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Joel 2:12-13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the attributes of God named in Joel 2:13 and trace them back to God's self-description to Moses",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Joel 2:13",
+    "Exodus 34:6-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Day of the Lord in Joel as a day of God's judgment that is also a day of rescue for those who call on His name",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Joel 1:15",
+    "Joel 2:1-2",
+    "Joel 2:11",
+    "Joel 2:31-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the locust plague of Joel 1 with the invading army of Joel 2 and explain how Joel uses a present disaster to warn of a greater coming judgment",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Joel 1:4-7",
+    "Joel 2:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Joel 1 as a communal lament by identifying each group called to mourn and the reason given for their mourning",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Joel 1:5-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical basis for corporate fasting and solemn assembly as called for in Joel and as the Reformed tradition confesses it",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Joel 1:14",
+    "Joel 2:15-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul applies Joel 2:32 to teach that everyone who calls on the name of the Lord, Jew or Gentile, will be saved",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [
+    "Joel 2:32",
+    "Romans 10:9-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Peter interprets Joel 2:28-32 as fulfilled in the outpouring of the Spirit at Pentecost",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Joel 2:28-32",
+    "Acts 2:16-21",
+    "Acts 2:38-39"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q53"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the reasons Joel gives for God's judgment on the nations in the Valley of Jehoshaphat",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Joel 3:1-8",
+    "Joel 3:12-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast Joel's command to beat plowshares into swords with the reversed image in Isaiah and Micah and explain what each passage signals about the Day of the Lord",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Joel 3:9-10",
+    "Isaiah 2:4",
+    "Micah 4:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate proposals for the date of Joel using internal evidence such as the absence of a named king and the prominence of priests, elders, and the temple",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Joel 1:9",
+    "Joel 1:13-14",
+    "Joel 2:17",
+    "Joel 3:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed reading of the Day of the Lord as begun at Pentecost and completed at Christ's return in final judgment",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Joel 2:30-31",
+    "Acts 2:19-21",
+    "2 Peter 3:10-13",
+    "Matthew 24:29-31"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1",
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the Reformed tradition reads Joel's promises of restored land and God dwelling in Zion as fulfilled in Christ, His church, and the new creation, in comparison with readings that expect a separate future fulfillment for national Israel",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Joel 2:18-27",
+    "Joel 3:17-21",
+    "Hebrews 12:22-24",
+    "Revelation 21:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a teaching outline that traces the pattern of judgment, repentance, and restoration in Joel through its fulfillment in Christ and the gift of the Spirit",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Joel 2:12-13",
+    "Joel 2:28-32",
+    "Joel 3:17-21",
+    "Acts 2:16-21",
+    "Romans 10:13"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and sharpened the real competencies from the old list: the locust plague, the Day of the Lord, rend your hearts, the Spirit promise, Peter's use of Joel at Pentecost, and synthesis of judgment and restoration. Dropped vague or drifting items: the general comparison of natural disasters with judgment, the timeline exercise, the apologetic defense of repentance, and the prayer item that was phrased as a feeling. Added objectives on teaching the next generation (1:3), restoring the years the locusts ate (2:25), the attributes of God in 2:13 and their echo of Exodus 34, the communal lament of chapter 1, the biblical basis of corporate fasting (WCF 21.5), Paul's use of 2:32 in Romans 10, the judgment of the nations in chapter 3, the plowshares and swords reversal, the dating of the book, the already and not yet Day of the Lord (WCF 33), and the Reformed reading of the Zion restoration promises. I also added confession anchors where they state the doctrine being taught and narrowed the scripture references to specific verses.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1886,
+  "output": 4591
+ }
+}

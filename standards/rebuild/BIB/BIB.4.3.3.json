@@ -1,0 +1,325 @@
+{
+ "sub_topic": "BIB.4.3.3",
+ "name": "The Five Solas",
+ "path": [
+  "Bible & Theology",
+  "Church History",
+  "The Reformation Era"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Recall that the Bible teaches that God saves people as a free gift and not because of the good things they do",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Ephesians 2:8-9",
+    "Titus 3:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the five alone phrases of the Reformation in English as Scripture alone, grace alone, faith alone, Christ alone, and the glory of God alone",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the Bible as the only rule God has given for what to believe and how to live, using a verse that teaches it",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "Psalm 119:105"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Match each Latin sola name with its English meaning",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain in simple words what each of the five solas means and pair each with a Bible verse that supports it",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "Ephesians 2:8-9",
+    "Galatians 2:16",
+    "Acts 4:12",
+    "Romans 11:36"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the word alone was the point of disagreement in the Reformation, since both sides affirmed Scripture, grace, faith, and Christ but differed on whether anything else was added",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 2:16",
+    "Galatians 5:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that Jesus Christ is the only mediator between God and people and the only Savior",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 2:5",
+    "Acts 4:12",
+    "John 14:6",
+    "Hebrews 7:25"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21",
+    "Heidelberg Catechism Q30"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe what Soli Deo Gloria teaches and identify ways ordinary work, study, and play can be done for the glory of God",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "1 Corinthians 10:31",
+    "Colossians 3:23-24",
+    "Romans 11:36"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the late medieval teachings on merit, the intercession of saints, church tradition, and penance that the Reformers believed obscured the gospel",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how each of the five solas answered a specific late medieval teaching or practice",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:21-28",
+    "1 Timothy 2:5",
+    "Hebrews 10:10-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Ephesians 2:1-10 in its context to explain how grace, faith, and good works relate in salvation",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [
+    "Ephesians 2:1-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the doctrine of justification by faith alone from Romans and Galatians as the Reformed confessions state it",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:21-28",
+    "Galatians 2:16",
+    "Romans 5:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Westminster Shorter Catechism Q33",
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the Reformation teaching of Scripture as the supreme authority over creeds and councils from the view that rejects all church tradition",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "Acts 17:11",
+    "Mark 7:8-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 1.10",
+    "Belgic Confession Article 7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition connects grace alone with human inability and God's effectual calling",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:1-5",
+    "Romans 9:16",
+    "John 6:44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 9.3",
+    "Westminster Confession of Faith 10.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Reformed confessions reconcile justification by faith alone with James 2 through the teaching that justifying faith is never alone but works by love",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "James 2:14-26",
+    "Galatians 5:6",
+    "Romans 4:1-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.2",
+    "Heidelberg Catechism Q64"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the doctrine of the imputation of Christ's righteousness as the ground of justification in Reformed teaching",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "2 Corinthians 5:21",
+    "Romans 4:4-8",
+    "Philippians 3:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Heidelberg Catechism Q60",
+    "Heidelberg Catechism Q61"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformation doctrine of justification with the Council of Trent's decree on justification",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:28",
+    "Galatians 2:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify where each sola is stated in Reformation-era confessions and explain that the five solas as a set is a later summary of those teachings",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [
+    "Belgic Confession Article 7",
+    "Belgic Confession Article 22",
+    "Heidelberg Catechism Q1",
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claim that justification is the article on which the church stands or falls using Scripture and the Reformed confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 1:6-9",
+    "Romans 1:16-17",
+    "Romans 3:21-28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate contemporary teachings such as the prosperity gospel, religious pluralism, and claims of new revelation against the five solas",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 4:12",
+    "2 Timothy 3:16-17",
+    "Galatians 1:6-9",
+    "Hebrews 1:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a reasoned defense of one sola that answers a major historical or modern objection from Scripture and the confessions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 3:21-28",
+    "2 Timothy 3:16-17",
+    "Ephesians 2:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose an essay showing how the five solas depend on one another and point to the glory of God as their goal",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 11:33-36",
+    "Ephesians 1:3-14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (naming the solas, summarizing each, why 'alone' mattered, Soli Deo Gloria applied, sola-versus-medieval-teaching analysis, Ephesians 2, Sola Scriptura and authority, Solus Christus, evaluating modern movements, the 'stands or falls' claim, the synthesis essay). Dropped the vague 'construct a systematic defense' in favor of a focused defense against an objection. Split the K to 3 recall items so each states a distinct skill. Added missing competencies: matching Latin names, medieval background, justification from Romans and Galatians, Scripture over creeds versus rejecting all tradition, grace alone and human inability, faith and works in James 2, imputation, comparison with Trent, and the confessional sources of the solas. Replaced chapter-only references with verse ranges and added fitting confession citations (WSC Q1, Q2, Q33, WCF 9.3, 10.2, 11.2, 16.2, Heidelberg Q30, Q60, Q61, Q64, Belgic 7 and 22). Left indulgences and individual Reformers to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1967,
+  "output": 4996
+ }
+}

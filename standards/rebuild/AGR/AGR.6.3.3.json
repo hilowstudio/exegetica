@@ -1,0 +1,291 @@
+{
+ "sub_topic": "AGR.6.3.3",
+ "name": "Sustainable & Regenerative Agriculture",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Natural Resources & Environmental Science",
+  "Environmental Stewardship & Sustainability"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify ways farmers and gardeners take care of the soil, water, plants, and animals they use to grow food",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how earthworms and other living things in the soil help plants grow",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how composting and crop rotation return nutrients to the soil",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how plant roots, mulch, and ground cover protect soil from being washed or blown away",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how pollinators and beneficial insects support food production and how farms can provide habitat for them",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the call to be a faithful steward of the land shapes the way a farmer manages soil, water, and livestock for future generations",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare a conventional farming practice to a sustainable alternative, such as conventional tillage versus no-till planting",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the core principles of regenerative agriculture, including minimizing soil disturbance, keeping soil covered, maintaining living roots, increasing plant diversity, and integrating livestock",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how integrated pest management combines biological, cultural, mechanical, and chemical controls to reduce pest damage with fewer chemical inputs",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how cover cropping, rotational grazing, and reduced chemical inputs work together to build healthier soil over time",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe on-farm water conservation practices such as drip irrigation, crop residue management, and improving soil organic matter to increase water infiltration and holding capacity",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize production methods focused on sustainable soil management, including crop rotation, companion planting, and cover crops",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.05.a"
+   ]
+  },
+  {
+   "text": "Summarize how microbial biodiversity contributes to the physical and chemical characteristics of soil, such as aggregate structure and nutrient availability",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.04.01.a"
+   ]
+  },
+  {
+   "text": "Describe the environmental effects of animal agriculture, including how managed grazing and manure application can improve soil",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.08.01.01.a"
+   ]
+  },
+  {
+   "text": "Identify practices for sustainable food production and distribution such as regenerative agriculture, vertical farming, rooftop farming, and short supply chains",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.04.02.a"
+   ]
+  },
+  {
+   "text": "Examine how the activities of soil microorganisms, including mycorrhizal fungi and nitrogen-fixing bacteria, affect nutrient cycling and ecosystem biodiversity",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.04.01.b"
+   ]
+  },
+  {
+   "text": "Conduct field soil health tests such as infiltration, aggregate stability, and soil respiration on a farm, garden, or SAE plot",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.02"
+   ]
+  },
+  {
+   "text": "Compare different measurements of soil quality, such as soil texture, organic matter, and soil respiration, to determine their effectiveness and limitations for monitoring a sustainable system",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.05.02.02.b"
+   ]
+  },
+  {
+   "text": "Determine the land capability classes for a parcel of land using a soil survey and recommend sustainable uses that match each class",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.02.01.b",
+    "ESS.03.02"
+   ]
+  },
+  {
+   "text": "Analyze a regenerative agriculture practice for its effect on soil health, water use, and long-term farm productivity",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.04"
+   ]
+  },
+  {
+   "text": "Measure on-farm biodiversity, such as plant or insect species counts in fields and field borders, and explain the role biodiversity plays in a sustainable production system",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.05.01.a"
+   ]
+  },
+  {
+   "text": "Evaluate how soil microorganisms and biological products such as inoculants and compost can be used to minimize waste, maximize nutrient cycling, and increase biodiversity",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.04.01.c",
+    "BS.03"
+   ]
+  },
+  {
+   "text": "Evaluate the economic tradeoffs of transitioning to sustainable practices, including input costs, yield changes, price premiums, and cost-share programs",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the requirements and claims of sustainability and regenerative certification and labeling programs for agricultural products",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Design and carry out an SAE research or demonstration plot that compares a sustainable practice with a conventional one and reports the results",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.04"
+   ]
+  },
+  {
+   "text": "Devise a soil management plan for a selected cropping system that minimizes erosion and maximizes biodiversity, plant productivity, and topsoil formation",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.05.04.c",
+    "PS.01.04.05.c"
+   ]
+  },
+  {
+   "text": "Design a whole-farm sustainable production plan integrating crops and livestock that maintains yield while improving soil, water, and biodiversity over several growing seasons",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.04"
+   ]
+  }
+ ],
+ "changes": "Kept all six original competencies, rewording slightly and anchoring the high school ones to AFNR standards. Added elementary objectives on soil life, erosion protection, and pollinator habitat. Added middle grade objectives on stewardship, regenerative principles, integrated pest management, and water conservation. Added grade 9 to 12 objectives tied to candidate standards: sustainable soil methods, soil microbial biodiversity and nutrient cycling, animal agriculture effects, sustainable food systems, soil health testing and comparison of soil quality measures, land capability classes, and on-farm biodiversity measurement. Added economic transition analysis, certification evaluation, an SAE research plot, and a soil management plan alongside the whole-farm capstone. Pollution, energy, and climate content was left to sibling sub-topics, and ESS.05.02.02.a was not used because it targets contamination.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.08.01.01.a",
+  "BS.03",
+  "ESS.03.02",
+  "ESS.03.02.01.b",
+  "ESS.03.04.01.a",
+  "ESS.03.04.01.b",
+  "ESS.03.04.01.c",
+  "ESS.03.05.01.a",
+  "ESS.05.02.02.a",
+  "ESS.05.02.02.b",
+  "FPP.04.04.02.a",
+  "NRS.01.05.04.c",
+  "PS.01.04.05.a",
+  "PS.01.04.05.c",
+  "PS.03.04"
+ ],
+ "usage": {
+  "input": 2578,
+  "output": 4467
+ }
+}

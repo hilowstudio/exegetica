@@ -1,0 +1,354 @@
+{
+ "sub_topic": "BIB.8.5.4",
+ "name": "The Passion Week, Crucifixion, and Resurrection",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "The Gospels and the Life of Christ"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Retell how the crowds welcomed Jesus into Jerusalem by waving branches and shouting Hosanna",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 21:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Jesus died on the cross, was buried, and rose again on the third day, leaving the tomb empty",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Luke 24:1-7",
+    "1 Corinthians 15:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Jesus washed his disciples' feet and explain the example of service he told them to follow",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "John 13:1-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Last Supper and explain what Jesus said the bread and the cup represent",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Luke 22:14-20"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q96"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe Jesus' prayer in the Garden of Gethsemane and what it shows about his submission to the Father's will",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 26:36-46"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that Jesus died as a substitute, bearing the punishment for the sins of his people",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Mark 10:45",
+    "Isaiah 53:4-6",
+    "2 Corinthians 5:21",
+    "1 Peter 2:24"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q37",
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify people to whom the risen Jesus appeared, including Mary Magdalene, the travelers to Emmaus, and Thomas",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "John 20:11-18",
+    "Luke 24:13-35",
+    "John 20:24-29",
+    "1 Corinthians 15:3-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Judas' betrayal and Peter's denial, including how each story ends",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 26:14-16",
+    "Matthew 26:69-75",
+    "Matthew 27:3-5",
+    "John 21:15-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a timeline of the major events of Passion Week from the triumphal entry to the resurrection",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "Matthew 21:1-11",
+    "Mark 11:15-18",
+    "Mark 14:12-26",
+    "Mark 15:1-47",
+    "Mark 16:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Jesus' predictions of his death and resurrection and describe how the disciples responded to them",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Mark 8:31-33",
+    "Mark 9:30-32",
+    "Mark 10:32-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus' clearing of the temple during Passion Week intensified the religious leaders' opposition to him",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Mark 11:15-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how events of the Passion fulfill Old Testament prophecies",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Zechariah 9:9",
+    "Psalm 22:16-18",
+    "Isaiah 53:7-9",
+    "John 19:23-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Jewish and Roman trials of Jesus, including the charges brought and the roles of Caiaphas, Pilate, and Herod",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Mark 14:53-15:15",
+    "Luke 23:1-25",
+    "John 18:12-19:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the seven sayings of Jesus from the cross in light of their Gospel context and Old Testament background",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Luke 23:34",
+    "Luke 23:43",
+    "John 19:26-27",
+    "Matthew 27:46",
+    "John 19:28",
+    "John 19:30",
+    "Luke 23:46"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Passover in Exodus with the Last Supper and the crucifixion to explain why Scripture calls Christ our Passover lamb",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 12:1-13",
+    "1 Corinthians 5:7",
+    "John 1:29",
+    "John 19:36"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of the darkness and the tearing of the temple curtain at Jesus' death",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 27:45-54",
+    "Hebrews 10:19-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the significance of the resurrection for justification and for the future resurrection of believers",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 4:25",
+    "1 Corinthians 15:17-22"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q45"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish Christ's state of humiliation from his state of exaltation as the Westminster Standards describe them",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 2:5-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q27",
+    "Westminster Shorter Catechism Q28",
+    "Westminster Confession of Faith 8.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition interprets the Apostles' Creed phrases about Christ's burial and descent into hell",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 27:57-61",
+    "Isaiah 53:9",
+    "Matthew 27:46"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q41",
+    "Heidelberg Catechism Q44"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the four Gospel accounts of the crucifixion and identify the distinct emphasis of each evangelist",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 27:32-56",
+    "Mark 15:21-41",
+    "Luke 23:26-49",
+    "John 19:16-37"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Gospel accounts and Roman crucifixion practice as evidence that Jesus truly died",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "John 19:31-35",
+    "Mark 15:42-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the historical evidence for the resurrection against alternative explanations such as theft, swoon, and hallucination",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 28:11-15",
+    "1 Corinthians 15:3-8",
+    "Acts 2:22-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate major theories of the atonement against Scripture, explaining why the Reformed tradition holds penal substitution as central",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 3:21-26",
+    "Isaiah 53:4-6",
+    "Colossians 2:13-15",
+    "1 Peter 2:21-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.5",
+    "Heidelberg Catechism Q40"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed doctrine of definite atonement and the passages its defenders cite",
+   "grade": 12,
+   "bloom": 2,
+   "scripture": [
+    "John 10:11-15",
+    "Ephesians 5:25-27"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.8",
+    "Canons of Dort 2.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a written or oral synthesis explaining how the cross and the empty tomb together accomplish redemption and union with Christ",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 4:25",
+    "Romans 6:3-11",
+    "1 Corinthians 15:3-4"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q43",
+    "Heidelberg Catechism Q45"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: triumphal entry, cross and empty tomb, foot washing, Last Supper, Gethsemane, substitutionary death, Judas and Peter, trials, seven sayings, Passover, resurrection significance, timeline, and the final synthesis. Merged the separate K to 2 recall items into fuller statements and replaced 'Observe' and 'Name' with observable verbs. Moved the timeline down to grade 5. Recast the medical aspects item as analyzing evidence that Jesus truly died, and recast 'defend as historical fact' as evaluating evidence against alternative theories. Added Jesus' passion predictions, the temple clearing, prophecy fulfillment, signs at his death, resurrection appearances, humiliation and exaltation, burial and descent in the Creed, comparison of the four Gospel accounts, atonement theories, and definite atonement. Added scripture and confession anchors where each objective rests on them.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2010,
+  "output": 5863
+ }
+}

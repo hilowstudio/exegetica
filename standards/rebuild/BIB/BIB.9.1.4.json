@@ -1,0 +1,297 @@
+{
+ "sub_topic": "BIB.9.1.4",
+ "name": "Esther",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Historical Books"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Esther as a Jewish young woman whom God placed as queen in the land of Persia",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Esther 2:7",
+    "Esther 2:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the main people in the book of Esther, including Esther, Mordecai, King Ahasuerus, and Haman",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Esther 2:5-7",
+    "Esther 3:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Esther went to the king without being called in order to ask help for her people, even though it put her life in danger",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Esther 4:11",
+    "Esther 4:16",
+    "Esther 5:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sequence the main events of Esther from Vashti's removal through the deliverance of the Jews",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Esther 1:19",
+    "Esther 2:17",
+    "Esther 2:21-23",
+    "Esther 3:8-13",
+    "Esther 7:1-10",
+    "Esther 8:11",
+    "Esther 9:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Haman plotted to destroy all the Jews in the Persian empire",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Esther 3:1-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate the book of Esther in history as taking place in the Persian empire after the exile, among Jews who had not returned to Judah",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Esther 1:1-3",
+    "Esther 2:5-6",
+    "Esther 3:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the fast Esther asked the Jews to keep and explain what it shows about their dependence on God in a crisis",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Esther 4:3",
+    "Esther 4:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Haman's pride and downfall with Mordecai's faithfulness and exaltation using the book's own details",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Esther 5:9-14",
+    "Esther 6:6-11",
+    "Esther 7:9-10",
+    "Esther 10:3",
+    "Proverbs 16:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Mordecai's words for such a time as this in their context, including his confidence that deliverance would come for the Jews",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Esther 4:12-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the reversals in the plot of Esther, such as Haman honoring Mordecai, Haman hanged on his own gallows, and the decree of destruction turned to victory",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Esther 6:10-11",
+    "Esther 7:10",
+    "Esther 8:1-2",
+    "Esther 9:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the book of Esther displays God's providence through ordinary events even though God's name is never mentioned",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Esther 4:14",
+    "Esther 6:1-3",
+    "Proverbs 16:33",
+    "Proverbs 21:1"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11",
+    "Westminster Confession of Faith 5.1",
+    "Heidelberg Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the origin, name, and purpose of the feast of Purim as Esther and Mordecai established it",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Esther 3:7",
+    "Esther 9:20-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the significance of Haman as an Agagite and Mordecai as a Benjaminite descendant of Kish in light of Israel's earlier conflict with Amalek",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Esther 2:5",
+    "Esther 3:1",
+    "Exodus 17:14-16",
+    "1 Samuel 15:8-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the irrevocable law of the Medes and Persians shaped the danger of the Jews and the way their deliverance was achieved",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Esther 1:19",
+    "Esther 3:12-13",
+    "Esther 8:8-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the preservation of the Jews in Esther fits God's covenant promise to preserve Abraham's offspring through whom the Messiah would come",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 12:2-3",
+    "Esther 3:6",
+    "Esther 4:14",
+    "Galatians 3:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Esther's intercession for her people with Christ's work as mediator and intercessor, noting both likenesses and differences",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Esther 7:3-4",
+    "Esther 8:3-6",
+    "1 Timothy 2:5",
+    "Hebrews 7:25"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate historical objections to Esther's place in the canon and explain the Reformed position that the Hebrew book is Scripture while the Greek additions are not",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Esther 9:29-32"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Westminster Confession of Faith 1.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the morally complex choices of Esther, Mordecai, and the Jews by distinguishing what the narrative describes from what Scripture elsewhere commands",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Esther 2:8-10",
+    "Esther 2:17",
+    "Esther 9:5-16",
+    "Deuteronomy 7:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a defense of the Reformed doctrine of providence that uses Esther to show how God governs human choices and ordinary means without being the author of sin",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Esther 4:14",
+    "Esther 6:1-3",
+    "Genesis 50:20",
+    "Romans 8:28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.2",
+    "Westminster Confession of Faith 5.3",
+    "Westminster Confession of Faith 5.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Write an essay tracing the theme of hostility toward God's people from Exodus through Esther and explaining how the book's deliverance displays God's care for His church",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Exodus 1:8-10",
+    "Psalm 83:3-4",
+    "Esther 3:6",
+    "Esther 9:1",
+    "Matthew 16:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.7"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and sharpened real competencies (Esther as queen, main characters, her bravery before the king, how she became queen folded into a full event sequence, Haman's plot, Haman versus Mordecai, for such a time as this, God's unnamed presence, Purim, providence, diaspora vulnerability, canonicity, moral complexity, defense of providence). Reworded the vague 'apply' and 'interpret' items into contextual explanations, and reframed the anti-semitism essay as a biblical theme essay tied to God's care for His church. Added historical setting, Esther's fast, literary reversals, the Agagite and Amalek background, the irrevocable Persian law, covenant preservation of Abraham's line, and a Christ the intercessor comparison. Anchored each objective to specific verses and added Westminster and Heidelberg references on providence, canon, and Christ's priestly office.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1848,
+  "output": 4241
+ }
+}

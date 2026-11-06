@@ -1,0 +1,243 @@
+{
+ "sub_topic": "BIB.10.3.4",
+ "name": "Private Devotion vs. Public Assembly",
+ "path": [
+  "Bible & Theology",
+  "Practical Theology & Christian Living",
+  "Worship and Liturgy"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify ways a person can worship God alone and ways God's people worship Him together at church",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 6:6",
+    "Psalm 122:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the Lord's Day as the day the church gathers to worship God together",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 20:7",
+    "Psalm 92:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall Bible examples of worshipping God alone and with others, such as Daniel praying at his window and Jesus going to the synagogue on the Sabbath",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Daniel 6:10",
+    "Luke 4:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize Jesus' teaching on praying in secret and explain why He warns against praying to be seen by others",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 6:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the practice of family worship and explain its basis in God's command to teach His words at home",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 6:6-7",
+    "Joshua 24:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the command not to neglect meeting together and the reasons Hebrews gives for gathering",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 10:24-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare private devotion and public worship by identifying what each provides that the other does not",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 6:6",
+    "Hebrews 10:24-25",
+    "Psalm 22:22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Carry out a simple pattern of private devotion in class that includes reading a passage, meditating on it, and praying in response",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Psalm 1:1-2",
+    "Psalm 119:11",
+    "Mark 1:35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the early church combined gathered worship with daily fellowship and prayer in homes",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:42-47"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Paul's picture of the church as a body to explain why the tradition teaches that no believer is meant to grow in isolation",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 12:12-27",
+    "Ephesians 4:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition teaches that the preaching of the Word in the assembly is an especially effective means of grace alongside private reading of Scripture",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 10:14-17",
+    "Nehemiah 8:1-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q89"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Westminster teaching that God is to be worshipped in secret, in families daily, and more solemnly in public assemblies that are not to be neglected",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "John 4:21-24",
+    "Matthew 6:6",
+    "Hebrews 10:25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching on the Lord's Day as a day set apart for public and private exercises of worship",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:8-11",
+    "Isaiah 58:13-14",
+    "Acts 20:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.7",
+    "Westminster Confession of Faith 21.8",
+    "Westminster Shorter Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the dangers of outward public worship without private devotion and of private spirituality that withdraws from the assembly",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 29:13",
+    "Matthew 15:8-9",
+    "Hebrews 10:24-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a plan of daily and weekly rhythms that includes private, family, and public worship",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Deuteronomy 6:6-7",
+    "Psalm 92:1-2",
+    "Hebrews 10:24-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate virtual church practices against biblical teaching on the physical gathering of believers",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 10:24-25",
+    "1 Corinthians 11:18-20",
+    "2 John 1:12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose an argument showing how private devotion and public assembly together serve both personal growth and the edification of the body",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Ephesians 4:11-16",
+    "Colossians 3:16",
+    "Acts 2:42-47"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.6"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies on praying in secret, Hebrews 10, comparing private and public worship, family worship, the body metaphor, the Lord's Day, daily and weekly rhythms, virtual church, and the closing synthesis. Dropped vague or experiential filler such as observing families, recalling that we need both, and the private piety to public power line. Merged the defense of physical gathering into the virtual church evaluation. Added objectives on biblical examples of both kinds of worship, a classroom devotional practice, early church patterns in Acts 2, the preached Word as a means of grace (WSC Q89), the threefold pattern of WCF 21.6, and the dangers of imbalance. Replaced the lone WCF 21.7 citation with fuller anchors in WCF 21.6 to 21.8 and WSC Q60. Left the regulative principle, elements, and sacraments to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1937,
+  "output": 3896
+ }
+}

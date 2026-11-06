@@ -1,0 +1,313 @@
+{
+ "sub_topic": "BIB.1.3.3",
+ "name": "Prophetic Fulfillment",
+ "path": [
+  "Bible & Theology",
+  "Apologetics and Worldviews",
+  "Evidential Apologetics"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God knows the future and tells his people what will happen",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Isaiah 46:9-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Bethlehem as the town where God promised long before that Jesus would be born",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Micah 5:2",
+    "Matthew 2:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell God's first promise of a Savior in the garden and explain how Jesus kept that promise",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:15",
+    "Galatians 4:4-5"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Match the promise of a virgin-born child in Isaiah to its fulfillment in the birth of Jesus",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 7:14",
+    "Matthew 1:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical test of a true prophet, that his word from the Lord always comes to pass",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 18:21-22",
+    "Isaiah 41:21-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Old Testament prophecies of the crucifixion and match each detail to its Gospel account",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 22:16-18",
+    "Isaiah 53:5-7",
+    "John 19:23-24",
+    "Matthew 27:38-43"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus fulfilled the Passover as the Lamb of God",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 12:3-13",
+    "Exodus 12:46",
+    "John 19:36",
+    "1 Corinthians 5:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare vague predictions such as horoscopes with specific biblical prophecies such as the naming of Cyrus",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 44:28",
+    "Isaiah 45:1",
+    "Ezra 1:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus taught that the Law, the Prophets, and the Psalms point to his suffering and resurrection",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:25-27",
+    "Luke 24:44-47"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why God's past fulfillment of prophecy gives grounds for trusting his unfulfilled promises such as Christ's return",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Joshua 23:14",
+    "Acts 1:11",
+    "2 Peter 3:8-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus fulfilled Moses' promise of a coming prophet like him",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 18:15-18",
+    "Acts 3:22-26"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q24"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a chart of major Messianic prophecies with their New Testament fulfillment citations",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [
+    "Genesis 49:10",
+    "2 Samuel 7:12-16",
+    "Zechariah 9:9",
+    "Matthew 21:4-5",
+    "Psalm 16:10",
+    "Acts 2:25-32"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish direct predictive prophecy from typological fulfillment using New Testament examples",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Hosea 11:1",
+    "Matthew 2:15",
+    "Micah 5:2",
+    "Hebrews 10:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the probability argument that one man fulfilling many specific Messianic prophecies is beyond chance, and identify its strengths and limits",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Daniel's vision of the statue and the succession of empires in light of later history",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 2:36-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Ezekiel's prophecy against Tyre in relation to the historical record of its destruction",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Ezekiel 26:3-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Suffering Servant passage and evaluate the claim that the Servant is the nation of Israel rather than the Messiah",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 52:13-15",
+    "Isaiah 53:1-12",
+    "Acts 8:30-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Daniel's seventy weeks prophecy and compare the main interpretations of its timing for the Messiah",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 9:24-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the objection that Jesus deliberately arranged his life to fulfill prophecy by identifying prophecies outside human control",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Micah 5:2",
+    "Psalm 22:16-18",
+    "Psalm 34:20",
+    "John 19:31-37"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the objection that biblical prophecies were written after the events they describe",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 53:1-12",
+    "Daniel 2:36-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the objection that New Testament writers misused Old Testament texts by examining how they cite prophecy in context",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 2:15",
+    "Hosea 11:1-2",
+    "Matthew 2:17-18",
+    "Jeremiah 31:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a reasoned argument for the divine origin of Scripture from predictive prophecy",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Isaiah 46:9-10",
+    "2 Peter 1:19-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the role of the argument from prophecy within the Reformed teaching that full persuasion of Scripture's authority comes from the inward work of the Holy Spirit",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "2 Peter 1:19-21",
+    "1 Corinthians 2:12-14",
+    "John 5:39-40"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (God knows the future, Bethlehem, crucifixion prophecies, Passover, vague versus specific prediction, probability, Daniel 2, Tyre, typology, prophecy chart, maneuvering objection, divine origin argument) and moved several to grades where they fit better. Dropped vague filler (Jesus did everything God promised, only God can tell the future 100% of the time) and recast the future-promises objective as knowledge rather than personal application. Dropped the synthesis with miracles since that belongs to the sibling sub-topic Miracles as Proof. Added Genesis 3:15, Isaiah 7:14, the test of a true prophet, Jesus' own reading of the Old Testament, the prophet like Moses, Daniel's seventy weeks, the Suffering Servant identity question, the after-the-fact and misuse objections, and the Reformed view of evidence and the Spirit's witness. Replaced whole-chapter references with verse ranges and added confession anchors where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1998,
+  "output": 4733
+ }
+}

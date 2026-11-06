@@ -1,0 +1,260 @@
+{
+ "sub_topic": "BIB.6.2.2",
+ "name": "Authorial Intent",
+ "path": [
+  "Bible & Theology",
+  "Hermeneutics (The Art of Interpretation)",
+  "Principles of Interpretation"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God used people to write the books of the Bible",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 3:16",
+    "2 Peter 1:21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the human writer of a familiar Bible book, such as Moses, David, Luke, or Paul",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Luke 1:1-4",
+    "Galatians 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall a verse where a Bible writer tells readers why he wrote his book",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "John 20:30-31",
+    "1 John 5:13",
+    "Luke 1:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Ask the question what did the writer want his first readers to know when reading a Bible passage",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [
+    "Luke 1:3-4",
+    "John 20:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize in their own words the main point an author makes in a short Bible passage",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 4:4-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why readers may not make a Bible passage mean whatever they want it to mean",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "2 Peter 1:20-21",
+    "2 Peter 3:15-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish a reader's personal reaction to a verse from what its author actually stated",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Philippians 4:13",
+    "Jeremiah 29:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply the principle that a passage has one meaning intended by its author but many faithful applications",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "1 Corinthians 10:6",
+    "1 Corinthians 10:11",
+    "Romans 15:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the occasion that prompted an author to write a New Testament letter, such as Paul's reasons for writing Galatians",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 1:6-9",
+    "1 Corinthians 7:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how an author's purpose statements, repeated words, and structure reveal his intent across a whole book",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "John 20:30-31",
+    "1 John 1:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare an authorial intent approach to interpretation with a reader response approach",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "2 Peter 3:16",
+    "Nehemiah 8:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed doctrine of dual authorship, in which the Holy Spirit and human writers together produced Scripture",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "2 Peter 1:20-21",
+    "2 Timothy 3:16",
+    "Hebrews 1:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4",
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the divine author's intent can be fuller than a human author's understanding without contradicting what the human author meant",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 Peter 1:10-12",
+    "Matthew 1:22-23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a thesis statement on the purpose of a specific Bible book and support it with evidence from the text",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Luke 1:1-4",
+    "Acts 1:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the postmodern claim that the author is dead and meaning is created by readers",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Peter 1:20-21",
+    "Isaiah 55:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed position that Scripture has a single, knowable meaning that settles interpretive disputes",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Psalm 119:105",
+    "Psalm 119:130",
+    "Acts 17:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.7",
+    "Westminster Confession of Faith 1.9",
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the distinct styles and personalities of different human authors show that inspiration worked through them rather than overriding them",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Luke 1:1-4",
+    "2 Peter 3:15-16",
+    "2 Peter 1:21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate competing interpretations of a passage by measuring each against the author's demonstrable intent",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 1:6-9",
+    "Acts 17:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (God used human writers, naming authors, summarizing the main point, one meaning many applications, occasion for writing, authorial intent vs reader response, dual authorship, thesis on a book's intent, postmodern 'death of the author', defending objective meaning, human personality and inspiration). Merged 'recall the writer wanted to tell us something' into a concrete objective about locating stated purpose verses. Reframed the feelings comparison as distinguishing a reader's reaction from the author's statement so feelings are not the objective. Replaced the vague 'connect human and divine intent' with an analysis of fuller divine intent using 1 Peter 1:10-12. Added objectives on how structure and repeated words reveal purpose and on judging competing interpretations by authorial intent. Added WCF 1.9 (one true sense), 1.7, 1.10, 1.2 and WSC Q2, and supplied verse-level Scripture anchors throughout. Left context, genre, method, and progressive revelation material to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1943,
+  "output": 3819
+ }
+}

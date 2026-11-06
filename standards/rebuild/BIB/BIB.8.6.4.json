@@ -1,0 +1,352 @@
+{
+ "sub_topic": "BIB.8.6.4",
+ "name": "Pastoral Leadership: 1 & 2 Timothy and Titus",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "The Pauline Epistles"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Timothy as the young helper whom Paul taught and called his child in the faith",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Acts 16:1-3",
+    "2 Timothy 1:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Timothy learned the Scriptures from childhood through his grandmother Lois and his mother Eunice",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 1:5",
+    "2 Timothy 3:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "State that all Scripture is breathed out by God and is useful for teaching and training",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 3:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the five ways Paul told young Timothy to set an example for believers in speech, conduct, love, faith, and purity",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "1 Timothy 4:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Paul's pictures of the Christian life as fighting the good fight and finishing the race",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 6:12",
+    "2 Timothy 4:7-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Paul instructed the church to pray for kings and all who are in authority",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 2:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Paul means by godliness with contentment and why he warns against the love of money",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 6:6-10",
+    "1 Timothy 6:17-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the images of the soldier, the athlete, and the farmer that Paul uses to describe faithful service",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 2:3-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the qualifications Paul gives for elders by sorting them into character, family, and teaching",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 3:1-7",
+    "Titus 1:5-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the sound teaching Paul commends with the myths and false teaching he warns Timothy and Titus against",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "1 Timothy 1:3-7",
+    "1 Timothy 4:1-7",
+    "2 Timothy 4:3-4",
+    "Titus 1:10-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the role and qualifications of deacons and how their service differs from that of elders",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 3:8-13",
+    "Acts 6:1-6"
+   ],
+   "confessions": [
+    "Belgic Confession 31"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul uses his own story as the foremost of sinners to show the mercy of Christ Jesus",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 1:12-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the chain of faithful teachers Paul describes for passing the gospel from one generation to the next",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "2 Timothy 2:1-2",
+    "2 Timothy 1:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed doctrine of the inspiration, authority, and sufficiency of Scripture from Paul's words to Timothy",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:14-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Westminster Confession of Faith 1.4",
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe Paul's instructions for older men, older women, younger women, younger men, and bondservants and the reason he gives for each",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Titus 2:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Paul's instructions for the church's care of widows and its honor and correction of elders",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 5:3-16",
+    "1 Timothy 5:17-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply Paul's charge to rightly handle the word of truth by interpreting a passage from the Pastoral Epistles in its context",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "2 Timothy 2:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul connects God's grace and sound doctrine to a life devoted to good works in Titus",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Titus 2:11-14",
+    "Titus 3:4-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed understanding of church government by elders and deacons drawn from the Pastoral Epistles",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 3:1-13",
+    "Titus 1:5"
+   ],
+   "confessions": [
+    "Belgic Confession 30",
+    "Belgic Confession 31",
+    "Westminster Confession of Faith 30.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the confession that Christ Jesus is the one mediator between God and men as Paul states it to Timothy",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 2:5-6",
+    "1 Timothy 3:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.1",
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul prepares Timothy to share in suffering for the gospel and to expect persecution",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 1:8-12",
+    "2 Timothy 3:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's charge to preach the word in season and out of season and how the Reformed tradition confesses the place of preaching",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 4:1-5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q89",
+    "Westminster Larger Catechism Q159"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Paul directs leaders to correct opponents with gentleness and to deal with divisive people",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "2 Timothy 2:23-26",
+    "Titus 3:9-11",
+    "1 Timothy 1:18-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the priority Paul places on character over skill in the qualifications for church leaders",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Timothy 3:1-7",
+    "Titus 1:5-9",
+    "1 Timothy 4:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed tradition's reading of Paul's instructions on men and women in worship and office with other interpretations of the same texts",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "1 Timothy 2:8-15",
+    "1 Timothy 3:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend from the Pastoral Epistles the duty to guard the deposit of faith without adding to it",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Timothy 6:20-21",
+    "2 Timothy 1:13-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a written charge to a church leader that synthesizes the major themes of 1 and 2 Timothy and Titus, including Paul's final charge",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "2 Timothy 4:1-8",
+    "1 Timothy 6:11-16",
+    "Titus 2:15"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Timothy as helper, inspiration of Scripture, leaders as examples, the good fight, elder qualifications, contentment, true versus false teaching, deacons, Scripture in the church, rightly handling the word, doctrine and good works, character over skill, guarding the deposit, the final charge). Fixed the typo in 'Study to sho' and recast it as interpreting a passage in context. Moved elder qualifications later and paired 1 Timothy 3 with Titus 1. Dropped vague items ('passing of the torch' merged into the 2 Timothy 2:2 chain of teachers, 'construct a model of leadership' folded into the grade 12 capstone). Added missing content: Lois and Eunice, prayer for rulers, soldier athlete farmer images, Paul as foremost of sinners, Titus 2 household instructions, widows and elders, Reformed church government, one mediator, suffering, preaching, correcting opponents, and men and women in worship and office. Added verse-level references and confession anchors including Westminster, Belgic, and catechism citations.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1996,
+  "output": 4926
+ }
+}

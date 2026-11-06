@@ -1,0 +1,262 @@
+{
+ "sub_topic": "BIB.6.2.4",
+ "name": "Principle of Progressive Revelation",
+ "path": [
+  "Bible & Theology",
+  "Hermeneutics (The Art of Interpretation)",
+  "Principles of Interpretation"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God told his people more and more about his plan over time, from Adam all the way to Jesus",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Hebrews 1:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Jesus as the fullest and final word God has spoken to his people",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Hebrews 1:1-2",
+    "John 1:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how God's first promise of a rescuer was made clearer through later promises to Abraham and David",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:15",
+    "Genesis 12:1-3",
+    "2 Samuel 7:12-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how God's plan grows from the Garden in Genesis to the city in Revelation like a seed growing into a tree",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:8-10",
+    "Revelation 22:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that Old Testament sacrifices and feasts were shadows that pointed forward to Christ as the substance",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 2:16-17",
+    "Hebrews 10:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare what Moses and the prophets knew about the Messiah with what the apostles proclaimed after Christ came",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "1 Peter 1:10-12",
+    "2 Corinthians 3:12-18",
+    "Luke 24:25-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Paul means by the fullness of time and why God sent his Son at that point in the story of redemption",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 4:4-5",
+    "Galatians 3:23-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish progressive revelation as a clearer unfolding of truth from the mistaken idea that earlier revelation was false or corrected",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 5:17-18",
+    "Galatians 3:17-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the unfolding of God's covenant promises of seed, land, king, and worldwide blessing across Scripture",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 12:1-3",
+    "2 Samuel 7:12-16",
+    "Galatians 3:8-9",
+    "Galatians 3:29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Paul's teaching on the mystery hidden in former ages and now revealed, including the joining of Gentiles to God's people",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Ephesians 3:1-6",
+    "Romans 16:25-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Hebrews presents the repeated Levitical sacrifices as fulfilled by Christ's once-for-all offering",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 10:1-14",
+    "Hebrews 9:11-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition confesses one covenant of grace administered differently under the law and under the gospel",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 8:6-13",
+    "Jeremiah 31:31-34"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain using the Reformed distinction of moral, ceremonial, and civil law why ceremonial laws no longer bind believers while the moral law still does",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 2:16-17",
+    "Acts 10:9-16",
+    "Hebrews 8:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.3",
+    "Westminster Confession of Faith 19.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply the principle of progressive revelation to interpret an Old Testament passage in light of its New Testament fulfillment",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [
+    "Luke 24:44-47",
+    "Isaiah 53:4-6",
+    "Acts 8:32-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a timeline of the major stages of God's revelation from creation through the apostles with the key truth disclosed at each stage",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [
+    "Hebrews 1:1-2",
+    "Ephesians 3:4-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate dispensational and covenantal accounts of how revelation progresses across the biblical covenants",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 3:15-29",
+    "Ephesians 2:11-22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Hebrews the Reformed teaching that God's revelation in his Son is final and that new public revelation has ceased",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 1:1-2",
+    "Hebrews 2:1-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the organic unity of Scripture in an essay tracing one biblical theme from its first promise to its fulfillment in Christ",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 3:15",
+    "Galatians 4:4-5",
+    "Revelation 21:1-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Removed the Jude 3 citation that could not be found and anchored the finality objective in Hebrews 1:1-2 and Hebrews 2:1-4 instead. Kept the real competencies from the old list and reworded them, including God revealing more over time, Christ as the final word, the Garden to the City, shadow and substance, Moses compared with Christ, the covenant unfolding, the Ephesians 3 mystery, the Levitical sacrifices, ceremonial law, the timeline, the dispensational and covenantal comparison, Hebrews 1, and the unity synthesis. Dropped the vague objective about applying the blessing of the whole Bible because it named no assessable skill. Added objectives on the clarifying of the Genesis 3:15 promise, the fullness of time, telling unfolding apart from correction, one covenant of grace under two administrations, and using the principle to interpret an Old Testament passage. Grounded the ceremonial law objective in Westminster Confession of Faith 19.3 and 19.5.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 4043,
+  "output": 8169
+ }
+}

@@ -1,0 +1,229 @@
+{
+ "sub_topic": "BIB.5.2.1",
+ "name": "Ethical Systems (Utilitarianism, Deontology, Virtue)",
+ "path": [
+  "Bible & Theology",
+  "Comparative Religious Studies & Ethics",
+  "Comparative Ethics & Moral Frameworks"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Retell a Bible story in which a person chose to do what was right even when it was hard",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Daniel 6:10",
+    "Daniel 6:16-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall the Golden Rule and explain how it guides the way we treat other people",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 7:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name character qualities the Bible calls good, such as kindness, patience, and self-control",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Galatians 5:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe three questions people ask when making a moral choice: what the rule says, what will happen, and what kind of person the choice makes them",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Micah 6:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why doing something wrong to get a good result is still wrong",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare acting out of duty to a rule with acting from good character using a story or case",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 5:21-22",
+    "Matthew 23:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define utilitarianism as judging actions by whether they produce the greatest good for the greatest number",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define deontology as judging actions by duties and rules regardless of their outcomes",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how utilitarian and deontological reasoning reach different conclusions about the same moral case",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe virtue ethics, including Aristotle's account of virtue as a habit formed by practice and a mean between extremes",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the four classical cardinal virtues and the three theological virtues and locate the theological virtues in Scripture",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [
+    "1 Corinthians 13:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze biblical passages to show where Scripture appeals to commands, to consequences, and to character in its moral teaching",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 20:1-17",
+    "Deuteronomy 30:15-16",
+    "Galatians 5:22-23",
+    "1 Peter 1:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply utilitarian, deontological, and virtue reasoning to a classic dilemma such as the trolley problem and explain each conclusion",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Kant's categorical imperative in its formulations of universal law and of treating persons as ends and never merely as means",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the difficulties of measuring and comparing happiness in the utilitarian theories of Bentham and Mill",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a critique of utilitarianism based on the dignity of every person as made in the image of God",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 9:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Kant's grounding of duty in autonomous reason against the Reformed teaching that the moral law is revealed by God and written on the heart",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 2:14-15",
+    "Exodus 20:1-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.2",
+    "Westminster Shorter Catechism Q40"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how virtue ethics compares with the Reformed doctrine of sanctification, distinguishing character formed by grace from habit formed by human effort alone",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Corinthians 3:18",
+    "Philippians 2:12-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Produce an argued essay on a complex bioethical issue that analyzes how each ethical system approaches it and evaluates them in light of Scripture",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:27",
+    "Psalm 139:13-16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q68"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept the real competencies and reworded them: the Golden Rule, fruit-of-the-Spirit qualities, ends and means, duty versus character, utilitarianism versus deontology, virtue ethics, the trolley problem, the human-dignity critique, the Kant evaluation, sanctification, and the bioethics essay. Moved the definition of utilitarianism from grade 3 to grade 6, where it can first reasonably be taught. Made the K objective a Bible story retelling. Dropped the vague 'name Fairness and Kindness', 'observe easy vs right', and 'apply decision-making' items. Recast the God's-character objective as a scripture analysis of commands, consequences, and character, so it stays on ethical systems and does not overlap the theological-vs-secular sibling. Added objectives for a separate definition of deontology, the Kantian formulations, Bentham and Mill's measurement problem, and the cardinal and theological virtues. Reframed the sanctification item to evaluate rather than defend. Added confessional anchors only where a confession states the doctrine (WCF 4.2, 19.2, 13.1 and WSC Q40, Q68).",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1966,
+  "output": 3973
+ }
+}

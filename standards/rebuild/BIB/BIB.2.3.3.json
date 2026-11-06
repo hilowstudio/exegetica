@@ -1,0 +1,409 @@
+{
+ "sub_topic": "BIB.2.3.3",
+ "name": "The Wisdom Literature and Psalms: Writings (Ketuvim)",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "Old Testament Overview"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Psalms as songs and prayers that God's people sang to worship him",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 95:1-2",
+    "Psalm 100:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite Psalm 23:1-3 and describe how the Lord cares for his people like a shepherd cares for sheep",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 23:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Solomon as the king who asked God for wisdom and wrote many proverbs",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "1 Kings 3:9-12",
+    "1 Kings 4:32",
+    "Proverbs 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify David as the shepherd king who wrote many of the psalms",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "2 Samuel 23:1-2",
+    "1 Samuel 16:11-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name in order the poetic and wisdom books of the Old Testament: Job, Psalms, Proverbs, Ecclesiastes, and Song of Songs",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Proverbs that the fear of the Lord is the beginning of wisdom",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 1:7",
+    "Proverbs 9:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how creation declares the glory of God using Psalm 19",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 19:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the different emotions the psalmists express, such as joy, sorrow, fear, and trust, and explain that the psalms show God's people bringing every situation to him in prayer",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 13:1-6",
+    "Psalm 100:1-5",
+    "Psalm 56:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Job's testing, his response, and God's restoration of him",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Job 1:20-22",
+    "Job 2:9-10",
+    "Job 42:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between a proverb as a general principle of wise living and a promise from God",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 22:6",
+    "Proverbs 26:4-5",
+    "Proverbs 10:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast the way of the righteous and the way of the wicked as presented in Psalm 1",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 1:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Job's questioning in suffering with the expressions of trust in God found in the Psalms",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Job 1:21",
+    "Job 3:1-3",
+    "Psalm 22:1-5",
+    "Psalm 46:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the message of Ecclesiastes about life under the sun and its concluding call to fear God and keep his commandments",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 1:2-3",
+    "Ecclesiastes 12:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the arrangement of the Psalter into five books, each closing with a doxology",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 41:13",
+    "Psalm 72:18-19",
+    "Psalm 89:52",
+    "Psalm 106:48",
+    "Psalm 150:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze examples of Hebrew parallelism, distinguishing synonymous, antithetical, and synthetic lines",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 19:1-2",
+    "Proverbs 10:1",
+    "Psalm 1:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the figurative language and structures of Hebrew poetry, including metaphor and acrostic form",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 18:2",
+    "Psalm 119:1-8",
+    "Proverbs 31:10-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed practice of singing psalms in worship and sing a metrical psalm in class",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [
+    "Colossians 3:16",
+    "Ephesians 5:19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the Writings as the third division of the Hebrew Bible alongside the Law and the Prophets, as Jesus referred to it",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze God's speeches to Job and explain what they teach about God's sovereign providence and the limits of human understanding",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Job 38:1-7",
+    "Job 40:1-5",
+    "Job 42:1-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus prayed and quoted the Psalms during his ministry and on the cross",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 27:46",
+    "Psalm 22:1",
+    "Luke 23:46",
+    "Psalm 31:5",
+    "Matthew 21:42",
+    "Psalm 118:22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose an original lament or praise psalm that follows the structure and parallelism of biblical examples",
+   "grade": 8,
+   "bloom": 6,
+   "scripture": [
+    "Psalm 13:1-6",
+    "Psalm 103:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the meaning of the Hebrew word hebel, often translated vanity or vapor, across Ecclesiastes and explain how it supports the book's conclusion",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Ecclesiastes 1:2",
+    "Ecclesiastes 1:14",
+    "Ecclesiastes 2:24-26",
+    "Ecclesiastes 12:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Song of Songs celebrates covenant love in marriage and how the church has also read it in light of Christ and his church",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Song of Songs 8:6-7",
+    "Genesis 2:24",
+    "Ephesians 5:31-32"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Classify psalms by genre, including lament, hymn of praise, thanksgiving, royal, and wisdom psalms, and identify the typical structure of each",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 13:1-6",
+    "Psalm 100:1-5",
+    "Psalm 30:1-5",
+    "Psalm 2:1-12",
+    "Psalm 1:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the New Testament applies royal and messianic psalms to Christ as prophet, priest, and king",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 2:7",
+    "Acts 13:33",
+    "Psalm 110:1-4",
+    "Hebrews 1:13",
+    "Hebrews 5:5-6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q23"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the personification of Wisdom in Proverbs 8 and how the New Testament presents Christ as the wisdom of God",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 8:22-31",
+    "1 Corinthians 1:24",
+    "Colossians 2:3",
+    "John 1:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Job, the Psalms, and Ecclesiastes challenge a simple view that suffering always results from personal sin",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Job 42:7",
+    "Psalm 73:2-3",
+    "Psalm 73:16-17",
+    "Ecclesiastes 7:15",
+    "John 9:1-3"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q27",
+    "Heidelberg Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the counsel of Proverbs on speech, work, money, and friendship and apply it to contemporary situations",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Proverbs 6:6-11",
+    "Proverbs 15:1",
+    "Proverbs 17:17",
+    "Proverbs 22:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the imprecatory psalms in their context and explain how they entrust judgment to God in light of New Testament teaching",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 137:7-9",
+    "Psalm 139:19-22",
+    "Romans 12:19",
+    "Revelation 6:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Write a synthesis essay showing how the Wisdom books and Psalms point to Christ as the fulfillment of the pursuit of wisdom",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Proverbs 2:1-6",
+    "Colossians 2:3",
+    "1 Corinthians 1:30",
+    "Luke 24:44"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Psalms as songs, Solomon, Psalm 23, fear of the Lord, proverb vs promise, Job vs Psalms, Ecclesiastes, parallelism, Job and providence, Jesus and the Psalms, hebel, psalm genres, suffering, practical Proverbs, wisdom in Christ). Dropped the vague 'observe poetry and feelings' objective and replaced it with text-based analysis of the psalmists' expressions. Added David as psalmist, naming the books, Psalm 19 and creation, the two ways of Psalm 1, the five books of the Psalter, poetic devices, Reformed psalm singing, the Writings in the Hebrew canon, composing a psalm, Song of Songs, messianic psalms, Wisdom personified in Proverbs 8, and imprecatory psalms. Anchored all objectives to specific verses and added confession references where they state the doctrine. Left Ruth, Esther, Chronicles, Lamentations, and Daniel to the historical and prophetic sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2007,
+  "output": 6243
+ }
+}

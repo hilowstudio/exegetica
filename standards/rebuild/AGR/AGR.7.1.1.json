@@ -1,0 +1,191 @@
+{
+ "sub_topic": "AGR.7.1.1",
+ "name": "History, Mission & Structure of FFA",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "FFA Leadership & SAE",
+  "FFA Organization & Heritage"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe the purpose of FFA as a student organization for young people interested in agriculture, leadership, and careers",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how FFA grew out of vocational agriculture education under the Smith-Hughes Act and describe its founding in Kansas City in 1928",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sequence major events in FFA history on a timeline, including the federal charter, the merger with the New Farmers of America, the admission of women, and the 1988 name change",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the roles of the local chapter, state association, and National FFA Organization in serving members",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define classroom instruction, FFA, and supervised agricultural experience and explain how they work together in the three-component model of agricultural education",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.11.01.01.a"
+   ]
+  },
+  {
+   "text": "Identify important facts and programs of the National FFA Organization, such as national convention, membership scope, the National FFA Foundation, and FFA Alumni and Supporters",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.11.03.01.a"
+   ]
+  },
+  {
+   "text": "Explain the meaning of each part of the FFA mission statement and why it matters to members",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12.03"
+   ]
+  },
+  {
+   "text": "Explain how the National FFA Organization is governed through its federal charter, board of directors, national officers, and delegate process",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12"
+   ]
+  },
+  {
+   "text": "Analyze how historical events such as the NFA merger and the admission of women changed FFA membership and helped the organization remain relevant",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.10",
+    "FPS.10.01.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate the significance of the 1988 name change to the National FFA Organization in recognizing the full range of agricultural careers beyond production farming",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.10.01.01.b",
+    "FPS.10.01.01.c"
+   ]
+  },
+  {
+   "text": "Interpret the FFA mission statement in the context of when it was written and how it guides the organization today",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12.03.01.b"
+   ]
+  },
+  {
+   "text": "Justify the need for FFA within agricultural education by explaining its impact on student learning, leadership, and career success",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.11.03",
+    "FPS.11.03.01.b",
+    "FPS.11.03.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate the impact of the FFA mission statement on the National FFA Organization and its members using evidence from chapter and SAE experiences",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12.03.01.c"
+   ]
+  },
+  {
+   "text": "Predict how current trends in agriculture and education may shape the future direction of FFA based on patterns in its history",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.10.01.01.c"
+   ]
+  },
+  {
+   "text": "Develop a presentation for new members tracing FFA's history, mission, and structure from the local chapter to the national organization",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.11.03.01.a",
+    "FPS.12.03"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded the purpose, founding, levels-of-structure, 1988 name change, and new-member presentation objectives. Dropped the motto objective because the motto belongs with the Creed, Emblem and Ceremonies sibling. Added a history timeline, the three-component model, key facts and programs, the mission statement (explain, interpret, evaluate), national governance and the federal charter, analysis of historical events, justification of FFA within agricultural education, and future direction. These additions cover the full set of AFNR history and mission standards. Standards are attached only to objectives at grades 9 to 12.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPS.10",
+  "FPS.10.01.01.b",
+  "FPS.10.01.01.c",
+  "FPS.11.01.01.a",
+  "FPS.11.03",
+  "FPS.11.03.01.a",
+  "FPS.11.03.01.b",
+  "FPS.11.03.01.c",
+  "FPS.12",
+  "FPS.12.01.01.c",
+  "FPS.12.02",
+  "FPS.12.02.01.c",
+  "FPS.12.03",
+  "FPS.12.03.01.b",
+  "FPS.12.03.01.c"
+ ],
+ "usage": {
+  "input": 2276,
+  "output": 2812
+ }
+}

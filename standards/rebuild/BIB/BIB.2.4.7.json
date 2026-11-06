@@ -1,0 +1,284 @@
+{
+ "sub_topic": "BIB.2.4.7",
+ "name": "Whole-Bible Reading Plans (Discipline)",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "Systematic Reading of Scripture"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Recall that the Bible has two main parts called the Old Testament and the New Testament",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 24:44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify Genesis as the first book and Revelation as the last book and explain that the Bible tells one story from beginning to end",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1",
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell in order the major stories heard as an adult reads through a picture Bible from creation to the early church",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the four Gospels and explain that they tell the story of Jesus so that people may believe in him",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 20:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort the books of the Bible into their divisions such as Law, History, Poetry, Prophets, Gospels, Letters, and Prophecy",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [
+    "Luke 24:44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Belgic Confession Article 4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Locate any book of the Bible quickly using the table of contents and knowledge of its division",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the storyline of the whole Bible from creation and fall through redemption in Christ to the new heavens and new earth",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1",
+    "Genesis 3:15",
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use a reading plan to read one entire book of the Bible from start to finish while recording each completed reading",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "Acts 17:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why the Reformed tradition teaches that God's people should read the whole counsel of God rather than only favorite verses",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 20:27",
+    "2 Timothy 3:16-17",
+    "Matthew 4:4",
+    "Romans 15:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Larger Catechism Q156"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the length, genre, and reading pace of different books such as Psalms and Mark to estimate the time a reading plan requires",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Israel publicly read the whole law to all the people using examples from Deuteronomy and Nehemiah",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 31:10-13",
+    "Joshua 8:34-35",
+    "Nehemiah 8:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how canonical, chronological, and multi-stream reading plans are structured and what each emphasizes",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the Reformed practice of lectio continua as reading consecutively through whole books of Scripture in worship and at home",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 4:13",
+    "Colossians 4:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the directions the Westminster Standards give for how Scripture is to be read and apply them to keeping a long reading plan",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Deuteronomy 17:18-19",
+    "Psalm 1:2"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q90",
+    "Westminster Larger Catechism Q157"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Connect each book read in a plan to its place in the larger storyline of Scripture",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Luke 24:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace how the Old Testament prepares the way for Christ and the New Testament across a whole-Bible reading",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Luke 24:27",
+    "Luke 24:44",
+    "Romans 15:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed principle that Scripture interprets Scripture and how reading the whole Bible equips a reader to apply it",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 119:160",
+    "Acts 17:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the strengths and weaknesses of historic and modern reading plans such as M'Cheyne, chronological, and canonical plans",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Develop strategies for reading difficult portions such as genealogies, laws, and prophecies within a plan using the confessional teaching that not all Scripture is equally plain",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [
+    "2 Peter 3:16",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a personalized plan to read the entire Bible in one or two years with daily portions, pacing, and a catch-up strategy",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Acts 20:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate a completed reading record to identify neglected portions of the canon and revise a plan to cover them",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Acts 20:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Produce a written synthesis of a major biblical theme traced through a whole-Bible reading",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Psalm 119:160",
+    "Luke 24:27"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (two testaments, first and last books, Gospels, book divisions, storyline summary, finishing a book, comparing books, plan structures, metanarrative, whole counsel, Old Testament preparing for the New, evaluating plans, constructing a plan, theme synthesis). Merged the whole counsel objective into a grade 6 explanation with its scriptural and confessional basis. Dropped the independent historical research objective as belonging to inductive study and comprehension siblings. Added navigation of the canon, Israel's public reading of the whole law, the Reformed practice of lectio continua, the Westminster directions for reading, Scripture interpreting Scripture, strategies for difficult portions, and auditing a reading record for neglected parts. Replaced the confession citation with precise articles (WCF 1.2, 1.6, 1.7, 1.9, 7.5-6, 21.5, WSC Q90, WLC Q156-157, Belgic 4) and added verse-level scripture anchors.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2076,
+  "output": 4577
+ }
+}

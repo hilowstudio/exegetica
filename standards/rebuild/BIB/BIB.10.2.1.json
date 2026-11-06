@@ -1,0 +1,364 @@
+{
+ "sub_topic": "BIB.10.2.1",
+ "name": "A Theology of Marriage and Parenting",
+ "path": [
+  "Bible & Theology",
+  "Practical Theology & Christian Living",
+  "Family, Vocation, and Stewardship"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the family as a gift God gives and name the members of a family",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 68:6",
+    "Genesis 1:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite the fifth commandment and name ways children honor their father and mother",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 20:12"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q63"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how God created the first man and woman and brought them together as husband and wife",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 2:18-24"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Give examples of how children obey and honor their parents at home",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 6:1-3",
+    "Colossians 3:20"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q64"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify from Psalm 127 that children are a gift and blessing from the Lord",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 127:3-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Genesis 2:24 means by leaving parents, holding fast to a spouse, and becoming one flesh",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how family members in Bible stories showed loyal love and forgiveness to one another",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ruth 1:16-17",
+    "Genesis 50:17-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the callings Ephesians 5 gives to husbands to love sacrificially and to wives to submit, as the Reformed tradition reads the passage",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 5:22-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the duties Scripture gives parents to instruct, nurture, and correct their children without provoking them",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 6:4",
+    "Colossians 3:21"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q129"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus pointed back to creation when he taught about marriage",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 19:4-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the household and the church as communities in which God gives order, care, and instruction",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "1 Timothy 3:4-5",
+    "Ephesians 2:19",
+    "1 Timothy 5:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how honoring parents extends to adult children caring for aging parents",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 5:4",
+    "1 Timothy 5:8",
+    "Mark 7:9-13"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q104"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the purposes of marriage named in the Westminster Confession and the Scriptures that support each",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:18",
+    "Genesis 1:28",
+    "Malachi 2:15",
+    "1 Corinthians 7:2-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Ephesians 5 presents marriage as a picture of Christ and the church",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 5:25-27",
+    "Ephesians 5:31-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Deuteronomy 6 on parents teaching God's words to their children in the ordinary rhythms of daily life",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [
+    "Deuteronomy 6:4-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that covenant promises extend to the children of believers and how this shapes infant baptism and parental vows",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 17:7",
+    "Acts 2:39",
+    "1 Corinthians 7:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 28.4",
+    "Heidelberg Catechism Q74"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the families of Isaac, Jacob, and David to show how favoritism and sin damaged the household",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 25:27-28",
+    "Genesis 37:3-4",
+    "2 Samuel 13:21-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical purpose of parental discipline as loving correction aimed at wisdom and maturity",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 3:11-12",
+    "Proverbs 22:6",
+    "Hebrews 12:5-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the seventh commandment guards marriage by requiring sexual faithfulness in thought and deed",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:14",
+    "Matthew 5:27-28",
+    "Hebrews 13:4"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q71",
+    "Heidelberg Catechism Q108",
+    "Heidelberg Catechism Q109"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical definition of marriage as a covenant between one man and one woman",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 2:24",
+    "Malachi 2:14",
+    "Matthew 19:4-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical teaching that believers are to marry only in the Lord",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 7:39",
+    "2 Corinthians 6:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture honors singleness as a calling for serving the Lord",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 7:7-8",
+    "1 Corinthians 7:32-35",
+    "Matthew 19:11-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Scripture teaches about divorce and summarize the position of the Westminster Confession",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 19:3-9",
+    "1 Corinthians 7:10-15",
+    "Malachi 2:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.5",
+    "Westminster Confession of Faith 24.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate cultural redefinitions of marriage and family against Scripture and the church's confession",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 2:24",
+    "Matthew 19:4-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed tradition's teaching that man and woman are equal as image bearers and distinct in their callings in marriage",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 2:18",
+    "1 Peter 3:7",
+    "Galatians 3:28"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Design a plan for family worship that includes Scripture reading, prayer, and singing, grounded in Scripture and Reformed practice",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Deuteronomy 6:6-7",
+    "Joshua 24:15",
+    "Psalm 78:4-7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.6"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (marriage as God's design, honoring parents, leave and cleave, Ephesians 5 roles, family and church, children as blessing, Christ and church, Deuteronomy 6, discipline, definition of marriage, cultural redefinitions, complementarity, family worship). Dropped vague items such as observing love in the home and replaced the abstract covenant faithfulness item with an analysis of biblical family narratives and a covenant children objective. Added missing competencies: parental duties, Jesus on marriage, care of aging parents, purposes of marriage, the seventh commandment, marrying in the Lord, singleness, and divorce. Anchored objectives to specific verses and to WCF 24, WCF 28.4, WCF 21.6, WSC Q10, Q63, Q64, Q71, WLC Q129, and HC Q74, Q104, Q108-109.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1912,
+  "output": 5374
+ }
+}

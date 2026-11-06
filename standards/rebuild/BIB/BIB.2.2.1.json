@@ -1,0 +1,306 @@
+{
+ "sub_topic": "BIB.2.2.1",
+ "name": "The Synoptic Problem and John's Unique Perspective",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "New Testament Overview"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Name Matthew, Mark, Luke, and John as the four Gospels that tell about the life of Jesus",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "John 20:30-31"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell a story about Jesus that appears in more than one Gospel, such as the feeding of the five thousand",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Mark 6:30-44",
+    "John 6:1-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "State that the Gospel writers wrote true accounts of Jesus as the Holy Spirit guided them",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "John 14:26",
+    "Luke 1:1-4",
+    "2 Timothy 3:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that Matthew, Mark, and Luke are called the Synoptic Gospels because they see the life of Jesus together and share many of the same events",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 3:13-17",
+    "Mark 1:9-11",
+    "Luke 3:21-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify key words that John repeats in his Gospel, such as light, life, love, and believe",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "John 1:4-5",
+    "John 3:16",
+    "John 13:34-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose John gives for writing his Gospel",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "John 20:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how John's Gospel emphasizes that Jesus is God the Son, equal with the Father",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "John 1:1-3",
+    "John 8:58",
+    "John 10:30",
+    "John 20:28"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q11",
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare parallel accounts of the same event in Mark and Luke, noting details each writer includes or leaves out",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Mark 4:35-41",
+    "Luke 8:22-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the seven I AM statements in John and explain what each reveals about Jesus",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "John 6:35",
+    "John 8:12",
+    "John 10:9",
+    "John 10:11",
+    "John 11:25",
+    "John 14:6",
+    "John 15:1",
+    "John 8:58",
+    "Exodus 3:14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the signs recorded in John's Gospel and explain how John uses them to point to who Jesus is",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "John 2:1-11",
+    "John 9:1-7",
+    "John 11:38-44",
+    "John 20:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the Synoptic Problem as the question of how to explain the close agreements and differences in wording and order among Matthew, Mark, and Luke",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 9:1-8",
+    "Mark 2:1-12",
+    "Luke 5:17-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the Prologue of John in light of Genesis 1, explaining its teaching that the eternal Word became flesh",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "John 1:1-18",
+    "Genesis 1:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the audience and purpose of each Gospel shape its emphases, such as Matthew's fulfillment quotations and Mark's explanations of Jewish customs",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 1:22-23",
+    "Mark 7:3-4",
+    "Luke 1:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the main proposed solutions to the Synoptic Problem, including Markan priority, the two-source hypothesis, and the view that Matthew was written first",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Luke 1:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use a Gospel synopsis to classify passages as triple tradition, double tradition, or material unique to one Gospel",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [
+    "Matthew 6:9-13",
+    "Luke 11:2-4",
+    "Luke 15:11-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a harmony of a single event across all four Gospels and explain how apparent differences in detail can be reconciled",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Matthew 14:13-21",
+    "Mark 6:30-44",
+    "Luke 9:10-17",
+    "John 6:1-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare John's chronology and settings with those of the Synoptics, such as the timing of the temple cleansing and Jesus' visits to Jerusalem",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 2:13-22",
+    "Mark 11:15-18",
+    "John 5:1",
+    "John 7:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate source theories about the Gospels in light of the Reformed teaching that Scripture has both genuine human authors and a divine origin",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Luke 1:1-4",
+    "2 Peter 1:20-21",
+    "John 14:26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4",
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the unique theological contribution of John's Gospel, including its teaching on eternal life, the Spirit as Helper, and believing in the Son",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 3:36",
+    "John 14:16-17",
+    "John 16:13-14",
+    "John 17:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the reliability of the Gospel record by explaining the value of four distinct but harmonious witnesses",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Deuteronomy 19:15",
+    "Luke 1:1-4",
+    "John 19:35",
+    "John 21:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the distinct portraits of Christ in the four Gospels into a unified account of his person as truly God and truly man",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Matthew 2:2",
+    "Mark 10:45",
+    "Luke 19:10",
+    "John 1:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (naming the Gospels, the meaning of Synoptic, John's key words, John's emphasis on Christ's deity, Mark and Luke comparison, I AM statements, Prologue, audiences, Markan priority, harmony, John's contribution, four witnesses, fourfold portrait). Merged the filler on truthfulness into an inspiration objective and folded the vague literary relationship item into a clear definition of the Synoptic Problem. Added missing competencies: retelling a shared story, John's stated purpose, John's signs, using a synopsis to classify traditions, comparing John's chronology with the Synoptics, and weighing source theories against the Reformed doctrine of Scripture. Added specific verse anchors and confessional references only where they state the doctrine taught, and reframed the fourfold portrait around the two natures of Christ.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1970,
+  "output": 4653
+ }
+}

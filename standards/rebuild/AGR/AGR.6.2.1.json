@@ -1,0 +1,298 @@
+{
+ "sub_topic": "AGR.6.2.1",
+ "name": "Soil & Water Conservation",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Natural Resources & Environmental Science",
+  "Natural Resource Management"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify soil and water as resources that plants, animals, and people need",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe simple ways people can use less water at home, at school, and on the farm",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare sand, silt, and clay by how they look and feel",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how earthworms and decaying plants make soil healthier",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how wind and rain can wear away soil that is left bare",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how plant roots and ground cover hold soil in place",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how rainfall either soaks into the ground or runs off the surface and what affects which happens",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate how cover crops, mulch, or contour planting reduce soil erosion on a slope",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how sediment, fertilizer, and manure carried in runoff can pollute streams and lakes",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the boundaries of a local watershed on a map and show where its runoff flows",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Investigate how soil texture and structure affect how well a soil holds and drains water",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Measure and compare the infiltration rates of soils under different surface covers",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how physical, chemical, and biological weathering and the buildup of organic matter form soil horizons over time",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.02.02.a"
+   ]
+  },
+  {
+   "text": "Determine soil texture class using the texture-by-feel method and the soil textural triangle",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.02.a",
+    "NRS.01.02.05.a"
+   ]
+  },
+  {
+   "text": "Explain soil water terms including water holding capacity, gravitational water, plant available water, and permanent wilting point",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.02.a"
+   ]
+  },
+  {
+   "text": "Interpret a soil survey to determine the land capability class of a parcel as practiced in land judging",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.02.01.b"
+   ]
+  },
+  {
+   "text": "Compare conservation practices such as terracing, no-till, grassed waterways, contour farming, and buffer strips by how they control erosion and runoff",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.05.04.a",
+    "FPS.04.01.01.b"
+   ]
+  },
+  {
+   "text": "Explain how crop rotation, cover crops, and residue management build soil organic matter and long-term soil health",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.05.a"
+   ]
+  },
+  {
+   "text": "Collect soil samples with a soil probe and interpret soil test results to judge the condition of a field",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.05.02.02.a"
+   ]
+  },
+  {
+   "text": "Calculate estimated annual soil loss for a field using the factors of the Universal Soil Loss Equation",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze a farm or property's conservation plan, evaluating practices such as terracing, no-till, and buffer strips against the erosion risks of its soil and slope",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.05.04.b",
+    "FPS.04.01.01.b"
+   ]
+  },
+  {
+   "text": "Compare soil quality measurements such as organic matter, soil respiration, aggregate stability, and infiltration for their effectiveness and limitations",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.05.02.02.b"
+   ]
+  },
+  {
+   "text": "Examine how soil microorganisms affect nutrient cycling, soil structure, and ecosystem biodiversity",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.04.01.b"
+   ]
+  },
+  {
+   "text": "Analyze how nutrient runoff and leaching from agricultural land affect surface water and groundwater quality and ecosystem function",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.04.02.b"
+   ]
+  },
+  {
+   "text": "Assess how hydric soils and water chemistry distinguish wetland types and how wetlands filter runoff and store water",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.03.04.b"
+   ]
+  },
+  {
+   "text": "Evaluate irrigation methods such as drip, sprinkler, and furrow for water use efficiency and erosion risk in a given operation",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate conservation programs such as NRCS cost-share and conservation easements as options for funding practices on a farm or SAE operation",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Design a soil and water conservation plan for a local property that balances productive use of the land with long-term protection of its soil and water resources",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.05.04.c",
+    "ESS.03.02.01.c"
+   ]
+  }
+ ],
+ "changes": "Kept and lightly reworded all six existing objectives, since each named a real competency. Added early objectives on water saving, soil particles, soil organisms, root protection, and runoff versus infiltration. Added middle school objectives on runoff pollution, watersheds, and infiltration measurement. Added high school objectives tied to AFNR standards on soil formation, texture by feel, soil water, land capability classes from soil surveys, comparing practices, sustainable soil management, soil sampling, USLE, soil quality measures, soil microbes, water quality, wetlands, irrigation efficiency, and conservation programs. Mapped standards only where an objective teaches them. Left forestry, wildlife, and rangeland content to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ESS.03.02.01.b",
+  "ESS.03.02.01.c",
+  "ESS.03.02.02.a",
+  "ESS.03.03.04.b",
+  "ESS.03.04.01.b",
+  "ESS.05.02.02.a",
+  "ESS.05.02.02.b",
+  "FPS.04.01.01.b",
+  "NRS.01.02.05.a",
+  "NRS.01.04.02.b",
+  "NRS.01.05.04.a",
+  "NRS.01.05.04.b",
+  "NRS.01.05.04.c",
+  "PS.01.02.02.a",
+  "PS.01.04.05.a"
+ ],
+ "usage": {
+  "input": 2536,
+  "output": 4657
+ }
+}

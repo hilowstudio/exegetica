@@ -1,0 +1,218 @@
+{
+ "sub_topic": "BIB.4.2.3",
+ "name": "The East-West Schism (1054 AD)",
+ "path": [
+  "Bible & Theology",
+  "Church History",
+  "The Medieval Period"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that in the year 1054 the church divided into an Eastern church and a Western church",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the Eastern church as the Orthodox church and the Western church as the Roman Catholic church",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate Rome and Constantinople on a map and identify each city as the leading center of one side of the divided church",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Latin as the main language of the Western church and Greek as the main language of the Eastern church",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the East-West split grew over many years of disagreement about church leaders and beliefs rather than happening all at once",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the authority claimed by the pope in Rome differed from the role of the patriarch of Constantinople and why this difference helped cause the split",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare worship practices of the Latin and Greek churches, such as the language of worship, leavened or unleavened bread in the Lord's Supper, and the marriage of priests",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the division of the Roman Empire into eastern and western halves contributed to the cultural separation of the churches",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the Filioque clause added to the Nicene Creed and why the Eastern church objected to the West adding it without an ecumenical council",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "John 15:26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the events of 1054, including the mission of Cardinal Humbert to Constantinople and the mutual excommunications of Humbert and Patriarch Michael Cerularius",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how political and cultural differences between Latin and Greek Christians deepened the theological disputes between East and West",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Crusades, including the placing of Latin bishops over Eastern cities, hardened the separation between the churches after 1054",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Examine in their context the biblical passages each side used in the debate over the procession of the Holy Spirit",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 14:26",
+    "John 15:26",
+    "John 16:7",
+    "Romans 8:9",
+    "Galatians 4:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed confessional teaching that the Holy Spirit eternally proceeds from the Father and the Son",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "John 15:26",
+    "Galatians 4:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Belgic Confession Article 11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Filioque controversy by weighing both the doctrinal question about the Spirit and the question of who has authority to change an ecumenical creed",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 15:26",
+    "Galatians 4:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10",
+    "Westminster Confession of Faith 31.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a comparison of Eastern Orthodox, Roman Catholic, and Reformed positions on the issues raised by the schism, including church authority and the procession of the Spirit",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Westminster Confession of Faith 25.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the schism in light of Scripture's teaching on unity in truth and the Reformed confession of one catholic church that visible churches only partly display",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 17:20-23",
+    "Ephesians 4:3-6",
+    "1 Corinthians 1:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.1",
+    "Westminster Confession of Faith 25.4",
+    "Westminster Confession of Faith 25.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate what the 1965 lifting of the 1054 excommunications by Pope Paul VI and Patriarch Athenagoras did and did not resolve between the churches",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Produce a researched study of the Fourth Crusade's sack of Constantinople in 1204 and its lasting effects on East-West relations",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Dropped the off-topic filler about families fighting and the vague 'observe they disagreed' item, folding the latter into a clearer grade 3 objective on the split as a gradual process. Kept and reworded the real competencies (naming East and West, pope vs patriarch, Latin vs Greek comparison, Filioque, excommunications, political and cultural divide, Crusades, theological comparison, Fourth Crusade study). Moved map location down to grade 2 and added a grade 3 objective on language. Split the Crusades into a grade 9 analysis and a grade 12 Fourth Crusade research project. Added objectives on the Roman Empire's division, close reading of procession texts, the Reformed confessional position on the Filioque, and the 1965 lifting of excommunications. Recast 'defend unity in truth' as an evaluative objective grounded in Scripture and the Westminster teaching on the catholic and visible church. Replaced the unnumbered Nicene Creed citation with numbered confessional articles that actually state the doctrines (WCF 2.3, Belgic 11, WCF 1.10, 31.4, 25.1, 25.4, 25.5, 25.6) and widened scripture anchors to verse-specific passages on the Spirit's procession and church unity. Left papal origins to The Rise of the Papacy.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1857,
+  "output": 4157
+ }
+}

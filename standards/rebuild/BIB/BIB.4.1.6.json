@@ -1,0 +1,349 @@
+{
+ "sub_topic": "BIB.4.1.6",
+ "name": "The Ecumenical Councils and Creeds",
+ "path": [
+  "Bible & Theology",
+  "Church History",
+  "The Early Church (Apostolic to Nicene)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify a creed as a short statement of what the church believes from the Bible",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "1 Corinthians 15:3-4"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q22"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify a church council as a meeting where church leaders gathered to study Scripture and settle a question",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 15:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite the opening lines of the Apostles' Creed that name the Father, the Son, and the Holy Spirit",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 28:19"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q23"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite the complete Apostles' Creed from memory",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [
+    "Heidelberg Catechism Q23"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how the apostles and elders met at the Jerusalem council to settle a question by appealing to Scripture",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 15:1-29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 31.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Apostles' Creed is arranged around the three persons of the Trinity",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 28:19",
+    "2 Corinthians 13:14"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q24"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Match lines of the Apostles' Creed to Bible passages that teach them",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [
+    "Luke 1:35",
+    "1 Corinthians 15:3-4",
+    "Acts 1:9-11",
+    "John 1:14"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q23"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize why the Council of Nicaea met in AD 325 and what it declared about Jesus being fully God",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "John 1:1",
+    "John 1:14"
+   ],
+   "confessions": [
+    "Belgic Confession Article 10",
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare a creed with a hymn in purpose, form, and use in worship",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 3:16",
+    "Philippians 2:5-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the purposes of creeds as summaries of Scripture that unite believers, teach the faith, and guard against error",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 1:13",
+    "Jude 1:3"
+   ],
+   "confessions": [
+    "Belgic Confession Article 9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the first four ecumenical councils with their dates and the central question each addressed",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Council of Nicaea used Scripture to answer the claim of Arius that the Son was created",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "John 1:1-3",
+    "Colossians 1:15-17",
+    "Colossians 2:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how Reformed churches use the ancient creeds in worship and catechesis today",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 1:13"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q23",
+    "Belgic Confession Article 9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of homoousios and why the tradition holds that the Son being of one substance with the Father matters for salvation",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "John 10:30",
+    "Hebrews 1:3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q6",
+    "Westminster Confession of Faith 2.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the clauses on the Holy Spirit that the Council of Constantinople added to the Nicene Creed in AD 381",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "John 15:26",
+    "Acts 5:3-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Belgic Confession Article 11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Council of Ephesus affirmed that Christ is one person and why it called Mary Theotokos",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Luke 1:35",
+    "Luke 1:43"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Chalcedonian Definition's phrases without confusion, without change, without division, and without separation as a statement of the hypostatic union",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "John 1:14",
+    "Philippians 2:6-7",
+    "Colossians 2:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Shorter Catechism Q21",
+    "Belgic Confession Article 19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the structure and teaching of the Athanasian Creed on the Trinity and the incarnation",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 28:19",
+    "John 1:14"
+   ],
+   "confessions": [
+    "Belgic Confession Article 9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a historical overview of the first four ecumenical councils showing the occasion, key figures, and outcome of each",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition receives the ancient creeds as faithful summaries that remain subordinate to Scripture",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10",
+    "Westminster Confession of Faith 31.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate why the councils adopted precise terms not found in Scripture such as homoousios and hypostasis to express biblical teaching",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 1:1",
+    "Hebrews 1:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Eastern and Western forms of the Nicene Creed and explain the filioque clause and the Reformed position on it",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "John 15:26",
+    "John 16:7",
+    "Galatians 4:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Belgic Confession Article 11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate a modern teaching about the Trinity or the person of Christ using the Nicene and Chalcedonian formulations",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 1:1",
+    "Colossians 2:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the role of emperors such as Constantine in calling councils in light of the Reformed teaching on church and civil authority",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Romans 13:1-4",
+    "Acts 15:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 23.3",
+    "Westminster Confession of Faith 31.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Produce a research study of Athanasius's defense of Nicene teaching, including his exiles and the phrase Athanasius contra mundum",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Jude 1:3"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: council and creed definitions, Apostles' Creed recitation, Nicaea summary, homoousios (merged the grade 4 and grade 9 items at grade 8), creed versus hymn, Holy Spirit clauses (now tied to Constantinople 381), Chalcedon and the hypostatic union, the four-council overview, precise theological language, the modern-teaching evaluation, and the Athanasius study. Dropped the bare recall that Jesus is fully God because it is folded into the Nicaea summary. Reframed the Arius and Athanasius debate around how the council answered from Scripture, leaving the heresy itself to the sibling sub-topic. Added objectives on the Jerusalem council as a model, the Trinitarian shape of the Apostles' Creed, matching creed lines to Scripture, the purposes of creeds, naming the four councils, Ephesus and Theotokos, the Athanasian Creed, creeds as subordinate to Scripture, the filioque, creeds in Reformed worship today, and imperial involvement in councils. Anchored these to specific verses and to confessional articles: Heidelberg, Belgic, Westminster Confession, and Shorter Catechism.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1981,
+  "output": 5557
+ }
+}

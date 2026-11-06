@@ -1,0 +1,273 @@
+{
+ "sub_topic": "AGR.6.4.3",
+ "name": "Environmental Policy & Ethics",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Natural Resources & Environmental Science",
+  "Outdoor Skills & Creation Care"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify a rule that protects a park, animal, or natural area",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe what can happen when everyone overuses a shared resource such as a pond, a field, or a stream",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe why a community might set a rule to protect clean water or wildlife",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the people who make and enforce outdoor rules, such as lawmakers, game wardens, and park rangers",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of a local or state law that protects land, water, or wildlife",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how hunting and fishing licenses, seasons, and bag limits help sustain wildlife populations",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish between preservation, conservation, and development as approaches to managing land and natural resources",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the tragedy of the commons using an example from fisheries, grazing land, or groundwater",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the roles of a government agency, a private landowner, and a conservation group in protecting a natural resource",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe ways citizens can take part in environmental decision making, such as speaking at a public hearing or submitting a public comment",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the purpose and enforcement of major federal environmental laws that affect agriculture, including the Clean Water Act, Clean Air Act, Endangered Species Act, and National Environmental Policy Act",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.01"
+   ]
+  },
+  {
+   "text": "Explain how voluntary Farm Bill conservation programs such as CRP and EQIP use financial incentives to encourage conservation practices on private land",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.01",
+    "NRS.02.04.01.b"
+   ]
+  },
+  {
+   "text": "Compare how public and private land ownership shape differing social perceptions of natural resource use",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.03.01.a"
+   ]
+  },
+  {
+   "text": "Analyze a current environmental policy debate by identifying the competing interests and values involved",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.03.01.a",
+    "NRS.02.01.01.c"
+   ]
+  },
+  {
+   "text": "Compare the land ethics of Gifford Pinchot, John Muir, and Aldo Leopold and trace their influence on American conservation policy",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.03.01.a"
+   ]
+  },
+  {
+   "text": "Apply pesticide label law, nutrient management, and livestock waste permit requirements to determine the regulatory obligations of a farm or SAE operation",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.01",
+    "NRS.04"
+   ]
+  },
+  {
+   "text": "Evaluate the impact of a natural resource law or treaty such as the Migratory Bird Treaty Act, an interstate water compact, or wetland mitigation rules",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.01.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate the effectiveness of an agency or organization such as NRCS, a state wildlife agency, or a land trust in managing a natural resource",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.01.02.c",
+    "NRS.02.01"
+   ]
+  },
+  {
+   "text": "Analyze how economic value, such as ecosystem services, outdoor recreation spending, and Pittman-Robertson excise taxes, influences conservation decisions and policy",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.04.01.b",
+    "NRS.02.04.02.a"
+   ]
+  },
+  {
+   "text": "Analyze an environmental assessment or environmental impact statement to identify the proposed alternatives and their predicted effects on resources and communities",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.01",
+    "NRS.02.02.01.a"
+   ]
+  },
+  {
+   "text": "Evaluate the ethical responsibilities a producer has toward neighbors and downstream communities when making land, water, and chemical management decisions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.02.01.a"
+   ]
+  },
+  {
+   "text": "Evaluate a proposed environmental regulation by weighing its costs and benefits to landowners, communities, and natural resources",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.01.01.c",
+    "NRS.02.04.01.b"
+   ]
+  },
+  {
+   "text": "Develop and defend a researched position on an agricultural or natural resource policy issue in a format such as the FFA Agricultural Issues Forum",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.03.01.a",
+    "NRS.02.01"
+   ]
+  },
+  {
+   "text": "Design a policy or incentive program that improves conservation of a local natural resource while accounting for landowner economics",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.04.01.c",
+    "NRS.01.01.01.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives as real competencies and attached AFNR codes to the high school ones. Added elementary and middle grade objectives on shared resources, rule enforcers, game regulations, management philosophies, the tragedy of the commons, and citizen participation. Added high school objectives on major federal laws, Farm Bill conservation programs, public versus private land perspectives, Pinchot, Muir, and Leopold land ethics, regulatory compliance for farms and SAE operations, law and treaty impact, agency effectiveness, economic value in conservation, environmental impact statements, producer ethics toward neighbors, an FFA Agricultural Issues Forum position, and a capstone policy design. Left faith-based stewardship, outdoor safety, and careers to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "NRS.01.01.01.c",
+  "NRS.01.01.03.a",
+  "NRS.01.02",
+  "NRS.01.04.01.b",
+  "NRS.01.04.02.a",
+  "NRS.02.01",
+  "NRS.02.01.01.c",
+  "NRS.02.01.02.c",
+  "NRS.02.02.01.a",
+  "NRS.02.03.01.a",
+  "NRS.02.04.01.b",
+  "NRS.02.04.01.c",
+  "NRS.02.04.02.a",
+  "NRS.04",
+  "NRS.04.01.03.a"
+ ],
+ "usage": {
+  "input": 2523,
+  "output": 3974
+ }
+}

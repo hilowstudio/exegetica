@@ -1,0 +1,402 @@
+{
+ "sub_topic": "BIB.11.4.5",
+ "name": "The Atonement: Nature, Extent, and Necessity",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Christology: The Doctrine of Christ"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that Jesus died on the cross to take away sin",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "1 Corinthians 15:3",
+    "John 1:29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Jesus as the Lamb of God and repeat John the Baptist's words about Him",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "John 1:29",
+    "John 1:36"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Jesus took the punishment for sin that we deserved",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Isaiah 53:5",
+    "1 Peter 2:24"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q37"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the Passover story and describe how the blood of the lamb points to Jesus",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 12:3-13",
+    "1 Corinthians 5:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize substitution as Christ dying in the place of sinners",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "2 Corinthians 5:21",
+    "1 Peter 3:18"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe what the Bible teaches about the shedding of blood for the forgiveness of sins",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 17:11",
+    "Hebrews 9:22",
+    "Matthew 26:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain propitiation as Christ's sacrifice turning away God's righteous wrath against sin",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:25",
+    "1 John 2:2",
+    "1 John 4:10"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q37"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the Day of Atonement ritual and explain how Hebrews presents Christ as its fulfillment",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 16:15-22",
+    "Hebrews 9:11-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the repeated Old Testament sacrifices with Christ's once-for-all sacrifice",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 10:1-4",
+    "Hebrews 10:11-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain reconciliation as the restoration of peace between God and sinners through the cross",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:10-11",
+    "2 Corinthians 5:18-19",
+    "Colossians 1:20"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain redemption as Christ paying a ransom to set His people free from sin and the curse of the law",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Mark 10:45",
+    "Galatians 3:13",
+    "1 Peter 1:18-19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture how Christ's finished work is the ground of the believer's assurance of forgiveness",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Romans 8:32-34",
+    "1 John 1:7-9",
+    "Hebrews 10:17-18"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze why, according to Scripture and the Reformed confessions, God could not simply overlook sin without satisfaction of His justice",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:25-26",
+    "Habakkuk 1:13",
+    "Exodus 34:6-7"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q12",
+    "Heidelberg Catechism Q40",
+    "Canons of Dort 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why no sinner or mere creature could make satisfaction for sin and why the Mediator had to suffer as true man and true God",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 49:7-8",
+    "Hebrews 2:14-17"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q13",
+    "Heidelberg Catechism Q14",
+    "Heidelberg Catechism Q16",
+    "Heidelberg Catechism Q17"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Isaiah's Suffering Servant song in context as a prophecy of penal substitution",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 53:4-6",
+    "Isaiah 53:10-12"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q37"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition connects Christ's active and passive obedience to the justification of sinners",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:19",
+    "Philippians 2:8",
+    "Galatians 4:4-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.5",
+    "Westminster Confession of Faith 11.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish expiation, the removal of sin's guilt, from propitiation, the turning away of God's wrath",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 9:26",
+    "Colossians 2:13-14",
+    "Psalm 103:12",
+    "Romans 3:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Gospel accounts of Gethsemane and the cry of dereliction to explain how Christ bore God's wrath in body and soul",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 26:38-39",
+    "Matthew 27:45-46",
+    "Galatians 3:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.4",
+    "Heidelberg Catechism Q44"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Christ's triumph over sin, death, and the devil as a biblical aspect of the cross grounded in His satisfaction for sin",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 2:14-15",
+    "Hebrews 2:14-15",
+    "1 John 3:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed doctrine of definite atonement from texts that describe Christ dying for His sheep, His church, and those the Father gave Him",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "John 10:11",
+    "John 10:15",
+    "Ephesians 5:25",
+    "Acts 20:28",
+    "John 17:9"
+   ],
+   "confessions": [
+    "Canons of Dort 2.8",
+    "Westminster Confession of Faith 8.5",
+    "Westminster Confession of Faith 8.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze universal-sounding atonement texts in their context and explain the Canons of Dort distinction between the sufficiency and efficiency of Christ's death",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 John 2:2",
+    "2 Corinthians 5:14-15",
+    "1 Timothy 2:4-6",
+    "John 3:16"
+   ],
+   "confessions": [
+    "Canons of Dort 2.3",
+    "Canons of Dort 2.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition holds together definite atonement and the free offer of the gospel to all people",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 11:28",
+    "Isaiah 55:1",
+    "Acts 17:30"
+   ],
+   "confessions": [
+    "Canons of Dort 2.5",
+    "Canons of Dort 2.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a reasoned defense of definite atonement that interacts fairly with Arminian and hypothetical universalist views",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "John 10:15",
+    "Romans 8:32-34",
+    "Ephesians 5:25"
+   ],
+   "confessions": [
+    "Canons of Dort 2.8",
+    "Westminster Confession of Faith 8.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the historical development of atonement doctrine from the early church through Anselm, Abelard, and the Reformers",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [
+    "Belgic Confession 21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the ransom-to-Satan, moral influence, and governmental theories against the biblical case for penal substitution",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 3:25-26",
+    "2 Corinthians 5:21",
+    "Isaiah 53:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.5",
+    "Heidelberg Catechism Q40"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate modern objections that penal substitution portrays divine violence by examining the Trinitarian unity and willingness displayed at the cross",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "John 10:17-18",
+    "Romans 5:8",
+    "2 Corinthians 5:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose a theological synthesis showing how the cross satisfies divine justice and displays divine love",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 3:26",
+    "1 John 4:9-10",
+    "Romans 5:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.3",
+    "Canons of Dort 2.2"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (sin taken away, Lamb of God, punishment borne, substitution, propitiation, Old Testament sacrifices compared, assurance, necessity, Isaiah 53, active and passive obedience, definite atonement defense, rival theories, justice and love). Replaced the vague blood observation with a Scripture-grounded objective on blood and forgiveness. Turned the assurance objective into an explanation of the scriptural ground rather than an experience. Separated expiation and reconciliation into distinct objectives and added redemption, Passover, Day of Atonement, the necessity of a divine-human Mediator, Gethsemane and the cry of dereliction, Christ's victory over the powers, exegesis of universal texts with Dort's sufficiency and efficiency distinction, the free offer of the gospel, historical development, and modern objections. Removed whole-chapter citations and attached confessions only where they state the doctrine, adding Heidelberg Q1, Q12-17, Q37, Q44, Shorter Catechism Q25, Belgic 21, and specific Canons of Dort Head 2 articles.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2198,
+  "output": 6072
+ }
+}

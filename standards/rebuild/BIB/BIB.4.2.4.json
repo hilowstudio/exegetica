@@ -1,0 +1,231 @@
+{
+ "sub_topic": "BIB.4.2.4",
+ "name": "The Rise of the Papacy",
+ "path": [
+  "Bible & Theology",
+  "Church History",
+  "The Medieval Period"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the pope as the bishop who led the church in the city of Rome",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate Rome on a map and name it as the capital city of the Roman Empire",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell what Scripture records about Paul preaching in Rome and Jesus foretelling Peter's death, and recall the early church's report that both apostles died there",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Acts 28:16",
+    "Acts 28:30-31",
+    "John 21:18-19",
+    "2 Timothy 4:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify from Scripture that Jesus Christ is the head of the church",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Colossians 1:18",
+    "Ephesians 1:22-23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how the bishop of Rome came to be called pope, a title meaning father",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Leo the Great's meeting with Attila the Hun in 452 raised the standing of the bishop of Rome",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the church of Rome gained special honor among early churches, including its place in the capital and its link to Peter and Paul",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Romans 1:7-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast the authority of Scripture as the church's final rule with the authority later claimed by the pope",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "Acts 17:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the medieval church hierarchy of pope, cardinals, bishops, and priests and the role of each",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the medieval hierarchy with the offices of elder and deacon described in the New Testament",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Philippians 1:1",
+    "Titus 1:5-7",
+    "1 Peter 5:1-4",
+    "Acts 20:17",
+    "Acts 20:28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 30.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Roman Catholic reading of Matthew 16 as grounds for Petrine supremacy alongside the Reformed reading that the church is built on the confession of Christ",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 16:16-19",
+    "Ephesians 2:20",
+    "1 Corinthians 3:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the collapse of Roman imperial rule in the West left the bishop of Rome as a leading civil and spiritual figure",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the contributions of Gregory the Great, including his mission to England, his pastoral writing, and his governing of Rome",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the alliance with Frankish kings, including Pepin's donation and the crowning of Charlemagne in 800, created the Papal States and tied popes to political power",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Donation of Constantine was used to support papal claims and how Lorenzo Valla showed it to be a forgery",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Investiture Controversy between Gregory VII and Henry IV and the settlement reached at the Concordat of Worms",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claims of Innocent III and Boniface VIII's Unam Sanctam to papal supremacy over earthly rulers in light of Jesus' teaching on his kingdom",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 18:36",
+    "Matthew 22:21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed confessional position that no pope can be head of the church, using Scripture and the Westminster Confession",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Colossians 1:18",
+    "Ephesians 1:22-23",
+    "Ephesians 5:23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a historical argument tracing the stages by which the honor of the Roman bishop grew into a claim to universal spiritual and civil jurisdiction",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "John 18:36",
+    "1 Peter 5:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 23.3"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: the pope as Rome's bishop, Rome as capital, Peter and Paul in Rome, the title pope, Leo and Attila, Scripture versus papal authority, the hierarchy, Petrine supremacy, Gregory the Great, the fall of Rome, the Donation of Constantine, the Investiture Controversy, the Protestant rejection, and the synthesis of temporal and spiritual power. Dropped the vague 'church became very powerful' filler and the duplicate evaluation of accumulated papal power, folding it into the grade 12 capstone. Added Christ as head of the church, reasons for Rome's early honor, a comparison with New Testament offices, the Frankish alliance and Papal States, and the claims of Innocent III and Unam Sanctam. Each item now has specific verse references, and Westminster Confession citations appear only where they state the doctrine taught. The Petrine objective now sets out the Roman Catholic and Reformed readings for students to analyze. East-West Schism and late medieval reform material is left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1927,
+  "output": 4013
+ }
+}

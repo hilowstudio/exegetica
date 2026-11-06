@@ -1,0 +1,223 @@
+{
+ "sub_topic": "AGR.6.4.4",
+ "name": "Careers in Natural Resources",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Natural Resources & Environmental Science",
+  "Outdoor Skills & Creation Care"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Name jobs in which people work outdoors caring for plants, animals, soil, or water",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Match common tools and equipment such as binoculars, compasses, field guides, and tree measuring tools to the natural resource jobs that use them",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the daily tasks of a park ranger, forester, game warden, or wildlife technician",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how natural resource workers help their community by protecting forests, water, soil, and wildlife",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify natural resource careers into fields such as forestry, fish and wildlife, soil and water conservation, environmental science, energy and minerals, and outdoor recreation management",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the education, skills, and work settings needed for two different natural resource careers",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Prepare and conduct an interview with a natural resource professional about the duties, challenges, and rewards of the job",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Investigate the training path and daily responsibilities of a career such as soil conservationist, fisheries biologist, hydrologist, or forester",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish among natural resource employers in federal and state agencies, private industry, and nonprofit conservation organizations",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the role of natural resource careers in the AFNR career cluster and their contribution to society and the economy",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02"
+   ]
+  },
+  {
+   "text": "Describe career opportunities in the Natural Resource Systems pathway and the education, training, and experience needed to enter each",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05"
+   ]
+  },
+  {
+   "text": "Plan a natural resources SAE such as a placement with a conservation agency or a wildlife research project that builds skills toward a chosen career",
+   "grade": 9,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05"
+   ]
+  },
+  {
+   "text": "Identify FFA career development events and proficiency awards in forestry, wildlife, and environmental and natural resources that develop career skills",
+   "grade": 10,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05"
+   ]
+  },
+  {
+   "text": "Evaluate a natural resource career against personal interests and strengths, including its required certifications and typical work settings",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05"
+   ]
+  },
+  {
+   "text": "Explain how a natural resource career can be pursued as a calling to serve neighbors and care for creation",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze employment outlook, salary ranges, and regional demand data for natural resource careers",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02",
+    "FPS.05"
+   ]
+  },
+  {
+   "text": "Explain how professionals such as foresters, wildlife biologists, hydrologists, and GIS specialists collaborate on a natural resource management project",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Prepare a resume, cover letter, and application for a natural resource internship or seasonal technician position",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05"
+   ]
+  },
+  {
+   "text": "Evaluate how emerging technologies such as drones, GIS, and remote sensing and growing sectors such as renewable energy are changing natural resource careers",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02"
+   ]
+  },
+  {
+   "text": "Design a post-secondary and career plan toward a natural resources profession, including coursework, credentials, SAE records, and work experience",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded all six existing objectives as real competencies. Added tool recognition, community role, career field classification, professional interviews, employer types, cluster role in society and economy, pathway opportunities, career-linked SAE planning, FFA CDE and proficiency connections, vocation as calling, labor market analysis, interdisciplinary teamwork, job application materials, and emerging technology trends. Standards limited to FPS.02 and FPS.05 at grades 9 to 12, since the NRS standards teach management skills rather than careers.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPS.02",
+  "FPS.04.01.01.a",
+  "FPS.05",
+  "NRS.01",
+  "NRS.01.01",
+  "NRS.01.01.03.a",
+  "NRS.01.04.01.b",
+  "NRS.02.02",
+  "NRS.02.02.01.a",
+  "NRS.03",
+  "NRS.03.01",
+  "NRS.03.01.02.c",
+  "NRS.03.02",
+  "NRS.04",
+  "NRS.04.01.03.b"
+ ],
+ "usage": {
+  "input": 2353,
+  "output": 2991
+ }
+}

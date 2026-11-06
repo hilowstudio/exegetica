@@ -1,0 +1,312 @@
+{
+ "sub_topic": "BIB.1.2.2",
+ "name": "Major Cults (Mormonism/LDS, Jehovah's Witnesses)",
+ "path": [
+  "Bible & Theology",
+  "Apologetics and Worldviews",
+  "Cults and Unique Systems"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that some groups use the name of Jesus but teach things about him that the Bible does not say",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 7:15",
+    "Matthew 24:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that the Bible is God's Word and the only rule for what we believe about God",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "State from John 1 and Colossians 1 that Jesus is truly God who made all things and is not a created being",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "John 1:1-3",
+    "Colossians 1:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Christians test what teachers say by comparing it with Scripture as the Bereans did",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:11",
+    "1 John 4:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main teachings of Jehovah's Witnesses about God, Jesus, the Holy Spirit, and salvation",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main teachings of the Latter-day Saints about God, Jesus, added scriptures, and salvation",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the doctrine of the Trinity as confessed by the church with Jehovah's Witness and Latter-day Saint teachings about God",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "Matthew 28:19",
+    "2 Corinthians 13:14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q6",
+    "Westminster Confession of Faith 2.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply the Reformed teaching that Scripture is complete and sufficient to Latter-day Saint claims of added scripture and Jehovah's Witness reliance on the Watchtower organization",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Deuteronomy 4:2",
+    "Revelation 22:18-19",
+    "Hebrews 1:1-2",
+    "Jude 3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Use biblical texts showing that God is eternal and unchanging to answer the Latter-day Saint teaching that God was once a man",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Psalm 90:2",
+    "Numbers 23:19",
+    "Malachi 3:6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the historical origins of the Latter-day Saints under Joseph Smith and the Jehovah's Witnesses under Charles Taze Russell and their claims to new revelation",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 1:8-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the failed end-time predictions of the Watchtower Society using the biblical test of a true prophet",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 18:20-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the New World Translation renderings of John 1:1 and Colossians 1:16-17 by comparing them with the grammar and context of the original text",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "John 1:1",
+    "Colossians 1:16-17",
+    "John 8:58",
+    "John 20:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast the works-based salvation taught by Jehovah's Witnesses and Latter-day Saints with the Reformed doctrine of justification by grace through faith alone",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:8-9",
+    "Romans 3:28",
+    "Galatians 2:16",
+    "Titus 3:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical evidence for the personhood and deity of the Holy Spirit in response to the Jehovah's Witness teaching that the Spirit is an impersonal force",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [
+    "Acts 5:3-4",
+    "John 16:13-14",
+    "Ephesians 4:30"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate in a class role play how to present the gospel respectfully to a Jehovah's Witness or Latter-day Saint while defining shared terms carefully",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [
+    "1 Peter 3:15",
+    "2 Timothy 2:24-25",
+    "Colossians 4:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical argument against the Arian Christology of the Jehovah's Witnesses drawing on the church's historic response to Arius",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "John 1:1-3",
+    "John 8:58",
+    "Hebrews 1:8",
+    "Titus 2:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Refute Latter-day Saint teaching on many gods and eternal progression from passages affirming that there is only one God",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 43:10",
+    "Isaiah 44:6-8",
+    "1 Corinthians 8:4-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Jehovah's Witness claim that Jesus rose as a spirit in light of biblical teaching on his bodily resurrection",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Luke 24:39",
+    "John 2:19-21",
+    "1 Corinthians 15:3-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Jehovah's Witness and Latter-day Saint claims to be restorations of a lost true church against Christ's promise to preserve his church",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 16:18",
+    "Matthew 28:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the doctrine of the hypostatic union against Jehovah's Witness and Latter-day Saint views of the person of Christ",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 1:14",
+    "Philippians 2:5-7",
+    "Colossians 2:9"
+   ],
+   "confessions": [
+    "Chalcedonian Definition",
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the leadership structures of the Watchtower Society and the Latter-day Saint church control interpretation of Scripture and discourage members from testing teaching",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Acts 17:11",
+    "Matthew 23:8-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a comparison chart of Reformed, Jehovah's Witness, and Latter-day Saint teaching on God, Jesus, the Holy Spirit, salvation, and Scripture with supporting texts",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Removed the Nicene Creed from all confession anchors and replaced it with Westminster Confession of Faith and Shorter Catechism articles that state the same doctrines (WCF 2.1, 2.3, 8.2, WSC Q6, Q21). Kept and reworded the real competencies from the old list. Dropped the filler items, such as the grade 1 'only special book' item, which was folded into a sufficiency of Scripture objective, and the vague 'be careful who we listen to', which became testing teachers by Scripture. Changed 'psychological structure of cult control' to an objective on the leadership structures that control interpretation. Split the separate JW and LDS doctrinal summaries. Added objectives on the eternal God against LDS exaltation teaching, the Watchtower's failed prophecies, the personhood of the Spirit, Christ's bodily resurrection, and restorationist claims. Anchored the scripture citations to specific verses.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 4056,
+  "output": 10123
+ }
+}

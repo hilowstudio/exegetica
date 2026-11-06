@@ -1,0 +1,317 @@
+{
+ "sub_topic": "BIB.3.2.2",
+ "name": "The Temple and the Presence of God",
+ "path": [
+  "Bible & Theology",
+  "Biblical Survey & Redemptive History",
+  "Redemptive Historical Themes"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the tabernacle and the temple as places where God chose to live among his people Israel",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 25:8",
+    "1 Kings 8:10-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God walked with Adam and Eve in the garden of Eden and that they were sent out of the garden after they sinned",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:8",
+    "Genesis 3:8",
+    "Genesis 3:23-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how God showed his presence with Israel through the pillar of cloud and fire and the glory cloud that filled the tabernacle",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 13:21-22",
+    "Exodus 40:34-38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Solomon built the temple and how God's glory filled it when it was dedicated",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "1 Kings 8:10-11",
+    "2 Chronicles 7:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that the name Immanuel means God with us and that the Gospels apply this name to Jesus",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 7:14",
+    "Matthew 1:23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the main parts of the tabernacle, including the courtyard, the Holy Place, the Most Holy Place, the veil, and the ark of the covenant",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 25:10-22",
+    "Exodus 26:31-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Solomon's prayer how Scripture teaches both that God is present everywhere and that he chose to dwell with his people in a special way at the temple",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 8:27-30",
+    "Psalm 139:7-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1",
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why only the high priest could enter the Most Holy Place and only once a year",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 16:2",
+    "Hebrews 9:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture describes sin as separating people from the holy God and what it says is required to dwell in his presence",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 59:2",
+    "Psalm 15:1-2",
+    "Psalm 24:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Paul means when he calls the church and the believer's body a temple of the Holy Spirit",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 3:16-17",
+    "1 Corinthians 6:19-20"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q53"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Psalms 27 and 84 express the desire of God's people to dwell in his house",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 27:4",
+    "Psalm 84:1-4",
+    "Psalm 84:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze parallels between the garden of Eden and the tabernacle, such as cherubim guarding the way, the eastern entrance, and gold and precious stones",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:8-12",
+    "Genesis 3:24",
+    "Exodus 25:18-22",
+    "Exodus 26:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the significance of Ezekiel's vision of God's glory departing from the temple before its destruction by Babylon",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 10:18-19",
+    "Ezekiel 11:22-23",
+    "2 Kings 25:8-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Ezekiel's vision of the new temple, including the return of God's glory and the river flowing from the sanctuary",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Ezekiel 43:1-5",
+    "Ezekiel 47:1-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the rebuilding of the second temple after the exile and Haggai's promise that its latter glory would be greater",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 3:10-13",
+    "Haggai 2:3-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how John's Gospel presents Jesus as the true temple in whom God dwells with his people",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "John 1:14",
+    "John 2:19-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of the tearing of the temple veil at Christ's death for access into God's presence",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 27:50-51",
+    "Hebrews 10:19-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus's teaching on worship in spirit and truth reshapes the question of where God is to be worshiped, as the Westminster Confession summarizes it",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "John 4:19-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the coming of the Spirit at Pentecost with the glory filling the tabernacle and temple",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:1-4",
+    "Exodus 40:34-35",
+    "2 Chronicles 7:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze why the New Jerusalem has no temple, including how its cube shape echoes the Most Holy Place",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 21:16",
+    "Revelation 21:22-23",
+    "1 Kings 6:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Ephesians and 1 Peter describe the church, Jew and Gentile together, as a temple built on Christ",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:19-22",
+    "1 Peter 2:4-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Hebrews presents the earthly tabernacle as a copy of the heavenly sanctuary where Christ now appears in God's presence",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 25:40",
+    "Hebrews 8:1-5",
+    "Hebrews 9:11-12",
+    "Hebrews 9:24"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q49"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a written or visual account tracing the theme of God's dwelling presence from Eden through the tabernacle, temple, Christ, and the church to the new creation",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 3:8",
+    "Exodus 40:34",
+    "1 Kings 8:10-11",
+    "John 1:14",
+    "Acts 2:1-4",
+    "Revelation 21:1-3",
+    "Revelation 22:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept real competencies and reworded them: Eden, the tabernacle cloud and fire, the Holy of Holies, Immanuel, believers as the Spirit's temple, Ezekiel's departing glory, Jesus as the true temple, the church as a spiritual house, and the Eden to new creation synthesis. Dropped filler and affective items such as 'God wants to be with us', 'observe that the Temple was beautiful', and the vague 'construct a theology of the Presence'. Turned 'defend the holiness required' into an explanation of what Scripture says. Folded 'separation caused by sin' into a holiness objective so it does not overlap the atonement sibling. Added Solomon's temple and prayer, omnipresence versus special presence, Eden and tabernacle parallels, Psalms of longing for God's house, the second temple and Haggai, Ezekiel's new temple, the torn veil, worship in spirit and truth, Pentecost, Hebrews' heavenly sanctuary, and the temple-less New Jerusalem. Anchored objectives to specific verses and added confessional references only where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1964,
+  "output": 5588
+ }
+}

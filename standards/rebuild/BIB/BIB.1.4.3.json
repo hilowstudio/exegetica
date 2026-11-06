@@ -1,0 +1,267 @@
+{
+ "sub_topic": "BIB.1.4.3",
+ "name": "Worldviews and Ultimate Authorities",
+ "path": [
+  "Bible & Theology",
+  "Apologetics and Worldviews",
+  "Presuppositional Apologetics"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Bible as God's Word that tells us what is true",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "John 17:17",
+    "Psalm 119:160"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that God decides what is true and right because He made everything and owns everything",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1",
+    "Psalm 24:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify that people believe different things about who made the world and who is in charge of it",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Joshua 24:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe a worldview as the set of beliefs a person uses to understand everything, using the picture of looking through glasses",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 36:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture that every person trusts something as a final authority, either God or something in creation such as the self",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 1:25",
+    "Joshua 24:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the big worldview questions of origin, meaning, morality, and destiny and state the Bible's answer to each",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:27",
+    "Ecclesiastes 12:13-14",
+    "Hebrews 9:27"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the biblical account of human origin and purpose with a naturalistic account that sees people as products of chance",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:26-27",
+    "Psalm 139:13-14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that Scripture is to be believed on the authority of God its author rather than on the testimony of any person or church",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "2 Peter 1:20-21",
+    "1 Thessalonians 2:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Use Scripture as the standard to test a claim heard in everyday life or media",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Isaiah 8:20",
+    "Acts 17:11",
+    "Psalm 119:105"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define a presupposition and identify the presuppositions underlying sample statements and arguments",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 2:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why the Reformed tradition holds that no one reasons from a neutral standpoint",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 12:30",
+    "Colossians 2:8",
+    "2 Corinthians 10:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Proverbs 1:7 and Colossians 2:3 present the fear of the Lord as the starting point of true knowledge",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 1:7",
+    "Colossians 2:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Romans 1 why the Reformed tradition teaches that evidence alone does not persuade unbelievers who know God yet suppress the truth",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 1:18-21",
+    "1 Corinthians 2:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the distinction between Creator and creature makes God's word the final authority over human reasoning",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 55:8-9",
+    "Job 38:4",
+    "Romans 11:33-36"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why an ultimate authority cannot be proven by appeal to any higher authority, using God swearing by Himself as an example",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 6:13",
+    "Isaiah 45:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a diagram that traces a chain of justification for a belief back to the ultimate authority it rests on",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze a contemporary cultural work to identify its underlying worldview and the ultimate authority it assumes",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "2 Corinthians 10:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify major philosophical positions such as rationalism, empiricism, and autonomous individualism by the ultimate authority each assumes",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 2:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the presuppositional approach to the authority of Scripture with classical and evidential apologetic approaches regarding where reasoning begins",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "1 Peter 3:15",
+    "Proverbs 1:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4",
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the charge of circular reasoning by distinguishing vicious circularity from the unavoidable circularity of any ultimate authority",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 6:13",
+    "John 8:13-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (worldview definition, everyone trusts some authority, Christian versus secular origins, presuppositions, myth of neutrality, fear of the Lord, Romans 1 suppression, ultimate authority diagram, circular reasoning). Dropped vague or filler items (observing that some do not believe the Bible, applying the Bible as starting point without a task) and replaced childish wording such as boss of truth. Moved the failure of empiricism and rationalism and the necessity of the Christian worldview to the Internal Critique and TAG siblings, keeping only classification of authorities here. Added the self-authenticating authority of Scripture, testing claims by Scripture, the big worldview questions, the Creator-creature distinction, cultural worldview analysis, and comparison with other apologetic methods. Anchored objectives to specific verses and to Westminster Confession 1.4, 1.5, 1.10, 2.2 and Shorter Catechism Q1 and Q10 where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1956,
+  "output": 4037
+ }
+}

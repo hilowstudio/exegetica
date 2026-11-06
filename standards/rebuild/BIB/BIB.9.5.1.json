@@ -1,0 +1,313 @@
+{
+ "sub_topic": "BIB.9.5.1",
+ "name": "Ecclesiastes",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Wisdom Literature"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from Ecclesiastes that God has made a time for everything, such as a time to laugh and a time to cry",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Ecclesiastes 3:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name everyday gifts that Ecclesiastes says come from the hand of God, such as food, drink, and work",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Ecclesiastes 2:24-25",
+    "Ecclesiastes 3:12-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the Preacher as the speaker of Ecclesiastes, a son of David and king in Jerusalem",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Ecclesiastes 1:1",
+    "Ecclesiastes 1:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe examples from Ecclesiastes of things under the sun that do not last, such as wealth left to others and the passing of generations",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 1:4-11",
+    "Ecclesiastes 2:18-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Preacher's teaching that two are better than one using the pictures of the fallen friend and the threefold cord",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 4:9-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Preacher's search for satisfaction in wisdom, pleasure, and great works and what he concluded about each",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 1:16-18",
+    "Ecclesiastes 2:1-11",
+    "Ecclesiastes 2:12-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of the Hebrew word hebel, translated vanity or meaningless, as a vapor or breath that is fleeting and hard to grasp",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 1:2",
+    "Ecclesiastes 12:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Preacher's view of life under the sun with his descriptions of life received as a gift from God",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Ecclesiastes 1:3",
+    "Ecclesiastes 2:24-26",
+    "Ecclesiastes 5:18-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Ecclesiastes means when it says God has made everything beautiful in its time and has put eternity into the human heart",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 3:11",
+    "Ecclesiastes 3:14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the book's conclusion to fear God and keep his commandments in light of God's coming judgment of every deed",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 12:13-14",
+    "Ecclesiastes 11:9"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q39",
+    "Westminster Confession of Faith 33.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the Preacher's instructions for approaching God in worship, including guarding one's steps, listening, and keeping vows",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 5:1-7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 22.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Ecclesiastes honestly portrays death and injustice, including oppression and the same end coming to the righteous and the wicked",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Ecclesiastes 3:16-22",
+    "Ecclesiastes 4:1-3",
+    "Ecclesiastes 8:14",
+    "Ecclesiastes 9:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the poem of aging as a figurative picture of old age and death that grounds the call to remember the Creator in youth",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Ecclesiastes 12:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Preacher's teaching that the love of money never satisfies and relate it to the Reformed teaching on contentment",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Ecclesiastes 5:10-17",
+    "Ecclesiastes 6:1-9"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q80",
+    "Westminster Shorter Catechism Q81"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Ecclesiastes teaches that God made humanity upright but that all have sinned, connecting it to the Reformed doctrine of the fall",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 7:20",
+    "Ecclesiastes 7:29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2",
+    "Westminster Shorter Catechism Q13"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Ecclesiastes presents God's sovereign providence and the limits of human wisdom to discover his work",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 3:14",
+    "Ecclesiastes 7:13-14",
+    "Ecclesiastes 8:16-17",
+    "Ecclesiastes 11:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the literary structure of Ecclesiastes, including the frame narrator, the recurring refrains, and its mix of reflection, poetry, and proverbs",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Ecclesiastes 1:1-2",
+    "Ecclesiastes 7:1-14",
+    "Ecclesiastes 12:8-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Preacher's calls to enjoy life as God's gift with a self-centered pursuit of pleasure",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Ecclesiastes 9:7-10",
+    "Ecclesiastes 11:7-10",
+    "Ecclesiastes 2:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct an apologetic argument from Ecclesiastes addressing the question of meaning in a world viewed without God",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Ecclesiastes 1:2-3",
+    "Ecclesiastes 3:11",
+    "Ecclesiastes 12:13-14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the arguments for Solomonic authorship and for a later sage writing in Solomon's voice",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Ecclesiastes 1:1",
+    "Ecclesiastes 1:12-16",
+    "Ecclesiastes 12:9-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the New Testament answers the futility of Ecclesiastes through creation's hope of redemption and labor that is not in vain in the Lord",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Ecclesiastes 1:2",
+    "Romans 8:20-21",
+    "1 Corinthians 15:58"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate competing interpretations of the Preacher as a skeptic or a faithful realist and defend the book's place in the canon",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Ecclesiastes 12:9-14",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose an essay applying Ecclesiastes' teaching on work, joy, and mortality to a Christian understanding of vocation",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Ecclesiastes 2:24",
+    "Ecclesiastes 3:12-13",
+    "Ecclesiastes 9:10"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: time for everything, the Preacher's identity, the search in pleasure, work, and wisdom, hebel, under the sun, the concluding command, death and injustice, remembering the Creator, materialism, apologetics, authorship, and canonicity. Dropped the toys filler and the feeling-based happiness objective and replaced them with text-based ones on things that do not last and gifts from God. Recast the grade 12 personal reflection as an essay on vocation. Dropped the vague fleeting joy objective and replaced it with a comparison of enjoyment as gift versus hedonism. Added objectives on companionship, worship and vows, eternity in the heart, the fall, providence and limits of wisdom, literary structure, and New Testament connections. Added verse-level Scripture and Westminster references where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1917,
+  "output": 4665
+ }
+}

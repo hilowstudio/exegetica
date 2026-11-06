@@ -1,0 +1,271 @@
+{
+ "sub_topic": "BIB.8.4.4",
+ "name": "Jude: Contending for the Faith",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "The General (Catholic) Epistles"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Jude as the writer of a short New Testament letter who called himself a servant of Jesus Christ and a brother of James",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Jude 1:1",
+    "Matthew 13:55",
+    "Mark 6:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall from Jude's closing words that God is able to keep his people from stumbling",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Jude 1:24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 17.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite the doxology of Jude from memory and name the things it gives to God",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Jude 1:24-25"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the three words Jude uses to describe believers in his greeting as called, beloved, and kept",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Jude 1:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain in their own words what Jude means by urging believers to contend for the faith that was once for all delivered to the saints",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Jude 1:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Jude says false teachers crept into the church unnoticed and what two errors he says they taught",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Jude 1:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the three Old Testament examples of judgment Jude uses and explain what each one warns about",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Jude 1:5-7",
+    "Numbers 14:26-35",
+    "Genesis 19:24-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the way of Cain, the error of Balaam, and the rebellion of Korah using their Old Testament accounts",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Jude 1:11",
+    "Genesis 4:3-8",
+    "Numbers 22:5-7",
+    "Numbers 16:1-3",
+    "Numbers 16:31-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of Jude's word pictures of hidden reefs, waterless clouds, fruitless trees, wild waves, and wandering stars",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Jude 1:12-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast the restraint of the archangel Michael with the slander of the false teachers in Jude",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Jude 1:8-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Jude quotes a prophecy attributed to Enoch and explain why the Reformed tradition holds that quoting a book does not make that book part of the canon",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Jude 1:14-15",
+    "Acts 17:28",
+    "Titus 1:12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Westminster Confession of Faith 1.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the four commands Jude gives for believers to build themselves up, pray in the Holy Spirit, keep themselves in God's love, and wait for Christ's mercy",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Jude 1:20-21"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jude uses the apostles' earlier predictions of scoffers to show that false teaching in the church was expected",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Jude 1:17-19",
+    "Acts 20:29-30",
+    "2 Timothy 3:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the different responses Jude commands toward those who doubt, those who must be snatched from the fire, and those to be shown mercy with fear",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Jude 1:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a profile of the false teachers in Jude from the traits the letter assigns to them in belief, conduct, and speech",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Jude 1:4",
+    "Jude 1:8",
+    "Jude 1:10-13",
+    "Jude 1:16",
+    "Jude 1:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claim that grace permits sinful living by comparing Jude's warning with Paul's teaching and the Reformed confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Jude 1:4",
+    "Romans 6:1-2",
+    "Titus 2:11-12"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q64",
+    "Westminster Confession of Faith 19.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Jude 1:3 and related texts the Reformed teaching that the faith was delivered once for all and is not added to by new revelations",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Jude 1:3",
+    "Hebrews 1:1-2",
+    "Galatians 1:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Develop a plan for answering a false teaching that follows Jude's pattern of holding firm to truth while showing mercy to those who doubt",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Jude 1:3",
+    "Jude 1:22-23",
+    "2 Timothy 2:24-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize Jude's warnings of judgment with his repeated theme of God keeping his people and explain how the tradition's doctrine of perseverance draws on the letter",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Jude 1:1",
+    "Jude 1:6",
+    "Jude 1:13",
+    "Jude 1:21",
+    "Jude 1:24-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 17.1",
+    "Westminster Confession of Faith 17.2",
+    "Heidelberg Catechism Q54"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (authorship, God's keeping, contend for the faith, false teachers creeping in, Cain/Balaam/Korah, doxology, use of Enoch, building up in faith, mercy to doubters, apostate profile, grace into license, once-for-all faith, judgment and preservation). Dropped vague filler ('Name the fight for the truth', 'Observe warnings about bad leaders') and folded the Sodom item into a fuller objective on all three Old Testament judgment examples. Added missing content from Jude: the called/beloved/kept greeting, the metaphors of verses 12-13, Michael's restraint, the apostles' predicted scoffers, and an applied plan for answering error with mercy. Anchored each to specific verses and added confession references only where they state the doctrine (canon, sufficiency, grace and holiness, perseverance, prayer).",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1938,
+  "output": 3668
+ }
+}

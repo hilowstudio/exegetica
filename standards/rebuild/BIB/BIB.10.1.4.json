@@ -1,0 +1,306 @@
+{
+ "sub_topic": "BIB.10.1.4",
+ "name": "The Fruits of the Spirit",
+ "path": [
+  "Bible & Theology",
+  "Practical Theology & Christian Living",
+  "Christian Living and Spiritual Disciplines"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the fruit of the Spirit as good qualities that God grows in his people by the Holy Spirit",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Galatians 5:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the nine qualities listed as the fruit of the Spirit in Galatians 5:22-23",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Galatians 5:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell Jesus' teaching that a good tree bears good fruit and a bad tree bears bad fruit",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 7:17-18",
+    "Luke 6:43-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Give examples of actions at home and school that show qualities such as love, kindness, and patience",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 5:22-23",
+    "Ephesians 4:32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Jesus displayed qualities of the fruit of the Spirit in specific Gospel accounts",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Mark 10:13-16",
+    "Matthew 9:36",
+    "Matthew 4:1-11",
+    "Luke 23:33-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize Galatians 5:22-23 in their own words, including Paul's statement that against such things there is no law",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 5:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture that the fruit of the Spirit is produced by the Spirit at work in believers rather than by human effort alone, as the Reformed tradition confesses",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "John 15:4-5",
+    "Philippians 2:12-13",
+    "Galatians 5:22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of each of the nine qualities using cross-references from elsewhere in Scripture",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 5:22-23",
+    "1 Corinthians 13:4-7",
+    "Colossians 3:12-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the works of the flesh with the fruit of the Spirit as Paul contrasts them in Galatians 5",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 5:19-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply self-control or another quality of the fruit to realistic scenarios involving anger, speech, or appetite, citing supporting Scripture",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Proverbs 16:32",
+    "James 1:19-20",
+    "Titus 2:11-12",
+    "Galatians 5:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Paul means by walking by the Spirit, keeping in step with the Spirit, and crucifying the flesh in Galatians 5",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 5:16-17",
+    "Galatians 5:24-25",
+    "Romans 8:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze why Paul uses the singular word fruit rather than the plural for the nine qualities",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 5:22-23",
+    "Galatians 5:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how biblical teaching on God's covenant faithfulness shapes the meaning of faithfulness as a fruit of the Spirit",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 7:9",
+    "Lamentations 3:22-23",
+    "2 Timothy 2:13",
+    "Galatians 5:22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Relate the fruit of the Spirit to the character of Christ and to the Spirit's work of conforming believers to his image",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 8:29",
+    "2 Corinthians 3:18",
+    "Colossians 3:12-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture connects patience and joy with enduring suffering and trials",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "James 1:2-4",
+    "Romans 5:3-5",
+    "Colossians 1:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that spiritual fruit and good works are the evidence of true faith and not the ground of justification",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:8-10",
+    "James 2:17-18",
+    "Matthew 7:17-20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.2",
+    "Heidelberg Catechism Q64",
+    "Heidelberg Catechism Q86"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Greek terms behind key qualities such as agape, chara, and praotes through a word study using lexical tools and cross-references",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 13:4-7",
+    "1 John 4:7-11",
+    "Matthew 11:29",
+    "Galatians 5:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the fruit of the Spirit from the gifts of the Spirit in purpose, distribution, and expectation",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 12:4-11",
+    "1 Corinthians 13:1-3",
+    "Galatians 5:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend from Scripture the claim that Christlike character matters more than spiritual gifts",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 13:1-3",
+    "Matthew 7:21-23",
+    "1 Corinthians 12:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate case studies and biographical accounts for evidence of the fruit of the Spirit, distinguishing genuine fruit from mere outward morality",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 7:15-20",
+    "Matthew 23:25-28",
+    "Galatians 5:22-23"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q91"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate moralistic and perfectionist approaches to character growth in light of Paul's teaching on the Spirit and the flesh and the Reformed doctrine of sanctification",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 5:16-18",
+    "Galatians 3:3",
+    "Romans 7:18-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.2",
+    "Westminster Confession of Faith 13.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose an essay explaining how the Spirit produces fruit in believers through union with Christ and abiding in him",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "John 15:1-8",
+    "Galatians 2:20",
+    "Galatians 5:22-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.1",
+    "Westminster Shorter Catechism Q35"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (identify, name, good tree, Jesus' example, summary, Spirit's agency, flesh vs fruit, self-control application, singular fruit, covenant faithfulness, Christ's character, patience in suffering, agape word study, character over gifts, John 15 essay). Replaced the personal self-evaluation objective with evaluating case studies, since a student's inner state is not an objective. Added defining each quality from cross-references, practical examples for young grades, walking by the Spirit, fruit as evidence not ground of justification, fruit versus gifts, and evaluating moralism and perfectionism. Added Scripture verse anchors and Westminster and Heidelberg references where they state the doctrine. Left prayer, general ethics, and holiness to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1995,
+  "output": 4919
+ }
+}

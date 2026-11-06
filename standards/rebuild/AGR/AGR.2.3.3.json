@@ -1,0 +1,273 @@
+{
+ "sub_topic": "AGR.2.3.3",
+ "name": "Agronomy & Field Crops",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Plant & Horticultural Science",
+  "Horticulture & Crop Production"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify common field crops such as corn, soybeans, wheat, cotton, and hay and name products made from them",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort field crops into groups such as grains, oilseeds, forages, and fiber crops",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the steps of growing a field crop from land preparation and planting through harvest",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the soil moisture, temperature, and oxygen conditions a seed needs to germinate and emerge",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how crop rotation and cover crops improve soil health and break pest cycles",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify field crop plants and seeds by sight in the manner of the FFA Agronomy Career Development Event",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate seeding rate and plant population for a field crop given row spacing, seed spacing, and germination percentage",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare conventional tillage, minimum tillage, and no-till systems for their effects on erosion, soil moisture, and fuel use",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Stage corn and soybean plants using vegetative and reproductive growth stage systems and describe the environmental conditions each stage requires",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.02.04.a"
+   ]
+  },
+  {
+   "text": "Plant a field crop plot using correct seedbed preparation, seeding depth, and calibrated planting equipment",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.03.01.b",
+    "PS.01.03.01.a",
+    "PS.03"
+   ]
+  },
+  {
+   "text": "Compare forage crops such as alfalfa, perennial grasses, and silage corn for yield, quality, and livestock use",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate grain samples for moisture, test weight, and damage using official grain grading standards",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.05"
+   ]
+  },
+  {
+   "text": "Record inputs, field operations, and yields for a field crop SAE enterprise and calculate cost of production per bushel or ton",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.05.02.b"
+   ]
+  },
+  {
+   "text": "Interpret a soil test report to determine fertilizer and lime needs for a field crop",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04"
+   ]
+  },
+  {
+   "text": "Recommend a field crop and a suitable hybrid or variety for a given region based on climate, soil, and market conditions",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.03.01.c"
+   ]
+  },
+  {
+   "text": "Analyze how planting date, hybrid selection, and plant population affect field crop yield",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.05.02.b",
+    "PS.01"
+   ]
+  },
+  {
+   "text": "Estimate grain yield in the field using yield component methods such as the corn ear count method",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.05.02.b"
+   ]
+  },
+  {
+   "text": "Determine harvest timing for grain and forage crops using grain moisture, physiological maturity, and forage quality indicators",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.05"
+   ]
+  },
+  {
+   "text": "Develop a nutrient management plan that sets the rate, source, timing, and placement of fertilizer for a field crop",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04"
+   ]
+  },
+  {
+   "text": "Demonstrate safe combine and forage harvesting practices including machine adjustments that reduce field losses",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.05.01.c",
+    "PS.03.05"
+   ]
+  },
+  {
+   "text": "Analyze crop yield and harvest loss data to recommend strategies that reduce crop loss",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.05.02.b",
+    "PS.03.05.02.c"
+   ]
+  },
+  {
+   "text": "Analyze yield maps and other precision agriculture data to identify management zones within a field",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.05.02.b"
+   ]
+  },
+  {
+   "text": "Evaluate the effects of genetically modified field crop traits such as herbicide tolerance and insect resistance on other production practices",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.01.05.c",
+    "BS.03"
+   ]
+  },
+  {
+   "text": "Design a crop rotation and management plan for a field and justify the choices using agronomic principles",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01",
+    "PS.01.04.05.a"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives, rewording some for precision. Expanded the seeding rate objective to include germination percentage. Broadened the crop rotation objective to cover cover crops. Added crop classification, germination conditions, and field crop identification tied to the FFA Agronomy CDE. Added tillage systems, growth staging, and plot planting. Added forage comparison, grain grading, and SAE record keeping with cost of production. Added soil test interpretation, regional crop and hybrid recommendation, field yield estimation, and harvest timing. Added nutrient management planning, combine harvest practices, yield loss analysis, precision ag data, and GMO trait evaluation. Pest and weed management was left to Integrated Pest Management. Horticultural crops were left to the sibling sub-topics. AFNR codes are applied only at grades 9 to 12 where an objective directly teaches the standard.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "BS.03",
+  "PS.01",
+  "PS.01.02.01.c",
+  "PS.01.03.01.a",
+  "PS.01.03.01.b",
+  "PS.01.03.01.c",
+  "PS.01.04",
+  "PS.01.04.05.a",
+  "PS.03",
+  "PS.03.01.05.c",
+  "PS.03.02.04.a",
+  "PS.03.05",
+  "PS.03.05.01.c",
+  "PS.03.05.02.b",
+  "PS.03.05.02.c"
+ ],
+ "usage": {
+  "input": 2230,
+  "output": 4105
+ }
+}

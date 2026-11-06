@@ -1,0 +1,282 @@
+{
+ "sub_topic": "BIB.7.2.4",
+ "name": "Hellenistic Philosophy (Stoicism and Epicureanism)",
+ "path": [
+  "Bible & Theology",
+  "Historical & Cultural Context",
+  "First-Century Roman World (NT)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Athens as a city where people gathered to talk about big questions and where Paul went to tell about Jesus",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Acts 17:16-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Paul spoke to the thinkers of Athens at the Areopagus, also called Mars Hill",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 17:19-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Paul told the people of Athens that God made the world and everything in it and gives life to all people",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Acts 17:24-25"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe what a philosopher is and why the people of Athens liked to hear and discuss new ideas",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:18-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Epicurean teaching that the goal of life is a calm and pleasant life free from fear and pain",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Stoic teaching that a person should live by reason, practice self-control, and calmly accept whatever happens",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Paul meant when he told the Athenians that they worshiped what they did not know",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Epicurean belief that the gods are distant and uninvolved with the Stoic belief that a divine reason fills all things",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why some Athenians called Paul a babbler and thought he was preaching foreign gods",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:18-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the Greek poets Paul quoted at Athens and explain why he used words his listeners already knew",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul's teaching on creation and providence answered both the distant gods of the Epicureans and the all-pervading divine reason of the Stoics",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 17:24-28"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11",
+    "Westminster Confession of Faith 4.1",
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the structure of Paul's Areopagus speech as it moves from creation to providence, repentance, judgment, and resurrection",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 17:22-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Greek listeners shaped by Epicurean and Stoic views of death mocked the bodily resurrection Paul preached",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:31-32",
+    "1 Corinthians 15:12-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Stoic idea of the Logos as impersonal world reason with John's teaching that the Logos is the eternal, personal Word who became flesh",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "John 1:1-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Contrast the Epicurean pursuit of ataraxia and the Stoic pursuit of freedom from passion with the peace with God that Scripture says comes through Christ",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:1",
+    "John 14:27",
+    "Philippians 4:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul uses the Stoic idea of self-sufficient contentment in Philippians and grounds it in the strength of Christ rather than in the self",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Philippians 4:11-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's use of the saying let us eat and drink for tomorrow we die as his answer to a life lived without hope of resurrection",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 15:32-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Christian ethics with Stoic ethics in their views of virtue, emotion, self-control, and the motive and source of good works",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 5:22-23",
+    "Titus 2:11-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.2",
+    "Westminster Confession of Faith 16.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul appeals to what all people can know of God through creation at Athens and why the Reformed tradition holds that this knowledge is not sufficient for salvation",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:26-30",
+    "Romans 1:19-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Paul's contrast between the wisdom of the world and the wisdom of God and his warning against philosophy according to human tradition",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 1:20-25",
+    "1 Corinthians 2:1-5",
+    "Colossians 2:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Paul's method at Athens of using common ground while calling for repentance as a model for engaging an intellectual culture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 17:16-34",
+    "1 Peter 3:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a written response to a modern form of Stoic or Epicurean thinking using Paul's Areopagus speech and Reformed teaching on creation and resurrection",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 17:24-31",
+    "Colossians 2:8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q9",
+    "Westminster Confession of Faith 32.2"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: Paul at the Areopagus, the Epicurean and Stoic summaries (now split into separate objectives with accurate content instead of 'be tough'), the unknown god statement, the analysis of Paul's speech, the Stoic versus Johannine Logos, ataraxia, the ethics comparison, the wisdom of the world versus the wisdom of God, and resurrection skepticism, which is now an explanation grounded in Acts 17:32 and 1 Corinthians 15. Dropped filler (observing statues), the Gnosticism objective (not Stoic or Epicurean), and the vague synthesis and 'emptiness' items, which became a concrete evaluation of Colossians 2:8 and a written response task. Changed the unknown god objective to Paul's use of it, leaving the altar itself to the Roman religion sibling. Added competencies on the philosophers' views of the gods, the creation and providence answer in Acts 17:24-28, the babbler charge, the quoted Greek poets, Stoic contentment in Philippians 4, the Epicurean slogan in 1 Corinthians 15:32, general revelation, and Paul's method of engagement. Attached Westminster references only where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1979,
+  "output": 4485
+ }
+}

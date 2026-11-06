@@ -1,0 +1,241 @@
+{
+ "sub_topic": "AGR.2.4.2",
+ "name": "Turf & Grounds Management",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Plant & Horticultural Science",
+  "Landscape & Floriculture Design"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify grass as a type of plant that covers lawns, parks, and playing fields",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Label the main parts of a grass plant, including the blade, sheath, crown, and roots",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how mowing, watering, and fertilizing keep turf healthy",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how turf benefits people and the environment through erosion control, surface cooling, and safe playing surfaces",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare cool-season and warm-season turfgrass species and their regional adaptation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common turfgrass species using vegetative features such as ligule, auricle, vernation, and growth habit",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare turf establishment methods, including seeding, sodding, sprigging, and plugging, for cost, speed, and suitability",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe careers in turf and grounds management, such as golf course superintendent, sports turf manager, and lawn care technician",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain proper mowing height, mowing frequency, and core aeration practices for turf health",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify turf management equipment such as reel and rotary mowers, aerators, spreaders, and sprayers by function and demonstrate their safe operation",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.04.02.02.a"
+   ]
+  },
+  {
+   "text": "Calibrate a spreader or sprayer and calculate product application rates per 1,000 square feet",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04"
+   ]
+  },
+  {
+   "text": "Interpret a soil test report and develop a seasonal fertilizer plan for a lawn or grounds site",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04"
+   ]
+  },
+  {
+   "text": "Develop an irrigation schedule for turf based on evapotranspiration, soil texture, and drainage",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.02.b",
+    "PS.03.02.04.a"
+   ]
+  },
+  {
+   "text": "Diagnose common turf problems, including disease, insect damage, weeds, thatch buildup, and compaction, and prepare a scouting report with corrective practices",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.01.c"
+   ]
+  },
+  {
+   "text": "Apply integrated pest management principles to select cultural, biological, and chemical controls for turf pests",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.01.c"
+   ]
+  },
+  {
+   "text": "Select turfgrass species and cultivars suited to site conditions such as shade, traffic, drought, and intended use",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.04.01.01.b",
+    "PS.04.02.03.b"
+   ]
+  },
+  {
+   "text": "Analyze how root zone composition, such as native soil versus sand-based mixes, affects drainage, compaction, and turf performance",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.01.a",
+    "PS.01.02.02.b"
+   ]
+  },
+  {
+   "text": "Design a turf renovation plan using practices such as dethatching, topdressing, overseeding, and soil amendment",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04.05.c",
+    "NRS.01.05.04.c"
+   ]
+  },
+  {
+   "text": "Evaluate the environmental impact of turf management practices on water use and nutrient runoff and propose more sustainable alternatives",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.04.02.03.b",
+    "PS.04.02.01.c",
+    "PS.01.04.05.a"
+   ]
+  },
+  {
+   "text": "Manage a turf maintenance program for an athletic field or grounds site that integrates fertility, irrigation, pest control, and renovation practices",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.04",
+    "PS.04.02.01.c"
+   ]
+  },
+  {
+   "text": "Create an annual maintenance calendar, budget, and record system for a turf or grounds enterprise suitable for a supervised agricultural experience",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept all six original competencies, rewording slightly and expanding the grade 10 diagnosis objective to include a scouting report. Added grass plant anatomy, turf benefits, species identification, establishment methods, and careers for the middle grades. Added equipment safety and classification, calibration and rate calculation, soil test interpretation and fertilizer planning, irrigation scheduling, and IPM for grades 9 to 10. Added site-based species selection, root zone analysis, renovation planning, and environmental evaluation for grade 11. Added an SAE-ready maintenance calendar and budget for grade 12. Standards are aligned only for grades 9 to 12 and only where the objective teaches the standard.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ESS.03.02.01.c",
+  "NRS.01.05.04.c",
+  "PS.01.02.01.a",
+  "PS.01.02.02.b",
+  "PS.01.03.01.a",
+  "PS.01.04",
+  "PS.01.04.01.c",
+  "PS.01.04.05.a",
+  "PS.01.04.05.c",
+  "PS.03.02.04.a",
+  "PS.04",
+  "PS.04.01.01.b",
+  "PS.04.02.01.c",
+  "PS.04.02.02.a",
+  "PS.04.02.03.b"
+ ],
+ "usage": {
+  "input": 2460,
+  "output": 2858
+ }
+}

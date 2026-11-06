@@ -1,0 +1,333 @@
+{
+ "sub_topic": "BIB.2.2.2",
+ "name": "The History of the Early Church (Acts)",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "New Testament Overview"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Retell that Jesus went up to heaven and promised to send the Holy Spirit to his followers",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Acts 1:4-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the sound of wind and the tongues of fire as signs that the Holy Spirit came at Pentecost",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Peter and Paul as leaders in the early church who told others about Jesus",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:14",
+    "Acts 13:9",
+    "Acts 13:46-49"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that the church began in Jerusalem and describe how the first believers learned, prayed, ate together, and shared what they had",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:42-47",
+    "Acts 4:32-37"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize how the gospel spread from Jerusalem to Judea, Samaria, and the ends of the earth as Jesus said it would",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 1:8",
+    "Acts 8:4-5",
+    "Acts 28:14-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the church chose seven men to care for widows so the apostles could keep preaching and praying",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 6:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what happened at Pentecost, including Peter's sermon and how the crowd responded",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:1-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the Bereans examined the Scriptures and practice checking a teaching against a Bible passage in class",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [
+    "Acts 17:10-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Peter's boldness before the council after Pentecost with his fear when he denied Jesus",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Luke 22:54-62",
+    "Acts 4:1-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the witness and death of Stephen and the ministry of Philip in Samaria and to the Ethiopian official",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Acts 6:8-15",
+    "Acts 7:54-60",
+    "Acts 8:4-40"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the conversion and calling of Saul and explain how it changed the direction of his life",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 9:1-19",
+    "Acts 26:12-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace Paul's missionary journeys and his voyage to Rome on a map of the Roman world",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Acts 13:1-14:28",
+    "Acts 15:36-18:22",
+    "Acts 18:23-21:17",
+    "Acts 27:1-28:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a timeline of the major events in Acts from the Ascension to Paul's imprisonment in Rome",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [
+    "Acts 1:9-11",
+    "Acts 28:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the conflict over circumcision and how the Jerusalem Council resolved it",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 15:1-29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the significance of Peter's vision and the conversion of Cornelius for the inclusion of Gentiles in the church",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Acts 10:1-48",
+    "Acts 11:1-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the apostles' preaching in Acts centers on their witness to the death and resurrection of Jesus",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:22-36",
+    "Acts 3:13-15",
+    "Acts 4:33",
+    "Acts 10:39-43"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how persecution scattered believers and carried the gospel into new regions",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Acts 8:1-4",
+    "Acts 11:19-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare how Paul shaped his message for a synagogue audience and for Gentile philosophers in Athens",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Acts 13:16-41",
+    "Acts 17:22-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Acts as the second volume of Luke's work and identify its purpose from its prologue",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Luke 1:1-4",
+    "Acts 1:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Peter reads Pentecost as the fulfillment of Joel's prophecy and how it contrasts with Babel",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:14-21",
+    "Joel 2:28-32",
+    "Genesis 11:1-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the offices of apostle, elder, and deacon in Acts and explain how the Reformed tradition draws its church order from them",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Acts 1:21-26",
+    "Acts 6:1-6",
+    "Acts 14:23",
+    "Acts 20:17-28"
+   ],
+   "confessions": [
+    "Belgic Confession Article 30"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the accounts of baptism and the breaking of bread in Acts, including household baptisms, and explain how the Reformed confessions use them",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:38-42",
+    "Acts 16:14-15",
+    "Acts 16:30-34",
+    "Acts 20:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 28.4",
+    "Heidelberg Catechism Q74"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate which events in Acts describe a unique apostolic era and which prescribe practice for the church today",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 1:21-26",
+    "Acts 2:42",
+    "Acts 2:43",
+    "Acts 15:28-29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from the text the view that the risen Christ by his Spirit is the primary actor in the growth of the church in Acts",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 1:1-2",
+    "Acts 2:33",
+    "Acts 2:47",
+    "Acts 13:2-4",
+    "Acts 16:6-10"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q54"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize how Acts traces the movement from a Jerusalem community of Jewish believers to a church of Jews and Gentiles across the empire",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 1:8",
+    "Acts 15:13-19",
+    "Acts 28:23-31"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies, including Pentecost, Acts 1:8, the boldness of Peter, Saul's conversion, the Jerusalem Council, Cornelius, persecution, the timeline, prescriptive vs descriptive, the Spirit as actor, and the synthesis. Fixed the map objective to cover the Roman world and the voyage to Rome. Merged the Jerusalem start with communal life. Added the Ascension, the seven chosen to serve, the Bereans as a practice, Stephen and Philip, the resurrection witness in apostolic preaching, Paul's sermons to different audiences, Luke's purpose, the fulfillment of Joel, church offices, and the sacraments. Anchored the doctrinal objectives to confessions where they state the doctrine. Replaced whole-chapter citations with verse ranges.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1970,
+  "output": 4702
+ }
+}

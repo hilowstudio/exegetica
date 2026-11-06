@@ -1,0 +1,242 @@
+{
+ "sub_topic": "AGR.5.3.4",
+ "name": "Quality Control & Inspection",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Safety & Quality"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe why food products are inspected before they are sold to families and stores",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify quality characteristics of fresh fruits and vegetables using sight, touch, and smell, such as color, firmness, and aroma",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify signs that a food product does not meet quality standards, such as bruising, discoloration, wilting, or damaged packaging",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare food products sold under different grades, such as Grade AA and Grade A eggs, and explain what the grade tells a buyer",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the steps involved in inspecting a food product for defects from sampling to recording results",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Measure and record quality attributes of a food sample using simple tools such as a scale, ruler, thermometer, and color chart",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the purposes of quality assurance and food safety tests performed on food products during harvest, transport, and processing",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.04.a",
+    "FPP.01.02"
+   ]
+  },
+  {
+   "text": "Summarize the characteristics of USDA quality and yield grades for food products such as beef, eggs, and fresh produce",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.01.a"
+   ]
+  },
+  {
+   "text": "Apply quality control standards and a sampling plan to evaluate a batch of food products for defects",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01",
+    "FPP.03.01.02.b"
+   ]
+  },
+  {
+   "text": "Distinguish mandatory federal safety inspection from voluntary quality grading of food products",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.03.a",
+    "FPP.03.01.01.a"
+   ]
+  },
+  {
+   "text": "Describe FSIS protocols for pre-mortem and post-mortem inspection of livestock and poultry",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.03.a"
+   ]
+  },
+  {
+   "text": "Conduct quality assurance tests on food products such as pH, Brix, moisture content, and sensory evaluation",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.04.b"
+   ]
+  },
+  {
+   "text": "Analyze factors that affect quality and yield grades, such as marbling, maturity, fat thickness, and ribeye area in beef carcasses",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.01.b"
+   ]
+  },
+  {
+   "text": "Examine the desirable qualities of food products from different classifications such as meats, dairy, eggs, and produce",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.04.b"
+   ]
+  },
+  {
+   "text": "Assign quality and yield grades to carcasses, retail cuts, or eggs according to industry standards as practiced in FFA Meats and Poultry Evaluation",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.01.c",
+    "FPP.03.01.04.c",
+    "FPP.03.01"
+   ]
+  },
+  {
+   "text": "Evaluate quality assurance test results using control charts and recommend corrective procedures when a process falls out of specification",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.04.c"
+   ]
+  },
+  {
+   "text": "Evaluate care and handling procedures during storage and distribution for their ability to maintain original food quality and yield",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.02.c",
+    "FPP.01.03"
+   ]
+  },
+  {
+   "text": "Evaluate the effectiveness of a quality control checkpoint in a food production process",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02",
+    "FPP.01.02.04.c"
+   ]
+  },
+  {
+   "text": "Design a quality control inspection protocol for raw products or a specific food product line, including sampling, tests, acceptance criteria, and records",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.02.b",
+    "FPP.01",
+    "FPP.03.01"
+   ]
+  },
+  {
+   "text": "Create a grading and quality record-keeping plan for a product marketed through a supervised agricultural experience",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01",
+    "FPP.03.01.04.c"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded all six existing objectives, attaching standards to the grade 9 and up items. Added early-grade sensory quality, grade comparison, and measurement skills. Added high school competencies for QA test purposes and conduct, USDA quality and yield grades, grading versus FSIS inspection, pre-mortem and post-mortem protocols, grade factors, product class qualities, FFA-style grading, control charts with corrective action, storage and distribution handling, and an SAE grading plan. Left pathogens, HACCP, and labeling to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.01",
+  "FPP.01.02",
+  "FPP.01.02.04.a",
+  "FPP.01.02.04.b",
+  "FPP.01.02.04.c",
+  "FPP.01.03",
+  "FPP.03.01",
+  "FPP.03.01.01.a",
+  "FPP.03.01.01.b",
+  "FPP.03.01.01.c",
+  "FPP.03.01.02.b",
+  "FPP.03.01.02.c",
+  "FPP.03.01.03.a",
+  "FPP.03.01.04.b",
+  "FPP.03.01.04.c"
+ ],
+ "usage": {
+  "input": 2284,
+  "output": 3019
+ }
+}

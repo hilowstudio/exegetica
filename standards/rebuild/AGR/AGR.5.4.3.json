@@ -1,0 +1,235 @@
+{
+ "sub_topic": "AGR.5.4.3",
+ "name": "Packaging & Distribution",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Systems & Innovation"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify common materials used to package food such as glass, metal, paper, cardboard, and plastic",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify foods by whether they must be kept refrigerated, frozen, or shelf stable while they are stored and shipped",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how packaging protects food from crushing, moisture, light, air, and pests during shipping and storage",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the information printed on a food package such as ingredients, net weight, date codes, and handling instructions",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how temperature, humidity, and rough handling during transport affect the quality of perishable foods such as milk, meat, and fresh produce",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how packaging design features such as seals, barriers, and tamper evident closures affect a food product's shelf life and safety",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Package and label a farm product for direct sale at a farmers market or FFA fruit sale using safe handling practices",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize food packaging methods including canning, retort pouches, vacuum packaging, aseptic packaging, and modified atmosphere packaging",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.04.a"
+   ]
+  },
+  {
+   "text": "Explain how the cold chain uses temperature control during storage and transport to maintain food safety and quality",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.03",
+    "FPP.01.02.04.a"
+   ]
+  },
+  {
+   "text": "Select appropriate packaging materials for fresh, frozen, and ready to eat food products based on each product's storage needs",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.04.c",
+    "FPP.03.02.02.a"
+   ]
+  },
+  {
+   "text": "Analyze changes in color, texture, flavor, and moisture of a food stored in different packaging through a shelf life test",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.04.b"
+   ]
+  },
+  {
+   "text": "Apply safe food handling procedures for receiving, storing, and loading food products such as first in first out rotation and temperature logging",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.03"
+   ]
+  },
+  {
+   "text": "Interpret federal labeling requirements on food packages including the nutrition facts panel, allergen declarations, and date labeling",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze packaging options for a food product based on cost, protection, and sustainability",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.04.c",
+    "FPP.04.04.01.a"
+   ]
+  },
+  {
+   "text": "Evaluate the environmental impact of different food packaging materials across their life cycle from production to disposal or recycling",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.04.01.a",
+    "FPP.04.02.02.a"
+   ]
+  },
+  {
+   "text": "Assess how market demand influences the distribution channels and packaging formats used for a food product",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.03.b"
+   ]
+  },
+  {
+   "text": "Recommend improvements to safety procedures in a food distribution scenario to ensure a safe product reaches consumers",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.02.c",
+    "FPP.01.03"
+   ]
+  },
+  {
+   "text": "Create a distribution plan for a food product that ensures safe delivery through temperature control, transport selection, and product traceability",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03",
+    "FPP.01.03"
+   ]
+  },
+  {
+   "text": "Design a packaging solution for a food product that balances protection, cost, and sustainability",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02",
+    "FPP.03.02.04.c"
+   ]
+  },
+  {
+   "text": "Create a plan to educate consumers or the community about sustainable food packaging and reducing food waste",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.04.01.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six original objectives, rewording grades 5, 7, 11, and 12 for precision. Added early objectives on storage classification, package labels, and transport conditions. Added a grade 8 SAE and FFA packaging objective. Added grades 9 to 12 objectives on packaging methods, the cold chain, material selection, shelf life testing, safe handling during distribution, labeling regulations, market demand, safety recommendations, distribution planning, and sustainability education. These are aligned to AFNR FPP standards. Broader supply chain and product formulation content was left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.01.02.04.a",
+  "FPP.01.03",
+  "FPP.02.02.03.a",
+  "FPP.03.01.04.c",
+  "FPP.03.02",
+  "FPP.03.02.02.a",
+  "FPP.03.02.04.a",
+  "FPP.03.02.04.b",
+  "FPP.03.02.04.c",
+  "FPP.03.03",
+  "FPP.03.03.02.c",
+  "FPP.03.03.03.b",
+  "FPP.04.02.02.a",
+  "FPP.04.04.01.a",
+  "FPP.04.04.01.c"
+ ],
+ "usage": {
+  "input": 2268,
+  "output": 3297
+ }
+}

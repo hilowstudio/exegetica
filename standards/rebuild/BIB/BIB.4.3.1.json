@@ -1,0 +1,312 @@
+{
+ "sub_topic": "BIB.4.3.1",
+ "name": "John Calvin and Geneva",
+ "path": [
+  "Bible & Theology",
+  "Church History",
+  "The Reformation Era"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify John Calvin as a pastor who preached and taught the Bible in the city of Geneva",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 4:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate Geneva on a map of Europe and describe it as a city where people gathered to hear the Bible taught",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Calvin taught that God rules over all things and that all glory belongs to him",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Romans 11:36"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the main events of Calvin's life, including his flight from France, his call to Geneva by Farel, his exile to Strasbourg, and his return to Geneva",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Calvin's teaching that ordinary work and daily life can be done for the glory of God",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 10:31",
+    "Colossians 3:23-24"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the Institutes of the Christian Religion as Calvin's major book and describe its purpose as a guide for reading and teaching the Bible",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the people of Geneva sang the Psalms together using the Genevan Psalter and explain the scriptural basis for congregational psalm singing",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 3:16",
+    "Ephesians 5:19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what makes a church Reformed and trace the name to the churches shaped by Calvin's teaching in Geneva",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the four church offices Calvin established in Geneva, namely pastors, teachers, elders, and deacons, and identify the passages he drew them from",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 4:11-12",
+    "1 Timothy 3:1-13",
+    "Acts 6:1-6"
+   ],
+   "confessions": [
+    "Belgic Confession 30"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Calvin's role as an organizer and systematic teacher of the Reformation with Luther's role in beginning it",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Geneva became a refuge for Protestants fleeing persecution and how returning refugees carried Reformed teaching back to their homelands",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 10:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the founding of the Geneva Academy and its role in training pastors who were sent out as missionaries to France and beyond",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 2:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Calvin's practice of preaching verse by verse through whole books of the Bible and writing commentaries on most of Scripture",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:8",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q89"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the structure and main themes of the Institutes, beginning with Calvin's claim that knowledge of God and knowledge of ourselves are bound together",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 1:19-20",
+    "Jeremiah 9:23-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Calvin's teaching that believers truly feed on Christ spiritually in the Lord's Supper and distinguish it from transubstantiation and a merely memorial view",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 10:16",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 29.7",
+    "Heidelberg Catechism Q76"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace Calvin's influence through John Knox in Scotland, the Huguenots in France, the Puritans in England, and the Pilgrims in America",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed doctrine of God's sovereignty in salvation as Calvin taught it from Paul's letters",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 1:4-5",
+    "Romans 8:29-30",
+    "Romans 9:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.5",
+    "Westminster Shorter Catechism Q20"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize Calvin's teaching on union with Christ as the source of the twofold grace of justification and sanctification",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 1:30",
+    "Galatians 2:20"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q30",
+    "Westminster Shorter Catechism Q32"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Calvin's teaching that Scripture is confirmed to believers by the inward witness of the Holy Spirit",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 2:14",
+    "1 John 2:20-27"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the work of the Geneva Consistory in church discipline and the relationship between church and civil authority in Calvin's Geneva",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 18:15-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 30.3",
+    "Westminster Confession of Faith 23.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a profile of Calvin as pastor and theologian using primary sources such as his sermons, letters, and prefaces",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the trial and execution of Michael Servetus using primary sources, weighing sixteenth-century context against the teaching of Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Timothy 2:24-25",
+    "Romans 12:17-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed doctrine of predestination from Scripture while responding to major objections and explaining the care the confessions urge in teaching it",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Ephesians 1:4-5",
+    "Romans 9:16",
+    "John 6:37-44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.5",
+    "Westminster Confession of Faith 3.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish Calvin's own teaching from later Calvinism as formulated at the Synod of Dort",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [
+    "Canons of Dort 1.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Develop a reasoned argument assessing the legacy of Calvinism in Western history, including its effects on education, representative church government, and views of work",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: Calvin as Geneva teacher, the Institutes, the glory of God, Reformed churches, Luther comparison, Geneva as refuge, the Lord's Supper, Knox and the Puritans, sovereignty in salvation, the Calvin profile, Servetus, predestination, and legacy. Dropped vague filler such as 'observe Geneva became a city of Bible study' and merged 'God's great power' into the glory-of-God objective. Added missing competencies: Calvin's life events, the Genevan Psalter, the four church offices, the Geneva Academy and missions, expository preaching and commentaries, the knowledge of God and self in the Institutes, union with Christ, the inward witness of the Spirit, the Consistory and church-state relations, and Calvin versus later Dort Calvinism. Replaced the Westminster Confession citation format with numbered forms, added verse-level scripture, and left general Reformation, Sola, Zwingli and Anabaptist content to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1936,
+  "output": 5304
+ }
+}

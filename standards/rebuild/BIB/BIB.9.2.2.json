@@ -1,0 +1,294 @@
+{
+ "sub_topic": "BIB.9.2.2",
+ "name": "Ezekiel",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Major Prophets"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Ezekiel as a prophet whom God sent to speak His words to His people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Ezekiel 2:3-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of the valley of dry bones that came to life when Ezekiel spoke God's word and God gave them breath",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 37:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how God promises in Ezekiel to be the Shepherd who searches for and cares for His lost sheep",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 34:11-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the main features of Ezekiel's opening vision of God's glory, including the living creatures, the wheels, and the throne",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 1:4-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Ezekiel acted out some of his messages with sign-acts such as the brick siege model and the exile's baggage",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 4:1-3",
+    "Ezekiel 12:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Ezekiel's temple visions that God's glory departed from the temple because of the people's idolatry",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 8:5-6",
+    "Ezekiel 10:18-19",
+    "Ezekiel 11:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate Ezekiel's ministry among the exiles in Babylon in relation to the deportation of 597 BC and the fall of Jerusalem in 586 BC",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 1:1-3",
+    "Ezekiel 33:21",
+    "2 Kings 24:10-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the heart of stone with the heart of flesh and explain what God promises to do in giving a new heart and His Spirit",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 36:25-27",
+    "Ezekiel 11:19-20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 10.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Outline the three-part structure of Ezekiel as oracles of judgment on Judah, oracles against the nations, and messages of restoration",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 24:1-2",
+    "Ezekiel 25:1-3",
+    "Ezekiel 33:21-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the role of the watchman and the responsibility it placed on Ezekiel to warn the people",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 3:17-21",
+    "Ezekiel 33:7-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the title son of man emphasizes about Ezekiel when God addresses him by it",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 2:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the repeated phrase then they will know that I am the LORD expresses the purpose of both God's judgments and His restorations in Ezekiel",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Ezekiel 6:7",
+    "Ezekiel 36:23",
+    "Ezekiel 37:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the allegory of the unfaithful wife as a picture of Israel's covenant unfaithfulness and God's everlasting covenant grace",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Ezekiel 16:8",
+    "Ezekiel 16:15",
+    "Ezekiel 16:59-63"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the oracle against Israel's false shepherds and the promise of David as one shepherd point forward to Christ the Good Shepherd",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 34:1-10",
+    "Ezekiel 34:23-24",
+    "John 10:11-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the sign of the two sticks promises the reunion of Israel and Judah under one king in an everlasting covenant of peace",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 37:15-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Ezekiel 18 corrects the proverb of the sour grapes by teaching individual accountability for sin and God's call to repent and live",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 18:1-4",
+    "Ezekiel 18:20-23",
+    "Ezekiel 18:30-32",
+    "Ezekiel 33:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why God says He restores Israel for the sake of His holy name rather than for their own merit",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 36:22-23",
+    "Ezekiel 36:32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a diagram tracing the departure of God's glory from the temple and its return in the restoration vision",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Ezekiel 10:18-19",
+    "Ezekiel 11:22-23",
+    "Ezekiel 43:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the lament over the king of Tyre and evaluate interpretations that connect its imagery to the fall of Satan",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Ezekiel 28:1-10",
+    "Ezekiel 28:11-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed teaching that regeneration is a sovereign work of the Spirit using the new heart promise and the vision of the dry bones",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Ezekiel 36:26-27",
+    "Ezekiel 37:1-14",
+    "John 3:5-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 10.1",
+    "Westminster Confession of Faith 10.2",
+    "Westminster Shorter Catechism Q31",
+    "Canons of Dort 3/4.11-12"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the apocalyptic imagery of the Gog and Magog oracles and compare major interpretive approaches to them",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Ezekiel 38:1-23",
+    "Ezekiel 39:1-8",
+    "Revelation 20:7-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate literal and typological readings of Ezekiel's new temple vision and synthesize its river and its closing name with their fulfillment in the New Testament",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Ezekiel 40:1-4",
+    "Ezekiel 47:1-12",
+    "Ezekiel 48:35",
+    "John 2:19-21",
+    "John 7:37-39",
+    "Revelation 21:22",
+    "Revelation 22:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: dry bones, glory leaving the temple, heart of stone and flesh, exile setting, watchman, the recognition formula, Ezekiel 18, the glory diagram, apocalyptic imagery, regeneration, and the temple vision with Revelation. Dropped the filler objectives: strange visions, naming the valley, observing the wheels, and the vague claim that God can make dead things alive. The opening vision now has a concrete description objective. Added missing content: the prophet's call, sign-acts, God as Shepherd and the false shepherds oracle, the book's structure, the title son of man, the unfaithful wife allegory, the two sticks, God acting for His name's sake, the Tyre lament, and Gog and Magog. Anchors now use specific verse ranges. Corrected the confession reference to Westminster Confession of Faith 10.1 and 10.2 and added Westminster Shorter Catechism Q31 and Canons of Dort 3/4.11-12 for regeneration.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1948,
+  "output": 5149
+ }
+}

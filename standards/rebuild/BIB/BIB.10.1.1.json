@@ -1,0 +1,341 @@
+{
+ "sub_topic": "BIB.10.1.1",
+ "name": "Christian Ethics",
+ "path": [
+  "Bible & Theology",
+  "Practical Theology & Christian Living",
+  "Christian Living and Spiritual Disciplines"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Ten Commandments as the rules God gave his people for how to live",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 20:1-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q41"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify everyday actions such as lying and stealing as breaking God's commandments",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 20:15-16",
+    "Ephesians 4:25",
+    "Ephesians 4:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what it means to honor parents and others in authority according to the fifth commandment",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:12",
+    "Ephesians 6:1-3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q64"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the parable of the Good Samaritan and explain whom Jesus calls our neighbor",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Luke 10:25-37"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that God sees and knows everything we do, so right and wrong are measured by God and not by who is watching",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 139:1-4",
+    "Proverbs 15:3",
+    "Hebrews 4:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the two greatest commandments and show how they sum up duties to God and duties to neighbor in the Ten Commandments",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 22:37-40",
+    "Exodus 20:1-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q42"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Christians tell the truth by connecting honesty to the truthful character of God",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Numbers 23:19",
+    "John 14:6",
+    "Ephesians 4:25"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q112"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply the Golden Rule to school situations such as bullying, teasing, and leaving others out",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [
+    "Matthew 7:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare what the surrounding culture says is right with what the Bible teaches on a given moral question",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Romans 12:2",
+    "Isaiah 5:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that each commandment both forbids a sin and requires the opposite duty, using the sixth commandment as an example",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:13",
+    "Matthew 5:21-24"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q105",
+    "Heidelberg Catechism Q107"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture describes conscience and the moral law written on every human heart",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Romans 2:14-15",
+    "Romans 1:18-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Jesus' teaching in the Sermon on the Mount that God's law reaches the heart as well as outward actions",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 5:21-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that obedience to God's law is a response of gratitude for grace and not a way to earn salvation",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 6:14",
+    "Ephesians 2:8-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6",
+    "Heidelberg Catechism Q86"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply the doctrine of the image of God to the value of human life in issues such as abortion and euthanasia",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 9:6",
+    "Psalm 139:13-16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q68"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical view of work as a calling from God and the Scripture's warnings against laziness",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:15",
+    "Proverbs 6:6-11",
+    "Colossians 3:23-24",
+    "2 Thessalonians 3:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q74"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical teaching on marriage and sexual purity as grounded in creation and the seventh commandment",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:24",
+    "Matthew 19:4-6",
+    "1 Corinthians 6:18-20"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q71"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what Scripture teaches about justice and mercy toward the poor and vulnerable",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Micah 6:8",
+    "Proverbs 31:8-9",
+    "Amos 5:24",
+    "James 2:14-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare consequence-based, duty-based, and virtue-based ethical theories with biblical ethics' attention to God's law, right motive, and God's glory",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 10:31",
+    "Micah 6:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed doctrine of Christian liberty and the care owed to a weaker brother in matters Scripture does not command",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Romans 14:1-23",
+    "1 Corinthians 8:9-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical framework for moral decision making that weighs direct commands, scriptural principles, wisdom, and conscience",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Psalm 119:105",
+    "1 Corinthians 10:23-31",
+    "Proverbs 3:5-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the moral, ceremonial, and civil laws of the Old Testament and explain how the Reformed tradition applies each today",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 5:17-19",
+    "Colossians 2:16-17",
+    "Hebrews 10:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.3",
+    "Westminster Confession of Faith 19.4",
+    "Westminster Confession of Faith 19.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate complex ethical dilemmas such as war and bioethics using scriptural principles and the Reformed confessional tradition",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 9:6",
+    "Romans 13:1-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 23.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the existence of objective morality grounded in God's character against the claims of moral relativism",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 1:18-20",
+    "Romans 2:14-15",
+    "Judges 21:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the three uses of the law and explain the Reformed teaching on the law as a guide for the believer's life",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:20",
+    "Galatians 3:24",
+    "Psalm 119:105"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6",
+    "Heidelberg Catechism Q115"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Ten Commandments, two great commandments, truth-telling, Golden Rule, worldview comparison, Sermon on the Mount, law and grace, image of God, work, decision making, dilemmas, relativism, third use of the law). Dropped vague recall items or merged them into fuller objectives. Recast 'observe that God sees everything' as an explanation of God as the measure of right and wrong. Moved the Golden Rule earlier. Added missing competencies: honoring authority, the Good Samaritan, the forbids-and-requires reading of each commandment, conscience and natural law, marriage and sexual ethics, justice and mercy, comparison with secular ethical theories, Christian liberty, and the moral, ceremonial, and civil distinction. Added verse-level Scripture and confession anchors, removed whole-concept citations that did not fit, and left neighbouring material on holiness, prayer, and the fruit of the Spirit to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1965,
+  "output": 5285
+ }
+}

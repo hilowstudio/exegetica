@@ -1,0 +1,258 @@
+{
+ "sub_topic": "BIB.1.3.2",
+ "name": "Miracles as Proof",
+ "path": [
+  "Bible & Theology",
+  "Apologetics and Worldviews",
+  "Evidential Apologetics"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify a miracle as a wonderful work that only God can do, using the story of Jesus calming the storm",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Mark 4:35-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell a miracle in which Jesus showed his power over sickness, nature, or death",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Mark 4:39-41",
+    "Mark 5:41-42",
+    "Mark 1:40-42"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from John's Gospel that the signs of Jesus were written down so that readers would believe he is the Christ, the Son of God",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "John 20:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish a true miracle from a magic trick, using the account of Pharaoh's magicians admitting the finger of God",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 7:10-12",
+    "Exodus 8:18-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain two purposes of Jesus' miracles, showing compassion and proving his authority, using specific Gospel accounts",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 14:14",
+    "Mark 2:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify the miracles of Jesus as nature, healing, exorcism, or raising the dead and explain what each kind reveals about his authority",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "Mark 4:41",
+    "Mark 1:27",
+    "Luke 7:14-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the main periods when miracles cluster in Scripture and explain how they accompanied and confirmed new revelation from God",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 4:1-5",
+    "1 Kings 18:36-39",
+    "Hebrews 2:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define a miracle using the biblical terms signs, wonders, and mighty works and distinguish it from God's ordinary providence as the Reformed tradition describes it",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:22",
+    "Hebrews 1:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Nicodemus and the man born blind reasoned from Jesus' signs to the conclusion that he came from God",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "John 3:2",
+    "John 9:30-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus appealed to his own works as testimony to his identity and his unity with the Father",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "John 5:36",
+    "John 10:37-38",
+    "Matthew 11:4-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the seven signs of John's Gospel and explain what each reveals about who Jesus is",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "John 2:11",
+    "John 4:54",
+    "John 11:43-44",
+    "John 20:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why witnessing miracles does not by itself produce faith, connecting this to the Reformed teaching on the inward work of the Spirit",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Luke 16:31",
+    "John 12:37",
+    "Matthew 12:38-39"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate claimed wonders in other religions and movements using the biblical tests for counterfeit signs",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Deuteronomy 13:1-3",
+    "Matthew 24:24",
+    "2 Thessalonians 2:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed cessationist position on revelatory miracles with continuationist views and explain how each affects the use of miracles in apologetics",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "2 Corinthians 12:12",
+    "Hebrews 2:3-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze David Hume's argument against miracles and construct a reasoned response to its premises about uniform experience and testimony",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claim that science disproves miracles by distinguishing natural laws as descriptions of God's ordinary providence from philosophical naturalism",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Colossians 1:17",
+    "Hebrews 1:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture presents the Resurrection as the culminating sign on which the credibility of the other miracles depends",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 12:39-40",
+    "John 2:18-22",
+    "1 Corinthians 15:14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the role and limits of miracles as evidence by comparing evidentialist and presuppositional approaches in light of Scripture's teaching on faith and sight",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "John 20:29-31",
+    "Romans 1:19-20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a written or oral argument from the biblical miracles that answers a common objection with gentleness and respect",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Peter 3:15",
+    "Acts 2:22"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (miracle definition, Jesus' power, purpose of signs, magic vs miracle, categories, Nicodemus, John's signs, Hume, science objection, cessation debate, Resurrection as culminating sign). Merged the duplicate magic/miracle objectives. Replaced the vague comparison with other religions with testing counterfeit wonders by biblical criteria. Replaced the personal reflection on faith and evidence with an evaluative comparison of apologetic approaches plus an argument-construction task. Added objectives on miracle clusters confirming revelation, Jesus' appeal to his works, why miracles do not compel faith, and providence vs miracle anchored in WCF 5.3. Kept resurrection treatment theological, leaving historical evidence to the sibling sub-topic. Added verse-level Scripture and confession anchors throughout.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1921,
+  "output": 3963
+ }
+}

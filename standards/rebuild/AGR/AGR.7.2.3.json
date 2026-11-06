@@ -1,0 +1,251 @@
+{
+ "sub_topic": "AGR.7.2.3",
+ "name": "Teamwork & Parliamentary Procedure",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "FFA Leadership & SAE",
+  "Leadership & Personal Development"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe ways team members take turns, share tasks, and listen to one another to complete a group project",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify roles members can play on a team such as leader, recorder, timekeeper, and encourager",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how a group reaches a decision through discussion followed by a majority vote",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of parliamentary procedure in running an orderly meeting",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the FFA officer stations and the duties each officer performs during a chapter meeting",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the meaning of one, two, and three gavel taps used by a presiding officer",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the standard order of business for an FFA chapter meeting",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate how to make, second, and vote on a main motion",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define parliamentary terms such as motion, second, amendment, quorum, previous question, and adjourn",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.013.01.01.a"
+   ]
+  },
+  {
+   "text": "Explain how parliamentary procedure protects the rights of the majority, the minority, and absent members",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.013.01.01.b"
+   ]
+  },
+  {
+   "text": "Classify motions as main, subsidiary, privileged, incidental, or bringing a question again before the assembly and rank them by precedence",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.013.01.01.a",
+    "FPS.013.01.01.b"
+   ]
+  },
+  {
+   "text": "Record accurate minutes of a business meeting including each motion made and the result of each vote",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare voting methods such as voice vote, rising vote, show of hands, and ballot and select the appropriate method for a meeting situation",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.013.01.01.b"
+   ]
+  },
+  {
+   "text": "Apply rules of debate including obtaining the floor, speaking limits, and germane discussion in a business meeting",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.13.02.01.c"
+   ]
+  },
+  {
+   "text": "Chair a short meeting that introduces, debates, and votes on a main motion",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.13.02.01.c"
+   ]
+  },
+  {
+   "text": "Analyze how a chapter committee divides its work and reports recommendations back to the full membership",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.12.02.02.a"
+   ]
+  },
+  {
+   "text": "Apply Robert's Rules of Order to process amendments, refer motions to committee, and raise points of order during a mock meeting",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.013.01.01.b",
+    "FPS.013.01.01.c"
+   ]
+  },
+  {
+   "text": "Analyze a meeting scenario to determine which motion is in order and whether it needs a second, is debatable, is amendable, and what vote it requires",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.013.01.01.b"
+   ]
+  },
+  {
+   "text": "Develop strategies to resolve conflict and keep team members engaged toward a shared chapter goal",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.12.02"
+   ]
+  },
+  {
+   "text": "Demonstrate parliamentary procedure as a team to resolve a chapter problem in the format of the FFA Parliamentary Procedure Career Development Event",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.013.01.01.c",
+    "FPS.13.02.01.c"
+   ]
+  },
+  {
+   "text": "Lead a chapter business meeting from call to order through adjournment using full parliamentary procedure",
+   "grade": 12,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.013.01.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate the efficiency and fairness of a chapter meeting and recommend improvements to its procedures",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.06.02",
+    "CRP.06.02.01.b",
+    "CRP.06.02.02.b"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives as real competencies, rewording a few for precision. Added teamwork roles, group decision making, FFA officer stations, gavel taps, order of business, parliamentary terms, member rights, motion classification and precedence, minutes, voting methods, debate rules, committee work, motion analysis, team conflict strategies, the Parliamentary Procedure CDE, and meeting evaluation. Standards are assigned only at grades 9 to 12 where an objective directly teaches the AFNR standard. Personal character, public speaking, and goal setting content was left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "CRP.01.01.01.a",
+  "CRP.01.03.01.c",
+  "CRP.05.01.01.a",
+  "CRP.06.02",
+  "CRP.06.02.01.b",
+  "CRP.06.02.02.a",
+  "CRP.06.02.02.b",
+  "CRP.06.03",
+  "CRP.06.03.02.c",
+  "CRP.12.02",
+  "CRP.12.02.02.a",
+  "FPS.013.01.01.a",
+  "FPS.013.01.01.b",
+  "FPS.013.01.01.c",
+  "FPS.13.02.01.c"
+ ],
+ "usage": {
+  "input": 2450,
+  "output": 3492
+ }
+}

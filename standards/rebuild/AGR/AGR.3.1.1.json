@@ -1,0 +1,206 @@
+{
+ "sub_topic": "AGR.3.1.1",
+ "name": "Agricultural Shop Safety",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Shop Safety, Tools & Fabrication"
+ ],
+ "grades": [
+  5,
+  6,
+  7,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the required personal protective equipment for a given shop task, including eye, ear, hand, foot, and respiratory protection",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate general shop rules for proper dress, hair and jewelry control, housekeeping, and conduct before and during shop work",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate and explain the purpose of shop safety equipment, including fire extinguishers, eyewash stations, first-aid kits, and emergency shutoffs",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret safety color codes and the signal words danger, warning, and caution on shop signs, labels, and equipment",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate safe lifting, carrying, and material-handling techniques for shop stock and equipment",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify fires using the fire triangle and fire classes and demonstrate selecting and operating the correct extinguisher with the PASS method",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate the shop emergency procedure for reporting an injury, using the eyewash station, giving basic first aid for cuts and burns, and evacuating the shop",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the hazard information on a Safety Data Sheet and chemical label and apply it to the safe storage and use of a shop chemical such as a solvent, fuel, or paint",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain electrical hazards in the shop and the practices that control them, including ground fault circuit interrupters, grounding, cord inspection, and avoiding wet conditions",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Justify the selection of personal protective equipment for a shop task based on its specific hazards and inspect that equipment for proper fit and condition",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.03.04.01.a",
+    "FPS.03.04"
+   ]
+  },
+  {
+   "text": "Interpret the hazards of agricultural machinery and power units using owner's manuals, safety decals, signal words, and safety color codes",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.02.02.02.a",
+    "PST.01.02.03.a"
+   ]
+  },
+  {
+   "text": "Apply the federal Hazardous Occupations Orders in Agriculture to determine which shop and farm tasks are permitted for youth in a supervised agricultural experience placement",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate lockout and tagout procedures before servicing or adjusting shop machinery and agricultural equipment",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.03.04"
+   ]
+  },
+  {
+   "text": "Analyze a shop layout for hazards such as blocked exits, poor ventilation, missing machine guards, and improper storage and propose corrections",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.08.04.01.b"
+   ]
+  },
+  {
+   "text": "Analyze a shop activity for airborne hazards such as dust, fumes, and engine exhaust carbon monoxide and recommend ventilation or respiratory controls",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.08.04.01.b"
+   ]
+  },
+  {
+   "text": "Create a job safety analysis for a shop task or supervised agricultural experience project that ranks controls using the hierarchy of hazard controls",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.08.04.01.b"
+   ]
+  },
+  {
+   "text": "Investigate a shop incident or near miss to determine its root causes and recommend preventive actions",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.08.04.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate a shop's compliance with OSHA general industry standards and justify a plan to manage its remaining risks",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.08.04.01.b"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives, lightly reworded (added respiratory protection, machine guards, and solvent and fuel examples). Added general shop rules and conduct, safety color codes and signal words, fire classes and extinguisher use, emergency and first-aid response, electrical safety, PPE fit and inspection, machinery hazard interpretation from manuals and decals, the youth Hazardous Occupations Orders for SAE placements, lockout and tagout, airborne hazard control, job safety analysis using the hierarchy of controls, and incident investigation. Tool-specific, welding, and woodworking procedures are left to the sibling sub-topics. Standards are tied only to objectives at grade 9 and above. Food, pesticide, and biotechnology safety codes were not used because they fall outside the shop setting.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "BS.02.03.01.b",
+  "FPP.01.01.01.a",
+  "FPP.01.01.01.b",
+  "FPP.01.02.04.a",
+  "FPP.03.03.02.b",
+  "FPP.03.03.02.c",
+  "FPS.03.04",
+  "FPS.03.04.01.a",
+  "FPS.08.04.01.b",
+  "PS.03.03.04.b",
+  "PS.03.06",
+  "PS.03.06.01.a",
+  "PS.03.06.01.b",
+  "PST.01.02.03.a",
+  "PST.02.02.02.a"
+ ],
+ "usage": {
+  "input": 2661,
+  "output": 4134
+ }
+}

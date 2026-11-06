@@ -1,0 +1,288 @@
+{
+ "sub_topic": "AGR.1.3.2",
+ "name": "Swine, Sheep & Goats",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Animal Science",
+  "Livestock Species & Production Systems"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Sort pictures of pigs, sheep, and goats by species and name one product each provides",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the terms for the male, female, castrated male, and young of swine, sheep, and goats",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Label the major external parts of a pig, a sheep, and a goat",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the housing and feeding needs of swine, sheep, or goats at different life stages",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common breeds of swine, sheep, and goats and classify each by its primary purpose such as meat, wool, hair, mohair, or dairy",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the monogastric digestive system of swine with the ruminant digestive system of sheep and goats and explain how each affects what the animal is fed",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain differences in reproductive rates, gestation lengths, and market timelines among swine, sheep, and goats",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe common production systems such as farrow-to-finish, wean-to-finish, farm flock, and range operations and explain where each fits in the industry",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain common management practices for swine and small ruminants such as castration, tail docking, needle teeth clipping, hoof trimming, and parasite control",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the structure of the swine industry, including vertical integration, and contrast it with the structure of the sheep and goat industries",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.01.02.a"
+   ]
+  },
+  {
+   "text": "Identify animal identification and tracking methods used for swine, sheep, and goats such as ear notching, scrapie tags, tattoos, and premises ID",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.02.03.a"
+   ]
+  },
+  {
+   "text": "Demonstrate low-stress handling of swine, sheep, or goats using knowledge of flight zone, flocking instinct, and tools such as sorting boards",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02"
+   ]
+  },
+  {
+   "text": "Apply feed label information and feeding directions to develop a daily feeding program for a market hog, lamb, or goat SAE project",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.03.02.b"
+   ]
+  },
+  {
+   "text": "Explain how wool and mohair are graded using fiber diameter, staple length, and yield",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.03.02.b"
+   ]
+  },
+  {
+   "text": "Use FAMACHA scoring and fecal egg counts to make targeted deworming decisions for a sheep or goat flock",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate a class of market hogs, lambs, or goats for muscling, structural correctness, and finish and defend the placing with oral reasons",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.03.02.c"
+   ]
+  },
+  {
+   "text": "Interpret market weight and grade data to determine the optimal time to sell a group of market hogs or lambs",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.03.02.b",
+    "AS.06.01.02.b"
+   ]
+  },
+  {
+   "text": "Compare marketing methods for pork, lamb, and goat meat such as packer contracts, sale barns, ethnic and holiday markets, and direct freezer sales",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.02.02.a"
+   ]
+  },
+  {
+   "text": "Explain the difference between animal welfare and animal rights using examples from swine housing and small ruminant management debates",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.01.01.a"
+   ]
+  },
+  {
+   "text": "Explain sustainability practices in swine, sheep, and goat production such as manure nutrient management and rotational grazing",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.03.02.a"
+   ]
+  },
+  {
+   "text": "Analyze carcass data such as backfat, loin eye area, and lamb yield grade to judge carcass merit and its effect on value",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.03.02.b",
+    "AS.06.01.02.b"
+   ]
+  },
+  {
+   "text": "Analyze how production methods such as gestation stalls versus group housing or confinement versus pasture affect product quality, cost, and animal welfare",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.02.01.b"
+   ]
+  },
+  {
+   "text": "Select and justify breeding methods such as artificial insemination, estrus synchronization, and crossbreeding systems for a swine herd or sheep or goat flock based on reproductive and economic efficiency",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.01.c"
+   ]
+  },
+  {
+   "text": "Create a care plan for sows, ewes, or does that differentiates management through breeding, gestation, farrowing or lambing or kidding, and lactation",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.04.c"
+   ]
+  },
+  {
+   "text": "Recommend whether a swine, sheep, or goat enterprise best fits a given farm based on local market demand, economic circumstances, and available land and facilities",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.01.02.c",
+    "AS.06.01.02.b"
+   ]
+  },
+  {
+   "text": "Design a production and marketing plan for a swine, sheep, or goat enterprise that accounts for breeding schedule, feed costs, and target markets",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.02.02.c",
+    "AS.04.03.01.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six original objectives, rewording the grade 6 and grade 8 items to add gestation length and swine-specific practices, and anchored the grade 10 and 12 items to standards. Added early objectives on species terminology, external parts, breeds by purpose, and digestive systems. Added a middle-grade objective on production systems. Added high school competencies tied to the AFNR standards: industry structure, animal identification, low-stress handling, feed labels for SAE projects, wool and mohair grading, FAMACHA-based parasite control, livestock judging with oral reasons, marketing methods, welfare versus rights, sustainability, carcass evaluation, housing impacts, breeding methods, reproductive care plans, and enterprise selection. Cattle, poultry, and equine content was left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.01.01.02.a",
+  "AS.01.02.01.b",
+  "AS.01.02.02.a",
+  "AS.01.02.02.c",
+  "AS.01.03.02.a",
+  "AS.02",
+  "AS.02.01.01.a",
+  "AS.02.02.03.a",
+  "AS.03.03.02.b",
+  "AS.04.02.04.c",
+  "AS.04.03.01.c",
+  "AS.06.01.02.b",
+  "AS.06.01.02.c",
+  "AS.06.03.02.b",
+  "AS.06.03.02.c"
+ ],
+ "usage": {
+  "input": 2305,
+  "output": 4253
+ }
+}

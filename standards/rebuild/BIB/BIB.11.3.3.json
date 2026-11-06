@@ -1,0 +1,341 @@
+{
+ "sub_topic": "BIB.11.3.3",
+ "name": "Necessity and Inspiration",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Bibliology: The Doctrine of Scripture"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Bible as the book in which God speaks to his people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 3:16",
+    "Hebrews 1:1-2"
+   ],
+   "confessions": [
+    "Belgic Confession Article 3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that the sky, the seasons, and living things show that God is great and powerful",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 19:1-4",
+    "Romans 1:20"
+   ],
+   "confessions": [
+    "Belgic Confession Article 2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that Scripture is breathed out by God, using the words of 2 Timothy 3:16",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 3:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that people need the Bible to learn who Jesus is and how God saves sinners",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 5:39",
+    "John 20:31",
+    "Romans 10:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how God used human writers such as Moses, David, Luke, and Paul to write his words",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 24:4",
+    "Luke 1:1-4",
+    "2 Peter 1:21"
+   ],
+   "confessions": [
+    "Belgic Confession Article 3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish general revelation from special revelation using examples of each",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 19:1-11",
+    "Romans 1:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Belgic Confession Article 2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why general revelation leaves people without excuse but cannot teach them the way of salvation",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 1:18-20",
+    "Romans 10:14-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify ways God revealed himself before Scripture was complete and explain why he had his word written down",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 1:1-2",
+    "Exodus 24:4",
+    "Luke 1:3-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Belgic Confession Article 3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the four purposes for which inspired Scripture is profitable according to 2 Timothy 3:16-17",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use a passage of Scripture to show how it teaches, reproves, corrects, or trains in righteousness in a given situation",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "Psalm 119:9-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the meaning of verbal plenary inspiration and how Jesus and Paul treat the very words and letters of Scripture as significant",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 5:18",
+    "Galatians 3:16",
+    "Matthew 22:31-32"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Contrast the doctrine of inspiration with a mechanical dictation view by showing how the writers' research, style, and personality remain in the text",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Luke 1:1-4",
+    "2 Peter 1:21",
+    "Romans 9:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret 2 Peter 1:19-21 in its context to explain what it means that the prophets were carried along by the Holy Spirit",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "2 Peter 1:16-21"
+   ],
+   "confessions": [
+    "Belgic Confession Article 3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how sin's effect on the human mind makes Scripture necessary for knowing God savingly",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 1:21-23",
+    "1 Corinthians 2:14",
+    "Ephesians 4:17-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish revelation, inspiration, and illumination and explain the Spirit's role in each",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 2:10-14",
+    "2 Peter 1:21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Westminster Confession's teaching that Scripture is most necessary because God's former ways of revealing his will have now ceased",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 1:1-2",
+    "Jude 1:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze New Testament passages that treat what Scripture says as what God says",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 19:4-5",
+    "Acts 4:24-25",
+    "Hebrews 3:7",
+    "Romans 9:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the apostles understood their own teaching and writings as words given by the Spirit",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 2:13",
+    "1 Thessalonians 2:13",
+    "2 Peter 3:15-16",
+    "John 14:26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the neo-orthodox view that Scripture becomes the Word of God in encounter against the Reformed view that Scripture is the Word of God",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Timothy 3:16",
+    "1 Thessalonians 2:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate liberal and partial views of inspiration that limit it to human insight or to religious ideas alone",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Peter 1:20-21",
+    "2 Timothy 3:16",
+    "Matthew 5:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an argument for the necessity of special revelation for salvation that answers the objection concerning those who never hear",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Romans 10:13-17",
+    "Acts 4:12",
+    "Romans 1:18-20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Westminster Confession of Faith 10.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an explanation of the dual authorship of Scripture showing how God fully authored each word while human writers fully wrote as themselves",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 4:25",
+    "2 Peter 1:21",
+    "Jeremiah 1:9",
+    "Luke 1:1-4"
+   ],
+   "confessions": [
+    "Belgic Confession Article 3",
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Write a defense of the divine origin of Scripture drawing on its self-witness and the marks the Westminster Confession identifies",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "2 Timothy 3:16",
+    "2 Peter 1:19-21",
+    "John 10:35"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Dropped 'only book that is perfectly true' and 'the Bible is the boss' as they belong to the Inerrancy and Authority sibling. Reworded the K to 3 items into observable competencies and replaced the vague 'apply usefulness' item with explaining and using 2 Timothy 3:16-17. Split the grade 8 interpretation item so 2 Peter 1:19-21 is read in context and the Timothy material sits earlier. Kept and sharpened verbal plenary inspiration, revelation versus illumination, neo-orthodoxy, necessity for salvation, dual authorship, and the divine origin defense. Added general versus special revelation, the reason God had his word written, dictation theory, sin's noetic effect, the Confession's teaching on former ways of revelation having ceased, Scripture's self-witness in Jesus and the apostles, and liberal views of inspiration. Anchored confessions to WCF 1.1, 1.2, 1.5, 1.6, 1.8, 10.4 and Belgic Confession Articles 2 and 3, and removed WCF 1.4 as an authority article.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2076,
+  "output": 5125
+ }
+}

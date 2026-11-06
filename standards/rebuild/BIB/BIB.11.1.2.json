@@ -1,0 +1,299 @@
+{
+ "sub_topic": "BIB.11.1.2",
+ "name": "The Ministry of the Holy Angels",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Angelology: The Doctrine of Spiritual Beings"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify holy angels as servants God sends to help His people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Hebrews 1:14",
+    "Psalm 103:20"
+   ],
+   "confessions": [
+    "Belgic Confession Article 12"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how the angels announced the birth of Jesus to the shepherds",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:9-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how the angel Gabriel brought Mary the news that she would bear Jesus",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Luke 1:26-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that holy angels obey God's commands and praise His name",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 103:20-21",
+    "Psalm 148:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Jesus' words that angels rejoice in heaven when a sinner repents",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Luke 15:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe biblical accounts in which God sent angels to protect or rescue His people",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "2 Kings 6:15-17",
+    "Daniel 6:22",
+    "Acts 12:7-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how angels worship God in the visions of Isaiah and Revelation",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 6:1-3",
+    "Revelation 5:11-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how angels carried God's messages to people in Scripture using examples from both Testaments",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 9:21-23",
+    "Luke 1:11-20",
+    "Acts 10:3-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Lord's Prayer petition for God's will to be done on earth as in heaven points to the angels' willing obedience as a pattern for believers",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 6:10",
+    "Psalm 103:20"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q124",
+    "Westminster Shorter Catechism Q103"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the worship angels offer God with the worship of the gathered church",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 5:11-14",
+    "Hebrews 12:22-24",
+    "Isaiah 6:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Psalm 91 and Matthew 18 teach about God commanding angels to guard His people and how Jesus refused Satan's misuse of Psalm 91",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 91:11-12",
+    "Matthew 18:10",
+    "Matthew 4:5-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the work Scripture says angels will do at Christ's return",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 24:31",
+    "Matthew 13:39-43",
+    "1 Thessalonians 4:16",
+    "Matthew 25:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the ministry of angels across redemptive history from the garden to the giving of the law to the early church",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 3:24",
+    "Exodus 23:20",
+    "Galatians 3:19",
+    "Acts 7:53",
+    "Acts 8:26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the angels' service to Christ at His birth, temptation, agony in Gethsemane, resurrection, and ascension",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Luke 2:9-14",
+    "Matthew 4:11",
+    "Luke 22:43",
+    "Matthew 28:2-6",
+    "Acts 1:10-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture that God also uses angels as agents of His justice in judgment",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "2 Kings 19:35",
+    "Acts 12:23",
+    "2 Thessalonians 1:7-8"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition forbids worshiping or praying to angels",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 22:8-9",
+    "Colossians 2:18",
+    "Matthew 4:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.2",
+    "Westminster Larger Catechism Q105"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Westminster Larger Catechism presents angels as instruments God employs at His pleasure in the administration of His power, mercy, and justice",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 103:20-21",
+    "Hebrews 1:14"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the argument of Hebrews 1 that the Son is superior to the angels, who are ministering spirits sent to serve the heirs of salvation",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 1:4-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate popular beliefs about guardian angels, including praying to them and the idea that people become angels, in light of Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 18:10",
+    "Acts 12:15",
+    "Colossians 2:18",
+    "1 Timothy 2:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate claims of new revelation received from angels using Paul's warning in Galatians and the sufficiency of Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 1:8",
+    "2 Corinthians 11:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblically grounded summary of the ministry of holy angels that keeps them subordinate to Christ and in service to His church",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Hebrews 1:14",
+    "Psalm 103:20-21",
+    "Revelation 22:8-9",
+    "Colossians 1:16"
+   ],
+   "confessions": [
+    "Belgic Confession Article 12",
+    "Westminster Larger Catechism Q19"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (angels as God's servants, Gabriel, obedience, rejoicing over repentance, messengers, worship comparison, guarding, redemptive history, service to Christ, no worship of angels, guardian angel prayers, Hebrews 1 synthesis). Dropped filler and overlapping items (generic summary, connecting to church care, separate defend item) and the feeling-based 'apply comfort' objective, recasting it as interpreting Psalm 91 and Matthew 18. Added the shepherds' announcement, protection narratives, the Lord's Prayer petition with Heidelberg Q124 and WSC Q103, angels at Christ's return, angels as agents of justice, WLC Q19 on providence, and evaluating claimed angelic revelation. Anchored to verse-level Scripture and to confessional articles that state each doctrine (Belgic 12, WLC Q19, WCF 21.2, WLC Q105, WCF 1.6).",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2073,
+  "output": 4654
+ }
+}

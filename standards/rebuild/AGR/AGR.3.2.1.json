@@ -1,0 +1,219 @@
+{
+ "sub_topic": "AGR.3.2.1",
+ "name": "Small Gas Engines",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Power, Engines & Machinery"
+ ],
+ "grades": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify safe work practices for small engine labs, including eye protection, fuel handling, ventilation, and disconnecting the spark plug wire before service",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the major external components of a small gasoline engine, including the air cleaner, carburetor, muffler, recoil starter, fuel tank, and spark plug",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the major internal components of a small engine, including the piston, rings, connecting rod, crankshaft, camshaft, valves, and flywheel",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the intake, compression, power, and exhaust strokes of the four-stroke cycle in the order they occur",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the roles of the ignition, fuel, lubrication, and cooling systems in small engine operation",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare two-stroke and four-stroke engines in their power cycle, lubrication method, fuel requirements, and typical farm and landscape uses",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how a mechanical or air-vane governor maintains engine speed as the load changes",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Prepare the correct fuel and oil for a small engine, including mixing two-stroke fuel at the specified ratio and storing fuel to prevent ethanol-related problems",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate the correct procedure for servicing an air filter, replacing and gapping a spark plug, and changing engine oil",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use a feeler gauge and torque wrench to set spark plug gap, armature air gap, and fastener torque to manufacturer specifications",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate engine specifications and service procedures in a manufacturer's service manual using the engine model and serial numbers",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.01.02.b",
+    "PST.03.01"
+   ]
+  },
+  {
+   "text": "Calculate engine displacement and compression ratio from bore, stroke, and chamber volume measurements",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.01.02.a"
+   ]
+  },
+  {
+   "text": "Disassemble and reassemble a small engine in correct sequence while explaining how each component works with the others during operation",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.01.01.a",
+    "PST.03.01.01.b"
+   ]
+  },
+  {
+   "text": "Test magneto ignition components and kill switch circuits using a spark tester and multimeter to locate electrical faults",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.02",
+    "PST.03.02.02.c"
+   ]
+  },
+  {
+   "text": "Diagnose a small engine that fails to start by systematically testing for spark, fuel, and compression",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.01.01.c",
+    "PST.03.01.02.b",
+    "PST.03.03"
+   ]
+  },
+  {
+   "text": "Evaluate internal engine wear by measuring cylinder bore, piston ring end gap, and valve clearance and comparing results to manufacturer specifications",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.01.01.c",
+    "PST.03.01.02.b"
+   ]
+  },
+  {
+   "text": "Troubleshoot and repair a carburetor fault causing hard starting, rough idle, or stalling by cleaning, adjusting, and replacing jets, floats, needles, and gaskets",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.01",
+    "PST.03.01.02.c"
+   ]
+  },
+  {
+   "text": "Evaluate small engine options for an agricultural task by comparing horsepower, torque, engine type, fuel use, and duty cycle",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.01.02.a"
+   ]
+  },
+  {
+   "text": "Develop a written work order with diagnosis, parts list, labor time, and cost estimate for a small engine repair completed through supervised agricultural experience",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept all six original competencies, reworded for precision, and added cooling to the systems objective. Added shop safety, internal components, a two-stroke versus four-stroke comparison, governor operation, fuel mixing and storage, and precision measurement to specifications. Added grade 9 and 10 work on service manuals, displacement and compression ratio, guided teardown and reassembly, ignition electrical testing, internal wear measurement, engine selection, and an SAE work order with cost estimate. Left tractor systems, hydraulics, and general machinery maintenance to the sibling sub-topics. Mapped AFNR PST.03 standards only to objectives at grade 9 and above.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "PST.02.01.02.a",
+  "PST.03.01",
+  "PST.03.01.01.a",
+  "PST.03.01.01.b",
+  "PST.03.01.01.c",
+  "PST.03.01.02.a",
+  "PST.03.01.02.b",
+  "PST.03.01.02.c",
+  "PST.03.02",
+  "PST.03.02.02.c",
+  "PST.03.03",
+  "PST.03.03.02.a",
+  "PST.03.03.02.b",
+  "PST.04.05.02.b",
+  "PST.05.02.02.c"
+ ],
+ "usage": {
+  "input": 2436,
+  "output": 3372
+ }
+}

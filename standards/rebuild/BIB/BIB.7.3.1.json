@@ -1,0 +1,273 @@
+{
+ "sub_topic": "BIB.7.3.1",
+ "name": "Second Temple Judaism and Key Sects (Pharisees, Sadducees)",
+ "path": [
+  "Bible & Theology",
+  "Historical & Cultural Context",
+  "Jewish Culture and Tradition (Intertestamental)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Temple in Jerusalem as the place where the Jewish people worshiped God in the days of Jesus",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:41-49"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the Pharisees and the Sadducees as groups of Jewish teachers and leaders who appear in the stories about Jesus",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 22:23",
+    "Matthew 22:34-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how God's people returned from exile and rebuilt the Temple, which began the Second Temple period",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 3:8-13",
+    "Ezra 6:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recount a Gospel story in which Jesus answered the Pharisees about keeping the Sabbath",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Mark 2:23-28",
+    "Mark 3:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the work of the scribes as students, copyists, and teachers of the law of Moses",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 7:6-10",
+    "Matthew 7:28-29",
+    "Mark 12:38-40"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main differences between the Pharisees and the Sadducees in their beliefs about the resurrection, angels, and spirits",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 23:6-8",
+    "Matthew 22:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus' parable of the Pharisee and the tax collector contrasts trust in one's own righteousness with humble dependence on God's mercy",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Luke 18:9-14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Zealots, the Essenes, and the Herodians with the Pharisees and Sadducees in how each group related to Rome and to the Temple",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Luke 6:15",
+    "Mark 3:6",
+    "Mark 12:13-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Herod expanded the Second Temple and how Jesus foretold its destruction",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "John 2:19-21",
+    "Mark 13:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Greek rule and the Maccabean revolt in the intertestamental period shaped Jewish zeal for the law and the Temple",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 11:31-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the tradition of the elders and how Jesus distinguished it from the commandment of God in the dispute over handwashing and Corban",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Mark 7:1-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 20.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Connect the Sadducees to the high priestly families and their control of the Temple using their opposition to the apostles in Acts",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 4:1-3",
+    "Acts 5:17-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Jesus' woes against the scribes and Pharisees by distinguishing his respect for the teaching of Moses from his rebuke of hypocrisy and neglect of justice, mercy, and faithfulness",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 23:1-3",
+    "Matthew 23:23-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus answered the Sadducees' denial of the resurrection from the Scriptures and how the Reformed confessions state the doctrine of the resurrection of the body",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 22:23-33",
+    "Exodus 3:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.2",
+    "Westminster Confession of Faith 32.3",
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain who the Qumran community was and how the Dead Sea Scrolls bear on the faithful transmission of the Old Testament text",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 40:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Paul's former life as a zealous Pharisee with his later teaching on righteousness through faith in Christ",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Philippians 3:4-9",
+    "Galatians 1:13-14",
+    "Acts 23:6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33",
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate common stereotypes of the Pharisees using New Testament accounts of Nicodemus, Gamaliel, and Pharisees who warned Jesus",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "John 3:1-2",
+    "John 19:39",
+    "Acts 5:34-39",
+    "Luke 13:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how extrabiblical sources such as Josephus describe the Jewish sects and compare their accounts with the New Testament",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Acts 23:8",
+    "Acts 26:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Reformed teaching that worship and good works must rest on God's commands rather than human traditions in light of Jesus' critique of the Pharisees",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Mark 7:6-8",
+    "Matthew 15:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.1",
+    "Westminster Confession of Faith 21.1",
+    "Heidelberg Catechism Q91"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an account of the diversity of Second Temple Judaism that explains how each major group responded to the Law, the Temple, and Rome and how this context illumines the conflicts in the Gospels",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Mark 12:13-27",
+    "Acts 23:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies: the Temple, Pharisees vs Sadducees, scribes, Zealots and Essenes (expanded to include Herodians), tradition of the elders, Jesus' critique in Matthew 23, Sadducees and Temple power, Qumran, and the closing synthesis. Dropped filler or vague items (they didn't like Jesus, observe men reading scrolls, construct a profile) and moved Sanhedrin and political Messiah material to their sibling sub-topics. Added the return from exile and rebuilding of the Temple, Sabbath disputes, the Pharisee and tax collector parable, Herod's Temple and its foretold destruction, the Maccabean background, Jesus' resurrection answer to the Sadducees, Paul as a Pharisee, a fair evaluation of Pharisee stereotypes, use of Josephus as a source, and the Reformed regulative principle against human tradition. Replaced Defend Jesus' interaction with the Law vs Tradition with objectives tied to Mark 7 and confessional statements, and anchored each objective in specific verses and confession articles.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1945,
+  "output": 4949
+ }
+}

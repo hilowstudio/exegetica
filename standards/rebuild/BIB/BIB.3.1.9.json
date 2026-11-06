@@ -1,0 +1,369 @@
+{
+ "sub_topic": "BIB.3.1.9",
+ "name": "Patriarchs (Abraham to Joseph)",
+ "path": [
+  "Bible & Theology",
+  "Biblical Survey & Redemptive History",
+  "Chronological Bible Narrative"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Abraham as the man God called to leave his home and who believed God's promise",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 12:1-4",
+    "Genesis 15:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Abraham, Isaac, Jacob, and Joseph in the order they appear in the story of God's family",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 21:1-3",
+    "Genesis 25:24-26",
+    "Genesis 30:22-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how God kept his promise to give Abraham and Sarah a son in their old age",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 18:9-14",
+    "Genesis 21:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Joseph's coat, his brothers' jealousy, and his journey to Egypt",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 37:3-36"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Joseph revealed himself to his brothers and forgave them",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 45:1-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the call of Abraham and his journey to Canaan",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 12:1-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Jacob's dream at Bethel and the promise God repeated to him there",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 28:10-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall how God renamed Jacob as Israel after Jacob wrestled with him",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 32:24-30",
+    "Genesis 35:9-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the text shows God was with Joseph in Potiphar's house and in prison",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 39:1-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the three parts of God's promise to Abraham as land, offspring, and blessing for all nations",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Genesis 15:18",
+    "Genesis 17:7-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jacob deceived Isaac and Esau and describe the consequences that followed in his family",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 25:29-34",
+    "Genesis 27:1-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Abraham's intercession for Sodom and explain what it reveals about God's justice",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 18:22-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Abraham's acts of faith with his failures, such as lying about Sarah and taking Hagar",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 12:10-20",
+    "Genesis 16:1-4",
+    "Genesis 20:1-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how God cared for Hagar and Ishmael even outside the line of promise",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 16:7-13",
+    "Genesis 21:14-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace on a map the movement of the patriarchs from Ur to Haran to Canaan to Egypt",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "Genesis 11:31",
+    "Genesis 12:4-5",
+    "Genesis 46:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a family tree of the patriarchs including their wives and the sons of Jacob",
+   "grade": 6,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 25:19-26",
+    "Genesis 35:22-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain circumcision as the covenant sign God gave Abraham and how Paul describes it as a seal of faith",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 17:9-14",
+    "Romans 4:9-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 27.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the covenant ceremony of Genesis 15 and how God alone passing between the pieces shows the promise rests on him",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 15:7-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul uses Genesis 15:6 to teach the Reformed doctrine of justification by faith",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 15:6",
+    "Romans 4:1-5",
+    "Galatians 3:6-9"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33",
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the testing of Abraham in Genesis 22, including God's provision of the ram and the interpretation in Hebrews",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 22:1-19",
+    "Hebrews 11:17-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Joseph's statements about God's purpose in his suffering as a teaching on God's providence",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 45:5-8",
+    "Genesis 50:19-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.4",
+    "Heidelberg Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Connect the twelve sons of Jacob to the twelve tribes of Israel using Jacob's final blessings",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Genesis 35:22-26",
+    "Genesis 49:1-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Judah's change of character and Jacob's blessing on Judah point forward to the kingly line of David and Christ",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 44:18-34",
+    "Genesis 49:8-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Melchizedek's meeting with Abraham is used in Hebrews to portray Christ's priesthood",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 14:18-20",
+    "Hebrews 7:1-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Hebrews presents the patriarchs as strangers who lived by faith in promises not yet received",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 11:8-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed doctrine of election as Paul draws it from the choice of Isaac over Ishmael and Jacob over Esau",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 25:23",
+    "Romans 9:6-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the Genesis narrator portrays polygamy and favoritism through the conflict they produce rather than by approval",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 29:30-30:24",
+    "Genesis 37:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how ancient Near Eastern customs such as birthright, covenant making, surrogate marriage, and household gods illuminate the patriarchal narratives",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 16:1-3",
+    "Genesis 25:29-34",
+    "Genesis 31:19-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize how the Abrahamic covenant is fulfilled in Christ and extended to the church across redemptive history",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Galatians 3:7-9",
+    "Galatians 3:16",
+    "Galatians 3:29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.3",
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Abraham's call and faith, Joseph's story, Jacob's renaming and deception, Abraham's failures, migration route, Genesis 22, Genesis 50:20, twelve tribes, election, family tree, cultural customs, covenant synthesis). Dropped the vague 'defend providence in preserving the messianic line' as a standalone and folded it into the Joseph providence objective. Moved the family tree earlier to grade 6. Added missing competencies: Isaac's birth, Joseph's forgiveness, Bethel, Joseph in Egypt, the three-part promise, intercession for Sodom, Hagar and Ishmael, circumcision, the Genesis 15 covenant ceremony, justification by faith from Genesis 15:6, Judah's line, Melchizedek, Hebrews 11, and the narrator's treatment of polygamy. Anchored each to specific verses and added confessional references only where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2204,
+  "output": 5215
+ }
+}

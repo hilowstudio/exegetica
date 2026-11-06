@@ -1,0 +1,328 @@
+{
+ "sub_topic": "BIB.11.9.4",
+ "name": "Justification by Faith Alone",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Soteriology: The Doctrine of Salvation"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from the parable of the Pharisee and the tax collector that God forgave the man who trusted in His mercy rather than in his own goodness",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 18:9-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Jesus as the One who makes sinners right with God",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Romans 5:1",
+    "1 Peter 3:18"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that God forgives sinners because of what Jesus did and not because of their good works",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Ephesians 2:8-9",
+    "Titus 3:4-7"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how God removed Joshua's filthy garments and clothed him in clean ones and explain how this pictures God taking away sin and giving righteousness",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Zechariah 3:1-5",
+    "Isaiah 61:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define justification in your own words as God pardoning all our sins and accepting us as righteous only for Christ's sake through faith",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:24",
+    "Romans 4:5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Abraham was counted righteous by believing God's promise and why Paul uses him as the pattern for all believers",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 15:6",
+    "Romans 4:1-5",
+    "Romans 4:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain justification as a legal declaration by God the judge rather than a change worked inside the believer",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:33-34",
+    "Romans 4:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare justification as a once-for-all declaration with sanctification as a lifelong work of renewal",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:1",
+    "Philippians 2:12-13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33",
+    "Westminster Shorter Catechism Q35",
+    "Westminster Larger Catechism Q77"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the benefits that Paul says flow from justification, including peace with God, access to grace, and freedom from condemnation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:1-2",
+    "Romans 8:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Romans 3 how God remains just while justifying sinners through the propitiation Christ made",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:23-26"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.3",
+    "Westminster Larger Catechism Q71"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the double imputation in which believers' sin is counted to Christ and His righteousness is counted to them",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "2 Corinthians 5:21",
+    "Romans 4:5-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Psalm 32 and Romans 4 how Old Testament believers such as David were justified in the same way as New Testament believers",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 32:1-2",
+    "Romans 4:6-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the phrase justified by faith apart from works of the law within the flow of Paul's argument in Romans and Galatians",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:21-28",
+    "Galatians 2:16",
+    "Romans 11:6"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q70"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish Christ's active and passive obedience and explain how both together form the ground of justification",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:18-19",
+    "Galatians 4:4-5",
+    "Philippians 3:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Westminster Confession of Faith 11.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why faith is the instrument and not the ground of justification",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 4:16",
+    "Ephesians 2:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.2",
+    "Westminster Larger Catechism Q73",
+    "Heidelberg Catechism Q61"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how James 2 and Paul's letters use the words faith, works, and justify and show how the Reformed tradition reconciles them",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "James 2:14-26",
+    "Romans 4:1-5",
+    "Galatians 5:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition teaches that justified believers still confess sin and seek forgiveness without losing their justified status",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:1",
+    "1 John 1:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a written defense of justification by faith alone from Romans and Galatians",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Romans 3:21-28",
+    "Romans 4:4-5",
+    "Galatians 2:16",
+    "Galatians 3:10-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Westminster Confession of Faith 11.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the objection that justification by faith alone encourages careless living using Paul's response in Romans 6",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Romans 6:1-4",
+    "Titus 2:11-14"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q64"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Council of Trent's view of infused righteousness and faith joined with works against the Reformed doctrine of imputed righteousness",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 4:5-8",
+    "Philippians 3:8-9",
+    "Galatians 2:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Heidelberg Catechism Q62"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate recent reinterpretations of Paul's phrase works of the law, such as the New Perspective on Paul, in light of the texts and the Reformed confessions",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Romans 3:20",
+    "Galatians 2:16",
+    "Romans 4:4-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the role of justification in the Protestant Reformation, including Luther's reading of Romans 1, and explain why it was called the article on which the church stands or falls",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Romans 1:16-17",
+    "Habakkuk 2:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: not guilty declaration, Jesus as the one who makes us right, forgiveness not by works, definition, legal declaration, comparison with sanctification, double imputation, faith apart from works of the law, active and passive obedience, faith as instrument, defense of sola fide, infused righteousness evaluation, and the article on which the church stands or falls, which is now a historical analysis. Merged the duplicate grade 3 imputation items into a Zechariah 3 objective and a WSC Q33 definition. Replaced 'apply the peace' with a describable objective on the benefits in Romans 5 and 8. Merged the 'faith plus works' defense into the Trent evaluation. Added Luke 18 at K, Abraham in Genesis 15, propitiation in Romans 3:23-26, OT believers per WCF 11.6, James 2 reconciliation, ongoing forgiveness per WCF 11.5, the antinomian objection with HC Q64, and the New Perspective. Corrected references by adding WLC Q71, Q73, Q77, HC Q60-64, and WCF 11.5-11.6, and by tying WSC Q35 only to the sanctification comparison.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2139,
+  "output": 5213
+ }
+}

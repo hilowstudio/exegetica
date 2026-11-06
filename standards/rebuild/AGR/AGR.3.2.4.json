@@ -1,0 +1,269 @@
+{
+ "sub_topic": "AGR.3.2.4",
+ "name": "Machinery Maintenance & Repair",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Power, Engines & Machinery"
+ ],
+ "grades": [
+  5,
+  6,
+  7,
+  9,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the fluids, filters, and lubrication points on a piece of farm machinery",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how preventive maintenance extends machine life, reduces breakdowns, and improves operator safety",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Select and safely use the correct hand tools and shop equipment for basic machinery maintenance tasks",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate a routine preventive maintenance service, including fluid level checks and fluid and filter changes",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Lubricate machinery grease fittings using the correct grease and the interval specified by the manufacturer",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret an equipment operator's manual and maintenance schedule to determine required service tasks and intervals",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common fastener types, thread sizes, and bolt grades used on farm machinery",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Perform a pre-operation walk-around inspection of a machine using a written checklist",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain lockout/tagout procedures and the stored energy hazards that must be controlled before servicing machinery",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe proper handling, storage, recycling, and disposal of used oil, filters, coolant, and other shop wastes",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Record completed maintenance and repairs in a service log as part of a supervised agricultural experience",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Select oils, greases, and coolants by viscosity grade and service classification for specific machine applications",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.02.01.02.a"
+   ]
+  },
+  {
+   "text": "Compare the operating principles and wear characteristics of belts, chains, gears, bearings, seals, and drive shafts",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.03.02.a"
+   ]
+  },
+  {
+   "text": "Assess belts, chains, sprockets, hoses, bearings, and nozzles for wear and damage against manufacturer service specifications",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.02.01.02.c"
+   ]
+  },
+  {
+   "text": "Perform scheduled preventive maintenance on equipment and power units following the manufacturer's service manual",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.02.01",
+    "PST.02.01.01.b",
+    "PST.02.01.02.b"
+   ]
+  },
+  {
+   "text": "Diagnose the cause of a machinery malfunction using a systematic troubleshooting sequence and manufacturer guidelines",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.03",
+    "PST.03"
+   ]
+  },
+  {
+   "text": "Use precision measuring tools and a torque wrench to measure component wear and tighten fasteners to specification",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.02.03.b",
+    "PST.02.01.02.b"
+   ]
+  },
+  {
+   "text": "Replace a worn belt, bearing, or chain drive component and set correct alignment and tension",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.02.01.02.b",
+    "PST.03"
+   ]
+  },
+  {
+   "text": "Prepare a machine for seasonal storage and return it to service following manufacturer procedures",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.02.01.01.b"
+   ]
+  },
+  {
+   "text": "Design a written lockout/tagout and service procedure plan for maintaining a specific machine in the school shop or SAE operation",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.02.01.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate malfunctioning machinery electrical components such as batteries, lighting, fuses, and wiring using a multimeter and service manual",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.02",
+    "PST.03.02.02.c"
+   ]
+  },
+  {
+   "text": "Calculate the annual and per-hour maintenance and repair costs of a piece of farm equipment",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.02.02.b"
+   ]
+  },
+  {
+   "text": "Justify a repair-versus-replace decision for a piece of equipment using cost, downtime, and reliability data",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.02.02.b"
+   ]
+  },
+  {
+   "text": "Create a fleet maintenance schedule and record system for a farm, agribusiness, or SAE operation",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.02.01",
+    "PST.02.01.01.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six original competencies, rewording several and moving troubleshooting to grade 10 and splitting the grade 12 item into a cost-based repair-versus-replace decision and a fleet record system design. Added middle-grade foundations: tool selection, grease lubrication, fasteners, pre-operation inspection, lockout/tagout awareness, waste disposal, and SAE service logs. Added high school competencies tied to AFNR standards: lubricant selection, comparing drive components, assessing wear to spec, scheduled service by manual, precision measurement and torque, seasonal storage, a LOTO and service plan, electrical component testing, and maintenance cost calculation. Left engine overhaul, tractor systems, and hydraulics to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "PST.01.02.02.b",
+  "PST.01.02.03.b",
+  "PST.02.01",
+  "PST.02.01.01.b",
+  "PST.02.01.01.c",
+  "PST.02.01.02.a",
+  "PST.02.01.02.b",
+  "PST.02.01.02.c",
+  "PST.03",
+  "PST.03.01",
+  "PST.03.01.02.b",
+  "PST.03.02",
+  "PST.03.02.02.c",
+  "PST.03.03",
+  "PST.03.03.02.a"
+ ],
+ "usage": {
+  "input": 2602,
+  "output": 3590
+ }
+}

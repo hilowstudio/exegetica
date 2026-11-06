@@ -1,0 +1,374 @@
+{
+ "sub_topic": "BIB.11.9.3",
+ "name": "Conversion: Faith and Repentance",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Soteriology: The Doctrine of Salvation"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify faith as trusting Jesus to save us, using a Bible account in which someone trusts Jesus",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Acts 16:30-31",
+    "John 3:16",
+    "Mark 5:25-34"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q86"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name repentance as turning away from sin and turning toward God",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 3:19",
+    "1 Thessalonians 1:9"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall Jesus' first gospel preaching that people must repent and believe",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Mark 1:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Zacchaeus and describe how he turned from his sin to follow Jesus",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Luke 19:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that faith and repentance always go together in the gospel call",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Mark 1:15",
+    "Acts 20:21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 15.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite the Westminster Shorter Catechism answers that define faith in Jesus Christ and repentance unto life",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "John 1:12",
+    "Acts 11:18"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q86",
+    "Westminster Shorter Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the three parts of saving faith as knowledge, assent, and trust",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 10:14-17",
+    "Hebrews 11:1",
+    "Hebrews 11:6"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the parts of repentance unto life as seeing sin, grieving over it, hating it, and turning to God with a purpose of new obedience",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "2 Corinthians 7:10",
+    "Psalm 51:1-4",
+    "Acts 26:20"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q87",
+    "Westminster Confession of Faith 15.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish godly sorrow from worldly sorrow by comparing the responses of Peter and Judas after their sins",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "2 Corinthians 7:9-11",
+    "Luke 22:61-62",
+    "Matthew 27:3-5",
+    "John 21:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare true saving faith with mere intellectual belief using biblical examples of false or shallow faith",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "James 2:19",
+    "John 2:23-25",
+    "Matthew 13:20-21"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Psalm 51 as a model of repentance by identifying its confession of sin, appeal to mercy, and resolve to obey",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 51:1-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 15.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Examine how the apostolic sermons in Acts call hearers to repent and believe and describe how the hearers responded",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:36-41",
+    "Acts 3:18-19",
+    "Acts 17:30-31",
+    "Acts 20:21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze faith and repentance as two inseparable sides of one conversion and explain why neither exists without the other",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 20:21",
+    "Hebrews 6:1",
+    "1 Thessalonians 1:9-10"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q88",
+    "Westminster Confession of Faith 15.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that saving faith rests on Christ alone as its object rather than on the strength or quality of the believer's faith",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 3:9",
+    "John 1:12",
+    "Mark 9:24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 14.2",
+    "Westminster Shorter Catechism Q86"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture that faith and repentance are gifts worked by the Holy Spirit rather than human achievements",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:8-9",
+    "Philippians 1:29",
+    "Acts 11:18",
+    "2 Timothy 2:25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 14.1",
+    "Heidelberg Catechism Q65"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that repentance continues throughout the Christian life as the dying of the old self and the rising of the new",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 John 1:8-9",
+    "Colossians 3:5-10",
+    "Romans 6:11"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q88",
+    "Heidelberg Catechism Q89",
+    "Heidelberg Catechism Q90",
+    "Westminster Confession of Faith 15.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed confessions teach that repentance is no satisfaction for sin and yet is necessary for every sinner",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Luke 13:3",
+    "Ezekiel 36:31-32",
+    "Ephesians 1:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 15.3",
+    "Westminster Confession of Faith 15.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Prepare a clear explanation of the gospel call to repent and believe that is faithful to Scripture and suited to a younger audience",
+   "grade": 9,
+   "bloom": 6,
+   "scripture": [
+    "Mark 1:15",
+    "Acts 16:31",
+    "Romans 10:9-10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q85"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed teaching that faith is the instrument that receives Christ and his righteousness rather than a meritorious work",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Romans 4:5",
+    "Romans 4:16",
+    "Romans 3:28",
+    "Galatians 2:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.2",
+    "Heidelberg Catechism Q61"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how James 2 and Romans 4 together show that living faith is never alone but bears fruit in obedience",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "James 2:14-26",
+    "Romans 4:1-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate easy-believism and works-righteousness as distortions of the biblical teaching on faith and repentance",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "James 2:17",
+    "Galatians 2:16",
+    "Luke 3:8",
+    "Ephesians 2:8-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 15.3",
+    "Westminster Confession of Faith 11.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed account of repentance with the Roman Catholic sacrament of penance",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 32:5",
+    "1 John 1:9",
+    "Hebrews 10:12-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 15.3",
+    "Westminster Confession of Faith 15.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed view that faith and repentance flow from regeneration with the Arminian view of faith as preceding new birth",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "John 1:12-13",
+    "John 6:44",
+    "Ephesians 2:1-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 10.2",
+    "Westminster Confession of Faith 14.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a biblical and confessional account of conversion as the sinner's Spirit-wrought response of faith and repentance to God's grace",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 26:18",
+    "Ezekiel 36:26-27",
+    "Acts 11:18",
+    "Ephesians 2:8-9"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q72",
+    "Westminster Larger Catechism Q76",
+    "Heidelberg Catechism Q88"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (faith as trust, repentance as turning, knowledge-assent-trust, repentance unto life, faith versus mere belief, two sides of conversion, faith resting on Christ, gift of the Spirit, instrumental role, distortions, final synthesis). Merged the separate gift and Spirit objectives into one. Dropped the filler 'saved by believing not earning' and the justification-construction objective, which belong to the Justification sibling, keeping only the instrumental role of faith. Reworded 'Apply the call to repent and believe' so it no longer asks for a personal response and instead has students trace the call in Acts and prepare an explanation of it. Added Bible narratives (Zacchaeus, Peter and Judas), Mark 1:15, catechism recitation, Psalm 51 as a model of repentance, ongoing repentance, repentance as no satisfaction, James 2 with Romans 4, comparison with Roman Catholic penance, and the Reformed versus Arminian ordering. Corrected confession citations to standard names and numbers.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2124,
+  "output": 5418
+ }
+}

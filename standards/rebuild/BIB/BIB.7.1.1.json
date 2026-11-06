@@ -1,0 +1,302 @@
+{
+ "sub_topic": "BIB.7.1.1",
+ "name": "Biblical Chronology and Dating",
+ "path": [
+  "Bible & Theology",
+  "Historical & Cultural Context",
+  "Ancient Near Eastern Background (OT)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Put pictures of Adam, Noah, Abraham, Moses, David, and Jesus in the order the Bible tells their stories",
+   "grade": 0,
+   "bloom": 2,
+   "scripture": [
+    "Acts 13:17-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the Bible as a true account of real events that took place over a very long time, from creation to Jesus",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Luke 1:1-4",
+    "Genesis 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Galatians 4:4 that God sent his Son at the exact time he had planned",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 4:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Place major Bible figures on a class timeline to show who lived before whom",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [
+    "Acts 13:17-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main eras of Old Testament history in order: creation, patriarchs, exodus and wilderness, judges, kings, exile, and return",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 9:6-31",
+    "Acts 7:2-47"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of BC, AD, BCE, and CE and why years before Christ count down while years after count up",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate the number of years between two dated events, including spans that cross from BC to AD with no year zero",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate key anchor dates on a timeline, including David's reign, the fall of Samaria in 722 BC, the fall of Jerusalem in 586 BC, and the return under Cyrus in 538 BC",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "2 Kings 17:5-6",
+    "2 Kings 25:8-10",
+    "Ezra 1:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the ways the Bible itself marks time, such as regnal years, genealogies, and references to well-known events",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 6:1",
+    "Amos 1:1",
+    "2 Kings 18:9-10",
+    "Luke 3:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how dated promises and their fulfillment show the Reformed teaching that God governs real history according to his plan",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 15:13-16",
+    "Exodus 12:40-41",
+    "Jeremiah 29:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the genealogies of Genesis 5 and 11 to explain how ages and the term fathered are used and why biblical genealogies may sometimes skip generations",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 5:1-32",
+    "Genesis 11:10-26",
+    "Matthew 1:8-9",
+    "1 Chronicles 3:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the 480 years of 1 Kings 6:1 and explain how it is used to date the Exodus from Solomon's reign",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "1 Kings 6:1",
+    "Judges 11:26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect biblical events to dates fixed by outside records, such as the Battle of Carchemish in 605 BC and Sennacherib's campaign of 701 BC",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Jeremiah 46:2",
+    "2 Kings 18:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the arguments for the early date and the late date of the Exodus, weighing the biblical numbers and archaeological evidence each side uses",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "1 Kings 6:1",
+    "Exodus 1:11",
+    "Judges 11:26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the 400 and 430 year time spans given for Israel's sojourn and explain the main proposals for reconciling them",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 15:13",
+    "Exodus 12:40-41",
+    "Galatians 3:17",
+    "Acts 7:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how archaeologists date ancient material through stratigraphy, pottery, inscriptions, and radiocarbon, and describe the limits of each method",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a synchronized timeline of the kings of Israel and Judah alongside Assyrian and Babylonian rulers using the cross-references in Kings",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "2 Kings 15:1",
+    "2 Kings 18:9-10",
+    "2 Kings 24:12",
+    "2 Kings 25:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze apparent conflicts in the regnal numbers of Kings by applying coregencies, accession and non-accession reckoning, and differing calendar years",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "2 Kings 15:5",
+    "2 Kings 8:16",
+    "2 Kings 15:27-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the differences among Masoretic, Septuagint, and Samaritan numbers in the Genesis genealogies and their effect on dating the flood and creation",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 5:3-32",
+    "Genesis 11:10-26",
+    "Luke 3:36"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Ussher's chronology and other approaches to dating early Genesis, describing how Reformed interpreters have reasoned about the question",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 5:3-32",
+    "Genesis 11:10-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how prophetic time markers such as Jeremiah's seventy years relate to the dated events of the exile and return",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Jeremiah 25:11-12",
+    "Daniel 9:1-2",
+    "2 Chronicles 36:20-23",
+    "Zechariah 1:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate minimalist claims that the Israelite monarchy is not historical by weighing inscriptions such as the Tel Dan Stele, Mesha Stele, and Shishak's list against the biblical record",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Kings 3:4-5",
+    "1 Kings 14:25-26",
+    "2 Kings 9:14-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Produce a study tracing the Persian, Greek, Hasmonean, and Roman periods between the testaments and how they set the stage for Christ's coming",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Daniel 2:36-45",
+    "Malachi 4:5-6",
+    "Galatians 4:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (ordering figures, eras, BC/AD, genealogies, 1 Kings 6:1, fixed external dates, Exodus dating debate, synchronized king timeline, Masoretic vs Septuagint numbers, minimalism, intertestamental study). Merged the grade 6 calculation into a broader date-span skill that handles the BC to AD crossover. Turned the vague grade 1 and grade 3 timeline-string items into clear statements and expanded the eras list. Replaced the narrow David vs Exile comparison with placing anchor dates on a timeline. Added missing competencies: how Scripture marks time internally, God's providence over dated history, the 400 and 430 year spans, archaeological dating methods, coregencies and reckoning systems, Ussher and approaches to early Genesis chronology, and prophetic time markers such as the seventy years. Anchored objectives to specific verses and cited WCF 8.2, WCF 5.1, WSC Q11, and WCF 1.5 where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2030,
+  "output": 5562
+ }
+}

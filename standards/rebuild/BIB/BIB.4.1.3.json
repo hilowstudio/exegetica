@@ -1,0 +1,275 @@
+{
+ "sub_topic": "BIB.4.1.3",
+ "name": "Rise of Monasticism",
+ "path": [
+  "Bible & Theology",
+  "Church History",
+  "The Early Church (Apostolic to Nicene)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify monks as Christians long ago who left ordinary life to spend their days praying and living simply",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 6:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Anthony heard Jesus' words to the rich young man and went to live in the desert",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 19:16-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Jesus went to quiet places to pray and how early monks tried to follow his example",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Mark 1:35",
+    "Luke 5:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Practice a short time of quiet prayer in class following Jesus' teaching on praying in secret",
+   "grade": 2,
+   "bloom": 3,
+   "scripture": [
+    "Matthew 6:5-6",
+    "Psalm 46:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name things early monks gave up such as money, houses, and marriage and explain what they hoped to gain by giving them up",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 19:21",
+    "1 John 2:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the life of Anthony of Egypt as Athanasius told it",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why many Christians went to the desert after the persecutions ended and the church grew popular and comfortable under Constantine",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 John 2:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe daily life in the communities Pachomius founded, including shared work, prayer, and meals",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:42-47"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the daily life of an early monk with the daily life of an ordinary Christian family in the early church",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 3:17-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish eremitic hermit monasticism from cenobitic community monasticism and explain why many leaders came to favor community life",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 12:12-27",
+    "Hebrews 10:24-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Basil of Caesarea organized monks to serve the poor and sick and connect his work to Jesus' teaching on caring for the needy",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 25:34-40"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Benedictine Rule's pattern of prayer and work and compare it with Scripture's teaching on work",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 3:23-24",
+    "2 Thessalonians 3:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how monasteries copied Scripture and preserved learning and literacy in the centuries after Rome fell",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 119:105"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the strengths of early monasticism such as devotion and service alongside its dangers such as isolation and harsh self-denial",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 2:20-23",
+    "Matthew 5:14-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze a passage from Athanasius' Life of Antony or the Sayings of the Desert Fathers for what it teaches about the Christian life",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate extreme ascetic practices such as Simeon Stylites living on a pillar in light of Paul's warnings about self-made religion",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [
+    "Colossians 2:20-23",
+    "1 Timothy 4:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Paul's teaching on singleness and marriage with the monastic view of celibacy as a higher way",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 7:7-9",
+    "1 Corinthians 7:32-35",
+    "Hebrews 13:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that vows of perpetual celibacy, poverty, and obedience are not a higher degree of Christian perfection",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 4:1-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 22.7",
+    "Second Helvetic Confession 18"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Critique the two-tiered view of spirituality that ranks monks above laypeople using the Reformed doctrine that good works are those God commands in every lawful calling",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 7:17-24",
+    "Colossians 3:23-24",
+    "1 Peter 2:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.1",
+    "Heidelberg Catechism Q91"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the impact of monasticism on Western civilization in learning, agriculture, care for the sick, and missions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical argument for being in the world but not of it that contrasts monastic withdrawal with the call to be salt and light",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "John 17:15-18",
+    "Matthew 5:13-16",
+    "1 John 2:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Design a plan for practicing solitude, silence, and simplicity grounded in Scripture that avoids the errors the Reformers identified in monasticism",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Matthew 6:6",
+    "Mark 1:35",
+    "Psalm 46:10",
+    "Philippians 4:11-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.1"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (identifying monks, Anthony's story and life, reasons for going to the desert, monk versus ordinary life, eremitic versus cenobitic, Benedictine Rule, preservation of learning, benefits and dangers, two-tiered critique, impact on civilization, in the world not of it, solitude and simplicity). Moved eremitic versus cenobitic down to grade 6. Folded 'wanted to be close to God' into the kindergarten and grade 3 objectives. Replaced 'apply the value of silence' and the grade 12 reflection, which centered on inner response, with a classroom prayer practice and a Scripture-grounded plan. Merged the grade 3 objective on giving up money and houses into a single objective that names what monks gave up and why. Added Jesus' example of withdrawal for prayer, Pachomius, Basil's care for the poor, a primary-source analysis, an evaluation of extreme asceticism, Paul on singleness and marriage, and the Reformed confessional teaching on monastic vows and good works (WCF 22.7, 16.1, 24.3, Second Helvetic 18, Heidelberg Q91). Added specific scripture anchors where objectives rest on texts.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1967,
+  "output": 4918
+ }
+}

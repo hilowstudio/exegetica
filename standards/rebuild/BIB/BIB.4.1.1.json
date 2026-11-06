@@ -1,0 +1,345 @@
+{
+ "sub_topic": "BIB.4.1.1",
+ "name": "Heresies of the Early Church",
+ "path": [
+  "Bible & Theology",
+  "Church History",
+  "The Early Church (Apostolic to Nicene)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify a heresy as a false teaching about God that disagrees with what the Bible says",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Galatians 1:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "State that Jesus is both true God and true man, the truth that many early false teachers denied",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "John 1:1",
+    "John 1:14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how early Christians tested a teaching by comparing it with the words of Scripture and the apostles",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:11",
+    "1 John 4:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how the apostles warned that false teachers would arise and how church leaders were charged to guard believers from them",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 20:28-31",
+    "Jude 1:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Gnostic teaching that the material world and the body are evil and that secret knowledge saves",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:31",
+    "1 Timothy 4:1-5",
+    "Colossians 2:8-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Arian claim that the Son was created contradicts what Scripture teaches about the Word who made all things",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "John 1:1-3",
+    "Colossians 1:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q6",
+    "Westminster Confession of Faith 2.3",
+    "Belgic Confession Article 10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Docetic claim that Jesus only seemed to be human and show how the apostles answered it from his bodily life and resurrection",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "1 John 4:2-3",
+    "1 John 1:1",
+    "Luke 24:39"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Heidelberg Catechism Q35"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare a heresy to a counterfeit by identifying what it borrows from true teaching and what it changes",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "2 Corinthians 11:3-4",
+    "2 Corinthians 11:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Marcion's rejection of the Old Testament and its God and explain how Scripture presents one God and one story across both testaments",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:44-47",
+    "2 Timothy 3:15-17",
+    "Hebrews 1:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Belgic Confession Article 9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish modalism (Sabellianism) from the doctrine of the Trinity using passages where Father, Son, and Spirit act distinctly",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 3:16-17",
+    "Matthew 28:19",
+    "John 14:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q6",
+    "Westminster Confession of Faith 2.3",
+    "Belgic Confession Article 9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Ebionite and adoptionist claims that Jesus was a mere man later made Son of God and identify texts that affirm his eternal deity",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "John 1:1",
+    "John 8:58",
+    "Hebrews 1:8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21",
+    "Belgic Confession Article 10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Marcion's shortened canon pressed the early church to recognize which books belonged in Scripture",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "2 Peter 3:15-16",
+    "Luke 24:44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Belgic Confession Article 5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Pelagius's teaching that people can obey God without inward grace with what Scripture says about sin inherited from Adam",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:12",
+    "Ephesians 2:1-5",
+    "Psalm 51:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.2",
+    "Westminster Confession of Faith 6.3",
+    "Belgic Confession Article 15"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Connect an ancient heresy to the teaching of a modern religious group, such as Arianism and the Jehovah's Witnesses' denial of Christ's deity",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "John 1:1",
+    "Colossians 2:9"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Montanism's claims of new prophecy challenged the sufficiency of the apostolic Scriptures",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 1:1-2",
+    "Jude 1:3",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Donatist claim that a sacrament's validity depends on the holiness of the minister and the church's answer to it",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 13:24-30",
+    "Philippians 1:15-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 27.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze a passage from Irenaeus's Against Heresies to identify how he answered Gnostic teaching by appeal to Scripture and the apostolic rule of faith",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 1:13-14",
+    "1 Corinthians 15:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify the Christological heresies of the early centuries, including Docetism, Ebionism, Arianism, Apollinarianism, Nestorianism, and Eutychianism, by the truth about Christ's person each denies",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 1:14",
+    "Colossians 2:9",
+    "Hebrews 2:14"
+   ],
+   "confessions": [
+    "Chalcedonian Definition",
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the early church held that the Redeemer must be both fully God and fully man to save, as the Reformed confessions also teach",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 2:14-17",
+    "1 Timothy 2:5"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q16",
+    "Heidelberg Catechism Q17",
+    "Westminster Larger Catechism Q38",
+    "Westminster Larger Catechism Q39"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the church's response to heresy led it to sharpen doctrinal language such as the term homoousios",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Jude 1:3",
+    "1 Timothy 3:15"
+   ],
+   "confessions": [
+    "Belgic Confession Article 9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed doctrine of human inability against Pelagian and semi-Pelagian claims using Scripture and the confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 6:44",
+    "Romans 8:7-8",
+    "Ephesians 2:1-5"
+   ],
+   "confessions": [
+    "Canons of Dort 3/4.3",
+    "Westminster Confession of Faith 9.3",
+    "Belgic Confession Article 15"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the criteria the early church used to distinguish orthodoxy from heresy, including Scripture, the apostolic rule of faith, and the consensus of the churches",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 1:8-9",
+    "2 Timothy 1:13-14",
+    "Acts 15:6-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Write an essay that traces a modern teaching to an ancient heresy and answers it from Scripture and the Reformed confessions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Titus 1:9",
+    "1 Peter 3:15"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Removed every reference to the Nicene Creed. Doctrines it had anchored are now cited to library documents: Westminster Shorter Catechism Q6 and Q21, Westminster Confession of Faith 2.3, and Belgic Confession Articles 9 and 10. Dropped filler and devotional objectives (careful what we listen to, the Bible helps us spot lies, apply the need to know the real Jesus). Reworded and kept the real competencies: defining heresy, Gnosticism, Arianism, the counterfeit comparison, Marcionism, Pelagianism, modern parallels, Docetism, the Christological taxonomy, the church's response, and the defense against Pelagius. Recast the orthodoxy synthesis as an evaluation of the early church's criteria. Added objectives on testing teaching by Scripture, apostolic warnings, modalism, Ebionism and adoptionism, Marcion and the canon, Montanism, Donatism, Irenaeus as a source, why the Redeemer must be God and man, and a capstone essay. Material on the councils and creeds themselves is left to the sibling sub-topic.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 4126,
+  "output": 12194
+ }
+}

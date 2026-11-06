@@ -1,0 +1,355 @@
+{
+ "sub_topic": "BIB.11.4.1",
+ "name": "The Deity and Preexistence of Christ",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Christology: The Doctrine of Christ"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Jesus as God the Son",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 16:16",
+    "John 20:28"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name Jesus as the One through whom all things were made",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "John 1:3",
+    "Colossians 1:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Jesus lived with the Father before he was born in Bethlehem",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "John 17:5",
+    "Micah 5:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Gospel accounts in which people worshiped Jesus and he accepted their worship",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 14:33",
+    "John 9:38",
+    "John 20:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell Jesus' words 'Before Abraham was, I am' and explain why his hearers tried to stone him",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 8:56-59",
+    "Exodus 3:14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of John 1:1 that the Word was with God and the Word was God",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "John 1:1-3"
+   ],
+   "confessions": [
+    "Belgic Confession Article 10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Contrast the eternal Son, who was not made, with everything that God created",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "John 1:3",
+    "Colossians 1:16-17",
+    "Hebrews 1:10-12"
+   ],
+   "confessions": [
+    "Belgic Confession Article 10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Classify the titles of Christ that point to his deity, such as Lord, Son of God, Word, I AM, and God, using supporting verses",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "John 1:1",
+    "John 8:58",
+    "Romans 10:9",
+    "Titus 2:13",
+    "Matthew 16:16"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the 'I am' statements in the Gospel of John and explain how they echo God's name in Exodus",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "John 6:35",
+    "John 8:12",
+    "John 10:11",
+    "John 11:25",
+    "John 14:6",
+    "John 8:58",
+    "Exodus 3:14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture ascribes divine attributes and works to Christ, such as forgiving sins, knowing hearts, being unchanging, and judging the world",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Mark 2:5-7",
+    "John 2:24-25",
+    "Hebrews 13:8",
+    "John 5:22-23"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze New Testament passages that apply Old Testament texts about the LORD directly to Jesus",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 45:22-23",
+    "Philippians 2:10-11",
+    "Joel 2:32",
+    "Romans 10:9-13",
+    "Psalm 102:25-27",
+    "Hebrews 1:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that the Son is eternally begotten of the Father and not made",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "John 1:18",
+    "Psalm 2:7",
+    "Hebrews 1:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Heidelberg Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Son's role as the agent through whom the Father created and now upholds all things",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "John 1:3",
+    "1 Corinthians 8:6",
+    "Colossians 1:16-17",
+    "Hebrews 1:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Old Testament appearances of the Angel of the LORD and evaluate the case that they reveal the preincarnate Son",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 16:7-13",
+    "Exodus 3:2-6",
+    "Judges 13:21-22",
+    "Isaiah 6:1-5",
+    "John 12:41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the Son's equality with the Father in essence from his distinction from the Father as a person",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "John 1:1",
+    "John 10:30",
+    "John 17:5",
+    "John 5:23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Belgic Confession Article 10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Philippians 2 and 2 Corinthians 8 assume the Son's existence in the form of God before his incarnation",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 2:5-7",
+    "2 Corinthians 8:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from the catechism why the Mediator must be true God",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 9:14",
+    "Acts 20:28",
+    "Hebrews 7:24-25"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q38",
+    "Heidelberg Catechism Q17"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical case for the full deity of Christ using his names, attributes, works, and worship",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "John 1:1",
+    "Titus 2:13",
+    "Colossians 2:9",
+    "Hebrews 1:3",
+    "John 5:23",
+    "Revelation 5:12-13"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Arian claim that 'there was when the Son was not' in light of Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 1:1-3",
+    "John 17:5",
+    "Colossians 1:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze passages often cited against Christ's deity, such as 'firstborn of all creation' and 'the Father is greater than I', and interpret them in context",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 1:15-18",
+    "John 14:28",
+    "Mark 13:32",
+    "Proverbs 8:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the worship of Christ as worship that belongs to God alone",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 4:10",
+    "John 5:23",
+    "Hebrews 1:6",
+    "Revelation 5:12-14"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Council of Nicaea's term homoousios, of one substance, answered Arianism and how the Westminster Confession restates it",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "John 10:30",
+    "Colossians 2:9",
+    "Hebrews 1:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Confession of Faith 2.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate modern denials of Christ's deity, such as the rendering of John 1:1 as 'a god' and adoptionist views, using Scripture and the confessions",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "John 1:1",
+    "John 20:28",
+    "Titus 2:13",
+    "John 17:5"
+   ],
+   "confessions": [
+    "Belgic Confession Article 10",
+    "Westminster Confession of Faith 8.2"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Removed all Nicene Creed and Athanasian Creed citations because they are not in the library. Nicene content is now anchored to Westminster Confession of Faith 8.2 and 2.3, Belgic Confession Article 10, and Heidelberg Catechism Q33. Kept and reworded the real competencies (titles, I AM sayings, eternal generation, theophanies, agent of creation, Arian controversy, worship, homoousios) and tightened their verse anchors. Added objectives on divine attributes and works ascribed to Christ, Old Testament texts about the LORD applied to Jesus, the Son's distinction from the Father as a person, preexistence in Philippians 2 and 2 Corinthians 8, why the Mediator must be God, passages often cited against Christ's deity, and modern denials. Incarnation, offices, and atonement material is left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 4418,
+  "output": 11727
+ }
+}

@@ -1,0 +1,344 @@
+{
+ "sub_topic": "BIB.9.1.1",
+ "name": "1 & 2 Chronicles",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Historical Books"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify 1 and 2 Chronicles as books that tell about the kings God gave to rule his people, especially King David and King Solomon",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "1 Chronicles 29:26-28",
+    "2 Chronicles 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that King Solomon built a temple in Jerusalem where God's people gathered to worship him",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "2 Chronicles 3:1",
+    "2 Chronicles 5:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how King David brought the ark of God to Jerusalem with singing and music and gave thanks to the Lord",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "1 Chronicles 15:25-28",
+    "1 Chronicles 16:7-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how King Jehoshaphat prayed when enemies came and how God told the people that the battle was his",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "2 Chronicles 20:3-4",
+    "2 Chronicles 20:12",
+    "2 Chronicles 20:15-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that the long lists of names at the start of Chronicles trace God's people from Adam to the families who returned to Jerusalem",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Chronicles 1:1",
+    "1 Chronicles 9:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how King Josiah found the Book of the Law, read it to the people, and led them to renew the covenant",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "2 Chronicles 34:14-21",
+    "2 Chronicles 34:29-33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that Chronicles retells much of the history found in Samuel and Kings from a different point of view",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Chronicles 10:13-14",
+    "1 Chronicles 11:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize Solomon's prayer at the dedication of the temple and God's answer when his glory filled the house",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "2 Chronicles 6:18-21",
+    "2 Chronicles 7:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the theme of seeking the Lord in Chronicles using the example of King Asa's faithfulness and later decline",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "2 Chronicles 15:2",
+    "2 Chronicles 15:12-15",
+    "2 Chronicles 16:7-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the promise God made to David about a son whose throne would be established forever",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "1 Chronicles 17:11-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the prayers of Jabez and Jehoshaphat in their contexts to identify what each asks of God and on what basis",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "1 Chronicles 4:9-10",
+    "2 Chronicles 20:5-12"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the account of Manasseh's humbling and restoration shows God's mercy to a repentant sinner",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "2 Chronicles 33:1-6",
+    "2 Chronicles 33:10-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 15.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare parallel accounts in Samuel and Chronicles, such as David's sin with Bathsheba and the census, to identify what Chronicles includes, omits, or changes",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "2 Samuel 11:1-4",
+    "1 Chronicles 20:1-3",
+    "2 Samuel 24:1",
+    "1 Chronicles 21:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the ending of Chronicles, from the exile to the decree of Cyrus, shows the book was written for the community returning from exile",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "2 Chronicles 36:15-23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from the accounts of Uzzah and the second ark procession why Chronicles stresses worship carried out in the way God prescribed",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "1 Chronicles 13:9-12",
+    "1 Chronicles 15:13-15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret why Chronicles centers on Judah and David's line while still inviting all Israel to return to the Lord",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "2 Chronicles 13:4-12",
+    "2 Chronicles 30:1",
+    "2 Chronicles 30:6-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect the genealogies of 1 Chronicles 1 to 9 to the identity and hope of the post-exilic community",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "1 Chronicles 9:1-3",
+    "1 Chronicles 3:17-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how David organized the Levites, priests, and musicians for temple service and explain the purpose of this order",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Chronicles 23:28-32",
+    "1 Chronicles 25:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the pattern of blessing for seeking God and judgment for forsaking him in the reigns of Judah's kings and identify where Chronicles tempers it with mercy",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "2 Chronicles 12:1-8",
+    "2 Chronicles 26:16-21",
+    "2 Chronicles 30:18-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Uzziah's judgment for burning incense shows the distinction Chronicles draws between the offices of king and priest",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "2 Chronicles 26:16-21"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q23"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a comparison of Kings as prophetic history explaining the exile and Chronicles as priestly history encouraging renewed worship",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "2 Kings 17:7-18",
+    "2 Chronicles 36:15-21",
+    "2 Chronicles 36:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret 2 Chronicles 7:14 within its temple and covenant setting and evaluate common ways it is applied today",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "2 Chronicles 7:12-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the theological purpose of the idealized portrait of David and Solomon as builders of the temple and models of the coming king",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Chronicles 22:6-10",
+    "1 Chronicles 28:5-7",
+    "1 Chronicles 29:10-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Research the Persian period setting of Chronicles using historical sources and explain how that setting shapes the book's concerns",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [
+    "2 Chronicles 36:22-23",
+    "Ezra 1:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the significance of Chronicles as the final book of the Hebrew canon and how Jesus' reference to Abel and Zechariah reflects that order",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "2 Chronicles 24:20-22",
+    "Matthew 23:35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize how the hope for the Son of David and the house of God in Chronicles is fulfilled in Jesus Christ as king and true temple",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Chronicles 17:11-14",
+    "Matthew 1:1",
+    "Luke 1:32-33",
+    "John 2:19-21"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26",
+    "Heidelberg Catechism Q31"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (kings, temple focus, genealogies, retelling Samuel-Kings, Bathsheba comparison, prayers of Jabez and Jehoshaphat in context, post-exilic purpose, Judah focus, genealogy and identity, seeking the Lord, Kings vs Chronicles, idealized David and Solomon, research on context, Son of David hope). Replaced 'loved the Temple' and 'main heroes' with content-based recall. Changed 'Apply the prayer of Jabez' to contextual analysis. Added the ark narrative, Jehoshaphat's battle, Josiah's reform, temple dedication, Davidic covenant, Manasseh's repentance, regulated worship (Uzzah), Levitical order, retribution and mercy pattern, Uzziah and the king-priest distinction, 2 Chronicles 7:14 in context, and Chronicles' place in the Hebrew canon. Added verse-level Scripture and confessional anchors where the doctrine is stated.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1933,
+  "output": 5073
+ }
+}

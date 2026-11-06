@@ -1,0 +1,248 @@
+{
+ "sub_topic": "AGR.2.2.3",
+ "name": "Water Management & Irrigation",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Plant & Horticultural Science",
+  "Soil Science & Plant Nutrition"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify ways plants get water, such as rain, watering cans, and hoses",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe what happens to a plant that gets too little or too much water",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how roots take up water from the soil and move it through the plant",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how mulch and shading help a garden bed hold water longer",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use a rain gauge and a simple soil moisture check to decide whether a garden needs watering",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare drip, sprinkler, and furrow irrigation by how they deliver water and how much water they lose",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the water cycle supplies soil moisture and water for irrigation",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common sources of irrigation water such as wells, rivers, ponds, and municipal supplies",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Assemble a simple drip irrigation system for a school garden or greenhouse bench using emitters, filters, pressure regulators, and backflow preventers",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe soil water terms including field capacity, plant available water, permanent wilting point, and gravitational water",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.02.a"
+   ]
+  },
+  {
+   "text": "Explain how soil texture changes how often and how much a crop should be irrigated",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.02.a"
+   ]
+  },
+  {
+   "text": "Describe where irrigation fits among the steps of crop production from land preparation through harvest",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.03.01.a"
+   ]
+  },
+  {
+   "text": "Describe the effects of irrigation water quality, including pH and dissolved solids, on plant growth",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.01.03.a"
+   ]
+  },
+  {
+   "text": "Analyze how interactions between groundwater and surface water affect the water available for irrigation",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.02.05.b"
+   ]
+  },
+  {
+   "text": "Analyze plant responses to drought stress and overwatering in a crop or greenhouse setting",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.01.03.b"
+   ]
+  },
+  {
+   "text": "Explain how drainage practices such as drain tile, surface drainage, and growing media porosity affect water in the root zone",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.02.b"
+   ]
+  },
+  {
+   "text": "Use tensiometers or soil moisture sensors to monitor soil water and decide when to irrigate",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.02.a"
+   ]
+  },
+  {
+   "text": "Calculate a crop's irrigation needs using evapotranspiration and soil moisture data",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Measure the application rate and distribution uniformity of a sprinkler or drip system and adjust it for even watering",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret electroconductivity and pH results to adjust irrigation practices such as leaching salts from the root zone",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.02.02.c"
+   ]
+  },
+  {
+   "text": "Recommend modifications to irrigation water such as acidification or filtration for desired plant growth",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.01.01.03.c"
+   ]
+  },
+  {
+   "text": "Evaluate the economic and environmental tradeoffs of irrigation methods, including energy costs, water rights, and runoff",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Design an efficient irrigation system and schedule for a production setting or SAE, justifying the choices made to conserve water",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept all six existing objectives, rewording some, and moved the water cycle objective to grade 7. Added early objectives on signs of too little or too much water, using mulch to hold water, and rain gauge checks. Added hands-on drip system assembly and system calibration for SAE and greenhouse work. Added high school objectives on soil water terms, how texture affects irrigation, water quality, groundwater and surface water, plant water stress, drainage, moisture sensors, EC and pH adjustments, water treatment, and irrigation tradeoffs. Soil formation, fertility, and conservation topics are left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ESS.03.02.03.b",
+  "ESS.03.02.03.c",
+  "ESS.03.02.05.b",
+  "ESS.03.02.06.a",
+  "PS.01.01.03.a",
+  "PS.01.01.03.b",
+  "PS.01.01.03.c",
+  "PS.01.02.02.a",
+  "PS.01.02.02.b",
+  "PS.01.02.02.c",
+  "PS.01.03.01.a",
+  "PS.01.03.01.b",
+  "PS.01.04",
+  "PS.01.04.05.a",
+  "PS.03.02.04.a"
+ ],
+ "usage": {
+  "input": 2368,
+  "output": 3391
+ }
+}

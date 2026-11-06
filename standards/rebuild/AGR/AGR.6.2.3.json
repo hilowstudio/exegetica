@@ -1,0 +1,305 @@
+{
+ "sub_topic": "AGR.6.2.3",
+ "name": "Wildlife & Fisheries Management",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Natural Resources & Environmental Science",
+  "Natural Resource Management"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify common local wildlife and fish species by their appearance, tracks, or sounds",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort animals into game animals, fish caught for food, and protected species",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how food, water, cover, and space together make up a habitat that keeps wildlife populations healthy",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how predators and prey affect each other's numbers in a wildlife habitat",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the work of state wildlife agencies, biologists, and game wardens in protecting wildlife and fish",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how hunting seasons, bag limits, and fishing licenses help keep wildlife and fish populations at healthy levels",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain carrying capacity and how limiting factors in a habitat cap the size of a wildlife population",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain safe, legal, and ethical practices for hunting and fishing based on hunter and angler education principles",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how hunting and fishing license fees and excise taxes on sporting equipment fund wildlife and fisheries conservation",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how endangered species laws and recovery programs protect threatened wildlife and fish",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Investigate a method used to estimate a wildlife or fish population, such as mark and recapture, transect counts, or electrofishing surveys",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how fish hatcheries and stocking programs are used to restore or supplement fish populations",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how invasive species such as feral hogs, invasive carp, and zebra mussels harm native wildlife and fisheries and how they are controlled",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply identification techniques such as dichotomous keys, field guides, tracks, and sign to determine the species of wildlife and fish",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.02.03.b"
+   ]
+  },
+  {
+   "text": "Identify the characteristics of healthy wildlife habitat on a local site using a habitat evaluation scorecard",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.01.03.a"
+   ]
+  },
+  {
+   "text": "Compare sustainable harvest tools such as quotas, antlerless permits, slot limits, catch and release, and gear restrictions by their effect on population structure",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.03.01.02.a"
+   ]
+  },
+  {
+   "text": "Plan a supervised agricultural experience in wildlife or fisheries management, such as habitat improvement, pond management, or game bird production, with measurable goals and records",
+   "grade": 9,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze population and harvest data to judge whether a game or fish species is being managed sustainably",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Assess wildlife harvest techniques for sustainability, practicality, ethics, and public acceptance",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.03.01.02.b"
+   ]
+  },
+  {
+   "text": "Analyze local wildlife populations and challenges to agricultural production, such as crop damage, livestock predation, and disease shared between wildlife and livestock, along with the control measures in use",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.01.02.04.b"
+   ]
+  },
+  {
+   "text": "Classify the causes of wildlife and aquatic species diseases as parasitic, bacterial, viral, fungal, or environmental",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.02.02.a"
+   ]
+  },
+  {
+   "text": "Analyze a wildlife or aquatic species disease such as chronic wasting disease or whirling disease based on its symptoms",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.02.02.b"
+   ]
+  },
+  {
+   "text": "Assess wildlife habitat management methods such as prescribed burning, food plots, edge creation, water development, and fish habitat structures",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.01.03.b"
+   ]
+  },
+  {
+   "text": "Evaluate the wildlife, fish, and aquatic insect species present at a site to assess the status of the ecosystem",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.02.03.c"
+   ]
+  },
+  {
+   "text": "Evaluate wildlife movement, invasive species spread, and habitat edge versus interior using GIS, GPS, and mapping tools",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.03.02.01.c"
+   ]
+  },
+  {
+   "text": "Develop recommendations for the sustainable harvest of an aquatic species in a farm pond, lake, or commercial fishery",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.03.01.08.c"
+   ]
+  },
+  {
+   "text": "Design a wildlife management plan that sets harvest methods, harvest limits, and habitat goals for a species based on its population ecology, density, and dispersion",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.06.01.c",
+    "NRS.03.01.02.c"
+   ]
+  },
+  {
+   "text": "Create a management plan to reduce the infection and spread of a wildlife or aquatic species disease",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.02.02.c"
+   ]
+  },
+  {
+   "text": "Evaluate the biodiversity of a wildlife habitat and devise strategies to increase it so the ecosystem supports healthier wildlife and fish populations",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.01.03.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives as real competencies, rewording several (grade 2 sort, grade 4 habitat, grade 8 population estimation with field examples, grade 12 plan expanded to population ecology). Added early grade species identification, predator-prey, agency roles, carrying capacity, hunter ethics, conservation funding, endangered species, hatcheries and stocking, and invasive species. Added grade 9 to 12 objectives aligned to AFNR standards on species identification, habitat assessment and management, harvest regulation tools and technique assessment, aquatic harvest recommendations, wildlife-agriculture conflicts, disease classification, diagnosis, and management, indicator species, GIS mapping, and biodiversity, plus a wildlife or fisheries SAE planning objective. Soil, water, forestry, and rangeland content was left to sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.01.02.04.b",
+  "NRS.01.01.03.c",
+  "NRS.01.02.03.b",
+  "NRS.01.02.03.c",
+  "NRS.01.06.01.c",
+  "NRS.03.01.02.a",
+  "NRS.03.01.02.b",
+  "NRS.03.01.02.c",
+  "NRS.03.01.08.c",
+  "NRS.03.02.01.c",
+  "NRS.04.01.03.a",
+  "NRS.04.01.03.b",
+  "NRS.04.02.02.a",
+  "NRS.04.02.02.b",
+  "NRS.04.02.02.c"
+ ],
+ "usage": {
+  "input": 2402,
+  "output": 5141
+ }
+}

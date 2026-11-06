@@ -1,0 +1,285 @@
+{
+ "sub_topic": "BIB.5.5.1",
+ "name": "Beliefs about God and Texts",
+ "path": [
+  "Bible & Theology",
+  "Comparative Religious Studies & Ethics",
+  "Judaism: Covenant, Law & Peoplehood"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that Jewish people believe there is one God who made everything",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "Genesis 1:1"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the Torah as the holy scroll read in the synagogue and describe how it is handled with great care",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Nehemiah 8:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why many Jewish people avoid saying or fully writing God's name and connect this practice to the third commandment",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 3:14-15",
+    "Exodus 20:7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q54"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recognize several Hebrew letters and identify that the Hebrew Scriptures are written mostly in Hebrew and read from right to left",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 119:73"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite the opening words of the Shema and explain what it teaches about God being one and about loving him with all of life",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 6:4-9",
+    "Mark 12:29-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "List the three parts of the Tanakh as Torah, Prophets, and Writings and give an example book from each part",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Luke 24:44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what the Talmud is and distinguish the Mishnah from the Gemara as layers of rabbinic teaching",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the Jewish belief that God's covenants with Abraham and with Israel at Sinai form the foundation of Jewish peoplehood",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Genesis 17:7",
+    "Exodus 19:5-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Jewish understanding of God's oneness with the doctrine of the Trinity as confessed by Reformed churches",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "Matthew 28:19",
+    "2 Corinthians 13:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Westminster Shorter Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the rabbinic teaching that an Oral Torah was given at Sinai alongside the Written Torah",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 24:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the concept of mitzvot, including the traditional count of 613 commandments, and explain why Judaism views Torah as a whole way of life",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 30:11-16",
+    "Psalm 119:97"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the main points of Maimonides' Thirteen Principles of Faith as a historic statement of Jewish belief about God, Torah, and the Messiah",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 4:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Jewish description of God's character in the thirteen attributes of mercy draws on God's self-revelation to Moses",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 34:6-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how religious leadership in Judaism shifted from Temple priests to rabbis as teachers of Torah after the destruction of the Temple in AD 70",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Malachi 2:7",
+    "Matthew 23:2-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Jesus' disputes with the Pharisees over the tradition of the elders in light of the developing Oral Law",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Mark 7:1-13",
+    "Matthew 15:1-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Midrash and classic commentators such as Rashi interpret passages of the Hebrew Scriptures",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 22:1-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Jewish view of sin and atonement without a Temple through repentance, prayer, good deeds, and Yom Kippur",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 16:29-30",
+    "Hosea 14:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare how Orthodox, Conservative, and Reform Judaism understand the authority of the Written Torah and the Oral Law",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Jewish understanding of righteousness through covenant faithfulness and repentance with the Reformed doctrine of justification by grace through faith in Christ's sacrifice",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:20-24",
+    "Galatians 2:16",
+    "Ephesians 2:8-9",
+    "Hebrews 9:22",
+    "Hebrews 10:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the rabbinic claim of an authoritative oral tradition from Sinai in light of the Reformed doctrine that Scripture alone is the supreme rule of faith",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Mark 7:8-9",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Develop a research study comparing Jewish and Reformed Christian understandings of Israel as God's chosen people using the relevant biblical texts",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Deuteronomy 7:6-8",
+    "Romans 9:4-5",
+    "Romans 11:1-5",
+    "Romans 11:28-29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (one God, Torah scroll, reverence for God's name, Hebrew, Shema, Talmud, Trinity comparison, mitzvot, rabbi and priest, Oral Law and Jesus, atonement without a Temple, salvation comparison, Talmudic tradition, chosen people). Reframed the salvation comparison to describe the Jewish view fairly and reframed the Talmud evaluation around the authority of oral tradition versus sola Scriptura. Dropped 'apply respect for Jewish roots' as an attitude rather than an assessable competency. Dropped the Isaiah 53 objective because Christian readings of the Hebrew Scriptures belong to the sibling sub-topic on Judaism's relationship to the Old Testament. Added the three parts of the Tanakh, covenant as the basis of peoplehood, the Oral Torah concept, Maimonides' Thirteen Principles, the thirteen attributes of mercy, Midrash and Rashi, and the views of the Jewish movements on Torah authority. Replaced Westminster Confession 8.4 with confession articles that state the doctrines taught (WCF 1.2, 1.6, 1.8, 1.10, 2.3, 7.5, 7.6, 11.1, 20.2, WSC Q4, Q5, Q6, Q54, HC Q60) and added verse-level Scripture anchors.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2016,
+  "output": 5132
+ }
+}

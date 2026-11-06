@@ -1,0 +1,331 @@
+{
+ "sub_topic": "BIB.11.8.3",
+ "name": "The Spirit in Redemption: Regeneration and Indwelling",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Pneumatology: The Doctrine of the Holy Spirit"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Holy Spirit as the One who gives new life to God's people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "John 3:5-6",
+    "Titus 3:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the Holy Spirit as the Helper Jesus promised would live with and in his followers",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "John 14:16-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell Jesus' conversation with Nicodemus about being born again of the Spirit",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "John 3:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus' picture of the wind shows that the Spirit's work of new birth is real even though it cannot be seen",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 3:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe from Jesus' words how the Spirit bears witness to Jesus and glorifies him",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "John 15:26",
+    "John 16:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain regeneration as the Spirit's work of giving a new heart, using God's promise in Ezekiel",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ezekiel 36:26-27",
+    "Titus 3:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Scripture means when it says the Holy Spirit dwells in every believer",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:9-11",
+    "1 Corinthians 3:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the spiritual deadness of a person before regeneration and explain from Scripture why no one can cause their own new birth",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:1-5",
+    "John 1:12-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 9.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the person who is in the flesh with the person who is in the Spirit as Paul describes them in Romans 8",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Romans 8:5-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Spirit's indwelling makes the believer's body a temple and identify what Paul says this means for how the body is used",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "1 Corinthians 6:19-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the Old Testament promises of the Spirit's coming to their fulfillment at Pentecost",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Ezekiel 36:26-27",
+    "Joel 2:28-29",
+    "Acts 2:16-18",
+    "Acts 2:33"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture how the Spirit uses the Word of God as the means of regeneration",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "1 Peter 1:23-25",
+    "James 1:18",
+    "Romans 10:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 10.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Reformed confessions describe the Spirit as the One who unites believers to Christ",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 6:17",
+    "Ephesians 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q30",
+    "Heidelberg Catechism Q53"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Spirit's role in applying to believers the redemption purchased by Christ",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Titus 3:4-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q29",
+    "Westminster Shorter Catechism Q30",
+    "Westminster Confession of Faith 8.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain effectual calling and why the Reformed tradition teaches that regeneration precedes and produces faith",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "John 6:44",
+    "1 John 5:1",
+    "Ephesians 2:4-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q31",
+    "Westminster Confession of Faith 10.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Spirit's baptism of all believers into the one body of Christ",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 12:13",
+    "Ephesians 4:4-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Paul's description of the indwelling Spirit as a seal and a guarantee of the believer's future inheritance",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 1:13-14",
+    "2 Corinthians 1:21-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Romans 8 links the Spirit's present indwelling to the future resurrection of the body",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 8:9-11",
+    "Romans 8:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish regeneration from conversion, justification, and sanctification as the Reformed confessions define them",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 3:3",
+    "Acts 3:19",
+    "Romans 3:24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 10.2",
+    "Westminster Confession of Faith 11.1",
+    "Westminster Confession of Faith 13.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Scripture and the confessions the Reformed teaching that the Spirit's regenerating work is necessary for salvation",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 3:3-5",
+    "1 Corinthians 2:14",
+    "Romans 8:7-8"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed monergistic view of regeneration with synergistic and baptismal regeneration views",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "John 1:12-13",
+    "Ephesians 2:4-5",
+    "Titus 3:5"
+   ],
+   "confessions": [
+    "Canons of Dort 3/4.11",
+    "Canons of Dort 3/4.12"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the second blessing view of Spirit baptism against the view that every believer receives Spirit baptism at conversion",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 2:38-39",
+    "Acts 8:14-17",
+    "Acts 19:1-6",
+    "1 Corinthians 12:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Westminster Confession's teaching on the regeneration of elect infants and others incapable of being outwardly called by the Word",
+   "grade": 12,
+   "bloom": 2,
+   "scripture": [
+    "John 3:8",
+    "Luke 1:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 10.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a theological essay that synthesizes regeneration and indwelling within the Spirit's application of Christ's redemption",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Titus 3:4-7",
+    "Romans 8:9-11",
+    "John 3:5-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q29",
+    "Westminster Shorter Catechism Q30"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (new life, Helper, born of the Spirit, indwelling, flesh and Spirit, temple, union with Christ, applying redemption, effectual calling, Spirit baptism, second blessing, necessity of regeneration). Merged the duplicate grade 8 and grade 12 application of redemption objectives and recast grade 12 as a create task. Dropped the indwelling and assurance objective since assurance belongs to the sibling sub-topic, and removed Heidelberg Q1 for the same reason. Added Nicodemus retelling, wind image, Ezekiel new heart promise, spiritual deadness, Pentecost fulfillment, the Word as means of regeneration, sealing, indwelling and resurrection, distinguishing regeneration from related doctrines, comparison with synergistic and baptismal regeneration views, and WCF 10.3 on elect infants. Replaced vague verbs (observe, apply the truth) with observable ones and added verse-level anchors and confession references that state each doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2188,
+  "output": 4962
+ }
+}

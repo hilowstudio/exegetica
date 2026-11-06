@@ -1,0 +1,287 @@
+{
+ "sub_topic": "AGR.5.2.3",
+ "name": "Dairy & Meat Processing",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Processing & Preservation"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify common dairy products made from milk such as cheese, butter, ice cream, and yogurt",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how milk moves from the dairy farm through the processing plant to the grocery store",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common meat products and the livestock species they come from, including beef, pork, lamb, and poultry",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the main steps used to process milk into dairy products and livestock into meat products",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe useful by-products of meat and dairy processing such as hides, gelatin, tallow, and whey",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the primal cuts of beef, pork, and lamb and the carcass region each comes from",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of pasteurization and homogenization in fluid milk processing",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how milk is separated and standardized to produce whole, reduced-fat, and skim milk and cream",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how cream is churned into butter and how milk is coagulated and the curd separated from the whey to make cheese",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the steps of livestock harvest from humane handling and stunning through carcass chilling",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the dairy and meat processing industries have developed from farm-scale production to modern processing plants",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04"
+   ]
+  },
+  {
+   "text": "Describe the composition of milk and how its fat, protein, lactose, and solids content affect dairy product yield and quality",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.04.a"
+   ]
+  },
+  {
+   "text": "Identify retail cuts of beef, pork, and lamb by species, primal origin, and recommended cookery method",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.04.a"
+   ]
+  },
+  {
+   "text": "Explain how the conversion of muscle to meat, including rigor mortis and postmortem pH decline, affects tenderness, color, and water-holding capacity",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how curing, smoking, and aging affect the flavor, color, and safety of a meat product",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.02.b"
+   ]
+  },
+  {
+   "text": "Explain how processed meats such as sausage and deli meats are formulated through grinding, emulsifying, stuffing, and cooking",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.02.a"
+   ]
+  },
+  {
+   "text": "Calculate dressing percentage and retail cutting yield from live, carcass, and retail product weights",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.01.a"
+   ]
+  },
+  {
+   "text": "Evaluate milk and dairy product quality using tests for somatic cell count, bacteria count, and off-flavors as practiced in the FFA Milk Quality and Products CDE",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02",
+    "FPP.03.01.04.c"
+   ]
+  },
+  {
+   "text": "Apply sanitation, temperature control, and cold-chain procedures when handling, processing, and packaging meat or dairy products in the lab or an SAE",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02"
+   ]
+  },
+  {
+   "text": "Explain the roles of USDA FSIS meat inspection and the Grade A Pasteurized Milk Ordinance in regulating meat and dairy plants",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.03.02.b"
+   ]
+  },
+  {
+   "text": "Evaluate beef and pork carcasses using USDA quality and yield grade factors such as marbling, maturity, ribeye area, and backfat as practiced in the FFA Meats Evaluation and Technology CDE",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.03.02.b",
+    "FPP.03.01.04.c"
+   ]
+  },
+  {
+   "text": "Develop a HACCP plan that identifies hazards, critical control points, and corrective actions for a dairy or meat processing operation",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01",
+    "FPP.04.03.02.c"
+   ]
+  },
+  {
+   "text": "Construct standard operating procedures for a piece of meat or dairy processing equipment such as a grinder, slicer, or vat pasteurizer",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.01.02.c"
+   ]
+  },
+  {
+   "text": "Analyze current trends in dairy and meat processing such as plant-based alternatives, cell-cultured meat, and value-added products",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.02.01.b",
+    "FPP.02.02.03.b"
+   ]
+  },
+  {
+   "text": "Evaluate sustainability practices in dairy and meat processing such as whey utilization, by-product rendering, and water and energy use",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.04/"
+   ]
+  },
+  {
+   "text": "Design a value-added dairy or meat product for an SAE or Agriscience Fair project, including formulation, processing steps, and quality checks",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.03.a",
+    "FPP.03.02.02.a"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded the six original competencies. The grade 12 quality control objective became a HACCP plan and a set of SOPs. Added foundational objectives on dairy and meat products, the farm-to-store path, by-products, primal and retail cuts, milk separation, butter and cheese making, and harvest steps. Added high school competencies on milk composition, muscle-to-meat conversion, sausage formulation, yield calculations, and cold-chain sanitation. Added milk quality and carcass grading aligned with the FFA CDEs, plus FSIS and PMO regulation, industry history, trends, sustainability, and a value-added SAE product. Left general preservation principles and fermentation science to the sibling sub-topics, and attached standards only to grade 9 to 12 objectives they actually teach.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.01",
+  "FPP.01.01.02.c",
+  "FPP.01.02",
+  "FPP.02.02.02.b",
+  "FPP.02.02.03.a",
+  "FPP.02.02.03.b",
+  "FPP.03.01.04.a",
+  "FPP.03.01.04.c",
+  "FPP.03.02.01.a",
+  "FPP.03.02.02.a",
+  "FPP.04",
+  "FPP.04.02.01.b",
+  "FPP.04.03.02.b",
+  "FPP.04.03.02.c",
+  "FPP.04.04/"
+ ],
+ "usage": {
+  "input": 2330,
+  "output": 4227
+ }
+}

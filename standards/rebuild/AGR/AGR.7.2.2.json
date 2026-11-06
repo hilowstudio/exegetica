@@ -1,0 +1,277 @@
+{
+ "sub_topic": "AGR.7.2.2",
+ "name": "Communication & Public Speaking",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "FFA Leadership & SAE",
+  "Leadership & Personal Development"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the introduction, body, and conclusion of a simple prepared speech",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate active listening by summarizing the main idea and one supporting detail of a classmate's short talk",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how eye contact, posture, voice volume, and gestures help a speaker connect with an audience",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Deliver a one to two minute informative talk about a farm animal, crop, or natural resource to classmates",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Organize an outline for a short speech on an agricultural topic with a clear main idea, supporting points, and a closing statement",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of each paragraph of the FFA Creed in your own words",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how a speaker adjusts word choice and examples for different audiences such as peers, younger students, and community members",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Deliver the FFA Creed from memory with accurate wording, clear pronunciation, and expressive delivery",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Respond to judges' questions about a speech or the FFA Creed with clear, concise, and relevant answers",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish among forms of verbal communication used in agriculture such as public speaking, presentations, debate, radio, and podcasts",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.03.03.03.a",
+    "ECL.04.02.03.a"
+   ]
+  },
+  {
+   "text": "Explain why strong verbal communication matters for agricultural careers, SAE growth, and agricultural advocacy",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.03.03.03.b"
+   ]
+  },
+  {
+   "text": "Identify strategies such as vocal variety, logical organization, eye contact, and thorough preparation that make spoken communication clear and professional",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.04.01.01.a",
+    "ECL.03.01"
+   ]
+  },
+  {
+   "text": "Analyze a target audience to select the purpose, key message, and supporting evidence for an agricultural presentation",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.04.01"
+   ]
+  },
+  {
+   "text": "Research an agricultural topic using credible sources and cite them accurately in a prepared speech manuscript",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.04.02.03.b"
+   ]
+  },
+  {
+   "text": "Write and deliver a six to eight minute prepared speech on an agricultural topic that meets FFA Prepared Public Speaking CDE guidelines",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.04.01.02.b",
+    "ECL.04.02.03.b",
+    "ECL.03.03.03.c"
+   ]
+  },
+  {
+   "text": "Analyze a recorded speech for clarity, organization, nonverbal delivery, and persuasive appeal",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.04.01.01.c"
+   ]
+  },
+  {
+   "text": "Design visual aids that support rather than distract from an oral presentation of SAE records and results",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.04.01.02.b"
+   ]
+  },
+  {
+   "text": "Demonstrate professional interview skills for an agricultural job, proficiency award, or FFA degree interview",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.04.01.02.b",
+    "ECL.03.03.03.c"
+   ]
+  },
+  {
+   "text": "Plan and deliver an extemporaneous speech on a current agricultural issue with limited preparation time",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.04.01.02.b",
+    "ECL.03.03.03.c"
+   ]
+  },
+  {
+   "text": "Present multiple perspectives on a controversial agricultural issue and respond respectfully to challenging questions in an issues forum",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.04.01.02.b",
+    "ECL.04.02.03.b"
+   ]
+  },
+  {
+   "text": "Develop a communication plan that combines speaking opportunities with other media to promote a chapter event or SAE to an intended audience",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.04",
+    "ECL.04.01",
+    "ECL.04.02"
+   ]
+  },
+  {
+   "text": "Create a communication plan for answering public questions and criticism about an agricultural practice",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.01.02.01.c",
+    "ECL.03.01.02.c"
+   ]
+  },
+  {
+   "text": "Deliver a persuasive presentation advocating an agricultural position to a public audience such as a school board, civic club, or elected official",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.04.01.02.b",
+    "ECL.04.02.03.b"
+   ]
+  },
+  {
+   "text": "Evaluate and coach a peer's speech using official FFA CDE speaking rubrics",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.04.01.01.c"
+   ]
+  }
+ ],
+ "changes": "Removed the confession reference so scripture and confessions are empty for every objective. Kept and reworded all six original competencies. Added foundational listening, delivery, and outlining skills for grades 4 to 6, FFA Creed understanding, delivery, and questioning for grades 7 to 8, and high school competencies for audience analysis, research and citation, visual aids, interviews, issues forums, communication planning, responding to criticism, and public advocacy. Each is tagged only with fitting AFNR codes from the candidate list, and objectives below grade 9 have no standards.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "CRP.04.01.01.a",
+  "CRP.04.01.01.c",
+  "CRP.04.01.02.b",
+  "ECL.01.02.01.c",
+  "ECL.03.01",
+  "ECL.03.01.01.a",
+  "ECL.03.01.02.c",
+  "ECL.03.03.03.a",
+  "ECL.03.03.03.b",
+  "ECL.03.03.03.c",
+  "ECL.04",
+  "ECL.04.01",
+  "ECL.04.02",
+  "ECL.04.02.03.a",
+  "ECL.04.02.03.b"
+ ],
+ "usage": {
+  "input": 5003,
+  "output": 7399
+ }
+}

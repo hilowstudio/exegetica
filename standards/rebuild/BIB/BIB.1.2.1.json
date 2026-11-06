@@ -1,0 +1,314 @@
+{
+ "sub_topic": "BIB.1.2.1",
+ "name": "Christianity vs Other Worldviews (Secularism)",
+ "path": [
+  "Bible & Theology",
+  "Apologetics and Worldviews",
+  "Cults and Unique Systems"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God made everything in the world and that the world did not happen by accident",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:1",
+    "Colossians 1:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain in simple words that some people live as if God is not there and that the Bible calls this foolish",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 14:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall from the catechism that people were made to glorify God and enjoy him forever",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:27",
+    "1 Corinthians 10:31"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe what an atheist believes about God and contrast it with what the Bible teaches about God",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 14:1",
+    "Hebrews 11:6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Bible teaches that creation shows everyone that God exists",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 19:1-4",
+    "Romans 1:19-20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Belgic Confession Article 2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture teaches that God's law is written on every human heart so that all people know right from wrong",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 2:14-15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare living for present pleasures with living in light of eternity using Jesus' parable of the rich fool",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Luke 12:16-21",
+    "Matthew 6:19-21",
+    "2 Corinthians 4:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define secularism and identify secular assumptions in everyday messages such as advertising, media, and popular sayings",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Romans 12:2",
+    "Colossians 2:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Christian hope of bodily resurrection and new creation as the Bible's answer to the secular claim that death is the end",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:17-22",
+    "1 Thessalonians 4:13-14"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q57",
+    "Heidelberg Catechism Q58"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the materialist claim that only matter exists by contrasting it with Scripture's teaching that God is spirit and humans have souls",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "John 4:24",
+    "Genesis 2:7",
+    "Matthew 10:28"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4",
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret how Ecclesiastes portrays life under the sun as meaningless apart from God and connect this to the modern idea of nihilism",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Ecclesiastes 1:2-3",
+    "Ecclesiastes 2:17",
+    "Ecclesiastes 12:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how purely naturalistic accounts of human origins shape views of human worth and contrast them with the doctrine of the image of God",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:26-27",
+    "Genesis 9:6",
+    "Psalm 8:3-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how secularism developed in Western thought from the Enlightenment to the present",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the postmodern claim that there is no absolute truth and compare it with Scripture's claims about truth",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "John 14:6",
+    "John 17:17",
+    "John 18:37-38"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's address at the Areopagus as a model for engaging people who do not share a biblical worldview",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Acts 17:22-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the moral argument that objective moral obligations require a moral lawgiver",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 2:14-15",
+    "James 4:12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the core tenets of secular humanism, especially its confidence in human goodness, against Scripture's teaching on human sin",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Jeremiah 17:9",
+    "Romans 3:10-12"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q5",
+    "Westminster Shorter Catechism Q18"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Reformed presuppositional apologetics argues that secular reasoning relies on assumptions about logic, order, and knowledge that only God supplies",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 1:7",
+    "Colossians 2:3",
+    "2 Corinthians 10:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how an atheist can account for the problem of evil without a standard of good and compare this with the Reformed doctrine of providence",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 50:20",
+    "Romans 8:28",
+    "Romans 2:14-15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the claim that meaning, value, and purpose require God by evaluating secular attempts to ground them",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 17:24-28",
+    "Ecclesiastes 12:13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a written or spoken dialogue that answers a secular objection to Christianity with gentleness and respect",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Peter 3:15-16",
+    "Colossians 4:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize an argument showing how the Christian worldview, as the Reformed tradition holds, accounts for rationality, morality, and meaning better than secularism",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Colossians 1:16-17",
+    "Colossians 2:3",
+    "Romans 1:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Westminster Confession of Faith 4.1"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Dropped 'people are sad without God' because it rests on feelings rather than a teachable competency, and replaced 'apply the hope we have in Jesus' with an assessable explanation of resurrection hope. Reframed the Darwinism objective as an analysis of naturalistic origins against the image of God. Merged the grade 4 'no God means no right or wrong' into a Romans 2 objective at grade 4 and a moral argument objective at grade 10. Added competencies on general revelation, identifying secular assumptions in media, the historical rise of secularism, Paul at the Areopagus, presuppositional apologetics, and crafting a gentle apologetic dialogue. Retained and reworded the remaining objectives and anchored them to specific verses and confessional articles.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1924,
+  "output": 5021
+ }
+}

@@ -1,0 +1,217 @@
+{
+ "sub_topic": "AGR.5.2.2",
+ "name": "Food Processing Methods",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Processing & Preservation"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify foods that are changed or processed in some way before they reach the grocery store",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why farmers and processors turn raw commodities into food products by adding value, convenience, and safety",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the steps a raw commodity such as wheat, apples, or peanuts goes through to become a packaged product",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish primary processing from secondary processing using examples of commodities grown in the local area",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify food processing methods as mechanical, thermal, or chemical",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate basic mechanical unit operations such as cleaning, sorting, grading, peeling, size reduction, and mixing in a food lab",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how separation operations such as milling, pressing, filtering, and centrifuging turn one raw material into several products",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the methods and materials used to process food for fresh, minimally processed, and ready-to-eat markets",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.02.a"
+   ]
+  },
+  {
+   "text": "Explain how thermal operations such as blanching, roasting, frying, and extrusion cooking change a raw ingredient during processing",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02"
+   ]
+  },
+  {
+   "text": "Construct a process flow diagram that shows each unit operation for a food product from receiving raw materials to packaging and distribution",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02",
+    "FPP.04.02.01.a"
+   ]
+  },
+  {
+   "text": "Identify physical, chemical, and biological hazards at points along a processing line and apply sanitation and quality assurance procedures to control them",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.01.a",
+    "FPP.01.02"
+   ]
+  },
+  {
+   "text": "Describe current and emerging processing technologies such as high pressure processing, pulsed electric fields, and automated lines",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.02.03.a"
+   ]
+  },
+  {
+   "text": "Evaluate how a processing method affects the texture, flavor, color, and nutrient content of a food",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02"
+   ]
+  },
+  {
+   "text": "Analyze significant changes and trends in food processing methods from small on-farm operations to large automated plants",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04",
+    "FPP.04.02.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate how processors use by-products and reduce water and energy use to make processing operations more sustainable",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.04.01.a",
+    "FPP.04.04/"
+   ]
+  },
+  {
+   "text": "Document batch records, critical measurements, and quality checks during a processing run according to industry standards",
+   "grade": 12,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.03.02.b",
+    "FPP.04.03.02.b"
+   ]
+  },
+  {
+   "text": "Operate and manage a simulated processing line to produce a food product that meets quality specifications",
+   "grade": 12,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02",
+    "FPP.01.02"
+   ]
+  },
+  {
+   "text": "Develop a value-added food product for an SAE or agriscience fair project by selecting and justifying the processing methods used",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02",
+    "FPP.02.02.03.b"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded the grade 3, 5, 7, 11, and 12 objectives. Dropped the grade 9 pasteurization objective because shelf life extension belongs to the sibling Principles of Food Preservation. Added objectives on the purpose of processing, primary versus secondary processing, mechanical and separation unit operations, thermal operations, processing for different markets, process flow diagrams, hazard control on the line, emerging technologies, industry trends, sustainability and by-products, batch documentation, and an SAE or agriscience fair product development project. Dairy, meat, fermentation, and baking content was left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.01.02",
+  "FPP.01.02.01.a",
+  "FPP.01.03.02.b",
+  "FPP.02.02.03.b",
+  "FPP.03.02",
+  "FPP.03.02.02.a",
+  "FPP.03.02.03.a",
+  "FPP.03.03.02.a",
+  "FPP.04",
+  "FPP.04.02.01.a",
+  "FPP.04.02.01.b",
+  "FPP.04.02.03.a",
+  "FPP.04.03.02.b",
+  "FPP.04.04.01.a",
+  "FPP.04.04/"
+ ],
+ "usage": {
+  "input": 2272,
+  "output": 3050
+ }
+}

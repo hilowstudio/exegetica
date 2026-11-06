@@ -1,0 +1,225 @@
+{
+ "sub_topic": "BIB.8.2.4",
+ "name": "The Intertestamental Period (400 Silent Years)",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "Prolegomena and Backgrounds (Foundations)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that a long time passed between the last Old Testament prophet and the birth of Jesus",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Galatians 4:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Malachi as the last book of the Old Testament and Matthew as the first book of the New Testament",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Malachi 4:5-6",
+    "Matthew 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall from Scripture that faithful people like Simeon and Anna were waiting for the promised Messiah when Jesus was born",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:25-26",
+    "Luke 2:36-38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the time between the Testaments is often called the 400 silent years because God sent no new prophet and no new Scripture was written",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Malachi 4:5-6",
+    "Hebrews 1:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture that God continued to rule over kings and nations during the years when He sent no new prophet",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 2:20-21",
+    "Daniel 4:34-35"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11",
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of the Maccabean revolt and the rededication of the temple that is remembered at Hanukkah",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "John 10:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sequence the powers that ruled Judea between Malachi and Matthew from Persia through Greece, the Ptolemies, the Seleucids, and the Hasmoneans to Rome",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 8:20-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the conquests of Alexander the Great spread the Greek language and culture across the lands of the Bible",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 8:5-8",
+    "Daniel 8:21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Daniel's visions of successive kingdoms with the empires that rose and fell between the Testaments as Reformed interpreters have read them",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 2:36-45",
+    "Daniel 8:20-25",
+    "Daniel 11:2-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the desecration of the temple by Antiochus IV Epiphanes in light of Daniel's prophecy of the abomination of desolation and Jesus' later use of that phrase",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 11:31",
+    "Daniel 8:23-25",
+    "Matthew 24:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the origin of the Septuagint and trace examples of New Testament writers quoting it",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Isaiah 7:14",
+    "Matthew 1:23",
+    "Hebrews 10:5-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the rise and fall of the Hasmonean dynasty ending with Pompey's capture of Jerusalem in 63 BC",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the spread of Jewish communities across the Greek and Persian world during this period prepared places where the gospel was later preached",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:5-11",
+    "Acts 13:14-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct an annotated timeline of the intertestamental period from Malachi to the birth of Christ marking its key rulers and events",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the books of the Maccabees as historical sources for this period while distinguishing them from inspired Scripture as the Reformed confessions teach",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Luke 24:44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.3",
+    "Belgic Confession Article 6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the continuity of God's plan across the silent years by tracing Malachi's promise of a coming messenger to its fulfillment in John the Baptist",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Malachi 3:1",
+    "Malachi 4:5-6",
+    "Mark 1:2-4",
+    "Matthew 11:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose an essay arguing how the political, linguistic, and religious developments of the intertestamental period set the stage for the fullness of time",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Galatians 4:4-5",
+    "Mark 1:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: the gap between the Testaments, the reason for the name silent years, God's rule during the silence, the Maccabees and Hanukkah, Alexander, Antiochus and Daniel 11:31, the Septuagint, the timeline, the Apocrypha as a historical source, continuity of God's plan, and the Galatians 4:4 essay. Dropped the vague 400 years item into the K and grade 1 objectives and anchored the waiting item in Simeon and Anna. Replaced the Persia versus Rome comparison and the empire categorization with one sequencing objective covering the Ptolemies, Seleucids, and Hasmoneans. Dropped the synagogue objective as Second Temple Judaism material and avoided Roman World detail beyond Pompey's conquest. Added Daniel's kingdom visions, Hasmonean rise and fall, the Jewish dispersion, and the Malachi to John the Baptist link. Added scripture anchors throughout and confession anchors for providence (WSC Q11, WCF 5.1), the Apocrypha (WCF 1.3, Belgic 6), and the covenant before Christ (WCF 7.5).",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1978,
+  "output": 3893
+ }
+}

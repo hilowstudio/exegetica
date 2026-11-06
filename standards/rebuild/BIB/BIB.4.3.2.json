@@ -1,0 +1,261 @@
+{
+ "sub_topic": "BIB.4.3.2",
+ "name": "Martin Luther and the 95 Theses",
+ "path": [
+  "Bible & Theology",
+  "Church History",
+  "The Reformation Era"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Martin Luther as a man who lived long ago and called the church back to the Bible",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Luther posted the 95 Theses on the church door in Wittenberg on October 31, 1517",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Luther taught that God's forgiveness is a free gift received by faith and cannot be bought with money",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Ephesians 2:8-9"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the story of the thunderstorm and Luther's vow to become a monk",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Luther translated the Bible into German so that ordinary people could read it in their own language",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Romans 10:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe Luther's work writing hymns for congregations to sing, including A Mighty Fortress Is Our God and the psalm it is drawn from",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 46:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what an indulgence was and why Johann Tetzel's sale of indulgences troubled Luther",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the late medieval church practices Luther grew up with, including penance, pilgrimages, relics, and the belief in purgatory",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Luther's struggle as a monk to find peace with God through fasting, confession, and good works",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the purpose and structure of Luther's Small Catechism as a tool for teaching families the faith",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 6:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the main claims of selected theses, such as Thesis 1 on lifelong repentance and Thesis 62 on the gospel as the true treasure of the church",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 4:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Luther's study of Romans 1:17 changed his understanding of the righteousness of God and of justification",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 1:16-17",
+    "Romans 3:24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the printing press spread the 95 Theses and Luther's later writings across Europe",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the events of the Diet of Worms in 1521 and explain Luther's appeal to Scripture and conscience in his reply",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Acts 5:29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Luther's teaching on the priesthood of all believers and its basis in Scripture",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Peter 2:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Luther's view of justification by faith with the late medieval church's teaching on merit and penance",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:24",
+    "Ephesians 2:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze primary source excerpts of the 95 Theses to trace how Luther's critique moved from indulgence abuses toward questions of papal authority",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the main arguments of Luther's 1520 treatises, including The Freedom of a Christian and The Babylonian Captivity of the Church",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 5:1",
+    "Galatians 5:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast Luther's theology of the cross with the theology of glory as set out in the Heidelberg Disputation of 1518",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 1:18-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Luther's later writings and actions, including his response to the Peasants' War and his writings against the Jews, in light of Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate arguments for and against the necessity of Luther's break with Rome using Scripture as the final authority",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 1:8-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Assess the lasting impact of Luther's German Bible on the German language, church life, and later vernacular translations",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a researched historical argument on the significance of the 95 Theses using primary and secondary sources",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (posting the theses, faith not money, the storm vow, Bible translation, indulgences, Romans 1:17, Worms, printing press, priesthood of believers, theology of the cross, later errors, breach with Rome, German Bible impact). Dropped filler such as 'monk with a hammer' and the feeling-based 'apply the courage of Here I Stand', folding Luther's appeal to conscience into the Worms objective. Turned the Pope comparison into a precise comparison with medieval teaching on merit and penance. Added Luther's hymns, the medieval church background, his monastic struggle, the Small Catechism, close reading of specific theses, primary source tracing of the theses, the 1520 treatises, the Heidelberg Disputation, and a culminating research argument. Broad treatment of the solas is left to The Five Solas sibling. Replaced loose references with precise ones such as WCF 1.8, 1.10, 11.1, and 20.2.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1919,
+  "output": 4060
+ }
+}

@@ -1,0 +1,238 @@
+{
+ "sub_topic": "AGR.6.4.2",
+ "name": "Biblical Stewardship & Creation Care",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Natural Resources & Environmental Science",
+  "Outdoor Skills & Creation Care"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Name ways people can take care of plants, animals, and the outdoors",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify things in creation that people depend on for food, water, and shelter",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate a simple daily care routine for a classroom plant or animal",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical idea that people are called to tend and keep the earth God made rather than use it carelessly",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish renewable from nonrenewable resources and explain why each requires different care",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how wasting food, water, or soil affects people, animals, and the land",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what it means to be a steward of something entrusted to you and apply that idea to the use of land, water, and animals",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how farmers and ranchers care for soil, water, and livestock as part of producing food",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify human activities that help or harm a local habitat and explain their effects on the plants and animals living there",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare a use of natural resources that reflects responsible care with one that reflects waste or neglect",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Plan a small conservation or service project that improves the school grounds or a local natural area",
+   "grade": 8,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the relationship between natural resources, ecosystems, and human activity as the foundation for stewardship",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.02.01.a"
+   ]
+  },
+  {
+   "text": "Explain why preserving biodiversity is part of creation care and how it supports ecosystem function and resource availability",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.01.03.a"
+   ]
+  },
+  {
+   "text": "Illustrate stewardship of natural resources through a specific practice carried out in an SAE or FFA chapter activity",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.04.01.01.a"
+   ]
+  },
+  {
+   "text": "Demonstrate a resource management practice such as erosion control, habitat improvement, or water quality protection",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04"
+   ]
+  },
+  {
+   "text": "Describe how technologies such as precision agriculture have changed the ability to use and care for natural resources",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.03.03.a"
+   ]
+  },
+  {
+   "text": "Assess how a specific agricultural or development activity affects the long-term availability of soil, water, or wildlife resources",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate a real-world resource decision for whether it treats the earth as something to be cared for and passed on or something to be used up",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how viewing the earth as a gift entrusted by God, as a mere commodity, or as something to be worshiped shapes how people use natural resources",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.03.01.b"
+   ]
+  },
+  {
+   "text": "Analyze how conservation practices such as cover crops, rotational grazing, or no-till sustain both farm productivity and long-term resource health",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Develop a stewardship plan for a farm, woodlot, or SAE enterprise that sustains production while protecting soil, water, and wildlife",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.03"
+   ]
+  },
+  {
+   "text": "Justify a personal or community stewardship commitment that balances responsible use of natural resources with lasting care for creation",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.04.01.01.a"
+   ]
+  }
+ ],
+ "changes": "Kept all six original objectives, rewording the grade 4 one to name the biblical tend-and-keep calling explicitly. Added early hands-on care and dependence on creation (grades 3), renewable versus nonrenewable resources and waste (grade 5), agricultural care of soil, water, and livestock (grade 6), local habitat impacts (grade 7), and a service project plan (grade 8). For grades 9 to 12 added AFNR-anchored competencies: human activity and ecosystems, biodiversity, stewardship in SAE and FFA, hands-on management practices, technology, impact assessment, worldview views of creation, conservation practices that sustain productivity, and a full stewardship plan. Laws, agencies, and economic policy content was left to Environmental Policy & Ethics, recreation to Outdoor Recreation & Safety, and careers to Careers in Natural Resources.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPS.04.01.01.a",
+  "NRS.01.01.03.a",
+  "NRS.01.04",
+  "NRS.01.05",
+  "NRS.02.01",
+  "NRS.02.02.01.a",
+  "NRS.02.02.01.b",
+  "NRS.02.03.01.a",
+  "NRS.02.03.01.b",
+  "NRS.02.03.03.a",
+  "NRS.02.04.02.a",
+  "NRS.02.04.02.b",
+  "NRS.03",
+  "NRS.03.01.07.a",
+  "NRS.04"
+ ],
+ "usage": {
+  "input": 2442,
+  "output": 3346
+ }
+}

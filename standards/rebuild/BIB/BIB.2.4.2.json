@@ -1,0 +1,264 @@
+{
+ "sub_topic": "BIB.2.4.2",
+ "name": "Inductive Bible Study Overview",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "Systematic Reading of Scripture"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe the people, places, and actions shown in a picture of a Bible story before saying what the story means",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Ask who, what, where, and when questions about a Bible passage read aloud and find the answers in the text",
+   "grade": 1,
+   "bloom": 3,
+   "scripture": [
+    "Acts 17:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify words or phrases that are repeated in a short Bible passage",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 136:1-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the three steps of inductive Bible study (observation, interpretation, application) and describe the question each step asks",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 7:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Mark key words, names, places, and time references in a printed passage using a consistent system of symbols or colors",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify connecting words such as because, therefore, but, and so that in a passage and explain the relationship each one shows",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why careful observation of what a text says must come before deciding what it means",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 2:15",
+    "Acts 17:11"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q157"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the surrounding verses of a passage shape the meaning of a single verse within it",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 4:10-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the genre of a passage and describe how its genre shapes the questions a reader asks during observation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze a paragraph by listing its facts and noting contrasts, comparisons, and cause and effect relationships",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use cross-references to compare a passage with related passages and explain the Reformed principle that Scripture interprets Scripture",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [
+    "2 Peter 1:20-21",
+    "Acts 15:15-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the author's main point in a passage using only evidence drawn from observations of the text and its context",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Nehemiah 8:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish exegesis, drawing meaning out of a text, from eisegesis, reading one's own ideas into it, using examples of commonly misused verses",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "2 Peter 3:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Develop a specific, actionable application that follows from the interpreted meaning of a passage rather than from observation alone",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [
+    "James 1:22-25"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q157"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the structure of a passage by outlining its sections and the flow of its argument",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Conduct a word study on a key term using a concordance or lexicon and analyze how its use in context determines its meaning",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:28",
+    "James 2:21-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a full inductive study of a New Testament epistle passage covering observation, interpretation, and application",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "2 Timothy 2:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Research the historical and cultural background of a passage and use it to inform observation and interpretation",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [
+    "1 Corinthians 8:1-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate commentaries and study tools against one's own inductive observations, explaining the Reformed teaching that Scripture is the supreme judge of all interpretation",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 17:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching on the clarity of Scripture and the illumination of the Spirit and how these relate to diligent use of ordinary means of study",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 119:18",
+    "Psalm 119:130",
+    "1 Corinthians 2:12-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Confession of Faith 1.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare inductive Bible study with topical and deductive approaches and evaluate the strengths and limits of each",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Produce a teaching outline based on an inductive study of a passage",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Ezra 7:10",
+    "Nehemiah 8:8"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real method competencies (picture observation, who/what/where questions, the three steps, marking key words, observation before interpretation, paragraph analysis, interpretation from observation, application, full epistle study, commentaries, background research, teaching outline). Dropped items that drifted into comprehension or character study (main person, beginning-middle-end retelling, comparing characters' choices) and merged the redundant grade 9 'danger of jumping to application' into the observation-first and exegesis objectives. Added repeated words, connecting words, context, genre, cross-references with Scripture interpreting Scripture (WCF 1.9), exegesis vs eisegesis, structure tracing, word studies, clarity and illumination (WCF 1.6-1.7), Scripture as supreme judge (WCF 1.10), and comparison with other study approaches. Added WLC Q157 where it states how Scripture is to be read with diligence and application.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1976,
+  "output": 4352
+ }
+}

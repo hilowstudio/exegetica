@@ -1,0 +1,331 @@
+{
+ "sub_topic": "BIB.2.1.3",
+ "name": "Typology: Shadows and Substance in Scripture",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "Biblical Narrative Structure"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that a shadow shows the shape of something real but is not the real thing, as a picture of how some Old Testament things point ahead to Jesus",
+   "grade": 0,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 2:16-17",
+    "Hebrews 10:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of the Passover and name Jesus as the Lamb of God whom the Passover lamb pointed to",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 12:1-13",
+    "John 1:29",
+    "1 Corinthians 5:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how God saved Noah's family through the ark and how the New Testament uses this to picture salvation in Christ",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 7:1",
+    "Genesis 7:23",
+    "1 Peter 3:20-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect the manna God gave Israel in the wilderness to Jesus' teaching that he is the true Bread of Life",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 16:13-15",
+    "John 6:31-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Jesus' own words that the whole Old Testament speaks about him",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:27",
+    "Luke 24:44",
+    "John 5:39"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how the layout and furniture of the tabernacle teach God's holiness and the need for a God-given way to approach him",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 25:8-9",
+    "Hebrews 9:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define type, antitype, shadow, and substance using the language of Colossians and Hebrews",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Colossians 2:16-17",
+    "Hebrews 8:5",
+    "Hebrews 10:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the bronze serpent lifted up in the wilderness with Jesus lifted up on the cross",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Numbers 21:4-9",
+    "John 3:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the life of Joseph with the life of Christ, tracing the pattern of rejection, suffering, exaltation, and the saving of others",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 37:18-28",
+    "Genesis 45:4-8",
+    "Genesis 50:20",
+    "Acts 7:9-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify biblical types as persons, events, or institutions and give an example of each",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:14",
+    "1 Corinthians 10:1-6",
+    "Hebrews 9:8-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the criteria for a valid biblical type, including real history, genuine correspondence, escalation in the fulfillment, and warrant from Scripture",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:14",
+    "1 Corinthians 10:6",
+    "1 Corinthians 10:11",
+    "Hebrews 8:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul presents Adam as a type of Christ, the head of a new humanity",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:12-19",
+    "1 Corinthians 15:45-49"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that Old Testament believers were saved through faith in the promised Christ whom the types and sacrifices foreshadowed",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "John 8:56",
+    "Hebrews 11:13",
+    "1 Peter 1:10-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 8.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the priesthood of Aaron with the priesthood of Christ, showing where Christ fulfills and surpasses it",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 5:1-6",
+    "Hebrews 7:23-28"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Hebrews presents Melchizedek as a type of Christ's eternal priesthood",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 14:18-20",
+    "Psalm 110:4",
+    "Hebrews 7:1-3",
+    "Hebrews 7:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the temple finds its fulfillment in Christ's body and in the people of God joined to him",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "John 2:19-21",
+    "1 Corinthians 3:16",
+    "Revelation 21:22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the ceremonial laws that served as types are no longer binding now that Christ has fulfilled them",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 2:16-17",
+    "Ephesians 2:14-15",
+    "Hebrews 8:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Hebrews argues that the repeated animal sacrifices revealed their own insufficiency and pointed to Christ's single sacrifice",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 10:1-4",
+    "Hebrews 10:11-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a study of the Day of Atonement that traces each element of the ritual to its fulfillment in Christ",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Leviticus 16:15-22",
+    "Hebrews 9:11-14",
+    "Hebrews 9:24-26"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Gospels present Jesus as the true Israel who relives and fulfills Israel's exodus and wilderness testing",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Hosea 11:1",
+    "Matthew 2:15",
+    "Deuteronomy 8:2-3",
+    "Matthew 4:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the difference between reading a passage typologically and allegorizing it, using examples from church history and Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 4:22-26",
+    "1 Corinthians 10:1-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed tradition's Christ-centered reading of the Old Testament against objections, using the New Testament's own interpretation",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Luke 24:27",
+    "Luke 24:44",
+    "2 Corinthians 1:20",
+    "1 Peter 1:10-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the New Testament's greater than pattern to show how Jesus is the greater Moses, David, Solomon, and Jonah who fulfills the offices of prophet, priest, and king",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Deuteronomy 18:15",
+    "Acts 3:22",
+    "Hebrews 3:1-6",
+    "Matthew 12:40-42"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q23",
+    "Heidelberg Catechism Q31"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (shadow concept, Passover, ark, manna, Luke 24, tabernacle, bronze serpent, Joseph, criteria for types, Aaron's priesthood, temple, Day of Atonement, allegory vs typology, Christ-centered reading, greater than pattern). Dropped the vague kindergarten picture item and replaced it with a concrete shadow and substance objective. Recast observe and name items with assessable verbs and moved manna to grade 2. Added missing competencies: defining type and antitype vocabulary, classifying kinds of types, Adam as type, Old Testament saints saved through the foreshadowed Christ, Melchizedek, expiry of ceremonial types, insufficiency of repeated sacrifices, and Jesus as true Israel. Narrowed Leviticus 16 to verses 15-22, added supporting passages, and anchored confessions only where they state the doctrine (WCF 1.9, 7.5, 8.6, 19.3, WSC Q23 and Q25, Heidelberg Q19 and Q31). Left covenant structure and metanarrative content to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2075,
+  "output": 5138
+ }
+}

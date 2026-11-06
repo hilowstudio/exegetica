@@ -1,0 +1,292 @@
+{
+ "sub_topic": "BIB.7.2.2",
+ "name": "Roman Religion and the Imperial Cult",
+ "path": [
+  "Bible & Theology",
+  "Historical & Cultural Context",
+  "First-Century Roman World (NT)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that people in the Roman world made statues of many gods and bowed down to them, while the Bible teaches that there is only one true God",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "1 Corinthians 8:4-6",
+    "Acts 17:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify Caesar as the emperor who ruled the Roman world when Jesus was born",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that the earliest Christians confessed Jesus is Lord as a short statement of what they believed about Jesus",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Romans 10:9",
+    "1 Corinthians 12:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that the Romans worshiped many gods and name major Roman gods such as Jupiter, Mars, and Venus with what each was believed to control",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 14:8-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Roman religion was practiced through temples, sacrifices, household gods, and city festivals, using the riot over Artemis in Ephesus as an example",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 19:23-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Christians in the Roman world got in trouble for refusing to worship the emperor or offer sacrifice to the gods",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:6-7",
+    "Acts 5:29"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the living God described in Scripture with the idols of the nations",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 115:3-8",
+    "Isaiah 44:9-20",
+    "1 Thessalonians 1:9-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1",
+    "Westminster Shorter Catechism Q5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell Jesus' answer about paying taxes to Caesar and explain how the coin's image and inscription shaped the meaning of his reply",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Mark 12:13-17",
+    "Matthew 22:15-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the imperial cult, including temples to Rome and Augustus and titles such as lord, savior, and son of god claimed for the emperor",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 25:21",
+    "John 19:12-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the New Testament applies the titles Lord, Savior, and Son of God to Jesus in a world where Caesar claimed those same titles",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Luke 2:10-11",
+    "Mark 1:1",
+    "Philippians 2:9-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul responded to the idols and altars of Athens in his speech at the Areopagus",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 17:16-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the syncretism of Roman religion and why the first commandment kept Christians from adding Christ to the gods of Rome",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:3-5",
+    "1 Corinthians 10:19-22"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q46",
+    "Westminster Shorter Catechism Q47",
+    "Heidelberg Catechism Q95"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the question of food sacrificed to idols in Corinth and summarize the guidance Paul gave to believers",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 8:1-13",
+    "1 Corinthians 10:25-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret emperor worship as an act of political loyalty and explain why refusing it was treated as disloyalty to Rome",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:7",
+    "John 19:12-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Romans charged Christians with atheism for worshiping a God without images or sacrifices and for withdrawing from civic religion",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Peter 4:3-4",
+    "1 Thessalonians 1:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the imagery of Revelation, including the beast and the throne of Satan at Pergamum, in light of the imperial cult in Asia Minor",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 2:12-13",
+    "Revelation 13:1-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze primary sources such as Pliny's letter to Trajan to describe how Roman officials tested and punished Christians",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 Peter 4:12-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast the claims and character of the kingdom of Caesar with the kingdom of Christ as Scripture presents it",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 18:36",
+    "Philippians 3:20-21",
+    "Daniel 7:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claim that early Christianity borrowed from the mystery religions by comparing their rites and myths with the historical gospel",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 15:3-8",
+    "2 Peter 1:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the New Testament commands to honor the emperor fit with the Christian refusal to worship him",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 13:1-7",
+    "1 Peter 2:13-17",
+    "Acts 5:29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.2",
+    "Westminster Confession of Faith 23.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an argument for the exclusivity of Christ as the Reformed tradition confesses it, set against the religious pluralism of the Roman world",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 4:12",
+    "John 14:6",
+    "1 Timothy 2:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 10.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a written synthesis relating the early church's response to pressure to conform under Rome with Scripture's call to holiness in any culture",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 12:1-2",
+    "1 Peter 1:14-16",
+    "Daniel 3:16-18"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Roman gods, Caesar, Jesus is Lord, polytheism, refusal to worship Caesar, idols vs true God, syncretism, political nature, atheism charge, Revelation, two kingdoms, mystery religions, exclusivity, conformity vs holiness). Dropped the filler grade 6 'Identify Jupiter or Mars' by merging it into the grade 3 polytheism objective. Added missing competencies: Roman religious practice (Artemis riot), render to Caesar, imperial titles applied to Jesus, Paul at Athens, idol food in Corinth, Pliny's letter, and honoring vs worshiping the emperor. Replaced Romans 12 anchoring where unrelated, added verse-specific anchors, and cited confessions only where they state the doctrine (WSC Q5, Q46-47, HC Q95, WCF 2.1, 10.4, 20.2, 23.4). Left social, travel, and philosophy material to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1943,
+  "output": 4643
+ }
+}

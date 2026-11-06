@@ -1,0 +1,275 @@
+{
+ "sub_topic": "AGR.1.4.1",
+ "name": "Companion & Small Animals",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Animal Science",
+  "Companion, Aquaculture & Emerging Industries"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the basic needs of a pet, such as food, water, shelter, and exercise",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort common animals into companion, farm, and wild animal groups and explain each choice",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the daily and weekly responsibilities of caring for a companion animal, including feeding schedules and cleaning its living space",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate calm, safe ways to approach, pick up, and hold a small animal such as a rabbit or guinea pig",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain differences in the housing, dietary, and social needs of common companion mammals such as dogs, cats, and rabbits",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common breeds of dogs, cats, and rabbits by their visual characteristics",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate basic grooming tasks for a companion animal, including brushing, nail trimming, and bathing",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recommend an appropriate companion animal species or breed for a household by weighing its space, time, budget, and lifestyle",
+   "grade": 7,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the care requirements of exotic companion species such as reptiles, birds, and small rodents with those of dogs and cats",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common diseases and internal and external parasites of companion animals and the vaccines and preventive measures used against each",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the uses of companion animals as pets, service animals, therapy animals, and working animals",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.01.02.a"
+   ]
+  },
+  {
+   "text": "Use correct terminology for the sex, age, and breed classification of small animal species such as rabbits and cavies",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.06.01.03.b"
+   ]
+  },
+  {
+   "text": "Analyze pet food labels to compare guaranteed analysis, ingredient lists, and life-stage nutrition claims",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.01",
+    "AS.03.02"
+   ]
+  },
+  {
+   "text": "Calculate daily feeding amounts for a companion animal based on its body weight, life stage, and activity level",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.03.01"
+   ]
+  },
+  {
+   "text": "Describe the housing and equipment requirements of small animals, including cage size, bedding, ventilation, and temperature",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.05.01.01.a"
+   ]
+  },
+  {
+   "text": "Explain identification and tracking methods for companion animals, such as microchips, tattoos, ear tags, and licensing",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.02.03.a"
+   ]
+  },
+  {
+   "text": "Evaluate a companion animal's behavior and body condition to identify signs of stress, illness, or poor welfare",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02",
+    "AS.02.01"
+   ]
+  },
+  {
+   "text": "Determine when a companion animal health concern must be referred to a veterinarian",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01.02.c"
+   ]
+  },
+  {
+   "text": "Apply species-specific restraint and handling techniques for examining, grooming, and medicating small animals based on their behavior",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02",
+    "AS.02.01.02.c"
+   ]
+  },
+  {
+   "text": "Evaluate a small animal enclosure or kennel facility for space, sanitation, ventilation, and safety",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.05.01"
+   ]
+  },
+  {
+   "text": "Explain the reproductive cycle and breeding management of a small animal species such as rabbits, including gestation and kindling",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Design a vaccination and parasite prevention program for a dog, cat, or rabbit across its life stages",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01"
+   ]
+  },
+  {
+   "text": "Analyze a local animal shelter or rescue program to judge how well it prevents neglect and protects animal welfare",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.01.01.b"
+   ]
+  },
+  {
+   "text": "Develop a supervised agricultural experience plan for a companion animal enterprise such as rabbit production, grooming, or boarding, including a budget and record-keeping system",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Design a small-animal care and enrichment program for a shelter or boarding facility that addresses health, behavior, housing, and adoption readiness",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01",
+    "AS.02",
+    "AS.05.01"
+   ]
+  }
+ ],
+ "changes": "Kept all six original objectives, rewording two slightly. The grade 6 objective now names companion mammals so it does not overlap the new exotic species objective. The grade 12 objective now includes housing. Added grade-appropriate competencies in eleven areas: animal classification, safe handling, breed identification, grooming, matching an animal to a household, exotic species care, and disease and parasite identification. The other new areas are pet food label analysis, ration calculation, housing requirements, and identification and tracking. Also added veterinary referral decisions, species-specific restraint, facility evaluation, rabbit reproduction, preventive health program design, shelter program analysis, and a companion animal SAE plan. Left welfare versus rights, careers, aquaculture, and animal products to the sibling sub-topics. Attached AFNR codes only to grade 9 to 12 objectives that directly teach them.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.02",
+  "AS.02.01",
+  "AS.02.01.01.a",
+  "AS.02.01.01.b",
+  "AS.02.01.02.c",
+  "AS.02.02.03.a",
+  "AS.03.01",
+  "AS.03.02",
+  "AS.05.01",
+  "AS.05.01.01.a",
+  "AS.06.01.02.a",
+  "AS.06.01.03.b",
+  "AS.06.02.02.a",
+  "AS.07.01",
+  "AS.07.01.02.c"
+ ],
+ "usage": {
+  "input": 2330,
+  "output": 4684
+ }
+}

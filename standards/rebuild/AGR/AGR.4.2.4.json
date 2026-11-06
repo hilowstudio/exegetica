@@ -1,0 +1,277 @@
+{
+ "sub_topic": "AGR.4.2.4",
+ "name": "Farm Business Planning",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agribusiness & Marketing",
+  "Agricultural Economics & Markets"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe what a business plan is and why a farm might need one",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the resources a farm business uses, including land, labor, capital, and management",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify the items in a simple garden or animal project as income or expenses",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the main parts of a farm business plan, such as mission, goals, resources, budget, and marketing",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Write a mission statement and SMART goals for a farm business or supervised agricultural experience project",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish between fixed and variable costs in an agricultural enterprise",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Prepare a simple budget for a supervised agricultural experience project that estimates revenue, expenses, and net income",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate the break-even price and break-even yield needed to cover the costs of producing an agricultural product",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the components of a cash budget, including anticipated revenue, production costs, overhead costs, and profit",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.01.01.a"
+   ]
+  },
+  {
+   "text": "Compare forms of business ownership, such as sole proprietorship, partnership, LLC, cooperative, and corporation, for different types of farm businesses",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01"
+   ]
+  },
+  {
+   "text": "Analyze farm enterprise budgets to compare the profitability of different crops or livestock",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.01.01.b",
+    "ABS.01.01"
+   ]
+  },
+  {
+   "text": "Prepare a cash flow budget that projects monthly inflows and outflows to determine the feasibility and borrowing needs of a farm enterprise",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.01.01.b"
+   ]
+  },
+  {
+   "text": "Conduct a SWOT analysis of a farm business or supervised agricultural experience to identify strategies for improving the operation",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.02.02.c"
+   ]
+  },
+  {
+   "text": "Summarize the purpose and components of the marketing section of a farm business plan",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.03.a"
+   ]
+  },
+  {
+   "text": "Interpret a farm balance sheet and income statement to assess the liquidity, solvency, and profitability of the business",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how buying, leasing, or custom hiring a major asset such as a tractor would affect a farm's cash flow and profitability",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.01.02.b"
+   ]
+  },
+  {
+   "text": "Assess alternative production systems for a specific agricultural product in terms of cost, labor, and return",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.02.02.b"
+   ]
+  },
+  {
+   "text": "Develop a production and operations plan that describes the inputs, facilities, labor, and timeline for a farm enterprise",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.02",
+    "ABS.01.01"
+   ]
+  },
+  {
+   "text": "Develop the marketing section of a farm business plan that identifies the target market, competition, pricing, and promotion",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03",
+    "ABS.05.01"
+   ]
+  },
+  {
+   "text": "Compare sources of agricultural credit, such as Farm Credit, the Farm Service Agency, and commercial banks, and prepare a loan request for a farm enterprise",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01"
+   ]
+  },
+  {
+   "text": "Identify production, financial, legal, and human risks facing a farm business and propose strategies to manage them in the business plan",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate a farm business plan for commercial feasibility and sustainability, including its market, financing, and management sections",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.01.03.c",
+    "ABS.04.01"
+   ]
+  },
+  {
+   "text": "Develop a complete business plan for a new or expanding agricultural enterprise, including mission, operations, financial projections, and marketing strategy",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04",
+    "ABS.04.01.03.b"
+   ]
+  },
+  {
+   "text": "Present and defend a farm business plan to a lender or judging panel, responding to questions about its assumptions and projections",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04"
+   ]
+  },
+  {
+   "text": "Analyze the steps of farm transition and succession planning and explain how they affect the long-term continuity of a family farm business",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept all six original objectives, rewording the break-even objective to include break-even yield, the enterprise budget objective for clarity, the evaluation objective to add sustainability, and the capstone plan objective to include operations and financial projections. Added early competencies on farm resources, income versus expenses, mission and SMART goals, fixed and variable costs, and SAE budgeting. Added high school competencies on cash budget components, business ownership forms, cash flow budgeting, SWOT analysis, the marketing section of a plan, financial statements, major asset purchase decisions, alternative production systems, production and operations planning, credit sources and loan requests, risk management, presenting a plan to a lender or FFA panel, and succession planning. Price discovery, commodity marketing, and trade policy content was left to sibling sub-topics. Standards were attached only from the candidate list at grades 9 to 12 where the objective directly teaches the standard.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.01.01",
+  "ABS.03.01.01.a",
+  "ABS.03.01.01.b",
+  "ABS.03.01.02.b",
+  "ABS.04",
+  "ABS.04.01",
+  "ABS.04.01.03.b",
+  "ABS.04.01.03.c",
+  "ABS.04.02",
+  "ABS.04.02.02.b",
+  "ABS.04.02.02.c",
+  "ABS.05.01",
+  "ABS.05.03",
+  "ABS.05.03.01.c",
+  "ABS.05.03.03.a"
+ ],
+ "usage": {
+  "input": 2362,
+  "output": 3996
+ }
+}

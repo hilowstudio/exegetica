@@ -1,0 +1,257 @@
+{
+ "sub_topic": "AGR.5.3.1",
+ "name": "Foodborne Illness & Microbiology",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Safety & Quality"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify everyday habits that keep food from making people sick, such as washing hands and keeping cold foods cold",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that tiny living things called microorganisms live on food and that some are helpful while others can cause illness",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe why keeping food out of the temperature danger zone helps prevent bacterial growth",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common symptoms of foodborne illness and the groups of people most at risk of serious illness",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Investigate how temperature and time affect the growth of bacteria in a food sample and record the results",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish spoilage microorganisms from pathogens and explain why food can look and smell normal yet still be unsafe",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare bacteria, viruses, parasites, and molds as causes of foodborne illness",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how cross-contamination moves pathogens from raw foods, hands, and surfaces to ready-to-eat foods",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe major foodborne pathogens such as Salmonella, E. coli O157:H7, Listeria, norovirus, and Clostridium botulinum by their sources, associated foods, and effects on humans",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.05.a"
+   ]
+  },
+  {
+   "text": "Explain how food, acidity, time, temperature, oxygen, and moisture control the growth of microorganisms in food",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02"
+   ]
+  },
+  {
+   "text": "Analyze an outbreak case study to determine the pathogen responsible and the point of contamination",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.05.a",
+    "FPP.04.02.02.b"
+   ]
+  },
+  {
+   "text": "Distinguish foodborne infection, intoxication, and toxin-mediated infection using examples of specific pathogens",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.05.a"
+   ]
+  },
+  {
+   "text": "Explain how pathogens enter the food supply on the farm through livestock, manure, irrigation water, and harvest practices",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.04.a"
+   ]
+  },
+  {
+   "text": "Perform aseptic sampling, swab, and plate count procedures used to detect microorganisms in food and on surfaces",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.05.b"
+   ]
+  },
+  {
+   "text": "Interpret results of microbiological tests for foodborne pathogens and indicator organisms against accepted limits",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.05.c",
+    "FPP.01.02.04.a"
+   ]
+  },
+  {
+   "text": "Explain how processing methods such as pasteurization, acidification, drying, and irradiation destroy or inhibit microorganisms",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02",
+    "FPP.04.02.02.b"
+   ]
+  },
+  {
+   "text": "Analyze how preservatives and other additives inhibit microbial growth and affect food chemistry",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.02.b"
+   ]
+  },
+  {
+   "text": "Evaluate control measures a food business could implement to prevent a specific foodborne illness based on the biology of the pathogen",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02.03.b",
+    "FPP.02.02"
+   ]
+  },
+  {
+   "text": "Recommend improvements to storage and distribution practices that allow microbial growth in a cold chain scenario",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.02.b",
+    "FPP.03.03.02.c",
+    "FPP.01.03"
+   ]
+  },
+  {
+   "text": "Evaluate current microbial food safety issues such as raw milk sales, antimicrobial resistance, and produce outbreaks",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.02.02.b"
+   ]
+  },
+  {
+   "text": "Design a storage and distribution plan that keeps a specific food product out of the temperature danger zone from farm to consumer",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03",
+    "FPP.01.03",
+    "FPP.01.02.03.b"
+   ]
+  },
+  {
+   "text": "Design and conduct an agriscience experiment that tests a variable affecting microbial growth or survival in a food product",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02",
+    "FPP.01.02.05.b"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives as real competencies, rewording the grade 3 item toward illness prevention and refocusing the grade 12 plan on storage and distribution so it does not duplicate HACCP work in the sibling sub-topic. Added objectives on microorganisms as helpful or harmful, illness symptoms and high-risk groups, spoilage versus pathogenic organisms, and types of microbial agents. Also added cross-contamination, major pathogen profiles, factors controlling microbial growth, and infection versus intoxication. Further additions cover on-farm pathogen sources, lab testing procedure and interpretation, microbial control by processing and preservatives, cold chain recommendations, current issues, and an agriscience fair style experiment for SAE and FFA. Anchored grade 9 to 12 objectives to the matching FPP standards and left earlier grades unanchored.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.01.02.03.b",
+  "FPP.01.02.04.a",
+  "FPP.01.02.05.a",
+  "FPP.01.02.05.b",
+  "FPP.01.02.05.c",
+  "FPP.01.03",
+  "FPP.02.01",
+  "FPP.02.02",
+  "FPP.02.02.02.b",
+  "FPP.03.01",
+  "FPP.03.02.04.b",
+  "FPP.03.03",
+  "FPP.03.03.02.b",
+  "FPP.03.03.02.c",
+  "FPP.04.02.02.b"
+ ],
+ "usage": {
+  "input": 2397,
+  "output": 3491
+ }
+}

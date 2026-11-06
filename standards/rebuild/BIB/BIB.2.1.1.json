@@ -1,0 +1,312 @@
+{
+ "sub_topic": "BIB.2.1.1",
+ "name": "The Metanarrative: Creation, Fall, Redemption, Restoration",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "Biblical Narrative Structure"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God made the world and everything in it and called it very good",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:1",
+    "Genesis 1:31"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how Adam and Eve disobeyed God in the garden and name what happened as a result",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 3:1-13",
+    "Genesis 3:22-24"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q13"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that God sent Jesus to rescue sinners",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Luke 19:10",
+    "1 Timothy 1:15"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe what Scripture says God will do when he makes all things new",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the Bible's big story using the four parts of creation, fall, redemption, and restoration",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:1",
+    "Genesis 3:15",
+    "Colossians 1:19-20",
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how God made people in his image and gave them work to do in his good creation",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:26-28",
+    "Genesis 2:15"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10",
+    "Heidelberg Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Genesis 3 and Romans 5 why all people need a Rescuer",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:12",
+    "Romans 3:23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q16",
+    "Westminster Shorter Catechism Q18"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Garden of Eden with the New Jerusalem to show how the end of the story answers its beginning",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:8-15",
+    "Revelation 21:1-4",
+    "Revelation 22:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Fall broke humanity's relationship with God, with one another, and with the rest of creation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:7-19",
+    "Romans 8:20-22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture uses the promise of final restoration to direct believers in how to respond to suffering",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:18-25",
+    "2 Corinthians 4:16-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how individual Bible narratives fit within the larger arc of creation, fall, redemption, and restoration",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Luke 24:25-27",
+    "Romans 15:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Genesis 3:15 as the first promise of redemption and trace its fulfillment in Christ",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 3:15",
+    "Galatians 4:4-5",
+    "Romans 16:20",
+    "Hebrews 2:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze examples of present-day brokenness in people, society, and nature as consequences of the Fall",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 1:21-25",
+    "Romans 8:20-22",
+    "James 4:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how God's single plan of redemption unfolds consistently from Genesis to Revelation",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 1:9-10",
+    "Isaiah 46:9-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the person and work of Christ stand at the center of the redemption movement of the biblical story",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 1:15-20",
+    "2 Corinthians 5:17-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an annotated timeline of the biblical metanarrative that places key events and supporting texts in each of the four movements",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:1",
+    "Genesis 3:15",
+    "Colossians 1:19-20",
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the biblical hope of a restored physical creation from views that picture salvation as escape from the material world",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 8:19-23",
+    "2 Peter 3:13",
+    "Revelation 21:1-5",
+    "1 Corinthians 15:42-44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the accounts other worldviews give of origin, problem, solution, and destiny against the biblical metanarrative",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 1:1",
+    "Acts 17:24-31",
+    "Colossians 2:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed position that a historical Fall is necessary to the logic of the gospel",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 5:12-19",
+    "1 Corinthians 15:21-22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.1",
+    "Westminster Confession of Faith 6.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Westminster Confession and Heidelberg Catechism organize their teaching around the movements of the biblical story",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:31",
+    "Romans 5:12",
+    "Revelation 21:1-5"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q2",
+    "Westminster Confession of Faith 4.2",
+    "Westminster Confession of Faith 6.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Develop a written explanation of how the Reformed tradition understands the Christian's calling in the present age within the four-part story",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:28",
+    "2 Corinthians 5:17-20",
+    "Matthew 28:18-20",
+    "Ephesians 2:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.2"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (good creation, the Fall, Jesus the Rescuer, all things new, four-part summary, need for a Rescuer, Eden and New Jerusalem, stories within the arc, Genesis 3:15, present brokenness, consistency of God's plan, timeline, worldview evaluation, historical Fall). Reframed the feelings-based 'bad day' objective as explaining how Scripture directs believers in suffering. Reframed the vague 'believer's role' synthesis as an explanation of the Reformed view of calling. Added image-bearing and work in creation, the relational effects of the Fall, Christ at the center of redemption, a restored physical creation versus escape views, and how the confessions organize the story. Left covenant structure, typology, and already/not yet to sibling sub-topics. Replaced whole-chapter citations with verse ranges and added catechism and confession anchors where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2050,
+  "output": 4442
+ }
+}

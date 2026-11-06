@@ -1,0 +1,284 @@
+{
+ "sub_topic": "BIB.11.2.6",
+ "name": "The Sanctity and Dignity of Human Life",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Anthropology: The Doctrine of Humanity"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God made every person and that every human life is precious to him",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:27",
+    "Psalm 139:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall the sixth commandment and state that God gave it to protect people's lives",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 20:13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q67"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe from Psalm 139 how God forms and knows each person before birth",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 139:13-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Genesis 9:6 why taking innocent human life is a grave wrong because people bear God's image",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 9:6",
+    "Genesis 1:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Give examples of how God's law commands kindness and protection toward weak people such as the blind, the deaf, orphans, and widows",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 19:14",
+    "James 1:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the duties the sixth commandment requires for preserving one's own life and the lives of others",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q68"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why people of every nation and ethnicity have equal worth before God and why showing partiality is sin",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:26",
+    "James 2:1",
+    "James 2:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jesus taught that the sixth commandment forbids sinful anger, hatred, and cursing words as well as murder",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 5:21-22",
+    "1 John 3:15",
+    "James 3:9-10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q69"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the biblical view of human life with practices in ancient and modern cultures that have devalued life, such as infant exposure",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 9:6",
+    "Psalm 127:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture why the Reformed tradition teaches that a person must care for his or her own body and life rather than harm it",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 6:19-20",
+    "Ephesians 5:29"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q135"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze biblical passages that speak of unborn children as persons known and called by God",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Luke 1:41-44",
+    "Psalm 139:13-16",
+    "Jeremiah 1:5",
+    "Psalm 51:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish murder from the taking of life in public justice, lawful war, and necessary defense as the Westminster Standards explain",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 9:6",
+    "Romans 13:4",
+    "Exodus 22:2"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q136"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Classify the duties and sins listed under the sixth commandment in the Westminster Larger Catechism as matters of heart, word, and deed",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 5:21-22",
+    "Ephesians 4:31-32"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q135",
+    "Westminster Larger Catechism Q136"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe practical ways believers and the church can obey the biblical call to rescue and speak for those who cannot speak for themselves",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [
+    "Proverbs 24:11-12",
+    "Proverbs 31:8-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the early and Reformation church applied the sanctity of life through care for abandoned infants, the sick, and the poor",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "James 1:27",
+    "Matthew 25:35-40"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate common arguments for abortion against Scripture's teaching on the personhood of the unborn and the sixth commandment",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Exodus 20:13",
+    "Psalm 139:13-16",
+    "Luke 1:41-44"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q136"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate arguments for euthanasia and assisted suicide in light of God's sovereignty over life and death",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Deuteronomy 32:39",
+    "Job 1:21",
+    "Exodus 20:13",
+    "Psalm 31:15"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q136"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the dignity of people with disabilities, the elderly, and the unborn against views that ground human worth in ability or usefulness",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Exodus 4:11",
+    "John 9:1-3",
+    "Leviticus 19:32",
+    "Genesis 9:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate contemporary bioethical practices such as embryo destruction and selective genetic screening using biblical principles of human dignity",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Psalm 139:16",
+    "Genesis 9:6",
+    "Exodus 20:13"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q135"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a written Christian ethic of human life that traces human dignity through creation, fall, redemption, and resurrection",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:27",
+    "Genesis 9:6",
+    "John 1:14",
+    "1 Corinthians 15:42-44"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (precious life, sixth commandment, Psalm 139, Genesis 9:6 basis, care for the vulnerable, hatred as murder, unborn personhood, abortion and euthanasia evaluation, defense of the disabled and aged, capstone ethic). Dropped the vague grade 1 and grade 3 restatements of 'life is sacred because of the image' that belong to the Imago Dei sibling, and merged the redundant 'connect image to abortion and euthanasia' and 'construct a pro-life ethic' into the evaluation and capstone objectives. Added equal worth across ethnicities, care for one's own body, the lawful-taking-of-life distinction from WLC Q136, classification of catechism duties and sins, speaking for the voiceless, church history of life-care, and contemporary bioethics. Corrected confession anchors to WSC Q67 to Q69 and WLC Q135 to Q136 and added verse-specific Scripture.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2087,
+  "output": 4297
+ }
+}

@@ -1,0 +1,271 @@
+{
+ "sub_topic": "AGR.4.1.2",
+ "name": "Agricultural Records & Bookkeeping",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agribusiness & Marketing",
+  "Agribusiness Management"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe why farmers and ranchers keep records of what they buy, sell, and grow",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Record daily production data such as eggs collected, feed fed, or plant growth in a simple log",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between income and expenses in a farm record book",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate the profit or loss of a small agricultural project by subtracting total expenses from total income",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the main sections of an SAE record book, including inventory, income, expenses, and hours worked",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Record SAE transactions in a journal with the date, description, and amount, using receipts and sales slips as source documents",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify farm transactions as assets, liabilities, income, or expenses",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish between current and noncurrent assets and between capital and noncapital items when building a beginning inventory",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply double-entry principles by recording agricultural business transactions as debits and credits to the correct accounts",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.01"
+   ]
+  },
+  {
+   "text": "Compare cash and accrual accounting methods and explain how each records income and expenses for a farm business",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.01"
+   ]
+  },
+  {
+   "text": "Maintain SAE records in the Agricultural Experience Tracker, including beginning and ending inventories, capital purchases, income, expenses, and hours",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.01"
+   ]
+  },
+  {
+   "text": "Reconcile a farm checking account register with a bank statement to locate and correct recording errors",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.01"
+   ]
+  },
+  {
+   "text": "Compare the purposes of balance sheets, income statements, cash flow statements, and statements of owner equity and how often each is used to monitor an agricultural business",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.01.a"
+   ]
+  },
+  {
+   "text": "Interpret a balance sheet and an income statement to assess the net worth and profitability of an agricultural business",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.01.c",
+    "ABS.02.02"
+   ]
+  },
+  {
+   "text": "Calculate straight-line depreciation for machinery, buildings, or purchased breeding livestock and record it on a depreciation schedule",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.01"
+   ]
+  },
+  {
+   "text": "Prepare inventory reports that calculate cost of goods sold and gross margin for an agricultural production or retail enterprise",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.02.b"
+   ]
+  },
+  {
+   "text": "Calculate and interpret financial ratios such as the current ratio, debt-to-asset ratio, and rate of return on assets for a farm or ranch",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.01.c"
+   ]
+  },
+  {
+   "text": "Analyze a cash flow statement to identify periods of surplus and shortfall in an agricultural operation",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02",
+    "ABS.03.01.02.a"
+   ]
+  },
+  {
+   "text": "Develop a cash budget for an SAE enterprise that projects anticipated revenue, production costs, and overhead costs",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.01.01.a"
+   ]
+  },
+  {
+   "text": "Calculate cost of production per unit and break-even price and yield from enterprise records",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02"
+   ]
+  },
+  {
+   "text": "Analyze how recording the purchase of a major capital asset such as a tractor changes the balance sheet, depreciation schedule, and cash flow of an agricultural business",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.01.02.b"
+   ]
+  },
+  {
+   "text": "Prepare verified SAE financial summaries of earnings, productive investment, and hours for an FFA degree or proficiency award application",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate enterprise records to recommend whether to expand, adjust, or discontinue an agricultural enterprise",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02"
+   ]
+  },
+  {
+   "text": "Manage a complete set of agricultural financial records and prepare an accurate balance sheet, income statement, and cash flow statement",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.01.b",
+    "ABS.02.01"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives, rewording the grade 10 item to name net worth and profitability, and anchored the high school ones to AFNR codes. Added missing competencies across the span: production logs, project profit or loss, SAE record book sections and journaling, capital versus noncapital and current versus noncurrent items, debits and credits, cash versus accrual, AET record keeping, bank reconciliation, comparing financial report types, depreciation schedules, inventory and cost of goods sold, financial ratios, SAE cash budgets, cost of production and break-even, capital asset effects, FFA degree and proficiency summaries, and enterprise evaluation. Tax reporting, credit, risk, and business organization standards were left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.01.02",
+  "ABS.01.02.01.b",
+  "ABS.01.02.01.c",
+  "ABS.02.01",
+  "ABS.02.02",
+  "ABS.02.02.01.a",
+  "ABS.02.02.01.b",
+  "ABS.02.02.01.c",
+  "ABS.02.02.02.b",
+  "ABS.02.02.03.b",
+  "ABS.03.01.01.a",
+  "ABS.03.01.02.a",
+  "ABS.03.01.02.b",
+  "ABS.04.02.02.b",
+  "ABS.04.03.01.b"
+ ],
+ "usage": {
+  "input": 2605,
+  "output": 3567
+ }
+}

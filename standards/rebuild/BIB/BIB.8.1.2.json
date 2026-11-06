@@ -1,0 +1,261 @@
+{
+ "sub_topic": "BIB.8.1.2",
+ "name": "The Jerusalem Church: Community and Persecution",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "Acts and the Founding of the Church"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify ways the first Christians in Jerusalem shared their food and belongings with one another",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:44-46",
+    "Acts 4:32-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Stephen as the first follower of Jesus to die for his faith and retell how he prayed for the people who killed him",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 7:54-60"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "List the four things the Jerusalem believers devoted themselves to: the apostles' teaching, fellowship, the breaking of bread, and the prayers",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:42"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the healing of the lame man at the temple gate and the arrest of Peter and John that followed",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Acts 3:1-10",
+    "Acts 4:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Peter and John said they must obey God rather than men when the leaders ordered them to stop speaking about Jesus",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Acts 4:18-20",
+    "Acts 5:27-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how God freed the apostles from prison and later answered the church's prayer for Peter's release",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 5:17-21",
+    "Acts 12:1-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the generous gift of Barnabas with the deception of Ananias and Sapphira and explain why Peter called their sin lying to the Holy Spirit",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Acts 4:36-37",
+    "Acts 5:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the apostles rejoiced after being beaten by connecting their response to Jesus' teaching about persecution",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Acts 5:40-42",
+    "Matthew 5:10-12",
+    "John 15:18-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Saul's part in the persecution after Stephen's death and how the scattering of believers carried the gospel into Judea and Samaria as Jesus had said",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 7:58",
+    "Acts 8:1-4",
+    "Acts 1:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the church's prayer under threat in Acts 4, including its use of Psalm 2 and its appeal to God's sovereign plan",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 4:23-31",
+    "Psalm 2:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify Luke's summary statements of the church's growth in Jerusalem and explain what they show about the Lord's role in adding to the church",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Acts 2:47",
+    "Acts 5:14",
+    "Acts 6:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the appointment of the seven resolved the neglect of widows while guarding the apostles' ministry of the word and prayer, and how Reformed churches have drawn the office of deacon from it",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Acts 6:1-7"
+   ],
+   "confessions": [
+    "Belgic Confession Article 30"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the significance of Stephen's vision of the Son of Man standing at the right hand of God in light of Daniel's prophecy and Christ's exaltation",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Acts 7:55-56",
+    "Daniel 7:13-14"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Gamaliel's counsel to the Sanhedrin and evaluate its reasoning in light of how the rest of Acts unfolds",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [
+    "Acts 5:33-39"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the argument of Stephen's speech through Israel's history and explain how it answered the charges brought against him",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 6:11-14",
+    "Acts 7:1-53"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the meaning of koinonia in the Jerusalem church and relate it to the communion of saints as confessed by the Reformed churches",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:42-47",
+    "Acts 4:32-35"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 26.1",
+    "Westminster Confession of Faith 26.2",
+    "Heidelberg Catechism Q55"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claim that the early church practiced compulsory socialism by examining evidence that its sharing was voluntary",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 2:44-45",
+    "Acts 4:32-35",
+    "Acts 5:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 26.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the tension between the Jerusalem believers' continued temple worship and the charge that Stephen spoke against the temple and the law",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:46",
+    "Acts 3:1",
+    "Acts 6:13-14",
+    "Acts 7:44-50"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a written argument assessing the saying that the blood of the martyrs is the seed of the church against the pattern of persecution and growth in Acts",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Acts 8:1-4",
+    "Acts 11:19-21",
+    "Acts 12:1-5",
+    "Acts 12:24"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (sharing, Stephen, Acts 2:42, Barnabas versus Ananias and Sapphira, scattering, the Acts 4 prayer, the seven, Gamaliel, koinonia, voluntary sharing, Jewish tradition tension, martyrs as seed) and sharpened them with observable verbs and precise texts. Replaced the vague jail and daily prayer items with retellings of the temple healing and arrest and of the prison releases, including Acts 12. Added objectives on obeying God rather than men, rejoicing in suffering, Saul's role, Luke's growth summaries, Stephen's vision of the exalted Christ, and the structure of Stephen's speech. Attached confessional anchors only where they state the doctrine: providence (WCF 5.1, WSC Q11), the diaconate (Belgic 30), exaltation (WSC Q28), and the communion of saints and property (WCF 26, HC Q55). Pentecost, the Samaritan mission's details, Paul's journeys, and the Council were left to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1972,
+  "output": 4333
+ }
+}

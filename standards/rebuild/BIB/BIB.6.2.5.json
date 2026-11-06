@@ -1,0 +1,332 @@
+{
+ "sub_topic": "BIB.6.2.5",
+ "name": "The Historical-Grammatical Method",
+ "path": [
+  "Bible & Theology",
+  "Hermeneutics (The Art of Interpretation)",
+  "Principles of Interpretation"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that the Bible tells about real people, places, and events that truly happened",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 1:1-4",
+    "2 Peter 1:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the human writer and the first listeners of a familiar Bible book, such as Paul writing to the church at Philippi",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Philippians 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that every word of Scripture matters and should be read carefully without adding to it",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 30:5-6",
+    "Matthew 5:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate the places named in a Bible story on a simple map of Bible lands",
+   "grade": 2,
+   "bloom": 3,
+   "scripture": [
+    "Ruth 1:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the plain meaning of a short Bible passage in your own words",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe details of everyday life in Bible times, such as houses, farming, or travel, that help explain what happens in a passage",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Mark 2:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that a passage must first be understood as its original readers would have understood it before it is applied today",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 15:4",
+    "1 Corinthians 10:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the subject, action, and object in a Bible sentence to tell who does what to whom",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [
+    "John 3:16",
+    "Ephesians 2:8-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast a reading that follows the actual words of a passage with an invented meaning read into it",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Proverbs 30:6",
+    "2 Peter 3:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Use a Bible dictionary or atlas to find background information about a person, place, or custom in a passage",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "Acts 17:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply the Reformed teaching that each Scripture has one true sense by testing proposed readings of a verse against its plain meaning",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Nehemiah 8:8",
+    "2 Timothy 2:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify how pronouns, connecting words such as therefore and because, and verb tense change the meaning of a verse",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Romans 12:1",
+    "Matthew 22:31-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the historical setting of a Bible book by determining its author, approximate date, original audience, and occasion",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Luke 1:1-4",
+    "1 Corinthians 1:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition treats the Hebrew and Greek texts as the final appeal in interpretation and also calls for faithful translations into common languages",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:8",
+    "Acts 2:8-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret a passage by diagramming its grammatical structure, separating main clauses from the clauses that modify them",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Ephesians 1:3-6",
+    "Matthew 28:19-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Conduct a basic word study with a concordance to determine how a key biblical term is used across its occurrences",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Romans 3:24-26",
+    "2 Timothy 2:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Jesus and the apostles built arguments on grammatical details of Scripture such as verb tense and singular nouns",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 22:31-32",
+    "Galatians 3:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare an allegorical interpretation of a historical narrative from church history with a historical-grammatical reading of the same passage",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "2 Peter 1:16",
+    "Luke 10:30-37"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's use of allegory in Galatians and explain why it does not license allegorizing historical narratives in general",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 4:22-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the Reformers moved from the medieval fourfold sense of Scripture to the historical-grammatical method",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a defense of the historical-grammatical method grounded in Scripture's nature as revelation given in real history and human language",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Luke 1:1-4",
+    "2 Timothy 3:16-17",
+    "2 Timothy 2:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.7",
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate reader-response and other reader-centered approaches against the historical-grammatical method",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Proverbs 30:5-6",
+    "2 Peter 1:20-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Research the cultural and historical background of a passage using commentaries, archaeological findings, and ancient sources to explain its meaning",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [
+    "Acts 17:22-23",
+    "Acts 17:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Examine a Hebrew or Greek term with an interlinear and lexicon and assess how different English translations render it",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "John 1:1",
+    "Romans 3:25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the historical reality of biblical events, such as the resurrection, bears on the truth of Christian doctrine",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 15:3-8",
+    "1 Corinthians 15:14-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Produce an exegetical paper that applies historical background, grammatical analysis, and word study to establish the meaning of a passage",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "2 Timothy 2:15",
+    "Nehemiah 8:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (historical events, naming writers, plain meaning, first readers, literal vs invented readings, historical setting, grammar, avoiding allegory, defense of the method, reader-response critique, cultural research). Recast 'read the Bible like other stories' and the plain-sense rule around the confessional single sense of Scripture (WCF 1.9). Dropped the vague synthesis objective in favor of a concrete one on history and doctrine. Added sub-skills missing from the old list: map work, Bible-times daily life, sentence grammar, connecting words and tense, diagramming, concordance word studies, Jesus and the apostles arguing from grammar, original languages and translation (WCF 1.8), Galatians 4 allegory, the Reformation shift from the fourfold sense, lexical tools, and a capstone exegetical paper. Left context, authorial intent, genre, analogy of Scripture, and progressive revelation to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1934,
+  "output": 5193
+ }
+}

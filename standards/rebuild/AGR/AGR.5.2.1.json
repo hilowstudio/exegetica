@@ -1,0 +1,260 @@
+{
+ "sub_topic": "AGR.5.2.1",
+ "name": "Principles of Food Preservation",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Processing & Preservation"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify signs that food has spoiled, such as mold growth, off odors, sliminess, and changes in color or texture",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify methods used to keep food from spoiling, such as refrigerating, freezing, drying, and canning",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that microorganisms such as bacteria, yeasts, and molds cause much food spoilage and need food, water, and warmth to grow",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how canning, freezing, and drying each slow down food spoilage",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how enzymes and oxygen cause food to brown, soften, or turn rancid even when microorganisms are not present",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare traditional preservation methods such as salting, smoking, and root cellaring with modern methods such as refrigeration and commercial canning",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how food preservation reduces food waste and helps farmers and families steward harvests across seasons",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how controlling moisture, temperature, acidity, and oxygen slows the growth of microorganisms in food",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply the temperature danger zone to decide how long perishable foods may safely remain unrefrigerated",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the major food preservation methods, including thermal processing, refrigeration, freezing, dehydration, curing, irradiation, and chemical preservatives, and the spoilage factor each controls",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.03.a"
+   ]
+  },
+  {
+   "text": "Identify common preservation equipment such as pressure canners, dehydrators, vacuum sealers, and blast freezers and describe the function of each",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.01.02.a"
+   ]
+  },
+  {
+   "text": "Explain how water activity and pH determine which microorganisms can grow in a food and how preservation methods alter these factors",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the advantages and limitations of canning, freezing, drying, and curing as preservation methods",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.03.a"
+   ]
+  },
+  {
+   "text": "Explain why low-acid foods require pressure canning to destroy Clostridium botulinum spores while high-acid foods can be safely processed in a boiling water bath",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.02"
+   ]
+  },
+  {
+   "text": "Analyze how common preservatives such as salt, sugar, nitrites, sorbates, and antioxidants inhibit spoilage and influence food chemistry",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.02.b"
+   ]
+  },
+  {
+   "text": "Apply a tested preservation procedure, such as dehydrating produce or canning tomatoes, in a lab or supervised agricultural experience project",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.03.b",
+    "FPP.01.02"
+   ]
+  },
+  {
+   "text": "Analyze the characteristics of food products to determine appropriate storage temperature, humidity, and duration",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.03.01.b",
+    "FPP.01.03"
+   ]
+  },
+  {
+   "text": "Analyze how combining several mild preservation hurdles can produce a safe, shelf-stable food product",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.03.b"
+   ]
+  },
+  {
+   "text": "Analyze how packaging methods such as vacuum sealing and modified atmosphere packaging extend shelf life and maintain desirable food qualities",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.04.b",
+    "FPP.03.02.04.c"
+   ]
+  },
+  {
+   "text": "Evaluate a preservation method's effectiveness at maintaining the nutritional and sensory quality of a food",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.02.c",
+    "FPP.02.01.01.c"
+   ]
+  },
+  {
+   "text": "Design a shelf-life study that measures changes in appearance, weight, microbial growth, or rancidity of a preserved product over time",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.02.c"
+   ]
+  },
+  {
+   "text": "Recommend preservation strategies for different foods based on their composition, intended market, and safety risks",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.03.c",
+    "FPP.03.02.02.a"
+   ]
+  },
+  {
+   "text": "Design a preservation process for a specific food product and justify the method chosen",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02",
+    "FPP.03.02.03.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives as real competencies, rewording the grade 3 and grade 7 items to broaden them (adding refrigeration and canning, and acidity and oxygen as spoilage factors). Added missing principles across the span: signs of spoilage, microorganisms as spoilage agents, enzymatic and oxidative spoilage, traditional versus modern methods, stewardship and food waste, the temperature danger zone, water activity and pH, botulism and low-acid canning, chemical preservatives, preservation equipment, storage conditions, hurdle technology, preservation packaging, shelf-life testing, and recommending strategies. Added hands-on application suited to labs and SAE. Left specific processing operations, dairy and meat curing detail, and fermentation to the sibling sub-topics. Assigned AFNR codes only to grade 9 to 12 objectives that directly teach them.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.01.01.02.a",
+  "FPP.01.02",
+  "FPP.01.03",
+  "FPP.01.03.01.b",
+  "FPP.02.01.01.c",
+  "FPP.02.02.02.b",
+  "FPP.02.02.03.b",
+  "FPP.03.02",
+  "FPP.03.02.02.a",
+  "FPP.03.02.02.c",
+  "FPP.03.02.03.a",
+  "FPP.03.02.03.b",
+  "FPP.03.02.03.c",
+  "FPP.03.02.04.b",
+  "FPP.03.02.04.c"
+ ],
+ "usage": {
+  "input": 2320,
+  "output": 3943
+ }
+}

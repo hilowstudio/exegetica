@@ -1,0 +1,275 @@
+{
+ "sub_topic": "AGR.1.2.1",
+ "name": "Principles of Heredity & Selection",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Animal Science",
+  "Genetics, Reproduction & Breeding"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Match young animals to their parents based on observable traits such as color, markings, and size",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort animal characteristics into traits passed down from parents and features caused by the animal's surroundings or care",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how offspring inherit traits from both their dam and their sire",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how producers choose animals with desirable traits as parents to improve the next generation of a herd or flock",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between dominant and recessive traits using a livestock example such as black and red coat color or polled and horned cattle",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how genes carried on chromosomes are passed to offspring with each parent contributing one allele for each gene",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish between genotype and phenotype and between homozygous and heterozygous animals for a single livestock trait",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a Punnett square to predict the probability of offspring traits from a single-trait livestock cross",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define inheritance terms used in animal breeding including dominant, recessive, codominant, incomplete dominance, homozygous, heterozygous, allele, and sex-linked",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.02.a",
+    "AS.04.02.01.a"
+   ]
+  },
+  {
+   "text": "Explain codominant and incompletely dominant inheritance using livestock examples such as roan Shorthorn cattle or palomino horses",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.01.a",
+    "AS.04.02.02.a"
+   ]
+  },
+  {
+   "text": "Calculate expected genotypic and phenotypic ratios for two-trait livestock crosses such as polled and coat color in cattle",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.02.b"
+   ]
+  },
+  {
+   "text": "Differentiate qualitative traits controlled by few genes from quantitative traits such as growth, milk yield, and carcass merit that are shaped by many genes and the environment",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.01.a"
+   ]
+  },
+  {
+   "text": "Identify inherited genetic defects that affect animal performance such as arthrogryposis multiplex in cattle, porcine stress syndrome in swine, and HYPP in horses and explain how carriers pass them on",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.03.a"
+   ]
+  },
+  {
+   "text": "Explain how heritability estimates determine how quickly a trait will respond to selection by comparing highly heritable traits with lowly heritable traits such as fertility",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03"
+   ]
+  },
+  {
+   "text": "Calculate the expected response to selection per generation using heritability, selection differential, and generation interval",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03"
+   ]
+  },
+  {
+   "text": "Calculate adjusted weights and within-group ratios from SAE herd or flock records to rank animals for selection",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.04.a"
+   ]
+  },
+  {
+   "text": "Interpret expected progeny differences and their accuracy values to compare the genetic merit of genetically superior sires with breed-average sires",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.04.a",
+    "AS.04.03.04.b"
+   ]
+  },
+  {
+   "text": "Analyze an animal's pedigree and performance records to evaluate its genetic merit for a specific trait",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.04.a"
+   ]
+  },
+  {
+   "text": "Analyze how selecting for one trait can change genetically correlated traits such as birth weight and growth rate",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03"
+   ]
+  },
+  {
+   "text": "Recommend breeding decisions using DNA test results such as genetic defect carrier status and genomic-enhanced EPDs",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.03.c"
+   ]
+  },
+  {
+   "text": "Justify the selection of specific mating pairs to achieve a desired genetic outcome while avoiding the production of affected offspring from carrier animals",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.02.02.c",
+    "AS.04.02.02.b"
+   ]
+  },
+  {
+   "text": "Evaluate animals for theoretical purchase based on expected progeny differences, performance records, pedigrees, and a specified production scenario",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.04.c"
+   ]
+  },
+  {
+   "text": "Evaluate economic selection indexes such as maternal or terminal dollar values to rank breeding stock for the goals of a particular operation",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03.04.c",
+    "AS.04.03.04.b"
+   ]
+  },
+  {
+   "text": "Design a multi-generation selection plan that uses heritability estimates, expected progeny differences, and DNA data to improve a herd's genetics toward defined production goals",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.04.03",
+    "AS.04.02.02.c",
+    "AS.04.02.03.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives as real competencies, lightly reworded (dam and sire language, broader dominant and recessive examples, Punnett square as construct). Added early-grade objectives on heritable versus environmental traits and the idea of selection, middle-grade objectives on genes, alleles, genotype, and phenotype, and high-school objectives on codominance and incomplete dominance, two-trait crosses, qualitative versus quantitative traits, genetic defects and carriers, heritability and response to selection, SAE record ratios, EPD and accuracy interpretation, correlated traits, DNA-based decisions, mating-pair justification, theoretical purchase evaluation, and economic selection indexes. The capstone plan now focuses on selection and leaves crossbreeding systems, AI, reproductive anatomy, and visual judging to sibling sub-topics. Standards were assigned only from grade 9 upward.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.04.01",
+  "AS.04.02",
+  "AS.04.02.01.a",
+  "AS.04.02.01.c",
+  "AS.04.02.02.a",
+  "AS.04.02.02.b",
+  "AS.04.02.02.c",
+  "AS.04.02.03.a",
+  "AS.04.02.03.c",
+  "AS.04.02.04.c",
+  "AS.04.03",
+  "AS.04.03.01.c",
+  "AS.04.03.04.a",
+  "AS.04.03.04.b",
+  "AS.04.03.04.c"
+ ],
+ "usage": {
+  "input": 2270,
+  "output": 3794
+ }
+}

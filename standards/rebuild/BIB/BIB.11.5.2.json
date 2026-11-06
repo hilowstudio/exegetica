@@ -1,0 +1,342 @@
+{
+ "sub_topic": "BIB.11.5.2",
+ "name": "The Marks and Attributes of a True Church",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Ecclesiology: The Doctrine of the Church"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that a true church gathers to hear and learn God's Word",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:42"
+   ],
+   "confessions": [
+    "Belgic Confession 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the Bible as the authority the church must follow in everything it teaches",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "1 Timothy 3:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite the four words the Nicene Creed uses to describe the church: one, holy, catholic, and apostolic",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Ephesians 4:4-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify preaching, baptism, and the Lord's Supper as practices Christ gave his church to carry out",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:41-42",
+    "Matthew 28:19-20",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Belgic Confession 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "List the three marks of a true church in the Reformed tradition: pure preaching of the gospel, pure administration of the sacraments, and church discipline",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Acts 2:42",
+    "Matthew 18:15-17"
+   ],
+   "confessions": [
+    "Belgic Confession 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the faithful preaching of the gospel is the chief mark of a true church, using the Bereans' example of testing teaching by Scripture",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:11",
+    "Titus 1:9",
+    "2 Timothy 4:3-4"
+   ],
+   "confessions": [
+    "Belgic Confession 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how administering the sacraments as Christ instituted them serves as a mark of a true church",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 11:23-26",
+    "Matthew 28:19"
+   ],
+   "confessions": [
+    "Belgic Confession 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how church discipline protects the purity of the church and seeks the restoration of the one who sins",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 18:15-17",
+    "1 Corinthians 5:6-7"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q85",
+    "Belgic Confession 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that catholic in the creed means universal and distinguish this meaning from the name of the Roman Catholic denomination",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "John 10:16",
+    "Revelation 7:9"
+   ],
+   "confessions": [
+    "Belgic Confession 27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the unity of the church rests on one Lord, one faith, and one baptism rather than on a single organization",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 4:4-6",
+    "John 17:21"
+   ],
+   "confessions": [
+    "Belgic Confession 27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the church is called holy because it is set apart by Christ even though its members still sin",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 1:2",
+    "Ephesians 5:25-27"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q54"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed view that the church is apostolic by continuing in the apostles' teaching rather than by an unbroken succession of bishops",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:20",
+    "Acts 2:42",
+    "2 Timothy 2:2"
+   ],
+   "confessions": [
+    "Belgic Confession 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the marks of the true church with the marks of a false church as the Belgic Confession describes them",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 4:3-4",
+    "1 John 4:1"
+   ],
+   "confessions": [
+    "Belgic Confession 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the marks of the church, by which a true church is recognized, from the attributes of the church, which describe what the church is",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:42",
+    "Ephesians 4:4-6"
+   ],
+   "confessions": [
+    "Belgic Confession 27",
+    "Belgic Confession 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from the parable of the wheat and the tares why even the purest churches contain mixture and error and how some churches decline until they are no longer churches of Christ",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 13:24-30",
+    "Revelation 3:14-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Christ's letters to the churches in Revelation for signs of faithfulness and decline in relation to the marks",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 2:4-5",
+    "Revelation 2:14-16",
+    "Revelation 3:14-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Belgic Confession's teaching that believers are to join themselves to a true church and the role the marks play in recognizing one",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 10:24-25",
+    "Acts 2:41-42"
+   ],
+   "confessions": [
+    "Belgic Confession 28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Reformation statements that name two marks of the church with those that add discipline as a third and explain how discipline relates to the Word",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 16:18-19",
+    "Matthew 18:15-17"
+   ],
+   "confessions": [
+    "Belgic Confession 29",
+    "Heidelberg Catechism Q83",
+    "Heidelberg Catechism Q84"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Reformed, Roman Catholic, and Eastern Orthodox accounts of what makes a church catholic and apostolic",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:20",
+    "Matthew 16:18"
+   ],
+   "confessions": [
+    "Belgic Confession 27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate a described congregation's teaching and practice using the marks of a true church as criteria",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Acts 17:11",
+    "1 John 4:1",
+    "Titus 1:9"
+   ],
+   "confessions": [
+    "Belgic Confession 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate claims that one denomination alone is the true church in light of Scripture and the teaching that particular churches are more or less pure",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 10:16",
+    "Ephesians 4:4-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.4",
+    "Westminster Confession of Faith 25.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the necessity of the Word, the sacraments, and discipline together by explaining what a church loses when one is neglected",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 2:42",
+    "1 Corinthians 11:23-26",
+    "1 Corinthians 5:6-7"
+   ],
+   "confessions": [
+    "Belgic Confession 29"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a written account of the marks and attributes of the true church that integrates Scripture, the Nicene Creed, and the Reformed confessions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Ephesians 2:20",
+    "Ephesians 4:4-6",
+    "Matthew 16:18"
+   ],
+   "confessions": [
+    "Belgic Confession 27",
+    "Belgic Confession 29",
+    "Westminster Confession of Faith 25.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Removed the Jude 3 citation entirely and kept all other citations to verified verse references. Reworded the kept objectives so each opens with an observable verb and states one competency. Dropped the vague grade 6 discernment item and the grade 8 creed interpretation item because later objectives on individual attributes cover them. Merged the grade 12 synthesis item into a single create objective. Added objectives on each mark taught separately, on each attribute (unity, holiness, catholicity, apostolicity), on the false church in Belgic Confession 29, on the difference between marks and attributes, on the letters to the churches in Revelation, on the duty to join a true church, on two-mark versus three-mark statements, and on comparing traditions. Cited Belgic Confession 27-29, Heidelberg Catechism Q54 and Q83-85, and Westminster Confession of Faith 1.10 and 25.4-25.5 where they state the doctrine taught. Left visible and invisible church, church officers, sacramental theology, and worship to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 4295,
+  "output": 9942
+ }
+}

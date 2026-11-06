@@ -1,0 +1,344 @@
+{
+ "sub_topic": "BIB.9.1.5",
+ "name": "Ezra",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Historical Books"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Ezra as a man who studied God's Word, obeyed it, and taught it to God's people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Ezra 7:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God brought his people home from Babylon to Jerusalem",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Ezra 1:1-5",
+    "Ezra 2:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the temple as the house of God that the returning people rebuilt",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Ezra 3:8-11",
+    "Ezra 6:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the people sang praise to God and how some older people wept when the temple foundation was laid",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 3:10-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the decree of Cyrus allowing the people to return and explain how it fulfilled the word God spoke through Jeremiah",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 1:1-4",
+    "Jeremiah 25:11-12",
+    "Jeremiah 29:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Ezra and the people fasted and prayed for God's protection before their journey to Jerusalem",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 8:21-23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain who opposed the rebuilding of the temple and the ways they tried to stop the work",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 4:1-5",
+    "Ezra 4:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the prophets Haggai and Zechariah encouraged the people to start building the temple again",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 5:1-2",
+    "Ezra 6:14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the people dedicated the finished temple and celebrated the Passover",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 6:15-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the first return under Zerubbabel and Jeshua with the second return under Ezra in their leaders, purposes, and accomplishments",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Ezra 2:1-2",
+    "Ezra 3:8",
+    "Ezra 7:6-10",
+    "Ezra 8:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the returnees rebuilt the altar and offered sacrifices as the Law of Moses commanded before the temple was finished",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 3:2-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Outline the two main parts of Ezra, the rebuilding of the temple and the reform of the people under Ezra",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 6:14-15",
+    "Ezra 7:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the repeated phrase about the good hand of God being on Ezra and explain what it teaches about God's guidance of his servants",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Ezra 7:6",
+    "Ezra 7:9",
+    "Ezra 7:28",
+    "Ezra 8:18",
+    "Ezra 8:22",
+    "Ezra 8:31"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Ezra shows God directing pagan kings to accomplish his purposes for his people, as the Reformed tradition confesses in its doctrine of providence",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 1:1",
+    "Ezra 6:22",
+    "Ezra 7:27",
+    "Proverbs 21:1",
+    "Isaiah 44:28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Heidelberg Catechism Q27",
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply Ezra's pattern of studying, doing, and teaching God's law by preparing and presenting a short study of a Bible passage",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [
+    "Ezra 7:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q90"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the role of a scribe in post-exilic Israel using the description of Ezra as a scribe skilled in the Law of Moses",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 7:6",
+    "Ezra 7:11-12",
+    "Ezra 7:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Ezra's prayer of confession to show how it acknowledges the people's sin, God's justice, and God's mercy to the remnant",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Ezra 9:5-15"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q87",
+    "Westminster Confession of Faith 15.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the intermarriage crisis in light of the Mosaic prohibition against marrying idolatrous nations and its threat to covenant faithfulness",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Ezra 9:1-2",
+    "Ezra 10:1-5",
+    "Deuteronomy 7:3-4",
+    "Exodus 34:15-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a timeline of the Persian kings named in Ezra and place the book's events on it, including the gap between the temple's completion and Ezra's arrival",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [
+    "Ezra 1:1",
+    "Ezra 4:5-7",
+    "Ezra 6:15",
+    "Ezra 7:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze why Ezra 4 groups opposition from later reigns together out of chronological order and what theme this arrangement highlights",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Ezra 4:4-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the Aramaic sections of Ezra and explain why official Persian correspondence was recorded in that language",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 4:8",
+    "Ezra 6:18",
+    "Ezra 7:12-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the opening of Ezra with the closing of Chronicles and explain how the repeated decree links the exile to the restoration",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Ezra 1:1-3",
+    "2 Chronicles 36:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate whether the community's separation from the peoples of the land was ethnic exclusivity or covenant faithfulness, using the text's own grounds including its welcome of those who separated from idolatry",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Ezra 4:1-3",
+    "Ezra 6:21",
+    "Ezra 9:1-2",
+    "Ezra 10:10-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed reading that God kept his covenant promises after the exile though no Davidic king reigned, using remnant language and Zerubbabel's place in the line of David",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Ezra 3:10-11",
+    "Ezra 9:8-9",
+    "Haggai 2:23",
+    "Matthew 1:12-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the rebuilt but humbler second temple pointed beyond itself to Christ as the true temple",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Ezra 3:12",
+    "Haggai 2:3-9",
+    "John 2:19-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and sharpened the real competencies (Ezra as teacher, return, temple, Cyrus decree, opposition, two returns, altar and worship, scribe, Persian timeline, intermarriage, exclusivity, covenant continuity). Reworded the K-3 items so the grade 3 feelings item became a description of the people's recorded response, and reworded the grade 6 application as a classroom study task. Replaced the vague spiritual-condition item with an analysis of Ezra's prayer of confession. Dropped the Ezra-Nehemiah synthesis to leave it to the Nehemiah sibling. Added missing content: Jeremiah fulfillment, fasting for the journey, Haggai and Zechariah, temple dedication and Passover, book structure, the hand of God motif, providence over pagan kings, the thematic arrangement of Ezra 4, the Aramaic sections, the link with 2 Chronicles 36, and the second temple pointing to Christ. Added confessional anchors on providence, repentance, prayer, worship, marriage, and covenant administration.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1895,
+  "output": 6672
+ }
+}

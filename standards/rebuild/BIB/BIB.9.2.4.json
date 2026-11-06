@@ -1,0 +1,326 @@
+{
+ "sub_topic": "BIB.9.2.4",
+ "name": "Jeremiah",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Major Prophets"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Jeremiah as a prophet God sent to speak his words to Judah, known as the weeping prophet because he grieved over his people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Jeremiah 1:4-9",
+    "Jeremiah 9:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Jeremiah at the potter's house and tell what it shows about God as the potter and his people as the clay",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 18:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recount how God called Jeremiah when he was young and promised to be with him even though Jeremiah felt unable to speak",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Jeremiah 1:4-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Jeremiah's message calling the people of Judah to turn away from idols and return to the Lord",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 3:12-14",
+    "Jeremiah 7:3-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Jeremiah was thrown into a cistern for preaching God's word and was rescued by Ebed-melech",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 38:1-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the account of King Jehoiakim burning Jeremiah's scroll and explain how God's word was written again",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 36:20-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain God's promise of a new covenant in which he writes his law on his people's hearts and forgives their sin",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 31:31-34"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Place Jeremiah's ministry on a timeline of Judah's last kings from Josiah to Zedekiah and the rise of Babylon",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Jeremiah 1:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Jeremiah's message with that of the false prophets who promised peace, using the conflict with Hananiah as an example",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Jeremiah 6:13-14",
+    "Jeremiah 23:16-22",
+    "Jeremiah 28:1-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the instructions in Jeremiah's letter to the exiles to build houses, seek the welfare of Babylon, and wait seventy years for God's restoration",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 29:4-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Jeremiah's purchase of a field during the siege and explain how it signaled God's promise to restore the land",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 32:6-15",
+    "Jeremiah 32:42-44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jeremiah announced judgment on Judah as the consequence of breaking the covenant made at Sinai",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 11:1-10",
+    "Deuteronomy 28:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Jeremiah's acted parables, such as the linen belt, the broken flask, and the yoke, to explain the message each sign conveyed",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Jeremiah 13:1-11",
+    "Jeremiah 19:1-13",
+    "Jeremiah 27:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the Temple Sermon as a warning against trusting in the temple and its rituals while disobeying God",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Jeremiah 7:1-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the historical events of Babylon's siege and destruction of Jerusalem in 586 BC using the accounts in Jeremiah and Kings",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 39:1-10",
+    "Jeremiah 52:4-16",
+    "2 Kings 25:1-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the promise of a righteous Branch from David's line called The LORD Is Our Righteousness and identify its fulfillment in Christ",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 23:5-6",
+    "Jeremiah 33:14-16",
+    "1 Corinthians 1:30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Jeremiah's confessions as laments in which the prophet brings his complaints against his persecutors and his calling before God",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Jeremiah 11:18-12:6",
+    "Jeremiah 15:10-21",
+    "Jeremiah 20:7-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Jeremiah's diagnosis of the deceitful human heart and relate it to the Reformed doctrine of the corruption of human nature",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 17:9-10",
+    "Jeremiah 13:23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the arrangement of the book of Jeremiah, including its non-chronological ordering, its narrative sections, and its oracles against the nations",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 25:15-29",
+    "Jeremiah 46:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace how the New Testament applies Jeremiah's new covenant promise to the ministry, death, and priesthood of Christ",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Jeremiah 31:31-34",
+    "Luke 22:20",
+    "Hebrews 8:6-13",
+    "Hebrews 10:15-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Jeremiah's rejection and suffering with the suffering of Jesus, including Jesus' use of Jeremiah's words in cleansing the temple",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Jeremiah 11:19",
+    "Jeremiah 7:11",
+    "Matthew 21:13",
+    "Matthew 16:13-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Jeremiah presents God as sovereign over the nations, using Babylon as his servant and then judging Babylon in turn",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 25:8-14",
+    "Jeremiah 27:5-7",
+    "Jeremiah 50:17-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the case Jeremiah makes for the justice of God's judgment on Judah, citing the covenant charges brought against the nation",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Jeremiah 2:4-13",
+    "Jeremiah 25:3-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Produce a study of prophetic conflict in Jeremiah's day that applies the biblical tests for true and false prophecy",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Deuteronomy 18:20-22",
+    "Jeremiah 23:9-40",
+    "Jeremiah 28:5-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate differing Christian interpretations of the new covenant in Jeremiah 31 in light of the Reformed understanding of one covenant of grace under different administrations",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Jeremiah 31:31-34",
+    "Hebrews 8:8-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: weeping prophet, potter and clay, call to repentance, the New Covenant, true versus false prophets, acted parables, the Temple Sermon, the fall of Jerusalem, Jeremiah's suffering compared with Christ's, the justice of God's judgment, and the false prophets study. The inner-life profile became an analysis of Jeremiah's laments. Dropped the moral application about obedience, the vague observation objective, and the duplicate Jeremiah 31 evaluation. Added Jeremiah's call, the cistern rescue, the burned scroll, the historical timeline, the letter to the exiles, the field purchase, covenant breaking as the ground of judgment, the righteous Branch, the deceitful heart, the book's structure, New Testament use of the New Covenant, God's sovereignty over the nations, and the competing interpretations of the New Covenant. Anchored each objective to specific verses and added confession references only where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1928,
+  "output": 4709
+ }
+}

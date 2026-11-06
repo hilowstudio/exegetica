@@ -1,0 +1,317 @@
+{
+ "sub_topic": "BIB.11.6.6",
+ "name": "Millennial Views and the Interpretation of Prophecy",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Eschatology: The Doctrine of Last Things"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Jesus as the King who reigns over all things now and forever",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 28:18",
+    "Revelation 11:15"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that God's kingdom will never end",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Luke 1:33",
+    "Daniel 2:44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify a promise God made through a prophet and show from the Gospels how God kept it",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Micah 5:2",
+    "Matthew 2:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that the Old Testament prophets point forward to Jesus",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:25-27",
+    "Luke 24:44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define the millennium as the thousand-year reign described in Revelation 20",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 20:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the book of Revelation uses pictures such as the Lamb and the lampstands to show truths about Christ and his church",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 1:12-20",
+    "Revelation 5:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between reading a prophetic passage literally and reading it symbolically",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 1:1",
+    "Revelation 1:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed principle that clearer passages of Scripture help interpret harder prophetic passages",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "2 Peter 1:20-21",
+    "2 Peter 3:15-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.7",
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Revelation draws its images from Old Testament prophecy by comparing the beasts of Daniel 7 with the beast of Revelation 13",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 7:1-8",
+    "Revelation 13:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare premillennial, postmillennial, and amillennial views on the timing of Christ's return and the nature of the thousand-year reign",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 20:1-6",
+    "1 Corinthians 15:23-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret apocalyptic literature according to the features of its genre",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Daniel 7:15-17",
+    "Revelation 1:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Romans 14 how the church distinguishes shared core doctrines of the last things from debated matters such as the millennium and treats those who differ with charity",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 14:1-5",
+    "Ephesians 4:3-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how each major millennial view affirms the certain final victory of Christ over his enemies",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:24-25",
+    "Revelation 11:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish historic premillennialism from dispensational premillennialism including the teaching of a pretribulation rapture",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "1 Thessalonians 4:16-17",
+    "Revelation 20:4-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the binding of Satan and the reign of the saints in Revelation 20 in light of Jesus' teaching on binding the strong man",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 20:1-6",
+    "Matthew 12:28-29",
+    "Luke 10:17-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the already and not yet of the kingdom and how it shapes the millennial debate",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Luke 17:20-21",
+    "Matthew 12:28",
+    "1 Corinthians 15:24-26"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q102",
+    "Heidelberg Catechism Q123"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how differing views of the relationship between Israel and the church shape millennial positions",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Romans 11:25-27",
+    "Galatians 3:29",
+    "Galatians 6:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the preterist, historicist, futurist, and idealist approaches to interpreting Revelation",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 1:1",
+    "Revelation 1:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the history of millennial views from early church chiliasm through Augustine and the Reformation to modern dispensationalism",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [
+    "Second Helvetic Confession 11",
+    "Augsburg Confession 17"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze whether Revelation 20 continues the events of Revelation 19 in sequence or returns to retell the church age",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 19:11-21",
+    "Revelation 20:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the Reformed confessions affirm about the last things and what they leave open regarding the millennium",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:31"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1",
+    "Belgic Confession 37",
+    "Second Helvetic Confession 11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate date-setting and sensational end-times schemes that read current events into prophecy",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 24:36",
+    "Acts 1:7",
+    "Deuteronomy 29:29"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate major interpretations of the seventy weeks prophecy in Daniel 9",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Daniel 9:24-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a reasoned position on the millennium from the whole of Scripture that engages the strongest arguments of other views",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Revelation 20:1-6",
+    "1 Corinthians 15:20-28",
+    "Daniel 7:13-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Christ's kingship, the endless kingdom, defining the millennium, literal versus symbolic reading, comparing the three views, genre, binding of Satan, already and not yet, Israel and the church, evaluating sensational schemes, constructing a position). Recast the humility objective as explaining the Romans 14 basis for charity rather than an attitude, and folded the 'defend Christ's victory' and synthesis objectives into one concrete objective on how each view affirms Christ's victory. Dropped vague filler such as 'observe that faithful reading handles prophecy with care.' Added missing competencies: fulfilled prophecy, prophecy pointing to Christ, symbols in Revelation, Scripture interpreting Scripture, Old Testament roots of Revelation's imagery, historic versus dispensational premillennialism, interpretive approaches to Revelation, the structure of Revelation 19 and 20, the history of millennial views, the confessional boundaries, and Daniel 9. Added confessional anchors where they state the doctrine and left the Christ's return, judgment, and new creation material to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2142,
+  "output": 5533
+ }
+}

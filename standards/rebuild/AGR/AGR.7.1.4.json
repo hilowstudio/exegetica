@@ -1,0 +1,198 @@
+{
+ "sub_topic": "AGR.7.1.4",
+ "name": "Chapter Operations & Programs",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "FFA Leadership & SAE",
+  "FFA Organization & Heritage"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the officers of a local FFA chapter and describe the basic duties of each",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how a chapter meeting moves through an order of business from the officer reports to new business",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how a chapter Program of Activities organizes the chapter's goals and events for the year",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how standing committees divide the work of a chapter and report their progress to the membership",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the steps for becoming an active FFA member, including paying dues and affiliating with the state and national organization",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify chapter activities into the Growing Leaders, Building Communities, and Strengthening Agriculture divisions of the Program of Activities",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Participate in chapter business by making a motion, discussing it, and voting on it during a meeting",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how holding a chapter office, serving on a committee, and taking part in chapter service and events build leadership and citizenship skills",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.14.04.01.b"
+   ]
+  },
+  {
+   "text": "Interpret a chapter constitution and bylaws to determine how officers are nominated and elected and how the chapter makes decisions",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze an existing chapter Program of Activities, budget, and calendar to identify its goals, gaps, and imbalances across divisions",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.02.01.01.a"
+   ]
+  },
+  {
+   "text": "Prepare a chapter budget that forecasts income from fundraisers and dues against expenses for planned activities",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Build an outline for a chapter Program of Activities that assigns activities to divisions and committees",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12.04.01.b"
+   ]
+  },
+  {
+   "text": "Develop a component of the chapter Program of Activities with measurable goals, a timeline, assigned responsibilities, a budget, and an evaluation plan",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.12.04.01.c"
+   ]
+  },
+  {
+   "text": "Design a membership recruitment and retention plan that increases active participation in chapter programs",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate a completed chapter activity against its stated goals and recommend improvements for the next year's Program of Activities",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.02.01.01.a"
+   ]
+  },
+  {
+   "text": "Manage a chapter committee's execution of its portion of the Program of Activities across a school year through delegation, progress reports, and budget tracking",
+   "grade": 12,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Assemble a National Chapter Award application that documents the chapter's activities, outcomes, and growth across all three divisions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how partnerships with the FFA Alumni and Supporters, the agricultural advisory committee, and community stakeholders strengthen chapter programs",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "x",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ECL.01.02.01.a",
+  "ECL.02.01.01.a",
+  "FPS.10",
+  "FPS.10.01.01.b",
+  "FPS.10.01.01.c",
+  "FPS.11.01.01.a",
+  "FPS.11.03",
+  "FPS.12",
+  "FPS.12.01.01.c",
+  "FPS.12.02.01.c",
+  "FPS.12.03",
+  "FPS.12.03.01.c",
+  "FPS.12.04.01.b",
+  "FPS.12.04.01.c",
+  "FPS.14.04.01.b"
+ ],
+ "usage": {
+  "input": 2344,
+  "output": 3051
+ }
+}

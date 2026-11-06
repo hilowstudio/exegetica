@@ -1,0 +1,187 @@
+{
+ "sub_topic": "AGR.7.3.4",
+ "name": "Reflection, Portfolios & Presentation",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "FFA Leadership & SAE",
+  "Supervised Agricultural Experience (SAE)"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe what was learned from a simple agricultural project or activity",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what went well and what could be done differently in a completed agricultural project",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Organize photos and notes from an agricultural project into a simple portfolio page with clear captions",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Present a short oral or visual summary of an agricultural project to classmates or family",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Write a reflection that summarizes SAE accomplishments and compares results to the goals set at the start of the project",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the knowledge and skills learned through a foundational SAE and describe the lifelong learning and career skills it developed",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.11.04.01.a",
+    "FPS.07.02.01.a"
+   ]
+  },
+  {
+   "text": "Explain how personal SAE experiences have affected learning in agriculture classes and FFA",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.11.04.01.b"
+   ]
+  },
+  {
+   "text": "Compile SAE records, photos, and reflections into an organized portfolio that meets chapter or state portfolio standards",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the career and employability skills demonstrated in an SAE using evidence drawn from the portfolio",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.07.02.01.b",
+    "FPS.07.01.01.b"
+   ]
+  },
+  {
+   "text": "Revise SAE reflections and portfolio entries using feedback from an agriculture teacher, employer, or peer",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Create a digital or display presentation of an SAE and deliver it while answering questions from judges or evaluators",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Write proficiency award application narratives that describe SAE growth, skills, and accomplishments with supporting evidence",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the value of a personal SAE and the lifelong skills it built for future education and career plans",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.07.01",
+    "FPS.07.01.01.c",
+    "FPS.07.02.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate a finished SAE portfolio against the requirements for a State FFA Degree, American FFA Degree, or proficiency award and revise it to meet them",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Justify the importance of SAE within agricultural education to stakeholders using evidence from one's own experience",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.11.04",
+    "FPS.11.04.01.c"
+   ]
+  },
+  {
+   "text": "Adapt SAE portfolio content into a résumé and interview responses for college, scholarship, or employment applications",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded all six original competencies (project reflection, portfolio page, written reflection, portfolio compilation, presentation, degree and proficiency evaluation), splitting the grade 11 item into separate presentation and growth evaluation objectives. Added objectives for evaluating what went well, early oral presentation, identifying and analyzing skills learned, explaining SAE impact on learning, revising with feedback, writing proficiency narratives, advocating for SAE to stakeholders, and converting portfolio content into résumés and interviews. Aligned grade 9 to 12 objectives to the FPS.07 and FPS.11.04 SAE value standards where they genuinely fit and left record keeping and planning content to sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPS.07",
+  "FPS.07.01",
+  "FPS.07.01.01.a",
+  "FPS.07.01.01.b",
+  "FPS.07.01.01.c",
+  "FPS.07.02.01.a",
+  "FPS.07.02.01.b",
+  "FPS.07.02.01.c",
+  "FPS.07.03",
+  "FPS.08.04.01.c",
+  "FPS.09.02.01.c",
+  "FPS.11.04",
+  "FPS.11.04.01.a",
+  "FPS.11.04.01.b",
+  "FPS.11.04.01.c"
+ ],
+ "usage": {
+  "input": 2208,
+  "output": 2668
+ }
+}

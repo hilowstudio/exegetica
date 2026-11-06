@@ -1,0 +1,260 @@
+{
+ "sub_topic": "BIB.6.1.3",
+ "name": "Textual Criticism",
+ "path": [
+  "Bible & Theology",
+  "Hermeneutics (The Art of Interpretation)",
+  "Exegesis and Application"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that the books of the Bible were first written down by hand by people God chose, long before printed books existed",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Jeremiah 36:4",
+    "2 Peter 1:21"
+   ],
+   "confessions": [
+    "Belgic Confession Article 3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how scribes copied the Scriptures by hand onto scrolls with great care",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 17:18",
+    "Ezra 7:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall Bible verses that teach God's word will last forever",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Isaiah 40:8",
+    "1 Peter 1:24-25",
+    "Matthew 5:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify Hebrew as the main language of the Old Testament and Greek as the language of the New Testament",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Locate footnotes in a Bible and tell what kinds of information they give, such as other wordings found in some manuscripts",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sequence the steps by which the Bible came to us from the original writings to handwritten copies to English translations",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that copyists sometimes made small slips such as misspelling a word or skipping a line",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the number and age of New Testament manuscripts with the surviving copies of other ancient books such as Homer's writings",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define the terms manuscript, autograph, scribe, papyrus, codex, and variant",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the account of King Jehoiakim burning Jeremiah's scroll shows God preserving his word",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 36:23",
+    "Jeremiah 36:27-28",
+    "Jeremiah 36:32"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the discovery of the Dead Sea Scrolls and explain how the Great Isaiah Scroll bears on the accuracy of Old Testament copying",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze why some Bibles place brackets or notes around passages such as the longer ending of Mark and the account of the woman caught in adultery",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Mark 16:9-20",
+    "John 7:53-8:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish a textual variant among copies from an error in the original writing",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Classify sample textual variants as differences of spelling, word order, omission, addition, or substitution",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that the original Hebrew and Greek Scriptures were inspired by God and kept pure by his singular care and providence, so that the church appeals to them as final",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16",
+    "Matthew 5:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain basic principles textual critics use to weigh readings, such as age and spread of witnesses, the harder reading, and the reading that best explains the others",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish differences between English versions such as the KJV, ESV, and NIV that come from textual variants from those that come from translation choices",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:1",
+    "Luke 2:14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply textual principles to evaluate a specific variant such as the Johannine Comma using the evidence presented in a critical apparatus",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [
+    "1 John 5:7-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct an argument for the reliability of the transmitted New Testament text based on the quantity, early date, and geographic spread of its manuscripts",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claim that textual variants alter core Christian doctrine by testing major variants against the doctrines they touch",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Mark 16:9-20",
+    "1 John 5:7-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the histories of the Textus Receptus, the Majority Text, and the modern critical text, including the work of Erasmus, Westcott and Hort, and the Nestle-Aland editions",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how Reformed theologians have related the confessional doctrine of providential preservation to the practice of textual criticism",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 40:8",
+    "Matthew 5:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Dropped filler and feeling-based items (apply confidence, name the scribes, recall that we can trust the Bible) and replaced them with assessable competencies on God's promise of an enduring word and the WCF 1.8 doctrine of preservation. Reworded kept items (handwritten origins, footnotes, copyist slips, manuscript comparison with Homer, Mark 16 brackets, variant vs error, Dead Sea Scrolls, manuscript defense, doctrinal impact, TR vs critical text) with observable verbs. Reframed translation comparison to stay on topic by distinguishing textual variants from translation choices. Added original languages, transmission sequence, key vocabulary, Jeremiah 36 preservation, variant classification, principles for weighing readings, applying them to a specific variant, and Reformed views on preservation and textual criticism. Added verse-level anchors and Belgic Confession Article 3.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1932,
+  "output": 3893
+ }
+}

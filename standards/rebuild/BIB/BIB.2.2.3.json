@@ -1,0 +1,340 @@
+{
+ "sub_topic": "BIB.2.2.3",
+ "name": "The Epistolary Genre: Reading Letters in Context",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "New Testament Overview"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that some books of the Bible are letters written to churches and to people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Romans 1:7",
+    "Philemon 1:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Paul, Peter, James, and John as people who wrote letters found in the New Testament",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Romans 1:1",
+    "James 1:1",
+    "1 Peter 1:1",
+    "2 John 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that New Testament letters were sent both to whole churches and to individual people",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "1 Corinthians 1:2",
+    "Philemon 1:1-2",
+    "1 Timothy 1:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the sender, the recipients, and the greeting in the opening verses of a New Testament letter",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Romans 1:1-7",
+    "Philippians 1:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the usual parts of a New Testament letter, including the opening, thanksgiving, body, and closing",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Philippians 1:1-11",
+    "Philippians 4:21-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from the letters themselves that the apostles wrote to teach, correct, and encourage churches",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 1:10-11",
+    "1 Thessalonians 4:13-18",
+    "2 Timothy 3:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the letters of Paul from the General Epistles by their authors and recipients",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 1:1-2",
+    "James 1:1",
+    "1 Peter 1:1",
+    "Jude 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare a personal letter such as Philemon with a letter written to a church such as Ephesians",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Philemon 1:1-3",
+    "Philemon 1:8-21",
+    "Ephesians 1:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate the cities and regions that received New Testament letters on a map of the Roman world",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "1 Peter 1:1",
+    "Revelation 1:11",
+    "Colossians 1:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify co-senders named in letter openings, such as Timothy and Silvanus, and explain their connection to the author",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Thessalonians 1:1",
+    "Philippians 1:1",
+    "1 Corinthians 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Outline the flow of thought of a short New Testament letter section by section",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Philippians 1:1-11",
+    "Philippians 2:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the occasional nature of the epistles by using clues in the text to reconstruct the situation a letter addresses",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 1:10-11",
+    "1 Corinthians 7:1",
+    "Galatians 1:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how New Testament letters were carried, read aloud to congregations, and shared among churches",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 4:7-9",
+    "Colossians 4:16",
+    "1 Thessalonians 5:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose a letter that follows the structure of a New Testament epistle to explain the teaching of a chosen passage",
+   "grade": 7,
+   "bloom": 6,
+   "scripture": [
+    "Philippians 1:1-11",
+    "Colossians 4:7-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect the doctrinal teaching of a letter to the commands that follow from it, distinguishing indicative from imperative",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:8-10",
+    "Ephesians 4:1",
+    "Romans 12:1-2",
+    "Colossians 3:1-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the cultural background of a specific command and distinguish the abiding principle from its first-century expression",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 11:2-16",
+    "1 Corinthians 8:1-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the role of the amanuensis in the writing of New Testament letters using evidence from the text",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 16:22",
+    "Galatians 6:11",
+    "2 Thessalonians 3:17",
+    "1 Peter 5:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the argument of an epistle by analyzing connecting words such as therefore, for, and but",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:1",
+    "Romans 8:1",
+    "Romans 12:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a historical and cultural background profile of a recipient city such as Corinth and explain how it illuminates the letter",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Acts 18:1-11",
+    "1 Corinthians 1:26-31",
+    "1 Corinthians 6:9-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the stated theme of a letter governs the development of its argument",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 1:16-17",
+    "Romans 3:21-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate principles for applying letters written to first-century churches to the church today, including the Reformed principle that Scripture interprets Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 15:4",
+    "2 Timothy 3:16-17",
+    "1 Corinthians 10:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9",
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the authority of the apostolic letters as Scripture using the testimony of the New Testament and the Reformed confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Peter 3:15-16",
+    "1 Thessalonians 2:13",
+    "2 Timothy 3:16",
+    "1 Corinthians 14:37"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2",
+    "Westminster Confession of Faith 1.4",
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize Paul's teaching on justification by faith across several of his epistles",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 3:21-28",
+    "Galatians 2:16",
+    "Ephesians 2:8-9",
+    "Philippians 3:8-9"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33",
+    "Westminster Confession of Faith 11.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the teaching of Paul and James on faith and works and explain how the Reformed tradition harmonizes them",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "James 2:14-26",
+    "Romans 3:28",
+    "Romans 4:1-5",
+    "Galatians 5:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.2",
+    "Heidelberg Catechism Q64"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (identifying letters, letter parts, occasional nature, indicative and imperative, cultural background, amanuensis, Corinth profile, application today, apostolic authority, Pauline synthesis). Merged greeting observation into identifying sender, recipients, and greeting. Added missing competencies: General Epistles vs Pauline letters, mapping recipients, outlining a letter, delivery and public reading, composing a letter in epistolary form, tracing argument through connectives, theme governing argument, and Paul and James on faith and works. Narrowed the final synthesis to a specific doctrine and added verse-level Scripture and confession anchors throughout.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1983,
+  "output": 4021
+ }
+}

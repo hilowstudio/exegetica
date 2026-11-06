@@ -1,0 +1,302 @@
+{
+ "sub_topic": "BIB.8.2.2",
+ "name": "The Context of the New Testament (Second Temple Judaism)",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "Prolegomena and Backgrounds (Foundations)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Temple in Jerusalem as the place where God's people gathered to worship him, pray, and offer sacrifices",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:22-24",
+    "Luke 18:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Jesus as a Jewish boy who grew up in Nazareth in the land of Israel and traveled with his family to Jerusalem for Passover",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:39-42",
+    "Luke 2:51-52"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that faithful Jewish people such as Simeon and Anna were waiting for the Messiah God had promised",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Luke 2:25-38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe what happened in a synagogue on the Sabbath, including the reading of the Scriptures from scrolls",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Luke 4:16-21",
+    "Acts 13:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between the Temple and a synagogue in Jewish worship",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Luke 4:16-21",
+    "Luke 1:8-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the major Jewish feasts that Jesus attended, such as Passover, Tabernacles, and Dedication",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "John 2:13",
+    "John 7:2-10",
+    "John 10:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain who the Pharisees and Sadducees were and name a belief that set them apart from each other",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Acts 23:6-8",
+    "Matthew 22:23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the roles of priests, Levites, scribes, and the Sanhedrin in Jewish religious life",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Luke 1:8-9",
+    "Luke 10:31-32",
+    "Mark 14:53-55"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Jesus drove the money changers and sellers out of the Temple courts",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "John 2:13-17",
+    "Mark 11:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the first-century hope for a political king with the kind of king Jesus showed himself to be",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "John 6:14-15",
+    "John 18:36",
+    "Zechariah 9:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate Judea, Samaria, Galilee, and Jerusalem on a map and explain why Jews and Samaritans avoided one another",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "John 4:9",
+    "John 4:20-22",
+    "Luke 9:51-53"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Law of Moses shaped daily Jewish life through practices such as Sabbath keeping, food laws, ritual purity, and circumcision",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Luke 2:21",
+    "Mark 2:23-24",
+    "Mark 7:1-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Jesus responded to the tradition of the elders and how he distinguished it from the commandment of God",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Mark 7:1-13",
+    "Matthew 23:23-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the span of the Second Temple period from the rebuilding of the Temple after the exile to its destruction in AD 70",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Ezra 6:14-16",
+    "Matthew 24:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Jewish Diaspora, its synagogues, and Gentile God-fearers opened pathways for the spread of the gospel",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:5-11",
+    "Acts 8:1-4",
+    "Acts 13:14-16",
+    "Acts 17:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the range of first-century messianic expectations with the way Jesus fulfilled the Old Testament promises as prophet, priest, and king",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Luke 3:15",
+    "John 7:40-42",
+    "Matthew 16:13-16",
+    "Luke 24:25-27"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q23"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the beliefs and aims of the major Jewish groups of Jesus' day, including Pharisees, Sadducees, Essenes, Zealots, and Herodians",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 23:8",
+    "Mark 3:6",
+    "Luke 6:15",
+    "Mark 12:13-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul describes his training as a Pharisee and how he reassesses it in light of knowing Christ",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 22:3",
+    "Galatians 1:13-14",
+    "Philippians 3:4-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the influence of Hellenistic culture on first-century Judaism as seen in the Greek-speaking Jews of the New Testament",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 6:1",
+    "Acts 6:9",
+    "John 12:20-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how sources outside the Bible such as Josephus and the Dead Sea Scrolls illuminate the New Testament world while Scripture remains the final authority",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "Luke 1:1-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate claims of the New Perspective on Paul about Second Temple Judaism in light of Paul's teaching on justification as confessed in the Reformed tradition",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 2:15-16",
+    "Romans 3:20-28",
+    "Romans 10:2-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.1",
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a synthesis explaining how the religious setting of Second Temple Judaism formed the setting into which God sent his Son in the fullness of time",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Galatians 4:4-5",
+    "Mark 1:14-15",
+    "Hebrews 1:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies on the Temple, synagogue, Pharisees and Sadducees, kingship hopes, geography, Diaspora, messianic expectation, Jewish sects, Hellenism, and the closing synthesis. Folded the land of Israel into an objective about Jesus' Jewish upbringing and the scroll observation into a synagogue worship objective. Merged the Josephus research item into an evaluation of extrabiblical sources under Scripture's authority. Dropped Jewish and Roman political tension as belonging to the Roman World sibling, and narrowed the Second Temple period item to a framing span so the Intertestamental sibling keeps the history. Added objectives on the feasts, religious leadership roles, the Temple cleansing, Mosaic practice in daily life, the tradition of the elders, Samaritans, Paul's Pharisaic background, and the New Perspective debate on justification. Added specific verse anchors and confessional references where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1981,
+  "output": 4973
+ }
+}

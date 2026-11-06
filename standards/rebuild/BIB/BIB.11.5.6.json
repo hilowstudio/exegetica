@@ -1,0 +1,319 @@
+{
+ "sub_topic": "BIB.11.5.6",
+ "name": "The Mission of the Church (The Great Commission)",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Ecclesiology: The Doctrine of the Church"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that Jesus told His followers to go and tell people everywhere about Him",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 28:19-20",
+    "Mark 16:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall Jesus' promise to be with His disciples always as they carry out His command",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 28:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "State the good news the church shares, that Jesus died for our sins and rose again",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "1 Corinthians 15:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recognize from Scripture that God gathers people from every nation, tribe, and language to Himself",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 12:3",
+    "Revelation 7:9"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q54"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe praying for workers in God's harvest as one way the church takes part in its mission",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 9:37-38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the commands of the Great Commission to go, make disciples, baptize, and teach them to obey",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 28:18-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the spread of the gospel in the book of Acts from Jerusalem to Judea, Samaria, and the wider world",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [
+    "Acts 1:8",
+    "Acts 8:4-5",
+    "Acts 28:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Romans 10 why sending and preaching are needed for people to hear and believe the gospel",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 10:14-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from the phrase to the end of the age why the Great Commission belongs to the church in every generation and not only to the apostles",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 28:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare evangelism as proclaiming the gospel with discipleship as teaching believers to obey all that Christ commanded",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 28:19-20",
+    "Colossians 1:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the risen Christ's universal authority grounds and secures the church's mission to the nations",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 28:18",
+    "Psalm 2:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the Holy Spirit's role in empowering the church's witness as shown in Acts",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 1:8",
+    "Acts 4:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe concrete ways church members take part in mission through praying, giving, going, and sending, using biblical examples",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Acts 13:1-3",
+    "Romans 10:15",
+    "Philippians 4:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the practices of the early church in Acts that marked it as a missionary community",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Acts 2:42-47",
+    "Acts 13:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the good works and holy conduct of believers serve the church's witness to unbelievers",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 5:16",
+    "1 Peter 2:12"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q86",
+    "Westminster Confession of Faith 16.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the petition Your kingdom come in the Lord's Prayer expresses the church's mission as the Reformed catechisms teach it",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 6:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q102",
+    "Westminster Larger Catechism Q191",
+    "Heidelberg Catechism Q123"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the church's central mission of gospel proclamation and disciple-making from the works of mercy that accompany and adorn it",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 28:19-20",
+    "Acts 6:1-4",
+    "Galatians 6:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that Christ gave the ministry, Word, and ordinances to the church for gathering and perfecting the saints",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 4:11-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Reformed doctrine of God's sovereignty in salvation supports rather than undermines the urgency of evangelism",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 13:48",
+    "Acts 18:9-10",
+    "2 Timothy 2:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 10.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a biblical theology of mission that traces God's purpose for the nations from Genesis to Revelation",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 12:3",
+    "Psalm 67:1-2",
+    "Isaiah 49:6",
+    "Habakkuk 2:14",
+    "Revelation 5:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the prosperity gospel and the social gospel against the apostolic gospel",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 1:6-9",
+    "1 Corinthians 15:1-4",
+    "1 Timothy 6:5-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the exclusivity of salvation in Christ and the resulting necessity of missions from Scripture and the confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 14:6",
+    "Acts 4:12",
+    "Romans 10:14-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 10.4",
+    "Westminster Larger Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate approaches to communicating the gospel across cultures in light of Paul's practice",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 9:19-23",
+    "Acts 17:22-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose a theological statement of the church's mission as making disciples of all nations for the glory of God",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Matthew 28:18-20",
+    "Romans 11:36",
+    "Revelation 7:9-10"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q54"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (commission summary, promise, nations, Acts 1:8 witness, evangelism vs discipleship, Christ's authority, Acts missionary church, word and deed, proclamation vs social action, biblical theology, false gospels, exclusivity, synthesis). Recast the personal application objective as describing ways members participate. Merged the word-and-deed and social-action items into one distinction. Added missing competencies: the gospel content, prayer for workers, Romans 10 sending, the commission's continuance, the Spirit's empowering, good works as witness, the kingdom petition, the ministry for gathering saints, sovereignty and evangelism, and cross-cultural communication. Added confessional anchors (WSC Q102, WLC Q191, Heidelberg Q54/Q86/Q123, WCF 10.1, 10.4, 16.2, 25.3, WLC Q60) and replaced whole-text citations with verse ranges.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2173,
+  "output": 4936
+ }
+}

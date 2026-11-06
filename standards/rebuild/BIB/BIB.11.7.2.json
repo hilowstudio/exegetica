@@ -1,0 +1,297 @@
+{
+ "sub_topic": "BIB.11.7.2",
+ "name": "Original Sin and Imputation",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Hamartiology: The Doctrine of Sin"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from David's words in Psalm 51 that people are sinful from the very start of their lives",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 51:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Adam as the first man, whom God appointed to stand for all the people who would come from him",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "1 Corinthians 15:22",
+    "Romans 5:12"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q16"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell in simple words how Romans 5:12 says sin and death came into the world through one man and spread to everyone",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:12"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q16"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite and explain the three parts of original sin named in the catechism: the guilt of Adam's first sin, the lack of original righteousness, and the corruption of the whole nature",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 51:5",
+    "Ephesians 2:3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q18",
+    "Heidelberg Catechism Q7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching of federal headship, that God made his covenant with Adam not for himself only but for all his descendants",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:12",
+    "1 Corinthians 15:22"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q22",
+    "Westminster Shorter Catechism Q16"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Psalm 51:5, Psalm 58:3, Job 14:4, and Ephesians 2:3 why Scripture teaches that people are sinful from birth rather than becoming sinners only by copying bad examples",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 51:5",
+    "Psalm 58:3",
+    "Job 14:4",
+    "Ephesians 2:3"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish original sin, the sinful condition people are born with, from actual sins, the wrong things people think, say, and do",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 51:5",
+    "James 1:14-15"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q18",
+    "Westminster Confession of Faith 6.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture presents Christ as the last Adam who represents his people just as the first Adam represented the human race",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:21-22",
+    "1 Corinthians 15:45",
+    "Romans 5:19"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q31"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's argument in Romans 5:12-14 that death reigned from Adam to Moses even before the law was given, showing that all were counted guilty in Adam",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:12-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain imputation as God's legal reckoning and compare its three uses in Scripture: Adam's sin to his descendants, the sins of believers to Christ, and Christ's righteousness to believers",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:18-19",
+    "2 Corinthians 5:21",
+    "Romans 4:6-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33",
+    "Westminster Confession of Faith 6.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the confessional phrase by ordinary generation to explain how the corruption of Adam's nature is passed to all his natural descendants",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 51:5",
+    "Job 14:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.3",
+    "Westminster Larger Catechism Q26"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish imputed guilt, which is Adam's sin legally counted to his posterity, from inherited corruption, which is the sinful nature passed down to them",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:18-19",
+    "Ephesians 2:1-3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.3",
+    "Westminster Larger Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why Christ, conceived by the Holy Spirit and born of the virgin Mary, did not inherit Adam's guilt or corruption",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Luke 1:35",
+    "Hebrews 7:26",
+    "Hebrews 4:15"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q37",
+    "Heidelberg Catechism Q35-36"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the federal view of immediate imputation with the realist and mediate imputation views of how Adam's sin relates to his descendants",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 5:12",
+    "Romans 5:18-19",
+    "Hebrews 7:9-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed confessions address infants who die in infancy in light of the doctrine of original sin",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 51:5",
+    "Acts 2:39",
+    "Luke 18:15-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 10.3",
+    "Canons of Dort 1.17"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a doctrine of original sin from a verse by verse study of Romans 5:12-21",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Romans 5:12-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.3",
+    "Westminster Shorter Catechism Q18"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate Pelagian and semi-Pelagian denials of original sin against Scripture and the Reformed confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 5:12",
+    "Ephesians 2:1-3",
+    "Psalm 51:5"
+   ],
+   "confessions": [
+    "Belgic Confession Article 15",
+    "Westminster Confession of Faith 6.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the justice of God in appointing Adam as representative of the race by showing that the same principle of representation grounds salvation in Christ",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 5:18-19",
+    "1 Corinthians 15:22"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q22",
+    "Westminster Larger Catechism Q31"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Write a synthesis of the two Adams that traces condemnation through the first Adam and righteousness and life through Christ across Romans 5 and 1 Corinthians 15",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 5:12-21",
+    "1 Corinthians 15:21-22",
+    "1 Corinthians 15:45-49"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.3",
+    "Westminster Larger Catechism Q31"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the core competencies on birth sinfulness, Adam's headship, the spread of sin, the three parts of original sin, federal headship, original versus actual sin, Christ as second Adam, Romans 5, ordinary generation, imputed guilt versus inherited corruption, Pelagianism, the justice of headship, and the two Adams synthesis. Dropped 'little children need a new heart' because it drifts toward regeneration. Recast 'apply why we all need Christ' as a knowledge objective. Added Romans 5:12-14 argument analysis, the three uses of imputation, Christ's freedom from original sin, competing views of imputation, the confessional teaching on infants, and Scripture evidence against sin by imitation. Fixed confession citation formats and added Heidelberg Catechism Q7, Belgic Confession Article 15, and related catechism questions where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2065,
+  "output": 4484
+ }
+}

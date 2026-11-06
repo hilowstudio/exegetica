@@ -1,0 +1,202 @@
+{
+ "sub_topic": "AGR.7.2.1",
+ "name": "Personal Leadership & Character",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "FFA Leadership & SAE",
+  "Leadership & Personal Development"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify character traits such as honesty, responsibility, respect, and kindness that make a person a good leader",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the difference between leading by position and leading by example through everyday choices",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how honesty and responsibility support trustworthy leadership",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the FFA motto and FFA Creed express values of personal leadership and character",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate personal accountability by following through on an assigned chapter task and owning its outcome",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how to respond to a personal mistake or setback with honesty and a willingness to make it right",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define leadership and distinguish among ethical, efficient, and effective leadership characteristics and behaviors",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.14.01.01.a",
+    "ECL.05.01"
+   ]
+  },
+  {
+   "text": "Explain how FFA offices, community service, leadership conferences, CDEs, and LDEs build leadership and citizenship skills",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.14.04.01.b"
+   ]
+  },
+  {
+   "text": "Conduct a self-assessment of personal ethical and effective leadership characteristics and reflect on the results to identify strengths and areas for growth",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.14.01.01.c",
+    "CRP.09.01.02.b",
+    "ECL.05.02.01.b"
+   ]
+  },
+  {
+   "text": "Analyze workplace and community leaders in agriculture to determine the ethical and effective leadership characteristics they demonstrate",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.05.01.01.b",
+    "CRP.09.01.01.b"
+   ]
+  },
+  {
+   "text": "Compare leadership styles such as servant, democratic, and authoritative leadership and explain when each is appropriate",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.05.01"
+   ]
+  },
+  {
+   "text": "Analyze a leadership challenge in a chapter, school, or community setting and identify the character traits needed to address it",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "CRP.09.01.02.a",
+    "ECL.05.02.01.a"
+   ]
+  },
+  {
+   "text": "Evaluate an ethical dilemma common in agriculture or SAE work, such as honest record keeping, animal welfare, or livestock show ethics, and justify a course of action",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply personal leadership traits such as initiative, dependability, and integrity in an SAE or agricultural workplace setting",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.02.03.01.a",
+    "ECL.02.03.01.b"
+   ]
+  },
+  {
+   "text": "Create a personal leadership development plan to strengthen one or more characteristics of an effective leader",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ECL.05.02.01.c"
+   ]
+  },
+  {
+   "text": "Develop a personal leadership philosophy grounded in service and stewardship of one's abilities",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Mentor a younger FFA member in developing leadership character through example, encouragement, and feedback",
+   "grade": 12,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Reworded the grade 4 objective away from team membership, which belongs to Teamwork & Parliamentary Procedure, toward character traits of a leader. Kept the honesty, accountability, leadership challenge, philosophy, and mentoring objectives with light rewording. Added objectives on leading by example, the FFA motto and Creed, responding to mistakes, defining ethical and effective leadership, how FFA opportunities build leadership, self-assessment, analyzing agricultural leaders, comparing leadership styles, agricultural ethical dilemmas, applying traits in SAE, and a leadership development plan. Aligned AFNR standards for grades 9 to 12 and avoided time management and goal setting content left to the sibling sub-topic.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "CRP.09.01.01.b",
+  "CRP.09.01.02.a",
+  "CRP.09.01.02.b",
+  "ECL.02.03.01.a",
+  "ECL.02.03.01.b",
+  "ECL.05.01",
+  "ECL.05.01.01.b",
+  "ECL.05.01.01.c",
+  "ECL.05.02.01.a",
+  "ECL.05.02.01.b",
+  "ECL.05.02.01.c",
+  "FPS.14.01.01.a",
+  "FPS.14.01.01.c",
+  "FPS.14.04.01.b",
+  "Model/"
+ ],
+ "usage": {
+  "input": 2489,
+  "output": 3030
+ }
+}

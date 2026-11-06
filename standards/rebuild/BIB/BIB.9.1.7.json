@@ -1,0 +1,296 @@
+{
+ "sub_topic": "BIB.9.1.7",
+ "name": "Judges",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Historical Books"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Gideon, Deborah, and Samson as people God used to rescue Israel in the book of Judges",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Judges 4:4-7",
+    "Judges 6:11-16",
+    "Judges 13:24-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the judges as leaders God raised up for Israel in the time before Israel had kings",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Judges 2:16-18",
+    "Judges 21:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how the people of Israel forgot God and how God sent a judge to save them when they cried out to him",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Judges 2:10-12",
+    "Judges 3:7-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the repeating cycle in Judges of sin, oppression, crying out, and deliverance",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Judges 2:11-19",
+    "Judges 10:6-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how God gave Gideon victory over the Midianites with a small army so that Israel would know the victory came from the LORD",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Judges 6:11-16",
+    "Judges 7:1-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the roles of Deborah, Barak, and Jael in Israel's deliverance from Sisera and the Canaanites",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Judges 4:1-24",
+    "Judges 5:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the strength God gave Samson with his repeated disobedience and his broken Nazirite vow",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Judges 13:5",
+    "Judges 14:6",
+    "Judges 16:17-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a chart of the major judges showing each judge's enemy, tribe or region, and years of rest",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Judges 3:7-31",
+    "Judges 4:1-3",
+    "Judges 6:1-6",
+    "Judges 10:6-9",
+    "Judges 13:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Israel's failure to drive out the Canaanites and its intermarriage with them led to idolatry",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Judges 1:27-33",
+    "Judges 2:1-3",
+    "Judges 3:5-6",
+    "Deuteronomy 7:1-4"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q47"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the refrain that in those days there was no king in Israel and everyone did what was right in his own eyes",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Judges 17:6",
+    "Judges 18:1",
+    "Judges 19:1",
+    "Judges 21:25",
+    "Deuteronomy 12:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Judges means when it says the Spirit of the LORD came upon a judge to equip him for the task of deliverance",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Judges 3:10",
+    "Judges 6:34",
+    "Judges 11:29",
+    "Judges 14:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jephthah's vow and its outcome in light of God's law about vows and child sacrifice",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Judges 11:30-40",
+    "Deuteronomy 12:31",
+    "Deuteronomy 23:21-23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 22.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Connect Israel's moral decline to its religious compromise using the accounts of Micah's idol and the tribe of Dan",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Judges 17:1-13",
+    "Judges 18:14-31",
+    "Exodus 20:3-5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q51",
+    "Heidelberg Catechism Q96"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Gideon's refusal of kingship alongside his ephod and the rise of Abimelech to explain what Judges teaches about the LORD as Israel's true king",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Judges 8:22-27",
+    "Judges 9:1-6",
+    "Judges 9:7-15",
+    "Judges 9:56-57"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the LORD's compassion toward Israel in its distress shows his covenant faithfulness to an unfaithful people",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Judges 2:18",
+    "Judges 10:10-16",
+    "Deuteronomy 7:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the judges grow progressively more flawed from Othniel to Samson and how this shapes the book's downward structure",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Judges 3:7-11",
+    "Judges 8:24-27",
+    "Judges 11:30-31",
+    "Judges 16:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Hebrews names Gideon, Barak, Samson, and Jephthah among examples of faith despite their failures",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Hebrews 11:32-34",
+    "Judges 7:9-15",
+    "Judges 16:28-30"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 14.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the closing chapters of Judges, including the outrage at Gibeah and the civil war against Benjamin, as the climax of Israel's apostasy",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Judges 19:22-30",
+    "Judges 20:12-48",
+    "Judges 21:25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 6.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed teaching that God sovereignly accomplishes his purposes through flawed and sinful human instruments without being the author of their sin",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Judges 14:4",
+    "Judges 2:20-23",
+    "Judges 9:23-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.4",
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose an essay tracing the spiral of apostasy in Judges and how the book's longing for a righteous king anticipates the kingship of Christ",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Judges 2:11-19",
+    "Judges 21:25",
+    "Deuteronomy 17:14-20",
+    "Isaiah 9:6-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26",
+    "Heidelberg Catechism Q31"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (characters, cycle, Gideon, Samson, refrain, Jephthah, decline and compromise, Spirit, chart, ending, sovereignty, essay). Turned the grade 3 feeling-free observation into a retelling objective at grade 2 tied to Judges 3:7-11. Merged categorizing enemies into the chart objective. Added Deborah and Jael, the incomplete conquest of Judges 1, Gideon's ephod and Abimelech on God as king, God's covenant compassion, the declining quality of the judges, and Hebrews 11 on flawed faith. Grounded the essay in a Christ-centered reading of the kingship theme. Added verse-specific anchors and confessional references only where they state the doctrine (vows, idolatry and images, providence, depravity, Christ as king).",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1926,
+  "output": 3892
+ }
+}

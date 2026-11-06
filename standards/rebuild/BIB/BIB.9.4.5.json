@@ -1,0 +1,305 @@
+{
+ "sub_topic": "BIB.9.4.5",
+ "name": "Leviticus",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Torah (The Pentateuch)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Leviticus as the book where God teaches His people how to come near to Him because He is holy",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Leviticus 1:1-2",
+    "Leviticus 11:44-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Aaron and his sons as the priests God chose to serve Him at the tabernacle",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Leviticus 8:1-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God gave Israel rules about being clean so that they could live near Him",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Leviticus 15:31",
+    "Leviticus 11:44-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Leviticus that sin separates people from a holy God and that God provided sacrifices so sinners could be forgiven",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 4:27-31",
+    "Leviticus 17:11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q14"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the five main offerings of Leviticus and state the basic purpose of each",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [
+    "Leviticus 1:1-6:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that holy means set apart for God and describe how Israel was to be set apart from the nations",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 20:26",
+    "Leviticus 11:44-45"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the ordination of the priests and the judgment on Nadab and Abihu and explain what it shows about approaching God His way",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 9:22-24",
+    "Leviticus 10:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Outline the major sections of Leviticus from the offerings through the holiness laws",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 1:1-2",
+    "Leviticus 16:1-2",
+    "Leviticus 27:34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare clean and unclean animals and distinguish ritual uncleanness from moral sin",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Leviticus 10:10",
+    "Leviticus 11:1-23",
+    "Leviticus 11:46-47"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the laws for skin disease and purification and connect them to Jesus cleansing a leper",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 13:45-46",
+    "Leviticus 14:1-9",
+    "Mark 1:40-44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Categorize the appointed feasts of Leviticus 23 by their timing and what each commemorated",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Leviticus 23:1-44"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the Sabbath year and the Year of Jubilee and explain how they taught that the land belonged to God",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 25:1-17",
+    "Leviticus 25:23-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the sequence of the Day of Atonement ceremony and the role of the high priest in it",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Leviticus 16:1-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the neighbor-love commands of Leviticus 19 and show how Jesus uses them to summarize the law",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 19:9-18",
+    "Matthew 22:37-40"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q42"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the command to be holy as God is holy in Leviticus and in its New Testament use",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 11:44",
+    "Leviticus 19:2",
+    "1 Peter 1:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect the food laws to Israel's separation from the nations and explain why the New Testament sets them aside",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Leviticus 20:24-26",
+    "Mark 7:18-19",
+    "Acts 10:9-15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the two goats of the Day of Atonement together picture both payment for sin and its removal",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 16:7-10",
+    "Leviticus 16:20-22",
+    "Psalm 103:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the covenant blessings and curses of Leviticus 26 and explain God's promise to remember His covenant",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 26:3-13",
+    "Leviticus 26:14-17",
+    "Leviticus 26:40-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct an explanation of substitutionary atonement from the laying on of hands and the shedding of blood in Leviticus",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Leviticus 1:4",
+    "Leviticus 16:21",
+    "Leviticus 17:11",
+    "Isaiah 53:5-6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25",
+    "Westminster Confession of Faith 8.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the laws of Leviticus apply to New Testament believers using the Reformed distinction of moral, ceremonial, and judicial law",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Leviticus 18:1-5",
+    "Leviticus 19:18",
+    "Colossians 2:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.3",
+    "Westminster Confession of Faith 19.4",
+    "Westminster Confession of Faith 19.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed teaching that atonement requires the shedding of blood",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Leviticus 17:11",
+    "Hebrews 9:22"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q40",
+    "Westminster Confession of Faith 8.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the priesthood, sacrifices, and Day of Atonement of Leviticus with their fulfillment in Christ as taught in Hebrews",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Hebrews 9:11-14",
+    "Hebrews 10:1-14",
+    "Leviticus 16:15-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 8.4"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (holiness, priests, cleanness, five offerings, clean and unclean, feasts, Day of Atonement, be holy, food laws, scapegoat, substitution, applying the Holiness Code, blood, Hebrews). Replaced the vague 'sin is serious' item with an objective on sin and sacrifice. Added missing content: Nadab and Abihu, the book's structure, skin disease and purification, Sabbath year and Jubilee, Leviticus 19 neighbor love, and the covenant blessings and curses of chapter 26. Gave verse-level anchors throughout, swapped the loosely fitting WCF 8.4 for WCF 8.5, WSC Q25, HC Q40 and WCF 19.3-5 where those state the doctrine, and kept WCF 8.4 only for the Hebrews synthesis.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1944,
+  "output": 4397
+ }
+}

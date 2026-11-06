@@ -1,0 +1,323 @@
+{
+ "sub_topic": "BIB.9.4.2",
+ "name": "Exodus",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Torah (The Pentateuch)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Exodus as the book of the Bible that tells how God brought Israel out of slavery in Egypt",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 1:8-14",
+    "Exodus 12:31-42"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how God protected baby Moses in a basket on the Nile River",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 2:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Moses as the leader God called at the burning bush to bring Israel out of Egypt",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 3:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall how God parted the Red Sea so Israel could cross on dry ground",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 14:21-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how God provided manna, quail, and water for Israel in the wilderness before Sinai",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 16:1-18",
+    "Exodus 17:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite the Ten Commandments in order as God gave them at Mount Sinai",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 20:1-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q41"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the ten plagues and explain how they showed God's power over Pharaoh and the gods of Egypt",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 7:1-5",
+    "Exodus 12:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of the word exodus as a going out and show how the title fits the book",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 13:3",
+    "Exodus 19:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what God commanded Israel to do at the first Passover and why the blood on the doorposts spared their firstborn",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 12:1-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how God's covenant promises to Abraham, Isaac, and Jacob are the reason Exodus gives for the rescue from Egypt",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 2:23-25",
+    "Exodus 6:2-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Ten Commandments begin by recalling God's rescue from Egypt before giving any command",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:1-2"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q43",
+    "Westminster Shorter Catechism Q44"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Song of the Sea praises the LORD as warrior and king after the crossing",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 15:1-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the golden calf account shows Israel's idolatry, Moses' intercession, and God's mercy in renewing the covenant",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 32:1-14",
+    "Exodus 34:6-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the structure of Exodus in three movements of deliverance from Egypt, covenant at Sinai, and the building of the tabernacle",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 19:4-6",
+    "Exodus 25:8",
+    "Exodus 40:34-35"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the terms of the Sinai covenant, including Israel's calling to be a kingdom of priests and a holy nation and the ratifying blood ceremony",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 19:1-8",
+    "Exodus 24:3-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the divine name revealed at the burning bush and explain what it teaches about God's self-existence and covenant faithfulness",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 3:13-15",
+    "Exodus 34:6-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4",
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the New Testament presents Christ as the fulfillment of the Passover lamb",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 12:5-7",
+    "John 1:29",
+    "1 Corinthians 5:7",
+    "1 Peter 1:18-19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Exodus describes the hardening of Pharaoh's heart as both Pharaoh's own act and God's judicial act",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 4:21",
+    "Exodus 8:15",
+    "Exodus 9:12",
+    "Romans 9:17-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of the tabernacle as God's dwelling among his people and how its layout and furnishings expressed his holiness",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 25:8-9",
+    "Exodus 26:31-34",
+    "Exodus 40:34-38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how New Testament writers use tabernacle imagery to describe the person and work of Christ",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "John 1:14",
+    "Hebrews 8:5",
+    "Hebrews 9:11-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a map of the proposed routes of the Exodus and explain the textual and geographical clues behind each",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [
+    "Exodus 13:17-18",
+    "Exodus 14:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the laws of the Book of the Covenant with ancient Near Eastern law codes such as the Code of Hammurabi",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 21:12-27",
+    "Exodus 22:21-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the biblical and archaeological arguments for the early and late dates of the Exodus",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Kings 6:1",
+    "Exodus 1:11",
+    "Exodus 12:40-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate minimalist claims against the historicity of the Exodus using textual and archaeological evidence",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Exodus 12:37-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose an essay tracing how later Scripture uses the Exodus as a pattern of redemption for the return from exile and the work of Christ",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Isaiah 43:16-19",
+    "Luke 9:30-31",
+    "1 Corinthians 10:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (title, Moses, Red Sea, plagues, Passover, structure, divine name, Passover lamb and Christ, tabernacle, routes map, dating, historicity, salvation paradigm essay). Dropped vague filler (observing commandments as rules, comparing slavery to freedom, applying the lesson that God rescues) or replaced them with assessable versions such as reciting the Decalogue and explaining the prologue. Added missing content: Moses' birth, wilderness provision before Sinai, Abrahamic covenant motive, Song of the Sea, golden calf and covenant renewal, Sinai covenant terms, hardening of Pharaoh, NT tabernacle imagery, and the Book of the Covenant compared with ANE law. Replaced WCF 8.4 with 8.5, which addresses Christ's sacrifice, and added catechism anchors for the Decalogue and divine name. Left sacrificial system, later wilderness wanderings, and law-gospel uses to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1962,
+  "output": 5120
+ }
+}

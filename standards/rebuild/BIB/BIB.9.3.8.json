@@ -1,0 +1,286 @@
+{
+ "sub_topic": "BIB.9.3.8",
+ "name": "Micah",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Minor Prophets"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Micah as a prophet who spoke God's words to God's people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Micah 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name Bethlehem as the small town Micah said a ruler would come from and tell that Jesus was born there",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Micah 5:2",
+    "Matthew 2:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite Micah 6:8 and name the three things it says the LORD requires",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Micah 6:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Micah's picture of God throwing sins into the depths of the sea and tell what it shows about God's forgiveness",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Micah 7:18-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Give examples of acting justly, loving kindness, and walking humbly with God in home and school life based on Micah 6:8",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [
+    "Micah 6:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the wrongs Micah condemned, including seizing fields and houses, taking bribes, and prophesying for money",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Micah 2:1-2",
+    "Micah 3:5",
+    "Micah 3:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the chief priests and scribes used Micah 5:2 in Matthew 2 to point to the birthplace of the promised ruler",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Micah 5:2",
+    "Matthew 2:4-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the corrupt rulers of Micah 3 with the shepherd ruler promised in Micah 5",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Micah 3:1-3",
+    "Micah 3:9-11",
+    "Micah 5:2-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate Micah in history as a prophet from Moresheth during the reigns of Jotham, Ahaz, and Hezekiah and a contemporary of Isaiah before the fall of Samaria",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [
+    "Micah 1:1",
+    "Micah 1:5-6",
+    "Isaiah 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Micah 6:6-7 sets aside lavish sacrifices and how Micah 6:8 summarizes the obedience God has already made known",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Micah 6:6-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q39",
+    "Westminster Shorter Catechism Q40"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the courtroom lawsuit of Micah 6:1-5 by identifying the witnesses, the charge, and the saving acts God recounts as evidence",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Micah 6:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Micah's resolve to watch and wait for the LORD in Micah 7:7-9 expresses hope in God's justice in a time of judgment",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Micah 7:7-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Outline the structure of Micah as three cycles that each open with a call to hear and move from judgment to hope",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Micah 1:2",
+    "Micah 2:12-13",
+    "Micah 3:1",
+    "Micah 4:1-5",
+    "Micah 6:1",
+    "Micah 7:18-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the prophecy of the mountain of the LORD in Micah 4:1-5 and compare it with the parallel in Isaiah 2:2-4",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Micah 4:1-5",
+    "Isaiah 2:2-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast Micah's Spirit-given boldness with the false prophets of his day using the biblical tests of a true prophet",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Micah 3:5-8",
+    "Deuteronomy 18:20-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Micah's promise of a gathered remnant and trace how it turns judgment toward restoration",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Micah 2:12-13",
+    "Micah 4:6-7",
+    "Micah 5:7-8",
+    "Micah 7:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Jeremiah 26 recalls Micah's warning against Zion and Hezekiah's response to show how prophetic warnings call for repentance",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Micah 3:12",
+    "Jeremiah 26:17-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claim that Micah 6:8 teaches salvation by good deeds in light of God's prior redemption in Micah 6:4-5 and the tradition's teaching on good works as the fruit of faith",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Micah 6:4-8",
+    "Ephesians 2:8-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.2",
+    "Heidelberg Catechism Q86"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate interpretations of Micah 5:2-5 and defend the tradition's reading of the ruler whose origin is from of old as the eternal Son who became the shepherd-king",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Micah 5:2-5",
+    "John 7:42",
+    "John 10:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.2",
+    "Westminster Shorter Catechism Q21"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the consistency of God's justice and mercy in Micah using his judgments and his pardon together with their fulfillment at the cross",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Micah 1:3-5",
+    "Micah 7:9",
+    "Micah 7:18",
+    "Romans 3:25-26"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose an exposition of Micah 7:18-20 that explains the wordplay on Micah's name, the pardon of sin, and God's oath to Abraham and Jacob, and connects them to forgiveness in Christ",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Micah 7:18-20",
+    "Genesis 22:16-18",
+    "Luke 1:72-73"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q56",
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept the real competencies (Micah as prophet, Bethlehem, Micah 6:8, forgiveness imagery, rulers versus shepherd, lawsuit, mountain of the LORD, the Isaiah link, the shepherd-king prophecy, and justice with mercy) and reworded them with sharper verbs and verse anchors. Folded the Isaiah link into the mountain of the LORD objective. Recast 'walk humbly' as concrete examples a student can give. Recast 'construct a theology of what God requires' as an evaluation of a works-based misreading of 6:8. Turned the 'reflection' into an exposition of 7:18-20. Dropped 'recall God wants us kind and humble' because it duplicated 6:8. Added the historical setting, the specific sins Micah condemned, Matthew's use of 5:2, the three-cycle structure, false versus true prophets, the remnant, Jeremiah 26's citation of Micah 3:12, and waiting on the LORD in 7:7-9. Added confessional anchors only where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1882,
+  "output": 5011
+ }
+}

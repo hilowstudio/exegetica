@@ -1,0 +1,383 @@
+{
+ "sub_topic": "BIB.3.1.3",
+ "name": "Divided Kingdom and the Prophets",
+ "path": [
+  "Bible & Theology",
+  "Biblical Survey & Redemptive History",
+  "Chronological Bible Narrative"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Elijah as the prophet God sent to call Israel back to Him and recall that God answered Elijah with fire on Mount Carmel",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "1 Kings 18:36-39"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how God cared for Elijah through the ravens and the widow's flour and oil",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 17:1-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Jonah, including God's call to Nineveh, Jonah's running away, the great fish, and God's mercy to the city",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Jonah 1:1-3",
+    "Jonah 1:17",
+    "Jonah 3:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that after Solomon the kingdom split into Israel in the north and Judah in the south",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "1 Kings 12:16-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify a prophet as a messenger whom God sent to speak His words to His people",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Deuteronomy 18:18",
+    "Jeremiah 1:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how the foreign commander Naaman was healed of leprosy through the prophet Elisha",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "2 Kings 5:1-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the contest on Mount Carmel and explain what it showed about the LORD and Baal",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 18:20-39"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe, using examples of specific kings, how kings who did evil led the people to idols and kings who did right led them back to the LORD",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 16:30-33",
+    "2 Kings 18:3-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how young King Josiah responded when the Book of the Law was found in the temple",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "2 Kings 22:1-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the kingdom divided, including Rehoboam's harsh answer and God's judgment on Solomon's idolatry",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 11:9-13",
+    "1 Kings 12:1-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how God met the discouraged Elijah at Horeb and told him of the seven thousand who had not bowed to Baal",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 19:9-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Northern Kingdom of Israel and the Southern Kingdom of Judah by capital, ruling families, centers of worship, and length of existence",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "1 Kings 12:20",
+    "1 Kings 12:28-29",
+    "1 Kings 15:4",
+    "2 Samuel 7:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate Samaria, Jerusalem, Bethel, Dan, Mount Carmel, and Nineveh on a map of the divided kingdom period",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "1 Kings 12:29",
+    "1 Kings 16:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Categorize the prophets of this period by whom they addressed, whether Israel, Judah, or other nations",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Hosea 1:1",
+    "Amos 7:14-15",
+    "Isaiah 1:1",
+    "Jonah 1:2",
+    "Nahum 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the ending of Jonah teaches about God's compassion toward the nations and about Jonah's resistance to it",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Jonah 4:1-4",
+    "Jonah 4:10-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Jeroboam's golden calves as a political and religious choice that broke the second commandment and became the lasting sin of the Northern Kingdom",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "1 Kings 12:26-30",
+    "2 Kings 17:21-22",
+    "Exodus 20:4-6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q51"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what Isaiah's vision in the temple reveals about the holiness of God and the calling of a prophet",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 6:1-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Hosea's marriage pictures the LORD's faithful love toward unfaithful Israel",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Hosea 1:2",
+    "Hosea 3:1",
+    "Hosea 11:1-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the prophets brought the LORD's covenant lawsuit against His people by appealing to the blessings and curses of Deuteronomy",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Micah 6:1-8",
+    "Hosea 4:1-3",
+    "Deuteronomy 28:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the fall of Samaria to Assyria in 722 BC and the reasons Scripture gives for it",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "2 Kings 17:5-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the prophets joined the call to true worship with the demand for justice toward the poor and oppressed",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Amos 5:21-24",
+    "Isaiah 1:10-17",
+    "Micah 6:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the reforms of Hezekiah and Josiah against the requirements of Deuteronomy and explain why judgment on Judah still came",
+   "grade": 9,
+   "bloom": 5,
+   "scripture": [
+    "2 Kings 18:1-8",
+    "2 Kings 23:1-25",
+    "2 Kings 23:26-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply the biblical tests of a true prophet to the conflict between Jeremiah and Hananiah",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [
+    "Deuteronomy 13:1-5",
+    "Deuteronomy 18:20-22",
+    "Jeremiah 28:1-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a timeline of the kings of Israel and Judah and the prophets who ministered during their reigns",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Isaiah 1:1",
+    "Hosea 1:1",
+    "Amos 1:1",
+    "Micah 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the promises of a coming king from David's line in the prophets of this period and explain how the New Testament reads them as fulfilled in Christ",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 7:14",
+    "Isaiah 9:6-7",
+    "Isaiah 11:1-5",
+    "Micah 5:2",
+    "Matthew 1:22-23",
+    "Matthew 2:5-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the geopolitical situation involving Assyria, Babylon, and Egypt and the prophets' warnings against trusting foreign alliances instead of the LORD",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 10:5-7",
+    "Isaiah 30:1-3",
+    "Isaiah 31:1",
+    "2 Kings 18:19-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Deuteronomy and the repeated prophetic warnings the tradition's teaching that the fall of Jerusalem was God's just judgment",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Deuteronomy 28:36",
+    "Deuteronomy 28:64",
+    "2 Kings 17:13",
+    "2 Chronicles 36:15-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the theme of the faithful remnant from Elijah and Isaiah to Paul's teaching of a remnant chosen by grace",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "1 Kings 19:18",
+    "Isaiah 10:20-22",
+    "Romans 11:2-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Produce a study of the Day of the Lord theme in the prophets that traces its near judgments and its final fulfillment",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Amos 5:18-20",
+    "Zephaniah 1:14-16",
+    "Joel 2:28-32",
+    "Acts 2:16-21",
+    "2 Peter 3:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: Elijah, Jonah, the split, wicked kings, Carmel, causes of division, North and South comparison, categorizing prophets, Jeroboam's calves, covenant lawsuit, fall of Samaria, Hezekiah and Josiah reforms, timeline, geopolitics, the justice of judgment, and the Day of the Lord. Recast the Exile objective as the fall of Jerusalem to leave the exile itself to its sibling. Added missing competencies: God's care for Elijah, Naaman and Elisha, the prophet as God's messenger, Josiah's finding of the Law, Elijah at Horeb, mapping, the ending of Jonah, Isaiah's call, Hosea, justice in the prophets, tests of a true prophet, messianic promises, and the remnant theme. Added verse-level scripture and confession anchors only where a catechism or confession states the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2157,
+  "output": 6471
+ }
+}

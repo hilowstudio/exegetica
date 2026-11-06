@@ -1,0 +1,258 @@
+{
+ "sub_topic": "AGR.5.4.1",
+ "name": "Farm-to-Table & Supply Chains",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Systems & Innovation"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe the journey a food takes from a farm to a grocery store and then to the family table",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify foods grown or raised in the local community and the kinds of farms that produce them",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why some foods are sold fresh while others are processed before they reach consumers",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the stages of a food supply chain, including production, processing, distribution, retail, and consumption, and the role of each stage",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how seasons, climate, and geography affect when and where foods are available to consumers",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare a local and a long-distance supply chain for the same food in terms of distance traveled, time to market, and freshness",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how transportation and storage conditions, including the cold chain, affect food quality and safety along a supply chain",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how farmers markets, farm stands, and community supported agriculture shorten the path from producer to consumer",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate the share of the consumer food dollar received by the farmer compared with processors, distributors, and retailers",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the food system has changed from local subsistence farming to today's regional and global supply chains",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04"
+   ]
+  },
+  {
+   "text": "Map the supply chain of a specific food product from farm to consumer, identifying each handler and transfer point",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.02.a"
+   ]
+  },
+  {
+   "text": "Describe the market channels food products follow from processing centers to consumers, including retail, foodservice, institutional, and direct markets",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.02.a"
+   ]
+  },
+  {
+   "text": "Describe how raw commodities are processed to serve different markets such as fresh, minimally processed, and ready to eat",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.02.02.a",
+    "FPP.03"
+   ]
+  },
+  {
+   "text": "Apply food safety procedures such as temperature monitoring and proper handling at storage and transfer points in a supply chain",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.01.03"
+   ]
+  },
+  {
+   "text": "Explain how traceability systems and food labeling allow products to be tracked from farm to consumer during a food safety recall",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.01.a",
+    "FPP.04.02.02.a"
+   ]
+  },
+  {
+   "text": "Analyze the supply chain for a supervised agricultural experience enterprise, identifying how the product reaches buyers and where value is added",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.02.a"
+   ]
+  },
+  {
+   "text": "Analyze how consumer trends such as the local food movement and demand for food system transparency are reshaping farm-to-fork supply chains",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.01.02.a"
+   ]
+  },
+  {
+   "text": "Assess how market demand for food products influences the way those products are distributed",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.03.b"
+   ]
+  },
+  {
+   "text": "Evaluate how disruptions such as weather events, labor shortages, and transportation breakdowns affect food availability and price",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify where food loss and waste occur along a supply chain and sustainable practices that reduce them, such as short supply chains and composting",
+   "grade": 11,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.04.02.a",
+    "FPP.04.04.01.a"
+   ]
+  },
+  {
+   "text": "Respond to consumer concerns about the safety and environmental impact of the food supply using accurate information about supply chain practices",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.02.02.c",
+    "FPP.04.02.02.a"
+   ]
+  },
+  {
+   "text": "Defend a strategy for reducing the environmental impact of moving food through a specific supply chain",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.01.c"
+   ]
+  },
+  {
+   "text": "Design an improvement to a specific food supply chain that increases its resilience or reduces food waste",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.04.02.a"
+   ]
+  }
+ ],
+ "changes": "I kept all six original objectives, reworded them for precision, and anchored the grade 9 to 12 ones to AFNR standards. I added several things that were missing. In the early grades: local food sources, why some foods are processed, and how seasons and geography affect availability. In the middle grades: a local versus long-distance comparison, direct-to-consumer markets, and the farmer's share of the food dollar. In high school: the history of the food system, market channels, processing for different markets, food safety at storage and transfer points, and traceability and labeling. High school also gained an SAE enterprise supply chain analysis, consumer trends, how market demand shapes distribution, food loss and waste, responding to consumer concerns, and defending a lower-impact distribution strategy. I attached no standard to the disruption objective because no candidate standard covers supply security. I kept the focus on the whole farm-to-table chain and left packaging design and logistics, product development, and careers to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.01.03",
+  "FPP.02.01",
+  "FPP.02.03",
+  "FPP.02.03.01.a",
+  "FPP.03",
+  "FPP.03.02.02.a",
+  "FPP.03.03.01.c",
+  "FPP.03.03.02.a",
+  "FPP.03.03.03.b",
+  "FPP.04",
+  "FPP.04.01.02.a",
+  "FPP.04.02.02.a",
+  "FPP.04.02.02.c",
+  "FPP.04.04.01.a",
+  "FPP.04.04.02.a"
+ ],
+ "usage": {
+  "input": 2343,
+  "output": 3563
+ }
+}

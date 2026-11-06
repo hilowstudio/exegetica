@@ -1,0 +1,345 @@
+{
+ "sub_topic": "BIB.8.6.2",
+ "name": "Ecclesiology: 1 & 2 Corinthians and Thessalonians",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "The Pauline Epistles"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the church as one body with many members who each belong and care for one another",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "1 Corinthians 12:12-27"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q55"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the churches in Corinth and Thessalonica as churches that Paul wrote letters to",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "1 Corinthians 1:1-3",
+    "1 Thessalonians 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the qualities of love that Paul lists and name love as the greatest of faith, hope, and love",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 13:4-7",
+    "1 Corinthians 13:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Paul's teaching that church workers are fellow workers who plant and water while God gives the growth",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 3:5-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell Paul's teaching that Jesus will return, the dead in Christ will rise, and believers will be with the Lord forever",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Thessalonians 4:13-18"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q38"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the words of Jesus at the Lord's Supper as Paul passed them on to the Corinthian church",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q96"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that the Holy Spirit gives different gifts to church members for the common good",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 12:4-11"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q55"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Paul's teaching that the church and the believer's body are a temple of the Holy Spirit",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 3:16-17",
+    "1 Corinthians 6:19-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the wisdom of the world with the wisdom of God shown in the message of the cross",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 1:18-25",
+    "1 Corinthians 2:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Paul taught the Corinthians to give generously and cheerfully to meet the needs of other believers",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "2 Corinthians 8:1-9",
+    "2 Corinthians 9:6-8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 26.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Outline Paul's argument that the resurrection of Christ is the foundation of the gospel and of Christian hope",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:1-8",
+    "1 Corinthians 15:12-20"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q45"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the comfort God gives in suffering equips believers to comfort others in the church",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "2 Corinthians 1:3-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Paul's command to work quietly and not be idle while the church waits for the Lord's return",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Thessalonians 4:11-12",
+    "2 Thessalonians 3:6-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the divisions, immorality, and lawsuits in the Corinthian church and the corrections Paul gives for each",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 1:10-13",
+    "1 Corinthians 5:1-2",
+    "1 Corinthians 6:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul directs church discipline toward repentance, restoration, and the purity of the congregation",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 5:1-13",
+    "2 Corinthians 2:5-11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 30.3",
+    "Heidelberg Catechism Q85"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what it means for believers to be ambassadors for Christ entrusted with the message of reconciliation",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "2 Corinthians 5:17-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's teaching about the man of lawlessness in light of his purpose to correct the false claim that the day of the Lord had already come",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "2 Thessalonians 2:1-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Paul's principles for orderly worship that builds up the whole congregation",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 14:26-33",
+    "1 Corinthians 14:40"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Paul's teaching on strength in weakness answers the boasting of the false apostles in Corinth",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "2 Corinthians 11:12-15",
+    "2 Corinthians 12:7-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching on worthy reception of the Lord's Supper through self-examination and discerning the body",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 11:27-32"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q97",
+    "Westminster Confession of Faith 29.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an explanation of the resurrection body using Paul's seed analogy and his contrasts between the natural and spiritual body",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "1 Corinthians 15:35-49"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q87",
+    "Westminster Confession of Faith 32.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed teaching on Christ's spiritual presence in the Lord's Supper with other views using Paul's language of participation",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 10:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 29.7",
+    "Heidelberg Catechism Q79"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate uses of Christian liberty according to Paul's principle of love for the weaker brother and the glory of God",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 8:1-13",
+    "1 Corinthians 10:23-33"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the bodily resurrection of believers against its denial using Paul's argument in 1 Corinthians 15",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 15:12-20",
+    "1 Corinthians 15:50-57"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q87",
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate continuationist and cessationist readings of Paul's teaching on spiritual gifts in light of the Reformed tradition's position",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 13:8-12",
+    "1 Corinthians 14:1-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a synthesis of Paul's call to holy living in light of the certain but unknown day of Christ's return",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Thessalonians 4:1-8",
+    "1 Thessalonians 5:1-11",
+    "1 Thessalonians 5:23-24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.3"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (body of Christ, love, Lord's Supper, gifts, two wisdoms, resurrection, Corinthian problems, man of lawlessness, comfort in suffering, ambassadors, resurrection body, Christian liberty, defending the resurrection, holiness and the Second Coming). Replaced the vague 'work together' with Paul's fellow-workers teaching and reworded 'identify the Resurrection chapter' into outlining Paul's argument. Added missing competencies: Paul's letters to these churches, temple of the Spirit, generosity, idleness and work, church discipline, orderly worship, strength in weakness, worthy reception and spiritual presence in the Supper, and the gifts debate. Gave every objective verse-level Scripture anchors and added confession references only where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2084,
+  "output": 6104
+ }
+}

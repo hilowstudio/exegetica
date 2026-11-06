@@ -1,0 +1,305 @@
+{
+ "sub_topic": "BIB.10.1.2",
+ "name": "Holiness and Godliness",
+ "path": [
+  "Bible & Theology",
+  "Practical Theology & Christian Living",
+  "Christian Living and Spiritual Disciplines"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God is holy, meaning he is perfectly good and set apart from all sin",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Isaiah 6:3",
+    "Revelation 4:8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify sin as any failure to obey God's law and as the opposite of God's holiness",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "1 John 3:4",
+    "Romans 3:23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q14"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite and summarize God's command to his people to be holy because he is holy",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 19:2",
+    "1 Peter 1:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the Bible teaches that the Holy Spirit works in believers to make them more like Jesus",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "2 Corinthians 3:18",
+    "Philippians 2:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical meaning of holy as set apart for God using examples such as the Sabbath, the tabernacle, and God's people",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 19:5-6",
+    "Exodus 20:8-11",
+    "1 Peter 2:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between justification as a once for all act of God and sanctification as an ongoing work of God",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:1",
+    "1 Corinthians 6:11",
+    "Philippians 1:6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33",
+    "Westminster Shorter Catechism Q35"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe Isaiah's response to the vision of God's holiness and explain what the passage shows about sin and cleansing",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 6:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the two parts of sanctification, dying to sin and living to righteousness, as taught in Romans 6",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Romans 6:11-13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q35",
+    "Heidelberg Catechism Q88"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply the put off and put on pattern of Ephesians 4 and Colossians 3 to sample situations from school and family life",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Ephesians 4:22-32",
+    "Colossians 3:8-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the biblical meaning of godliness as reverent devotion to God trained and shown in everyday life",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "1 Timothy 4:7-8",
+    "Titus 2:11-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain repentance unto life as a continual turning from sin to God using David's prayer in Psalm 51",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 51:1-12"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze sanctification as a progressive and lifelong work that remains imperfect in this life yet continues to grow",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Philippians 3:12-14",
+    "2 Corinthians 3:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.2",
+    "Westminster Confession of Faith 13.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Paul's description of the struggle with sin in Romans 7 in its context and compare the main Reformed readings of the passage",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 7:15-25",
+    "Galatians 5:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture how the holy conduct of believers serves as a witness to the world",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 5:14-16",
+    "1 Peter 2:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Puritan teaching on the mortification of sin, drawing on John Owen and the biblical texts behind it",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:13",
+    "Colossians 3:5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how good works relate to sanctification as fruits of true faith rather than the ground of salvation",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 2:8-10",
+    "James 2:17-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.2",
+    "Heidelberg Catechism Q86"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a sample weekly pattern of spiritual disciplines drawing on Word, sacrament, and fellowship and explain from Scripture how each serves growth in holiness",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Acts 2:42",
+    "Hebrews 10:24-25",
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q88"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate legalism and antinomianism as distortions of the pursuit of holiness in light of Scripture and the confessional teaching on the law",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Galatians 5:1",
+    "Galatians 5:13-14",
+    "Romans 6:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6",
+    "Westminster Confession of Faith 20.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed teaching that holiness is a necessary mark of those who are saved using Hebrews 12:14 and related texts",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Hebrews 12:14",
+    "1 John 3:6-10"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q87",
+    "Westminster Confession of Faith 13.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Reformed tradition presents union with Christ in his death and resurrection as the source of godliness",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "John 15:4-5",
+    "Romans 6:4-6",
+    "Galatians 2:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.1",
+    "Westminster Shorter Catechism Q30"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed view of sanctification with perfectionist and passive views of the Christian life using key biblical texts",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "1 John 1:8-10",
+    "Philippians 2:12-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 13.2"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (sin as opposite of holiness, Be holy command, Spirit's work, justification vs sanctification, put off and put on, progressive sanctification, Romans 7, witness, mortification, legalism vs antinomianism, necessity of holiness, union with Christ). Dropped 'God is happy when we obey' because it rests on feeling, 'holiness as being like Jesus' because it was vague, and 'worldly happiness vs joy' because it belongs to Fruits of the Spirit. Reframed the personal growth plan as a sample pattern of disciplines so it can be assessed, and limited it to how each discipline serves holiness to avoid overlap with Prayer (Means of Grace). Added God's own holiness, the meaning of set apart, Isaiah 6, the two parts of sanctification, godliness, repentance, good works, and a comparison with perfectionist and passive views. Corrected confession citations to full document names with article numbers.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2002,
+  "output": 4509
+ }
+}

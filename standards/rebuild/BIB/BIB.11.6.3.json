@@ -1,0 +1,348 @@
+{
+ "sub_topic": "BIB.11.6.3",
+ "name": "The Resurrection and the Final Judgment",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Eschatology: The Doctrine of Last Things"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify from Scripture that God will raise the dead to life on the last day",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "John 5:28-29"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that Jesus will come to judge the living and the dead, as Scripture and the Apostles' Creed state",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Acts 10:42",
+    "2 Timothy 4:1"
+   ],
+   "confessions": [
+    "Belgic Confession 37"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell the account of Jesus rising bodily from the dead and state that it shows God's power to raise his people",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Luke 24:36-43",
+    "1 Corinthians 15:20"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q45"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that the same body that dies will be raised, changed in its qualities but not replaced by a different body",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Job 19:25-27",
+    "1 Corinthians 15:42-44"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.2",
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify from Scripture that every person, great and small, will stand before Christ to give an account",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "2 Corinthians 5:10",
+    "Revelation 20:12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the contrasts Paul draws between the present body and the resurrection body of believers",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:42-44",
+    "Philippians 3:21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what Scripture teaches will happen to believers who are still alive on the last day",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 15:51-52",
+    "1 Thessalonians 4:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the resurrection of the just to honor with the resurrection of the unjust to dishonor",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 12:2",
+    "John 5:28-29",
+    "Acts 24:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.3",
+    "Westminster Larger Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture that the final judgment will bring every thought, word, and deed into account",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Ecclesiastes 12:14",
+    "Matthew 12:36-37",
+    "Romans 2:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Father has appointed Christ as judge and how Paul presents Christ's resurrection as proof of the coming judgment",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "John 5:22-27",
+    "Acts 17:30-31"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul uses the coming resurrection to instruct believers about grieving and about steadfast labor in the Lord",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "1 Thessalonians 4:13-14",
+    "1 Corinthians 15:58"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the final judgment in terms of its judge, its subjects, and its standard",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 2:5-11",
+    "2 Corinthians 5:10",
+    "Revelation 20:11-15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1",
+    "Westminster Larger Catechism Q88"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the hope of bodily resurrection through Old Testament passages and explain how the New Testament develops it",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Job 19:25-27",
+    "Isaiah 26:19",
+    "Daniel 12:2",
+    "Matthew 22:29-32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the separation of the sheep and the goats in its context, explaining how works serve as evidence rather than the ground of acceptance",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 25:31-46",
+    "Ephesians 2:8-10"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q89",
+    "Westminster Larger Catechism Q90"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's firstfruits argument connecting Christ's resurrection, by the Spirit, to the resurrection of believers",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 15:20-23",
+    "Romans 8:11"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q45",
+    "Westminster Larger Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the purpose of the last judgment as the Reformed tradition confesses it, the display of God's mercy and justice",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 9:22-23",
+    "2 Thessalonians 1:6-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition relates justification by faith to judgment according to works, including the open acquittal of believers",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Romans 2:6-7",
+    "Romans 8:1",
+    "Romans 8:33-34",
+    "Matthew 10:32"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q38",
+    "Westminster Larger Catechism Q90"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the reasons the Westminster Confession gives for the certainty of the judgment and the hiddenness of its day",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 24:36",
+    "2 Peter 3:11-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's argument about the consequences for the gospel if there is no resurrection of the dead",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 15:12-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare how the Westminster Standards, the Belgic Confession, and the Heidelberg Catechism state the doctrines of resurrection and judgment",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [
+    "Westminster Confession of Faith 32.2",
+    "Westminster Confession of Faith 33.1",
+    "Belgic Confession 37",
+    "Heidelberg Catechism Q52",
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate views that deny a bodily resurrection or a final judgment, from the Sadducees and early spiritualizing errors to modern universalism, using Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 22:23-33",
+    "2 Timothy 2:17-18",
+    "1 Corinthians 15:12",
+    "Hebrews 9:27"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.2",
+    "Westminster Confession of Faith 33.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the justice of God in the final judgment against common objections using Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 18:25",
+    "Romans 2:11",
+    "Romans 3:5-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a theological essay that synthesizes resurrection and judgment as the vindication of God and his people, drawing on Scripture and the confessions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Corinthians 15:54-57",
+    "2 Timothy 4:8",
+    "Revelation 20:11-15"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q38",
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: raising the dead, the day of judgment, bodily resurrection, the resurrection of just and unjust, the resurrection body, judge, subjects, and standard, sheep and goats, firstfruits, purpose of judgment, evaluating denials, defending God's justice, and the capstone synthesis. Recast the grief objective as explaining Paul's instruction so it no longer targets feelings. Merged 'observe everyone will stand before God' into an objective with clear anchors. Replaced the vague 'construct a theology' with a confessional comparison and a capstone essay. Added missing competencies: identity of the raised body, change of the living, judgment of thoughts, words, and deeds, Christ appointed as judge, the Old Testament resurrection hope, justification and judgment according to works, WCF 33.3 on the certainty of judgment and its hidden day, and Paul's 1 Corinthians 15 argument. Left Christ's return, the intermediate state, the new creation, hell, and millennial views to the sibling sub-topics. Corrected confession citations to full document names and added the Heidelberg Catechism and Belgic Confession where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2164,
+  "output": 5830
+ }
+}

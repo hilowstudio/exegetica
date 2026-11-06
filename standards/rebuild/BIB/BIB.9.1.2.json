@@ -1,0 +1,318 @@
+{
+ "sub_topic": "BIB.9.1.2",
+ "name": "1 & 2 Kings",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Historical Books"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Solomon as the king who asked God for wisdom and built the Temple in Jerusalem",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "1 Kings 3:5-14",
+    "1 Kings 6:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how God provided food for Elijah through the ravens and the widow of Zarephath",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 17:1-16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how Elijah was taken up to heaven and how Elisha carried on his work as prophet",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "2 Kings 2:1-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that after Solomon the kingdom split into Israel in the north and Judah in the south",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "1 Kings 12:16-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the contest between Elijah and the prophets of Baal on Mount Carmel",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 18:20-39"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the healing of Naaman and explain what it shows about God's power reaching beyond Israel",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "2 Kings 5:1-15",
+    "Luke 4:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Solomon's sin and Rehoboam's harsh answer led to the division of the kingdom",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 11:9-13",
+    "1 Kings 12:1-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Hezekiah's prayer when Jerusalem was threatened by Assyria and how God answered it",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "2 Kings 19:14-19",
+    "2 Kings 19:32-36"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Northern Kingdom of Israel and the Southern Kingdom of Judah in their capitals, royal lines, and places of worship",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "1 Kings 12:20-33",
+    "1 Kings 16:23-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace how Solomon's many wives and wealth turned his heart from the LORD in light of the law for kings",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "1 Kings 10:14-29",
+    "1 Kings 11:1-8",
+    "Deuteronomy 17:14-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify kings such as Hezekiah, Josiah, Ahab, and Manasseh using the narrator's verdict of doing right or evil in the sight of the LORD",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "1 Kings 15:11",
+    "1 Kings 16:30-33",
+    "2 Kings 18:3-6",
+    "2 Kings 21:1-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the ministries of Elijah and Elisha as prophets who confronted kings and performed signs that called Israel back to the covenant",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "1 Kings 18:17-21",
+    "1 Kings 21:17-24",
+    "2 Kings 4:1-37"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q24"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what God's appearance to Elijah at Horeb in the low whisper teaches about God's preservation of a faithful remnant",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 19:9-18",
+    "Romans 11:2-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect Josiah's reforms to the finding of the Book of the Law in the Temple",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "2 Kings 22:8-13",
+    "2 Kings 23:1-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the pattern of prophecy and fulfillment in Kings using the prophecy against Bethel's altar and its fulfillment under Josiah",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "1 Kings 13:1-2",
+    "2 Kings 23:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the sin of Jeroboam's golden calves as a violation of the second commandment and trace its effect on later northern kings",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "1 Kings 12:28-30",
+    "2 Kings 17:21-23",
+    "Exodus 20:4-6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q51",
+    "Heidelberg Catechism Q96"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the account of Naboth's vineyard to show how Ahab and Jezebel abused royal power against God's law",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "1 Kings 21:1-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a synchronized timeline of the kings of Israel and Judah using the regnal formulas of Kings alongside Assyrian and Babylonian history",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "1 Kings 15:9-10",
+    "1 Kings 15:25",
+    "2 Kings 17:5-6",
+    "2 Kings 25:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Kings shows God keeping his promise to David through the preserved line of Judah and the release of Jehoiachin",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "2 Samuel 7:12-16",
+    "1 Kings 11:36",
+    "2 Kings 25:27-30"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the role of the prophet in relation to the king in Kings using Nathan, Elijah, Micaiah, and Isaiah",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Kings 1:11-14",
+    "1 Kings 22:13-28",
+    "2 Kings 20:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed reading of the fall of Samaria and Jerusalem as God's just judgment under the covenant curses of Deuteronomy",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Kings 17:7-23",
+    "2 Kings 24:1-4",
+    "Deuteronomy 28:15",
+    "Deuteronomy 28:36"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Produce a study of the contest between the LORD and Baal across Kings showing why the narrative condemns idolatry",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "1 Kings 16:30-33",
+    "1 Kings 18:21",
+    "1 Kings 18:36-39",
+    "2 Kings 10:18-28"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q47",
+    "Heidelberg Catechism Q95"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the New Testament presents Jesus as greater than Solomon and links John the Baptist to Elijah",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 12:42",
+    "Malachi 4:5-6",
+    "Luke 1:17",
+    "Luke 4:25-27"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Solomon, Elijah, division, Carmel, north versus south comparison, good and bad kings, Elijah and Elisha, Josiah, Jeroboam's calves, timeline, prophet and king, justice of exile, Yahweh versus Baal). Replaced the vague grade 3 idol observation with the narrator's evaluation formula at grade 6 and merged the fall of Samaria and Jerusalem into the covenant curse objective. Added missing content: God's provision for Elijah, Naaman, Hezekiah's prayer, Solomon's turning against the law for kings, Horeb and the remnant, prophecy and fulfillment, Naboth's vineyard, the Davidic promise and Jehoiachin's release, and New Testament connections to Christ and John the Baptist. Added verse-level scripture and confession anchors where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2035,
+  "output": 4191
+ }
+}

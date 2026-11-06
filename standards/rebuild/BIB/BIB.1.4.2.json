@@ -1,0 +1,311 @@
+{
+ "sub_topic": "BIB.1.4.2",
+ "name": "The Transcendental Argument (TAG)",
+ "path": [
+  "Bible & Theology",
+  "Apologetics and Worldviews",
+  "Presuppositional Apologetics"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God made an orderly world where things like day and night and the seasons keep happening the same way",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 8:22",
+    "Genesis 1:31"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that God never changes and always tells the truth",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Malachi 3:6",
+    "Numbers 23:19"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that people are able to think, count, and learn because God made them in His image",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:27",
+    "Colossians 3:10"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10",
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how Scripture teaches that God holds all things together so that nature follows regular patterns",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 1:17",
+    "Hebrews 1:3",
+    "Jeremiah 33:25"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11",
+    "Heidelberg Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify everyday examples showing that all people, including those who do not believe in God, rely on logic, right and wrong, and the regularity of nature",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Acts 17:28",
+    "Romans 2:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that laws of logic, such as the rule that a statement cannot be both true and false at the same time and in the same way, are the same everywhere and do not change",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 2:13",
+    "Hebrews 6:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare a universe produced by chance with a universe governed by God's providence in how each explains order and predictability",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 8:22",
+    "Jeremiah 33:25",
+    "Psalm 104:19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching from Romans 1 that all people know God through creation yet suppress that knowledge",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 1:18-22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1",
+    "Belgic Confession Article 2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the idea of borrowed capital, the claim that unbelievers must use logic, morality, and the uniformity of nature that only the Christian worldview accounts for",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 1:21-22",
+    "Acts 17:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the preconditions of intelligibility, including the laws of logic, moral absolutes, the uniformity of nature, and the reliability of human reasoning",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish a transcendental argument, which asks what must be true for any experience or reasoning to be possible, from evidential arguments that reason from particular facts",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the problem of induction and how the doctrine of providence accounts for the expectation that the future will resemble the past",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 8:22",
+    "Jeremiah 33:25",
+    "Hebrews 1:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Connect the universal, invariant, and abstract character of the laws of logic to God's nature as unchanging, everywhere present, and truthful",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Malachi 3:6",
+    "Psalm 139:7-10",
+    "Titus 1:2"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4",
+    "Westminster Confession of Faith 2.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition holds that binding moral absolutes require a personal and holy lawgiver whose law is written on the human heart",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 2:14-15",
+    "Leviticus 19:2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2",
+    "Westminster Confession of Faith 19.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze why a strictly materialist account of reality cannot ground the universal and immaterial laws of logic",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Colossians 2:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct the transcendental argument in premise and conclusion form, showing that the Christian God is the necessary precondition of intelligibility",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Colossians 2:3",
+    "Proverbs 1:7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Proverbs 1:7 and Colossians 2:3 support the presuppositional claim that all true knowledge depends on God and is found in Christ",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 1:7",
+    "Colossians 2:3",
+    "Psalm 36:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the claim of the impossibility of the contrary, which holds that the denial of the Christian worldview undermines the very reasoning used to deny it",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 1:22",
+    "1 Corinthians 1:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate common objections to the transcendental argument, such as the charge of vicious circularity and the claim that logic and nature need no further explanation",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend in a written or oral argument the Reformed apologetic claim that the triune God of Scripture is the necessary foundation for rational thought, presented with gentleness and respect",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Corinthians 10:5",
+    "1 Peter 3:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Cornelius Van Til and Greg Bahnsen developed the transcendental argument, including the Creator and creature distinction and the idea that human knowledge is analogical to God's knowledge",
+   "grade": 12,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 55:8-9",
+    "Psalm 36:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Van Til used the doctrine of the Trinity to address the philosophical problem of the one and the many",
+   "grade": 12,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 28:19",
+    "2 Corinthians 13:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Westminster Shorter Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose an essay that presents and assesses Van Til's transcendental method of apologetics",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "2 Corinthians 10:5",
+    "1 Peter 3:15"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (order in creation, God's image and reason, laws of logic as invariant, chance versus providence, borrowed capital, preconditions of intelligibility, problem of induction, logic and God's nature, materialism and logic, constructing TAG, impossibility of the contrary, defending the Christian foundation for reason, Van Til essay). Dropped vague or overlapping filler (God makes things make sense, if no God we could not know anything, trusting minds stated as a feeling) and folded their content into clearer objectives. Added missing competencies: God's unchanging truthfulness, providence holding nature together, Romans 1 suppression, transcendental versus evidential arguments, moral absolutes and a lawgiver, the Scripture basis in Proverbs 1:7 and Colossians 2:3, objections to TAG, Van Til and Bahnsen distinctives including analogical knowledge, and the Trinity and the one and the many. Reframed doctrinal claims as the Reformed tradition's position, added verse-specific Scripture and confessional anchors (WSC, WCF, Heidelberg, Belgic), and left internal critique of specific worldviews and ultimate authority questions to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1926,
+  "output": 5297
+ }
+}

@@ -1,0 +1,389 @@
+{
+ "sub_topic": "BIB.11.9.8",
+ "name": "Glorification and Union with Christ",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Soteriology: The Doctrine of Salvation"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that people who belong to Jesus will one day live with him forever where there is no more sin, sadness, or death",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 21:3-4",
+    "1 Thessalonians 4:17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q38"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall that Jesus rose from the dead with a real body and that God promises to raise the bodies of his people too",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "1 Corinthians 15:20-23",
+    "John 11:25"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q57"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell Jesus's picture of the vine and the branches to describe what it means to be joined to him",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "John 15:4-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture that when Jesus returns God will make his people like Jesus in body and character",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "1 John 3:2",
+    "Philippians 3:20-21"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q38"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe glorification as the final step in which God completes his work of saving his people",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:30",
+    "Philippians 1:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the New Testament means when it says believers are in Christ using passages from Ephesians, Galatians, and 1 Corinthians",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 1:3-4",
+    "Galatians 2:20",
+    "1 Corinthians 1:30"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q66"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify the Holy Spirit and faith as the means by which, in Reformed teaching, believers are joined to Christ",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [
+    "1 Corinthians 12:13",
+    "Ephesians 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q30",
+    "Westminster Larger Catechism Q66"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe what the Westminster Shorter Catechism teaches that believers receive from Christ at death and at the resurrection",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "2 Corinthians 5:8",
+    "Philippians 1:23",
+    "1 Corinthians 15:42-44"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q37",
+    "Westminster Shorter Catechism Q38"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the adoption believers have already received with the future glory Scripture says they still await",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Romans 8:15-17",
+    "Romans 8:23",
+    "1 John 3:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul relates present suffering to future glory in Romans 8 and 2 Corinthians 4",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:18",
+    "2 Corinthians 4:16-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the biblical images of union with Christ such as vine and branches, head and body, bridegroom and bride, and cornerstone and building, and explain what each teaches",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "John 15:5",
+    "Ephesians 5:23-32",
+    "Ephesians 2:19-22",
+    "1 Corinthians 12:12-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how union with Christ joins believers to his death, resurrection, and ascension using Romans 6 and Colossians 3",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Romans 6:3-11",
+    "Colossians 3:1-4",
+    "Ephesians 2:4-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze union with Christ as the source from which every saving benefit flows to the believer",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 1:30",
+    "Ephesians 1:3"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q69"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the golden chain of Romans 8:29-30 and explain why Paul speaks of glorification in the past tense",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Romans 8:29-30"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how the Reformed confessions present baptism and the Lord's Supper as signs and seals of union and communion with Christ",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 6:3-5",
+    "1 Corinthians 10:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q94",
+    "Westminster Confession of Faith 28.1",
+    "Heidelberg Catechism Q76"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish union with Christ from communion with Christ in grace and from the communion of saints as the Westminster Standards define them",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "1 John 1:3",
+    "Ephesians 4:15-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 26.1",
+    "Westminster Larger Catechism Q65",
+    "Westminster Larger Catechism Q69"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between the intermediate state of the soul after death and the final glory of the resurrection",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Luke 23:43",
+    "2 Corinthians 5:8",
+    "John 5:28-29",
+    "1 Corinthians 15:51-53"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1",
+    "Westminster Confession of Faith 32.3",
+    "Westminster Larger Catechism Q86",
+    "Westminster Larger Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Paul's description of the resurrection body in 1 Corinthians 15 to show both its continuity with and its difference from the present body",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 15:35-49"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the teachings of soul sleep and purgatory against Scripture and the Westminster Confession",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Luke 23:43",
+    "Philippians 1:21-23",
+    "Hebrews 12:23"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the cosmic scope of glorification as Scripture describes creation set free and the new heavens and new earth",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Romans 8:19-22",
+    "2 Peter 3:13",
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a written theology of glorification from an exposition of Romans 8:18-30",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Romans 8:18-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that the glorified will see and fully enjoy God forever",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 13:12",
+    "1 John 3:2",
+    "Revelation 22:3-5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q38",
+    "Westminster Larger Catechism Q90"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate views that deny or spiritualize the bodily resurrection and glorification of believers",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 15:12-19",
+    "Luke 24:39"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q57",
+    "Westminster Confession of Faith 32.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate mystical and merely moral accounts of union with Christ against the Reformed teaching that the union is real, spiritual, and inseparable without merging the believer into deity",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 17:21-23",
+    "2 Peter 1:4",
+    "1 Corinthians 6:17"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q66"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze Calvin's teaching that Christ's benefits avail nothing for us until he is united to us by the Spirit",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 3:16-17",
+    "Romans 8:9-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend in an argued essay the Reformed claim that union with Christ holds justification and sanctification together without confusing them",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 1:30",
+    "Philippians 3:8-12"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q69",
+    "Westminster Larger Catechism Q77"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the order of salvation from election to glory as one unbreakable work of grace organized around union with Christ",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Romans 8:29-30",
+    "Ephesians 1:3-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.6",
+    "Westminster Larger Catechism Q66"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (future perfection with Jesus, bodily resurrection, being made like Christ, glorification as the completion of salvation, being in Christ, adoption compared with glory, suffering and glory, union as the ground of benefits, the golden chain, intermediate state, Romans 8 theology, evaluating denials of bodily glory, defending union, the order of salvation). Merged the K and grade 1 heaven items. Reframed the suffering objective as explaining Paul's teaching rather than applying hope personally. Folded the vague connect-union-to-benefits item into the grade 7 analysis and grade 12 defense. Added missing competencies: the Spirit and faith as the bond of union, the catechism's benefits at death and resurrection, biblical images of union, dying and rising with Christ, sacraments as signs of union, union versus communion, the resurrection body in 1 Corinthians 15, soul sleep and purgatory, the renewal of creation, the beatific vision, errors about union, and Calvin on union. Replaced whole-section references with verse ranges and added confession anchors such as WSC Q30, Q37, Q94, WCF 26.1, 28.1, 32.1-3, WLC Q65, Q87, Q90, and Heidelberg Q57 and Q76.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2163,
+  "output": 6237
+ }
+}

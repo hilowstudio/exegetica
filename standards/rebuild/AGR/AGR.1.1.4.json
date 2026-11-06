@@ -1,0 +1,231 @@
+{
+ "sub_topic": "AGR.1.1.4",
+ "name": "Veterinary Practices & Animal Welfare",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Animal Science",
+  "Animal Anatomy, Physiology & Health"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Name tools a veterinarian or animal caretaker uses to check on an animal's health, such as a thermometer, stethoscope, and scale",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the daily care an animal needs from its caretaker, including feed, clean water, shelter, and attention",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the basic restraint and handling steps that keep an animal and handler safe during an exam",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the roles of animal health professionals such as veterinarians, veterinary technicians, farriers, and livestock producers in caring for animals",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Five Freedoms of animal welfare and give an example of each on a working farm",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how flight zone, point of balance, and signs of fear or stress guide low-stress movement of livestock",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe an exhibitor's responsibilities for the welfare of a project animal during fitting, transport, and a livestock show",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate how to take and record an animal's temperature, pulse, and respiration rate and compare them to normal ranges for the species",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the difference between animal welfare and animal rights using examples from livestock and companion animal settings",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.01.01.a"
+   ]
+  },
+  {
+   "text": "Maintain an accurate health and treatment record for an SAE animal, including dates, products, doses, and routes of administration",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Perform routine husbandry procedures such as subcutaneous and intramuscular injections, ear tagging, and hoof care using proper equipment and restraint",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Determine when an animal's condition requires referral to a veterinarian based on observed signs and vital sign data",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01.02.c"
+   ]
+  },
+  {
+   "text": "Interpret an animal health product label to calculate a correct dose and apply the required withdrawal time before animals or their products enter the food supply",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.02.02.c"
+   ]
+  },
+  {
+   "text": "Evaluate a livestock handling facility or routine against accepted animal welfare standards and recommend improvements",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.05.01",
+    "AS.02.01.02.b"
+   ]
+  },
+  {
+   "text": "Explain how the veterinarian-client-patient relationship, prescription rules, and the Veterinary Feed Directive govern the use of animal drugs",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.01"
+   ]
+  },
+  {
+   "text": "Recommend surgical or nonsurgical methods and pain management for procedures such as castration, dehorning, and tail docking based on species, age, and welfare outcomes",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.07.01.05.c",
+    "AS.02.02.01.c"
+   ]
+  },
+  {
+   "text": "Explain the criteria for deciding when euthanasia is appropriate and identify humane methods accepted by veterinary guidelines",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.01"
+   ]
+  },
+  {
+   "text": "Analyze industry quality assurance and welfare audit programs such as Beef Quality Assurance and PQA Plus to determine how they prevent mistreatment and protect product safety",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.01.01.b",
+    "AS.02.02.02.c"
+   ]
+  },
+  {
+   "text": "Justify a set of animal welfare and veterinary care protocols for a livestock operation, weighing animal well-being, cost, and regulatory requirements",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02",
+    "AS.07.01",
+    "AS.02.01"
+   ]
+  },
+  {
+   "text": "Evaluate competing arguments in a public debate over a livestock welfare practice using scientific evidence and a framework of responsible stewardship",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.01.01.b"
+   ]
+  }
+ ],
+ "changes": "Kept all six original objectives, lightly expanding the grade 2 and grade 8 ones. Added competencies that were missing: basic daily care needs (3), roles of animal health professionals (5), low-stress handling with flight zone and point of balance (7), exhibitor welfare responsibilities (7), the welfare versus rights distinction (9), SAE treatment records (9), routine husbandry procedures such as injections and tagging (10), deciding when to refer to a veterinarian (10), label interpretation, dosing, and withdrawal times (10), VCPR and drug regulation including the VFD (11), surgical and nonsurgical procedures with pain management (11), euthanasia criteria (11), quality assurance and welfare audit programs (11), and evaluating public welfare debates from a stewardship perspective (12). Disease prevention, nutrition, and body systems content is left to the sibling sub-topics. Standards are attached only from grade 9 up and only where the objective directly teaches them.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.01.01.02.a",
+  "AS.02",
+  "AS.02.01",
+  "AS.02.01.01.a",
+  "AS.02.01.01.b",
+  "AS.02.01.02.b",
+  "AS.02.02.01.b",
+  "AS.02.02.01.c",
+  "AS.02.02.02.c",
+  "AS.03.01",
+  "AS.05.01",
+  "AS.06.03.02.c",
+  "AS.07.01",
+  "AS.07.01.02.c",
+  "AS.07.01.05.c"
+ ],
+ "usage": {
+  "input": 2312,
+  "output": 3278
+ }
+}

@@ -1,0 +1,289 @@
+{
+ "sub_topic": "BIB.11.1.4",
+ "name": "Demons and Spiritual Warfare",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Angelology: The Doctrine of Spiritual Beings"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify demons as angels who sinned against God and now work against Him and His people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 25:41",
+    "2 Peter 2:4",
+    "Jude 1:6"
+   ],
+   "confessions": [
+    "Belgic Confession Article 12"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell a Gospel account in which Jesus commands an evil spirit to leave a person",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Mark 1:23-27",
+    "Mark 5:1-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite the Lord's Prayer request to be delivered from evil and explain that it asks God for protection from the evil one",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 6:13"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q127",
+    "Westminster Shorter Catechism Q106"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recall from the Gospels that demons must obey Jesus because He is stronger than every evil spirit",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Mark 1:34",
+    "Luke 10:17",
+    "1 John 4:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Ephesians that the Christian's struggle is against spiritual forces of evil and not against other people",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 6:12",
+    "2 Corinthians 10:3-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe each piece of the armor of God and the gospel truth it represents",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 6:10-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Scripture joins resisting the devil to submitting to God and standing firm in faith",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "James 4:7-8",
+    "1 Peter 5:8-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate answering a temptation with a fitting passage of Scripture following Jesus' example in the wilderness",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "Matthew 4:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare biblical teaching on demons with popular superstitions, charms, and media portrayals of evil spirits",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 18:10-12",
+    "Acts 19:18-19",
+    "Colossians 2:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Scripture forbids occult practices such as divination, sorcery, and consulting the dead",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 18:10-12",
+    "Leviticus 19:31",
+    "Isaiah 8:19-20",
+    "Galatians 5:19-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the devil's tactics of temptation, deception, and accusation using the passages that describe each",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 3:1-5",
+    "2 Corinthians 11:3",
+    "2 Corinthians 11:14",
+    "Revelation 12:9-10",
+    "Matthew 4:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Jesus' casting out of demons as a sign that the kingdom of God has arrived and the strong man is bound",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Luke 11:20-22",
+    "Matthew 12:28-29",
+    "Mark 3:27"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q191"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Word of God and prayer serve as the means by which believers stand against spiritual attack",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Ephesians 6:17-18",
+    "Matthew 4:4",
+    "Luke 22:31-32"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q127"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the limits Scripture places on demonic power, including God's sovereign permission and the believer's protection in Christ",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Job 1:12",
+    "Job 2:6",
+    "Luke 22:31-32",
+    "1 John 5:18",
+    "Romans 8:38-39"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the devil, the world, and the sinful flesh as the sources of temptation that Scripture and the catechism name",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:1-3",
+    "James 1:14-15",
+    "1 John 2:15-16"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q127"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Scripture links false teaching to deceiving spirits and how believers are commanded to test the spirits",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "1 Timothy 4:1",
+    "1 John 4:1-3",
+    "2 Corinthians 11:13-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the encounters with evil spirits in Acts in their historical context, including the failed exorcism by the sons of Sceva",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Acts 16:16-18",
+    "Acts 19:13-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate both the denial of the demonic and an unhealthy fascination with it in light of Scripture and the Reformed confessions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Ephesians 6:12",
+    "1 Peter 5:8-9",
+    "Colossians 2:15"
+   ],
+   "confessions": [
+    "Belgic Confession Article 12"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate contemporary deliverance and spiritual warfare practices, such as naming territorial spirits or rebuking the devil by formula, against biblical teaching",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Jude 1:8-9",
+    "Acts 19:13-16",
+    "Ephesians 6:13-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a sober biblical theology of spiritual warfare that integrates the reality of demons, their limits under God's sovereignty, and the ordinary means of grace",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Ephesians 6:10-18",
+    "Colossians 2:15",
+    "James 4:7",
+    "Job 1:12"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q19",
+    "Heidelberg Catechism Q127"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (demons as fallen angels, Jesus' authority, spiritual not human struggle, armor of God, resisting by submitting, superstition comparison, tactics, kingdom sign, Word and prayer, limits of power, denial vs obsession, sober theology). Dropped vague filler (summarize reality of warfare, name need to resist) and the security and final-victory items that belong to the sibling on the Christian's victory in Christ, merging the synthesis into the grade 12 capstone. Added the Lord's Prayer petition, using Scripture against temptation, occult prohibitions, devil-world-flesh distinction, testing deceiving spirits, Acts encounters, and evaluation of contemporary deliverance practices. Added verse-level anchors and confessional references (Belgic 12, WLC Q19, WLC Q191, WSC Q106, HC Q127) only where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2109,
+  "output": 4703
+ }
+}

@@ -1,0 +1,257 @@
+{
+ "sub_topic": "AGR.6.2.4",
+ "name": "Rangeland & Land Use",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Natural Resources & Environmental Science",
+  "Natural Resource Management"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Sort pictures of land into uses such as farmland, pasture, rangeland, forest, and town",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify livestock commonly raised on pasture and rangeland such as beef cattle, sheep, and goats",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how grazing animals use grassland and rangeland for food",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify products and benefits people receive from rangeland such as meat, wool, wildlife habitat, clean water, and recreation",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify common range plants as grasses, grass-likes, forbs, or shrubs using their visible features",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare how a rotational grazing system and a continuous grazing system affect the health of a pasture",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why some range plants are valued as desirable forage while others are classed as undesirable, poisonous, or invasive",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate a stocking rate for a pasture using forage production, animal units, and animal unit months",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how overgrazing changes rangeland plant cover and increases the risk of erosion",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how land capability classes rate land for cropping, grazing, woodland, or other uses",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the characteristics of rangeland and the global importance of the rangeland biome in providing ecosystem services",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.01.04.a"
+   ]
+  },
+  {
+   "text": "Describe the environmental effects of livestock grazing on rangeland including impacts on soil, plant communities, water quality, and carbon storage",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.08.01.01.a"
+   ]
+  },
+  {
+   "text": "Describe careers in range management and land-use planning such as range conservationist, land manager, and rancher and the role they play in the economy",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02"
+   ]
+  },
+  {
+   "text": "Determine the range condition of a site by comparing its current plant species composition with its ecological site potential",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.01.04.b"
+   ]
+  },
+  {
+   "text": "Apply rangeland management practices such as prescribed burning, brush control, water development, and cross fencing to improve grazing distribution and range health",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.01.04.b",
+    "FPS.04.01.01.b"
+   ]
+  },
+  {
+   "text": "Develop a grazing plan for a supervised agricultural experience livestock enterprise that includes stocking rate, rotation schedule, and forage monitoring",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.01.04.b",
+    "NRS.03.01"
+   ]
+  },
+  {
+   "text": "Analyze how a region's land-use pattern of farmland, rangeland, forest, and development affects its natural resources",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.01",
+    "NRS.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Assess how conversion of rangeland to cropland, urban development, and energy extraction affects the availability of rangeland resources",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate the plant and animal biodiversity of a rangeland site and recommend practices that enhance its ecosystem function",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.01.03.c",
+    "NRS.01.01.03.a"
+   ]
+  },
+  {
+   "text": "Compare how private ownership, federal grazing permits, and conservation easements shape decisions about rangeland use",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Revise a rangeland management plan so that it supports livestock production, wildlife habitat, water supply, and other ecosystem services together",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.01.04.c"
+   ]
+  },
+  {
+   "text": "Design a master land-use plan for a given area that uses land capability classes to assign cropland, rangeland, and development",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.02.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate a land-use decision by weighing economic needs against the responsibility to conserve soil, water, and wildlife for future generations",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.04.01.01.b",
+    "NRS.02.02.01.b"
+   ]
+  }
+ ],
+ "changes": "Removed the invalid code FPS.04.01.04.b and used only candidate codes. Kept all six original objectives, adding rangeland to the grade 2 sort. Added objectives on range livestock, rangeland products, range plant classification, forage desirability, stocking rate and animal unit months, land capability classes, rangeland characteristics and ecosystem services, grazing environmental effects, range careers, range condition assessment, range improvement practices, an SAE grazing plan, rangeland conversion, biodiversity evaluation, ownership and permits, plan revision, and master land-use design. Erosion control, forestry, and wildlife management detail were left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "AS.08.01.01.a",
+  "ESS.03.02.01.c",
+  "FPS.02",
+  "FPS.04.01.01.b",
+  "NRS.01.01",
+  "NRS.01.01.03.a",
+  "NRS.01.01.03.c",
+  "NRS.01.05.04.a",
+  "NRS.01.05.04.b",
+  "NRS.01.05.04.c",
+  "NRS.02.02.01.b",
+  "NRS.03.01",
+  "NRS.04.01.04.a",
+  "NRS.04.01.04.b",
+  "NRS.04.01.04.c"
+ ],
+ "usage": {
+  "input": 5142,
+  "output": 7981
+ }
+}

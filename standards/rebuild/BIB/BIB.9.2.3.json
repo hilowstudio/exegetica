@@ -1,0 +1,305 @@
+{
+ "sub_topic": "BIB.9.2.3",
+ "name": "Isaiah",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Major Prophets"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Isaiah as a prophet who saw the Lord seated on a high throne while angels called out that God is holy",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Isaiah 6:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Isaiah promised a child called Immanuel, meaning God with us, and that Matthew says this promise came true in Jesus",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Isaiah 7:14",
+    "Matthew 1:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the story of Isaiah's call, including his confession of sin, the burning coal touching his lips, and his answer Here am I, send me",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 6:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Isaiah said the Servant would be wounded for our transgressions and that Christians read this as a promise of Jesus' death for sinners",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Isaiah 53:5-6",
+    "1 Peter 2:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the titles Isaiah gives the promised child, such as Wonderful Counselor and Prince of Peace, and explain what each tells about the coming King",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 9:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe Isaiah's picture of the peaceful kingdom of the Branch from Jesse, where the wolf lives with the lamb",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 11:1-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Isaiah 53 describes the Servant suffering in the place of others and how the Reformed tradition connects this to Christ's sacrificial death",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 53:4-12",
+    "Acts 8:30-35"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q37",
+    "Westminster Confession of Faith 8.4",
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Isaiah's mockery of handmade idols with his portrait of the Lord as the incomparable Creator",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 40:18-26",
+    "Isaiah 44:9-20"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Isaiah's message of comfort to God's people and how the Gospels identify John the Baptist as the voice crying in the wilderness",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 40:1-11",
+    "Mark 1:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate passages from Isaiah quoted in the New Testament and explain how Jesus and the apostles use them",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Isaiah 61:1-2",
+    "Luke 4:16-21",
+    "Isaiah 53:7-8",
+    "Acts 8:32-35",
+    "Isaiah 6:9-10",
+    "Matthew 13:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the structure of Isaiah by comparing the emphasis on judgment in chapters 1 to 39 with the emphasis on comfort and restoration in chapters 40 to 66",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 1:2-4",
+    "Isaiah 40:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Isaiah's charge against empty worship and his call for repentance and justice for the oppressed",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 1:10-20",
+    "Isaiah 58:3-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Isaiah's vision of God's holiness exposes human sin and how the cleansing of his lips points to atonement provided by God",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 6:1-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret a messianic prophecy such as the Immanuel sign by explaining its meaning for Ahaz in its own time and its fulfillment in Christ",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 7:1-17",
+    "Isaiah 8:8-10",
+    "Matthew 1:22-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the historical setting of Isaiah's ministry, including the Syro-Ephraimite crisis, Sennacherib's invasion, Hezekiah's prayer, and the prediction of exile to Babylon",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 1:1",
+    "Isaiah 7:1-2",
+    "Isaiah 36:1",
+    "Isaiah 37:14-20",
+    "Isaiah 37:36-37",
+    "Isaiah 39:5-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Servant Songs to distinguish where the servant is the nation of Israel and where the Servant is an individual who redeems Israel",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 41:8-10",
+    "Isaiah 42:1-4",
+    "Isaiah 49:1-6",
+    "Isaiah 50:4-9",
+    "Isaiah 52:13-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a written account of Isaiah's theology of the Holy One of Israel by tracing the title through both halves of the book",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Isaiah 1:4",
+    "Isaiah 5:24",
+    "Isaiah 41:14",
+    "Isaiah 43:3",
+    "Isaiah 54:5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Isaiah's teaching on God's sovereignty over the nations, including Assyria as the rod of his anger and Cyrus as his anointed instrument",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 10:5-12",
+    "Isaiah 44:24-28",
+    "Isaiah 45:1-7",
+    "Isaiah 46:9-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 3.1",
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain Isaiah's call for Judah to trust the Lord rather than seek security in alliances with Egypt",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 30:1-5",
+    "Isaiah 30:15",
+    "Isaiah 31:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate critical theories that divide Isaiah among multiple authors by weighing them against evidence for the book's unity, including New Testament attribution and the Great Isaiah Scroll",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 1:1",
+    "John 12:38-41"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Isaiah's vision of the nations coming to worship the Lord and how the apostles apply it to the mission to the Gentiles",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 2:2-4",
+    "Isaiah 49:6",
+    "Isaiah 56:6-8",
+    "Isaiah 66:18-21",
+    "Acts 13:46-47"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize Isaiah's vision of the new heavens and new earth with its fulfillment in Revelation in a written or presented account of biblical hope",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Isaiah 65:17-25",
+    "Isaiah 66:22-23",
+    "Revelation 21:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (throne vision, Immanuel, call, Suffering Servant, wolf and lamb, idols versus comfort, structure, holiness and cleansing, Assyrian context, Holy One of Israel, new heavens and earth). Folded 'most quoted prophet' into an objective on locating and explaining New Testament uses of Isaiah. Merged the Deutero-Isaiah and unity objectives into one evaluation objective. Replaced the vague 'interpret the messianic prophecies' with a specific near and ultimate fulfillment task on the Immanuel sign. Added missing competencies: titles in Isaiah 9, the voice in the wilderness, empty worship and justice, Servant Songs, sovereignty over nations and Cyrus, trusting God over Egyptian alliances, and the nations streaming to Zion. Anchored each objective to specific verses and added confessional references only where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1973,
+  "output": 5092
+ }
+}

@@ -1,0 +1,273 @@
+{
+ "sub_topic": "BIB.7.1.3",
+ "name": "Languages (Hebrew, Aramaic, Ugaritic)",
+ "path": [
+  "Bible & Theology",
+  "Historical & Cultural Context",
+  "Ancient Near Eastern Background (OT)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that most of the Old Testament was first written in the Hebrew language",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name the meanings of Hebrew words still used in worship today, such as shalom, amen, and hallelujah",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Numbers 6:24-26",
+    "Deuteronomy 27:15",
+    "Psalm 106:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Jesus spoke Aramaic and identify Aramaic words kept in the Gospels, such as Abba and Talitha cumi",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Mark 5:41",
+    "Mark 7:34",
+    "Mark 14:36",
+    "Mark 15:34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Hebrew is written from right to left using an alphabet of twenty-two letters",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 119:1-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that our English Bible is translated from the original Hebrew, Aramaic, and Greek so that people can read God's Word in their own language",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Locate the passages of the Old Testament written in Aramaic and explain why those sections fit an Aramaic-speaking setting",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 2:4",
+    "Ezra 4:7-8",
+    "Ezra 7:12-26",
+    "Jeremiah 10:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Hebrew names carry meanings that connect to the stories and promises of Scripture",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 17:5",
+    "Isaiah 7:14",
+    "Matthew 1:21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare how two English translations render the same verse and explain why translators must choose between possible words",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 34:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Dead Sea Scrolls, such as the Great Isaiah Scroll, give evidence for the careful transmission of the Hebrew text",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Isaiah 40:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe Hebrew as a Semitic language related to Aramaic, Ugaritic, Phoenician, and Akkadian",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare word-for-word and thought-for-thought translation approaches and evaluate the strengths of each for Bible study",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 23:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Jews translated the Old Testament into Greek in the Septuagint and how New Testament writers quote it",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 40:6",
+    "Hebrews 10:5-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the discovery of the Ugaritic texts at Ras Shamra and explain how they help clarify rare Hebrew words and poetic patterns",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 29:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Masoretes preserved the Hebrew text by adding vowel points and careful scribal notes",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 5:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Conduct a Hebrew word study using a concordance and lexicon to trace a word's meaning across several passages",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [
+    "Exodus 34:6-7",
+    "Psalm 136:1",
+    "Hosea 6:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how biblical poets use Canaanite language known from Ugaritic texts to declare the LORD's supremacy over Baal",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 29:3-10",
+    "Psalm 68:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how understanding Hebrew terms such as hesed and berit enriches the meaning of key doctrinal passages",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Exodus 34:6-7",
+    "Genesis 17:7",
+    "Psalm 136:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that Scripture in its original languages is the final authority, providentially preserved, and to be translated for all peoples",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Isaiah 40:8",
+    "Matthew 5:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate arguments for the reliable preservation of the Old Testament text using manuscript evidence",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Isaiah 40:8",
+    "Matthew 5:18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the spread of Aramaic as the common language of the ancient Near East using evidence from the Old Testament",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "2 Kings 18:26",
+    "Ezra 4:7",
+    "Daniel 2:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare readings of a passage in the Masoretic Text, the Septuagint, and the Dead Sea Scrolls and explain how scholars weigh textual differences",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 32:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.8"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (Hebrew origin, shalom, Aramaic of Jesus, Hebrew script, English Bible from originals, Aramaic in Daniel, translation choices, Dead Sea Scrolls, translation philosophies, Ugaritic, Septuagint, word study, hesed, preservation, Aramaic lingua franca). Dropped the filler letter-comparison objective by folding it into the script objective. Added Gospel Aramaic words, Aramaic sections of Ezra and Jeremiah, meaningful Hebrew names, Semitic language family, Masoretes, Ugaritic polemic in Psalms, Reformed doctrine of original-language authority, and comparison of textual witnesses. Anchored doctrine of the original languages to Westminster Confession of Faith 1.8 and replaced chapter-level gaps with specific verses.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2012,
+  "output": 4396
+ }
+}

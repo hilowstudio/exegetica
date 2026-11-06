@@ -1,0 +1,282 @@
+{
+ "sub_topic": "BIB.4.3.4",
+ "name": "Ulrich Zwingli and the Anabaptists",
+ "path": [
+  "Bible & Theology",
+  "Church History",
+  "The Reformation Era"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Ulrich Zwingli as a pastor in Zurich, Switzerland, who taught his church from the Bible",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the Anabaptists as a group who taught that only people who confess faith should be baptized, which led others to call them rebaptizers",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how Zwingli began in 1519 to preach through the Gospel of Matthew verse by verse instead of following the assigned readings",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 4:2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recount that early Anabaptist leaders such as Conrad Grebel and Felix Manz were punished by both Roman Catholic and Protestant authorities, including the drowning of Manz in Zurich in 1527",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the 1522 Affair of the Sausages and explain Zwingli's argument that Scripture does not require Christians to keep the Lenten fast",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Colossians 2:16-17",
+    "1 Timothy 4:3-5"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 20.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how the Zurich disputations of 1523 and Zwingli's Sixty-Seven Articles sought to settle church questions by appeal to Scripture",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:11"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe Zwingli's death at the Battle of Kappel in 1531 and Heinrich Bullinger's role in continuing the Zurich reformation",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the disagreement between Luther and Zwingli over the Lord's Supper at the Marburg Colloquy of 1529, including their readings of the words this is my body",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 26:26-28",
+    "1 Corinthians 11:23-26"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q96"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Anabaptist case for believer's baptism from the New Testament passages they cited",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 28:19-20",
+    "Acts 2:38",
+    "Acts 2:41",
+    "Acts 8:36-38"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Zwingli reformed worship in Zurich by removing images and simplifying the service on the basis of the second commandment",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:4-6",
+    "John 4:24"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q96",
+    "Heidelberg Catechism Q98",
+    "Westminster Confession of Faith 21.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare Zwingli's memorial view of the Lord's Supper with the later Reformed confessional teaching of a spiritual feeding on Christ by faith",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 10:16-17",
+    "1 Corinthians 11:23-26",
+    "John 6:53-56"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 29.7",
+    "Heidelberg Catechism Q76"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Contrast the Magisterial Reformers' view that the civil magistrate should support the true church with the Anabaptist call for a church separate from the state",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 13:1-7",
+    "John 18:36"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 23.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed case for infant baptism that Zwingli set against the Anabaptists, grounded in the continuity of God's covenant with believers and their children",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 17:7",
+    "Acts 2:38-39",
+    "Colossians 2:11-12",
+    "1 Corinthians 7:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 28.4",
+    "Heidelberg Catechism Q74",
+    "Westminster Shorter Catechism Q95"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace how Menno Simons and later movements such as the Mennonites, Amish, and Hutterites descend from sixteenth-century Anabaptism",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the seven articles of the Schleitheim Confession of 1527 and the Scripture passages Anabaptists used to support them",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 5:33-37",
+    "Matthew 5:38-39",
+    "Matthew 18:15-17",
+    "2 Corinthians 6:14-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Zurich and other Protestant authorities treated Anabaptism as a threat to civil and religious order and punished its followers",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct a comparison of Lutheran, Reformed, and Anabaptist teaching on baptism, the Lord's Supper, and the relationship of church and state",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Matthew 28:19",
+    "1 Corinthians 11:23-26",
+    "Romans 13:1-7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 28.4",
+    "Westminster Confession of Faith 29.7",
+    "Westminster Confession of Faith 23.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Anabaptist rejection of oaths, military service, and civil office in light of Scripture and the Reformed confessional position",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Matthew 5:33-39",
+    "Romans 13:1-7",
+    "Hebrews 6:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 22.2",
+    "Westminster Confession of Faith 23.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Protestant persecution of Anabaptists using biblical teaching on the nature of Christ's kingdom and on living at peace with others",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "John 18:36",
+    "Romans 12:17-18",
+    "2 Corinthians 10:3-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the Anabaptist idea of a believers' church against the Reformed teaching that the visible church includes believers and their children",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Acts 2:39",
+    "1 Corinthians 7:14",
+    "Ephesians 6:1-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Produce a research study distinguishing the violent Münster Rebellion of 1534 to 1535 from peaceful Anabaptism and analyzing how Münster shaped later views of the movement",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: identifying Zwingli, naming the Anabaptists, the Marburg Colloquy, believer's baptism, Magisterial vs Radical views of church and state (merged with the separation objective), the Affair of the Sausages, Amish and Mennonite descent, the three-tradition comparison, pacifism (widened to oaths and civil office), and the Münster study. Dropped filler: 'obey the Bible exactly', 'persecuted by everyone' (replaced with an accurate account of Grebel and Manz), and 'apply the courage to stand for conviction', which is a disposition rather than an assessable skill. Recast 'defend a Believers' Church' as an evaluation against the Reformed confessional teaching on the visible church, and recast the tragedy of persecution as an explanation of Zurich's reasons plus a biblical evaluation. Added Zwingli's lectio continua preaching, the 1523 disputations and Sixty-Seven Articles, his death at Kappel and Bullinger's succession, worship reform under the second commandment, the Reformed covenantal case for infant baptism, the comparison of Zwingli's memorial view with later Reformed teaching on the Supper, and the Schleitheim Confession. Anchored objectives to specific verses and to WCF, Heidelberg, and Shorter Catechism articles only where they state the doctrine. Questions centered on Calvin, Luther, and the Solas were left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1980,
+  "output": 4782
+ }
+}

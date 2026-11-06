@@ -1,0 +1,270 @@
+{
+ "sub_topic": "AGR.4.2.1",
+ "name": "Supply, Demand & Agricultural Markets",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agribusiness & Marketing",
+  "Agricultural Economics & Markets"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe how the amount of a crop harvested can raise or lower its price at the market",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the buyers and sellers in local agricultural markets such as a farmers market, livestock sale barn, or grain elevator",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the price and availability of fresh fruits and vegetables change with the growing season",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the law of supply and the law of demand using examples of agricultural products",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Construct supply and demand curves from a simple price and quantity schedule for a farm product",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how a surplus or shortage of an agricultural product pushes its price toward equilibrium",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify factors that shift agricultural supply and demand such as weather, input costs, technology, population, and consumer preference",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why individual farmers and ranchers are usually price takers in competitive commodity markets",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the major types of agricultural markets including cash grain, livestock auction, wholesale, retail, and direct-to-consumer markets",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.01.01.a"
+   ]
+  },
+  {
+   "text": "Distinguish between a change in quantity demanded and a change in demand for an agricultural product",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.01.01.01.a"
+   ]
+  },
+  {
+   "text": "Explain how the prices of substitute and complementary products such as beef and pork affect consumer demand for food",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.01.01.01.a"
+   ]
+  },
+  {
+   "text": "Analyze local supply and demand conditions to set a price for a product from a supervised agricultural experience",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.01"
+   ]
+  },
+  {
+   "text": "Interpret a supply and demand graph to predict changes in an agricultural commodity's equilibrium price and quantity",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.01.01.01.a"
+   ]
+  },
+  {
+   "text": "Calculate equilibrium price and quantity and the size of a surplus or shortage from supply and demand schedules for a commodity",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.01.01.01.b"
+   ]
+  },
+  {
+   "text": "Use USDA supply and demand data such as WASDE and NASS reports to describe current conditions in a commodity market",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02.01.02.a"
+   ]
+  },
+  {
+   "text": "Compare agricultural market structures such as perfect competition in grain production and concentration in meatpacking and their effects on price",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.01.01.b"
+   ]
+  },
+  {
+   "text": "Analyze how consumer demand for food products influences what is produced and how it is distributed",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.03.03.b"
+   ]
+  },
+  {
+   "text": "Calculate the price elasticity of demand for an agricultural product and interpret whether demand is elastic or inelastic",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.01.01.01.b"
+   ]
+  },
+  {
+   "text": "Analyze why inelastic demand can cause a record harvest to lower total farm revenue and how this shapes planting and marketing decisions",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.01.01.01.a"
+   ]
+  },
+  {
+   "text": "Analyze how biological production lags create price cycles such as the cattle cycle and hog cycle",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.01.01.b"
+   ]
+  },
+  {
+   "text": "Analyze how price changes move through linked markets such as corn to livestock feed and corn to ethanol and energy",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.01.01.a",
+    "ABS.05.01.01.b"
+   ]
+  },
+  {
+   "text": "Analyze the farm-to-retail price spread and the farmer's share of the food dollar for a selected food product",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.01.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate the effects of a market shock such as a drought, disease outbreak, or export ban on agricultural commodity prices",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.01.01.b",
+    "ABS.05.01.01.c"
+   ]
+  },
+  {
+   "text": "Develop a supply and demand outlook that predicts the price trend for a specific commodity using current market data",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.01.01.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six original competencies, rewording several for precision and broadening the market shock objective. Added early-grade objectives on market participants, seasonal prices, the laws of supply and demand, graphing curves, and surplus and shortage. Added high school objectives on market types, demand shifts versus movement along the curve, substitutes and complements, SAE pricing, equilibrium and elasticity calculations, USDA data, market structure, demand-driven distribution, production cycles, linked markets, the farm-to-retail spread, and a capstone commodity outlook. Futures, hedging, trade policy, and business planning were left to the sibling sub-topics. Standards are assigned only at grades 9 to 12 where an objective directly teaches them.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.01.01.01.a",
+  "ABS.01.01.01.b",
+  "ABS.01.01.02.b",
+  "ABS.01.01.03.c",
+  "ABS.02.02.02.b",
+  "ABS.03.01.02.b",
+  "ABS.04.02.02.b",
+  "ABS.05.01",
+  "ABS.05.01.01.a",
+  "ABS.05.01.01.b",
+  "ABS.05.01.01.c",
+  "ABS.05.03.02.b",
+  "FPP.03.03.03.b",
+  "FPS.02.01.02.a",
+  "FPS.02.02.03.a"
+ ],
+ "usage": {
+  "input": 2540,
+  "output": 3734
+ }
+}

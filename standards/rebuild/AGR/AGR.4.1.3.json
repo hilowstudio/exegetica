@@ -1,0 +1,229 @@
+{
+ "sub_topic": "AGR.4.1.3",
+ "name": "Financing & Agricultural Credit",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agribusiness & Marketing",
+  "Agribusiness Management"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe what it means to borrow money and repay it with interest",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify reasons a farmer or rancher might borrow money, such as buying seed, feeder livestock, land, or equipment",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the main habits that build good credit, such as paying bills on time and not borrowing more than can be repaid",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common sources of agricultural credit, such as the Farm Credit System, commercial banks, the Farm Service Agency, and input or equipment dealers",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the different types of agricultural loans, such as operating, intermediate-term, and long-term real estate loans, and the uses each is meant to finance",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the factors lenders weigh when deciding whether to make a loan, including character, capacity, capital, collateral, and conditions",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Define the terms and conditions of agricultural credit instruments, including principal, APR, collateral, grace periods, co-signers, and personal liability",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.02.02.a"
+   ]
+  },
+  {
+   "text": "Summarize the characteristics of credit instruments available to agricultural businesses, such as operating notes, lines of credit, installment loans, leases, and alternative sources of capital",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.02.01.a"
+   ]
+  },
+  {
+   "text": "Identify financing options available to students starting or expanding an SAE, such as FSA youth loans, local lender programs, and FFA or foundation grants",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.02.01.a"
+   ]
+  },
+  {
+   "text": "Calculate the total cost of a loan using its principal, interest rate, fees, and repayment term",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.02.02.a"
+   ]
+  },
+  {
+   "text": "Construct an amortization schedule for an agricultural loan and compare equal-payment and equal-principal repayment plans",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.02.02.a"
+   ]
+  },
+  {
+   "text": "Analyze the operating needs of an SAE or agricultural business to determine whether a loan is necessary and how much should be borrowed",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.02.01.b",
+    "ABS.03.02"
+   ]
+  },
+  {
+   "text": "Analyze how financing a major asset such as a tractor or breeding herd would affect cash flow and repayment capacity",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.01.02.b",
+    "ABS.03.01"
+   ]
+  },
+  {
+   "text": "Interpret the financial ratios lenders use to judge creditworthiness, such as current ratio, debt-to-asset ratio, and term debt coverage",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate loan offers from different agricultural lenders based on interest rate, collateral requirements, fees, and repayment terms",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.02.02.a",
+    "ABS.03.02"
+   ]
+  },
+  {
+   "text": "Compare leasing and purchasing land or equipment as ways to gain control of agricultural assets",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.02.01.a",
+    "ABS.03.01.02.b"
+   ]
+  },
+  {
+   "text": "Compare strategies for responsibly managing a credit budget, such as matching loan terms to asset life, keeping borrowing within repayment capacity, and maintaining a working capital reserve",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.02.02.b"
+   ]
+  },
+  {
+   "text": "Prepare a loan application package for an SAE expansion that includes a balance sheet, projected cash flow, and description of the intended use of funds",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.02.02.01.b",
+    "ABS.03.02"
+   ]
+  },
+  {
+   "text": "Develop a financing plan for a farm purchase or expansion that matches loan type to the intended use of funds and recommends how available credit should be used",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.02.02.c",
+    "ABS.03.02",
+    "ABS.03"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives, rewording a few for precision (loan types now tied to their uses, loan cost includes fees, loan offer evaluation includes fees, financing plan includes credit recommendations). Added objectives on reasons farmers borrow (5), sources of agricultural credit (7), lender credit factors such as the five Cs (8), credit terms and conditions (9), types of credit instruments (9), SAE youth financing options (9), amortization schedules (10), analyzing whether a loan is needed (10), effects of financing a major asset on cash flow (11), lender financial ratios (11), leasing versus buying (11), responsible credit budget strategies (11), and preparing a loan application package (12). Standards were assigned only from the provided list. Tax, legal, risk, record-keeping, and ownership-structure content was left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.02.02.01.b",
+  "ABS.02.02.01.c",
+  "ABS.02.02.03.a",
+  "ABS.02.02.03.b",
+  "ABS.03",
+  "ABS.03.01",
+  "ABS.03.01.02.a",
+  "ABS.03.01.02.b",
+  "ABS.03.02",
+  "ABS.03.02.01.a",
+  "ABS.03.02.01.b",
+  "ABS.03.02.02.a",
+  "ABS.03.02.02.b",
+  "ABS.03.02.02.c",
+  "CRP.03.02.01.a"
+ ],
+ "usage": {
+  "input": 2555,
+  "output": 3051
+ }
+}

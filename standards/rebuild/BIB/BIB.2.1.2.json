@@ -1,0 +1,418 @@
+{
+ "sub_topic": "BIB.2.1.2",
+ "name": "The Covenants: Adamic, Noahic, Abrahamic, Mosaic, Davidic, New",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "Biblical Narrative Structure"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify a covenant as a special promise God makes with his people and always keeps",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Deuteronomy 7:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell God's promise to Noah never again to flood the whole earth and name the rainbow as its sign",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 9:11-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God promised Abraham a large family, a land, and that all nations would be blessed through him",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Genesis 15:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell how God gave Israel the Ten Commandments at Mount Sinai after rescuing them from Egypt",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 19:3-6",
+    "Exodus 20:1-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall God's promise to David that a king from his family would rule forever",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "2 Samuel 7:12-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the six major biblical covenants in order and match each to the person through whom God made it",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 3:15",
+    "Genesis 9:11",
+    "Genesis 17:7",
+    "Exodus 24:7-8",
+    "2 Samuel 7:12-16",
+    "Jeremiah 31:31-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Give examples from the covenant stories that show God keeping his promises even when his people were unfaithful",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 21:1-2",
+    "Joshua 21:43-45",
+    "Psalm 89:30-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the parties, promises, obligations, and sign in a given covenant passage",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [
+    "Genesis 9:8-17",
+    "Genesis 17:1-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why God's rescue of Israel from Egypt came before the giving of the law at Sinai and what this shows about the relationship between God's promise and his commands",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 19:4-6",
+    "Exodus 20:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the promise God spoke in the garden that the offspring of the woman would crush the serpent and explain why the Reformed tradition sees it as the first announcement of the gospel",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:15"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q19",
+    "Westminster Confession of Faith 7.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the command and warning God gave Adam in the garden and explain why the Reformed tradition calls this arrangement the covenant of works",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:16-17",
+    "Hosea 6:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.2",
+    "Westminster Shorter Catechism Q12"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the old covenant written on tablets of stone with the new covenant promise of the law written on the heart",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Jeremiah 31:31-34",
+    "Ezekiel 36:26-27",
+    "2 Corinthians 3:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Jesus meant at the Last Supper when he called the cup the new covenant in his blood",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Luke 22:20",
+    "1 Corinthians 11:25",
+    "Exodus 24:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the sign of each covenant and explain what each sign pointed to",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 9:12-13",
+    "Genesis 17:10-11",
+    "Exodus 31:13-17",
+    "Luke 22:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Noahic covenant as God's commitment to preserve the created order and human life until the end of the age",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 8:21-22",
+    "Genesis 9:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the covenant ceremony of Genesis 15 and explain what God passing alone between the pieces reveals about who guarantees the promise",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 15:9-18",
+    "Jeremiah 34:18-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the conditional and unconditional elements in the Abrahamic, Mosaic, and Davidic covenants",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Genesis 17:1-2",
+    "Exodus 19:5-6",
+    "2 Samuel 7:14-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition teaches that God relates to people by way of covenant as an act of voluntary condescension",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 17:7",
+    "Psalm 113:5-6",
+    "Luke 17:10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace how the blessings and curses of the Mosaic covenant explain Israel's exile and the promise of restoration",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 28:1-2",
+    "Deuteronomy 28:15",
+    "Deuteronomy 30:1-6",
+    "2 Kings 17:7-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul connects the promise to Abraham's offspring with Christ and with gentile believers",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 3:7-9",
+    "Galatians 3:16",
+    "Galatians 3:29",
+    "Genesis 12:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the purposes of the Mosaic law according to Paul, including revealing sin and guarding God's people until Christ came",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Galatians 3:19-24",
+    "Romans 3:20",
+    "Romans 7:7"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6",
+    "Heidelberg Catechism Q3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the Davidic covenant promise through the Psalms and Prophets to its fulfillment in Jesus as the son of David",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "2 Samuel 7:12-16",
+    "Psalm 89:3-4",
+    "Isaiah 9:6-7",
+    "Luke 1:32-33",
+    "Acts 2:29-36"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the structure of the Sinai covenant with ancient Near Eastern suzerain and vassal treaties",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 20:1-17",
+    "Deuteronomy 28:1-2",
+    "Deuteronomy 31:24-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed distinction between the covenant of works and the covenant of grace using Paul's comparison of Adam and Christ",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Romans 5:12-19",
+    "Galatians 3:10-14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.2",
+    "Westminster Confession of Faith 7.3",
+    "Westminster Shorter Catechism Q20"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a chart tracing the progressive revelation of God's promises from the Adamic to the new covenant",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 3:15",
+    "Genesis 12:1-3",
+    "2 Samuel 7:12-16",
+    "Jeremiah 31:31-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition understands the sacraments as signs and seals of the covenant of grace, including the link it draws between circumcision and baptism",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 17:7",
+    "Genesis 17:10-11",
+    "Colossians 2:11-12",
+    "Acts 2:38-39"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 27.1",
+    "Heidelberg Catechism Q74"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Hebrews uses Jeremiah's new covenant prophecy to argue that the first covenant has become obsolete",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Hebrews 8:6-13",
+    "Jeremiah 31:31-34",
+    "Hebrews 10:15-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how covenant theology and dispensationalism differ in their account of continuity between Israel and the church",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 11:17-24",
+    "Galatians 3:29",
+    "Ephesians 2:11-22"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Scripture the Reformed teaching that one covenant of grace is administered differently under the law and under the gospel",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 4:1-12",
+    "Galatians 3:8",
+    "Hebrews 11:13",
+    "Hebrews 11:39-40"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Write a theological argument showing how Christ is the mediator and fulfillment of each biblical covenant",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Hebrews 8:6",
+    "Hebrews 9:15",
+    "2 Corinthians 1:20",
+    "Luke 22:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.1",
+    "Westminster Confession of Faith 7.3"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (rainbow, Abraham's promise, God's faithfulness, Davidic promise, stone versus heart, covenant signs, conditional elements, Abraham to Christ, purposes of the law, progressive revelation chart, covenant theology versus dispensationalism, unity of the covenant of grace, Christ as mediator). Dropped the generic K item on keeping promises and replaced it with a covenant-specific one. Reframed the rule versus promise item around the order of rescue and law at Sinai. Added missing content: the Adamic covenant and covenant of works, Genesis 3:15 as the first gospel promise, Sinai narrative, ordering the six covenants, covenant parts, the Last Supper cup, the Noahic preservation of creation, the Genesis 15 ceremony, covenant as voluntary condescension, blessings, curses and exile, Davidic fulfillment, treaty form, works and grace distinction, sacraments as covenant signs, and Hebrews' exegesis of Jeremiah 31. Anchored each objective to specific verses and added WCF, WSC, and Heidelberg references where they state the doctrine.",
+ "problems": [],
+ "old_count": 15,
+ "candidates": [],
+ "usage": {
+  "input": 2060,
+  "output": 7199
+ }
+}

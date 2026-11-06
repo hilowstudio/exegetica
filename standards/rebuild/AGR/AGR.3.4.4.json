@@ -1,0 +1,207 @@
+{
+ "sub_topic": "AGR.3.4.4",
+ "name": "Emerging Agricultural Technology",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Surveying, Technology & Precision Ag"
+ ],
+ "grades": [
+  6,
+  7,
+  8,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify examples of emerging technologies used on modern farms and ranches, such as robotic milkers, automated feeders, and autonomous tractors",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how a specific emerging technology helps a farmer solve a real problem such as a labor shortage, animal care demands, or crop loss",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how controlled environment agriculture systems such as vertical farms and automated hydroponic greenhouses grow crops year-round",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how agricultural robots use cameras, machine vision, and programmed decisions to perform tasks such as weeding, harvesting, or milking",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how artificial intelligence and data analytics turn farm records into management recommendations for a producer",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare a conventional method of completing a farm task with an automated method in terms of time, labor, and consistency",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how automation changes the labor needs and skill requirements of a specific farm task",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.01"
+   ]
+  },
+  {
+   "text": "Identify automation and climate control technologies used in modern animal production facilities and explain how they affect animal welfare and efficiency",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.05.01.02.a"
+   ]
+  },
+  {
+   "text": "Operate an automated system such as a computerized feeding system or greenhouse environmental controller to carry out a production task in a lab or SAE setting",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "AS.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Analyze how emerging production technologies such as vertical farming and alternative proteins align with sustainable practices and natural resource use",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.03.04.01.b",
+    "FPP.04.04.02.a",
+    "NRS.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Explain how digital traceability tools such as blockchain records track agricultural products from the farm through the supply chain",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.06.01.02.a"
+   ]
+  },
+  {
+   "text": "Analyze career pathways created by emerging agricultural technology and the technical skills each requires",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02"
+   ]
+  },
+  {
+   "text": "Evaluate the benefits and limitations of adopting a specific emerging technology for a given farm or food operation",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.02.02.b",
+    "FPP.04.02.03.c"
+   ]
+  },
+  {
+   "text": "Analyze the financial impact of purchasing a major technology asset such as a robotic milking system using a partial budget and payback period",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.03.01.02.b"
+   ]
+  },
+  {
+   "text": "Evaluate the ethical, privacy, and data ownership issues raised when technology companies collect and use farm data",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.01"
+   ]
+  },
+  {
+   "text": "Justify a technology adoption plan for a farm that weighs cost, employee training needs, and expected return",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.02.02.c",
+    "ABS.03.01.02.b",
+    "ABS.01.04"
+   ]
+  },
+  {
+   "text": "Create a proposal for an emerging technology solution to a problem in an SAE or local operation suitable for presentation in an FFA agriscience or ag technology event",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.04.02.02.c"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded the grade 6, 9, 11, and 12 objectives. Dropped the grade 7 sensor network objective (belongs to Drones & Agricultural Sensors) and the grade 8 autosteer objective (belongs to GPS, GIS & Precision Agriculture). Added competencies on controlled environment agriculture, robotics and machine vision, AI and data analytics, conventional versus automated comparison, animal facility automation, hands-on operation of automated systems, sustainability of emerging production systems, digital traceability, careers, asset purchase analysis, data ethics, and an FFA-ready technology proposal. Anchored grade 9 to 12 objectives to fitting AFNR standards.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.01.04",
+  "ABS.03.01.02.b",
+  "ABS.04.02.02.b",
+  "ABS.04.02.02.c",
+  "AS.02.02.01.b",
+  "AS.03.03.01.c",
+  "AS.05.01.02.a",
+  "BS.03",
+  "FPP.04.02.03.c",
+  "FPP.04.04.02.a",
+  "FPS.01",
+  "FPS.02",
+  "FPS.06.01.02.a",
+  "NRS.02.02.01.b",
+  "PS.03.04.01.b"
+ ],
+ "usage": {
+  "input": 2615,
+  "output": 3081
+ }
+}

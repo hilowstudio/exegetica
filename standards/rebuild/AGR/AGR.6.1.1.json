@@ -1,0 +1,276 @@
+{
+ "sub_topic": "AGR.6.1.1",
+ "name": "Ecosystems & Biomes",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Natural Resources & Environmental Science",
+  "Ecology & Ecosystems"
+ ],
+ "grades": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the living and nonliving parts of a schoolyard, garden, or farm habitat",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort local plants and animals by the habitat where they live",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how a body feature or behavior helps a plant or animal survive in its habitat",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how a habitat provides food, water, shelter, and space for the living things in it",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how a change to a habitat such as drought, flooding, or plowing affects the organisms that live there",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate the major land biomes of the world on a map and name the biome of the local area",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the plants and animals found in two different biomes, such as forest and grassland",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how latitude, elevation, temperature, and precipitation patterns determine where biomes occur",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish among organisms, populations, communities, ecosystems, and biomes as levels of ecological organization",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the stages of ecological succession that follow a disturbance such as a wildfire or an abandoned crop field",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how competition, predation, mutualism, parasitism, and commensalism shape the community within an ecosystem",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret a climatogram to predict the biome of a location",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify a given ecosystem by its climate, soil, and dominant vegetation to identify its biome",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the abiotic characteristics such as soil type, climate, and topography that define a local ecosystem",
+   "grade": 9,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.02.05.a"
+   ]
+  },
+  {
+   "text": "Describe the characteristics of rangeland and grassland biomes and the ecosystem services they provide to agriculture and society",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.04.01.04.a"
+   ]
+  },
+  {
+   "text": "Analyze how limiting factors such as water, temperature, and predation determine which organisms can survive in a biome",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.01.02.c"
+   ]
+  },
+  {
+   "text": "Apply the concept of carrying capacity to determine an appropriate stocking rate for a pasture or range unit",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the concept of landscape ecology and summarize how composition, structure, and function shape a farm or ranch landscape",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PS.04.02.03.a"
+   ]
+  },
+  {
+   "text": "Describe how indicator organisms such as macroinvertebrates and amphibians are used to assess the condition of an ecosystem",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.03.05.04.a"
+   ]
+  },
+  {
+   "text": "Evaluate the interdependence of biotic and abiotic components in a local agricultural or natural ecosystem",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.01.02.c"
+   ]
+  },
+  {
+   "text": "Compare natural ecosystems with agroecosystems such as cropland and pasture in structure, function, and stability",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Assess the status of an ecosystem by surveying the trees, herbaceous plants, wildlife, and insects present, including native and invasive species",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.02.01.c",
+    "NRS.01.02.02.c",
+    "NRS.01.02.03.c"
+   ]
+  },
+  {
+   "text": "Interpret field signs of habitat disturbance and resilience to judge the health of an ecosystem",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.05.02.c"
+   ]
+  },
+  {
+   "text": "Evaluate a habitat site to determine its ecological quality and whether it is threatened, as in an FFA natural resources career development event",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ESS.05.02.04.c"
+   ]
+  },
+  {
+   "text": "Evaluate how a change in climate or land use would shift the boundary between two neighboring biomes",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.01.02.c"
+   ]
+  },
+  {
+   "text": "Create an ecosystem management plan for a farm, ranch, or SAE property that sustains production while enhancing ecosystem function through native plant diversity",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "NRS.01.01.03.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six original objectives as real competencies and anchored the grade 10 and 12 ones to NRS.01.01.02.c. Filled gaps across the span: living and nonliving habitat parts, adaptations, habitat change, biome mapping, climate controls on biomes, levels of organization, succession, species interactions, and climatogram interpretation in the lower grades. Added high school objectives tied to AFNR standards on abiotic characteristics, rangeland ecosystem services, landscape ecology, bioindicators, biotic and abiotic interdependence, ecosystem status surveys, disturbance and resilience, and habitat evaluation for FFA CDE work, plus carrying capacity and stocking rate, natural versus agroecosystem comparison, and a culminating SAE management plan. Left soil microbe, carbon cycling, and biodiversity-focused standards to the Nutrient Cycles and Biodiversity siblings.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ESS.03.04.01.a",
+  "ESS.03.04.01.b",
+  "ESS.03.04.01.c",
+  "ESS.03.04.02.a",
+  "ESS.03.05.04.a",
+  "ESS.05.02.04.c",
+  "NRS.01.01.02.c",
+  "NRS.01.01.03.c",
+  "NRS.01.02.01.c",
+  "NRS.01.02.02.c",
+  "NRS.01.02.03.c",
+  "NRS.01.02.05.a",
+  "NRS.01.05.02.c",
+  "NRS.04.01.04.a",
+  "PS.04.02.03.a"
+ ],
+ "usage": {
+  "input": 2542,
+  "output": 4157
+ }
+}

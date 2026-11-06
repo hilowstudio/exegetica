@@ -1,0 +1,196 @@
+{
+ "sub_topic": "AGR.4.3.1",
+ "name": "Agricultural Sales & Customer Relations",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agribusiness & Marketing",
+  "Sales, Marketing & Communication"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe the qualities and behaviors of a good salesperson at a farm stand or market, such as friendliness, honesty, and product knowledge",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate courteous customer service by greeting, listening to, and thanking a customer during a mock farm stand or FFA plant sale",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the steps of a basic sales process, from approaching a customer to closing the sale and following up",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Calculate the total price and correct change for a sale of agricultural products and record the transaction in a simple sales log",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish between the features and the benefits of an agricultural product when explaining it to a customer",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare methods of selling agricultural products directly to consumers, such as farm stands, farmers markets, community-supported agriculture, and online orders",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.03.02.b"
+   ]
+  },
+  {
+   "text": "Use open-ended questions and active listening to identify the needs of an agricultural customer, such as a producer buying seed, feed, or equipment",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.02.01.a"
+   ]
+  },
+  {
+   "text": "Classify the types of sales calls used in AFNR businesses, such as retail counter sales, on-farm calls, prospecting calls, and service calls",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.02.02.c"
+   ]
+  },
+  {
+   "text": "Prepare responses to customer objections about price, competitor products, and product performance during an agricultural sales call",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.02.02.b"
+   ]
+  },
+  {
+   "text": "Apply techniques for resolving customer complaints and providing post-sale service that preserve the customer relationship in an agricultural business",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.02.02.b"
+   ]
+  },
+  {
+   "text": "Explain how market prices, competition, and seasonal supply influence pricing and negotiation in agricultural sales",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.01"
+   ]
+  },
+  {
+   "text": "Explain the ethical and legal responsibilities of an agricultural salesperson, such as truthful product claims, accurate weights and measures, and honoring guarantees",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05"
+   ]
+  },
+  {
+   "text": "Plan and deliver a role-played sales call for an agricultural product or service following the format of the FFA Agricultural Sales Career Development Event",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.02.02.c",
+    "ABS.05.02.01.a"
+   ]
+  },
+  {
+   "text": "Evaluate a sales strategy for an agricultural product based on customer needs, competition, and market conditions",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05.01",
+    "ABS.05"
+   ]
+  },
+  {
+   "text": "Analyze sales and customer records from a supervised agricultural experience to identify customer trends and set realistic sales goals",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05"
+   ]
+  },
+  {
+   "text": "Develop a customer relations plan for an agribusiness that uses follow-up, customer records, and service practices to build repeat business and referrals",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "ABS.05"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded all six existing objectives. Split complaint handling from objection handling into distinct grade 10 competencies. Added customer service practice (5), sales math and record keeping (7), features versus benefits (7), needs identification (9), types of sales calls (9), price and competition in negotiation (10), sales ethics and law (11), an FFA Agricultural Sales CDE style sales call (11), and SAE sales record analysis (12). Marketing plans, advertising, and branding were left to sibling sub-topics. Standards were attached only at grades 9 to 12, except the direct-marketing comparison at grade 8, which matches ABS.05.03.02.b.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.04.02.02.b",
+  "ABS.05",
+  "ABS.05.01",
+  "ABS.05.02.01.a",
+  "ABS.05.02.02.b",
+  "ABS.05.02.02.c",
+  "ABS.05.03",
+  "ABS.05.03.01.a",
+  "ABS.05.03.01.b",
+  "ABS.05.03.01.c",
+  "ABS.05.03.02.a",
+  "ABS.05.03.02.b",
+  "ABS.05.03.02.c",
+  "ABS.05.03.03.a",
+  "ABS.05.03.03.b"
+ ],
+ "usage": {
+  "input": 2546,
+  "output": 2822
+ }
+}

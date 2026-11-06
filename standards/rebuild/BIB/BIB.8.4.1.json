@@ -1,0 +1,314 @@
+{
+ "sub_topic": "BIB.8.4.1",
+ "name": "James: Faith Working through Love",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "The General (Catholic) Epistles"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify James as a letter in the Bible written by James, the brother of Jesus, to teach believers how to live",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "James 1:1",
+    "Matthew 13:55",
+    "Galatians 1:19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell James's picture of the tongue as a small spark that can set a great forest on fire",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "James 3:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall James's promise that God gives wisdom generously to those who ask him in faith",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "James 1:5-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall James's teaching that faith without works is dead",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "James 2:17",
+    "James 2:26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe what it looks like in daily life to be quick to hear, slow to speak, and slow to anger",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "James 1:19-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize James's teaching that trials test faith and produce steadfastness, so believers can count them joy",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "James 1:2-4",
+    "James 1:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain James's teaching that temptation comes from our own desires and not from God, while every good gift comes from the unchanging Father",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "James 1:13-18"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why showing favoritism to the rich breaks the royal law to love your neighbor as yourself",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "James 2:1-9",
+    "Leviticus 19:18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe James's definition of pure religion as controlling the tongue, caring for orphans and widows, and keeping oneself unstained from the world",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "James 1:26-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare hearing the word with doing the word using James's illustration of the person who looks in a mirror and forgets",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "James 1:22-25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how James uses Abraham and Rahab as examples of faith shown by works",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "James 2:21-25",
+    "Genesis 22:1-14",
+    "Joshua 2:1-21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast the wisdom from above with earthly wisdom using the qualities and fruits James lists",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "James 3:13-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain James's warnings against speaking evil of a brother and against boasting about tomorrow instead of saying if the Lord wills",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "James 4:11-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe James's call to restore a believer who wanders from the truth",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "James 5:19-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how James traces quarrels to selfish desires and calls readers to humble submission to God",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "James 4:1-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how James and Paul use the words faith, works, and justified so that their teaching agrees rather than conflicts, as the Reformed confessions explain",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "James 2:14-26",
+    "Romans 3:28",
+    "Romans 4:1-5",
+    "Ephesians 2:8-10",
+    "Galatians 5:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.2",
+    "Westminster Confession of Faith 16.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply James's teaching on taming the tongue, including the stricter judgment of teachers and the inconsistency of blessing and cursing, to examples of everyday speech",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "James 3:1-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain James's instructions on prayer for the sick, confession of sins to one another, and the example of Elijah's prayer",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "James 5:13-18",
+    "1 Kings 17:1",
+    "1 Kings 18:41-45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain James's phrase the perfect law of liberty and how the Reformed tradition understands the moral law as a rule of life for believers",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "James 1:25",
+    "James 2:8-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain James's warning to rich oppressors and his call for patient endurance until the coming of the Lord, using the examples of the farmer, the prophets, and Job",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "James 5:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the features of James as wisdom writing addressed to Jewish Christians of the dispersion, including its short exhortations and vivid images",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "James 1:1",
+    "James 3:3-4",
+    "James 3:11-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare parallel teachings in James and the Sermon on the Mount on trials, mercy, judging, and oaths",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "James 1:2-4",
+    "Matthew 5:10-12",
+    "James 2:13",
+    "Matthew 5:7",
+    "James 4:11-12",
+    "Matthew 7:1-5",
+    "James 5:12",
+    "Matthew 5:33-37"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate historical debates over James, including Luther's hesitations, in light of the Reformed confessions' acceptance of James as canonical Scripture",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "James 2:24",
+    "Romans 3:28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an explanation of how good works serve as the fruit and evidence of true faith rather than its ground, drawing on James, Paul, Jesus, and the confessions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "James 2:18",
+    "Matthew 7:16-20",
+    "Ephesians 2:8-10",
+    "Galatians 5:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.2",
+    "Heidelberg Catechism Q86"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (authorship, tongue as spark, faith without works, quick to hear, trials, favoritism, hearing and doing, two wisdoms, Paul and James, taming the tongue, prayer for the sick, law of liberty, Sermon on the Mount parallels, pure religion, fruit as evidence) and anchored each to specific verses. Moved pure religion down to grade 4 as a describe objective and turned the fruit synthesis into a constructed explanation tied to WCF 16.2 and HC Q86. Added Reformed confessional anchors for the Paul and James analysis (WCF 11.2, 16.2), the law of liberty (WCF 19.6), temptation (WCF 5.4), and canonicity (WCF 1.2). Dropped the vague 'defend the practical nature of Christian living' filler. Added missing content from James: asking God for wisdom, temptation and good gifts, Abraham and Rahab, quarrels and submission, judging and boasting about tomorrow, rich oppressors and patience, restoring the wanderer, genre and audience, and the historical debate over the letter.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1918,
+  "output": 4728
+ }
+}

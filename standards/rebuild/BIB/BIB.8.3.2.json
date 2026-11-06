@@ -1,0 +1,272 @@
+{
+ "sub_topic": "BIB.8.3.2",
+ "name": "Apocalyptic Symbolism and OT Imagery",
+ "path": [
+  "Bible & Theology",
+  "New Testament Studies: Life and Doctrine in Christ",
+  "Revelation"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Jesus as both the Lion of the tribe of Judah and the Lamb in John's vision",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 5:5-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the great dragon in Revelation as Satan, the enemy of God and his people",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 12:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that numbers in Revelation carry meaning, such as seven standing for fullness or completeness",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Revelation 1:4",
+    "Revelation 5:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the throne room vision, including the throne, the rainbow, the elders, and the living creatures full of eyes and wings",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 4:1-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the four living creatures around God's throne with the creatures in Ezekiel's vision and the seraphim in Isaiah's vision",
+   "grade": 4,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 4:6-8",
+    "Ezekiel 1:5-10",
+    "Isaiah 6:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why Jesus is called the Lamb who was slain by connecting the title to the Passover lamb and his sacrifice for sinners",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 5:6-12",
+    "Exodus 12:3-13",
+    "John 1:29"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q25"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify symbols that Revelation explains within the text, such as lampstands as churches, incense as prayers, and the dragon as Satan",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 1:20",
+    "Revelation 5:8",
+    "Revelation 12:9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Contrast the Beast with the Lamb by showing how the Beast imitates the Lamb's death, resurrection, and authority",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 13:1-8",
+    "Revelation 5:6-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the Four Horsemen and explain their background in the horsemen and chariots of Zechariah's visions",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 6:1-8",
+    "Zechariah 1:8-11",
+    "Zechariah 6:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Revelation draws on Daniel's vision of the four beasts and the Son of Man in its portraits of Christ and the Beast",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 7:1-14",
+    "Revelation 1:12-16",
+    "Revelation 13:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how John's eating of the little scroll reworks Ezekiel's commissioning to show the prophet's calling",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 10:8-11",
+    "Ezekiel 2:8-3:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Babylon in Revelation as a symbol of the world system opposed to God, drawing on the prophets' oracles against historical Babylon",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Revelation 17:1-6",
+    "Revelation 18:2-4",
+    "Jeremiah 51:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Connect the bowl judgments in Revelation to the plagues of the Exodus and explain what the parallel teaches about God's deliverance of his people",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 16:1-11",
+    "Exodus 7:20-21",
+    "Exodus 9:8-11",
+    "Exodus 10:21-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the mark of the Beast with the seal of God using the Old Testament background of marking on the forehead and hand",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 7:2-4",
+    "Revelation 13:16-14:1",
+    "Ezekiel 9:4",
+    "Deuteronomy 6:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the features of apocalyptic literature, including visions, angelic interpreters, symbolic numbers and creatures, and cosmic conflict, using Daniel and Revelation as examples",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Revelation 1:1-3",
+    "Daniel 7:15-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply the principle that Scripture interprets Scripture by tracing an image in Revelation back to its Old Testament source to explain its meaning",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [
+    "Revelation 1:12-16",
+    "Daniel 7:9-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a reference guide to symbolic numbers in Revelation, such as 7, 12, 144,000, 1,000, and the forty-two months, that explains each with its biblical background",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Revelation 7:4-8",
+    "Revelation 11:2-3",
+    "Revelation 12:6",
+    "Revelation 12:14",
+    "Daniel 7:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how reading Revelation as apocalyptic prophecy sent as a letter shapes its interpretation differently from reading it as straightforward narrative",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Revelation 1:1-4",
+    "Revelation 22:6-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the preterist, historicist, futurist, and idealist approaches to Revelation, including how each handles literal and symbolic readings of its imagery",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Revelation 1:1-3",
+    "Revelation 1:19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.7",
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace the conflict between the seed of the woman and the serpent from Genesis 3:15 through the vision of the woman and the dragon in Revelation 12",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 3:15",
+    "Revelation 12:1-17"
+   ],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Lion and Lamb, Dragon, numbers, throne room, slain Lamb, Beast and Lamb, Four Horsemen, Daniel imagery, Babylon, Exodus plagues, mark and seal, numerology guide, interpretive methods, genre, seed and serpent). Split the Daniel and Ezekiel objective into two distinct analyses (Daniel 7 and the scroll of Ezekiel 2-3). Folded the observation of strange creatures into the throne room objective and added a comparison with Ezekiel and Isaiah. Added objectives on symbols Revelation interprets itself, features of apocalyptic genre, and using Scripture to interpret Scripture. Recast genre defense as analysis of reading Revelation as apocalyptic prophecy in letter form. Expanded the interpretive methods objective to the four main approaches. Added OT anchor texts throughout and confessional references where a doctrine is stated (WSC Q25, WCF 1.7, 1.9). Left victory, seven churches, and New Jerusalem content to sibling sub-topics.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1993,
+  "output": 4599
+ }
+}

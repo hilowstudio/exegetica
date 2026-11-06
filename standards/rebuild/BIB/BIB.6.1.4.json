@@ -1,0 +1,306 @@
+{
+ "sub_topic": "BIB.6.1.4",
+ "name": "Theological Correlation",
+ "path": [
+  "Bible & Theology",
+  "Hermeneutics (The Art of Interpretation)",
+  "Exegesis and Application"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify one thing a Bible story shows about what God is like",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 78:4",
+    "Psalm 145:3-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recognize that the whole Bible tells one story of God's plan to save his people through Jesus",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Luke 24:27",
+    "John 5:39"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q19"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Point out how God keeps the same promise in two different Bible stories",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Joshua 21:45"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare two Bible stories to show that God acts with the same character in each",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Malachi 3:6",
+    "Hebrews 13:8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize in one sentence what a short passage teaches about God, people, or salvation",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition holds that Scripture does not contradict itself because God is its one author",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 3:16",
+    "2 Peter 1:20-21"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.4",
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Use cross-references to locate other passages that teach the same truth as a given verse",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [
+    "Acts 17:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the principle that clearer passages of Scripture are used to interpret harder ones",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "2 Peter 3:15-16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.7",
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare a specific biblical command with the general principle that another passage shows it expresses",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 25:4",
+    "1 Corinthians 9:9-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Categorize passages under the major headings of doctrine such as God, Scripture, humanity, sin, Christ, salvation, the church, and last things",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "2 Timothy 3:16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace how a theme such as the promised Redeemer unfolds from the Old Testament to its fulfillment in the New Testament",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 3:15",
+    "Isaiah 53:5",
+    "Galatians 4:4-5",
+    "Hebrews 1:1-2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5",
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the doctrines a passage teaches directly and the doctrines it assumes",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Ephesians 2:8-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret a narrative passage in light of teaching passages that comment on it to identify its theological principle",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 15:6",
+    "Romans 4:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish exegesis, biblical theology, and systematic theology and explain how each builds on the others",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "2 Timothy 2:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the analogy of Scripture and the analogy of faith as principles for interpreting a passage within the whole of the Bible",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Romans 12:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed confessions summarize biblical teaching while remaining subordinate to Scripture",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:11",
+    "Isaiah 8:20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10",
+    "Westminster Confession of Faith 31.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze an apparent tension between two passages and show how context and the whole of Scripture resolve it",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:28",
+    "James 2:24"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 11.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a doctrinal statement drawn from careful exegesis of several related passages",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "2 Timothy 2:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate whether a proof text is being used faithfully to its context or lifted out of it",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "2 Timothy 2:15",
+    "2 Peter 3:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate a doctrine such as the Trinity by gathering and weighing the full range of biblical evidence for it",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Deuteronomy 6:4",
+    "Matthew 28:19",
+    "John 1:1",
+    "2 Corinthians 13:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 2.3",
+    "Westminster Shorter Catechism Q6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare how the Reformed tradition and another tradition correlate passages on a disputed doctrine and evaluate which reading better accounts for the whole of Scripture",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 17:7",
+    "Acts 2:38-39",
+    "Colossians 2:11-12"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 28.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize the results of word study, structural analysis, and historical context into a doctrinal conclusion and compare it with the tradition's confessional statement",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "2 Timothy 3:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (what a story teaches about God, God acting consistently, summarizing doctrine, fitting a verse with the whole Bible, specific command versus principle, categorizing under doctrines, analyzing implications, narrative to principle, exegesis to systematics, analogy of faith, constructing statements, evaluating doctrine, proof text handling, synthesis). Dropped vague 'name Jesus in the story' and 'all stories point to one big Truth' in favor of a concrete one-story-of-redemption objective. Added cross-referencing, Scripture's unity and non-contradiction, clearer interprets harder, tracing themes through progressive revelation, distinguishing exegesis from biblical and systematic theology, the confessions as subordinate summaries, resolving apparent tensions, weighing full biblical evidence for a doctrine, and comparing traditions' correlations. Dropped Isaiah 28:9-10 as a misapplied text, kept Romans 12:6, 2 Timothy 2:15 and 3:16-17, and WCF 1.9, and added specific verses and confessional articles that state each doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1892,
+  "output": 4553
+ }
+}

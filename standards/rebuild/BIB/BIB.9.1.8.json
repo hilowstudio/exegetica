@@ -1,0 +1,402 @@
+{
+ "sub_topic": "BIB.9.1.8",
+ "name": "Nehemiah",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Historical Books"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Nehemiah as the cupbearer who served the king of Persia",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Nehemiah 1:11",
+    "Nehemiah 2:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell that Nehemiah led God's people to rebuild the broken walls of Jerusalem",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Nehemiah 2:17-18",
+    "Nehemiah 6:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that the builders worked with a tool in one hand and a weapon in the other",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Nehemiah 4:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Nehemiah prayed to God before he answered the king's question",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 2:4-5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize how Nehemiah organized the people so that each group repaired a section of the wall, often near its own house",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 3:1-2",
+    "Nehemiah 3:23",
+    "Nehemiah 3:28-30"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why an ancient city needed walls and why Jerusalem's broken walls were a disgrace to God's people",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 1:3",
+    "Nehemiah 2:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the people listened, wept, and then rejoiced when Ezra read the Law aloud",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:1-3",
+    "Nehemiah 8:9-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the parts of Nehemiah's prayer in chapter 1, including praise, confession of sin, remembering God's promise, and making a request",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 1:4-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Locate Susa and Jerusalem on a map and describe Nehemiah's journey from the Persian court to Judah",
+   "grade": 4,
+   "bloom": 3,
+   "scripture": [
+    "Nehemiah 1:1",
+    "Nehemiah 2:6-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the people dedicated the finished wall with thanksgiving, singing, and great joy",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 12:27",
+    "Nehemiah 12:31",
+    "Nehemiah 12:43"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Identify Sanballat, Tobiah, and Geshem and describe the tactics of mockery, threats, and deception they used against the work",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 4:1-3",
+    "Nehemiah 4:7-8",
+    "Nehemiah 6:1-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Nehemiah answered opposition by both praying to God and setting a guard",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 4:9",
+    "Nehemiah 4:14",
+    "Nehemiah 6:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Outline the book of Nehemiah in two main movements, the rebuilding of the wall and the renewal of the people",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 2:17-18",
+    "Nehemiah 6:15",
+    "Nehemiah 8:1",
+    "Nehemiah 13:30-31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the book shows God's providence working through a pagan king and through the swift completion of the wall",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 2:8",
+    "Nehemiah 2:18",
+    "Nehemiah 6:15-16"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11",
+    "Westminster Confession of Faith 5.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe Nehemiah's leadership actions, such as inspecting the walls, casting vision, organizing workers, and refusing the governor's food allowance, citing the text for each",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Nehemiah 2:11-18",
+    "Nehemiah 5:14-18"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the economic injustice described in Nehemiah 5 and explain how Nehemiah's response applied the Law's teaching on lending to the poor",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Nehemiah 5:1-13",
+    "Exodus 22:25",
+    "Leviticus 25:35-37"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q74"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Place Nehemiah's mission in the Persian period under Artaxerxes I and explain how it followed the earlier returns under Zerubbabel and Ezra",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 2:1",
+    "Nehemiah 7:6-7",
+    "Nehemiah 12:1",
+    "Nehemiah 12:26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the statement that the joy of the LORD is your strength in its context of hearing the Law and keeping the feast",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:9-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Levites read the Law clearly and gave its sense so the people understood, and relate this to the Reformed teaching on the reading and preaching of the Word",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:7-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q89",
+    "Westminster Shorter Catechism Q90"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the prayer of confession in Nehemiah 9 as a retelling of Israel's history that contrasts God's faithfulness with the people's repeated rebellion",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Nehemiah 9:6-8",
+    "Nehemiah 9:16-17",
+    "Nehemiah 9:32-33"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the public reading of the Law led to confession and a written covenant pledge, and list the specific commitments the people made",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:1-3",
+    "Nehemiah 9:38",
+    "Nehemiah 10:28-39"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 22.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the roles of Nehemiah as governor and Ezra as priest and scribe in the restoration community",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Nehemiah 8:9",
+    "Nehemiah 12:26",
+    "Nehemiah 12:36"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that Ezra and Nehemiah form one book in the Hebrew canon and describe how Nehemiah's first-person memoir and its lists shape the book",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 1:1",
+    "Nehemiah 7:5",
+    "Nehemiah 12:22-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain Nehemiah's Sabbath reform and relate it to the fourth commandment as the Reformed confessions teach it",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [
+    "Nehemiah 13:15-22",
+    "Exodus 20:8-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q60",
+    "Westminster Confession of Faith 21.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a profile of godly leadership from Nehemiah that weighs both his strengths and his faults, supported with textual evidence",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Nehemiah 1:4",
+    "Nehemiah 2:17-18",
+    "Nehemiah 5:14-19",
+    "Nehemiah 13:25"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate whether the reforms lasted by comparing the covenant pledges of chapter 10 with the failures Nehemiah found in chapter 13",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Nehemiah 10:30-39",
+    "Nehemiah 13:10-11",
+    "Nehemiah 13:15-18",
+    "Nehemiah 13:23-27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Nehemiah's recurring prayers for God to remember him and what they show about his reliance on God's steadfast love",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Nehemiah 5:19",
+    "Nehemiah 13:14",
+    "Nehemiah 13:22",
+    "Nehemiah 13:31"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the unresolved ending of Nehemiah points beyond itself to the need for the new covenant fulfilled in Christ",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Nehemiah 13:23-31",
+    "Jeremiah 31:31-33",
+    "Hebrews 8:8-10"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.3",
+    "Westminster Confession of Faith 7.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose an essay tracing how prayer and practical action work together throughout the book of Nehemiah in light of the Reformed doctrine of God working through means",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Nehemiah 1:4",
+    "Nehemiah 2:4-5",
+    "Nehemiah 4:9",
+    "Nehemiah 6:9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.3"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (cupbearer, wall, tool and sword, prayer before the king, organizing builders, why walls mattered, Ezra comparison, usury, opposition, Law and covenant renewal, leadership profile, durability of reforms, prayer and action). Replaced the vague 'apply leadership skills' with a text-cited description of leadership actions, recast 'significance of Jerusalem' as the disgrace of the broken walls, and turned the topography research into a map task at an earlier grade. Added missing content: the structure of Nehemiah's chapter 1 prayer, the dedication of the wall, God's providence, book outline, Persian-period setting, the joy of the LORD in context, the Levites explaining the Law, the chapter 9 confession, the covenant pledge details, the canonical unity of Ezra-Nehemiah, the Sabbath reform, the 'remember me' prayers, and the book's pointing forward to the new covenant. Anchored objectives to specific verses and Westminster standards where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1943,
+  "output": 6926
+ }
+}

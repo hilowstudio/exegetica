@@ -1,0 +1,243 @@
+{
+ "sub_topic": "AGR.5.1.2",
+ "name": "Nutrition & Food Quality",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Chemistry & Nutrition"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Describe why the body needs a variety of foods to stay healthy and grow",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sort common farm and grocery foods into the MyPlate food groups",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the six classes of nutrients and name an agricultural food source for each",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the nutrient content of two similar food products using their Nutrition Facts labels",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what a calorie measures and how energy intake and physical activity together affect energy balance",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify foods according to their nutrient density and caloric content",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify signs of freshness and quality in fresh produce, eggs, milk, and meat",
+   "grade": 7,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how production and harvest practices such as crop variety, harvest maturity, and animal diet affect the nutritional quality of raw agricultural commodities",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the importance of food labeling to the consumer and interpret the required elements of a food label",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.01.a"
+   ]
+  },
+  {
+   "text": "Apply the Dietary Guidelines for Americans to design a balanced one-day meal plan",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01.02.a",
+    "FPP.02.01.02.c"
+   ]
+  },
+  {
+   "text": "Compare the nutritional needs of people at different life stages, activity levels, and dietary patterns",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01.02.b"
+   ]
+  },
+  {
+   "text": "Examine the USDA quality grades and desirable quality characteristics of products from different commodity classes such as eggs, beef, dairy, and fresh produce",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.04.b"
+   ]
+  },
+  {
+   "text": "Explain how changes during storage and handling such as moisture loss, oxidation, and enzymatic browning reduce the nutritional value and eating quality of foods",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate nutrient content claims and health claims on food packaging against labeling regulations and nutrition facts data",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.01.a"
+   ]
+  },
+  {
+   "text": "Analyze nutrient analysis data from a food product to determine its nutritional value",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate how a processing method such as canning, freezing, drying, or milling affects the nutritional quality of a food product",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.01.b",
+    "FPP.02.01.01.c"
+   ]
+  },
+  {
+   "text": "Evaluate and place food products from different commodity classes using official quality grading standards as in FFA evaluation events",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.03.01.04.c"
+   ]
+  },
+  {
+   "text": "Describe how consumer trends in health and nutrition influence the food products that processors develop and market",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.01.02.a"
+   ]
+  },
+  {
+   "text": "Explain how biofortified crops and nutrient-enhanced foods address micronutrient deficiencies in local and global food systems",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01",
+    "FPP.02.02.03.a"
+   ]
+  },
+  {
+   "text": "Justify recommendations for improving the nutritional quality of a processed food formulation",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01",
+    "FPP.02.03.02.c"
+   ]
+  },
+  {
+   "text": "Design an SAE research investigation that measures how a storage, handling, or processing variable affects the nutritional value or quality of a food product",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.02.01.b",
+    "FPP.02.01.01.c"
+   ]
+  }
+ ],
+ "changes": "Kept and lightly reworded all six existing objectives as real competencies and anchored the high school ones to matching standards. Added early objectives on food groups, nutrient classes, energy balance, freshness indicators, and how production practices shape nutritional quality. Added high school objectives on labeling and label claims, life-stage nutritional needs, USDA quality grading and FFA-style evaluation, storage-related quality loss, nutrient analysis data, consumer health trends, biofortification for global food security, and an SAE research design. Left constituent chemistry, additives, and sensory testing to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.02.01",
+  "FPP.02.01.01.a",
+  "FPP.02.01.01.c",
+  "FPP.02.01.02.a",
+  "FPP.02.01.02.b",
+  "FPP.02.01.02.c",
+  "FPP.02.02",
+  "FPP.02.02.01.b",
+  "FPP.02.02.02.b",
+  "FPP.02.02.03.a",
+  "FPP.02.03.01.a",
+  "FPP.02.03.02.c",
+  "FPP.03.01.04.b",
+  "FPP.03.01.04.c",
+  "FPP.04.01.02.a"
+ ],
+ "usage": {
+  "input": 2375,
+  "output": 3069
+ }
+}

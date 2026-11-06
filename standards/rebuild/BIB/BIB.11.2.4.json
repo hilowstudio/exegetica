@@ -1,0 +1,323 @@
+{
+ "sub_topic": "BIB.11.2.4",
+ "name": "The Cultural Mandate and Vocation",
+ "path": [
+  "Bible & Theology",
+  "Systematic Theology (The Loci of Doctrine)",
+  "Anthropology: The Doctrine of Humanity"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that God gave the first people the work of caring for the garden",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the parts of God's command to Adam and Eve to fill the earth and rule over it",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 1:28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Give examples of everyday work at home and school that cares for the things God has made",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:15",
+    "Psalm 8:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Genesis that work was a good gift from God given before sin entered the world",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:15",
+    "Genesis 1:31"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the four parts of the Cultural Mandate as be fruitful, fill, subdue, and have dominion",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:28"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain dominion as stewardship of creation that belongs to God rather than ownership that permits exploitation",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 24:1",
+    "Psalm 8:6-8",
+    "Genesis 2:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe the pattern of six days of work and one day of rest that God set in creation and in the fourth commandment",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:2-3",
+    "Exodus 20:8-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q58",
+    "Heidelberg Catechism Q103"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Adam's naming of the animals shows people using God-given gifts to develop and order creation",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:19-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare work before the Fall with work after the curse of thorns, sweat, and toil",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 2:15",
+    "Genesis 3:17-19"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply the command to do all work heartily as for the Lord and for his glory to ordinary classroom tasks",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Colossians 3:23",
+    "1 Corinthians 10:31"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what Scripture teaches about diligence, laziness, and working in order to provide for oneself and give to others",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Proverbs 6:6-11",
+    "2 Thessalonians 3:10-12",
+    "1 Thessalonians 4:11-12",
+    "Ephesians 4:28"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q111",
+    "Westminster Larger Catechism Q141"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze vocation as service to God and neighbor carried out in the callings of family, church, work, and community",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "1 Corinthians 7:17",
+    "Ephesians 6:5-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the growth of herding, music, and metalwork in Genesis 4 as cultural development continuing in a fallen world",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 4:20-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how God renewed the command to be fruitful and fill the earth to Noah after the flood",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 9:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Old Testament laws about land, trees, and animals as examples of how dominion includes care for creation",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Leviticus 25:2-5",
+    "Deuteronomy 20:19-20",
+    "Proverbs 12:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the Cultural Mandate with the Great Commission in their scope, purpose, and relationship to each other",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:28",
+    "Matthew 28:19-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the dignity of ordinary work using biblical examples such as Bezalel the craftsman and Jesus the carpenter",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 31:1-5",
+    "Mark 6:3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Reformers such as Luther and Calvin taught that every lawful calling, not only church office, is a place to serve God",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "1 Corinthians 7:17-24",
+    "1 Peter 2:9"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q141"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a theology of work that traces labor through creation, fall, redemption, and new creation",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 1:28",
+    "Genesis 3:17-19",
+    "Colossians 3:23",
+    "Isaiah 65:21-23",
+    "Revelation 21:24-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate views that treat secular work as less holy than sacred work in light of Scripture's teaching on vocation",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "1 Corinthians 10:31",
+    "Colossians 3:23",
+    "1 Corinthians 7:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend a biblical stewardship of creation against both exploitation of nature and worship of nature",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 1:25",
+    "Psalm 24:1",
+    "Genesis 2:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 4.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate biblical principles for discerning a calling such as stewarding gifts, serving others, and seeking wise counsel",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 12:6-8",
+    "1 Peter 4:10-11",
+    "Proverbs 15:22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate contemporary attitudes that make work an idol or treat it as merely a means to money using the teaching of Ecclesiastes",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Ecclesiastes 2:18-24",
+    "Ecclesiastes 5:18-20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize labor, rest, and dominion into an account of how the whole of human life can be offered as worship to the Creator",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Genesis 2:2-3",
+    "Hebrews 4:9-10",
+    "Romans 12:1",
+    "1 Corinthians 10:31"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q1"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (garden work, Genesis 1:28 summary, stewardship, pre and post Fall work, working as unto the Lord, vocation, creation care, Great Commission, dignity of work, theology of work, sacred and secular, nature-worship, synthesis). Merged the grade 2 recall into the kindergarten objective and replaced it with applying care of creation to daily work. Added work and rest pattern, Adam naming animals, diligence and giving, Genesis 4 cultural development, renewal to Noah, Bezalel and Jesus as workers, Reformation doctrine of vocation, discerning a calling, and work as idol. Added specific verse references and confessional anchors (WCF 4.2, WSC Q1, Q58, HC Q103, Q111, WLC Q141), keeping image of God content for the sibling sub-topic.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2068,
+  "output": 4601
+ }
+}

@@ -1,0 +1,310 @@
+{
+ "sub_topic": "BIB.3.1.5",
+ "name": "Exile and Return (Post-Exilic Period)",
+ "path": [
+  "Bible & Theology",
+  "Biblical Survey & Redemptive History",
+  "Chronological Bible Narrative"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Retell how God kept Daniel safe in the lions' den when Daniel kept praying to God",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Daniel 6:10-23"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify Queen Esther as the woman God placed in the palace to save her people",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Esther 4:13-16",
+    "Esther 8:3-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God's people came home from a faraway land to rebuild the temple and the walls of Jerusalem",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Ezra 1:1-5",
+    "Nehemiah 6:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the story of Shadrach, Meshach, and Abednego and the fiery furnace",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 3:13-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Daniel and his friends obeyed God while living in Babylon",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Daniel 1:8-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify ways God cared for and protected his people while they were far from home in exile",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 29:10-14",
+    "Daniel 6:19-23"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what exile means and why God sent Judah into exile in Babylon",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "2 Kings 25:8-11",
+    "2 Chronicles 36:15-21",
+    "Deuteronomy 28:63-64"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how God's people grieved in exile using Psalm 137 and Lamentations",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 137:1-6",
+    "Lamentations 3:19-24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sequence the major events from the fall of Jerusalem to the rebuilding of the walls on a timeline",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "2 Kings 25:8-11",
+    "Ezra 1:1-4",
+    "Ezra 6:14-15",
+    "Nehemiah 6:15-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the rebuilding of the temple under Zerubbabel and Ezra with the rebuilding of the wall under Nehemiah",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Ezra 3:8-13",
+    "Ezra 6:14-15",
+    "Nehemiah 2:17-18",
+    "Nehemiah 4:6-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the parts of Nehemiah's prayer and compose a prayer modeled on its pattern of praise, confession, and request",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Nehemiah 1:4-11"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain what Jeremiah instructed the exiles to do while living in Babylon",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Jeremiah 29:4-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the book of Esther shows God's providence even though God is never named",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Esther 4:13-14",
+    "Esther 6:1-11",
+    "Esther 9:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Heidelberg Catechism Q27"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the role of Ezra's public reading and teaching of the Law in renewing the returned community",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 8:1-8",
+    "Nehemiah 9:1-3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q89"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Connect the decree of Cyrus to the prophecies of Jeremiah and Isaiah about the return",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Jeremiah 29:10",
+    "Isaiah 44:28-45:1",
+    "Ezra 1:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Ezekiel's vision of the valley of dry bones in its exilic context",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Ezekiel 37:1-14"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze Daniel's prayer of confession as a response to the covenant curses and the promised seventy years",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Daniel 9:1-19"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how Haggai and Zechariah called the returned community to finish rebuilding the temple",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Haggai 1:2-11",
+    "Zechariah 4:6-9",
+    "Ezra 5:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the return from exile did not change the people's hearts and how the prophets promised a new covenant",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Nehemiah 13:23-27",
+    "Jeremiah 31:31-34",
+    "Ezekiel 36:24-27"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a historical overview of how the Babylonian and Persian empires shaped Israel's history in this period",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Daniel 2:36-45",
+    "Ezra 1:1-4",
+    "Ezra 7:11-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the spiritual condition of the post-exilic community using the charges in Malachi",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Malachi 1:6-8",
+    "Malachi 2:13-16",
+    "Malachi 3:6-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the claim that God preserved the Davidic line through the exile using Old Testament promises and New Testament genealogy",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Jeremiah 33:14-17",
+    "Haggai 2:20-23",
+    "Matthew 1:11-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Synthesize how the partial restoration after exile points forward to its fulfillment in Christ, using the already and not yet framework",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Haggai 2:6-9",
+    "Malachi 3:1",
+    "Malachi 4:5-6",
+    "Luke 1:16-17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (Daniel, Esther, return, fiery furnace, meaning of exile, Ezra and Nehemiah comparison, Esther providence, dry bones, Cyrus and Jeremiah, hard hearts, Persian overview, Malachi, Davidic line, already and not yet). Replaced the feeling-based 'God was with them' with identifying God's care in exile. Recast Nehemiah's prayer as describing and composing a prayer on its pattern. Added causes of exile, lament in exile, Daniel 1 faithfulness, timeline sequencing, Jeremiah's letter to the exiles, Ezra's reading of the Law, Daniel's prayer of confession, Haggai and Zechariah, and the new covenant promise. Anchored all objectives to specific verses and added confession references only where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2159,
+  "output": 3461
+ }
+}

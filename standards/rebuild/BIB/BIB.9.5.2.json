@@ -1,0 +1,283 @@
+{
+ "sub_topic": "BIB.9.5.2",
+ "name": "Job",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Wisdom Literature"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Job as a man who feared God and kept worshiping God after he lost his children and his belongings",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Job 1:1",
+    "Job 1:20-22"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name God as the maker and ruler of all creatures, using examples from God's words to Job",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Job 38:4-7",
+    "Job 38:39-41",
+    "Job 39:26-27"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q11"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Recite Job's words of worship that the Lord gave and the Lord has taken away and tell when Job spoke them",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Job 1:21"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize the opening story of Job, including Satan's accusation, Job's losses, and his sickness",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Job 1:6-2:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how Job's three friends first comforted him by coming to him and sitting with him in silence",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Job 2:11-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from the book of Job that suffering is not always punishment for a person's own sin",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Job 1:1",
+    "Job 1:8",
+    "Job 42:7",
+    "John 9:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the New Testament uses Job as an example of steadfastness and of the Lord's compassion",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "James 5:10-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Outline the structure of Job, distinguishing the prose prologue and epilogue from the poetic dialogues, Elihu's speeches, and God's speeches",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Job 1:1-2:13",
+    "Job 3:1-31:40",
+    "Job 32:1-37:24",
+    "Job 38:1-42:6",
+    "Job 42:7-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the prologue shows that Satan can act only within the limits God sets",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Job 1:12",
+    "Job 2:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the arguments of Eliphaz, Bildad, and Zophar to show how each assumes that suffering proves hidden sin",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Job 4:7-9",
+    "Job 8:3-7",
+    "Job 11:13-15",
+    "Job 22:4-11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret Job's confession that his Redeemer lives in its context and explain how the church has read it as hope of resurrection",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Job 19:25-27",
+    "Job 14:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 32.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the teaching of the wisdom poem in Job 28 that true wisdom is found with God and begins with the fear of the Lord",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Job 28:12-28"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret God's speeches from the whirlwind and Job's replies, explaining why God reveals his wisdom and power instead of giving Job the reason for his suffering",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Job 38:1-40:5",
+    "Job 40:6-41:34",
+    "Job 42:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why God says the friends did not speak rightly while Job did and how Job intercedes for them",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Job 42:7-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Job's honest lament and complaint to God with the cursing of God that Satan predicted and Job's wife urged",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Job 1:11",
+    "Job 2:9-10",
+    "Job 3:1-26",
+    "Job 23:1-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the retribution principle and analyze how the book of Job and its epilogue challenge a mechanical reading of it",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Job 4:7-8",
+    "Job 21:7-26",
+    "Job 42:10-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the role of Elihu's speeches, weighing how they differ from the three friends and how they prepare for God's speeches",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Job 32:1-5",
+    "Job 33:14-30",
+    "Job 36:22-37:24"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed doctrine of providence draws on Job to teach that God governs all things, including the afflictions of his people",
+   "grade": 11,
+   "bloom": 2,
+   "scripture": [
+    "Job 1:21",
+    "Job 2:10",
+    "Job 42:2"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.1",
+    "Westminster Confession of Faith 5.5",
+    "Heidelberg Catechism Q27",
+    "Heidelberg Catechism Q28"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the book of Job addresses the problem of evil and what questions it leaves unanswered",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Job 9:22-24",
+    "Job 38:1-4",
+    "Job 42:1-6",
+    "Romans 8:28"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 5.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize how Job's longing for a mediator and his innocent suffering anticipate Christ as the righteous sufferer and intercessor",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Job 9:32-35",
+    "Job 16:19-21",
+    "Job 19:25-27",
+    "1 Peter 2:22-24",
+    "Hebrews 7:25"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q18"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded real competencies (Job's character, prologue summary, friends' dialogue, whirlwind speeches, Satan's limits, retribution principle, Elihu, theodicy, Christ typology). Recast 'trust God' and 'did not stop loving God' items so they describe what the text says rather than the student's response. Merged the Behemoth/Leviathan item into the whirlwind speeches and the 'God is in charge' item into a creation-based objective. Recast 'defend sovereignty' as explaining the Reformed doctrine of providence. Added objectives on Job 1:21, the friends' first comfort, James 5:11, the book's structure, the Redeemer passage, the wisdom poem in Job 28, the epilogue verdict and intercession, and lament versus cursing God. Replaced whole-section references with specific verses and anchored confessions on providence.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1889,
+  "output": 3975
+ }
+}

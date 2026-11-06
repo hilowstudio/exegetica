@@ -1,0 +1,385 @@
+{
+ "sub_topic": "BIB.9.4.4",
+ "name": "Law and Gospel in the Pentateuch",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Torah (The Pentateuch)"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify a command God gave and a promise God made in a Bible story from the books of Moses",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Genesis 2:16-17",
+    "Genesis 3:15",
+    "Genesis 9:11-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that God rescued Israel from Egypt before he gave them the Ten Commandments",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 19:4-6",
+    "Exodus 20:1-2"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q44"
+   ],
+   "standards": []
+  },
+  {
+   "text": "State that no one except Jesus keeps all of God's commands perfectly",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Romans 3:23",
+    "Ecclesiastes 7:20"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q82"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell God's first promise of a Savior after Adam and Eve disobeyed his command",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 3:15",
+    "Genesis 3:21"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q20"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Name Jesus as the one who obeyed God's law perfectly in the place of his people",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Matthew 5:17",
+    "Romans 5:19"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q60"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how God forgave and restored Israel after they broke his law with the golden calf",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 32:30-32",
+    "Exodus 34:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how God's law works like a mirror that shows people their sin",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Romans 3:20",
+    "Romans 7:7",
+    "James 1:23-25"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize the whole law in the two great commandments taken from Deuteronomy and Leviticus",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Deuteronomy 6:4-5",
+    "Leviticus 19:18",
+    "Matthew 22:37-40"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the animal sacrifices pointed to God providing a substitute to bear the penalty for sin",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 1:4",
+    "Leviticus 17:11",
+    "Hebrews 10:1-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from the story of Abraham that God counted him righteous because he believed God's promise",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 15:5-6",
+    "Romans 4:1-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q33"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare trying to earn God's favor by obedience with trusting God's promise, using God's words to Israel about why he chose them",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 7:7-8",
+    "Deuteronomy 9:4-6",
+    "Romans 4:4-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the bronze serpent as a picture of salvation that comes by looking in faith to what God provides",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [
+    "Numbers 21:4-9",
+    "John 3:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish the moral, ceremonial, and civil laws of the Pentateuch using examples of each",
+   "grade": 6,
+   "bloom": 4,
+   "scripture": [
+    "Exodus 20:1-17",
+    "Exodus 21:28-32",
+    "Leviticus 11:1-8",
+    "Hebrews 10:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.3",
+    "Westminster Confession of Faith 19.4",
+    "Westminster Confession of Faith 19.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Reformed tradition teaches that the law guides the grateful life of the redeemed and is not a way to earn salvation",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 20:2",
+    "Galatians 2:16",
+    "Ephesians 2:8-10"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q2",
+    "Heidelberg Catechism Q86",
+    "Westminster Confession of Faith 19.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze the three uses of the law as the Reformed tradition confesses them, showing how the law convicts, restrains, and guides",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:20",
+    "1 Timothy 1:8-10",
+    "Psalm 119:105"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6",
+    "Westminster Larger Catechism Q95",
+    "Westminster Larger Catechism Q96",
+    "Westminster Larger Catechism Q97"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret Paul's description of the law as a guardian that held God's people until Christ came",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Galatians 3:19-25"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Trace how Deuteronomy anticipates Israel's failure to keep the law and promises a circumcised heart fulfilled in the New Covenant",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Deuteronomy 29:4",
+    "Deuteronomy 30:1-6",
+    "Deuteronomy 31:16-21",
+    "Jeremiah 31:31-34"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Paul uses texts from Leviticus and Deuteronomy to show that the law demands perfect obedience and pronounces a curse that Christ bore",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Leviticus 18:5",
+    "Deuteronomy 21:23",
+    "Deuteronomy 27:26",
+    "Galatians 3:10-13"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q94"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Pentateuch administers the covenant of grace through promises, sacrifices, and types that foreshadow Christ",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 12:1-3",
+    "Leviticus 16:15-22",
+    "Hebrews 10:1-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the relationship between the covenant of works with Adam and the covenant of grace announced after the fall",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:16-17",
+    "Genesis 3:15",
+    "Romans 5:12-19"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.2",
+    "Westminster Confession of Faith 7.3",
+    "Westminster Shorter Catechism Q12",
+    "Westminster Shorter Catechism Q20"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a law and gospel reading of a Pentateuch passage that distinguishes its commands from its promises and shows how each points to Christ",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "2 Corinthians 3:6",
+    "Luke 24:27"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare the Reformed and Lutheran accounts of law and gospel, especially their treatment of the law's use in the believer's life",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [
+    "Romans 3:31",
+    "Romans 7:12",
+    "Romans 8:3-4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6",
+    "Westminster Confession of Faith 19.7",
+    "Heidelberg Catechism Q115"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the errors of legalism and antinomianism using the Pentateuch and Paul's teaching on the law",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Romans 6:1-2",
+    "Romans 3:31",
+    "Galatians 5:1",
+    "Deuteronomy 10:12-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6",
+    "Westminster Confession of Faith 19.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend the Reformed position that believers in both Testaments are saved by grace through faith in the one Mediator",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Genesis 15:6",
+    "Romans 4:1-8",
+    "Hebrews 11:4-7",
+    "Galatians 3:8"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.6",
+    "Westminster Confession of Faith 11.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Synthesize how the Torah as a whole bears witness to Christ through its commands, promises, and patterns",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Luke 24:27",
+    "Luke 24:44",
+    "John 5:46",
+    "Deuteronomy 18:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 7.5"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (identifying law and gospel, inability to keep the law, Christ's obedience, forgiveness, the law as mirror, sacrifices, works versus trust, the law as guide, three uses, the guardian of Galatians 3, New Covenant, grace in the Old Testament, law and gospel hermeneutics, legalism and antinomianism, continuity of salvation, Torah as witness to Christ). Anchored each in Pentateuch texts rather than only New Testament ones. Recast 'Observe that God forgives us' as describing God's restoration of Israel after the golden calf. Added grace preceding law at Sinai, the first gospel promise, the two great commandments, Abraham justified by faith, God's unmerited choice of Israel, the bronze serpent, moral, ceremonial, and civil law, Paul's use of Leviticus 18:5 and Deuteronomy 27:26, covenant of works and grace, and a Reformed and Lutheran comparison. Corrected confession citations to full names and added Westminster Larger Catechism Q96 and Q97 alongside Q95 for the uses of the law.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1993,
+  "output": 6219
+ }
+}

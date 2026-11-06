@@ -1,0 +1,282 @@
+{
+ "sub_topic": "AGR.3.1.3",
+ "name": "Metalworking & Welding",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Shop Safety, Tools & Fabrication"
+ ],
+ "grades": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify common metals used in agriculture, including mild steel, cast iron, aluminum, and stainless steel, and describe their basic properties",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common shapes of metal stock such as flat bar, angle iron, square tubing, round bar, and sheet, and measure their dimensions",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the hazards specific to cutting, grinding, and welding metal and the personal protective equipment that guards against arc flash, sparks, fumes, and compressed gas cylinders",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate accurate layout of metal stock using a tape measure, combination square, scribe, center punch, and soapstone",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate cold metalworking processes including cutting, filing, drilling, tapping threads, and bending metal stock to a plan",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how oxy-fuel cutting uses preheating and rapid oxidation and how a plasma cutter uses an ionized gas arc to sever metal",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the electrical circuit, current types, and polarity settings used in shielded metal arc welding",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the five basic weld joints and the four welding positions used in metal fabrication",
+   "grade": 8,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the principles, equipment, and typical agricultural uses of SMAW, GMAW, GTAW, oxy-fuel, and plasma arc processes",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03.01.a",
+    "PST.01.03"
+   ]
+  },
+  {
+   "text": "Demonstrate safe setup and operation of an oxy-fuel torch and a plasma cutter to make straight and shaped cuts in mild steel",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03",
+    "PST.04.03.02.c"
+   ]
+  },
+  {
+   "text": "Apply proper gun angle, travel speed, and stickout to lay consistent beads with gas metal arc welding on mild steel",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03"
+   ]
+  },
+  {
+   "text": "Apply proper arc length, electrode angle, and travel speed to produce beads and fillet welds in the flat position with shielded metal arc welding",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03"
+   ]
+  },
+  {
+   "text": "Select the correct electrode, welding wire, shielding gas, amperage, wire feed speed, and gas flow rate for a given metal type and thickness",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03.02.b"
+   ]
+  },
+  {
+   "text": "Explain how heat input affects metal, including distortion, the heat-affected zone, and methods to control warping",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03"
+   ]
+  },
+  {
+   "text": "Demonstrate oxy-acetylene brazing to join thin or dissimilar metals",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03"
+   ]
+  },
+  {
+   "text": "Interpret standard welding symbols, joint configurations, and dimensional callouts on a welding blueprint",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03.03.a"
+   ]
+  },
+  {
+   "text": "Analyze welds visually for defects such as porosity, undercut, slag inclusion, and lack of fusion and identify the likely cause of each",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03.01.c"
+   ]
+  },
+  {
+   "text": "Produce fillet and groove welds in the horizontal, vertical, and overhead positions",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03"
+   ]
+  },
+  {
+   "text": "Demonstrate gas tungsten arc welding on mild steel, stainless steel, or aluminum",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03"
+   ]
+  },
+  {
+   "text": "Evaluate weld soundness by performing and interpreting a guided bend test on welded coupons",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03.01.c"
+   ]
+  },
+  {
+   "text": "Determine the best welding or cutting process for an agricultural fabrication or repair task based on metal type, thickness, position, and work location",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03.01.b"
+   ]
+  },
+  {
+   "text": "Develop a bill of materials, cut list, and cost estimate for a metal fabrication project",
+   "grade": 11,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Repair a damaged agricultural implement or structure by preparing the metal, selecting a joining process, and welding it back to serviceable condition",
+   "grade": 12,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03.02.c",
+    "PST.01.03.01.b"
+   ]
+  },
+  {
+   "text": "Create a part on a CNC plasma table from a digital design file",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03"
+   ]
+  },
+  {
+   "text": "Fabricate a welded steel project such as a gate, trailer, or livestock equipment from a plan and evaluate each joint for penetration, strength, and appearance",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.03.02.c",
+    "PST.04.04.03.c",
+    "PST.04.03.02.c",
+    "PST.01.03.01.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six original competencies, reworded some, and moved oxy-fuel and plasma cutting to grade 9 with a grade 8 conceptual objective before it. Added welding-specific hazards, metal stock identification, layout, cold metalworking, weld joints and positions, process comparison, SMAW technique, consumable and setting selection, heat effects, brazing, blueprint symbols, visual inspection, out-of-position welding, GTAW, bend testing, process selection, bill of materials for SAE and FFA Agricultural Mechanics CDE, equipment repair, and CNC plasma. General shop safety and general tool use are left to the sibling sub-topics. Standards are applied only at grades 9 to 12.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "PST.01.02.02.a",
+  "PST.01.03",
+  "PST.01.03.01.a",
+  "PST.01.03.01.b",
+  "PST.01.03.01.c",
+  "PST.01.03.02.b",
+  "PST.01.03.02.c",
+  "PST.01.03.03.a",
+  "PST.02.01.02.c",
+  "PST.03.02.03.b",
+  "PST.04.03.02.a",
+  "PST.04.03.02.b",
+  "PST.04.03.02.c",
+  "PST.04.04.03.c",
+  "PST.04.04.05.c"
+ ],
+ "usage": {
+  "input": 2647,
+  "output": 4028
+ }
+}

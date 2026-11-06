@@ -1,0 +1,203 @@
+{
+ "sub_topic": "AGR.5.3.3",
+ "name": "Food Labeling & Regulation",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Food Science & Technology",
+  "Food Safety & Quality"
+ ],
+ "grades": [
+  3,
+  5,
+  7,
+  9,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the basic information found on a food package label, such as product name, ingredients, net weight, and date",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate the major food allergens, such as milk, eggs, peanuts, wheat, and soy, in an ingredient list or allergen statement",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe why food labels list ingredients, allergens, and nutrition facts for the people who buy and eat the food",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the serving size, calories, and nutrients of two similar products using their Nutrition Facts panels",
+   "grade": 5,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish among date labels such as sell by, best if used by, and use by and explain what each tells the consumer",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the roles of the FDA and USDA in regulating food labeling",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret an ingredient list by explaining that ingredients appear in descending order by weight and identifying common additives listed by name",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze a food label for the required components, including statement of identity, net quantity, ingredient list, Nutrition Facts, allergen declaration, and manufacturer information",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.01.b"
+   ]
+  },
+  {
+   "text": "Describe how federal, state, and local agencies divide oversight of food labeling, including FSIS jurisdiction over meat, poultry, and egg products and FDA jurisdiction over most other foods",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.03.02.a"
+   ]
+  },
+  {
+   "text": "Classify label claims as nutrient content claims, health claims, or structure and function claims and explain the requirements for making each",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.01.01.a"
+   ]
+  },
+  {
+   "text": "Compare voluntary label terms and certifications such as USDA Organic, natural, grass fed, Non-GMO, and the bioengineered food disclosure with their regulatory definitions",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.01.01.a",
+    "FPP.04.01.02.a"
+   ]
+  },
+  {
+   "text": "Calculate Nutrition Facts values and percent Daily Values for a food product from its recipe and nutrient data",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.01.01.c"
+   ]
+  },
+  {
+   "text": "Analyze a food recall caused by mislabeling or an undeclared allergen to explain the regulatory response and the consequences for the processor",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.03.02.a",
+    "FPP.01.02.04.a"
+   ]
+  },
+  {
+   "text": "Evaluate how food labeling regulations protect consumers from misleading claims and support informed purchasing",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.01.a"
+   ]
+  },
+  {
+   "text": "Compare United States labeling requirements, including country of origin labeling, with international standards such as Codex Alimentarius and EU rules for exported products",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.01.01.a"
+   ]
+  },
+  {
+   "text": "Evaluate state cottage food and direct marketing labeling rules that apply to a farm market or SAE food product",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.04.03.02.a"
+   ]
+  },
+  {
+   "text": "Design and justify a compliant label for a new or SAE food product based on FDA and USDA requirements",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPP.02.03.01.b",
+    "FPP.04.01.01.a"
+   ]
+  }
+ ],
+ "changes": "Kept and lightly reworded all six original objectives, moving the FDA and USDA objective to focus on labeling and the label analysis to name the required components. Added objectives on allergen identification, Nutrition Facts comparison, date labels, ingredient order and additives, and agency jurisdiction. Also added label claim types, voluntary certifications and the bioengineered disclosure, nutrition calculation, mislabeling recalls, international and country of origin labeling, and cottage food rules for SAE products. Microbiology, sanitation, HACCP, and inspection content was left to the sibling sub-topics.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "FPP.01.02.04.a",
+  "FPP.01.03",
+  "FPP.02.01",
+  "FPP.02.01.01.c",
+  "FPP.02.02.02.b",
+  "FPP.02.02.03.a",
+  "FPP.02.02.03.b",
+  "FPP.02.03.01.a",
+  "FPP.02.03.01.b",
+  "FPP.03.01.04.b",
+  "FPP.03.01.04.c",
+  "FPP.03.03.03.b",
+  "FPP.04.01.01.a",
+  "FPP.04.01.02.a",
+  "FPP.04.03.02.a"
+ ],
+ "usage": {
+  "input": 2395,
+  "output": 3119
+ }
+}

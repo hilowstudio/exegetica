@@ -1,0 +1,293 @@
+{
+ "sub_topic": "BIB.2.4.4",
+ "name": "Reading for Devotion (Piety and Application)",
+ "path": [
+  "Bible & Theology",
+  "Biblical Literacy & Foundation",
+  "Systematic Reading of Scripture"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify one thing a Bible story shows about who God is, such as His love and care",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 136:1",
+    "Psalm 103:13"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Tell one thing God wants His people to do after hearing a Bible story",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "James 1:22"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that the Bible is God speaking to His people and why Christians pray before reading it",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 119:18",
+    "Psalm 119:105"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q90"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply a specific command from Scripture to a situation at school or home",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [
+    "James 1:22-25",
+    "Ephesians 6:1-3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q3"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compose a short prayer of thanks or praise in class that uses words from a passage just read",
+   "grade": 3,
+   "bloom": 3,
+   "scripture": [
+    "Colossians 3:16",
+    "Psalm 119:105"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain how a passage directs readers to love God and love their neighbor",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 22:37-40"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q42"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Summarize what a passage reveals about God's character and describe a fitting response such as worship, trust, or obedience",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Exodus 34:6-7"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Distinguish commands, promises, warnings, and examples in a passage as different ways the text calls for application",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "1 Corinthians 10:11"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Pray through a Psalm in a guided class exercise by turning its praise, confession, and petition into prayer",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Psalm 5:1-3",
+    "Psalm 51:1-12"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q99"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain from Jesus' own words why devotional reading looks for Christ as the center of Scripture's message",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "John 5:39-40",
+    "Luke 24:27"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the practices the Westminster Larger Catechism gives for reading Scripture with profit, including reverence, attention, application, and prayer",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Acts 17:11",
+    "Nehemiah 8:8"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q157",
+    "Westminster Shorter Catechism Q90"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Reformed teaching that the Holy Spirit illumines readers and uses the Word to sanctify God's people",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "John 16:13",
+    "1 Corinthians 2:12-14",
+    "John 17:17"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6",
+    "Westminster Shorter Catechism Q89"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Apply the truths and promises of a passage to common struggles such as fear, doubt, or temptation",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [
+    "Psalm 42:5",
+    "1 Corinthians 10:13",
+    "Psalm 56:3-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish moralism from gospel-motivated obedience by comparing two applications of the same passage",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Galatians 2:20",
+    "Ephesians 2:8-10",
+    "Titus 2:11-14"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q86",
+    "Westminster Confession of Faith 16.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze whether a devotional application is faithful to a passage's context or reads a foreign meaning into it",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "2 Timothy 2:15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.9"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate sample decisions and case studies in light of specific scriptural principles drawn from their original context",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [
+    "Romans 12:1-2",
+    "Hebrews 5:14"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.6"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct a prayer shaped by the language and theology of a passage read",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "Colossians 3:16",
+    "Nehemiah 9:5-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q99"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Produce a written devotional reflection that explains a passage in context and applies its theology to daily life",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [
+    "2 Timothy 3:16-17",
+    "James 1:22-25"
+   ],
+   "confessions": [
+    "Westminster Larger Catechism Q157"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Scripture the Reformed view that reading the Bible aims at knowing God and obeying Him and not merely gaining information",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "John 5:39-40",
+    "John 17:3",
+    "James 1:22"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q3",
+    "Westminster Shorter Catechism Q90"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate devotional books and resources for faithfulness to Scripture and sound doctrine",
+   "grade": 12,
+   "bloom": 5,
+   "scripture": [
+    "Acts 17:11",
+    "1 John 4:1"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.10"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (God's character, applying commands, love of God and neighbor, Psalm-based prayer, the Spirit's work through the Word, moralism versus gospel fruit, text-shaped prayer, devotional writing, reading for knowing God). Dropped or recast objectives aimed at inner experience: 'express thanks' became composing a prayer in class, 'analyze own heart responses' was removed, personal struggles became applying passages to common struggles, and evaluating personal choices became evaluating case studies. Removed verse copying because it overlaps with memorization. Added recognizing kinds of application, Christ-centered reading, the Larger Catechism's practices for profitable reading, checking applications against their context, and evaluating devotional resources. Added verse anchors and confessional anchors such as WSC Q3, Q89, Q90, and Q99, WLC Q157, WCF 1.6, 1.9, 1.10, and 16.2, and HC Q86.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 2033,
+  "output": 4483
+ }
+}

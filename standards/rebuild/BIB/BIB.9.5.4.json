@@ -1,0 +1,361 @@
+{
+ "sub_topic": "BIB.9.5.4",
+ "name": "Psalms",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Wisdom Literature"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Psalms as songs and prayers that God's people sang to the Lord",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 100:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite Psalm 23:1 and tell one thing it says about God as a shepherd",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 23:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name David as the shepherd and king who wrote many of the psalms",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "1 Samuel 16:23",
+    "2 Samuel 23:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the psalm writers prayed to God both in times of joy and in times of sorrow",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 13:1-6",
+    "Psalm 100:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Psalm 19 teaches about the heavens declaring the glory of God",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 19:1-6"
+   ],
+   "confessions": [
+    "Belgic Confession Article 2",
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Classify a psalm as praise, thanksgiving, or lament by pointing to words and features in the text",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 100:1-5",
+    "Psalm 30:1-12",
+    "Psalm 13:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the contrast between the way of the righteous and the way of the wicked in Psalm 1",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 1:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how a psalm title links the psalm to an event in David's life, such as Psalm 51 and David's sin with Bathsheba",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 51:1-4",
+    "2 Samuel 12:1-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how Christians have used the Psalms as a pattern for their own prayers",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 145:1-3",
+    "Psalm 62:8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q98",
+    "Heidelberg Catechism Q117"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze a lament psalm by identifying its address to God, complaint, petition, statement of trust, and vow of praise",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 13:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose a written prayer in class that follows the structure of a praise, thanksgiving, or lament psalm",
+   "grade": 5,
+   "bloom": 6,
+   "scripture": [
+    "Psalm 13:1-6",
+    "Psalm 100:1-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare Psalm 1 and Psalm 2 and explain how together they introduce the themes of the whole Psalter",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 1:1-6",
+    "Psalm 2:1-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the images of God as rock, refuge, fortress, and shepherd teach about his character",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 18:1-2",
+    "Psalm 46:1-3",
+    "Psalm 23:1-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what Psalm 119 teaches about the word of God and describe its acrostic structure",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 119:9-16",
+    "Psalm 119:105"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze synonymous, antithetic, and synthetic parallelism in lines of Hebrew poetry",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 19:1-2",
+    "Psalm 1:6",
+    "Psalm 103:10-12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the five-book division of the Psalter, locate the doxology that closes each book, and explain the traditional comparison with the five books of Moses",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 41:13",
+    "Psalm 72:18-19",
+    "Psalm 89:52",
+    "Psalm 106:48",
+    "Psalm 150:6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the setting of the Songs of Ascents as songs of pilgrimage to worship in Jerusalem",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 122:1-4",
+    "Psalm 121:1-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Summarize how the historical psalms retell Israel's story to teach the next generation God's faithfulness and Israel's failures",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 78:1-8",
+    "Psalm 106:6-8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain what the penitential psalms teach about sin, confession, and God's forgiveness as the Reformed tradition confesses repentance",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 51:1-12",
+    "Psalm 32:1-5"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q87",
+    "Westminster Confession of Faith 15.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the Messianic psalms by tracing how the New Testament applies them to the suffering and reign of Christ",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 22:1",
+    "Psalm 22:16-18",
+    "Matthew 27:46",
+    "Psalm 110:1-4",
+    "Matthew 22:41-45",
+    "Hebrews 5:5-6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 8.4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the possible meanings of Selah and other musical terms in the superscriptions and why scholars remain uncertain about them",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 46:1-3",
+    "Psalm 3:2-4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose an original psalm in a chosen genre that uses Hebrew parallelism and the genre's typical structure",
+   "grade": 9,
+   "bloom": 6,
+   "scripture": [
+    "Psalm 30:1-12",
+    "Psalm 19:1-2"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the movement of the Psalter from lament toward praise across its five books, ending in the closing Hallelujah psalms",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 89:38-52",
+    "Psalm 146:1-2",
+    "Psalm 150:1-6"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the Psalms bring the full range of human emotion before God and explain the Reformed teaching that they model honest prayer",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Psalm 42:5-6",
+    "Psalm 88:13-18",
+    "Psalm 62:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate major interpretive approaches to the imprecatory psalms in light of God's justice and the New Testament teaching on vengeance",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Psalm 137:8-9",
+    "Psalm 69:22-28",
+    "Romans 12:19",
+    "Revelation 6:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Defend the singing of psalms in corporate worship from Scripture and the confessions, and compare exclusive psalmody with the use of hymns within Reformed churches",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Colossians 3:16",
+    "Ephesians 5:19",
+    "James 5:13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 21.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Produce a study of the kingship of the Lord in the enthronement psalms and its fulfillment in the reign of Christ",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Psalm 47:1-9",
+    "Psalm 93:1-5",
+    "Psalm 96:10-13",
+    "Psalm 2:6-8"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q26"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies (songs to God, David as writer, Psalm 23, joy and sorrow, genres, prayer with Psalms, Psalm 1 and 2, parallelism, Messianic psalms, five books, Selah, emotions, imprecatory psalms, corporate worship, kingship of the Lord). Replaced 'Apply a Psalm to your own feelings' with observable composition tasks. Recast the 'theology of the emotions' objective as an analysis of the text and the tradition's teaching. Added psalm imagery, Psalm 19 and creation, Psalm 119 and acrostics, psalm titles and David's history, lament structure, Songs of Ascents, historical psalms, penitential psalms, and the lament-to-praise shape of the Psalter. Anchored each objective to specific verses. Kept WCF 8.4 for the Messianic psalms and added confessional references only where they state the doctrine, including WCF 21.5, WSC Q87, Q98, and Q26, Heidelberg Q117, and Belgic Article 2.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1933,
+  "output": 5680
+ }
+}

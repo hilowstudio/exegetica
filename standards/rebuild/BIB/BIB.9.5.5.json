@@ -1,0 +1,273 @@
+{
+ "sub_topic": "BIB.9.5.5",
+ "name": "Song of Solomon",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Wisdom Literature"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify the Song of Solomon as a book of the Bible that is a song about the love between a husband and wife",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Song of Solomon 1:1",
+    "Song of Solomon 2:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain that God created marriage as a good gift for a husband and wife",
+   "grade": 1,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:18-24",
+    "Song of Solomon 2:16"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Locate the Song of Solomon among the poetry and wisdom books of the Old Testament and name Solomon as the king in its title",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Song of Solomon 1:1",
+    "1 Kings 4:32"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify the main voices in the Song as the bride, the bridegroom, and the daughters of Jerusalem",
+   "grade": 3,
+   "bloom": 1,
+   "scripture": [
+    "Song of Solomon 1:2-8",
+    "Song of Solomon 5:8-10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the bride speaks of her husband as both her beloved and her friend",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Song of Solomon 5:16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how the Song uses pictures from nature such as gardens, vineyards, flowers, and animals to express love",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Song of Solomon 2:1-3",
+    "Song of Solomon 2:8-13",
+    "Song of Solomon 4:12-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain from Scripture the Reformed tradition's teaching that marriage is a covenant between one man and one woman",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 2:24",
+    "Matthew 19:4-6",
+    "Song of Solomon 6:3"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the meaning of the repeated charge not to stir up or awaken love until it pleases",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [
+    "Song of Solomon 2:7",
+    "Song of Solomon 3:5",
+    "Song of Solomon 8:4"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the faithful mutual belonging expressed in the refrain my beloved is mine and I am his",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Song of Solomon 2:16",
+    "Song of Solomon 6:3",
+    "Song of Solomon 7:10"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the Song's figurative language, including similes, metaphors, and descriptive praise poems of the bride and groom",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Song of Solomon 4:1-7",
+    "Song of Solomon 5:10-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the movement of the Song through its scenes of longing, searching, and reunion",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Song of Solomon 3:1-4",
+    "Song of Solomon 5:2-8",
+    "Song of Solomon 6:1-3"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Song presents physical intimacy within marriage as a good part of God's creation",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Song of Solomon 4:16-5:1",
+    "Genesis 1:27-31",
+    "Hebrews 13:4"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Interpret the climactic description of love as strong as death and unquenchable by many waters",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Song of Solomon 8:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the identity and role of the Shulammite woman in the Song",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Song of Solomon 1:5-6",
+    "Song of Solomon 6:13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the church received the Song as canonical Scripture even though it rarely or never names God directly",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Song of Solomon 8:6"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare literal, allegorical, and typological approaches to interpreting the Song in Jewish and Christian history",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Song of Solomon 1:2-4",
+    "Song of Solomon 8:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the prophets use marriage imagery for God's covenant with Israel as background for reading the Song",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Hosea 2:19-20",
+    "Isaiah 54:5",
+    "Ezekiel 16:8"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate contemporary cultural views of sexuality in light of the Song's portrait of exclusive covenant love",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Song of Solomon 8:6-7",
+    "Hebrews 13:4",
+    "1 Corinthians 6:18-20"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 24.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate how the Song functions as wisdom literature that instructs God's people in love and marriage",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Song of Solomon 2:7",
+    "Song of Solomon 8:6-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compose an essay that synthesizes the Song with New Testament teaching on the church as the bride of Christ",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Ephesians 5:25-32",
+    "2 Corinthians 11:2",
+    "Revelation 19:7-9"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 25.1"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: song about love, marriage as gift, poem about bride and groom (now naming its voices), friendship in marriage (anchored to 5:16), one man and one woman covenant, loyalty (now the mutual belonging refrain), poetic language, marital intimacy, Shulammite, literal vs allegorical, cultural views of sexuality, and bride of Christ synthesis. Dropped the generic objective that God loves His people, since it is not specific to this book. Folded the grade 5 comparison to God's love for the church into the grade 12 synthesis. Folded the defence of intimacy within marriage into the grade 8 and grade 11 objectives. Added objectives for locating the book in the canon, its nature imagery, the do not awaken love refrain, its structure of longing and reunion, the love strong as death passage, its canonicity, prophetic marriage imagery as background, and its function as wisdom literature. Added verse-level anchors and Westminster Confession 1.2, 24.1, 24.2, and 25.1 where they state the doctrine.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1855,
+  "output": 4054
+ }
+}

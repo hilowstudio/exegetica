@@ -1,0 +1,223 @@
+{
+ "sub_topic": "AGR.3.1.2",
+ "name": "Hand & Power Tools",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agricultural Mechanics & Power Technology",
+  "Shop Safety, Tools & Fabrication"
+ ],
+ "grades": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  11
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify common hand tools by name and describe the primary function of each",
+   "grade": 5,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify hand tools into functional groups such as measuring, cutting, striking, gripping, turning, and boring tools",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate the correct grip, stance, and technique for using hammers, screwdrivers, wrenches, pliers, and handsaws",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Distinguish between corded electric, cordless battery, and pneumatic power tools and explain the advantages and limits of each power source",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Measure length, angle, and diameter accurately using a tape measure, combination square, and caliper",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Lay out cut lines, centers, and hole locations on stock using a square, scribe, center punch, and chalk line",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Demonstrate the safe operation of a drill press, bench grinder, and portable power drill",
+   "grade": 7,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Sharpen and maintain edge tools such as chisels, plane irons, and knives following a regular maintenance schedule",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Select the correct saw blade, drill bit, or abrasive wheel for a material based on tooth count, bit type, and grit",
+   "grade": 8,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Select the correct tool and technique for a fastening task involving bolts, screws, rivets, or adhesives",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.02.03.b",
+    "PST.04.03.02.c"
+   ]
+  },
+  {
+   "text": "Prepare a tool and equipment list for an AFNR fabrication or repair project from its plans",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.02.02.a",
+    "PST.04.03.02.a"
+   ]
+  },
+  {
+   "text": "Operate portable power tools such as the circular saw, reciprocating saw, jigsaw, and angle grinder using best practices and safety guidelines",
+   "grade": 9,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.03",
+    "PST.04.03.02.c"
+   ]
+  },
+  {
+   "text": "Operate an air compressor and pneumatic tools including pressure regulation, line lubrication, and hose coupling",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.02.03.b",
+    "PST.04.03.02.c"
+   ]
+  },
+  {
+   "text": "Perform routine maintenance on power tools including cleaning, lubrication, cord and battery inspection, and blade or brush replacement",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.02.03.b"
+   ]
+  },
+  {
+   "text": "Select and use electrical tools such as wire strippers, crimpers, and a multimeter to install and test a wiring circuit",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.02.03.b",
+    "PST.04.03.02.c"
+   ]
+  },
+  {
+   "text": "Use layout tools such as a builder's level, laser level, and string lines to lay out an agricultural structure site",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.04.03.01.a",
+    "PST.04.03.01.b",
+    "PST.04.03.01.c"
+   ]
+  },
+  {
+   "text": "Calculate the purchase and maintenance costs of tools needed for an SAE or shop and recommend a cost-effective tool investment",
+   "grade": 10,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.02.02.b"
+   ]
+  },
+  {
+   "text": "Diagnose a malfunctioning power tool using manufacturer guidelines and troubleshoot the fault to a specific component",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.03.03"
+   ]
+  },
+  {
+   "text": "Design a standard operating procedure for the safe setup, use, and maintenance of a specific power tool in the agricultural shop",
+   "grade": 11,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "PST.01.02.02.c"
+   ]
+  }
+ ],
+ "changes": "Kept all six existing objectives as real competencies, moving power tool operation to grade 7 and recasting edge tool upkeep as hands-on sharpening. Added tool classification, hand tool technique, power source comparison, layout, blade and bit selection, project tool lists, portable power tools, pneumatic tools, power tool maintenance, electrical tools, site layout tools, tool cost analysis, and a tool-specific operating procedure. Each added objective is tool-focused. General shop safety, welding, and woodworking construction are left to the sibling sub-topics. AFNR codes are applied only from grade 9 up.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "PS.04.02.02.a",
+  "PS.04.02.02.b",
+  "PST.01.02.02.a",
+  "PST.01.02.02.b",
+  "PST.01.02.02.c",
+  "PST.01.02.03.b",
+  "PST.03.02.03.b",
+  "PST.03.03",
+  "PST.04.03",
+  "PST.04.03.01.a",
+  "PST.04.03.01.b",
+  "PST.04.03.01.c",
+  "PST.04.03.02.a",
+  "PST.04.03.02.c",
+  "PST.05.03.02.c"
+ ],
+ "usage": {
+  "input": 2481,
+  "output": 3490
+ }
+}

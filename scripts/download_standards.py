@@ -33,6 +33,9 @@ JURISDICTIONS = {
     "PER": [("C5FF5D77B40D4C15B04C95B872723EFB", "Collaborative for Academic, Social, and Emotional Learning"),
             ("A66ADAD3FB044D2F9B81C67CE1C6E7C3", "National Health Education Standards")],
     "CFL": [("2FEC7EA742444416BC3E0E955468251D", "ACTFL")],
+    # The AFNR Career Cluster Content Standards, 2024 edition only (filtered below). Added 2026-11-05
+    # for the Agriculture subject, which FFA makes central at the school.
+    "AGR": [("2F48212D5B0F4352805BD0D1A9911263", "National Council for Agricultural Education")],
 }
 
 
@@ -81,6 +84,8 @@ def main():
                         continue
                     if subject == "ELA" and "english" not in subj.lower() and "literacy" not in subj.lower():
                         continue
+                if jid == "2F48212D5B0F4352805BD0D1A9911263" and "(2024-)" not in subj:
+                    continue
                 jdir = RAW / jid
                 jdir.mkdir(exist_ok=True)
                 fp = jdir / f"{sid}.json"

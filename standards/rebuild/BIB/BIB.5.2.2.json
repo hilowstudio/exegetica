@@ -1,0 +1,254 @@
+{
+ "sub_topic": "BIB.5.2.2",
+ "name": "Theological vs Secular Ethics",
+ "path": [
+  "Bible & Theology",
+  "Comparative Religious Studies & Ethics",
+  "Comparative Ethics & Moral Frameworks"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify that the Bible teaches God is good and tells people what is right and wrong",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Psalm 119:68",
+    "Deuteronomy 10:12-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the Ten Commandments as the rules God gave his people to show them how to live",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Exodus 20:1-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q41"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Retell how Jesus summarized God's law as loving God and loving your neighbor",
+   "grade": 2,
+   "bloom": 2,
+   "scripture": [
+    "Matthew 22:37-40"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q42"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Describe how Romans 2 explains that people who do not know the Bible still have a sense of right and wrong written on their hearts",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Romans 2:14-15"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 1.1"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain that secular ethics is an approach that decides right and wrong without reference to God or Scripture",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain why the Bible teaches that every human life has worth because people are made in the image of God",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Genesis 1:26-27",
+    "Genesis 9:6"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Compare a reason for an action based on God's command with a reason based on personal feeling or preference",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Judges 21:25",
+    "Isaiah 5:20",
+    "Deuteronomy 10:12-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Identify common secular sources of moral authority such as personal feelings, cultural agreement, civil law, and human well-being",
+   "grade": 6,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Apply the Ten Commandments to contemporary moral situations using the catechism's account of what each commandment requires and forbids",
+   "grade": 6,
+   "bloom": 3,
+   "scripture": [
+    "Exodus 20:1-17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q41",
+    "Westminster Shorter Catechism Q69"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the Euthyphro dilemma and the Reformed response that goodness is grounded in God's unchanging nature rather than in arbitrary will or a standard above God",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Psalm 119:68",
+    "Malachi 3:6",
+    "James 1:17"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q4"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain the moral argument for God's existence and identify its premises and conclusion",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Romans 2:14-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Christian and secular accounts each ground human dignity and human rights, including the biblical teaching on the image of God",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Genesis 1:26-27",
+    "Genesis 9:6",
+    "James 3:9"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q10"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Explain individual and cultural moral relativism and identify the internal tensions in each form",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Judges 21:25",
+    "Isaiah 5:20"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain how the Reformed tradition accounts for real moral goodness in the actions of those who do not believe, while distinguishing it from works done in faith",
+   "grade": 10,
+   "bloom": 2,
+   "scripture": [
+    "Romans 2:14-15",
+    "Matthew 5:45"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 16.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Construct an argument for objective moral standards that draws on Scripture and the tradition's teaching that the moral law binds all people",
+   "grade": 10,
+   "bloom": 6,
+   "scripture": [
+    "Romans 2:14-15",
+    "Psalm 119:68"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.5"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate evolutionary accounts that explain morality as a product of survival and social instinct",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Evaluate major objections to divine command theory and distinguish it from the Reformed view of the moral law as a perfect rule of righteousness reflecting God's character",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Deuteronomy 10:12-13",
+    "Psalm 119:68"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Analyze how Scripture and the Reformed confessions relate law and love, including love as the fulfilling of the law and the uses of the law for believers",
+   "grade": 12,
+   "bloom": 4,
+   "scripture": [
+    "Romans 13:8-10",
+    "Matthew 22:37-40"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 19.6",
+    "Westminster Confession of Faith 19.7"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Create a comparative analysis of a contemporary ethical issue showing how a theological and a secular framework each reach and justify their conclusions",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  }
+ ],
+ "changes": "Reworded K and grade 1 objectives to anchor them in Scripture and the catechism. Dropped 'doing good makes God happy' and 'why we need God to have real rules' as vague or as duplicates of later objectives. Added the summary of the law (grade 2), the image of God (grade 4), secular sources of moral authority (grade 6), and the Reformed account of moral goodness among unbelievers (grade 10). Paired the Euthyphro dilemma with the Reformed answer grounded in God's nature, and kept divine command theory as a distinct evaluation at grade 11. Widened the grade 12 law and love objective to include the uses of the law, and added a capstone comparative analysis. Left the named ethical systems to the sibling sub-topic. Replaced the cited references where better anchors existed, and left anchors empty where no text truly states the competency.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1916,
+  "output": 4137
+ }
+}

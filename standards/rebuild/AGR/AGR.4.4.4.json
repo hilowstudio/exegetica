@@ -1,0 +1,175 @@
+{
+ "sub_topic": "AGR.4.4.4",
+ "name": "Careers in Agribusiness",
+ "path": [
+  "Agriculture, Food & Natural Resources",
+  "Agribusiness & Marketing",
+  "Entrepreneurship & Careers"
+ ],
+ "grades": [
+  4,
+  6,
+  8,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify jobs and careers connected to growing, processing, selling, and delivering food and fiber",
+   "grade": 4,
+   "bloom": 1,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe how people in different agribusiness jobs depend on one another to bring a product from the farm to a store shelf",
+   "grade": 5,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the range of agribusiness career pathways, including production, sales, marketing, finance, lending, insurance, and commodity trading",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Classify agribusiness careers by type of work, such as entry-level, skilled, technical, managerial, and professional",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the education, training, and credentials required for different agribusiness careers",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the role of the agribusiness sector in the economy and the share of AFNR careers found in business, finance, and marketing rather than direct production",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02"
+   ]
+  },
+  {
+   "text": "Describe the daily duties, work settings, and typical earnings of selected agribusiness careers such as agricultural loan officer, farm manager, commodity merchandiser, and agricultural sales representative",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05"
+   ]
+  },
+  {
+   "text": "Explain how supervised agricultural experience placements, FFA career development events, and proficiency awards build skills for agribusiness careers",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05"
+   ]
+  },
+  {
+   "text": "Analyze how supply chains connect agribusiness careers from input suppliers through producers, processors, distributors, and retailers to the consumer",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02"
+   ]
+  },
+  {
+   "text": "Analyze how trends such as technology, global trade, and consolidation are changing employment outlook and skill demands in agribusiness careers",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.02"
+   ]
+  },
+  {
+   "text": "Conduct an informational interview or job shadow with an agribusiness professional and summarize the career path and competencies described",
+   "grade": 10,
+   "bloom": 3,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05"
+   ]
+  },
+  {
+   "text": "Compare career paths of being employed by an agribusiness firm with owning an agribusiness based on risk, income, and required skills",
+   "grade": 11,
+   "bloom": 4,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05",
+    "ABS.04.01.01.b"
+   ]
+  },
+  {
+   "text": "Evaluate an agribusiness career pathway against personal interests, abilities, values, calling, and required education",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05"
+   ]
+  },
+  {
+   "text": "Develop a postsecondary and career plan for a chosen agribusiness, agricultural economics, or agricultural marketing pathway that includes education, credentials, and SAE goals",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [],
+   "confessions": [],
+   "standards": [
+    "FPS.05"
+   ]
+  }
+ ],
+ "changes": "Kept and reworded all six original objectives (grades 4, 6, 8, 10, 11 and 12), broadening some, for example adding credentials at grade 8 and calling and SAE goals at grades 11 and 12. Added these new objectives: interdependence of jobs (grade 5), classifying careers by level (grade 7), the economic scope of the agribusiness sector (grade 9), specific job duties and earnings (grade 9), SAE and FFA links to careers (grade 9), industry trends and employment outlook (grade 10), an informational interview or job shadow (grade 10), and employee versus owner career paths (grade 11). Business planning, cooperatives and job-readiness skills were left to the sibling sub-topics. Standards are limited to FPS.05, FPS.02 and ABS.04.01.01.b where they truly apply, and objectives below grade 9 have none.",
+ "problems": [],
+ "old_count": 6,
+ "candidates": [
+  "ABS.01.01.03.c",
+  "ABS.02.02.03.b",
+  "ABS.03.01.02.b",
+  "ABS.04.01",
+  "ABS.04.01.01.a",
+  "ABS.04.01.01.b",
+  "ABS.04.02.02.b",
+  "ABS.04.02.02.c",
+  "ABS.05.01",
+  "ABS.05.03",
+  "ABS.05.03.02.b",
+  "ABS.05.03.02.c",
+  "ABS.05.03.03.a",
+  "FPS.02",
+  "FPS.05"
+ ],
+ "usage": {
+  "input": 2433,
+  "output": 1481
+ }
+}

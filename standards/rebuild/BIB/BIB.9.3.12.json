@@ -1,0 +1,248 @@
+{
+ "sub_topic": "BIB.9.3.12",
+ "name": "Zephaniah",
+ "path": [
+  "Bible & Theology",
+  "Old Testament Studies (Canonical Survey)",
+  "Minor Prophets"
+ ],
+ "grades": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "model": "claude-opus-5-5",
+ "objectives": [
+  {
+   "text": "Identify Zephaniah as a prophet God sent to speak His message to His people",
+   "grade": 0,
+   "bloom": 1,
+   "scripture": [
+    "Zephaniah 1:1"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recall that Zephaniah says the Lord rejoices over His people with singing",
+   "grade": 1,
+   "bloom": 1,
+   "scripture": [
+    "Zephaniah 3:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Name the day of the Lord as the day Zephaniah warned God would come to judge sin",
+   "grade": 2,
+   "bloom": 1,
+   "scripture": [
+    "Zephaniah 1:14-16"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Retell the movement of Zephaniah from a warning of judgment on the whole earth to a promise of joy for God's people",
+   "grade": 3,
+   "bloom": 2,
+   "scripture": [
+    "Zephaniah 1:2-3",
+    "Zephaniah 3:14-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Describe the remnant in Zephaniah as the humble people who take refuge in the name of the Lord",
+   "grade": 4,
+   "bloom": 2,
+   "scripture": [
+    "Zephaniah 3:12-13"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Compare the day of the Lord as Zephaniah describes it for the proud with the day of rejoicing promised to the remnant",
+   "grade": 5,
+   "bloom": 4,
+   "scripture": [
+    "Zephaniah 1:14-18",
+    "Zephaniah 3:14-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Locate on a map the nations named in Zephaniah's oracles and explain why the prophet announces judgment on them as well as on Judah",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Zephaniah 2:4-15"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Recite Zephaniah 3:17 and explain what each of its phrases teaches about the Lord's presence and delight among His people",
+   "grade": 6,
+   "bloom": 2,
+   "scripture": [
+    "Zephaniah 3:17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the idolatry and complacency Zephaniah condemned in Judah",
+   "grade": 7,
+   "bloom": 2,
+   "scripture": [
+    "Zephaniah 1:4-6",
+    "Zephaniah 1:12"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the judgment language of Zephaniah 1 reverses the order of creation in Genesis 1",
+   "grade": 7,
+   "bloom": 4,
+   "scripture": [
+    "Zephaniah 1:2-3",
+    "Genesis 1:20-26"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Interpret the call to seek the Lord, righteousness, and humility as a summons to repentance before the day of the Lord",
+   "grade": 8,
+   "bloom": 2,
+   "scripture": [
+    "Zephaniah 2:1-3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q87"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Relate the setting of Zephaniah to the reign and reforms of King Josiah",
+   "grade": 8,
+   "bloom": 4,
+   "scripture": [
+    "Zephaniah 1:1",
+    "2 Kings 22:1-2",
+    "2 Kings 23:4-5"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Explain the image of the Lord as a mighty warrior who saves and dwells in the midst of His people",
+   "grade": 9,
+   "bloom": 2,
+   "scripture": [
+    "Zephaniah 3:15-17"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze how the promise of purified speech for the peoples reverses the scattering at Babel",
+   "grade": 9,
+   "bloom": 4,
+   "scripture": [
+    "Zephaniah 3:9-10",
+    "Genesis 11:7-9"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Analyze the charges Zephaniah brings against Jerusalem's officials, judges, prophets, and priests",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Zephaniah 3:1-7"
+   ],
+   "confessions": [],
+   "standards": []
+  },
+  {
+   "text": "Trace the day of the Lord theme from Zephaniah to the New Testament teaching on Christ's return and final judgment",
+   "grade": 10,
+   "bloom": 4,
+   "scripture": [
+    "Zephaniah 1:14-18",
+    "Amos 5:18-20",
+    "1 Thessalonians 5:2",
+    "2 Peter 3:10-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.1",
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Evaluate the syncretism condemned in Zephaniah in light of the first commandment",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Zephaniah 1:4-6",
+    "Exodus 20:3"
+   ],
+   "confessions": [
+    "Westminster Shorter Catechism Q47"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Defend from Zephaniah the Reformed teaching that God's judgment on sin and His restoration of a purified people together display His justice and mercy",
+   "grade": 11,
+   "bloom": 5,
+   "scripture": [
+    "Zephaniah 3:8-13"
+   ],
+   "confessions": [
+    "Westminster Confession of Faith 33.2"
+   ],
+   "standards": []
+  },
+  {
+   "text": "Write an essay that synthesizes the restoration promises of Zephaniah 3 with their New Testament fulfillment in Christ and the new creation",
+   "grade": 12,
+   "bloom": 6,
+   "scripture": [
+    "Zephaniah 3:14-20",
+    "Revelation 21:3-4"
+   ],
+   "confessions": [
+    "Heidelberg Catechism Q52"
+   ],
+   "standards": []
+  }
+ ],
+ "changes": "Kept and reworded the real competencies: Zephaniah as prophet, God singing over His people, the day of the Lord, the remnant, the judgment and joy contrast, de-creation language, seeking righteousness and humility, the Josiah setting, the warrior image, syncretism, judgment and restoration, and the synthesis of chapter 3. Dropped the vague 'God will clean up the world' item because the retelling objective covers it. Turned the feeling-based 'He will quiet you' item into recitation and explanation of 3:17. Turned 'construct a study' into tracing the day of the Lord into the New Testament. Added objectives on the oracles against the nations, Judah's idolatry and complacency, the charges against Jerusalem's leaders, and the reversal of Babel in 3:9. Anchored each objective to specific verses and added Westminster and Heidelberg references only where they state the doctrine taught.",
+ "problems": [],
+ "old_count": 16,
+ "candidates": [],
+ "usage": {
+  "input": 1890,
+  "output": 3882
+ }
+}
