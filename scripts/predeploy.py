@@ -122,6 +122,13 @@ def stdio_round_trip() -> tuple[bool, str, dict]:
         return False, f"stdio round trip failed: {type(e).__name__}: {e}", {}
 
 
+def history_off() -> bool:
+    """fly.toml can withhold History mode (docs/decisions/0023); the live site then lists no History tools."""
+    import tomllib
+    env = tomllib.loads((ROOT / "fly.toml").read_text(encoding="utf-8")).get("env", {})
+    return str(env.get("HISTORY_MODE", "on")).strip().lower() == "off"
+
+
 def get(url: str, timeout: int = 60) -> tuple[int, bytes]:
     try:
         with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "exegetica-predeploy"}),
@@ -198,6 +205,9 @@ def main() -> int:
     say(ok, f"stdio round trip ({note})")
     if not ok:
         failed.append("stdio")
+    if history_off():
+        counts["history"] = 0
+        say(None, "History mode is off in fly.toml; the live site should list no History tools")
 
     code, out = run([PY, "scripts/lint_voice.py"])
     say(None if code else True, "voice lint" + ("" if code == 0 else " reports tics (not blocking)"))

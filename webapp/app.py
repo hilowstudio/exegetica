@@ -960,7 +960,11 @@ async def _refresh_dbs_in_background(stale: list[tuple[str, str, str, str]], app
 
 async def _start_history(app) -> None:
     """Start the Social Sciences Mode's server (history, government, civics) if its DB is present.
-    Optional: without it the history subject is simply unavailable and the Bible chat is unaffected."""
+    Optional: without it the history subject is simply unavailable and the Bible chat is unaffected.
+    HISTORY_MODE=off withholds it from a site that has the DB (docs/decisions/0023)."""
+    if os.environ.get("HISTORY_MODE", "on").strip().lower() == "off":
+        logger.info("History mode is off (HISTORY_MODE)")
+        return
     ss_db = os.environ.get("SOCIAL_SCIENCES_DB") or str(PROJECT_ROOT / "db" / "social_sciences.db")
     if not Path(ss_db).exists():
         return

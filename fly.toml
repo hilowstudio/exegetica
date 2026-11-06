@@ -15,6 +15,7 @@ swap_size_mb = 512
   BOOKS_DB = '/data/books.db'
   COVERS_DB = '/data/covers.db'
   SOCIAL_SCIENCES_DB = '/data/social_sciences.db'
+  HISTORY_MODE = 'off'   # History chat withheld until the maker releases it (docs/decisions/0023)
   HF_HUB_OFFLINE = '1'   # model2vec loads from the baked image cache — no HuggingFace at call time
 
 # Persistent volume for the theology grounding corpus (boot-fetched from R2, version-gated).

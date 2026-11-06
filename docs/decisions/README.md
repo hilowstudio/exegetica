@@ -21,3 +21,4 @@ Each file records one decision about how Exegetica behaves: what was decided, wh
 | [0015](0015-old-studies-read-only.md) | A student's study takes new messages for one day, then opens for reading only |
 | [0016](0016-source-notes.md) | Replies and documents say what they drew on, and quotation marks alone pass nothing |
 | [0017](0017-image-studio.md) | Media Studio is the maker's alone for now, runs each model on the cheapest service, and keeps its images private |
+| [0023](0023-history-withheld.md) | History chat is withheld from the site until a broader release |
