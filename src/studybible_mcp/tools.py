@@ -92,7 +92,7 @@ Returns the full lexicon entry (original script, transliteration, definitions fr
         annotations=ToolAnnotations(title="Lookup Verse", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
         description="""Call to quote or examine one verse ('John 3:16', 'Jude 3').
 
-Returns the verse in a readable translation (BSB by default), its Greek or Hebrew text, a note on reading its genre where one applies, and on request a word-by-word interlinear with Strong's numbers and parsing codes. For a verse range or a chapter, use get_passage. For several translations side by side, use compare_translations. For the Septuagint's Greek of an Old Testament verse, use get_septuagint.""",
+Returns the verse in a readable translation (the ESV by default where this server has a Crossway key, else the BSB), its Greek or Hebrew text, a note on reading its genre where one applies, and on request a word-by-word interlinear with Strong's numbers and parsing codes. For a verse range or a chapter, use get_passage. For several translations side by side, use compare_translations. For the Septuagint's Greek of an Old Testament verse, use get_septuagint.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -102,7 +102,7 @@ Returns the verse in a readable translation (BSB by default), its Greek or Hebre
                 },
                 "translation": {
                     "type": "string",
-                    "description": "BSB (default), WEB, KJV, ASV or YLT, all held here. ESV and NET are fetched live, and the BSB stands in, with a note, when they can't be reached."
+                    "description": "Leave it out for the default: the ESV where this server has a Crossway key, else the BSB. BSB, WEB, KJV, ASV and YLT are held here. ESV and NET are fetched live, and the BSB stands in, with a note, when they can't be reached."
                 },
                 "include_original": {
                     "type": "boolean",
@@ -129,7 +129,7 @@ Returns the verse in a readable translation (BSB by default), its Greek or Hebre
         annotations=ToolAnnotations(title="Get Passage", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
         description="""Call to read more than one verse: a verse range or a whole chapter.
 
-Returns the numbered verses in one translation (BSB by default). The deuterocanon (Tobit, Judith, Wisdom, Sirach, Baruch, 1-4 Maccabees, 1-2 Esdras, Prayer of Manasseh, Greek Esther, Psalm 151, Susanna, Bel and the Dragon, Letter of Jeremiah) comes from the WEB automatically. For one verse with its Greek or Hebrew, use lookup_verse.""",
+Returns the numbered verses in one translation (the ESV by default where this server has a Crossway key, else the BSB). The deuterocanon (Tobit, Judith, Wisdom, Sirach, Baruch, 1-4 Maccabees, 1-2 Esdras, Prayer of Manasseh, Greek Esther, Psalm 151, Susanna, Bel and the Dragon, Letter of Jeremiah) comes from the WEB automatically. For one verse with its Greek or Hebrew, use lookup_verse.""",
         inputSchema={
             "type": "object",
             "properties": {
@@ -139,7 +139,7 @@ Returns the numbered verses in one translation (BSB by default). The deuterocano
                 },
                 "translation": {
                     "type": "string",
-                    "description": "Translation: BSB (default), WEB, KJV, ASV, YLT, or ESV / NET (fetched live)."
+                    "description": "Translation: leave it out for the default (the ESV where this server has a Crossway key, else the BSB), or BSB, WEB, KJV, ASV, YLT, or ESV / NET (fetched live)."
                 },
                 "reader_mode": {
                     "type": "boolean",
@@ -297,15 +297,19 @@ Returns the part of speech and, as they apply, tense or stem, voice, mood, perso
     Tool(
         name="search_by_strongs",
         annotations=ToolAnnotations(title="Search by Strong's Number", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-        description="""Call to see how a word is used across Scripture once you have its Strong's number (from word_study or search_lexicon).
+        description="""Call to see how a word is used across Scripture, or by one book, once you have its Strong's number (from word_study or search_lexicon). Name a book for questions such as how John uses "believe" or whether a book uses a word at all.
 
-Returns the word's short definition and the first verses that contain it, in Bible order, each in a literal word-for-word English gloss.""",
+Returns the word's short definition; how many times it occurs; the words that most often come right after it, which show its constructions (a preposition such as εἰς or a conjunction such as ὅτι); and the first verses in Bible order, each in a literal word-for-word English gloss with the original words around the term and its parsing.""",
         inputSchema={
             "type": "object",
             "properties": {
                 "strongs": {
                     "type": "string",
                     "description": "Strong's number (e.g., 'G26', 'H430')"
+                },
+                "book": {
+                    "type": "string",
+                    "description": "A book to search within (e.g., 'John', '1 John', 'Romans'). Default: the whole Bible"
                 },
                 "limit": {
                     "type": "integer",
@@ -556,12 +560,12 @@ Searches nearly 1,000 public-domain works (the Ante-Nicene and Nicene Fathers, A
         annotations=ToolAnnotations(title="Creeds & Confessions", readOnlyHint=True, destructiveHint=False, idempotentHint=True),
         description="""Call to read or search the creeds, confessions and catechisms: the ecumenical creeds, the Reformed and Baptist standards (Westminster, Heidelberg, Belgic, Dort, 1689), and Lutheran, Anglican, Catholic and Orthodox documents.
 
-With no arguments, lists the documents. document returns one, or its list of sections when it is long. document with section returns one part. topic searches every document. For the proof texts behind an article, use get_confession_proofs. For the articles that cite a verse, use find_confessions_by_verse.""",
+With no arguments, lists the documents. document returns one, or its list of sections when it is long. document with section returns one part. topic searches every document. The Westminster Confession and the 1689 come back with every paragraph numbered (29.2) and its proof texts; cite those numbers as shown. For the proof texts behind a catechism answer or another standard, use get_confession_proofs. For the articles that cite a verse, use find_confessions_by_verse.""",
         inputSchema={
             "type": "object",
             "properties": {
-                "document": {"type": "string", "description": "Document name (e.g., 'Nicene Creed', 'Westminster Confession', 'Heidelberg Catechism')"},
-                "section": {"type": "string", "description": "A catechism question ('Q1') or words from a chapter or article title ('Of Creation', 'God the Father')."},
+                "document": {"type": "string", "description": "Document name (e.g., 'Nicene Creed', 'Westminster Confession', '1689', 'Heidelberg Catechism')"},
+                "section": {"type": "string", "description": "A chapter ('29'), a paragraph ('29.2'), a catechism question ('Q1'), or words from a chapter or article title ('Of Creation', 'God the Father')."},
                 "topic": {"type": "string", "description": "A word or short phrase, matched as written (e.g., 'justification'). Returns up to 12 sections."}
             }
         }

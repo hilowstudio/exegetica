@@ -44,9 +44,18 @@ class Unavailable(Exception):
         self.translation = translation
 
 
-async def _fetch_esv(reference: str) -> tuple[str | None, str | None]:
+def _esv_key() -> str | None:
     # Accept either ESV_API_KEY or BIBLE_API_KEY (a Crossway key under either name).
-    key = os.environ.get("ESV_API_KEY") or os.environ.get("BIBLE_API_KEY")
+    return os.environ.get("ESV_API_KEY") or os.environ.get("BIBLE_API_KEY")
+
+
+def esv_configured() -> bool:
+    """Whether this server has a Crossway key, which makes the ESV the default translation."""
+    return bool(_esv_key())
+
+
+async def _fetch_esv(reference: str) -> tuple[str | None, str | None]:
+    key = _esv_key()
     if not key:
         raise Unavailable("ESV", "no ESV_API_KEY or BIBLE_API_KEY is set", "is not set up on this server")
     try:

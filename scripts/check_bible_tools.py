@@ -23,6 +23,8 @@ import types as pytypes
 from pathlib import Path
 
 os.environ.setdefault("HF_HUB_OFFLINE", "1")  # as in production (fly.toml): no HuggingFace call
+for _key in ("ESV_API_KEY", "BIBLE_API_KEY"):   # no Crossway key, so the default translation is the bundled
+    os.environ.pop(_key, None)                    # BSB and no case reaches api.esv.org
 _up = Path(__file__).resolve().parents
 ROOT = _up[1]
 if (ROOT / "src").exists():  # the repo; on the server the package is installed
@@ -49,6 +51,9 @@ CASES = [  # (tool, arguments, text the answer must contain; a leading "!" marks
     ("lookup_name", {"name": "Lazarus"}, ["Key References"]),
     ("parse_morphology", {"code": "V-AAI-3S"}, ["Aorist"]),
     ("search_by_strongs", {"strongs": "G26", "limit": 5}, ["Verses with G26", "Mat.24.12"]),
+    # one book, in the original, with the constructions: how John uses "believe"
+    ("search_by_strongs", {"strongs": "G4100", "book": "John", "limit": 3},
+     ["In John: ", "Jhn.1.12", "εἰς τὸ ὄνομα", "The word right after it: εἰς", "!Mat."]),
     # Hebrew words carry a sense letter in the tagged text (H3068G, H0430G, H1254A)
     ("search_by_strongs", {"strongs": "H3068", "limit": 3}, ["Gen.2.4", "!No verses found"]),
     ("search_by_strongs", {"strongs": "H430", "limit": 3}, ["Gen.1.1", "*God*", "!No verses found"]),

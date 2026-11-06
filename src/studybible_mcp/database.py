@@ -614,8 +614,9 @@ class StudyBibleDB:
             or await self._fetchone("SELECT * FROM verses WHERE ref_alt = ?", (normalized,))
         )
     
-    async def get_verses_with_strongs(self, strongs: str, limit: int = 20) -> list[dict]:
-        """Find verses containing a specific Strong's number.
+    async def get_verses_with_strongs(self, strongs: str, limit: int = 20, book: str | None = None) -> list[dict]:
+        """Find verses containing a specific Strong's number, in Bible order, optionally in one book
+        (its internal code, e.g. 'Jhn').
 
         The tagged text gives most words a STEPBible sense letter (YHWH is H3068G, bara is
         H1254A, nearly every Hebrew word has one), so a plain number also matches its lettered
@@ -624,14 +625,13 @@ class StudyBibleDB:
         strongs = self._normalize_strongs(strongs)
         if re.match(r"^[GH]\d+$", strongs):
             # The number followed by its closing quote or by a letter: "H3068" or "H3068G".
-            return await self._fetchall(
-                "SELECT * FROM verses WHERE word_data GLOB ? LIMIT ?",
-                (f'*"{strongs}[A-Za-z"]*', limit),
-            )
-        return await self._fetchall(
-            "SELECT * FROM verses WHERE word_data LIKE ? LIMIT ?",
-            (f'%"{strongs}"%', limit),
-        )
+            where, params = "word_data GLOB ?", [f'*"{strongs}[A-Za-z"]*']
+        else:
+            where, params = "word_data LIKE ?", [f'%"{strongs}"%']
+        if book:
+            where += " AND book = ?"
+            params.append(book)
+        return await self._fetchall(f"SELECT * FROM verses WHERE {where} ORDER BY id LIMIT ?", (*params, limit))
     
     # =========================================================================
     # Cross-reference queries
@@ -940,7 +940,8 @@ class StudyBibleDB:
     async def search_historical_documents(self, query: str, limit: int = 12) -> list[dict]:
         q = f"%{query.lower()}%"
         return await self._fetchall(
-            "SELECT doc_title, tradition, section_label, content, topics FROM historical_documents "
+            "SELECT doc_id, doc_title, tradition, section_num, section_label, content, topics "
+            "FROM historical_documents "
             "WHERE LOWER(content) LIKE ? OR LOWER(topics) LIKE ? OR LOWER(section_label) LIKE ? "
             "ORDER BY doc_title, section_num LIMIT ?",
             (q, q, q, limit),

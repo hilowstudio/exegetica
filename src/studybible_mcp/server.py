@@ -36,7 +36,7 @@ from mcp.types import (
 
 from .database import (
     StudyBibleDB, BOOK_ABBREV_MAP, SINGLE_CHAPTER_BOOKS,
-    DEUTERO_BOOKS, resolve_folded_ref, _NAME_TO_OSIS, _OSIS_TO_NAME,
+    DEUTERO_BOOKS, resolve_folded_ref, _NAME_TO_OSIS, _OSIS_TO_NAME, base_strongs,
 )
 from .tools import (
     TOOLS,
@@ -50,7 +50,7 @@ from .tools import (
 from .hermeneutics import get_genre_from_reference, format_genre_guidance
 from .parsers.commentaries import COMMENTARIES
 from .parsers.lxx import swete_ref
-from .clients import OPTIONAL_TRANSLATIONS, ATTRIBUTION, Unavailable, fetch_optional
+from .clients import OPTIONAL_TRANSLATIONS, ATTRIBUTION, Unavailable, esv_configured, fetch_optional
 
 logging.basicConfig(
     level=logging.INFO,
@@ -255,6 +255,15 @@ def _stand_in_note(e: Unavailable, translation: str) -> str:
     return f"*{e} This is the {translation} in its place. Name the {translation} when quoting it.*"
 
 
+def _default_translation(reference: str, book: str) -> str:
+    """With no translation asked for: the ESV where this server has a Crossway key, so students read
+    the wording their class uses, and the BSB otherwise. The deuterocanon comes from the WEB, the
+    only translation here that holds it. A failed ESV fetch falls back to the BSB with a note."""
+    if book in DEUTERO_BOOKS or resolve_folded_ref(reference):
+        return "WEB"
+    return "ESV" if esv_configured() else "BSB"
+
+
 def _route_deutero(reference: str, book: str, requested: str) -> str:
     """Deuterocanon text is bundled only in WEB, so route those references there.
 
@@ -402,7 +411,7 @@ async def handle_word_study(args: dict[str, Any]) -> list[TextContent]:
 async def handle_lookup_verse(args: dict[str, Any]) -> list[TextContent] | CallToolResult:
     """Get a verse in a readable translation, with optional original + interlinear."""
     reference = args.get("reference", "")
-    translation = (args.get("translation") or "BSB").upper()
+    requested = (args.get("translation") or "").upper()
     include_original = args.get("include_original", True)
     include_morphology = args.get("include_morphology", False)
 
@@ -411,7 +420,8 @@ async def handle_lookup_verse(args: dict[str, Any]) -> list[TextContent] | CallT
 
     normalized = db._normalize_reference(reference)
     verse = await db.get_verse(reference)
-    translation = _route_deutero(reference, normalized.split(".")[0], translation)
+    book = normalized.split(".")[0]
+    translation = _route_deutero(reference, book, requested) if requested else _default_translation(reference, book)
 
     readable_text = None
     readable_note = None
@@ -473,9 +483,10 @@ async def handle_lookup_verse(args: dict[str, Any]) -> list[TextContent] | CallT
 async def handle_get_passage(args: dict[str, Any]) -> list[TextContent] | CallToolResult:
     """Return a readable passage (verse range or whole chapter) in a translation."""
     reference = args.get("reference", "")
-    translation = (args.get("translation") or "BSB").upper()
     if not reference:
         return text("Please provide a passage reference (e.g., 'Romans 3:21-26' or 'Psalm 23').")
+    requested = (args.get("translation") or "").upper()
+    translation = requested or _default_translation(reference, (_parse_passage(reference) or ("",))[0])
 
     stand_in = None
     if translation in OPTIONAL_TRANSLATIONS:
@@ -647,10 +658,29 @@ async def handle_parse_morphology(args: dict[str, Any]) -> list[TextContent]:
     return text(result)
 
 
+_STRONGS_SCAN = 1500   # verses read for the counts and the tally of the word that follows
+
+
+def _strongs_uses(words: list, target: str) -> list[int]:
+    """Positions of the words tagged with `target`. A plain number also matches its lettered forms
+    (H3068 finds H3068G), as in get_verses_with_strongs; a lettered one matches only itself."""
+    plain = base_strongs(target) == target
+    return [i for i, w in enumerate(words)
+            if isinstance(w, dict) and (base_strongs(w.get("strongs", "")) if plain else w.get("strongs")) == target]
+
+
+def _bare(word: str) -> str:
+    """A word without its punctuation, for the tally: 'κρίνεται·' -> 'κρίνεται', 'אֶת\\־' -> 'אֶת'."""
+    return word.strip(".,;:·’'\"!?()[]\\־׃")
+
+
 async def handle_search_by_strongs(args: dict[str, Any]) -> list[TextContent]:
-    """Find all verses containing a Strong's number."""
+    """Find the verses containing a Strong's number, in one book or the whole Bible, each with the
+    original words around the term. A tally of the word that follows shows the constructions, so
+    "how does John use believe" is answered from the text in one call."""
     strongs = args.get("strongs", "")
     limit = args.get("limit", 20)
+    book_name = (args.get("book") or "").strip()
 
     if not strongs:
         return text("Please provide a Strong's number (e.g., 'G26' or 'H3068').")
@@ -658,15 +688,55 @@ async def handle_search_by_strongs(args: dict[str, Any]) -> list[TextContent]:
     entry = await db.get_lexicon_entry(strongs)
     if not entry:
         return text(f"Unknown Strong's number: {strongs}")
+    book = _book_abbr(book_name) if book_name else None
+    if book and book not in set(BOOK_ABBREV_MAP.values()):
+        return text(f"Unknown book: {book_name}. Name a book of the Bible, such as John or 1 John.")
 
-    verses = await db.get_verses_with_strongs(strongs, limit=limit)
+    target = db._normalize_strongs(strongs)
+    rows = await db.get_verses_with_strongs(strongs, limit=_STRONGS_SCAN, book=book)
     result = f"## Verses with {strongs} ({entry['word']} - {entry['transliteration']})\n\n"
     result += f"*{entry['short_definition']}*\n\n"
-    if verses:
-        for v in verses:
-            result += f"**{v['reference']}**: {v['text_english']}\n\n"
-    else:
-        result += "No verses found with this Strong's number in the database.\n"
+    if not rows:
+        where = f" in {book_name}" if book else ""
+        return text(result + f"No verses found with this Strong's number{where} in the database.\n")
+
+    verses, uses, after, forms = [], 0, {}, {}
+    for v in rows:
+        words = json.loads(v["word_data"]) if v.get("word_data") else []
+        at = _strongs_uses(words, target)
+        uses += len(at)
+        for i in at:
+            if i + 1 < len(words):
+                nxt = words[i + 1]
+                key = base_strongs(nxt.get("strongs", ""))
+                after[key] = after.get(key, 0) + 1
+                forms.setdefault(key, {})
+                form = _bare(nxt.get("word", ""))
+                forms[key][form] = forms[key].get(form, 0) + 1
+        verses.append((v, words, at))
+
+    scope = f"In {book_name}" if book else "In the whole Bible"
+    capped = len(rows) >= _STRONGS_SCAN
+    result += (f"{scope}: {uses} uses in {len(rows)}{'+' if capped else ''} verses"
+               f"{' (the counts cover the first ' + str(_STRONGS_SCAN) + '; name a book to narrow it)' if capped else ''}. "
+               f"The first {min(limit, len(rows))} follow, in Bible order.\n\n")
+    if after:
+        top = sorted(after.items(), key=lambda kv: -kv[1])[:8]
+        tally = " · ".join(f"{max(forms[k], key=forms[k].get)} ({k}) {n}" for k, n in top)
+        result += f"The word right after it: {tally}\n\n"
+    label = "Greek" if target.startswith("G") else "Hebrew"
+    for v, words, at in verses[:limit]:
+        result += f"**{v['reference']}**: {v['text_english']}\n"
+        spans = []
+        for i in at:
+            span = []
+            for j in range(max(0, i - 2), min(len(words), i + 4)):
+                w = words[j].get("word", "")
+                span.append(f"**{w}** [{words[j].get('morph', '')}]" if j == i else w)
+            spans.append(" ".join(span))
+        if spans:
+            result += f"{label}: {' … '.join(spans)}\n"
+        result += "\n"
     return text(result)
 
 
@@ -1280,6 +1350,194 @@ async def handle_search_theology(args: dict[str, Any]) -> list[TextContent]:
     return text("\n".join(lines))
 
 
+# The confession texts carry chapter titles and no chapter numbers. The 1689's paragraphs end in
+# the source's footnote counters, and its proof rows lost the numeral of books like 1 Corinthians.
+# The proof-text index carries the standard numbering ("29.2"), so a confession that has one is
+# numbered from it: a chapter takes its number from a paragraph whose text matches an indexed
+# article, a chapter with no match takes the number between its neighbours, and paragraphs count
+# in order within their chapter. Its proof texts come from the index too.
+_PROOF_EDITION = {"london-baptist-1689": "1689-confession", "westminster-confession": "wcf"}
+_DOC_ALIASES = {
+    "1689": "london-baptist-1689", "lbcf": "london-baptist-1689", "second london": "london-baptist-1689",
+    "wcf": "westminster-confession", "wsc": "westminster-shorter-catechism",
+    "wlc": "westminster-larger-catechism", "shorter catechism": "westminster-shorter-catechism",
+    "larger catechism": "westminster-larger-catechism", "heidelberg": "heidelberg-catechism",
+    "belgic": "belgic-confession", "dort": "canons-of-dort", "thirty nine articles": "39-articles",
+    "trent": "council-of-trent", "augsburg": "augsburg-confession", "nicene": "nicene-creed",
+    "apostles": "apostles-creed", "athanasian": "athanasian-creed", "chalcedon": "chalcedonian-definition",
+}
+_SECTION_WORDS = re.compile(r"\b(?:chapter|chap|ch|article|art|paragraph|para|par|section|sec)\b\.?|§", re.I)
+_PROSE = re.compile(r"\b[a-z]{3,}\b")               # a row of proof references holds at most an "etc."
+_FOOTNOTE = re.compile(r"\s+\d{1,3}\s*$")           # the 1689's trailing footnote counters
+_INLINE_PARA = re.compile(r"(?:^|(?<=[\s.;:]))(\d{1,2})\.\s*(?=[A-Z(])")   # Westminster's "1. ... 2. ..."
+_outlines: dict[str, list[dict]] = {}
+
+
+def _plain(s: str) -> str:
+    return " ".join(re.sub(r"[^a-z0-9]+", " ", (s or "").lower()).split())
+
+
+def _letters(s: str) -> str:
+    return re.sub(r"[^a-z]", "", (s or "").lower())[:50]
+
+
+async def _find_document(name: str) -> str | None:
+    """The doc_id a document name means: an exact title or id, the shortest title that contains it,
+    a common short name ('1689', 'WCF', 'Shorter Catechism'), or the title holding all its words
+    ('1689 London Baptist Confession')."""
+    want = _plain(name)
+    if not want:
+        return None
+    docs = await db.list_historical_documents()
+    for d in docs:
+        if want in (_plain(d["doc_title"]), _plain(d["doc_id"])):
+            return d["doc_id"]
+    holding = [d for d in docs if want in _plain(d["doc_title"])]
+    if not holding:
+        alias = next((doc_id for key, doc_id in _DOC_ALIASES.items() if re.search(rf"\b{key}\b", want)), None)
+        if alias:
+            return alias
+        words = [w for w in want.split() if len(w) >= 3 and not w.isdigit() and w not in ("the", "and", "faith")]
+        holding = [d for d in docs if words and all(w in _plain(d["doc_title"]).split() for w in words)]
+    return min(holding, key=lambda d: len(d["doc_title"]))["doc_id"] if holding else None
+
+
+def _section_numbers(section: str) -> tuple[int, int | None] | None:
+    """(chapter, paragraph or None) for a numbered section: '29', '29.2', '29:2', 'chapter 29',
+    'ch. 29 para 2'. None for a title or a catechism question."""
+    m = re.fullmatch(r"\s*(\d{1,3})\s*(?:[.:,]\s*|\s+)?(\d{1,3})?\s*\.?\s*", _SECTION_WORDS.sub(" ", section or ""))
+    if not m:
+        return None
+    return int(m.group(1)), int(m.group(2)) if m.group(2) else None
+
+
+def _paragraphs(content: str) -> list[str]:
+    """A row's paragraphs: the row itself, or a chapter's numbered paragraphs in order. Numbering that
+    starts over at 1 is another chapter's text run on, and is left out."""
+    t = re.sub(r"\[[\d.\s/]+\]\s*", "", content or "").strip()   # Book of Confessions codes, '[6.051 / 6.183]'
+    if not _INLINE_PARA.match(t):
+        return [_FOOTNOTE.sub("", t).strip()]
+    bits = _INLINE_PARA.split(t)
+    out: list[str] = []
+    for i in range(1, len(bits) - 1, 2):
+        if bits[i] == "1" and out:
+            break
+        out.append(bits[i + 1].strip())
+    return out
+
+
+async def _confession_outline(doc_id: str) -> list[dict] | None:
+    """[{num, title, paras: [{num, text, row, indexed}]}] for a confession numbered from its proof-text
+    index, else None. `indexed` is the index's own label for a paragraph. It differs from the number
+    shown where the editions part: Westminster 31 has four paragraphs here and five in the index."""
+    edition = _PROOF_EDITION.get(doc_id)
+    if not edition or not await db.has_confession_proofs():
+        return None
+    if doc_id not in _outlines:
+        index = {_letters(o["section_text"]): o["section_label"] for o in await db.confession_proof_outline(edition)}
+        chapters: list[dict] = []
+        for x in await db.get_historical_document(doc_id):
+            if not chapters or chapters[-1]["title"] != (x["section_label"] or ""):
+                chapters.append({"num": None, "title": x["section_label"] or "", "paras": []})
+            ch = chapters[-1]
+            if len(_PROSE.findall(x["content"] or "")) < 4:
+                continue
+            for p in _paragraphs(x["content"]):
+                label = index.get(_letters(p))
+                ch["paras"].append({"num": len(ch["paras"]) + 1, "text": p, "row": x["section_num"], "indexed": label})
+                if label and ch["num"] is None:
+                    ch["num"] = int(label.split(".")[0])
+        for i, ch in enumerate(chapters):
+            if ch["num"] is None:
+                before = next((c["num"] for c in reversed(chapters[:i]) if c["num"]), 0)
+                after = next((c["num"] for c in chapters[i + 1:] if c["num"]), None)
+                if after is not None and after - before == 2:
+                    ch["num"] = before + 1
+        _outlines[doc_id] = chapters
+    return _outlines[doc_id]
+
+
+def _para_label(ch: dict, p: dict) -> str:
+    return f"{ch['num']}.{p['num']}" if ch["num"] else f"¶{p['num']}"
+
+
+async def _proof_refs(edition: str, labels: list[str]) -> dict[str, str]:
+    """{article label: its proof references, with book numerals intact} from the proof-text index."""
+    out: dict[str, list[str]] = {}
+    for r in await db.get_confession_proofs(edition, labels) if labels else []:
+        ref = _format_xref_target(f"{r['book']}.{r['chapter']}.{r['verse_start']}")
+        if r["verse_end"] and r["verse_end"] != r["verse_start"]:
+            ref += f"-{r['verse_end']}"
+        refs = out.setdefault(r["section_label"], [])
+        if ref not in refs:
+            refs.append(ref)
+    return {label: "; ".join(refs) for label, refs in out.items()}
+
+
+async def _numbered_confession(meta: dict, doc_id: str, outline: list[dict], section) -> str:
+    """A numbered confession: its chapter list, or the chapters and paragraphs a section names."""
+    header = f"## {meta['doc_title']}\n*{(meta['doc_type'] or '').title()} · {meta['tradition']} · {meta['doc_date']}*\n"
+    if not section:
+        if len(outline) > 12:
+            lines = [header, f"*{len(outline)} chapters. Request one with `section` ('29'), a paragraph "
+                             "('29.2'), or words from its title, or search with `topic`.*", ""]
+            lines += [f"- **{ch['num'] or 'unnumbered'}** {ch['title']} ({len(ch['paras'])} "
+                      f"paragraph{'' if len(ch['paras']) == 1 else 's'})" for ch in outline]
+            return "\n".join(lines)
+        chosen = [(ch, ch["paras"]) for ch in outline]
+    else:
+        nums = _section_numbers(str(section))
+        if nums:
+            chosen = [(ch, [p for p in ch["paras"] if nums[1] is None or p["num"] == nums[1]])
+                      for ch in outline if ch["num"] == nums[0]]
+            chosen = [(ch, ps) for ch, ps in chosen if ps]
+        else:
+            want = _plain(str(section))
+            named = [ch for ch in outline if _plain(ch["title"]) == want] or \
+                    [ch for ch in outline if want and want in _plain(ch["title"])]
+            chosen = [(ch, ch["paras"]) for ch in named]
+        if not chosen:
+            return (f"No section '{section}' found in {meta['doc_title']}. Name a chapter ('29'), a paragraph "
+                    "('29.2'), or words from a chapter title.")
+    proofs = await _proof_refs(_PROOF_EDITION[doc_id], [p["indexed"] for _, ps in chosen for p in ps if p["indexed"]])
+    lines = [header]
+    for ch, paras in chosen:
+        lines.append(f"### Chapter {ch['num']}: {ch['title']}" if ch["num"] else f"### {ch['title']} (unnumbered)")
+        for p in paras:
+            label = _para_label(ch, p)
+            note = f" (numbered {p['indexed']} in the proof-text edition)" if p["indexed"] and p["indexed"] != label else ""
+            body = p["text"]
+            lines.append(f"**{label}**{note} {body[:1600].rstrip()}{' …' if len(body) > 1600 else ''}")
+            if p["indexed"] in proofs:
+                lines.append(f"Proof texts: {proofs[p['indexed']]}")
+            lines.append("")
+    lines.append("*Cite a paragraph by the number shown here, chapter.paragraph.*")
+    return "\n".join(lines)
+
+
+def _matching_sections(secs: list[dict], section: str) -> list[dict]:
+    """The sections of an unnumbered document that a request names: an exact label ('Q1', 'Article
+    XII', '1.2'), a catechism question by number ('1', 'question 1'), a chapter of a document labelled
+    '1.1', '1.2' ('1' or 'chapter 1'), or words from a title."""
+    s = section.strip().lower()
+
+    def label(x):
+        return (x["section_label"] or "").strip().lower()
+
+    exact = [x for x in secs if label(x) == s]
+    if exact:
+        return exact
+    question = re.fullmatch(r"(?:q|question)\s*\.?\s*(\d+)", s)
+    nums = _section_numbers(s)
+    if question or (nums and nums[1] is None):
+        number = int(question.group(1)) if question else nums[0]
+        asked = [x for x in secs if label(x) == f"q{number}"]
+        return asked if asked or question else [x for x in secs if label(x).startswith(f"{number}.")]
+    if nums:
+        return [x for x in secs if label(x) == f"{nums[0]}.{nums[1]}"]
+    return [x for x in secs if s in label(x)]
+
+
 async def handle_get_confession(args: dict[str, Any]) -> list[TextContent]:
     """List / retrieve / search creeds, confessions, and catechisms."""
     document = args.get("document")
@@ -1291,32 +1549,38 @@ async def handle_get_confession(args: dict[str, Any]) -> list[TextContent]:
 
     if topic and not document:
         rows = await db.search_historical_documents(topic)
-        if not rows:
-            return text(f"No creed/confession/catechism sections found for '{topic}'.")
         lines = [f"## Creeds & Confessions on '{topic}'", ""]
         for r in rows:
+            outline = await _confession_outline(r["doc_id"]) if r["doc_id"] in _PROOF_EDITION else None
+            if outline is not None:   # numbered paragraphs; a row of proof references is passed over
+                hits = [(ch, p) for ch in outline for p in ch["paras"] if p["row"] == r["section_num"]]
+                inside = [(ch, p) for ch, p in hits if topic.lower() in p["text"].lower()]
+                for ch, p in inside or hits[:1]:
+                    lines.append(f"### {r['doc_title']} {_para_label(ch, p)} ({ch['title']})  *({r['tradition']})*")
+                    lines.append(p["text"][:1200].rstrip() + " …" if len(p["text"]) > 1200 else p["text"])
+                    lines.append("")
+                continue
             lines.append(f"### {r['doc_title']} — {r['section_label']}  *({r['tradition']})*")
             body = r["content"]
             lines.append(body[:1200].rstrip() + " …" if len(body) > 1200 else body)
             lines.append("")
+        if len(lines) == 2:
+            return text(f"No creed/confession/catechism sections found for '{topic}'.")
         return text("\n".join(lines))
 
     if document:
-        doc_id = await db.find_historical_doc_id(document)
+        doc_id = await _find_document(document)
         if not doc_id:
             avail = ", ".join(d["doc_title"] for d in await db.list_historical_documents())
             return text(f"No document matched '{document}'. Available: {avail}.")
         secs = await db.get_historical_document(doc_id)
         meta = secs[0]
+        outline = await _confession_outline(doc_id)
+        if outline is not None:
+            return text(await _numbered_confession(meta, doc_id, outline, section))
         header = f"## {meta['doc_title']}\n*{(meta['doc_type'] or '').title()} · {meta['tradition']} · {meta['doc_date']}*\n"
         if section:
-            s = str(section).strip().lower()
-            qm = re.match(r"^q?(\d+)$", s)
-            if qm:  # a catechism question number: exact match so 'Q1' != 'Q10'
-                target = f"q{qm.group(1)}"
-                secs = [x for x in secs if (x["section_label"] or "").strip().lower() == target]
-            else:
-                secs = [x for x in secs if s in (x["section_label"] or "").lower()]
+            secs = _matching_sections(secs, str(section))
             if not secs:
                 return text(f"No section '{section}' found in {meta['doc_title']}.")
         if section or len(secs) <= 12:
@@ -1454,8 +1718,11 @@ def _proof_sections(section: str, labels: list[str]) -> list[str]:
     number = s[1:] if s[:1] in "Qq" else s
     if number.isdigit() and f"Q{number}" in labels:
         return [f"Q{number}"]
-    if s.isdigit():
-        return [label for label in labels if label.startswith(f"{s}.")]
+    nums = _section_numbers(s)   # '29.2', '29:2', 'chapter 29', 'ch. 29 para 2'
+    if nums and nums[1] is not None:
+        return [f"{nums[0]}.{nums[1]}"] if f"{nums[0]}.{nums[1]}" in labels else []
+    if nums:
+        return [label for label in labels if label.startswith(f"{nums[0]}.")]
     return []
 
 

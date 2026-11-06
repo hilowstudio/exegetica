@@ -144,3 +144,36 @@ async def test_a_successful_live_quote_keeps_its_copyright_line(monkeypatch):
     assert "## John 3:16 (ESV)" in msg and "For God so loved the world, ESV" in msg
     assert clients.ATTRIBUTION["ESV"] in msg
     assert "could not be reached" not in msg
+
+
+# The default translation (2026-11-05, at the maker's request): the ESV where the server has a Crossway
+# key, so students read their class's wording, the BSB otherwise, and the WEB for the deuterocanon.
+
+@pytest.mark.parametrize("tool", ["get_passage", "lookup_verse"])
+async def test_with_a_key_the_default_is_the_esv(monkeypatch, tool):
+    monkeypatch.setattr(clients, "httpx", _http(payload={"passages": ["For God so loved the world, ESV"]}))
+    msg = _text(await _call(tool, {"reference": "John 3:16"}))
+    assert "For God so loved the world, ESV" in msg and clients.ATTRIBUTION["ESV"] in msg
+
+
+@pytest.mark.parametrize("tool,label", [("get_passage", "(BSB)"), ("lookup_verse", "**BSB:**")])
+async def test_a_failed_default_esv_falls_back_to_the_bsb_with_a_note(monkeypatch, tool, label):
+    monkeypatch.setattr(clients, "httpx", _http(raises=OSError(RAW)))
+    res = await _call(tool, {"reference": "John 3:16"})
+    msg = _text(res)
+    assert res.isError is False and label in msg and "For God so loved the world" in msg
+    assert "could not be reached" in msg and not any(leak in msg for leak in LEAKS), msg
+
+
+@pytest.mark.parametrize("tool,label", [("get_passage", "(BSB)"), ("lookup_verse", "**BSB:**")])
+async def test_without_a_key_the_default_is_the_bsb_with_no_note(monkeypatch, tool, label):
+    monkeypatch.delenv("ESV_API_KEY")
+    monkeypatch.delenv("BIBLE_API_KEY", raising=False)
+    monkeypatch.setattr(clients, "httpx", _http(raises=AssertionError("no network call expected")))
+    msg = _text(await _call(tool, {"reference": "John 3:16"}))
+    assert label in msg and "For God so loved the world" in msg and "could not be reached" not in msg
+
+
+def test_the_deuterocanon_defaults_to_the_web_even_with_a_key():
+    assert bible._default_translation("Tobit 1:1", "Tob") == "WEB"
+    assert bible._default_translation("John 3:16", "Jhn") == "ESV"
