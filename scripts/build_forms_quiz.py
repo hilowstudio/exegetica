@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build a Google Forms quiz from a chapter-quiz Markdown file (docs/john-quizzes/).
+Build a Google Forms quiz from a chapter-quiz Markdown file (docs/john/john-quizzes/).
 
 Run-on-demand, like push_to_classroom.py. It reads the quiz Markdown (the single
 source of truth Adam reviews), creates a Forms quiz in your Drive with points,
@@ -30,9 +30,9 @@ quiz file. A second run refuses to duplicate; pass --rebuild to replace the
 questions of the existing form in place (do that before anyone responds).
 
 Run:
-    python scripts/build_forms_quiz.py docs/john-quizzes/ch01-quiz.md --dry-run
-    python scripts/build_forms_quiz.py docs/john-quizzes/ch01-quiz.md
-    python scripts/build_forms_quiz.py docs/john-quizzes/ch01-quiz.md --rebuild
+    python scripts/build_forms_quiz.py docs/john/john-quizzes/ch01-quiz.md --dry-run
+    python scripts/build_forms_quiz.py docs/john/john-quizzes/ch01-quiz.md
+    python scripts/build_forms_quiz.py docs/john/john-quizzes/ch01-quiz.md --rebuild
 """
 from __future__ import annotations
 
@@ -227,7 +227,7 @@ def get_forms():
             else:
                 raise SystemExit("No OAuth credentials found. Set GOOGLE_CLIENT_ID and "
                                  "GOOGLE_CLIENT_SECRET, or save the client JSON at "
-                                 f"{CLIENT_SECRET}. See docs/John_Google_Classroom.md.")
+                                 f"{CLIENT_SECRET}. See docs/john/John_Google_Classroom.md.")
             print("Opening a browser for Google consent (Forms access)...", flush=True)
             creds = flow.run_local_server(port=0)
         SECRETS_DIR.mkdir(parents=True, exist_ok=True)
@@ -294,7 +294,7 @@ def build_form(q: dict, key: str, rebuild: bool, accepting: bool) -> None:
 # ------------------------------------------------------------------ main
 def main() -> None:
     ap = argparse.ArgumentParser(description="Build a Google Forms quiz from a quiz Markdown file.")
-    ap.add_argument("quiz", help="path to the quiz Markdown, e.g. docs/john-quizzes/ch01-quiz.md")
+    ap.add_argument("quiz", help="path to the quiz Markdown, e.g. docs/john/john-quizzes/ch01-quiz.md")
     ap.add_argument("--dry-run", action="store_true",
                     help="parse and validate only; contact no service")
     ap.add_argument("--rebuild", action="store_true",

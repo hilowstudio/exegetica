@@ -2,7 +2,7 @@
 
 The first slug in each set keeps its row (and so its slug, cover and reading positions); the other
 volumes' chapters are appended in order, their rows and covers are removed, and each absorbed volume
-is logged to docs/reading-room-deletions.csv with reason "merged into <slug>". Repeated chapter titles
+is logged to docs/reading-room/reading-room-deletions.csv with reason "merged into <slug>". Repeated chapter titles
 across volumes (each restarting at Chapter I) are disambiguated by format_gutenberg.dedup_book.
 
 A set can also pull a missing volume straight from Project Gutenberg: "fetch": [gutenberg ids] appends
@@ -36,7 +36,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 from format_gutenberg import dedup_book  # noqa: E402
 
-LOG = ROOT / "docs" / "reading-room-deletions.csv"
+LOG = ROOT / "docs" / "reading-room" / "reading-room-deletions.csv"
 
 
 async def _fetch(gids: list[str], author: str, title: str) -> list[dict]:

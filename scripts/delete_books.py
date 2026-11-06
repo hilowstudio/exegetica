@@ -1,7 +1,7 @@
 """Delete Reading Room books by slug, and log each one so it can be found (and re-imported) later.
 
 Removes the book's chapters and row from db/books.db and its cover from db/covers.db, then appends
-one line per book to docs/reading-room-deletions.csv (date, slug, title, author, gutenberg id,
+one line per book to docs/reading-room/reading-room-deletions.csv (date, slug, title, author, gutenberg id,
 reason). Reads a CSV with at least `slug` and `reason` columns.
 
     python scripts/delete_books.py approved.csv [--dry-run]
@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-LOG = ROOT / "docs" / "reading-room-deletions.csv"
+LOG = ROOT / "docs" / "reading-room" / "reading-room-deletions.csv"
 
 
 def main():

@@ -6,7 +6,7 @@ publishing the shareable full_text (PD copies only) and persisting everything to
 Generation reads the book text live at request time (webapp/reader.py + comprehension.py),
 so the pipeline no longer pre-extracts learning objectives or academic-spine alignments.
 
-Grounding-first (docs/living-library-plan.md §10): every factual claim in the derivative
+Grounding-first (docs/sources/living-library-plan.md §10): every factual claim in the derivative
 is taken from the supplied text, never model memory.
 
 The Anthropic calls and the network fetch can't run in a sandbox without egress; the

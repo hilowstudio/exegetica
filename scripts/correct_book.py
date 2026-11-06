@@ -1,6 +1,6 @@
 """Apply a title's reviewed corrections to the stored text (books.db), logged and repeatable.
 
-Each title under review keeps its corrections in docs/corrections/<slug>.json, a list of operations:
+Each title under review keeps its corrections in docs/reading-room/corrections/<slug>.json, a list of operations:
 
   {"op": "insert", "chapter": 1, "at": "start" | "end", "html": "<p class=\"ex-ded\">To …</p>",
    "why": "dedication omitted at import; restored from the Standard Ebooks source"}
@@ -12,7 +12,7 @@ A baked edition (scripts/bake_edition.py) is edited in edition_chapters: that is
 Books not yet baked are edited in book_chapters (the source the typesetting pass reads).
 
 Operations are idempotent: an insert whose html is already present, or a replace whose `with` is already
-there and `find` is gone, is skipped. Every applied change is appended to docs/edition-corrections.csv.
+there and `find` is gone, is skipped. Every applied change is appended to docs/reading-room/edition-corrections.csv.
 
     python scripts/correct_book.py <slug> [--dry-run]
 """
@@ -27,12 +27,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DB = ROOT / "db" / "books.db"
-LOG = ROOT / "docs" / "edition-corrections.csv"
+LOG = ROOT / "docs" / "reading-room" / "edition-corrections.csv"
 
 
 def main() -> None:
     slug, dry = sys.argv[1], "--dry-run" in sys.argv
-    ops = json.loads((ROOT / "docs" / "corrections" / f"{slug}.json").read_text(encoding="utf-8"))
+    ops = json.loads((ROOT / "docs" / "reading-room" / "corrections" / f"{slug}.json").read_text(encoding="utf-8"))
     con = sqlite3.connect(DB)
     bid, = con.execute("select id from books where slug=?", (slug,)).fetchone()
     try:

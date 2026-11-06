@@ -2,7 +2,7 @@
 """
 Recover the public-domain stories of one pulp issue from its Internet Archive scan.
 
-For each story in the issue that is public domain now (docs/pulp-eligible-stories.csv) and has
+For each story in the issue that is public domain now (docs/reading-room/pulp-eligible-stories.csv) and has
 no clean text yet (not on Gutenberg, not in our library), this:
   1. downloads the scan's ABBYY layout and page-number map (cached, .seed_cache/iapilot/),
   2. cuts the story out by the FictionMags contents' page numbers (ia_pulp_ocr),
@@ -134,7 +134,7 @@ def main() -> None:
 
     items = [i for i in B.contents(mag, cfg["magid"], y, y, False, cfg["title"]) if (i["year"], i["month"]) == (y, m)]
     items.sort(key=lambda i: int(re.sub(r"\D", "", i["page"]) or 0))
-    rows = {(r["title"], r["author"]): r for r in csv.DictReader(open(ROOT / "docs" / "pulp-eligible-stories.csv", encoding="utf-8"))
+    rows = {(r["title"], r["author"]): r for r in csv.DictReader(open(ROOT / "docs" / "reading-room" / "pulp-eligible-stories.csv", encoding="utf-8"))
             if r["magazine"] == mag and B.issue_key(r["issue"]) == (y, m)}
     ident = ia_item(mag, y, m)
     pages = O.load_issue(download(ident))

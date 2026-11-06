@@ -2,7 +2,7 @@
 Calendar views: a daily and weekly schedule for the Gospel of John course.
 
 Server-rendered like course_views, and it reads the AUTHORITATIVE course calendar
-(docs/john-course-calendar.json), which is generated from the finished lessons by
+(docs/john/john-course-calendar.json), which is generated from the finished lessons by
 scripts/build_course_calendar.py (true to final state, not the pre-generation plan).
 Reuses the site chrome and CSS from course_views.
 """
@@ -15,7 +15,7 @@ from pathlib import Path
 
 from webapp.course_views import _crumbs, _page, _u, esc
 
-CAL_PATH = Path(__file__).parent.parent / "docs" / "john-course-calendar.json"
+CAL_PATH = Path(__file__).parent.parent / "docs" / "john" / "john-course-calendar.json"
 
 SCHED = {"regular": "50 min", "thursday": "Thu 36", "half_day": "Half 26",
          "finals_exam": "Final"}

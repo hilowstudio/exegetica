@@ -8,7 +8,7 @@ This fetches each book's content.opf and those files from github.com/standardebo
     own between the colophon and the contents;
   * a piece placed before a later part/chapter -> prepended to that chapter, as an epigraph.
 
-Logged to docs/edition-corrections.csv. Idempotent: front_html is rebuilt; chapter inserts are skipped
+Logged to docs/reading-room/edition-corrections.csv. Idempotent: front_html is rebuilt; chapter inserts are skipped
 when already present.
 
     python scripts/restore_se_frontmatter.py <slug> […]      # or --all for every Standard Ebooks book
@@ -27,7 +27,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DB = ROOT / "db" / "books.db"
-LOG = ROOT / "docs" / "edition-corrections.csv"
+LOG = ROOT / "docs" / "reading-room" / "edition-corrections.csv"
 RAW = "https://raw.githubusercontent.com/standardebooks/{slug}/{branch}/src/epub/{path}"
 UA = {"User-Agent": "ExegeticaLibrary/1.0 (public-domain edition review)"}
 FRONT = re.compile(r"(?:titlepage|halftitlepage|imprint|toc|introduction|preface|foreword|dedication|epigraph|"

@@ -1,16 +1,16 @@
 """Build the authoritative John course calendar from the FINISHED lessons.
 
-The calendar is derived from the generated lesson files in docs/john-lessons/
+The calendar is derived from the generated lesson files in docs/john/john-lessons/
 (their embedded Date / Passage / Memory fields), NOT from the pre-generation
-planning doc docs/john-calendar-map.json. Dates for the earliest units (U1-U4),
+planning doc docs/john/john-calendar-map.json. Dates for the earliest units (U1-U4),
 whose generated headers predate the date-in-header convention, are filled from
-the real school teaching-day sequence in docs/yorkville_2026-27_calendar.json and
+the real school teaching-day sequence in docs/school/yorkville_2026-27_calendar.json and
 validated against every other lesson's embedded date. This keeps the calendar
 true to the final state of the course.
 
 Outputs:
-  docs/john-course-calendar.json   machine-readable, one entry per teaching day
-  docs/John_Course_Calendar.md     human-readable, grouped by month
+  docs/john/john-course-calendar.json   machine-readable, one entry per teaching day
+  docs/john/John_Course_Calendar.md     human-readable, grouped by month
 
 Run:  PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/build_course_calendar.py
 """
@@ -18,10 +18,10 @@ from __future__ import annotations
 import re, glob, os, json, datetime as dt
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LESSONS = os.path.join(ROOT, "docs", "john-lessons")
-SCHOOL = os.path.join(ROOT, "docs", "yorkville_2026-27_calendar.json")
-OUT_JSON = os.path.join(ROOT, "docs", "john-course-calendar.json")
-OUT_MD = os.path.join(ROOT, "docs", "John_Course_Calendar.md")
+LESSONS = os.path.join(ROOT, "docs", "john", "john-lessons")
+SCHOOL = os.path.join(ROOT, "docs", "school", "yorkville_2026-27_calendar.json")
+OUT_JSON = os.path.join(ROOT, "docs", "john", "john-course-calendar.json")
+OUT_MD = os.path.join(ROOT, "docs", "john", "John_Course_Calendar.md")
 
 MONTHS = {m: i for i, m in enumerate(
     ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
@@ -80,7 +80,7 @@ def passage_from_filename(b: str) -> str:
 def load_reading_guides():
     """Clean unit names and per-lesson titles from the finished reading guides."""
     unit_name, titles = {}, {}
-    for f in glob.glob(os.path.join(ROOT, "docs", "john-materials", "GEN_U*_reading-guide.md")):
+    for f in glob.glob(os.path.join(ROOT, "docs", "john", "john-materials", "GEN_U*_reading-guide.md")):
         um = re.search(r"GEN_U(\d+)_", os.path.basename(f))
         if not um:
             continue
@@ -257,9 +257,9 @@ def main():
 
     out = dict(
         course="Sophomore Bible: The Gospel of John (2026-27)",
-        source="Derived from the finished lessons in docs/john-lessons/ (embedded dates), "
-               "with U1-U4 gaps filled from docs/yorkville_2026-27_calendar.json and validated. "
-               "NOT built from docs/john-calendar-map.json (the pre-generation plan).",
+        source="Derived from the finished lessons in docs/john/john-lessons/ (embedded dates), "
+               "with U1-U4 gaps filled from docs/school/yorkville_2026-27_calendar.json and validated. "
+               "NOT built from docs/john/john-calendar-map.json (the pre-generation plan).",
         generated=dt.date.today().isoformat(),
         span=dict(first=span_lo.isoformat(), last=span_hi.isoformat()),
         counts=dict(lessons=len(items), plants=sum(r["plant"] for r in rows),
@@ -287,7 +287,7 @@ def write_md(out: dict):
     L.append("# The Gospel of John: course calendar (2026-27)")
     L.append("")
     L.append("> Sophomore Bible, Yorkville Christian School. **This calendar is generated from the "
-             "finished lessons** (`docs/john-lessons/`), so it is true to the course as built, "
+             "finished lessons** (`docs/john/john-lessons/`), so it is true to the course as built, "
              "including every recut passage. Regenerate with `scripts/build_course_calendar.py`.")
     L.append("")
     c = out["counts"]

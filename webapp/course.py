@@ -1,8 +1,8 @@
 """
 Course publishing layer: turn the generated Markdown into a browsable course.
 
-Reads the authoritative calendar map (docs/john-calendar-map.json) and scans the
-generated Markdown in docs/john-lessons (teacher guides) and docs/john-materials
+Reads the authoritative calendar map (docs/john/john-calendar-map.json) and scans the
+generated Markdown in docs/john/john-lessons (teacher guides) and docs/john/john-materials
 (student + course docs), then builds ONE manifest indexed by day / week / month /
 unit / semester with an `audience` tag on every artifact. The Starlette app renders
 views over this manifest; the same manifest drives the PDF batch.
@@ -24,9 +24,9 @@ from markdown_it import MarkdownIt
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DOCS = PROJECT_ROOT / "docs"
-CALENDAR = DOCS / "john-calendar-map.json"
-TEACHER_DIR = DOCS / "john-lessons"
-STUDENT_DIR = DOCS / "john-materials"
+CALENDAR = DOCS / "john" / "john-calendar-map.json"
+TEACHER_DIR = DOCS / "john" / "john-lessons"
+STUDENT_DIR = DOCS / "john" / "john-materials"
 
 # Friendly titles for the course-level student docs (fallback is the file's H1).
 COURSE_DOC_TITLES = {

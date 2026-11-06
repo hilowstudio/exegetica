@@ -1,4 +1,4 @@
-"""Per-title review tooling for Exegetica editions (see docs/go-to-market-plan.md).
+"""Per-title review tooling for Exegetica editions (see docs/reading-room/go-to-market-plan.md).
 
 Grounds a title in a reference text and checks, word by word, that what the reader serves (after
 the typesetting pass) still carries the whole book and nothing else.
@@ -201,13 +201,13 @@ def references(slug: str) -> tuple[str, list[str], list[dict]]:
 def merged_volumes(slug: str) -> list[str]:
     """Gutenberg ids of volumes merged into this book, in the order they were merged (from the deletion log)."""
     import csv  # noqa: PLC0415
-    over = ROOT / "docs" / "review-references.json"         # books merged at import name their volumes here
+    over = ROOT / "docs" / "reading-room" / "review-references.json"         # books merged at import name their volumes here
     if over.exists():
         extra = json.loads(over.read_text(encoding="utf-8")).get(slug)
         if extra:
             return list(extra)
     out = []
-    log = ROOT / "docs" / "reading-room-deletions.csv"
+    log = ROOT / "docs" / "reading-room" / "reading-room-deletions.csv"
     if log.exists():
         for r in csv.reader(open(log, encoding="utf-8")):
             if len(r) >= 6 and r[5].strip() == f"merged into {slug}" and r[4].strip().isdigit():

@@ -7,12 +7,12 @@ the Theologian/Assistant can call to answer questions from the actual documents
 instead of from memory.
 
 STUDENT-FACING ONLY. These handlers read a fixed whitelist of files under
-docs/john-materials/, addressed by validated integers (unit / quarter). They
-never touch the teacher guides (docs/john-lessons/), any *_TEACHER-KEY file, the
+docs/john/john-materials/, addressed by validated integers (unit / quarter). They
+never touch the teacher guides (docs/john/john-lessons/), any *_TEACHER-KEY file, the
 daily-page answer content, or anything outside the materials directory — there is
 no path passed in from the model, so there is no traversal surface.
 
-The one exception is get_course_schedule, which reads docs/john-course-calendar.json
+The one exception is get_course_schedule, which reads docs/john/john-course-calendar.json
 (the same calendar the public /calendar page shows) and reports today's Chicago date
 with the day's unit, lesson, passage, and focus. It names no lesson file.
 """
@@ -25,7 +25,7 @@ from datetime import date, datetime, timedelta, timezone
 from functools import lru_cache
 from pathlib import Path
 
-_MATERIALS = Path(__file__).resolve().parent.parent / "docs" / "john-materials"
+_MATERIALS = Path(__file__).resolve().parent.parent / "docs" / "john" / "john-materials"
 _MEMORY_MASTER = _MATERIALS / "GEN_memory-master.md"
 # The authoritative course calendar (built from the finished lessons by
 # scripts/build_course_calendar.py). Each lesson row names its teacher lesson file; the

@@ -13,7 +13,7 @@ course_pdf.py.
                           shuffles choices), plus the written rubrics and models
 
 Run:
-    python scripts/print_quiz.py docs/john-quizzes/ch01-quiz.md
+    python scripts/print_quiz.py docs/john/john-quizzes/ch01-quiz.md
 """
 from __future__ import annotations
 
@@ -199,7 +199,7 @@ async def _render(jobs: list[tuple[str, Path]]) -> None:
 
 def main() -> None:
     if len(sys.argv) != 2:
-        raise SystemExit("usage: python scripts/print_quiz.py docs/john-quizzes/ch01-quiz.md")
+        raise SystemExit("usage: python scripts/print_quiz.py docs/john/john-quizzes/ch01-quiz.md")
     path = Path(sys.argv[1])
     if not path.is_absolute():
         path = ROOT / path

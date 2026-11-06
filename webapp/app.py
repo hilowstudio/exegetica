@@ -915,7 +915,7 @@ async def _request_comprehension(book_key: str) -> bool:
 async def generate_book_endpoint(request):
     """Living Library redesign: generate a resource FROM a book (read live from books.db), calibrated
     to the student's position in it. Feeds the whole work when it fits (omniscient comprehension) plus
-    a position marker for the covered range. See docs/living-library-generation-plan.md."""
+    a position marker for the covered range. See docs/sources/living-library-generation-plan.md."""
     denied = _teacher_only(request)
     if denied:
         return denied

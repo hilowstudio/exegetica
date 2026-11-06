@@ -96,7 +96,7 @@ alter table cover_overrides add column if not exists source_page text;
 -- the spine can be curated/grown in place (proposals → active). The JSON in
 -- webapp/standards/ + the .npy embeddings are a GENERATED READ-CACHE, regenerated
 -- from this table (the perf-sensitive in-memory search still loads them). See
--- docs/living-library-plan.md §7. Seeded by scripts/seed_spine.py from the JSON.
+-- docs/sources/living-library-plan.md §7. Seeded by scripts/seed_spine.py from the JSON.
 -- ===========================================================================
 create table if not exists spine_nodes (
     id         text primary key,           -- durable spine code (e.g. 'ELA.5.5.2'); objectives use their oid
@@ -115,7 +115,7 @@ create index if not exists spine_nodes_level_idx on spine_nodes(level);
 
 -- ===========================================================================
 -- Living Library (teacher tool). Three tiers, by design (see
--- docs/living-library-plan.md):
+-- docs/sources/living-library-plan.md):
 --   * library_extractions  — TIER 2: the global, cross-teacher, deduped catalog.
 --       Holds the transformative derivative (summary/TOC/themes/...) + intrinsic
 --       metadata, and — only where redistribution is permissible — shareable
@@ -243,7 +243,7 @@ create index if not exists library_ingest_jobs_status_idx on library_ingest_jobs
 create index if not exists library_ingest_jobs_user_idx on library_ingest_jobs(user_id);
 
 -- ===========================================================================
--- Living Library — spine alignment & objectives layer (docs/living-library-plan.md
+-- Living Library — spine alignment & objectives layer (docs/sources/living-library-plan.md
 -- §7–§10). Adds book structure (a generic typed tree), alignment of resources/
 -- sections to the academic spine, three-tier objectives (community + personal)
 -- with wiki-style revision history, a per-teacher hide, and spine-gap proposals.
@@ -281,7 +281,7 @@ drop table if exists library_spine_proposals      cascade;
 -- from the CREATE statements above).
 alter table library_extractions  add column if not exists us_clear      boolean not null default false;
 alter table library_extractions  add column if not exists full_text_raw text;
--- Ingestion quality gate + best-copy-wins canonicalization (docs/living-library-plan.md).
+-- Ingestion quality gate + best-copy-wins canonicalization (docs/sources/living-library-plan.md).
 -- verify_verdict: null (unchecked) | accepted | rejected | borderline | superseded.
 -- canonical_source: which copy produced the live derivative ('gutenberg'/'ccel'/'upload:<uid>').
 -- canonical_tier: provenance rank of that copy (trusted PD source 3 > user upload 2).
@@ -305,7 +305,7 @@ end $$;
 
 
 -- ===========================================================================
--- Living Library — generation redesign (docs/living-library-generation-plan.md).
+-- Living Library — generation redesign (docs/sources/living-library-generation-plan.md).
 -- Whole-work COMPREHENSION layer for LARGE works only (small books are read whole at
 -- generation time). Built lazily on first generation against a big book and cached here;
 -- rebuilt only when the source text changes (word_count guard) or on manual request.

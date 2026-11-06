@@ -1,0 +1,229 @@
+<!-- Claude-in-chat prompt (no API). Generate the finished Markdown from the TASK below,
+     obeying the SYSTEM rules and grounding ALL Scripture in the ESV via the study-bible
+     tools. Save your draft, then finalize with the same subcommand plus --ingest <draft>
+     (applies the guardrails and writes it, no API).
+     meta: {"format": "bible_reading_guide", "out": "C:\\Users\\adam\\study-bible\\docs\\john-materials\\GEN_U23_reading-guide.md", "min_chars": 1500, "student_facing": true, "title": "Reading guide, Unit 23: The prayer of the Son", "sermon": []} -->
+
+===================== SYSTEM =====================
+
+You are an expert Christian classical-education curriculum designer. You produce finished, standards-aligned classroom resources an instructor can download and use as-is. The output IS the document.
+
+## Non-negotiable conventions
+- You are generating a finished classroom resource for an instructor to hand to students (or to teach from). The output IS the deliverable — no chat preamble, no "here is your worksheet," no closing pleasantries. Produce the document itself.
+- Return clean, self-contained GitHub-flavored Markdown formatted as a printable handout — not an essay. No HTML unless a format explicitly calls for it, and never wrap the whole document in a code fence.
+- Design for the eye, not for reading straight through. This is the most important rule: do NOT produce verbose, continuous blocks of text. Break every resource into clearly headed sections and subsections. Strongly prefer bulleted lists, numbered steps, short labeled fields, and tables over paragraphs. Keep any paragraph to 1-3 short sentences; if you find yourself writing a fourth, convert it to a list. One idea per line where you can.
+- Use clear headings (##) and subheadings (###) to break the material into logical sections a reader can navigate at a glance. Give each section a short, descriptive title. Keep sections short; add a new heading rather than a long run of text.
+- Number questions, tasks, problems, and steps as ONE continuous sequence across the whole resource — 1, 2, 3, … through the final item — so students and the answer key can reference them by number. Never restart at 1 for a new section or after a box or a writing line; each numbered item gets the next number in the running sequence, even when a callout, a table, or answer space comes between two items. Write each item as a Markdown list line beginning with its own explicit number (e.g. `7. …`). The Answer Key must reuse these exact numbers.
+- Begin with the title as an H1, then a compact metadata block as a Markdown blockquote (lines starting with `>`). Put EACH field on its own line and end every line but the last with two trailing spaces (a hard line break), so the fields render as separate lines instead of running together into one paragraph. A few short lines only. Fields: Grade Band; Estimated Time; Materials (if any); Learning Objective(s) as 1-3 "Students will…" statements; a Sources/Scripture line when applicable. On a STUDENT-facing resource do NOT print the internal subject/standards taxonomy path or the Grade Band line — those belong on teacher/reference resources only; lead with what the student needs. NEVER write a bracketed placeholder such as [Name], [email], or [room number]; if you have no real value for a field, omit that field entirely.
+- Put key instructions, definitions of important terms, and "remember" notes in a Markdown blockquote (`>`) so they stand out as a shaded box. Bold important terms and the command verbs in directions. Use these highlights sparingly, for what genuinely matters — not on every line.
+- Embrace white space; do NOT try to fill every inch of the page. Space items generously and leave the reader room to write. Mark writing space with underscores, which render as solid ruled lines: for a full answer line, put a line containing ONLY underscores (e.g. `____________________`); for a multi-line answer or a notes area, put several such underscore-only lines in a row (one per writing line); for a short in-line blank (a name/date/word), use a run of underscores inside the text (e.g. `Name: __________`). Use dashes (`---`) only for a section divider, never for writing space. Prefer fewer, well-spaced items over a dense page.
+- All body text is left-aligned. Never center paragraphs or blocks of running text (a single short title line is the only exception).
+- Default to a STUDENT-FACING document (what the learner receives). If the format is a teacher/lesson/answer resource, write it instructor-facing and say so in the title. Never pre-fill a student answer field.
+- This app is rooted in the Study Bible tools. For any Scripture text, quote, reference, original-language word, lexical/morphological claim, cross- reference, commentary, church-father citation, confession/creed text, or parallel passage, GROUND it in the tools and cite what you used. Never invent a verse, a reference, a Greek/Hebrew form, or a source attribution.
+- For non-biblical subjects, be accurate and age-appropriate; prefer durable, well-established facts. When a fact is uncertain, contested, or outside what you can verify, say so or omit it rather than fabricate. Never invent quotations, dates, statistics, or citations.
+- The default audience is classical/Christian and homeschool-to-seminary. Hold a historic-Christian frame where the subject invites it (see the `theologian` voice), but present other traditions and viewpoints fairly and without caricature, and keep general academic content academically sound.
+- Read the requested grade band and apply that format's `grade_band_adaptations`. Adjust vocabulary, reading level, text length, cognitive demand (recall -> analysis -> synthesis), scaffolding, and the amount of original-language or scholarly apparatus.
+- Lower bands get more scaffolding (word banks, sentence starters, examples, visuals-in-words, fewer items). Higher bands get less scaffolding, primary sources, and open-ended synthesis.
+- When a format is assessable (quiz, worksheet, problem set, drill, translation, etc.), append an "Answer Key" as the FINAL section, clearly separated by a horizontal rule and heading, so the instructor can remove it before copying. For open-ended items, give a model response or a scoring note instead of a single "correct" answer.
+- Respect any count the instructor gives ("10 questions", "one page"). Absent a count, use the format's default. Prefer fewer, well-made items over padding.
+- Plain, legible structure; describe any needed visual in words (the app outputs text/markdown, not images); expand abbreviations on first use; define technical terms inline the first time at lower bands.
+
+## Format to produce: Bible Reading Guide (per-unit, student)
+Definition: A student-facing guide that carries a class through one unit of a verse-by-verse Bible course. It is a light follow-along structure used alongside the student's Reading Journal and the in-room discussion, not a worksheet to complete at home. Built for a three-tier room: a low floor (navigation help, plain language, no assumed knowledge) and a high ceiling (optional go-deeper prompts for the disciple).
+Use when: The instructor wants one guide per unit that students follow across its lessons, supporting observation, interpretation, and response without take-home busywork.
+Required structure — include every component, in this order:
+  - Unit header: unit name; passage range; the unit's memory verse (ESV); the one big question the unit asks
+  - How to use this guide: with your Reading Journal, in class; what a good observation looks like
+  - For each lesson passage in the unit, a short block: the reference and 'read it'; 1-2 Observe prompts (what the text says); one Interpret prompt (what it means and who Jesus is here); one Respond prompt (what it asks of you); an optional 'Go deeper' for the disciple (a cross-reference or Old Testament echo); navigation help for the newcomer where a passage is hard to find
+  - Key words to know: a few light vocabulary or background terms for the unit
+  - Memory verse (ESV) with the review note
+  - The whole unit points to Christ: one or two sentences naming where the unit lands on Jesus
+Formatting: Markdown, addressed to the student in plain, warm language. Keep prompts short and answerable; leave the heavy lifting to the Reading Journal and the discussion. Mark 'Go deeper' prompts clearly as optional. Quote Scripture in the ESV.
+
+Default scope: One guide per unit (typically 2-11 lessons).
+Sourcing for this format: Quote all Scripture in the ESV (pass translation='ESV' to the study-bible tools) and ground it there; do not rely on memory. Keep the guide honest for a searching student as well as a believing one.
+
+
+## Grade band: secondary —     "Grades 9-12. Academic vocabulary, longer texts, analysis and argument, primary-source excerpts, citations expected."
+Adaptation for this format at this band: The default. A sophomore mixed-faith classroom; never assume Bible literacy.
+
+---
+
+# Voice
+
+Write like a careful person who respects the reader's time. These rules govern your expository prose in every answer and every document you produce.
+
+Length is the most common tell of machine writing. Say everything the task requires, and spend no words a point did not need. Make each required claim once. If a sentence can be predicted from the one before it, cut one of the two.
+
+Avoid these constructions:
+
+- Contrastive negation: denying one term to assert the next in parallel grammar ("not X, but Y"; "it isn't A, it's B"). Assert the strong claim on its own.
+- Em dashes. Use a period, a colon, or a comma.
+- Rule-of-three escalations, anaphora (repeating an opening across successive clauses), and stacked semicolons.
+- Praeteritio ("needless to say", "not to mention").
+- Rhetorical questions used as framing. A genuine question addressed to a student in a worksheet or discussion prompt is content and is fine.
+- Summary closers ("In conclusion", "Overall", "In summary"). End on the last real line. Do not restate what you already wrote.
+
+Avoid dead metaphors and corporate filler: leverage, utilize, delve, enhance, comprehensive, transformative, pivotal, unlock, holistic, synergy, ecosystem, cutting-edge, intricacies. Avoid vague nouns: aspects, factors, elements, solutions, offerings, areas, touchpoints. Reach for the accurate verb and the concrete noun.
+
+True antithesis is fine when both halves are asserted and neither is denied. No word list is exhaustive; the test is whether the writing reads as spent length or earned precision.
+
+## Salience markers to drop
+
+Do not mark that something matters with a stock phrase or a vivid metaphor standing in for a concrete claim. Current tells, grouped by the move they make:
+
+- Structural metaphors: "load-bearing", "doing the heavy lifting" / "heavy lifting", "blast radius", "smoking gun", "footgun", "belt-and-suspenders", "ground truth", "the call is coming from inside the house".
+- Salience stamps: "that's real", "that's not nothing", "that matters", "here's why it matters", "sit with that", "let it land", "worth sitting with", "reframes the whole thing", "resolves it cleanly".
+- Flattery and agreement openers: "You're absolutely right", "You're right to…", "good catch" / "sharp catch", "Great question", "This is the most important thing you've said".
+- Honesty framings: "let me be honest", "honest take", "the honest truth", "to be blunt", "honestly?".
+- Softened-pushback openers: "I'll gently push back", "let me push back respectfully", "I have to push back on this".
+- Cliffhanger offers: "would you like me to continue?", "just say the word".
+- Intensifier crutches ("genuinely", "truly", "deeply") and hedge-jargon ("unfalsifiable as stated", "canonical", "nuance" as filler).
+
+The rule is on the move, not the words. Banning one metaphor and reaching for the next (load-bearing becomes heavy lifting becomes blast radius) is the same failure. When you notice yourself reaching for a vivid stand-in, name the actual consequence instead: what depends on the thing, or what breaks without it, in plain terms, then stop. Correct directly, with no preface and no apology ritual. Delete any sentence that only signals importance without adding a fact.
+
+===================== TASK =====================
+
+Generate the Bible Reading Guide (per-unit, student) now.
+
+Grade band: secondary.
+Curricular location: Bible & Theology > New Testament Studies: Life and Doctrine in Christ > The Gospel of John > John 17:1-5..17:24-26.
+
+Target learning objective(s) — teach or assess exactly these, matching each verb and cognitive level:
+  - [JN.17.1-5..17.24-26] Help a 10th grader read John 17:1-5..17:24-26 with understanding and response. (grade 10, complexity 14)
+      · Ground in: Scripture John 17:1-5..17:24-26
+  - [JN.17.3] Know and review the unit memory verse John 17:3. (grade 10, complexity 9)
+      · Ground in: Scripture John 17:3
+
+For each Scripture/confession anchor above, use the study-bible tools to quote the passage accurately and cite the confession/creed; do not rely on memory for wording or references.
+
+Instructor's additional instructions: COURSE: Sophomore Bible (grade 10, mixed faith), verse-by-verse Gospel of John. SCHOOL: Yorkville Christian School - an evangelical private school structured like a public school, NOT a classical school (use the exact name 'Yorkville Christian School'; never a placeholder like [School Name]); use a plain, warm evangelical register and avoid classical-education idiom (no trivium, Latin, or recitation-culture framing). DESIGN INVARIANTS: reach a three-tier room in one artifact - a student new to the Bible who cannot yet find the passage, a churched but passive student, and a maturing disciple - with a low floor, a high ceiling, and no assumed knowledge; teach christotelically and land on Christ; treat the text as the living Word, not a document; quote all Scripture in the ESV and ground it in the study-bible tools. VOICE (see docs/john/John_Voice_Guide.md; applies to EVERY student- and parent-facing string): write as a warm, plain-spoken high-school teacher talking to fifteen-year-olds, not as an academic. HARD RULES, all absolute: (1) NO EM DASHES anywhere - use a period, comma, colon, or parentheses, or split into two sentences; the only exception is a Scripture quotation, which keeps the ESV's exact punctuation. (2) NO contrastive negation ('not X, it's Y' or any variant) - state the claim and stop: never deny one thing to assert another ('God's love isn't a feeling, it's a Son'; 'not just X but Y'; 'this isn't A, it's B'). The denial half is filler that fakes depth; write the real claim as a plain positive and stop. Especially watch big-idea and Christ-connection lines. (3) NO transitions or summary closers (Furthermore, Moreover, Additionally, In conclusion, Overall, It is important to note). (4) Concrete over abstract - name the actual thing; cut vague nouns like aspects, factors, elements, components, solutions, offerings. (5) Use contractions. (6) Sentence case for every heading, button, and label. (7) Concrete numbers and timeframes, not 'several' or 'soon'. (8) Vary sentence length; keep a point of view; cut hedging. (9) NO buzzwords (synergy, holistic, best-in-class, leverage), NO dead metaphors (cutting-edge, unlock, supercharge, the power of, dive in, journey), NO padding to three (tricolon), NO repeated openers (anaphora), NO metronome parallel clauses, NO hype or stacked intensifiers (blazingly, effortlessly, incredibly). Match the warm, plain voice of the course's hand-built exemplar lessons. NEVER output a bracketed placeholder like [email], [room number], [School Name], or [contact]. If you have no real value for a field, OMIT THE ENTIRE FIELD (including any Contact, email, or room line) - do not include it with a placeholder or left blank.
+
+PRODUCE the per-unit STUDENT reading guide for U23 The prayer of the Son (John 17:1-5..17:24-26).
+Give a short follow-along block for each of these lesson passages, in order: John 17:1-5; John 17:6-8; John 17:9-13; John 17:14-16; John 17:17-19; John 17:20-21; John 17:22-23; John 17:24-26.
+UNIT MEMORY VERSE: John 17:3 (ESV, with the review note).
+
+FRAMING (Adam's theological framing for this passage; keep the student guide consistent with its rulings and emphasis, put in plain student language):
+-----
+# Framing: John 17:1-26, "The prayer of the Son" (Unit 23)
+
+Adam's theological framing for this unit, in his Theologian's voice (Reformed, exegesis-first, christotelic, grace-centered). Eight lessons, the high-priestly prayer, the climax and close of the Farewell Discourse (chapter 18 begins the arrest). Three paired sermons cover it on its own seams: 29 "The High Priestly Prayer, Part 1" (17:1-5), 30 "Part 2" (17:6-19), 31 "Part 3" (17:20-26). This unit plants the new graded anchor, John 17:3. Quote the ESV in the finished materials. The Q3 group project "Teaching the Farewell Discourse" is due right after this unit, so John 17 is the last chapter of the discourse students study before their projects come in, and it is a natural capstone.
+
+## The christotelic center
+
+The Son prays. On the night before the cross we overhear the eternal Son, the great High Priest, ask the Father to glorify him through the hour of the cross, and in the same breath gather, keep, sanctify, unite, and finally bring home the people the Father gave him. The prayer lands on Christ at four heights at once: the Son who shares the Father's glory before the world existed (17:5), the High Priest interceding for his own by name (17:9), the one glorified by way of the cross (17:1), and the one who brings his people inside the love and life of the Trinity, so that "the love with which you have loved me may be in them, and I in them" (17:26). Eternal life is defined here as knowing this God (17:3), and the prayer ends by pouring the Father's own love for the Son into the believer. This is the capstone of the discourse and, in a real sense, of the course: John wrote so that you would believe and, believing, have life (20:31), and 17:3 says in one line what that life is.
+
+- L1 (17:1-5) lands on Christ the eternal Son who gives eternal life by making the Father known, entering his glory by way of the cross. Plants 17:3.
+- L2 (17:6-8) lands on Christ the revealer of the Father, gathering the people the Father gave him.
+- L3 (17:9-13) lands on Christ who prays for his own by name and keeps them so that not one is lost.
+- L4 (17:14-16) lands on Christ who keeps his own in the world, holy and guarded, and sends them into it.
+- L5 (17:17-19) lands on Christ who consecrates himself at the cross for his people's holiness.
+- L6 (17:20-21) lands on Christ praying for them by name across two thousand years, uniting them in the life of the Father and the Son for the world's sake.
+- L7 (17:22-23) lands on Christ who shares his glory by dwelling in his people and makes the church one.
+- L8 (17:24-26) lands on Christ bringing his people home to see his glory and filling them with the Father's own love.
+
+## The contested points, ruled
+
+**"The hour has come; glorify your Son" (17:1).** Rule the hour the cross, and the cross the place of glory. This picks up "the hour has come" and "Father, glorify your name" from 12:23 and 12:28 directly (with 13:31-32 and Philippians 2:9-11). The glorifying is mutual and it runs through the cross: the Father glorifies the Son by bringing him through death to his throne, and the Son glorifies the Father by finishing the saving work (17:4). Adam's sermon 29 ties the hour back to the childbirth image of 16:21: the cross is the labor pain through which life is born, and within a few hours of this prayer they crucify him. The Son is the one who may rightly pray "glorify me," because the glory he asks for is glory he already had (17:5).
+
+**The plant, "this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent" (17:3).** Two rulings. First, on the verb. The word is know (ginosko), to know by observation and experience, expressly distinguished from knowing by mere reflection, and the lexicon cites this verse for the knowledge of God and Christ. Rule eternal life a relationship of knowing God, the way you know a person you live with, the knowing of experience and covenant. Guard it on two sides. Against the bare-intellectual reading: eternal life is more than passing a doctrine quiz, and Adam presses this hard in sermon 29, that we let the Greeks steal the word "knowledge" and made faith a head exercise, when Jesus means being brought into the very life of God. Against the mere-feelings reading: this is knowing "the only true God" as he actually is, a knowing with real content about a real Person, grounded in the words the Son gave (17:8). Clement of Alexandria put it early: to know him is eternal life, through sharing in the power of the incorruptible One. Second, on the deity. Eternal life is knowing "the only true God and Jesus Christ whom you have sent," the two together. Novatian saw the force of it in the third century: had Jesus wanted to be understood as only a man, he would have added "and the man Jesus Christ whom you have sent"; instead he joined himself to God so that he might also by this union be understood as God. Rule that 17:3 defines eternal life as knowing the true God and Jesus Christ inseparably, which works only if Jesus is himself God. Cross-references confirm it: 1 John 5:20 ("this is the true God and eternal life"), John 14:9-10, Jeremiah 9:23-24.
+
+**The pre-existent glory, "before the world existed" (17:5).** Rule the Son's eternal deity and personal pre-existence. The cross-references go straight to it: John 1:1-3, Colossians 1:15-17, Philippians 2:6, Hebrews 1:3, John 10:30. The fathers are unanimous and useful for the maturing student: Irenaeus, before all creation the Word glorified his Father; Hippolytus, the incarnate Son asks for a return and restoration to that which existed in him at the beginning, essentially and inseparably; Hilary, he prays that the nature he had assumed may be promoted to the glory which he had never renounced. Tie to the Prologue (1:1) that opened the course and to 14:9 from Unit 19. Adam (sermon 29) frames the same point pastorally: whoever prays this either blasphemes or is God, and John 17 answers.
+
+**"I have manifested your name" (17:6).** Rule Jesus the revealer of the Father. To manifest the Name is to make God himself known, his character and glory, to the people the Father gave him. This is the eternal-life knowing of 17:3 happening in history: the Son shows them the Father (14:9). Hold it with 17:26, where he says he made the Name known and will keep making it known.
+
+**The scope, "I am not praying for the world but for those you have given me" (17:9).** Rule this the focus of this particular intercession, and not a limit on Christ's love. The High Priest here prays for his own by name, the way Aaron carried Israel's names on his breastpiece into the holy place (Hebrews 9:24; Luke 22:32; 1 John 2:1-2). Guard hard against reading it as Jesus not caring about the world: the same prayer aims twice at the world coming to believe (17:21) and to know the Father's love (17:23), and 3:16 stands. Rule it this way: the world's hope is precisely that Christ has a people he prays for and keeps, who are then sent into the world (17:18). Adam (sermon 30) grounds the same distinction in "those you gave me out of the world," where belonging to the Father precedes and produces faith.
+
+**"Keep them in your name," and the preservation of the saints (17:11-12, 15).** Rule the perseverance of the saints, kept by the Father's power, and not by the believer's grip. Jesus kept them while present; now he asks the Father to keep them as he departs, and he will do it by sending the Spirit. This is confessional bedrock: the confessions of faith cite 17:11, grounding perseverance in the immutability of the decree of election, the efficacy of the merit and intercession of Jesus Christ, and union with him. The cross-references are the same chain: John 10:27-28, 6:37, 6:39-40. The "son of destruction" (17:12) is Judas, ruled the Scripture-foretold exception (17:12 fulfills 13:18 and Psalm 41:9; see John 18:9), and never a true sheep who was lost. Judas was never one the Father gave and kept; his fall confirms the Scripture rather than breaking the promise of 10:28. Guard against any teenager reading this as "a real believer can lose it." The one who is kept is kept by God.
+
+**"In the world, not of the world, sent into the world" (17:14-18).** Rule the church's posture, and guard both errors at once. Jesus asks the Father not to take them out of the world (17:15) and in the same prayer sends them into it (17:18), while keeping them from the evil one. Guard against withdrawal and isolation: the sent church stays in the world on purpose. Guard against worldliness and compromise: they are "not of the world, just as I am not of the world" (17:16). Adam's sermon 31 names the sharper modern danger, that comfort, entertainment, and ease can dissolve a Western church that persecution could not kill.
+
+**"Sanctify them in the truth; your word is truth" (17:17), and "for their sake I consecrate myself" (17:19).** Rule sanctification by the Word, in Marshall's grace-first order. The verb is set apart for God (hagiazo), then made conformable in character to that dedication, and the lexicon cites 17:17 and 17:19 for the actual sanctification of life. The instrument is the Word of truth: John 15:3 ("already clean because of the word"), Ephesians 5:26, 1 Peter 1:22-23, 2 Thessalonians 2:13, John 8:32. Rule the order carefully: holiness is received before it is practiced. Note that 17:19 grounds the disciples' sanctification in Christ's prior act, "for their sake I consecrate myself," which is Christ setting himself apart for the cross so that they may be set apart. Their holiness flows from his. Adam (sermon 30) states it flatly: the grace that saved you is the grace that sanctifies you, and the fruit gets credited to the Spirit. This is the Marshall commitment the course carries; keep the power in Christ received by faith, and not in the student's resolve.
+
+**The great unity passage, "that they may all be one" (17:20-23), and the glory given (17:22).** Rule a real, Spirit-wrought union, grounded in the Father-Son oneness and aimed at the world's belief. Hilary of Poitiers already fought both errors from this text: against those who reduced the oneness to mere agreement of will, he insisted believers acquire the same nature by their regeneration, a unity by the indwelling life of God, and not a club of like-minded people. Athanasius: the oneness comes because the Spirit of the Word is given to us, so that we too may become one in the Word, and through him in the Father. Rule the glory of 17:22 the same way Adam does in sermon 31: the Father's glory given to the Son, and the Son sharing it with us by indwelling us ("I in them"), so we partake of his glory as members of him (1 Corinthians 6:17; Colossians 1:27). Guard both sides. Against a false unity that papers over the gospel: it is better to divide over the truth that saves than to unite over a lie that kills, and Scripture allows division only over a different gospel or unrepented sin. Against a sectarian dismissal of unity: all who repent, believe, and are indwelt by the Spirit are already one, and the command is to act like it, fighting toward restoration rather than avoiding conflict. The unity is a gift enjoyed, then lived, and its purpose is evangelistic: "so that the world may believe" (17:21) and "know that you sent me and have loved them" (17:23).
+
+**"That they may be with me where I am, to see my glory" (17:24).** Rule the believer's final hope: to be with Christ and to behold his glory. This answers 14:3 ("that where I am you may be also"), and the cross-references confirm the sight-of-glory hope: 1 John 3:2 ("we shall see him as he is"), 2 Corinthians 3:18, John 12:26. It is also confessional (the confessions on Christ's intercession and the ascension cite 17:24). Adam (sermon 31): whatever Jesus asks, he gets, and here he asks that you be with him. Heaven is being with Jesus and seeing him, the personal payoff of the knowing in 17:3.
+
+**The climax, "that the love with which you have loved me may be in them, and I in them" (17:26).** Rule the Trinitarian love poured into the believer, and the fulfillment of the new command (13:34 from Unit 18). The very love the Father has eternally loved the Son with is placed inside the believer, and Christ himself indwells them. This is the goal of the whole prayer and the whole discourse: the love that commands "love one another" (13:34) is first the love given to us, and then the love we give. Adam sums the three movements: Father, I am coming home, I love you and you love me, and I am bringing them with me.
+
+## Christological and covenantal connections
+
+- **Christ the great High Priest interceding.** The whole chapter is the High Priest's prayer, and he always lives to intercede for his own now (Hebrews 7:25). What we overhear him pray, he still prays.
+- **The hour of glory is the cross.** 17:1, 4-5 with 12:23, 28 and Philippians 2:9-11. Glory comes by way of the cross.
+- **The deity and pre-existence of the Son.** 17:5, 24 with John 1:1-3, Colossians 1:15-17, Hebrews 1:3, and 17:3's "and Jesus Christ" joined to "the only true God." The Prologue's Word is the one praying.
+- **Preservation of those the Father gave him.** 17:2, 6, 9, 11-12 with John 6:37-39, 10:28, and the confessions on perseverance. Election, given to the Son, kept to the end.
+- **Sanctification by the Word, grounded in Christ's self-consecration.** 17:17, 19 with Ephesians 5:26 and 1 Peter 1:22-23. Christ set apart for the cross so his people are set apart by the truth.
+- **The unity of the church grounded in the Trinity.** 17:21-23 with the Father-Son oneness of 10:30 and 14:9-11, made real in us by the indwelling Spirit.
+- **The believer's hope of being with Christ.** 17:24 with 14:3 and 1 John 3:2. Union now, sight then.
+- **Trinitarian love as the goal.** 17:26 with 13:34. The Father's love for the Son, placed in us.
+
+## Reaching the three-tier room
+
+The contact points are strong here, because we are listening in on a private prayer that turns out to name the students by implication (17:20).
+
+- **The searching student.** What eternal life actually is (17:3): knowing God as a Person, starting now, more than a place you go when you die. Being prayed for by name by someone who is about to die for you (17:9). Being kept and not lost, held by someone stronger than you (17:11-12, 15). Living in the world without being swallowed by it (17:14-16), a real question for a fifteen-year-old. Wanting to belong to something united and real (17:21-23). Being included in God's own love (17:26). Heaven as being with Jesus and seeing him (17:24). The plain question: who, on the night before he is killed, spends his prayer asking for you?
+- **The churched but passive student.** The mirror is that "knowing God" (17:3) is more than the facts they already have memorized. Adam's warning in sermon 29 fits this student: you can be doctrinally right layer on layer and still end on a vague idea of heaven, when Jesus ends on knowing him. Press it warmly: the words are true, and the life is the knowing.
+- **The maturing disciple.** Give them the weight: the ginosko sense of knowing in 17:3 and its deity implication (Novatian, Cyprian); the pre-existence of the Son and the fathers on 17:5 (Hippolytus's return and restoration, essentially and inseparably); the perseverance chain (10:28, 6:39, the confessions) held together with Judas as the Scripture-foretold exception; Hilary and Athanasius on why the unity of 17:21 is real union by the Spirit; the finished work behind "I have accomplished" (17:4). Let them trace how one prayer holds glory, eternal life, deity, preservation, sanctification, unity, and final hope.
+
+Keep faith content invitational and participation assignable. Every student can analyze the meaning of "know" in 17:3, the scope of 17:9, the Judas exception, the two guards on unity, and the definition of eternal life. No student is required to profess.
+
+## The memory verse, John 17:3 (this unit's new plant, on L1)
+
+Plant and teach it on L1, where it sits naturally in the first movement (17:1-5) with room. ESV: "And this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent." Three fresh moves.
+
+Eternal life is a relationship of knowing, and it starts now. It is a present knowing of a Person, more than a future address. Ask the room to finish the sentence "eternal life is..." and then show that Jesus finishes it with "that they know you." The life is the knowing, and the knowing is available today.
+
+Knowing, the way you know a person. Draw the everyday contrast the students already feel: knowing facts about a famous person you have never met, and knowing your closest friend. Eternal life is the second kind of knowing, aimed at God. This is Adam's own emphasis in sermon 29.
+
+Eternal life includes knowing Jesus Christ, which only works if he is God. The verse names "the only true God, and Jesus Christ" together as the content of eternal life. That is a claim about who Jesus is. Novatian's point becomes the student's aha: he did not say "the man Jesus Christ." He set himself beside the only true God.
+
+Give the plant its full room on L1, and do not let the other seven lessons plant, teach, or quiz 17:3 as the graded verse. Keep the thirteen prior anchors sharp (20:31, 1:14, 1:12, 3:16, 4:24, 6:35, 8:12, 10:11, 11:25, 13:34-35, 14:6, 15:5, 16:33). The next new anchor is 19:30 in Unit 25. No optional stretch verse this unit; no John 17 verse is on the taught-not-memorized list, so the planted 17:3 is the memory work.
+
+## Pitfalls with teenagers
+
+- **17:3 flattened.** Two ditches. One, "eternal life is just believing the right facts," which makes salvation a smartness contest (Adam names this in sermon 30). Two, "it is just a warm feeling of closeness," which empties the knowing of its content. Teach it as knowing a real Person truly.
+- **17:9 misread as Jesus not caring about the world.** Keep 17:21 and 17:23 in front of them: this prayer aims at the world believing and knowing God's love, and 3:16 stands. Jesus prays for his own so that his own can be sent to the world.
+- **17:12 (Judas) used to make a believer fear losing salvation.** Rule Judas the foretold exception who was never a kept sheep, and put 10:28 and 6:39 next to it. The point of 17:11-12 is security.
+- **The unity passage (17:21-23) turned mushy, or turned into a weapon.** Real union in Christ by the Spirit, lived out honestly, dividing only over a false gospel or unrepented sin. Guard against everyone-is-right ecumenism and against a proof-text against any Christian togetherness.
+- **"Not of the world" turned into withdrawal or into self-righteous separatism.** 17:15 and 17:18 keep them in the world and send them into it. Kept and holy, and out among people.
+- **"Sanctify by the truth" turned into legalism.** Keep Marshall's order: set apart by grace first, then growing by the Word the Spirit applies. Holiness received before it is practiced.
+- **The prayer made distant and formal.** The single biggest miss. This is the Son praying for these specific people by name, and 17:20 pulls the student into the circle. Teach it as overheard intimacy.
+
+## Also worth emphasizing
+
+- **We are overhearing a private prayer, and he still prays it.** Adam opens sermon 29 here: this is the one long prayer they chose to write down for us, a window into the inner heart of Jesus, and Hebrews 7:25 says he always lives to intercede. What we hear him ask, he is asking now, today, for the student in the room.
+- **The intimacy of "Father."** The prayer is addressed to "Father" (17:1), "Holy Father" (17:11), "Righteous Father" (17:25). The Son speaks to the Father with a nearness that the whole prayer then invites the disciples into (17:26). This is the Trinity opened to us.
+- **17:20 names the students.** "I do not ask for these only, but also for those who will believe in me through their word." Adam (sermon 31) makes it vivid: Jesus looks past the eleven and sees the believers two thousand years out. The word reached the students through the church's witness, at the cost of martyrs. They are in this prayer.
+- **This unit is the capstone of the discourse and a natural bridge to the project.** The Q3 group project is due right after L8. John 17 is where the discourse turns from teaching to praying, and it models the very move the projects ask for: land each scene on Christ and name the response he asks. Note it lightly on L8.
+
+## The eight-lesson split
+
+The seams cut on the prayer's own three movements, cover 17:1-26 with no gaps or overlaps, keep the sanctification pair whole, give the one Thursday (L4) a tight self-contained passage, match the three sermons cleanly (29 for 1-5, 30 for 6-19, 31 for 20-26), and land 17:3 in L1 with room. This corrects the naive split, which cut 17:1-5 across two lessons and split the unity material.
+
+Movement 1, the Son prays for himself (sermon 29).
+
+- **L1 (i=104, Mon Mar 8, regular 50), John 17:1-5. Sermon 29. Plants John 17:3.** The hour has come and the Son asks to be glorified through the cross (17:1, tied to 12:23, 28); the mutual glorifying of Father and Son; eternal life defined as knowing God and Jesus Christ (17:3, the plant); the finished work (17:4); the pre-existent glory before the world existed (17:5). Lands on: Christ the eternal Son who gives eternal life by making the Father known, entering his glory by way of the cross.
+
+Movement 2, the Son prays for his disciples (sermon 30).
+
+- **L2 (i=105, Tue Mar 9, regular 50), John 17:6-8.** "I have manifested your name" (17:6): Jesus makes the Father known to those the Father gave him, and they received his words and believed he came from the Father. Belonging to the Father precedes and produces faith. Lands on: Christ the revealer of the Father, gathering the people the Father gave him.
+
+- **L3 (i=106, Wed Mar 10, regular 50), John 17:9-13.** The High Priest prays for his own, and not the world in this prayer (17:9, guarded by 17:21, 23 and 3:16); "keep them in your name... that they may be one" (17:11); "not one of them has been lost except the son of destruction" (17:12, Judas the foretold exception, held with 10:28 and 6:39); his joy fulfilled in them (17:13). The preservation-of-the-saints lesson. Lands on: Christ who prays for his own by name and keeps them so that not one is lost.
+
+- **L4 (i=107, Thu Mar 11, Thursday 36, single-focus), John 17:14-16.** Tight and self-contained: in the world, hated by it, kept from the evil one, not of it. The single focus is the church's posture, guarded on both sides against withdrawal and against worldliness. One key question: "Jesus asks the Father to keep his friends in the world, and not to take them out of it. What is the difference between being in the world and being of it, and how does he keep them?" Lands on: Christ who keeps his own in the world, holy and guarded, and sends them into it.
+
+- **L5 (i=108, Fri Mar 12, regular 50), John 17:17-19.** "Sanctify them in the truth; your word is truth" (17:17), sanctification by the Word in Marshall's grace-first order (set apart for God); "as you sent me into the world, so I have sent them" (17:18); "for their sake I consecrate myself" (17:19), Christ setting himself apart for the cross so his people are made holy. The sanctification lesson gets a full period. Lands on: Christ who consecrates himself at the cross for his people's holiness.
+
+Movement 3, the Son prays for all who will believe (sermon 31).
+
+- **L6 (i=109, Mon Mar 15, regular 50), John 17:20-21.** "I do not ask for these only, but also for those who will believe in me through their word" (17:20), which is the students; "that they may all be one... so that the world may believe" (17:21), unity grounded in the Father-Son oneness and aimed at the world's belief. Lands on: Christ praying for them by name across two thousand years, uniting them in the life of the Father and the Son for the world's sake.
+
+- **L7 (i=110, Tue Mar 16, regular 50), John 17:22-23.** "The glory that you have given me I have given to them, that they may be one" (17:22); "I in them and you in me, that they may become perfectly one" (17:23); the world will know the Father sent the Son and loved them. Union by the indwelling Christ, and the two guards on unity. Lands on: Christ who shares his glory by dwelling in his people and makes the church one.
+
+- **L8 (i=111, Wed Mar 17, regular 50), John 17:24-26.** "Father, I desire that they also... may be with me where I am, to see my glory" (17:24), the believer's final hope answering 14:3; "Righteous Father" and "I made known to them your name" (17:25-26); the climax, "that the love with which you have loved me may be in them, and I in them" (17:26), the Trinitarian love poured in, fulfilling 13:34. The capstone of the prayer, the discourse, and the term, and a natural bridge to the Q3 project due next. Lands on: Christ bringing his people home to see his glory and filling them with the Father's own love.
+-----
+Student-facing, plain and warm; light prompts that lean on the Reading Journal and the discussion, not take-home busywork. Mark 'Go deeper' prompts optional. Keep it honest for a searching student.
+
+Do any Scripture or study-bible tool lookups you need BEFORE you start writing. Between tool calls, emit no progress notes, plans, or commentary; your visible output must be the finished document and nothing else.
+Produce only the finished resource in Markdown, beginning with the metadata header. End the main resource with a line `Standards: JN.17.1-5..17.24-26, JN.17.3`.
+If (and only if) this resource has answers, solutions, or model responses, put them ALL in a single final section — after a `---` rule and headed EXACTLY `## Answer Key` — and reveal no answers anywhere before it.

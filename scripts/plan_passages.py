@@ -8,7 +8,7 @@ when preaching (parsed from the sermon filenames) and otherwise splitting the
 range evenly. Output feeds the generation adapter so a lesson generates its own
 sub-passage without a manual override. Splits are PROPOSED, for review.
 
-    python -m scripts.plan_passages            # write docs/john-lesson-passages.json
+    python -m scripts.plan_passages            # write docs/john/john-lesson-passages.json
     python -m scripts.plan_passages --show U2  # preview a unit's split
 """
 import argparse
@@ -18,8 +18,8 @@ from itertools import groupby
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-MAP = json.loads((ROOT / "docs" / "john-calendar-map.json").read_text(encoding="utf-8"))
-SERMONS = ROOT / "docs" / "john-sermons"
+MAP = json.loads((ROOT / "docs" / "john" / "john-calendar-map.json").read_text(encoding="utf-8"))
+SERMONS = ROOT / "docs" / "john" / "john-sermons"
 
 
 def _range(pas):
@@ -112,9 +112,9 @@ def main():
                 for i, p in items:
                     print(f"  lesson {i}: John {p}")
         return
-    (ROOT / "docs" / "john-lesson-passages.json").write_text(
+    (ROOT / "docs" / "john" / "john-lesson-passages.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"wrote docs/john-lesson-passages.json ({len(out)} lessons)")
+    print(f"wrote docs/john/john-lesson-passages.json ({len(out)} lessons)")
     # show the exposition units for a quick eyeball
     for unit, items in preview.items():
         if len(items) > 1 and ":" in (items[0][1] or ""):

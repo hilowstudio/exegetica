@@ -2,7 +2,7 @@
 
 Recorded 2026-11-02 from the harness Governance spike. The Generator was renamed the Prep Room on 2026-11-05 at the maker's request. Its URL (`/generate`), its code (`webapp/generator.py`), and the older records keep the working name.
 
-**Decision.** `/api/generate`, `/api/generate/book`, `/api/revise`, `/api/library/extract`, and the upload routes require a signed-in teacher. The course site shows students only files matching known student patterns; everything else in `docs/john-materials/` (both finals, every answer key, anything added later) is teacher-only, and the teacher view itself requires a signed-in teacher.
+**Decision.** `/api/generate`, `/api/generate/book`, `/api/revise`, `/api/library/extract`, and the upload routes require a signed-in teacher. The course site shows students only files matching known student patterns; everything else in `docs/john/john-materials/` (both finals, every answer key, anything added later) is teacher-only, and the teacher view itself requires a signed-in teacher.
 
 **Why.** The Generator writes answer keys and runs on the server key with no conduct floor. The final-exam keys were public on the live site on 2026-11-02, linked from `/course`.
 

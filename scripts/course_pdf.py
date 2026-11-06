@@ -7,8 +7,8 @@ renders each document with headless Edge/Chromium via Playwright (channel=msedge
 No server and no MCP bridge — it only reads the generated Markdown, so it runs
 under the plain interpreter that has playwright + markdown-it-py.
 
-Student-facing docs go to docs/john-pdf/student/; --teacher additionally renders
-the teacher guides and answer keys to docs/john-pdf/teacher/ (kept separate so the
+Student-facing docs go to docs/john/john-pdf/student/; --teacher additionally renders
+the teacher guides and answer keys to docs/john/john-pdf/teacher/ (kept separate so the
 student set can be shared without leaking teacher material).
 
 Run:
@@ -31,7 +31,7 @@ sys.path.insert(0, str(ROOT))
 from webapp import course  # noqa: E402
 
 CSS = (ROOT / "webapp" / "static" / "course-print.css").read_text(encoding="utf-8")
-OUT = ROOT / "docs" / "john-pdf"
+OUT = ROOT / "docs" / "john" / "john-pdf"
 FONTS_DIR = ROOT / "webapp" / "static" / "fonts"
 
 

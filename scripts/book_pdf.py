@@ -31,7 +31,7 @@ marker landed on, and pass two prints those numbers. Markers are absolutely
 positioned, so both passes paginate identically.
 
 Run:
-    python scripts/book_pdf.py docs/books/between-the-brackets
+    python scripts/book_pdf.py docs/reading-room/books/between-the-brackets
 """
 from __future__ import annotations
 

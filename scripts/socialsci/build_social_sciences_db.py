@@ -1,6 +1,6 @@
 """Build db/social_sciences.db: the owned corpus behind the Social Sciences Mode (socialsci_mcp).
 
-Everything here was harvested once into .seed_cache/socialsci/ (see docs/social-sciences-sources.md);
+Everything here was harvested once into .seed_cache/socialsci/ (see docs/sources/social-sciences-sources.md);
 this script turns it into one SQLite file, the way theology.db backs search_theology:
 
   documents   one row per document (source, collection, title, author, date, url, citation, rights, text)

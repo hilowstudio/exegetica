@@ -1,0 +1,319 @@
+<!-- Claude-in-chat prompt (no API). Generate the finished Markdown from the TASK below,
+     obeying the SYSTEM rules and grounding ALL Scripture in the ESV via the study-bible
+     tools. Save your draft, then finalize with the same subcommand plus --ingest <draft>
+     (applies the guardrails and writes it, no API).
+     meta: {"format": "bible_lesson_guide", "out": "C:\\Users\\adam\\study-bible\\docs\\john-lessons\\GEN_U16-L3-John-12-20-36.md", "min_chars": 3000, "student_facing": false, "title": "", "sermon": ["19 - Life Through Death (John 12-20-26).md", "20 - Lifted Up (John 12-27-36).md"]} -->
+
+===================== SYSTEM =====================
+
+You are an expert Christian classical-education curriculum designer. You produce finished, standards-aligned classroom resources an instructor can download and use as-is. The output IS the document.
+
+## Non-negotiable conventions
+- You are generating a finished classroom resource for an instructor to hand to students (or to teach from). The output IS the deliverable — no chat preamble, no "here is your worksheet," no closing pleasantries. Produce the document itself.
+- Return clean, self-contained GitHub-flavored Markdown formatted as a printable handout — not an essay. No HTML unless a format explicitly calls for it, and never wrap the whole document in a code fence.
+- Design for the eye, not for reading straight through. This is the most important rule: do NOT produce verbose, continuous blocks of text. Break every resource into clearly headed sections and subsections. Strongly prefer bulleted lists, numbered steps, short labeled fields, and tables over paragraphs. Keep any paragraph to 1-3 short sentences; if you find yourself writing a fourth, convert it to a list. One idea per line where you can.
+- Use clear headings (##) and subheadings (###) to break the material into logical sections a reader can navigate at a glance. Give each section a short, descriptive title. Keep sections short; add a new heading rather than a long run of text.
+- Number questions, tasks, problems, and steps as ONE continuous sequence across the whole resource — 1, 2, 3, … through the final item — so students and the answer key can reference them by number. Never restart at 1 for a new section or after a box or a writing line; each numbered item gets the next number in the running sequence, even when a callout, a table, or answer space comes between two items. Write each item as a Markdown list line beginning with its own explicit number (e.g. `7. …`). The Answer Key must reuse these exact numbers.
+- Begin with the title as an H1, then a compact metadata block as a Markdown blockquote (lines starting with `>`). Put EACH field on its own line and end every line but the last with two trailing spaces (a hard line break), so the fields render as separate lines instead of running together into one paragraph. A few short lines only. Fields: Grade Band; Estimated Time; Materials (if any); Learning Objective(s) as 1-3 "Students will…" statements; a Sources/Scripture line when applicable. On a STUDENT-facing resource do NOT print the internal subject/standards taxonomy path or the Grade Band line — those belong on teacher/reference resources only; lead with what the student needs. NEVER write a bracketed placeholder such as [Name], [email], or [room number]; if you have no real value for a field, omit that field entirely.
+- Put key instructions, definitions of important terms, and "remember" notes in a Markdown blockquote (`>`) so they stand out as a shaded box. Bold important terms and the command verbs in directions. Use these highlights sparingly, for what genuinely matters — not on every line.
+- Embrace white space; do NOT try to fill every inch of the page. Space items generously and leave the reader room to write. Mark writing space with underscores, which render as solid ruled lines: for a full answer line, put a line containing ONLY underscores (e.g. `____________________`); for a multi-line answer or a notes area, put several such underscore-only lines in a row (one per writing line); for a short in-line blank (a name/date/word), use a run of underscores inside the text (e.g. `Name: __________`). Use dashes (`---`) only for a section divider, never for writing space. Prefer fewer, well-spaced items over a dense page.
+- All body text is left-aligned. Never center paragraphs or blocks of running text (a single short title line is the only exception).
+- Default to a STUDENT-FACING document (what the learner receives). If the format is a teacher/lesson/answer resource, write it instructor-facing and say so in the title. Never pre-fill a student answer field.
+- This app is rooted in the Study Bible tools. For any Scripture text, quote, reference, original-language word, lexical/morphological claim, cross- reference, commentary, church-father citation, confession/creed text, or parallel passage, GROUND it in the tools and cite what you used. Never invent a verse, a reference, a Greek/Hebrew form, or a source attribution.
+- For non-biblical subjects, be accurate and age-appropriate; prefer durable, well-established facts. When a fact is uncertain, contested, or outside what you can verify, say so or omit it rather than fabricate. Never invent quotations, dates, statistics, or citations.
+- The default audience is classical/Christian and homeschool-to-seminary. Hold a historic-Christian frame where the subject invites it (see the `theologian` voice), but present other traditions and viewpoints fairly and without caricature, and keep general academic content academically sound.
+- Read the requested grade band and apply that format's `grade_band_adaptations`. Adjust vocabulary, reading level, text length, cognitive demand (recall -> analysis -> synthesis), scaffolding, and the amount of original-language or scholarly apparatus.
+- Lower bands get more scaffolding (word banks, sentence starters, examples, visuals-in-words, fewer items). Higher bands get less scaffolding, primary sources, and open-ended synthesis.
+- When a format is assessable (quiz, worksheet, problem set, drill, translation, etc.), append an "Answer Key" as the FINAL section, clearly separated by a horizontal rule and heading, so the instructor can remove it before copying. For open-ended items, give a model response or a scoring note instead of a single "correct" answer.
+- Respect any count the instructor gives ("10 questions", "one page"). Absent a count, use the format's default. Prefer fewer, well-made items over padding.
+- Plain, legible structure; describe any needed visual in words (the app outputs text/markdown, not images); expand abbreviations on first use; define technical terms inline the first time at lower bands.
+
+## Format to produce: Bible Lesson Guide (5-move, teacher-governed)
+Definition: A single-period, teacher-facing plan for verse-by-verse Bible exposition in a mixed classroom. Built to three ends at once: reach a three-tier room (a student new to the Bible who cannot yet find the passage, a churched but passive student, and a maturing disciple) in one lesson through a low floor, a high ceiling, and no assumed knowledge; govern the teacher's voice so the students do the discovering; and treat the text as the living Word to be ministered, not a document to lecture.
+Use when: Producing a daily teacher guide for a year-long, passage-driven Bible course (e.g., the Gospel of John), where each lesson opens in quiet time, works the text through student output, and lands on Christ.
+Required structure — include every component, in this order:
+  - Metadata header table: Unit; Lesson n of N; Date / Day type (Regular 50 / Thursday 36 / Half-day 26); Passage; Big idea (one sentence); Christ connection (the christotelic landing); Memory verse (if planted or reviewed); Content objectives (2-4, measurable, the floor that quizzes and finals assess); Reach / Hold / Stretch (the entry for the searching student, the background for the churched, the high-ceiling thread for the disciple); Resources (paired sermon + external map)
+  - Talk budget line: teacher sustained voice under about 40% of the working period, and no single block past 8-10 minutes
+  - Move 1 - Quiet time with the Lord (7 min, ungraded): host (teacher or rotating student, prayer opt-in); settle plus a centering verse or prompt; journal in the Quiet-Time Journal; an honest on-ramp so a doubter can write questions to God; phones away
+  - Move 2 - Hear the Word (3-5 min): students read the passage aloud, slowly; navigation help so the newcomer is never lost
+  - Move 3 - Work the text (about 25 min, THE GOVERNED BLOCK, no lecture): a prepared question sequence the teacher asks so students discover the meaning - an Entry question any student can answer, a Core question worked in small groups with observation in the Reading Journal, and a Deeper high-ceiling question for the disciple; named cold-call comprehension checks; teacher circulates and probes in short turns
+  - Move 4 - Land and minister (5-7 min, the teacher's protected pulpit): bring the passage to Christ and speak its truth over the students, instructing the believer and inviting the outsider; gently correct or deepen any theology that surfaced, off the grade
+  - Move 5 - Respond (3-5 min, graded participation): an in-room written response to an existential prompt ('what is this passage asking of you?'), room given for the Word to press rather than a manufactured result
+  - After the bell: homework (near-zero, the reading itself); what the lesson feeds the gradebook (participation; content mastery lives in the memory verses, quizzes, and finals, not here); what it sets up next
+  - Teacher notes: the governing reminders, the fresh-build or paired-sermon note, and the day-type adaptation
+Formatting: Markdown. Open with the metadata header as a two-column table, then the talk budget, then the five moves as headed sections, each with its time box in the heading and short teacher-move bullets. Write the Work-block questions out for the teacher to ask verbatim; never write a paragraph for the teacher to read aloud in that block - convert content into a question.
+
+Default scope: One class session; 50-minute regular day unless the day type says otherwise.
+Sourcing for this format: Quote all Scripture in the ESV: pass translation='ESV' to the study-bible tools (lookup_verse, get_passage, compare_translations). Ground every quotation and cross-reference in those tools; do not rely on memory for wording or references. Draw framing and illustrations from the paired sermon and the vetted external resources named in the header, deriving and citing rather than copying.
+
+
+## Grade band: secondary —     "Grades 9-12. Academic vocabulary, longer texts, analysis and argument, primary-source excerpts, citations expected."
+Adaptation for this format at this band: The default. A sophomore mixed-faith classroom; keep the floor low and the ceiling real.
+
+---
+
+# Voice
+
+Write like a careful person who respects the reader's time. These rules govern your expository prose in every answer and every document you produce.
+
+Length is the most common tell of machine writing. Say everything the task requires, and spend no words a point did not need. Make each required claim once. If a sentence can be predicted from the one before it, cut one of the two.
+
+Avoid these constructions:
+
+- Contrastive negation: denying one term to assert the next in parallel grammar ("not X, but Y"; "it isn't A, it's B"). Assert the strong claim on its own.
+- Em dashes. Use a period, a colon, or a comma.
+- Rule-of-three escalations, anaphora (repeating an opening across successive clauses), and stacked semicolons.
+- Praeteritio ("needless to say", "not to mention").
+- Rhetorical questions used as framing. A genuine question addressed to a student in a worksheet or discussion prompt is content and is fine.
+- Summary closers ("In conclusion", "Overall", "In summary"). End on the last real line. Do not restate what you already wrote.
+
+Avoid dead metaphors and corporate filler: leverage, utilize, delve, enhance, comprehensive, transformative, pivotal, unlock, holistic, synergy, ecosystem, cutting-edge, intricacies. Avoid vague nouns: aspects, factors, elements, solutions, offerings, areas, touchpoints. Reach for the accurate verb and the concrete noun.
+
+True antithesis is fine when both halves are asserted and neither is denied. No word list is exhaustive; the test is whether the writing reads as spent length or earned precision.
+
+## Salience markers to drop
+
+Do not mark that something matters with a stock phrase or a vivid metaphor standing in for a concrete claim. Current tells, grouped by the move they make:
+
+- Structural metaphors: "load-bearing", "doing the heavy lifting" / "heavy lifting", "blast radius", "smoking gun", "footgun", "belt-and-suspenders", "ground truth", "the call is coming from inside the house".
+- Salience stamps: "that's real", "that's not nothing", "that matters", "here's why it matters", "sit with that", "let it land", "worth sitting with", "reframes the whole thing", "resolves it cleanly".
+- Flattery and agreement openers: "You're absolutely right", "You're right to…", "good catch" / "sharp catch", "Great question", "This is the most important thing you've said".
+- Honesty framings: "let me be honest", "honest take", "the honest truth", "to be blunt", "honestly?".
+- Softened-pushback openers: "I'll gently push back", "let me push back respectfully", "I have to push back on this".
+- Cliffhanger offers: "would you like me to continue?", "just say the word".
+- Intensifier crutches ("genuinely", "truly", "deeply") and hedge-jargon ("unfalsifiable as stated", "canonical", "nuance" as filler).
+
+The rule is on the move, not the words. Banning one metaphor and reaching for the next (load-bearing becomes heavy lifting becomes blast radius) is the same failure. When you notice yourself reaching for a vivid stand-in, name the actual consequence instead: what depends on the thing, or what breaks without it, in plain terms, then stop. Correct directly, with no preface and no apology ritual. Delete any sentence that only signals importance without adding a fact.
+
+===================== TASK =====================
+
+Generate the Bible Lesson Guide (5-move, teacher-governed) now.
+
+Grade band: secondary.
+Curricular location: Bible & Theology > New Testament Studies: Life and Doctrine in Christ > The Gospel of John > John 12:20-36.
+
+Target learning objective(s) — teach or assess exactly these, matching each verb and cognitive level:
+  - [JN.12.20-36] Teach John 12:20-36 faithfully so students grasp who Jesus is and the response he calls for (John 20:31). (grade 10, complexity 14)
+      · Ground in: Scripture John 12:20-36
+
+For each Scripture/confession anchor above, use the study-bible tools to quote the passage accurately and cite the confession/creed; do not rely on memory for wording or references.
+
+Instructor's additional instructions: COURSE: Sophomore Bible (grade 10, mixed faith), verse-by-verse Gospel of John. SCHOOL: Yorkville Christian School - an evangelical private school structured like a public school, NOT a classical school (use the exact name 'Yorkville Christian School'; never a placeholder like [School Name]); use a plain, warm evangelical register and avoid classical-education idiom (no trivium, Latin, or recitation-culture framing). DESIGN INVARIANTS: reach a three-tier room in one artifact - a student new to the Bible who cannot yet find the passage, a churched but passive student, and a maturing disciple - with a low floor, a high ceiling, and no assumed knowledge; teach christotelically and land on Christ; treat the text as the living Word, not a document; quote all Scripture in the ESV and ground it in the study-bible tools. VOICE (see docs/john/John_Voice_Guide.md; applies to EVERY student- and parent-facing string): write as a warm, plain-spoken high-school teacher talking to fifteen-year-olds, not as an academic. HARD RULES, all absolute: (1) NO EM DASHES anywhere - use a period, comma, colon, or parentheses, or split into two sentences; the only exception is a Scripture quotation, which keeps the ESV's exact punctuation. (2) NO contrastive negation ('not X, it's Y' or any variant) - state the claim and stop: never deny one thing to assert another ('God's love isn't a feeling, it's a Son'; 'not just X but Y'; 'this isn't A, it's B'). The denial half is filler that fakes depth; write the real claim as a plain positive and stop. Especially watch big-idea and Christ-connection lines. (3) NO transitions or summary closers (Furthermore, Moreover, Additionally, In conclusion, Overall, It is important to note). (4) Concrete over abstract - name the actual thing; cut vague nouns like aspects, factors, elements, components, solutions, offerings. (5) Use contractions. (6) Sentence case for every heading, button, and label. (7) Concrete numbers and timeframes, not 'several' or 'soon'. (8) Vary sentence length; keep a point of view; cut hedging. (9) NO buzzwords (synergy, holistic, best-in-class, leverage), NO dead metaphors (cutting-edge, unlock, supercharge, the power of, dive in, journey), NO padding to three (tricolon), NO repeated openers (anaphora), NO metronome parallel clauses, NO hype or stacked intensifiers (blazingly, effortlessly, incredibly). Match the warm, plain voice of the course's hand-built exemplar lessons. NEVER output a bracketed placeholder like [email], [room number], [School Name], or [contact]. If you have no real value for a field, OMIT THE ENTIRE FIELD (including any Contact, email, or room line) - do not include it with a placeholder or left blank.
+
+PRODUCE the teacher lesson guide for global lesson 69 of 150.
+UNIT (use this exact name): U16 The hour has come.  LESSON WITHIN UNIT: 3/5.
+PASSAGE: John 12:20-36.  DAY TYPE: Regular (50 min) (use the matching variant).
+
+MEMORY VERSES: on the 16-verse plan this unit is REVIEW ONLY. It introduces NO new memory verse, and none of its verses are memorized or quizzed. Do NOT plant, assign, plan to quiz, or invent a memory verse from this unit. If memory work comes up, say only that there is no new verse this unit and to keep the assigned verses sharp (John 20:31, John 1:14, John 1:12, John 3:16, John 4:24, John 6:35, John 8:12, John 10:11, John 11:25); the next new one comes in John 13:34-35 (Unit 18).
+Propose the big idea, Christ connection, content objectives, and Reach/Hold/Stretch from the passage.
+
+FRAMING (Adam's own theological framing for this fresh-build passage, in his Theologian's voice; treat it as his ruling: follow it on the contested points and land where it lands):
+-----
+# Framing: John 12:1-50, "The hour has come" (Unit 16)
+
+Adam's theological framing for this unit, in his Theologian's voice (Reformed, exegesis-first, christotelic, grace-centered). Five lessons with an unusual shape. L1 (Fri Dec 18) is a HALF-DAY recap and cumulative memory quiz, the last class before winter break, with no new John 12 exposition. The exposition of John 12 runs across the four full-length days, L2 through L5. L2 builds on sermon 18 (12:1-8) with fresh framing for the triumphal entry. L3 builds on sermons 19 and 20. L4 builds on sermon 21. L5 builds on sermon 22. This unit plants no new graded verse. Quote the ESV in the finished materials.
+
+A word to set the room. John 12 is the last page of the Book of Signs. After 12:36 Jesus is hidden from the crowds, and from chapter 13 he is alone with the Twelve. Everything the course has tracked since Cana lands in this chapter. The hour that "has not yet come" at 2:4, 7:30, and 8:20 arrives at 12:23. The "lifted up" of 3:14 and 8:28 is completed at 12:32. The light of 8:12 is restated at 12:35-36 and 12:46. The King Nathanael named at 1:49 rides into Zion. The other sheep of 10:16 and the scattered children of 11:52 arrive as Greeks at the feast. Teach this unit as a gathering-in of the whole first half of the Gospel, and land it where John lands it, on a cross that draws a world.
+
+## The christotelic center
+
+The hour has come. From his mother's request for wine, Jesus lived on the Father's clock, and the appointment at the end of the clock was the cross. In John 12 the clock strikes. "The hour has come for the Son of Man to be glorified" (12:23), and John tells us what glorification means: he said this to show by what kind of death he was going to die (12:33). The center of the unit is that the glory of the Son is a cross, that the way up is the way down, that a buried seed is how a harvest comes, and that the Son lifted up from the earth draws a world to himself (12:32). The unit lands on Christ the crucified King, anointed for burial, entering Zion humble to die, glorified in being lifted up, whom Isaiah saw enthroned in glory seven centuries before the manger (12:41).
+
+- L1 (half-day recap) lands on the whole Book of Signs, the Christ the seven signs and the "I am" sayings have shown, and John's stated aim (20:31).
+- L2 (12:1-19) lands on Christ the King anointed for his burial, entering his city humble on a donkey to die.
+- L3 (12:20-36) lands on Christ whose hour has come, the grain of wheat that dies to bear a harvest of the nations, lifted up to draw all to himself.
+- L4 (12:37-43) lands on Christ whose glory Isaiah saw, rejected in a hardening foretold, sovereign over the unbelief that will crucify him.
+- L5 (12:44-50) lands on Christ the light who came to save, whose word is the Father's word and will judge on the last day, holding mercy's door open with his last public breath.
+
+## The contested points, ruled
+
+**The anointing "for the day of my burial" (12:1-8).** Rule Mary's act worship shaped by faith in his coming death, and rule against flattening it into "give generously." Jesus reads her intent: she kept this perfume for the day of his burial (12:7). Mary, who watched her brother walk out of a tomb (Unit 15), pours out a year's wages because she believes this man is going to die and she will not miss her chance to love him while he is here. Sermon 18 is the frame: three people at the table, Lazarus reclining, Martha serving, Mary anointing, and the question under all three is how you see Jesus. How you see Jesus determines how you worship him. Judas is the counter-example. He objects that the money should have gone to the poor, and John strips the mask: Judas said this because he was a thief, not because he cared for the poor (12:6). Rule the lesson: worship poured out on the Christ who dies, love that counts him worth everything, over against a calculating heart that follows Jesus for what it can get. Teach the extravagance as the fruit of seeing him rightly, and keep the power in the Christ she has seen, never in the size of the gift.
+
+**The plot to kill Lazarus (12:9-11).** Rule this the darkening backdrop that shows unbelief hardening into murder. The crowds come to see Jesus and the raised man, so the chief priests plan to kill Lazarus too, because many were believing on account of him (12:10-11). A living proof of resurrection is a problem to be erased. The greatest sign of life (Unit 15) now generates a second murder plot. Faced with a man raised from the dead, a hard heart plots another death.
+
+**The Triumphal Entry (12:12-19).** Rule the crowd's welcome real and their expectation wrong. They shout "Hosanna! Blessed is he who comes in the name of the Lord, even the King of Israel!" (12:13), waving palm branches, a nationalist emblem, hailing a King they expect to throw off Rome. Jesus answers the expectation by the animal he chooses. He sits on a young donkey (12:14), and John cites Zechariah 9:9: your King is coming, seated on a donkey's colt (12:15). A king on a warhorse comes for battle. A king on a donkey comes in peace. He is a King, and he comes to die. Rule the disciples' delay a feature to teach: they did not understand at first, and after Jesus was glorified they remembered (12:16). Understanding came after the resurrection, in hindsight, by the Spirit, the same pattern the course met at 2:22 (Unit 3). Then rule 12:19 the hinge: the Pharisees say "the whole world has gone after him," an unwitting prophecy, and John immediately gives us the world, "now there were some Greeks" (12:20). Frame this scene fresh, no sermon covers it.
+
+**The Greeks who come to see Jesus (12:20-22).** Rule these ethnic Gentiles, and rule their arrival the first light of the harvest of the nations. Sermon 19 settles it: not Hellenistic Jews, ethnic Greeks coming up to a Jewish feast and asking for Jesus. Tie it to 10:16 (the other sheep, one flock, Unit 14) and 11:52 (the scattered children gathered, Unit 15). The world has begun to come, and it triggers the hour.
+
+**"The hour has come for the Son of Man to be glorified" (12:23).** Rule this the arrival of the hour the whole Gospel has circled. Jesus often said the hour had not yet come (2:4; 7:30; 8:20), and now it has, and the arrival of the Greeks marked it. Rule "glorified" defined by 12:33, the death he was going to die. The cross-references run to 13:31-32 and 17:1-5 (the glorification thread) and to Isaiah 49:5-6 and 53:10-12 (the Servant who is a light to the nations and sees his offspring). The hour is the cross, and the cross is the glory. Teach the paradox plainly: the throne of this King is a Roman cross, and being lifted up on it is how he is exalted.
+
+**The grain of wheat (12:24), Christ's death first.** Rule the seed Christ himself, and rule his death the cause of all fruit. Unless a grain of wheat falls into the earth and dies, it remains alone, and if it dies it bears much fruit (12:24). Sermon 19 rules it: he is the grain of wheat. The cross-references confirm the direction: 1 Corinthians 15:36-38 (the seed sown and raised), Isaiah 53:10-12 (the Servant sees his offspring), Hebrews 2:9-10 (bringing many sons to glory), and John 12:32-33 (the fruit is the drawing of all). Guard the order. The fruit is you, and he had to go first. Rule against the flattening that makes 12:24 a general maxim about self-sacrifice. Christ dies first, and the disciple's death-to-self in 12:25 flows out of his, never alongside it. This is Marshall's order in a seed: holiness received from a death already died, before it is practiced.
+
+**"Whoever loves his life loses it" (12:25).** Rule this the shape of the fruit, given to those already joined to his death by faith. Sermon 19 guards the sequence: 12:25 is not describing how you become fruit, it describes how fruit is borne once Jesus has died. Teach the call to die to self on the ground of the cross that already died for the sinner, never as the price of getting in. The engine is grace-first: you are the fruit because of what someone else did for you. Give the command of 12:25 plainly, and put Christ in their hands as its strength.
+
+**"Now is my soul troubled" (12:27), the Gethsemane window.** Rule this John's own glimpse of the anguish the other Gospels show in the garden. The Greek is tarasso, to be stirred and thrown into turmoil, the same verb John uses of Jesus at Lazarus's tomb (11:33) and at the betrayal (13:21). Calvin grounds it: the trouble is real human feeling, voluntary and genuine, so that death was not a game to Christ but a real torment endured for us. Sermon 20 is blunt and right: the cross for your sin scared Jesus, and he trembled. Rule "Father, save me from this hour?" a real question refused: "But for this purpose I have come to this hour" (12:27). Then "Father, glorify your name" (12:28), and the voice from heaven answers. Rule the voice a genuine Trinitarian moment given for the crowd (12:30), the Father assuring the trembling Son. Keep both natures live: he genuinely feared, and he obeyed anyway, and that is the wonder.
+
+**"Now the ruler of this world will be cast out" (12:31) and "lifted up... will draw all people to myself" (12:32-33).** Rule 12:31 the verdict of the cross on Satan and the world, and rule 12:32 the completion of the lifted-up thread, guarded from a universalist misreading. The Greek "lifted up" is hypsoo, which carries both senses at once, to raise physically and to exalt. The New Testament uses it of the cross at 3:14, 8:28, 12:32, and 12:34. One word holds the crucifixion and the exaltation together, one event at two heights. This completes the chain the course built from the bronze serpent (Unit 4) through the "I am" lifted up (Units 8 and 12). Now guard "draw all people" against universalism. The drawing is not of every individual, since not all come to Christ. It is the drawing of people from every kind, Jew and Greek, all nations, all sorts, the harvest of the buried seed, and it draws them effectually. The 1689 cites 12:32 for effectual calling: Christ calls to himself, by his word and Spirit, those the Father gave him. Teach it as the reach of the gospel to the whole world, the point the Greeks just triggered, never as a promise that every individual is saved.
+
+**The unbelief foretold and the two Isaiah quotations (12:37-41), the hard one.** This needs the most care in the unit. Rule the judicial hardening and real human responsibility held together, exactly as John holds them, and neither denied. The plain fact first: though Jesus had done so many signs before them, they still did not believe (12:37). They saw and would not come. John then gives two Isaiah texts. First Isaiah 53:1, "Lord, who has believed what he heard from us?" (12:38), the Servant despised and rejected. Second Isaiah 6:10, "he has blinded their eyes and hardened their heart" (12:40). Rule the "could not believe" of 12:39 God's judicial hardening, and rule 12:37 and 12:42-43 the human responsibility standing in the same passage. Calvin guards it against fatalism: the prophecy does not lay a necessity on them, it foretells what the free unbelief of hard hearts would do, and faith is shown to be an uncommon gift of God. Teach it to sophomores as two true things spoken by the same John in one breath. They would not come (real guilt, 12:37). They could not come, because God gave hard hearts over to their hardness (real sovereignty, 12:39-40). Sermon 21 lands the gospel turn: God is utterly in control, he hardened to fulfill his purpose, and through the rejection of the Son the mercy went out to the nations, a remnant spared. Rule the disciple-tier note against arrogance: do not imagine you would have believed where they did not. The difference is grace, not merit.
+
+**"Isaiah said these things because he saw his glory" (12:41), the deity.** Rule this a plain claim that the enthroned LORD Isaiah saw in the temple (Isaiah 6:1-5) was the Son. The cross-references tie 12:41 to Isaiah 6, and to John 1:14, 1:18, 5:39, and 14:9. The fathers are unanimous and rich. Aquinas: seeing the glory of the Son, Isaiah saw the glory of the Father, and of the whole Trinity. Augustine: the Son in the form of God is invisible as the Father is, and the deity Isaiah saw was seen in a symbolic way. This is a deity claim as strong as anything in the Book of Signs, on the same shelf as "before Abraham was, I am" (8:58, Unit 12) and "I and the Father are one" (10:30, Unit 14). The prophet saw Christ on the throne. Teach it as the capstone of the whole "who is this Jesus" argument the Book of Signs has been making.
+
+**The secret believers (12:42-43).** Rule this a gentle, serious warning about fear of man, taught without shaming the frightened student. Many of the authorities believed in him, and because of the Pharisees they would not confess him, for they loved the glory that comes from man more than the glory that comes from God (12:42-43). The tradition is split on whether these had saving faith, and the passage leans (with 5:44) toward a belief that stopped short. Present the tension fairly and land it pastorally. The love of human approval can silence a real conviction, and Jesus asks to be confessed, not hidden. Handle it so a frightened teenager hears an invitation to speak, never a verdict that they are a coward.
+
+**The final public appeal (12:44-50).** Rule this Jesus' last public words, a summary of his whole ministry, spoken to no one in particular because they are for everyone. Sermon 22 catches why John gives no setting: these words are for you. Rule the three claims. First, to believe in Jesus is to believe in the Father, and to see him is to see the Father (12:44-45), the deity restated. Second, he came to save the world, not to judge it (12:47), and the light comes so that no one who believes stays in darkness (12:46). Sermon 22's insight on "remain" is worth keeping: darkness is the starting position, and the light has to come to a heart that cannot light itself. Third, judgment is real and deferred: the word he has spoken will judge on the last day (12:48). Rule the two comings: he came first as the Lamb to save, he returns as the Judge, and the same word that saves now will judge then. Land the unit on the open door. Mercy's door is still open, the appeal is still going out, and the Christ who trembled at the hour holds it open with his last public breath.
+
+## Christological and covenantal connections
+
+- **The hour arriving as the hinge of the Gospel.** From 2:4 through 7:30 and 8:20 to 12:23, and on to 13:1 and 17:1. This unit is where the clock strikes.
+- **The lifted-up / cross thread completed.** hypsoo at 3:14 (the serpent, Unit 4), 8:28 (Unit 12), and now 12:32, one word for crucifixion and exaltation.
+- **The King of Zechariah 9:9.** The King Nathanael confessed (1:49) enters Zion humble on a donkey, a King of peace who comes to die.
+- **The grain of wheat and the harvest of the nations.** The buried seed (12:24) tied to Isaiah 53:10-12 and 1 Corinthians 15:36-38. His death is the sowing that reaps a world.
+- **The world coming in, the one flock.** The Greeks (12:20) as the firstfruits of 10:16 and 11:52, the New Covenant people of Jew and Gentile, drawn by the lifted-up Christ (12:32).
+- **Isaiah seeing Christ's glory, the deity.** 12:41 reads Isaiah 6 as a vision of the Son enthroned, on the deity thread with 8:58 and 10:30.
+- **The light thread.** 1:4-5 and 1:9 (Prologue), claimed at 8:12 (Unit 12), restated at 12:35-36 and 12:46.
+- **The close of the Book of Signs.** 12:36-37 ends the public ministry. After this Jesus is alone with the Twelve (chapter 13 opens the Book of Glory). This unit sits on the seam of the whole Gospel.
+
+## Reaching the three-tier room
+
+The contact points are strong for teenagers: extravagant love, wanting a Jesus who fixes your politics or your problems, what you do with your one life, dying to self to bear fruit, honest fear of what following Jesus costs socially, and unbelief in the face of evidence.
+
+- **Searching student.** The floor is Mary and the King on the donkey. A woman pours out a year's pay on a man's feet because she loves him and knows he is going to die (12:1-8). A King rides into the capital on a borrowed donkey, refusing the army the crowd wanted (12:12-15). Ask the plain question: do you want a Jesus who solves your problems and backs your side, or the real one, who came to die and asks you to follow him there? The grain of wheat is built for this student: a seed has to be buried before anything grows, and Jesus says that is what his death is, and what yours will be (12:24-25).
+- **Churched but coasting.** Their mirror is Judas and the secret believers. Judas followed Jesus for what he could get and called real worship a waste (12:4-6). The leaders believed and would not say so, because they loved human approval more than God's (12:42-43). Press it gently: a person can be near Jesus for years, know the words, and run a quiet calculation the whole time. And press the harder mirror of 12:37, people who saw every sign and still would not come. Familiarity with the signs is not faith in the Christ they point to.
+- **Maturing disciple.** Give them the weight: the hour chain from 2:4 to 12:23, hypsoo holding crucifixion and exaltation in one word (3:14, 8:28, 12:32), the tarasso window into Gethsemane (12:27), the two Isaiah quotations and the judicial hardening held with human responsibility (12:37-40), and the stunning 12:41 with the fathers on Isaiah seeing the Son's glory. Let them trace how the whole Book of Signs gathers into this one chapter and lands on a cross.
+
+Keep faith content invitational and participation assignable. Every student can analyze the donkey, the seed, the two Isaiah texts, and the open door. No student is required to profess.
+
+## Memory: review only
+
+This unit plants no new graded verse. Students hold nine anchors: 20:31, 1:14, 1:12, 3:16, 4:24, 6:35, 8:12, 10:11, 11:25. The next new anchor is 13:34-35 in Unit 18. Keep the nine sharp across L2 through L5 with light cumulative passes, and let 10:11 (the shepherd who lays down his life) and 11:25 (the resurrection and the life) stand right behind "the hour has come to be glorified."
+
+Offer John 12:24 as an optional stretch off the graded line, on L3, where the grain of wheat is taught: "unless a grain of wheat falls into the earth and dies, it remains alone, but if it dies, it bears much fruit." It is on the taught-not-memorized list, short, and it carries the unit's center. Keep it off the graded set, a gift for the student who wants to hold it.
+
+**The L1 half-day cumulative memory quiz (Fri Dec 18, 26 min, last class before winter break).** This is a recap-and-quiz beat, no new John 12 exposition, a semester wind-down that celebrates what students carry.
+- Recap the Book of Signs, briefly and warmly. Walk the arc in one sweep: the Prologue (the Word made flesh, 1:14), the seven signs (Cana 2:11, the official's son 4:46-54, Bethesda 5, the feeding and walking on water 6, the man born blind 9, Lazarus 11), and the "I am" sayings collected so far (bread 6:35, light 8:12, door and good shepherd 10:7 and 10:11, resurrection and life 11:25, plus the absolute "I am" of 8:58). Tie it to John's stated aim, 20:31, the first verse they learned. Frame it as "look how far we have come, and look who these signs have shown you." A window, not a lecture.
+- Quiz the nine anchors (20:31, 1:14, 1:12, 3:16, 4:24, 6:35, 8:12, 10:11, 11:25). Cumulative, low-stakes, celebratory.
+- Grading: it is a graded cumulative memory quiz feeding the memory and quizzes bucket, consistent with the earlier half-day memory beat in Unit 6. Keep the recap portion formative and coached, off the grade.
+- Tone: it is the last class before a long break. Send them out light, having proved to themselves that they hold nine load-bearing verses and the whole first half of John. A good place for a short blessing over the break.
+
+## Pitfalls with teenagers
+
+- The anointing moralized into generic generosity. The point is worship poured out on the Christ who dies, faith that counts him worth everything (sermon 18). Keep it about seeing Jesus rightly.
+- The triumphal entry as a happy parade. The crowd wanted a political messiah and got a King on a donkey headed for a cross (Zechariah 9:9). Do not let it become a palm-waving celebration that misses that the King comes to die.
+- "Grain of wheat" flattened to generic self-sacrifice. Christ is the seed, and he dies first (Isaiah 53:10-12). The disciple's death to self flows out of his death, never beside it. Guard the order or you reverse the gospel.
+- "Draw all people to myself" read as universalism. Not every individual, but people of every kind drawn effectually (1689 on effectual calling). Teach the reach of the gospel to all nations, never that all are saved.
+- The Isaiah hardening turned into fatalism, or into a denial of human responsibility. Hold both, as John does. They would not believe (12:37) and could not believe (12:39-40). Calvin: the prophecy foretells, it does not compel. Never "so why bother," and never a God who is not sovereign over hard hearts.
+- The secret believers used to shame the fearful student. 12:42-43 is a gentle warning about the fear of man, aimed at a room that knows that fear. Handle it so the frightened teenager hears an invitation to speak, not a verdict.
+- "I have not come to judge the world" (12:47) missing that the word judges on the last day. Both are true. He came to save, and his word will judge.
+- Anti-Jewish reading of the unbelief. "The Jews" here names the hostile leadership in this scene. Jesus, the disciples, Mary, the believing crowds (12:11), and the many leaders who believed (12:42) are all Jewish. The hardening of 12:40 measures response to Christ, and it falls on any hard heart, including the churched student. Never let the class hear contempt for Jewish people.
+
+## Also worth emphasizing
+
+- 12:16 and understanding after glorification. After Jesus was glorified, they remembered. Following Jesus with things you do not yet understand is the normal shape of discipleship, the same note struck at 2:22. A warm word for the half-in student.
+- The voice from heaven for the crowd (12:30). The Father speaks audibly, and Jesus says it was for their benefit. God stoops to give evidence to unbelief. A quiet mercy.
+- "Remain in darkness" (12:46). Darkness is the default, and the light has to come to a heart that cannot light itself. Grace-first anthropology in one word.
+- The chapter is a hinge, and students should feel it. L5 (12:36-50) is the last of the public ministry. After this, the crowds are gone and Jesus is with his own. Mark the seam so students know they are standing at the turn of the whole Gospel, from the Book of Signs into the Book of Glory.
+
+## The lesson split
+
+**L1 (i=67, Fri Dec 18, half-day 26), Book of Signs recap and cumulative memory quiz.** Recap the arc from the Prologue through Lazarus and run the graded cumulative quiz on the nine anchors, as detailed above. No new John 12 exposition. A warm semester wind-down before the long break. The exposition begins Jan 4.
+
+**L2 (i=68, Mon Jan 4, regular 50), John 12:1-19: the King anointed for burial, entering Zion to die.** The anointing at Bethany and Judas's false concern (12:1-8), the plot to kill Lazarus (12:9-11), and the triumphal entry on the donkey of Zechariah 9:9 (12:12-19). Two narrative scenes bound by one idea: this King is going to his death, and he knows it, and he enters his city humble to accomplish it. Build on sermon 18 (12:1-8) and fresh framing for the entry (12:9-19). Lands on: Christ the King anointed for his burial, coming to Zion humble on a donkey to die.
+
+**L3 (i=69, Tue Jan 5, regular 50), John 12:20-36: the hour has come, the seed that dies, lifted up to draw all.** The Greeks arrive and the hour strikes (12:20-23), the grain of wheat and the cost of discipleship (12:24-26), the soul troubled and the voice from heaven (12:27-30), the ruler cast out and the lifting up that draws all (12:31-33), and the light among them a little longer (12:34-36). This is the christological hinge of the unit, one continuous interaction. Build on sermons 19 and 20. Offer 12:24 as the optional stretch here, off the graded line. This is the densest day, so pace it as one arc and let it land on two verses, 12:23 and 12:32. Lands on: Christ whose hour has come, the buried seed of a world-harvest, lifted up to draw all to himself.
+
+**L4 (i=70, Wed Jan 6, regular 50), John 12:37-43: the unbelief foretold, and Isaiah who saw his glory.** The rejection John foresaw (12:37), Isaiah 53:1 and Isaiah 6:10, the judicial hardening held together with real responsibility (12:38-40), the stunning "Isaiah saw his glory" (12:41), and the secret believers who loved human praise (12:42-43). The hardest theological material in the unit gets a full period so it is not rushed. Build on sermon 21. Handle the hardening pastorally and the deity of 12:41 as the capstone of the Book of Signs' argument. Lands on: Christ whose glory Isaiah saw, rejected in a hardening foretold, sovereign over the very unbelief that will crucify him.
+
+**L5 (i=71, Thu Jan 7, Thursday 36, single-focus, last passage), John 12:44-50: mercy's door is open.** The final public words of Jesus, a summary of the whole ministry, spoken for everyone. One key question: "These are the last public words of Jesus in John. What is the one thing he most wants you to know before he goes silent to the crowds?" Work the three claims (to believe in the Son is to believe in the Father, he came to save and not to condemn, his word will judge on the last day), and land on the open door. Build on sermon 22. Lands on: Christ the light who came to save, whose word is the Father's and will judge on the last day, holding mercy's door open with his last public breath.
+-----
+
+PAIRED SERMON (the instructor's own; derive the frame and emphasis, cite it, do not copy or read aloud):
+-----
+# Life Through Death (John 12:20-26)
+
+**Series:** Gospel of John — Adam Vega Sermon Library
+**Passage:** John 12:20-26
+
+---
+
+[00:00] Passage opens this morning, John chapter 12 verse 20, with this detail, that you're kind of tempted to skip over, frankly, because, in writing this sermon, I really broke down the text into four central statements of Jesus. Every time Jesus speaks, preach, by far. Like, by far, if Jesus speaks, he does he does all the work for me. Like, as a preacher, I can't add to what he has to say. Right?
+
+[00:24] So I just come up and just, hey, and he said this. You know? But So you kinda wanna skip over it because he makes these four big statements. I give them to you upfront in this passage. He says that the hours come for the son of man to be glorified.
+
+[00:38] That's statement number one. Statement two that he makes is that unless a grain of wheat falls into the ground and dies, it remains alone. But if it dies, it bears much fruit. Statement three, he says that whoever loves his life loses it, and whoever hates it in this world will keep it in eternal life. And lastly, he says that if anybody serves him, that he must follow him.
+
+[01:01] Now wherever he is, that is where his servant will be found also. And so that gives us plenty to preach about this morning, but what we can't skip over is that he's saying these things in response to a circumstance. Something has happened that has brought this these words, these statements from Jesus' lips. And my prayer as we look at his response is that we will see three things this morning. That we will see, chiefly, why Jesus died.
+
+[01:25] Number one, why Jesus died. Jesus died, number one, why Jesus died. Number two, that we will see for whom he died. And lastly, that we will see how he calls us to respond to those first two truths. Let's look at our text together.
+
+[01:43] Now, among those who went up to worship at the feast were some Greeks. Now, among those who went up to worship at the feast were some Greeks. Pastor Brett preached it last week, that the feast we're talking about is the Passover Feast. And yet, coming up to worship at this feast are some Greeks. Now, the Passover is a distinctly Jewish feast.
+
+[02:08] And coming up to worship at this feast are some Greeks. And so because this is abnormal, people have speculated all kinds of different things about who these Greeks are. And a lot of it's wrong, and some of it's right. And I'm gonna tell you what's right. The Greeks that are referenced here are Wait For It.
+
+[02:28] And that should go without saying, right? But because they're coming up to worship, because they want to observe the Passover, some have speculated that these were Hellenistic Jews. These were Jews who were greatly influenced by Greek culture, who subscribed to Greek traditions, but that they were really Jews. Others would say that these were Greeks who have been circumcised, who have fully come into decidedly is that these There are different words for Greeks in the Greek, and the Greeks that we are referencing here, we're talking about ethnic Greeks. Not people who speak Greek, not people who like Greek tradition.
+
+[03:07] We're talking about Greeks. And they're coming up to worship at the feast. And the reason why I might press back a little bit and say that they're probably not Greeks who are circumcised and who have fully subscribed to Jewish tradition is that on arrival, who are they looking for? Verse 21, and these came to Philip, who was from Bethsaida in Galilee, and they asked him, sir, we wish to see a jeezy. So they were coming up to the Passover feast, this same Passover feast that the ethnic Jews were seeking to crucify Jesus.
+
+[03:41] These Greeks come up and they're looking for him in a positive fashion. They're there to see him. This is abnormal, and this is magnificent. And if you've been with Mercy's Door for some time, then you know that the great herald of our message, the great central doctrine of our message, that though it has been the will of the father from eternity past to bring all things under the rule in the of Jesus Christ. That every knee will bow, that every tongue will confess that Jesus Christ is Lord.
+
+[04:12] That's what he's ultimately doing and purchasing a remnant for himself and then scattering amongst the peoples of the earth to spread the gospel is that he is gathering for himself a people from every tribe, tongue, and nation. And here before Jesus has even gone to a cross yet, some Greeks are making their way to the past over feast. Jesus. They want to see him. And so they go and they find Philip and they say, sir, we wish to see Jesus.
+
+[04:39] And Philip went and told Andrew. Another kind of, maybe I'm reading too much into it, but kind of showing us that this is abnormal. Philip didn't know what to do with this information, with this situation. So he goes and he tells Andrew. Andrew, there are these Greeks that have come up to worship and they want to see Jesus.
+
+[05:00] What's your way to do? So Philip not wanting to go alone, Andrew not wanting to go alone, they both go to Jesus. So the Greeks go to Philip, Philip goes to Andrew, Philip and Andrew go to Jesus. Jesus, there are these Greeks that have come up to worship and they're asking for you. And Jesus answers them these four statements.
+
+[05:26] I set up this context to say that what we're about to hear from Jesus is in response to the fact that the nations have started to And these people from the from the Greek ethnicity have come up to the Jewish feast, seeking Jesus. This is beginning the earliest grumblings of the formation of the church among the Gentile people. You guys being gentile people. This is the first kind of movement toward your salvation, toward my salvation, toward the grace of our Lord Jesus Christ reaching beyond the Jewish city center. And this is what he has to say to them.
+
+[06:14] First he says, the hour has come for the son of man to be glorified. Jesus, there are these Greeks and they're they've come up to worship and they and they wanna they wanna see you. They're asking to see you. Jesus' response, it is time. It's time.
+
+[06:36] The time has come. The hour has come for the Son of Man to be glorified. It's his response. The Greeks are here? It's time.
+
+[06:48] Connect it. The pull of my ministry is starting to is starting to bring the nations to me. It's time. This is what I was here for. It's time for the sun to be glorified.
+
+[07:05] Fact that Jesus uses the word glorified because we all know what he's talking about. He's going to make it super obvious what he's talking about. I generally try to when Jesus speaks, I try to sermon because that's how the original hearers would have received it. So if he was there and just talking in one continuous teaching, I try to do it the same way. I didn't do it this time.
+
+[07:30] So I'm gonna borrow from next week and just say that he says from next week and just say that he says in this same interaction,
+
+# Lifted Up (John 12:27-36)
+
+**Series:** Gospel of John — Adam Vega Sermon Library
+**Passage:** John 12:27-36
+
+---
+
+[00:00] So, again, John chapter 12 verse 27. You know, I had told you guys last week that whenever Jesus speaks in one interaction, I try to preach it all in one sermon, because that's how the original hearers would have heard it. So this is still I didn't do that last week. I kinda gave you guys a heads up on that. So this is really a continuation of last week.
+
+[00:19] You're no worse off if you weren't here last week because I'm gonna be a pretty good summarizer of what we talked about last week. But everything that we hear this morning is likewise from last week in response to an event. Right? Last week, some Greeks came up to the Passover feast asking for Jesus. Ethnic Greeks would be coming up from Greece to a Jewish feast.
+
+[00:41] And when they get there, asking for Jesus. If you were Greek and you were circumcised and were subscribing to the Jewish faith, then likely you were anti Jesus at this point in Jesus' history because that's what the ethnic Jews were, is they were opposed to Jesus. In fact, they're going to crucify him in a different way. They're coming up to a Jewish feast being non Jews and and in coming to the feast are seeking out Jesus. They ask for him.
+
+[01:05] So they go to Philip, we want to see Jesus. Philip goes to Andrew and he's like, Andrew, these Greeks, they want to see Jesus. And then Philip and Andrew go to Jesus. Now, like, there are these Greeks who have come up to the feast and they're asking for you. And everything that flowed last week was Jesus's response to this event.
+
+[01:22] And so last week, just kind of quick summary, we said that Jesus's response was the hour people of the earth has started to be started to be drawn to me. This is the very purpose for which I've come. It's time for the son of man to be glorified. And we said that by glorified, he means crucified. He was talking about his death, which is going to clarify.
+
+[01:43] And it's his death, which is going to clarify this. In a parable, he said that unless a grain of a seed of grain falls into the earth and dies, it remains alone. But if it dies, it bears much fruit. And so we answered the question, why did Jesus die? And we said the answer was to bear much fruit.
+
+[02:04] And then we asked the question, well, who is the fruit? And we answered the question, well, you are the fruit. A people unto himself. He made a people who were not a people. He produced you His church, his people.
+
+[02:19] He put new life in spiritually dead beings. He bore much fruit. So why did Jesus die? To bear fruit. Who is the fruit?
+
+[02:28] You are the fruit. And then kind of point three was, what does Jesus how does Jesus describe that fruit? What does the fruit look like? And he said, well, my fruit, We pick up in verse 27 this morning. And Jesus says, now is my soul troubled.
+
+[03:02] And what shall I say? Saved me from this hour. Now, I want you guys to track with me the whole time that I'm speaking this morning that everything Jesus says in this passage and in last week's passage is in regard to what he called the -Yeah. -has come for the son of man to be glorified. Everything he's talking about points to this hour, the hour of my soul is my soul trouble.
+
+[03:51] This word soul is the same word that is used for life. Often times it's used to kind of describe the seat of the emotions, is how theologians like to describe this word. The seat of the emotions. Maybe a better word for you might be heart or mind. However you regard the place where the fullness of your emotions dwell is the place that Jesus is regarding here when he says that it is his soul that is troubled.
+
+[04:18] The very seat of my emotions is agitated. It is troubled. And what shall I say? Father, save me from this hour. But it's for this purpose.
+
+[04:32] I've come to this hour, Jesus says. So, Father, glorify your name. We see something on display in these words here that is kind of hard for a lot of us to wrap our minds around. And what that is, is we're seeing the humanity of And when God became flesh, when when God the Father sent the Son, when God, the Triune Godhead, sent one person of the Godhead, the Son, Jesus, to Earth to take on human flesh, to become like us, he dwelled on this Earth with a dual nature, his deity, his godhood, and his humanity taking the likeness of men. And this is like, okay.
+
+[05:17] One God in three persons was hard enough. Now one person of the three persons is has two natures. Like this, it gets hard. Right? And honestly, I'm not gonna stand up here and try to make it easy because it's not.
+
+[05:33] But Jesus, God the Son, took on human flesh. And here's why it's important for us to wrap our head around that this morning. Something that you can't it's talking about something that you very much can relate to. We're talking about actual soul agitation as he fixed his eyes on the hour that was to come, the hour he was regarding, the hour of his to say it more directly, however uncomfortable this might make you. On the cross for your sin scared Jesus.
+
+[06:13] He trembled. In fact, in the Garden Of Gethsemane, he sweat drops of blood so extreme was the trouble in his soul. He felt it. He understood what he was doing, and he had a very rational response to it. This is terrifying.
+
+[06:36] And of course, that was his human nature on display. But why is it important that we see this? Well, here's why. Because we can look at the God nature of Jesus, and use it to kind of inoculate all of the other attributes that he displays to us, where we kinda neutralize or become unimpressed with all that he did in the flesh. Because if he's God, well of course.
+
+[07:05] Because if he's God, well of course. Right? Think about it like this. I spent a lot of time thinking about this this week. We tend to put righteousness, for an example, in two buckets.
+
+[07:18] Right? There's the righteousness that is all but expected, that you don't get any applause for. Right? So if you work at a retailer, maybe for just to give an easy example, you work at a retailer, and every day you don't steal money from the register, nobody's clapping for you afterwards. Right?
+
+[07:38] But when you find a wallet on the ground, and you don't lift the 20 out of it before you return it, or you return it at all, or you find the ID and you look up the address and you take it to the guy. You get praise for going out of your way to do the right thing. Kind of these two buckets. One of them we're unimpressed with. One of them, we're impressed with.
+
+[08:01] And here's why. Because when we look at the at the opportunity that you had to do the wrong thing, and we see that you elected to do the right thing, we find this to be praiseworthy. Now, in our brokenness I'm kind of going in the depths of my thoughts here. But in my in our brokenness, I think that really what it comes down to is that we want glory. Righteousness be
+-----
+
+Do any Scripture or study-bible tool lookups you need BEFORE you start writing. Between tool calls, emit no progress notes, plans, or commentary; your visible output must be the finished document and nothing else.
+Produce only the finished resource in Markdown, beginning with the metadata header. End the main resource with a line `Standards: JN.12.20-36`.
+If (and only if) this resource has answers, solutions, or model responses, put them ALL in a single final section — after a `---` rule and headed EXACTLY `## Answer Key` — and reveal no answers anywhere before it.

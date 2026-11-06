@@ -8,7 +8,7 @@ build per book at a time, so a closed browser or a crash loses no paid work and 
 the failed batch. The first generation against a large book requests it and tells the teacher the
 book is being prepared. Uses the server ANTHROPIC key (a shared, cached artifact, not per-teacher
 BYOK). Small books never need this — they're read whole at generation time. See
-docs/living-library-generation-plan.md.
+docs/sources/living-library-generation-plan.md.
 
 Also provides covered-range passage selection (semantic retrieval via webapp.embed) for when the
 covered range itself is too large to include verbatim.

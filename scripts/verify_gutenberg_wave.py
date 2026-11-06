@@ -32,7 +32,7 @@ from webapp.sources.matching import author_tokens, normalize  # noqa: E402
 
 _CATALOG_URL = "https://www.gutenberg.org/cache/epub/feeds/pg_catalog.csv.gz"
 
-# author -> works, transcribed from the Gb-tagged entries of docs/reformed-pd-ingestion.md
+# author -> works, transcribed from the Gb-tagged entries of docs/sources/reformed-pd-ingestion.md
 CANDIDATES = [
     ("Augustine of Hippo", ["Confessions", "The City of God", "On Christian Doctrine", "The Enchiridion", "On the Trinity"]),
     ("Eusebius", ["The Church History of Eusebius"]),

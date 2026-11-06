@@ -22,7 +22,7 @@ sys.path.insert(0, str(ROOT))
 from webapp.typeset import split_heading  # noqa: E402
 
 DB = ROOT / "db" / "books.db"
-LOG = ROOT / "docs" / "edition-corrections.csv"
+LOG = ROOT / "docs" / "reading-room" / "edition-corrections.csv"
 
 
 def plain(h: str) -> str:

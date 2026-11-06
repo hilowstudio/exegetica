@@ -9,8 +9,8 @@ per-book crawler noise. So each book is judged on what a reader would see and kn
 year, subjects, length, plus the evidence of a lasting audience (Open Library editions/readers,
 a Wikipedia article for the work, the author's Wikipedia reach).
 
-Reads docs/gutenberg-holdings-review.csv (score_gutenberg_holdings.py), writes
-docs/gutenberg-readership.csv {slug, p, reason}. Cached per slug in
+Reads docs/reading-room/gutenberg-holdings-review.csv (score_gutenberg_holdings.py), writes
+docs/reading-room/gutenberg-readership.csv {slug, p, reason}. Cached per slug in
 .seed_cache/pd_sources/readership_judgments.json, so reruns only judge new books.
 
     python scripts/judge_readership.py --sample 150     # pilot on a mixed sample
@@ -28,8 +28,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "docs" / "gutenberg-holdings-review.csv"
-OUT = ROOT / "docs" / "gutenberg-readership.csv"
+SRC = ROOT / "docs" / "reading-room" / "gutenberg-holdings-review.csv"
+OUT = ROOT / "docs" / "reading-room" / "gutenberg-readership.csv"
 CACHE = ROOT / ".seed_cache" / "pd_sources" / "readership_judgments.json"
 MODEL = "claude-sonnet-5-5"
 PRICE = (2.0, 10.0)   # $/MTok in, out

@@ -4,7 +4,7 @@ Which pulp-magazine stories can the Reading Room publish (US)?
 
 For every item in every issue of each magazine in MAGS (Weird Tales, Fantastic Adventures, and
 the science-fiction magazines our Gutenberg stories came from), within the years in scope, this
-joins three sources and writes docs/pulp-eligible-stories.csv:
+joins three sources and writes docs/reading-room/pulp-eligible-stories.csv:
 
   Contents   The FictionMags / Science Fiction Index contents lists (philsp.com): each issue's
              page, title, author, and item type. One page fetched at a time, a second apart,
@@ -47,7 +47,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".seed_cache" / "pulp"
-OUT = ROOT / "docs" / "pulp-eligible-stories.csv"
+OUT = ROOT / "docs" / "reading-room" / "pulp-eligible-stories.csv"
 UA = {"User-Agent": "ExegeticaReadingRoom/1.0 (public-domain story index; hello@hilowstudio.dev)"}
 try:
     sys.stdout.reconfigure(encoding="utf-8")

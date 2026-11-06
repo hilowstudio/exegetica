@@ -1,4 +1,4 @@
-"""Draw the shelf motif library: eight motifs per Reading Room shelf (see docs/covers/genre-motifs.md).
+"""Draw the shelf motif library: eight motifs per Reading Room shelf (see docs/reading-room/covers/genre-motifs.md).
 
 Each motif is drawn once by the image model in the house style (house_covers.MOTIF_PROMPT), checked,
 cleaned to a black-and-white mask and filed in the shared motif library, where any book, shelf or the

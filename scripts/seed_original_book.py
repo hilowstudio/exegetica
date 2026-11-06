@@ -1,4 +1,4 @@
-"""Seed an original Exegetica book (one written in-house as Markdown, e.g. docs/books/<name>/) into the Reading Room.
+"""Seed an original Exegetica book (one written in-house as Markdown, e.g. docs/reading-room/books/<name>/) into the Reading Room.
 
 Reads the same folder scripts/book_pdf.py renders: its *.md parts in name order and book.json. The
 book.json "library" entry gives the catalog fields:
@@ -12,7 +12,7 @@ title page), a "##" chapter becomes "Chapter N: Title" (the reader's typesetting
 unnumbered. The cover is the book's own cover-2x3.jpg (drawn by book_pdf.py), stored in covers.db.
 Idempotent: re-running replaces the book.
 
-    python scripts/seed_original_book.py docs/books/between-the-brackets [--dry-run]
+    python scripts/seed_original_book.py docs/reading-room/books/between-the-brackets [--dry-run]
 """
 from __future__ import annotations
 

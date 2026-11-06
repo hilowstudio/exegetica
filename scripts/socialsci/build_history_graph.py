@@ -1,5 +1,5 @@
 """Build the history people-and-events graph into db/social_sciences.db from the Wikidata harvest
-(scripts/socialsci/harvest_wikidata.py). Design: docs/history-graph-design.md.
+(scripts/socialsci/harvest_wikidata.py). Design: docs/sources/history-graph-design.md.
 
 Tables:
   h_entities  every node: person, event, place, or item (an office, party, occupation, school, work)

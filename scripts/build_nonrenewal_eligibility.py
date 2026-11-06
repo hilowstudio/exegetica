@@ -28,7 +28,7 @@ Catalogs (cached under .seed_cache/pd_sources, from the 2026-10-05 sources spike
   fp_rows.json   Fadedpage allbooks.php      {pid, a "Surname, Given", t, y, lib, pg}
   pga_rows.json  PG Australia index + pages  {i, a "Given Surname", t, y, d [born, died], lib, pg, fmt}
 
-Writes docs/pd-nonrenewal-candidates.csv.
+Writes docs/reading-room/pd-nonrenewal-candidates.csv.
 
     python scripts/build_nonrenewal_eligibility.py
 """
@@ -52,7 +52,7 @@ ROOT = Path(__file__).resolve().parent.parent
 REN_DIR = ROOT / ".seed_cache" / "cce-renewals" / "data"
 REG_DIR = ROOT / ".seed_cache" / "cce-registrations" / "xml"
 SRC_DIR = ROOT / ".seed_cache" / "pd_sources"
-OUT = ROOT / "docs" / "pd-nonrenewal-candidates.csv"
+OUT = ROOT / "docs" / "reading-room" / "pd-nonrenewal-candidates.csv"
 
 csv.field_size_limit(10**8)
 ARTICLES = {"the", "a", "an"}

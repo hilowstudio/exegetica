@@ -3,7 +3,7 @@
 Seed the Reading Room with Weird Tales and Fantastic Adventures as issue collections.
 
 One book per magazine issue ("Weird Tales, October 1936"), built from
-docs/pulp-eligible-stories.csv (scripts/build_pulp_eligibility.py). Each collection holds the
+docs/reading-room/pulp-eligible-stories.csv (scripts/build_pulp_eligibility.py). Each collection holds the
 issue's stories that are public domain now and have clean text, in page order:
 
   - Text comes from our own library when the story is already a standalone book there (already
@@ -49,7 +49,7 @@ from format_gutenberg import _norm_ws, _strip_pg  # noqa: E402
 from webapp.sources import gutenberg as gb  # noqa: E402
 from webapp.sources.matching import BROWSER_UA  # noqa: E402
 
-CSV_PATH = ROOT / "docs" / "pulp-eligible-stories.csv"
+CSV_PATH = ROOT / "docs" / "reading-room" / "pulp-eligible-stories.csv"
 DB = ROOT / "db" / "books.db"
 TEXT_CACHE = ROOT / ".seed_cache" / "pulp" / "texts"
 # Magazines (slug stem, shelf, cover checklist) come from the shared config in build_pulp_eligibility.

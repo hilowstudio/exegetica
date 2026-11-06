@@ -39,15 +39,15 @@ except ImportError:
     pass
 
 DOCS = PROJECT_ROOT / "docs"
-TEACHER = DOCS / "john-lessons"          # teacher lesson guides
-MATERIALS = DOCS / "john-materials"      # student + course-level documents
-SERMONS = DOCS / "john-sermons"
-FRAMING = DOCS / "john-framing"          # optional per-unit theological framing (fresh-builds)
-PROMPTS = DOCS / "_prompts"              # --emit writes assembled prompts here (Claude-in-chat path)
-MAP = json.loads((DOCS / "john-calendar-map.json").read_text(encoding="utf-8"))
-PASSAGES = json.loads((DOCS / "john-lesson-passages.json").read_text(encoding="utf-8")) \
-    if (DOCS / "john-lesson-passages.json").exists() else {}
-LOG = DOCS / "_john-gen-log.jsonl"
+TEACHER = DOCS / "john" / "john-lessons"          # teacher lesson guides
+MATERIALS = DOCS / "john" / "john-materials"      # student + course-level documents
+SERMONS = DOCS / "john" / "john-sermons"
+FRAMING = DOCS / "john" / "john-framing"          # optional per-unit theological framing (fresh-builds)
+PROMPTS = DOCS / "john" / "_prompts"              # --emit writes assembled prompts here (Claude-in-chat path)
+MAP = json.loads((DOCS / "john" / "john-calendar-map.json").read_text(encoding="utf-8"))
+PASSAGES = json.loads((DOCS / "john" / "john-lesson-passages.json").read_text(encoding="utf-8")) \
+    if (DOCS / "john" / "john-lesson-passages.json").exists() else {}
+LOG = DOCS / "john" / "_john-gen-log.jsonl"
 
 # 16-verse anchor core (evangelical school; short, load-bearing, rolling + cumulative).
 # One planted per listed unit; other units review. Longer/secondary verses are taught
@@ -73,7 +73,7 @@ PREAMBLE = (
     "low floor, a high ceiling, and no assumed knowledge; teach christotelically and land on Christ; "
     "treat the text as the living Word, not a document; quote all Scripture in the ESV and ground it "
     "in the study-bible tools. "
-    "VOICE (see docs/John_Voice_Guide.md; applies to EVERY student- and parent-facing string): write as "
+    "VOICE (see docs/john/John_Voice_Guide.md; applies to EVERY student- and parent-facing string): write as "
     "a warm, plain-spoken high-school teacher talking to fifteen-year-olds, not as an academic. HARD "
     "RULES, all absolute: (1) NO EM DASHES anywhere - use a period, comma, colon, or parentheses, or "
     "split into two sentences; the only exception is a Scripture quotation, which keeps the ESV's exact "
@@ -400,7 +400,7 @@ def _reading_title(unit_label: str) -> str:
 
 def _framing(unit_key: str) -> str:
     """Adam's theological framing for a fresh-build unit (from the Theologian persona),
-    if present at docs/john-framing/<unit>.md. Injected into the brief like a sermon."""
+    if present at docs/john/john-framing/<unit>.md. Injected into the brief like a sermon."""
     p = FRAMING / f"{unit_key}.md"
     return p.read_text(encoding="utf-8").strip() if p.exists() else ""
 
@@ -573,7 +573,7 @@ def main():
         pp.add_argument("--force", action="store_true")
         pp.add_argument("--no-sermon", action="store_true")
         pp.add_argument("--emit", action="store_true",
-                        help="write the assembled prompt to docs/_prompts/ instead of calling the API")
+                        help="write the assembled prompt to docs/john/_prompts/ instead of calling the API")
         pp.add_argument("--ingest", metavar="DRAFT",
                         help="apply the guardrails to a Claude-in-chat draft and write it (no API)")
     a = ap.parse_args()

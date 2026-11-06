@@ -1,6 +1,6 @@
 """Harvest the history people-and-events graph from Wikidata (CC0) into .seed_cache/socialsci/wikidata/.
 
-Rules (docs/history-graph-design.md, decided 2026-10-20):
+Rules (docs/sources/history-graph-design.md, decided 2026-10-20):
   people  fame tiers: born in Illinois with 3+ Wikipedia articles, Americans 5+, everyone else 10+,
           20+ for anyone who died before 1400; plus anyone (with at least one article) who held an
           office in scope, signed a notable document, or took part in a conflict, a political event,

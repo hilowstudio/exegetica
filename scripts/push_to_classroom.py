@@ -19,7 +19,7 @@ Re-running is idempotent: a local state file remembers what was created and
 updates it in place instead of making duplicates.
 
 One-time setup (Google Cloud project, OAuth client, school-admin caveat) is in
-docs/John_Google_Classroom.md. Read that first.
+docs/john/John_Google_Classroom.md. Read that first.
 
 Run:
     # 1. find the class to push into
@@ -57,7 +57,7 @@ from webapp import course  # noqa: E402
 import course_pdf  # noqa: E402  (reuse the exact PDF-naming logic)
 
 # ------------------------------------------------------------------ paths / config
-PDF_DIR = ROOT / "docs" / "john-pdf" / "student"
+PDF_DIR = ROOT / "docs" / "john" / "john-pdf" / "student"
 SECRETS_DIR = ROOT / ".secrets"
 CLIENT_SECRET = SECRETS_DIR / "client_secret.json"   # optional: the downloaded OAuth JSON
 TOKEN = SECRETS_DIR / "classroom-token.json"          # created on first auth
@@ -87,7 +87,7 @@ T_RESOURCES = "Course resources"
 T_PROJECTS = "Projects"
 T_EXAMS = "Exams and review"
 
-# Graded coursework due dates, taken from docs/john-course-calendar.json
+# Graded coursework due dates, taken from docs/john/john-course-calendar.json
 # (project intro/due markers) and its finals-exam events. (year, month, day).
 PROJECT_DUE = {
     "GEN_project-1-signs-guide.md": (2026, 11, 5),      # Q1 due (CHK-2)
@@ -109,7 +109,7 @@ T_CHECKPOINTS = "Checkpoints"
 #               (shareMode STUDENT_COPY); the teacher sees each student's copy.
 #   doc_view  -> a view-only material; students make their OWN copy into their own
 #               Drive, so it stays private and uncollected.
-MD_DIR = ROOT / "docs" / "john-materials"
+MD_DIR = ROOT / "docs" / "john" / "john-materials"
 
 
 def _daily_page_fillins() -> list[tuple[str, str, str]]:
@@ -150,7 +150,7 @@ DOC_FILES = {f for f, _, _ in FILLIN}
 
 
 # ------------------------------------------------------------------ unit dates
-CALENDAR = ROOT / "docs" / "john-course-calendar.json"
+CALENDAR = ROOT / "docs" / "john" / "john-course-calendar.json"
 
 
 def _unit_num(fname: str) -> int | None:
@@ -331,7 +331,7 @@ def do_dry_run(items: list[dict]) -> int:
         print(f"                 <- {src.name}")
     if missing:
         print(f"\n{len(missing)} source file(s) missing. Render PDFs first "
-              f"(python scripts/course_pdf.py --all); Doc sources live in docs/john-materials/:")
+              f"(python scripts/course_pdf.py --all); Doc sources live in docs/john/john-materials/:")
         for it in missing:
             print(f"  - {_source(it).name}  (for {it['file']})")
         return 1
@@ -440,7 +440,7 @@ def get_services(sa_path: str | None = None, impersonate: str | None = None):
                     raise SystemExit(
                         "No OAuth credentials found. Set GOOGLE_CLIENT_ID and "
                         "GOOGLE_CLIENT_SECRET (env or .env), or save the OAuth client "
-                        f"JSON at {CLIENT_SECRET}. See docs/John_Google_Classroom.md.")
+                        f"JSON at {CLIENT_SECRET}. See docs/john/John_Google_Classroom.md.")
                 creds = flow.run_local_server(port=0)
             SECRETS_DIR.mkdir(parents=True, exist_ok=True)
             TOKEN.write_text(creds.to_json(), encoding="utf-8")

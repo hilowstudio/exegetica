@@ -9,7 +9,7 @@ magazine collections, and argument summaries titled "Contents".
     python scripts/clean_front_matter.py            # classify -> .seed_cache/reading_room/front_matter.csv
     python scripts/clean_front_matter.py --apply    # drop the "drop" rows, renumber, log
 
-Dropped chapters are logged to docs/reading-room-chapter-removals.csv. Reading positions saved by
+Dropped chapters are logged to docs/reading-room/reading-room-chapter-removals.csv. Reading positions saved by
 chapter number shift for affected books (by the number of chapters removed before them).
 """
 from __future__ import annotations
@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 DB = ROOT / "db" / "books.db"
 OUT = ROOT / ".seed_cache" / "reading_room" / "front_matter.csv"
-LOG = ROOT / "docs" / "reading-room-chapter-removals.csv"
+LOG = ROOT / "docs" / "reading-room" / "reading-room-chapter-removals.csv"
 
 _MAGAZINE = re.compile(r"_\d{4}-\d{2}$")
 _PREFIX = re.compile(r"^.{1,80}? · ")

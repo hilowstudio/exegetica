@@ -3,10 +3,10 @@
 Unit 6 (Living Water, John 4:1-42) for a day the teacher is out (one 50-minute period): a slide deck the
 substitute projects, with students working in their notebooks (no handouts), and the substitute's plan with answers.
 
-  docs/john-pdf/student/U6-Well-Story-Activities.pdf   the Well Story Chart (landscape), Spot the twists,
+  docs/john/john-pdf/student/U6-Well-Story-Activities.pdf   the Well Story Chart (landscape), Spot the twists,
                                                         Respond, memory check; the five stop cards to cut
                                                         out; the group sheet
-  docs/john-pdf/teacher/U6-Well-Story-Activities-TEACHER.pdf
+  docs/john/john-pdf/teacher/U6-Well-Story-Activities-TEACHER.pdf
                                                         timing, placement and materials; the chart key;
                                                         what to listen for at each question and stop;
                                                         cautions
@@ -333,7 +333,7 @@ def teacher() -> str:
 
 
 # ---------------------------------------------------------------- the reading
-READING_MD = ROOT / "docs/john-materials/U6-Woman-at-the-Well-reading.md"
+READING_MD = ROOT / "docs/john/john-materials/U6-Woman-at-the-Well-reading.md"
 READING_CSS = """
 @page { size: letter; margin: 0.75in 1.05in 0.8in 0.8in; }
 html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -383,6 +383,6 @@ async def render(jobs):
 
 
 if __name__ == "__main__":
-    asyncio.run(render([(reading(), ROOT / "docs/john-pdf/student/U6-Woman-at-the-Well-Reading.pdf"),
-                        (deck(), ROOT / "docs/john-pdf/student/U6-Well-Story-Slides.pdf"),
-                        (teacher(), ROOT / "docs/john-pdf/teacher/U6-Well-Story-SUB-PLAN.pdf")]))
+    asyncio.run(render([(reading(), ROOT / "docs/john/john-pdf/student/U6-Woman-at-the-Well-Reading.pdf"),
+                        (deck(), ROOT / "docs/john/john-pdf/student/U6-Well-Story-Slides.pdf"),
+                        (teacher(), ROOT / "docs/john/john-pdf/teacher/U6-Well-Story-SUB-PLAN.pdf")]))

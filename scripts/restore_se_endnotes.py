@@ -8,7 +8,7 @@ note numbers glued to the text ("Unborrow'd from the eye”3"). For one baked bo
   * finds each reference's bare numeral in our edition by those preceding words, turns it into a note marker,
     and gathers the note at the end of that chapter, the way every Exegetica footnote is set.
 
-Edits edition_chapters only; logs each restored note to docs/edition-corrections.csv. A numeral that cannot
+Edits edition_chapters only; logs each restored note to docs/reading-room/edition-corrections.csv. A numeral that cannot
 be located unambiguously is reported, not guessed.
 
     python scripts/restore_se_endnotes.py <slug> [--dry-run]
@@ -25,7 +25,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DB = ROOT / "db" / "books.db"
-LOG = ROOT / "docs" / "edition-corrections.csv"
+LOG = ROOT / "docs" / "reading-room" / "edition-corrections.csv"
 SHY = "­"
 
 

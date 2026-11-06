@@ -19,7 +19,7 @@ Signals (all cached under .seed_cache/pd_sources):
 Thresholds are calibrated on the canon books (see --calibrate), not on our holdings, which were
 never curated for quality.
 
-Writes docs/gutenberg-holdings-review.csv.
+Writes docs/reading-room/gutenberg-holdings-review.csv.
 
     python scripts/score_gutenberg_holdings.py [--calibrate]
 """
@@ -36,7 +36,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / ".seed_cache" / "pd_sources"
 CATALOG = ROOT / ".seed_cache" / "pg_catalog_2026-10-05.csv"
-OUT = ROOT / "docs" / "gutenberg-holdings-review.csv"
+OUT = ROOT / "docs" / "reading-room" / "gutenberg-holdings-review.csv"
 CANON = ("Harvard Classics", "Best Books Ever Listings", "Bestsellers, American, 1895-1923")
 csv.field_size_limit(10**8)
 
@@ -128,7 +128,7 @@ def main():
         calibrate(rdf, authors, works, ol, cat, held)
         return
     pulp = set()
-    for r in csv.DictReader(open(ROOT / "docs" / "pulp-eligible-stories.csv", encoding="utf-8")):
+    for r in csv.DictReader(open(ROOT / "docs" / "reading-room" / "pulp-eligible-stories.csv", encoding="utf-8")):
         pulp.update(re.findall(r"\d+", r.get("gutenberg") or ""))
     out = []
     for slug, title, author, genres, words in books:

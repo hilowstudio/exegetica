@@ -3,7 +3,7 @@ under a wall-clock budget. Ported from quillnext `src/lib/sources/registry.ts`.
 Never raises: a source that errors is skipped and we fall through.
 
 Sources are added here in best-first priority order as their adapters are built
-(see docs/living-library-sources.md build waves). Gutenberg is the first.
+(see docs/sources/living-library-sources.md build waves). Gutenberg is the first.
 """
 from __future__ import annotations
 

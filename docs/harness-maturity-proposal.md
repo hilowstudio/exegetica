@@ -48,7 +48,7 @@ Level 3 is the target nearly everywhere, because the app handles minors' text an
 | F | Do old studies reopen read-only? | Yes, after one day, with a 24-turn cap | Reopening a study resends its whole transcript, so one chat carries the model across days, which is the slow-burn route |
 | G | Doctrine wording | Your sign-off on the third-person file | The student prompt states the tradition's positions and attributes them, and the pastors' prompt keeps "your convictions" |
 | H | Does `/ops` show a daily count of help-panel displays? | Only if the school approves | You are school personnel and would read it. The number is a total with no category, time, or join. Decided yes on 2026-11-04 (docs/decisions/0018) |
-| I | Is this non-commercial? | Your ruling | `docs/go-to-market-plan.md:151,186` lists Kindle books at a $0.99 minimum, and two QSF N/As depend on the answer |
+| I | Is this non-commercial? | Your ruling | `docs/reading-room/go-to-market-plan.md:151,186` lists Kindle books at a $0.99 minimum, and two QSF N/As depend on the answer |
 
 ## Roadmap
 
@@ -196,7 +196,7 @@ Other findings: cascade does not finish deletion, because `canonical_source` kee
 1. Fix overwrites: a failed GET shows a retry notice and blocks saves; PUT echoes `updated_at` and gets 409 if stale, which also stops two tabs colliding. `memory.html`, `index.html`, `store.py`. M.
 2. Decision records in `docs/decisions/`: decision, reason, reversal condition, enforcement point, with a `CLAUDE.md` pointer. The reasons now sit in auto-memory on one machine, outside git. Correct `safety.py:4` and `memory.py:5`. S.
 3. Prompt-identity test. S.
-4. Course schedule tool: `curriculum.py` reads `docs/john-course-calendar.json` and returns today's Chicago date and scheduled lesson. A date in the system prompt would rewrite the cached prefix daily. S.
+4. Course schedule tool: `curriculum.py` reads `docs/john/john-course-calendar.json` and returns today's Chicago date and scheduled lesson. A date in the system prompt would rewrite the cached prefix daily. S.
 5. Corpus manifest: `scripts/corpus_manifest.py` writes committed JSON (source, count, license, URL, hash), `/corpus` renders it, and a check compares `NOTICE`. M.
 6. Chat bounds: studies older than a day reopen read-only. S. Needs decision F.
 7. Browser hygiene: clear local copies after a confirmed import, prune local chats at 30 days, add Clear this browser, fix `index.html:553`. S.
