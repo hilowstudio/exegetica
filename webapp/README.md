@@ -25,7 +25,7 @@ browser (SSE)  ──►  webapp/app.py  ──►  Anthropic API (claude-opus-5
 
 A standards-aligned resource generator. Two layers fuse:
 
-- **quill-standards** (what to teach) → distilled into `webapp/standards/`
+- **quill-standards** (what to teach, removed from the repo 2026-11-06) → distilled into `webapp/standards/`
   (`standards-tree.json` menu + `standards-objectives.json`, 26,016 objectives).
 - **resource-generators.yaml** (how to deliver it) → 74 format archetypes with
   schemas, plus `webapp/standards/format-recommendations.yaml` bridging each of

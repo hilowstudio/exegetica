@@ -2,6 +2,9 @@
 """
 Distill quill-standards into a compact index the generator app can consume.
 
+quill-standards/ left the repo on 2026-11-06 (webapp/standards/ is the source of truth now). To rerun
+this, unpack _backups/quill-standards.pre-fanout.tar.gz or restore it from git history, and pass --src.
+
 The raw spine is 2,092 JSON files (~20 MB, heavily denormalized). This produces
 two lean, bundled files under webapp/standards/:
 
