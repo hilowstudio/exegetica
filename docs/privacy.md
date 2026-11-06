@@ -4,7 +4,7 @@
 
 ## What Exegetica is
 
-Exegetica is a study tool for the school's Bible and Social Sciences classes. Students' chat replies are written by an open AI language model, Nemotron 3.5 Super, made by NVIDIA. Teachers' replies are written by Claude, made by Anthropic. The models work from Exegetica's own library of texts and tools, and it can still be wrong, so check what matters against the sources it cites.
+Exegetica is a study tool for the school's Bible and Social Sciences classes. Chat replies are written by an open AI language model, Nemotron 3.5 Super VL, made by NVIDIA. For teachers, the Prep Room's drafts are written by Claude, made by Anthropic. The models work from Exegetica's own library of texts and tools, and it can still be wrong, so check what matters against the sources it cites.
 
 Exegetica runs on a server and needs an internet connection. Nothing in it works offline.
 
@@ -31,8 +31,8 @@ Exegetica keeps no profile of a student. A new study starts with no knowledge of
 
 ## Who else receives information
 
-- **DeepInfra** runs the models that write students' replies: Nemotron 3.5 Super, and GLM-5.3-Flash, made by Z.ai, when Nemotron can't be reached. It receives each student message with the study so far. Its [terms of service](https://deepinfra.com/terms) (section 7(b)) commit it to keep no message or reply beyond the time needed to answer and to train no model on them. It keeps request counts, times, and billing records, and any records the law or the prevention of abuse requires.
-- **Anthropic** receives a teacher's chat messages and writes the replies, and it drafts the Prep Room's documents. A small Anthropic model, Claude Haiku, also reads a student's last three messages to decide whether to open the **Need help now?** window. Anthropic's commercial terms bar it from training its models on this data, and it keeps the data for a limited time under its own [privacy policy](https://www.anthropic.com/legal/privacy).
+- **DeepInfra** runs the models that write chat replies: Nemotron 3.5 Super VL, and GLM-5.3-Flash, made by Z.ai, when Nemotron can't be reached. It receives each chat message with the study so far, and Nemotron also reads your last three messages there to decide whether to open the **Need help now?** window. Its [terms of service](https://deepinfra.com/terms) (section 7(b)) commit it to keep no message or reply beyond the time needed to answer and to train no model on them. It keeps request counts, times, and billing records, and any records the law or the prevention of abuse requires.
+- **Anthropic** drafts the Prep Room's documents and the summaries in a teacher's library. It receives no chat messages. Anthropic's commercial terms bar it from training its models on this data, and it keeps the data for a limited time under its own [privacy policy](https://www.anthropic.com/legal/privacy).
 - **Google** handles sign-in. A teacher's library searches go to Google Books and YouTube. Exegetica serves its typefaces from its own server, so opening a page sends nothing to Google.
 - **Crossway** (the ESV) and **bible.org** (the NET Bible) receive Bible references when a tool looks up a passage. They never receive your messages.
 - **Fly.io** hosts the server and keeps its logs for a short time. **Neon** hosts the database. **Cloudflare** stores a teacher's uploaded file until it is processed, and serves a maths typesetting script to the Reading Room.

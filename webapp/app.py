@@ -445,13 +445,9 @@ async def chat(request):
     persona = policy.persona(body.get("persona"))
     subject = "history" if body.get("subject") == "history" else "bible"
     teacher = auth.is_teacher(user)
-    if teacher:   # teachers may bring their own provider, model, and key
-        provider = body.get("provider", "anthropic")
-        model = body.get("model", "")
-        api_key = (body.get("api_key") or "").strip() or None
-        limits = policy.TEACHER_CHAT
-    else:         # students: whatever the browser sent is ignored
-        provider, model, api_key, limits = policy.STUDENT_PROVIDER, policy.STUDENT_MODEL, None, policy.STUDENT_CHAT
+    # One chat model for everyone (docs/decisions/0024): a provider, model, or key the browser sends
+    # is ignored.
+    provider, model, api_key, limits = policy.CHAT_PROVIDER, policy.CHAT_MODEL, None, policy.CHAT
 
     mcp: MCPBridge = request.app.state.mcp
     if subject == "history":
@@ -470,14 +466,12 @@ async def chat(request):
 
     # The crisis check (webapp/safety.py, docs/decisions/0018-crisis-check.md). The word check reads
     # the person's latest message now, so its window opens before the reply. The model check reads
-    # their last few messages alongside the reply: on every student chat, whichever model writes the
-    # reply (0024), and on a teacher's chat that already goes to Anthropic. Both run before every
-    # limit below, so a capped student in crisis still gets the window.
+    # their last few messages alongside the reply, on the same host as the reply (0024). Both run
+    # before every limit below, so a capped student in crisis still gets the window.
     last_user = next((m["content"] for m in reversed(messages) if m["role"] == "user"), "")
     pre = safety.precheck(last_user)
     said = [m["content"] for m in messages if m["role"] == "user"]
-    model_check = not teacher or provider == "anthropic"
-    recent = said[-safety.CHECK_TURNS:] if model_check and not pre["concern"] else []
+    recent = said[-safety.CHECK_TURNS:] if not pre["concern"] else []
 
     # Fixed replies and limits, decided in code before any model call
     # (docs/decisions/0011-fixed-replies-and-caps.md).

@@ -13,7 +13,7 @@ class _FailingMCP(_MCP):
         return "The library did not answer.", True
 
 
-def _collect(mcp, script, limits=policy.STUDENT_CHAT, monkeypatch=None):
+def _collect(mcp, script, limits=policy.CHAT, monkeypatch=None):
     calls, stats = [], {}
     monkeypatch.setitem(sys.modules, "anthropic", _fake_anthropic(script, calls))
 
@@ -61,7 +61,7 @@ def test_a_student_never_sees_the_raw_api_error(monkeypatch):
     async def go():
         return [ev async for ev in providers.run("anthropic", None, "claude-opus-5-5", "s",
                                                   [{"role": "user", "content": "q"}], _MCP(),
-                                                  limits=policy.STUDENT_CHAT, stats=stats)]
+                                                  limits=policy.CHAT, stats=stats)]
     events = asyncio.run(go())
     assert events[0] == {"type": "error", "message": policy.PROVIDER_ERROR}
     assert "echoed" not in str(events) and stats["http_status"] == 529 and stats["outcome"] == "provider_error"
@@ -97,7 +97,7 @@ def test_a_closed_browser_still_counts_the_tokens_streamed(monkeypatch):
 
     async def go():
         gen = providers.run("anthropic", None, "claude-opus-5-5", "s", [{"role": "user", "content": "q"}],
-                            _MCP(), limits=policy.STUDENT_CHAT, stats=stats)
+                            _MCP(), limits=policy.CHAT, stats=stats)
         async for ev in gen:
             if ev["type"] == "text":
                 break
@@ -156,7 +156,7 @@ def _with_failures(monkeypatch, failures, status=200, kind="overloaded_error"):
     async def go():
         return [ev async for ev in providers.run("anthropic", None, "claude-opus-5-5", "s",
                                                   [{"role": "user", "content": "q"}], _MCP(),
-                                                  limits=policy.STUDENT_CHAT, stats=stats)]
+                                                  limits=policy.CHAT, stats=stats)]
     return asyncio.run(go()), attempts, stats
 
 

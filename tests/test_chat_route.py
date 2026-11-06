@@ -116,24 +116,27 @@ def test_a_tool_in_the_last_replies_resets_drift():
     assert not policy.drifted(msgs)
 
 
-def test_students_are_locked_to_the_student_model(env):
+def test_students_are_locked_to_the_chat_model(env):
     _events(env, _study("Who was Nicodemus?"), provider="openai", model="gpt-5.6", api_key="sk-x")
     run = env["runs"][0]
-    assert (run["provider"], run["model"], run["key"]) == (policy.STUDENT_PROVIDER, policy.STUDENT_MODEL, None)
-    assert run["limits"] is policy.STUDENT_CHAT
+    assert (run["provider"], run["model"], run["key"]) == (policy.CHAT_PROVIDER, policy.CHAT_MODEL, None)
+    assert run["limits"] is policy.CHAT
 
 
 def test_the_model_check_reads_a_student_chat_whichever_model_replies(env):
     # 2026-11-06: students moved off Anthropic (0024), and the check had run only on chats sent there.
-    assert policy.STUDENT_PROVIDER != "anthropic"
+    assert policy.CHAT_PROVIDER != "anthropic"
     _events(env, _study("Who was Nicodemus?"))
     assert env["checked"] == [["Who was Nicodemus?"]]
 
 
-def test_a_teacher_on_another_provider_is_not_sent_to_the_model_check(env):
+def test_a_teacher_chats_on_the_same_model_with_the_same_checks(env):
+    # 2026-11-06: chat runs on one model for everyone, and a teacher's own provider or key is ignored.
     env["user"]["who"] = TEACHER
     _events(env, _study("Who was Nicodemus?"), provider="openai", model="gpt-5.6", api_key="sk-x")
-    assert env["runs"][0]["provider"] == "openai" and not env["checked"]
+    run = env["runs"][0]
+    assert (run["provider"], run["model"], run["key"]) == (policy.CHAT_PROVIDER, policy.CHAT_MODEL, None)
+    assert run["limits"] is policy.CHAT and env["checked"] == [["Who was Nicodemus?"]]
 
 
 def test_a_capped_student_in_crisis_still_gets_the_help_panel(env):
@@ -199,12 +202,6 @@ def test_a_failed_model_check_is_counted_and_the_reply_stands(env):
 def test_a_quiet_study_question_opens_nothing(env):
     events, _ = _events(env, _study("Why did the Jews seek to kill Jesus in John 5?"))
     assert not _safety(events) and env["counts"] == []
-
-
-def test_a_teacher_on_another_provider_gets_no_model_check(env):
-    env["user"]["who"] = TEACHER
-    _events(env, _study("Who was Nicodemus?"), provider="openai", model="gpt-5.6", api_key="sk-x")
-    assert not env["checked"]
 
 
 def test_a_bare_greeting_gets_no_model_check(env):

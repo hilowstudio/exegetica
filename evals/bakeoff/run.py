@@ -2,7 +2,7 @@
 
 Every model answers questions.json under the student chat's own prompt (webapp.app._system_for, the
 default persona), the real library tools (both MCP servers, started here), and the student run limits
-(policy.STUDENT_CHAT: 8 steps, 16,000 output tokens, $1 a question). Opus 5.5 runs through the app's
+(policy.CHAT: 8 steps, 16,000 output tokens, $1 a question). Opus 5.5 runs through the app's
 own Anthropic path as the baseline. The open models run through OpenRouter, each pinned to one host
 that keeps no data (provider.only, zdr, data_collection deny), so a model is never silently served
 by another host or quantization. OpenRouter is used here only; the site never routes to it. The round
@@ -168,7 +168,7 @@ async def ask_openrouter(client, model: str, pin: str, params: set, system: str,
     the request settings the pinned host takes."""
     from webapp import policy, providers
 
-    limits = policy.STUDENT_CHAT
+    limits = policy.CHAT
     schemas = providers._openai_tools(tools.tools)
     messages = [{"role": "system", "content": system}, {"role": "user", "content": question}]
     route = {"only": [pin], "allow_fallbacks": False, "require_parameters": True,
@@ -255,7 +255,7 @@ async def ask_baseline(system: str, question: str, tools) -> dict:
     text, calls, stats = [], [], {}
     async for ev in providers.run("anthropic", None, OPUS, system,
                                   [{"role": "user", "content": question}], tools,
-                                  limits=policy.STUDENT_CHAT, stats=stats):
+                                  limits=policy.CHAT, stats=stats):
         if ev["type"] == "text":
             text.append(ev["text"])
         elif ev["type"] == "tool_done":
@@ -280,7 +280,7 @@ async def ask_app(model: str | None, pin: str | None, system: str, question: str
         cfg = {"label": "DeepInfra (eval)", "kind": "openai", "base_url": DEEPINFRA,
                "extra_params": {"reasoning_effort": EFFORT}}
         events = providers._run_openai(cfg, _key("DEEPINFRA_API_KEY"), model, system, history, tools,
-                                       policy.STUDENT_CHAT, stats)
+                                       policy.CHAT, stats)
     elif model:
         providers._PRICES.setdefault(model, providers._PRICES["nvidia/NVIDIA-Nemotron-3.5-Super-VL"])
         cfg = {"label": "OpenRouter (eval)", "kind": "openai", "base_url": OPENROUTER,
@@ -289,10 +289,10 @@ async def ask_app(model: str | None, pin: str | None, system: str, question: str
                                                             "require_parameters": True, "data_collection": "deny",
                                                             "zdr": True},
                                                "reasoning": {"effort": EFFORT}}}}
-        events = providers._run_openai(cfg, _key(), model, system, history, tools, policy.STUDENT_CHAT, stats)
+        events = providers._run_openai(cfg, _key(), model, system, history, tools, policy.CHAT, stats)
     else:
         events = providers.run("anthropic", None, OPUS, system, history, tools,
-                               limits=policy.STUDENT_CHAT, stats=stats)
+                               limits=policy.CHAT, stats=stats)
     async for ev in events:
         if ev["type"] == "text":
             raw.append(ev["text"])

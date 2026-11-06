@@ -8,12 +8,12 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-# Student chat runs on Nemotron 3.5 Super on DeepInfra, with the server's key, and on GLM-5.3-Flash
-# there when Nemotron can't be reached (docs/decisions/0024). Another model reaches students only
-# after the maker has probed it himself (0004).
-STUDENT_PROVIDER = "deepinfra"
-STUDENT_MODEL = "nvidia/NVIDIA-Nemotron-3.5-Super-VL"
-STUDENT_FALLBACK_MODEL = "zai-org/GLM-5.3-Flash"
+# Chat runs on Nemotron 3.5 Super on DeepInfra for everyone, students, teachers and the maker, with
+# the server's key, and on GLM-5.3-Flash there when Nemotron can't be reached (docs/decisions/0024).
+# Another model reaches students only after the maker has probed it himself (0004).
+CHAT_PROVIDER = "deepinfra"
+CHAT_MODEL = "nvidia/NVIDIA-Nemotron-3.5-Super-VL"
+CHAT_FALLBACK_MODEL = "zai-org/GLM-5.3-Flash"
 
 # Shown when a model reports that it declined a student's message (the Anthropic path does). No
 # other model answers in its place, so a refusal ends the reply here.
@@ -26,7 +26,7 @@ class RunLimits:
     max_steps: int         # model calls in one run, tool rounds included
     max_tokens: int        # output cap per call
     max_usd: float         # estimated spend for the whole run
-    locked: bool = False   # fixed error text, and no fallback but `fallback_model` (student chat)
+    locked: bool = False   # fixed error text, and no fallback but `fallback_model` (chat)
     # The library comes first: sources the message names are fetched before the model starts, and
     # with none fetched, a first answer that used no library is set aside and the model asked once to
     # look (docs/decisions/0020). The OpenAI-compatible loop honors it. The Anthropic loop streams
@@ -37,9 +37,8 @@ class RunLimits:
     fallback_model: str | None = None
 
 
-STUDENT_CHAT = RunLimits(max_steps=8, max_tokens=16000, max_usd=1.0, locked=True, tool_first=True,
-                         fallback_model=STUDENT_FALLBACK_MODEL)
-TEACHER_CHAT = RunLimits(max_steps=8, max_tokens=16000, max_usd=1.0)
+CHAT = RunLimits(max_steps=8, max_tokens=16000, max_usd=1.0, locked=True, tool_first=True,
+                 fallback_model=CHAT_FALLBACK_MODEL)
 GENERATE = RunLimits(max_steps=12, max_tokens=64000, max_usd=5.0)
 REVISE = RunLimits(max_steps=3, max_tokens=64000, max_usd=2.0)
 

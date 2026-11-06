@@ -12,7 +12,7 @@ Each set was written by a separate agent that never saw webapp/safety.py. Each m
   scored once with everything frozen.
 
 Layers: "list" is the word list alone, "classifier" the local classifier alone, "local" the two
-together (what runs before the reply), "model" the Haiku check, "either" local or model.
+together (what runs before the reply), "model" the model check (Nemotron since 2026-11-06, Haiku before), "either" local or model.
 
     .venv/Scripts/python.exe evals/crisis/run.py                     # heldout3, the local check: free
     .venv/Scripts/python.exe evals/crisis/run.py --model             # also the model check: about $0.01

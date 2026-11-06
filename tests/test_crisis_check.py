@@ -10,7 +10,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from webapp import metrics, safety
+from webapp import metrics, policy, safety
 
 FIRES = [
     ("I want to kill myself", "SELF_HARM"),
@@ -158,12 +158,12 @@ def test_every_category_leads_with_its_resources_and_keeps_the_rest():
 
 
 class _Client:
-    """Stands in for AsyncAnthropic: records the request, answers with `reply` or raises it."""
+    """Stands in for the host's AsyncOpenAI client: records the request, answers with `reply` or raises it."""
 
     def __init__(self, reply):
         self.reply = reply
         self.sent = []
-        self.messages = self
+        self.chat = SimpleNamespace(completions=self)
 
     async def create(self, **req):
         self.sent.append(req)
@@ -172,34 +172,38 @@ class _Client:
         return self.reply
 
 
-def _answer(verdict=None, stop="end_turn"):
-    content = [SimpleNamespace(type="text", text=json.dumps(verdict))] if verdict else []
-    return SimpleNamespace(content=content, stop_reason=stop,
-                           usage=SimpleNamespace(input_tokens=500, output_tokens=20))
+def _answer(verdict=None, finish="stop"):
+    message = SimpleNamespace(content=json.dumps(verdict) if verdict else "")
+    return SimpleNamespace(choices=[SimpleNamespace(message=message, finish_reason=finish)],
+                           usage=SimpleNamespace(prompt_tokens=500, completion_tokens=20,
+                                                 prompt_tokens_details=SimpleNamespace(cached_tokens=0)))
 
 
 def _check(monkeypatch, reply, messages):
     client = _Client(reply)
-    monkeypatch.setattr(safety, "_anthropic", lambda: client)
+    monkeypatch.setattr(safety, "_host", lambda: client)
     return asyncio.run(safety.check(messages)), client
+
+
+def _sent(client):
+    return json.loads(client.sent[0]["messages"][1]["content"].split("\n", 1)[1])
 
 
 def test_the_model_check_flags_and_reads_only_the_last_few_messages(monkeypatch):
     msgs = ["one", "two", "  ", "three", "four"]
     out, client = _check(monkeypatch, _answer({"concern": True, "category": "abuse"}), msgs)
     assert out["concern"] is True and out["category"] == "ABUSE" and out["ok"]
-    assert out["usd"] == pytest.approx((500 * 0.10 + 20 * 0.50) / 1e6)
+    assert out["usd"] == pytest.approx((500 * 0.15 + 20 * 0.50) / 1e6)
     req = client.sent[0]
-    assert req["model"] == safety.CHECK_MODEL and req["thinking"] == {"type": "disabled"}
-    assert req["output_config"]["format"]["type"] == "json_schema"
-    sent = json.loads(req["messages"][0]["content"].split("\n", 1)[1])
-    assert sent == ["two", "three", "four"]   # blank ones dropped, newest last
+    assert req["model"] == safety.CHECK_MODEL == policy.CHAT_MODEL   # the chat model, on the chat's host (0024)
+    assert req["extra_body"] == {"chat_template_kwargs": {"enable_thinking": False}}
+    assert req["response_format"]["type"] == "json_schema" and req["messages"][0]["content"] == safety.CHECK_SYSTEM
+    assert _sent(client) == ["two", "three", "four"]   # blank ones dropped, newest last
 
 
 def test_the_model_check_trims_each_message(monkeypatch):
     _, client = _check(monkeypatch, _answer({"concern": False, "category": "none"}), ["x" * 9000])
-    sent = json.loads(client.sent[0]["messages"][0]["content"].split("\n", 1)[1])
-    assert len(sent[0]) == safety.CHECK_CHARS
+    assert len(_sent(client)[0]) == safety.CHECK_CHARS
 
 
 def test_no_concern_carries_no_category(monkeypatch):
@@ -207,7 +211,7 @@ def test_no_concern_carries_no_category(monkeypatch):
     assert out == {"concern": False, "category": None, "ok": True, "usd": out["usd"]}
 
 
-@pytest.mark.parametrize("reply", [RuntimeError("down"), _answer(stop="refusal")])
+@pytest.mark.parametrize("reply", [RuntimeError("down"), _answer(finish="content_filter"), _answer()])
 def test_a_failed_or_refused_check_gives_no_answer_and_never_raises(monkeypatch, reply):
     out, _ = _check(monkeypatch, reply, ["hello"])
     assert out["concern"] is False and out["ok"] is False

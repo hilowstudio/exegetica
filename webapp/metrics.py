@@ -37,7 +37,8 @@ OUTCOMES = {
     "limited",        # too many turns in a minute, or the server was full, no model call
 }
 LABELS = {"route": ROUTES, "key_source": KEY_SOURCES, "outcome": OUTCOMES}
-MODELS = {"claude-opus-5-5", "claude-sonnet-5-5", "claude-sonnet-5", "claude-haiku-5-5", "claude-sonnet-4-6"}
+MODELS = {"claude-opus-5-5", "claude-sonnet-5-5", "claude-sonnet-5", "claude-haiku-5-5", "claude-sonnet-4-6",
+          "nvidia/NVIDIA-Nemotron-3.5-Super-VL", "zai-org/GLM-5.3-Flash"}   # chat and its fallback (0024)
 NUMBERS = ("http_status", "steps", "tool_errors", "input", "cache_read", "cache_write", "output",
            "first_read", "first_write", "duration_ms", "checks_dropped", "checks_stopped")
 FIELDS = ("route", "key_source", "model_req", "model_served", "prefix_hash", "outcome",

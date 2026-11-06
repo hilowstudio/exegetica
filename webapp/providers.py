@@ -60,7 +60,7 @@ _PRICES = {"claude-opus-5-5": (4.0, 20.0, 0.05), "claude-sonnet-5-5": (2.0, 10.0
            "claude-sonnet-4-6": (3.0, 15.0, 0.10),
            # DeepInfra's Nemotron 3.5 Super, checked 2026-11-05: cached input is $0.02 of $0.15.
            "nvidia/NVIDIA-Nemotron-3.5-Super-VL": (0.15, 0.50, 0.02 / 0.15),
-           # DeepInfra's GLM-5.3-Flash, the student fallback, checked 2026-11-06: cached input $0.03.
+           # DeepInfra's GLM-5.3-Flash, the chat fallback, checked 2026-11-06: cached input $0.03.
            "zai-org/GLM-5.3-Flash": (0.15, 0.50, 0.20)}
 
 
@@ -115,8 +115,8 @@ PROVIDERS = {
         "base_url": "https://api.x.ai/v1",
         "key_url": "https://console.x.ai",
     },
-    # Student chat (docs/decisions/0024): open models on DeepInfra, which keeps no prompts or replies
-    # under its terms, paid with the server's key. Settings doesn't offer it to teachers.
+    # Chat for everyone (docs/decisions/0024): open models on DeepInfra, which keeps no prompts or
+    # replies under its terms, paid with the server's key. Settings doesn't offer it.
     "deepinfra": {
         "label": "DeepInfra", "kind": "openai",
         "default_model": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
@@ -309,8 +309,8 @@ async def run(provider: str, api_key: str | None, model: str,
     stable fallback model and emits a notice. A failure after content has begun,
     or an auth / rate-limit / server error, is passed through unchanged.
 
-    `limits` (webapp/policy.RunLimits) bounds steps, output, and spend. A locked run (student chat)
-    never uses the provider's fallback. It turns, without a notice, to its own `fallback_model` when
+    `limits` (webapp/policy.RunLimits) bounds steps, output, and spend. A locked run (chat) never
+    uses the provider's fallback. It turns, without a notice, to its own `fallback_model` when
     the first model ends in an error before any text was shown (docs/decisions/0024).
 
     Every run ends with one {"type": "end", "outcome": ...} event naming how it ended (OUTCOMES).
@@ -327,7 +327,7 @@ async def run(provider: str, api_key: str | None, model: str,
         yield {"type": "end", "outcome": "provider_error"}
         return
     locked = bool(limits and limits.locked)
-    if not api_key and cfg.get("key_env"):   # a provider the server pays for (student chat)
+    if not api_key and cfg.get("key_env"):   # a provider the server pays for (chat)
         api_key = os.environ.get(cfg["key_env"])
     if cfg["kind"] != "anthropic" and not api_key:
         stats["outcome"] = "provider_error"
@@ -337,8 +337,8 @@ async def run(provider: str, api_key: str | None, model: str,
         return
 
     requested = (model or "").strip() or cfg["default_model"]
-    # A locked run's fallback model lives on the student provider, so it applies only there.
-    fallback = (limits.fallback_model if provider == policy.STUDENT_PROVIDER else None) if locked \
+    # A locked run's fallback model lives on the chat provider, so it applies only there.
+    fallback = (limits.fallback_model if provider == policy.CHAT_PROVIDER else None) if locked \
         else cfg.get("fallback_model")
     candidates = [requested] + ([fallback] if fallback and fallback != requested else [])
 
@@ -356,7 +356,7 @@ async def run(provider: str, api_key: str | None, model: str,
             if ev["type"] == "error" and not last and (   # a refusal ends a locked run (0004)
                     not wrote and ev.get("message") != policy.REFUSAL_TEXT if locked
                     else not emitted and _is_model_error(ev.get("message", ""))):
-                if locked:   # the student sees one reply, from whichever model wrote it
+                if locked:   # the reader sees one reply, from whichever model wrote it
                     logger.warning("%s could not answer; falling back to %s", current, candidates[i + 1])
                 else:
                     yield {"type": "notice",

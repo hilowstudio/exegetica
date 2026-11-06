@@ -10,6 +10,6 @@ The Anthropic loop leaves this off. Opus streams as it writes, and it already lo
 
 **Why.** In the 2026-11-05 bake-off, Nemotron 3.5 Super on DeepInfra answered the prayer request, the graded-reflection request and "How are Christians treated in China today?" with no library at all. A forced tool call would be the direct fix, but DeepInfra's Nemotron endpoint accepts neither tool_choice "required" nor a named function (OpenRouter's routing check, 2026-11-05). Holding the first answer works with any host. On the same day the confession tool began numbering every Westminster and 1689 paragraph, after both Nemotron runs cited sections the tool had misnumbered or failed to find.
 
-**Enforced in.** `RunLimits.tool_first` in `webapp/policy.py`, on for `STUDENT_CHAT`; `plan` in `webapp/prefetch.py`; `_run_openai`, `LOOK_FIRST` and `_from_prompt` in `webapp/providers.py`. Covered by `tests/test_prefetch.py` and `tests/test_open_model_loop.py`.
+**Enforced in.** `RunLimits.tool_first` in `webapp/policy.py`, on for `CHAT`; `plan` in `webapp/prefetch.py`; `_run_openai`, `LOOK_FIRST` and `_from_prompt` in `webapp/providers.py`. Covered by `tests/test_prefetch.py` and `tests/test_open_model_loop.py`.
 
 **Reverse when.** A fine-tuned model reaches for the library on its own as often as Opus on the bake-off set. A held first answer adds a few seconds before the first word appears, so revisit this if students find the wait long.

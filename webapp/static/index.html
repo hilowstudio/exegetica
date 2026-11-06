@@ -206,7 +206,6 @@
     border:1px solid var(--rule);border-radius:9px;padding:9px 12px;cursor:pointer;text-align:left;margin-bottom:7px;line-height:1.4}
   .exg button:hover{border-color:var(--iron-soft);color:var(--ink)}
 
-  .banner{background:var(--err);color:var(--on-accent);font-size:13px;padding:8px 20px;text-align:center}
   [hidden]{display:none!important}
   .gate{margin:0 0 8px;padding:10px 14px;border:1px solid var(--rule-strong);border-radius:12px;background:var(--surface);
     color:var(--ink);font-size:14px;line-height:1.5;text-align:center}
@@ -296,7 +295,6 @@
       <img class="wm-light" src="/static/wordmark-black.png" alt="Exegetica">
       <img class="wm-dark" src="/static/wordmark.png" alt="Exegetica">
     </div>
-    <div id="keybanner" class="banner" style="display:none">No <code>ANTHROPIC_API_KEY</code> set on the server. Set it and restart to chat.</div>
     <div class="thread-h">
       <button class="menu-btn railbtn" id="menu-btn" type="button" aria-label="Show studies" style="width:34px;height:34px;border-radius:8px"><svg viewBox="0 0 24 24" style="width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.7"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       <span class="ttl" id="thread-title">New study</span>
@@ -697,13 +695,9 @@ try{ if(localStorage.getItem("studybible.side.open")==="1") setStudiesOpen(true)
 
 // ---------- BYOK settings (GLOBAL — the panel + store live in /static/settings.js) ----------
 let CFG={providers:[],server_anthropic_key:false,tools:0,crisis_resources:[]};
-function pcfg(id){return CFG.providers.find(p=>p.id===id)||{};}
-function curProvider(){return window.AppSettings?AppSettings.provider():"anthropic";}
-function curModel(){return window.AppSettings?AppSettings.model():"";}
-function curKey(){return window.AppSettings?AppSettings.key():"";}
-// Only teachers may bring a provider or key; the server ignores both for students.
+// Chat runs on one model for everyone (docs/decisions/0024), so it sends no provider, model, or key.
+// Settings' provider and key serve the Prep Room only.
 function isTeacher(){return !!(AUTH.user&&AUTH.user.role==="teacher");}
-function needsKey(){if(!isTeacher())return false;const p=curProvider();return !(p==="anthropic"&&CFG.server_anthropic_key)&&!curKey();}
 function applyGate(){
   const off=!AUTH.signed,g=document.getElementById("signin-gate");
   g.hidden=!off;syncComposer();
@@ -711,17 +705,9 @@ function applyGate(){
     document.getElementById("gate-msg").textContent="That Google account isn't a school account. Use your school account.";
 }
 
-const banner=document.getElementById("keybanner");
-function updateStatus(){
-  if(!window.AppSettings)return;
-  const p=pcfg(curProvider());const label=p.label||curProvider();
-  if(needsKey()){banner.style.display="block";banner.innerHTML="Add your <strong>"+label+"</strong> API key to start chatting. Open <strong>Settings</strong> in the left rail.";}
-  else{banner.style.display="none";}
-}
-window.addEventListener("appsettings:changed",updateStatus);          // refresh banner when the global Settings change
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeSide();}});
 
-fetch("/api/config").then(r=>r.json()).then(c=>{CFG=c;updateStatus();
+fetch("/api/config").then(r=>r.json()).then(c=>{CFG=c;
   if((c.history_tools||[]).length){document.getElementById("subj").hidden=false;document.getElementById("subj-lab").hidden=false;}
   else if(subject==="history")setSubject("bible",false);})
   .catch(()=>{console.error("backend unavailable");});
@@ -752,7 +738,6 @@ async function send(text){
   if(!text.trim())return;
   if(!AUTH.signed){applyGate();return;}
   if(curChatId){closedWhy=studyClosed(loadChats().find(x=>x.id===curChatId),history);if(closedWhy){syncComposer();return;}}
-  if(needsKey()){AppSettings.open();return;}
   busy=true;stopper=new AbortController();sendBtn.textContent="Stop";sendBtn.setAttribute("aria-label","Stop the reply");
   if(!curChatId)curChatId=uid();
   addMsg("user").innerHTML="<div class='prose'>"+renderMarkdown(text)+"</div>";
@@ -770,10 +755,8 @@ async function send(text){
   function paint(){prose.innerHTML=renderMarkdown(raw+(note?"\n\n"+note:""));prose.appendChild(caret);scroll();}
 
   try{
-    const t=isTeacher();
     const resp=await fetch("/api/chat",{method:"POST",signal:stopper.signal,headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({persona,subject,provider:t?curProvider():"anthropic",model:t?curModel():"",
-        api_key:t?curKey():"",messages:history})});
+      body:JSON.stringify({persona,subject,messages:history})});
     if(!resp.ok||!resp.body){
       let m="";try{m=(await resp.json()).error||"";}catch(_){}
       if(resp.status===401){AUTH.signed=false;applyGate();}

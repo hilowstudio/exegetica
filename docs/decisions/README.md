@@ -27,4 +27,4 @@ Each file records one decision about how Exegetica behaves: what was decided, wh
 | [0021](0021-prompt-method-and-disputed-questions.md) | The student prompt separates what the tradition holds from how a disputed question is answered (its procedure replaced by 0022) |
 | [0022](0022-study-order-and-plain-teaching.md) | Exegetica studies a passage the way a theologian does, and says plainly what Scripture plainly teaches |
 | [0023](0023-history-withheld.md) | History chat is withheld from the site until a broader release |
-| [0024](0024-students-on-nemotron.md) | Students' replies come from Nemotron 3.5 Super on DeepInfra, and from GLM-5.3-Flash when Nemotron can't be reached |
+| [0024](0024-students-on-nemotron.md) | Chat replies come from Nemotron 3.5 Super on DeepInfra, and from GLM-5.3-Flash when Nemotron can't be reached |

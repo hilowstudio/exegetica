@@ -97,23 +97,23 @@ def _run(monkeypatch, script, limits, usage=None, model="claude-opus-5-5"):
 
 # ---------------------------------------------------------------- the loop
 def test_student_refusal_ends_with_fixed_text_and_no_fallback(monkeypatch):
-    events, calls, stats = _run(monkeypatch, ["refusal"], policy.STUDENT_CHAT)
+    events, calls, stats = _run(monkeypatch, ["refusal"], policy.CHAT)
     assert events[-1] == {"type": "error", "message": policy.REFUSAL_TEXT}
     assert stats["outcome"] == "refused"
     assert len(calls) == 1
     assert "fallbacks" not in calls[0] and "betas" not in calls[0]
 
 
-def test_teacher_run_keeps_server_side_fallback(monkeypatch):
-    _events, calls, stats = _run(monkeypatch, ["end_turn"], policy.TEACHER_CHAT)
+def test_an_unlocked_run_keeps_server_side_fallback(monkeypatch):
+    _events, calls, stats = _run(monkeypatch, ["end_turn"], policy.GENERATE)   # the Prep Room
     assert calls[0].get("fallbacks") == "default"
     assert stats["outcome"] == "complete" and stats["steps"] == 1
 
 
 def test_step_limit_forces_an_answer_and_says_so(monkeypatch):
-    events, calls, stats = _run(monkeypatch, ["tool_use"], policy.STUDENT_CHAT)
+    events, calls, stats = _run(monkeypatch, ["tool_use"], policy.CHAT)
     assert stats["outcome"] == "step_limit"
-    assert len(calls) == policy.STUDENT_CHAT.max_steps
+    assert len(calls) == policy.CHAT.max_steps
     assert calls[-1].get("tool_choice") == {"type": "none"}
     assert all("tool_choice" not in c for c in calls[:-1])
     assert events[-1]["type"] == "notice" and events[-1]["incomplete"]
@@ -123,28 +123,28 @@ def test_step_limit_forces_an_answer_and_says_so(monkeypatch):
 
 
 def test_a_last_step_that_writes_nothing_says_so(monkeypatch):
-    script = ["tool_use"] * (policy.STUDENT_CHAT.max_steps - 1) + ["end_turn"]   # the fake streams no text
-    events, _calls, stats = _run(monkeypatch, script, policy.STUDENT_CHAT)
+    script = ["tool_use"] * (policy.CHAT.max_steps - 1) + ["end_turn"]   # the fake streams no text
+    events, _calls, stats = _run(monkeypatch, script, policy.CHAT)
     assert stats["outcome"] == "step_limit"
     assert events[-1] == {"type": "notice", "incomplete": True, "message": providers.STEP_LIMIT}
 
 
 def test_cut_off_reply_is_reported(monkeypatch):
-    events, _calls, stats = _run(monkeypatch, ["max_tokens"], policy.STUDENT_CHAT)
+    events, _calls, stats = _run(monkeypatch, ["max_tokens"], policy.CHAT)
     assert events[-1]["type"] == "notice" and events[-1]["incomplete"]
     assert stats["outcome"] == "cut_off"
 
 
 def test_spend_ceiling_forces_the_next_step_to_answer(monkeypatch):
     # 60k output tokens on Opus 5.5 is $1.20, past the $1 student ceiling after one step.
-    _events, calls, stats = _run(monkeypatch, ["tool_use"], policy.STUDENT_CHAT, usage=lambda: _Usage(out=60000))
+    _events, calls, stats = _run(monkeypatch, ["tool_use"], policy.CHAT, usage=lambda: _Usage(out=60000))
     assert len(calls) == 2 and calls[1].get("tool_choice") == {"type": "none"}
-    assert stats["outcome"] == "step_limit" and stats["est_usd"] > policy.STUDENT_CHAT.max_usd
+    assert stats["outcome"] == "step_limit" and stats["est_usd"] > policy.CHAT.max_usd
 
 
 def test_student_output_cap_is_applied(monkeypatch):
-    _events, calls, _stats = _run(monkeypatch, ["end_turn"], policy.STUDENT_CHAT)
-    assert calls[0]["max_tokens"] == policy.STUDENT_CHAT.max_tokens
+    _events, calls, _stats = _run(monkeypatch, ["end_turn"], policy.CHAT)
+    assert calls[0]["max_tokens"] == policy.CHAT.max_tokens
 
 
 LOCKED = policy.RunLimits(max_steps=8, max_tokens=16000, max_usd=1.0, locked=True)   # no fallback model
@@ -191,11 +191,11 @@ def test_a_student_reply_comes_from_the_fallback_model_when_the_first_cannot_be_
     tried = []
     monkeypatch.setenv("DEEPINFRA_API_KEY", "server-key")
     monkeypatch.setattr(providers, "_attempt", _scripted({
-        policy.STUDENT_MODEL: [{"type": "tool_call", "name": "lookup_verse"},
+        policy.CHAT_MODEL: [{"type": "tool_call", "name": "lookup_verse"},
                                {"type": "error", "message": policy.PROVIDER_ERROR}],
-        policy.STUDENT_FALLBACK_MODEL: [{"type": "text", "text": "The Word was God."}]}, tried))
-    seen = _dispatch(policy.STUDENT_PROVIDER, policy.STUDENT_MODEL, policy.STUDENT_CHAT)
-    assert tried == [(policy.STUDENT_MODEL, "server-key"), (policy.STUDENT_FALLBACK_MODEL, "server-key")]
+        policy.CHAT_FALLBACK_MODEL: [{"type": "text", "text": "The Word was God."}]}, tried))
+    seen = _dispatch(policy.CHAT_PROVIDER, policy.CHAT_MODEL, policy.CHAT)
+    assert tried == [(policy.CHAT_MODEL, "server-key"), (policy.CHAT_FALLBACK_MODEL, "server-key")]
     assert [e["type"] for e in seen] == ["tool_call", "text", "end"]   # no error, no notice
     assert seen[-1]["outcome"] == "complete"
 
@@ -204,10 +204,10 @@ def test_a_student_reply_never_switches_models_once_text_is_shown(monkeypatch):
     tried = []
     monkeypatch.setenv("DEEPINFRA_API_KEY", "server-key")
     monkeypatch.setattr(providers, "_attempt", _scripted({
-        policy.STUDENT_MODEL: [{"type": "text", "text": "The Word "}, {"type": "error", "message": policy.PROVIDER_ERROR}],
-        policy.STUDENT_FALLBACK_MODEL: [{"type": "text", "text": "Other."}]}, tried))
-    seen = _dispatch(policy.STUDENT_PROVIDER, policy.STUDENT_MODEL, policy.STUDENT_CHAT)
-    assert [m for m, _k in tried] == [policy.STUDENT_MODEL]
+        policy.CHAT_MODEL: [{"type": "text", "text": "The Word "}, {"type": "error", "message": policy.PROVIDER_ERROR}],
+        policy.CHAT_FALLBACK_MODEL: [{"type": "text", "text": "Other."}]}, tried))
+    seen = _dispatch(policy.CHAT_PROVIDER, policy.CHAT_MODEL, policy.CHAT)
+    assert [m for m, _k in tried] == [policy.CHAT_MODEL]
     assert seen[-2] == {"type": "error", "message": policy.PROVIDER_ERROR}
 
 
@@ -215,22 +215,22 @@ def test_a_refusal_is_never_handed_to_the_fallback_model(monkeypatch):
     tried = []
     monkeypatch.setenv("DEEPINFRA_API_KEY", "server-key")
     monkeypatch.setattr(providers, "_attempt", _scripted({
-        policy.STUDENT_MODEL: [{"type": "error", "message": policy.REFUSAL_TEXT}],
-        policy.STUDENT_FALLBACK_MODEL: [{"type": "text", "text": "Sure."}]}, tried))
-    seen = _dispatch(policy.STUDENT_PROVIDER, policy.STUDENT_MODEL, policy.STUDENT_CHAT)
-    assert [m for m, _k in tried] == [policy.STUDENT_MODEL]
+        policy.CHAT_MODEL: [{"type": "error", "message": policy.REFUSAL_TEXT}],
+        policy.CHAT_FALLBACK_MODEL: [{"type": "text", "text": "Sure."}]}, tried))
+    seen = _dispatch(policy.CHAT_PROVIDER, policy.CHAT_MODEL, policy.CHAT)
+    assert [m for m, _k in tried] == [policy.CHAT_MODEL]
     assert {"type": "error", "message": policy.REFUSAL_TEXT} in seen
 
 
 def test_without_the_server_key_a_student_sees_the_fixed_error(monkeypatch):
     monkeypatch.delenv("DEEPINFRA_API_KEY", raising=False)
-    seen = _dispatch(policy.STUDENT_PROVIDER, policy.STUDENT_MODEL, policy.STUDENT_CHAT)
+    seen = _dispatch(policy.CHAT_PROVIDER, policy.CHAT_MODEL, policy.CHAT)
     assert seen[0] == {"type": "error", "message": policy.PROVIDER_ERROR}
 
 
 def test_the_student_provider_is_not_offered_in_settings():
-    assert policy.STUDENT_PROVIDER not in {p["id"] for p in providers.public_providers()}
-    assert policy.STUDENT_FALLBACK_MODEL in providers._PRICES and policy.STUDENT_MODEL in providers._PRICES
+    assert policy.CHAT_PROVIDER not in {p["id"] for p in providers.public_providers()}
+    assert policy.CHAT_FALLBACK_MODEL in providers._PRICES and policy.CHAT_MODEL in providers._PRICES
 
 
 # ---------------------------------------------------------------- transcript validation

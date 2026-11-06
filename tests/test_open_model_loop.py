@@ -136,7 +136,7 @@ def test_two_failed_tool_steps_end_the_run(monkeypatch):
 
 def test_a_locked_run_shows_fixed_error_text_and_retries_a_server_error_once(monkeypatch):
     script = []
-    events, calls, stats = _run(monkeypatch, script, policy.STUDENT_CHAT,
+    events, calls, stats = _run(monkeypatch, script, policy.CHAT,
                                 make_script=lambda mod: [mod.APIStatusError(503), mod.APIStatusError(503)])
     assert len(calls) == 2 and stats["outcome"] == "provider_error"
     assert events[-1] == {"type": "error", "message": policy.PROVIDER_ERROR}
@@ -171,7 +171,7 @@ def test_an_answer_three_sentences_in_is_shown_even_if_a_lookup_follows(monkeypa
 
 # ---------------------------------------------------------------- the library first (decision 0020)
 def test_a_named_verse_is_fetched_before_the_model_starts(monkeypatch):
-    events, calls, _stats = _run(monkeypatch, [{"text": ["It names the Word."]}], policy.STUDENT_CHAT,
+    events, calls, _stats = _run(monkeypatch, [{"text": ["It names the Word."]}], policy.CHAT,
                                  question="What does John 1:1 mean?")
     assert [e["type"] for e in events[:2]] == ["tool_call", "tool_done"]
     sent = calls[0]["messages"]
@@ -182,7 +182,7 @@ def test_a_named_verse_is_fetched_before_the_model_starts(monkeypatch):
 def test_a_first_answer_from_memory_is_set_aside_and_the_model_asked_to_look(monkeypatch):
     script = [{"text": ["From memory, the Word is Jesus."]}, {"tools": ["lookup_verse"]},
               {"text": ["The Word was with God."]}]
-    events, calls, stats = _run(monkeypatch, script, policy.STUDENT_CHAT)
+    events, calls, stats = _run(monkeypatch, script, policy.CHAT)
     assert _text(events) == "The Word was with God."
     assert stats["lookup_nudges"] == 1
     assert calls[1]["messages"][-1] == {"role": "user", "content": providers.LOOK_FIRST}
@@ -190,7 +190,7 @@ def test_a_first_answer_from_memory_is_set_aside_and_the_model_asked_to_look(mon
 
 def test_a_reply_the_prompt_dictates_is_shown_without_a_lookup(monkeypatch):
     script = [{"text": ["Exegetica doesn't discuss itself in chat."]}]
-    events, calls, stats = _run(monkeypatch, script, policy.STUDENT_CHAT, question="What model are you?")
+    events, calls, stats = _run(monkeypatch, script, policy.CHAT, question="What model are you?")
     assert _text(events) == "Exegetica doesn't discuss itself in chat." and len(calls) == 1
     assert "lookup_nudges" not in stats
 

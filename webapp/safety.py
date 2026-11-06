@@ -19,6 +19,7 @@ import asyncio
 import json
 import logging
 import math
+import os
 import re
 import threading
 from pathlib import Path
@@ -336,11 +337,12 @@ def points_to_help(text: str) -> bool:
 
 
 # ---------------------------------------------------------------------------
-# 3. The model check: a small model reads the person's last few messages for meaning. It runs
-# alongside the reply, so the window opens a second or two in. If it fails or gives no answer, the
-# word check's answer stands.
+# 3. The model check: the chat model, with its reasoning off, reads the person's last few messages
+# for meaning on the chat's own host (docs/decisions/0024). It runs alongside the reply, so the window
+# opens about half a second in. If it fails or gives no answer, the word check's answer stands.
 # ---------------------------------------------------------------------------
-CHECK_MODEL = "claude-haiku-5-5"
+CHECK_MODEL = "nvidia/NVIDIA-Nemotron-3.5-Super-VL"   # policy.CHAT_MODEL
+CHECK_HOST = "https://api.deepinfra.com/v1/openai"
 CHECK_TURNS = 3          # the person's last messages the check reads, newest last
 CHECK_CHARS = 2000       # of each
 CHECK_TIMEOUT = 10.0     # seconds before the check gives up
@@ -359,21 +361,25 @@ When unsure whether a message is personal, flag it. Showing the resources to som
 
 The latest message matters most. Earlier ones are context."""
 
-_CHECK_FORMAT = {"type": "json_schema", "schema": {
+_CHECK_FORMAT = {"type": "json_schema", "json_schema": {"name": "verdict", "strict": True, "schema": {
     "type": "object",
     "properties": {"concern": {"type": "boolean"},
                    "category": {"type": "string", "enum": ["self_harm", "abuse", "violence", "danger", "none"]}},
     "required": ["concern", "category"],
-    "additionalProperties": False}}
+    "additionalProperties": False}}}
+# Reasoning off: on the three held-out sets it answered in a median 0.4 s and missed one message the
+# local check caught, where low reasoning took 1.2 s and twice gave no answer (2026-11-06).
+_NO_THINKING = {"chat_template_kwargs": {"enable_thinking": False}}
 _CATEGORIES = {"self_harm": "SELF_HARM", "abuse": "ABUSE", "violence": "VIOLENCE", "danger": "DANGER"}
 _client = None
 
 
-def _anthropic():
+def _host():
     global _client
     if _client is None:
-        from anthropic import AsyncAnthropic
-        _client = AsyncAnthropic(max_retries=1, timeout=CHECK_TIMEOUT)
+        from openai import AsyncOpenAI
+        _client = AsyncOpenAI(api_key=os.environ.get("DEEPINFRA_API_KEY") or "unset", base_url=CHECK_HOST,
+                              max_retries=1, timeout=CHECK_TIMEOUT)
     return _client
 
 
@@ -386,16 +392,19 @@ async def check(messages: list[str]) -> dict:
     if not recent:
         return {"concern": False, "category": None, "ok": True, "usd": 0.0}
     try:
-        msg = await asyncio.wait_for(_anthropic().messages.create(
-            model=CHECK_MODEL, max_tokens=100, system=CHECK_SYSTEM,
-            thinking={"type": "disabled"}, output_config={"effort": "low", "format": _CHECK_FORMAT},
-            messages=[{"role": "user", "content": "The student's messages, oldest first, as a JSON array:\n"
+        reply = await asyncio.wait_for(_host().chat.completions.create(
+            model=CHECK_MODEL, max_tokens=100, temperature=0, response_format=_CHECK_FORMAT, extra_body=_NO_THINKING,
+            messages=[{"role": "system", "content": CHECK_SYSTEM},
+                      {"role": "user", "content": "The student's messages, oldest first, as a JSON array:\n"
                        + json.dumps(recent, ensure_ascii=False)}]), CHECK_TIMEOUT + 2)
-        usd = _usd(CHECK_MODEL, {"input": msg.usage.input_tokens, "output": msg.usage.output_tokens,
-                                 "cache_read": 0, "cache_write": 0})
-        if msg.stop_reason == "refusal":
+        u = reply.usage
+        cached = getattr(getattr(u, "prompt_tokens_details", None), "cached_tokens", 0) or 0
+        usd = _usd(CHECK_MODEL, {"input": u.prompt_tokens - cached, "cache_read": cached, "cache_write": 0,
+                                 "output": u.completion_tokens})
+        choice = reply.choices[0]
+        if choice.finish_reason == "content_filter":
             return {"concern": False, "category": None, "ok": False, "usd": usd}
-        verdict = json.loads(next(b.text for b in msg.content if b.type == "text"))
+        verdict = json.loads(choice.message.content)
         concern = verdict.get("concern") is True
         return {"concern": concern, "category": _CATEGORIES.get(verdict.get("category")) if concern else None,
                 "ok": True, "usd": usd}

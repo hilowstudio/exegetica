@@ -68,7 +68,7 @@ def prompt_fingerprint() -> dict:
     h = hashlib.sha256()
     for s in sorted(parts):
         h.update(parts[s].encode())
-    model = policy.STUDENT_MODEL + (f" (fallback {policy.STUDENT_FALLBACK_MODEL})" if policy.STUDENT_FALLBACK_MODEL else "")
+    model = policy.CHAT_MODEL + (f" (fallback {policy.CHAT_FALLBACK_MODEL})" if policy.CHAT_FALLBACK_MODEL else "")
     h.update(model.encode())
     return {"prompt_hash": h.hexdigest()[:16], "model": model}
 
