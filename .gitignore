@@ -32,6 +32,9 @@ Thumbs.db
 # Standards corpus: raw API dumps are re-downloadable via scripts/download_standards.py
 /standards/raw/
 
+# Model bake-off output (evals/bakeoff/run.py writes it; rerun to reproduce)
+/evals/bakeoff/results/
+
 # Copyrighted third-party teaching material — teacher-prep only, derive-and-cite, never redistributed
 /sproul-transcripts/
 /ferguson-transcripts/
