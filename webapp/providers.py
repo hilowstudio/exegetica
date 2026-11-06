@@ -35,6 +35,13 @@ MAX_TOOL_TURNS = 12
 # multi-chapter passages, and tells the model to ask for less.
 _LIVE_TOOL_CAP = 20000
 
+# The last allowed step must answer (docs/decisions/0008), and the last tool results carry this line
+# so the model knows it. Opus 5.5 once spent its last step, tools withheld, writing nothing at all.
+# Open models can also ignore tool_choice "none", so their loop sends that step with no tools.
+ANSWER_NOW = ("[The library step limit is reached. Write the answer now from the results above, "
+              "with no further lookups.]")
+STEP_LIMIT = "This answer reached its step limit. Ask a narrower question to go further."
+
 
 async def _call_tool(mcp, name: str, args: dict) -> tuple[str, bool]:
     out, is_error = await mcp.call(name, args)
@@ -49,7 +56,9 @@ async def _call_tool(mcp, name: str, args: dict) -> tuple[str, bool]:
 # $ per million tokens: (input, output, cache-read multiplier); cache writes are 1.25x input.
 _PRICES = {"claude-opus-5-5": (4.0, 20.0, 0.05), "claude-sonnet-5-5": (2.0, 10.0, 0.05),
            "claude-sonnet-5": (2.0, 10.0, 0.10), "claude-haiku-5-5": (0.10, 0.50, 0.10),
-           "claude-sonnet-4-6": (3.0, 15.0, 0.10)}
+           "claude-sonnet-4-6": (3.0, 15.0, 0.10),
+           # DeepInfra's Nemotron 3.5 Super, checked 2026-11-05: cached input is $0.02 of $0.15.
+           "nvidia/NVIDIA-Nemotron-3.5-Super-VL": (0.15, 0.50, 0.02 / 0.15)}
 
 
 def _usd(model: str, u: dict) -> float:
@@ -267,7 +276,7 @@ def _attempt(cfg, api_key, model, system_text, history, mcp, limits=None, stats=
         return _run_anthropic(api_key, model, system_text, history, mcp, limits, stats)
     if kind == "responses":                       # OpenAI: reasoning + tools
         return _run_openai_responses(cfg, api_key, model, system_text, history, mcp)
-    return _run_openai(cfg, api_key, model, system_text, history, mcp)  # Grok / Gemini
+    return _run_openai(cfg, api_key, model, system_text, history, mcp, limits, stats)  # Grok / Gemini / open models
 
 
 OUTCOMES = ("complete", "cut_off", "step_limit", "budget", "tools_failed", "refused",
@@ -424,6 +433,7 @@ async def _run_anthropic(api_key, model, system_text, history, mcp, limits=None,
     failed_steps = 0     # consecutive steps whose every tool call failed
     retried = False      # one retry per run, for a step that failed before any text reached the reader
     outcome = None
+    wrote = False        # some text of this run has reached the reader
     stats.update(model_req=model, steps=0, tool_errors=0)
 
     def tally_partial():
@@ -442,6 +452,8 @@ async def _run_anthropic(api_key, model, system_text, history, mcp, limits=None,
             over_budget = limits is not None and spent >= limits.max_usd
             final_step = step == max_steps - 1 or over_budget
             call = dict(params, tool_choice={"type": "none"}) if final_step and step else params
+            if final_step and step and messages[-1]["role"] == "user" and isinstance(messages[-1]["content"], list):
+                messages[-1] = {"role": "user", "content": messages[-1]["content"] + [{"type": "text", "text": ANSWER_NOW}]}
             while True:
                 shown = False   # text from this step has reached the reader
                 try:
@@ -457,7 +469,7 @@ async def _run_anthropic(api_key, model, system_text, history, mcp, limits=None,
                             elif event.type == "content_block_delta":
                                 d = event.delta
                                 if d.type == "text_delta":
-                                    shown = True
+                                    shown = wrote = True
                                     yield {"type": "text", "text": d.text}
                                 elif d.type == "thinking_delta":
                                     yield {"type": "thinking", "text": d.thinking}
@@ -497,10 +509,11 @@ async def _run_anthropic(api_key, model, system_text, history, mcp, limits=None,
                 break
             if final.stop_reason != "tool_use":
                 outcome = "budget" if over_budget else "step_limit" if final_step and step else "complete"
+                if final_step and step and not wrote:   # the reader would otherwise see nothing at all
+                    yield {"type": "notice", "incomplete": True, "message": STEP_LIMIT}
                 break
             if final_step:   # tool_choice "none" should prevent this; never run tools past the limit
-                yield {"type": "notice", "incomplete": True,
-                       "message": "This answer reached its step limit. Ask a narrower question to go further."}
+                yield {"type": "notice", "incomplete": True, "message": STEP_LIMIT}
                 outcome = "step_limit"
                 break
             tool_results = []
@@ -610,48 +623,197 @@ async def _run_openai_responses(cfg, api_key, model, system_text, history, mcp):
 # ---------------------------------------------------------------------------
 # OpenAI-compatible chat completions (xAI Grok / Google Gemini)
 # ---------------------------------------------------------------------------
-async def _run_openai(cfg, api_key, model, system_text, history, mcp):
+# Text a step writes is held until it has begun a third sentence. A step that calls a tool before
+# then was narrating its next lookup ("Let me pull the passage."), and that text never reaches the
+# reader (docs/decisions/0019).
+_HOLD_SENTENCES = 3
+# With nothing fetched in advance, a first answer that used no library is set aside unseen and the
+# model is asked once to look first (docs/decisions/0020). Open model hosts reject a forced tool
+# call (tool_choice "required"), so this is the portable form of one.
+LOOK_FIRST = ("[Before answering, look this up with the library tools and answer from what they "
+              "return. The student sees only the answer that follows.]")
+
+
+def _from_prompt(text: str, system_text: str) -> bool:
+    """A reply the system prompt dictates word for word, such as the fixed reply about Exegetica."""
+    t = " ".join(text.split())
+    return len(t) >= 40 and t in " ".join(system_text.split())
+
+
+def _sentences_begun(text: str) -> int:
+    from webapp.reply_check import _BOUNDARY
+    return sum(1 for piece in _BOUNDARY.split(text) if piece.strip())
+
+
+def _openai_retryable(e: Exception) -> bool:
+    import openai
+    if isinstance(e, openai.APIConnectionError):
+        return True
+    return isinstance(e, openai.APIStatusError) and (e.status_code in (408, 409, 429) or e.status_code >= 500)
+
+
+async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=None, stats=None):
+    """The chat-completions tool loop for Grok, Gemini and open models, under the same ceilings as the
+    Anthropic loop (docs/decisions/0008): steps, output per call, estimated spend for models with a
+    price, a last step that must answer, one retry, and two all-failed tool steps end the run."""
     import openai
     from openai import AsyncOpenAI
 
+    from webapp import prefetch
+
+    stats = {} if stats is None else stats
     client = AsyncOpenAI(api_key=api_key, base_url=cfg["base_url"])
     tools = _openai_tools(mcp.tools)
     messages = [{"role": "system", "content": system_text}]
     messages += _chat_messages(history)
-
     extra = cfg.get("extra_params", {})
+    max_steps = limits.max_steps if limits else MAX_TOOL_TURNS
+    locked = bool(limits and limits.locked)
+    priced = model in _PRICES   # usage is asked for only where it can be priced
+    usage = {"requests": 0, "input": 0, "cache_read": 0, "cache_write": 0, "output": 0}
+    spent = 0.0
+    failed_steps = 0
+    retried = False
+    outcome = None
+    wrote = False   # some text of this run has reached the reader
+    stats.update(model_req=model, steps=0, tool_errors=0, narration_dropped=0)
+
     try:
-        for _turn in range(MAX_TOOL_TURNS):
-            stream = await client.chat.completions.create(
-                model=model, messages=messages, tools=tools, stream=True, **extra,
-            )
-            text_parts: list[str] = []
-            calls: dict[int, dict] = {}
-            announced: set[int] = set()
-            async for chunk in stream:
-                if not chunk.choices:
+        # The library first (docs/decisions/0020): sources the student's message names are looked up
+        # before the model starts, and with none found the first step must use the library.
+        must_call = False
+        if limits and limits.tool_first:
+            asked = next((m["content"] for m in reversed(history) if m.get("role") == "user"), "")
+            planned = prefetch.plan(asked, {t["name"] for t in mcp.tools})
+            must_call = not planned
+            stats["prefetched"] = len(planned)
+            if planned:
+                ids = [f"pre{i}" for i in range(len(planned))]
+                messages.append({"role": "assistant", "content": None, "tool_calls": [
+                    {"id": cid, "type": "function", "function": {"name": name, "arguments": json.dumps(args)}}
+                    for cid, (name, args) in zip(ids, planned)]})
+                for cid, (name, args) in zip(ids, planned):
+                    yield {"type": "tool_call", "name": name}
+                    out, is_error = await _call_tool(mcp, name, args)
+                    stats["tool_errors"] += bool(is_error)
+                    messages.append({"role": "tool", "tool_call_id": cid, "content": out})
+                    yield {"type": "tool_done", "name": name, "input": args, "output": _cap(out), "error": is_error}
+
+        for step in range(max_steps):
+            over_budget = limits is not None and spent >= limits.max_usd
+            final_step = bool(step) and (step == max_steps - 1 or over_budget)
+            params = dict(model=model, messages=messages, stream=True, **extra)
+            if limits:
+                params["max_tokens"] = limits.max_tokens
+            if priced:
+                params["stream_options"] = {"include_usage": True}
+            if final_step:
+                if messages[-1]["role"] == "tool":
+                    messages[-1] = dict(messages[-1], content=f"{messages[-1]['content']}\n\n{ANSWER_NOW}")
+            else:
+                params["tools"] = tools
+            hold_all = step == 0 and must_call   # this answer shows only if it used the library
+            while True:
+                text_parts: list[str] = []
+                held: list[str] = []
+                releasing = final_step   # a step with no tools is the answer from its first word
+                shown = False
+                calls: dict[int, dict] = {}
+                announced: set[int] = set()
+                finish = None
+                served = None
+                su = None
+                try:
+                    stream = await client.chat.completions.create(**params)
+                    async for chunk in stream:
+                        served = getattr(chunk, "model", None) or served
+                        if getattr(chunk, "usage", None):
+                            u = chunk.usage
+                            cached = getattr(getattr(u, "prompt_tokens_details", None), "cached_tokens", 0) or 0
+                            su = {"input": (u.prompt_tokens or 0) - cached, "cache_read": cached,
+                                  "cache_write": 0, "output": u.completion_tokens or 0}
+                        if not chunk.choices:
+                            continue
+                        choice = chunk.choices[0]
+                        finish = getattr(choice, "finish_reason", None) or finish
+                        delta = choice.delta
+                        if getattr(delta, "content", None):
+                            text_parts.append(delta.content)
+                            if releasing:
+                                shown = True
+                                yield {"type": "text", "text": delta.content}
+                            else:
+                                held.append(delta.content)
+                                if not hold_all and _sentences_begun("".join(held)) >= _HOLD_SENTENCES:
+                                    releasing = shown = True
+                                    yield {"type": "text", "text": "".join(held)}
+                                    held = []
+                        for tc in (getattr(delta, "tool_calls", None) or []):
+                            if held:   # the text before a lookup was narration
+                                stats["narration_dropped"] += 1
+                                held = []
+                            slot = calls.setdefault(tc.index, {"id": None, "name": "", "args": ""})
+                            if tc.id:
+                                slot["id"] = tc.id
+                            if tc.function:
+                                if tc.function.name:
+                                    slot["name"] += tc.function.name
+                                if tc.function.arguments:
+                                    slot["args"] += tc.function.arguments
+                            if slot["name"] and tc.index not in announced:
+                                announced.add(tc.index)
+                                yield {"type": "tool_call", "name": slot["name"]}
+                    if not text_parts and not calls and finish != "length" and not retried:
+                        retried = True   # an empty completion is a host glitch, like a dropped connection
+                        logger.warning("%s step %d came back empty, retrying once", cfg["label"], step)
+                        await asyncio.sleep(RETRY_WAIT)
+                        continue
+                    break
+                except Exception as e:  # noqa: BLE001
+                    if shown or retried or not _openai_retryable(e):
+                        raise
+                    retried = True
+                    logger.warning("%s step %d failed (%s), retrying once", cfg["label"], step, type(e).__name__)
+                    await asyncio.sleep(RETRY_WAIT)
+            usage["requests"] += 1
+            if su:
+                for k, v in su.items():
+                    usage[k] += v
+                spent += _usd(model, su)
+            stats.update(steps=usage["requests"], model_served=served or model)
+            answer = "".join(held)
+            if answer and not calls:
+                if hold_all and finish != "length" and not _from_prompt(answer, system_text):
+                    stats["lookup_nudges"] = 1   # answered from memory: set it aside and ask once to look
+                    messages.append({"role": "user", "content": LOOK_FIRST})
                     continue
-                delta = chunk.choices[0].delta
-                if getattr(delta, "content", None):
-                    text_parts.append(delta.content)
-                    yield {"type": "text", "text": delta.content}
-                for tc in (getattr(delta, "tool_calls", None) or []):
-                    slot = calls.setdefault(tc.index, {"id": None, "name": "", "args": ""})
-                    if tc.id:
-                        slot["id"] = tc.id
-                    if tc.function:
-                        if tc.function.name:
-                            slot["name"] += tc.function.name
-                        if tc.function.arguments:
-                            slot["args"] += tc.function.arguments
-                    if slot["name"] and tc.index not in announced:
-                        announced.add(tc.index)
-                        yield {"type": "tool_call", "name": slot["name"]}
+                yield {"type": "text", "text": answer}   # the answer ended inside its first sentences
+                shown = True
+            wrote = wrote or shown
 
+            if finish == "length":
+                yield {"type": "notice", "incomplete": True,
+                       "message": "This answer was cut off at its length limit. Ask for a shorter piece."}
+                outcome = "cut_off"
+                break
             if not calls:
-                return  # model finished with text
-
-            # Append the assistant turn (with its tool calls), then each result.
+                if not wrote and not final_step:   # empty again after the retry: say so, never a blank reply
+                    yield {"type": "error", "message": policy.PROVIDER_ERROR}
+                    outcome = "provider_error"
+                    break
+                outcome = "budget" if over_budget else "step_limit" if final_step else "complete"
+                if final_step and not wrote:   # the reader would otherwise see nothing at all
+                    yield {"type": "notice", "incomplete": True, "message": STEP_LIMIT}
+                break
+            if final_step:   # tools were withheld; never run a call past the limit
+                yield {"type": "notice", "incomplete": True, "message": STEP_LIMIT}
+                outcome = "step_limit"
+                break
+            for c in calls.values():   # a call with arguments that aren't JSON runs with none, like the app
+                try:
+                    json.loads(c["args"] or "{}")
+                except json.JSONDecodeError:
+                    c["args"] = "{}"
             messages.append({
                 "role": "assistant",
                 "content": "".join(text_parts) or None,
@@ -661,23 +823,43 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp):
                     for c in calls.values()
                 ],
             })
+            errors = []
             for c in calls.values():
-                try:
-                    args = json.loads(c["args"]) if c["args"].strip() else {}
-                except json.JSONDecodeError:
-                    args = {}
+                args = json.loads(c["args"]) if c["args"].strip() else {}
                 out, is_error = await _call_tool(mcp, c["name"], args)
+                stats["tool_errors"] += bool(is_error)
+                errors.append(is_error)
                 messages.append({"role": "tool", "tool_call_id": c["id"], "content": out})
                 yield {"type": "tool_done", "name": c["name"], "input": args,
                        "output": _cap(out), "error": is_error}
+            failed_steps = failed_steps + 1 if errors and all(errors) else 0
+            if failed_steps >= 2:   # the library is down; stop paying for steps that can't ground an answer
+                yield {"type": "notice", "incomplete": True, "message": policy.TOOLS_DOWN}
+                outcome = "tools_failed"
+                break
+        else:
+            outcome = "step_limit"
     except openai.APIStatusError as e:
-        yield {"type": "error", "message": f"{cfg['label']} API error {e.status_code}: {getattr(e, 'message', str(e))}"}
+        # The raw error can echo the request, so a locked run shows fixed text only.
+        logger.warning("%s API error status=%s", cfg["label"], e.status_code)
+        stats["http_status"] = e.status_code
+        outcome = "provider_error"
+        yield {"type": "error", "message": policy.PROVIDER_ERROR if locked else
+               f"{cfg['label']} API error {e.status_code}: {getattr(e, 'message', str(e))}"}
     except openai.APIConnectionError:
-        yield {"type": "error", "message": f"Could not reach {cfg['label']}. Check the key and network."}
+        outcome = "provider_error"
+        yield {"type": "error", "message": policy.PROVIDER_ERROR if locked else
+               f"Could not reach {cfg['label']}. Check the key and network."}
     except Exception as e:  # noqa: BLE001
         logger.exception("openai-compatible stream failed")
-        yield {"type": "error", "message": str(e)}
+        outcome = "provider_error"
+        yield {"type": "error", "message": policy.PROVIDER_ERROR if locked else str(e)}
     finally:
+        stats.update({k: usage[k] for k in ("input", "cache_read", "cache_write", "output")},
+                     est_usd=round(spent, 6), outcome=outcome or "cancelled")
+        if stats["narration_dropped"]:
+            logger.info("narration held back: steps=%d", stats["narration_dropped"])
+        _log_usage(model, usage)
         import contextlib
         with contextlib.suppress(Exception):
             await client.close()

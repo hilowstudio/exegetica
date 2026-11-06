@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Generator · Exegetica</title>
+<title>Prep Room · Exegetica</title>
 <link rel="icon" href="/static/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png">
@@ -254,7 +254,7 @@
     <a class="railbtn" href="/" title="Chat" aria-label="Chat"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg></a>
     <a class="railbtn" href="/memory" title="Scripture Memory" aria-label="Scripture Memory"><svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/><path d="M6.5 11h6M6.5 14h4"/></svg></a>
     <a class="railbtn" href="/read" title="Reading Room" aria-label="Reading Room"><svg viewBox="0 0 24 24"><path d="M12 6.6C10.2 5.3 7.3 5 4.8 5.6v12.3c2.5-.6 5.4-.3 7.2 1 1.8-1.3 4.7-1.6 7.2-1V5.6C16.7 5 13.8 5.3 12 6.6z"/><path d="M12 6.6v11.7"/></svg></a>
-    <a class="railbtn teach active" href="/generate" style="display:none" title="Generator" aria-label="Generator"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/></svg></a>
+    <a class="railbtn teach active" href="/generate" style="display:none" title="Prep Room" aria-label="Prep Room"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/></svg></a>
     <a class="railbtn teach" href="/library" style="display:none" title="Living Library" aria-label="Living Library"><svg viewBox="0 0 24 24"><rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/><path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/></svg></a>
     <a class="railbtn admin" href="/studio" style="display:none" title="Media Studio" aria-label="Media Studio"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4.5 17.5l5-5 3.5 3.5 2.5-2.5 4 4"/></svg></a>
     <span class="sp"></span>
@@ -319,7 +319,7 @@
 
     <div class="builder-foot">
       <div class="note" id="gennote">Pick a book, coverage, and a format.</div>
-      <button class="gen" id="gen" disabled>Generate resource</button>
+      <button class="gen" id="gen" disabled>Draft resource</button>
     </div>
   </aside>
 
@@ -341,7 +341,7 @@
     <section class="report" id="report" aria-label="Source check" hidden></section>
     <div class="paperwrap" id="paperwrap" style="display:none"><div class="paper prose" id="paper"></div></div>
     <textarea class="editor" id="editor" style="display:none" spellcheck="false"></textarea>
-    <div class="placeholder" id="placeholder"><h1>Generate a resource</h1><p>Build from a book — pick the title and the chapters your class has read, and the document lands where your students are — or from an academic standard. Choose the source at left. Switch between Teacher and Student, edit it directly, or revise it with a plain instruction.</p></div>
+    <div class="placeholder" id="placeholder"><h1>Prepare a resource</h1><p>Build from a book — pick the title and the chapters your class has read, and the document lands where your students are — or from an academic standard. Choose the source at left. Switch between Teacher and Student, edit it directly, or revise it with a plain instruction.</p></div>
   </section>
 </div>
 
@@ -393,6 +393,11 @@ Promise.all([
   (TREE.subjects||[]).forEach(s=>{const o=document.createElement("option");o.value=s.id;o.textContent=s.name;$("sel-subject").appendChild(o);});
   $("sel-subject").insertAdjacentHTML("afterbegin","<option value=''>Select…</option>");
   $("sel-subject").value="";
+  // Opened from the standards page with ?standard=<sub-topic id>: start in standards mode at that sub-topic.
+  const deep=new URLSearchParams(location.search).get("standard"),p=(deep||"").split(".");
+  if(p.length>=4){srcMode="standard";applySrcMode();
+    gotoLocation({subject:p[0],sub_subject:p.slice(0,2).join("."),topic:p.slice(0,3).join("."),
+                  sub_topic:p.slice(0,4).join("."),objective:p.length>4?deep:null});}
   updateKeyBanner();
 }).catch(()=>{console.error("backend unavailable");});
 
@@ -415,7 +420,7 @@ function refreshGen(){
   const srcOk = srcMode==="book" ? !!(pickedBook && $("sel-cover").value) : !!(curSubtopic && selectedObjectives().length);
   $("gen").disabled = !(srcOk && $("sel-format").value && !needsKey() && !busy);
   const n=$("gennote");
-  if(busy){n.textContent="Generating…";n.className="note";}
+  if(busy){n.textContent="Drafting…";n.className="note";}
   else if(needsKey()){n.textContent="Add your API key in Settings to generate.";n.className="note warn";}
   else if(!srcOk){n.textContent = srcMode==="book" ? "Pick a book, coverage, and a format." : "Pick a standard, an objective, and a format.";n.className="note";}
   else if(srcMode==="book"){n.textContent="Ready. "+pickedBook.title+" · through ch "+$("sel-cover").value+" · "+((FMT[$("sel-format").value]||{}).name||"")+".";n.className="note";}

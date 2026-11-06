@@ -4,8 +4,8 @@ Operational metrics (docs/harness-maturity-proposal.md, Layer 7; docs/decisions/
 One row per model run in `turn_metrics`, holding numbers and fixed labels only. Never recorded:
 message text or its hash, tool inputs or outputs, provider error strings, persona, IP, browser,
 session, email, account id, or key. The time is cut to the hour, and there is no column that could
-join a row to a person. Rows older than RETENTION_DAYS are deleted on the write path, so the purge
-runs whenever the app is in use.
+join a row to a person. A few daily totals (`count`, COUNTERS) go to `ops_daily`. Rows older than
+RETENTION_DAYS are deleted on the write path, so the purge runs whenever the app is in use.
 
 Writes never block or fail a reply: each one runs as its own task, and a failure is counted in
 memory for /ops. Until the tables exist (scripts/schema.sql) every write and read is a no-op.
@@ -42,6 +42,9 @@ NUMBERS = ("http_status", "steps", "tool_errors", "input", "cache_read", "cache_
            "first_read", "first_write", "duration_ms", "checks_dropped", "checks_stopped")
 FIELDS = ("route", "key_source", "model_req", "model_served", "prefix_hash", "outcome",
           "refusal_category", "est_usd") + NUMBERS
+# Daily totals in ops_daily (docs/decisions/0018-crisis-check.md): how often the help window opened,
+# by the layer that opened it, and how often the model check gave no answer. Nothing else.
+COUNTERS = ("help_words", "help_reply", "help_check", "check_failed")
 
 # In-memory health for /ops: since this process started.
 failed_writes = 0
@@ -111,6 +114,52 @@ async def _write(r: dict) -> None:
         logger.warning("metrics write failed", exc_info=True)
         return
     await purge_if_due()
+
+
+def count(name: str) -> None:
+    """Add one to today's total for a counter, in the background. A UTC day and a number: no
+    account, message, category, or time of day."""
+    if name not in COUNTERS:
+        raise ValueError(f"not a counter: {name}")
+    try:
+        task = asyncio.get_running_loop().create_task(_bump(name))
+    except RuntimeError:   # no running loop (tests, shutdown)
+        return
+    _tasks.add(task)
+    task.add_done_callback(_tasks.discard)
+
+
+async def _bump(name: str) -> None:
+    global failed_writes
+    if not db.ready() or "ops_daily" in missing_tables:
+        return
+    try:
+        await db.execute(
+            """insert into ops_daily (day, name, value) values ((now() at time zone 'UTC')::date, $1, 1)
+               on conflict (day, name) do update set value = ops_daily.value + 1""", name)
+    except asyncpg.UndefinedTableError:
+        missing_tables.add("ops_daily")
+    except Exception:  # noqa: BLE001
+        failed_writes += 1
+        logger.warning("counter write failed", exc_info=True)
+
+
+async def daily_counts(days: int = 14) -> list[dict] | None:
+    """Per UTC day with any count: each counter's total. None if the table is missing."""
+    if not db.ready() or "ops_daily" in missing_tables:
+        return None
+    try:
+        rows = await db.fetch(
+            """select day, name, value from ops_daily
+               where name = any($1) and day > (now() at time zone 'UTC')::date - $2
+               order by day desc""", list(COUNTERS), days)
+    except asyncpg.UndefinedTableError:
+        missing_tables.add("ops_daily")
+        return None
+    out: dict = {}
+    for r in rows:
+        out.setdefault(r["day"], {"day": r["day"], **dict.fromkeys(COUNTERS, 0)})[r["name"]] = int(r["value"])
+    return list(out.values())
 
 
 async def purge_if_due() -> None:

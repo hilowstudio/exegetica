@@ -6,7 +6,7 @@ Recorded 2026-11-03 from the harness proposal, Layer 7.
 
 Never recorded: message text or its hash, tool inputs or outputs, provider error strings, persona, IP, browser, session, email, account id, or key. A test pins each row to this allowlist.
 
-`/ops` is admin-only. It shows 14 UTC days of runs and spend by ending, the libraries' health, the tables' state, and failed metric writes. `/ops/flag` sends the one alert: the first time in a UTC day that estimated spend passes $5, it answers 500, so the keep-warm run fails and GitHub emails the maker. It needs `OPS_FLAG_TOKEN`, set both as a Fly secret and as a GitHub Actions secret.
+`/ops` is admin-only. It shows 14 UTC days of runs and spend by ending, how often the help window opened (daily totals in `ops_daily`, decision 0018), the libraries' health, the tables' state, and failed metric writes. `/ops/flag` sends the one alert: the first time in a UTC day that estimated spend passes $5, it answers 500, so the keep-warm run fails and GitHub emails the maker. It needs `OPS_FLAG_TOKEN`, set both as a Fly secret and as a GitHub Actions secret.
 
 **Every run ends in one named state:** complete, cut_off, step_limit, budget, tools_failed, refused, provider_error, or cancelled, plus check_stop, greeting, drift, capped, and limited from the app. The chat page treats a stream without an end event as interrupted. Two steps in a row where every tool failed end the run with a plain notice. Students never see a raw provider error.
 

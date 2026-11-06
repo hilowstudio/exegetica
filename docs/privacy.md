@@ -1,6 +1,6 @@
 # Privacy
 
-*Exegetica, made by A. James Vega of Hi Low Studio LLC for Yorkville Christian School. Updated 3 November 2026.*
+*Exegetica, made by A. James Vega of Hi Low Studio LLC for Yorkville Christian School. Updated 4 November 2026.*
 
 ## What Exegetica is
 
@@ -31,7 +31,7 @@ Exegetica keeps no profile of a student. A new study starts with no knowledge of
 
 ## Who else receives information
 
-- **Anthropic** receives each chat message, with the study so far, and writes the reply. Anthropic's commercial terms bar it from training its models on this data, and it keeps the data for a limited time under its own [privacy policy](https://www.anthropic.com/legal/privacy).
+- **Anthropic** receives each chat message, with the study so far, and writes the reply. A second, smaller Anthropic model also reads your last three messages to decide whether to open the **Need help now?** window. Anthropic's commercial terms bar it from training its models on this data, and it keeps the data for a limited time under its own [privacy policy](https://www.anthropic.com/legal/privacy).
 - **Google** handles sign-in. A teacher's library searches go to Google Books and YouTube. Exegetica serves its typefaces from its own server, so opening a page sends nothing to Google.
 - **Crossway** (the ESV) and **bible.org** (the NET Bible) receive Bible references when a tool looks up a passage. They never receive your messages.
 - **Fly.io** hosts the server and keeps its logs for a short time. **Neon** hosts the database. **Cloudflare** stores a teacher's uploaded file until it is processed, and serves a maths typesetting script to the Reading Room.
@@ -40,7 +40,7 @@ Exegetica keeps no profile of a student. A new study starts with no knowledge of
 
 ## Counts kept to run the service
 
-For each reply, Exegetica records numbers only: how long it took, how many tool calls it made, how many tokens it used, its estimated cost, and how it ended. These records hold no account, message, or address, and they are deleted after {{metrics_days}} days. To enforce daily limits, each account has a counter for the day under a code that only the server can match, deleted after {{cap_days}} days.
+For each reply, Exegetica records numbers only: how long it took, how many tool calls it made, how many tokens it used, its estimated cost, and how it ended. Each day it also counts how many times the **Need help now?** window opened. These records hold no account, message, or address, and they are deleted after {{metrics_days}} days. To enforce daily limits, each account has a counter for the day under a code that only the server can match, deleted after {{cap_days}} days.
 
 ## Your choices
 

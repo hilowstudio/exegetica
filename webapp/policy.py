@@ -24,9 +24,14 @@ class RunLimits:
     max_tokens: int        # output cap per call
     max_usd: float         # estimated spend for the whole run
     locked: bool = False   # no model fallback of any kind (student chat)
+    # The library comes first: sources the message names are fetched before the model starts, and
+    # with none fetched, a first answer that used no library is set aside and the model asked once to
+    # look (docs/decisions/0020). The OpenAI-compatible loop honors it. The Anthropic loop streams
+    # Opus as it writes and leaves this off, since Opus already looks things up.
+    tool_first: bool = False
 
 
-STUDENT_CHAT = RunLimits(max_steps=8, max_tokens=16000, max_usd=1.0, locked=True)
+STUDENT_CHAT = RunLimits(max_steps=8, max_tokens=16000, max_usd=1.0, locked=True, tool_first=True)
 TEACHER_CHAT = RunLimits(max_steps=8, max_tokens=16000, max_usd=1.0)
 GENERATE = RunLimits(max_steps=12, max_tokens=64000, max_usd=5.0)
 REVISE = RunLimits(max_steps=3, max_tokens=64000, max_usd=2.0)

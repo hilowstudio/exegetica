@@ -117,6 +117,16 @@ def test_step_limit_forces_an_answer_and_says_so(monkeypatch):
     assert calls[-1].get("tool_choice") == {"type": "none"}
     assert all("tool_choice" not in c for c in calls[:-1])
     assert events[-1]["type"] == "notice" and events[-1]["incomplete"]
+    # The last tool results tell the model to write now (Opus once spent this step writing nothing).
+    last_results = [m for m in calls[-1]["messages"] if m["role"] == "user"][-1]
+    assert last_results["content"][-1] == {"type": "text", "text": providers.ANSWER_NOW}
+
+
+def test_a_last_step_that_writes_nothing_says_so(monkeypatch):
+    script = ["tool_use"] * (policy.STUDENT_CHAT.max_steps - 1) + ["end_turn"]   # the fake streams no text
+    events, _calls, stats = _run(monkeypatch, script, policy.STUDENT_CHAT)
+    assert stats["outcome"] == "step_limit"
+    assert events[-1] == {"type": "notice", "incomplete": True, "message": providers.STEP_LIMIT}
 
 
 def test_cut_off_reply_is_reported(monkeypatch):

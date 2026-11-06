@@ -2,8 +2,9 @@
 /ops, the maker's operations page, and /ops/flag, the once-a-day spend alert
 (docs/harness-maturity-proposal.md, Layer 7; docs/decisions/0012-metrics.md).
 
-/ops is admin-only and reads webapp/metrics.py: 14 UTC days of runs, estimated spend, and how runs
-ended, plus the libraries' health. It shows counts only, never a person or a message.
+/ops is admin-only and reads webapp/metrics.py: 14 UTC days of runs, estimated spend, how runs
+ended, and how often the help window opened, plus the libraries' health. It shows counts only,
+never a person or a message.
 
 /ops/flag is for the keep-warm workflow. It answers 500 the first time in a UTC day that the
 estimated spend for that day (or the day before) passes ALERT_USD, so the scheduled GitHub run
@@ -109,6 +110,11 @@ async def page(request):
         for d in days) or f"<tr><td colspan={len(cols)}>No runs recorded.</td></tr>"
     total = sum(float(d["usd"]) for d in days)
     week = sum(float(d["usd"]) for d in days[:7])
+    helps = await metrics.daily_counts(14) or []
+    help_rows = "".join(
+        f"<tr><td>{h['day']}</td><td>{h['help_words'] + h['help_reply'] + h['help_check']}</td>"
+        f"<td>{h['help_words']}</td><td>{h['help_reply']}</td><td>{h['help_check']}</td>"
+        f"<td>{h['check_failed']}</td></tr>" for h in helps) or "<tr><td colspan=6>None recorded.</td></tr>"
     out = (
         "<h1>Operations</h1>"
         f"<p>Estimated spend: ${week:.2f} in the last 7 UTC days, ${total:.2f} in 14. Alert above "
@@ -118,6 +124,10 @@ async def page(request):
         + _bridge_row("History", getattr(state, "mcp_history", None)) + "</table>"
         "<h2>Runs by day</h2><div class=wide><table><tr>" + "".join(f"<th>{h}</th>" for h in heads)
         + "</tr>" + body + "</table></div>"
+        "<h2>Help window</h2><p>How many times a day the Need help now window opened, and what opened "
+        "it. A total only: no account, message, category, or time.</p><div class=wide><table><tr>"
+        "<th>UTC day</th><th>Opened</th><th>Local check</th><th>Reply</th><th>Model check</th>"
+        "<th>Model check failed</th></tr>" + help_rows + "</table></div>"
         "<h2>Records</h2><table>"
         + "".join(f"<tr><th>{t}</th><td>{html.escape(s)}</td></tr>" for t, s in tables.items())
         + f"<tr><th>Last metrics row</th><td>{last or 'none'}</td></tr>"

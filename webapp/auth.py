@@ -165,4 +165,4 @@ async def logout(request):
 
 async def me(request):
     u = current_user(request)
-    return JSONResponse({"user": u, "admin": is_admin(u)})
+    return JSONResponse({"user": u, "admin": is_admin(u)}, headers={"Cache-Control": "no-store"})

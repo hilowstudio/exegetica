@@ -135,7 +135,7 @@
         '</div>' +
       '</div>' +
       '<div class="set-pane" id="setp-model">' +
-        '<p class="set-hint" style="margin:0 0 14px">Bring your own key. It is stored only in this browser and sent to the app only to make your request — the server never saves it. Chat and Generator share this.</p>' +
+        '<p class="set-hint" style="margin:0 0 14px">Bring your own key. It is stored only in this browser and sent to the app only to make your request — the server never saves it. Chat and the Prep Room share this.</p>' +
         '<label class="set-fld">Provider<select id="set-prov"></select></label>' +
         '<label class="set-fld">Model<input id="set-model" type="text" spellcheck="false" autocomplete="off"><span class="set-hint" id="set-modelhint"></span></label>' +
         '<label class="set-fld">API key<input id="set-key" type="password" spellcheck="false" autocomplete="off" placeholder="Paste your key"><span class="set-hint" id="set-keyhint"></span></label>' +

@@ -2,6 +2,7 @@
 Scripture, and ordinary answers exactly as written (webapp/reply_check.py). No network."""
 import pytest
 
+from webapp import citations
 from webapp.reply_check import ReplyGate, check_sentence
 
 
@@ -109,6 +110,77 @@ def test_quotations_without_affection_are_never_looked_up():
     assert seen == []
 
 
+def test_two_quotations_in_one_sentence_are_checked_one_at_a_time():
+    # Opus's Lazarus answer was stopped here: both quotations were held, and run together they were not.
+    held = ("Then Jesus told them plainly, “Lazarus has died, and for your sake I am glad that I was not "
+            "there, so that you may believe.")
+    ok = lambda q: all(citations.normalize(p) in citations.normalize(held) for p in q.split("…") if p.strip())
+    line = ('- **"So that you may believe" (11:15).** Jesus told the disciples, "Lazarus has died, and for '
+            'your sake I am glad that I was not there, so that you may believe." Healing would have been less. ')
+    text, gate = gated([line], ok)
+    assert not gate.stopped and "I am glad" in text
+
+
 def test_unquoted_affection_after_a_quotation_still_stops():
     _, gate = gated(["“Grace and peace,” Paul writes, and I love you for asking. "], lambda quote: True)
     assert gate.stopped
+
+
+# A list of memory verses written without quotation marks was once stopped at John 13:34.
+MEMORY_SHEET = ("A new commandment I give to you, that you love one another: just as I have loved you, "
+                "you also are to love one another.")
+
+
+def _held(quote):
+    return " ".join(quote.split()).strip(" *") in MEMORY_SHEET
+
+
+@pytest.mark.parametrize("line", [
+    "A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another.\n",
+    "**John 13:34** A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another.\n",
+    "- John 13:34 — A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another.\n",
+])
+def test_an_unquoted_verse_the_sources_hold_passes(line):
+    text, gate = gated([line], _held)
+    assert not gate.stopped and "just as I have loved you" in text
+
+
+@pytest.mark.parametrize("line", [
+    "Just as I have loved you, Exegetica is here for you.\n",                  # the source's words and the bot's
+    "I have loved you all along.\n",                                            # held nowhere
+])
+def test_affection_the_sources_do_not_hold_word_for_word_still_stops(line):
+    _, gate = gated([line], _held)
+    assert gate.stopped
+
+
+# ---------------------------------------------------------------- em dashes (decision 0019)
+@pytest.mark.parametrize("sentence", [
+    "If you want, I can pull those too.",            # first person mid-sentence is the prompt's job (0001)
+    "Answer in your own words, and I will check it.",
+])
+def test_a_mid_sentence_offer_is_left_to_the_prompt(sentence):
+    assert check_sentence(sentence) == "pass"
+
+
+@pytest.mark.parametrize("before,after", [
+    ("- **Bread of life** — Jesus feeds the crowd.", "- **Bread of life**: Jesus feeds the crowd."),
+    ("**“I am the door” — John 10:9.**", "**“I am the door”: John 10:9.**"),
+    ("### Unit 6 — Worship in spirit and truth", "### Unit 6: Worship in spirit and truth"),
+    ("The Word — the eternal Son — became flesh.", "The Word, the eternal Son, became flesh."),
+    ("He stopped—then wept.", "He stopped, then wept."),
+    ("This is where it ends —", "This is where it ends"),
+    ("Jesus said, “It is finished—the work is done.”", "Jesus said, “It is finished—the work is done.”"),
+    ("> A quoted line — kept as written.", "> A quoted line — kept as written."),
+    # A dash beside a straight quote mark once vanished and glued the words to the quotation.
+    ('Jesus follows — "Feed my lambs" — with a second charge.',
+     'Jesus follows, "Feed my lambs", with a second charge.'),
+])
+def test_em_dashes_outside_quotations_are_rewritten(before, after):
+    text, _ = run([before])
+    assert text == after
+
+
+def test_a_dash_inside_a_quotation_opened_earlier_is_kept():
+    text, _ = run(["He wrote, “The first line ends. The second — runs on.” Then he stopped."])
+    assert "second — runs on" in text

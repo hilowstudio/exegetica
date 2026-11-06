@@ -56,6 +56,18 @@ def test_a_quotation_counts_as_held_only_when_every_piece_is():
     assert not citations.found("In the beginning was the Word … and the Word became flesh", held)
 
 
+def test_a_quotation_across_a_verse_boundary_is_found_in_a_fetched_passage():
+    # get_passage prints each verse behind its number; a reply quoting John 11:14-15 from such a
+    # passage was once stopped as unheld affection ("I am glad").
+    passage = ("**14** Then Jesus told them plainly, \"Lazarus has died, **15** and for your sake I am glad "
+               "that I was not there, so that you may believe. But let us go to him.\"")
+    held = citations.Held([passage])
+    quote = "Lazarus has died, and for your sake I am glad that I was not there, so that you may believe"
+    assert citations.found(quote, held)
+    assert citations.quote_check(type("Run", (), {"outputs": [passage]}), None)(quote)
+    assert not citations.found("Lazarus has died, and for your sake I am glad that I was there", held)
+
+
 def test_the_reply_check_trusts_only_this_runs_results_for_short_quotations():
     run = recorded("lookup_verse")
     ok = citations.quote_check(run, None)

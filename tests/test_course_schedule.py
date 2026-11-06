@@ -52,7 +52,9 @@ def run(**args):
 
 def test_tool_is_registered():
     assert "get_course_schedule" in curriculum.HANDLER_NAMES
-    assert "get_course_schedule" in curriculum.system_note()
+    # The note describes the tool and never names it, so no name is copied into a reply (decision 0021).
+    assert "course-schedule tool" in curriculum.system_note()
+    assert "get_course_schedule" not in curriculum.system_note()
 
 
 def test_today_is_a_lesson_day(cal):

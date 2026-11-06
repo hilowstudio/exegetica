@@ -27,7 +27,7 @@ from pathlib import Path
 
 from studybible_mcp.database import StudyBibleDB
 
-NO_SOURCE = "No library source was consulted."
+NO_SOURCE = "No library resource was consulted for this response."
 
 _ROOT = Path(__file__).resolve().parent.parent
 _TRANSLATIONS = ("BSB", "KJV", "WEB", "ASV", "YLT")
@@ -203,6 +203,9 @@ def bible() -> Bible | None:
 # Is a quotation held somewhere?
 # ---------------------------------------------------------------------------------------------
 
+_VERSE_NUMBER = re.compile(r"\b\d{1,3}\b")
+
+
 class Held:
     """Texts a quotation may come from, normalized once as they grow."""
 
@@ -210,12 +213,20 @@ class Held:
         self.texts = texts
         self._seen = 0
         self._joined = ""
+        self._unnumbered = ""
 
     def has(self, fragment: str) -> bool:
         if self._seen != len(self.texts):
             self._joined = " | ".join(normalize(t) for t in self.texts)
+            self._unnumbered = " ".join(_VERSE_NUMBER.sub(" ", self._joined).split())
             self._seen = len(self.texts)
-        return fragment in self._joined
+        if fragment in self._joined:
+            return True
+        # A passage prints each verse behind its number ("**15** and for your sake"), so a quotation
+        # that runs across a verse boundary is found only with the numbers taken out of both sides.
+        # John 11:14-15 quoted from a fetched passage once stopped a reply this way.
+        plain = " ".join(_VERSE_NUMBER.sub(" ", fragment).split())
+        return len(plain.split()) >= 3 and plain in self._unnumbered
 
 
 def found(quote: str, held: Held, local: Bible | None = None, hint: dict | None = None) -> bool:

@@ -47,7 +47,7 @@ Level 3 is the target nearly everywhere, because the app handles minors' text an
 | E | May the Generator write prayers and devotions? | No closing prayers; keep passages and questions, and a person prays | `devotional_guide` writes a closing prayer, which the statement's "orchestrate a devotion" appears to forbid. A softer option is to draft prayers for a teacher to lead |
 | F | Do old studies reopen read-only? | Yes, after one day, with a 24-turn cap | Reopening a study resends its whole transcript, so one chat carries the model across days, which is the slow-burn route |
 | G | Doctrine wording | Your sign-off on the third-person file | The student prompt states the tradition's positions and attributes them, and the pastors' prompt keeps "your convictions" |
-| H | Does `/ops` show a daily count of help-panel displays? | Only if the school approves | You are school personnel and would read it. The number is a total with no category, time, or join |
+| H | Does `/ops` show a daily count of help-panel displays? | Only if the school approves | You are school personnel and would read it. The number is a total with no category, time, or join. Decided yes on 2026-11-04 (docs/decisions/0018) |
 | I | Is this non-commercial? | Your ruling | `docs/go-to-market-plan.md:151,186` lists Kindle books at a $0.99 minimum, and two QSF N/As depend on the answer |
 
 ## Roadmap
@@ -76,7 +76,9 @@ Built on 2026-11-03 after the first pass: the comprehension build on Inngest, th
 
 Phases 1 to 5 were committed and deployed on 2026-11-04. Self-hosted fonts, the last item from Phases 2 to 4, were built the same day after the deploy.
 
-Phase 5 is built except the cache-lifetime decision, which waits on two weeks of metrics. Built on 2026-11-03: tool descriptions that say when to call each tool, the citation hook (`webapp/citations.py`), the "No library source was consulted." label and the note on quotations no source holds, the Generator's source check, and paragraph locators on theology hits (docs/decisions/0016). The ESV fallback and the comprehension build were built earlier.
+The crisis check, first on the 2026-10-31 safety review's fix list and missing from this plan, was built on 2026-11-04 (docs/decisions/0018). A word check, the reply itself, and a Claude Haiku 5.5 check can each open the help window, and `/ops` counts how often it opens. On the latest blind set the local check (a word list and a small classifier on the server) opens on 56 of 60 crisis messages, against 5 of 50 for the old list, and the model check on all 60. Together they caught every one, with 6 wrong opens in 60 quiet messages and none on the 30 study questions.
+
+Phase 5 is built except the cache-lifetime decision, which waits on two weeks of metrics. Built on 2026-11-03: tool descriptions that say when to call each tool, the citation hook (`webapp/citations.py`), the "No library resource was consulted for this response." label and the note on quotations no source holds, the Generator's source check, and paragraph locators on theology hits (docs/decisions/0016). The ESV fallback and the comprehension build were built earlier.
 
 | Money | Estimate |
 |---|---|

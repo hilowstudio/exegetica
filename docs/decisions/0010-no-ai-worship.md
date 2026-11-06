@@ -1,4 +1,4 @@
-# 0010: No AI-written worship, in chat or in the Generator
+# 0010: No AI-written worship, in chat or in the Prep Room
 
 Decided by A. James Vega, 2026-11-02 ("no for now").
 

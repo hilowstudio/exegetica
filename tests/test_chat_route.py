@@ -9,7 +9,7 @@ from starlette.routing import Route
 from starlette.testclient import TestClient
 
 from webapp import app as appmod
-from webapp import auth, citations, metrics, policy, providers, reply_check, usage
+from webapp import auth, citations, metrics, policy, providers, reply_check, safety, usage
 
 STUDENT = {"id": "00000000-0000-0000-0000-000000000001", "email": "s@school.test", "role": "student"}
 TEACHER = {"id": "00000000-0000-0000-0000-000000000002", "email": "t@school.test", "role": "teacher"}
@@ -25,9 +25,17 @@ class _Bridge:
 
 @pytest.fixture
 def env(monkeypatch):
-    """A client, the provider calls it received, and the metrics rows it recorded."""
-    seen = {"runs": [], "rows": []}
+    """A client, the provider calls it received, the metrics rows and daily counts it recorded, and
+    the messages the model check was given (its answer is seen["verdict"], no concern by default)."""
+    seen = {"runs": [], "rows": [], "counts": [], "checked": []}
     user = {"who": STUDENT}
+
+    async def fake_check(messages):
+        seen["checked"].append(messages)
+        return seen.get("verdict", {"concern": False, "category": None, "ok": True, "usd": 0.0001})
+    monkeypatch.setattr(safety, "check", fake_check)
+    monkeypatch.setattr(safety, "_similar", lambda message: False)   # the word list alone, so each layer is seen
+    monkeypatch.setattr(metrics, "count", lambda name: seen["counts"].append(name))
 
     async def fake_run(provider, api_key, model, system_text, history, mcp, limits=None, stats=None):
         seen["runs"].append({"provider": provider, "model": model, "limits": limits, "key": api_key})
@@ -122,6 +130,73 @@ def test_a_capped_student_in_crisis_still_gets_the_help_panel(env):
     assert kinds.index("safety") < kinds.index("error")
     assert {"type": "error", "message": usage.CAPPED} in events and not env["runs"]
     assert env["rows"][0]["outcome"] == "capped"
+    assert env["counts"] == ["help_words"] and not env["checked"]   # the word check answered; no model check
+
+
+FLAGGED = {"concern": True, "category": "ABUSE", "ok": True, "usd": 0.0001}
+
+
+def _safety(events):
+    return [e for e in events if e["type"] == "safety"]
+
+
+def test_the_model_check_opens_the_window_the_word_check_missed(env):
+    env["verdict"] = FLAGGED
+    events, _ = _events(env, _study("hi", "Hello.", "things at home are bad", "Say more?", "who wrote John?"))
+    assert env["checked"] == [["hi", "things at home are bad", "who wrote John?"]]
+    win = _safety(events)
+    assert len(win) == 1 and win[0]["category"] == "ABUSE" and win[0]["resources"]
+    assert {"type": "end", "outcome": "complete"} in events   # the reply itself is unchanged
+    assert env["counts"] == ["help_check"]
+    assert env["rows"][-1]["est_usd"] == pytest.approx(0.0101)   # the check's cost is in the row
+
+
+def test_a_capped_student_gets_the_model_checks_window_before_the_cap_line(env):
+    env["cap"] = usage.CAPPED
+    env["verdict"] = FLAGGED
+    events, _ = _events(env, _study("things at home are really bad lately"))
+    kinds = [e["type"] for e in events]
+    assert kinds.index("safety") < kinds.index("error") and not env["runs"]
+    assert env["counts"] == ["help_check"]
+
+
+def test_a_reply_that_points_to_the_window_opens_it_once(env):
+    env["script"] = ["This matters. ", "Open Need help now below. ", "Tell a trusted adult. ",
+                     "Need help now has numbers to call. "]
+    events, _ = _events(env, _study("its all too much"))
+    assert len(_safety(events)) == 1 and env["counts"] == ["help_reply"]
+    kinds = [e["type"] for e in events]
+    assert kinds.index("safety") < [i for i, e in enumerate(events) if "Need help now" in e.get("text", "")][0]
+
+
+def test_the_window_opens_once_when_every_layer_flags(env):
+    env["verdict"] = FLAGGED
+    env["script"] = ["This matters. ", "Open Need help now below. "]
+    events, _ = _events(env, _study("my dad hits me"))
+    assert len(_safety(events)) == 1 and env["counts"] == ["help_words"]
+
+
+def test_a_failed_model_check_is_counted_and_the_reply_stands(env):
+    env["verdict"] = {"concern": False, "category": None, "ok": False, "usd": 0.0}
+    events, _ = _events(env, _study("Who was Nicodemus?"))
+    assert not _safety(events) and {"type": "end", "outcome": "complete"} in events
+    assert env["counts"] == ["check_failed"]
+
+
+def test_a_quiet_study_question_opens_nothing(env):
+    events, _ = _events(env, _study("Why did the Jews seek to kill Jesus in John 5?"))
+    assert not _safety(events) and env["counts"] == []
+
+
+def test_a_teacher_on_another_provider_gets_no_model_check(env):
+    env["user"]["who"] = TEACHER
+    _events(env, _study("Who was Nicodemus?"), provider="openai", model="gpt-5.6", api_key="sk-x")
+    assert not env["checked"]
+
+
+def test_a_bare_greeting_gets_no_model_check(env):
+    _events(env, _study("Hello!"))
+    assert not env["checked"]
 
 
 def test_too_many_turns_in_a_minute_are_refused_without_a_model_call(env):

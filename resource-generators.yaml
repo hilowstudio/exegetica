@@ -418,7 +418,7 @@ formats:
   - id: graphic_organizer
     name: Graphic Organizer (concept map / KWL / sequence / cause-effect)
     aka: [Graphic Organizers, Concept Map, Mind Map, KWL Chart, Sequence Chart, Cause and Effect, Interdisciplinary Connection Maps]
-    definition: A structured thinking scaffold that arranges information spatially — concept map, mind map, KWL, sequence/flow, cause-and-effect, or hierarchy.
+    definition: 'A structured thinking scaffold that arranges information spatially: a concept map, mind map, KWL chart, sequence or flow, cause and effect, or hierarchy.'
     use_when: Organizing ideas, activating prior knowledge, mapping relationships or processes.
     structure:
       - Title + which organizer + directions
@@ -475,7 +475,7 @@ formats:
   - id: annotated_map
     name: Map Activity (annotated or blank)
     aka: [Missionary Journey Maps, Bible Lands Topography Map, Silk Road Trade Route Map, Empire Map, Blank Political & Physical Maps, Map Quizzes]
-    definition: A geography resource keyed to a map — either an annotated/thematic map described in text, or a labeling/quiz activity over a (student-supplied or standard) map.
+    definition: 'A geography resource keyed to a map: either an annotated or thematic map described in text, or a labeling or quiz activity over a student-supplied or standard map.'
     use_when: Journeys, trade routes, empires, biblical geography, physical features, place identification.
     structure:
       - Title + region + map type
@@ -681,7 +681,7 @@ formats:
   - id: word_study
     name: Original-Language Word Study
     aka: [Greek Word Study Guides, Hebrew Word Study Guides, Word Study]
-    definition: 'A structured study of a single biblical word: lemma, semantic range, key usages, and interpretive payoff — built from the tools.'
+    definition: 'A structured study of a single biblical word, built from the library''s tools: lemma, semantic range, key usages, and interpretive payoff.'
     use_when: Studying a significant Greek/Hebrew term in a passage.
     structure:
       - The word (lemma + transliteration + Strong's) + the passage prompting it
@@ -724,7 +724,7 @@ formats:
   - id: writing_prompt_set
     name: Writing Prompt Set
     aka: [Creative Writing Prompts, Narrative Story Starters, Expository Topic Brainstormers, Journaling Prompts, Drawing Prompts]
-    definition: A set of prompts to spark writing (or drawing) in a mode — creative, narrative, expository, persuasive, or reflective/journal.
+    definition: 'A set of prompts to spark writing or drawing in one mode: creative, narrative, expository, persuasive, or reflective.'
     use_when: Sparking student writing; warm-ups; journals.
     structure:
       - Mode + directions (length/time)
@@ -846,7 +846,7 @@ formats:
   - id: logic_practice
     name: Logic / Reasoning Practice
     aka: [Syllogism Practice, Logical Fallacy Identification, Truth Table Practice, Deductive vs Inductive Quizzes, Argument Map]
-    definition: Exercises in formal or informal logic — syllogisms, validity, fallacy identification, truth tables, or argument mapping.
+    definition: 'Exercises in formal or informal logic: syllogisms, validity, fallacy identification, truth tables, or argument mapping.'
     use_when: Teaching logic and reasoning (Trivium, math logic, apologetics).
     structure:
       - The concept (brief) + example
@@ -861,7 +861,7 @@ formats:
   - id: labeled_diagram
     name: Labeled Diagram (labeling activity)
     aka: [Cell Diagram Labeling, Plant Part Labeling, Atmospheric Layer Diagrams, Anatomy, Architecture Identification]
-    definition: A labeling activity over a structure/system — described in text with a parts list, a blank labeling task, and a key.
+    definition: A labeling activity for a structure or system, described in text with a parts list, a blank labeling task, and a key.
     use_when: Learning the parts of a structure (cell, plant, atmosphere, instrument, building).
     structure:
       - Title + the structure + brief overview
@@ -974,7 +974,7 @@ formats:
   - id: checklist
     name: Checklist
     aka: [Skills Checklists, Safety Guides, Study Skills Checklists, Character Development Checklists, Quality Control Checklists]
-    definition: An actionable list of items to complete, verify, or observe — for skills, safety, quality, or accountability.
+    definition: An actionable list of items to complete, verify, or observe, for skills, safety, quality, or accountability.
     use_when: Verifying steps/skills/safety or tracking completion.
     structure:
       - Title + purpose + how to use
@@ -1026,7 +1026,7 @@ formats:
   - id: script
     name: Script (reader's theater / skit / dialogue)
     aka: [Reader's Theater Script, Scriptwriting Prompts, Public Reading Practice Scripts, Cantata Libretto]
-    definition: A performable script — reader's theater, skit, dramatized dialogue, or reading — with roles, lines, and stage/reading directions.
+    definition: A performable script, such as reader's theater, a skit, a dramatized dialogue, or a reading, with roles, lines, and stage or reading directions.
     use_when: Drama, oral reading, dramatized history/Scripture, language practice.
     structure:
       - Title + cast list (roles) + setting
@@ -1107,7 +1107,7 @@ formats:
   - id: exegesis_report
     name: Exegesis Report / Template
     aka: [Exegesis Report Templates]
-    definition: A rigorous passage exegesis template covering text, context, structure, grammar/lexis, theology, and application — for advanced study.
+    definition: A rigorous passage exegesis template for advanced study, covering text, context, structure, grammar and lexis, theology, and application.
     use_when: Seminary/college-level exegetical work.
     structure:
       - Passage + text-critical note (if any) + translation
@@ -1229,7 +1229,7 @@ formats:
   - id: apologetics_argument_map
     name: Apologetics Argument / Worldview Tool
     aka: [Argument Outline Templates, Counter-Argument Worksheets, Objection Handling Prompts, Worldview Comparison Grids]
-    definition: A tool for reasoning about worldviews and objections — argument outlines, objection→response frames, or worldview comparison.
+    definition: 'A tool for reasoning about worldviews and objections: argument outlines, objection-and-response frames, or worldview comparisons.'
     use_when: Apologetics, worldview analysis, handling objections.
     structure:
       - The claim / question / worldview in view
@@ -1420,7 +1420,7 @@ subjects:
 
   Universal (any subject):
     Curriculum & Delivery:
-      formats: [lesson_plan, unit_plan, student_packet, reading_anthology, slide_deck, rubric, answer_key, checklist, tracker]
+      formats: [lesson_plan, unit_plan, course_syllabus, student_packet, reading_anthology, slide_deck, rubric, answer_key, diagnostic, graphic_organizer, cornell_notes, faith_integration, checklist, tracker]
       signature:
         - {name: Teacher Guide, format: lesson_plan}
         - {name: Student Packet, format: student_packet}
@@ -1429,7 +1429,7 @@ subjects:
 
   Bible & Theology:
     Biblical Studies (OT & NT, Survey, Redemptive History):
-      formats: [inductive_passage_study, book_survey, harmony_chart, character_study, timeline, comparison_matrix, reading_comprehension_set, discussion_questions, quiz, study_guide, annotated_map]
+      formats: [bible_lesson_guide, bible_reading_guide, inductive_passage_study, book_survey, harmony_chart, character_study, family_tree, timeline, comparison_matrix, reading_comprehension_set, discussion_questions, quiz, study_guide, annotated_map, sermon_lesson_outline]
       signature:
         - {name: Chronological Timeline of Redemptive History, format: timeline}
         - {name: Covenant Study Chart, format: comparison_matrix}
@@ -1484,7 +1484,7 @@ subjects:
         - {name: Belief Comparison Chart, format: comparison_matrix}
         - {name: Unreached People Groups Map, format: annotated_map}
     Discipleship & Christian Living:
-      formats: [reflection_journal, tracker, scripture_memory_plan, devotional_guide, checklist, project_planner]
+      formats: [reflection_journal, tracker, scripture_memory_plan, devotional_guide, student_devotional, checklist, project_planner]
       signature:
         - {name: Prayer Journal, format: reflection_journal}
         - {name: Family Devotion Guide, format: devotional_guide}
@@ -1611,7 +1611,7 @@ subjects:
 
   History & Social Studies:
     World & U.S. History (all eras):
-      formats: [timeline, biography_profile, annotated_map, comparison_matrix, close_reading_guide, case_study, quiz, essay_assignment]
+      formats: [timeline, biography_profile, family_tree, annotated_map, comparison_matrix, close_reading_guide, case_study, quiz, essay_assignment]
       signature:
         - {name: Primary Source Analysis, format: close_reading_guide}
         - {name: Historical Figure Comparison, format: comparison_matrix}

@@ -1,4 +1,4 @@
-"""Decision F (docs/decisions/0015) and the bot's answer to "who can read this?" (0001, 0009).
+"""Decision F (docs/decisions/0015) and the bot's one reply about itself (0001).
 Reads the shipped page and prompts; no network, no cost."""
 import pathlib
 import re
@@ -25,11 +25,13 @@ def test_a_closed_study_cannot_send():
     assert "!isTeacher()&&start" in INDEX                     # the one-day rule is for students
 
 
-def test_every_chat_prompt_answers_who_reads_this_with_the_faq_facts():
-    faq = re.search(r"<summary>Who can read what I type\?</summary><p>(.*?)<a ", INDEX).group(1)
-    for fact in ("outside model provider", "limited time", "A. James Vega", "mandated reporter"):
-        assert fact in faq and fact in appmod.ABOUT_EXEGETICA, fact
-    assert "/privacy" in appmod.ABOUT_EXEGETICA
-    assert "Three exceptions" in appmod.CONDUCT_FLOOR and "who can read or see what is typed" in appmod.CONDUCT_FLOOR
-    for persona, subject in (("professor", "bible"), ("professor", "history")):
-        assert appmod.ABOUT_EXEGETICA in appmod._system_for(persona, subject)
+def test_every_chat_prompt_discusses_exegetica_only_by_its_tools_and_sources():
+    """Decision 0001 (2026-11-05): who made it, who reads it, how it works, its feelings, and its
+    model all get one fixed reply pointing to the FAQ; only its tools and sources are answered."""
+    assert "hello@hilowstudio.dev" in appmod.SELF_REPLY and "FAQ under the ⓘ icon" in appmod.SELF_REPLY
+    for persona, subject in (("professor", "bible"), ("professor", "history"), ("researcher", "history")):
+        prompt = appmod._system_for(persona, subject)
+        assert appmod.SELF_REPLY in prompt and "The one exception" in prompt and "Sources available" in prompt
+        for gone in ("A. James Vega", "Pastor Adam", "mandated reporter", "Three exceptions",
+                     "It has no feelings", "one plain answer"):
+            assert gone not in prompt, gone

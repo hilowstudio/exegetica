@@ -41,7 +41,8 @@ BIBLE = [
         [
             ("word_study", "The lexicon entry for a Strong's number or a Greek, Hebrew, or English word."),
             ("search_lexicon", "Search the Greek and Hebrew lexicons by English word, transliteration, or concept."),
-            ("search_by_strongs", "Every verse where a given Strong's-numbered word appears."),
+            ("search_by_strongs", "Every verse where a given Strong's-numbered word appears, in the whole Bible or "
+                                  "one book, with the original words around it and the words that most often follow."),
             ("parse_morphology", "Explain a grammatical parsing code."),
             ("vocabulary_list", "The rarest original-language words in a passage."),
         ],

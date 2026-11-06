@@ -8,7 +8,8 @@ check passes, and it deploys only when asked. In order:
   1. the git tree is clean (untracked files count: they would ship too)
   2. pytest
   3. the Bible and History tool checks, and one stdio round trip through the app's own bridge
-  4. the voice lint (a warning only: it reports older copy too)
+  4. the voice lint over the pages, and over the assembled student prompts (warnings only: the
+     pages hold older copy too)
   5. the student prompt has a recorded probe: the maker probes the bot himself, then records the
      prompt with --record-probe; a changed prompt needs a new record before it ships
   6. with --deploy: `fly deploy`, then the live site is checked: /api/config reports the same tool
@@ -211,6 +212,9 @@ def main() -> int:
 
     code, out = run([PY, "scripts/lint_voice.py"])
     say(None if code else True, "voice lint" + ("" if code == 0 else " reports tics (not blocking)"))
+    code, out = run([PY, "scripts/lint_voice.py", "--prompts"])
+    say(None if code else True, "student prompts pass their own voice rules"
+        + ("" if code == 0 else ": tics reported (not blocking)"))
 
     fp = prompt_fingerprint()
     probed = any(r.get("prompt_hash") == fp["prompt_hash"] and r.get("model") == fp["model"] for r in load_records())
