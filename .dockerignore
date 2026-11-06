@@ -42,8 +42,6 @@ evals/
 # NOTE: docs/ is intentionally NOT ignored — the /course and /calendar views
 # read the John lessons, materials, and calendar JSON from docs/ at runtime.
 
-# Root-level files the image does not copy
-favicon1.png
-exegetica-logo-black-on-white.png
-A-peaceful-garden-scene-with-blooming-flowers-and-soft-tones-creating-a-soothing-atmosphere.webp
+# Brand source images and stray PDFs the image does not use
+assets/brand/
 *.pdf

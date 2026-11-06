@@ -13,8 +13,8 @@ title-token overlap + surname guard, and records the best match:
 Threaded + resumable: re-running only queries rows whose `_archived` flag is empty, and it
 checkpoints psych_sources.csv every 200 lookups.
 
-    python scripts/psych_archive.py            # run/continue
-    python scripts/psych_archive.py --workers 12
+    python scripts/psych/psych_archive.py            # run/continue
+    python scripts/psych/psych_archive.py --workers 12
 """
 from __future__ import annotations
 import argparse, csv, os, sys, threading, time
@@ -25,7 +25,9 @@ sys.stdout.reconfigure(encoding="utf-8")
 import httpx
 from psych_find_sources import sig_tokens, surname, tok_subset_score
 
-SRC = "psych_sources.csv"
+HERE = os.path.dirname(os.path.abspath(__file__))   # the lists live beside these scripts
+ROOT = os.path.dirname(os.path.dirname(HERE))
+SRC = os.path.join(HERE, "psych_sources.csv")
 UA = {"User-Agent": "ExegeticaReadingRoom/1.0 (library sourcing; hello@hilowstudio.dev)"}
 ADV = "https://archive.org/advancedsearch.php"
 _lock = threading.Lock()

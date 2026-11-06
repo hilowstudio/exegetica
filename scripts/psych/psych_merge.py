@@ -16,7 +16,9 @@ sys.stdout.reconfigure(encoding="utf-8")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from psych_cleanup import load, classify
 
-DECISIONS_GLOB = ".seed_cache/psych_slices/decisions_*.csv"
+HERE = os.path.dirname(os.path.abspath(__file__))   # the lists live beside these scripts
+ROOT = os.path.dirname(os.path.dirname(HERE))
+DECISIONS_GLOB = os.path.join(ROOT, ".seed_cache", "psych_slices", "decisions_*.csv")
 
 
 def main():
@@ -56,10 +58,10 @@ def main():
                 r["keep_reason"] = f"ambig:{why}"; keep.append(r)
 
     cols = ["cosine", "tier", "Title", "Author", "Reg. No.", "Status"]
-    with open("psych_cleaned_keep.csv", "w", encoding="utf-8", newline="") as f:
+    with open(os.path.join(HERE, "psych_cleaned_keep.csv"), "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols + ["keep_reason"], extrasaction="ignore")
         w.writeheader(); w.writerows(keep)
-    with open("psych_dropped.csv", "w", encoding="utf-8", newline="") as f:
+    with open(os.path.join(HERE, "psych_dropped.csv"), "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols + ["drop_reason"], extrasaction="ignore")
         w.writeheader(); w.writerows(drop)
 

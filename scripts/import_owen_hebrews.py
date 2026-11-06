@@ -54,7 +54,7 @@ def _clean(text: str) -> str:
 def _epubs() -> list[tuple[int, pathlib.Path]]:
     """The 7 volumes, ordered by volume number (from filename: ''=1, '2'=2, …)."""
     out = []
-    for p in _ROOT.glob("An Exposition of the Epistle to - John Owen*.epub"):
+    for p in (_ROOT / "data" / "epub").glob("An Exposition of the Epistle to - John Owen*.epub"):
         m = re.search(r"Owen(\d*)\.epub$", p.name)
         out.append((int(m.group(1)) if m and m.group(1) else 1, p))
     return sorted(out)
@@ -101,7 +101,7 @@ def main() -> None:
 
     vols = _epubs()
     if not vols:
-        sys.exit("Owen Hebrews EPUBs not found in the repo root.")
+        sys.exit("Owen Hebrews EPUBs not found in data/epub/.")
     if not _DB.exists():
         sys.exit("db/theology.db not found — build_theology_grounding.py first.")
 

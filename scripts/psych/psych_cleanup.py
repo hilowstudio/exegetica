@@ -10,15 +10,17 @@ Pass 1 (this file): a lexicon buckets each row into
   AMBIG  - neither (abstract titles needing per-title judgment)
 Pass 2 (downstream): LLM judgment on the AMBIG residue.
 
-    python scripts/psych_cleanup.py --measure          # bucket counts + samples
-    python scripts/psych_cleanup.py --emit-ambig FILE   # write the AMBIG rows for judgment
-    python scripts/psych_cleanup.py --write             # write keep/drop/ambig CSVs
+    python scripts/psych/psych_cleanup.py --measure          # bucket counts + samples
+    python scripts/psych/psych_cleanup.py --emit-ambig FILE   # write the AMBIG rows for judgment
+    python scripts/psych/psych_cleanup.py --write             # write keep/drop/ambig CSVs
 """
 from __future__ import annotations
-import argparse, csv, re, sys
+import argparse, csv, os, re, sys
 sys.stdout.reconfigure(encoding="utf-8")
 
-SRC = "psych_candidates_semantic_filtered.csv"
+HERE = os.path.dirname(os.path.abspath(__file__))   # the lists live beside these scripts
+ROOT = os.path.dirname(os.path.dirname(HERE))
+SRC = os.path.join(HERE, "psych_candidates_semantic_filtered.csv")
 
 # --- STRONG psychology stems: presence => KEEP, overrides any exclusion term in the title ---
 PSYCH_STRONG = [

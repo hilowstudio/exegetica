@@ -34,7 +34,7 @@ for _stream in (sys.stdout, sys.stderr):
         pass
 
 _ROOT = pathlib.Path(__file__).resolve().parent.parent
-_EPUB = _ROOT / "Expository Thoughts  - J. C. Ryle.epub"
+_EPUB = _ROOT / "data" / "epub" / "Expository Thoughts  - J. C. Ryle.epub"
 _DB = _ROOT / "db" / "study_bible.db"
 _SOURCE = "ryle-expository"
 

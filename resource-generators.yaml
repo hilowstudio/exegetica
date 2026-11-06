@@ -16,7 +16,7 @@
 # format's definition + structure + grade-band adaptation, and the subject
 # context into the model, which returns one clean, downloadable document.
 #
-# Seed for this catalog: GENERATOR_CONTENT_TYPES.YAML (the instructor's list).
+# Seed for this catalog: docs/generator-content-types.yaml (the instructor's list).
 # =============================================================================
 
 version: 1

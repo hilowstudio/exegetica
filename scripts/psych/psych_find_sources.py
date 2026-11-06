@@ -8,16 +8,18 @@ tokens should be a near-subset of the Gutenberg title's tokens).
 Emits psych_sources.csv: the input columns + gutenberg_id, gutenberg_title, match_score, source.
 Later phases fill `source` for the rest from archive.org etc.
 
-    python scripts/psych_find_sources.py --gutenberg
+    python scripts/psych/psych_find_sources.py --gutenberg
 """
 from __future__ import annotations
-import argparse, csv, re, sys
+import argparse, csv, os, re, sys
 from collections import defaultdict
 sys.stdout.reconfigure(encoding="utf-8")
 
-KEEP = "psych_cleaned_keep.csv"
-PG = ".seed_cache/pg_catalog.csv"
-OUT = "psych_sources.csv"
+HERE = os.path.dirname(os.path.abspath(__file__))   # the lists live beside these scripts
+ROOT = os.path.dirname(os.path.dirname(HERE))
+KEEP = os.path.join(HERE, "psych_cleaned_keep.csv")
+PG = os.path.join(ROOT, ".seed_cache", "pg_catalog.csv")
+OUT = os.path.join(HERE, "psych_sources.csv")
 
 STOP = set("the a an of and or to in on for with by is are as at from be this that his her its "
            "their our your my we you they it into out about over under between within without "
