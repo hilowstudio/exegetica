@@ -55,6 +55,22 @@ Check the answer against its sources too. Each reply names what it drew on, so y
 
 Exegetica quotes the English Standard Version (ESV), the translation your Bible class uses, unless you ask for another. If the ESV can't be reached, it shows the Berean Standard Bible (BSB) instead and says so. It can also show the New English Translation (NET), the King James Version (KJV), the World English Bible, the American Standard Version, and Young's Literal Translation. Ask for one by name, for example "Show John 3:16 in the KJV," or ask it to compare translations side by side. It can also show the Hebrew and Greek words behind a verse.
 
+**What sources does Exegetica have access to?**
+
+Exegetica answers from its own library, through 33 read-only study tools.
+
+For the text of Scripture, it holds five English translations: the Berean Standard Bible, World English Bible, King James Version, American Standard Version, and Young's Literal Translation. It reads the ESV and the NET live from their publishers, and it holds the Septuagint, the ancient Greek Old Testament, with an English translation.
+
+For the original languages, it has the Hebrew Old Testament and Greek New Testament tagged word by word, from STEPBible at Tyndale House, Cambridge, with four lexicons: Brown-Driver-Briggs, Abbott-Smith, Liddell-Scott-Jones, and an extended Strong's.
+
+For study, it has cross-references and parallel passages, a guide to the Bible's people, places, and events, study notes, two Bible dictionaries, and translators' notes on key terms.
+
+For the voice of the church, it has commentaries by Matthew Henry, John Calvin, John Gill, Adam Clarke, Jamieson-Fausset-Brown, and Keil and Delitzsch, comments from the church fathers arranged by verse, nearly a thousand classic works of theology, and the creeds, confessions, and catechisms of the Ecumenical, Reformed, Lutheran, Anglican, Catholic, and Orthodox traditions.
+
+It also holds the Gospel of John course materials for the school's Bible class.
+
+[See every work, with counts and licenses.](/corpus)
+
 **Why did a help window pop up?**
 
 Exegetica opens the **Need help now?** window when a message sounds like you or someone you know may be in danger: thoughts of suicide or self-harm, being hurt or abused, a threat to hurt others, or another emergency. The window lists people who can help right away, free and private: the 988 Suicide & Crisis Lifeline, the Childhelp hotline, Crisis Text Line, and 911.
@@ -262,7 +278,7 @@ Questions this FAQ doesn't answer can go to hello@hilowstudio.dev.
 - **Set aside for now (2026-11-06): "Will I be told if my child's messages open the Need help now? window?"** The honest answer today is no: nothing is sent to anyone, and the opening isn't saved with the study. Revisit once the read-and-report procedure under decision 0009 exists.
 
 - **Phone: the bottom rail covers "Need help now?"** At phone width the fixed bottom rail sits over the hint line under the message box, hiding the Privacy and **Need help now?** links, which the help-window answer tells students to use. Give the chat column bottom room for the rail on narrow screens. The message box's placeholder is also clipped mid-word there.
-- **Home screen.** Add a web app manifest (name, start URL `/`, the existing `icon-192.png` and `icon-512.png`, standalone display, theme color) so Android offers to install Exegetica as an app that opens full screen; today it adds a plain shortcut. Add the `apple-touch-icon` link to `reader.html`, the one page without it.
+- **Home screen.** Done 2026-11-06 with the new E icon (`scripts/build_icons.py`): every page links the icon set and `webapp/static/manifest.json`, which gives Android its 192 and 512 px icons, and the site root answers `/favicon.ico` and `/apple-touch-icon.png`. Still open: the manifest sets no standalone display, so Android adds a browser shortcut rather than a full-screen app. That's the maker's call.
 - **Port Podcatch's podcast and video processing before the Living Library answer ships.** From `../podcatch` (`inngest/functions/process-episode.ts`, `lib/transcripts.ts`, `lib/ai/video`): feeds that bring in new episodes, the publisher's transcript or Deepgram transcription with speakers and word timing, YouTube captions or Gemini watching the video, a summary, five takeaways, timestamped chapters, people, books, and ideas, books and links mentioned, the following transcript, highlights, asking questions of an episode, collections that compare episodes, and processing once for everyone. Leave out the social posts. Add Deepgram and Google to the privacy page's list of who receives what.
 - **Living Library media can't be opened.** A saved video's screen shows a play symbol that links nowhere, and a podcast's view is a turntable graphic with no audio or link. Make the video open on YouTube and the podcast link to its show (Apple Podcasts or its feed). Study sets from episodes and videos are the "next phase" the page already promises.
 - **The Living Library shelf doesn't feed the Prep Room.** The Prep Room's "From a book" picks from the Reading Room's books only, so a book a teacher adds to their shelf, or uploads, isn't offered there unless the Reading Room also holds it.

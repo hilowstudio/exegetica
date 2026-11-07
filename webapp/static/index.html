@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Exegetica</title>
-<link rel="icon" href="/static/icons/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png">
-<link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
+<link rel="icon" href="/static/icons/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=2">
+<link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/static/manifest.json">
 <link rel="stylesheet" href="/static/fonts/app.css">
 <link rel="stylesheet" href="/static/scrollbars.css">
 <style>
@@ -101,22 +102,32 @@
   .corpus-info{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;color:var(--ink-faint);text-decoration:none}
   .corpus-info:hover{color:var(--accent);background:var(--surface)}
   .corpus-info svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-  /* info bubble: the tools and sources this mode can reach */
+  /* the About Exegetica window (info button): About and FAQs tabs */
   .src-btn{display:inline-flex;vertical-align:-5px;align-items:center;justify-content:center;width:26px;height:26px;margin-left:4px;padding:0;border:0;border-radius:8px;background:none;color:var(--ink-faint);cursor:pointer}
   .src-btn:hover,.src-btn:focus-visible{color:var(--accent);background:var(--surface)}
   .src-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
   .src-btn:focus-visible,.corpus-info:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   @media (pointer:coarse){.src-btn,.corpus-info{width:44px;height:44px}.src-btn{vertical-align:middle;margin-left:0}}
   .help-card.src-card{max-width:640px}
-  .src-g{border-top:1px solid var(--rule);padding:12px 2px 6px}
-  .src-g h4{margin:0 0 6px;font-family:var(--serif);font-size:16px;color:var(--ink)}
-  .src-g ul{list-style:none;margin:0;padding:0}
-  .src-g li{font-size:13.5px;line-height:1.5;padding:2px 0;color:var(--ink)}
-  .src-g code{font-family:var(--mono);font-size:12px;color:var(--iron);margin-right:7px}
-  .src-from{font-size:12.5px;line-height:1.5;color:var(--ink-soft);margin:7px 0 8px}
-  .src-from span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--iron-soft);margin-right:7px}
-  .src-foot{border-top:1px solid var(--rule);padding:12px 2px 8px;font-size:13px}
-  .src-foot a{color:var(--iron)}
+  .src-intro p{margin:0 2px 12px;font-size:14px;line-height:1.6;color:var(--ink-soft)}
+  .src-intro p.about-lead{font-size:15.5px;color:var(--ink);margin-top:14px}
+  .src-intro strong{color:var(--ink);font-weight:600}
+  .about-go{border:none;background:none;padding:0;font:inherit;color:var(--iron);text-decoration:underline;cursor:pointer}
+  .about-go:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .src-tabs{display:flex;gap:4px;border-bottom:1px solid var(--rule);margin:2px 0 4px}
+  .src-tab{border:none;background:none;color:var(--ink-soft);font:inherit;font-size:13.5px;font-weight:600;padding:8px 12px;border-bottom:2px solid transparent;margin-bottom:-1px;cursor:pointer}
+  .src-tab:hover{color:var(--ink)}
+  .src-tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+  .src-tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  #src-about:focus-visible,#src-faq:focus-visible{outline:none}
+  .faq-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 8px}
+  .faq-link{display:block;border:1px solid var(--rule-strong);border-radius:10px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+  .faq-link:hover,.faq-link:focus-visible{border-color:var(--accent)}
+  .faq-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .faq-link strong{display:block;font-size:14.5px;font-weight:600;margin-bottom:3px}
+  .faq-link span{display:block;font-size:12.5px;line-height:1.45;color:var(--ink-soft)}
+  @media (max-width:520px){.faq-links{grid-template-columns:1fr}}
+  @media (pointer:coarse){.src-tab{min-height:44px}}
   .src-h{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--iron-soft);margin:14px 0 6px}
   .faq{border-top:1px solid var(--rule)}
   .faq summary{cursor:pointer;font-size:14px;font-weight:600;line-height:1.4;color:var(--ink);padding:9px 2px}
@@ -236,19 +247,6 @@
   .btn-solid{font-family:var(--sans);font-weight:600;font-size:14px;border:0;border-radius:9px;background:var(--accent);color:var(--on-accent);padding:9px 18px;cursor:pointer}
   .btn-ghost{font-family:var(--sans);font-weight:600;font-size:14px;border:1px solid var(--rule-strong);border-radius:9px;background:var(--surface);color:var(--ink-soft);padding:9px 14px;cursor:pointer}
   .btn-ghost:hover{color:var(--ink);border-color:var(--ink-faint)}
-  .modal.wide{max-width:600px;max-height:88vh;overflow-y:auto}
-  .about-lede{font-family:var(--serif);font-size:1.05rem;color:var(--ink);margin:0 0 6px;line-height:1.5}
-  .about h3{font-family:var(--serif);font-weight:600;font-size:1rem;color:var(--ink);margin:16px 0 2px}
-  .about p{font-size:14px;color:var(--ink-soft);margin:0 0 2px;line-height:1.55}
-  .about .caveat{font-size:13px;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--rule);border-radius:9px;padding:11px 13px;margin-top:16px}
-  .tabs{display:flex;gap:4px;border-bottom:1px solid var(--rule);margin:2px 0 16px}
-  .tab{font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink-soft);background:none;border:0;border-bottom:2px solid transparent;padding:7px 12px;cursor:pointer;margin-bottom:-1px}
-  .tab.on{color:var(--accent);border-bottom-color:var(--accent)}
-  .pane{display:none}.pane.on{display:block}
-  .reslist{display:flex;flex-direction:column;gap:11px}
-  .resgroup{border-left:2px solid var(--iron);padding-left:12px}
-  .resgroup h4{font-family:var(--serif);font-weight:600;font-size:.92rem;color:var(--ink);margin:0 0 1px}
-  .resgroup p{font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.5}
 
   /* ---------- mobile ---------- */
   @media(max-width:640px){
@@ -315,7 +313,7 @@
         <button id="p-aide" aria-pressed="false" type="button">Aide</button>
         <button id="p-researcher" aria-pressed="false" type="button">Researcher</button>
       </div>
-      <a class="corpus-info" href="/corpus" data-src title="FAQ, tools, and sources" aria-label="About Exegetica: FAQ, tools, and sources"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></a>
+      <a class="corpus-info" href="/corpus" data-src title="About Exegetica and FAQs" aria-label="About Exegetica and FAQs"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></a>
     </div>
 
     <main class="scroll" id="main">
@@ -324,7 +322,7 @@
           <div class="es-bible">
           <div class="eyebrow">Answers you can check</div>
           <h1>Begin a study</h1>
-          <p>Ask about a passage, a word, a doctrine, or the historic church. Every answer is drawn from the Exegetica library of tools and sources.<button class="src-btn" type="button" data-src aria-haspopup="dialog" aria-label="About Exegetica: FAQ, tools, and sources" title="FAQ, tools, and sources"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button></p>
+          <p>Ask about a passage, a word, a doctrine, or the historic church. Every answer is drawn from the Exegetica library of tools and sources.<button class="src-btn" type="button" data-src aria-haspopup="dialog" aria-label="About Exegetica and FAQs" title="About Exegetica and FAQs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button></p>
           <div class="exgroups" id="examples">
             <div class="exg">
               <div class="exh">Word &amp; language</div>
@@ -351,7 +349,7 @@
           <div class="es-history" hidden>
           <div class="eyebrow">Answers you can check</div>
           <h1>Begin an inquiry</h1>
-          <p>Ask about a person, an event, a document, a court case, or a law. Every answer is drawn from the primary sources and cited.<button class="src-btn" type="button" data-src aria-haspopup="dialog" aria-label="About Exegetica: FAQ, tools, and sources" title="FAQ, tools, and sources"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button></p>
+          <p>Ask about a person, an event, a document, a court case, or a law. Every answer is drawn from the primary sources and cited.<button class="src-btn" type="button" data-src aria-haspopup="dialog" aria-label="About Exegetica and FAQs" title="About Exegetica and FAQs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button></p>
           <div class="exgroups">
             <div class="exg">
               <div class="exh">Primary sources</div>
@@ -413,8 +411,20 @@
       <div class="help-card src-card">
         <button class="help-x" id="src-close" type="button" aria-label="Close">&times;</button>
         <h3 id="src-title">About Exegetica</h3>
+        <div class="src-tabs" role="tablist" aria-label="About Exegetica">
+          <button class="src-tab" type="button" role="tab" id="src-tab-about" aria-controls="src-about" aria-selected="true">About</button>
+          <button class="src-tab" type="button" role="tab" id="src-tab-faq" aria-controls="src-faq" aria-selected="false" tabindex="-1">FAQs</button>
+        </div>
+        <div id="src-about" role="tabpanel" aria-labelledby="src-tab-about" tabindex="0">
+          <div class="src-intro">
+            <p class="about-lead">Exegetica is a study tool made to help you to study Scripture closely with a library of trusted sources at hand while leaving the thinking to you.</p>
+            <p><strong>Study in chat.</strong> Ask about a passage, a Hebrew or Greek word, a person or place in the Bible, a doctrine, or any other question your Bible brings up for you. Exegetica looks things up in its library before it answers, names the sources it used, and checks its quotations, so you can open them and read for yourself.</p>
+            <p>For help with memorizing Scripture, the Scripture Memory tool will help you to take a verse from first reading to full recall in eight steps.</p>
+            <p>Common questions about Exegetica are answered under <button type="button" class="about-go" id="about-to-faq">FAQs</button>.</p>
+          </div>
+        </div>
+        <div id="src-faq" role="tabpanel" aria-labelledby="src-tab-faq" tabindex="0" hidden>
         <div id="faq">
-          <div class="src-h">FAQ</div>
 <!-- FAQ:start (built by scripts/build_faq.py from docs/faq.md) -->
 <div class="faq-h">Students</div>
 <details class="faq"><summary>Is using Exegetica cheating?</summary><p>It depends on your teacher. The Student Handbook does not allow AI tools on coursework unless your teacher approves them in advance, and it treats AI use without permission or credit as academic dishonesty. So ask first, and when your teacher says yes, say that you used Exegetica. It will help you find sources, understand a passage, and check facts. It will not write an essay or answer graded work for you.</p>
@@ -443,6 +453,13 @@
 <p>Then tell us. Use the <strong>Copy</strong> button under the reply, and email it with the question you asked to hello@hilowstudio.dev. Every report is read, and a fix to the library, the tools, or Exegetica's instructions reaches everyone who uses it.</p>
 <p>Check the answer against its sources too. Each reply names what it drew on, so you can open the passage or commentary and see what it says. If the mistake touches your schoolwork, tell your teacher.</p></details>
 <details class="faq"><summary>Which Bible does it use?</summary><p>Exegetica quotes the English Standard Version (ESV), the translation your Bible class uses, unless you ask for another. If the ESV can't be reached, it shows the Berean Standard Bible (BSB) instead and says so. It can also show the New English Translation (NET), the King James Version (KJV), the World English Bible, the American Standard Version, and Young's Literal Translation. Ask for one by name, for example &quot;Show John 3:16 in the KJV,&quot; or ask it to compare translations side by side. It can also show the Hebrew and Greek words behind a verse.</p></details>
+<details class="faq"><summary>What sources does Exegetica have access to?</summary><p>Exegetica answers from its own library, through 33 read-only study tools.</p>
+<p>For the text of Scripture, it holds five English translations: the Berean Standard Bible, World English Bible, King James Version, American Standard Version, and Young's Literal Translation. It reads the ESV and the NET live from their publishers, and it holds the Septuagint, the ancient Greek Old Testament, with an English translation.</p>
+<p>For the original languages, it has the Hebrew Old Testament and Greek New Testament tagged word by word, from STEPBible at Tyndale House, Cambridge, with four lexicons: Brown-Driver-Briggs, Abbott-Smith, Liddell-Scott-Jones, and an extended Strong's.</p>
+<p>For study, it has cross-references and parallel passages, a guide to the Bible's people, places, and events, study notes, two Bible dictionaries, and translators' notes on key terms.</p>
+<p>For the voice of the church, it has commentaries by Matthew Henry, John Calvin, John Gill, Adam Clarke, Jamieson-Fausset-Brown, and Keil and Delitzsch, comments from the church fathers arranged by verse, nearly a thousand classic works of theology, and the creeds, confessions, and catechisms of the Ecumenical, Reformed, Lutheran, Anglican, Catholic, and Orthodox traditions.</p>
+<p>It also holds the Gospel of John course materials for the school's Bible class.</p>
+<p><a href="/corpus">See every work, with counts and licenses.</a></p></details>
 <details class="faq"><summary>Why did a help window pop up?</summary><p>Exegetica opens the <strong>Need help now?</strong> window when a message sounds like you or someone you know may be in danger: thoughts of suicide or self-harm, being hurt or abused, a threat to hurt others, or another emergency. The window lists people who can help right away, free and private: the 988 Suicide &amp; Crisis Lifeline, the Childhelp hotline, Crisis Text Line, and 911.</p>
 <p>The <strong>Need help now?</strong> window does not automatically alert any service line or resource. Your study is saved like any other, and it can be monitored or reviewed. Exegetica errs toward offering help, so the window sometimes opens on a joke or a question about a hard topic. If that happens, close it and keep studying. You can open it yourself any time with <strong>Need help now?</strong> under the message box.</p>
 <p>If you are in danger, or someone you know is, tell a parent, pastor, teacher, or friend you trust today.</p></details>
@@ -579,10 +596,11 @@
 <p>Questions this FAQ doesn't answer can go to hello@hilowstudio.dev.</p></details>
 <!-- FAQ:end -->
         </div>
-        <div class="src-h">Tools and sources</div>
-        <p id="src-lead" class="help-lead"></p>
-        <div id="src-list"></div>
-        <div class="src-foot"><a href="/corpus">Full inventory: every work, with counts and licenses</a> &middot; <a href="/position">Position on AI</a> &middot; <a href="/quiet-standards">Quiet Standards</a> &middot; <a href="/privacy">Privacy</a></div>
+        <div class="faq-links">
+          <a class="faq-link" href="/privacy"><strong>Privacy</strong><span>What Exegetica keeps, who receives it, and who can read it</span></a>
+          <a class="faq-link" href="/position"><strong>Position statement</strong><span>The wise and ethical use of AI in Christian education</span></a>
+        </div>
+        </div>
       </div>
     </div>
   </div>
@@ -696,23 +714,26 @@ document.getElementById("help-link").onclick=e=>{e.preventDefault();openHelp();}
 helpBg.addEventListener("click",e=>{if(e.target===helpBg)closeHelp();});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&helpBg.classList.contains("open"))closeHelp();});
 
-/* ---------- info bubble: the tools and sources the current mode can reach (catalog from /api/config) ---------- */
-const srcBg=document.getElementById("src-bg"),srcList=document.getElementById("src-list"),srcLead=document.getElementById("src-lead");
+/* ---------- the About Exegetica window: an About tab and the FAQs (built from docs/faq.md) ---------- */
+const srcBg=document.getElementById("src-bg");
 let srcOpener=null;
-function srcHtml(groups){
-  return (groups||[]).map(g=>{
-    const tools=g.tools.map(t=>`<li><code>${helpEsc(t.name)}</code>${helpEsc(t.desc)}</li>`).join("");
-    const from=g.sources?`<div class="src-from"><span>Sources</span>${helpEsc(g.sources)}</div>`:"";
-    return `<section class="src-g"><h4>${helpEsc(g.group)}</h4><ul>${tools}</ul>${from}</section>`;
-  }).join("");
-}
 function openSources(opener){
-  const groups=(CFG.catalog&&CFG.catalog[subject])||[];
-  const n=groups.reduce((a,g)=>a+g.tools.length,0);
-  srcLead.textContent=groups.length?`This chat can call ${n} read-only tools. Answers are built from what the tools return, drawn from the sources listed under each group.`:"The tool list is not available right now.";
-  srcList.innerHTML=srcHtml(groups);
+  srcTab(srcTabs[0],false);
   srcOpener=opener||null;srcBg.classList.add("open");document.getElementById("src-close").focus();
 }
+const srcTabs=[...document.querySelectorAll(".src-tab")];
+function srcTab(tab,focus){
+  srcTabs.forEach(t=>{const on=t===tab;t.setAttribute("aria-selected",on);t.tabIndex=on?0:-1;
+    document.getElementById(t.getAttribute("aria-controls")).hidden=!on;});
+  if(focus)tab.focus();
+}
+srcTabs.forEach((t,i)=>{
+  t.onclick=()=>srcTab(t,false);
+  t.onkeydown=e=>{const n=srcTabs.length,k=e.key;
+    const j=k==="ArrowRight"?(i+1)%n:k==="ArrowLeft"?(i+n-1)%n:k==="Home"?0:k==="End"?n-1:-1;
+    if(j>=0){e.preventDefault();srcTab(srcTabs[j],true);}};
+});
+document.getElementById("about-to-faq").onclick=()=>srcTab(srcTabs[1],true);
 function closeSources(){srcBg.classList.remove("open");if(srcOpener){srcOpener.focus();srcOpener=null;}}
 document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-src]");if(b){e.preventDefault();openSources(b);}});
 document.getElementById("src-close").onclick=closeSources;
