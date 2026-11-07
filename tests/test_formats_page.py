@@ -16,7 +16,7 @@ def test_every_format_is_filed_under_a_subject():
 
 def test_the_page_lists_every_format_by_subject_and_no_withheld_one():
     r = TestClient(appmod.app).get("/prep-room/formats")
-    assert r.status_code == 200 and r.headers["cache-control"] == "no-cache"
+    assert r.status_code == 200 and r.headers["cache-control"] == "private, no-cache"
     for f in generator.FORMATS.values():
         assert html.escape(f["name"]) in r.text, f["id"]
     for subject in generator._catalog["subjects"]:

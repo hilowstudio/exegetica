@@ -6,12 +6,13 @@ import re
 from webapp import app as appmod
 from webapp import policy
 
-INDEX = (pathlib.Path(__file__).resolve().parents[1] / "webapp" / "static" / "index.html").read_text(encoding="utf-8")
+_WEBAPP = pathlib.Path(__file__).resolve().parents[1] / "webapp"
+INDEX = "\n".join((_WEBAPP / p).read_text(encoding="utf-8") for p in ("templates/chat.html", "static/js/chat.js"))
 
 
 def test_the_page_closes_a_study_where_the_server_would_refuse_it():
     m = re.search(r"const OPEN_HOURS=(\d+),MAX_MESSAGES=(\d+);", INDEX)
-    assert m, "studyClosed() constants not found in index.html"
+    assert m, "studyClosed() constants not found in the chat page"
     assert int(m.group(1)) == 24
     assert int(m.group(2)) == policy.MAX_MESSAGES
 

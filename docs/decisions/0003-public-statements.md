@@ -6,6 +6,6 @@ Decided by A. James Vega, 2026-11-02.
 
 **Why.** The position statement is theological and pastoral; the framework statement is an engineering standard. Mixing them weakens both.
 
-**Enforced in.** `webapp/about.py` renders `docs/position-statement-christian-school-theologian.md` and `docs/quiet-standards-statement.md`; the FAQ and the info bubble in `webapp/static/index.html` link to each page separately.
+**Enforced in.** `webapp/about.py` renders `docs/position-statement-christian-school-theologian.md` and `docs/quiet-standards-statement.md`; the FAQ (`webapp/templates/partials/faq.html`) and the info bubble in `webapp/templates/chat.html` link to each page separately.
 
 **Reverse when.** By the maker's decision. If the promise about faces and voices ever stops being true (for example, if a feature generated images of students), the promise must be removed before the feature ships.

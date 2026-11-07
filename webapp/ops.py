@@ -21,9 +21,9 @@ import logging
 import os
 
 import asyncpg
-from starlette.responses import HTMLResponse, PlainTextResponse
+from starlette.responses import PlainTextResponse
 
-from webapp import about, auth, db, metrics, retention, usage
+from webapp import about, auth, db, metrics, retention, shell, usage
 
 logger = logging.getLogger("study-bible-web.ops")
 
@@ -137,14 +137,5 @@ async def page(request):
         f"<tr><th>Account-data purge</th><td>{'on' if retention.enabled() else 'off'}</td></tr>"
         "</table>"
     )
-    css = ("table{border-collapse:collapse;font-family:Inter,system-ui,sans-serif;font-size:14px;margin:.5em 0}"
-           "th,td{border-bottom:1px solid var(--rule);padding:6px 10px;text-align:left;vertical-align:top}"
-           ".wide{overflow-x:auto}main{max-width:1100px}")
-    return HTMLResponse(
-        "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
-        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
-        "<meta name=\"robots\" content=\"noindex\"><title>Operations | Exegetica</title>"
-        "<link rel=\"stylesheet\" href=\"/static/fonts.css\">"
-        f"<style>{about._CSS}{css}</style></head><body><main>"
-        "<nav><a href=\"/\">Back to chat</a></nav>" + out + "</main></body></html>",
-        headers={"Cache-Control": "no-store"})
+    return shell.render(request, about.prose("Operations", out, css=("/static/css/ops.css",), noindex=True),
+                        cache="no-store")

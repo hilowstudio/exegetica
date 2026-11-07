@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% block title %}Reading Room — Exegetica{% endblock %}
+{% block meta %}<meta name="description" content="Read public-domain classics in Exegetica — the Reading Room.">{% endblock %}
+{% block fonts %}<link rel="stylesheet" href="/static/fonts/reader.css">{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/reader.css">{% endblock %}
+{% block content %}
+  <header class="topbar">
+    <a class="tb-back" id="back" href="/read">‹ Library</a>
+    <div class="tb-title" id="topTitle">Reading Room</div>
+    <div class="tb-ctrls">
+      <button class="iconbtn tb-toc" id="tocToggle" title="Contents" hidden>☰</button>
+      <button class="iconbtn sm" id="fMinus" title="Smaller text" hidden>A−</button>
+      <button class="iconbtn sm" id="fPlus" title="Larger text" hidden>A+</button>
+      <button class="iconbtn sm" id="fFace" title="Typeface: EB Garamond or Literata" hidden>Aa</button>
+    </div>
+  </header>
+
+  <main id="browse" hidden>
+    <div class="wrap shell-col">
+      <div class="eyebrow">Reading Room<a class="admin-link" id="adminCovers" href="/read/admin/covers" hidden>Review magazine covers →</a></div>
+      <h1 class="title">The Library</h1>
+      <label class="search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input id="q" type="search" placeholder="Search by title or author…" autocomplete="off" spellcheck="false">
+        <button class="clr" id="qClear" hidden>clear</button>
+      </label>
+      <div class="browse-layout">
+        <aside class="facets" id="facets">
+          <div class="facet-group"><div class="facet-h">Section</div><div class="facet-scroll" id="secOpts"></div></div>
+          <div class="facet-group fg-sort"><div class="facet-h">Sort</div><div id="sortOpts"></div></div>
+          <div class="facet-group fg-len"><div class="facet-h">Length</div><div id="lenOpts"></div></div>
+        </aside>
+        <div class="results">
+          <div class="mfilters">
+            <label class="msel"><span class="msel-l">Sort</span><select id="mSort" aria-label="Sort"></select></label>
+            <label class="msel"><span class="msel-l">Length</span><select id="mLen" aria-label="Length"></select></label>
+          </div>
+          <div class="rbar">
+            <span class="rcount" id="count"></span>
+            <div class="rtools">
+              <button class="rclear" id="resetF" hidden>Reset filters</button>
+              <button class="style-btn" id="styleShelf" type="button" title="Cover style for this shelf" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/><circle cx="12" cy="12" r="6.6"/></svg><span id="styleShelfName">Shelf style</span></button>
+              <button class="style-btn" id="styleLib" type="button" title="Cover style for the whole library"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/><circle cx="12" cy="12" r="6.6"/></svg>Library style</button>
+              <button class="wrap-tog" id="flipTog" type="button" title="Turn a book over when you point at it"><span class="sw"></span>Flip on hover</button>
+              <button class="wrap-tog" id="wrapTog" type="button" title="Show the cloth editions instead of cover art"><span class="sw"></span>Book Wrap</button>
+            </div>
+          </div>
+          <div class="shelf-grid" id="grid"></div>
+          <div class="empty" id="browseEmpty" hidden></div>
+          <button class="more" id="loadMore" type="button" hidden>Show more</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <main id="reader" hidden>
+    <div class="reader">
+      <nav class="toc" id="toc" aria-label="Contents">
+        <div class="bt" id="tocBookTitle"></div>
+        <div class="ba" id="tocBookAuthor"></div>
+        <div class="toc-h">Contents</div>
+        <ol id="tocList"></ol>
+      </nav>
+      <div class="backdrop" id="backdrop"></div>
+      <div class="stage" id="stage">
+        <div class="book" id="book">
+          <div class="pageport" id="pageport"><div class="runhead" id="runhead" aria-hidden="true"><span id="rhL"></span><span id="rhR"></span></div><article class="chapter" id="chapter" lang="en"></article><div class="gutter" aria-hidden="true"></div></div>
+          <div class="pagebar" id="pagebar"><div class="pb-fill" id="pbFill"></div><span class="pb-l" id="pbL"></span><span class="pb-c" id="pbC"></span><span class="pb-r" id="pbR"></span></div>
+        </div>
+        <button class="edge prev" id="pgPrev" aria-label="Previous page"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="edge next" id="pgNext" aria-label="Next page"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </main>
+
+  <dialog class="cd sd" id="styleDlg" aria-labelledby="sdTitle">
+    <div class="sd-top">
+      <div class="sd-top-l">
+        <div class="cd-kicker">Book Wrap</div>
+        <h2 class="cd-title" id="sdTitle">Cover style</h2>
+      </div>
+      <div class="sd-mode" role="tablist" aria-label="Which mode to style">
+        <button type="button" role="tab" id="sdModeL" data-mode="light">Light mode</button>
+        <button type="button" role="tab" id="sdModeD" data-mode="dark">Dark mode</button>
+      </div>
+      <button class="cd-x" id="sdClose" type="button" aria-label="Close">×</button>
+      <label class="sd-scope">
+        <span class="sd-scope-l">Which shelf do you want to change?</span>
+        <select id="sdScope" aria-label="Which shelf to style"></select>
+      </label>
+      <p class="sd-scope-note" id="sdNote"></p>
+    </div>
+    <div class="sd-body">
+      <div class="sd-prev">
+        <img id="sdPrev" alt="Preview of the cover">
+        <div class="sd-prev-cap" id="sdPrevCap"></div>
+      </div>
+      <div class="sd-ctl">
+        <section class="sd-step">
+          <div class="sd-step-h"><span class="sd-n">1</span><h3>Color scheme</h3><span class="sd-cur" id="sdCurColor"></span></div>
+          <div id="sdColors"></div>
+        </section>
+        <section class="sd-step">
+          <div class="sd-step-h"><span class="sd-n">2</span><h3>Title font</h3><span class="sd-cur" id="sdCurFont"></span></div>
+          <div class="sd-fonts" id="sdFont" role="radiogroup" aria-label="Title font"></div>
+        </section>
+        <section class="sd-step">
+          <div class="sd-step-h"><span class="sd-n">3</span><h3>Pattern</h3><span class="sd-cur" id="sdCurMotif"></span></div>
+          <div id="sdMotif"></div>
+        </section>
+      </div>
+    </div>
+    <div class="cd-foot">
+      <div class="sd-btns" id="sdBtns">
+        <button class="cd-btn" id="sdReset" type="button" hidden>Clear this shelf's style</button>
+        <span class="sd-dirty" id="sdDirty" hidden></span>
+        <button class="cd-btn" id="sdCancel" type="button">Cancel</button>
+        <button class="cd-btn primary" id="sdSave" type="button">Save</button>
+      </div>
+      <div class="sd-ask" id="sdAsk" hidden>
+        <p id="sdAskText"></p>
+        <button class="cd-btn" id="sdBack" type="button">Back</button>
+        <button class="cd-btn" id="sdKeep" type="button">Only those without</button>
+        <button class="cd-btn primary" id="sdOverride" type="button">Apply to all</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="cd" id="coverDlg" aria-labelledby="cdTitle">
+    <div class="cd-head">
+      <div class="cd-kicker">Find cover art</div>
+      <h2 class="cd-title" id="cdTitle"></h2>
+      <div class="cd-author" id="cdAuthor"></div>
+      <button class="cd-x" id="cdClose" type="button" aria-label="Close">×</button>
+      <div class="cd-q"><code id="cdQuery"></code><a id="cdGoogle" target="_blank" rel="noopener" hidden>Open in Google Images ↗</a></div>
+    </div>
+    <p class="cd-status" id="cdStatus" role="status" aria-live="polite"></p>
+    <div class="cd-results" id="cdResults"></div>
+    <div class="cd-foot">
+      <form id="cdForm">
+        <input id="cdUrl" type="url" placeholder="Or paste an image address (https://…)" aria-label="Image address">
+        <button class="cd-btn primary" type="submit">Use this image</button>
+      </form>
+      <button class="cd-btn" id="cdRevert" type="button">Restore original cover</button>
+    </div>
+  </dialog>
+{% endblock %}
+{% block scripts %}<script src="/static/js/reader.js"></script>{% endblock %}

@@ -13,6 +13,7 @@ import functools
 import json
 from pathlib import Path
 
+from webapp import shell
 from webapp.course_views import _crumbs, _page, _u, esc
 
 CAL_PATH = Path(__file__).parent.parent / "docs" / "john" / "john-course-calendar.json"
@@ -123,7 +124,7 @@ def _week_cell(date: dt.date, entry: dict | None, view: str) -> str:
     )
 
 
-def week(date_s: str, *, view: str, here: str) -> str:
+def week(date_s: str, *, view: str, here: str) -> shell.Built:
     monday = _monday_of(date_s)
     by, mons = _by_date(), _week_mondays()
     cells = [_week_cell(monday + dt.timedelta(days=off),
@@ -165,7 +166,7 @@ def _jump(view: str) -> str:
 
 
 # --------------------------------------------------------------------------- day
-def day(date_s: str, *, view: str, here: str) -> str | None:
+def day(date_s: str, *, view: str, here: str) -> shell.Built | None:
     by = _by_date()
     entry = by.get(date_s)
     if entry is None:

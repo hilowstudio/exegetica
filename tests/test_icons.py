@@ -1,4 +1,4 @@
-"""Browser and home-screen icons (scripts/build_icons.py): every page links the same versioned set and
+"""Browser and home-screen icons (scripts/build_icons.py): the shared page head links the same versioned set and
 the manifest, the manifest's icons exist at their sizes, and the site root answers the two paths
 browsers and phones ask for when a page names no icon. No network."""
 import json
@@ -13,7 +13,8 @@ ICONS = appmod.STATIC_DIR / "icons"
 
 
 def test_every_page_links_the_icons_and_the_manifest():
-    for page in sorted(appmod.STATIC_DIR.glob("*.html")):
+    # every page extends templates/base.html (tests/test_rail.py), so its head is the one to check
+    for page in [appmod.STATIC_DIR.parent / "templates" / "base.html", *appmod.STATIC_DIR.glob("*.html")]:
         text = page.read_text(encoding="utf-8")
         hrefs = re.findall(r'<link rel="(?:icon|apple-touch-icon|manifest)"[^>]*href="([^"]+)"', text)
         assert {h.split("?")[0] for h in hrefs} == {

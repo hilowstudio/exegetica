@@ -1,6 +1,6 @@
 # FAQ
 
-The FAQ in the chat page's About Exegetica window, written with the maker one question at a time (2026-11-05 and 2026-11-06). `scripts/build_faq.py` builds it into `webapp/static/index.html`. Edit the questions here, then run the script. Everything after the end marker stays out of the page.
+The FAQ in the chat page's About Exegetica window, written with the maker one question at a time (2026-11-05 and 2026-11-06). `scripts/build_faq.py` builds it into `webapp/templates/partials/faq.html`, which the chat page includes. Edit the questions here, then run the script. Everything after the end marker stays out of the page.
 
 ## Students
 
@@ -75,7 +75,7 @@ It also holds the Gospel of John course materials for the school's Bible class.
 
 Exegetica opens the **Need help now?** window when a message sounds like you or someone you know may be in danger: thoughts of suicide or self-harm, being hurt or abused, a threat to hurt others, or another emergency. The window lists people who can help right away, free and private: the 988 Suicide & Crisis Lifeline, the Childhelp hotline, Crisis Text Line, and 911.
 
-The **Need help now?** window does not automatically alert any service line or resource. Your study is saved like any other, and it can be monitored or reviewed. Exegetica errs toward offering help, so the window sometimes opens on a joke or a question about a hard topic. If that happens, close it and keep studying. You can open it yourself any time with **Need help now?** under the message box.
+The **Need help now?** window does not automatically alert any service line or resource. Your study is saved like any other, and it can be monitored or reviewed. Exegetica errs toward offering help, so the window sometimes opens on a joke or a question about a hard topic. If that happens, close it and keep studying. You can open it yourself any time with the **Need help now?** button, the lifesaver ring in the side rail, or along the bottom of the screen on a phone.
 
 If you are in danger, or someone you know is, tell a parent, pastor, teacher, or friend you trust today.
 
@@ -91,7 +91,7 @@ Scripture Memory and the Reading Room work without signing in. Signing in saves 
 
 **How do I download or delete my data?**
 
-Open **Settings** in the left rail. On the **Account** tab, under **Your data**:
+Open **Settings**, the profile icon in the left rail, or along the bottom of the screen on a phone. Under **Your data**:
 
 - **Download my data** saves everything Exegetica keeps for your account as one file: your studies, memory verses, reading places, and cover choices.
 - **Delete my account** removes your account and everything saved in it. To confirm, you type **delete**. It can't be undone, so download your data first if you want a copy.
@@ -277,7 +277,7 @@ Questions this FAQ doesn't answer can go to hello@hilowstudio.dev.
 
 - **Set aside for now (2026-11-06): "Will I be told if my child's messages open the Need help now? window?"** The honest answer today is no: nothing is sent to anyone, and the opening isn't saved with the study. Revisit once the read-and-report procedure under decision 0009 exists.
 
-- **Phone: the bottom rail covers "Need help now?"** At phone width the fixed bottom rail sits over the hint line under the message box, hiding the Privacy and **Need help now?** links, which the help-window answer tells students to use. Give the chat column bottom room for the rail on narrow screens. The message box's placeholder is also clipped mid-word there.
+- **Phone: the bottom rail covered "Need help now?"** Resolved 2026-11-06: the line under the message box now holds only the AI disclaimer, and **Need help now?** is a lifesaver-ring button in the rail (the bottom bar on a phone).
 - **Home screen.** Done 2026-11-06 with the new E icon (`scripts/build_icons.py`): every page links the icon set and `webapp/static/manifest.json`, which gives Android its 192 and 512 px icons, and the site root answers `/favicon.ico` and `/apple-touch-icon.png`. Still open: the manifest sets no standalone display, so Android adds a browser shortcut rather than a full-screen app. That's the maker's call.
 - **Port Podcatch's podcast and video processing before the Living Library answer ships.** From `../podcatch` (`inngest/functions/process-episode.ts`, `lib/transcripts.ts`, `lib/ai/video`): feeds that bring in new episodes, the publisher's transcript or Deepgram transcription with speakers and word timing, YouTube captions or Gemini watching the video, a summary, five takeaways, timestamped chapters, people, books, and ideas, books and links mentioned, the following transcript, highlights, asking questions of an episode, collections that compare episodes, and processing once for everyone. Leave out the social posts. Add Deepgram and Google to the privacy page's list of who receives what.
 - **Living Library media can't be opened.** A saved video's screen shows a play symbol that links nowhere, and a podcast's view is a turntable graphic with no audio or link. Make the video open on YouTube and the podcast link to its show (Apple Podcasts or its feed). Study sets from episodes and videos are the "next phase" the page already promises.

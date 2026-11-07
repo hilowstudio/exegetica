@@ -16,7 +16,7 @@ def _page(monkeypatch, user=None):
 
 def test_every_part_of_the_spine_is_listed(monkeypatch):
     r = _page(monkeypatch)
-    assert r.status_code == 200 and r.headers["cache-control"] == "no-cache"
+    assert r.status_code == 200 and r.headers["cache-control"] == "private, no-cache"
     text = r.text   # decode the page once; the response decodes it again on every access
     for s in generator.TREE["subjects"]:
         assert f'id="S-{s["id"]}"' in text and html.escape(s["name"]) in text

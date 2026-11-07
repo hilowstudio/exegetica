@@ -1,0 +1,11 @@
+{# The Need help now? window: the rail's lifesaver ring opens it on every page, and the chat page
+   opens it when a crisis check fires (docs/decisions/0018). static/js/shell.js runs it. #}
+<div id="help-bg" class="help-bg" role="dialog" aria-modal="true" aria-labelledby="help-title">
+  <div class="help-card">
+    <button class="help-x" id="help-close" type="button" aria-label="Close">&times;</button>
+    <h3 id="help-title">Need help now?</h3>
+    <p id="help-lead" class="help-lead"></p>
+    <div id="help-list"></div>
+  </div>
+</div>
+<script id="help-data" type="application/json">{{ crisis|tojson }}</script>

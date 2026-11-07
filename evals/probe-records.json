@@ -16,5 +16,11 @@
     "model": "nvidia/NVIDIA-Nemotron-3.5-Super-VL (fallback zai-org/GLM-5.3-Flash)",
     "date": "2026-11-06",
     "note": "Adam probed students on Nemotron 3.5 Super with GLM-5.3-Flash as fallback (decision 0024); recorded at his word"
+  },
+  {
+    "prompt_hash": "226c54a4fca7abf8",
+    "model": "nvidia/NVIDIA-Nemotron-3.5-Super-VL (fallback zai-org/GLM-5.3-Flash)",
+    "date": "2026-11-06",
+    "note": "Adam probed the 0022 line on whether churches differ (report each church's documents, no agreement concluded from silence) on Nemotron with the open-model loop that holds a step's text until it ends; recorded at his word"
   }
 ]

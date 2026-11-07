@@ -34,7 +34,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_views, curriculum, db, generator, house_cover, library, library_store, memory, metrics, ops, policy, providers, r2, reader, reply_check, safety, store, studio, tool_catalog, usage
+from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_views, curriculum, db, generator, house_cover, library, library_store, memory, metrics, ops, policy, providers, r2, reader, reply_check, safety, shell, store, studio, tool_catalog, usage
 from webapp.bridge import CombinedTools, MCPBridge  # noqa: F401  (scripts/john_gen.py imports MCPBridge from here)
 
 logging.basicConfig(level=logging.INFO)
@@ -341,6 +341,13 @@ PLAIN_TEACHING = (
     "never present one church's reading as the only faithful one. Lay the views side by side at "
     "length only when the student asks how they compare (\"Why do some churches baptize babies?\"), "
     "and then take each church's reading from its own documents in the library.\n"
+    "- When a student asks whether churches differ on a point, look up each church's own documents in "
+    "the library (Trent and the Baltimore Catechism, Augsburg, the Thirty-Nine Articles, the Orthodox "
+    "Longer Catechism, the Westminster Confession and the 1689) and report what each one says, cited. A "
+    "search that turns up no difference shows only what the library holds. Where the library has "
+    "nothing from a church, say so in one line and leave that church's view open. Say that churches "
+    "agree only when documents each of them holds, opened in this answer, show it, as the creeds do on "
+    "the Trinity.\n"
     "- Add no \"where Christians differ\" passage to an answer on a point Christians do not dispute, "
     "and no sentence describing the answer itself (\"this answer presents both readings\")."
 )
@@ -567,7 +574,7 @@ async def chat(request):
             metrics.record(metrics.from_stats(
                 route, key_source, stats, outcome=outcome, prefix_hash=_prefix_hash(system_text, mcp.tools),
                 duration_ms=(time.monotonic() - t0) * 1000,
-                checks_dropped=gate.dropped + (stats.get("narration_dropped") or 0),
+                checks_dropped=gate.dropped + (stats.get("narration_dropped") or 0) + (stats.get("answers_held") or 0),
                 checks_stopped=int(gate.stopped),
                 est_usd=(stats.get("est_usd") or 0.0) + (check.result()["usd"] if checked else 0.0)))
             if key_source == "server" and stats.get("steps"):
@@ -693,23 +700,23 @@ async def config(request):
 
 
 async def index(request):
-    return FileResponse(STATIC_DIR / "index.html")
+    return shell.page(request, "chat.html")
 
 
 # ---------------------------------------------------------------------------
 # Resource generator (standards-aligned)
 # ---------------------------------------------------------------------------
 async def generate_page(request):
-    return FileResponse(STATIC_DIR / "generate.html")
+    return shell.page(request, "generate.html")
 
 
 async def library_page(request):
-    return FileResponse(STATIC_DIR / "library.html")
+    return shell.page(request, "library.html")
 
 
 async def corpus_page(request):
     """The source-corpus inventory ('everything the connector can cite'), linked from the chat info icon."""
-    return FileResponse(STATIC_DIR / "corpus.html")
+    return shell.page(request, "corpus.html")
 
 
 # ---------------------------------------------------------------------------
@@ -731,49 +738,49 @@ def _teacher_only(request):
 
 async def course_overview(request):
     m = course.build_manifest()
-    return HTMLResponse(course_views.overview(m, view=_view(request), here=request.url.path))
+    return shell.render(request, course_views.overview(m, view=_view(request), here=request.url.path))
 
 
 async def course_unit(request):
     m, view, here = course.build_manifest(), _view(request), request.url.path
     body = course_views.unit(m, request.path_params["key"], view=view, here=here)
     if body is None:
-        return HTMLResponse(course_views.not_found("No such unit.", view=view, here=here), status_code=404)
-    return HTMLResponse(body)
+        return shell.render(request, course_views.not_found("No such unit.", view=view, here=here), status_code=404)
+    return shell.render(request, body)
 
 
 async def course_day(request):
     m, view, here = course.build_manifest(), _view(request), request.url.path
     body = course_views.day(m, request.path_params["date"], view=view, here=here)
     if body is None:
-        return HTMLResponse(course_views.not_found("No lesson on that date.", view=view, here=here), status_code=404)
-    return HTMLResponse(body)
+        return shell.render(request, course_views.not_found("No lesson on that date.", view=view, here=here), status_code=404)
+    return shell.render(request, body)
 
 
 async def course_week(request):
     m, view, here = course.build_manifest(), _view(request), request.url.path
     body = course_views.week(m, request.path_params["week"], view=view, here=here)
     if body is None:
-        return HTMLResponse(course_views.not_found("No such week.", view=view, here=here), status_code=404)
-    return HTMLResponse(body)
+        return shell.render(request, course_views.not_found("No such week.", view=view, here=here), status_code=404)
+    return shell.render(request, body)
 
 
 async def course_month(request):
     m, view, here = course.build_manifest(), _view(request), request.url.path
     body = course_views.month(m, request.path_params["month"], view=view, here=here)
     if body is None:
-        return HTMLResponse(course_views.not_found("No such month.", view=view, here=here), status_code=404)
-    return HTMLResponse(body)
+        return shell.render(request, course_views.not_found("No such month.", view=view, here=here), status_code=404)
+    return shell.render(request, body)
 
 
 async def course_doc(request):
     m, view, here = course.build_manifest(), _view(request), request.url.path
     art = course_views.find_artifact(m, request.path_params["file"])
     if not art:
-        return HTMLResponse(course_views.not_found("No such document.", view=view, here=here), status_code=404)
+        return shell.render(request, course_views.not_found("No such document.", view=view, here=here), status_code=404)
     if art["audience"] == "teacher" and view != "teacher":
-        return HTMLResponse(course_views.forbidden(view=view, here=here), status_code=403)
-    return HTMLResponse(course_views.doc(m, art, view=view, here=here))
+        return shell.render(request, course_views.forbidden(view=view, here=here), status_code=403)
+    return shell.render(request, course_views.doc(m, art, view=view, here=here))
 
 
 # ---------------------------------------------------------------------------
@@ -781,7 +788,7 @@ async def course_doc(request):
 # ---------------------------------------------------------------------------
 async def calendar_home(request):
     view, here = _view(request), request.url.path
-    return HTMLResponse(calendar_views.week(calendar_views.default_week(), view=view, here=here))
+    return shell.render(request, calendar_views.week(calendar_views.default_week(), view=view, here=here))
 
 
 async def calendar_week_route(request):
@@ -789,16 +796,16 @@ async def calendar_week_route(request):
     try:
         body = calendar_views.week(request.path_params["date"], view=view, here=here)
     except ValueError:
-        return HTMLResponse(course_views.not_found("Not a valid week.", view=view, here=here), status_code=404)
-    return HTMLResponse(body)
+        return shell.render(request, course_views.not_found("Not a valid week.", view=view, here=here), status_code=404)
+    return shell.render(request, body)
 
 
 async def calendar_day_route(request):
     view, here = _view(request), request.url.path
     body = calendar_views.day(request.path_params["date"], view=view, here=here)
     if body is None:
-        return HTMLResponse(course_views.not_found("No lesson or event on that date.", view=view, here=here), status_code=404)
-    return HTMLResponse(body)
+        return shell.render(request, course_views.not_found("No lesson or event on that date.", view=view, here=here), status_code=404)
+    return shell.render(request, body)
 
 
 async def library_books(request):
@@ -932,9 +939,7 @@ async def generate_book_endpoint(request):
     coverage = body.get("coverage") or {}
     grade_band = body.get("grade_band", "secondary")
     brief = body.get("brief", "")
-    provider = body.get("provider", "anthropic")
-    model = body.get("model", "")
-    api_key = (body.get("api_key") or "").strip() or None
+    provider, model, api_key = policy.byok(body)   # bring-your-own-key is off for now
 
     book = await run_in_threadpool(reader._gen_book_sync, slug)
     if not book or not book.get("chapters"):
@@ -982,9 +987,7 @@ async def generate_endpoint(request):
     grade_band = body.get("grade_band", "secondary")
     context = body.get("context") or {}
     brief = body.get("brief", "")
-    provider = body.get("provider", "anthropic")
-    model = body.get("model", "")
-    api_key = (body.get("api_key") or "").strip() or None
+    provider, model, api_key = policy.byok(body)   # bring-your-own-key is off for now
 
     system_text = generator.build_system(format_id, grade_band)
     task = generator.build_task(format_id, objectives, grade_band, context, brief)
@@ -1002,9 +1005,7 @@ async def revise_endpoint(request):
     instruction = (body.get("instruction") or "").strip()
     if not document or not instruction:
         return JSONResponse({"error": "document and instruction are required"}, status_code=400)
-    provider = body.get("provider", "anthropic")
-    model = body.get("model", "")
-    api_key = (body.get("api_key") or "").strip() or None
+    provider, model, api_key = policy.byok(body)   # bring-your-own-key is off for now
     system_text, task = generator.build_revision(document, instruction)
     return _generation("revise", {"type": "start", "provider": provider},
                        provider, api_key, model, system_text, task, request.app.state.mcp, policy.REVISE)

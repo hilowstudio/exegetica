@@ -29,13 +29,12 @@ import uuid
 from concurrent.futures import ThreadPoolExecutor
 
 from starlette.concurrency import run_in_threadpool
-from starlette.responses import FileResponse, JSONResponse, Response
+from starlette.responses import JSONResponse, Response
 
-from webapp import auth, db, typeset
+from webapp import auth, db, shell, typeset
 
 logger = logging.getLogger("study-bible-web.reader")
 
-_STATIC = pathlib.Path(__file__).resolve().parent / "static"
 _DEFAULT_DB = pathlib.Path(__file__).resolve().parent.parent / "db" / "books.db"
 _DEFAULT_COVERS = pathlib.Path(__file__).resolve().parent.parent / "db" / "covers.db"
 
@@ -308,7 +307,7 @@ def _gen_book_sync(slug: str) -> dict | None:
 
 async def reader_page(request):
     """One SPA for both the browse grid (/read) and a single book (/read/{slug})."""
-    return FileResponse(_STATIC / "reader.html")
+    return shell.page(request, "reader.html")
 
 
 async def books_list(request):
@@ -792,7 +791,7 @@ def _review_books_sync(slugs: list[str]) -> dict[str, dict]:
 
 
 async def covers_review_page(request):
-    return FileResponse(_STATIC / "covers.html")
+    return shell.page(request, "covers.html")
 
 
 async def covers_review(request):

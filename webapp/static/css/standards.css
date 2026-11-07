@@ -1,0 +1,32 @@
+/* The academic standards page (/prep-room/standards, webapp/about.py). */
+.std-search{position:relative;margin:1.2em 0 1.6em}
+.std-search label{display:block;font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:600;margin-bottom:6px}
+.std-search input{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--rule);border-radius:10px;background:transparent;color:var(--ink)}
+.std-search input:focus-visible{outline:2px solid var(--iron);outline-offset:1px}
+#hits{margin-top:6px;font-family:Inter,system-ui,sans-serif;font-size:14px}
+#hits button{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:0;border-bottom:1px solid var(--rule);padding:9px 4px;cursor:pointer}
+#hits button:hover,#hits button:focus-visible{background:color-mix(in srgb,var(--iron) 10%,transparent);outline:none}
+#hits .path{display:block;color:var(--ink-soft);font-size:12.5px;margin-top:2px}
+details{border-top:1px solid var(--rule)}
+summary{display:flex;align-items:baseline;gap:10px;cursor:pointer;padding:12px 0;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'\25B8';color:var(--ink-soft);font-size:.85rem;transition:transform .15s}
+details[open]>summary::before{transform:rotate(90deg)}
+summary:focus-visible{outline:2px solid var(--iron);outline-offset:2px}
+summary .n{font-family:Inter,system-ui,sans-serif;font-size:13px;color:var(--ink-soft);white-space:nowrap}
+summary h2,summary h3{margin:0;flex:1}
+summary h2{font-size:1.25rem}
+summary h3{font-size:1.05rem}
+.strand{margin-left:1.1em}
+.topic{margin:0 0 0 2.2em}
+.topic h4{font-family:Inter,system-ui,sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin:1.2em 0 .2em}
+.st summary{font-size:16px;padding:9px 0}
+.st summary .name{flex:1}
+.st ol{margin:.2em 0 .8em;padding-left:1.4em;font-size:16px}
+.st li{margin:.45em 0}
+.st li.hit{background:color-mix(in srgb,var(--iron) 14%,transparent);border-radius:4px}
+.gr{font-family:Inter,system-ui,sans-serif;font-size:12px;color:var(--ink-soft);margin-right:6px}
+.anc{display:block;font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:var(--ink-soft)}
+.draft{display:inline-block;font-family:Inter,system-ui,sans-serif;font-size:14px;margin:0 0 .9em}
+@media (max-width:600px){.strand{margin-left:.35em}
+.topic{margin-left:.7em}}

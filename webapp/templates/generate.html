@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Prep Room · Exegetica{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/generate.css">{% endblock %}
+{% block content %}
+<div class="app">
+
+  <aside class="builder">
+    <div class="builder-head"><span class="bh-title">Build a resource</span></div>
+    <div id="keybanner" class="banner" style="display:none"></div>
+    <div class="src-toggle" role="tablist" aria-label="Source">
+      <button class="srcbtn on" type="button" data-src="book" role="tab">From a book</button>
+      <button class="srcbtn" type="button" data-src="standard" role="tab">From standards</button>
+    </div>
+    <div class="bsearch" id="stdsearchwrap" style="display:none">
+      <label class="lbl" for="stdsearch">Find a standard</label>
+      <div class="searchbox">
+        <input id="stdsearch" type="text" autocomplete="off" spellcheck="false" placeholder="Search a subject, topic, or objective…">
+        <div class="sresults" id="sresults"></div>
+      </div>
+    </div>
+    <div class="acc" id="acc">
+      <section class="acc-sec open" data-sec="book">
+        <button class="acc-h" type="button"><span class="acc-n">1</span><span class="acc-t">Book</span><span class="acc-sum" id="sum-book">None</span><span class="chev">›</span></button>
+        <div class="acc-body">
+          <div class="fld"><label for="booksearch">Find a book</label>
+            <div class="searchbox"><input id="booksearch" type="text" autocomplete="off" spellcheck="false" placeholder="Search title or author…"><div class="sresults" id="bookresults"></div></div>
+          </div>
+          <div class="fld" id="coverwrap" style="display:none"><label for="sel-cover">Assign through (students have read up to and including)</label><select id="sel-cover"></select></div>
+        </div>
+      </section>
+      <section class="acc-sec" data-sec="standard" style="display:none">
+        <button class="acc-h" type="button"><span class="acc-n">1</span><span class="acc-t">Standard</span><span class="acc-sum" id="sum-standard">Not chosen</span><span class="chev">›</span></button>
+        <div class="acc-body">
+          <div class="crumb" id="crumb"></div>
+          <div class="fld"><label for="sel-subject">Subject</label><select id="sel-subject"></select></div>
+          <div class="fld"><label for="sel-subsubject">Sub-subject</label><select id="sel-subsubject" disabled></select></div>
+          <div class="fld"><label for="sel-topic">Topic</label><select id="sel-topic" disabled></select></div>
+          <div class="fld"><label for="sel-subtopic">Sub-topic</label><select id="sel-subtopic" disabled></select></div>
+        </div>
+      </section>
+      <section class="acc-sec" data-sec="objectives" style="display:none">
+        <button class="acc-h" type="button"><span class="acc-n">2</span><span class="acc-t">Objectives</span><span class="acc-sum" id="sum-objectives">None</span><span class="chev">›</span></button>
+        <div class="acc-body">
+          <div class="objs" id="objs"><div class="empty">Select a sub-topic to load objectives.</div></div>
+        </div>
+      </section>
+      <section class="acc-sec" data-sec="format">
+        <button class="acc-h" type="button"><span class="acc-n">2</span><span class="acc-t">Resource Kind</span><span class="acc-sum" id="sum-format">None</span><span class="chev">›</span></button>
+        <div class="acc-body">
+          <div class="recs" id="recs"></div>
+          <div class="fld"><select id="sel-format" aria-label="Resource kind"></select><span class="fmtdef" id="fmtdef"></span></div>
+        </div>
+      </section>
+      <section class="acc-sec" data-sec="audience">
+        <button class="acc-h" type="button"><span class="acc-n">3</span><span class="acc-t">Audience</span><span class="acc-sum" id="sum-audience">Secondary</span><span class="chev">›</span></button>
+        <div class="acc-body">
+          <div class="fld"><label for="sel-band">Grade band (who you're teaching)</label><select id="sel-band"></select></div>
+          <div class="fld"><label for="brief">Optional instructions</label><textarea id="brief" placeholder="e.g. 12 items, focus on the Greek, make it a one-pager"></textarea></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="builder-foot">
+      <div class="note" id="gennote">Pick a book, coverage, and a format.</div>
+      <button class="gen" id="gen" disabled>Draft resource</button>
+    </div>
+  </aside>
+
+  <section class="output">
+    <div class="outhead">
+      <h2 id="outtitle">Resource</h2>
+      <div class="seg" id="aud"><button data-v="teacher" class="on" type="button">Teacher</button><button data-v="student" type="button">Student</button></div>
+      <div class="seg" id="mode"><button data-m="view" class="on" type="button">View</button><button data-m="edit" type="button">Edit</button></div>
+      <span style="flex:1"></span>
+      <button class="obtn" id="copy" disabled>Copy</button>
+      <button class="obtn" id="download" disabled>.md</button>
+      <button class="obtn primary" id="pdf" disabled>PDF</button>
+    </div>
+    <div class="modrow" id="modrow" style="display:none">
+      <input id="modin" aria-label="Change this document" placeholder="Modify without regenerating. For example: “add 3 harder items”, “make the reading shorter”, “change the theme to autumn”">
+      <button class="obtn" id="modbtn">Apply</button>
+    </div>
+    <div class="tools" id="tools"></div>
+    <section class="report" id="report" aria-label="Source check" hidden></section>
+    <div class="paperwrap" id="paperwrap" style="display:none"><div class="paper prose" id="paper"></div></div>
+    <textarea class="editor" id="editor" style="display:none" spellcheck="false"></textarea>
+    <div class="placeholder" id="placeholder"><h1>Prepare a resource</h1><p>Build from a book — pick the title and the chapters your class has read, and the document lands where your students are — or from an academic standard. Choose the source at left. Switch between Teacher and Student, edit it directly, or revise it with a plain instruction.</p></div>
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/generate.js"></script>{% endblock %}

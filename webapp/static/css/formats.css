@@ -1,0 +1,12 @@
+/* The Prep Room's format list (/prep-room/formats, webapp/about.py). */
+details{border-top:1px solid var(--rule)}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{display:flex;align-items:baseline;gap:12px;cursor:pointer;padding:14px 0;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'\25B8';color:var(--ink-soft);font-size:.9rem;transition:transform .15s}
+details[open]>summary::before{transform:rotate(90deg)}
+summary h2{margin:0;font-size:1.25rem;flex:1}
+summary span{font-family:Inter,system-ui,sans-serif;font-size:14px;color:var(--ink-soft)}
+summary:focus-visible{outline:2px solid var(--iron);outline-offset:2px}
+details ul{padding-left:1.2em}
+details li{margin:.35em 0}

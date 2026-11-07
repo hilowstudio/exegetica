@@ -14,12 +14,11 @@ Both are stateless lookups; they store nothing.
 from __future__ import annotations
 
 import os
-from pathlib import Path
 
 import httpx
-from starlette.responses import FileResponse, JSONResponse
+from starlette.responses import JSONResponse
 
-STATIC_DIR = Path(__file__).resolve().parent / "static"
+from webapp import shell
 
 ESV_TEXT_URL = "https://api.esv.org/v3/passage/text/"
 ESV_AUDIO_URL = "https://api.esv.org/v3/passage/audio/"
@@ -80,7 +79,7 @@ async def esv_audio_url(reference: str) -> str | None:
 
 # ------------------------------------------------------------------ handlers
 async def memory_page(request):
-    return FileResponse(STATIC_DIR / "memory.html")
+    return shell.page(request, "memory.html")
 
 
 async def memory_text(request):

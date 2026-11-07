@@ -19,7 +19,7 @@ import re
 from typing import Callable
 
 STOP_TEXT = ("Exegetica stopped this reply. Exegetica is software and has no feelings. If something is "
-             "weighing on you, talk with a parent, teacher, or pastor you trust, or open Need help now below.")
+             "weighing on you, talk with a parent, teacher, or pastor you trust, or open Need help now with the lifesaver ring button.")
 
 # A sentence ends at . ! ? (plus any closing quote or bracket) followed by space, or at a newline.
 _BOUNDARY = re.compile(r"(?<=[.!?])[\"”’)\]]*[ \t]+|\n")

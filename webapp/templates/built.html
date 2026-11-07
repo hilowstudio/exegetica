@@ -1,0 +1,11 @@
+{# A page whose content is built in Python (shell.Built): the statements, privacy, the Prep Room's formats
+   and standards, ops, and the course and calendar views. They set type in the fonts of static/fonts.css. #}
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block meta %}{% if noindex %}<meta name="robots" content="noindex">{% endif %}{% endblock %}
+{% block fonts %}{{ super() }}<link rel="stylesheet" href="/static/fonts.css">{% endblock %}
+{% block styles %}{% for href in css %}<link rel="stylesheet" href="{{ href }}">{% endfor %}{% endblock %}
+{% block content %}
+{{ body }}
+{% endblock %}
+{% block scripts %}{% for src in scripts %}<script src="{{ src }}"></script>{% endfor %}{% endblock %}

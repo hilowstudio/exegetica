@@ -5,65 +5,39 @@ the Prep Room drafts (/prep-room/formats). The statements are different messages
 page, rendered from its one file in docs/. No model is involved.
 
 The privacy page fills its retention lines from webapp/retention.py, so it states only the purges
-that are running.
+that are running. Each page is a prose column (static/css/prose.css) in the shared layout (shell.py).
 """
 from __future__ import annotations
 
 import html
 from pathlib import Path
 
-from starlette.responses import HTMLResponse
-
-from webapp import course, generator, retention
+from webapp import course, generator, retention, shell
 
 DOCS_DIR = Path(__file__).resolve().parent.parent / "docs"
 
-_TOKENS_DARK = ("--paper:#14151a;--ink:#e9e7e0;--ink-soft:#a9aeb9;--rule:#2c2f37;--iron:#7fb0c2")
-_CSS = (
-    ":root{--paper:#f0e8dc;--ink:#1e2026;--ink-soft:#54596a;--rule:#ddd3c1;--iron:#3d6980}"
-    "@media (prefers-color-scheme:dark){:root:not([data-theme=\"light\"]){" + _TOKENS_DARK + "}}"
-    ":root[data-theme=\"dark\"]{" + _TOKENS_DARK + "}"
-    "*{box-sizing:border-box}"
-    "body{margin:0;background:var(--paper);color:var(--ink);font-family:\"Source Serif 4\",Georgia,serif;"
-    "font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}"
-    "main{max-width:68ch;margin:0 auto;padding:12px 20px 72px}"
-    "nav{font-family:Inter,system-ui,sans-serif;font-size:14px}"
-    "nav a{display:inline-flex;align-items:center;min-height:44px}"
-    "h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.2;text-wrap:balance}"
-    "h1{font-size:2rem;margin:.6em 0 .3em}h2{font-size:1.4rem;margin:1.8em 0 .4em}"
-    "h3{font-family:Inter,system-ui,sans-serif;font-size:1rem;font-weight:600;margin:1.5em 0 .3em}"
-    "em{color:var(--ink-soft)}a{color:var(--iron)}"
-    "a:focus-visible{outline:2px solid var(--iron);outline-offset:2px}"
-)
 
-
-def _page(title: str, doc: str, fill: dict[str, str] | None = None) -> HTMLResponse:
+def _doc(title: str, doc: str, fill: dict[str, str] | None = None) -> shell.Built:
     body = course.render_html(DOCS_DIR / doc)
     for marker, text in (fill or {}).items():
         body = body.replace(marker, text)
-    return _shell(title, body)
+    return prose(title, body)
 
 
-def _shell(title: str, body: str) -> HTMLResponse:
-    return HTMLResponse(
-        "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
-        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
-        f"<title>{title} | Exegetica</title>"
-        "<link rel=\"stylesheet\" href=\"/static/fonts.css\">"
-        f"<style>{_CSS}</style>"
-        "<script>try{var t=localStorage.getItem(\"studybible.theme\");"
-        "if(t===\"light\"||t===\"dark\")document.documentElement.dataset.theme=t;}catch(e){}</script>"
-        "</head><body><main><nav><a href=\"/\">Back to chat</a></nav>"
-        f"{body}</main></body></html>"
-    )
+def prose(title: str, body: str, css: tuple[str, ...] = (), scripts: tuple[str, ...] = (),
+          noindex: bool = False) -> shell.Built:
+    """One prose page: a back link and the body in a reading column."""
+    return shell.Built(f"{title} | Exegetica",
+                       f'<main class="prose shell-col"><nav class="back"><a href="/">Back to chat</a></nav>{body}</main>',
+                       css=("/static/css/prose.css", *css), scripts=scripts, noindex=noindex)
 
 
 async def position_page(request):
-    return _page("Position on AI", "position-statement-christian-school-theologian.md")
+    return shell.render(request, _doc("Position on AI", "position-statement-christian-school-theologian.md"))
 
 
 async def quiet_standards_page(request):
-    return _page("Quiet Standards", "quiet-standards-statement.md")
+    return shell.render(request, _doc("Quiet Standards", "quiet-standards-statement.md"))
 
 
 def _retention_text() -> str:
@@ -95,21 +69,12 @@ async def formats_page(request):
         if parts:
             sections.append(f"<details><summary><h2>{html.escape(subject)}</h2><span>{len(seen)} formats</span>"
                             "</summary>" + "".join(parts) + "</details>")
-    css = ("<style>details{border-top:1px solid var(--rule)}details:last-of-type{border-bottom:1px solid var(--rule)}"
-           "summary{display:flex;align-items:baseline;gap:12px;cursor:pointer;padding:14px 0;list-style:none}"
-           "summary::-webkit-details-marker{display:none}"
-           "summary::before{content:'\\25B8';color:var(--ink-soft);font-size:.9rem;transition:transform .15s}"
-           "details[open]>summary::before{transform:rotate(90deg)}"
-           "summary h2{margin:0;font-size:1.25rem;flex:1}"
-           "summary span{font-family:Inter,system-ui,sans-serif;font-size:14px;color:var(--ink-soft)}"
-           "summary:focus-visible{outline:2px solid var(--iron);outline-offset:2px}"
-           "details ul{padding-left:1.2em}details li{margin:.35em 0}</style>")
-    body = (f"{css}<h1>What the Prep Room can make</h1><p>The Prep Room drafts {len(generator.FORMATS)} kinds "
+    body = (f"<h1>What the Prep Room can make</h1><p>The Prep Room drafts {len(generator.FORMATS)} kinds "
             "of documents for teachers, grouped here by subject. Open a subject to see its formats. A format "
             "that serves several subjects appears under each, and the formats under Universal work for any "
             "subject. Every draft is the teacher's to check and change before students see it.</p>"
             + "".join(sections))
-    return _shell("Prep Room formats", body)
+    return shell.render(request, prose("Prep Room formats", body, css=("/static/css/formats.css",)))
 
 
 def _grades(grades: list[int]) -> str:
@@ -118,91 +83,6 @@ def _grades(grades: list[int]) -> str:
     lo, hi = min(grades), max(grades)
     k = lambda g: "K" if g == 0 else str(g)  # noqa: E731
     return f"grade {k(lo)}" if lo == hi else f"grades {k(lo)} to {k(hi)}"
-
-
-_STANDARDS_CSS = (
-    "<style>"
-    ".std-search{position:relative;margin:1.2em 0 1.6em}"
-    ".std-search label{display:block;font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:600;margin-bottom:6px}"
-    ".std-search input{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--rule);"
-    "border-radius:10px;background:transparent;color:var(--ink)}"
-    ".std-search input:focus-visible{outline:2px solid var(--iron);outline-offset:1px}"
-    "#hits{margin-top:6px;font-family:Inter,system-ui,sans-serif;font-size:14px}"
-    "#hits button{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:0;"
-    "border-bottom:1px solid var(--rule);padding:9px 4px;cursor:pointer}"
-    "#hits button:hover,#hits button:focus-visible{background:color-mix(in srgb,var(--iron) 10%,transparent);outline:none}"
-    "#hits .path{display:block;color:var(--ink-soft);font-size:12.5px;margin-top:2px}"
-    "details{border-top:1px solid var(--rule)}"
-    "summary{display:flex;align-items:baseline;gap:10px;cursor:pointer;padding:12px 0;list-style:none}"
-    "summary::-webkit-details-marker{display:none}"
-    "summary::before{content:'\\25B8';color:var(--ink-soft);font-size:.85rem;transition:transform .15s}"
-    "details[open]>summary::before{transform:rotate(90deg)}"
-    "summary:focus-visible{outline:2px solid var(--iron);outline-offset:2px}"
-    "summary .n{font-family:Inter,system-ui,sans-serif;font-size:13px;color:var(--ink-soft);white-space:nowrap}"
-    "summary h2,summary h3{margin:0;flex:1}summary h2{font-size:1.25rem}summary h3{font-size:1.05rem}"
-    ".strand{margin-left:1.1em}.topic{margin:0 0 0 2.2em}"
-    ".topic h4{font-family:Inter,system-ui,sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase;"
-    "color:var(--ink-soft);margin:1.2em 0 .2em}"
-    ".st summary{font-size:16px;padding:9px 0}.st summary .name{flex:1}"
-    ".st ol{margin:.2em 0 .8em;padding-left:1.4em;font-size:16px}.st li{margin:.45em 0}"
-    ".st li.hit{background:color-mix(in srgb,var(--iron) 14%,transparent);border-radius:4px}"
-    ".gr{font-family:Inter,system-ui,sans-serif;font-size:12px;color:var(--ink-soft);margin-right:6px}"
-    ".anc{display:block;font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:var(--ink-soft)}"
-    ".draft{display:inline-block;font-family:Inter,system-ui,sans-serif;font-size:14px;margin:0 0 .9em}"
-    "@media (max-width:600px){.strand{margin-left:.35em}.topic{margin-left:.7em}}"
-    "</style>"
-)
-
-_STANDARDS_JS = """<script>
-(function(){
-  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
-  function grade(g){return g===0?"K":String(g);}
-  function load(d){
-    if(d.dataset.loaded)return Promise.resolve();
-    d.dataset.loaded="1";
-    var box=d.querySelector(".objs");box.textContent="Loading objectives…";
-    return fetch("/api/standards/objectives?sub_topic="+encodeURIComponent(d.dataset.st)).then(function(r){return r.json();}).then(function(j){
-      var objs=(j.objectives||[]).slice().sort(function(a,b){return a.c-b.c;});
-      box.innerHTML="<ol>"+objs.map(function(o){
-        var a=o.a||{},anc=[].concat(a.scripture||[],a.confessions||[],a.standards||[]);
-        return '<li id="o-'+esc(o.id)+'"><span class="gr">Grade '+grade(o.g)+'</span>'+esc(o.t)+
-          (anc.length?'<span class="anc">'+esc(anc.join(" · "))+'</span>':"")+"</li>";}).join("")+"</ol>";
-    }).catch(function(){d.dataset.loaded="";box.textContent="The objectives could not be loaded. Close and open this again.";});
-  }
-  document.querySelectorAll("details.st").forEach(function(d){d.addEventListener("toggle",function(){if(d.open)load(d);});});
-  function reveal(ids){
-    ["subject","sub_subject","sub_topic"].forEach(function(k){var e=ids[k]&&document.getElementById("S-"+ids[k]);if(e)e.open=true;});
-    var st=ids.sub_topic&&document.getElementById("S-"+ids.sub_topic);
-    var target=st||document.getElementById("S-"+(ids.sub_subject||ids.subject));
-    if(!target)return;
-    (st?load(st):Promise.resolve()).then(function(){
-      var o=ids.objective&&document.getElementById("o-"+ids.objective);
-      document.querySelectorAll("li.hit").forEach(function(x){x.classList.remove("hit");});
-      if(o)o.classList.add("hit");
-      (o||target).scrollIntoView({block:"center"});
-      target.querySelector("summary").focus({preventScroll:true});
-    });
-  }
-  var q=document.getElementById("q"),hits=document.getElementById("hits"),timer=null;
-  q.addEventListener("input",function(){
-    clearTimeout(timer);var v=q.value.trim();
-    if(v.length<2){hits.innerHTML="";return;}
-    timer=setTimeout(function(){
-      fetch("/api/standards/search?q="+encodeURIComponent(v)).then(function(r){return r.json();}).then(function(j){
-        var rs=(j.results||[]).slice(0,10);
-        if(!rs.length){hits.innerHTML='<p class="path">No matches. Try fewer or simpler words.</p>';return;}
-        hits.innerHTML="";
-        rs.forEach(function(h){
-          var b=document.createElement("button");b.type="button";
-          b.innerHTML=esc(h.label)+'<span class="path">'+esc(h.path.join(" › "))+(h.grade!=null?" · grade "+grade(h.grade):"")+"</span>";
-          b.addEventListener("click",function(){reveal(h.ids);});
-          hits.appendChild(b);
-        });
-      }).catch(function(){hits.innerHTML='<p class="path">Search is not available right now.</p>';});
-    },200);
-  });
-})();
-</script>"""
 
 
 async def standards_page(request):
@@ -241,12 +121,17 @@ async def standards_page(request):
              '<div class="std-search"><label for="q">Search the standards</label>'
              '<input id="q" type="search" autocomplete="off" placeholder="For example: FFA officer roles, or justification by faith">'
              '<div id="hits" aria-live="polite"></div></div>')
-    return _shell("Academic standards", _STANDARDS_CSS + intro + "".join(out) + _STANDARDS_JS)
+    return shell.render(request, prose("Academic standards", intro + "".join(out),
+                                       css=("/static/css/standards.css",), scripts=("/static/js/standards.js",)))
 
 
-async def privacy_page(request):
-    return _page("Privacy", "privacy.md", {
+def privacy() -> shell.Built:
+    return _doc("Privacy", "privacy.md", {
         "<p>{{retention}}</p>": _retention_text(),
         "{{metrics_days}}": str(retention.METRICS_DAYS),
         "{{cap_days}}": str(retention.CAP_DAYS),
     })
+
+
+async def privacy_page(request):
+    return shell.render(request, privacy())

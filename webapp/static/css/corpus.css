@@ -1,0 +1,75 @@
+/* The Study Bible Corpus page (templates/corpus.html). The shared shell, colours and rail are in tokens.css and shell.css. */
+:root{--shadow:0 14px 40px -22px rgba(40,32,22,.55);}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--shadow:0 16px 44px -22px rgba(0,0,0,.7);}}
+:root[data-theme="dark"]{--shadow:0 16px 44px -22px rgba(0,0,0,.7);}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+.page{--col:940px;padding:48px 24px 90px}
+a{color:var(--iron)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,3rem);line-height:1.08;margin:.35em 0 .18em;letter-spacing:-.01em}
+.lead{font-size:1.06rem;color:var(--ink-soft);max-width:66ch;margin:0 0 26px}
+.lead b{color:var(--ink);font-weight:600}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 8px}
+.stat{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:11px 15px;min-width:96px}
+.stat .n{font-family:var(--serif);font-weight:600;font-size:1.5rem;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.stat .l{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin-top:5px}
+section{margin-top:44px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--rule-strong);padding-bottom:9px;margin-bottom:18px}
+.sec-h h2{font-family:var(--serif);font-weight:600;font-size:1.42rem;margin:0;color:var(--ink)}
+.sec-h .k{font-family:var(--mono);font-size:11px;color:var(--iron);font-weight:500;margin-left:auto;flex:none}
+.sec-note{font-size:13.5px;color:var(--ink-soft);margin:-8px 0 18px;max-width:66ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px}
+.item{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:13px 15px}
+.item .t{font-family:var(--serif);font-weight:600;font-size:1.04rem;color:var(--ink);line-height:1.25}
+.item .t .abbr{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:500;margin-right:7px}
+.item .d{font-size:12.5px;color:var(--ink-soft);margin-top:3px;line-height:1.45}
+.item .d i{font-style:italic}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px}
+.pill{background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:6px 13px;font-size:13.5px;color:var(--ink)}
+.pill b{font-weight:600}
+.fbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px}
+.search{flex:1;min-width:220px;display:flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--rule-strong);border-radius:10px;padding:9px 13px}
+.search svg{width:16px;height:16px;stroke:var(--ink-faint);fill:none;stroke-width:2;flex:none}
+.search input{flex:1;border:0;background:none;font-family:var(--sans);font-size:14.5px;color:var(--ink);outline:none}
+.search:focus-within{border-color:var(--brass);outline:1px solid var(--brass)}   /* the input drops its own ring */
+.fcount{font-family:var(--mono);font-size:12px;color:var(--ink-faint);flex:none}
+.fathers{columns:3 210px;column-gap:26px}
+.fentry{break-inside:avoid;display:flex;align-items:baseline;gap:8px;padding:4px 0;border-bottom:1px solid var(--rule);line-height:1.35}
+.fentry .fn{font-size:13.7px;color:var(--ink);flex:1}
+.fentry .fc{font-family:var(--mono);font-size:11px;color:var(--ink-faint);flex:none;font-variant-numeric:tabular-nums}
+.fnone{color:var(--ink-soft);font-size:14px;padding:14px 0}
+mark{background:color-mix(in srgb,var(--accent) 30%,transparent);color:inherit;border-radius:3px;padding:0 1px}
+.foot{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--ink-faint);line-height:1.6}
+.foot b{color:var(--ink-soft)}
+@media(max-width:560px){ .fathers{columns:1} .page{padding:34px 16px calc(var(--rail-bar) + 70px)} }
+.corpus-disc{margin:16px 0 0}
+.corpus-disc summary{cursor:pointer;font-size:13.5px;color:var(--iron);max-width:66ch;list-style:none;line-height:1.5}
+.corpus-disc summary::-webkit-details-marker{display:none}
+.corpus-disc summary::before{content:"\25B8  ";color:var(--accent);font-weight:600}
+.corpus-disc[open] summary::before{content:"\25BE  "}
+.corpus-disc summary:hover{text-decoration:underline}
+.corpuslist{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0 22px;max-height:560px;overflow:auto;margin-top:14px;border:1px solid var(--rule);border-radius:12px;background:var(--surface);padding:6px 14px}
+.centry{padding:5px 0;border-bottom:1px solid var(--rule);line-height:1.35;font-size:13px;break-inside:avoid}
+.centry .ct{color:var(--ink)}
+.centry .ca{color:var(--ink-faint)}
+.subh{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin:18px 0 8px}
+.persona{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:16px 18px}
+.persona p{margin:0 0 10px;font-size:14px;color:var(--ink-soft);line-height:1.62}
+.persona p:last-child{margin-bottom:0}
+.persona b{color:var(--ink);font-weight:600}
+.item .tool{font-family:var(--mono);font-size:.92rem;font-weight:600;color:var(--ink);line-height:1.3;word-break:break-word}
+.persona + .sec-note{margin-top:16px}
+.modeh{font-family:var(--serif);font-weight:600;font-size:1.15rem;color:var(--ink);margin:30px 0 4px;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+.modeh span{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--iron)}
+.modeh + .sec-note{margin:4px 0 0}
+.backlink{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--iron);text-decoration:none;padding:16px 24px 0 calc(var(--rail-w) + 24px);letter-spacing:.05em}
+.backlink:hover{text-decoration:underline}
+/* touch: every control gets at least a 44px target */
+@media (pointer:coarse){
+  .backlink{display:inline-flex;align-items:center;min-height:44px;padding-top:6px}
+  .search{padding-top:0;padding-bottom:0}
+  .search input{min-height:44px}
+  .corpus-disc summary{padding:12px 0}
+}

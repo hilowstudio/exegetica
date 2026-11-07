@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% block title %}Media Studio · Exegetica{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/studio.css">{% endblock %}
+{% block content %}
+<div class="app">
+
+  <aside class="controls" aria-label="Studio settings">
+    <div>
+      <h1>Media Studio</h1>
+    </div>
+    <div class="notready" id="notready" hidden></div>
+
+    <div class="fld">
+      <span class="lab" id="mode-lab">Mode</span>
+      <div class="seg" role="group" aria-labelledby="mode-lab" id="mode">
+        <button type="button" data-v="create" aria-pressed="true">Create</button>
+        <button type="button" data-v="edit" aria-pressed="false">Edit</button>
+        <button type="button" data-v="video" aria-pressed="false">Video</button>
+      </div>
+    </div>
+
+    <div class="fld" id="source-fld" hidden>
+      <span class="lab" id="source-lab">Image to edit</span>
+      <div class="source">
+        <img id="source-img" alt="The chosen image" hidden>
+        <span class="none" id="source-none">Upload an image, or pick one below and choose Edit this.</span>
+      </div>
+      <div class="row">
+        <button class="btn" type="button" id="upload-btn">Upload an image</button>
+        <button class="btn" type="button" id="clear-source" hidden>Remove</button>
+      </div>
+      <input type="file" id="upload" accept="image/png,image/jpeg,image/webp" hidden>
+    </div>
+
+    <div class="fld" id="extend-fld" hidden>
+      <span class="lab">Carrying on from</span>
+      <div class="source">
+        <video id="extend-video" muted preload="metadata" width="96" height="64"></video>
+        <span class="none">The new clip starts from this clip's last second, and the two are joined. Your own GPU only.</span>
+      </div>
+      <div class="row"><button class="btn" type="button" id="clear-extend">Stop extending</button></div>
+    </div>
+
+    <div class="fld" id="end-fld" hidden>
+      <span class="lab">Last frame (optional)</span>
+      <div class="source">
+        <img id="end-img" alt="The chosen last frame" hidden>
+        <span class="none" id="end-none">The video ends on this picture. Your own GPU only.</span>
+      </div>
+      <div class="row">
+        <button class="btn" type="button" id="end-btn">Upload an image</button>
+        <button class="btn" type="button" id="clear-end" hidden>Remove</button>
+      </div>
+      <input type="file" id="end-upload" accept="image/png,image/jpeg,image/webp" hidden>
+    </div>
+
+    <div class="fld" id="refs-fld" hidden>
+      <span class="lab">Pictures</span>
+      <p class="hint" id="refs-hint">People, things or places to show. Name them in your description as Picture 1, Picture 2 and on.</p>
+      <div class="thumbs" id="refs"></div>
+      <div class="row"><button class="btn" type="button" id="refs-btn">Add pictures</button></div>
+      <input type="file" id="refs-upload" accept="image/png,image/jpeg,image/webp" multiple hidden>
+    </div>
+
+    <div class="fld" id="pins-fld" hidden>
+      <span class="lab">Pictures at set seconds</span>
+      <p class="hint">The video becomes each picture, whole, at the second under it.</p>
+      <div class="thumbs" id="pins"></div>
+      <div class="row"><button class="btn" type="button" id="pins-btn">Add a picture</button></div>
+      <input type="file" id="pins-upload" accept="image/png,image/jpeg,image/webp" hidden>
+    </div>
+
+    <div class="fld">
+      <label class="lab" for="prompt" id="prompt-lab">Describe the image</label>
+      <textarea id="prompt" maxlength="2000" placeholder="An apple on a wooden table in morning light"></textarea>
+      <label class="check"><input type="checkbox" id="rewrite" checked><span>Rewrite my words into a detailed prompt first. You'll see the rewrite.</span></label>
+    </div>
+
+    <div class="fld" id="task-fld" hidden>
+      <span class="lab" id="task-lab">What are you making?</span>
+      <div class="chips" role="group" aria-labelledby="task-lab" id="tasks"></div>
+    </div>
+
+    <div class="fld">
+      <label class="lab" for="model">Model</label>
+      <select id="model"></select>
+      <p class="hint" id="model-note"></p>
+      <div class="mcard" id="mcard" hidden></div>
+    </div>
+
+    <div class="fld">
+      <label class="lab" for="service">Service</label>
+      <select id="service"><option value="">Cheapest today</option></select>
+      <p class="hint" id="prices-line"><span id="prices-when"></span> <button class="linkbtn" type="button" id="check-prices">Check prices now</button></p>
+    </div>
+
+    <div class="fld" id="steps-fld" hidden>
+      <label class="lab" for="steps">Steps: <span id="steps-n">28</span></label>
+      <input type="range" id="steps" min="10" max="50" step="1" value="28">
+    </div>
+
+    <div class="fld" id="shape-fld">
+      <span class="lab" id="shape-lab">Shape</span>
+      <div class="chips" role="group" aria-labelledby="shape-lab" id="shape"></div>
+      <p class="hint" id="shape-note" hidden>The first frame sets the video's shape.</p>
+    </div>
+
+    <div class="fld" id="seconds-fld" hidden>
+      <span class="lab" id="seconds-lab">Length</span>
+      <div class="chips" role="group" aria-labelledby="seconds-lab" id="seconds"></div>
+    </div>
+
+    <label class="check" id="audio-fld" hidden><input type="checkbox" id="audio"><span>With sound</span></label>
+
+    <button class="make" id="make" type="button" disabled>Make image</button>
+    <p class="saving" id="saving-to" hidden></p>
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+  </aside>
+
+  <main class="canvas">
+    <section class="stage" id="stage" aria-live="polite">
+      <div class="empty"><h2>Nothing made yet</h2><p>Describe what you want at left and choose Make. Images take seconds. A video takes a few minutes, and you can leave the page while it is made.</p></div>
+    </section>
+    <section class="library" id="gallery" aria-label="Library" hidden>
+      <div class="lib-head" id="lib-head">
+        <div class="lib-title" id="lib-title"></div>
+        <div class="lib-actions" id="lib-actions">
+          <button class="btn coarse-only" type="button" id="select-btn">Select</button>
+          <button class="btn" type="button" id="new-folder"></button>
+          <button class="iconbtn" type="button" id="folder-menu" aria-haspopup="menu" aria-expanded="false" aria-label="Folder options"></button>
+        </div>
+        <div class="selbar" id="selbar" hidden>
+          <button class="iconbtn" type="button" id="sel-clear" aria-label="Clear the selection"></button>
+          <span class="count" id="sel-count" role="status"></span>
+          <button class="linkbtn" type="button" id="sel-all"></button>
+          <span class="sp"></span>
+          <button class="btn" type="button" id="move-btn" aria-haspopup="menu" aria-expanded="false"></button>
+          <button class="btn danger" type="button" id="bulk-delete"></button>
+        </div>
+      </div>
+      <div class="folders" id="folders" role="list" aria-label="Folders"></div>
+      <p class="section-lab" id="loose-lab" hidden>Not in a folder</p>
+      <div class="grid" id="grid"></div>
+      <p class="empty-note" id="empty-folder" hidden></p>
+    </section>
+    <dialog id="compare" class="compare" aria-labelledby="compare-title">
+      <div class="cmp-head">
+        <h2 id="compare-title">Same request, every model</h2>
+        <button class="iconbtn" type="button" id="compare-close" aria-label="Close"></button>
+      </div>
+      <div class="seg cmp-kind" role="group" aria-label="What to compare" id="cmp-kind">
+        <button type="button" data-v="create" aria-pressed="true">Pictures from words</button>
+        <button type="button" data-v="edit" aria-pressed="false">Edits</button>
+      </div>
+      <div class="chips cmp-prompts" role="group" aria-label="Request" id="cmp-prompts"></div>
+      <p class="cmp-text" id="cmp-text"></p>
+      <div class="cmp-grid" id="cmp-grid"></div>
+      <p class="hint cmp-foot" id="cmp-foot"></p>
+      <div class="lightbox" id="lightbox" hidden>
+        <img id="lightbox-img" alt="">
+        <p id="lightbox-cap"></p>
+        <button class="btn" type="button" id="lightbox-close">Back to the comparison</button>
+      </div>
+    </dialog>
+    <div class="menu" id="menu" role="menu" hidden></div>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <dialog id="dlg" aria-labelledby="dlg-title">
+      <form method="dialog" id="dlg-form">
+        <h2 id="dlg-title"></h2>
+        <p class="hint" id="dlg-note"></p>
+        <div id="dlg-fields"></div>
+        <p class="hint warn" id="dlg-error" role="alert"></p>
+        <div class="dlg-actions">
+          <button class="btn danger" type="button" id="dlg-extra" hidden></button>
+          <span class="sp"></span>
+          <button class="btn" type="button" id="dlg-cancel">Cancel</button>
+          <button class="btn primary" type="submit" id="dlg-ok">OK</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/studio.js"></script>{% endblock %}

@@ -30,8 +30,7 @@ def test_robots_txt_is_served_as_text():
     assert r.headers["content-type"].startswith("text/plain")
 
 
-@pytest.mark.parametrize("path", ["/", "/position", "/quiet-standards", "/privacy", "/corpus",
-                                  "/static/index.html"])
+@pytest.mark.parametrize("path", ["/", "/position", "/quiet-standards", "/privacy", "/corpus"])
 def test_the_front_door_and_public_statements_may_be_listed(path):
     assert allowed(path)
 

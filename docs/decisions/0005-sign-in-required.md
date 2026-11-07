@@ -6,7 +6,7 @@ Decided by A. James Vega, 2026-11-02.
 
 **Why.** Anonymous, unlimited chat on the maker's own API key could not be limited per person, and gave no way to bind a student to the rules of the school.
 
-**Enforced in.** `chat()` in `webapp/app.py`; `_may_sign_in` and `is_teacher` in `webapp/auth.py`; the sign-in prompt in `webapp/static/index.html`.
+**Enforced in.** `chat()` in `webapp/app.py`; `_may_sign_in` and `is_teacher` in `webapp/auth.py`; the sign-in prompt in `webapp/templates/chat.html` and `webapp/static/js/chat.js`.
 
 **Consequences still open.**
 - Signed-in chats sync to Neon (`chat_state`), so every student's chats are now stored where the maker can read them. Decided in [0009](0009-student-chats-readable.md).

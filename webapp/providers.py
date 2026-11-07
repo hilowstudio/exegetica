@@ -41,6 +41,9 @@ _LIVE_TOOL_CAP = 20000
 # Open models can also ignore tool_choice "none", so their loop sends that step with no tools.
 ANSWER_NOW = ("[The library step limit is reached. Write the answer now from the results above, "
               "with no further lookups.]")
+# After an answer that was checked with a lookup (docs/decisions/0019). The student never saw that answer.
+ANSWER_IN_FULL = ("[The student has not seen the answer above. Write the whole answer now, correcting it by "
+                  "what the library returned, with no further lookups. The student sees only the answer that follows.]")
 STEP_LIMIT = "This answer reached its step limit. Ask a narrower question to go further."
 
 
@@ -659,10 +662,11 @@ async def _run_openai_responses(cfg, api_key, model, system_text, history, mcp):
 # ---------------------------------------------------------------------------
 # OpenAI-compatible chat completions (xAI Grok / Google Gemini)
 # ---------------------------------------------------------------------------
-# Text a step writes is held until it has begun a third sentence. A step that calls a tool before
-# then was narrating its next lookup ("Let me pull the passage."), and that text never reaches the
-# reader (docs/decisions/0019).
-_HOLD_SENTENCES = 3
+# While a step may still call a tool, all its text is held, and it reaches the reader only if the step
+# ends without one (docs/decisions/0019). Text before a lookup never shows. Held text that had begun a
+# third sentence was a whole answer the model went on to check, so the step after the check answers
+# with tools withheld: one check, never a loop of answer, lookup, answer.
+_ANSWER_SENTENCES = 3
 # With nothing fetched in advance, a first answer that used no library is set aside unseen and the
 # model is asked once to look first (docs/decisions/0020). Open model hosts reject a forced tool
 # call (tool_choice "required"), so this is the portable form of one.
@@ -713,7 +717,8 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
     retried = False
     outcome = None
     wrote = False   # some text of this run has reached the reader
-    stats.update(model_req=model, steps=0, tool_errors=0, narration_dropped=0)
+    checked = ""    # an answer the last step wrote and then looked something up to check (never shown)
+    stats.update(model_req=model, steps=0, tool_errors=0, narration_dropped=0, answers_held=0)
 
     try:
         # The library first (docs/decisions/0020): sources the student's message names are looked up
@@ -738,7 +743,8 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
 
         for step in range(max_steps):
             over_budget = limits is not None and spent >= limits.max_usd
-            final_step = bool(step) and (step == max_steps - 1 or over_budget)
+            at_limit = step == max_steps - 1
+            final_step = bool(step) and (at_limit or over_budget or bool(checked))
             params = dict(model=model, messages=messages, stream=True, **extra)
             if limits:
                 params["max_tokens"] = limits.max_tokens
@@ -746,14 +752,14 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
                 params["stream_options"] = {"include_usage": True}
             if final_step:
                 if messages[-1]["role"] == "tool":
-                    messages[-1] = dict(messages[-1], content=f"{messages[-1]['content']}\n\n{ANSWER_NOW}")
+                    note = ANSWER_IN_FULL if checked else ANSWER_NOW
+                    messages[-1] = dict(messages[-1], content=f"{messages[-1]['content']}\n\n{note}")
             else:
                 params["tools"] = tools
             hold_all = step == 0 and must_call   # this answer shows only if it used the library
             while True:
                 text_parts: list[str] = []
-                held: list[str] = []
-                releasing = final_step   # a step with no tools is the answer from its first word
+                held: list[str] = []   # a step offered tools shows nothing until it ends without a call
                 shown = False
                 calls: dict[int, dict] = {}
                 announced: set[int] = set()
@@ -776,19 +782,12 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
                         delta = choice.delta
                         if getattr(delta, "content", None):
                             text_parts.append(delta.content)
-                            if releasing:
+                            if final_step:   # a step with no tools is the answer from its first word
                                 shown = True
                                 yield {"type": "text", "text": delta.content}
                             else:
                                 held.append(delta.content)
-                                if not hold_all and _sentences_begun("".join(held)) >= _HOLD_SENTENCES:
-                                    releasing = shown = True
-                                    yield {"type": "text", "text": "".join(held)}
-                                    held = []
                         for tc in (getattr(delta, "tool_calls", None) or []):
-                            if held:   # the text before a lookup was narration
-                                stats["narration_dropped"] += 1
-                                held = []
                             slot = calls.setdefault(tc.index, {"id": None, "name": "", "args": ""})
                             if tc.id:
                                 slot["id"] = tc.id
@@ -819,12 +818,18 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
                 spent += _usd(model, su)
             stats.update(steps=usage["requests"], model_served=served or model)
             answer = "".join(held)
-            if answer and not calls:
+            if answer.strip() and calls:   # text before a lookup never reaches the reader
+                if _sentences_begun(answer) >= _ANSWER_SENTENCES:
+                    stats["answers_held"] += 1
+                    checked = answer   # it answered, then looked something up to check: next, the whole answer
+                else:
+                    stats["narration_dropped"] += 1   # "Let me pull the passage."
+            elif answer and not calls:
                 if hold_all and finish != "length" and not _from_prompt(answer, system_text):
                     stats["lookup_nudges"] = 1   # answered from memory: set it aside and ask once to look
                     messages.append({"role": "user", "content": LOOK_FIRST})
                     continue
-                yield {"type": "text", "text": answer}   # the answer ended inside its first sentences
+                yield {"type": "text", "text": answer}   # the step ended without a lookup: this is the answer
                 shown = True
             wrote = wrote or shown
 
@@ -838,9 +843,12 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
                     yield {"type": "error", "message": policy.PROVIDER_ERROR}
                     outcome = "provider_error"
                     break
-                outcome = "budget" if over_budget else "step_limit" if final_step else "complete"
+                outcome = "budget" if over_budget else "step_limit" if at_limit else "complete"
                 if final_step and not wrote:   # the reader would otherwise see nothing at all
-                    yield {"type": "notice", "incomplete": True, "message": STEP_LIMIT}
+                    if checked:   # the step after the check wrote nothing: show the answer it was checking
+                        yield {"type": "text", "text": checked}
+                    else:
+                        yield {"type": "notice", "incomplete": True, "message": STEP_LIMIT}
                 break
             if final_step:   # tools were withheld; never run a call past the limit
                 yield {"type": "notice", "incomplete": True, "message": STEP_LIMIT}
@@ -894,8 +902,9 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
     finally:
         stats.update({k: usage[k] for k in ("input", "cache_read", "cache_write", "output")},
                      est_usd=round(spent, 6), outcome=outcome or "cancelled")
-        if stats["narration_dropped"]:
-            logger.info("narration held back: steps=%d", stats["narration_dropped"])
+        if stats["narration_dropped"] or stats["answers_held"]:
+            logger.info("held back before a lookup: narration steps=%d, checked answers=%d",
+                        stats["narration_dropped"], stats["answers_held"])
         _log_usage(model, usage)
         import contextlib
         with contextlib.suppress(Exception):

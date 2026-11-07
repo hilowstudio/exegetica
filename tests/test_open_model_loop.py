@@ -1,6 +1,7 @@
 """The OpenAI-compatible loop that Grok, Gemini and open models run on keeps the Anthropic loop's
-ceilings (decision 0008), holds back narration before a lookup (0019), and puts the library first
-for student chat (0020). A stand-in openai module replays scripted steps. No network or cost."""
+ceilings (decision 0008), shows no text written before a lookup and lets an answer be checked once
+(0019), and puts the library first for student chat (0020). A stand-in openai module replays scripted
+steps. No network or cost."""
 import asyncio
 import sys
 import types
@@ -33,7 +34,8 @@ async def _stream(step):
                                                           prompt_tokens_details=_ns(cached_tokens=0)))
 
 
-def _fake_openai(script, calls):
+def _fake_openai(script, calls, honor_tools=False):
+    """With honor_tools, a step sent no tools can't call one, as on a real host."""
     mod = types.ModuleType("openai")
 
     class APIStatusError(Exception):
@@ -50,6 +52,8 @@ def _fake_openai(script, calls):
             step = script[min(len(calls) - 1, len(script) - 1)]
             if isinstance(step, Exception):
                 raise step
+            if honor_tools and "tools" not in params:
+                step = {k: v for k, v in step.items() if k != "tools"}
             return _stream(step)
 
     class AsyncOpenAI:
@@ -73,9 +77,10 @@ class _MCP:
         return ("The library is down.", True) if self.fail else ("In the beginning was the Word.", False)
 
 
-def _run(monkeypatch, script, limits, question="hi there", model="test-model", mcp=None, make_script=None):
+def _run(monkeypatch, script, limits, question="hi there", model="test-model", mcp=None, make_script=None,
+         honor_tools=False):
     calls = []
-    mod = _fake_openai(script, calls)
+    mod = _fake_openai(script, calls, honor_tools)
     monkeypatch.setitem(sys.modules, "openai", mod)
     if make_script:
         script[:] = make_script(mod)
@@ -154,19 +159,43 @@ def test_an_empty_reply_after_the_retry_shows_the_error_text(monkeypatch):
     assert events[-1] == {"type": "error", "message": policy.PROVIDER_ERROR}
 
 
-# ---------------------------------------------------------------- narration (decision 0019)
+# ---------------------------------------------------------------- text before a lookup (decision 0019)
+# The maker's probe, 2026-11-06: Nemotron wrote a whole answer, which was already streaming to the
+# student, then called lookup_verse to check its Leviticus quote, then wrote the answer again from the
+# start, checked again, and wrote it a third time. The student saw it three times.
+ANSWER = ('Leviticus 19:18 says, "You shall love your neighbor as yourself." Jesus calls it the second '
+          "great commandment in Matthew 22:39. Paul says the whole law is summed up in it in Romans 13:9.")
+SESSION = [{"text": [ANSWER[:60], ANSWER[60:]], "tools": ["lookup_verse"]},
+           {"text": [ANSWER], "tools": ["lookup_verse"]},
+           {"text": [ANSWER]}]
+
+
 def test_text_before_a_lookup_never_reaches_the_reader(monkeypatch):
     script = [{"text": ["Let me look ", "that up."], "tools": ["lookup_verse"]}, {"text": ["The Word was God."]}]
     events, _calls, stats = _run(monkeypatch, script, OPEN)
     assert _text(events) == "The Word was God."
-    assert stats["narration_dropped"] == 1
+    assert stats["narration_dropped"] == 1 and stats["answers_held"] == 0
 
 
-def test_an_answer_three_sentences_in_is_shown_even_if_a_lookup_follows(monkeypatch):
-    script = [{"text": ["One point. Two points. Three"], "tools": ["lookup_verse"]}, {"text": ["Done."]}]
-    events, _calls, stats = _run(monkeypatch, script, OPEN)
-    assert _text(events) == "One point. Two points. ThreeDone."
-    assert stats["narration_dropped"] == 0
+def test_an_answer_checked_with_a_lookup_reaches_the_student_once(monkeypatch):
+    events, calls, stats = _run(monkeypatch, [dict(s) for s in SESSION], policy.CHAT,
+                                question="Where does the Bible say to love your neighbor?", honor_tools=True)
+    assert _text(events) == ANSWER and len([e for e in events if e["type"] == "text"]) == 1
+    # one check, then the whole answer with tools withheld: two model steps, never a third
+    assert len(calls) == 2 and "tools" in calls[0] and "tools" not in calls[1]
+    assert calls[1]["messages"][-1]["role"] == "tool"
+    assert calls[1]["messages"][-1]["content"].endswith(providers.ANSWER_IN_FULL)
+    kinds = [e["type"] for e in events]
+    assert kinds.count("tool_call") == 1 and kinds.index("tool_done") < kinds.index("text")
+    assert stats["answers_held"] == 1 and stats["narration_dropped"] == 0 and stats["outcome"] == "complete"
+
+
+def test_an_empty_reply_after_the_check_shows_the_answer_it_checked(monkeypatch):
+    script = [SESSION[0], {"text": []}]
+    events, calls, stats = _run(monkeypatch, script, OPEN, honor_tools=True)
+    assert len(calls) == 3   # the empty step was retried once
+    assert _text(events) == ANSWER and not [e for e in events if e["type"] == "notice"]
+    assert stats["outcome"] == "complete"
 
 
 # ---------------------------------------------------------------- the library first (decision 0020)

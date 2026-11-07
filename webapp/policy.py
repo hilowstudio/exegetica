@@ -18,7 +18,7 @@ CHAT_FALLBACK_MODEL = "zai-org/GLM-5.3-Flash"
 # Shown when a model reports that it declined a student's message (the Anthropic path does). No
 # other model answers in its place, so a refusal ends the reply here.
 REFUSAL_TEXT = ("Exegetica can't help with that. If something is weighing on you, talk with a "
-                "parent, teacher, or pastor you trust, or open Need help now below.")
+                "parent, teacher, or pastor you trust, or open Need help now with the lifesaver ring button.")
 
 
 @dataclass(frozen=True)
@@ -41,6 +41,17 @@ CHAT = RunLimits(max_steps=8, max_tokens=16000, max_usd=1.0, locked=True, tool_f
                  fallback_model=CHAT_FALLBACK_MODEL)
 GENERATE = RunLimits(max_steps=12, max_tokens=64000, max_usd=5.0)
 REVISE = RunLimits(max_steps=3, max_tokens=64000, max_usd=2.0)
+
+# Bringing your own provider, model or API key is off in production for now (2026-11-06): Settings
+# no longer offers it, and the Prep Room runs on the server's own model whatever a browser sends.
+BYOK = False
+
+
+def byok(body: dict) -> tuple[str, str, str | None]:
+    """The provider, model and key a Prep Room request runs on."""
+    if not BYOK:
+        return "anthropic", "", None
+    return body.get("provider", "anthropic"), body.get("model", ""), (body.get("api_key") or "").strip() or None
 
 # One study: 24 turns, a bounded transcript, and no single oversized message.
 MAX_MESSAGES = 48

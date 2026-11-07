@@ -42,7 +42,7 @@ import uuid
 
 from starlette.responses import HTMLResponse, JSONResponse, Response
 
-from webapp import auth, metrics, r2
+from webapp import auth, metrics, r2, shell
 from webapp import studio_comfy as comfy
 from webapp import studio_prices as prices
 from webapp import studio_services as svc
@@ -1765,9 +1765,7 @@ def _not_found():
 async def page(request):
     if not _user_or_404(request):
         return HTMLResponse("Not found", status_code=404)
-    path = os.path.join(os.path.dirname(__file__), "static", "studio.html")
-    with open(path, encoding="utf-8") as f:
-        return HTMLResponse(f.read(), headers={"Cache-Control": "no-store"})
+    return shell.page(request, "studio.html")
 
 
 def _menu_entry(model_id: str, m: dict) -> dict:

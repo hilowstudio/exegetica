@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% block title %}Exegetica{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/chat.css">{% endblock %}
+{% block content %}
+<div class="app">
+  <aside class="side" id="side">
+    <div class="side-h"><button class="newbtn" id="new-chat" type="button"><span style="font-size:15px;line-height:1">＋</span> New study</button></div>
+    <div class="side-lab">Recent studies</div>
+    <div class="chats" id="chats"></div>
+  </aside>
+
+  <div class="col">
+    <div class="masthead">
+      <img class="wm-light" src="/static/wordmark-black.png" alt="Exegetica">
+      <img class="wm-dark" src="/static/wordmark.png" alt="Exegetica">
+    </div>
+    <div class="thread-h">
+      <button class="menu-btn" id="menu-btn" type="button" title="Studies" aria-label="Show studies" aria-controls="side" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M9 5v14"/></svg></button>
+      <span class="ttl" id="thread-title">New study</span>
+      <span class="vlab" id="subj-lab" hidden>Subject</span>
+      <div class="toggle" id="subj" role="group" aria-label="Subject" hidden>
+        <button id="s-bible" aria-pressed="true" type="button">Bible</button>
+        <button id="s-history" aria-pressed="false" type="button">History</button>
+      </div>
+      <!-- Modes stay in code but are hidden: Bible chat is the Theologian, History chat the Historian
+           (docs/decisions/0006-chat-modes.md). -->
+      <span class="vlab" hidden>Mode</span>
+      <div class="toggle" role="group" aria-label="Mode" hidden>
+        <button id="p-professor" aria-pressed="true" type="button">Professor</button>
+        <button id="p-aide" aria-pressed="false" type="button">Aide</button>
+        <button id="p-researcher" aria-pressed="false" type="button">Researcher</button>
+      </div>
+      <a class="corpus-info" href="/corpus" data-src title="About Exegetica and FAQs" aria-label="About Exegetica and FAQs"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></a>
+    </div>
+
+    <main class="scroll" id="main">
+      <div class="thread shell-col" id="thread">
+        <div class="empty" id="empty">
+          <div class="es-bible">
+          <div class="eyebrow">Answers you can check</div>
+          <h1>Begin a study</h1>
+          <p>Ask about a passage, a word, a doctrine, or the historic church. Every answer is drawn from the Exegetica library of tools and sources.<button class="src-btn" type="button" data-src aria-haspopup="dialog" aria-label="About Exegetica and FAQs" title="About Exegetica and FAQs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button></p>
+          <div class="exgroups" id="examples">
+            <div class="exg">
+              <div class="exh">Word &amp; language</div>
+              <button type="button">What does <em>logos</em> mean in John 1:1?</button>
+              <button type="button">Trace the word <em>meno</em> (abide) through John 15.</button>
+            </div>
+            <div class="exg">
+              <div class="exh">The historic church</div>
+              <button type="button">Which confessions cite John 3:16?</button>
+              <button type="button">Show me the church fathers on John 1:14.</button>
+            </div>
+            <div class="exg">
+              <div class="exh">Passage study</div>
+              <button type="button">Walk me through the bread of life discourse in John 6.</button>
+              <button type="button">Cross-references for the good shepherd in John 10.</button>
+            </div>
+            <div class="exg">
+              <div class="exh">People &amp; places</div>
+              <button type="button">Who was Nicodemus, and where does he appear in John?</button>
+              <button type="button">Where was Jacob's well, where Jesus met the Samaritan woman?</button>
+            </div>
+          </div>
+          </div>
+          <div class="es-history" hidden>
+          <div class="eyebrow">Answers you can check</div>
+          <h1>Begin an inquiry</h1>
+          <p>Ask about a person, an event, a document, a court case, or a law. Every answer is drawn from the primary sources and cited.<button class="src-btn" type="button" data-src aria-haspopup="dialog" aria-label="About Exegetica and FAQs" title="About Exegetica and FAQs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button></p>
+          <div class="exgroups">
+            <div class="exg">
+              <div class="exh">Primary sources</div>
+              <button type="button">What reasons did the seceding states give for leaving the Union?</button>
+              <button type="button">How did Frederick Douglass learn to read, in his own words?</button>
+            </div>
+            <div class="exg">
+              <div class="exh">The Constitution</div>
+              <button type="button">Quiz me for the Constitution Test.</button>
+              <button type="button">What does the Fourteenth Amendment say, and why was it added?</button>
+            </div>
+            <div class="exg">
+              <div class="exh">The Court &amp; the law</div>
+              <button type="button">Can a school search a student's backpack? What has the Supreme Court said?</button>
+              <button type="button">What do I have to do if I'm in a car accident in Illinois?</button>
+            </div>
+            <div class="exg">
+              <div class="exh">Faith &amp; the founding</div>
+              <button type="button">Did the founders intend America to be a Christian nation?</button>
+              <button type="button">What did Jefferson mean by a "wall of separation"?</button>
+            </div>
+            <div class="exg">
+              <div class="exh">People &amp; events</div>
+              <button type="button">How was Thomas Jefferson connected to John Adams?</button>
+              <button type="button">What else was happening in the world in 1776?</button>
+            </div>
+            <div class="exg">
+              <div class="exh">Turning points</div>
+              <button type="button">What happened in the Great Chicago Fire of 1871?</button>
+              <button type="button">Who invented the telephone, and how did it change the country?</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="composer-wrap">
+      <div id="signin-gate" class="gate shell-col" hidden><span id="gate-msg">Chat needs your school Google account.</span> <a href="/auth/login?next=/">Sign in with Google</a></div>
+      <div id="load-note" class="gate shell-col" hidden>Your saved studies didn't load, so new studies won't be saved. Refresh the page to try again.</div>
+      <div id="closed-note" class="gate shell-col" hidden role="status"><span id="closed-msg"></span> <button type="button" id="closed-new">Start a new study</button></div>
+      <div class="composer shell-col">
+        <textarea id="input" rows="1" aria-label="Message" placeholder="Ask a question about the Gospel of John…"></textarea>
+        <button class="send" id="send" type="button">Send</button>
+      </div>
+      <div class="hint shell-col">Replies are written by AI. Answers can be wrong, so check what matters against the text.</div>
+    </div>
+
+    <div id="src-bg" class="help-bg" role="dialog" aria-modal="true" aria-labelledby="src-title">
+      <div class="help-card src-card">
+        <button class="help-x" id="src-close" type="button" aria-label="Close">&times;</button>
+        <h3 id="src-title">About Exegetica</h3>
+        <div class="src-tabs" role="tablist" aria-label="About Exegetica">
+          <button class="src-tab" type="button" role="tab" id="src-tab-about" aria-controls="src-about" aria-selected="true">About</button>
+          <button class="src-tab" type="button" role="tab" id="src-tab-faq" aria-controls="src-faq" aria-selected="false" tabindex="-1">FAQs</button>
+        </div>
+        <div id="src-about" role="tabpanel" aria-labelledby="src-tab-about" tabindex="0">
+          <div class="src-intro">
+            <p class="about-lead">Exegetica is a study tool made to help you to study Scripture closely with a library of trusted sources at hand while leaving the thinking to you.</p>
+            <p><strong>Study in chat.</strong> Ask about a passage, a Hebrew or Greek word, a person or place in the Bible, a doctrine, or any other question your Bible brings up for you. Exegetica looks things up in its library before it answers, names the sources it used, and checks its quotations, so you can open them and read for yourself.</p>
+            <p>For help with memorizing Scripture, the Scripture Memory tool will help you to take a verse from first reading to full recall in eight steps.</p>
+            <p>Common questions about Exegetica are answered under <button type="button" class="about-go" id="about-to-faq">FAQs</button>.</p>
+          </div>
+        </div>
+        <div id="src-faq" role="tabpanel" aria-labelledby="src-tab-faq" tabindex="0" hidden>
+        <div id="faq">
+{% include "partials/faq.html" %}
+        </div>
+        <div class="faq-links">
+          <a class="faq-link" href="/privacy"><strong>Privacy</strong><span>What Exegetica keeps, who receives it, and who can read it</span></a>
+          <a class="faq-link" href="/position"><strong>Position statement</strong><span>The wise and ethical use of AI in Christian education</span></a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/chat.js"></script>{% endblock %}

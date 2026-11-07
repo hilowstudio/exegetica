@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Magazine Covers — Exegetica{% endblock %}
+{% block meta %}<meta name="robots" content="noindex">{% endblock %}
+{% block fonts %}<link rel="stylesheet" href="/static/fonts/covers.css">{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/covers.css">{% endblock %}
+{% block content %}
+<header class="topbar">
+  <a class="tb-back" href="/read">‹ Library</a>
+  <div class="tb-title">Magazine covers</div>
+  <div class="tb-spacer"></div>
+</header>
+<main class="wrap shell-col">
+  <div class="kicker">Reading Room · admin</div>
+  <h1>Original magazine covers</h1>
+  <p class="lede" id="lede">These stories name the magazine issue they were transcribed from. Each card shows the book's cover now and that issue's cover. Pick the ones you want and apply them together.</p>
+  <div class="bar" id="bar" hidden>
+    <div class="seg" role="group" aria-label="Show">
+      <button type="button" data-show="needs" aria-pressed="true">Without a custom cover</button>
+      <button type="button" data-show="all" aria-pressed="false">All</button>
+    </div>
+    <select id="mag" aria-label="Magazine"><option value="">All magazines</option></select>
+    <button class="lnk" id="selAll" type="button">Select all shown</button>
+    <button class="lnk" id="selNone" type="button">Clear selection</button>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="grid" id="grid"></div>
+  <p class="msg" id="msg">Loading…</p>
+</main>
+<div class="dock" id="dock" hidden>
+  <span class="prog" id="prog" role="status" aria-live="polite"></span>
+  <button class="go" id="go" type="button" disabled>Apply covers</button>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/covers.js"></script>{% endblock %}

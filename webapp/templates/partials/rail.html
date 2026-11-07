@@ -1,0 +1,12 @@
+{# The rail (webapp/shell.py chooses its places by role; static/css/shell.css and static/js/shell.js run it). #}
+<nav class="rail" id="rail" aria-label="Primary">
+  <button class="rail-collapse" id="rail-collapse" type="button" title="Hide the sidebar" aria-label="Hide the sidebar" aria-controls="rail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 6l-6 6 6 6M19 6l-6 6 6 6"/></svg></button>
+  {% for item in rail %}
+  <a class="railbtn{% if item.active %} active{% endif %}" href="{{ item.href }}" title="{{ item.label }}" aria-label="{{ item.label }}"{% if item.active %} aria-current="page"{% endif %}>{{ item.icon }}</a>
+  {% endfor %}
+  <span class="sp"></span>
+  <button id="help-link" type="button" title="Need help now?" aria-label="Need help now?" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.8"/><path d="M6 6l3.3 3.3M18 6l-3.3 3.3M6 18l3.3-3.3M18 18l-3.3-3.3"/></svg></button>
+  <button id="theme-toggle" type="button" title="Dark theme" aria-label="Switch to the dark theme"></button>
+  <button id="open-settings" type="button" title="Settings" aria-label="Settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3.2"/><path d="M6.3 18.3c1.3-2.2 3.3-3.4 5.7-3.4s4.4 1.2 5.7 3.4"/></svg></button>
+</nav>
+<button class="rail-handle" id="rail-handle" type="button" title="Show the sidebar" aria-label="Show the sidebar" aria-controls="rail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>

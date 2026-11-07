@@ -134,7 +134,7 @@ def test_prefix_delete_refuses_anything_but_a_folder():
 
 # ---------------------------------------------------------------- privacy page
 def _privacy() -> str:
-    return asyncio.run(about.privacy_page(None)).body.decode()
+    return about.privacy().body
 
 
 def test_privacy_page_claims_no_purge_that_is_off(monkeypatch):
@@ -158,9 +158,12 @@ def test_privacy_page_states_the_facts_the_faq_promises():
 
 def test_no_page_loads_anything_from_google_fonts():
     """The privacy page says opening a page sends nothing to Google (decision 0013)."""
-    static = Path(__file__).resolve().parents[1] / "webapp" / "static"
+    webapp = Path(__file__).resolve().parents[1] / "webapp"
+    static = webapp / "static"
     loads = re.compile(r"(href=|src=|url\(|@import)\s*[\"']?(https?:)?//fonts\.(googleapis|gstatic)\.com")
-    for page in [*static.glob("*.html"), *static.glob("*.js"), *static.glob("*.css"), *static.glob("fonts/*.css")]:
+    pages = [*webapp.glob("templates/**/*.html"), *static.glob("**/*.html"), *static.glob("**/*.js"), *static.glob("**/*.css")]
+    assert len(pages) > 20
+    for page in pages:
         assert not loads.search(page.read_text(encoding="utf-8")), page.name
     for sheet in static.glob("fonts/*.css"):
         for url in re.findall(r"url\(([^)]+)\)", sheet.read_text(encoding="utf-8")):

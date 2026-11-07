@@ -312,7 +312,7 @@ async def ask_app(model: str | None, pin: str | None, system: str, question: str
             "prompt_sha": hashlib.sha256(system.encode("utf-8")).hexdigest()[:12],
             "live_dropped": gate.dropped, "live_stopped": gate.stopped, "em_dashes_raw": "".join(raw).count("—"),
             "prefetched": stats.get("prefetched", 0), "lookup_nudges": stats.get("lookup_nudges", 0),
-            "narration_dropped": stats.get("narration_dropped", 0)}
+            "narration_dropped": stats.get("narration_dropped", 0), "answers_held": stats.get("answers_held", 0)}
 
 
 # ---------------------------------------------------------------------------------------------

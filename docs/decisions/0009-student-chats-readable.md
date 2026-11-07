@@ -6,7 +6,7 @@ Decided by A. James Vega, 2026-11-02, "for now."
 
 **Why.** It keeps a way to look into misuse, such as the inappropriate use seen in October and November 2026, and lets students keep their studies across devices.
 
-**Enforced in.** `webapp/store.py` (storage), and for disclosure the FAQ in `webapp/static/index.html` and `docs/privacy.md`. No code restricts or logs reads; access is the maker's own Neon credentials.
+**Enforced in.** `webapp/store.py` (storage), and for disclosure the FAQ (`webapp/templates/partials/faq.html`, built from `docs/faq.md`) and `docs/privacy.md`. No code restricts or logs reads; access is the maker's own Neon credentials.
 
 **Still open.**
 - A written procedure: when he reads student chats (routinely, or only when something is reported), and what he does when he reads something reportable. Illinois lists school personnel as mandated reporters. The school should know the procedure exists.

@@ -87,8 +87,8 @@ def main(argv: list[str]) -> int:
     if argv:
         files = [Path(a) for a in argv]
     else:
-        files = [root / "webapp" / "static" / "index.html",
-                 root / "webapp" / "static" / "generate.html"]
+        files = [root / "webapp" / "templates" / "chat.html", root / "webapp" / "static" / "js" / "chat.js",
+                 root / "webapp" / "templates" / "generate.html", root / "webapp" / "static" / "js" / "generate.js"]
     total = 0
     for f in files:
         if f.name in SKIP or not f.is_file():

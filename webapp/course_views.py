@@ -1,6 +1,7 @@
 """
-HTML views over the course manifest (see course.py). Server-rendered, no template
-engine — small string builders keyed to the classes in static/course.css.
+HTML views over the course manifest (see course.py). Server-rendered by small string
+builders keyed to the classes in static/course.css; each page is a shell.Built that the
+route puts in the site's shared layout.
 
 Audience gating: `view` is "student" (default) or "teacher". Teacher-only artifacts
 (lesson guides, answer keys) are hidden in the student view and refused by the doc
@@ -13,7 +14,7 @@ from __future__ import annotations
 import html
 from datetime import date as _date
 
-from webapp import course
+from webapp import course, shell
 
 esc = lambda s: html.escape(str(s), quote=True)  # noqa: E731
 
@@ -49,7 +50,7 @@ def _header(here: str, view: str) -> str:
     nav = (f'<a href="{_u("/course", view)}">Overview</a>'
            f'<a href="{_u("/course", view)}#units">Units</a>'
            f'<a href="{_u("/calendar", view)}">Calendar</a>')
-    return (f'<header class="site-header"><div class="bar">'
+    return (f'<header class="site-header"><div class="bar shell-col">'
             f'<a class="brand-mark" href="{_u("/course", view)}">{_crest()}'
             f'<span class="wordmark"><b>Gospel of John</b><span>Sophomore Bible</span></span></a>'
             f'<nav class="site-nav">{nav}{_toggle(here, view)}</nav></div></header>')
@@ -65,20 +66,14 @@ def _crumbs(items: list[tuple[str, str | None]], view: str) -> str:
     return '<nav class="crumbs">' + '<span class="sep">/</span>'.join(parts) + "</nav>"
 
 
-def _page(title: str, body: str, *, here: str, view: str) -> str:
-    return (
-        "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
-        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
-        f"<title>{esc(title)}</title>"
-        "<link rel=\"stylesheet\" href=\"/static/fonts.css\">"
-        "<link rel=\"stylesheet\" href=\"/static/course.css\">"
-        "</head><body>"
-        f"{_header(here, view)}<main>{body}</main>"
-        "<footer class=\"site-footer\"><div class=\"bar\">"
+def _page(title: str, body: str, *, here: str, view: str) -> shell.Built:
+    return shell.Built(
+        title,
+        f"{_header(here, view)}<main class=\"shell-col\">{body}</main>"
+        "<footer class=\"site-footer\"><div class=\"bar shell-col\">"
         "<span>The Gospel of John &middot; Sophomore Bible &middot; 2026–27</span>"
-        "<span>Yorkville Christian School</span></div></footer>"
-        "</body></html>"
-    )
+        "<span>Yorkville Christian School</span></div></footer>",
+        css=("/static/course.css",))
 
 
 def _fmt_date(iso: str, long: bool = False) -> str:
@@ -145,7 +140,7 @@ def _lesson_row(m: dict, day: dict, view: str) -> str:
 
 
 # --------------------------------------------------------------------------- views
-def overview(m: dict, *, view: str, here: str) -> str:
+def overview(m: dict, *, view: str, here: str) -> shell.Built:
     days = m["days"]
     span = f"{_fmt_date(days[0]['date'])} &ndash; {_fmt_date(days[-1]['date'], )}" if days else ""
     mem = _memory_file(m)
@@ -209,7 +204,7 @@ def overview(m: dict, *, view: str, here: str) -> str:
     return _page("The Gospel of John — Sophomore Bible", body, here=here, view=view)
 
 
-def unit(m: dict, key: str, *, view: str, here: str) -> str | None:
+def unit(m: dict, key: str, *, view: str, here: str) -> shell.Built | None:
     u = m["units"].get(key)
     if not u:
         return None
@@ -242,7 +237,7 @@ def unit(m: dict, key: str, *, view: str, here: str) -> str | None:
     return _page(f"{name} — Gospel of John", body, here=here, view=view)
 
 
-def day(m: dict, date_s: str, *, view: str, here: str) -> str | None:
+def day(m: dict, date_s: str, *, view: str, here: str) -> shell.Built | None:
     days = m["days"]
     idx = next((i for i, d in enumerate(days) if d["date"] == date_s), None)
     if idx is None:
@@ -292,21 +287,21 @@ def day(m: dict, date_s: str, *, view: str, here: str) -> str | None:
     return _page(f"{d.get('passage') or 'Lesson'} — Gospel of John", body, here=here, view=view)
 
 
-def _day_listing(m: dict, ds: list[dict], title: str, crumb_label: str, *, view: str, here: str) -> str:
+def _day_listing(m: dict, ds: list[dict], title: str, crumb_label: str, *, view: str, here: str) -> shell.Built:
     rows = "".join(_lesson_row(m, d, view) for d in ds)
     body = (_crumbs([("Overview", "/course"), ("Calendar", "/course#calendar"), (crumb_label, None)], view)
             + f'<h1>{esc(title)}</h1><div class="lessons">{rows or "<p class=empty>No lessons.</p>"}</div>')
     return _page(f"{title} — Gospel of John", body, here=here, view=view)
 
 
-def week(m: dict, key: str, *, view: str, here: str) -> str | None:
+def week(m: dict, key: str, *, view: str, here: str) -> shell.Built | None:
     ds = m["weeks"].get(key)
     if not ds:
         return None
     return _day_listing(m, ds, _week_label(key), _week_label(key), view=view, here=here)
 
 
-def month(m: dict, key: str, *, view: str, here: str) -> str | None:
+def month(m: dict, key: str, *, view: str, here: str) -> shell.Built | None:
     ds = m["months"].get(key)
     if not ds:
         return None
@@ -317,7 +312,7 @@ def find_artifact(m: dict, file: str) -> dict | None:
     return next((a for a in m["artifacts"] if a["file"] == file), None)
 
 
-def doc(m: dict, art: dict, *, view: str, here: str) -> str:
+def doc(m: dict, art: dict, *, view: str, here: str) -> shell.Built:
     crumbs = [("Overview", "/course")]
     if art.get("unit_key"):
         crumbs.append((art["unit_key"], "/course/unit/" + art["unit_key"]))
@@ -329,12 +324,12 @@ def doc(m: dict, art: dict, *, view: str, here: str) -> str:
     return _page(f"{art['title']} — Gospel of John", body, here=here, view=view)
 
 
-def not_found(msg: str, *, view: str, here: str) -> str:
+def not_found(msg: str, *, view: str, here: str) -> shell.Built:
     body = _crumbs([("Overview", "/course")], view) + f'<h1>Not found</h1><p class="empty">{esc(msg)}</p>'
     return _page("Not found", body, here=here, view=view)
 
 
-def forbidden(*, view: str, here: str) -> str:
+def forbidden(*, view: str, here: str) -> shell.Built:
     body = (_crumbs([("Overview", "/course")], view)
             + '<h1>Teacher material</h1>'
             '<p class="empty">This is teacher material. Sign in with a teacher account to open it.</p>')

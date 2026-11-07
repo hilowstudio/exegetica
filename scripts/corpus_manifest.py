@@ -18,7 +18,7 @@ holds steady across a rebuild that changes nothing. It does not see an in-place 
 text; publish_db.py already content-hashes the whole file when it ships.
 
 The check compares:
-  - the numbers on /corpus (webapp/static/corpus.html) with the databases, including the
+  - the numbers on /corpus (webapp/templates/corpus.html) with the databases, including the
     embedded church-father list and the grounding-work list (the Lexicons heading's "5 works"
     is not checked: lexicon rows are not labeled by work);
   - the page's tool list with the tools the chat registers. The page renders that list at load
@@ -57,7 +57,8 @@ ROOT = Path(__file__).resolve().parent.parent
 DB_DIR = ROOT / "db"
 MANIFEST = ROOT / "docs" / "corpus-manifest.json"
 NOTICE = ROOT / "NOTICE"
-PAGE = ROOT / "webapp" / "static" / "corpus.html"
+PAGE = ROOT / "webapp" / "templates" / "corpus.html"
+PAGE_JS = ROOT / "webapp" / "static" / "js" / "corpus.js"
 
 DATABASES = {
     "study_bible": "db/study_bible.db",
@@ -756,6 +757,8 @@ def main(argv: list[str] | None = None) -> int:
 
     drift: list[tuple[str, str]] = []
     page = _read(PAGE)
+    if page is not None:
+        page += "\n" + (_read(PAGE_JS) or "")   # the stats and the tool list are drawn by the page's script
     if page is None:
         print(f"skipped: {PAGE.relative_to(ROOT)} not found")
     else:
