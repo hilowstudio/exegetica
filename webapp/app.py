@@ -647,6 +647,13 @@ async def robots(request):
     return PlainTextResponse(ROBOTS_TXT, headers={"Cache-Control": "public, max-age=86400"})
 
 
+async def root_icon(request):
+    """Browsers and phones ask the site root for these when a page names no icon, as the
+    server-rendered pages don't (scripts/build_icons.py makes them)."""
+    name = "favicon.ico" if request.url.path == "/favicon.ico" else "apple-touch-icon.png"
+    return FileResponse(STATIC_DIR / "icons" / name, headers={"Cache-Control": "public, max-age=86400"})
+
+
 async def health(request):
     """Deep check for keep-warm and /ops: every MCP server answers a ping, or 503. A server that
     misses one is restarted by its supervisor (webapp/bridge.py). Fly's own check stays on
@@ -1278,6 +1285,8 @@ app = Starlette(
         Route("/prep-room/formats", about.formats_page),
         Route("/prep-room/standards", about.standards_page),
         Route("/robots.txt", robots),
+        Route("/favicon.ico", root_icon),
+        Route("/apple-touch-icon.png", root_icon),
         Route("/ops", ops.page),
         # Media Studio: the maker's login only for now (webapp/studio.py, docs/decisions/0017)
         Route("/studio", studio.page),
