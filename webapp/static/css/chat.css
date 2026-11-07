@@ -112,6 +112,7 @@ main.scroll{flex:1;overflow-y:auto;min-height:0}
 .prose th,.prose td{border:1px solid var(--rule);padding:6px 10px;text-align:left;vertical-align:top}
 .prose th{background:var(--surface-2);font-weight:600}
 .tools{display:flex;flex-direction:column;gap:5px;margin:2px 0}   /* the tool chips (Shell.chips) */
+.shell-status:not([hidden]) ~ .prose .caret{display:none}   /* the status line is the one sign of work */
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 .thinking{font-style:italic;color:var(--ink-faint);font-size:.92em;font-family:var(--serif)}
 .notice{font-size:12.5px;color:var(--warn);background:var(--surface-2);border:1px solid var(--rule);

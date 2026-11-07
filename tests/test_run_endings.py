@@ -62,7 +62,7 @@ def test_a_student_never_sees_the_raw_api_error(monkeypatch):
         return [ev async for ev in providers.run("anthropic", None, "claude-opus-5-5", "s",
                                                   [{"role": "user", "content": "q"}], _MCP(),
                                                   limits=policy.CHAT, stats=stats)]
-    events = asyncio.run(go())
+    events = [e for e in asyncio.run(go()) if e["type"] != "status"]
     assert events[0] == {"type": "error", "message": policy.PROVIDER_ERROR}
     assert "echoed" not in str(events) and stats["http_status"] == 529 and stats["outcome"] == "provider_error"
 
@@ -156,7 +156,7 @@ def _with_failures(monkeypatch, failures, status=200, kind="overloaded_error"):
     async def go():
         return [ev async for ev in providers.run("anthropic", None, "claude-opus-5-5", "s",
                                                   [{"role": "user", "content": "q"}], _MCP(),
-                                                  limits=policy.CHAT, stats=stats)]
+                                                  limits=policy.CHAT, stats=stats) if ev["type"] != "status"]
     return asyncio.run(go()), attempts, stats
 
 

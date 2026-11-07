@@ -93,6 +93,20 @@ def test_tool_chips_are_drawn_by_the_shell_alone():
         assert (".tool-chip" in css.read_text(encoding="utf-8")) == (css.name == "shell.css"), css.name
 
 
+def test_the_status_line_is_the_shells_and_names_every_stage_the_server_sends():
+    # the wording lives once, in shell.js, and covers each stage webapp/providers.py can send
+    from webapp import providers
+    shell_js = (STATIC / "js" / "shell.js").read_text(encoding="utf-8")
+    sent = re.findall(r'"stage": ([^,}]+)', Path(providers.__file__).read_text(encoding="utf-8"))
+    stages = {s for expr in sent for s in re.findall(r'"(\w+)"', expr)}
+    assert stages == {"studying", "reading", "looking", "writing", "checking"}
+    for stage in stages:
+        assert re.search(rf"\b{stage}: \"", shell_js), stage
+    for page in ("chat.js", "generate.js"):
+        text = (STATIC / "js" / page).read_text(encoding="utf-8")
+        assert "Shell.status(" in text and "Studying the question" not in text, page
+
+
 def test_settings_offers_no_model_or_key():
     js = (STATIC / "js" / "settings.js").read_text(encoding="utf-8")
     assert "Model &amp; Key" not in js and 'id="set-key"' not in js and "Appearance" not in js

@@ -72,6 +72,16 @@ h1,h2,h3{text-wrap:balance}
   border:1px solid var(--rule);color:var(--ink);font-size:10.5px;font-weight:600;line-height:16px;text-align:center}
 @keyframes chip-pulse{0%,100%{opacity:1}50%{opacity:.25}}
 
+/* ---------- the status line (Shell.status): what a reply is doing while nothing shows yet ----------
+   It takes a line of its own, after any chips beside it, and the answer fades in when it goes. */
+.shell-status{display:flex;align-items:center;gap:8px;flex-basis:100%;order:9;margin:4px 0 2px;padding-left:11px;
+  font-family:var(--sans);font-size:13px;line-height:1.4;color:var(--ink-soft)}   /* its dot under the chips' dots */
+.shell-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none;
+  animation:chip-pulse 1.2s infinite}
+.shell-status .ct{font-variant-numeric:tabular-nums}
+.shell-reveal{animation:shell-reveal .45s ease-out}
+@keyframes shell-reveal{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
 /* ---------- print: the page alone ---------- */
 @media print{
   :root,:root[data-rail="closed"]{--rail-w:0px;--rail-bar:0px}

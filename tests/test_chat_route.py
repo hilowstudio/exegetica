@@ -41,7 +41,7 @@ def env(monkeypatch):
         seen["runs"].append({"provider": provider, "model": model, "limits": limits, "key": api_key})
         stats.update(outcome="complete", steps=1, est_usd=0.01, model_req=model)
         for chunk in seen.get("script", ["The Word was God (John 1:1). "]):
-            yield {"type": "text", "text": chunk}
+            yield chunk if isinstance(chunk, dict) else {"type": "text", "text": chunk}
         yield {"type": "end", "outcome": "complete"}
 
     monkeypatch.setattr(providers, "run", fake_run)
@@ -137,6 +137,14 @@ def test_a_teacher_chats_on_the_same_model_with_the_same_checks(env):
     run = env["runs"][0]
     assert (run["provider"], run["model"], run["key"]) == (policy.CHAT_PROVIDER, policy.CHAT_MODEL, None)
     assert run["limits"] is policy.CHAT and env["checked"] == [["Who was Nicodemus?"]]
+
+
+def test_a_status_passes_straight_through_and_leaves_an_open_sentence_whole(env):
+    # The reply check holds a sentence until it ends; a status line update must not release half of one.
+    env["script"] = ["The Word ", {"type": "status", "stage": "looking"}, "was God (John 1:1). "]
+    events, _ = _events(env, _study("Who is the Word?"))
+    assert {"type": "status", "stage": "looking"} in events
+    assert [e["text"] for e in events if e["type"] == "text"][0] == "The Word was God (John 1:1). "
 
 
 def test_a_capped_student_in_crisis_still_gets_the_help_panel(env):

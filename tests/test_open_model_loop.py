@@ -190,6 +190,40 @@ def test_an_answer_checked_with_a_lookup_reaches_the_student_once(monkeypatch):
     assert stats["answers_held"] == 1 and stats["narration_dropped"] == 0 and stats["outcome"] == "complete"
 
 
+def _stages(events):
+    return [(e["stage"], e.get("words")) for e in events if e["type"] == "status"]
+
+
+def test_the_status_line_follows_the_work_while_an_answer_is_held(monkeypatch):
+    events, _calls, _stats = _run(monkeypatch, [dict(s) for s in SESSION], policy.CHAT,
+                                  question="Where does the Bible say to love your neighbor?", honor_tools=True)
+    assert _stages(events) == [("studying", None), ("writing", len(ANSWER.split())), ("checking", None),
+                               ("writing", None)]
+    kinds = [e["type"] for e in events]
+    assert kinds.index("status") < kinds.index("tool_call") and kinds[-1] == "text"
+
+
+def test_a_note_before_a_lookup_never_shows_as_writing(monkeypatch):
+    script = [{"text": ["Let me look ", "that up."], "tools": ["lookup_verse"]}, {"text": ["The Word was God."]}]
+    events, _calls, _stats = _run(monkeypatch, script, OPEN)
+    assert _stages(events) == [("studying", None), ("looking", None), ("reading", None)]
+
+
+def test_a_long_held_answer_counts_up_as_it_grows(monkeypatch):
+    words = [f"word{i} " for i in range(80)]
+    script = [{"text": words, "tools": ["lookup_verse"]}, {"text": ["Done."]}]
+    events, _calls, _stats = _run(monkeypatch, script, OPEN)
+    counts = [w for s, w in _stages(events) if s == "writing" and w]
+    assert counts[0] >= providers._STATUS_FIRST_WORDS and counts == sorted(counts) and counts[-1] <= 80
+    assert all(b - a >= providers._STATUS_EVERY_WORDS for a, b in zip(counts, counts[1:]))
+
+
+def test_named_sources_show_as_looking_before_the_model_starts(monkeypatch):
+    events, _calls, _stats = _run(monkeypatch, [{"text": ["It names the Word."]}], policy.CHAT,
+                                  question="What does John 1:1 mean?")
+    assert _stages(events) == [("looking", None), ("reading", None)]
+
+
 def test_an_empty_reply_after_the_check_shows_the_answer_it_checked(monkeypatch):
     script = [SESSION[0], {"text": []}]
     events, calls, stats = _run(monkeypatch, script, OPEN, honor_tools=True)
@@ -202,7 +236,7 @@ def test_an_empty_reply_after_the_check_shows_the_answer_it_checked(monkeypatch)
 def test_a_named_verse_is_fetched_before_the_model_starts(monkeypatch):
     events, calls, _stats = _run(monkeypatch, [{"text": ["It names the Word."]}], policy.CHAT,
                                  question="What does John 1:1 mean?")
-    assert [e["type"] for e in events[:2]] == ["tool_call", "tool_done"]
+    assert [e["type"] for e in events if e["type"] != "status"][:2] == ["tool_call", "tool_done"]
     sent = calls[0]["messages"]
     assert sent[-2]["tool_calls"][0]["function"]["name"] == "lookup_verse" and sent[-1]["role"] == "tool"
     assert _text(events) == "It names the Word." and len(calls) == 1

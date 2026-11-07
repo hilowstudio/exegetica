@@ -295,10 +295,13 @@ async function send(text){
 
   const bubble=addMsg("assistant");
   const toolsBox=document.createElement("div");toolsBox.className="tools";bubble.appendChild(toolsBox);
+  const status=Shell.status(bubble);   // what the reply is doing until its text arrives
   const thinkEl=document.createElement("div");thinkEl.className="thinking";thinkEl.style.display="none";bubble.appendChild(thinkEl);
   const prose=document.createElement("div");prose.className="prose";bubble.appendChild(prose);
   const caret=document.createElement("span");caret.className="caret";prose.appendChild(caret);
   let raw="",thinkBuf="",note="",srcNote="",ended=false;const chips=Shell.chips(toolsBox);const turnTools=[];
+  // A fixed reply arrives at once; anything slower says what it is doing.
+  const early=setTimeout(()=>{if(!raw&&!note)status.set("studying");},400);
 
   // `note` (an error line) is shown but never saved into history, so it never goes back to the model.
   function paint(){prose.innerHTML=renderMarkdown(raw+(note?"\n\n"+note:""));prose.appendChild(caret);scroll();}
@@ -318,14 +321,15 @@ async function send(text){
       for(const f of frames){
         const line=f.split("\n").find(l=>l.startsWith("data:"));if(!line)continue;
         const ev=JSON.parse(line.slice(5).trim());
-        if(ev.type==="text"){raw+=ev.text;if(thinkEl.style.display!=="none"){thinkEl.style.display="none";}paint();}
+        if(ev.type==="text"){status.done(prose);raw+=ev.text;if(thinkEl.style.display!=="none"){thinkEl.style.display="none";}paint();}
+        else if(ev.type==="status"){if(!raw)status.set(ev.stage,ev.words);}
         else if(ev.type==="thinking"){thinkBuf+=ev.text;thinkEl.style.display="block";thinkEl.textContent="Thinking… "+thinkBuf.slice(-160);scroll();}
         else if(ev.type==="tool_call"){chips.start(ev.name);}
         else if(ev.type==="tool_done"){chips.finish(ev.name,!!ev.error);
           turnTools.push({name:ev.name,input:ev.input||{},output:ev.output||"",is_error:!!ev.error});}
-        else if(ev.type==="notice"){const n=document.createElement("div");n.className="notice";n.textContent=ev.message;bubble.insertBefore(n,prose);scroll();}
+        else if(ev.type==="notice"){status.done();const n=document.createElement("div");n.className="notice";n.textContent=ev.message;bubble.insertBefore(n,prose);scroll();}
         else if(ev.type==="safety"){Shell.openHelp(ev.resources,"You matter, and you don't have to carry this alone. These people can help right now — free and private. Please also tell a parent, pastor, teacher, or friend you trust.");}
-        else if(ev.type==="error"){note="**"+ev.message+"**";paint();}
+        else if(ev.type==="error"){status.done();note="**"+ev.message+"**";paint();}
         else if(ev.type==="end"){ended=true;}
         else if(ev.type==="source_note"){srcNote=ev.text;}
         else if(ev.type==="done"){/* finished */}
@@ -346,7 +350,7 @@ async function send(text){
     const amsg={role:"assistant",content:raw};
     if(turnTools.length)amsg.tools=turnTools;
     history.push(amsg);persistCurrent();
-  }finally{busy=false;stopper=null;sendBtn.textContent="Send";sendBtn.removeAttribute("aria-label");input.focus();}
+  }finally{clearTimeout(early);status.done();busy=false;stopper=null;sendBtn.textContent="Send";sendBtn.removeAttribute("aria-label");input.focus();}
 }
 
 sendBtn.onclick=()=>{if(busy){if(stopper)stopper.abort();return;}const t=input.value;input.value="";auto();send(t);};

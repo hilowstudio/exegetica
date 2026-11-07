@@ -259,10 +259,12 @@ function showReport(r){
   el.innerHTML="<h3>Source check</h3>"+lines.map(l=>"<p>"+l+"</p>").join("");el.hidden=false;
 }
 async function streamInto(url,body){
-  tools.innerHTML="";const chips=Shell.chips(tools);paper.innerHTML="<span class='caret'></span>";setOutButtons(false);
+  tools.innerHTML="";const chips=Shell.chips(tools),status=Shell.status(tools);status.set("studying");
+  paper.innerHTML="<span class='caret'></span>";setOutButtons(false);
   $("report").hidden=true;$("report").innerHTML="";
   function live(){if(mode==="view")paper.innerHTML=md(shown())+"<span class='caret'></span>";}
   let ok=true;   // false on an error, a dropped connection, or a cut-off reply
+  let started=false;   // the document's first text fades in; later pauses for a lookup only show the line
   try{
     const resp=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(!resp.ok||!resp.body)throw new Error("HTTP "+resp.status);
@@ -270,14 +272,16 @@ async function streamInto(url,body){
     while(true){const {value,done}=await rd.read();if(done)break;buf+=dec.decode(value,{stream:true});
       const fr=buf.split("\n\n");buf=fr.pop();
       for(const f of fr){const ln=f.split("\n").find(x=>x.startsWith("data:"));if(!ln)continue;const ev=JSON.parse(ln.slice(5).trim());
-        if(ev.type==="text"){rawDoc+=ev.text;live();}
+        if(ev.type==="text"){status.done(started?null:paper);started=true;rawDoc+=ev.text;live();}
+        else if(ev.type==="status"){status.set(ev.stage,ev.words);}
         else if(ev.type==="tool_call"){chips.start(ev.name);}
         else if(ev.type==="tool_done"){chips.finish(ev.name,!!ev.error);}
-        else if(ev.type==="notice"){const n=document.createElement("div");n.className="tool-chip";n.textContent=ev.message;tools.appendChild(n);if(ev.incomplete)ok=false;}
-        else if(ev.type==="error"){ok=false;rawDoc+="\n\n**Error:** "+ev.message;live();}
+        else if(ev.type==="notice"){status.done();const n=document.createElement("div");n.className="tool-chip";n.textContent=ev.message;tools.appendChild(n);if(ev.incomplete)ok=false;}
+        else if(ev.type==="error"){status.done();ok=false;rawDoc+="\n\n**Error:** "+ev.message;live();}
         else if(ev.type==="report"){showReport(ev);}
       }}
   }catch(e){ok=false;rawDoc+="\n\n**Connection error:** "+e.message;}
+  status.done();
   if(mode==="view")render();else editor.value=rawDoc;
   setOutButtons(!!rawDoc.trim());
   return ok;

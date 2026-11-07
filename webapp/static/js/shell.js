@@ -1,7 +1,7 @@
 /* The shared shell every page gets from templates/base.html: the rail's collapse handle, the
-   light/dark theme button, the Need help now? window, and the tool chips. A page script reaches them
-   through window.Shell: Shell.esc(text), Shell.openHelp(resources, lead), Shell.closeHelp(), and
-   Shell.chips(box). */
+   light/dark theme button, the Need help now? window, the tool chips, and a reply's status line. A
+   page script reaches them through window.Shell: Shell.esc(text), Shell.openHelp(resources, lead),
+   Shell.closeHelp(), Shell.chips(box), and Shell.status(container). */
 (function () {
   "use strict";
   var root = document.documentElement, RKEY = "exeg-rail", TKEY = "studybible.theme";
@@ -124,5 +124,43 @@
     };
   }
 
-  window.Shell = { esc: esc, openHelp: openHelp, closeHelp: closeHelp, chips: chips };
+  // ---- the status line: what a reply is doing while nothing shows yet ----
+  // Shell.status(container) adds the line and gives set(stage, words) and done(reveal). The server names
+  // the stage (webapp/providers.py), so the line changes only when the work does. done() takes the line
+  // away, and fades `reveal` in if the line was showing, so an answer held until it was finished arrives
+  // smoothly. Only the stage is announced to a screen reader, never each new word count.
+  var STAGES = {
+    studying: "Studying the question",
+    reading: "Reading what the library returned",
+    looking: "Looking it up in the library",
+    writing: "Writing the answer",
+    checking: "Checking the answer against the library"
+  };
+  function status(container) {
+    var el = document.createElement("div");
+    el.className = "shell-status";
+    el.hidden = true;
+    el.innerHTML = "<span><span class='st' role='status'></span><span class='ct' aria-hidden='true'></span></span>";
+    container.appendChild(el);
+    var st = el.querySelector(".st"), ct = el.querySelector(".ct");
+    return {
+      set: function (stage, words) {
+        if (!STAGES[stage]) return;
+        if (st.textContent !== STAGES[stage]) st.textContent = STAGES[stage];
+        ct.textContent = words ? ", " + words + " words so far" : "";
+        el.hidden = false;
+      },
+      done: function (reveal) {
+        if (el.hidden) return;
+        el.hidden = true;
+        if (reveal) {
+          reveal.classList.remove("shell-reveal");
+          void reveal.offsetWidth;   // restart the fade if it ran before
+          reveal.classList.add("shell-reveal");
+        }
+      }
+    };
+  }
+
+  window.Shell = { esc: esc, openHelp: openHelp, closeHelp: closeHelp, chips: chips, status: status };
 })();

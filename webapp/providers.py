@@ -12,7 +12,12 @@ Both paths drive the SAME Study Bible MCP tools and yield the SAME event dicts:
   {"type": "thinking", "text": ...}          (Anthropic only)
   {"type": "tool_call", "name": ...}
   {"type": "tool_done", "name": ..., "error": bool}
+  {"type": "status", "stage": ..., "words": n}   (what the run is doing while nothing shows yet)
   {"type": "error", "message": ...}
+
+A status stage is "studying" (the first step), "reading" (a step after lookups), "looking" (lookups
+running), "writing" (an answer held until its step ends, with its words so far, or the answer after
+a check), or "checking" (lookups checking an answer the model wrote). The page names each one.
 
 The API key is supplied per request and used to build a throwaway client; it is
 never stored or logged server-side.
@@ -493,6 +498,7 @@ async def _run_anthropic(api_key, model, system_text, history, mcp, limits=None,
             call = dict(params, tool_choice={"type": "none"}) if final_step and step else params
             if final_step and step and messages[-1]["role"] == "user" and isinstance(messages[-1]["content"], list):
                 messages[-1] = {"role": "user", "content": messages[-1]["content"] + [{"type": "text", "text": ANSWER_NOW}]}
+            yield {"type": "status", "stage": "reading" if step else "studying"}
             while True:
                 shown = False   # text from this step has reached the reader
                 try:
@@ -555,6 +561,7 @@ async def _run_anthropic(api_key, model, system_text, history, mcp, limits=None,
                 yield {"type": "notice", "incomplete": True, "message": STEP_LIMIT}
                 outcome = "step_limit"
                 break
+            yield {"type": "status", "stage": "looking"}
             tool_results = []
             for block in content:
                 if block.type != "tool_use":
@@ -667,6 +674,11 @@ async def _run_openai_responses(cfg, api_key, model, system_text, history, mcp):
 # third sentence was a whole answer the model went on to check, so the step after the check answers
 # with tools withheld: one check, never a loop of answer, lookup, answer.
 _ANSWER_SENTENCES = 3
+# While text is held, the status line counts its words: first once a step has written more than a
+# one-line note, then every few words, so a student sees the answer growing (the word count is
+# rechecked every hundred or so characters).
+_STATUS_FIRST_WORDS = 12
+_STATUS_EVERY_WORDS = 25
 # With nothing fetched in advance, a first answer that used no library is set aside unseen and the
 # model is asked once to look first (docs/decisions/0020). Open model hosts reject a forced tool
 # call (tool_choice "required"), so this is the portable form of one.
@@ -718,6 +730,7 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
     outcome = None
     wrote = False   # some text of this run has reached the reader
     checked = ""    # an answer the last step wrote and then looked something up to check (never shown)
+    looked = False  # some lookup has run, so a step starts by reading its results
     stats.update(model_req=model, steps=0, tool_errors=0, narration_dropped=0, answers_held=0)
 
     try:
@@ -730,6 +743,8 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
             must_call = not planned
             stats["prefetched"] = len(planned)
             if planned:
+                yield {"type": "status", "stage": "looking"}
+                looked = True
                 ids = [f"pre{i}" for i in range(len(planned))]
                 messages.append({"role": "assistant", "content": None, "tool_calls": [
                     {"id": cid, "type": "function", "function": {"name": name, "arguments": json.dumps(args)}}
@@ -757,9 +772,11 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
             else:
                 params["tools"] = tools
             hold_all = step == 0 and must_call   # this answer shows only if it used the library
+            yield {"type": "status", "stage": "writing" if checked else "reading" if looked else "studying"}
             while True:
                 text_parts: list[str] = []
                 held: list[str] = []   # a step offered tools shows nothing until it ends without a call
+                held_chars = recount_at = said = 0   # the status line's word count of the held text
                 shown = False
                 calls: dict[int, dict] = {}
                 announced: set[int] = set()
@@ -787,6 +804,13 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
                                 yield {"type": "text", "text": delta.content}
                             else:
                                 held.append(delta.content)
+                                held_chars += len(delta.content)
+                                if held_chars >= recount_at:
+                                    recount_at = held_chars + 100
+                                    words = len("".join(held).split())
+                                    if words >= (said + _STATUS_EVERY_WORDS if said else _STATUS_FIRST_WORDS):
+                                        said = words
+                                        yield {"type": "status", "stage": "writing", "words": words}
                         for tc in (getattr(delta, "tool_calls", None) or []):
                             slot = calls.setdefault(tc.index, {"id": None, "name": "", "args": ""})
                             if tc.id:
@@ -868,6 +892,7 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
                     for c in calls.values()
                 ],
             })
+            yield {"type": "status", "stage": "checking" if checked else "looking"}
             errors = []
             for c in calls.values():
                 args = json.loads(c["args"]) if c["args"].strip() else {}
@@ -877,6 +902,7 @@ async def _run_openai(cfg, api_key, model, system_text, history, mcp, limits=Non
                 messages.append({"role": "tool", "tool_call_id": c["id"], "content": out})
                 yield {"type": "tool_done", "name": c["name"], "input": args,
                        "output": _cap(out), "error": is_error}
+            looked = True
             failed_steps = failed_steps + 1 if errors and all(errors) else 0
             if failed_steps >= 2:   # the library is down; stop paying for steps that can't ground an answer
                 yield {"type": "notice", "incomplete": True, "message": policy.TOOLS_DOWN}

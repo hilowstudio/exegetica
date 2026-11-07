@@ -594,6 +594,9 @@ async def chat(request):
                     break
                 if ev.get("type") == "thinking":   # reasoning can quote the rules; it never reaches a student
                     continue
+                if ev.get("type") == "status":   # passes straight through, leaving the reply check's open sentence
+                    yield _sse(ev)
+                    continue
                 if ev.get("type") == "check_done":
                     if event := check_window():
                         yield event
