@@ -791,6 +791,8 @@ def _review_books_sync(slugs: list[str]) -> dict[str, dict]:
 
 
 async def covers_review_page(request):
+    if not shell.may_open(request, "admin"):
+        return shell.for_others(request, "Magazine covers", "The magazine covers review is for library admins.")
     return shell.page(request, "covers.html")
 
 

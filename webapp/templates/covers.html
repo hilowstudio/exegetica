@@ -1,15 +1,16 @@
 {% extends "base.html" %}
-{% block title %}Magazine Covers — Exegetica{% endblock %}
+{% block title %}Magazine Covers · Exegetica{% endblock %}
 {% block meta %}<meta name="robots" content="noindex">{% endblock %}
 {% block fonts %}<link rel="stylesheet" href="/static/fonts/covers.css">{% endblock %}
 {% block styles %}<link rel="stylesheet" href="/static/css/covers.css">{% endblock %}
 {% block content %}
-<header class="topbar">
+<header class="topbar shell-stick">
   <a class="tb-back" href="/read">‹ Library</a>
   <div class="tb-title">Magazine covers</div>
   <div class="tb-spacer"></div>
 </header>
 <main class="wrap shell-col">
+  {% include "partials/masthead.html" %}
   <div class="kicker">Reading Room · admin</div>
   <h1>Original magazine covers</h1>
   <p class="lede" id="lede">These stories name the magazine issue they were transcribed from. Each card shows the book's cover now and that issue's cover. Pick the ones you want and apply them together.</p>

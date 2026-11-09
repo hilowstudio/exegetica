@@ -3,27 +3,35 @@
    rail's theme button (data-theme on <html>, kept in localStorage 'studybible.theme'). */
 :root {
     --paper:#f0e8dc; --surface:#f8f2ea; --surface-2:#e8dfd0; --sunk:#e2d7c6; --ink:#1e2026;
-    --ink-soft:#54596a; --ink-faint:#5f636f; --rule:#ddd3c1; --rule-strong:#c9bda6;
-    --accent:#9f4751; --accent-soft:#8c414b; --on-accent:#fff;
-    --iron:#3d6980; --iron-soft:#496775; --brass:#9a7c3d;
-    --ok:#396e4a; --warn:#8c6018; --err:#a34919;
+    --ink-soft:#505566; --ink-faint:#515560; --rule:#ddd3c1; --rule-strong:#c9bda6;
+    --accent:#8f3944; --accent-soft:#893e49; --on-accent:#fff;
+    --iron:#2e5a71; --iron-soft:#3c5967; --brass:#896b2b;
+    --ok:#2b603d; --warn:#774c00; --err:#923a00;
     --user-bg:#ece3d4; --code-bg:#efe7d8;
-    --serif:"Spectral",Georgia,serif; --sans:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --garden:url("/static/garden-light.webp");
+    --serif:"Spectral","Exegetica Greek","Exegetica Hebrew",Georgia,serif;
+    --sans:"Public Sans","Exegetica Greek","Exegetica Hebrew",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    /* fonts/orig.css. Neither subset holds the space, so a loaded text face follows to supply it */
+    --greek:"Exegetica Greek","Spectral","EB Garamond",Georgia,serif; --hebrew:"Exegetica Hebrew","Spectral","EB Garamond",Georgia,serif;
+    --doc:"EB Garamond","Exegetica Greek","Exegetica Hebrew",Georgia,serif;   /* printed documents (fonts/doc.css) */
     --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    --display:"Fraunces",Georgia,serif; --caps:"Libre Baskerville",Georgia,serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
     --paper:#14151a; --surface:#1b1d23; --surface-2:#23252c; --sunk:#101116; --ink:#e9e7e0;
-    --ink-soft:#a9aeb9; --ink-faint:#888c96; --rule:#2c2f37; --rule-strong:#3b3f49;
-    --accent:#dd8089; --accent-soft:#c0777f; --on-accent:#14151a;
-    --iron:#7fb0c2; --iron-soft:#6a92a2; --brass:#c7a45f;
+    --ink-soft:#a9aeb9; --ink-faint:#9b9fa9; --rule:#2c2f37; --rule-strong:#3b3f49;
+    --accent:#e2858e; --accent-soft:#d68b93; --on-accent:#14151a;
+    --iron:#7fb0c2; --iron-soft:#7da5b6; --brass:#c7a45f;
     --ok:#6bbf86; --warn:#d5a24a; --err:#e8895a;
     --user-bg:#232630; --code-bg:#22242b;
+    --garden:url("/static/garden.webp");
 }}
 :root[data-theme="dark"]{
     --paper:#14151a; --surface:#1b1d23; --surface-2:#23252c; --sunk:#101116; --ink:#e9e7e0;
-    --ink-soft:#a9aeb9; --ink-faint:#888c96; --rule:#2c2f37; --rule-strong:#3b3f49;
-    --accent:#dd8089; --accent-soft:#c0777f; --on-accent:#14151a;
-    --iron:#7fb0c2; --iron-soft:#6a92a2; --brass:#c7a45f;
+    --ink-soft:#a9aeb9; --ink-faint:#9b9fa9; --rule:#2c2f37; --rule-strong:#3b3f49;
+    --accent:#e2858e; --accent-soft:#d68b93; --on-accent:#14151a;
+    --iron:#7fb0c2; --iron-soft:#7da5b6; --brass:#c7a45f;
     --ok:#6bbf86; --warn:#d5a24a; --err:#e8895a;
     --user-bg:#232630; --code-bg:#22242b;
+    --garden:url("/static/garden.webp");
 }

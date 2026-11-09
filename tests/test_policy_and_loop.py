@@ -211,6 +211,20 @@ def test_a_student_reply_never_switches_models_once_text_is_shown(monkeypatch):
     assert seen[-2] == {"type": "error", "message": policy.PROVIDER_ERROR}
 
 
+def test_the_prep_room_fallback_notice_names_no_model(monkeypatch):
+    tried = []
+    first, backup = "claude-opus-5-5", providers.PROVIDERS["anthropic"]["fallback_model"]
+    monkeypatch.setattr(providers, "_attempt", _scripted({
+        first: [{"type": "error", "message": f"model {first} not found (404)"}],
+        backup: [{"type": "text", "text": "A draft."}]}, tried))
+    seen = _dispatch("anthropic", first, policy.GENERATE)
+    assert [m for m, _k in tried] == [first, backup]
+    notice = [e for e in seen if e["type"] == "notice"]
+    assert notice == [{"type": "notice", "message": providers.FALLBACK_NOTICE}]
+    assert first not in notice[0]["message"] and backup not in notice[0]["message"]
+    assert "—" not in notice[0]["message"]   # the house voice has no em dashes
+
+
 def test_a_refusal_is_never_handed_to_the_fallback_model(monkeypatch):
     tried = []
     monkeypatch.setenv("DEEPINFRA_API_KEY", "server-key")

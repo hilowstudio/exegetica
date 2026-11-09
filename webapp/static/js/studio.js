@@ -515,15 +515,7 @@ async function send(url, method, body){
     return r.ok ? d : {error: d.error || "That did not work."};
   } catch (e) { return {error: "The connection dropped. Try again."}; }
 }
-let toastTimer = null;
-function toast(text, undo){
-  const t = $("toast");
-  clearTimeout(toastTimer);
-  t.innerHTML = `<span>${esc(text)}</span>` + (undo ? '<button type="button">Undo</button>' : "");
-  if (undo) t.querySelector("button").onclick = async () => { t.hidden = true; await undo(); };
-  t.hidden = false;
-  toastTimer = setTimeout(() => { t.hidden = true; }, 6000);
-}
+function toast(text, undo){ Shell.toast(text, undo ? {undo} : {}); }   // the shell's toast
 
 // ---------------------------------------------------------------- dialogs and menus
 function ask({title, note, fields = [], ok = "OK", danger = false, extra = null, submit, body = null, setup = null, wide = false}){

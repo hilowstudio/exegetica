@@ -1,4 +1,4 @@
-/* The Magazine Covers — Exegetica page (templates/covers.html). The rail, theme and Need help now? come from static/js/shell.js. */
+/* The Magazine Covers page (templates/covers.html). The rail, theme and Need help now? come from static/js/shell.js. */
 (function(){
   var $ = function(id){ return document.getElementById(id); };
   var items = [], bySlug = {}, show = "needs", mag = "", busy = false;
@@ -18,12 +18,12 @@
     var covers = el("div", "covers"), now = el("div", "cv now"), nw = el("div", "cv new");
     var f1 = el("div", "fr"); if(it.current){ f1.appendChild(img(it.current, "Current cover")); } else { f1.appendChild(el("div", "none", "No cover")); }
     now.appendChild(f1); now.appendChild(el("span", "lbl", "Now"));
-    var cand = it.candidates[it.pick], f2 = el("div", "fr");
-    f2.appendChild(img(cand.thumb, it.issue)); f2.title = "Select or deselect";
-    f2.addEventListener("click", function(){ toggle(it); });
+    // the new cover is the checkbox's label, so a click on it ticks the box and the keyboard uses the box
+    var cand = it.candidates[it.pick], f2 = el("label", "fr");
+    f2.appendChild(img(cand.thumb, it.issue)); f2.title = "Select or deselect"; f2.htmlFor = "pick-" + it.slug;
     nw.appendChild(f2); nw.appendChild(el("span", "lbl", cand.domain));
     covers.appendChild(now); covers.appendChild(nw);
-    var cb = el("input", "pick"); cb.type = "checkbox"; cb.checked = !!it.sel; cb.disabled = !!it.done;
+    var cb = el("input", "pick"); cb.type = "checkbox"; cb.id = "pick-" + it.slug; cb.checked = !!it.sel; cb.disabled = !!it.done;
     cb.setAttribute("aria-label", "Use the magazine cover for " + it.title);
     cb.addEventListener("change", function(){ toggle(it, cb.checked); });
     var m = el("div", "meta");
@@ -97,7 +97,9 @@
   $("selNone").addEventListener("click", function(){ if(busy) return; items.forEach(function(it){ it.sel = false; }); render(); });
   $("go").addEventListener("click", function(){
     var n = selected().length;
-    if(window.confirm("Download " + n + (n === 1 ? " cover" : " covers") + " and make " + (n === 1 ? "it the book's" : "them the books'") + " cover art?")) apply();
+    Shell.ask({title: "Apply " + n + (n === 1 ? " cover?" : " covers?"),
+               body: "Exegetica downloads " + (n === 1 ? "the chosen magazine cover and makes it the book's" : "the chosen magazine covers and makes them the books'") + " cover art.",
+               ok: n === 1 ? "Apply cover" : "Apply covers"}).then(function(yes){ if(yes) apply(); });
   });
 
   fetch("/api/reading/cover/review").then(function(r){

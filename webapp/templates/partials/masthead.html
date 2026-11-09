@@ -1,0 +1,10 @@
+{# The Exegetica wordmark, set straight on the page's background at the top of the page's own column.
+   Every page includes it there (a page built in Python marks the place with shell.MASTHEAD), and
+   static/css/shell.css styles it. The theme picks the black or the white wordmark. Away from the
+   chat page it links back to it. A page whose columns stack on a phone can include it twice, with
+   mast set to "wide" in its main column and "narrow" at the top of the stack, and show one at a time. #}
+{% set home = request.url.path != "/" %}
+<header class="masthead{% if mast %} masthead-{{ mast }}{% endif %}">{% if home %}<a href="/" title="Exegetica home">{% endif %}
+  <img class="wm-light" src="/static/wordmark-black.png" width="800" height="204" alt="Exegetica">
+  <img class="wm-dark" src="/static/wordmark.png" width="800" height="191" alt="Exegetica">
+{% if home %}</a>{% endif %}</header>

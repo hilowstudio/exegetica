@@ -20,11 +20,12 @@ def test_scripts_and_styles_are_checked_before_reuse(client, path):
     assert r.headers.get("etag")   # so an unchanged file answers 304
 
 
-@pytest.mark.parametrize("path", ["/", "/library", "/read", "/privacy"])
+@pytest.mark.parametrize("path", ["/", "/memory", "/read", "/privacy", "/library"])
 def test_pages_differ_by_person_so_no_shared_cache_keeps_them(client, path):
-    # the rail shows a teacher's and an admin's places, so a page is built for its reader
+    # the rail shows a teacher's and an admin's places, so a page is built for its reader. Signed out,
+    # /library answers with the page saying it's for teachers (decision 0007), which differs by person too.
     r = client.get(path)
-    assert r.status_code == 200 and r.headers["cache-control"] == "private, no-cache"
+    assert r.status_code == (403 if path == "/library" else 200) and r.headers["cache-control"] == "private, no-cache"
 
 
 def test_an_unchanged_script_answers_not_modified(client):

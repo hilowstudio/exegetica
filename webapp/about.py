@@ -26,9 +26,10 @@ def _doc(title: str, doc: str, fill: dict[str, str] | None = None) -> shell.Buil
 
 def prose(title: str, body: str, css: tuple[str, ...] = (), scripts: tuple[str, ...] = (),
           noindex: bool = False) -> shell.Built:
-    """One prose page: a back link and the body in a reading column."""
+    """One prose page: a back link, the wordmark, and the body in a reading column."""
     return shell.Built(f"{title} | Exegetica",
-                       f'<main class="prose shell-col"><nav class="back"><a href="/">Back to chat</a></nav>{body}</main>',
+                       f'<main class="prose shell-col"><nav class="back"><a href="/">Back to chat</a></nav>'
+                       f'{shell.MASTHEAD}{body}</main>',
                        css=("/static/css/prose.css", *css), scripts=scripts, noindex=noindex)
 
 

@@ -150,10 +150,14 @@
     });
   }
   $("#set-clear").onclick = function () {
-    if (!confirm("Remove everything Exegetica keeps in this browser: settings, any API key, and anything saved before sign-in? Your account is not affected.")) return;
-    clearBrowser();
-    dataMsg.textContent = "This browser is cleared.";
-    setTimeout(function () { location.reload(); }, 900);
+    Shell.ask({title: "Clear this browser?",
+               body: "This removes everything Exegetica keeps in this browser: settings, any API key, and anything saved before sign-in. Your account is not affected.",
+               ok: "Clear this browser", danger: true}).then(function (yes) {
+      if (!yes) return;
+      clearBrowser();
+      dataMsg.textContent = "This browser is cleared.";
+      setTimeout(function () { location.reload(); }, 900);
+    });
   };
 
   // ---- boot ----

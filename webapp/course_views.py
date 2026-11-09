@@ -69,7 +69,7 @@ def _crumbs(items: list[tuple[str, str | None]], view: str) -> str:
 def _page(title: str, body: str, *, here: str, view: str) -> shell.Built:
     return shell.Built(
         title,
-        f"{_header(here, view)}<main class=\"shell-col\">{body}</main>"
+        f"{_header(here, view)}<main class=\"shell-col\">{shell.MASTHEAD}{body}</main>"
         "<footer class=\"site-footer\"><div class=\"bar shell-col\">"
         "<span>The Gospel of John &middot; Sophomore Bible &middot; 2026–27</span>"
         "<span>Yorkville Christian School</span></div></footer>",
@@ -201,7 +201,7 @@ def overview(m: dict, *, view: str, here: str) -> shell.Built:
              'Switch to Student to see only what students and parents see.</div>' if view == "teacher" else "")
     body = _crumbs([("Overview", None)], view) + hero + tflag + start + units + cal
     _ = mem
-    return _page("The Gospel of John — Sophomore Bible", body, here=here, view=view)
+    return _page("The Gospel of John · Sophomore Bible", body, here=here, view=view)
 
 
 def unit(m: dict, key: str, *, view: str, here: str) -> shell.Built | None:
@@ -234,7 +234,7 @@ def unit(m: dict, key: str, *, view: str, here: str) -> shell.Built | None:
 
     body = (_crumbs([("Overview", "/course"), (key, None)], view)
             + head + verse + rg_block + lessons)
-    return _page(f"{name} — Gospel of John", body, here=here, view=view)
+    return _page(f"{name} · Gospel of John", body, here=here, view=view)
 
 
 def day(m: dict, date_s: str, *, view: str, here: str) -> shell.Built | None:
@@ -284,14 +284,14 @@ def day(m: dict, date_s: str, *, view: str, here: str) -> shell.Built | None:
     body = (_crumbs([("Overview", "/course"), (d["unit_key"], "/course/unit/" + d["unit_key"]),
                      (_fmt_date(date_s), None)], view)
             + head + verse + blocks + pager)
-    return _page(f"{d.get('passage') or 'Lesson'} — Gospel of John", body, here=here, view=view)
+    return _page(f"{d.get('passage') or 'Lesson'} · Gospel of John", body, here=here, view=view)
 
 
 def _day_listing(m: dict, ds: list[dict], title: str, crumb_label: str, *, view: str, here: str) -> shell.Built:
     rows = "".join(_lesson_row(m, d, view) for d in ds)
     body = (_crumbs([("Overview", "/course"), ("Calendar", "/course#calendar"), (crumb_label, None)], view)
             + f'<h1>{esc(title)}</h1><div class="lessons">{rows or "<p class=empty>No lessons.</p>"}</div>')
-    return _page(f"{title} — Gospel of John", body, here=here, view=view)
+    return _page(f"{title} · Gospel of John", body, here=here, view=view)
 
 
 def week(m: dict, key: str, *, view: str, here: str) -> shell.Built | None:
@@ -321,7 +321,7 @@ def doc(m: dict, art: dict, *, view: str, here: str) -> shell.Built:
                'Print / Save as PDF</button></div>')
     body = (_crumbs(crumbs, view) + toolbar
             + f'<article class="doc">{course.render_html(art["path"])}</article>')
-    return _page(f"{art['title']} — Gospel of John", body, here=here, view=view)
+    return _page(f"{art['title']} · Gospel of John", body, here=here, view=view)
 
 
 def not_found(msg: str, *, view: str, here: str) -> shell.Built:

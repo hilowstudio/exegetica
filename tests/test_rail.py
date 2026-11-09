@@ -107,6 +107,23 @@ def test_the_status_line_is_the_shells_and_names_every_stage_the_server_sends():
         assert "Shell.status(" in text and "Studying the question" not in text, page
 
 
+def test_pages_ask_and_confirm_through_the_shell():
+    # rule F3/F4 of the exegetica-design skill: the page's own dialog (Shell.ask) and one toast with Undo
+    # (Shell.toast), never the browser's confirm(), alert() or prompt(), and no toast of a page's own
+    shell_js = (STATIC / "js" / "shell.js").read_text(encoding="utf-8")
+    assert "function ask(" in shell_js and "function toast(" in shell_js and "ask: ask, toast: toast" in shell_js
+    native = re.compile(r"(?<![\w$.])(?:window\.)?(?:confirm|alert|prompt)\s*\(")
+    for js in (STATIC / "js").glob("*.js"):
+        code = re.sub(r"/\*.*?\*/", "", js.read_text(encoding="utf-8"), flags=re.S)
+        code = "\n".join(line.split("//")[0] if "://" not in line else line for line in code.splitlines())
+        assert not native.search(code), (js.name, native.search(code).group(0))
+    for page in PAGES:
+        assert 'id="toast"' not in page.read_text(encoding="utf-8"), page.name
+    for css in (STATIC / "css").glob("*.css"):
+        if css.name != "shell.css":
+            assert not re.search(r"(^|[\s,}])\.toast[{.:\s]", css.read_text(encoding="utf-8")), css.name
+
+
 def test_settings_offers_no_model_or_key():
     js = (STATIC / "js" / "settings.js").read_text(encoding="utf-8")
     assert "Model &amp; Key" not in js and 'id="set-key"' not in js and "Appearance" not in js
@@ -115,3 +132,71 @@ def test_settings_offers_no_model_or_key():
 def test_the_prep_room_ignores_a_provider_model_or_key_from_the_browser():
     assert policy.BYOK is False
     assert policy.byok({"provider": "openai", "model": "gpt-5.6", "api_key": "sk-x"}) == ("anthropic", "", None)
+
+
+def test_every_page_sits_on_the_garden_with_the_wordmark_in_its_own_column():
+    css = {f.name: f.read_text(encoding="utf-8") for f in (STATIC / "css").glob("*.css")}
+    assert "var(--garden)" in re.search(r"^body\{[^}]*\}", css["shell.css"], re.M).group(0)
+    gardens = re.findall(r'--garden:url\("/static/([\w.-]+)"\)', css["tokens.css"])   # light, system dark, chosen dark
+    assert gardens == ["garden-light.webp", "garden.webp", "garden.webp"], gardens
+    assert all((STATIC / g).exists() for g in gardens)
+    for page in ("generate", "studio", "reader", "covers"):   # their sticky bars stay clear until stuck
+        assert "shell-stick" in (TEMPLATES / f"{page}.html").read_text(encoding="utf-8"), page
+    for name, sheet in css.items():   # no page paints the paper colour over the whole page
+        if name != "shell.css":
+            body = re.search(r"^\s*body\{[^}]*\}", sheet, re.M)
+            assert not body or "background" not in body.group(0), name
+    assert "masthead" not in (TEMPLATES / "base.html").read_text(encoding="utf-8")   # no banner above the page
+    for page in PAGES:   # each page puts the wordmark in its own column, once
+        text = page.read_text(encoding="utf-8")
+        stacks = page.name in ("generate.html", "studio.html")   # their panels stack on a phone: one shows at a time
+        assert text.count('{% include "partials/masthead.html" %}') == (0 if page.name == "built.html" else 2 if stacks else 1), page.name
+        if stacks:
+            assert 'mast="narrow"' in text and 'mast="wide"' in text, page.name
+        assert "/static/wordmark" not in text, page.name   # the wordmark lives in the partial alone
+    client = TestClient(appmod.app)
+    for path in ("/", "/memory", "/read", "/corpus", "/privacy", "/position"):
+        assert client.get(path).text.count('class="masthead"') == 1, path
+    browse = re.search(r'<main id="browse" hidden>.*?</main>', client.get("/read/some-book").text, re.S).group(0)
+    assert 'class="masthead"' in browse   # on the shelves only: a book's pages fill the window
+    assert 'href="/"' not in re.search(r'<header class="masthead">.*?</header>', client.get("/").text, re.S).group(0)
+    assert shell.MASTHEAD not in client.get("/privacy").text
+    printed = re.search(r"@media print\{.*?^\}", css["shell.css"], re.S | re.M).group(0)
+    assert ".masthead{display:none" in printed.replace(",.masthead{", ".masthead{")   # nor on paper
+
+
+STUDENT = {"email": "s@school.test", "role": "student"}
+TEACHER = {"email": "t@school.test", "role": "teacher"}
+ADMIN = {"email": "a@school.test", "role": "teacher"}
+
+
+@pytest.mark.parametrize("path,opens,says", [
+    ("/generate", ("teacher", "admin"), "The Prep Room is for teachers."),
+    ("/library", ("teacher", "admin"), "The Living Library is for teachers."),
+    ("/read/admin/covers", ("admin",), "The magazine covers review is for library admins."),
+])
+def test_teacher_places_turn_others_away_with_a_page(monkeypatch, path, opens, says):
+    # decision 0007: the actions already refuse, and the page says so instead of showing a tool that can't work
+    people = {"guest": None, "student": STUDENT, "teacher": TEACHER, "admin": ADMIN}
+    for role, user in people.items():
+        monkeypatch.setattr(auth, "current_user", lambda request, u=user: u)
+        monkeypatch.setattr(auth, "is_teacher", lambda u: bool(u) and u["role"] == "teacher")
+        monkeypatch.setattr(auth, "is_admin", lambda u: bool(u) and u["email"] == "a@school.test")
+        r = TestClient(appmod.app).get(path)
+        if role in opens:
+            assert r.status_code == 200 and says not in r.text, (path, role)
+        else:
+            assert r.status_code == 403 and says in r.text and 'href="/">Back to chat' in r.text, (path, role)
+            assert ("/auth/login?next=" in r.text) == (user is None), (path, role)   # sign-in only when signed out
+
+
+def test_the_verse_list_sits_beside_the_page_wider_than_a_phone():
+    # Adam, 2026-11-09: on a laptop or tablet the open list moves the page over, so nothing hides under it.
+    # On a phone it covers the page, which waits out of reach (inert) until the list closes.
+    css = (STATIC / "css" / "memory.css").read_text(encoding="utf-8")
+    wide = re.search(r"@media \(min-width:641px\)\{.*?\n\}", css, re.S).group(0)
+    assert ".side.open ~ .col{padding-left:294px}" in wide and ".side.open{box-shadow:none}" in wide
+    js = (STATIC / "js" / "memory.js").read_text(encoding="utf-8")
+    assert "col.inert = !!o && !!(phone && phone.matches)" in js
+    assert "if(phone && phone.matches) setDrawerOpen(false);" in js   # a docked list stays put when a verse is chosen
+    assert '"Hide verses":"Show verses"' in js                         # the toggle says what it will do

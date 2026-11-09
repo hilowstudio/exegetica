@@ -34,9 +34,7 @@ function renderMarkdown(src){
     if(line.includes("|")&&i+1<lines.length&&isTableSep(lines[i+1])){
       const head=cells(line);i+=2;const rows=[];
       while(i<lines.length&&lines[i].includes("|")&&!/^\s*$/.test(lines[i])){rows.push(cells(lines[i]));i++;}
-      let t="<div class='tablewrap'><table><thead><tr>"+head.map(h=>"<th>"+inline(h)+"</th>").join("")+"</tr></thead><tbody>";
-      for(const r of rows){t+="<tr>"+r.map(c=>"<td>"+inline(c)+"</td>").join("")+"</tr>";}
-      html+=t+"</tbody></table></div>";continue;
+      html+=Shell.table(head,rows,inline);continue;   // the shell's table (rule J2)
     }
     if(/^\s*[-*]\s+/.test(line)){
       let buf=[];while(i<lines.length&&/^\s*[-*]\s+/.test(lines[i])){buf.push("<li>"+inline(lines[i].replace(/^\s*[-*]\s+/,""))+"</li>");i++;}
@@ -195,8 +193,16 @@ function persistCurrent(){
   closedWhy=studyClosed(c,history);syncComposer();
 }
 function deleteChat(id){
-  saveChats(loadChats().filter(c=>c.id!==id));
-  if(id===curChatId)newStudy();else renderChatList();
+  const all=loadChats(),i=all.findIndex(c=>c.id===id);if(i<0)return;
+  const gone=all[i],wasOpen=id===curChatId;
+  saveChats(all.filter(c=>c.id!==id));
+  if(wasOpen)newStudy();else renderChatList();
+  // Undo puts it back.
+  Shell.toast("Study deleted",{undo:()=>{
+    const now=loadChats();if(now.some(c=>c.id===id))return;
+    now.splice(Math.min(i,now.length),0,gone);saveChats(now);
+    if(wasOpen)openChat(id);else renderChatList();
+  }});
 }
 function clearThread(){thread.querySelectorAll(".msg").forEach(m=>m.remove());}
 function showEmpty(on){const e=document.getElementById("empty");if(e)e.style.display=on?"":"none";}
@@ -205,7 +211,7 @@ function newStudy(){
   curChatId=null;history=[];clearThread();
   let e=document.getElementById("empty");
   if(!e){location.reload();return;} // empty node was consumed; simplest reset
-  e.style.display="";titleEl.textContent="New study";renderChatList();closeSide();
+  e.style.display="";titleEl.textContent="New study";renderChatList();if(!wide())closeSide();
 }
 function openChat(id){
   const c=loadChats().find(x=>x.id===id);if(!c)return;
@@ -224,7 +230,7 @@ function openChat(id){
       if(m.note)addSourceNote(b,m.note);
       addCopy(b,m.content);}
   });
-  titleEl.textContent=c.title;renderChatList();closeSide();scroll();
+  titleEl.textContent=c.title;renderChatList();if(!wide())closeSide();scroll();
   closedWhy=studyClosed(c,history);syncComposer();
 }
 document.getElementById("new-chat").onclick=newStudy;
@@ -236,6 +242,7 @@ const wide=()=>!(window.matchMedia&&matchMedia("(max-width:640px)").matches);
 function setStudiesOpen(o){
   sideEl.classList.toggle("open",o);
   menuBtn.setAttribute("aria-expanded",String(o));
+  menuBtn.setAttribute("aria-label",o?"Hide studies":"Show studies");
   if(wide()){try{localStorage.setItem("studybible.side.open",o?"1":"0");}catch(e){}}
 }
 function openSide(){setStudiesOpen(true);}
@@ -328,7 +335,7 @@ async function send(text){
         else if(ev.type==="tool_done"){chips.finish(ev.name,!!ev.error);
           turnTools.push({name:ev.name,input:ev.input||{},output:ev.output||"",is_error:!!ev.error});}
         else if(ev.type==="notice"){status.done();const n=document.createElement("div");n.className="notice";n.textContent=ev.message;bubble.insertBefore(n,prose);scroll();}
-        else if(ev.type==="safety"){Shell.openHelp(ev.resources,"You matter, and you don't have to carry this alone. These people can help right now — free and private. Please also tell a parent, pastor, teacher, or friend you trust.");}
+        else if(ev.type==="safety"){Shell.openHelp(ev.resources,"You matter, and you don't have to carry this alone. These people can help right now. It's free and private. Please also tell a parent, pastor, teacher, or friend you trust.");}
         else if(ev.type==="error"){status.done();note="**"+ev.message+"**";paint();}
         else if(ev.type==="end"){ended=true;}
         else if(ev.type==="source_note"){srcNote=ev.text;}
@@ -373,7 +380,10 @@ async function initChats(){
     else{
       // Empty account: offer a one-time import of this browser's studies, else start clean.
       var local=_loadLocalChats();
-      if(local.length && confirm("Import your "+local.length+" saved stud"+(local.length===1?"y":"ies")+" from this browser into your account?")){
+      const n=local.length;
+      if(n && await Shell.ask({title:"Bring your studies into your account?",
+            body:"This browser holds "+n+" saved stud"+(n===1?"y":"ies")+". Import "+(n===1?"it":"them")+" so "+(n===1?"it follows":"they follow")+" you to any device.",
+            ok:"Import",cancel:"Not now"})){
         chatsMem=local;
         fetch("/api/chats",{method:"PUT",credentials:"same-origin",headers:{"Content-Type":"application/json"},
           body:JSON.stringify({chats:local})}).then(function(r){if(r.ok){try{localStorage.removeItem(CKEY);}catch(e){}}}).catch(function(){});

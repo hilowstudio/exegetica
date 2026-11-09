@@ -29,6 +29,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from webapp import course  # noqa: E402
+from print_fonts import LANG_CSS, embedded, tag_languages  # noqa: E402  (scripts/print_fonts.py)
 
 CSS = (ROOT / "webapp" / "static" / "course-print.css").read_text(encoding="utf-8")
 OUT = ROOT / "docs" / "john" / "john-pdf"
@@ -49,7 +50,7 @@ def _embedded_fonts() -> str:
     return "".join(faces)
 
 
-_FONT_CSS = _embedded_fonts()
+_FONT_CSS = _embedded_fonts() + embedded(("orig",)) + LANG_CSS   # + Greek and Hebrew (rule G6)
 
 
 def _slug(s: str) -> str:
@@ -67,7 +68,7 @@ def _running_head(title: str) -> str:
 
 
 def _html(art: dict) -> str:
-    body = course.render_html(art["path"])
+    body = tag_languages(course.render_html(art["path"]))
     return (
         "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
         f"<style>{_FONT_CSS}</style>"

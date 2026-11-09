@@ -10,10 +10,7 @@
   </aside>
 
   <div class="col">
-    <div class="masthead">
-      <img class="wm-light" src="/static/wordmark-black.png" alt="Exegetica">
-      <img class="wm-dark" src="/static/wordmark.png" alt="Exegetica">
-    </div>
+    {% include "partials/masthead.html" %}
     <div class="thread-h">
       <button class="menu-btn" id="menu-btn" type="button" title="Studies" aria-label="Show studies" aria-controls="side" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M9 5v14"/></svg></button>
       <span class="ttl" id="thread-title">New study</span>
@@ -104,7 +101,7 @@
       </div>
     </main>
 
-    <div class="composer-wrap">
+    <div class="composer-wrap" data-toast-above>
       <div id="signin-gate" class="gate shell-col" hidden><span id="gate-msg">Chat needs your school Google account.</span> <a href="/auth/login?next=/">Sign in with Google</a></div>
       <div id="load-note" class="gate shell-col" hidden>Your saved studies didn't load, so new studies won't be saved. Refresh the page to try again.</div>
       <div id="closed-note" class="gate shell-col" hidden role="status"><span id="closed-msg"></span> <button type="button" id="closed-new">Start a new study</button></div>

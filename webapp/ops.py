@@ -119,23 +119,23 @@ async def page(request):
         "<h1>Operations</h1>"
         f"<p>Estimated spend: ${week:.2f} in the last 7 UTC days, ${total:.2f} in 14. Alert above "
         f"${ALERT_USD:.0f} a day. The Anthropic Console is the bill of record.</p>"
-        "<h2>Libraries</h2><table>"
+        "<h2>Libraries</h2><div class=wide tabindex=0 role=region aria-label=\"Libraries\"><table>"
         + _bridge_row("Bible", getattr(state, "mcp", None))
-        + _bridge_row("History", getattr(state, "mcp_history", None)) + "</table>"
-        "<h2>Runs by day</h2><div class=wide><table><tr>" + "".join(f"<th>{h}</th>" for h in heads)
+        + _bridge_row("History", getattr(state, "mcp_history", None)) + "</table></div>"
+        "<h2>Runs by day</h2><div class=wide tabindex=0 role=region aria-label=\"Runs by day\"><table><tr>" + "".join(f"<th>{h}</th>" for h in heads)
         + "</tr>" + body + "</table></div>"
         "<h2>Help window</h2><p>How many times a day the Need help now window opened, and what opened "
-        "it. A total only: no account, message, category, or time.</p><div class=wide><table><tr>"
+        "it. A total only: no account, message, category, or time.</p><div class=wide tabindex=0 role=region aria-label=\"Help window by day\"><table><tr>"
         "<th>UTC day</th><th>Opened</th><th>Local check</th><th>Reply</th><th>Model check</th>"
         "<th>Model check failed</th></tr>" + help_rows + "</table></div>"
-        "<h2>Records</h2><table>"
+        "<h2>Records</h2><div class=wide tabindex=0 role=region aria-label=\"Records\"><table>"
         + "".join(f"<tr><th>{t}</th><td>{html.escape(s)}</td></tr>" for t, s in tables.items())
         + f"<tr><th>Last metrics row</th><td>{last or 'none'}</td></tr>"
         f"<tr><th>Failed metric writes since start</th><td>{metrics.failed_writes}</td></tr>"
         f"<tr><th>Daily caps</th><td>students {usage.STUDENT_TURNS} turns or ${usage.STUDENT_USD:.2f}; "
         f"teachers {usage.TEACHER_TURNS} turns; all students ${usage.SCHOOL_USD:.2f}</td></tr>"
         f"<tr><th>Account-data purge</th><td>{'on' if retention.enabled() else 'off'}</td></tr>"
-        "</table>"
+        "</table></div>"
     )
     return shell.render(request, about.prose("Operations", out, css=("/static/css/ops.css",), noindex=True),
                         cache="no-store")

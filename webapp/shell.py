@@ -70,6 +70,10 @@ def page(request, template: str, status_code: int = 200, cache: str = "private, 
                                       headers={"Cache-Control": cache})
 
 
+# Where a built page's column takes the Exegetica wordmark (templates/partials/masthead.html).
+MASTHEAD = "<!--masthead-->"
+
+
 @dataclass(frozen=True)
 class Built:
     """A page built in Python: its title, its body HTML (already escaped where it needs to be), and the
@@ -82,5 +86,29 @@ class Built:
 
 
 def render(request, built: Built, status_code: int = 200, cache: str = "private, no-cache"):
-    return page(request, "built.html", status_code, cache, title=built.title, body=Markup(built.body),
+    masthead = TEMPLATES.get_template("partials/masthead.html").render(request=request)
+    body = built.body.replace(MASTHEAD, masthead, 1)
+    return page(request, "built.html", status_code, cache, title=built.title, body=Markup(body),
                 css=built.css, scripts=built.scripts, noindex=built.noindex)
+
+
+def may_open(request, who: str) -> bool:
+    """Whether the signed-in person may open a "teacher" or "admin" place, by the rail's own rule."""
+    user = auth.current_user(request)
+    teacher, admin = auth.is_teacher(user), auth.is_admin(user)
+    return admin or (who == "teacher" and teacher)
+
+
+def for_others(request, name: str, sentence: str):
+    """The page someone sees when they open a place their account doesn't include (decision 0007, rule
+    F1): what the place is, who it's for, and the way back. Its actions refuse them anyway, so this only
+    spares them a tool that can't work for them. Signed out, it offers sign-in."""
+    from urllib.parse import quote
+    lines = f"<p>{sentence}</p>"
+    if not auth.current_user(request):
+        lines += (f'<p><a href="/auth/login?next={quote(request.url.path)}">Sign in</a> with your school account '
+                  "to use it.</p>")
+    body = (f'<main class="prose shell-col"><nav class="back"><a href="/">Back to chat</a></nav>{MASTHEAD}'
+            f"<h1>{name}</h1>{lines}</main>")
+    return render(request, Built(f"{name} · Exegetica", body, css=("/static/css/prose.css",), noindex=True),
+                  status_code=403)

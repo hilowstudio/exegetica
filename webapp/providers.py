@@ -50,6 +50,9 @@ ANSWER_NOW = ("[The library step limit is reached. Write the answer now from the
 ANSWER_IN_FULL = ("[The student has not seen the answer above. Write the whole answer now, correcting it by "
                   "what the library returned, with no further lookups. The student sees only the answer that follows.]")
 STEP_LIMIT = "This answer reached its step limit. Ask a narrower question to go further."
+# What a teacher sees when the Prep Room's model gives way to its fallback. It names no model, since the
+# model is never named to readers (memory project-exegetica-identity); the log keeps which models.
+FALLBACK_NOTICE = "The first model couldn't answer, so a backup wrote this draft."
 
 
 async def _call_tool(mcp, name: str, args: dict) -> tuple[str, bool]:
@@ -364,11 +367,9 @@ async def run(provider: str, api_key: str | None, model: str,
             if ev["type"] == "error" and not last and (   # a refusal ends a locked run (0004)
                     not wrote and ev.get("message") != policy.REFUSAL_TEXT if locked
                     else not emitted and _is_model_error(ev.get("message", ""))):
-                if locked:   # the reader sees one reply, from whichever model wrote it
-                    logger.warning("%s could not answer; falling back to %s", current, candidates[i + 1])
-                else:
-                    yield {"type": "notice",
-                           "message": f"Model “{current}” is unavailable — falling back to “{candidates[i + 1]}”."}
+                logger.warning("%s could not answer; falling back to %s", current, candidates[i + 1])
+                if not locked:   # a locked run (chat) shows one reply, from whichever model wrote it
+                    yield {"type": "notice", "message": FALLBACK_NOTICE}
                 fell_back = True
                 break
             errored = errored or ev["type"] == "error"

@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Prep Room · Exegetica{% endblock %}
+{% block fonts %}{{ super() }}<link rel="stylesheet" href="/static/fonts/doc.css">{% endblock %}
 {% block styles %}<link rel="stylesheet" href="/static/css/generate.css">{% endblock %}
 {% block content %}
 <div class="app">
+  {# on a phone the panels stack, and the wordmark tops the stack #}
+  {% with mast="narrow" %}{% include "partials/masthead.html" %}{% endwith %}
 
   <aside class="builder">
     <div class="builder-head"><span class="bh-title">Build a resource</span></div>
@@ -67,11 +70,13 @@
   </aside>
 
   <section class="output">
-    <div class="outhead">
+    {% with mast="wide" %}{% include "partials/masthead.html" %}{% endwith %}
+    <div class="outhead shell-stick">
       <h2 id="outtitle">Resource</h2>
       <div class="seg" id="aud"><button data-v="teacher" class="on" type="button">Teacher</button><button data-v="student" type="button">Student</button></div>
       <div class="seg" id="mode"><button data-m="view" class="on" type="button">View</button><button data-m="edit" type="button">Edit</button></div>
       <span style="flex:1"></span>
+      <label class="credit-opt" title="Ends the PDF and the .md file with a line saying the document was drafted with Exegetica and reviewed by the teacher"><input type="checkbox" id="credit"> Credit line</label>
       <button class="obtn" id="copy" disabled>Copy</button>
       <button class="obtn" id="download" disabled>.md</button>
       <button class="obtn primary" id="pdf" disabled>PDF</button>
@@ -84,7 +89,7 @@
     <section class="report" id="report" aria-label="Source check" hidden></section>
     <div class="paperwrap" id="paperwrap" style="display:none"><div class="paper prose" id="paper"></div></div>
     <textarea class="editor" id="editor" style="display:none" spellcheck="false"></textarea>
-    <div class="placeholder" id="placeholder"><h1>Prepare a resource</h1><p>Build from a book — pick the title and the chapters your class has read, and the document lands where your students are — or from an academic standard. Choose the source at left. Switch between Teacher and Student, edit it directly, or revise it with a plain instruction.</p></div>
+    <div class="placeholder" id="placeholder"><h1>Prepare a resource</h1><p>Build from a book by picking the title and the chapters your class has read, and the document lands where your students are. Or build from an academic standard. Choose the source at left. Switch between Teacher and Student, edit it directly, or revise it with a plain instruction.</p></div>
   </section>
 </div>
 {% endblock %}

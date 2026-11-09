@@ -60,11 +60,13 @@ function seedNew(){ return { verses: SEED.map(function(r){ return newVerse(r); }
 // Debounced server write; whole-blob PUT. pagehide flushes any pending change.
 var _saveTimer=null, _dirty=false, _loadFailed=false;
 function showLoadNote(){
-  var n=document.createElement("div"); n.setAttribute("role","status");
-  n.textContent="Your saved verses didn't load, so changes here won't be saved. Refresh the page to try again.";
-  n.style.cssText="margin:12px auto;max-width:640px;padding:10px 14px;border:1px solid var(--rule-strong);"+
-    "border-radius:12px;background:var(--surface);color:var(--ink);font-size:14px;text-align:center";
-  document.body.insertBefore(n, document.body.firstChild);
+  // shown at the top of the page's own column, so the verse list beside it never covers it, and spoken
+  // through the shell, since on a phone the column waits behind the open list
+  var text="Your saved verses didn't load, so changes here won't be saved. Refresh the page to try again.";
+  var n=document.createElement("div"); n.className="loadnote"; n.textContent=text;
+  var col=document.querySelector(".app > .col")||document.body;
+  col.insertBefore(n, col.firstChild);
+  if(window.Shell && Shell.say) Shell.say(text);
 }
 function flushServer(keepalive){
   if(!_dirty || _loadFailed) return;
@@ -95,8 +97,10 @@ async function init(){
     } else {
       // Empty account: offer a one-time import of this browser's verses, else seed.
       var local = loadLocal();
-      if(local && local.verses && local.verses.length &&
-         confirm("Import your "+local.verses.length+" saved verse"+(local.verses.length===1?"":"s")+" from this browser into your account?")){
+      var n=local && local.verses ? local.verses.length : 0;
+      if(n && await Shell.ask({title:"Bring your verses into your account?",
+            body:"This browser holds "+n+" saved verse"+(n===1?"":"s")+". Import "+(n===1?"it":"them")+" so "+(n===1?"it follows":"they follow")+" you to any device.",
+            ok:"Import", cancel:"Not now"})){
         db = local;
       } else {
         db = seedNew();
@@ -142,7 +146,7 @@ function ensureText(v){
 // ---------------------------------------------------------------- grading (verbatim logic)
 function cleanText(t){
   return (t||"")
-    .replace(/[‘’“”–—]/g, "")      // smart quotes / dashes
+    .replace(/[\u2018\u2019\u201c\u201d\u2013\u2014]/g, "")      // smart quotes / dashes
     .replace(/[.,/#!$%^&*;:{}=\-_`~()"']/g, "")
     .toLowerCase().replace(/\s+/g," ").trim();
 }
@@ -165,11 +169,7 @@ function similarity(s1,s2){
 
 // ---------------------------------------------------------------- helpers
 function esc(s){ return (s||"").replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
-var toastT;
-function toast(msg){
-  var el=document.getElementById("toast"); el.textContent=msg; el.classList.add("show");
-  clearTimeout(toastT); toastT=setTimeout(function(){ el.classList.remove("show"); }, 2400);
-}
+function toast(msg, o){ Shell.toast(msg, o); }   // the shell's toast, with Undo where an action can be taken back
 function fmtDate(iso){
   if(!iso) return "";
   try{ return new Date(iso).toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"}); }catch(e){ return ""; }
@@ -318,13 +318,14 @@ function hydrateDetail(v){
   });
 }
 
+var phone=window.matchMedia?matchMedia("(max-width:640px)"):null;   // the verse list covers the page below this
 function wireRowSelect(){
   document.querySelectorAll("[data-select]").forEach(function(el){
     el.addEventListener("click",function(e){
       if(e.target.closest("[data-vmenu]")||e.target.closest(".menu")) return;
       var id=el.getAttribute("data-select");
       ui.selectedId=id; ui.menuFor=null;
-      setDrawerOpen(false);   // reveal the exercise once a verse is chosen
+      if(phone && phone.matches) setDrawerOpen(false);   // on a phone, reveal the exercise once a verse is chosen
       render();
       if(e.detail===0){       // chosen from the keyboard: land on the verse's practice button
         var go=document.querySelector("[data-practice],[data-refresh]"); if(go) go.focus();
@@ -415,26 +416,36 @@ function moveVerse(vid, folderId){
   toast(folderId ? ("Moved to "+(folderById(folderId)||{}).name) : "Moved to unfiled");
 }
 function deleteVerse(vid){
-  var v=verseById(vid); if(!v) return;
-  if(!confirm('Delete "'+v.reference+'"? This removes it and its progress.')) return;
-  db.verses = db.verses.filter(function(x){ return x.id!==vid; });
+  var i=db.verses.findIndex(function(x){ return x.id===vid; }); if(i<0) return;
+  var v=db.verses[i];
+  db.verses.splice(i,1);
   save(); closeMenus(); render();
+  toast('Deleted "'+v.reference+'"', {undo:function(){
+    db.verses.splice(Math.min(i, db.verses.length), 0, v); save(); render();
+  }});
 }
 function deleteFolder(fid){
-  var f=folderById(fid); if(!f) return;
-  if(!confirm('Delete folder "'+f.name+'"? Verses inside it are kept and become unfiled.')) return;
-  db.verses.forEach(function(v){ if(v.folderId===fid) v.folderId=null; });
-  db.folders = db.folders.filter(function(x){ return x.id!==fid; });
-  if(ui.folderId===fid) ui.folderId=null;
+  var i=db.folders.findIndex(function(x){ return x.id===fid; }); if(i<0) return;
+  var f=db.folders[i], wasOpen=ui.folderId===fid;
+  var inside=db.verses.filter(function(v){ return v.folderId===fid; });
+  inside.forEach(function(v){ v.folderId=null; });
+  db.folders.splice(i,1);
+  if(wasOpen) ui.folderId=null;
   save(); closeMenus(); render();
+  toast('Deleted folder "'+f.name+'". Its verses are kept, unfiled.', {undo:function(){
+    db.folders.splice(Math.min(i, db.folders.length), 0, f);
+    inside.forEach(function(v){ v.folderId=fid; });
+    if(wasOpen) ui.folderId=fid;
+    save(); render();
+  }});
 }
-function renameFolder(fid){
+async function renameFolder(fid){
   var f=folderById(fid); if(!f) return;
-  var name=prompt("Rename folder:", f.name);
+  closeMenus();
+  var name=await Shell.ask({title:"Rename folder", ok:"Rename", input:{label:"Folder name", value:f.name, max:50},
+    validate:function(t){ return t.length<1 ? "A folder needs a name." : ""; }});
   if(name==null) return;
-  name=name.trim();
-  if(name.length<1||name.length>50){ toast("Name must be 1–50 characters."); return; }
-  f.name=name; save(); closeMenus(); render();
+  f.name=name; save(); render();
 }
 
 // ---------------------------------------------------------------- modals
@@ -618,7 +629,7 @@ function actArea(){
   if(s.type==="speak"){
     return '<button class="mic'+(practice.listening?" on":"")+'" id="a-mic"'+((!recogSupported||disabled)?" disabled":"")+'>'+
         '<span class="disc"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v3"/></svg></span>'+
-        '<span>'+(!recogSupported?"Speech input not supported — use the button below":(practice.listening?"Listening…":"Tap to speak"))+'</span>'+
+        '<span>'+(!recogSupported?"Speech input isn't supported here. Use the button below":(practice.listening?"Listening…":"Tap to speak"))+'</span>'+
       '</button>'+
       '<div class="transcript" id="a-trans">'+speakTrans()+'</div>'+
       '<div id="a-adv">'+speakAdvance()+'</div>';
@@ -754,19 +765,26 @@ function stepRetry(){
   renderPractice();
 }
 function needsPractice(){
-  if(!confirm("Move this verse back to Learning? This resets its progress to the start.")) return;
-  var v=practice.verse;
+  var v=practice.verse, before={currentStep:v.currentStep, masteredAt:v.masteredAt, lastRefreshedAt:v.lastRefreshedAt};
   v.currentStep=0; v.masteredAt=null; v.lastRefreshedAt=null; save();
-  toast("Back to Learning");
   exitPractice();
+  toast("Back to Learning. Its practice starts over.", {undo:function(){
+    v.currentStep=before.currentStep; v.masteredAt=before.masteredAt; v.lastRefreshedAt=before.lastRefreshedAt;
+    save(); render();
+  }});
 }
 
 // ---------------------------------------------------------------- verse drawer
 var sideEl=$("side");
 function setDrawerOpen(o){
   sideEl.classList.toggle("open", !!o);
-  var tb=$("menu-btn"); if(tb) tb.setAttribute("aria-expanded", o?"true":"false");
+  var tb=$("menu-btn"), label=o?"Hide verses":"Show verses";
+  if(tb){ tb.setAttribute("aria-expanded", o?"true":"false"); tb.setAttribute("aria-label", label); tb.title=label; }
+  // wider screens dock the list beside the page (memory.css). On a phone it covers the page, so the page
+  // waits behind it, out of reach, until the list closes.
+  var col=document.querySelector(".app > .col"); if(col) col.inert = !!o && !!(phone && phone.matches);
 }
+if(phone && phone.addEventListener) phone.addEventListener("change", function(){ setDrawerOpen(sideEl.classList.contains("open")); });
 function toggleDrawer(){ setDrawerOpen(!sideEl.classList.contains("open")); }
 $("menu-btn").onclick=toggleDrawer;
 $("drawer-close").onclick=function(){ setDrawerOpen(false); $("menu-btn").focus(); };

@@ -3,6 +3,8 @@
 {% block styles %}<link rel="stylesheet" href="/static/css/studio.css">{% endblock %}
 {% block content %}
 <div class="app">
+  {# on a phone the panels stack, and the wordmark tops the stack #}
+  {% with mast="narrow" %}{% include "partials/masthead.html" %}{% endwith %}
 
   <aside class="controls" aria-label="Studio settings">
     <div>
@@ -118,11 +120,12 @@
   </aside>
 
   <main class="canvas">
+    {% with mast="wide" %}{% include "partials/masthead.html" %}{% endwith %}
     <section class="stage" id="stage" aria-live="polite">
       <div class="empty"><h2>Nothing made yet</h2><p>Describe what you want at left and choose Make. Images take seconds. A video takes a few minutes, and you can leave the page while it is made.</p></div>
     </section>
     <section class="library" id="gallery" aria-label="Library" hidden>
-      <div class="lib-head" id="lib-head">
+      <div class="lib-head shell-stick" id="lib-head">
         <div class="lib-title" id="lib-title"></div>
         <div class="lib-actions" id="lib-actions">
           <button class="btn coarse-only" type="button" id="select-btn">Select</button>
@@ -163,7 +166,6 @@
       </div>
     </dialog>
     <div class="menu" id="menu" role="menu" hidden></div>
-    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
     <dialog id="dlg" aria-labelledby="dlg-title">
       <form method="dialog" id="dlg-form">
         <h2 id="dlg-title"></h2>

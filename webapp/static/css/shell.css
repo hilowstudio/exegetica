@@ -10,7 +10,8 @@
 /* ---------- base ---------- */
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;
+/* Every page sits on the garden, faded to the paper colour (the chat page's background, now everyone's). */
+body{margin:0;background:linear-gradient(color-mix(in srgb,var(--paper) 86%,transparent),color-mix(in srgb,var(--paper) 86%,transparent)),var(--garden) center/cover no-repeat fixed var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;
   -webkit-font-smoothing:antialiased}
 h1,h2,h3{text-wrap:balance}
 [hidden]{display:none!important}
@@ -23,6 +24,27 @@ h1,h2,h3{text-wrap:balance}
 /* A page's centred column. It stays centred while the window is wide enough and starts beside the
    rail on a narrower one, so the rail never covers it. The page sets the column's width with --col. */
 .shell-col{max-width:var(--col,940px);margin-left:max(var(--rail-w),calc((100% - var(--col,940px)) / 2));margin-right:auto}
+
+/* ---------- the wordmark (templates/partials/masthead.html), on the background at the top of each page's column ---------- */
+.masthead{display:flex;justify-content:center;padding:14px 16px 6px;flex:none}
+.masthead a{display:block;border-radius:6px}
+.masthead a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.masthead img{display:block;width:360px;max-width:80vw;height:auto}
+.masthead .wm-dark{display:none}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .masthead .wm-light{display:none}
+  :root:not([data-theme="light"]) .masthead .wm-dark{display:block}
+}
+:root[data-theme="dark"] .masthead .wm-light{display:none}
+:root[data-theme="dark"] .masthead .wm-dark{display:block}
+@media (max-width:640px){.masthead{padding:8px 16px 2px}}
+
+/* A bar that stays put while its page scrolls (.shell-stick, position:sticky) is clear, on the garden
+   like the rest of the page, and frosts over only while something scrolls beneath it (.stuck, set
+   by shell.js). Its sticky top sits at least 1px above its scroller's top edge, so it can tell. */
+.shell-stick{background:transparent;transition:background-color .15s ease}
+.shell-stick.stuck{background:color-mix(in srgb,var(--paper) 90%,transparent);-webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px)}
 
 /* ---------- the rail ---------- */
 .rail{position:fixed;left:0;top:0;bottom:0;width:58px;z-index:60;display:flex;flex-direction:column;align-items:center;
@@ -85,7 +107,8 @@ h1,h2,h3{text-wrap:balance}
 /* ---------- print: the page alone ---------- */
 @media print{
   :root,:root[data-rail="closed"]{--rail-w:0px;--rail-bar:0px}
-  .rail,.rail-handle,.help-bg{display:none!important}
+  .rail,.rail-handle,.help-bg,.shell-toast,.masthead{display:none!important}
+  body{background:none}
 }
 
 /* ---------- dialogs: the Need help now? window (and any page dialog that borrows its look) ---------- */
@@ -102,3 +125,68 @@ h1,h2,h3{text-wrap:balance}
 .help-item .hnote{color:var(--ink-faint);font-size:12px;margin-top:3px}
 .help-item a{color:var(--iron)}
 @media (pointer:coarse){.help-x{min-width:44px;min-height:44px}}
+
+/* ---------- Greek and Hebrew: the shell tags them (Shell.tagLanguages), and these set them ---------- */
+:lang(grc){font-family:var(--greek);font-size:1.1em;line-height:1}   /* Garamond's Greek sits small beside the sans */
+:lang(he){font-family:var(--hebrew);font-size:1.15em;line-height:1}
+.chapter :lang(grc){font-family:inherit;font-size:1em}   /* a book's own face (EB Garamond, Literata) carries its Greek */
+
+/* ---------- the page's question dialog (Shell.ask), in place of the browser's confirm() and prompt() ---------- */
+.shell-dlg{border:1px solid var(--rule-strong);border-radius:14px;background:var(--surface);color:var(--ink);padding:0;
+  width:min(420px,calc(100vw - 32px));box-shadow:0 18px 50px rgba(0,0,0,.28)}
+.shell-dlg::backdrop{background:rgba(0,0,0,.5)}
+.shell-dlg form{padding:20px 20px 16px;margin:0}
+.shell-dlg h2{margin:0 0 6px;font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink)}
+.shell-dlg .sd-body{margin:0 0 14px;color:var(--ink-soft);font-size:14px;line-height:1.5}
+.shell-dlg .sd-field{display:flex;flex-direction:column;gap:6px;margin:8px 0 12px;font-size:13px;color:var(--ink-soft)}
+.shell-dlg .sd-field input{font:inherit;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--ink-faint);
+  border-radius:8px;padding:9px 10px}
+.shell-dlg .sd-error{margin:-4px 0 12px;color:var(--err);font-size:13px}
+.shell-dlg .sd-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:6px}
+.shell-dlg .sd-actions button{font:inherit;font-size:14px;min-height:38px;padding:8px 16px;border-radius:9px;cursor:pointer;
+  border:1px solid var(--rule-strong);background:var(--surface);color:var(--ink)}
+.shell-dlg .sd-ok{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600}
+.shell-dlg .sd-ok.danger{background:var(--err);border-color:var(--err);color:var(--paper)}
+.shell-dlg button:focus-visible,.shell-dlg input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+
+/* ---------- the toast (Shell.toast): a paper card like the site's notices, with Undo in the accent when the
+   action can be taken back. It sits above whatever a page marks with data-toast-above (chat's composer), and
+   runs nearly full width above the bottom bar on a phone. ---------- */
+.shell-toast{position:fixed;left:50%;bottom:calc(20px + var(--rail-bar,0px));transform:translateX(-50%);z-index:90;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;max-width:min(520px,calc(100vw - 32px));
+  padding:9px 10px 9px 16px;border-radius:12px;background:var(--surface);color:var(--ink);border:1px solid var(--rule-strong);
+  font-size:14px;line-height:1.4;box-shadow:0 10px 30px rgba(20,16,12,.16),0 1px 3px rgba(20,16,12,.08)}
+.shell-toast[hidden]{display:none}
+.shell-toast button{font:inherit;font-weight:600;border:0;background:none;color:var(--accent);text-decoration:underline;
+  text-underline-offset:3px;cursor:pointer;min-height:30px;padding:2px 8px;border-radius:8px;flex:none}
+.shell-toast button:hover{background:var(--surface-2)}
+.shell-toast button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+@media (max-width:640px){.shell-toast{left:12px;right:12px;transform:none;max-width:none}}
+@media (prefers-reduced-motion:no-preference){.shell-toast{animation:shell-toast-in .18s ease-out}}
+@keyframes shell-toast-in{from{opacity:0;translate:0 6px}to{opacity:1;translate:0 0}}
+.shell-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- tables (Shell.table, rule J2): shared by chat and the Prep Room ---------- */
+.tablebox{position:relative}
+.tablebox .tablewrap{margin:0}
+.tablewrap .nobr{white-space:nowrap}   /* "4:46-54" never breaks across lines (shell.js) */
+/* a soft shade at an edge when columns are out of sight (shell.js fitTables) */
+.tablebox::before,.tablebox::after{content:"";position:absolute;top:0;bottom:0;width:18px;pointer-events:none;opacity:0;
+  transition:opacity .15s;z-index:1}
+.tablebox::before{left:0;background:linear-gradient(to right,color-mix(in srgb,var(--ink) 20%,transparent),transparent)}
+.tablebox::after{right:0;background:linear-gradient(to left,color-mix(in srgb,var(--ink) 20%,transparent),transparent)}
+.tablebox.more-left::before,.tablebox.more-right::after{opacity:1}
+/* five columns or more: on a phone each row becomes a card of labelled lines. The table keeps its roles (shell.js). */
+@media screen and (max-width:560px){
+  .tablebox table.stack,.tablebox table.stack tbody,.tablebox table.stack tr{display:block;width:100%}
+  .tablebox table.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .tablebox table.stack tr{border:1px solid var(--rule);border-radius:8px;padding:2px 12px;margin:0 0 10px}
+  .tablebox table.stack td{display:grid;grid-template-columns:minmax(5.5em,36%) 1fr;gap:12px;border:0;
+    border-top:1px solid var(--rule);padding:7px 0;text-align:left}
+  .tablebox table.stack td::before{content:attr(data-label);content:attr(data-label) / "";font-weight:600;color:var(--ink-soft)}
+  .tablebox table.stack td.num,.tablebox table.stack th.num{text-align:left}   /* above the paper's own right-align */
+  .tablebox table.stack td:first-child{border-top:0}
+  .tablebox table.stack td:first-child:not(.num){display:block;font-weight:600;padding-top:9px}   /* the row's name heads its card */
+  .tablebox table.stack td:first-child:not(.num)::before{content:none}
+}
+@media print{.tablebox::before,.tablebox::after{display:none}}

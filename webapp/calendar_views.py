@@ -147,7 +147,7 @@ def week(date_s: str, *, view: str, here: str) -> shell.Built:
             f'<h1>{esc(title)}</h1></div>{_mode_toggle(date_s, "week", view)}</div>')
     body = (_crumbs([("Calendar", "/calendar"), (title, None)], view)
             + head + grid + pager + _jump(view))
-    return _page(f"{title} — Gospel of John", body, here=here, view=view)
+    return _page(f"{title} · Gospel of John", body, here=here, view=view)
 
 
 def _jump(view: str) -> str:
@@ -213,5 +213,5 @@ def day(date_s: str, *, view: str, here: str) -> shell.Built | None:
                      (f'Week of {mon.strftime("%b")} {mon.day}', "/calendar/week/" + date_s),
                      (f'{d.strftime("%a")} {d.strftime("%b")} {d.day}', None)], view)
             + head + blocks + pager)
-    return _page(f"{entry.get('passage') or entry.get('label') or 'Day'} — Gospel of John",
+    return _page(f"{entry.get('passage') or entry.get('label') or 'Day'} · Gospel of John",
                  body, here=here, view=view)

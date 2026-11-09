@@ -204,7 +204,7 @@ async def shelf_set_cover(request):
         if url and not url.startswith("/api/library/cover/") and r2.configured():
             img, err = await _fetch_cover_image(url)
             if err:
-                return JSONResponse({"error": f"couldn't use that image — {err}"}, status_code=400)
+                return JSONResponse({"error": f"Couldn't use that image: {err}"}, status_code=400)
             data, ct = img
             await r2.put_bytes_async(f"covers/{exid}", data, ct)
             stored = f"/api/library/cover/{exid}?v={int(time.time())}"  # ?v busts the immutable cache
@@ -484,7 +484,7 @@ async def upload_complete(request):
     if body.get("attested") is not True:
         return JSONResponse({"error": "attestation required"}, status_code=400)
     if not await r2.head_async(key):
-        return JSONResponse({"error": "upload not found — try again"}, status_code=400)
+        return JSONResponse({"error": "Upload not found. Try again."}, status_code=400)
 
     dedup = extraction.book_dedup_key({"title": title, "authors": [author] if author else []})
     ex = await db.fetchrow(

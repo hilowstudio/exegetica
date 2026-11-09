@@ -710,10 +710,14 @@ async def index(request):
 # Resource generator (standards-aligned)
 # ---------------------------------------------------------------------------
 async def generate_page(request):
+    if not shell.may_open(request, "teacher"):   # decision 0007
+        return shell.for_others(request, "Prep Room", "The Prep Room is for teachers.")
     return shell.page(request, "generate.html")
 
 
 async def library_page(request):
+    if not shell.may_open(request, "teacher"):   # decision 0007
+        return shell.for_others(request, "Living Library", "The Living Library is for teachers.")
     return shell.page(request, "library.html")
 
 

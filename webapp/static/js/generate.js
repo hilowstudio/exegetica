@@ -11,7 +11,7 @@ function md(src){const L=src.replace(/\r\n/g,"\n").split("\n");let h="",i=0;cons
     if(/^\s*_{3,}\s*$/.test(l)){let n=0;while(i<L.length&&/^\s*_{3,}\s*$/.test(L[i])){n++;i++;}for(let k=0;k<n;k++)h+="<div class='writeline'></div>";continue;}
     if(/^\s*(-{3,}|\*{3,})\s*$/.test(l)){h+="<hr>";i++;continue;}
     if(/^\s*>/.test(l)){let b=[];while(i<L.length&&/^\s*>/.test(L[i])){b.push(L[i].replace(/^\s*>\s?/,""));i++;}h+="<blockquote>"+md(b.join("\n"))+"</blockquote>";continue;}
-    if(l.includes("|")&&i+1<L.length&&sep(L[i+1])){const hd=cells(l);i+=2;const rs=[];while(i<L.length&&L[i].includes("|")&&!/^\s*$/.test(L[i])){rs.push(cells(L[i]));i++;}let t="<div class='tablewrap'><table><thead><tr>"+hd.map(x=>"<th>"+inl(x)+"</th>").join("")+"</tr></thead><tbody>";for(const r of rs)t+="<tr>"+r.map(c=>"<td>"+inl(c)+"</td>").join("")+"</tr>";h+=t+"</tbody></table></div>";continue;}
+    if(l.includes("|")&&i+1<L.length&&sep(L[i+1])){const hd=cells(l);i+=2;const rs=[];while(i<L.length&&L[i].includes("|")&&!/^\s*$/.test(L[i])){rs.push(cells(L[i]));i++;}h+=Shell.table(hd,rs,inl);continue;}
     if(/^\s*[-*]\s+/.test(l)){let b=[];while(i<L.length&&/^\s*[-*]\s+/.test(L[i])){b.push("<li>"+inl(L[i].replace(/^\s*[-*]\s+/,""))+"</li>");i++;}h+="<ul>"+b.join("")+"</ul>";continue;}
     if(/^\s*\d+[.)]\s+/.test(l)){let b=[];while(i<L.length&&/^\s*\d+[.)]\s+/.test(L[i])){const mm=L[i].match(/^\s*(\d+)[.)]\s+/);b.push("<li value='"+mm[1]+"'>"+inl(L[i].replace(/^\s*\d+[.)]\s+/,""))+"</li>");i++;}h+="<ol>"+b.join("")+"</ol>";continue;}
     let b=[];while(i<L.length&&!/^\s*$/.test(L[i])&&!/^```/.test(L[i])&&!/^#{1,4}\s/.test(L[i])&&!/^\s*[-*]\s+/.test(L[i])&&!/^\s*>/.test(L[i])&&!/^\s*_{3,}\s*$/.test(L[i])&&!/^\s*(-{3,}|\*{3,})\s*$/.test(L[i])){b.push(L[i]);i++;}h+="<p>"+inl(b.join("\n")).replace(/\n/g,"<br>")+"</p>";}
@@ -54,7 +54,7 @@ Promise.all([
   updateKeyBanner();
 }).catch(()=>{console.error("backend unavailable");});
 
-function updateKeyBanner(){const b=$("keybanner");if(needsKey()){b.style.display="block";b.textContent="Add your "+(pcfg(curProvider()).label||curProvider())+" API key in Settings (left rail) to generate.";}else b.style.display="none";refreshGen();}
+function updateKeyBanner(){const b=$("keybanner");if(needsKey()){b.style.display="block";b.textContent="Drafting isn't available right now.";}else b.style.display="none";refreshGen();}
 
 // ---- format recommendations ----
 function loadRecs(subSubjectId){if(!subSubjectId){$("recs").innerHTML="";RECS=[];return;}
@@ -74,7 +74,7 @@ function refreshGen(){
   $("gen").disabled = !(srcOk && $("sel-format").value && !needsKey() && !busy);
   const n=$("gennote");
   if(busy){n.textContent="Drafting…";n.className="note";}
-  else if(needsKey()){n.textContent="Add your API key in Settings to generate.";n.className="note warn";}
+  else if(needsKey()){n.textContent="Drafting isn't available right now.";n.className="note warn";}
   else if(!srcOk){n.textContent = srcMode==="book" ? "Pick a book, coverage, and a format." : "Pick a standard, an objective, and a format.";n.className="note";}
   else if(srcMode==="book"){n.textContent="Ready. "+pickedBook.title+" · through ch "+$("sel-cover").value+" · "+((FMT[$("sel-format").value]||{}).name||"")+".";n.className="note";}
   else{n.textContent="Ready. "+selectedObjectives().length+" objective(s) · "+((FMT[$("sel-format").value]||{}).name||"")+".";n.className="note";}
@@ -210,7 +210,7 @@ function chooseBook(b){fetch("/api/books/"+encodeURIComponent(b.slug)).then(r=>r
   $("booksearch").value=b.title;$("bookresults").classList.remove("open");$("bookresults").innerHTML="";
   const sel=$("sel-cover");sel.innerHTML="";
   (pickedBook.toc||[]).forEach(t=>{const o=document.createElement("option");o.value=t.section_number;
-    o.textContent="Ch "+t.section_number+(t.title?" — "+t.title:"");sel.appendChild(o);});
+    o.textContent="Ch "+t.section_number+(t.title?": "+t.title:"");sel.appendChild(o);});
   if(pickedBook.toc.length)sel.value=pickedBook.toc[pickedBook.toc.length-1].section_number;  // default: whole book
   $("coverwrap").style.display=pickedBook.toc.length?"":"none";
   refreshGen();}).catch(()=>{});}
@@ -226,7 +226,41 @@ function splitKey(raw){const L=raw.split("\n");let idx=-1;for(let i=0;i<L.length
   return {body:L.slice(0,cut).join("\n").trimEnd(),key:L.slice(idx).join("\n")};}
 function hasKey(){return !!splitKey(rawDoc).key;}
 function shown(){return audience==="student"?splitKey(rawDoc).body:rawDoc;}
-function render(){paper.innerHTML=md(shown());}
+// The credit line (Adam, 2026-11-08: an option at download). It ends the PDF and the .md file, shows at the
+// foot of the document while on, and the teacher's choice is kept in this browser.
+const CREDIT="Drafted with Exegetica from its library's sources and reviewed by the teacher.";
+const creditBox=$("credit");
+try{const v=localStorage.getItem("exeg-credit");creditBox.checked=v===null?true:v==="1";}catch(e){creditBox.checked=true;}
+creditBox.addEventListener("change",()=>{try{localStorage.setItem("exeg-credit",creditBox.checked?"1":"0");}catch(e){}if(rawDoc)render();});
+function withCredit(text){return creditBox.checked?text.replace(/\s*$/,"")+"\n\n---\n\n*"+CREDIT+"*\n":text;}
+let docBand="";   // the grade band the document was drafted for: the print size follows it
+function render(){
+  paper.innerHTML=md(shown());
+  paper.dataset.band=docBand||$("sel-band").value;
+  if(creditBox.checked){const p=document.createElement("p");p.className="credit";p.textContent=CREDIT;paper.appendChild(p);}
+  printReady();
+}
+// The printed faces (fonts/doc.css) load only when something uses them, and the print dialog will not wait
+// for them. So they load as soon as a document shows, and the PDF button waits until they have.
+function printReady(){
+  const faces=['400 1em "EB Garamond"','italic 400 1em "EB Garamond"','600 1em "EB Garamond"','600 1em "Fraunces"'];
+  return Promise.all(faces.map(f=>document.fonts.load(f).catch(()=>[]))).then(()=>document.fonts.ready);
+}
+// Every printed page carries the document's title and copy (rule H2): the page's margin boxes, written
+// just before printing because the title changes with each document.
+function setPrintHead(){
+  let st=document.getElementById("print-head");
+  if(!st){st=document.createElement("style");st.id="print-head";document.head.appendChild(st);}
+  const q=s=>'"'+String(s).replace(/\\/g,"\\\\").replace(/"/g,'\\"').replace(/\s+/g," ")+'"';
+  let title=($("outtitle").textContent||"Resource").trim();if(title.length>60)title=title.slice(0,59)+"…";
+  const copy=audience==="student"?"Student copy":"Teacher copy";
+  // the page's margin boxes do not see the tokens, so they name the faces (the same as --sans and --doc)
+  st.textContent="@page{@top-left{content:"+q(title)+";font:8pt 'Public Sans',sans-serif;color:#555}"+
+    "@top-right{content:"+q(copy)+";font:8pt 'Public Sans',sans-serif;color:#555}"+
+    "@bottom-center{content:counter(page);font:10pt 'EB Garamond',serif;color:#333}}"+
+    "@page:first{@top-left{content:none}@top-right{content:none}}";
+}
+window.addEventListener("beforeprint",setPrintHead);
 function setOutButtons(on){$("download").disabled=!on;$("copy").disabled=!on;$("pdf").disabled=!on;
   $("aud").querySelector('[data-v=student]').disabled=!hasKey();}
 function segOn(seg,pred){Array.from($(seg).children).forEach(x=>x.classList.toggle("on",pred(x)));}
@@ -303,7 +337,7 @@ async function generate(){
       provider:curProvider(),model:curModel(),api_key:curKey()};
     title=(FMT[body.format_id]||{}).name+" · "+(curSubtopic?curSubtopic.name:"");
   }
-  $("outtitle").textContent=title;
+  $("outtitle").textContent=title;docBand=$("sel-band").value;
   audience="teacher";mode="view";segOn("aud",x=>x.dataset.v==="teacher");segOn("mode",x=>x.dataset.m==="view");
   placeholder.style.display="none";paperwrap.style.display="flex";editor.style.display="none";modrow.style.display="flex";
   rawDoc="";
@@ -330,6 +364,6 @@ async function applyMod(){
   $("modbtn").textContent="Apply";busy=false;refreshGen();
 }
 
-$("pdf").addEventListener("click",()=>{if(mode==="edit"){rawDoc=editor.value;mode="view";syncMode();}render();setTimeout(()=>window.print(),60);});
-$("download").addEventListener("click",()=>{const blob=new Blob([shown()],{type:"text/markdown"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=slug()+(audience==="student"?"_student":"")+".md";a.click();URL.revokeObjectURL(a.href);});
+$("pdf").addEventListener("click",()=>{if(mode==="edit"){rawDoc=editor.value;mode="view";syncMode();}render();setPrintHead();printReady().then(()=>window.print());});
+$("download").addEventListener("click",()=>{const blob=new Blob([withCredit(shown())],{type:"text/markdown"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=slug()+(audience==="student"?"_student":"")+".md";a.click();URL.revokeObjectURL(a.href);});
 $("copy").addEventListener("click",()=>{navigator.clipboard&&navigator.clipboard.writeText(shown());$("copy").textContent="Copied";setTimeout(()=>$("copy").textContent="Copy",1200);});

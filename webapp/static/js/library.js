@@ -98,7 +98,7 @@ function shelfBookHTML(it,i){
     ? '<img class="bk-cover" src="'+esc(it.cover)+'" alt="" loading="lazy">'
     : '<div class="bk-cover ph" style="--c:'+it.accent+'"><span class="sp"></span><div class="t">'+esc(it.title)+'</div><div class="a">'+esc(it.sub)+'</div></div>';
   var badge=it.ready?'<span class="bk-ready" title="Study materials ready">✓</span>':"";
-  var tip=it.title+(it.ready?" — study materials ready":"");
+  var tip=it.title+(it.ready?" · study materials ready":"");
   return '<button class="book" style="--i:'+i+'" data-id="'+it.id+'" type="button" title="'+esc(tip)+'">'+badge+inner+'</button>';
 }
 function renderShelf(items){
@@ -123,8 +123,8 @@ function render(){
     else{$("grid").innerHTML=items.map(cardHTML).join("");$("grid").style.display="";}
   }
   if(!items.length){
-    var E={all:["Your library is empty","Add a book, podcast, or video with the omnibox above — or browse the ready library for titles already built into study materials."],
-           book:["No books on your shelf yet","Search a title above, or browse the ready library for books already built into study materials — instant, no wait."],
+    var E={all:["Your library is empty","Add a book, podcast, or video with the omnibox above, or browse the ready library for titles already built into study materials."],
+           book:["No books on your shelf yet","Search a title above, or browse the ready library for books already built into study materials, which open instantly."],
            podcast:["No podcasts yet","Search Apple Podcasts with the omnibox above to add a show."],
            video:["No videos yet","Search YouTube or paste a link with the omnibox above."]}[curFilter]||["Nothing here yet","Add a book, podcast, or video with the omnibox above."];
     $("empty").innerHTML='<h3>'+esc(E[0])+'</h3><p>'+esc(E[1])+'</p>';
@@ -145,7 +145,7 @@ function openBook(id){
       '<input type="url" id="cover-url" placeholder="https://…/cover.jpg" value="'+esc(it.cover||"")+'">'+
       '<div class="cover-edit-row"><button type="button" class="csave" id="cover-save">Save</button>'+
       '<button type="button" class="creset" id="cover-reset">Reset</button></div>'+
-      (AUTH.admin?'<div class="cover-edit-note">Admin — this sets the cover for everyone.</div>':'')+
+      (AUTH.admin?'<div class="cover-edit-note">Admin: this sets the cover for everyone.</div>':'')+
     '</div>';
   $("read-body").innerHTML='<div class="read-grid"><div class="read-cover">'+cover+coverEdit+'</div>'+
     '<div class="read-meta"><div class="r-eyebrow">Book</div><h2 class="r-title">'+esc(it.title)+'</h2>'+
@@ -238,7 +238,7 @@ function addItem(it,cb){
       }).catch(function(){toast("Could not save. Try again.");});
   }else{
     it.id=uid();it.fresh=true;LIB.unshift(it);_place(it);render();
-    toast("Added for this visit — sign in to save it to your library");if(cb)cb(it);
+    toast("Added for this visit. Sign in to save it to your library.");if(cb)cb(it);
   }
 }
 function removeItem(id){
@@ -274,12 +274,12 @@ function pollExtract(id,out,tries){
     .then(function(s){
       if(!s){out.innerHTML='<div class="ex-status err">Lost track of the extraction.</div>';return;}
       if(s.status==="extracted"){loadExtraction(id,out);return;}
-      if(s.status==="failed"){out.innerHTML='<div class="ex-status err">'+esc(s.error||"Extraction failed — this may not be a public-domain title.")+'</div>';return;}
+      if(s.status==="failed"){out.innerHTML='<div class="ex-status err">'+esc(s.error||"Extraction failed. This may not be a public-domain title.")+'</div>';return;}
       var msg='<div class="ex-status">'+esc(_exLabel(s))+'</div>';
       if(s.summary)msg+='<div class="ex-sec"><div class="ex-h">Summary (preview)</div><p>'+esc(s.summary)+'</p></div>';
-      if(tries>=140)msg+='<div class="ex-status" style="margin-top:8px;font-size:12px;opacity:.75">Taking a while — you can leave this page and it keeps building; reopen the book later to see the finished materials.</div>';
+      if(tries>=140)msg+='<div class="ex-status" style="margin-top:8px;font-size:12px;opacity:.75">Taking a while. You can leave this page and it keeps building. Reopen the book later to see the finished materials.</div>';
       out.innerHTML=msg;
-      if(tries>=300){out.innerHTML='<div class="ex-status">Still building after several minutes. Reopen this book later — the materials will be here when it finishes.</div>';return;}
+      if(tries>=300){out.innerHTML='<div class="ex-status">Still building after several minutes. Reopen this book later, and the materials will be here when it finishes.</div>';return;}
       var delay=tries<20?3000:(tries<60?5000:9000);
       setTimeout(function(){pollExtract(id,out,tries+1);},delay);
     }).catch(function(){setTimeout(function(){pollExtract(id,out,tries+1);},5000);});
@@ -351,7 +351,7 @@ function exportMaterials(){
     });
   }
   b+='<div class="foot">Study materials from Exegetica · exegetica.app</div>';
-  w.document.write('<!doctype html><meta charset="utf-8"><title>'+esc(title)+' — study materials</title><style>'+css+'</style>'+b);
+  w.document.write('<!doctype html><meta charset="utf-8"><title>'+esc(title)+' · study materials</title><style>'+css+'</style>'+b);
   w.document.close();
   setTimeout(function(){try{w.focus();w.print();}catch(e){}},300);
 }
@@ -361,7 +361,7 @@ document.addEventListener("click",function(e){if(e.target.closest(".lib-extract"
 function openUpload(it){
   if(!it||!AUTH.signed)return;
   _curBook=it;
-  $("up-book").textContent=it.title+(it.sub?" — "+it.sub:"");
+  $("up-book").textContent=it.title+(it.sub?": "+it.sub:"");
   $("up-file").value="";$("up-attest").checked=false;$("up-acq").value="owned";$("up-out").innerHTML="";
   $("upload-bg").classList.add("open");
 }
@@ -429,14 +429,14 @@ $("search-q").addEventListener("input",function(){
 });
 function runSearch(q){
   if(SEARCH_KIND==="book"){
-    // Ready (already-seeded) catalog first, external Google Books second — in parallel.
+    // Ready (already-seeded) catalog first, external Google Books second, fetched in parallel.
     Promise.all([
       fetch("/api/library/catalog?q="+encodeURIComponent(q),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():{catalog:[]};}).catch(function(){return {catalog:[]};}),
       fetch("/api/library/books?q="+encodeURIComponent(q)).then(function(r){return r.ok?r.json():{results:[],__err:true};}).catch(function(){return {results:[],__err:true};})
     ]).then(function(res){
       if($("search-q").value.trim()!==q)return;
       CAT=res[0].catalog||[];SR=res[1].results||[];
-      SEARCH_NOTE=res[1].__err?"Book search failed — try again.":"No matches found.";
+      SEARCH_NOTE=res[1].__err?"Book search failed. Try again.":"No matches found.";
       renderSearch();
     });
     return;
@@ -447,10 +447,10 @@ function runSearch(q){
   else url="/api/library/youtube?q="+encodeURIComponent(q);
   fetch(url).then(function(r){return r.json();}).then(function(d){
     if($("search-q").value.trim()!==q)return;
-    if(ytUrl){var p=d.preview;SR=(d.ok&&p)?[{title:p.title,author:p.author,thumbnail:p.thumbnail,url:p.url,duration:""}]:[];if(!d.ok)SEARCH_NOTE="Couldn’t read that link — paste a public YouTube URL.";}
+    if(ytUrl){var p=d.preview;SR=(d.ok&&p)?[{title:p.title,author:p.author,thumbnail:p.thumbnail,url:p.url,duration:""}]:[];if(!d.ok)SEARCH_NOTE="Couldn’t read that link. Paste a public YouTube URL.";}
     else{SR=d.results||[];if(SEARCH_KIND==="video"&&d.configured===false)SEARCH_NOTE="YouTube search isn’t set up on this server yet.";}
     renderSearch();
-  }).catch(function(){SR=[];SEARCH_NOTE="Search failed — try again.";renderSearch();});
+  }).catch(function(){SR=[];SEARCH_NOTE="Search failed. Try again.";renderSearch();});
 }
 function catResultHTML(x,i){
   var mini=x.cover?'<img class="mini-img" src="'+esc(x.cover)+'" alt="" loading="lazy">':'<span class="mini" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
@@ -461,7 +461,7 @@ function catResultHTML(x,i){
 function renderSearch(){
   if(SEARCH_KIND==="book"){
     var h="";
-    if(CAT.length)h+='<div class="s-note ready-head">Ready in the library — instant, no wait</div>'+CAT.map(catResultHTML).join("");
+    if(CAT.length)h+='<div class="s-note ready-head">Ready in the library: instant, no wait</div>'+CAT.map(catResultHTML).join("");
     if(SR.length)h+=(CAT.length?'<div class="s-note">Or build a new one</div>':'')+SR.map(function(x,i){
       var mini=x.cover?'<img class="mini-img" src="'+esc(x.cover)+'" alt="" loading="lazy">':'<span class="mini" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
       return '<button class="result" type="button" data-i="'+i+'">'+mini+'<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+esc(x.author||"Unknown author")+'</span></span><span class="r-y">'+esc(x.year||"")+'</span></button>';
@@ -482,7 +482,7 @@ function renderSearch(){
 }
 $("search-results").addEventListener("click",function(e){
   var b=e.target.closest(".result");if(!b)return;
-  if(b.dataset.cat!==undefined){  // a ready, already-seeded book — add it and open its materials
+  if(b.dataset.cat!==undefined){  // a ready, already-seeded book: add it and open its materials
     var c=CAT[+b.dataset.cat];if(!c)return;
     addItem({type:"book",title:c.title,sub:c.sub,meta:(c.objectives?c.objectives+" objectives ready":""),accent:nextAccent(),cover:c.cover||null},function(item){$("search-bg").classList.remove("open");openBook(item.id);});
     return;
@@ -545,8 +545,7 @@ function syncSort(){Array.prototype.forEach.call($("sortseg").children,function(
 $("sortseg").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;sortKey=b.dataset.s;try{localStorage.setItem("studybible.lib.sort",sortKey);}catch(e){}syncSort();render();});
 
 // ---------- misc ----------
-var toastT;
-function toast(msg){var t=$("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove("show");},2200);}
+function toast(msg, o){ Shell.toast(msg, o); }   // the shell's toast
 Array.prototype.forEach.call(document.querySelectorAll(".modal-bg"),function(bg){bg.addEventListener("click",function(e){if(e.target===bg)bg.classList.remove("open");});});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")Array.prototype.forEach.call(document.querySelectorAll(".modal-bg"),function(bg){bg.classList.remove("open");});});
 
@@ -560,7 +559,7 @@ function initLibrary(){
     fetch("/api/library/shelf",{credentials:"same-origin"}).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(s){
       LIB=(s&&s.items)||[];booting=false;render();
     }).catch(function(){booting=false;LIB=[];render();
-      $("empty").innerHTML='<h3>Couldn\u2019t load your library</h3><p>Something went wrong reaching the server — refresh to try again.</p>';$("empty").classList.remove("hidden");});
+      $("empty").innerHTML='<h3>Couldn\u2019t load your library</h3><p>Something went wrong reaching the server. Refresh to try again.</p>';$("empty").classList.remove("hidden");});
     loadBrowseCount();
     if(AUTH.user.role==="teacher")loadReviews();
   }).catch(function(){anon=true;LIB=DEMO_SEED.slice();booting=false;render();});
@@ -578,13 +577,13 @@ function loadReviews(){
     pill.hidden=REVIEWS.length===0;
   }).catch(function(){});
 }
-function fmtQ(q){return (q==null)?"—":Number(q).toFixed(2);}
+function fmtQ(q){return (q==null)?"n/a":Number(q).toFixed(2);}
 function renderReviews(){
   var box=document.getElementById("review-list");
   if(!REVIEWS.length){box.innerHTML='<div class="rv-empty">No copies awaiting review.</div>';return;}
   box.innerHTML=REVIEWS.map(function(r){
     var inc=r.incumbent||{},cand=r.candidate||{};
-    var incLabel=(inc.source&&inc.source.indexOf("upload:")===0)?"Current copy":("Current ("+(inc.source||"—")+")");
+    var incLabel=(inc.source&&inc.source.indexOf("upload:")===0)?"Current copy":("Current ("+(inc.source||"unknown")+")");
     return '<div class="rv-card" data-ex="'+r.extraction_id+'" data-uid="'+cand.user_id+'">'
       +'<h4>'+esc(r.title||"Untitled")+'</h4>'
       +'<p class="rv-by">'+esc(r.creator||"")+'</p>'

@@ -1,5 +1,5 @@
 /* The Media Studio · Exegetica page (templates/studio.html). The shared shell, colours and rail are in tokens.css and shell.css. */
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{margin:0;color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 .app{display:grid;grid-template-columns:calc(360px + var(--rail-w)) minmax(0,1fr);height:100%}   /* the controls start past the rail */
@@ -10,7 +10,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);f
 .lab{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
 .hint{font-size:13px;color:var(--ink-faint);margin:0}
 .hint.warn{color:var(--err)}
-.linkbtn{font:inherit;font-size:13px;border:0;background:none;padding:0;color:var(--accent);text-decoration:underline;cursor:pointer}
+.linkbtn{font:inherit;font-size:13px;border:0;background:none;padding:0;min-height:24px;color:var(--accent);text-decoration:underline;cursor:pointer}
 .linkbtn:disabled{color:var(--ink-faint);cursor:default;text-decoration:none}
 .seg{display:flex;gap:4px;padding:3px;background:var(--surface-2);border:1px solid var(--rule);border-radius:9px}
 .seg button{flex:1;font:inherit;font-size:13.5px;font-weight:600;border:0;border-radius:7px;padding:7px 8px;background:none;color:var(--ink-soft);cursor:pointer}
@@ -63,7 +63,7 @@ input[type=range]{width:100%;accent-color:var(--accent)}
 .grid .word{display:grid;place-items:center;height:100%;padding:8px;text-align:center}
 /* the library: a path header that turns into an action bar, folder cards, then loose work */
 .library{display:flex;flex-direction:column;gap:14px}
-.lib-head{position:sticky;top:-24px;z-index:5;display:flex;align-items:center;gap:10px;min-height:56px;margin:0 -28px;padding:8px 28px;background:var(--paper);border-bottom:1px solid var(--rule)}
+.lib-head{position:sticky;top:-24px;z-index:5;display:flex;align-items:center;gap:10px;min-height:56px;margin:0 -28px;padding:8px 28px;border-bottom:1px solid var(--rule)}
 .lib-title{display:flex;align-items:center;gap:6px;min-width:0;flex:1}
 .lib-title h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lib-title .crumb{font:inherit;font-family:var(--serif);font-size:1.3rem;border:0;border-radius:7px;background:none;color:var(--ink-faint);cursor:pointer;padding:1px 6px;margin-left:-6px}
@@ -110,7 +110,7 @@ dialog.wide{width:min(760px,calc(100vw - 32px))}
 .mcard .strip img{width:100%;height:100%;object-fit:cover;display:block}
 .mcard .foot{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .mcard details{color:var(--ink-faint);font-size:12px}
-.mcard details a{color:var(--ink-soft)}
+.mcard details a{color:var(--ink-soft);display:inline-block;padding:5px 0}
 /* the comparison: one request, every model's answer */
 dialog.compare{width:min(1180px,calc(100vw - 32px));max-height:calc(100vh - 40px);overflow:auto;padding:20px 24px 22px}
 .cmp-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
@@ -167,8 +167,6 @@ dialog.compare{width:min(1180px,calc(100vw - 32px));max-height:calc(100vh - 40px
 .menu button.danger{color:var(--err)}
 .menu hr{border:0;border-top:1px solid var(--rule);margin:5px 4px}
 .menu .label{font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint);padding:6px 10px 3px}
-.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:16px;max-width:calc(100vw - 32px);background:var(--ink);color:var(--paper);border-radius:10px;padding:11px 16px;font-size:14px;box-shadow:0 10px 28px rgba(0,0,0,.28)}
-.toast button{font:inherit;font-weight:700;border:0;background:none;color:inherit;text-decoration:underline;cursor:pointer;padding:0}
 dialog{border:1px solid var(--rule-strong);border-radius:14px;background:var(--surface);color:var(--ink);padding:22px 24px 20px;width:min(420px,calc(100vw - 32px));box-shadow:0 20px 50px rgba(0,0,0,.25)}
 dialog::backdrop{background:rgba(10,10,14,.5)}
 dialog h2{font-family:var(--serif);font-weight:600;font-size:1.25rem;margin:0 0 4px}
@@ -183,7 +181,10 @@ dialog .pw button{position:absolute;right:4px;top:50%;transform:translateY(-50%)
 .dlg-actions .sp{flex:1}
 #dlg-error:empty{display:none}
 #dlg-error{margin:12px 0 0}
+.masthead-narrow{display:none}
 @media(max-width:900px){
+  .masthead-narrow{display:flex}
+  .masthead-wide{display:none}
   .app{grid-template-columns:1fr;height:auto;min-height:100%;padding-bottom:var(--rail-bar)}
   .controls{border-right:0;border-bottom:1px solid var(--rule);overflow:visible}
   .canvas{overflow:visible;padding:20px 16px 20px calc(var(--rail-w) + 16px)}

@@ -6,6 +6,7 @@
 <div class="app">
 
   <div class="col">
+    {% include "partials/masthead.html" %}
     <div class="lib-head">
       <div class="eyebrow">Living Library</div>
       <h1>Your shelf of sources</h1>
@@ -90,7 +91,7 @@
 <div class="modal-bg" id="browse-bg">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="browse-title" style="max-width:760px">
     <h2 id="browse-title">The ready library</h2>
-    <p class="muted">Books already built into study materials — click one to add it and open the materials instantly, no wait.</p>
+    <p class="muted">Books already built into study materials. Click one to add it and open the materials instantly, no wait.</p>
     <input id="browse-q" class="browse-filter" type="text" autocomplete="off" spellcheck="false" placeholder="Filter by title or author…">
     <div class="browse-grid" id="browse-grid"><div class="s-note">Loading…</div></div>
     <div class="modal-actions"><span class="sp" id="browse-count2"></span><button class="btn-ghost" id="browse-close" type="button">Close</button></div>
@@ -101,7 +102,7 @@
 <div class="modal-bg" id="review-bg">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="review-title" style="max-width:560px">
     <h2 id="review-title">Copies awaiting review</h2>
-    <p class="muted">Two uploaded copies of the same book scored too close to auto-pick a winner. Choose which becomes the shared source for its study materials — the other stays private to its owner. You see quality signals only, never the private text.</p>
+    <p class="muted">Two uploaded copies of the same book scored too close to auto-pick a winner. Choose which becomes the shared source for its study materials. The other stays private to its owner. You see quality signals only, never the private text.</p>
     <div id="review-list"></div>
     <div class="modal-actions"><span class="sp"></span><button class="btn-ghost" id="review-close" type="button">Close</button></div>
   </div>
@@ -111,7 +112,7 @@
 <div class="modal-bg" id="upload-bg">
   <div class="modal" role="dialog" aria-modal="true" style="max-width:470px">
     <h3 class="up-title">Upload a copy</h3>
-    <p class="up-lead">Provide a copy you legally <strong>own</strong>, have <strong>borrowed</strong>, or can access under the <strong>accessibility exception</strong>. It builds study materials and is stored <strong>privately, encrypted</strong> — never shared. Only the derived materials become community resources.</p>
+    <p class="up-lead">Provide a copy you legally <strong>own</strong>, have <strong>borrowed</strong>, or can access under the <strong>accessibility exception</strong>. It builds study materials and is stored <strong>privately and encrypted</strong>, and it's never shared. Only the derived materials become community resources.</p>
     <div class="up-book" id="up-book"></div>
     <label class="up-lbl" for="up-file">Book file</label>
     <input type="file" id="up-file" accept=".epub,.pdf,.txt,.md" class="up-input">
@@ -143,6 +144,5 @@
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
 {% endblock %}
 {% block scripts %}<script src="/static/js/library.js"></script>{% endblock %}

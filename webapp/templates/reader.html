@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Reading Room — Exegetica{% endblock %}
-{% block meta %}<meta name="description" content="Read public-domain classics in Exegetica — the Reading Room.">{% endblock %}
+{% block title %}Reading Room · Exegetica{% endblock %}
+{% block meta %}<meta name="description" content="Read public-domain classics in Exegetica's Reading Room.">{% endblock %}
 {% block fonts %}<link rel="stylesheet" href="/static/fonts/reader.css">{% endblock %}
 {% block styles %}<link rel="stylesheet" href="/static/css/reader.css">{% endblock %}
 {% block content %}
-  <header class="topbar">
+  <header class="topbar shell-stick">
     <a class="tb-back" id="back" href="/read">‹ Library</a>
     <div class="tb-title" id="topTitle">Reading Room</div>
     <div class="tb-ctrls">
@@ -17,6 +17,8 @@
 
   <main id="browse" hidden>
     <div class="wrap shell-col">
+      {# the wordmark tops the shelves; a book's pages fill the window, so a book has none #}
+      {% include "partials/masthead.html" %}
       <div class="eyebrow">Reading Room<a class="admin-link" id="adminCovers" href="/read/admin/covers" hidden>Review magazine covers →</a></div>
       <h1 class="title">The Library</h1>
       <label class="search">

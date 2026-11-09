@@ -14,12 +14,12 @@
   --navy-600: #26385f;
   --gold-500: #f5b301;   /* accent / action */
   --gold-400: #ffc72c;
-  --gold-600: #c8890a;   /* AA-safe gold on light */
+  --gold-600: #8b4f00;   /* gold text: 4.5:1 on white, cream, the chips and the garden (tests/test_contrast.py) */
   --cream-50: #faf7ef;   /* paper */
   --cream-100: #f3ecdd;
   --c-paper:    #ffffff;
   --c-ink:      #14181f;
-  --steel-500:#5b6472;
+  --steel-500:#555e6c;
 
   /* semantic roles */
   --bg: var(--cream-50);
@@ -54,7 +54,9 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--bg);
+  /* the garden every page sits on, faded to the course's own cream (these pages stay light) */
+  background: linear-gradient(color-mix(in srgb, var(--bg) 86%, transparent), color-mix(in srgb, var(--bg) 86%, transparent)),
+              url("/static/garden-light.webp") center/cover no-repeat fixed var(--bg);
   color: var(--text);
   font-family: var(--c-sans);
   font-size: clamp(1rem, .97rem + .18vw, 1.07rem);
@@ -62,6 +64,10 @@ body {
   font-feature-settings: "kern", "liga";
   -webkit-font-smoothing: antialiased;
 }
+
+/* The course pages stay light in either theme, so the banner above them keeps its black wordmark. */
+.masthead .wm-light { display: block !important; }
+.masthead .wm-dark { display: none !important; }
 
 a { color: var(--navy-700); text-underline-offset: 2px; text-decoration-color: var(--line-strong); }
 a:hover { color: var(--accent-ink); }
@@ -112,7 +118,7 @@ h4 { font-size: 1.15rem; font-weight: 600; margin: 1.4em 0 .3em; }
 /* ------------------------------------------------------------------ layout */
 main { --col: var(--wrap); padding: clamp(1.4rem, 3vw, 2.6rem) var(--gutter) 4rem; }
 .crumbs { font-size: .82rem; color: var(--muted); margin: 0 0 1.4rem; display: flex; gap: .5rem; flex-wrap: wrap; }
-.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a { color: var(--muted); text-decoration: none; display: inline-block; padding: .2rem 0; }
 .crumbs a:hover { color: var(--accent-ink); }
 .crumbs .sep { opacity: .5; }
 

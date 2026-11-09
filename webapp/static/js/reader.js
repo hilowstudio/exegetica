@@ -1,4 +1,4 @@
-/* The Reading Room — Exegetica page (templates/reader.html). The rail, theme and Need help now? come from static/js/shell.js. */
+/* The Reading Room page (templates/reader.html). The rail, theme and Need help now? come from static/js/shell.js. */
 (function(){
   "use strict";
   var $ = function(id){ return document.getElementById(id); };
@@ -143,7 +143,7 @@
     $("browse").hidden = false;
     $("back").href = "/"; $("back").textContent = "‹ Exegetica";
     $("topTitle").textContent = "Reading Room";
-    document.title = "The Library — Exegetica";
+    document.title = "The Library · Exegetica";
 
     var books = [], positions = {}, progress = {}, secList = [];
     var READ_MIN = 7;   // a book joins "Continue Reading" only after this many pages read
@@ -299,7 +299,7 @@
         var b = document.createElement("button"), on = eff.font === f.key && (lv.font || s.level === "library");
         b.type = "button"; b.className = "sd-ft" + (on ? " on" : "");
         b.setAttribute("role", "radio"); b.setAttribute("aria-checked", on ? "true" : "false");
-        b.title = f.name + (f.genres.length && f.key !== "house" ? " — " + f.genres.join(", ") : "");
+        b.title = f.name + (f.genres.length && f.key !== "house" ? ": " + f.genres.join(", ") : "");
         b.innerHTML = '<span class="sd-ft-img" style="--src:url(\'/api/house-cover/font/' + encodeURIComponent(f.key) + '.png?v=' + esc(o.version) + '\')"></span>' +
           '<span class="sd-ft-name">' + esc(f.name.replace(" (house)", "")) + (f.key === "house" ? " · house" : "") + '</span>';
         b.addEventListener("click", function(){ edit("font", f.key); });
@@ -718,7 +718,8 @@
       e.preventDefault(); var url = $("cdUrl").value.trim(); if(url) applyCover(url, {source: "Pasted address"});
     });
     $("cdRevert").addEventListener("click", function(){
-      if(window.confirm("Remove the custom cover and go back to the original?")) applyCover("");
+      Shell.ask({title: "Remove the custom cover?", body: "The book goes back to its original cover.",
+                 ok: "Remove cover", danger: true}).then(function(yes){ if(yes) applyCover(""); });
     });
     // ---- load the whole catalog once, then everything is instant client-side ----
     Promise.all([
@@ -729,7 +730,7 @@
       var d = res[0];
       if(!d || d.available === false || !(d.items && d.items.length)){
         $("browseEmpty").hidden = false;
-        $("browseEmpty").textContent = "The Reading Room is still being stocked — check back soon.";
+        $("browseEmpty").textContent = "The Reading Room is still being stocked. Check back soon.";
         return;
       }
       res.splice(1, 2);
@@ -914,7 +915,7 @@
       book = res[0];
       if(!book){ chapter.innerHTML = '<div class="ch-eyebrow">Not found</div><p>This book isn’t in the Reading Room.</p>'; return; }
       savedPositions = (res[1] && res[1].positions) || {};
-      document.title = book.title + " — Exegetica";
+      document.title = book.title + " · Exegetica";
       $("tocBookTitle").textContent = book.title;
       $("tocBookAuthor").textContent = book.author || "";
       renderToc();
@@ -982,6 +983,7 @@
           }
         }
         chapter.innerHTML = front + c.html;
+        if(window.Shell && Shell.tagLanguages){ Shell.tagLanguages(chapter); }   // Greek and Hebrew set before the pages are measured
         typesetMath(chapter, c.html).then(function(){ laidOut(landing); });
       });
     }

@@ -48,6 +48,8 @@ import tempfile
 from pathlib import Path
 
 from markdown_it import MarkdownIt
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from print_fonts import LANG_CSS, embedded, tag_languages  # noqa: E402  (scripts/print_fonts.py)
 
 ROOT = Path(__file__).resolve().parents[1]
 MOTIFS = ROOT / "assets" / "cover-motifs"
@@ -58,10 +60,11 @@ _MD = MarkdownIt("commonmark", {"typographer": True}).enable(["table", "smartquo
 _NUM_WORDS = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
               "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen"]
 
-FONTS = ("https://fonts.googleapis.com/css2?"
-         "family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500"
-         "&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600"
-         "&family=Libre+Baskerville:wght@400;700&display=block")
+# The house faces from Exegetica's own copies (the Reading Room's sheet: EB Garamond, Fraunces, Libre
+# Baskerville) plus Greek and Hebrew, inlined so a render fetches nothing (rules H11, G6).
+def _font_css() -> str:
+    return embedded(("reader", "orig"), ("EB Garamond", "Fraunces", "Libre Baskerville",
+                                         "Exegetica Greek", "Exegetica Hebrew")) + LANG_CSS
 
 CSS = r"""
 :root{
@@ -353,8 +356,8 @@ def _build(meta: dict, md_text: str, pages: dict[str, int] | None, markers: bool
         css = css.replace("--accent:#7b2d26", f'--accent:{decor["accent"]}')
     return ("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
             f"<title>{html.escape(meta['title'])}</title>"
-            f'<link rel="stylesheet" href="{FONTS}"><style>{css}</style></head><body>'
-            f"{cover}{title_page}{contents}{''.join(body)}</body></html>")
+            f"<style>{_font_css()}</style><style>{css}</style></head><body>"
+            f"{cover}{title_page}{contents}{tag_languages(''.join(body))}</body></html>")
 
 
 async def _render(page, doc: str, out: Path) -> None:

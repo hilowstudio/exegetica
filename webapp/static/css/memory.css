@@ -1,5 +1,5 @@
 /* The Scripture Memory · Exegetica page (templates/memory.html). The shared shell, colours and rail are in tokens.css and shell.css. */
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+body{margin:0;color:var(--ink);font-family:var(--sans);
   font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
 button{font-family:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -12,6 +12,16 @@ button{font-family:inherit}
   position:fixed;left:var(--rail-w);top:0;bottom:0;width:294px;transform:translateX(calc(-100% - var(--rail-w) - 4px));transition:transform .2s ease,visibility 0s .2s;z-index:30;pointer-events:none;
   visibility:hidden}   /* closed: out of the Tab order too, not just off screen */
 .side.open{transform:translateX(0);box-shadow:0 0 40px rgba(0,0,0,.22);pointer-events:auto;visibility:visible;transition:transform .2s ease}
+.loadnote{margin:12px 16px 0 calc(var(--rail-w) + 16px);align-self:center;max-width:640px;padding:10px 14px;
+  border:1px solid var(--rule-strong);border-radius:12px;background:var(--surface);color:var(--ink);font-size:14px;
+  text-align:center;flex:none}   /* clear of the rail, and of the verse list when it sits beside the page */
+/* wider than a phone, the open list sits beside the page and moves it over, so nothing hides under it
+   (Adam, 2026-11-09). On a phone it covers the page, which memory.js makes inert meanwhile. */
+@media (min-width:641px){
+  .side.open{box-shadow:none}
+  .app > .col{transition:padding-left .2s ease}
+  .side.open ~ .col{padding-left:294px}
+}
 .side-h{padding:13px 13px 8px;display:flex;flex-direction:column;gap:7px;border-bottom:1px solid var(--rule)}
 .side-top{display:flex;align-items:center;justify-content:space-between;margin:-4px -2px 0 2px;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--iron-soft)}
 .side-x{border:0;background:none;color:var(--ink-faint);font-size:21px;line-height:1;cursor:pointer;width:30px;height:30px;border-radius:7px;display:grid;place-items:center;padding:0}
@@ -24,12 +34,11 @@ button{font-family:inherit}
 .side-body .none{font-size:12.5px;color:var(--ink-faint);padding:10px 4px;line-height:1.5}
 .detailwrap{max-width:620px;margin:0 auto}
 .col{display:flex;flex-direction:column;min-width:0;height:100%;overflow:hidden}
-.top{display:flex;align-items:center;gap:12px;padding:15px 26px 15px calc(var(--rail-w) + 26px);border-bottom:1px solid var(--rule);background:var(--paper)}
+.top{display:flex;align-items:center;gap:12px;padding:15px 26px 15px calc(var(--rail-w) + 26px);border-bottom:1px solid var(--rule)}
 .top h1{font-family:var(--serif);font-weight:600;font-size:20px;margin:0}
 .top .sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--iron-soft)}
 .top .sp{flex:1}
-.scroll{flex:1;overflow-y:auto;
-  background:linear-gradient(color-mix(in srgb,var(--paper) 86%,transparent),color-mix(in srgb,var(--paper) 86%,transparent)),url("/static/garden.webp") center/cover no-repeat fixed;}
+.scroll{flex:1;overflow-y:auto}
 .wrap{--col:940px;padding:26px 26px 80px}
 
 /* ---------- buttons ---------- */
@@ -176,9 +185,6 @@ input[type=text]:focus,textarea:focus{outline:2px solid var(--iron-soft);outline
 .audiocard audio{width:100%;height:38px}
 .needs{position:absolute;top:14px;right:16px}
 .note{font-size:12.5px;color:var(--ink-faint);text-align:center}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);
-  padding:11px 18px;border-radius:10px;font-size:14px;z-index:80;opacity:0;transition:opacity .2s;pointer-events:none;max-width:90vw}
-.toast.show{opacity:1}
 /* ---------- mobile ---------- */
 @media(max-width:640px){
   .top{flex-wrap:wrap;row-gap:8px;padding:12px 16px}
