@@ -1,10 +1,9 @@
 /* The shared shell every page gets from templates/base.html: a small base, the rail, and the
    Need help now? window. A page's own look lives in its own stylesheet.
 
-   The rail floats over the page on a desktop and never pushes it. It collapses to a small handle
-   at the left edge to give the page its full width, and the handle brings it back. On a phone it is
-   a bar along the bottom. Pages read two variables to keep clear of it:
-     --rail-w    the width the rail covers on the left (0 when it is collapsed, and on a phone)
+   The rail is always there: a column at the left on a desktop (Adam, 2026-11-09: never collapsible) and a
+   bar along the bottom on a phone. Pages read two variables to keep clear of it:
+     --rail-w    the width the rail covers on the left (0 on a phone)
      --rail-bar  the height the bar covers at the bottom (0 on a desktop) */
 
 /* ---------- base ---------- */
@@ -19,7 +18,6 @@ h1,h2,h3{text-wrap:balance}
   transition-duration:.001ms!important;scroll-behavior:auto!important}}
 
 :root{--rail-w:58px;--rail-bar:0px}
-:root[data-rail="closed"]{--rail-w:0px}
 
 /* A page's centred column. It stays centred while the window is wide enough and starts beside the
    rail on a narrower one, so the rail never covers it. The page sets the column's width with --col. */
@@ -49,35 +47,21 @@ h1,h2,h3{text-wrap:balance}
 /* ---------- the rail ---------- */
 .rail{position:fixed;left:0;top:0;bottom:0;width:58px;z-index:60;display:flex;flex-direction:column;align-items:center;
   gap:3px;padding:10px 0 12px;background:color-mix(in srgb,var(--surface) 88%,transparent);
-  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-right:1px solid var(--rule);
-  transition:transform .2s ease,visibility 0s linear 0s}
-:root[data-rail="closed"] .rail{transform:translateX(-100%);visibility:hidden;transition:transform .2s ease,visibility 0s linear .2s}
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-right:1px solid var(--rule)}
 .rail .sp{flex:1}
 .rail button,.rail a.railbtn{width:42px;height:42px;border-radius:10px;border:1px solid transparent;background:none;color:var(--ink-soft);
   display:grid;place-items:center;cursor:pointer;text-decoration:none;padding:0}
 .rail button:hover,.rail a.railbtn:hover{background:var(--surface-2);color:var(--ink)}
 .rail a.railbtn.active{background:var(--accent);color:var(--on-accent)}
 .rail svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.rail .rail-collapse{height:34px;margin-bottom:6px;color:var(--ink-faint)}
-.rail .rail-collapse svg{width:18px;height:18px}
-.rail button:focus-visible,.rail a:focus-visible,.rail-handle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
-/* the handle that brings a collapsed rail back */
-.rail-handle{position:fixed;left:0;top:50%;z-index:60;width:20px;height:60px;margin-top:-30px;padding:0;display:none;
-  align-items:center;justify-content:center;border:1px solid var(--rule-strong);border-left:0;border-radius:0 10px 10px 0;
-  background:color-mix(in srgb,var(--surface) 92%,transparent);color:var(--ink-soft);cursor:pointer;
-  box-shadow:2px 0 10px rgba(0,0,0,.08)}
-.rail-handle:hover{color:var(--ink);width:24px}
-.rail-handle svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-:root[data-rail="closed"] .rail-handle{display:flex}
+.rail button:focus-visible,.rail a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 /* ---------- a phone: the rail is a bar along the bottom ---------- */
 @media (max-width:640px){
-  :root,:root[data-rail="closed"]{--rail-w:0px;--rail-bar:calc(56px + env(safe-area-inset-bottom))}
-  .rail,:root[data-rail="closed"] .rail{top:auto;right:0;width:auto;flex-direction:row;justify-content:space-around;gap:0;
-    padding:6px 6px calc(6px + env(safe-area-inset-bottom));border-right:0;border-top:1px solid var(--rule);
-    transform:none;visibility:visible}
-  .rail .sp,.rail .rail-collapse,.rail-handle,:root[data-rail="closed"] .rail-handle{display:none}
+  :root{--rail-w:0px;--rail-bar:calc(56px + env(safe-area-inset-bottom))}
+  .rail{top:auto;right:0;width:auto;flex-direction:row;justify-content:space-around;gap:0;
+    padding:6px 6px calc(6px + env(safe-area-inset-bottom));border-right:0;border-top:1px solid var(--rule)}
+  .rail .sp{display:none}
   .rail button,.rail a.railbtn{flex:1 1 0;min-width:36px;max-width:52px;width:auto;height:44px}
 }
 @media (pointer:coarse){.rail button,.rail a.railbtn{min-height:44px}}
@@ -106,8 +90,8 @@ h1,h2,h3{text-wrap:balance}
 
 /* ---------- print: the page alone ---------- */
 @media print{
-  :root,:root[data-rail="closed"]{--rail-w:0px;--rail-bar:0px}
-  .rail,.rail-handle,.help-bg,.shell-toast,.masthead{display:none!important}
+  :root{--rail-w:0px;--rail-bar:0px}
+  .rail,.help-bg,.shell-toast,.masthead{display:none!important}
   body{background:none}
 }
 

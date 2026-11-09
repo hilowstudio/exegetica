@@ -1,11 +1,11 @@
-/* The shared shell every page gets from templates/base.html: the rail's collapse handle, the
+/* The shared shell every page gets from templates/base.html: the
    light/dark theme button, the Need help now? window, the tool chips, a reply's status line, the page's
    question dialog and its toast. A page script reaches them through window.Shell: Shell.esc(text),
    Shell.openHelp(resources, lead), Shell.closeHelp(), Shell.chips(box), Shell.status(container),
    Shell.ask(question), Shell.toast(text, {undo}) and Shell.tagLanguages(node), which marks Greek and Hebrew. */
 (function () {
   "use strict";
-  var root = document.documentElement, RKEY = "exeg-rail", TKEY = "studybible.theme";
+  var root = document.documentElement, TKEY = "studybible.theme";
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
@@ -14,22 +14,8 @@
   }
   function $(id) { return document.getElementById(id); }
 
-  // ---- the rail: collapse to the handle at the left edge, and back (remembered in this browser).
-  // A page that measures its own layout (the Reading Room's pages) hears a resize once the rail has moved. ----
-  var collapse = $("rail-collapse"), handle = $("rail-handle");
-  function setRail(closed, focus) {
-    if (closed) root.setAttribute("data-rail", "closed"); else root.removeAttribute("data-rail");
-    try { localStorage.setItem(RKEY, closed ? "closed" : "open"); } catch (e) {}
-    if (handle) handle.setAttribute("aria-expanded", String(!closed));
-    if (collapse) collapse.setAttribute("aria-expanded", String(!closed));
-    if (focus) {
-      var to = closed ? handle : collapse; if (to) to.focus();
-      setTimeout(function () { window.dispatchEvent(new Event("resize")); }, 220);
-    }
-  }
-  if (collapse) collapse.onclick = function () { setRail(true, true); };
-  if (handle) handle.onclick = function () { setRail(false, true); };
-  setRail(root.getAttribute("data-rail") === "closed", false);
+  // ---- the rail is always there (Adam, 2026-11-09); a browser that remembered it collapsed forgets that ----
+  try { localStorage.removeItem("exeg-rail"); } catch (e) {}
 
   // ---- the theme button: switches light and dark, starting from the system's choice, and tells the
   // page with a "shell:theme" event on document (detail: "light" or "dark") ----

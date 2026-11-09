@@ -200,3 +200,15 @@ def test_the_verse_list_sits_beside_the_page_wider_than_a_phone():
     assert "col.inert = !!o && !!(phone && phone.matches)" in js
     assert "if(phone && phone.matches) setDrawerOpen(false);" in js   # a docked list stays put when a verse is chosen
     assert '"Hide verses":"Show verses"' in js                         # the toggle says what it will do
+
+
+def test_the_rail_is_always_there():
+    # Adam, 2026-11-09: the rail is never collapsible. No hide button, no edge handle, no remembered closed state.
+    root = Path(__file__).resolve().parent.parent / "webapp"
+    rail = (root / "templates" / "partials" / "rail.html").read_text(encoding="utf-8")
+    base = (root / "templates" / "base.html").read_text(encoding="utf-8")
+    css = (root / "static" / "css" / "shell.css").read_text(encoding="utf-8")
+    js = (root / "static" / "js" / "shell.js").read_text(encoding="utf-8")
+    assert "rail-collapse" not in rail and "rail-handle" not in rail
+    assert 'data-rail' not in base and 'data-rail' not in css
+    assert "setRail" not in js and 'localStorage.removeItem("exeg-rail")' in js
