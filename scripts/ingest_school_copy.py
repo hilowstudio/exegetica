@@ -819,6 +819,18 @@ def _vision_md(slug, book):
     d = CACHE / slug
     vis = d / "vision"
     pages = {p["n"]: p for p in _load_pages(slug)} if (d / "pages.jsonl").exists() else {}
+    title_norm = _norm(book["title"])
+    heads = [_norm(x) for x in book.get("running_heads") or []] + [title_norm]
+    ocr_vocab = _vocab(" ".join(l["t"] for p in pages.values() for l in p["lines"]))
+
+    def ocr_text(n):
+        # the page's OCR, rebuilt into paragraphs as a scan's would be, without its running heads and feet
+        lines = [l for l in _body_lines(pages[n], title_norm) if not (
+            (l["y0"] < 0.10 or l["y1"] > 0.92) and any(
+                difflib.SequenceMatcher(None, re.sub(r"(\s+[0-9ivxlc|]{1,4})+$", "", _norm(l["t"])), h).ratio() > 0.8
+                or (h and h in _norm(l["t"])) for h in heads))]
+        return "\n\n".join(_curly(t) for kind, t, _ in _paragraphs([(n, lines, None)], ocr_vocab) if kind != "mark")
+
     texts, fallback = {}, []
     for c in book["chapters"]:
         for n in range(c["start"], c["end"] + 1):
@@ -826,8 +838,21 @@ def _vision_md(slug, book):
             if f.exists():
                 texts[n] = f.read_text(encoding="utf-8").strip()
             elif n in pages and pages[n]["lines"]:
-                texts[n] = "\n\n".join(l["t"] for l in pages[n]["lines"])
+                texts[n] = ocr_text(n)
                 fallback.append(n)
+    tex = re.compile(r"(\\\(.*?\\\)|\\\[.*?\\\])", re.S)
+
+    def normal_tex(s):
+        # outside formulas: $...$ holding maths becomes \( \); an escaped \$ \% \& in prose is the plain sign
+        parts = tex.split(s)
+        for k in range(0, len(parts), 2):
+            p = re.sub(r"(?<![\\$\w])\$(?!\s)([^$\n]{1,200}?)(?<!\s)\$(?![\w$])",
+                       lambda m: f"\\({m.group(1)}\\)" if re.search(r"[\\^_=<>]|^[A-Za-z]$|^[A-Za-z]\(", m.group(1))
+                       else m.group(0), parts[k])
+            parts[k] = re.sub(r"\\([$%&#])", r"\1", p)
+        return "".join(parts)
+
+    texts = {n: normal_tex(t) for n, t in texts.items()}
     first_heads = collections.Counter()
     for t in texts.values():
         m = re.match(r"#+ (.+)", t)
@@ -848,6 +873,18 @@ def _vision_md(slug, book):
             md.append(f"<!-- p{n}{' ocr' if n in fallback else ''} -->")
             body = []
             for ln in texts[n].split("\n"):
+                # a note that the page is blank or unreadable, which is the transcriber's, not the book's
+                if re.match(r"\s*\[?(Blank page|The page (appears|is|seems) (to be )?(blank|empty|mostly blank|too faded|"
+                            r"unreadable)|This page (is|appears) (blank|empty)|Figure: (An? |The )?(blank|plain|empty)\b)",
+                            ln, re.I):
+                    continue
+                # a running foot the transcription kept: a page number and a title in capitals ("LIFE OF CHRIST | 31")
+                if re.fullmatch(r"\s*(\d{1,4}\s*[|•·]\s*[A-Z][A-Z0-9 ’'&:,.-]+|[A-Z][A-Z0-9 ’'&:,.-]+\s*[|•·]\s*\d{1,4})\s*", ln):
+                    continue
+                # or a page number beside the chapter's name ("332 Chapter 5 Polynomials and Polynomial Functions")
+                if len(ln) < 90 and re.fullmatch(r"\s*(\d{1,4}\s+(Chapter|Lesson|Unit)\s+\d+\b[^.!?]*|"
+                                                 r"(Chapter|Lesson|Unit)\s+\d+\b[^.!?]*\s\d{1,4})\s*", ln):
+                    continue
                 m = re.match(r"(#+) (.+)", ln)
                 if m:
                     if _norm(m.group(2)) in running or _norm(m.group(2)) == _norm(c["title"]):
@@ -1008,7 +1045,7 @@ def _finish_build(a, d, book, md, proof_rows, total_words, vocab, low_conf):
             unknown[w] += 1
     glued = re.findall(r"\b[a-z]+[.,;:!?”\"’]\d{1,2}\b", re.sub(r"<!--.*?-->", "", text))
     pr = [f"# Proof worklist: {book['title']}", "",
-          f"Chapters from {book['chapters_from']}. {total_words:,} words. OCR pages: "
+          f"Chapters from {book.get('chapters_from', 'the hand map in book.json')}. {total_words:,} words. OCR pages: "
           f"{sum(r[4] for r in proof_rows)}.", "",
           "| Chapter | PDF pages | Words | OCR pages |", "|---|---|---|---|"]
     pr += [f"| {t} | {s}-{e} | {w:,} | {o} |" for t, s, e, w, o in proof_rows]
@@ -1166,7 +1203,7 @@ def cmd_load(a):
             cur.execute("delete from books where id=?", (row[0],))
         author = book["author"]
         parts = author.rsplit(" ", 1)
-        author_sort = f"{parts[1]}, {parts[0]}" if len(parts) == 2 else author
+        author_sort = book.get("author_sort") or (f"{parts[1]}, {parts[0]}" if len(parts) == 2 else author)
         shelf = json.dumps(book.get("shelf") or ["Christianity"])
         wc = sum(c["words"] for c in chapters)
         ded = (book.get("dedication") or "").strip()

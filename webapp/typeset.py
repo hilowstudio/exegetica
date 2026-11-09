@@ -218,6 +218,17 @@ def _indent_of(line: str) -> int:
     return 2 if n >= 6 else 1 if n >= 2 else 0
 
 
+_TEX = re.compile(r"(\\\(.*?\\\)|\\\[.*?\\\])", re.S)   # a formula the reader typesets with KaTeX
+
+
+def _outside_tex(s: str, fn) -> str:
+    """Apply a text clean-up only outside TeX: in a formula "{54}" is a fraction's denominator, not a page marker."""
+    parts = _TEX.split(s)
+    for k in range(0, len(parts), 2):
+        parts[k] = fn(parts[k])
+    return "".join(parts)
+
+
 def _hyphenate(el) -> None:
     if _HY is None:
         return
@@ -225,7 +236,11 @@ def _hyphenate(el) -> None:
     def hy(s: str | None) -> str | None:
         if not s:
             return s
-        return re.sub(r"[A-Za-z]{7,}", lambda m: _HY.inserted(m.group(0), hyphen=SHY), s)
+        # TeX between \( \) or \[ \] is left alone: a soft hyphen inside \triangle or bmatrix breaks the formula
+        parts = _TEX.split(s)
+        for k in range(0, len(parts), 2):
+            parts[k] = re.sub(r"[A-Za-z]{7,}", lambda m: _HY.inserted(m.group(0), hyphen=SHY), parts[k])
+        return "".join(parts)
 
     for node in el.iter():
         if node.tag in ("code", "pre", "abbr") or not isinstance(node.tag, str):
@@ -247,6 +262,8 @@ def _lead_in(p) -> bool:
     if not m:
         return False
     lead = m.group(1) or m.group(2)
+    if "\\(" in lead or "\\[" in lead:      # never cut a formula in two: end the lead-in before it
+        lead = lead[:min(i for i in (lead.find("\\("), lead.find("\\[")) if i >= 0)].rstrip()
     if len(lead) < 6:
         return False
     span = LH.Element("span")
@@ -491,9 +508,9 @@ def typeset(html: str, toc_title: str = "", first: bool = False, last: bool = Fa
         if not isinstance(el.tag, str):
             continue
         if el.text and _PAGE_MARK.search(el.text):
-            el.text = _PAGE_MARK.sub("", el.text)
+            el.text = _outside_tex(el.text, lambda s: _PAGE_MARK.sub("", s))
         if el.tail and _PAGE_MARK.search(el.tail):
-            el.tail = _PAGE_MARK.sub("", el.tail)
+            el.tail = _outside_tex(el.tail, lambda s: _PAGE_MARK.sub("", s))
     fragment = (toc_title or "").strip(" .:").lower() in _FRAGMENTS
     _wrap_loose(root)
     if first or fragment:                                     # a title page can sit inside any 'By' chapter
