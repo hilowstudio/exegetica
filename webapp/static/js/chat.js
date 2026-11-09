@@ -490,7 +490,7 @@ renderChatList(); // immediate paint from localStorage; initChats re-renders aft
 initChats();
 
 /* ---------- the passage beside the conversation (rule B1) ----------
-   A reference in a reply, or "Read it" for today's lesson, opens its chapter in the ESV with the verses marked.
+   A reference in a reply opens its chapter in the ESV with the verses marked.
    From there: the verse in Greek or Hebrew from the library, the verse added to Scripture Memory, or a question
    started about it. None of this calls a model. */
 const passageEl=document.getElementById("passage"),pgBody=document.getElementById("pg-body"),pgTitle=document.getElementById("pg-title"),
@@ -600,12 +600,3 @@ async function addToMemory(ref){
   Shell.toast("Added "+ref+" to Scripture Memory",{undo:async()=>{db.verses=db.verses.filter(x=>x.id!==v.id);await memStore(db);}});
 }
 
-// ---------- today's lesson in the course, as a way into a study (public course facts only) ----------
-fetch("/api/memory/course",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(c=>{
-  const l=c&&c.lesson,box=document.getElementById("today");if(!l||!box)return;
-  box.innerHTML="<p><span class='today-k'>"+esc(c.course)+(l.today?" today":" this week")+"</span> <a class='ref' href='#' data-ref='"+esc(l.passage)+"'>"+
-    esc(l.passage)+"</a>"+(l.focus?" · "+esc(l.focus):"")+"</p>"+
-    "<button type='button' class='today-go' id='today-go'>Study this passage</button>";
-  box.hidden=false;
-  document.getElementById("today-go").onclick=()=>{input.value="Walk me through "+l.passage+".";auto();sendBtn.click();};
-}).catch(()=>{});
