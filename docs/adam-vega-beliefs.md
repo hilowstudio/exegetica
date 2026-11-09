@@ -1,8 +1,8 @@
 # What Adam Vega Believed Most Passionately
 
-*A synthesis drawn from a full reading of all 136 sermons in the Adam Vega Sermon Library — his preaching at Mercy's Door (Mascoutah, IL / Scott Air Force Base), spanning verse-by-verse series through John, Hosea, Galatians, Colossians, Habakkuk, Obadiah, 1–3 John, the Psalms of Ascent, and topical series on the female disciples and the Beatitudes.*
+*A synthesis drawn from a full reading of all sermons in the Adam Vega's preaching library*
 
-*A note on method and honesty: a handful of these sermons were preached by others — Michael Collins, Brett Barton, Chaplain Howard, Andrew Campbell — and a few texts were re-preached. Where a sermon was not Vega's own voice it is excluded from what follows. What is described here is drawn from the sermons he unmistakably owns (he names himself, his wife Sarah Rose, his sons Jack, Boaz, and Augustine, his co-pastors, his own story). The consistency across those sermons is the striking thing: the man preached one gospel, from many angles, for years, and almost never drifted from it.*
+*The consistency across those sermons is the striking thing: the man preached one gospel, from many angles, for years, and almost never drifted from it.*
 
 ---
 

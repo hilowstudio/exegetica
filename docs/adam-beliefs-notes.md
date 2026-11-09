@@ -1,9 +1,8 @@
 # Adam Vega — Belief Study: Running Notes
 
-**Method:** Reading all 136 sermon transcripts in full (28 batches of 5), in chronological order. For each sermon I record its core convictions and note recurring emphases as they surface. These notes are the raw material; the synthesis ("What Adam Vega believed most passionately") is written at the end from this file.
+**Method:** Reading all 136 sermon transcripts in full (28 batches of 5), in chronological order. For each sermon I record its core convictions and note recurring emphases as they surface. These notes are the raw material; the synthesis ("What Adam Vega believed most passionately") will be written at the end from this file.
 
-**Corpus:** 136 sermons · 4.71M characters · Mercy's Door Community Church, Mascoutah, IL.
-
+**Corpus:** 136 sermons · 4.71M characters
 ---
 
 ## Recurring themes tally (updated as I read)
@@ -282,3 +281,117 @@
 ---
 
 ## STATUS: ALL 136 SERMONS READ. Per-batch notes complete (Batches 1–28). Ready for the final synthesis below.
+
+---
+
+## What Adam Vega believes
+
+*Drawn from the sermon notes above. Written November 2026. On women in ministry, families, baptism, and denominations, Adam clarified his views himself that month, and the text follows his own words.*
+
+Adam Vega was not raised a Christian. He grew up in Western Massachusetts, in a world of séances and "fairies." As a boy he found a Bible under a floorboard, and when he read it, he says, nothing happened. He spent middle and high school in despair. For a while he called himself a Christian to fit in, then gave the name up for a girl. The first real prayer he remembers was a curse: he shook his fist at God and blamed him. Then, in his telling, God ransomed him from death to life. On the Gulf of Mexico "the veil was lifted," and the Bible that had meant nothing to him "came alive." Every word of it was food.
+
+He left a career and his home to plant a church, and he preached through whole books of the Bible a verse at a time: John, Hosea, Galatians, Colossians, Habakkuk, Obadiah, the letters of John, the Psalms of Ascent. Jesus sent his followers to teach "all that I commanded," and Adam takes that to rule out a preacher's pet doctrines. He holds that the Bible is the apostles' teaching written down, carrying "the full backing of the authority of Jesus Christ." Its truth is objective: "things don't become true once you understand it." He has told his church, "The only reason to listen to me is if it's really flowing from here," meaning the Bible.
+
+He is afraid of public speaking and has said so from the pulpit. He has spent four hours in prayer on a Sunday morning before preaching. He takes walks at midnight to be still before God, and he writes songs and poems, one of them about his wife's illness.
+
+For readers who know the categories, he is Protestant, and in how he understands salvation he is Reformed, the tradition sometimes called Calvinist. The writers he quotes most often are A. W. Pink, Tim Keller, Charles Spurgeon, and C. S. Lewis, along with John Calvin, Jonathan Edwards, and the Westminster Shorter Catechism. Whatever the text, he works his way back to one subject. In his words, "the gospel is everything; all other theology is teased out of this one central truth."
+
+### Grace first
+
+The gospel, as Adam preaches it, turns on whose record God reads. On the day of judgment God reads either a person's own record or Christ's, and he grades no one on a curve. Jesus lived the life every person owes God, without one second of failing to love him fully, and he died under the punishment human sin deserves. Anyone who trusts him is credited with that perfect life, and their sin counts as already punished at the cross: "a just God will not punish sin twice." Adam has called this credited righteousness "the central doctrine of this church."
+
+He insists on what he calls "getting the order right." What God has done comes first, and what a Christian does grows out of it. Christians obey because God has already made them his children. Obeying in order to become his child is, in Adam's words, "spiritual slavery." The gift is free, and taking it costs a person everything else: "the demand is as total as the offer is free."
+
+He fights two ways of adding to that gift. The first is familiar: adding good behavior, religious habits, morality, family values, or a promise of wealth to what Christ did. The second he names again and again. It is self-punishment, the person who can't forgive himself, who does penance, who feels he has to "come back with something in your hands." Adam calls this the same pride as self-righteousness, since both treat Christ's work as unfinished. "Either his punishment was sufficient or it was not." Saying "I can't forgive myself" sets a person's own standard above God's. He applies the same logic to need and hurt. Past wounds and present poverty earn nothing from God either. In his phrase, there are no deserving poor and no good people in the family of God. Everyone in it came in by mercy.
+
+Christians never move past this. "Don't graduate from the gospel," he tells his church, because "the grace you first received is the grace you daily need." When a Christian sins, Adam's test of whether he believes the gospel is which way he runs. Believing it sends him toward God to confess.
+
+### Jesus
+
+Adam's most repeated claim about Jesus is that he is God. "That's the sentence we need to speak." He presses the old argument that a man who said what Jesus said is a liar, a lunatic, or the Lord: "he makes you either kill him or worship him; no middle ground." Jesus is also fully and permanently human. He still has a body at the Father's right hand. He was afraid of the cross and was tempted in earnest, so his obedience was real obedience. "He became punchable." Adam corrects anyone who says God can't understand what it is to be human.
+
+The Jesus of his sermons is gentle with ashamed people. He calls the bleeding woman "daughter." He weeps with Mary at her brother's grave. He calls people by name. Preaching on the storm at sea, Adam pointed out that John never mentions the wind being stilled. In his reading, "the miracle was that Jesus got in the boat." Christ enters a person's trouble even when he leaves the trouble in place.
+
+He warns that many people worship a Jesus they made up, one who agrees with them about everything. "If your God never disagrees with you, question who you're worshiping." The real Jesus "won't be characterized by his followers," and he claims to be the only way to the Father. When someone brings Adam a strange new teaching, his test is whether it sounds and looks like the Jesus of the Gospels.
+
+### God's choosing
+
+Adam believes salvation is God's work from start to finish. People are dead in sin, and the dead contribute nothing to their rescue. He has described God walking into a morgue and saying, "I'll take that corpse." God gives new life first, and faith follows as its result. Faith itself is a gift God gives a person. Adam knows the teaching offends. When Jesus taught it in John 6, the crowds walked away. Adam calls election "a discomfort until it's a comfort," and he points to his own conversion as a case of it: God changed a heart that had cursed him.
+
+The comfort is that what God starts, he keeps. Because no one earned a place in his family, no one can lose it. A child of God "can't wriggle free" from adoption, and God "doesn't unadopt anybody." Adam preaches this as a man who grew up with an absent father and who adopted his own stepson. He calls the fatherhood of God the heart of the gospel, and he teaches that every human father is a copy of that Father. He tells people to form their picture of God the Father from Christ, including people whose earthly fathers failed them.
+
+He also believes nothing evil takes God by surprise. Jesus chose Judas knowing he would betray him, and Herod and Pilate did what God's hand had planned beforehand. Adam brings this to people on both sides of harm: the sin a person committed and the evil done to him were both accounted for, and God is working both into his plan. He will not let the doctrine make anyone passive. God told Paul, "I have many people in this city," and Adam takes that as a reason to speak boldly to everyone. "In every other relationship you want to be chosen," he said. "Let God love you that way."
+
+### Sin and the cross
+
+Adam teaches that sin starts in the heart and spreads outward into the world. "The heart is an idol factory." Sin is first an offense against God. He traces it to a root: a need, a wound, or an accusation that a person never brings to God, which festers until it turns into sin. Desires themselves are good gifts, meant to be met by the God who gave them. Sin takes a good desire and looks for its fulfillment somewhere else. His counsel is to bring the need to God early, as if God already knows, because he does.
+
+He holds that God's holiness and his love are one thing, and he rejects the habit of saying God is loving but also holy, as though the two pulled against each other. His summary of the cross: "God does not crush the law for love. God crushes Christ for love." God's anger at sin is real. A just God has to punish sin, and leaving it unpunished would make him unjust, as anyone feels the moment someone wrongs them. At the cross Christ drank the cup of God's wrath to the dregs, and there is "not one drop" left for God's children. He has criticized a view, taught by some popular Bible teachers, in which Jesus removed sin's power without paying its penalty. "A wrathless cross is an incomplete gospel."
+
+He preaches hell plainly as part of the gospel. Hell, in his description, is a person making his own payment for sin forever and getting no closer to the end. He also corrects preachers who use hell to frighten Christians, such as telling them they will have blood on their hands for every neighbor they failed to reach. The Father gives people to the Son, and the outcome rests with him.
+
+For a believer the wrath is spent. What remains is a Father's discipline, which Adam distinguishes sharply from punishment: discipline hurts, the child survives it, and its aim is to bring him home. He reads Hosea's hedge of thorns the same way. God makes sin stop working so that his people come back. Hardship in a Christian's life is never God punishing him. Adam tells sick believers that what they owed God was death, which Christ paid, and that their illness is no installment on that debt.
+
+### Suffering and tears
+
+Adam has lived with suffering at close range. His wife lives with chronic illness and chronic pain, and he has called her healing "the longest unanswered prayer of my life." He once confessed to his church that he had stopped asking, because God's earlier no had hurt, and he told them to ask again. He has preached through his father's death and through his own panic attacks.
+
+He teaches that sickness and death are "radically abnormal," results of the Fall. Illness is no sign that God has stopped loving someone. In John 11 the sisters send word, "he whom you love is ill," and Adam stresses that the Lord, his love, and the illness all stand together in that sentence. Jesus waited two days on purpose. A delay is no proof of God's displeasure or of the sufferer's failure.
+
+In his preaching God brings joy through suffering, the way a child comes through labor, and joy is possible in the middle of grief, before anything changes. He wants people to "want the Healer more than the healing." He compares a maturing Christian to a weaned child, who stops wanting only the milk and wants the mother herself. God sometimes withholds comforts, Adam says, and he never withholds himself.
+
+He treats feelings as part of being made in God's image, since God and the sinless Christ feel the full range of them. "There are too many stoics in the church." Lament belongs in a believer's prayers, as it does in the Psalms. He tells people to bring doubt and anger to God with open hands, and he warns against reciting Scripture to drown out feelings that belong in a conversation with God. Doubt is normal for believers. When Jesus gave the Great Commission, some of the eleven worshiped and some doubted, and he gave it to all of them. Despair, Adam says, does not mean a person has turned his back on God.
+
+He comforts people with lines like "nobody ever cried alone," since God keeps every tear, and "God does his best work in the dark," drawn from the sealed tomb before Easter morning.
+
+### Confession
+
+Adam believes honesty is how a Christian lives. "Confession of sin is confession of faith." Sin in a believer's life breaks his fellowship with God while his adoption stays in place, and confession restores the fellowship. God forgives because he is just: the sin was already punished on Christ. The aim he set for his church was a culture of prayer and confession, "dragging what's in the darkness into the light." He wants the church to be the safest place there is to tell the truth and confess. Answering a confession with "gotcha," he says, puts you in Caiaphas's seat.
+
+He practices what he asks. From the pulpit he has confessed that he bullied his younger brother for years as a boy, and told how he confessed it to his brother. He has told his church that he walked into his small group straight from a fight with his wife, that he resented his own congregation one Sunday, and that he had opportunistic thoughts as markets fell during COVID. He confessed a long private struggle with sin, first to his wife and then to the church. After that confession he said, "If this job requires me to be in hiding, this is the last job I need."
+
+He rejects the idea that truth and love must be balanced against each other, calling it a category error: "There is no truth that is unloving, and no love that is untruthful." He holds that forgiveness and lasting hurt can coexist. Someone who harmed another person should not demand that the injured one forget so he can feel better, and a wounded person who still hurts may have forgiven fully, as Jesus forgave while the nails went in.
+
+### Growing up in church
+
+On how God works in families, Adam leans Presbyterian: God ordinarily rescues people across generations through his covenant grace. Going to church makes no one a Christian, and neither does having a Christian mother. His mission field is unbelievers, and some of them sit in church every week.
+
+Adam watches for two temptations. A person raised in the church tends to presume, forgetting that he too had to be born again. A dramatic convert tends to strive, afraid the well will run dry. He thinks both have made the faith about themselves.
+
+He spent years "wearing the jersey" of Christianity without being born again, and he warns that "you can walk and talk like a Christian and nothing changed within you." He said the church he planted was a church "for teenage Adam," the young person who thinks being a good person makes him a Christian. He asks people plainly whether they have been born again.
+
+He is wary of teaching God's commands to people who do not yet know God. In his view it "manufactures Pharisees," people who know about God and have never met him. Jesus told his followers to make disciples and then teach them to obey, and Adam keeps that order. He believes the Holy Spirit opens doctrine to every believer, so he preaches real doctrine to everyone.
+
+He tells Christians that the Great Commission starts with their own children and neighbors: "we are the ends of the earth." Raising children, he says, exposes how insufficient parents are and drives them to the Lord. In his reading of Psalm 127, the heritage that matters most is the name Christian, handed down from one generation to the next.
+
+### The church and other Christians
+
+Adam believes the church is a people Christ has reconciled to God and to one another, a body he directs as its head. He prefers the local church, where people know each other's names, over the celebrity teacher and the downloaded sermon, because those teachers neither know nor love the listener. He warns against loyalty to any teacher over Christ, himself included: taking up Paul's "What is Paul?", he asked, "What is Adam?" He has told his people, "I need you in my living room so I can hear from God."
+
+Love among believers is, for him, the evidence of new life, and he treats a professing Christian who doesn't love other Christians as a mission field. Christians behold their unity more than they build it: it is beautiful because nobody in the room made it. No one sneaks in by the side door, and no one claims the front row, because every member was adopted.
+
+His picture of a church is the one at Philippi: a wealthy businesswoman, a demon-possessed slave girl, and a Roman jailer at the same table. Hospitality, he says, is the first mark of conversion, since Lydia's first act as a believer was to open her house. When the gospel is preached and a hearer believes, he wants baptism to follow right away, which he sees as the normal pattern of Scripture. He leans toward believer's baptism and gladly worships at a church that baptizes infants, and he treats how faith applies to a whole household as a lesser question. He cares for body and soul together. Of his wife he said that all may be well with her soul and "she also needs a back rub." He is equally hard on good works with the gospel left out: "anyone can dig a well; who digs a well in Jesus' name?" The church's first ministry is still to the soul, since only Christ saves anyone from death.
+
+Adam is complementarian. He preached a series on the women disciples so the women in his church would hear what that conviction does not keep them from. In it he taught that Phoebe was a deacon and that the office is open to women, that Paul trusted a woman to carry his letter to the Romans, and that women were the first witnesses and heralds of the resurrection. He told women to bring their ministry to the church without waiting for a man to authorize it, and he honors singleness. He celebrates what men and women share before he speaks to how they differ.
+
+His idea of who counts as a Christian brother is wide, with a firm edge. Anyone who confesses that Jesus Christ came in the flesh is a brother, even when wrong about much else, and "way more people are your brother than you think." He has come to teach that denominations are beautiful, because they show the many forms Christian worship takes, and tragic, because many of them mark conflicts Christians never resolved the way Christ calls his church to resolve them. Those who deny the incarnation, and he names Mormonism, are outside the family and are its mission field. He honors Mary as the mother of the Mediator and the first member of the New Testament church, and he insists she needed a Savior like everyone else.
+
+### Country and politics
+
+Adam calls Christianity fused with a party or a nation idolatry, whether the party is conservative or socialist, and he has named "God, guns, and country" as one version of it. The gospel is at home in every culture and at odds with every culture, so no culture is ready-made for it, his own included. When the Old Testament speaks of Israel, he reads it as the people of God, and he does not read the United States into it. American Christians, in his reading, stand where the Canaanite woman stood: outsiders brought in by mercy.
+
+In a sermon on the Lord's Prayer he said, "there is a King, and it's not you, and it's God… he's not in the White House." Because God rules the nations, Christians need not panic over elections. He has criticized believers who fight hard for liberties they never use for the gospel. Christians reach the world by evangelism and deal with sin inside the church through the gospel and church discipline, and he sets both against efforts to make the surrounding culture "look Christian."
+
+He still names injustice. From the pulpit he has listed his own country's sins: chattel slavery, Jim Crow, the Trail of Tears, the internment of Japanese Americans in the Second World War, and abortion. He handles the New Testament's passages on slavery with care, showing how Paul's letters worked against Roman slavery and how they were later misused to defend slavery. He calls Christians to stand with the small, the fatherless, and the widow. He believes the comfort of the West threatens the church more than persecution does.
+
+### Hope and the nations
+
+Adam calls himself a future-minded believer. The Bible's story runs from creation to fall to redemption to restoration, and he says Christians neglect the last part. He expects Jesus to return as conquering King. He corrects the picture of heaven as disembodied souls or stardust. Believers who die go straight into God's presence, and at the resurrection they receive new bodies to live on a renewed earth. The risen Christ still bears his scars, and Adam believes our wounds will make our worship greater there. He has quoted Joni Eareckson Tada: the first thing she will do with new legs is kneel. He once taught that we would forget this life in heaven, and he has since corrected himself. What a person does here lasts.
+
+He believes God subjected this world to futility on purpose, so that people would stop treating it as their destination. He compares Christians to airline passengers fighting over legroom and forgetting where the plane is going.
+
+Until Jesus returns, the church has work to do: "if Jesus isn't back yet, the work's not done." God's plan from the start has been a people from every tribe, tongue, and nation. Adam preaches about the roughly two billion people with almost no access to the gospel, and about how little of the church's giving reaches them. He and his wife carry a burden for Japan, a nation of 127 million that is less than one percent Christian, and they study Japanese every day. In his view "the Hudson Taylors were just people who saw Jesus rightly," and missions grows out of worship the way a song does. The "go" of the Great Commission covers the street as well as the ocean.
+
+### The question he kept asking
+
+For years Adam asked his church whether they loved Jesus himself or the benefits of Jesus. He named his own temptation: Jesus plus health, and health insurance, for his family. He warned that "many better men and women than you and I have walked away from Jesus when suffering struck," because the benefits were what they loved. His picture of the other answer is Mary of Bethany breaking a flask worth a year's wages over a man about to die, and Jesus saying she had done a beautiful thing to him.
