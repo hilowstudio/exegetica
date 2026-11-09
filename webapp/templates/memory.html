@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 {% block title %}Scripture Memory · Exegetica{% endblock %}
+{% block fonts %}{{ super() }}<link rel="stylesheet" href="/static/fonts/doc.css">{% endblock %}
 {% block styles %}<link rel="stylesheet" href="/static/css/memory.css">{% endblock %}
 {% block content %}
 <div class="app">
 
   <aside class="side" id="side" aria-label="Your verses">
     <div class="side-h">
-      <div class="side-top"><span>Your verses</span><button class="side-x" id="drawer-close" type="button" title="Hide verses" aria-label="Hide your verses" aria-controls="side">&times;</button></div>
+      <div class="side-top"><span>Your verses</span>
+        <span class="tools">
+          <button class="side-x" id="drawer-print" type="button" title="Print cards or your book" aria-label="Print pocket cards or your memory book"><svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M7 8V4h10v4"/><rect x="4" y="8" width="16" height="8" rx="2"/><path d="M7 13h10v7H7z"/></svg></button>
+          <button class="side-x" id="drawer-close" type="button" title="Hide verses" aria-label="Hide your verses" aria-controls="side">&times;</button>
+        </span>
+      </div>
       <button class="newbtn" id="drawer-add"><span style="font-size:15px;line-height:1">＋</span> Add verse</button>
       <button class="btn ghost" id="drawer-lib" style="width:100%">Browse library</button>
     </div>
@@ -22,12 +28,14 @@
       <span class="sp"></span>
       <div id="topactions"></div>
     </div>
-    <div class="scroll"><div class="wrap shell-col" id="view"></div></div>
+    <div class="scroll" id="scroller"><div class="wrap shell-col" id="view"></div></div>
   </div>
 </div>
 
-<div class="scrim" id="scrim"><div class="modal" id="modal"></div></div>
+<div class="recite" id="recite" role="dialog" aria-modal="true" aria-labelledby="rc-ref" hidden></div>
+<div class="scrim" id="scrim"><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
 <div class="trash" id="trash"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13h10l1-13"/></svg> Drop here to delete</div>
+<div id="printroot"></div>
 {% endblock %}
 {% block scripts %}<script src="/static/profanity.js"></script>
 <script src="/static/js/memory.js"></script>{% endblock %}

@@ -30,7 +30,7 @@ Evidence can challenge a House rule. Claude raises the conflict once and Adam de
 Features Adam approved while the rules were drafted. Each one is built later through the skill's procedure.
 
 - **Socratic study in chat** (2026-11-08). Quizzing and coaching inside a study, so students master the material instead of only looking it up. To be designed with Adam. Rule B3 sets the limits until then. The decision record should also update the position statement.
-- **Spaced review in Scripture Memory** (2026-11-08). Mastered verses return on a growing schedule, shown only inside the page (rule B4).
+- **Spaced review in Scripture Memory** (2026-11-08). Mastered verses return on a growing schedule, shown only inside the page (rule B4). **Built 2026-11-09** with the Scripture Memory redesign: verses come back after 1, 3, 7, 14, 30 and 60 days, and the student grades each one Had it, Close or Not yet.
 - **Teachers in what the tool does with their students** (2026-11-08). Adam is open to deeper teacher integration and has no fixed vision yet. To be designed together, linked to the Socratic study. A starting principle: knowledge about a student goes to the teacher, never to the model (commitment 1, test 3). Any change to who can read saved studies amends decision 0009.
 - **Report this reply** (2026-11-08). An easy way for a student or teacher to flag a wrong or troubling reply. It sends that reply to Adam, adds no new knowledge about the student, and needs a decision record before building (rule C5).
 - **Maps and timelines from the library** (2026-11-08). The library already holds place coordinates, event and birth years, and genealogies. To be designed with Adam under rules J3 to J5 and J9.
