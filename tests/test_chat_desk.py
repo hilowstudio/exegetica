@@ -61,3 +61,13 @@ def test_studies_are_grouped_and_closed_ones_say_so():
 def test_the_wordmark_scrolls_with_the_conversation():
     main = re.search(r'<main class="scroll" id="main">(.*?)</main>', HTML, re.S).group(1)
     assert '{% include "partials/masthead.html" %}' in main
+
+
+def test_the_studies_button_sits_where_the_list_opens():
+    # Adam, 2026-11-09: a Studies button at the top right was not intuitive. It sits at the top left, labelled,
+    # and the open list carries its own hide control at its top edge (the familiar sidebar pattern).
+    assert '<span>Studies</span></button>' in HTML and 'id="side-x"' in HTML and 'aria-label="Hide studies"' in HTML
+    assert ".thread-h{position:absolute;top:12px;left:calc(var(--rail-w) + 16px);right:20px;" in CSS and "margin-right:auto" in CSS
+    assert ".side.open ~ .col .menu-btn{visibility:hidden}" in CSS
+    assert "menuBtn.onclick=()=>setStudiesOpen(true,true);" in JS and "sideX.onclick=()=>setStudiesOpen(false,true);" in JS
+    assert "visibility:hidden}" in CSS[CSS.index(".side{"):CSS.index(".side.open{")]   # a closed list takes no focus

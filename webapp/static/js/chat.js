@@ -313,18 +313,23 @@ function openChat(id){
 document.getElementById("new-chat").onclick=newStudy;
 document.getElementById("closed-new").onclick=newStudy;
 
-// the studies panel: the Studies button opens and closes it, and a desktop remembers it open
-const sideEl=document.getElementById("side"),menuBtn=document.getElementById("menu-btn");
+// the studies panel: the Studies button at the top left opens it, and its own hide control at its top edge
+// closes it (the familiar sidebar pattern). Focus follows, since the button pressed is hidden by the change.
+// A desktop remembers the list open.
+const sideEl=document.getElementById("side"),menuBtn=document.getElementById("menu-btn"),sideX=document.getElementById("side-x");
 const wide=()=>!(window.matchMedia&&matchMedia("(max-width:640px)").matches);
-function setStudiesOpen(o){
+function setStudiesOpen(o,moveFocus){
+  const inside=sideEl.contains(document.activeElement);
   sideEl.classList.toggle("open",o);
   menuBtn.setAttribute("aria-expanded",String(o));
-  menuBtn.setAttribute("aria-label",o?"Hide studies":"Show studies");
   if(wide()){try{localStorage.setItem("studybible.side.open",o?"1":"0");}catch(e){}}
+  if(o&&moveFocus)sideX.focus({preventScroll:true});
+  if(!o&&(moveFocus||inside))menuBtn.focus({preventScroll:true});
 }
 function openSide(){setStudiesOpen(true);}
 function closeSide(){setStudiesOpen(false);}
-menuBtn.onclick=()=>setStudiesOpen(!sideEl.classList.contains("open"));
+menuBtn.onclick=()=>setStudiesOpen(true,true);
+sideX.onclick=()=>setStudiesOpen(false,true);
 try{ if(wide()&&localStorage.getItem("studybible.side.open")==="1") setStudiesOpen(true); }catch(e){}
 
 // ---------- config: the server's tools and help resources ----------

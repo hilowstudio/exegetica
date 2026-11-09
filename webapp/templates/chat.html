@@ -4,7 +4,7 @@
 {% block content %}
 <div class="app">
   <aside class="side" id="side">
-    <div class="side-h"><button class="newbtn" id="new-chat" type="button"><span style="font-size:15px;line-height:1">＋</span> New study</button></div>
+    <div class="side-h"><button class="newbtn" id="new-chat" type="button"><span style="font-size:15px;line-height:1">＋</span> New study</button><button class="side-x" id="side-x" type="button" title="Hide studies" aria-label="Hide studies" aria-controls="side"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M9 5v14"/></svg></button></div>
     <div class="chats" id="chats"></div>
   </aside>
 
@@ -24,7 +24,7 @@
 
   <div class="col">
     <div class="thread-h">
-      <button class="menu-btn" id="menu-btn" type="button" title="Studies" aria-label="Show studies" aria-controls="side" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M9 5v14"/></svg></button>
+      <button class="menu-btn" id="menu-btn" type="button" aria-controls="side" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M9 5v14"/></svg><span>Studies</span></button>
       <span class="ttl" id="thread-title">New study</span>
       <span class="vlab" id="subj-lab" hidden>Subject</span>
       <div class="toggle" id="subj" role="group" aria-label="Subject" hidden>
