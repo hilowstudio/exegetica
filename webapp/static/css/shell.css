@@ -84,7 +84,7 @@ h1,h2,h3{text-wrap:balance}
 
 /* ---------- tool chips (Shell.chips): one per tool, with a count when it ran more than once ----------
    A page lays out the box that holds them. A plain .tool-chip with text and no dot is a short note. */
-.tool-chip{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;font-family:var(--mono);font-size:12px;
+.tool-chip{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;font-family:var(--sans);font-size:12.5px;
   color:var(--ink-soft);background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:5px 10px}
 .tool-chip .ic{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
 .tool-chip.running .ic{animation:chip-pulse 1s infinite}

@@ -5,12 +5,24 @@
 <div class="app">
   <aside class="side" id="side">
     <div class="side-h"><button class="newbtn" id="new-chat" type="button"><span style="font-size:15px;line-height:1">＋</span> New study</button></div>
-    <div class="side-lab">Recent studies</div>
     <div class="chats" id="chats"></div>
   </aside>
 
+  <!-- The passage a reference in a reply opens: beside the conversation on a wide screen, over it on a phone. -->
+  <aside class="passage" id="passage" aria-labelledby="pg-title">
+    <div class="pg-h">
+      <button class="pg-btn" id="pg-prev" type="button" aria-label="Previous chapter" title="Previous chapter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <h2 id="pg-title" tabindex="-1">Passage</h2>
+      <button class="pg-btn" id="pg-next" type="button" aria-label="Next chapter" title="Next chapter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+      <span class="pg-sp"></span>
+      <button class="pg-btn" id="pg-close" type="button" aria-label="Close the passage" title="Close">&times;</button>
+    </div>
+    <div class="pg-body" id="pg-body" tabindex="0" role="region" aria-label="Passage text"></div>
+    <div class="pg-orig" id="pg-orig" hidden></div>
+    <div class="pg-foot" id="pg-foot"></div>
+  </aside>
+
   <div class="col">
-    {% include "partials/masthead.html" %}
     <div class="thread-h">
       <button class="menu-btn" id="menu-btn" type="button" title="Studies" aria-label="Show studies" aria-controls="side" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M9 5v14"/></svg></button>
       <span class="ttl" id="thread-title">New study</span>
@@ -31,12 +43,14 @@
     </div>
 
     <main class="scroll" id="main">
+      {% include "partials/masthead.html" %}
       <div class="thread shell-col" id="thread">
         <div class="empty" id="empty">
           <div class="es-bible">
           <div class="eyebrow">Answers you can check</div>
           <h1>Begin a study</h1>
           <p>Ask about a passage, a word, a doctrine, or the historic church. Every answer is drawn from the Exegetica library of tools and sources.<button class="src-btn" type="button" data-src aria-haspopup="dialog" aria-label="About Exegetica and FAQs" title="About Exegetica and FAQs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6h.01"/></svg></button></p>
+          <div class="today" id="today" hidden></div>
           <div class="exgroups" id="examples">
             <div class="exg">
               <div class="exh">Word &amp; language</div>
@@ -102,6 +116,7 @@
     </main>
 
     <div class="composer-wrap" data-toast-above>
+      <button class="jump" id="jump" type="button" hidden>Jump to the latest <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
       <div id="signin-gate" class="gate shell-col" hidden><span id="gate-msg">Chat needs your school Google account.</span> <a href="/auth/login?next=/">Sign in with Google</a></div>
       <div id="load-note" class="gate shell-col" hidden>Your saved studies didn't load, so new studies won't be saved. Refresh the page to try again.</div>
       <div id="closed-note" class="gate shell-col" hidden role="status"><span id="closed-msg"></span> <button type="button" id="closed-new">Start a new study</button></div>

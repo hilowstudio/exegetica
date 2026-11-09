@@ -130,6 +130,12 @@
         if (!c) return;
         c.open = Math.max(0, c.open - 1);
         if (!c.open) c.el.className = "tool-chip " + (error ? "error" : "done");
+      },
+      // a page may give a tool a plain label ("Looked up John 3:16") in place of its code name (rule F11)
+      label: function (name, text) {
+        var c = chip(name);
+        c.el.querySelector(".nm").textContent = text;
+        c.el.title = text;
       }
     };
   }

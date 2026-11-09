@@ -34,7 +34,8 @@ def test_the_course_week_follows_the_calendar():
     assert len(week["anchors"]) == 16 and week["order"][0] == "John 20:31"
     assert memory.course_week(dt.date(2026, 8, 1))["current"] is None            # before the year starts
     assert memory.course_week(dt.date(2027, 7, 1))["current"] is None            # well after it ends
-    assert set(week) == {"course", "anchors", "order", "current", "review"}     # course facts only, nothing about a student
+    assert set(week) == {"course", "anchors", "order", "current", "review", "lesson"}   # course facts only, nothing about a student
+    assert week["lesson"]["passage"] == "John 7:14-24" and week["lesson"]["today"]
 
 
 def test_a_verse_in_the_original_comes_from_the_library():

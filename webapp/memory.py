@@ -240,11 +240,16 @@ except Exception:  # noqa: BLE001  (no tz database here: Central time is near en
 
 
 @lru_cache(maxsize=1)
-def _plantings() -> tuple[tuple[dict, ...], str]:
+def _calendar() -> dict:
     try:
-        cal = json.loads(_COURSE.read_text(encoding="utf-8"))
+        return json.loads(_COURSE.read_text(encoding="utf-8"))
     except (OSError, ValueError):
-        return (), ""
+        return {}
+
+
+@lru_cache(maxsize=1)
+def _plantings() -> tuple[tuple[dict, ...], str]:
+    cal = _calendar()
     out = []
     for lesson in cal.get("lessons") or []:
         if lesson.get("plant") and lesson.get("planted"):
@@ -252,6 +257,21 @@ def _plantings() -> tuple[tuple[dict, ...], str]:
             out.append({"date": lesson["date"], "reference": ref, "unit": lesson.get("unit") or ""})
     out.sort(key=lambda p: p["date"])
     return tuple(out), (cal.get("span") or {}).get("last", "")
+
+
+def _lesson(today: dt.date) -> dict | None:
+    """The latest lesson on or before today, within the week, that reads a passage (not a checkpoint)."""
+    best = None
+    for lesson in _calendar().get("lessons") or []:
+        passage = re.sub(r"\s*\(.*?\)\s*$", "", str(lesson.get("passage") or "")).strip()
+        if not parse_ref(passage) or lesson.get("date", "") > today.isoformat():
+            continue
+        if today - dt.date.fromisoformat(lesson["date"]) > dt.timedelta(days=6):
+            continue
+        if not best or lesson["date"] > best["date"]:
+            best = {"date": lesson["date"], "passage": passage, "unit": lesson.get("unit") or "",
+                    "focus": lesson.get("focus") or "", "today": lesson["date"] == today.isoformat()}
+    return best
 
 
 def course_week(today: dt.date | None = None) -> dict:
@@ -264,7 +284,8 @@ def course_week(today: dt.date | None = None) -> dict:
     current = planted[-1] if planted and not over else None
     return {"course": "Sophomore Bible", "anchors": {p["reference"]: p["unit"] for p in plantings},
             "order": [p["reference"] for p in plantings], "current": current,
-            "review": [p["reference"] for p in planted[:-1]] if current else []}
+            "review": [p["reference"] for p in planted[:-1]] if current else [],
+            "lesson": _lesson(today) if not over else None}
 
 
 async def memory_texts(request):
