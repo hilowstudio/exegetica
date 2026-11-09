@@ -338,6 +338,10 @@ h1.title{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,5vw,3re
   border-right:1px solid var(--rule);background:var(--surface);transform:translateX(0);
   transition:transform .18s ease,left .18s ease}
 .toc.hidden{transform:translateX(calc(-100% - var(--rail-w)))}
+/* a closed panel takes no keyboard focus; it hides once it has slid away */
+.toc.hidden{visibility:hidden;transition:transform .18s ease,left .18s ease,visibility 0s linear .18s}
+.tb-toc svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.tb-toc[aria-expanded="true"]{color:var(--ink);border-color:var(--brass)}
 .toc .bt{font-family:var(--serif);font-weight:600;font-size:1.05rem;color:var(--ink);line-height:1.2;margin-bottom:2px}
 .toc .ba{font-size:12.5px;color:var(--ink-soft);margin-bottom:16px}
 .toc-h{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 8px}
@@ -543,7 +547,6 @@ body.reading{overflow:hidden}
   .backdrop{position:fixed;inset:59px 0 var(--rail-bar);background:rgba(0,0,0,.34);z-index:14}
   .backdrop.show{display:block}
 }
-@media (min-width:821px){ .tb-toc{display:none} }
 @media (max-width:820px){ body.reading .tb-title{visibility:hidden} }
 
 /* touch: every control gets at least a 44px target */
@@ -567,3 +570,44 @@ body.reading{overflow:hidden}
   .cv-cog:hover{background:none}
   .cv-cog:hover::before{background:var(--accent)}
 }
+
+/* ---- the front table (2026-11-09): what the reader has in hand, then two shelves worth starting with ----
+   Shown above the whole library only when nothing is searched or filtered. Each row is a strip that scrolls
+   sideways: by trackpad or touch, by the arrows for a mouse, by Tab for a keyboard. */
+.front{margin:0 0 6px}
+.fr-row{margin:0 0 34px}
+.fr-h{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
+.fr-h h2{font-family:var(--serif);font-weight:600;font-size:1.32rem;line-height:1.2;letter-spacing:-.005em;margin:0;color:var(--ink)}
+.fr-h > span{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--ink-soft)}
+.fr-nav{margin-left:auto;display:flex;gap:6px;align-self:center}
+.fr-nav[hidden]{display:none}
+.fr-nav button{width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--rule-strong);border-radius:9px;
+  background:var(--surface);color:var(--ink-soft);padding:0}
+.fr-nav button:hover{color:var(--ink);border-color:var(--brass)}
+.fr-nav button:disabled{opacity:.4;cursor:default;border-color:var(--rule)}
+.fr-nav svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fr-books{display:grid;grid-auto-flow:column;grid-auto-columns:148px;gap:22px;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x proximity;scroll-padding-left:2px;padding:8px 2px 14px;margin:-8px -2px 0;
+  scrollbar-width:thin;scrollbar-color:var(--rule-strong) transparent;overscroll-behavior-x:contain}
+.fr-books::-webkit-scrollbar{height:6px}
+.fr-books::-webkit-scrollbar-thumb{background:var(--rule-strong);border-radius:6px}
+.fr-cell{scroll-snap-align:start;min-width:0}
+.fr-cap{margin-top:9px;font-family:var(--sans);font-size:12.5px;color:var(--ink-soft);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+.fr-all{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-faint);margin:6px 0 12px}
+@media (prefers-reduced-motion:no-preference){ .fr-books{scroll-behavior:smooth} }
+@media (max-width:760px){
+  .fr-row{margin-bottom:24px}
+  .fr-h{margin-bottom:10px;gap:4px 10px}
+  .fr-h h2{font-size:1.12rem}
+  .fr-h > span{font-size:.86rem;flex-basis:100%;order:3}
+  .fr-nav{display:none}
+  .fr-books{grid-auto-columns:104px;gap:12px;margin:-8px -16px 0;padding:8px 16px 10px;scroll-padding-left:16px}
+  .fr-cap{font-size:11.5px;margin-top:7px}
+}
+/* inside a book, the top bar names the book and the chapter open */
+.tb-title .tb-ch{font-family:var(--sans);font-weight:400;font-size:.86rem;color:var(--ink-soft)}
+.tb-title .tb-ch::before{content:"\00B7";margin:0 .55em;color:var(--ink-faint)}
+/* the blank left-hand page belongs to a two-page spread; one page at a time opens on the title */
+#chapter.one-up .fm-blank{display:none}

@@ -150,6 +150,70 @@
     function started(slug){ return (progress[slug] || 0) >= READ_MIN; }
     var state = { q:"", section:null, length:null, sort:"author", reading:false, wrap: lsGet("exeg-book-wrap") !== "0", hoverFlip: lsGet("exeg-hover-flip") !== "0" };   // both on unless turned off
     var filtered = [], shown = 0, BATCH = 48;
+    var updated = {};   // slug -> when this reader last turned a page in it (seconds)
+    // The front table (2026-11-09): the books this reader has in hand, then two shelves worth starting with.
+    // It shows only while nothing is searched or filtered, and the whole library follows below it as before.
+    var FRONT = [
+      {title: "Christian classics", note: "Books the church has read for centuries", slugs: [
+        "john-bunyan_the-pilgrims-progress", "augustine-of-hippo_the-city-of-god_marcus-dods_george-wilson_j-j-smith",
+        "ccel-augustine-confessions", "thomas-a-kempis_the-imitation-of-christ_william-benham", "g-k-chesterton_orthodoxy",
+        "jean-calvin_institutes-of-the-christian-religion-pg45001", "ccel-edwards-affections", "ccel-spurgeon-grace",
+        "ccel-lawrence-practice", "ccel-owen-mort", "ccel-bunyan-grace", "ccel-bunyan-holy_war"]},
+      {title: "Great stories", note: "Novels worth a lifetime of rereading", slugs: [
+        "jane-austen_pride-and-prejudice", "charles-dickens_great-expectations", "robert-louis-stevenson_treasure-island",
+        "herman-melville_moby-dick", "charlotte-bronte_jane-eyre", "mark-twain_the-adventures-of-tom-sawyer",
+        "louisa-may-alcott_little-women", "mary-shelley_frankenstein", "charles-dickens_a-christmas-carol",
+        "g-k-chesterton_the-man-who-was-thursday", "l-m-montgomery_anne-of-green-gables", "daniel-defoe_the-life-and-adventures-of-robinson-crusoe"]}
+    ];
+    var ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
+    function frontRow(id, title, note, list, caption){
+      var sec = document.createElement("section"); sec.className = "fr-row"; sec.setAttribute("aria-labelledby", id);
+      sec.innerHTML = '<div class="fr-h"><h2 id="' + id + '">' + esc(title) + '</h2>' + (note ? '<span>' + esc(note) + '</span>' : "") +
+        '<div class="fr-nav" hidden><button type="button" class="fr-prev" aria-label="Earlier books in ' + esc(title) + '">' + ARROW + '</button>' +
+        '<button type="button" class="fr-next" aria-label="More books in ' + esc(title) + '"><span style="display:grid;transform:scaleX(-1)">' + ARROW + '</span></button></div></div>';
+      var row = document.createElement("div"); row.className = "fr-books"; row.setAttribute("role", "list");
+      list.forEach(function(b){
+        var cell = document.createElement("div"); cell.className = "fr-cell"; cell.setAttribute("role", "listitem");
+        cell.appendChild(cover(b));
+        if(caption){ var c = caption(b); if(c){ var p = document.createElement("div"); p.className = "fr-cap"; p.textContent = c; cell.appendChild(p); } }
+        row.appendChild(cell);
+      });
+      sec.appendChild(row);
+      var nav = sec.querySelector(".fr-nav"), prev = sec.querySelector(".fr-prev"), next = sec.querySelector(".fr-next");
+      function ends(){
+        var over = row.scrollWidth > row.clientWidth + 4;
+        nav.hidden = !over;
+        prev.disabled = row.scrollLeft < 4;
+        next.disabled = row.scrollLeft + row.clientWidth > row.scrollWidth - 4;
+      }
+      function by(dir){ row.scrollBy({left: dir * Math.max(160, row.clientWidth - 170)}); }
+      prev.addEventListener("click", function(){ by(-1); });
+      next.addEventListener("click", function(){ by(1); });
+      row.addEventListener("scroll", ends, {passive: true});
+      window.addEventListener("resize", ends);
+      requestAnimationFrame(ends);
+      return sec;
+    }
+    function renderFront(){
+      var box = $("front"); if(!box) return;
+      box.hidden = !!(state.q || state.section || state.length || state.reading);
+      if(box.hidden || box.dataset.drawn) return;   // drawn once; turnAll and restyle keep its covers current
+      box.dataset.drawn = "1";
+      var reading = books.filter(function(b){ return started(b.slug); }).sort(function(a, b){
+        return ((updated[b.slug] || 0) - (updated[a.slug] || 0)) || ((progress[b.slug] || 0) - (progress[a.slug] || 0));
+      }).slice(0, 12);
+      if(reading.length){
+        box.appendChild(frontRow("fr-reading", "Continue reading", "", reading, function(b){
+          var n = positions[b.slug], of = b.chapters || 0;
+          return (n && of > 1) ? "Chapter " + n + " of " + of : "In progress";
+        }));
+      }
+      FRONT.forEach(function(f, i){
+        var list = f.slugs.map(function(sl){ return bySlug[sl]; }).filter(Boolean);
+        if(list.length >= 4) box.appendChild(frontRow("fr-" + i, f.title, f.note, list, null));
+      });
+      var h = document.createElement("h2"); h.className = "fr-all"; h.textContent = "The whole library"; box.appendChild(h);
+    }
 
     var bySlug = {}, isAdmin = false;
     function cloth(sec){ return CLOTH[sec] || "#4a4038"; }
@@ -183,7 +247,7 @@
       if(img.getAttribute("src") !== u){ img.classList.remove("ld"); img.setAttribute("src", u); }
     }
     function restyle(){            // a style or the light/dark mode changed: redraw what's been drawn
-      Array.prototype.forEach.call(document.querySelectorAll("#grid .cover"), function(a){
+      Array.prototype.forEach.call(document.querySelectorAll("#browse .cover"), function(a){
         var img = houseImg(a);
         if(img && (img.getAttribute("src") || state.wrap || !a.classList.contains("has-img"))) loadHouse(a);
       });
@@ -528,7 +592,7 @@
         if(s === "short") return a.words - b.words;
         return a._a < b._a ? -1 : (a._a > b._a ? 1 : (a._t < b._t ? -1 : 1));
       });
-      render(true); updateCount(); buildFacets();
+      render(true); updateCount(); buildFacets(); renderFront();
     }
 
     // ---- wire controls ----
@@ -562,7 +626,7 @@
     // Books outside the viewport just swap, so a long page doesn't animate hundreds of tiles.
     function turnAll(){
       unhover();
-      var vh = window.innerHeight, tiles = Array.prototype.slice.call(document.querySelectorAll("#grid .cover"));
+      var vh = window.innerHeight, tiles = Array.prototype.slice.call(document.querySelectorAll("#browse .cover"));
       tiles.forEach(function(a){
         if(state.wrap) loadHouse(a);
         a.classList.remove("flip-in", "flip-out", "turn-to-wrap", "turn-to-art");
@@ -682,7 +746,7 @@
     // bounce the flip. So hover is judged against the tile's resting outline, captured on entry.
     var hovered = null, hoverBox = null;
     function unhover(){ if(hovered){ flip(hovered, false); hovered = null; hoverBox = null; } }
-    $("grid").addEventListener("mouseover", function(e){
+    $("browse").addEventListener("mouseover", function(e){
       var a = tileOf(e); if(!a || a === hovered) return;
       unhover();
       hovered = a; hoverBox = a.getBoundingClientRect(); flip(a, true);
@@ -694,13 +758,13 @@
     }, {passive: true});
     window.addEventListener("scroll", unhover, {passive: true});
     document.documentElement.addEventListener("mouseleave", unhover);
-    $("grid").addEventListener("focusin", function(e){ var a = tileOf(e); if(a && a.matches(":focus-visible")) flip(a, true); });
-    $("grid").addEventListener("focusout", function(e){ var a = tileOf(e); if(a && !a.contains(e.relatedTarget)) flip(a, false); });
-    $("grid").addEventListener("animationend", function(e){
+    $("browse").addEventListener("focusin", function(e){ var a = tileOf(e); if(a && a.matches(":focus-visible")) flip(a, true); });
+    $("browse").addEventListener("focusout", function(e){ var a = tileOf(e); if(a && !a.contains(e.relatedTarget)) flip(a, false); });
+    $("browse").addEventListener("animationend", function(e){
       if(e.animationName === "cvFlipOut") e.target.classList.remove("flip-out");
       if(e.animationName === "cvTurn") e.target.classList.remove("turn-to-wrap", "turn-to-art");
     });
-    $("grid").addEventListener("click", function(e){
+    $("browse").addEventListener("click", function(e){
       var cog = e.target.closest ? e.target.closest(".cv-cog") : null;
       if(cog){
         e.preventDefault(); e.stopPropagation();
@@ -736,6 +800,7 @@
       res.splice(1, 2);
       positions = (res[1] && res[1].positions) || {};
       progress = (res[1] && res[1].progress) || {};
+      updated = (res[1] && res[1].updated) || {};
       isAdmin = !!d.admin;
       if(isAdmin){ $("grid").classList.add("admin"); $("adminCovers").hidden = false; }
       books = d.items;
@@ -791,11 +856,22 @@
     function setToc(open){
       $("toc").classList.toggle("hidden", !open);
       $("stage").classList.toggle("wide", !open);
+      $("tocToggle").setAttribute("aria-expanded", open ? "true" : "false");
+      if(!narrow()){ lsSet("exeg-toc", open ? "1" : "0"); }
       $("backdrop").classList.toggle("show", open && narrow());
       pendingAnchor = firstVisibleBlockIndex();
-      requestAnimationFrame(paginate);   // sidebar changed the width → re-measure, keep place
+      // the stage slides to its new width (.18s); measure the pages once it has arrived, keeping the place
+      var st = $("stage"), done = false;
+      function settle(){ if(done) return; done = true; st.removeEventListener("transitionend", onEnd); paginate(); }
+      function onEnd(e){ if(e.target === st && e.propertyName === "margin-left") settle(); }
+      st.addEventListener("transitionend", onEnd);
+      setTimeout(settle, 260);           // no transition (reduced motion, or a phone where the width holds)
     }
-    if(narrow()){ $("toc").classList.add("hidden"); $("stage").classList.add("wide"); }
+    var tocPref = lsGet("exeg-toc");   // a laptop reader's own choice; otherwise open only if a two-page spread still fits
+    if(narrow() || tocPref === "0" || (tocPref !== "1" && $("stage").clientWidth - 2 * 66 - 76 < 2 * 420)){
+      $("toc").classList.add("hidden"); $("stage").classList.add("wide");
+    }
+    $("tocToggle").setAttribute("aria-expanded", $("toc").classList.contains("hidden") ? "false" : "true");
     $("tocToggle").addEventListener("click", function(){ setToc($("toc").classList.contains("hidden")); });
     $("backdrop").addEventListener("click", function(){ setToc(false); });
 
@@ -814,6 +890,7 @@
       var measure = Math.round(560 * scale / 1.15); // hardcover line ≈ 62 chars; scales with text size
       var minCol = narrow() ? 260 : 420;            // go two-up only when each column clears this
       var cols = ((host - 2 * margin - colGap) / 2 >= minCol) ? 2 : 1;
+      chapter.classList.toggle("one-up", cols === 1);   // the blank verso belongs to a two-page spread only
       var contentW = Math.min(cols * measure + (cols - 1) * colGap, host - 2 * margin);
       var colW = Math.floor((contentW - (cols - 1) * colGap) / cols);
       bookEl.style.width = (contentW + 2 * margin) + "px";     // the centered page card; desk shows on the sides
@@ -945,11 +1022,13 @@
         if(!c){ return; }
         current = c.section_number;
         chapterName = c.name || c.label || "";
+        $("topTitle").innerHTML = '<span class="tb-book">' + esc(book.title) + '</span>' +
+          (chapterName && chapterName !== book.title ? '<span class="tb-ch">' + esc(chapterName) + '</span>' : '');
         var front = "";
         if(current === 1){                            // title page, colophon, contents (Exegetica front matter)
           var tparts = book.title.split(/:\s+/), main = tparts.shift(), sub = tparts.join(": ");
           var face = root.getAttribute("data-face") === "literata" ? "Literata" : "EB Garamond";
-          front = (narrow() ? "" : '<div class="fm-page" aria-hidden="true"></div>') +
+          front = (narrow() ? "" : '<div class="fm-page fm-blank" aria-hidden="true"></div>') +
             '<section class="fm-page fm-title"><div><i class="ex-orn"></i><h1>' + esc(main) + '</h1>' +
               (sub ? '<div class="fm-sub">' + esc(sub) + '</div>' : '') +
               '<div class="fm-rule"></div>' + (book.author ? '<div class="fm-by">' + esc(book.author) + '</div>' : '') +

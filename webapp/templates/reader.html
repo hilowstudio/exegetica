@@ -8,7 +8,7 @@
     <a class="tb-back" id="back" href="/read">‹ Library</a>
     <div class="tb-title" id="topTitle">Reading Room</div>
     <div class="tb-ctrls">
-      <button class="iconbtn tb-toc" id="tocToggle" title="Contents" hidden>☰</button>
+      <button class="iconbtn tb-toc" id="tocToggle" type="button" title="Contents" aria-label="Contents" aria-controls="toc" aria-expanded="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h11"/></svg></button>
       <button class="iconbtn sm" id="fMinus" title="Smaller text" hidden>A−</button>
       <button class="iconbtn sm" id="fPlus" title="Larger text" hidden>A+</button>
       <button class="iconbtn sm" id="fFace" title="Typeface: EB Garamond or Literata" hidden>Aa</button>
@@ -33,6 +33,7 @@
           <div class="facet-group fg-len"><div class="facet-h">Length</div><div id="lenOpts"></div></div>
         </aside>
         <div class="results">
+          <div class="front" id="front" hidden></div>
           <div class="mfilters">
             <label class="msel"><span class="msel-l">Sort</span><select id="mSort" aria-label="Sort"></select></label>
             <label class="msel"><span class="msel-l">Length</span><select id="mLen" aria-label="Length"></select></label>

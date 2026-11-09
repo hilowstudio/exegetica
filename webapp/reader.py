@@ -395,11 +395,13 @@ async def position_get(request):
     if not user or not db.ready():
         return JSONResponse({"positions": {}})
     rows = await db.fetch(
-        "select book_slug, section_number, pages from reading_state where user_id=$1", uuid.UUID(user["id"])
+        "select book_slug, section_number, pages, extract(epoch from updated_at)::bigint as at "
+        "from reading_state where user_id=$1", uuid.UUID(user["id"])
     )
     return JSONResponse({
         "positions": {r["book_slug"]: r["section_number"] for r in rows},   # chapter, for the reader to resume
         "progress": {r["book_slug"]: r["pages"] for r in rows},             # furthest page reached, for "Continue Reading"
+        "updated": {r["book_slug"]: r["at"] for r in rows},                 # last read, so the newest leads the row
     })
 
 
