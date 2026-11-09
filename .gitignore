@@ -60,3 +60,6 @@ Thumbs.db
 # Local only: Claude API billing exports and the cover-art download cache
 /claude_api_cost_*.csv
 /db/cover-cache/
+
+# School-provided book copies: copyrighted, never committed (2026-11-09)
+/book-copies/

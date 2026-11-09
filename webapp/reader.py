@@ -98,6 +98,59 @@ def _connect() -> sqlite3.Connection:
     return con
 
 
+# ---- school-only books (2026-11-09) ----
+# Copies Yorkville Christian provides for its own accounts (in copyright; scripts/ingest_school_copy.py) carry
+# access='school' in books.db. They are listed and opened only for a signed-in school account, a teacher or an
+# admin; everyone else never sees them, and asking for one by its address answers "not found".
+SCHOOL = "school"
+
+
+def may_read_school(user) -> bool:
+    if not user:
+        return False
+    email = (user.get("email") or "").lower()
+    return email.endswith("@" + auth.SCHOOL_DOMAIN) or auth.is_teacher(user) or auth.is_admin(user)
+
+
+REFERENCE = "reference"   # a school textbook or curriculum: for the Prep Room, never on a Reading Room shelf
+
+
+def reader_level(user) -> int:
+    """0 the public, 1 a school account (reads school copies), 2 a teacher or admin (also finds reference copies)."""
+    if not user:
+        return 0
+    if auth.is_teacher(user) or auth.is_admin(user):
+        return 2
+    return 1 if may_read_school(user) else 0
+
+
+def _visible(con, school: int, shelf: bool = False) -> str:
+    """The SQL condition for the books this reader may see (books.db from before 2026-11-09 has no access column).
+    `school` is the reader's level (a bool still works: True is a school reader). Reference copies (textbooks the
+    Prep Room drafts from) are never shelved; a teacher finds them by search."""
+    if "access" not in {c[1] for c in con.execute("pragma table_info(books)")}:
+        return "1=1"
+    level = int(school)
+    hidden = []
+    if level < 1:
+        hidden.append(SCHOOL)
+    if level < 2 or shelf:
+        hidden.append(REFERENCE)
+    if not hidden:
+        return "1=1"
+    return "coalesce(access, '') not in (" + ", ".join(f"'{h}'" for h in hidden) + ")"
+
+
+def _closed_to(con, slug: str, school: int) -> bool:
+    if "access" not in {c[1] for c in con.execute("pragma table_info(books)")}:
+        return False
+    r = con.execute("select access from books where slug=?", (slug,)).fetchone()
+    if not r:
+        return False
+    need = {SCHOOL: 1, REFERENCE: 2}.get(r[0], 0)
+    return int(school) < need
+
+
 def _safe_int(v, default: int) -> int:
     try:
         return int(v)
@@ -107,12 +160,12 @@ def _safe_int(v, default: int) -> int:
 
 # ---- SQLite reads (sync; wrapped in run_in_threadpool by the handlers) ----
 
-def _list_sync(q: str | None, limit: int, offset: int) -> dict:
+def _list_sync(q: str | None, limit: int, offset: int, school: bool = False) -> dict:
     con = _connect()
     try:
-        where, params = "", []
+        where, params = f"where {_visible(con, school)}", []
         if q:
-            where = "where title like ? or author like ?"
+            where += " and (title like ? or author like ?)"
             params = [f"%{q}%", f"%{q}%"]
         total = con.execute(f"select count(*) from books {where}", params).fetchone()[0]
         rows = con.execute(
@@ -133,13 +186,14 @@ def _list_sync(q: str | None, limit: int, offset: int) -> dict:
 _GENRE_FALLBACK = "Other"
 
 
-def _shelves_sync() -> list[dict]:
+def _shelves_sync(school: bool = False) -> list[dict]:
     """The whole corpus shelved like a library: one shelf per genre (a book appears under each of
     its genres), each shelf sorted by the surname-first sort key. Shelves ordered alphabetically."""
     con = _connect()
     try:
         rows = con.execute(
-            "select slug, title, author, author_sort, genres, chapter_count, word_count from books"
+            "select slug, title, author, author_sort, genres, chapter_count, word_count from books "
+            f"where {_visible(con, school, shelf=True)}"
         ).fetchall()
     finally:
         con.close()
@@ -157,16 +211,17 @@ def _shelves_sync() -> list[dict]:
     return {"shelves": ordered, "total": len(rows)}
 
 
-def _catalog_sync() -> dict:
+def _catalog_sync(school: bool = False) -> dict:
     """The whole corpus as one flat list (no per-genre duplication), for the client-side
     faceted browse: search, filter by section/length/source, and sort happen in the browser."""
     con = _connect()
     try:
         cols = {c[1] for c in con.execute("pragma table_info(books)")}
         cover = "cover_url" if "cover_url" in cols else "null as cover_url"
+        access = "access" if "access" in cols else "null as access"
         rows = con.execute(
-            f"""select slug, title, author, author_sort, genres, source, chapter_count, word_count, {cover}
-                from books order by author_sort collate nocase, title"""
+            f"""select slug, title, author, author_sort, genres, source, chapter_count, word_count, {cover}, {access}
+                from books where {_visible(con, school, shelf=True)} order by author_sort collate nocase, title"""
         ).fetchall()
     finally:
         con.close()
@@ -177,7 +232,7 @@ def _catalog_sync() -> dict:
             "author_sort": r["author_sort"] or r["author"] or r["title"],
             "sections": json.loads(r["genres"] or "[]"), "source": r["source"],
             "chapters": r["chapter_count"], "words": r["word_count"] or 0,
-            "cover": r["cover_url"],
+            "cover": r["cover_url"], **({"school": True} if r["access"] == SCHOOL else {}),
         })
     return {"items": items, "total": len(items)}
 
@@ -194,9 +249,11 @@ def _cover_of(slug: str) -> str | None:
         con.close()
 
 
-def _book_sync(slug: str) -> dict | None:
+def _book_sync(slug: str, school: bool = False) -> dict | None:
     con = _connect()
     try:
+        if _closed_to(con, slug, school):
+            return None
         b = con.execute(
             """select id, slug, title, author, author_sort, genres, language, subjects,
                       chapter_count, word_count, front_html, source, license from books where slug=?""",
@@ -239,9 +296,11 @@ def _edition_row(con, book_id: int, n: int):
         return None
 
 
-def _chapter_sync(slug: str, n: int) -> dict | None:
+def _chapter_sync(slug: str, n: int, school: bool = False) -> dict | None:
     con = _connect()
     try:
+        if _closed_to(con, slug, school):
+            return None
         b = con.execute("select id, slug, title, chapter_count from books where slug=?", (slug,)).fetchone()
         if not b:
             return None
@@ -279,8 +338,9 @@ def _html_to_text(h: str) -> str:
 
 
 def _gen_book_sync(slug: str) -> dict | None:
-    """A whole book as plaintext chapters, for the Living Library generator (reads books.db —
-    the converged PD corpus). Uploads/in-copyright works are NOT served here; they stay private."""
+    """A whole book as plaintext chapters, for the Prep Room's drafting (reads books.db). Reached only through
+    teacher-only routes and server jobs, so school-only copies are readable here; a teacher may draft from them.
+    A teacher's private uploads are not served here; they stay in the Living Library's vault."""
     con = _connect()
     try:
         b = con.execute(
@@ -316,7 +376,7 @@ async def books_list(request):
     q = (request.query_params.get("q") or "").strip() or None
     limit = min(_safe_int(request.query_params.get("limit"), 60), 200)
     offset = max(_safe_int(request.query_params.get("offset"), 0), 0)
-    data = await run_in_threadpool(_list_sync, q, limit, offset)
+    data = await run_in_threadpool(_list_sync, q, limit, offset, reader_level(auth.current_user(request)))
     data["available"] = True
     return JSONResponse(data)
 
@@ -326,7 +386,7 @@ async def shelves(request):
     alphabetical by author surname — the browse default."""
     if not available():
         return JSONResponse({"shelves": [], "total": 0, "available": False})
-    data = await run_in_threadpool(_shelves_sync)  # {"shelves": [...], "total": N}
+    data = await run_in_threadpool(_shelves_sync, reader_level(auth.current_user(request)))
     data["available"] = True
     return JSONResponse(data)
 
@@ -336,7 +396,7 @@ async def catalog(request):
     Library-admin cover overrides (Neon) are merged on top of the baked-in cover URLs."""
     if not available():
         return JSONResponse({"items": [], "total": 0, "available": False})
-    data = await run_in_threadpool(_catalog_sync)
+    data = await run_in_threadpool(_catalog_sync, reader_level(auth.current_user(request)))
     if db.ready():
         try:
             rows = await db.fetch(
@@ -376,7 +436,7 @@ async def cover_image(request):
 async def book_detail(request):
     if not available():
         return JSONResponse({"error": "unavailable"}, status_code=503)
-    d = await run_in_threadpool(_book_sync, request.path_params["slug"])
+    d = await run_in_threadpool(_book_sync, request.path_params["slug"], reader_level(auth.current_user(request)))
     return JSONResponse(d) if d else JSONResponse({"error": "not found"}, status_code=404)
 
 
@@ -384,7 +444,8 @@ async def book_chapter(request):
     if not available():
         return JSONResponse({"error": "unavailable"}, status_code=503)
     n = _safe_int(request.path_params.get("n"), 1)
-    d = await run_in_threadpool(_chapter_sync, request.path_params["slug"], n)
+    d = await run_in_threadpool(_chapter_sync, request.path_params["slug"], n,
+                                reader_level(auth.current_user(request)))
     return JSONResponse(d) if d else JSONResponse({"error": "not found"}, status_code=404)
 
 

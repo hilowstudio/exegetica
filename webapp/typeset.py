@@ -513,6 +513,9 @@ def typeset(html: str, toc_title: str = "", first: bool = False, last: bool = Fa
             _text(kids[0])):
         kids[0].tag = "h2"                                    # 'PREFACE.' set as its own paragraph is a heading
     head = kids[0] if kids and kids[0].tag in ("h1", "h2", "h3", "h4", "hgroup", "header") else None
+    # a heading marked as the book's own (a school copy whose chapters really are 'Chapter One') is never taken
+    # for an importer's placeholder
+    keep = head is not None and "ex-keep" in (head.get("class") or "")
     if head is not None:
         if head.tag in ("hgroup", "header"):
             for bq in reversed(head.xpath(".//blockquote")):  # an epigraph inside the header follows the opener
@@ -554,7 +557,7 @@ def typeset(html: str, toc_title: str = "", first: bool = False, last: bool = Fa
     if label and not title:                                   # 'Chapter Twelve' alone reads as the title
         title, label = label, ""
     title = re.sub(r"\s*\[(?:\d{1,3}|[A-Z*†])\]", "", title).strip()   # a note marker never belongs in a title
-    if title.strip(" .:").lower() in _FRAGMENTS or _PLACEHOLDER.match(title):   # torn-off words, importer placeholders
+    if title.strip(" .:").lower() in _FRAGMENTS or (_PLACEHOLDER.match(title) and not keep):   # torn-off words, importer placeholders
         title = ""
     title = re.sub(r"(?<![A-Z][a-z])(?<!\b[A-Z])(?<!\bSt)(?<!\bMr)(?<!\bMrs)(?<!\bDr)(?<!\bCo)\.$", "", title).strip()  # a title ends without a period
 

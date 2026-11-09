@@ -409,6 +409,8 @@ body.reading{overflow:hidden}
 .chapter .ex-open.ex-part .ex-t{font-style:italic;font-weight:420;font-size:2.3em}
 /* epigraphs, letter heads */
 .chapter .ex-epi{margin:0 auto .3em;max-width:24em;font-style:italic;font-size:.9em;line-height:1.5;text-align:center;text-indent:0;color:var(--ink-soft);hyphens:none}
+/* a displayed quotation's attribution in the body (school copies, 2026-11-09): set like the epigraph's, at the right */
+.chapter p.ex-cite:not(.ex-epi){text-align:right;text-indent:0;font-variant-caps:all-small-caps;letter-spacing:.05em;color:var(--ink-soft);margin:-.1em 0 .9em;hyphens:none}
 .chapter .ex-epi-by{font-style:normal;font-variant-caps:all-small-caps;letter-spacing:.06em;margin-bottom:2em}
 .chapter .ex-epi:not(.ex-epi-by):last-of-type{margin-bottom:2em}
 .chapter blockquote.ex-epi{margin:0 auto 2em;font-size:.9em;max-width:26em}
