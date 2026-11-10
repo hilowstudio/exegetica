@@ -220,4 +220,5 @@ main.scroll > .masthead{padding-top:18px}
 @media (pointer:coarse){
   .jump{min-height:44px}
 }
-}
+/* a starter card keeps a reference whole on one line (John 1:1, never John / 1:1) */
+.exgroups .nb{white-space:nowrap}
