@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{{ doc.title }} · Living Library · Exegetica{% endblock %}
+{% block meta %}<meta name="robots" content="noindex">{% endblock %}
+{% block fonts %}<link rel="stylesheet" href="/static/fonts/reader.css">{% if doc.resource %}<link rel="stylesheet" href="/static/fonts/doc.css">{% endif %}{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/reader.css"><link rel="stylesheet" href="/static/css/doc.css">{% if doc.resource %}<link rel="stylesheet" href="/static/css/handout.css">{% endif %}{% endblock %}
+{% block content %}
+{# An upload or a saved link, read in the Reading Room's typography (decision 0029, phase 3): one sheet, the text
+   as the teacher brought it, with every Scripture reference opening the passage beside it. A Prep Room resource on a
+   class shelf (phase 4) is the Prep Room's own handout paper, drawn by the same code as its Student view. #}
+<header class="topbar shell-stick">
+  <a class="tb-back" id="back" href="/library">‹ Your shelves</a>
+  <div class="tb-title">{{ doc.title }}</div>
+  <div class="tb-ctrls">
+    {% if both %}<div class="tb-seg" id="docAud" role="group" aria-label="Copy"><button type="button" data-v="teacher" aria-pressed="true">Teacher</button><button type="button" data-v="student" aria-pressed="false">Student</button></div>{% endif %}
+    {% if doc.owner_href %}<a class="tb-act" href="{{ doc.owner_href }}" aria-label="Open in the Prep Room"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span>Open in the Prep Room</span></a>{% endif %}
+    {% if can_place %}<button class="tb-act" id="docSave" type="button" aria-haspopup="true" aria-expanded="false"
+      data-id="{{ doc.id }}" data-origin="{{ doc.origin }}" data-kind="{{ doc.kind }}" data-title="{{ doc.title }}"{% if doc.url %} data-url="{{ doc.url }}"{% endif %}
+      aria-label="Save {{ doc.title }} to a unit or a class shelf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h10v17l-5-4-5 4z"/><path d="M12 7.5v5M9.5 10h5"/></svg><span>Save to…</span></button>{% endif %}
+  </div>
+</header>
+{% if doc.resource %}
+<main class="doc-page doc-handout">
+  {% if doc.note %}<p class="doc-note">{{ doc.note }}</p>{% endif %}
+  <div class="paperwrap"><article class="paper prose" id="hpaper" data-band="{{ doc.band }}" aria-label="{{ doc.title }}"></article></div>
+  <script type="application/json" id="hdoc">{{ markdown|tojson }}</script>
+</main>
+{% else %}
+<main class="doc-page">
+  <article class="doc-sheet" data-scripture>
+    <header class="doc-head">
+      <div class="doc-kind">{{ doc.type_word }}</div>
+      <h1>{{ doc.title }}</h1>
+      {% if doc.author or doc.site or doc.url %}
+      <p class="doc-by">{% if doc.author %}{{ doc.author }}{% endif %}{% if doc.author and doc.site %} · {% endif %}{% if doc.site %}{{ doc.site }}{% endif %}
+        {% if doc.url %}<a class="doc-orig" href="{{ doc.url }}" target="_blank" rel="noopener noreferrer">Original page<span aria-hidden="true"> ↗</span><span class="shell-sr"> (opens in a new tab)</span></a>{% endif %}</p>
+      {% endif %}
+    </header>
+    <div class="doc-body">{{ body_html }}</div>
+  </article>
+</main>
+{% endif %}
+{% endblock %}
+{% block scripts %}{% if doc.resource %}<script src="/static/js/prepdoc.js"></script>{% endif %}<script src="/static/js/doc.js"></script>{% endblock %}

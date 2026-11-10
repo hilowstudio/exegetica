@@ -1,0 +1,6 @@
+{# The Living Library's rooms (decision 0029): your shelves, and the Reading Room inside it. Set `room` to
+   "shelves" or "reading" around the include. Styles: static/css/covers.css. #}
+<nav class="rooms" aria-label="Living Library">
+  <a href="/library"{% if room == "shelves" %} aria-current="page"{% endif %}>Your shelves</a>
+  <a href="/read"{% if room == "reading" %} aria-current="page"{% endif %}>Reading Room</a>
+</nav>

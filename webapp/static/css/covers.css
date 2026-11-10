@@ -1,58 +1,159 @@
-/* The Magazine Covers — Exegetica page (templates/covers.html). The shared shell, colours and rail are in tokens.css and shell.css. */
-body{color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
-a{color:var(--iron);text-decoration:none} a:hover{text-decoration:underline}
-button,select{font-family:inherit}
-.topbar{position:sticky;top:-1px;z-index:20;display:flex;align-items:center;gap:14px;padding:12px 20px 12px calc(var(--rail-w) + 20px);
-  border-bottom:1px solid var(--rule)}
-.tb-back{font-family:var(--mono);font-size:12px;color:var(--iron);display:inline-block;padding:5px 0}
-.tb-title{flex:1;text-align:center;font-family:var(--serif);font-weight:600}
-.tb-spacer{width:70px}
-.wrap{--col:1240px;padding:30px 24px 140px}
-.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:600;font-size:2.3rem;line-height:1.1;margin:.15em 0 .3em}
-.lede{max-width:68ch;color:var(--ink-soft);margin:0 0 22px}
-.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:12px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.seg{display:inline-flex;border:1px solid var(--rule-strong);border-radius:9px;overflow:hidden}
-.seg button{border:0;background:var(--surface);color:var(--ink-soft);padding:7px 12px;font-size:13px;cursor:pointer}
-.seg button+button{border-left:1px solid var(--rule-strong)}
-.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-select{padding:7px 10px;border:1px solid var(--rule-strong);border-radius:9px;background:var(--surface);color:var(--ink);font-size:13px}
-.lnk{border:0;background:none;color:var(--iron);font-size:13px;cursor:pointer;padding:4px 2px;min-height:24px}
-.count{font-family:var(--mono);font-size:12px;color:var(--ink-faint);margin-left:auto}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;margin-top:20px}
-.card{display:grid;grid-template-columns:auto 1fr;gap:10px 12px;padding:12px;border:1px solid var(--rule);border-radius:12px;background:var(--surface)}
-.card.sel{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
-.covers{grid-column:1/-1;display:grid;grid-template-columns:1fr 2fr;gap:10px;align-items:end}
-.cv{display:flex;flex-direction:column;gap:4px;min-width:0}
-.cv .fr{aspect-ratio:2/3;background:var(--sunk);border-radius:6px;overflow:hidden;display:grid;place-items:center;box-shadow:inset 0 0 0 1px var(--rule)}
-.cv img{width:100%;height:100%;object-fit:cover;display:block}
-.cv .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
-.cv.now img{opacity:.85}
-.cv.new .fr{cursor:pointer}
-.none{font-size:11px;color:var(--ink-faint);padding:6px;text-align:center}
-.pick{grid-row:2;align-self:start;margin-top:0;width:24px;height:24px;accent-color:var(--accent)}
-.meta{grid-row:2;min-width:0}
-.t{font-family:var(--serif);font-weight:600;line-height:1.25}
-.a{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:.92rem}
-.iss{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:4px}
-.alts{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
-.alts button{font-size:11px;padding:3px 8px;border:1px solid var(--rule-strong);border-radius:6px;background:transparent;color:var(--ink-soft);cursor:pointer}
-.alts button[aria-pressed="true"]{border-color:var(--ink);color:var(--ink)}
-.badge{display:inline-block;margin-top:6px;font-size:11px;padding:2px 7px;border-radius:99px;background:var(--surface-2);color:var(--ink-soft)}
-.state{font-size:12px;margin-top:6px}
-.state.ok{color:var(--ok)} .state.bad{color:var(--accent)}
-.dock{position:fixed;left:var(--rail-w);right:0;bottom:var(--rail-bar);z-index:30;display:flex;align-items:center;gap:16px;justify-content:center;
-  padding:14px 20px;background:var(--surface);border-top:1px solid var(--rule-strong);box-shadow:0 -10px 30px -20px rgba(0,0,0,.4)}
-.dock .prog{font-size:13px;color:var(--ink-soft);min-width:0}
-html{scroll-padding-bottom:calc(var(--rail-bar) + 96px)}   /* focus never lands under the dock */
-.go{padding:10px 18px;border-radius:9px;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);font-weight:600;font-size:14px;cursor:pointer}
-.go:disabled{opacity:.5;cursor:default}
-.msg{padding:60px 0;text-align:center;color:var(--ink-soft)}
-:focus-visible{outline:2px solid var(--iron);outline-offset:2px}
-@media (max-width:640px){
-  .wrap{padding:20px 16px calc(var(--rail-bar) + 150px)} h1{font-size:1.8rem}
-  .grid{grid-template-columns:1fr}
-  .count{margin-left:0;width:100%}
-  .dock{flex-direction:column;gap:8px}
-  html{scroll-padding-bottom:calc(var(--rail-bar) + 150px)}
+/* What the Living Library's two rooms share (decision 0029): the Reading Room (templates/reader.html) and your
+   shelves (templates/library.html). One header with the room switch (partials/rooms.html), then the house covers
+   and the rows they stand in, so a book looks the same in both rooms. Covers are drawn by static/js/covers.js.
+   The cover rules moved here unchanged from reader.css. */
+
+/* ---- the rooms' header: eyebrow, the room's title, and the switch between rooms ---- */
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500}
+h1.title{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,5vw,3rem);line-height:1.04;margin:.28em 0 .5em;letter-spacing:-.015em}
+.rooms{display:flex;gap:28px;border-bottom:1px solid var(--rule);margin:0 0 28px}
+.rooms a{position:relative;padding:2px 0 11px;font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--ink-soft);text-decoration:none}
+.rooms a:hover{color:var(--ink)}
+.rooms a[aria-current="page"]{color:var(--ink)}
+.rooms a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;border-radius:2px;background:var(--accent)}
+.rooms a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+@media (pointer:coarse){ .rooms a{display:inline-flex;align-items:center;min-height:44px;padding-bottom:6px} }
+
+.shelf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:30px 22px}
+/* bespoke cloth-bound cover — no images; typeset per book, colored by section */
+.cover{position:relative;display:flex;flex-direction:column;justify-content:center;aspect-ratio:2/3;
+  border-radius:3px 6px 6px 3px;padding:20px 16px 16px 22px;color:#f4ecd8;overflow:hidden;
+  background:var(--cloth,#4a4038);text-decoration:none;isolation:isolate;
+  box-shadow:0 10px 22px -14px rgba(20,14,6,.7), 0 1px 2px rgba(0,0,0,.3);
+  transition:transform .16s ease, box-shadow .16s ease}
+.cover::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(155deg,rgba(255,255,255,.14),rgba(255,255,255,0) 42%),
+    radial-gradient(120% 80% at 80% 0,rgba(255,255,255,.10),transparent 60%),
+    linear-gradient(90deg,rgba(0,0,0,.34) 0 5px,rgba(0,0,0,.10) 5px 9px,transparent 9px)}
+.cover::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;mix-blend-mode:overlay;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 2px,transparent 2px 3px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 2px,transparent 2px 3px)}
+.cover:hover,.cover.flip-in{transform:translateY(-5px);box-shadow:0 20px 34px -16px rgba(20,14,6,.78), 0 2px 3px rgba(0,0,0,.3)}
+.cover:hover{text-decoration:none}
+.cv-title{font-family:var(--serif);font-weight:600;font-size:1.02rem;line-height:1.2;letter-spacing:-.005em;
+  color:#f7efdc;text-shadow:0 1px 1px rgba(0,0,0,.35);
+  display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.cv-rule{width:26px;height:2px;background:rgba(247,239,220,.55);margin:11px 0 9px;flex:none}
+.cv-author{font-family:var(--serif);font-style:italic;font-size:.82rem;line-height:1.3;color:rgba(247,239,220,.82);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cv-sec{position:absolute;left:22px;right:14px;bottom:12px;font-family:var(--mono);font-size:8.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:rgba(247,239,220,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* real cover art (Open Library / Google Books), overlaid on the cloth fallback */
+.cv-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;background:transparent;
+  border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);opacity:0;transition:opacity .25s ease}
+.cv-img.ld{opacity:1}
+@media (prefers-reduced-motion:reduce){.cv-img{transition:none}}
+/* hover flip: cover art turns over to the cloth wrap (title + author always legible). The tile
+   narrows edge-on, the image drops out at the midpoint, and it opens back up showing the wrap.
+   Mouse/trackpad only; touch keeps the art. Reduced motion gets a plain crossfade. */
+@keyframes cvFlipIn{0%{scale:1 1}50%{scale:0 1}100%{scale:1 1}}
+@keyframes cvFlipOut{0%{scale:1 1}50%{scale:0 1}100%{scale:1 1}}
+@keyframes cvArtOff{0%,49.9%{opacity:1}50%,100%{opacity:0}}
+@keyframes cvArtOn{0%,49.9%{opacity:0}50%,100%{opacity:1}}
+.cover.wrapped .cv-img.ld{opacity:0}   /* book-wrap mode: the wrap faces out, the art is the reverse */
+/* the Book Wrap toggle turns every visible book at once (any device, not just hover) */
+@keyframes cvTurn{0%{scale:1 1}50%{scale:0 1}100%{scale:1 1}}
+.cover.turn-to-wrap,.cover.turn-to-art{animation:cvTurn .4s ease-in-out}
+.cover.has-img.turn-to-wrap .cv-img{animation:cvArtOff .4s ease-in-out}
+.cover.has-img.turn-to-art .cv-img{animation:cvArtOn .4s ease-in-out}
+@media (prefers-reduced-motion:reduce){
+  .cover.turn-to-wrap,.cover.turn-to-art,.cover.has-img.turn-to-wrap .cv-img,.cover.has-img.turn-to-art .cv-img{animation:none}
+}
+@media (hover:hover) and (pointer:fine){
+  .cover.has-img.flip-in{animation:cvFlipIn .34s ease-in-out}
+  .cover.has-img.flip-in .cv-img{animation:cvArtOff .34s ease-in-out forwards}
+  .cover.has-img.flip-out{animation:cvFlipOut .34s ease-in-out}
+  .cover.has-img.flip-out .cv-img{animation:cvArtOn .34s ease-in-out}
+  .cover.has-img.wrapped.flip-in .cv-img{animation:cvArtOn .34s ease-in-out forwards}
+  .cover.has-img.wrapped.flip-out .cv-img{animation:cvArtOff .34s ease-in-out}
+}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:reduce){
+  .cover.has-img.flip-in,.cover.has-img.flip-out,.cover.has-img.flip-out .cv-img,
+  .cover.has-img.wrapped.flip-out .cv-img{animation:none}
+  .cover.has-img.flip-in .cv-img{animation:none;opacity:0;transition:opacity .2s ease}
+  .cover.has-img.wrapped.flip-in .cv-img{animation:none;opacity:1;transition:opacity .2s ease}
+}
+/* the house cloth cover (Book Wrap): under the art, over the CSS wrap it replaces */
+.cv-house{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;border-radius:inherit;
+  opacity:0;transition:opacity .25s ease}
+.cv-house.ld{opacity:1}
+@media (prefers-reduced-motion:reduce){.cv-house{transition:none}}
+/* per-book cover style (every reader) */
+.cv-cog{position:absolute;right:6px;bottom:6px;z-index:4;width:26px;height:26px;display:none;place-items:center;
+  border:0;border-radius:7px;background:rgba(18,12,5,.74);color:#f4ecd8;padding:0;backdrop-filter:blur(2px);
+  box-shadow:0 1px 3px rgba(0,0,0,.4);cursor:pointer}
+.cv-cog svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.7}
+.cover:hover .cv-cog,.cover.flip-in .cv-cog,.cover:focus-within .cv-cog{display:grid}   /* keyboard: Tab from the book reaches its cog */
+@media (hover:none){.cv-cog{display:grid;opacity:.8}}
+.cv-cog:hover{background:var(--accent);color:var(--on-accent)}
+/* shelve a book from the Reading Room (decision 0029): a plus on hover, a check that stays once it's yours. It takes
+   the cover's lower left, opposite the style cog, and the section line steps aside for a check that stays. */
+.cv-shelf{position:absolute;left:6px;bottom:6px;z-index:4;width:26px;height:26px;display:none;place-items:center;
+  border:0;border-radius:7px;background:rgba(18,12,5,.74);color:#f4ecd8;padding:0;backdrop-filter:blur(2px);
+  box-shadow:0 1px 3px rgba(0,0,0,.4);cursor:pointer}
+.cv-shelf svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cover:hover .cv-shelf,.cover.flip-in .cv-shelf,.cover:focus-within .cv-shelf,.cv-shelf[aria-pressed="true"]{display:grid}
+.cv-shelf:hover{background:var(--accent);color:var(--on-accent)}
+.cover:has(.cv-shelf[aria-pressed="true"]) .cv-sec{left:40px}
+@media (hover:none){ .cv-shelf{display:none} .cv-shelf[aria-pressed="true"]{display:grid;opacity:.85} }
+.cv-flag{position:absolute;top:0;right:12px;width:16px;height:26px;background:var(--accent);z-index:3;
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%)}  /* "in progress" ribbon */
+
+/* ---- the front table (2026-11-09): what the reader has in hand, then two shelves worth starting with ----
+   Shown above the whole library only when nothing is searched or filtered. Each row is a strip that scrolls
+   sideways: by trackpad or touch, by the arrows for a mouse, by Tab for a keyboard. */
+.front{margin:0 0 6px}
+.fr-row{margin:0 0 34px}
+.fr-h{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
+.fr-h h2{font-family:var(--serif);font-weight:600;font-size:1.32rem;line-height:1.2;letter-spacing:-.005em;margin:0;color:var(--ink)}
+.fr-h > span{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--ink-soft)}
+.fr-nav{margin-left:auto;display:flex;gap:6px;align-self:center}
+.fr-nav[hidden]{display:none}
+.fr-nav button{width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--rule-strong);border-radius:9px;
+  background:var(--surface);color:var(--ink-soft);padding:0}
+.fr-nav button:hover{color:var(--ink);border-color:var(--brass)}
+.fr-nav button:disabled{opacity:.4;cursor:default;border-color:var(--rule)}
+.fr-nav svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fr-books{display:grid;grid-auto-flow:column;grid-auto-columns:148px;gap:22px;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x proximity;scroll-padding-left:2px;padding:8px 2px 14px;margin:-8px -2px 0;
+  scrollbar-width:thin;scrollbar-color:var(--rule-strong) transparent;overscroll-behavior-x:contain}
+.fr-books::-webkit-scrollbar{height:6px}
+.fr-books::-webkit-scrollbar-thumb{background:var(--rule-strong);border-radius:6px}
+.fr-cell{scroll-snap-align:start;min-width:0}
+.fr-cap-phone{display:none}
+.fr-cap.fr-cap-2{white-space:pre-line;line-height:1.35}   /* two facts, a line each */   /* says what the cover's foot line says, where a phone hides that line */
+.fr-cap{margin-top:9px;font-family:var(--sans);font-size:12.5px;color:var(--ink-soft);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+.fr-all{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-faint);margin:6px 0 12px}
+@media (prefers-reduced-motion:no-preference){ .fr-books{scroll-behavior:smooth} }
+@media (max-width:760px){
+  .fr-row{margin-bottom:24px}
+  .fr-h{margin-bottom:10px;gap:4px 10px}
+  .fr-h h2{font-size:1.12rem}
+  .fr-h > span{font-size:.86rem;flex-basis:100%;order:3}
+  .fr-nav{display:none}
+  .fr-books{grid-auto-columns:104px;gap:12px;margin:-8px -16px 0;padding:8px 16px 10px;scroll-padding-left:16px}
+  .fr-cap{font-size:11.5px;margin-top:7px}
+  .fr-cap-phone{display:block}
+}
+@media (max-width:760px){
+  .shelf-grid{grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:18px 12px}
+  .cover{padding:12px 8px 10px 13px;border-radius:2px 4px 4px 2px}
+  .cover::before{background:linear-gradient(155deg,rgba(255,255,255,.14),rgba(255,255,255,0) 42%),
+    linear-gradient(90deg,rgba(0,0,0,.34) 0 3px,rgba(0,0,0,.10) 3px 6px,transparent 6px)}
+  .cover:hover,.cover.flip-in{transform:none}
+  .cv-title{font-size:.78rem;line-height:1.18;-webkit-line-clamp:5}
+  .cv-rule{width:16px;height:1.5px;margin:7px 0 6px}
+  .cv-author{font-size:.66rem}
+  .cv-sec{display:none}
+  .cv-flag{right:7px;width:11px;height:18px}
+}
+@media (pointer:coarse){
+  /* the cover cog keeps its small chip but takes a 44px tap area in the tile's corner */
+  .cv-cog{right:0;bottom:0;width:44px;height:44px;padding:6px 0 0 6px;background:none;box-shadow:none;backdrop-filter:none}
+  .cv-cog::before{content:"";position:absolute;right:6px;bottom:6px;width:26px;height:26px;border-radius:7px;z-index:-1;
+    background:rgba(18,12,5,.74);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+  .cv-cog:hover{background:none}
+  .cv-cog:hover::before{background:var(--accent)}
 }

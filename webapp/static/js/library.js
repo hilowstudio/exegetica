@@ -1,4 +1,6 @@
-/* The Living Library · Exegetica page (templates/library.html). The rail, theme and Need help now? come from static/js/shell.js. */
+/* A teacher's part of the Living Library's front room (templates/library.html, decision 0029): the videos,
+   podcasts and books they brought in, each on its own shelf, and the Add dialog. The class shelves and the
+   Reading Room books everyone shelves are static/js/shelves.js. The rail and theme come from static/js/shell.js. */
 "use strict";
 var $=function(id){return document.getElementById(id);};
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
@@ -8,31 +10,12 @@ var ACCENTS=["#8f2533","#2f4d5c","#5b4b8a","#3f6b4f","#9a7c3d","#7a3b52","#2e5b5
 var ai=0; function nextAccent(){return ACCENTS[ai++%ACCENTS.length];}
 function uid(){return "r"+Math.random().toString(36).slice(2,8);}
 
-// ---------- seed library (skin only) ----------
-var DEMO_SEED=[
-  {id:uid(),type:"book",title:"The Pilgrim's Progress",sub:"John Bunyan",meta:"1678",accent:"#8f2533"},
-  {id:uid(),type:"book",title:"Confessions",sub:"Augustine of Hippo",meta:"AD 397",accent:"#2f4d5c"},
-  {id:uid(),type:"podcast",title:"Renewing Your Mind",sub:"Ligonier Ministries",meta:"1,200+ episodes",accent:"#5b4b8a"},
-  {id:uid(),type:"video",title:"The Water Cycle, Explained",sub:"Crash Course Kids",meta:"9:14",accent:"#3f6b4f"}
-];
-var LIB=[], booting=true, anon=false;
+var LIB=[], booting=true;
 
-var TYPE_UI={
-  book:{title:"Bring a book into your library",placeholder:"Search a book by title, author, or ISBN…",add:"Search",
-    hint:"Searches OpenLibrary and Google Books. Pick an edition to add.",
-    lead:'<svg viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H12v15H5.5A1.5 1.5 0 0 0 4 20.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H12v15h6.5a1.5 1.5 0 0 1 1.5 1.5z"/></svg>'},
-  podcast:{title:"Bring a podcast into your library",placeholder:"Search Apple Podcasts by show or host…",add:"Search",
-    hint:"Searches Apple Podcasts. Pick a show and we save its feed.",
-    lead:'<svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></svg>'},
-  video:{title:"Bring a video into your library",placeholder:"Search YouTube, or paste a link…",add:"Search",
-    hint:"Search YouTube by topic, re-ranked by meaning, or paste a link.",
-    lead:'<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg>'}
-};
-
-var curType="book", curFilter="all";
+var curType="book";
 var AUTH={signed:false,user:null,admin:false};  // resolved in initLibrary(); shelf persists to Neon when signed in
-var wrap=(function(){try{return localStorage.getItem("studybible.lib.wrap")==="on";}catch(e){return false;}})();
-var sortKey=(function(){try{return localStorage.getItem("studybible.lib.sort")==="title"?"title":"author";}catch(e){return "author";}})();
+var wrap=false;           // a teacher's own copies show their cover art
+var sortKey="author";
 
 // ---------- render ----------
 function coverHTML(it){
@@ -47,25 +30,6 @@ function coverHTML(it){
   }
   if(!wrap&&it.thumbnail) return '<div class="media cover-img vidthumb" style="background-image:url('+cssurl(it.thumbnail)+')"><span class="play">▶</span></div>';
   return '<div class="media video" style="--c:'+it.accent+'"><span class="thumbtint"></span><span class="play">▶</span>'+(it.meta?'<span class="dur">'+esc(it.meta)+'</span>':'')+'</div>';
-}
-function cardHTML(it){
-  var label=it.type==="book"?"Book":it.type==="podcast"?"Podcast":"Video";
-  var metaRight=it.type==="video"?'<span class="c-meta"></span>':('<span class="c-meta">'+esc(it.meta||"")+'</span>');
-  var status=(it.type==="book"&&it.ready)
-    ? '<span class="status ready" title="Study materials ready">Materials ready</span>'
-    : (it.type==="book" ? '<span class="status">Not built yet</span>' : '');
-  return '<div class="card'+(it.fresh?" fresh":"")+'" data-id="'+it.id+'" role="button" tabindex="0">'+   // keyboard: Enter/Space open it (see #grid keydown)
-    coverHTML(it)+
-    '<span class="c-badge '+it.type+'"><span class="dot"></span>'+label+'</span>'+
-    '<div class="c-title">'+esc(it.title)+'</div>'+
-    '<div class="c-sub">'+esc(it.sub)+'</div>'+
-    '<div class="c-foot">'+metaRight+status+'</div>'+
-  '</div>';
-}
-function counts(){
-  var c={all:LIB.length,book:0,podcast:0,video:0};
-  LIB.forEach(function(it){c[it.type]++;});
-  $("n-all").textContent=c.all;$("n-book").textContent=c.book;$("n-podcast").textContent=c.podcast;$("n-video").textContent=c.video;
 }
 function stripArticle(s){return String(s||"").trim().replace(/^(the|a|an)\s+/i,"");}
 // Filing key for an author: strips suffixes (Jr, III, PhD, OP...), files a
@@ -110,26 +74,16 @@ function renderShelf(items){
   }
   host.innerHTML=html;
 }
+// Each kind on its own shelf, shown once it holds something. The group's heading shows with the first.
 function render(){
-  counts();
-  if(booting){["grid","shelf","records","films"].forEach(function(x){$(x).style.display="none";});$("empty").innerHTML='<h3>Loading your library\u2026</h3><p>One moment.</p>';$("empty").classList.remove("hidden");return;}
-  $("sortby").style.display=curFilter==="book"?"":"none";
-  var items=curFilter==="all"?LIB:LIB.filter(function(it){return it.type===curFilter;});
-  $("grid").style.display="none";$("shelf").style.display="none";$("records").style.display="none";$("films").style.display="none";
-  if(items.length){
-    if(curFilter==="book"){renderShelf(sortBooks(items));$("shelf").style.display="";}
-    else if(curFilter==="podcast"){renderRecords(items);$("records").style.display="";}
-    else if(curFilter==="video"){renderFilms(items);$("films").style.display="";}
-    else{$("grid").innerHTML=items.map(cardHTML).join("");$("grid").style.display="";}
-  }
-  if(!items.length){
-    var E={all:["Your library is empty","Add a book, podcast, or video with the omnibox above, or browse the ready library for titles already built into study materials."],
-           book:["No books on your shelf yet","Search a title above, or browse the ready library for books already built into study materials, which open instantly."],
-           podcast:["No podcasts yet","Search Apple Podcasts with the omnibox above to add a show."],
-           video:["No videos yet","Search YouTube or paste a link with the omnibox above."]}[curFilter]||["Nothing here yet","Add a book, podcast, or video with the omnibox above."];
-    $("empty").innerHTML='<h3>'+esc(E[0])+'</h3><p>'+esc(E[1])+'</p>';
-  }
-  $("empty").classList.toggle("hidden",items.length>0);
+  if(booting)return;
+  var by={video:[],podcast:[],book:[]};
+  LIB.forEach(function(it){if(by[it.type])by[it.type].push(it);});
+  if(by.video.length)renderFilms(by.video);
+  if(by.podcast.length)renderRecords(by.podcast);
+  if(by.book.length)renderShelf(sortBooks(by.book));
+  $("sec-video").hidden=!by.video.length;$("sec-podcast").hidden=!by.podcast.length;$("sec-book").hidden=!by.book.length;
+  $("media").hidden=!LIB.length;
   LIB.forEach(function(it){it.fresh=false;});
 }
 function openBook(id){
@@ -223,16 +177,17 @@ function openScreen(id){
 }
 $("films").addEventListener("click",function(e){var b=e.target.closest(".film");if(b)openScreen(b.dataset.id);});
 $("screen-close").addEventListener("click",function(){$("screen-bg").classList.remove("open");});
-$("grid").addEventListener("click",function(e){var c=e.target.closest(".card");if(!c)return;var it=null,k;for(k=0;k<LIB.length;k++){if(LIB[k].id===c.dataset.id){it=LIB[k];break;}}if(!it)return;if(it.type==="book")openBook(it.id);else if(it.type==="podcast")openPlayer(it.id);else openScreen(it.id);});
-$("grid").addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" ")return;var c=e.target.closest(".card");if(!c||c!==e.target)return;e.preventDefault();c.click();});
-var _rz;window.addEventListener("resize",function(){clearTimeout(_rz);_rz=setTimeout(function(){if(curFilter==="book")render();},160);});
+var _rz;window.addEventListener("resize",function(){clearTimeout(_rz);_rz=setTimeout(render,160);});   // the shelves refit
 // A saved item can go into a Prep Room unit from here (static/js/passage.js lists the teacher's units in place).
-function _unitBtn(it){return AUTH.signed&&window.Passage&&Passage.teacher?'<div class="lib-tools"><button type="button" class="shell-tool" data-unit-item="'+esc(it.id)+'" aria-haspopup="true" aria-expanded="false">'+Passage.icons.prep+'Add to a unit</button></div>':"";}
+// A video can also go on a class shelf, so it says "Save to…"; a podcast or a brought-in book goes to a unit.
+function _unitBtn(it){if(!(AUTH.signed&&window.Passage&&Passage.teacher))return "";var v=it.type==="video";
+  return '<div class="lib-tools"><button type="button" class="shell-tool" data-unit-item="'+esc(it.id)+'" aria-haspopup="true" aria-expanded="false">'+
+    (v?Passage.icons.save+'Save to…':Passage.icons.prep+'Add to a unit')+'</button></div>';}
 document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-unit-item]");if(!b)return;
   var it=LIB.filter(function(x){return x.id===b.getAttribute("data-unit-item");})[0];
-  if(it)Passage.addToUnit({kind:"library",ref:{item_id:it.id},label:it.title},b);});
+  if(it)Passage.addToUnit({kind:"library",ref:{item_id:it.id},label:it.title},b,null,
+    it.type==="video"?{place:{kind:"video",ref:{item_id:it.id},label:it.title}}:null);});
 function _rmBtn(it){return '<button type="button" class="lib-remove" data-remove="'+it.id+'">Remove from library</button>';}
-function _place(it){ if(curFilter!=="all"&&curFilter!==it.type){curFilter="all";syncFilters();} }
 function addItem(it,cb){
   if(AUTH.signed){
     fetch("/api/library/shelf",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify(it)})
@@ -240,11 +195,11 @@ function addItem(it,cb){
         if(!d||!d.item){toast("Could not save. Try again.");return;}
         var x=d.item;x.fresh=true;
         if(!LIB.some(function(y){return y.id===x.id;}))LIB.unshift(x);
-        _place(x);render();toast("“"+x.title+"” added to your library");
+        render();toast("Added “"+x.title+"” to your shelves");
         if(cb)cb(x);
       }).catch(function(){toast("Could not save. Try again.");});
   }else{
-    it.id=uid();it.fresh=true;LIB.unshift(it);_place(it);render();
+    it.id=uid();it.fresh=true;LIB.unshift(it);render();
     toast("Added for this visit. Sign in to save it to your library.");if(cb)cb(it);
   }
 }
@@ -400,33 +355,31 @@ $("up-cancel").addEventListener("click",function(){$("upload-bg").classList.remo
 $("up-submit").addEventListener("click",submitUpload);
 $("upload-bg").addEventListener("click",function(e){if(e.target===$("upload-bg"))$("upload-bg").classList.remove("open");});
 
-// ---------- omnibox ----------
-function syncType(){
-  var ui=TYPE_UI[curType];
-  $("omni-title").textContent=ui.title;
-  $("omni-input").placeholder=ui.placeholder;
-  $("omni-add").textContent=ui.add;
-  $("omni-lead").innerHTML=ui.lead;
-  $("omni-hint").innerHTML='<span class="k">tip</span> '+ui.hint;
-  Array.prototype.forEach.call($("types").children,function(b){b.classList.toggle("on",b.dataset.t===curType);});
-}
-$("types").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;curType=b.dataset.t;syncType();});
-$("omni-add").addEventListener("click",openAdd);
-$("omni-input").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();openAdd();}});
-function openAdd(){openSearch(curType,$("omni-input").value.trim());}
-
 // ---------- live search (books via OpenLibrary/Google Books, podcasts via iTunes) ----------
-var SEARCH_KIND="book", SR=[], CAT=[], stTimer=null, SEARCH_NOTE="No matches found.";
+var SEARCH_KIND="video", SR=[], CAT=[], stTimer=null, SEARCH_NOTE="No matches found.", searchOpener=null;
+$("types").addEventListener("click",function(e){var b=e.target.closest("[data-t]");if(b)openSearch(b.dataset.t,$("search-q").value.trim());});
+$("add-open").addEventListener("click",function(){openSearch(curType,"");});
+// One dialog adds anything: a video or podcast, or a book. A book is looked for in the Reading Room first, where
+// shelving it is all there is to do; one Exegetica doesn't have can be brought in with its study materials.
 function openSearch(kind,prefill){
-  SEARCH_KIND=kind;
-  var T={book:["Find a book","Search by title, author, or ISBN, then pick the edition to add.","Search books","e.g. The Pilgrim's Progress, or Homer"],
-         podcast:["Find a podcast","Search Apple Podcasts, then pick the show to add.","Search podcasts","e.g. Renewing Your Mind"],
-         video:["Find a video","Search YouTube, or paste a link, then pick the video to add.","Search videos","e.g. photosynthesis, or paste a YouTube link"]}[kind];
-  $("search-title").textContent=T[0];$("search-sub").textContent=T[1];$("search-label").textContent=T[2];$("search-q").placeholder=T[3];
+  SEARCH_KIND=kind;curType=kind;
+  var form=kind==="upload"||kind==="link";   // an upload or a link is a short form, not a search
+  $("search-fld").hidden=form;$("search-results").hidden=form;$("up-form").hidden=kind!=="upload";$("ln-form").hidden=kind!=="link";
+  $("up2-go").hidden=kind!=="upload";$("ln2-go").hidden=kind!=="link";
+  Array.prototype.forEach.call(document.querySelectorAll(".add-err"),function(p){p.hidden=true;});
+  var T={book:["Search the Reading Room by title or author. A book it doesn't have, you can upload.","Search books","e.g. The Pilgrim's Progress, or Homer"],
+         upload:["A book, an article, a handout or notes. Exegetica reads it, files it as the kind of thing it is, and keeps it encrypted on your shelves.","",""],
+         link:["An article or an online PDF. Exegetica reads the page and keeps it on your shelves as an article, with a link to the original.","",""],
+         podcast:["Search Apple Podcasts, then pick the show to add.","Search podcasts","e.g. Renewing Your Mind"],
+         video:["Search YouTube, or paste a link, then pick the video to add.","Search videos","e.g. photosynthesis, or paste a YouTube link"]}[kind];
+  $("search-sub").textContent=T[0];if(!form){$("search-label").textContent=T[1];$("search-q").placeholder=T[2];}
+  if(kind==="upload"&&prefill){$("up2-title").value=prefill;}
+  Array.prototype.forEach.call($("types").children,function(b){b.setAttribute("aria-selected",String(b.dataset.t===kind));});
   $("search-q").value=prefill||"";
   SR=[];$("search-results").innerHTML='<div class="s-note">Type to search.</div>';
-  $("search-bg").classList.add("open");setTimeout(function(){$("search-q").focus();},30);
-  if(prefill&&prefill.trim().length>=2){$("search-results").innerHTML='<div class="s-note">Searching…</div>';runSearch(prefill.trim());}
+  if(!$("search-bg").classList.contains("open")){searchOpener=document.activeElement;$("search-bg").classList.add("open");}
+  setTimeout(function(){(kind==="upload"?$("up2-file"):kind==="link"?$("ln2-url"):$("search-q")).focus();},30);
+  if(!form&&prefill&&prefill.trim().length>=2){$("search-results").innerHTML='<div class="s-note">Searching…</div>';runSearch(prefill.trim());}
 }
 $("search-q").addEventListener("input",function(){
   clearTimeout(stTimer);var q=$("search-q").value.trim();
@@ -438,11 +391,11 @@ function runSearch(q){
   if(SEARCH_KIND==="book"){
     // Ready (already-seeded) catalog first, external Google Books second, fetched in parallel.
     Promise.all([
-      fetch("/api/library/catalog?q="+encodeURIComponent(q),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():{catalog:[]};}).catch(function(){return {catalog:[]};}),
-      fetch("/api/library/books?q="+encodeURIComponent(q)).then(function(r){return r.ok?r.json():{results:[],__err:true};}).catch(function(){return {results:[],__err:true};})
+      fetch("/api/prep/books?q="+encodeURIComponent(q),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():{results:[]};}).catch(function(){return {results:[]};}),
+      Promise.resolve({results:[]})
     ]).then(function(res){
       if($("search-q").value.trim()!==q)return;
-      CAT=res[0].catalog||[];SR=res[1].results||[];
+      CAT=(res[0].results||[]).slice(0,8);SR=res[1].results||[];
       SEARCH_NOTE=res[1].__err?"Book search failed. Try again.":"No matches found.";
       renderSearch();
     });
@@ -459,21 +412,23 @@ function runSearch(q){
     renderSearch();
   }).catch(function(){SR=[];SEARCH_NOTE="Search failed. Try again.";renderSearch();});
 }
-function catResultHTML(x,i){
-  var mini=x.cover?'<img class="mini-img" src="'+esc(x.cover)+'" alt="" loading="lazy">':'<span class="mini" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
-  return '<button class="result ready" type="button" data-cat="'+i+'">'+mini+
-    '<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+esc(x.sub||"")+'</span></span>'+
-    '<span class="r-ready">Ready'+(x.objectives?' · '+x.objectives+' objectives':'')+'</span></button>';
+function catResultHTML(x,i){   // a Reading Room book: shelving it is all there is to do
+  var art=window.Covers?'<img class="mini-img" src="'+esc(Covers.CS.bookURL({slug:x.slug,title:x.title,author:x.author||"",sections:[]}))+'" alt="" loading="lazy">':'<span class="mini" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
+  return '<button class="result ready" type="button" data-cat="'+i+'">'+art+
+    '<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+esc(x.author||"")+'</span></span>'+
+    '<span class="r-ready">Shelve</span></button>';
 }
 function renderSearch(){
   if(SEARCH_KIND==="book"){
     var h="";
-    if(CAT.length)h+='<div class="s-note ready-head">Ready in the library: instant, no wait</div>'+CAT.map(catResultHTML).join("");
-    if(SR.length)h+=(CAT.length?'<div class="s-note">Or build a new one</div>':'')+SR.map(function(x,i){
+    if(CAT.length)h+='<div class="s-note ready-head">In the Reading Room</div>'+CAT.map(catResultHTML).join("");
+    h+='<div class="s-note up-offer">'+(CAT.length?"Not the one?":"Not in the Reading Room.")+' <button type="button" class="linkish" data-upload>Upload your copy</button></div>';
+    if(SR.length)h+=SR.map(function(x,i){
       var mini=x.cover?'<img class="mini-img" src="'+esc(x.cover)+'" alt="" loading="lazy">':'<span class="mini" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
       return '<button class="result" type="button" data-i="'+i+'">'+mini+'<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+esc(x.author||"Unknown author")+'</span></span><span class="r-y">'+esc(x.year||"")+'</span></button>';
     }).join("");
-    $("search-results").innerHTML=h||'<div class="s-note">'+esc(SEARCH_NOTE)+'</div>';
+    $("search-results").innerHTML=h;
+    var up=$("search-results").querySelector("[data-upload]");if(up)up.onclick=function(){openSearch("upload",$("search-q").value.trim());};
     return;
   }
   if(!SR.length){$("search-results").innerHTML='<div class="s-note">'+esc(SEARCH_NOTE)+'</div>';return;}
@@ -489,9 +444,11 @@ function renderSearch(){
 }
 $("search-results").addEventListener("click",function(e){
   var b=e.target.closest(".result");if(!b)return;
-  if(b.dataset.cat!==undefined){  // a ready, already-seeded book: add it and open its materials
+  if(b.dataset.cat!==undefined){  // a Reading Room book goes on the shelf (static/js/shelves.js draws it)
     var c=CAT[+b.dataset.cat];if(!c)return;
-    addItem({type:"book",title:c.title,sub:c.sub,meta:(c.objectives?c.objectives+" objectives ready":""),accent:nextAccent(),cover:c.cover||null},function(item){$("search-bg").classList.remove("open");openBook(item.id);});
+    fetch("/api/shelf/books/"+encodeURIComponent(c.slug),{method:"PUT",credentials:"same-origin"}).then(function(r){
+      if(!r.ok)throw new Error();closeSearch();toast("Shelved "+c.title);document.dispatchEvent(new CustomEvent("shelf:changed"));
+    }).catch(function(){toast("That book couldn't be shelved just now. Try again in a minute.");});
     return;
   }
   var x=SR[+b.dataset.i];if(!x)return;
@@ -502,74 +459,71 @@ $("search-results").addEventListener("click",function(e){
   }else{
     addItem({type:"podcast",title:x.title,sub:x.author||"",meta:x.episodes?(x.episodes+" episodes"):"Podcast",accent:nextAccent(),artwork:x.artwork||null,feed:x.feed||null});
   }
-  $("search-bg").classList.remove("open");
+  closeSearch();
 });
-$("search-cancel").addEventListener("click",function(){$("search-bg").classList.remove("open");});
-
-// ---------- browse the ready (seeded) library ----------
-var BROWSE=[], BROWSE_TOTAL=0, browseTimer=null;
-function loadBrowseCount(){
-  if(!AUTH.signed)return;
-  fetch("/api/library/catalog",{credentials:"same-origin"}).then(function(r){return r.ok?r.json():null;}).then(function(d){
-    var n=(d&&typeof d.total==="number")?d.total:((d&&d.catalog||[]).length), btn=$("browse-open"); if(!btn)return;
-    if(n>0){$("browse-count").textContent=n+" book"+(n===1?"":"s")+" built and ready to use";btn.hidden=false;}
-  }).catch(function(){});
-}
-function openBrowse(){$("browse-bg").classList.add("open");$("browse-q").value="";runBrowse("");setTimeout(function(){$("browse-q").focus();},30);}
-function runBrowse(q){
-  $("browse-grid").innerHTML='<div class="s-note">Loading…</div>';
-  fetch("/api/library/catalog?q="+encodeURIComponent(q),{credentials:"same-origin"}).then(function(r){return r.ok?r.json():{catalog:[]};}).then(function(d){
-    BROWSE=d.catalog||[];BROWSE_TOTAL=(typeof d.total==="number")?d.total:BROWSE.length;renderBrowse();
-  }).catch(function(){$("browse-grid").innerHTML='<div class="s-note">Could not load.</div>';});
-}
-function renderBrowse(){
-  var g=$("browse-grid"),c2=$("browse-count2");
-  if(c2)c2.textContent=BROWSE_TOTAL?(BROWSE_TOTAL+" ready"+(BROWSE_TOTAL>BROWSE.length?(" · showing "+BROWSE.length):"")):"";
-  if(!BROWSE.length){g.innerHTML='<div class="s-note">No ready books match.</div>';return;}
-  g.innerHTML=BROWSE.map(function(x,i){
-    var cover=x.cover?'<img src="'+esc(x.cover)+'" alt="" loading="lazy">':'<span class="bg-ph" style="--c:'+ACCENTS[i%ACCENTS.length]+'">'+esc(initials(x.title))+'</span>';
-    return '<button class="bg-card" type="button" data-i="'+i+'">'+cover+'<span class="bg-t">'+esc(x.title)+'</span><span class="bg-a">'+esc(x.sub||"")+'</span><span class="bg-n">'+x.objectives+' objectives</span></button>';
-  }).join("");
-}
+// an upload or a link: sent, read, filed; the toast says what it was filed as, and the shelf redraws
+var TYPE_WORD={book:"a book",article:"an article",handout:"a handout",document:"a document"};
+function addErr(form,msg){var p=form.querySelector(".add-err");p.textContent=msg;p.hidden=false;}
+$("up-form").addEventListener("submit",function(e){
+  e.preventDefault();var f=$("up2-file").files[0],form=$("up-form");if(!f){addErr(form,"Choose a file.");return;}
+  var fd=new FormData();fd.append("file",f);fd.append("title",$("up2-title").value.trim());fd.append("author",$("up2-author").value.trim());
+  var go=$("up2-go");go.disabled=true;go.textContent="Reading the file…";
+  fetch("/api/shelf/upload",{method:"POST",credentials:"same-origin",body:fd}).then(function(r){return r.json().then(function(d){if(!r.ok)throw new Error(d.error||"That upload didn't work.");return d;});})
+    .then(function(d){closeSearch();form.reset();toast("Filed “"+d.doc.title+"” as "+(TYPE_WORD[d.doc.type]||"a document")+". Change it from its menu if that's wrong.");
+      document.dispatchEvent(new CustomEvent("shelf:changed",{detail:{}}));})
+    .catch(function(err){addErr(form,err.message);}).then(function(){go.disabled=false;go.textContent="Upload";});
+});
+// the drop zone says which file is chosen, and offers its name as the title
 (function(){
-  var bo=$("browse-open"); if(bo)bo.addEventListener("click",openBrowse);
-  var bc=$("browse-close"); if(bc)bc.addEventListener("click",function(){$("browse-bg").classList.remove("open");});
-  var bq=$("browse-q"); if(bq)bq.addEventListener("input",function(){clearTimeout(browseTimer);var q=this.value.trim();browseTimer=setTimeout(function(){runBrowse(q);},220);});
-  var bg=$("browse-grid"); if(bg)bg.addEventListener("click",function(e){
-    var b=e.target.closest(".bg-card");if(!b)return;var x=BROWSE[+b.dataset.i];if(!x)return;
-    addItem({type:"book",title:x.title,sub:x.sub,meta:(x.objectives+" objectives ready"),accent:nextAccent(),cover:x.cover||null},function(item){
-      $("browse-bg").classList.remove("open");openBook(item.id);
-    });
-  });
+  var inp=$("up2-file"),zone=$("up2-drop");
+  function size(n){return n>=1048576?(n/1048576).toFixed(1)+" MB":Math.max(1,Math.round(n/1024))+" KB";}
+  function show(){var f=inp.files&&inp.files[0];zone.classList.toggle("has",!!f);
+    $("up2-name").textContent=f?f.name:"Choose a file, or drop it here";
+    $("up2-hint").textContent=f?size(f.size)+" · choose another to change it":"PDF, Word, EPUB or text, up to 15 MB";
+    $("up2-title").placeholder=f?f.name.replace(/\.[^.]+$/,"").replace(/_/g," "):"The file's name";}
+  inp.addEventListener("change",show);
+  ["dragenter","dragover"].forEach(function(t){inp.addEventListener(t,function(){zone.classList.add("over");});});
+  ["dragleave","drop"].forEach(function(t){inp.addEventListener(t,function(){zone.classList.remove("over");});});
+  $("up-form").addEventListener("reset",function(){setTimeout(show,0);});
 })();
-
-// ---------- filters ----------
-function syncFilters(){Array.prototype.forEach.call($("filters").children,function(b){b.classList.toggle("on",b.dataset.f===curFilter);});}
-$("filters").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;curFilter=b.dataset.f;syncFilters();render();});
-function syncWrap(){$("cwrap").setAttribute("aria-checked",wrap?"true":"false");}
-$("cwrap").addEventListener("click",function(){wrap=!wrap;try{localStorage.setItem("studybible.lib.wrap",wrap?"on":"off");}catch(e){}syncWrap();render();});
-function syncSort(){Array.prototype.forEach.call($("sortseg").children,function(b){b.classList.toggle("on",b.dataset.s===sortKey);});}
-$("sortseg").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;sortKey=b.dataset.s;try{localStorage.setItem("studybible.lib.sort",sortKey);}catch(e){}syncSort();render();});
+$("ln-form").addEventListener("submit",function(e){
+  e.preventDefault();var url=$("ln2-url").value.trim(),form=$("ln-form");
+  if(!/^https?:\/\//.test(url)){addErr(form,"Give a full address, starting with https://");return;}
+  var go=$("ln2-go");go.disabled=true;go.textContent="Reading the page…";
+  fetch("/api/shelf/link",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:url})})
+    .then(function(r){return r.json().then(function(d){if(!r.ok)throw new Error(d.error||"That page couldn't be saved.");return d;});})
+    .then(function(d){closeSearch();form.reset();toast("Saved “"+d.doc.title+"” as an article");document.dispatchEvent(new CustomEvent("shelf:changed",{detail:{}}));})
+    .catch(function(err){addErr(form,err.message);}).then(function(){go.disabled=false;go.textContent="Save the page";});
+});
+// an open dialog keeps the keyboard inside it until it closes
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Tab")return;
+  var bg=document.querySelector(".modal-bg.open");if(!bg)return;
+  var f=Array.prototype.filter.call(bg.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select,textarea,[tabindex]:not([tabindex="-1"])'),
+    function(x){return x.offsetParent!==null&&!x.closest("[hidden]");});
+  if(!f.length)return;var first=f[0],last=f[f.length-1],at=document.activeElement;
+  if(!bg.contains(at)){e.preventDefault();first.focus();}
+  else if(e.shiftKey&&at===first){e.preventDefault();last.focus();}
+  else if(!e.shiftKey&&at===last){e.preventDefault();first.focus();}
+});
+function closeSearch(){$("search-bg").classList.remove("open");if(searchOpener&&searchOpener.isConnected)searchOpener.focus();}
+$("search-cancel").addEventListener("click",closeSearch);
 
 // ---------- misc ----------
 function toast(msg, o){ Shell.toast(msg, o); }   // the shell's toast
 Array.prototype.forEach.call(document.querySelectorAll(".modal-bg"),function(bg){bg.addEventListener("click",function(e){if(e.target===bg)bg.classList.remove("open");});});
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!e.defaultPrevented)Array.prototype.forEach.call(document.querySelectorAll(".modal-bg"),function(bg){bg.classList.remove("open");});});
 
-syncType();syncFilters();syncWrap();syncSort();render();
-// Signed-in users get their persisted Neon shelf (replacing the demo seed);
-// anonymous visitors keep the in-memory demo shelf.
+// A teacher's own items: videos, podcasts and copies (the page loads this script only for a teacher).
 function initLibrary(){
   fetch("/api/me",{credentials:"same-origin"}).then(function(r){return r.json();}).then(function(d){
     AUTH.user=(d&&d.user)||null;AUTH.signed=!!AUTH.user;AUTH.admin=!!(d&&d.admin);
-    if(!AUTH.signed){anon=true;LIB=DEMO_SEED.slice();booting=false;render();return;}
+    if(!AUTH.signed)return;
     fetch("/api/library/shelf",{credentials:"same-origin"}).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(s){
       LIB=(s&&s.items)||[];booting=false;render();
-    }).catch(function(){booting=false;LIB=[];render();
-      $("empty").innerHTML='<h3>Couldn\u2019t load your library</h3><p>Something went wrong reaching the server. Refresh to try again.</p>';$("empty").classList.remove("hidden");});
-    loadBrowseCount();
+    }).catch(function(){booting=false;LIB=[];render();toast("Your videos and podcasts couldn\u2019t be loaded. Refresh to try again.");});
     if(AUTH.user.role==="teacher")loadReviews();
-  }).catch(function(){anon=true;LIB=DEMO_SEED.slice();booting=false;render();});
+  }).catch(function(){});
 }
 initLibrary();
 

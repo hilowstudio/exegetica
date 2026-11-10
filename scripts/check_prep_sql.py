@@ -32,8 +32,8 @@ def _tables(sql: str) -> str:
     users = re.search(r"create table if not exists users \(.*?\);", sql, re.S).group(0)
     prep_part = sql[sql.index("-- The Prep Room ("):]
     stand_ins = ("create table library_extractions (id uuid primary key, kind text, title text, creator text,"
-                 " source_url text);\ncreate table library_items (user_id uuid, extraction_id uuid, notes text,"
-                 " tags text[], added_at timestamptz);")
+                 " source_url text, cover_url text);\ncreate table library_items (user_id uuid, extraction_id uuid, notes text,"
+                 " tags text[], added_at timestamptz, unique (user_id, extraction_id));")
     return users + "\n" + stand_ins + "\n" + prep_part
 
 
@@ -200,6 +200,199 @@ async def main():
               and data["prep_resources"][0]["versions"] and data["courses_you_teach"],
               "the data export carries units, resources, versions and courses")
         check("feast" not in str(data), "the export doesn't repeat an upload's text")
+
+        # the Living Library's shelves (decision 0029)
+        from webapp import shelves
+        await shelves.shelve_book(me, "jane-austen_pride-and-prejudice", "Pride and Prejudice")
+        await shelves.shelve_book(me, "jane-austen_pride-and-prejudice", "Pride and Prejudice")     # twice is once
+        await shelves.shelve_book(me, "charles-dickens_great-expectations", "Great Expectations")
+        check(await shelves.shelved(me) == ["charles-dickens_great-expectations", "jane-austen_pride-and-prejudice"],
+              "shelve two books, newest first, a second shelving changing nothing")
+        await shelves.unshelve_book(me, "charles-dickens_great-expectations")
+        check(await shelves.shelved(me) == ["jane-austen_pride-and-prejudice"] and await shelves.shelved(other) == [],
+              "take one off, and another person's shelf stays empty")
+        await shelves.set_student_courses(other, ["bible-2", "lit-11"])
+        await shelves.set_student_courses(other, ["lit-11", "hist-us"])
+        check(sorted(await shelves.student_courses(other)) == ["hist-us", "lit-11"], "a student's classes are replaced as a set")
+        mine = await account.collect(me)
+        check([r["ref"]["slug"] for r in mine["your_shelf"]] == ["jane-austen_pride-and-prejudice"]
+              and "classes_you_take" in mine, "the data download carries the shelf and the classes taken")
+
+        # class shelves (decision 0029, phase 2): one per course, filled by its teachers, outliving them
+        from webapp import auth as _auth, teacher_courses
+        _auth.is_teacher = lambda u: bool(u)
+        leaver = uuid.uuid4()
+        await db.execute(f"insert into {schema}.users (id, google_sub, email, role) values ($1, $2, $3, 'teacher')",
+                         leaver, str(leaver), "l@school.test")
+        T = {me: {"id": str(me), "email": "t@school.test"}, other: {"id": str(other), "email": "o@school.test"},
+             leaver: {"id": str(leaver), "email": "l@school.test"}}
+        for who in T.values():
+            await teacher_courses.set_course(who["email"], "bible-2", True)
+        book = await shelves.place(T[me], "bible-2", "book", {"slug": "jane-austen_pride-and-prejudice"}, "students", "")
+        check(isinstance(book, dict) and book["audience"] == "students", "a teacher puts a Reading Room book on a class shelf")
+        check(await shelves.place(T[other], "bible-2", "book", {"slug": "jane-austen_pride-and-prejudice"}, "students", "")
+              == "Pride and Prejudice is already on that class shelf.", "the same book twice is refused, whoever adds it")
+        check(await shelves.place(T[me], "lit-11", "book", {"slug": "jane-austen_pride-and-prejudice"}, "students", "")
+              == "Choose that class in your classes first.", "a teacher places only on the classes they teach")
+        vid = uuid.uuid4()
+        await db.execute(f"insert into {schema}.library_extractions (id, kind, title, creator, source_url) values "
+                         "($1, 'video', 'Gospel of John, Part 1', 'BibleProject', 'https://www.youtube.com/watch?v=G-2e9mMf7E8')", vid)
+        whole = await shelves.place(T[leaver], "bible-2", "video", {"item_id": str(vid)}, "students", "")
+        moment = await shelves.place(T[leaver], "bible-2", "video", {"item_id": str(vid), "start": 0, "end": 30,
+                                                                       "note": "The Word made flesh"}, "teachers", "")
+        check(isinstance(whole, dict) and isinstance(moment, dict), "a whole video and a moment at 0:00 are two placements")
+        seen = await shelves.placements(["bible-2"], students_only=True)
+        check(sorted(p_["kind"] for p_ in seen) == ["book", "video"] and all(p_["audience"] == "students" for p_ in seen),
+              "students see only what is marked for them")
+        held = await shelves.class_holding(T[other], "book", "jane-austen_pride-and-prejudice")
+        check(held and held[0]["key"] == "bible-2" and held[0]["holds"]["id"] == book["id"], "a teacher's classes show where a book already is")
+        off = await shelves.take_off(T[other], uuid.UUID(book["id"]))
+        check(isinstance(off, dict) and off["returned"] and "jane-austen_pride-and-prejudice" in await shelves.shelved(me),
+              "another teacher takes it off, and the book goes back to the shelf of the one who added it")
+        check(await shelves.set_audience(T[me], uuid.UUID(whole["id"]), "teachers") is True
+              and len(await shelves.placements(["bible-2"], students_only=True)) == 0, "a teacher keeps an item for teachers")
+        await db.execute(f"delete from {schema}.users where id = $1", leaver)
+        left = await shelves.placements(["bible-2"], students_only=False)
+        check(len(left) == 2 and all(p_["added_by"] is None for p_ in left),
+              "the class keeps what a departed teacher added, with nothing that names them")
+        off = await shelves.take_off(T[me], uuid.UUID(left[0]["id"]))
+        check(isinstance(off, dict) and not off["returned"], "with no account to return it to, taking it off deletes it")
+        mine_out = await account.collect(me)
+        check("placed_on_class_shelves" in mine_out, "the data download lists what you placed on class shelves")
+
+        # a teacher's uploads and links (decision 0029, phase 3): kept encrypted, copied to a class, returned
+        from webapp import shelf_docs
+        text = "The feast of booths lasted seven days. " * 40
+        up = await shelf_docs._store(me, "upload", {"type": "handout", "title": "John 7 guide", "filename": "g.docx",
+                                                    "format": "docx"}, "John 7 guide", text)
+        lk = await shelf_docs._store(me, "link", {"type": "article", "title": "Living Water", "url": "https://example.org/w",
+                                                  "site": "example.org"}, "Living Water", text)
+        check(isinstance(up, dict) and up["words"] == 280 and await shelf_docs.text_of(uuid.UUID(up["id"])) == text
+              and await db.fetchval("select position(convert_to('booths', 'UTF8') in ct) from shelf_texts where item_id = $1",
+                                    uuid.UUID(up["id"])) == 0,
+              "an upload's text is kept, encrypted")
+        check([d["title"] for d in await shelf_docs.mine(me)] == ["Living Water", "John 7 guide"] and await shelf_docs.mine(other) == [],
+              "a teacher's uploads and links are theirs, newest first")
+        check(await shelf_docs.readable_by(T[other], uuid.UUID(up["id"])) is None
+              and await shelf_docs.readable_by(T[me], uuid.UUID(up["id"])) is not None, "no one else reads a teacher's own upload")
+        shared = await shelves.place(T[me], "bible-2", "upload", {"item_id": up["id"]}, "students", "")
+        check(isinstance(shared, dict) and shared["ref"]["origin"] == up["id"]
+              and await shelf_docs.text_of(uuid.UUID(shared["id"])) == text, "a shared upload's class copy keeps its own text")
+        check(await shelves.place(T[other], "bible-2", "upload", {"item_id": shared["id"]}, "students", "")
+              == "John 7 guide is already on that class shelf.", "the class copy shared again is refused as the same thing")
+        pupil = uuid.uuid4()
+        await db.execute(f"insert into {schema}.users (id, google_sub, email, role) values ($1, $2, $3, 'student')",
+                         pupil, str(pupil), "p@school.test")
+        await shelves.set_student_courses(pupil, ["bible-2"])
+        P = {"id": str(pupil), "email": "p@school.test"}
+        check(await shelf_docs.readable_by(P, uuid.UUID(shared["id"])) is not None
+              and await shelf_docs.readable_by(P, uuid.UUID(up["id"])) is None, "a student of the class reads the class copy alone")
+        await shelves.set_audience(T[me], uuid.UUID(shared["id"]), "teachers")
+        check(await shelf_docs.readable_by(P, uuid.UUID(shared["id"])) is None, "kept for teachers, it closes to students")
+        await db.execute("delete from shelf_items where id = $1", uuid.UUID(up["id"]))      # as the Delete in its menu
+        check(await shelf_docs.text_of(uuid.UUID(shared["id"])) == text and await shelf_docs.text_of(uuid.UUID(up["id"])) is None,
+              "deleting the teacher's own copy leaves the class's")
+        off = await shelves.take_off(T[other], uuid.UUID(shared["id"]))
+        back = [d for d in await shelf_docs.mine(me) if d["title"] == "John 7 guide"]
+        check(isinstance(off, dict) and off["returned"] and len(back) == 1 and await shelf_docs.text_of(uuid.UUID(back[0]["id"])) == text,
+              "taken off by another teacher, it goes back to the one who shared it, text and all")
+        pl2 = await shelves.place(T[me], "bible-2", "link", {"item_id": lk["id"]}, "students", "")
+        await shelves.take_off(T[other], uuid.UUID(pl2["id"]))
+        check(sum(d["title"] == "Living Water" for d in await shelf_docs.mine(me)) == 1,
+              "when the teacher still has their own copy, nothing is duplicated")
+        unit_copy = await prep.add_source(me, uid_, "upload", {"filename": "g.docx", "format": "docx", "shelf": back[0]["id"]},
+                                          "John 7 guide", text=text)
+        check(isinstance(unit_copy, dict) and await prep.add_source(me, uid_, "upload", {"filename": "g.docx", "format": "docx",
+              "shelf": back[0]["id"]}, "John 7 guide", text=text) == "John 7 guide is already in this unit.",
+              "a unit holds a shelf upload once")
+
+        class Req:
+            def __init__(self, user, pid, method="POST", body=None, form=None):
+                self.user, self.path_params, self.method, self._b, self._f = user, {"id": str(pid)}, method, body or {}, form or {}
+
+            async def json(self):
+                return self._b
+
+            async def form(self):
+                return self._f
+        maker = {"id": str(uuid.uuid4()), "email": "maker@school.test"}
+        _auth.current_user = lambda r: r.user
+        _auth.is_admin = lambda u: u is maker
+        bk = await shelf_docs._store(me, "upload", {"type": "book", "title": "A Body of Divinity", "author": "Thomas Watson"},
+                                     "A Body of Divinity", text)
+        r1 = await shelf_docs.suggest(Req(T[me], bk["id"], body={"basis": "Published 1692"}))
+        r2 = await shelf_docs.suggest(Req(T[me], bk["id"], body={"basis": "Published 1692"}))
+        r3 = await shelf_docs.suggest(Req(T[other], bk["id"], body={"basis": "Published 1692"}))
+        waiting = await shelf_docs.pending()
+        check(r1.status_code == 200 and r2.status_code == 400 and r3.status_code == 404 and len(waiting) == 1
+              and waiting[0]["words"] == 280 and [d["suggested"] for d in await shelf_docs.mine(me) if d["id"] == bk["id"]] == ["pending"],
+              "a teacher suggests their own book once, and the maker sees it waiting")
+        got = await shelf_docs.decide(Req(maker, waiting[0]["id"], method="GET"))
+        done = await shelf_docs.decide(Req(maker, waiting[0]["id"], form={"decision": "approved"}))
+        check(got.body.decode() == text and done.status_code == 303
+              and (await shelf_docs.pending())[0]["status"] == "approved"
+              and [d["suggested"] for d in await shelf_docs.mine(me) if d["id"] == bk["id"]] == ["approved"],
+              "the maker downloads the text and approves it, and the teacher's shelf says so")
+        nope = await shelf_docs.decide(Req(T[me], waiting[0]["id"], form={"decision": "declined"}))
+        check(nope.status_code == 404 and (await shelf_docs.pending())[0]["status"] == "approved", "only the maker decides")
+
+        # Prep Room resources on shelves (decision 0029, phase 4): the class sees the newest version, keys stay with
+        # teachers, a copy takes the original's place, and the class keeps its copy when the resource goes
+        from webapp import shelf_resources
+        quiz = "# Pop Quiz\n\n1. Where was Jesus teaching?\n\n## Answer Key\n\n1. In the temple, in the middle of the feast.\n"
+        rid = uuid.UUID(await prep.create_resource(me, uid_, "quiz", "Pop Quiz", {"grade_band": "secondary"}))
+        await prep.add_version(me, rid, quiz, "draft")
+        on = await shelves.place(T[me], "bible-2", "resource", {"resource_id": str(rid)}, "students", "")
+        item = uuid.UUID(on["id"]) if isinstance(on, dict) else None
+        check(item and on["ref"]["n"] == 1 and on["ref"]["kind_word"] == "Quiz" and not on["ref"]["keys_only"]
+              and await shelf_docs.text_of(item) == quiz, "a teacher puts a resource on a class shelf, its newest version with it")
+        check(await shelves.place(T[other], "bible-2", "resource", {"resource_id": str(rid)}, "students", "")
+              == "That resource isn't in your Prep Room.", "only its own teacher shelves a resource")
+        quiz2 = quiz.replace("Where was", "Where did") .replace("teaching?", "teach?")
+        await prep.add_version(me, rid, quiz2, "edit")
+        row = await db.fetchrow("select ref from shelf_items where id = $1", item)
+        check(await shelf_docs.text_of(item) == quiz2 and row["ref"]["n"] == 2, "a save reaches the class shelf in the same transaction")
+        check(await shelf_docs.readable_by(P, item) is not None, "a student of the class can open it (the page sends the student copy)")
+        key = uuid.UUID(await prep.create_resource(me, uid_, "answer_key", "Key", {}))
+        await prep.add_version(me, key, "# Key\n\n1. In the temple, in the middle of the feast of booths.\n", "draft")
+        kp = await shelves.place(T[me], "bible-2", "resource", {"resource_id": str(key)}, "students", "")
+        check(isinstance(kp, dict) and kp["audience"] == "teachers"
+              and isinstance(await shelves.set_audience(T[me], uuid.UUID(kp["id"]), "students"), str)
+              and await shelf_docs.readable_by(P, uuid.UUID(kp["id"])) is None, "an answer key goes to the teachers and stays there")
+        held = await shelf_resources.on_shelves([rid])
+        check([h["name"] for h in held[str(rid)]] == ["Bible II"] and held[str(rid)][0]["audience"] == "students",
+              "a resource knows which class shelves hold it")
+        cp = await prep.copy_resource(me, rid)
+        cid = uuid.UUID(cp["id"])
+        got = await prep.get_resource(me, cid)
+        check(got["title"] == "Pop Quiz (copy)" and got["version"]["document"] == quiz2 and got["settings"]["copy_of"] == str(rid)
+              and not (await shelf_resources.on_shelves([cid])).get(str(cid)), "make a copy: the newest version, in the same unit, on no shelf")
+        await prep.add_version(me, cid, quiz2 + "\n2. Who was amazed?\n", "edit")
+        check(await shelf_docs.text_of(item) == quiz2, "reworking the copy leaves the class's copy alone")
+        swapped = await shelf_resources.replace(T[me], cid, rid)
+        row = await db.fetchrow("select ref, label from shelf_items where id = $1", item)
+        check(swapped == ["Bible II"] and row["ref"]["resource_id"] == str(cid) and row["label"] == "Pop Quiz"
+              and "Who was amazed" in await shelf_docs.text_of(item), "the copy takes the original's place, keeping its name")
+        await prep.add_version(me, rid, quiz, "restore")
+        check("Who was amazed" in await shelf_docs.text_of(item), "the original, off the shelf, no longer reaches the class")
+        back = await shelf_resources.replace(T[me], rid, cid)
+        row = await db.fetchrow("select ref from shelf_items where id = $1", item)
+        check(back == ["Bible II"] and row["ref"]["resource_id"] == str(rid) and await shelf_docs.text_of(item) == quiz,
+              "Undo puts the original back")
+        await prep.update_resource(me, rid, "Pop Quiz on John 7", None, False)
+        await shelf_resources.rename(rid, "Pop Quiz on John 7")
+        check(await db.fetchval("select label from shelf_items where id = $1", item) == "Pop Quiz on John 7", "a rename reaches the shelf")
+        r1 = await shelf_resources.own_shelf(Req(T[me], rid, method="PUT"))
+        await shelf_resources.own_shelf(Req(T[me], rid, method="PUT"))
+        mine_res = await shelf_resources.mine(me)
+        check(r1.status_code == 200 and [m["id"] for m in mine_res] == [str(rid)] and mine_res[0]["href"].endswith(f"/r/{rid}")
+              and (await shelf_resources.own_shelf(Req(T[other], rid, method="PUT"))).status_code == 404,
+              "a teacher puts their own resource on their own shelf, once")
+        await shelf_resources.own_shelf(Req(T[me], rid, method="DELETE"))
+        check(await shelf_resources.mine(me) == [], "and takes it off, leaving it in its unit")
+        await prep.delete_resource(me, rid)
+        check(await shelf_docs.text_of(item) == quiz and await db.fetchval("select 1 from shelf_items where id = $1", item),
+              "deleting the resource leaves the class its last version")
 
         check(await prep.delete_unit(me, uid_), "delete the unit")
         left = await db.fetchval("select count(*) from prep_resources")

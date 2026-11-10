@@ -21,22 +21,24 @@ def _places(teacher, admin):
 
 
 def test_the_rail_shows_each_role_its_places():
-    assert _places(False, False) == ["/", "/memory", "/read"]
-    assert _places(True, False) == ["/", "/memory", "/read", "/generate", "/library"]
-    assert _places(True, True) == ["/", "/memory", "/read", "/generate", "/library", "/studio"]
+    # the Reading Room is a room inside the Living Library, which everyone has (decision 0029)
+    assert _places(False, False) == ["/", "/memory", "/library"]
+    assert _places(True, False) == ["/", "/memory", "/library", "/generate"]
+    assert _places(True, True) == ["/", "/memory", "/library", "/generate", "/studio"]
     assert _places(False, True) == _places(True, True)   # an admin sees the teacher places too
 
 
 def test_the_rail_marks_the_page_you_are_on():
     def active(path):
         return [i["href"] for i in shell.rail_items(path, True, True) if i["active"]]
-    assert active("/") == ["/"] and active("/read/some-book") == ["/read"] and active("/memory") == ["/memory"]
+    assert active("/") == ["/"] and active("/memory") == ["/memory"] and active("/library") == ["/library"]
+    assert active("/read") == ["/library"] and active("/read/some-book") == ["/library"]   # a room of the Living Library
     assert active("/privacy") == []
 
 
 @pytest.mark.parametrize("user,shown,hidden", [
-    (None, ["/memory", "/read"], ["/generate", "/library", "/studio"]),
-    ({"email": "t@school.test", "role": "teacher"}, ["/generate", "/library"], ["/studio"]),
+    (None, ["/memory", "/library"], ["/generate", "/studio", "/read"]),
+    ({"email": "t@school.test", "role": "teacher"}, ["/library", "/generate"], ["/studio"]),
 ])
 def test_a_page_draws_only_the_places_the_reader_may_open(monkeypatch, user, shown, hidden):
     monkeypatch.setattr(auth, "current_user", lambda request: user)
@@ -142,15 +144,17 @@ def test_every_page_sits_on_the_garden_with_the_wordmark_in_its_own_column():
     assert all((STATIC / g).exists() for g in gardens)
     for page in ("generate", "studio", "reader", "covers"):   # their sticky bars stay clear until stuck
         assert "shell-stick" in (TEMPLATES / f"{page}.html").read_text(encoding="utf-8"), page
-    for name, sheet in css.items():   # no page paints the paper colour over the whole page
+    for name, sheet in css.items():   # no page paints the paper colour over the whole page (on screen: paper prints white)
         if name != "shell.css":
+            sheet = re.sub(r"@media print\{.*?\n\}", "", sheet, flags=re.S)
             body = re.search(r"^\s*body\{[^}]*\}", sheet, re.M)
             assert not body or "background" not in body.group(0), name
     assert "masthead" not in (TEMPLATES / "base.html").read_text(encoding="utf-8")   # no banner above the page
     for page in PAGES:   # each page puts the wordmark in its own column, once
         text = page.read_text(encoding="utf-8")
         stacks = page.name in ("generate.html", "studio.html")   # their panels stack on a phone: one shows at a time
-        assert text.count('{% include "partials/masthead.html" %}') == (0 if page.name == "built.html" else 2 if stacks else 1), page.name
+        # doc.html is an upload's reading view: like a book's pages in the Reading Room, it has no wordmark
+        assert text.count('{% include "partials/masthead.html" %}') == (0 if page.name in ("built.html", "doc.html") else 2 if stacks else 1), page.name
         if stacks:
             assert 'mast="narrow"' in text and 'mast="wide"' in text, page.name
         assert "/static/wordmark" not in text, page.name   # the wordmark lives in the partial alone
@@ -172,7 +176,6 @@ ADMIN = {"email": "a@school.test", "role": "teacher"}
 
 @pytest.mark.parametrize("path,opens,says", [
     ("/generate", ("teacher", "admin"), "The Prep Room is for teachers."),
-    ("/library", ("teacher", "admin"), "The Living Library is for teachers."),
     ("/read/admin/covers", ("admin",), "The magazine covers review is for library admins."),
 ])
 def test_teacher_places_turn_others_away_with_a_page(monkeypatch, path, opens, says):
@@ -212,3 +215,12 @@ def test_the_rail_is_always_there():
     assert "rail-collapse" not in rail and "rail-handle" not in rail
     assert 'data-rail' not in base and 'data-rail' not in css
     assert "setRail" not in js and 'localStorage.removeItem("exeg-rail")' in js
+
+
+def test_the_living_library_opens_for_everyone(monkeypatch):
+    # decision 0029: the Living Library is everyone's, with the Reading Room inside it; the page draws by role
+    for user in (None, STUDENT, TEACHER):
+        monkeypatch.setattr(auth, "current_user", lambda request, u=user: u)
+        monkeypatch.setattr(auth, "is_teacher", lambda u: bool(u) and u["role"] == "teacher")
+        r = TestClient(appmod.app).get("/library")
+        assert r.status_code == 200 and "is for teachers" not in r.text

@@ -4,3 +4,8 @@ table{border-collapse:collapse;font-family:var(--sans);font-size:14px;margin:.5e
 th,td{border-bottom:1px solid var(--rule);padding:6px 10px;text-align:left;vertical-align:top}
 .wide{overflow-x:auto}
 .wide:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+/* the Reading Room suggestions (decision 0029): a link and two small forms in one cell */
+td.acts{white-space:nowrap}
+td.acts form{display:inline;margin-left:10px}
+td.acts button{font:600 13px var(--sans);min-height:28px;padding:3px 10px;border:1px solid var(--rule-strong);border-radius:7px;background:var(--surface);color:var(--ink);cursor:pointer}
+td.acts button:hover{background:var(--surface-2)}

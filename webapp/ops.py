@@ -93,6 +93,9 @@ def _bridge_row(name: str, bridge) -> str:
             f"<td>{html.escape(bridge.last_error or '')}</td></tr>")
 
 
+_SUGG_WORD = {"pending": "Waiting", "approved": "Approved", "declined": "Declined"}
+
+
 async def page(request):
     user = auth.current_user(request)
     if not auth.is_admin(user):
@@ -115,6 +118,16 @@ async def page(request):
         f"<tr><td>{h['day']}</td><td>{h['help_words'] + h['help_reply'] + h['help_check']}</td>"
         f"<td>{h['help_words']}</td><td>{h['help_reply']}</td><td>{h['help_check']}</td>"
         f"<td>{h['check_failed']}</td></tr>" for h in helps) or "<tr><td colspan=6>None recorded.</td></tr>"
+    from webapp import shelf_docs
+    sugg = await shelf_docs.pending() if db.ready() else []
+    sugg_rows = "".join(
+        f"<tr><td>{html.escape(r['title'] or '')}</td><td>{html.escape(r['author'] or '')}</td>"
+        f"<td>{html.escape(r['basis'] or '')}</td><td>{(r['words'] or 0):,}</td><td>{_SUGG_WORD.get(r['status'], r['status'])}</td><td class=acts>"
+        + (f"<a href=\"/ops/suggestions/{r['id']}/text\">Download the text</a>" if r["item_id"] else "Text gone")
+        + ("".join(f"<form method=post action=\"/ops/suggestions/{r['id']}\"><input type=hidden name=decision value={d}>"
+                   f"<button type=submit>{w}</button></form>" for d, w in (("approved", "Approve"), ("declined", "Decline")))
+           if r["status"] == "pending" else "")
+        + "</td></tr>" for r in sugg) or "<tr><td colspan=6>None waiting.</td></tr>"
     out = (
         "<h1>Operations</h1>"
         f"<p>Estimated spend: ${week:.2f} in the last 7 UTC days, ${total:.2f} in 14. Alert above "
@@ -128,6 +141,11 @@ async def page(request):
         "it. A total only: no account, message, category, or time.</p><div class=wide tabindex=0 role=region aria-label=\"Help window by day\"><table><tr>"
         "<th>UTC day</th><th>Opened</th><th>Local check</th><th>Reply</th><th>Model check</th>"
         "<th>Model check failed</th></tr>" + help_rows + "</table></div>"
+        "<h2 id=suggestions>Reading Room suggestions</h2><p>Books teachers uploaded and believe everyone may read, with "
+        "their reason (decision 0029). Approving records your yes; adding the book to the Reading Room is still done "
+        "with its text, outside the app.</p><div class=wide tabindex=0 role=region aria-label=\"Reading Room suggestions\"><table>"
+        "<tr><th>Title</th><th>Author</th><th>Why everyone may read it</th><th>Words</th><th>Status</th><th>Act</th></tr>"
+        + sugg_rows + "</table></div>"
         "<h2>Records</h2><div class=wide tabindex=0 role=region aria-label=\"Records\"><table>"
         + "".join(f"<tr><th>{t}</th><td>{html.escape(s)}</td></tr>" for t, s in tables.items())
         + f"<tr><th>Last metrics row</th><td>{last or 'none'}</td></tr>"

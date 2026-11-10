@@ -51,11 +51,14 @@ def test_scripture_memory_asks_and_opens_by_address_without_adding_on_its_own():
 
 
 def test_the_living_library_sends_items_moments_and_class_texts_to_a_unit():
-    lib, moments, classes = read("library.js"), read("library_moments.js"), read("library_classes.js")
+    lib, moments, shelves, reader = read("library.js"), read("library_moments.js"), read("shelves.js"), read("reader.js")
     assert "function _unitBtn(it)" in lib and lib.count("_unitBtn(it)+_rmBtn(it)") == 2 and "_unitBtn(it)+'<div id=\"extract-out\"" in lib
     assert 'e.key==="Escape"&&!e.defaultPrevented' in lib
-    assert "excerpts:[b.getAttribute(\"data-unit-moment\")]" in moments
-    assert 'kind:"book",ref:{slug:w.slug' in classes and 'kind:"outline",ref:{key:w.outline' in classes
+    assert 'Passage.addToUnit({kind:"library",ref:{item_id:M.item.id,excerpts:[id]}' in moments
+    assert 'place:{kind:"video",ref:{item_id:M.item.id,start:x.start' in moments   # a video's moment can go on a class shelf
+    # a class's book from its top bar, and a book known only by its outline from the outline (decision 0029)
+    assert 'kind: "book", ref: {slug: book.slug, coverage: {}}' in reader
+    assert 'kind: "outline", ref: {key: w.outline, parts: []}' in shelves
 
 
 def test_saving_a_moment_reads_its_own_fields():
@@ -79,13 +82,16 @@ def test_a_second_add_of_a_moment_joins_the_item_already_in_the_unit():
     assert prep.merged_excerpts({"item_id": item, "excerpts": [a]}, {"item_id": item, "excerpts": [a]}) is None
     assert prep.merged_excerpts({"item_id": item}, {"item_id": item, "excerpts": [a]}) is None     # the whole item is there
     assert prep.merged_excerpts({"item_id": item, "excerpts": [a]}, {"item_id": item}) == {"item_id": item}
-    assert set(prep.SAME_SOURCE) == {"book", "outline", "passage", "library", "link"}            # uploads may repeat
+    assert set(prep.SAME_SOURCE) == {"book", "outline", "passage", "library", "link", "upload"}
+    assert prep.SAME_SOURCE["upload"] == "shelf"     # an upload from a shelf is held once; a file uploaded to the unit may repeat
+    assert "shelf" not in prep.clean_ref("upload", {"filename": "a.docx", "format": "docx"})
 
 
 def test_add_to_a_unit_is_a_save_to_list_in_the_house_menu():
     js = read("passage.js")
-    assert "role='menuitemcheckbox'" in js and '"?kind=" + encodeURIComponent(source.kind)' in js
-    assert 'menu.className = "shell-menu"' in js and "icons: {memory: TO_MEMORY, chat: TO_CHAT, prep: TO_PREP}" in js
+    assert "role='menuitemcheckbox'" in js and '"?kind=" + encodeURIComponent(hk.kind)' in js
+    assert 'menu.className = "shell-menu"' in js and "icons: {memory: TO_MEMORY, chat: TO_CHAT, prep: TO_PREP, save: SAVE}" in js
+    assert "<div class='shell-menu-lab'>Class shelves</div>" in js and "menu: smallMenu" in js   # one menu card for every menu
     shell = (ROOT / "webapp" / "static" / "css" / "shell.css").read_text(encoding="utf-8")
     # the same card the Prep Room and Scripture Memory draw for their menus (rule F10)
     assert ".shell-menu{position:fixed" in shell and "box-shadow:0 8px 26px rgba(0,0,0,.14)" in shell

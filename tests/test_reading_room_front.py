@@ -8,8 +8,10 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
-JS = (ROOT / "webapp" / "static" / "js" / "reader.js").read_text(encoding="utf-8")
-CSS = (ROOT / "webapp" / "static" / "css" / "reader.css").read_text(encoding="utf-8")
+JS = ((ROOT / "webapp" / "static" / "js" / "reader.js").read_text(encoding="utf-8") +   # the page loads both;
+      (ROOT / "webapp" / "static" / "js" / "covers.js").read_text(encoding="utf-8"))      # covers and rows are shared
+CSS = ((ROOT / "webapp" / "static" / "css" / "reader.css").read_text(encoding="utf-8") +   # the page loads both;
+       (ROOT / "webapp" / "static" / "css" / "covers.css").read_text(encoding="utf-8"))     # covers and rows are shared
 HTML = (ROOT / "webapp" / "templates" / "reader.html").read_text(encoding="utf-8")
 PY = (ROOT / "webapp" / "reader.py").read_text(encoding="utf-8")
 
@@ -56,7 +58,7 @@ def test_every_cover_in_the_browse_view_flips_and_restyles():
 
 def test_the_rows_scroll_by_mouse_touch_and_keyboard():
     assert 'class="fr-prev" aria-label="Earlier books in' in JS and 'class="fr-next" aria-label="More books in' in JS
-    assert 'row.setAttribute("role", "list")' in JS and 'cell.setAttribute("role", "listitem")' in JS
+    assert 'strip.setAttribute("role", "list")' in JS and 'cell.setAttribute("role", "listitem")' in JS
     assert ".fr-books{display:grid;grid-auto-flow:column" in CSS and "overflow-x:auto" in CSS
 
 

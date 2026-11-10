@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Prep Room · Exegetica{% endblock %}
 {% block fonts %}{{ super() }}<link rel="stylesheet" href="/static/fonts/doc.css">{% endblock %}
-{% block styles %}<link rel="stylesheet" href="/static/css/generate.css">{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/generate.css"><link rel="stylesheet" href="/static/css/handout.css">{% endblock %}
 {% block content %}
 {# The Prep Room (decision 0026): units hold their sources, objectives and resources; the Make panel is the
    gallery of kinds. Home lists the units. One page, addressed as /generate, /generate/unit/<id>,
@@ -76,23 +76,30 @@
         <div class="seg" id="aud" role="group" aria-label="Copy"><button data-v="teacher" class="on" type="button" aria-pressed="true">Teacher</button><button data-v="student" type="button" aria-pressed="false">Student</button></div>
         <div class="seg" id="mode" role="group" aria-label="View or edit"><button data-m="view" class="on" type="button" aria-pressed="true">View</button><button data-m="edit" type="button" aria-pressed="false">Edit</button></div>
         <button class="obtn" id="versions" type="button" aria-haspopup="true" aria-expanded="false" disabled>Versions</button>
-        <span class="spacer"></span>
-        <label class="credit-opt" title="Ends the PDF and the .md file with a line saying the document was drafted with Exegetica and reviewed by the teacher"><input type="checkbox" id="credit"> Credit line</label>
+        {# the second row: where the resource goes, then the ways out of the app (decision 0029) #}
+        <span class="obreak" aria-hidden="true"></span>
+        <button class="obtn obtn-ic" id="saveto" type="button" aria-haspopup="true" aria-expanded="false" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h10v17l-5-4-5 4z"/><path d="M12 7.5v5M9.5 10h5"/></svg>Save to…</button>
+        <span class="osep" aria-hidden="true"></span>
         <button class="obtn" id="copy" type="button" disabled>Copy</button>
         <button class="obtn" id="download" type="button" disabled>.md</button>
         <button class="obtn" id="pdf" type="button" disabled>PDF</button>
+        <label class="credit-opt" title="Ends the PDF and the .md file with a line saying the document was drafted with Exegetica and reviewed by the teacher"><input type="checkbox" id="credit"> Credit line</label>
         <button class="obtn makebtn" id="open-make" type="button">Make</button>
         <div class="vmenu" id="vmenu" hidden></div>
       </div>
+      {# a resource on a class shelf says so, naming the shelf and the version its students see (decision 0029) #}
+      <div class="onshelf" id="onshelf" role="status" hidden></div>
       <div class="oldver" id="oldver" hidden></div>
       <form class="modrow" id="modrow" hidden>
         <label class="sr" for="modin">Change this resource</label>
-        <input id="modin" autocomplete="off" placeholder="Change it: “add three harder items”, “make the reading shorter”">
+        <input id="modin" autocomplete="off" placeholder="Change it: “add three harder items”, “make the reading shorter”" aria-describedby="modnote">
         <button class="obtn" id="modbtn" type="submit">Apply</button>
       </form>
+      <p class="modnote" id="modnote" hidden></p>
       <div class="tools" id="tools"></div>
       <section class="report" id="report" aria-label="Source check" hidden></section>
       <div class="paperwrap" id="paperwrap" hidden><div class="paper prose" id="paper"></div></div>
+      <p class="modnote editnote" id="editnote" hidden></p>
       <label class="sr" for="editor">Edit the resource as Markdown</label>
       <textarea class="editor" id="editor" hidden spellcheck="false"></textarea>
       <div class="placeholder" id="placeholder">
@@ -134,4 +141,4 @@
   <div class="pdlg-body" id="dlg-body"></div>
 </dialog>
 {% endblock %}
-{% block scripts %}<script src="/static/js/generate.js"></script>{% endblock %}
+{% block scripts %}<script src="/static/js/prepdoc.js"></script><script src="/static/js/generate.js"></script>{% endblock %}

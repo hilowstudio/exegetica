@@ -2,16 +2,24 @@
 {% block title %}Reading Room · Exegetica{% endblock %}
 {% block meta %}<meta name="description" content="Read public-domain classics in Exegetica's Reading Room.">{% endblock %}
 {% block fonts %}<link rel="stylesheet" href="/static/fonts/reader.css">{% endblock %}
-{% block styles %}<link rel="stylesheet" href="/static/css/reader.css">{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/covers.css"><link rel="stylesheet" href="/static/css/reader.css">{% endblock %}
 {% block content %}
   <header class="topbar shell-stick">
     <a class="tb-back" id="back" href="/read">‹ Library</a>
     <div class="tb-title" id="topTitle">Reading Room</div>
     <div class="tb-ctrls">
       <button class="iconbtn tb-toc" id="tocToggle" type="button" title="Contents" aria-label="Contents" aria-controls="toc" aria-expanded="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h11"/></svg></button>
-      <button class="iconbtn sm" id="fMinus" title="Smaller text" hidden>A−</button>
-      <button class="iconbtn sm" id="fPlus" title="Larger text" hidden>A+</button>
-      <button class="iconbtn sm" id="fFace" title="Typeface: EB Garamond or Literata" hidden>Aa</button>
+      {# "Aa" holds the type settings, as an e-reader's does (rule F6) #}
+      <button class="iconbtn sm" id="typeBtn" type="button" title="Text size and typeface" aria-haspopup="dialog" aria-expanded="false" aria-controls="typePop" hidden>Aa</button>
+      <div class="shell-menu type-pop" id="typePop" role="dialog" aria-label="Text size and typeface" hidden>
+        <div class="shell-menu-lab">Text size</div>
+        <div class="tp-row"><button type="button" id="fMinus" aria-label="Smaller text">A−</button><span class="tp-val" id="tpSize" aria-live="polite"></span><button type="button" id="fPlus" aria-label="Larger text">A+</button></div>
+        <div class="shell-menu-lab">Typeface</div>
+        <div class="tp-row tp-faces" role="group" aria-label="Typeface"><button type="button" data-face="garamond" aria-pressed="true">EB Garamond</button><button type="button" data-face="literata" aria-pressed="false">Literata</button></div>
+      </div>
+      {# a book can go on your shelf, and a teacher can plan from it (decision 0029) #}
+      <button class="tb-act" id="shelveBtn" type="button" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/><path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/></svg><span>Shelve</span></button>
+      {% if teacher %}<button class="tb-act" id="unitBtn" type="button" aria-haspopup="true" aria-expanded="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h10v17l-5-4-5 4z"/><path d="M12 7.5v5M9.5 10h5"/></svg><span>Save to…</span></button>{% endif %}
     </div>
   </header>
 
@@ -19,8 +27,9 @@
     <div class="wrap shell-col">
       {# the wordmark tops the shelves; a book's pages fill the window, so a book has none #}
       {% include "partials/masthead.html" %}
-      <div class="eyebrow">Reading Room<a class="admin-link" id="adminCovers" href="/read/admin/covers" hidden>Review magazine covers →</a></div>
-      <h1 class="title">The Library</h1>
+      <div class="eyebrow">Living Library<a class="admin-link" id="adminCovers" href="/read/admin/covers" hidden>Review magazine covers →</a></div>
+      <h1 class="title">The Reading Room</h1>
+      {% with room = "reading" %}{% include "partials/rooms.html" %}{% endwith %}
       <label class="search">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
         <input id="q" type="search" placeholder="Search by title or author…" autocomplete="off" spellcheck="false">
@@ -148,4 +157,4 @@
     </div>
   </dialog>
 {% endblock %}
-{% block scripts %}<script src="/static/js/reader.js"></script>{% endblock %}
+{% block scripts %}<script src="/static/js/covers.js"></script><script src="/static/js/reader.js"></script>{% endblock %}

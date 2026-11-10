@@ -93,6 +93,15 @@ async def collect(user_id: uuid.UUID) -> dict:
         "courses_you_teach": await many(
             """select tc.course_key, tc.source, tc.added_at from teacher_courses tc
                join users x on lower(x.email) = tc.email where x.id = $1 order by tc.course_key"""),
+        # decision 0029: what you shelved in the Living Library, and the classes you said you take
+        "your_shelf": await many(
+            """select kind, ref, label, added_at from shelf_items where user_id = $1 order by added_at"""),
+        "classes_you_take": await many(
+            """select course_key, added_at from student_courses where user_id = $1 order by course_key"""),
+        # what you placed on class shelves: it stays with the class when your account goes, without your name
+        "placed_on_class_shelves": await many(
+            """select course_key, audience, kind, ref, label, added_at from shelf_items
+               where added_by = $1 and course_key is not null order by added_at"""),
     }
 
 

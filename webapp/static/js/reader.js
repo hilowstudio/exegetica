@@ -9,95 +9,37 @@
   // and announces it, and covers and the open book redraw for it. ----
   function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
   function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
-  document.addEventListener("shell:theme", function(){ if(window.__exegRestyle) window.__exegRestyle(); });
-  // ---- house cloth covers (Book Wrap): each reader's cover style ----
-  // A style is {light, dark, font, motif}. It can be set for the whole library, for a shelf (a book's
-  // first section) and for one book; for each field the most specific setting wins, then the house
-  // default. Signed-in readers keep their settings in Neon; everyone else in this browser.
-  function isDark(){
-    var t = root.getAttribute("data-theme");
-    return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-  }
-  var CS = (function(){
-    var FIELDS = ["light", "dark", "font", "motif"];
-    var KEY = "exeg-cover-prefs";
-    var HOUSE = {light: "exegetica-rose", dark: "exegetica-rose-dark", font: "house", motif: "universal"};
-    var prefs = {library: {}, shelves: {}, books: {}}, server = false, version = "r1", options = null, ready = null;
-    function blank(p){ p = p || {}; return {library: p.library || {}, shelves: p.shelves || {}, books: p.books || {}}; }
-    function local(){ try{ return JSON.parse(localStorage.getItem(KEY) || "null"); }catch(e){ return null; } }
-    function load(){
-      if(ready) return ready;
-      ready = fetch("/api/cover-prefs").then(function(r){
-        if(r.ok){ server = true; return r.json(); }
-        return null;
-      }).catch(function(){ return null; }).then(function(p){
-        var mine = local();
-        if(server && p && !Object.keys(p.library || {}).length && !Object.keys(p.shelves || {}).length &&
-           !Object.keys(p.books || {}).length && mine){   // first sign-in: bring this browser's style along
-          prefs = blank(mine); save(); return prefs;
-        }
-        prefs = blank(server ? p : mine); return prefs;
-      });
-      return ready;
-    }
-    function save(){
-      if(server){
-        return fetch("/api/cover-prefs", {method: "PUT", headers: {"Content-Type": "application/json"}, body: JSON.stringify(prefs)})
-          .catch(function(){});
-      }
-      try{ localStorage.setItem(KEY, JSON.stringify(prefs)); }catch(e){}
-      return Promise.resolve();
-    }
-    function getOptions(){
-      if(!options){
-        options = fetch("/api/house-cover/options").then(function(r){ return r.json(); })
-          .then(function(o){ version = o.version || version; HOUSE = o.house || HOUSE; return o; });
-      }
-      return options;
-    }
-    function shelfOf(b){ return (b.sections && b.sections[0]) || ""; }
-    // A book follows the first of its shelves (in its own section order) that sets a field. "Each shelf's
-    // own motif" means the shelf that chose it, or the book's first shelf when chosen for the library.
-    function resolve(b){
-      var out = {}, bk = prefs.books[b.slug] || {}, secs = b.sections || [];
-      FIELDS.forEach(function(f){
-        if(bk[f]){ out[f] = bk[f]; out[f + "From"] = shelfOf(b); return; }
-        for(var i = 0; i < secs.length; i++){
-          var sh = prefs.shelves[secs[i]];
-          if(sh && sh[f]){ out[f] = sh[f]; out[f + "From"] = secs[i]; return; }
-        }
-        out[f] = prefs.library[f] || HOUSE[f]; out[f + "From"] = shelfOf(b);
-      });
-      return out;
-    }
-    function motifParam(style){ return style.motif === "shelf" ? "shelf:" + (style.motifFrom || "") : style.motif; }
-    function textKey(b){                     // a short hash of the title and author, so a retitled book's cover refreshes
-      var s = (b.title || "") + "|" + (b.author || ""), h = 0;
-      for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
-      return (h >>> 0).toString(36);
-    }
-    function url(slug, style, dark, x){
-      return "/api/house-cover/" + encodeURIComponent(slug) + "?t=" + encodeURIComponent(dark ? style.dark : style.light) +
-        "&f=" + encodeURIComponent(style.font) + "&m=" + encodeURIComponent(motifParam(style)) + "&v=" + version +
-        (x ? "&x=" + x : "");
-    }
-    function bookURL(b){ return url(b.slug, resolve(b), isDark(), textKey(b)); }
-    return {FIELDS: FIELDS, load: load, save: save, getOptions: getOptions, resolve: resolve, url: url, bookURL: bookURL,
-            shelfOf: shelfOf, prefs: function(){ return prefs; }, house: function(){ return HOUSE; }};
-  })();
-  try{ matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function(){ if(window.__exegRestyle) window.__exegRestyle(); }); }catch(e){}
+  var isDark = Covers.isDark, CS = Covers.CS;   // the house covers' styles (static/js/covers.js)
   var SCALES = [1.0, 1.08, 1.15, 1.24, 1.34, 1.45];
   var scaleIdx = parseInt(lsGet("exeg-read-scale") || "2", 10);
   if(isNaN(scaleIdx) || scaleIdx < 0 || scaleIdx >= SCALES.length){ scaleIdx = 2; }
-  function applyScale(){ root.style.setProperty("--read-scale", SCALES[scaleIdx] + "rem"); lsSet("exeg-read-scale", scaleIdx); if(relayout){ relayout(); } }
+  function applyScale(){ root.style.setProperty("--read-scale", SCALES[scaleIdx] + "rem"); lsSet("exeg-read-scale", scaleIdx);
+    var v = $("tpSize"); if(v) v.textContent = Math.round(SCALES[scaleIdx] / SCALES[2] * 100) + "%";
+    $("fMinus").disabled = scaleIdx === 0; $("fPlus").disabled = scaleIdx === SCALES.length - 1;
+    if(relayout){ relayout(); } }
   $("fMinus").addEventListener("click", function(){ if(scaleIdx>0){ scaleIdx--; applyScale(); } });
   $("fPlus").addEventListener("click", function(){ if(scaleIdx<SCALES.length-1){ scaleIdx++; applyScale(); } });
   applyScale();
   // book face: EB Garamond (house) or Literata (sturdier at small sizes)
   function applyFace(f){ if(f === "literata"){ root.setAttribute("data-face", "literata"); } else { root.removeAttribute("data-face"); }
+    Array.prototype.forEach.call(document.querySelectorAll(".tp-faces [data-face]"), function(b){ b.setAttribute("aria-pressed", String(b.dataset.face === f)); });
     lsSet("exeg-face", f); if(relayout){ relayout(); } }
   applyFace(lsGet("exeg-face") || "garamond");
-  $("fFace").addEventListener("click", function(){ applyFace(root.getAttribute("data-face") === "literata" ? "garamond" : "literata"); });
+  // "Aa": the type settings in a small panel under the button, closed by Escape, a click outside, or Aa again
+  Array.prototype.forEach.call(document.querySelectorAll(".tp-faces [data-face]"), function(b){ b.onclick = function(){ applyFace(b.dataset.face); }; });
+  (function(){
+    var btn = $("typeBtn"), pop = $("typePop");
+    function place(){ var r = btn.getBoundingClientRect(); pop.style.top = (r.bottom + 6) + "px";
+      pop.style.left = Math.max(8, Math.min(r.right - pop.offsetWidth, innerWidth - pop.offsetWidth - 8)) + "px"; }
+    function shut(back){ if(pop.hidden) return; pop.hidden = true; btn.setAttribute("aria-expanded", "false"); if(back) btn.focus(); }
+    btn.addEventListener("click", function(){
+      if(!pop.hidden){ shut(false); return; }
+      pop.hidden = false; btn.setAttribute("aria-expanded", "true"); place(); $("fMinus").focus();
+    });
+    document.addEventListener("click", function(e){ if(!pop.hidden && !pop.contains(e.target) && e.target !== btn) shut(false); });
+    document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !pop.hidden){ e.preventDefault(); shut(true); } }, true);
+    window.addEventListener("resize", function(){ shut(false); });
+  })();
 
   function fmtWords(w){
     if(!w) return "";
@@ -116,18 +58,7 @@
   if(m){ initReader(decodeURIComponent(m[1])); } else { initBrowse(); }
 
   // =================== BROWSE (search-first, faceted cover grid) ===================
-  var CLOTH = {
-    "Literary & Classics":"#6d2b30","Fantasy":"#1f5a54","Science Fiction":"#26364f",
-    "Mystery & Crime":"#33373d","Horror & Gothic":"#2a2130","Adventure":"#8a4a2b",
-    "Romance":"#8d4a5a","Humor & Satire":"#8f7130","Short Stories":"#495560",
-    "Children's":"#b0733a","Poetry":"#4a2e54","Plays & Drama":"#5e2a2a",
-    "Biography & Memoir":"#34513a","History":"#6a4a24","Travel & Places":"#1f5e6e",
-    "Christianity":"#2f3a6b","World Religions & Spirituality":"#7a5326","Philosophy":"#3b3f47",
-    "Psychology":"#4a3f6b","Science & Nature":"#2c5140","Health & Medicine":"#7d3f3a",
-    "Technology & How-To":"#3d5566","Cooking & Home":"#8a4030","Society, Politics & Economics":"#5a5a2e",
-    "Art, Music & Performance":"#1f5a63","Sports & Recreation":"#2f4d33","Language & Reference":"#6a5230",
-    "Reference & Knowledge":"#4d4a44","Christmas Reading":"#24503a"
-  };
+  var CLOTH = Covers.CLOTH;
   var LENGTHS = [
     {key:"s",label:"Short reads · under 20k",lo:0,hi:20000},
     {key:"m",label:"Medium · 20–80k words",lo:20000,hi:80000},
@@ -143,7 +74,7 @@
     $("browse").hidden = false;
     $("back").href = "/"; $("back").textContent = "‹ Exegetica";
     $("topTitle").textContent = "Reading Room";
-    document.title = "The Library · Exegetica";
+    document.title = "Reading Room · Living Library · Exegetica";
 
     var books = [], positions = {}, progress = {}, secList = [];
     var READ_MIN = 7;   // a book joins "Continue Reading" only after this many pages read
@@ -165,34 +96,8 @@
         "louisa-may-alcott_little-women", "mary-shelley_frankenstein", "charles-dickens_a-christmas-carol",
         "g-k-chesterton_the-man-who-was-thursday", "l-m-montgomery_anne-of-green-gables", "daniel-defoe_the-life-and-adventures-of-robinson-crusoe"]}
     ];
-    var ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
-    function frontRow(id, title, note, list, caption){
-      var sec = document.createElement("section"); sec.className = "fr-row"; sec.setAttribute("aria-labelledby", id);
-      sec.innerHTML = '<div class="fr-h"><h2 id="' + id + '">' + esc(title) + '</h2>' + (note ? '<span>' + esc(note) + '</span>' : "") +
-        '<div class="fr-nav" hidden><button type="button" class="fr-prev" aria-label="Earlier books in ' + esc(title) + '">' + ARROW + '</button>' +
-        '<button type="button" class="fr-next" aria-label="More books in ' + esc(title) + '"><span style="display:grid;transform:scaleX(-1)">' + ARROW + '</span></button></div></div>';
-      var row = document.createElement("div"); row.className = "fr-books"; row.setAttribute("role", "list");
-      list.forEach(function(b){
-        var cell = document.createElement("div"); cell.className = "fr-cell"; cell.setAttribute("role", "listitem");
-        cell.appendChild(cover(b));
-        if(caption){ var c = caption(b); if(c){ var p = document.createElement("div"); p.className = "fr-cap"; p.textContent = c; cell.appendChild(p); } }
-        row.appendChild(cell);
-      });
-      sec.appendChild(row);
-      var nav = sec.querySelector(".fr-nav"), prev = sec.querySelector(".fr-prev"), next = sec.querySelector(".fr-next");
-      function ends(){
-        var over = row.scrollWidth > row.clientWidth + 4;
-        nav.hidden = !over;
-        prev.disabled = row.scrollLeft < 4;
-        next.disabled = row.scrollLeft + row.clientWidth > row.scrollWidth - 4;
-      }
-      function by(dir){ row.scrollBy({left: dir * Math.max(160, row.clientWidth - 170)}); }
-      prev.addEventListener("click", function(){ by(-1); });
-      next.addEventListener("click", function(){ by(1); });
-      row.addEventListener("scroll", ends, {passive: true});
-      window.addEventListener("resize", ends);
-      requestAnimationFrame(ends);
-      return sec;
+    function frontRow(id, title, note, list, caption){     // the shared row (static/js/covers.js)
+      return Covers.row(id, title, note, list.map(function(b){ return {el: cover(b), cap: caption ? caption(b) : ""}; }));
     }
     function renderFront(){
       var box = $("front"); if(!box) return;
@@ -216,24 +121,10 @@
     }
 
     var bySlug = {}, isAdmin = false;
-    function cloth(sec){ return CLOTH[sec] || "#4a4038"; }
+    var cloth = Covers.cloth;
     function cover(b){
-      var a = document.createElement("a");
-      var art = !!b.cover;   // in book-wrap mode the art still loads, hidden, and the hover flip reveals it
-      a.className = "cover" + (art ? " has-img" : "") + (state.wrap ? " wrapped" : "");
-      a.href = "/read/" + encodeURIComponent(b.slug); a.dataset.slug = b.slug;
-      a.style.setProperty("--cloth", cloth(b.sections[0]));
-      a.innerHTML =
-        '<span class="cv-title">' + esc(b.title) + '</span><span class="cv-rule"></span>' +
-        (b.author ? '<span class="cv-author">' + esc(b.author) + '</span>' : "") +
-        '<span class="cv-sec">' + esc(b.sections[0] || "") + '</span>' +
-        '<img class="cv-house" alt="" loading="lazy" onload="this.classList.add(\'ld\')" onerror="this.remove()"' +
-          ((!art || state.wrap) ? ' src="' + esc(CS.bookURL(b)) + '"' : "") + '>' +
-        (art ? '<img class="cv-img" alt="" loading="lazy" src="' + esc(b.cover) + '" onload="this.classList.add(\'ld\')" onerror="var c=this.parentNode;c.classList.remove(\'has-img\');this.remove();if(window.__exegLoadHouse)window.__exegLoadHouse(c)">' : "") +
-        '<button class="cv-cog" type="button" title="Cover style for this book" aria-label="Cover style for this book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/><circle cx="12" cy="12" r="6.6"/></svg></button>' +
-        (started(b.slug) ? '<span class="cv-flag" title="In progress"></span>' : "") +
-        (isAdmin ? '<button class="cv-edit" type="button" title="Find cover art" aria-label="Find cover art">✎</button>' : "");
-      return a;
+      return Covers.cover(b, {wrap: state.wrap, started: started(b.slug), cog: true, admin: isAdmin,
+                              shelf: Covers.signed() ? Covers.onShelf(b.slug) : null});   // signed in: shelve it from here
     }
 
     // ---- house covers on the shelf ----
@@ -765,6 +656,13 @@
       if(e.animationName === "cvTurn") e.target.classList.remove("turn-to-wrap", "turn-to-art");
     });
     $("browse").addEventListener("click", function(e){
+      var sh = e.target.closest ? e.target.closest(".cv-shelf") : null;
+      if(sh){
+        e.preventDefault(); e.stopPropagation();
+        var st = sh.closest(".cover"), sb = st && bySlug[st.dataset.slug];
+        if(sb) Covers.shelve(sb, sh.getAttribute("aria-pressed") !== "true");
+        return;
+      }
       var cog = e.target.closest ? e.target.closest(".cv-cog") : null;
       if(cog){
         e.preventDefault(); e.stopPropagation();
@@ -789,7 +687,8 @@
     Promise.all([
       fetch("/api/catalog").then(function(r){ return r.json(); }),
       CS.load(), CS.getOptions().catch(function(){}),
-      fetch("/api/reading/position").then(function(r){ return r.ok ? r.json() : {positions:{}}; }).catch(function(){ return {positions:{}}; })
+      fetch("/api/reading/position").then(function(r){ return r.ok ? r.json() : {positions:{}}; }).catch(function(){ return {positions:{}}; }),
+      Covers.shelfLoad()
     ]).then(function(res){
       var d = res[0];
       if(!d || d.available === false || !(d.items && d.items.length)){
@@ -822,12 +721,38 @@
     }).catch(function(){ $("browseEmpty").hidden = false; $("browseEmpty").textContent = "Could not load the library."; });
   }
 
+  // A book's own actions in the top bar (decision 0029): shelve it, and for a teacher, plan from it.
+  function bookActions(book){
+    var sb = $("shelveBtn"), ub = $("unitBtn"), b = {slug: book.slug, title: book.title};
+    function show(on){
+      sb.setAttribute("aria-pressed", String(on));
+      sb.querySelector("span").textContent = on ? "Shelved" : "Shelve";
+      sb.title = on ? "On your shelf. Choose to take it off" : "Put this book on your shelf";
+    }
+    Covers.shelfLoad().then(function(){
+      if(!Covers.signed() || ub) return;     // a teacher's one "Save to…" holds their own shelf too
+      sb.hidden = false; show(Covers.onShelf(book.slug));
+      sb.onclick = function(){ Covers.shelve(b, sb.getAttribute("aria-pressed") !== "true"); };
+    });
+    document.addEventListener("shelf:changed", function(ev){ if(ev.detail.slug === book.slug) show(ev.detail.on); });
+    if(ub && window.Passage){
+      ub.hidden = false;
+      ub.setAttribute("aria-label", "Save " + book.title + " to a unit or a class shelf");
+      ub.onclick = function(){ Passage.addToUnit({kind: "book", ref: {slug: book.slug, coverage: {}}, label: book.title}, ub, null,
+        {place: {kind: "book", ref: {slug: book.slug}, label: book.title},
+         mine: {label: "Your books", checked: Covers.onShelf(book.slug), act: function(on){ return Covers.shelve(b, on); }}}); };
+    }
+  }
+
   // =================== READER (paginated) ===================
   function initReader(slug){
     $("reader").hidden = false;
     document.body.classList.add("reading");
-    $("tocToggle").hidden = false; $("fMinus").hidden = false; $("fPlus").hidden = false; $("fFace").hidden = false;
-    $("back").href = "/read"; $("back").textContent = "‹ Library";
+    $("tocToggle").hidden = false; $("typeBtn").hidden = false;
+    var from = "";
+    try{ from = new URL(document.referrer).pathname; }catch(e){}
+    if(from === "/library"){ $("back").href = "/library"; $("back").textContent = "‹ Your shelves"; }
+    else { $("back").href = "/read"; $("back").textContent = "‹ Reading Room"; }
     var book = null, current = 0, savedPositions = {};   // `book` = fetched book DATA (toc, title…)
     var chapter = $("chapter"), pageport = $("pageport"), bookEl = $("book"), pagebar = $("pagebar");
     var stride = 1, pages = 1, page = 0, colGap = 56, numCols = 1, colsPer = 1, foliosBefore = 0, frontCols = 0, turnT, maxPage = 0;
@@ -993,6 +918,7 @@
       if(!book){ chapter.innerHTML = '<div class="ch-eyebrow">Not found</div><p>This book isn’t in the Reading Room.</p>'; return; }
       savedPositions = (res[1] && res[1].positions) || {};
       document.title = book.title + " · Exegetica";
+      bookActions(book);
       $("tocBookTitle").textContent = book.title;
       $("tocBookAuthor").textContent = book.author || "";
       renderToc();

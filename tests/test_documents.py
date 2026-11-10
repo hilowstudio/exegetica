@@ -39,7 +39,7 @@ def test_the_builders_embed_our_own_fonts():
 
 
 def test_the_prep_room_prints_by_the_locked_rules():
-    css = _read(STATIC / "css" / "generate.css")
+    css = _read(STATIC / "css" / "handout.css")      # the paper, shared by the Prep Room and a class's shelf copy
     printed = re.search(r"@media print\{.*?\n\}", css, re.S).group(0)
     assert "font-family:var(--doc)" in printed and "font-size:12pt" in printed   # EB Garamond, a book face
     assert re.search(r"@page\{size:letter;margin:[\d.]+in 2in", printed)        # near 70 characters a line
@@ -69,7 +69,7 @@ def test_tables_come_from_the_shell():
     shell_js = _read(STATIC / "js" / "shell.js")
     assert "function table(head, rows, inline)" in shell_js and "table: table" in shell_js
     assert "role='region' tabindex='0' aria-label=" in shell_js and "scope='col'" in shell_js
-    for page in ("chat.js", "generate.js"):
+    for page in ("chat.js", "prepdoc.js"):              # prepdoc.js draws the Prep Room's documents
         js = _read(STATIC / "js" / page)
         assert "Shell.table(" in js and "<div class='tablewrap'>" not in js, page
     assert "td.num{text-align:right;font-variant-numeric:tabular-nums}" in _read(STATIC / "css" / "chat.css")
@@ -83,7 +83,7 @@ def test_tables_come_from_the_shell():
     assert ".tablebox.more-left::before,.tablebox.more-right::after{opacity:1}" in shell_css
     # the Prep Room's paper and column may shrink below a wide table, so the table scrolls and the page never does
     gen_css = _read(STATIC / "css" / "generate.css")
-    assert re.search(r"\.paper\{[^}]*min-width:0", gen_css)
+    assert re.search(r"\.paper\{[^}]*min-width:0", _read(STATIC / "css" / "handout.css"))
     assert "1fr;" not in re.sub(r"minmax\(0,1fr\)", "", re.search(r"\n\.app\{[^}]*\}", gen_css).group(0))
     narrow = re.search(r"@media\(max-width:900px\)\{.*?\n\}", gen_css, re.S).group(0)
     assert ".app{grid-template-columns:minmax(0,1fr)" in narrow

@@ -113,7 +113,9 @@ def clean_ref(kind: str, ref: dict) -> dict | None:
             out["excerpts"] = [str(e) for e in ref["excerpts"] if _uuid(e)][:40]
         return out
     if kind == "upload":
-        return {"filename": _clean(ref.get("filename"), 200), "format": _clean(ref.get("format"), 10)}
+        shelf = _uuid(ref.get("shelf"))
+        return {"filename": _clean(ref.get("filename"), 200), "format": _clean(ref.get("format"), 10),
+                **({"shelf": str(shelf)} if shelf else {})}
     if kind == "link":
         url = _clean(ref.get("url"), 1000)
         return {"url": url} if url.startswith(("http://", "https://")) else None
@@ -205,7 +207,8 @@ async def _touch(unit_id) -> None:
 
 # ---------------------------------------------------------------------------------------- sources
 # What makes two sources the same, now that a passage or a moment can be added to a unit from any page.
-SAME_SOURCE = {"book": "slug", "outline": "key", "passage": "ref", "library": "item_id", "link": "url"}
+SAME_SOURCE = {"book": "slug", "outline": "key", "passage": "ref", "library": "item_id", "link": "url",
+               "upload": "shelf"}   # an upload from a shelf; a file uploaded to the unit itself may repeat
 
 
 def merged_excerpts(old: dict, new: dict) -> dict | None:
@@ -354,6 +357,8 @@ async def add_version(uid: uuid.UUID, resource_id: uuid.UUID, document: str, ori
                 drew_on or [], report)
             await conn.execute("delete from prep_versions where resource_id = $1 and n <= $2",
                                resource_id, n - MAX_VERSIONS)
+            from webapp import shelf_resources   # a class always sees the newest version (decision 0029)
+            await shelf_resources.refresh(conn, resource_id, n, document)
             await conn.execute("update prep_resources set updated_at = now() where id = $1", resource_id)
             if unit_id:
                 await conn.execute("update prep_units set updated_at = now() where id = $1", unit_id)
@@ -421,7 +426,17 @@ async def units_list(request):
         for u in units:
             if u["id"] in held:
                 u["holds"] = held[u["id"]]
-    return JSONResponse({"units": units, "quick": await list_resources(uid, quick=True)})
+    quick = await list_resources(uid, quick=True)
+    await _mark_shelves(quick)
+    return JSONResponse({"units": units, "quick": quick})
+
+
+async def _mark_shelves(resources: list[dict]) -> None:
+    """Each resource says which class shelves hold it, so the Prep Room can name them before a change."""
+    from webapp import shelf_resources
+    held = await shelf_resources.on_shelves([r["id"] for r in resources])
+    for r in resources:
+        r["shelves"] = held.get(str(r["id"]), [])
 
 
 async def unit_create(request):
@@ -447,6 +462,8 @@ async def unit_get(request):
         return denied
     unit_id = _uuid(request.path_params["id"])
     unit = unit_id and await get_unit(uid, unit_id)
+    if unit:
+        await _mark_shelves(unit["resources"])
     return JSONResponse({"unit": unit}) if unit else _not_found("That unit")
 
 
@@ -492,6 +509,8 @@ async def source_add(request):
     unit_id = _uuid(request.path_params["id"])
     b = await _body(request)
     kind = b.get("kind")
+    if kind == "shelf":                       # an upload or a link from the Living Library: the unit keeps its own copy
+        return await _from_shelf(request, uid, unit_id, b)
     if kind not in ("book", "outline", "passage", "library"):
         return JSONResponse({"error": "Unknown kind of source."}, status_code=400)
     ref = clean_ref(kind, b.get("ref"))
@@ -501,6 +520,27 @@ async def source_add(request):
     if not unit_id:
         return _not_found("That unit")
     out = await add_source(uid, unit_id, kind, ref, label)
+    if out is None:
+        return _not_found("That unit")
+    if isinstance(out, str):
+        return JSONResponse({"error": out}, status_code=400)
+    return JSONResponse({"source": out}, status_code=201)
+
+
+async def _from_shelf(request, uid, unit_id, b):
+    from webapp import shelf_docs
+    item = _uuid((b.get("ref") or {}).get("item_id")) if isinstance(b.get("ref"), dict) else None
+    row = await shelf_docs.readable_by(auth.current_user(request), item) if item else None
+    text = await shelf_docs.text_of(item) if row else None
+    if not unit_id or not row or text is None:
+        return JSONResponse({"error": "That isn't on your shelves."}, status_code=404)
+    ref = row["ref"] or {}
+    if row["kind"] == "link":
+        kind, cref = "link", clean_ref("link", {"url": ref.get("url")})
+    else:
+        kind, cref = "upload", clean_ref("upload", {"filename": ref.get("filename") or row["label"], "format": ref.get("format") or "txt",
+                                                    "shelf": str(ref.get("origin") or item)})
+    out = await add_source(uid, unit_id, kind, cref, _clean(b.get("label"), 200) or row["label"], text=text)
     if out is None:
         return _not_found("That unit")
     if isinstance(out, str):
@@ -537,7 +577,43 @@ async def resource_get(request):
     rid = _uuid(request.path_params["id"])
     n = request.query_params.get("n")
     res = rid and await get_resource(uid, rid, int(n) if n and n.isdigit() else None)
-    return JSONResponse({"resource": res}) if res else _not_found("That resource")
+    if not res:
+        return _not_found("That resource")
+    from webapp import shelf_resources
+    res["shelves"] = (await shelf_resources.on_shelves([rid])).get(str(rid), [])
+    res["on_my_shelf"] = await shelf_resources.on_my_shelf(uid, rid)
+    orig = _uuid((res.get("settings") or {}).get("copy_of"))
+    if orig:                                  # a copy says where its original is, so it can take its place
+        o = await get_resource(uid, orig)
+        if o:
+            res["copy_of"] = {"id": str(orig), "title": o["title"],
+                              "shelves": (await shelf_resources.on_shelves([orig])).get(str(orig), [])}
+    return JSONResponse({"resource": res})
+
+
+async def copy_resource(uid: uuid.UUID, resource_id: uuid.UUID) -> dict | None:
+    """Make a copy (decision 0029): the newest version, as version 1 of a new resource in the same unit, on no shelf."""
+    res = await get_resource(uid, resource_id)
+    v = (res or {}).get("version")
+    if not v:
+        return None
+    title = (res["title"] + " (copy)")[:MAX_TITLE]
+    new = await create_resource(uid, _uuid(res["unit_id"]) if res.get("unit_id") else None, res["format_id"], title,
+                                {**(res.get("settings") or {}), "copy_of": str(resource_id)})
+    if not new:
+        return None
+    await add_version(uid, _uuid(new), v["document"], "restore", instruction=f"Copied from “{res['title']}”, version {v['n']}",
+                      drew_on=v.get("drew_on"), report=v.get("report"))
+    return {"id": str(new), "title": title, "unit_id": res.get("unit_id"), "format_id": res["format_id"]}
+
+
+async def resource_copy(request):
+    uid, denied = _guard(request)
+    if denied:
+        return denied
+    rid = _uuid(request.path_params["id"])
+    out = rid and await copy_resource(uid, rid)
+    return JSONResponse({"resource": out}, status_code=201) if out else _not_found("That resource")
 
 
 async def resource_save(request):
@@ -571,6 +647,9 @@ async def resource_update(request):
     target = _uuid(b.get("unit_id")) if move else None
     if not rid or not await update_resource(uid, rid, title, target, move):
         return _not_found("That resource")
+    if title:
+        from webapp import shelf_resources
+        await shelf_resources.rename(rid, title)
     return JSONResponse({"ok": True})
 
 

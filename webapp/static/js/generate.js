@@ -2,35 +2,7 @@
    resources; the Make panel is the gallery of kinds; every draft, revision and edit is saved as a version.
    The rail, theme and Need help now? come from static/js/shell.js. */
 "use strict";
-// ---- shared compact markdown renderer ----
-function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
-function inl(s){return esc(s).replace(/`([^`]+)`/g,(m,c)=>"<code>"+c+"</code>").replace(/_{3,}/g,m=>"<span class='blank' style='min-width:"+Math.min(26,Math.max(3,m.length*0.55)).toFixed(1)+"em'></span>").replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>").replace(/(^|[^*])\*([^*\n]+)\*/g,"$1<em>$2</em>").replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');}
-function md(src){const L=src.replace(/\r\n/g,"\n").split("\n");let h="",i=0;const sep=s=>/^\s*\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)+\|?\s*$/.test(s);const cells=s=>s.replace(/^\s*\|/,"").replace(/\|\s*$/,"").split("|").map(c=>c.trim());
-  while(i<L.length){let l=L[i];
-    if(/^```/.test(l)){i++;let b=[];while(i<L.length&&!/^```/.test(L[i])){b.push(L[i]);i++;}i++;h+="<pre><code>"+esc(b.join("\n"))+"</code></pre>";continue;}
-    if(/^\s*$/.test(l)){i++;continue;}
-    if(/^#{1,4}\s/.test(l)){const n=l.match(/^#+/)[0].length;h+="<h"+n+">"+inl(l.replace(/^#+\s/,""))+"</h"+n+">";i++;continue;}
-    if(/^\s*_{3,}\s*$/.test(l)){let n=0;while(i<L.length&&/^\s*_{3,}\s*$/.test(L[i])){n++;i++;}for(let k=0;k<n;k++)h+="<div class='writeline'></div>";continue;}
-    if(/^\s*(-{3,}|\*{3,})\s*$/.test(l)){h+="<hr>";i++;continue;}
-    if(/^\s*>/.test(l)){let b=[];while(i<L.length&&/^\s*>/.test(L[i])){b.push(L[i].replace(/^\s*>\s?/,""));i++;}h+="<blockquote>"+md(b.join("\n"))+"</blockquote>";continue;}
-    if(l.includes("|")&&i+1<L.length&&sep(L[i+1])){const hd=cells(l);i+=2;const rs=[];while(i<L.length&&L[i].includes("|")&&!/^\s*$/.test(L[i])){rs.push(cells(L[i]));i++;}h+=Shell.table(hd,rs,inl);continue;}
-    if(/^\s*[-*]\s+/.test(l)){let b=[];while(i<L.length&&/^\s*[-*]\s+/.test(L[i])){b.push("<li>"+inl(L[i].replace(/^\s*[-*]\s+/,""))+"</li>");i++;}h+="<ul>"+b.join("")+"</ul>";continue;}
-    if(/^\s*\d+[.)]\s+/.test(l)){let b=[];while(i<L.length&&/^\s*\d+[.)]\s+/.test(L[i])){const mm=L[i].match(/^\s*(\d+)[.)]\s+/);b.push("<li value='"+mm[1]+"'>"+inl(L[i].replace(/^\s*\d+[.)]\s+/,""))+"</li>");i++;}h+="<ol>"+b.join("")+"</ol>";continue;}
-    let b=[];while(i<L.length&&!/^\s*$/.test(L[i])&&!/^```/.test(L[i])&&!/^#{1,4}\s/.test(L[i])&&!/^\s*[-*]\s+/.test(L[i])&&!/^\s*>/.test(L[i])&&!/^\s*_{3,}\s*$/.test(L[i])&&!/^\s*(-{3,}|\*{3,})\s*$/.test(L[i])){b.push(L[i]);i++;}h+="<p>"+inl(b.join("\n")).replace(/\n/g,"<br>")+"</p>";}
-  return h;}
-
-// ---- the student copy: the teacher-only sections out (mirrors prep_catalog.student_copy) ----
-const TEACHER_HEAD=/^(#{1,6})\s+(?:answer key|answers|teaching notes|teacher notes|notes for the teacher|for the teacher|teacher'?s? (?:guide|notes|key)|.*\((?:teacher|teacher only|for the teacher)\))\s*:?\s*$/i;
-const TEACHER_LINE=/^\s*(?:\*\*)?(?:standards|objectives? \(teacher\))(?:\*\*)?\s*:/i;
-function studentCopy(src){const out=[];let skip=0;
-  for(const line of src.split("\n")){const head=line.match(/^(#{1,6})\s/);
-    if(skip){if(head&&head[1].length<=skip)skip=0;else continue;}
-    const m=line.trim().match(TEACHER_HEAD);
-    if(m){skip=m[1].length;while(out.length&&/^\s*(---|\*\*\*|___)?\s*$/.test(out[out.length-1]))out.pop();continue;}
-    if(TEACHER_LINE.test(line))continue;out.push(line);}
-  while(out.length&&/^\s*(---|\*\*\*|___)?\s*$/.test(out[out.length-1]))out.pop();
-  return out.join("\n")+"\n";}
-function hasTeacherPart(src){return src.split("\n").some(l=>TEACHER_HEAD.test(l.trim()));}
+// The markdown renderer and the student copy are static/js/prepdoc.js, shared with a class's shelf copy.
 
 // ---- state ----
 const $=id=>document.getElementById(id);
@@ -224,7 +196,8 @@ function renderUnit(){
   updateDraws();
 }
 function resRow(r,href){const k=kindOf(r.format_id);const on=S.res&&S.res.id===r.id?" on":"";
-  return '<li class="'+on+'"><a class="r-open" href="'+href+'" data-nav><span class="r-title">'+esc(r.title)+'</span><span class="r-sub">'+esc(k?k.name.split(/ \/ | \(/)[0]:r.format_id)+(r.latest?" · version "+r.latest:"")+" · "+ago(r.updated_at)+'</span></a>'+
+  const held=(r.shelves||[]).length?'<span class="r-shelf">'+SHELF_IC+'On '+esc(shelfNames(r.shelves))+'</span>':"";
+  return '<li class="'+on+'"><a class="r-open" href="'+href+'" data-nav><span class="r-title">'+esc(r.title)+'</span><span class="r-sub">'+esc(k?k.name.split(/ \/ | \(/)[0]:r.format_id)+(r.latest?" · version "+r.latest:"")+" · "+ago(r.updated_at)+'</span>'+held+'</a>'+
     '<button type="button" class="icobtn kebab" data-rmenu="'+r.id+'" aria-label="Options for '+esc(r.title)+'" aria-haspopup="true">'+ICON.kebab+'</button></li>';}
 $("u-edit").addEventListener("click",editUnit);
 document.addEventListener("click",e=>{
@@ -235,7 +208,7 @@ document.addEventListener("click",e=>{
     items.push({label:"Remove source",danger:true,act:()=>removeSource(s)});openMenu(sm,items);return;}
   const rm=e.target.closest("[data-rmenu]");
   if(rm){e.stopPropagation();const list=S.unit?S.unit.resources:S.quick;const r=list.find(x=>x.id===rm.dataset.rmenu);if(!r)return;
-    openMenu(rm,[{label:"Rename",act:()=>renameRes(r)},{label:"Delete resource",danger:true,act:()=>deleteRes(r,list)}]);return;}
+    openMenu(rm,[{label:"Rename",act:()=>renameRes(r)},{label:"Make a copy",act:()=>copyRes(r)},{label:"Delete resource",danger:true,act:()=>deleteRes(r,list)}]);return;}
   const uo=e.target.closest("[data-unobj]");
   if(uo){const i=+uo.dataset.unobj,old=S.unit.objectives.slice(),gone=old[i];S.unit.objectives.splice(i,1);saveObjectives();
     Shell.toast("Removed "+gone.id,{undo:()=>{S.unit.objectives=old;saveObjectives();}});}
@@ -262,7 +235,8 @@ async function renameRes(r){
 function deleteRes(r,list){
   const i=list.indexOf(r);list.splice(i,1);const wasOpen=S.res&&S.res.id===r.id;
   if(wasOpen){go(resPath(null));}else if(app.dataset.view==="home")renderHome();else renderUnit();
-  removeLater("/api/prep/resources/"+r.id,"Deleted “"+r.title+"”",()=>{list.splice(i,0,r);if(app.dataset.view==="home")renderHome();else renderUnit();});
+  const kept=(r.shelves||[]).length?". The "+shelfNames(r.shelves)+" shelf keeps its last version until a teacher takes it off":"";
+  removeLater("/api/prep/resources/"+r.id,"Deleted “"+r.title+"”"+kept,()=>{list.splice(i,0,r);if(app.dataset.view==="home")renderHome();else renderUnit();});
 }
 async function refreshUnit(){if(!S.unit)return;try{S.unit=(await api("GET","/api/prep/units/"+S.unit.id)).unit;renderUnit();}catch(e){}}
 
@@ -517,14 +491,14 @@ function setPrintHead(){
     "@page:first{@top-left{content:none}@top-right{content:none}}";
 }
 window.addEventListener("beforeprint",setPrintHead);
-function setOutButtons(on){$("download").disabled=!on;$("copy").disabled=!on;$("pdf").disabled=!on;
+function setOutButtons(on){$("download").disabled=!on;$("copy").disabled=!on;$("pdf").disabled=!on;$("saveto").disabled=!S.res||S.busy;
   const student=$("aud").querySelector('[data-v=student]');student.disabled=!hasTeacherPart(rawDoc);
   student.title=student.disabled?"This resource has no teacher-only part, so both copies are the same.":"";
   $("versions").disabled=!(S.res&&S.res.versions&&S.res.versions.length);}
 function segOn(seg,pred){Array.from($(seg).children).forEach(x=>{const on=pred(x);x.classList.toggle("on",on);x.setAttribute("aria-pressed",String(on));});}
-function showDoc(){placeholder.hidden=true;paperwrap.hidden=mode==="edit";editor.hidden=mode!=="edit";modrow.hidden=!S.res||!!S.viewing;}
+function showDoc(){placeholder.hidden=true;paperwrap.hidden=mode==="edit";editor.hidden=mode!=="edit";modrow.hidden=!S.res||!!S.viewing;drawShelf();}
 function clearDoc(){rawDoc="";S.savedDoc="";S.viewing=null;mode="view";audience="teacher";segOn("aud",x=>x.dataset.v==="teacher");segOn("mode",x=>x.dataset.m==="view");
-  paperwrap.hidden=true;editor.hidden=true;modrow.hidden=true;$("oldver").hidden=true;tools.innerHTML="";$("report").hidden=true;
+  paperwrap.hidden=true;editor.hidden=true;modrow.hidden=true;$("oldver").hidden=true;tools.innerHTML="";$("report").hidden=true;drawShelf();
   placeholder.hidden=false;$("outtitle").textContent=S.unit?S.unit.title:"Quick resource";setOutButtons(false);
   const has=(S.unit?S.unit.resources.length:0);
   $("ph-title").textContent=has?"Open a resource, or make another":"Make your first resource";
@@ -546,7 +520,8 @@ async function saveEditNow(leaving){
   if(!S.res||S.viewing||rawDoc===S.savedDoc||!rawDoc.trim())return;
   const doc=rawDoc;
   if(leaving){fetch("/api/prep/resources/"+S.res.id+"/versions",{method:"POST",keepalive:true,headers:{"Content-Type":"application/json"},body:JSON.stringify({origin:"edit",document:doc})});return;}
-  try{const d=await api("POST","/api/prep/resources/"+S.res.id+"/versions",{origin:"edit",document:doc});S.savedDoc=doc;await reloadVersions();Shell.toast("Saved your edits as version "+d.n);}
+  const before=newestN();
+  try{const d=await api("POST","/api/prep/resources/"+S.res.id+"/versions",{origin:"edit",document:doc});S.savedDoc=doc;await reloadVersions();savedToast("Saved your edits as version "+d.n+".",before);}
   catch(e){Shell.toast("Your edits weren't saved: "+e.message);}
 }
 
@@ -635,11 +610,13 @@ async function openResource(rid,n){
   $("outtitle").textContent=S.res.title;audience="teacher";mode="view";segOn("aud",x=>x.dataset.v==="teacher");segOn("mode",x=>x.dataset.m==="view");
   $("oldver").hidden=true;showDoc();render();showReport(v&&v.report);if(v)drewOn(v.drew_on);setOutButtons(!!rawDoc.trim());renderUnit();
 }
-async function reloadVersions(){if(!S.res)return;try{const d=await api("GET","/api/prep/resources/"+S.res.id);S.res.versions=d.resource.versions;setOutButtons(!!rawDoc.trim());}catch(e){}}
+async function reloadVersions(){if(!S.res)return;try{const d=await api("GET","/api/prep/resources/"+S.res.id);S.res.versions=d.resource.versions;
+  S.res.shelves=d.resource.shelves;S.res.copy_of=d.resource.copy_of;S.res.on_my_shelf=d.resource.on_my_shelf;setOutButtons(!!rawDoc.trim());drawShelf();}catch(e){}}
 function originWords(v){return v.origin==="draft"?"First draft":v.origin==="revise"?"Changed: “"+(v.instruction||"")+"”":v.origin==="restore"?(v.instruction||"Brought back"):"Your edits";}
 $("versions").addEventListener("click",e=>{e.stopPropagation();const m=$("vmenu");if(!m.hidden){closeMenus();return;}
   const vs=S.res.versions||[],newest=vs.length?vs[0].n:0;
-  m.innerHTML=vs.map(v=>'<button type="button" data-v="'+v.n+'"><span class="v-n">v'+v.n+'</span><span class="v-what">'+esc(originWords(v))+'</span>'+(v.n===newest?'<span class="v-now">newest</span>':"")+'<span class="v-when">'+when(v.created_at)+'</span></button>').join("");
+  const now=onShelves().length?"newest, on the shelf":"newest";
+  m.innerHTML=vs.map(v=>'<button type="button" data-v="'+v.n+'"><span class="v-n">v'+v.n+'</span><span class="v-what">'+esc(originWords(v))+'</span>'+(v.n===newest?'<span class="v-now">'+now+'</span>':"")+'<span class="v-when">'+when(v.created_at)+'</span></button>').join("");
   m.hidden=false;$("versions").setAttribute("aria-expanded","true");m.querySelector("button").focus();});
 $("vmenu").addEventListener("click",async e=>{const b=e.target.closest("[data-v]");if(!b)return;const n=+b.dataset.v;closeMenus();await viewVersion(n);});
 $("vmenu").addEventListener("keydown",e=>{const bs=[...$("vmenu").querySelectorAll("button")],i=bs.indexOf(document.activeElement);
@@ -651,13 +628,16 @@ async function viewVersion(n){
   let d;try{d=await api("GET","/api/prep/resources/"+S.res.id+"?n="+n);}catch(e){Shell.toast(e.message);return;}
   const v=d.resource.version;S.viewing=n;rawDoc=v.document;render();showReport(v.report);showDoc();
   const meta=S.res.versions.find(x=>x.n===n);
-  $("oldver").innerHTML='<p>You\'re looking at version '+n+' ('+esc(originWords(meta).toLowerCase())+'), from '+when(meta.created_at)+'. The newest is version '+newest+'.</p>'+
+  const who=shelfWho(onShelves());
+  $("oldver").innerHTML='<p>You\'re looking at version '+n+' ('+esc(originWords(meta).toLowerCase())+'), from '+when(meta.created_at)+'. The newest is version '+newest+(who?", which "+esc(who)+" see":"")+'.</p>'+
     '<button type="button" class="btn-primary" id="restore">Bring back this version</button><button type="button" class="btn-quiet" id="to-newest">Back to the newest</button>';
   $("oldver").hidden=false;$("restore").onclick=()=>restore(n);$("to-newest").onclick=()=>openResource(S.res.id);$("restore").focus();
 }
-async function restore(n){
-  try{const d=await api("POST","/api/prep/resources/"+S.res.id+"/versions",{origin:"restore",from_n:n});await openResource(S.res.id);
-    Shell.toast("Brought back version "+n+" as version "+d.n);refreshUnit();}
+async function restore(n,undoing){
+  const before=newestN();
+  try{const d=await api("POST","/api/prep/resources/"+S.res.id+"/versions",{origin:"restore",from_n:n});await openResource(S.res.id);refreshUnit();
+    if(undoing){const who=shelfWho(onShelves());Shell.toast("Brought back version "+n+(who?". "+who+" see it again.":"."));}
+    else savedToast("Brought back version "+n+" as version "+d.n+".",before);}
   catch(e){Shell.toast(e.message);}
 }
 
@@ -665,16 +645,75 @@ modrow.addEventListener("submit",async e=>{
   e.preventDefault();const instr=$("modin").value.trim();if(!instr||S.busy||!S.res||!rawDoc.trim())return;
   if(mode==="edit")leaveEdit();
   if(rawDoc!==S.savedDoc){await saveEditNow(false);if(rawDoc!==S.savedDoc)return;}
-  S.busy=true;$("modbtn").disabled=true;$("modbtn").textContent="Changing…";
+  S.busy=true;$("modbtn").disabled=true;$("modbtn").textContent="Changing…";const before=newestN();
   const prev=rawDoc,prevReport=$("report").innerHTML;let saved=null;
   rawDoc="";const ok=await streamInto("/api/prep/revise",{resource_id:S.res.id,instruction:instr},ev=>{if(ev.type==="saved")saved=ev;});
   // Any failure or cut-off keeps the teacher's document exactly as it was, with its source check.
   if(!ok||!rawDoc.trim()||!saved){rawDoc=prev;render();setOutButtons(true);
     if(prevReport){$("report").innerHTML=prevReport;$("report").hidden=false;}
     note("The change didn't finish, so your resource was left as it was.");}
-  else{S.savedDoc=rawDoc;$("modin").value="";await reloadVersions();refreshUnit();Shell.toast("Saved the change as version "+saved.n);}
+  else{S.savedDoc=rawDoc;$("modin").value="";await reloadVersions();refreshUnit();savedToast("Saved the change as version "+saved.n+".",before);}
   $("modbtn").textContent="Apply";$("modbtn").disabled=false;S.busy=false;
 });
+
+// ---- where a resource goes (decision 0029): your shelf and the class shelves, named before and after every change ----
+const SHELF_IC='<svg class="sh-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/><path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/></svg>';
+function onShelves(){return (S.res&&S.res.shelves)||[];}
+function newestN(){return S.res&&S.res.versions&&S.res.versions.length?S.res.versions[0].n:null;}
+function shelfNames(L){const n=L.map(s=>s.name);return n.length<2?(n[0]||""):n.slice(0,-1).join(", ")+" and "+n[n.length-1];}
+// who sees it: "Bible II students", "Bible II teachers", "Bible II and Bible III students"
+function shelfWho(L){if(!L.length)return "";const st=L.filter(s=>s.audience==="students"),te=L.filter(s=>s.audience!=="students");
+  return [st.length?shelfNames(st)+" students":"",te.length?shelfNames(te)+" teachers":""].filter(Boolean).join(" and ");}
+function drawShelf(){
+  const el=$("onshelf"),L=onShelves(),c=S.res&&S.res.copy_of,mn=$("modnote"),en=$("editnote");
+  mn.hidden=true;en.hidden=true;
+  if(!S.res||S.viewing||S.busy){el.hidden=true;return;}
+  if(L.length){
+    const who=shelfWho(L),many=L.length>1,forT=L.every(s=>s.audience!=="students");
+    el.className="onshelf";
+    const mixed=!forT&&L.some(s=>s.audience!=="students");
+    el.innerHTML=SHELF_IC+'<p>On the <b>'+esc(shelfNames(L))+'</b> shelf'+(many?"s":"")+(forT?", for "+(many?"their":"its")+" teachers. They see":
+      ". "+(many?"Their":"Its")+(mixed?" classes see":" students see"))+' version '+newestN()+', the newest'+(forT||mixed?".":", as the Student copy.")+'</p>'+
+      '<button type="button" class="btn-quiet sm" id="mk-copy">Make a copy</button>';
+    $("mk-copy").onclick=()=>copyRes(S.res);
+    mn.textContent="Applying a change saves a new version, and "+who+" see it at once.";mn.hidden=!!modrow.hidden;
+    en.textContent="Your edits are saved as a new version when you go back to View, and "+who+" see them at once.";en.hidden=mode!=="edit";
+    el.hidden=false;return;}
+  if(c&&(c.shelves||[]).length){
+    el.className="onshelf copy";
+    el.innerHTML=SHELF_IC+'<p>A copy of “'+esc(c.title)+'”, which '+esc(shelfWho(c.shelves))+' see. This copy is on no shelf, so you can rework it out of their sight.</p>'+
+      '<button type="button" class="btn-primary sm" id="put-copy">Put it in place of the original</button>';
+    $("put-copy").onclick=()=>putCopy(S.res,c);el.hidden=false;return;}
+  el.hidden=true;
+}
+// every save on a shelved resource says who now sees it, with Undo: the version before comes back
+function savedToast(msg,before){
+  const who=shelfWho(onShelves());
+  if(!who||!before){Shell.toast(msg);return;}
+  Shell.toast(msg+" "+who+" see it now.",{undo:()=>restore(before,true)});
+}
+$("saveto").addEventListener("click",()=>{
+  if(!S.res||!window.Passage)return;const r=S.res,b=$("saveto");
+  Passage.addToUnit({kind:"resource",ref:{resource_id:r.id},label:r.title},b,"“"+r.title+"”",{units:false,
+    place:{kind:"resource",ref:{resource_id:r.id},label:r.title},
+    mine:{label:"From the Prep Room",checked:!!r.on_my_shelf,act:on=>api(on?"PUT":"DELETE","/api/shelf/resources/"+r.id)
+      .then(()=>{r.on_my_shelf=on;Shell.toast(on?"Put “"+r.title+"” on your shelf in the Living Library":"Took “"+r.title+"” off your shelf");})
+      .catch(e=>Shell.toast(e.message))}});
+});
+document.addEventListener("shelf:changed",()=>{if(S.res&&S.res.id){reloadVersions();refreshUnit();}});
+async function copyRes(r){
+  try{const d=await api("POST","/api/prep/resources/"+r.id+"/copy");
+    if(!S.unit)S.quick.unshift({id:d.resource.id,title:d.resource.title,format_id:d.resource.format_id,latest:1,updated_at:new Date().toISOString(),shelves:[]});
+    await refreshUnit();go(resPath(d.resource.id));
+    Shell.toast("Made “"+d.resource.title+"”. It's on no shelf, so students don't see it.");}
+  catch(e){Shell.toast(e.message);}
+}
+async function putCopy(res,c){
+  try{const d=await api("POST","/api/prep/resources/"+res.id+"/replace",{original:c.id});await reloadVersions();refreshUnit();
+    Shell.toast("Put this copy on the "+d.shelves.join(" and ")+" shelf in place of “"+c.title+"”, which stays in the unit.",{undo:async()=>{
+      try{await api("POST","/api/prep/resources/"+c.id+"/replace",{original:res.id});await reloadVersions();refreshUnit();}catch(e){Shell.toast(e.message);}}});}
+  catch(e){Shell.toast(e.message);}
+}
 
 $("pdf").addEventListener("click",()=>{if(mode==="edit")leaveEdit();render();setPrintHead();printReady().then(()=>window.print());});
 $("download").addEventListener("click",()=>{const blob=new Blob([withCredit(shown())],{type:"text/markdown"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=slug()+(audience==="student"?"_student":"")+".md";a.click();URL.revokeObjectURL(a.href);});

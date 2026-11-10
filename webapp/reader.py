@@ -141,6 +141,20 @@ def _visible(con, school: int, shelf: bool = False) -> str:
     return "coalesce(access, '') not in (" + ", ".join(f"'{h}'" for h in hidden) + ")"
 
 
+def is_reference(slug: str) -> bool:
+    """A school textbook or teacher's edition: on a class shelf it is for the class's teachers alone (decision 0029)."""
+    if not slug or not available():
+        return False
+    con = _connect()
+    try:
+        if "access" not in {c[1] for c in con.execute("pragma table_info(books)")}:
+            return False
+        row = con.execute("select access from books where slug=?", (slug,)).fetchone()
+        return bool(row) and row[0] == REFERENCE
+    finally:
+        con.close()
+
+
 def _closed_to(con, slug: str, school: int) -> bool:
     if "access" not in {c[1] for c in con.execute("pragma table_info(books)")}:
         return False
@@ -225,16 +239,57 @@ def _catalog_sync(school: bool = False) -> dict:
         ).fetchall()
     finally:
         con.close()
-    items = []
-    for r in rows:
-        items.append({
-            "slug": r["slug"], "title": r["title"], "author": r["author"] or "",
-            "author_sort": r["author_sort"] or r["author"] or r["title"],
-            "sections": json.loads(r["genres"] or "[]"), "source": r["source"],
-            "chapters": r["chapter_count"], "words": r["word_count"] or 0,
-            "cover": r["cover_url"], **({"school": True} if r["access"] == SCHOOL else {}),
-        })
+    items = [_item(r) for r in rows]
     return {"items": items, "total": len(items)}
+
+
+def _item(r) -> dict:
+    """One book as the catalog and the shelves describe it, enough to draw its house cover."""
+    return {
+        "slug": r["slug"], "title": r["title"], "author": r["author"] or "",
+        "author_sort": r["author_sort"] or r["author"] or r["title"],
+        "sections": json.loads(r["genres"] or "[]"), "source": r["source"],
+        "chapters": r["chapter_count"], "words": r["word_count"] or 0,
+        "cover": r["cover_url"], **({"school": True} if r["access"] == SCHOOL else {}),
+    }
+
+
+def items_sync(slugs: list[str], school: int) -> dict[str, dict]:
+    """Catalog entries for these books, by slug, for the Living Library's shelves (decision 0029). A book this
+    reader may not open is left out. Unlike the catalog's shelves, a teacher keeps a reference copy here: on a
+    class shelf it is that class's textbook."""
+    slugs = [s for s in dict.fromkeys(slugs) if s]
+    if not slugs or not available():
+        return {}
+    con = _connect()
+    try:
+        cols = {c[1] for c in con.execute("pragma table_info(books)")}
+        cover = "cover_url" if "cover_url" in cols else "null as cover_url"
+        access = "access" if "access" in cols else "null as access"
+        rows = con.execute(
+            f"""select slug, title, author, author_sort, genres, source, chapter_count, word_count, {cover}, {access}
+                from books where slug in ({",".join("?" * len(slugs))}) and {_visible(con, school)}""", slugs
+        ).fetchall()
+    finally:
+        con.close()
+    return {r["slug"]: _item(r) for r in rows}
+
+
+async def apply_overrides(items) -> None:
+    """The library admin's cover replacements (Neon), over the covers baked into books.db."""
+    if not db.ready():
+        return
+    try:
+        rows = await db.fetch(
+            "select book_slug, cover_url, (webp is not null) as has_webp, "
+            "extract(epoch from updated_at)::bigint as v from cover_overrides")
+    except Exception:
+        return
+    ov = {r["book_slug"]: r for r in rows}
+    for it in items:
+        r = ov.get(it["slug"])
+        if r:   # self-hosted override -> versioned local path; legacy url-only -> the URL
+            it["cover"] = ("/api/cover/" + it["slug"] + "?v=" + str(r["v"])) if r["has_webp"] else r["cover_url"]
 
 
 def _cover_of(slug: str) -> str | None:
@@ -397,18 +452,7 @@ async def catalog(request):
     if not available():
         return JSONResponse({"items": [], "total": 0, "available": False})
     data = await run_in_threadpool(_catalog_sync, reader_level(auth.current_user(request)))
-    if db.ready():
-        try:
-            rows = await db.fetch(
-                "select book_slug, cover_url, (webp is not null) as has_webp, "
-                "extract(epoch from updated_at)::bigint as v from cover_overrides")
-        except Exception:
-            rows = []
-        ov = {r["book_slug"]: r for r in rows}
-        for it in data["items"]:
-            r = ov.get(it["slug"])
-            if r:   # self-hosted override -> versioned local path; legacy url-only -> the URL
-                it["cover"] = ("/api/cover/" + it["slug"] + "?v=" + str(r["v"])) if r["has_webp"] else r["cover_url"]
+    await apply_overrides(data["items"])
     data["available"] = True
     data["admin"] = auth.is_admin(auth.current_user(request))
     return JSONResponse(data)

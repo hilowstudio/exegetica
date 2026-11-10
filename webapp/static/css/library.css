@@ -1,100 +1,147 @@
-/* The Living Library · Exegetica page (templates/library.html). The shared shell, colours and rail are in tokens.css and shell.css. */
+/* The Living Library's front room (templates/library.html, decision 0029). The rooms' shared header, covers and rows
+   are covers.css; the shell, colours and rail are tokens.css and shell.css. */
 :root{--shadow:0 1px 2px rgba(30,26,20,.05),0 14px 34px rgba(30,26,20,.09);}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--shadow:0 1px 2px rgba(0,0,0,.35),0 18px 40px rgba(0,0,0,.5);}}
 :root[data-theme="dark"]{--shadow:0 1px 2px rgba(0,0,0,.35),0 18px 40px rgba(0,0,0,.5);}
-  body{margin:0;color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+
+  body{color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.55}
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .hidden{display:none!important}
 
-  /* ---------- app shell ---------- */
-  .app{display:grid;grid-template-columns:minmax(0,1fr);height:100%}
+  /* ---------- the front room (decision 0029) ---------- */
+  /* the same column as the Reading Room, so the header and the room switch hold still between rooms */
+  .lib-main{--col:1280px;padding:34px 28px 110px}
+  .room-title-row{display:flex;align-items:flex-end;justify-content:space-between;gap:10px 20px;flex-wrap:wrap}
+  .room-acts{display:flex;align-items:center;gap:10px;margin:0 0 .9em}
+  .add-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-weight:600;font-size:14px;color:var(--ink);
+    background:var(--surface);border:1px solid var(--rule-strong);border-radius:10px;padding:8px 15px 8px 12px;min-height:40px;cursor:pointer}
+  .add-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+  .add-btn:hover{border-color:var(--ink-faint);background:var(--surface-2)}
 
-  .col{display:flex;flex-direction:column;min-width:0;height:100%;overflow:hidden}
-  .lib-head{padding:16px 28px 12px calc(var(--rail-w) + 28px);border-bottom:1px solid var(--rule);flex:none}
-  .lib-head .eyebrow{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--iron-soft)}
-  .lib-head h1{font-family:var(--serif);font-weight:700;font-size:1.5rem;margin:3px 0 2px}
-  .lib-head p{margin:0;font-size:13.5px;color:var(--ink-soft)}
-  main.scroll{flex:1;overflow-y:auto;min-height:0}
-  .wrap{--col:1080px;padding:26px 28px 60px}
+  /* each group of shelves under a quiet label, the way the Reading Room heads "The whole library" */
+  .shelf-group{margin:0 0 44px}
+  .shelf-group[hidden]{display:none}
+  .sg-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;margin:0 0 18px}
+  .sg-label{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0}
+  .sg-act{font-family:var(--sans);font-weight:600;font-size:13px;color:var(--iron);background:none;border:0;padding:4px 0;min-height:24px;cursor:pointer;text-decoration:none}
+  .sg-act:hover{text-decoration:underline;text-underline-offset:3px}
+  .sg-act[hidden]{display:none}
+  .sg-note{font-size:14px;color:var(--ink-soft);margin:0 0 8px;max-width:62ch}
+  .sg-note b{color:var(--ink);font-weight:600}
+  /* before there are classes: one plain invitation, in the place the shelves will stand */
+  .class-invite{display:flex;align-items:center;justify-content:space-between;gap:14px 24px;flex-wrap:wrap;padding:22px 24px;
+    border:1px dashed var(--rule-strong);border-radius:14px;background:color-mix(in srgb,var(--surface) 72%,transparent)}
+  .class-invite p{margin:0;max-width:54ch;font-family:var(--serif);font-size:1.06rem;line-height:1.45;color:var(--ink)}
 
-  /* ---------- omnibox ---------- */
-  .omni{background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:22px 22px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-  .omni::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--accent),var(--brass) 55%,var(--iron))}
-  .omni .o-eyebrow{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--iron-soft)}
-  .omni h2{font-family:var(--serif);font-weight:600;font-size:1.35rem;margin:6px 0 16px;color:var(--ink)}
-  .types{display:inline-flex;border:1px solid var(--rule-strong);border-radius:10px;overflow:hidden;margin-bottom:14px}
-  .types button{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-weight:600;font-size:13px;border:0;background:var(--surface);color:var(--ink-soft);padding:8px 15px;cursor:pointer;border-right:1px solid var(--rule)}
-  .types button:last-child{border-right:0}
-  .types button.on{background:var(--accent);color:var(--on-accent)}
-  .types button:not(.on):hover{background:var(--surface-2);color:var(--ink)}
-  .types svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-  .o-field{display:flex;gap:10px;align-items:stretch}
-  .o-input{flex:1;position:relative;display:flex;align-items:center}
-  .o-input .lead{position:absolute;left:14px;color:var(--ink-faint);display:grid;place-items:center;pointer-events:none}
-  .o-input .lead svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-  .o-input input{width:100%;font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--paper);border:1px solid var(--rule-strong);border-radius:12px;padding:13px 14px 13px 42px}
-  .o-input input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
-  .o-add{font-family:var(--sans);font-weight:600;font-size:15px;border:0;border-radius:12px;background:var(--accent);color:var(--on-accent);padding:0 22px;cursor:pointer;white-space:nowrap}
-  .o-add:hover{background:var(--accent-soft)}
-  .o-hint{margin-top:11px;font-size:12.5px;color:var(--ink-faint);display:flex;align-items:center;gap:7px}
-  .o-hint .k{font-family:var(--mono);font-size:11px;color:var(--iron-soft)}
+  /* a class text there's no book to open: bound in its subject's cloth, quieter, and still */
+  .cover.cv-still{filter:saturate(.55) brightness(.97);cursor:default;box-shadow:0 6px 14px -12px rgba(20,14,6,.6),0 1px 2px rgba(0,0,0,.2)}
+  .cover.cv-still:hover{transform:none;box-shadow:0 6px 14px -12px rgba(20,14,6,.6),0 1px 2px rgba(0,0,0,.2)}
+  button.cover{border:0;font:inherit;text-align:left;width:100%;cursor:pointer}
+  button.cover:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  /* your books: a grid like the Reading Room's, each with a way off the shelf in its corner */
+  .mine-cell{position:relative}
+  .cv-off{position:absolute;top:6px;left:6px;z-index:5;width:26px;height:26px;display:none;place-items:center;border:0;border-radius:7px;
+    background:rgba(18,12,5,.74);color:#f4ecd8;padding:0;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.4);backdrop-filter:blur(2px)}
+  .cv-off svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round}
+  .mine-cell:hover .cv-off,.mine-cell:focus-within .cv-off,#mine.editing .cv-off{display:grid}
+  #mine.editing .cover{animation:none}
+  .sg-acts{display:flex;align-items:baseline;gap:6px 18px;flex-wrap:wrap}
+  .cv-off:hover{background:var(--accent);color:var(--on-accent)}
+  /* a class (decision 0029, phase 2): its books row, then its videos; a teacher's Edit sits beside its name */
+  .cls-edit{align-self:center;margin-left:auto}
+  .cls-edit + .fr-nav{margin-left:14px}
+  .placed{position:relative}
+  .cv-more{position:absolute;top:6px;left:6px;z-index:5;width:28px;height:28px;display:none;place-items:center;border:0;border-radius:7px;
+    background:rgba(18,12,5,.74);color:#f4ecd8;padding:0;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.4);backdrop-filter:blur(2px)}
+  .cv-more svg{width:16px;height:16px;fill:currentColor}
+  .placed:hover .cv-more,.placed:focus-within .cv-more,.cls.editing .cv-more{display:grid}
+  .cv-more:hover,.cv-more[aria-expanded="true"]{background:var(--accent);color:var(--on-accent)}
+  /* a class's videos: a strip of stills under its books, each opening YouTube at its moment */
+  .cls-sub{margin:-12px 0 36px}
+  .cls-sub-h{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  .fr-books.wide{grid-auto-columns:236px}
+  .vtile{display:block;color:var(--ink);text-decoration:none}
+  .vt-shot{position:relative;display:block;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:linear-gradient(140deg,#20222b,#33363f);
+    box-shadow:0 10px 22px -14px rgba(20,14,6,.7),0 1px 2px rgba(0,0,0,.3);transition:transform .16s ease,box-shadow .16s ease}
+  .vt-shot img{display:block;width:100%;height:100%;object-fit:cover}
+  .vtile:hover .vt-shot{transform:translateY(-3px);box-shadow:0 18px 30px -16px rgba(20,14,6,.78),0 2px 3px rgba(0,0,0,.3)}
+  .vt-play{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px 0 0 -20px;display:grid;place-items:center;
+    border-radius:50%;background:rgba(255,255,255,.92);color:#141414}
+  .vt-play svg{width:15px;height:15px;fill:currentColor;margin-left:2px}
+  .vt-from{position:absolute;right:7px;bottom:7px;font-family:var(--mono);font-size:10.5px;color:#fff;background:rgba(0,0,0,.72);padding:2px 6px;border-radius:5px}
+  .vt-t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:9px;font-family:var(--serif);
+    font-weight:600;font-size:.95rem;line-height:1.25}
+  .vt-s{display:block;margin-top:2px;font-size:12.5px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .vtile:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+  @media (prefers-reduced-motion:reduce){ .vt-shot{transition:none} .vtile:hover .vt-shot{transform:none} }
+  @media (max-width:760px){ .fr-books.wide{grid-auto-columns:200px} .cls-sub{margin-top:-6px} }
 
-  /* ---------- collection ---------- */
-  .filterbar{display:flex;align-items:flex-end;gap:14px;margin:30px 0 16px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
-  .filters{display:flex;align-items:center;gap:4px;flex:1;flex-wrap:wrap}
-  .cwrap{display:inline-flex;align-items:center;gap:9px;margin-bottom:8px;flex:none}
-  .cw-label{font-family:var(--sans);font-weight:600;font-size:12.5px;color:var(--ink-soft)}
-  .switch{position:relative;width:44px;height:24px;border-radius:999px;border:1px solid var(--rule-strong);background:var(--surface-2);cursor:pointer;padding:0;transition:background .15s ease,border-color .15s ease}
-  .switch:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .switch .knob{position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.3);transition:left .15s ease}
-  .switch[aria-checked="true"]{background:var(--iron);border-color:var(--iron)}
-  .switch[aria-checked="true"] .knob{left:22px}
-  .sortby{display:inline-flex;align-items:center;gap:8px;margin-bottom:7px;flex:none}
-  .sb-label{font-family:var(--sans);font-weight:600;font-size:12.5px;color:var(--ink-soft)}
-  .seg2{display:inline-flex;border:1px solid var(--rule-strong);border-radius:8px;overflow:hidden}
-  .seg2 button{font-family:var(--sans);font-weight:600;font-size:12px;border:0;background:var(--surface);color:var(--ink-soft);padding:6px 11px;cursor:pointer;border-right:1px solid var(--rule)}
-  .seg2 button:last-child{border-right:0}
-  .seg2 button.on{background:var(--iron);color:var(--on-accent)}
-  .seg2 button:not(.on):hover{background:var(--surface-2);color:var(--ink)}
-  .filters button{font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink-soft);background:none;border:0;border-bottom:2px solid transparent;padding:8px 12px;cursor:pointer;margin-bottom:-1px;display:inline-flex;align-items:center;gap:7px}
-  .filters button.on{color:var(--accent);border-bottom-color:var(--accent)}
-  .filters .n{font-family:var(--mono);font-size:11px;color:var(--ink-faint);background:var(--surface-2);border-radius:99px;padding:1px 7px}
-  .filters button.on .n{color:var(--accent)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
+  /* a sheet: an article, a handout or a document, the size of a cover so it stands on the same shelf (phase 3).
+     It reads as a printed page: a top margin, the title, set lines fading down the page, and its kind at the foot
+     where a cover keeps its own, so an options chip never covers it. */
+  .leaf{position:relative;display:flex;flex-direction:column;aspect-ratio:2/3;padding:38px 16px 13px;border-radius:2px;
+    background:var(--surface);color:var(--ink);text-decoration:none;overflow:hidden;border:1px solid var(--rule);
+    box-shadow:0 8px 18px -14px rgba(20,14,6,.6),0 1px 2px rgba(0,0,0,.18);transition:transform .16s ease,box-shadow .16s ease}
+  .leaf::after{content:"";position:absolute;top:0;right:0;width:22px;height:22px;
+    background:linear-gradient(225deg,var(--paper) 0 50%,color-mix(in srgb,var(--rule-strong) 80%,var(--surface)) 50% 100%);
+    box-shadow:-1px 1px 2px rgba(0,0,0,.12)}
+  .leaf:hover{transform:translateY(-4px);box-shadow:0 16px 28px -16px rgba(20,14,6,.7),0 2px 3px rgba(0,0,0,.2)}
+  .leaf:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .pp-title{font-family:var(--serif);font-weight:600;font-size:.98rem;line-height:1.22;color:var(--ink);
+    display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;flex:none}
+  .pp-by{margin-top:5px;font-family:var(--serif);font-style:italic;font-size:.8rem;color:var(--ink-soft);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:none}
+  .pp-lines{flex:1;min-height:0;margin:13px 0 10px;
+    background:repeating-linear-gradient(180deg,color-mix(in srgb,var(--ink) 12%,transparent) 0 2px,transparent 2px 9px);
+    -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent);mask-image:linear-gradient(180deg,#000 30%,transparent)}
+  .pp-kind{flex:none;font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  #docs.editing .cv-more,#prep.editing .cv-more{display:grid}
+  @media (prefers-reduced-motion:reduce){ .leaf{transition:none} .leaf:hover{transform:none} }
+  @media (max-width:760px){ .leaf{padding:26px 10px 9px}
+    .pp-title{font-size:.8rem;-webkit-line-clamp:4} .pp-kind{font-size:8px} .pp-by{font-size:.68rem}
+    .pp-lines{margin:9px 0 7px;background-size:100% 7px;
+      background-image:repeating-linear-gradient(180deg,color-mix(in srgb,var(--ink) 12%,transparent) 0 2px,transparent 2px 7px)} }
 
-  .card{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:12px;cursor:pointer;transition:border-color .12s ease,transform .12s ease,box-shadow .12s ease}
-  .card:hover{border-color:var(--iron-soft);transform:translateY(-2px);box-shadow:var(--shadow)}
-  .card.fresh{animation:pop .5s ease}
-  @keyframes pop{0%{transform:scale(.96);opacity:.4}100%{transform:scale(1);opacity:1}}
-  .media{position:relative;height:154px;border-radius:10px;overflow:hidden;margin-bottom:11px;display:flex}
-  .media.cover-img{background-size:cover;background-position:center;background-color:var(--sunk);align-items:center;justify-content:center}
-  .media.vidthumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.26))}
-  .media.book{padding:14px;flex-direction:column;color:#f4f1e6;background:var(--c)}
-  .media.book .spine{position:absolute;left:0;top:0;bottom:0;width:7px;background:rgba(0,0,0,.28);box-shadow:inset -1px 0 0 rgba(255,255,255,.12)}
-  .media.book .bk-t{font-family:var(--serif);font-weight:600;font-size:1.05rem;line-height:1.18;margin-top:auto;text-shadow:0 1px 2px rgba(0,0,0,.25)}
-  .media.book .bk-a{font-size:11px;opacity:.85;margin-top:5px;letter-spacing:.02em}
-  .media.podcast{align-items:center;justify-content:center;color:#f4f1e6;background:radial-gradient(120% 120% at 30% 20%, color-mix(in srgb,var(--c) 78%, #fff 0%), color-mix(in srgb,var(--c) 92%, #000 22%))}
-  .media.podcast .init{font-family:var(--serif);font-weight:700;font-size:2.3rem;text-shadow:0 1px 2px rgba(0,0,0,.25)}
-  .media.podcast .wave{position:absolute;right:10px;bottom:10px;display:flex;gap:2px;align-items:flex-end;height:16px;opacity:.85}
-  .media.podcast .wave i{width:2.5px;background:#fff;border-radius:2px}
-  .media.video{align-items:center;justify-content:center;background:linear-gradient(140deg,#20222b,#33363f)}
-  .media.video .thumbtint{position:absolute;inset:0;background:color-mix(in srgb,var(--c) 32%, transparent);mix-blend-mode:overlay}
-  .media .play{position:relative;z-index:1;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);color:#141414;display:grid;place-items:center;font-size:15px;padding-left:3px}
-  .media .dur{position:absolute;right:8px;bottom:8px;font-family:var(--mono);font-size:10px;color:#fff;background:rgba(0,0,0,.72);padding:2px 6px;border-radius:5px}
-  .c-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
-  .c-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--iron)}
-  .c-badge.book .dot{background:var(--brass)}
-  .c-badge.podcast .dot{background:var(--iron)}
-  .c-badge.video .dot{background:var(--accent)}
-  .c-title{font-family:var(--serif);font-weight:600;font-size:1rem;line-height:1.24;margin:5px 0 2px;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .c-sub{font-size:12.5px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .c-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}
-  .c-meta{font-family:var(--mono);font-size:11px;color:var(--ink-faint)}
-  .status{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--iron-soft);border:1px solid color-mix(in srgb,var(--iron) 40%,transparent);border-radius:99px;padding:2px 8px}
-  .status.ready{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
-
-  .empty{text-align:center;color:var(--ink-soft);padding:60px 20px}
-  .empty h3{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.2rem;margin:0 0 4px}
-  .empty p{margin:0;font-size:13.5px}
+  /* signed out */
+  .shelf-invite{max-width:640px;margin:6px 0 40px;padding:26px 28px;border:1px solid var(--rule);border-radius:16px;background:var(--surface)}
+  .shelf-invite h2{font-family:var(--serif);font-weight:600;font-size:1.35rem;margin:0 0 6px}
+  .shelf-invite p{margin:0 0 18px;color:var(--ink-soft)}
+  .si-acts{display:flex;gap:10px;flex-wrap:wrap}
+  .si-acts a{display:inline-flex;align-items:center;font-family:var(--sans);font-weight:600;font-size:14px;border-radius:10px;padding:9px 18px;text-decoration:none}
+  .si-acts .btn-primary{background:var(--accent);color:var(--on-accent)}
+  .si-acts .btn-primary:hover{background:var(--accent-soft)}
+  .si-acts .btn-quiet{color:var(--ink);border:1px solid var(--rule-strong);background:var(--paper)}
+  .si-acts .btn-quiet:hover{background:var(--surface-2)}
+  /* a teacher's videos, podcasts and copies, each kind on its own shelf */
+  .lib-sec{margin:0 0 34px}
+  .lib-sec[hidden]{display:none}
+  /* the Add dialog: what to add, as tabs, the way the Prep Room's "Add a source" asks */
+  .add-tabs{display:flex;gap:2px;border-bottom:1px solid var(--rule);margin:6px 0 12px}
+  .add-tabs button{font-family:var(--sans);font-weight:600;font-size:13.5px;color:var(--ink-soft);background:none;border:0;
+    border-bottom:2px solid transparent;padding:8px 12px;margin-bottom:-1px;cursor:pointer}
+  .add-tabs button:hover{color:var(--ink)}
+  .add-tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+  .cl-tools{margin:2px 0 12px -10px}
+  .add-form[hidden]{display:none}
+  .add-form .opt{font-weight:400;color:var(--ink-faint);text-transform:none;letter-spacing:0}
+  .add-err{color:var(--err);font-size:13px;margin:6px 0 0}
+  .drop{position:relative;display:grid;justify-items:center;gap:3px;padding:20px 16px 18px;border:1.5px dashed var(--rule-strong);
+    border-radius:12px;background:color-mix(in srgb,var(--surface) 55%,transparent);text-align:center;
+    transition:border-color .15s ease,background-color .15s ease}
+  .drop input{position:absolute;inset:0;width:100%;height:100%;min-height:0;margin:0;opacity:0;cursor:pointer}
+  .drop svg{width:24px;height:24px;margin-bottom:4px;fill:none;stroke:var(--iron);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .drop-t{font-family:var(--sans);font-weight:600;font-size:14px;color:var(--ink);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .drop-s{font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
+  .drop:hover,.drop.over{border-color:var(--iron);background:var(--surface)}
+  .drop.has{border-style:solid;border-color:var(--iron-soft);background:var(--surface)}
+  .drop:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+  .up-offer{display:flex;justify-content:center;align-items:baseline;gap:6px;flex-wrap:wrap}
+  .linkish{font:inherit;font-weight:600;color:var(--iron);background:none;border:0;padding:2px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+  @media(max-width:760px){
+    .lib-main{padding:20px 16px calc(var(--rail-bar) + 50px)}
+    .room-acts{margin-bottom:.6em}
+    .class-invite{padding:18px}
+  }
 
   /* ---------- book shelf (reading nook) ---------- */
   .shelfroom{position:relative;padding:22px 4px 6px}
@@ -341,23 +388,6 @@
   .result.ready:hover{background:color-mix(in srgb, var(--accent) 12%, var(--surface))}
   .result .r-ready{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--accent);margin-left:auto;flex:none;white-space:nowrap}
   /* Browse the ready library */
-  .browse-cta{margin-top:14px;display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid var(--accent);border-radius:12px;padding:11px 15px;background:color-mix(in srgb, var(--accent) 6%, var(--surface));cursor:pointer}
-  .browse-cta:hover{background:color-mix(in srgb, var(--accent) 12%, var(--surface))}
-  .browse-cta[hidden]{display:none}
-  .browse-cta .bc-star{color:var(--accent);font-size:17px;flex:none}
-  .browse-cta .bc-txt{display:flex;flex-direction:column;line-height:1.25}
-  .browse-cta .bc-txt strong{font-family:var(--sans);font-weight:700;font-size:13.5px;color:var(--ink)}
-  .browse-cta .bc-sub{font-size:12px;color:var(--ink-soft)}
-  .browse-cta .bc-arrow{margin-left:auto;color:var(--accent);font-size:17px;flex:none}
-  .browse-filter{width:100%;box-sizing:border-box;border:1px solid var(--rule-strong);border-radius:9px;padding:10px 12px;font-size:14px;font-family:var(--sans);background:var(--surface);color:var(--ink);margin-bottom:14px}
-  .browse-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:12px;max-height:52vh;overflow-y:auto;padding:2px}
-  .bg-card{display:flex;flex-direction:column;gap:6px;border:1px solid var(--rule);border-radius:10px;padding:10px;background:var(--surface);cursor:pointer;text-align:left}
-  .bg-card:hover{border-color:var(--accent);background:color-mix(in srgb, var(--accent) 6%, var(--surface))}
-  .bg-card img,.bg-card .bg-ph{width:100%;aspect-ratio:2/3;border-radius:5px;object-fit:cover;background:var(--sunk)}
-  .bg-card .bg-ph{display:flex;align-items:center;justify-content:center;color:#f4f1e6;font-family:var(--serif);font-weight:700;font-size:22px;background:var(--c)}
-  .bg-card .bg-t{font-family:var(--serif);font-weight:600;font-size:13px;color:var(--ink);line-height:1.2}
-  .bg-card .bg-a{font-size:11.5px;color:var(--ink-soft)}
-  .bg-card .bg-n{font-size:10.5px;font-weight:600;color:var(--accent);margin-top:auto}
 
   /* url preview (video) */
   .preview{display:flex;gap:14px;align-items:center;border:1px solid var(--rule);border-radius:12px;padding:12px;background:var(--paper);margin:6px 0 4px}
@@ -385,43 +415,20 @@
   .rv-actions{display:flex;gap:8px}
   .rv-actions .btn-solid,.rv-actions .btn-ghost{padding:8px 14px;font-size:13px}
   .rv-empty{color:var(--ink-soft);font-size:13px;padding:8px 0}
-  @media(max-width:640px){.wrap{padding:20px 16px calc(var(--rail-bar) + 50px)}.o-field{flex-direction:column}.o-add{padding:12px}.books{gap:18px}.book{width:96px}}
+  @media(max-width:640px){.books{gap:18px}.book{width:96px}}
   /* touch: every control gets at least a 44px target */
   @media (pointer:coarse){
-    .types button,.o-add,.filters button,.seg2 button,.cover-edit-btn,.cover-edit .csave,.cover-edit .creset,.lib-remove,.lib-extract,
-    .ex-export,.lib-upload,.btn-solid,.btn-ghost,.review-pill,.fld input,.cover-edit input,.up-input,.browse-filter{min-height:44px}
-    .switch::before{content:"";position:absolute;inset:-12px -3px}   /* a 46px tap area around the small switch */
+    .cover-edit-btn,.cover-edit .csave,.cover-edit .creset,.lib-remove,.lib-extract,.add-tabs button,.add-btn,.sg-act,
+    .ex-export,.lib-upload,.btn-solid,.btn-ghost,.review-pill,.fld input,.cover-edit input,.up-input,.si-acts a{min-height:44px}
+    .cv-off{width:32px;height:32px}   /* touch: shown in Edit mode, sized for a finger */
+    .mine-cell:hover .cv-off,.mine-cell:focus-within .cv-off{display:none}
+    #mine.editing .cv-off{display:grid}
+    .cv-more{width:36px;height:36px}   /* touch: shown in a class's Edit mode */
+    .placed:hover .cv-more,.placed:focus-within .cv-more{display:none}
+    .cls.editing .cv-more{display:grid}
   }
 
-'+css+'
 
-  /* ---------- for your classes (static/js/library_classes.js, decision 0026) ---------- */
-  .classes{background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:18px 20px 16px;box-shadow:var(--shadow);margin-bottom:22px}
-  .cl-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
-  .cl-eyebrow{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--iron-soft)}
-  .classes h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin:4px 0 0}
-  .cl-edit{font-family:var(--sans);font-weight:600;font-size:13px;color:var(--ink);background:var(--surface);border:1px solid var(--rule-strong);border-radius:9px;padding:7px 13px;min-height:34px;cursor:pointer}
-  .cl-edit:hover{border-color:var(--ink-faint)}
-  .cl-courses{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
-  .cl-courses:empty{display:none}
-  .cl-courses button{font-family:var(--sans);font-size:12.5px;font-weight:600;border:1px solid var(--rule-strong);background:var(--paper);color:var(--ink-soft);border-radius:999px;padding:5px 12px;min-height:30px;cursor:pointer}
-  .cl-courses button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
-  .cl-works{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
-  .cl-work{display:flex;flex-direction:column;gap:3px;background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:11px 12px 10px}
-  .cl-t{font-family:var(--serif);font-weight:600;font-size:.98rem;line-height:1.25;color:var(--ink);overflow-wrap:anywhere}
-  .cl-a,.cl-c,.cl-n{font-size:12px;color:var(--ink-soft)}
-  .cl-c{color:var(--iron-soft)}
-  .cl-state{align-self:flex-start;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--rule-strong);border-radius:99px;padding:1px 7px;margin-bottom:3px;color:var(--ink-soft)}
-  .cl-state.cl-text{border-color:var(--iron);color:var(--ink)}
-  .cl-state.cl-outline{border-color:var(--brass);color:var(--ink)}
-  .cl-act{align-self:flex-start;margin-top:5px;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--accent);background:none;border:0;padding:0;min-height:24px;cursor:pointer;text-decoration:none}
-  .cl-act:hover{text-decoration:underline}
-  /* a card's actions sit on its last line, level across the row: the way in on the left, "Add to a unit" quiet on the right */
-  .cl-acts{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:auto;padding-top:8px}
-  .cl-acts .cl-act{margin-top:0;align-self:center}
-  .cl-acts .cl-unit{margin:0 -8px 0 auto;color:var(--ink-soft)}
-  .cl-acts .cl-unit:hover{color:var(--ink)}
-  .cl-empty{grid-column:1/-1;font-size:13.5px;color:var(--ink-soft);padding:4px 0}
   .cl-dlg{border:1px solid var(--rule-strong);border-radius:16px;padding:0;width:min(640px,94vw);max-height:86vh;margin-top:7vh;background:var(--surface);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.3)}
   .cl-dlg::backdrop{background:rgba(20,22,30,.5)}
   .cl-dlg-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 4px}
@@ -437,7 +444,8 @@
   .cl-dlg-body input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent)}
   .cl-g{font-size:12px;color:var(--ink-faint)}
   .cl-err{color:var(--err);font-size:13px}
-  .cl-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:12px}
+  .cl-actions{display:flex;justify-content:flex-end;gap:10px;margin:12px -18px -18px;padding:12px 18px 16px;
+    position:sticky;bottom:-18px;background:var(--surface);border-top:1px solid var(--rule)}
   .cl-save{font-family:var(--sans);font-weight:600;font-size:14px;border:0;border-radius:9px;background:var(--accent);color:var(--on-accent);padding:9px 18px;cursor:pointer}
   .cl-dlg-body ul{margin:4px 0;padding-left:1.1em}
   .cl-dlg-body li{margin:5px 0}
@@ -445,7 +453,7 @@
   .cl-cov{display:block;font-size:12.5px;color:var(--ink-soft)}
   .cl-gen{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-faint)}
   .cl-src{font-size:12px;color:var(--ink-soft);margin-top:12px}
-  @media (pointer:coarse){.cl-edit,.cl-courses button,.cl-act,.cl-save,.cl-x{min-height:44px}.cl-x{min-width:44px}}
+  @media (pointer:coarse){.cl-save,.cl-x{min-height:44px}.cl-x{min-width:44px}}
 
   /* ---------- moments in a video or episode (static/js/library_moments.js, decision 0026) ---------- */
   .moments{border-top:1px solid var(--rule);margin-top:18px;padding-top:12px;text-align:left}

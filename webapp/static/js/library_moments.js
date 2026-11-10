@@ -94,7 +94,9 @@ function draw(){
     var when=stamp(x.start)+"–"+stamp(x.end);
     return '<li><span class="m-when">'+(x.link?'<a href="'+e(x.link)+'" target="_blank" rel="noopener">'+when+'</a>':when)+'</span>'+
       (x.quote?'<span class="m-q">“'+e(x.quote.length>280?x.quote.slice(0,278)+"…":x.quote)+'”</span>':"")+(x.note?'<span class="m-note">'+e(x.note)+'</span>':"")+
-      '<span class="m-acts">'+(window.Passage&&Passage.teacher?'<button type="button" class="shell-tool sm m-unit" data-unit-moment="'+x.id+'" data-when="'+when+'" aria-haspopup="true" aria-expanded="false" aria-label="Add the moment at '+when+' to a unit">'+Passage.icons.prep+'Add to a unit</button>':"")+
+      '<span class="m-acts">'+(window.Passage&&Passage.teacher?(M.item.type==="video"
+        ?'<button type="button" class="shell-tool sm m-unit" data-unit-moment="'+x.id+'" data-when="'+when+'" aria-haspopup="true" aria-expanded="false" aria-label="Save the moment at '+when+' to a unit or a class shelf">'+Passage.icons.save+'Save to…</button>'
+        :'<button type="button" class="shell-tool sm m-unit" data-unit-moment="'+x.id+'" data-when="'+when+'" aria-haspopup="true" aria-expanded="false" aria-label="Add the moment at '+when+' to a unit">'+Passage.icons.prep+'Add to a unit</button>'):"")+
       '<button type="button" class="m-del" data-del="'+x.id+'" aria-label="Delete the moment at '+when+'">Delete</button></span></li>';}).join("")+'</ul>':'<p class="m-help">None yet.</p>');
   body.innerHTML=html;
   var make=body.querySelector(".m-make");if(make)make.onclick=function(){look(false,true);};
@@ -104,8 +106,12 @@ function draw(){
     (M.mark===1?en:q("#m-n")).focus();};});
   body.querySelectorAll("[data-del]").forEach(function(b){b.onclick=function(){remove(b.getAttribute("data-del"));};});
   body.querySelectorAll("[data-unit-moment]").forEach(function(b){b.onclick=function(){
-    Passage.addToUnit({kind:"library",ref:{item_id:M.item.id,excerpts:[b.getAttribute("data-unit-moment")]},label:M.item.title},b,
-      "the moment at "+b.getAttribute("data-when"));};});
+    var id=b.getAttribute("data-unit-moment"),x=(M.data.excerpts||[]).filter(function(e){return e.id===id;})[0]||{};
+    var say="the moment at "+b.getAttribute("data-when");
+    // a video's moment can also go on a class shelf, carrying its words and note so it outlives the moment
+    Passage.addToUnit({kind:"library",ref:{item_id:M.item.id,excerpts:[id]},label:M.item.title},b,say,
+      M.item.type==="video"?{place:{kind:"video",ref:{item_id:M.item.id,start:x.start,end:x.end,quote:x.quote||undefined,note:x.note||undefined},
+        label:M.item.title+" from "+b.getAttribute("data-when").split("–")[0]}}:null);};});
 }
 function save(ev){
   ev.preventDefault();

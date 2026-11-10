@@ -488,3 +488,54 @@ create table if not exists library_transcribe_jobs (
     error       text,
     updated_at  timestamptz not null default now()
 );
+
+-- What is on a shelf in the Living Library (decision 0029). A row belongs to one person (user_id) or to one
+-- course's class shelf (course_key), never both. Phase 1 holds the Reading Room books a person shelves; uploads,
+-- links, videos, podcasts and Prep Room resources, and class shelves with their audience, come in later phases.
+create table if not exists shelf_items (
+    id          uuid primary key default gen_random_uuid(),
+    user_id     uuid references users(id) on delete cascade,
+    course_key  text,
+    audience    text check (audience in ('students','teachers')),
+    kind        text not null check (kind in ('book','upload','link','video','podcast','resource')),
+    ref         jsonb not null,
+    label       text,
+    added_by    uuid references users(id) on delete set null,
+    added_at    timestamptz not null default now(),
+    check ((user_id is null) <> (course_key is null))
+);
+create unique index if not exists shelf_items_user_book on shelf_items (user_id, (ref->>'slug'))
+    where kind = 'book' and user_id is not null;
+create index if not exists shelf_items_course_idx on shelf_items(course_key) where course_key is not null;
+
+-- The classes a student says they take (decision 0029), so their class shelves come first. The student's own
+-- setting: chosen and changed by them, never put in a prompt (0002), deleted with the account.
+create table if not exists student_courses (
+    user_id     uuid not null references users(id) on delete cascade,
+    course_key  text not null,
+    added_at    timestamptz not null default now(),
+    primary key (user_id, course_key)
+);
+
+-- The text of an upload or a saved link on a shelf (decision 0029, phase 3), kept encrypted like a Prep Room upload.
+-- One row per shelf item: a class shelf's copy has its own, so a handout outlives the teacher's own copy.
+create table if not exists shelf_texts (
+    item_id     uuid primary key references shelf_items(id) on delete cascade,
+    nonce       bytea not null,
+    ct          bytea not null,
+    words       integer not null default 0
+);
+
+-- A teacher's suggestion that a public-domain or openly licensed book they uploaded join the Reading Room
+-- (decision 0029). The maker approves or declines it at /ops, then adds an approved book to the catalog by hand.
+create table if not exists catalog_suggestions (
+    id          uuid primary key default gen_random_uuid(),
+    item_id     uuid references shelf_items(id) on delete set null,
+    user_id     uuid references users(id) on delete set null,
+    title       text not null,
+    author      text,
+    basis       text not null,
+    status      text not null default 'pending' check (status in ('pending','approved','declined')),
+    created_at  timestamptz not null default now(),
+    decided_at  timestamptz
+);

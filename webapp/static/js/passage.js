@@ -211,6 +211,7 @@
   var TO_MEMORY = icon("<rect x='3.5' y='6.5' width='12' height='12' rx='2'/><path d='M8 4.5h10a2 2 0 0 1 2 2v10'/><path d='M6.5 11h6M6.5 14h4'/>");
   var TO_CHAT = icon("<path d='M4 5.5h16v11H9l-4 3.2V16.5H4z'/>");
   var TO_PREP = icon("<path d='M6.5 3.5h8l4 4v13h-12z'/><path d='M14 3.5v4.2h4.2'/><path d='M9 12.5h6M9 15.5h6'/>");
+  var SAVE = icon("<path d='M7 3.5h10v17l-5-4-5 4z'/><path d='M12 7.5v5M9.5 10h5'/>");   // "Save to": a unit or a class shelf
   var CHEVRON = icon("<path d='M6 9l6 6 6-6'/>");
   function drawFoot() {
     if (!pg.v1) { foot.innerHTML = ""; return; }
@@ -311,10 +312,8 @@
       db.verses = db.verses.filter(function (x) { return x.id !== v.id; }); memStore(signed, db); }});
   }
 
-  // ---- Add to a unit: a teacher's sources travel into the Prep Room from wherever they are found ---------------
-  // The pattern people know from "Save to" lists (a video to playlists, a file to folders): the teacher's units,
-  // checked where the item already is. Choosing an unchecked unit adds it, a checked one takes it out, and both
-  // can be undone. The menu floats beside its button in the house menu style (shell.css .shell-menu).
+  // ---- the shell's floating menu: the house menu card (shell.css .shell-menu), anchored to its button ----
+  // One opener for every menu here: "Save to", and the small menus on a class shelf (Passage.menu).
   var menu = null, menuOpener = null, place = null;
   var BOX = "<span class='sm-box' aria-hidden='true'><svg viewBox='0 0 24 24'><path d='M20 6L9 17l-5-5'/></svg></span>";
   var PLUS = "<span class='sm-plus' aria-hidden='true'><svg viewBox='0 0 24 24'><path d='M12 5v14M5 12h14'/></svg></span>";
@@ -324,6 +323,58 @@
     window.removeEventListener("scroll", place, true); window.removeEventListener("resize", closeMenu);
     if (menuOpener) menuOpener.setAttribute("aria-expanded", "false");
   }
+  // the menu for this button, or null when it was already open (a second press closes it)
+  function openMenu(anchor, label) {
+    var was = menu && menuOpener === anchor; closeMenu(); if (was) return null;
+    menuOpener = anchor;
+    menu = document.createElement("div");
+    menu.className = "shell-menu"; menu.setAttribute("role", "menu"); menu.setAttribute("aria-label", label);
+    menu.setAttribute("data-keep-live", "");
+    // inside an open modal dialog, the menu must live in it: the rest of the page sits under the dialog, inert
+    (anchor.closest("dialog[open]") || document.body).appendChild(menu);
+    anchor.setAttribute("aria-expanded", "true");
+    place = function () {               // under the button, or over it when the screen runs out below
+      if (!menu) return;
+      var r = anchor.getBoundingClientRect(), w = menu.offsetWidth, h = menu.offsetHeight, gap = 6;
+      var below = innerHeight - r.bottom - gap - 8, above = r.top - gap - 8;
+      var up = h > below && above > below;
+      menu.style.maxHeight = Math.max(160, Math.min(380, up ? above : below)) + "px";
+      // its left edge on the button's, or its right edge on the button's when there's no room to the right
+      menu.style.left = Math.max(8, r.left + w <= innerWidth - 8 ? r.left : Math.min(r.right, innerWidth - 8) - w) + "px";
+      menu.style.top = (up ? Math.max(8, r.top - gap - menu.offsetHeight) : r.bottom + gap) + "px";
+    };
+    window.addEventListener("scroll", place, true); window.addEventListener("resize", closeMenu);
+    menu.addEventListener("keydown", function (e) {
+      var bs = Array.prototype.slice.call(menu.querySelectorAll("button")), i = bs.indexOf(document.activeElement);
+      if (!bs.length) return;
+      if (e.key === "ArrowDown") { e.preventDefault(); bs[(i + 1) % bs.length].focus(); }
+      if (e.key === "ArrowUp") { e.preventDefault(); bs[(i - 1 + bs.length) % bs.length].focus(); }
+      if (e.key === "Home") { e.preventDefault(); bs[0].focus(); }
+      if (e.key === "End") { e.preventDefault(); bs[bs.length - 1].focus(); }
+      if (e.key === "Tab") closeMenu();
+    });
+    return menu;
+  }
+  function settle(anchor) { setTimeout(function () { if (menu) { closeMenu(); anchor.focus(); } }, 260); }   // the check is seen, then the menu goes
+  document.addEventListener("click", function (e) {
+    // a click on an item of a menu that has just made way for another (File as…, Save to…) isn't a click outside
+    if (menu && e.target.isConnected && !menu.contains(e.target) && e.target !== menuOpener && !(menuOpener && menuOpener.contains(e.target))) closeMenu();
+  });
+  // A small menu of actions: entries [{label, checked (true or false makes it a checkbox), danger, act}].
+  function smallMenu(anchor, label, entries) {
+    var m = openMenu(anchor, label); if (!m) return;
+    m.innerHTML = entries.map(function (x, i) {
+      var box = typeof x.checked === "boolean";
+      return "<button type='button' role='" + (box ? "menuitemcheckbox" : "menuitem") + "' data-i='" + i + "'" +
+        (box ? " aria-checked='" + x.checked + "'" : "") + (x.danger ? " class='danger'" : "") + ">" +
+        (box ? BOX : "") + "<span class='sm-t'>" + esc(x.label) + "</span></button>"; }).join("");
+    place();
+    m.querySelectorAll("[data-i]").forEach(function (b) {
+      b.onclick = function () { var x = entries[+b.dataset.i]; closeMenu(); anchor.focus(); x.act(); };
+    });
+    var first = m.querySelector("button"); if (first) first.focus();
+  }
+
   function capital(t) { return t.charAt(0).toUpperCase() + t.slice(1); }
   function api(method, url, body) {
     return fetch(url, {method: method, credentials: "same-origin", headers: body ? {"Content-Type": "application/json"} : {},
@@ -331,7 +382,13 @@
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) {
         if (!r.ok) throw new Error(d.error || "That didn't work. Try again in a minute."); return d; }); });
   }
+
+  // ---- Save to: a teacher's sources travel into the Prep Room, and books and videos onto class shelves ----------
+  // The pattern people know from "Save to" lists (a video to playlists, a file to folders): the teacher's units, then
+  // (for a book or a video) the classes they teach, each checked where the item already is. Choosing an unchecked
+  // one adds it, a checked one takes it out, and both can be undone (decisions 0026 and 0029).
   function changed(unit) { document.dispatchEvent(new CustomEvent("prep:sources-changed", {detail: {unit: unit}})); }
+  function shelfChanged() { document.dispatchEvent(new CustomEvent("shelf:changed", {detail: {}})); }
   var KEY = {book: "slug", outline: "key", passage: "ref", library: "item_id", link: "url"};
   // where this item stands in a unit: "in", "whole" (a moment whose whole video is already there), or "out"
   function standing(unit, source) {
@@ -366,6 +423,27 @@
       }});
     });
   }
+  // a class shelf: put the book or video on it for the class's students, or take it off
+  function shelve(cls, pl, say) {
+    return api("POST", "/api/shelf/class/" + encodeURIComponent(cls.key) + "/items", {kind: pl.kind, ref: pl.ref, label: pl.label, audience: "students"})
+      .then(function (d) {
+        cls.holds = d.item; shelfChanged();
+        Shell.toast("Put " + (say || pl.label) + " on the " + cls.name + " shelf" + (d.item.audience === "teachers" ? ", for its teachers" : ""), {undo: function () {
+          api("DELETE", "/api/shelf/items/" + d.item.id).then(shelfChanged).catch(function (err) { Shell.toast(err.message); });
+        }});
+      });
+  }
+  function unshelve(cls, pl, say) {
+    var was = cls.holds;
+    return api("DELETE", "/api/shelf/items/" + was.id).then(function (d) {
+      cls.holds = null; shelfChanged();
+      Shell.toast("Took " + (say || pl.label) + " off the " + cls.name + " shelf" + (d.returned ? ". It's back on the shelf of the teacher who added it" : ""), {undo: function () {
+        // put back from what the menu was given (a class copy's own ref no longer names the teacher's copy)
+        api("POST", "/api/shelf/class/" + encodeURIComponent(cls.key) + "/items", {kind: pl.kind, ref: pl.ref, label: was.label, audience: was.audience})
+          .then(shelfChanged).catch(function (err) { Shell.toast(err.message); });
+      }});
+    });
+  }
   function row(u, source, here) {
     var st = standing(u, source);
     return "<button type='button' role='menuitemcheckbox' data-u='" + esc(u.id) + "' aria-checked='" + (st !== "out") + "'" +
@@ -373,51 +451,66 @@
       (st === "whole" ? "<span class='sm-note'>all of it</span>" : here && u.id === here.id ? "<span class='sm-note'>open</span>" : "") +
       "</button>";
   }
-  // say: what the toasts call it, when that isn't the source's label ("the moment at 2:14–3:05")
-  function addToUnit(source, anchor, say) {
-    var was = menu && menuOpener === anchor; closeMenu(); if (was) return;
-    menuOpener = anchor;
-    menu = document.createElement("div");
-    menu.className = "shell-menu"; menu.setAttribute("role", "menu"); menu.setAttribute("aria-label", "Add to a unit");
-    menu.setAttribute("data-keep-live", "");
-    menu.innerHTML = "<div class='shell-menu-lab'>Your units</div><p class='shell-menu-note' role='status'>Loading…</p>";
-    document.body.appendChild(menu);
-    anchor.setAttribute("aria-expanded", "true");
-    place = function () {               // under the button, or over it when the screen runs out below
-      if (!menu) return;
-      var r = anchor.getBoundingClientRect(), w = menu.offsetWidth, h = menu.offsetHeight, gap = 6;
-      var below = innerHeight - r.bottom - gap - 8, above = r.top - gap - 8;
-      var up = h > below && above > below;
-      menu.style.maxHeight = Math.max(160, Math.min(360, up ? above : below)) + "px";
-      // its left edge on the button's, or its right edge on the button's when there's no room to the right
-      menu.style.left = Math.max(8, r.left + w <= innerWidth - 8 ? r.left : Math.min(r.right, innerWidth - 8) - w) + "px";
-      menu.style.top = (up ? Math.max(8, r.top - gap - menu.offsetHeight) : r.bottom + gap) + "px";
-    };
+  function classRow(c) {
+    return "<button type='button' role='menuitemcheckbox' data-c='" + esc(c.key) + "' aria-checked='" + !!c.holds + "'>" + BOX +
+      "<span class='sm-t'>" + esc(c.name) + "</span>" + (c.holds && c.holds.audience === "teachers" ? "<span class='sm-note'>teachers</span>" : "") + "</button>";
+  }
+  // say: what the toasts call it, when that isn't the source's label ("the moment at 2:14–3:05").
+  // opts.place: {kind: "book" or "video", ref, label}, the same item as a class shelf holds it. With it, the menu
+  // also lists the classes the teacher teaches. opts.mine: {label, checked, act(on)}, the person's own shelf, listed
+  // first, so one "Save to" says everywhere a book lives for a teacher.
+  function addToUnit(source, anchor, say, opts) {
+    var pl = opts && opts.place, mine = opts && opts.mine;
+    var units = !(opts && opts.units === false);   // false: a Prep Room resource already lives in a unit
+    var m = openMenu(anchor, pl ? "Save to" : "Add to a unit"); if (!m) return;
+    m.innerHTML = "<div class='shell-menu-lab'>" + (units ? "Your units" : "Your shelves") + "</div><p class='shell-menu-note' role='status'>Loading…</p>";
     place();
-    window.addEventListener("scroll", place, true); window.addEventListener("resize", closeMenu);
     var here = Passage.currentUnit;     // the Prep Room says which unit is open
-    var key = source.ref && source.ref[KEY[source.kind]];
-    api("GET", "/api/prep/units" + (key ? "?kind=" + encodeURIComponent(source.kind) + "&key=" + encodeURIComponent(key) : ""))
-      .then(function (d) {
+    var hk = (opts && opts.hold) || {kind: source.kind, key: source.ref && source.ref[KEY[source.kind]]};   // opts.hold: how a unit holds it
+    var key = hk.key;
+    var heldUrl = pl ? "/api/shelf/held?kind=" + pl.kind + "&key=" + encodeURIComponent(pl.kind === "book" ? pl.ref.slug : (pl.ref.origin || pl.ref.item_id || pl.ref.resource_id)) +
+      (pl.ref.start != null ? "&start=" + pl.ref.start : "") : null;
+    Promise.all([units ? api("GET", "/api/prep/units" + (key ? "?kind=" + encodeURIComponent(hk.kind) + "&key=" + encodeURIComponent(key) : "")) : Promise.resolve({units: []}),
+                 heldUrl ? api("GET", heldUrl).catch(function () { return {classes: []}; }) : Promise.resolve({classes: []})])
+      .then(function (res) {
         if (!menu) return;
-        var units = (d.units || []).slice(0, 8);
+        var d = res[0], classes = res[1].classes || [];
+        var list = (d.units || []).slice(0, 8);
         var open = here && (d.units || []).filter(function (u) { return u.id === here.id; })[0];
-        if (open) units = [open].concat(units.filter(function (u) { return u.id !== open.id; }));
-        menu.innerHTML = "<div class='shell-menu-lab'>Your units</div>" +
-          (units.length ? units.map(function (u) { return row(u, source, here); }).join("") : "<p class='shell-menu-note'>None yet.</p>") +
-          "<div class='shell-menu-sep'></div><button type='button' role='menuitem' data-new>" + PLUS + "<span class='sm-t'>New unit…</span></button>";
+        if (open) list = [open].concat(list.filter(function (u) { return u.id !== open.id; }));
+        // your shelf, your units (with a new one), then the classes you teach: each group in its own band
+        menu.innerHTML = (mine ? "<div class='shell-menu-lab'>Your shelf</div><button type='button' role='menuitemcheckbox' data-m aria-checked='" +
+            !!mine.checked + "'>" + BOX + "<span class='sm-t'>" + esc(mine.label) + "</span></button><div class='shell-menu-sep'></div>" : "") +
+          (units ? "<div class='shell-menu-lab'>Your units</div>" +
+            (list.length ? list.map(function (u) { return row(u, source, here); }).join("") : "") +
+            "<button type='button' role='menuitem' data-new>" + PLUS + "<span class='sm-t'>New unit…</span></button>" : "") +
+          (classes.length ? (units || mine ? "<div class='shell-menu-sep'></div>" : "") + "<div class='shell-menu-lab'>Class shelves</div>" + classes.map(classRow).join("") :
+            units ? "" : "<p class='shell-menu-note'>Choose the classes you teach in the Living Library, and their shelves show here.</p>");
         place();
         menu.querySelectorAll("[data-u]").forEach(function (b) {
           b.onclick = function () {
-            var u = units.filter(function (x) { return x.id === b.dataset.u; })[0], on = b.getAttribute("aria-checked") === "true";
+            var u = list.filter(function (x) { return x.id === b.dataset.u; })[0], on = b.getAttribute("aria-checked") === "true";
             if (b.getAttribute("aria-disabled") === "true") { Shell.toast("“" + u.title + "” already holds all of it."); return; }
             b.setAttribute("aria-checked", String(!on));          // the check moves at once; the menu closes once it's seen
-            (on ? take(u, source, say) : add(u, source, say))
-              .then(function () { setTimeout(function () { if (menu) { closeMenu(); anchor.focus(); } }, 260); })
+            (on ? take(u, source, say) : add(u, source, say)).then(function () { settle(anchor); })
               .catch(function (err) { b.setAttribute("aria-checked", String(on)); Shell.toast(err.message); });
           };
         });
-        menu.querySelector("[data-new]").onclick = async function () {
+        var mb = menu.querySelector("[data-m]");
+        if (mb) mb.onclick = function () {
+          var on = mb.getAttribute("aria-checked") === "true";
+          mb.setAttribute("aria-checked", String(!on)); mine.checked = !on;
+          Promise.resolve(mine.act(!on)).then(function () { settle(anchor); });
+        };
+        menu.querySelectorAll("[data-c]").forEach(function (b) {
+          b.onclick = function () {
+            var c = classes.filter(function (x) { return x.key === b.dataset.c; })[0], on = b.getAttribute("aria-checked") === "true";
+            b.setAttribute("aria-checked", String(!on));
+            (on ? unshelve(c, pl, say) : shelve(c, pl, say)).then(function () { settle(anchor); })
+              .catch(function (err) { b.setAttribute("aria-checked", String(on)); Shell.toast(err.message); });
+          };
+        });
+        if (units) menu.querySelector("[data-new]").onclick = async function () {
           closeMenu();
           var name = await Shell.ask({title: "New unit", body: "Name it the way you plan. " + capital(say || source.label) + " goes in it first.",
             ok: "Create unit", input: {label: "Unit name", value: "", max: 160}, validate: function (t) { return t ? "" : "Give the unit a name."; }});
@@ -427,23 +520,11 @@
         };
         var first = menu.querySelector("button:not([aria-disabled='true'])"); if (first) first.focus();
       }).catch(function (err) { if (menu) { menu.querySelector(".shell-menu-note").textContent = err.message; place(); } });
-    menu.addEventListener("keydown", function (e) {
-      var bs = Array.prototype.slice.call(menu.querySelectorAll("button")), i = bs.indexOf(document.activeElement);
-      if (!bs.length) return;
-      if (e.key === "ArrowDown") { e.preventDefault(); bs[(i + 1) % bs.length].focus(); }
-      if (e.key === "ArrowUp") { e.preventDefault(); bs[(i - 1 + bs.length) % bs.length].focus(); }
-      if (e.key === "Home") { e.preventDefault(); bs[0].focus(); }
-      if (e.key === "End") { e.preventDefault(); bs[bs.length - 1].focus(); }
-      if (e.key === "Tab") closeMenu();
-    });
   }
-  document.addEventListener("click", function (e) {
-    if (menu && !menu.contains(e.target) && e.target !== menuOpener && !(menuOpener && menuOpener.contains(e.target))) closeMenu();
-  });
 
   window.Passage = {open: open, close: close, linkRefs: linkRefs, linkHtml: linkHtml, normalize: normalize, parse: parse, chapter: chapter,
-    ask: ask, keep: keep, addToUnit: addToUnit, teacher: teacher, currentUnit: null,
-    icons: {memory: TO_MEMORY, chat: TO_CHAT, prep: TO_PREP}};     // the rail's drawings, for the same actions elsewhere
+    ask: ask, keep: keep, addToUnit: addToUnit, menu: smallMenu, teacher: teacher, currentUnit: null,
+    icons: {memory: TO_MEMORY, chat: TO_CHAT, prep: TO_PREP, save: SAVE}};     // the rail's drawings, for the same actions elsewhere
 
   // Pages built on the server mark what holds Scripture with data-scripture; it's linked as the page loads.
   Array.prototype.forEach.call(document.querySelectorAll("[data-scripture]"), linkRefs);

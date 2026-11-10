@@ -34,14 +34,11 @@ RAIL = (
     ("/memory", "Scripture Memory", "everyone",
      _icon('<rect x="3.5" y="6.5" width="12" height="12" rx="2"/><path d="M8 4.5h10a2 2 0 0 1 2 2v10"/>'
            '<path d="M6.5 11h6M6.5 14h4"/>')),
-    ("/read", "Reading Room", "everyone",
-     _icon('<path d="M12 6.6C10.2 5.3 7.3 5 4.8 5.6v12.3c2.5-.6 5.4-.3 7.2 1 1.8-1.3 4.7-1.6 7.2-1V5.6'
-           'C16.7 5 13.8 5.3 12 6.6z"/><path d="M12 6.6v11.7"/>')),
-    ("/generate", "Prep Room", "teacher",
-     _icon('<path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/>')),
-    ("/library", "Living Library", "teacher",
+    ("/library", "Living Library", "everyone",     # the Reading Room is a room inside it (decision 0029)
      _icon('<rect x="4.5" y="5" width="4" height="14" rx="1"/><rect x="10" y="5" width="4" height="14" rx="1"/>'
            '<path d="M16 6.3l3.3.9-2.9 12.7-3.3-.9"/>')),
+    ("/generate", "Prep Room", "teacher",
+     _icon('<path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/>')),
     ("/studio", "Media Studio", "admin",
      _icon('<rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/>'
            '<path d="M4.5 17.5l5-5 3.5 3.5 2.5-2.5 4 4"/>')),
@@ -54,6 +51,8 @@ def rail_items(path: str, teacher: bool, admin: bool) -> list[dict]:
         return who == "everyone" or (who == "teacher" and (teacher or admin)) or (who == "admin" and admin)
 
     def here(href):
+        if href == "/library" and (path == "/read" or path.startswith("/read/")):
+            return True                                     # the Reading Room is inside the Living Library
         return path == "/" if href == "/" else path == href or path.startswith(href + "/")
 
     return [{"href": href, "label": label, "icon": icon, "active": here(href)}

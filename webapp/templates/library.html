@@ -1,109 +1,122 @@
 {% extends "base.html" %}
-{% block title %}Living Library · Exegetica{% endblock %}
-{% block fonts %}<link rel="stylesheet" href="/static/fonts/library.css">{% endblock %}
-{% block styles %}<link rel="stylesheet" href="/static/css/library.css">{% endblock %}
+{% block title %}Your shelves · Living Library · Exegetica{% endblock %}
+{% block fonts %}<link rel="stylesheet" href="/static/fonts/library.css"><link rel="stylesheet" href="/static/fonts/reader.css">{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/covers.css"><link rel="stylesheet" href="/static/css/library.css">{% endblock %}
 {% block content %}
-<div class="app">
-
-  <div class="col">
-    {% include "partials/masthead.html" %}
-    <div class="lib-head">
-      <div class="eyebrow">Living Library</div>
-      <h1>Your shelf of sources</h1>
-      <p>Books, podcasts, and videos you can build lessons and worksheets from.</p>
-      <button id="review-open" class="review-pill" type="button" hidden>Copy reviews <span class="rn" id="review-n">0</span></button>
-    </div>
-
-    <main class="scroll">
-      <div class="wrap shell-col">
-
-        <section class="classes" id="classes" hidden aria-labelledby="classes-h">
-          <div class="cl-head">
-            <div><div class="cl-eyebrow">The school's texts</div><h2 id="classes-h">For your classes</h2></div>
-            <button type="button" class="cl-edit" id="classes-edit">Choose your classes</button>
-          </div>
-          <div class="cl-courses" id="cl-courses" role="group" aria-label="Show the texts for"></div>
-          <ul class="cl-works" id="cl-works"></ul>
-        </section>
-
-        <div class="omni">
-          <div class="o-eyebrow">Add a resource</div>
-          <h2 id="omni-title">Bring a book into your library</h2>
-          <div class="types" id="types" role="group" aria-label="Resource type">
-            <button data-t="book" class="on" type="button"><svg viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H12v15H5.5A1.5 1.5 0 0 0 4 20.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H12v15h6.5a1.5 1.5 0 0 1 1.5 1.5z"/></svg>Book</button>
-            <button data-t="podcast" type="button"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6"/></svg>Podcast</button>
-            <button data-t="video" type="button"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg>Video</button>
-          </div>
-          <div class="o-field">
-            <div class="o-input">
-              <span class="lead" id="omni-lead"></span>
-              <input id="omni-input" type="text" autocomplete="off" spellcheck="false" placeholder="Search a book by title, author, or ISBN…">
-            </div>
-            <button class="o-add" id="omni-add" type="button">Search</button>
-          </div>
-          <div class="o-hint" id="omni-hint"><span class="k">tip</span> Search the great books by title or author, or paste an ISBN.</div>
-          <button class="browse-cta" id="browse-open" type="button" hidden>
-            <span class="bc-txt"><strong>Browse the ready library</strong><span class="bc-sub" id="browse-count">books built and ready to use</span></span>
-            <span class="bc-arrow">→</span>
-          </button>
-        </div>
-
-        <div class="filterbar">
-          <div class="filters" id="filters">
-            <button data-f="all" class="on" type="button">All <span class="n" id="n-all">0</span></button>
-            <button data-f="book" type="button">Books <span class="n" id="n-book">0</span></button>
-            <button data-f="podcast" type="button">Podcasts <span class="n" id="n-podcast">0</span></button>
-            <button data-f="video" type="button">Videos <span class="n" id="n-video">0</span></button>
-          </div>
-          <div class="sortby" id="sortby" style="display:none">
-            <span class="sb-label">Sort</span>
-            <div class="seg2" id="sortseg" role="group" aria-label="Sort books">
-              <button data-s="author" class="on" type="button">Author</button>
-              <button data-s="title" type="button">Title</button>
-            </div>
-          </div>
-          <div class="cwrap"><span class="cw-label">Cover Wrap</span><button id="cwrap" class="switch" type="button" role="switch" aria-checked="false" aria-label="Cover Wrap: on shows placeholders, off shows cover art"><span class="knob"></span></button></div>
-        </div>
-
-        <div class="grid" id="grid"></div>
-        <div class="shelfroom" id="shelf" style="display:none"></div>
-        <div class="records" id="records" style="display:none"></div>
-        <div class="films" id="films" style="display:none"></div>
-        <div class="empty hidden" id="empty"><h3>Nothing here yet</h3><p>Add a book, podcast, or video with the omnibox above.</p></div>
-
+{# The Living Library's front room (decision 0029): a shelf for each class first, then the books this person shelved
+   from the Reading Room. A teacher also keeps videos, podcasts and the books they brought in here. Drawn by
+   static/js/shelves.js (everyone) and static/js/library.js (a teacher's media and copies). #}
+<main class="wrap shell-col lib-main"{% if teacher %} data-teacher{% endif %}{% if not user %} data-signed-out{% endif %}>
+  {% include "partials/masthead.html" %}
+  <div class="room-head">
+    <div class="eyebrow">Living Library</div>
+    <div class="room-title-row">
+      <h1 class="title">Your shelves</h1>
+      {% if teacher %}
+      <div class="room-acts">
+        <button id="review-open" class="review-pill" type="button" hidden>Copy reviews <span class="rn" id="review-n">0</span></button>
+        <button id="add-open" class="add-btn" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add</button>
       </div>
-    </main>
+      {% endif %}
+    </div>
+    {% with room = "shelves" %}{% include "partials/rooms.html" %}{% endwith %}
   </div>
-</div>
 
+  {% if not user %}
+  <section class="shelf-invite">
+    <h2>Your shelves wait for your school account</h2>
+    <p>Sign in to keep the books for your classes and the ones you choose. The Reading Room is open to everyone.</p>
+    <div class="si-acts"><a class="btn-primary" href="/auth/login?next=/library">Sign in</a><a class="btn-quiet" href="/read">Browse the Reading Room</a></div>
+  </section>
+  {% else %}
+  <section class="shelf-group" id="classes" aria-labelledby="classes-h">
+    <div class="sg-head"><h2 class="sg-label" id="classes-h">Your classes</h2>
+      <button type="button" class="sg-act" id="classes-edit" hidden>Change your classes</button></div>
+    <div id="class-shelves"><p class="sg-note" role="status">Opening your shelves…</p></div>
+  </section>
 
-<!-- Add: Book / Podcast search -->
+  <section class="shelf-group" id="mine" aria-labelledby="mine-h" hidden>
+    <div class="sg-head"><h2 class="sg-label" id="mine-h">Your books</h2>
+      <span class="sg-acts"><button type="button" class="sg-act" id="mine-edit" aria-pressed="false" hidden>Edit</button>
+      <a class="sg-act" href="/read">Find more in the Reading Room</a></span></div>
+    <div id="my-books"></div>
+  </section>
+
+  {% if teacher %}
+  <section class="shelf-group" id="docs" aria-labelledby="docs-h" hidden>
+    <div class="sg-head"><h2 class="sg-label" id="docs-h">Your uploads and links</h2>
+      <button type="button" class="sg-act" id="docs-edit" aria-pressed="false">Edit</button></div>
+    <div id="my-docs"></div>
+  </section>
+
+  <section class="shelf-group" id="prep" aria-labelledby="prep-h" hidden>
+    <div class="sg-head"><h2 class="sg-label" id="prep-h">From the Prep Room</h2>
+      <button type="button" class="sg-act" id="prep-edit" aria-pressed="false">Edit</button></div>
+    <div id="my-prep"></div>
+  </section>
+
+  <section class="shelf-group" id="media" aria-labelledby="media-h" hidden>
+    <div class="sg-head"><h2 class="sg-label" id="media-h">Your videos, podcasts and copies</h2></div>
+    <section class="lib-sec" id="sec-video" hidden aria-labelledby="sec-video-h">
+      <div class="fr-h"><h2 id="sec-video-h">Videos</h2><span>Save moments from them for your units</span></div>
+      <div class="films" id="films"></div>
+    </section>
+    <section class="lib-sec" id="sec-podcast" hidden aria-labelledby="sec-podcast-h">
+      <div class="fr-h"><h2 id="sec-podcast-h">Podcasts</h2><span>A show's episodes, and the moments you keep</span></div>
+      <div class="records" id="records"></div>
+    </section>
+    <section class="lib-sec" id="sec-book" hidden aria-labelledby="sec-book-h">
+      <div class="fr-h"><h2 id="sec-book-h">Books you brought in</h2><span>Copies Exegetica didn't have, with their study materials</span></div>
+      <div class="shelfroom" id="shelf"></div>
+    </section>
+  </section>
+  {% endif %}
+  {% endif %}
+</main>
+
+{% if teacher %}
+<!-- Add: a video, a podcast, or a book Exegetica doesn't have (static/js/library.js) -->
 <div class="modal-bg" id="search-bg">
-  <div class="modal" role="dialog" aria-modal="true">
-    <h2 id="search-title">Find a book</h2>
-    <p class="muted" id="search-sub">Search by title, author, or ISBN, then pick the edition to add.</p>
-    <div class="fld"><label id="search-label">Search books</label><input id="search-q" type="text" autocomplete="off" spellcheck="false" placeholder="Search…"></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="search-title">
+    <h2 id="search-title">Add to your shelves</h2>
+    <div class="add-tabs" id="types" role="tablist" aria-label="What to add">
+      <button data-t="book" role="tab" type="button" aria-selected="true">Book</button>
+      <button data-t="upload" role="tab" type="button" aria-selected="false">Upload</button>
+      <button data-t="link" role="tab" type="button" aria-selected="false">Link</button>
+      <button data-t="video" role="tab" type="button" aria-selected="false">Video</button>
+      <button data-t="podcast" role="tab" type="button" aria-selected="false">Podcast</button>
+    </div>
+    <p class="muted" id="search-sub"></p>
+    <div class="fld" id="search-fld"><label id="search-label" for="search-q">Search</label><input id="search-q" type="text" autocomplete="off" spellcheck="false" placeholder="Search…"></div>
     <div class="results" id="search-results"><div class="s-note">Type to search.</div></div>
-    <div class="modal-actions"><span class="sp"></span><button class="btn-ghost" id="search-cancel" type="button">Cancel</button></div>
+    {# an upload or a link: read now, filed by kind, kept on your shelves (decision 0029, phase 3) #}
+    <form class="add-form" id="up-form" hidden>
+      <div class="fld"><label for="up2-file">File</label>
+        <div class="drop" id="up2-drop">
+          <input type="file" id="up2-file" accept=".pdf,.docx,.epub,.txt,.md" aria-describedby="up2-name up2-hint">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5"/><path d="M4.5 14.5v3A2.5 2.5 0 0 0 7 20h10a2.5 2.5 0 0 0 2.5-2.5v-3"/></svg>
+          <span class="drop-t" id="up2-name">Choose a file, or drop it here</span>
+          <span class="drop-s" id="up2-hint">PDF, Word, EPUB or text, up to 15 MB</span>
+        </div></div>
+      <div class="fld"><label for="up2-title">Title <span class="opt">(optional)</span></label><input id="up2-title" maxlength="200" autocomplete="off" placeholder="The file's name"></div>
+      <div class="fld"><label for="up2-author">Author <span class="opt">(optional)</span></label><input id="up2-author" maxlength="160" autocomplete="off"></div>
+      <p class="add-err" role="alert" hidden></p>
+    </form>
+    <form class="add-form" id="ln-form" novalidate hidden>
+      <div class="fld"><label for="ln2-url">Web address</label><input id="ln2-url" type="url" autocomplete="off" placeholder="https://"></div>
+      <p class="add-err" role="alert" hidden></p>
+    </form>
+    <div class="modal-actions"><span class="sp"></span><button class="btn-ghost" id="search-cancel" type="button">Close</button>
+      <button type="submit" class="btn-solid" id="up2-go" form="up-form" hidden>Upload</button>
+      <button type="submit" class="btn-solid" id="ln2-go" form="ln-form" hidden>Save the page</button></div>
   </div>
 </div>
 
-<!-- Reading surface (a book taken down from the shelf) -->
+<!-- A book taken down from the shelf: its study materials -->
 <div class="modal-bg" id="read-bg">
   <div class="modal read" role="dialog" aria-modal="true">
     <div id="read-body"></div>
     <div class="modal-actions"><span class="sp"></span><button class="btn-ghost" id="read-close" type="button">Close</button></div>
-  </div>
-</div>
-
-<!-- Browse the ready (seeded) library -->
-<div class="modal-bg" id="browse-bg">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="browse-title" style="max-width:760px">
-    <h2 id="browse-title">The ready library</h2>
-    <p class="muted">Books already built into study materials. Click one to add it and open the materials instantly, no wait.</p>
-    <input id="browse-q" class="browse-filter" type="text" autocomplete="off" spellcheck="false" placeholder="Filter by title or author…">
-    <div class="browse-grid" id="browse-grid"><div class="s-note">Loading…</div></div>
-    <div class="modal-actions"><span class="sp" id="browse-count2"></span><button class="btn-ghost" id="browse-close" type="button">Close</button></div>
   </div>
 </div>
 
@@ -152,11 +165,14 @@
     <div class="modal-actions"><span class="sp"></span><button class="btn-ghost" id="screen-close" type="button">Close</button></div>
   </div>
 </div>
+{% endif %}
 
-<!-- The classes a teacher teaches, and one school text's outline (static/js/library_classes.js) -->
+{% if user %}
+<!-- The classes a person takes or teaches, and a school text's outline (static/js/shelves.js) -->
 <dialog class="cl-dlg" id="cl-dlg" aria-labelledby="cl-dlg-title">
   <div class="cl-dlg-head"><h2 id="cl-dlg-title"></h2><button type="button" class="cl-x" data-close aria-label="Close">×</button></div>
   <div class="cl-dlg-body" id="cl-dlg-body"></div>
 </dialog>
+{% endif %}
 {% endblock %}
-{% block scripts %}<script src="/static/js/library.js"></script><script src="/static/js/library_classes.js"></script><script src="/static/js/library_moments.js"></script>{% endblock %}
+{% block scripts %}{% if user %}<script src="/static/js/covers.js"></script><script src="/static/js/shelves.js"></script>{% endif %}{% if teacher %}<script src="/static/js/library.js"></script><script src="/static/js/library_moments.js"></script>{% endif %}{% endblock %}

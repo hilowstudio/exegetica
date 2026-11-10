@@ -34,7 +34,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_views, curriculum, db, excerpts, generator, house_cover, library, library_store, memory, metrics, ops, policy, prep, prep_draft, providers, teacher_courses, r2, reader, reply_check, safety, shell, store, studio, tool_catalog, usage
+from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_views, curriculum, db, excerpts, generator, house_cover, library, library_store, memory, metrics, ops, policy, prep, prep_draft, providers, teacher_courses, r2, reader, reply_check, safety, shell, shelf_docs, shelf_resources, shelves, store, studio, tool_catalog, usage
 from webapp.bridge import CombinedTools, MCPBridge  # noqa: F401  (scripts/john_gen.py imports MCPBridge from here)
 
 logging.basicConfig(level=logging.INFO)
@@ -716,8 +716,8 @@ async def generate_page(request):
 
 
 async def library_page(request):
-    if not shell.may_open(request, "teacher"):   # decision 0007
-        return shell.for_others(request, "Living Library", "The Living Library is for teachers.")
+    """Everyone's shelves (decision 0029). The page draws itself by role: a teacher also gets the media shelves and
+    the Add dialog. Someone signed out is asked to sign in."""
     return shell.page(request, "library.html")
 
 
@@ -1407,6 +1407,20 @@ app = Starlette(
         Route("/api/library/item/{id}/transcript", excerpts.fetch_transcript, methods=["POST"]),
         Route("/api/library/item/{id}/excerpts", excerpts.save_excerpt, methods=["POST"]),
         Route("/api/library/excerpts/{id}", excerpts.delete_excerpt, methods=["DELETE"]),
+        Route("/api/shelf/home", shelves.home, methods=["GET"]),                  # decision 0029
+        Route("/api/shelf/classes", shelves.choose_classes, methods=["POST"]),
+        Route("/api/shelf/books", shelves.shelf_books, methods=["GET"]),
+        Route("/api/shelf/books/{slug:path}", shelves.shelve, methods=["PUT", "DELETE"]),
+        Route("/api/shelf/class/{course}/items", shelves.class_items_add, methods=["POST"]),
+        Route("/api/shelf/items/{id}", shelves.class_item_change, methods=["PATCH", "DELETE"]),
+        Route("/api/shelf/held", shelves.class_holding_get, methods=["GET"]),
+        Route("/api/shelf/upload", shelf_docs.upload, methods=["POST"]),                  # decision 0029, phase 3
+        Route("/api/shelf/link", shelf_docs.link, methods=["POST"]),
+        Route("/api/shelf/docs/{id}", shelf_docs.change, methods=["PATCH", "DELETE"]),
+        Route("/api/shelf/docs/{id}/suggest", shelf_docs.suggest, methods=["POST"]),
+        Route("/read/doc/{id}", shelf_docs.page),
+        Route("/ops/suggestions/{id}", shelf_docs.decide, methods=["POST"]),
+        Route("/ops/suggestions/{id}/text", shelf_docs.decide, methods=["GET"]),
         Route("/api/library/courses", teacher_courses.get, methods=["GET"]),
         Route("/api/library/courses", teacher_courses.change, methods=["POST"]),
         Route("/api/library/outline/{key}", teacher_courses.outline, methods=["GET"]),
@@ -1461,6 +1475,9 @@ app = Starlette(
         Route("/api/prep/resources/{id}", prep.resource_update, methods=["PATCH"]),
         Route("/api/prep/resources/{id}", prep.resource_delete, methods=["DELETE"]),
         Route("/api/prep/resources/{id}/versions", prep.resource_save, methods=["POST"]),
+        Route("/api/prep/resources/{id}/copy", prep.resource_copy, methods=["POST"]),
+        Route("/api/prep/resources/{id}/replace", shelf_resources.replace_route, methods=["POST"]),
+        Route("/api/shelf/resources/{id}", shelf_resources.own_shelf, methods=["PUT", "DELETE"]),
         Route("/api/prep/units/{id}/upload", prep_draft.upload_source, methods=["POST"]),
         Route("/api/prep/units/{id}/link", prep_draft.link_source, methods=["POST"]),
         Route("/api/prep/gallery", prep_draft.gallery, methods=["GET"]),
