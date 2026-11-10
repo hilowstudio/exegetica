@@ -40,6 +40,21 @@ SCHOOL_CAPPED = "Exegetica has reached today's chat limit for the school. Chat o
 TOO_FAST = "That's too many messages in one minute. Wait a moment and send it again."
 BUSY = "Exegetica is busy. Try again in a minute."
 
+# The Prep Room (decision 0027): drafts and changes, per teacher and for all teachers together, per school day.
+PREP_RUNS = 25
+PREP_USD = 10.00
+PREP_ALL_USD = 40.00
+PREP_CAPPED = "You've reached today's Prep Room limit. It opens again tomorrow, and everything you've made is saved."
+PREP_ALL_CAPPED = ("The Prep Room has reached today's limit for the school. It opens again tomorrow, and everything "
+                   "you've made is saved.")
+PREP_ALL = "prep"
+# Transcripts Gemini writes for the Living Library (decision 0028), per teacher and for everyone, per school day.
+TRANSCRIBE_RUNS = 10
+TRANSCRIBE_ALL_USD = 5.00
+TRANSCRIBE_CAPPED = "You've made today's limit of transcripts. You can make more tomorrow."
+TRANSCRIBE_ALL_CAPPED = "Exegetica has made today's limit of transcripts for the school. More can be made tomorrow."
+TRANSCRIBE_ALL = "transcribe"
+
 SCHOOL = "school"
 _KEY = (os.environ.get("SESSION_SECRET") or secrets.token_urlsafe(32)).encode()
 
@@ -130,3 +145,90 @@ async def add(user_id: str, teacher: bool, usd: float) -> None:
         metrics.missing_tables.add("usage_daily")
     except Exception:  # noqa: BLE001
         logger.warning("cap counter write failed", exc_info=True)
+
+
+# ---------------------------------------------------------------- Prep Room caps (Neon, decision 0027)
+def _prep_key(user_id: str, day: dt.date) -> str:
+    return who(f"prep:{user_id}", day)   # apart from the same teacher's chat turns
+
+
+async def prep_check(user_id: str) -> str | None:
+    """None if this teacher may start a Prep Room run, else the fixed text to show. Fails open, like chat's."""
+    if not db.ready() or "usage_daily" in metrics.missing_tables:
+        return None
+    day = today()
+    mine = _prep_key(user_id, day)
+    try:
+        rows = await db.fetch("select who, turns, est_usd from usage_daily where day = $1 and who = any($2)",
+                              day, [mine, PREP_ALL])
+    except asyncpg.UndefinedTableError:
+        metrics.missing_tables.add("usage_daily")
+        return None
+    except Exception:  # noqa: BLE001
+        logger.warning("Prep Room cap check failed; allowing the run", exc_info=True)
+        return None
+    seen = {r["who"]: r for r in rows}
+    me, everyone = seen.get(mine), seen.get(PREP_ALL)
+    if everyone and float(everyone["est_usd"]) >= PREP_ALL_USD:
+        return PREP_ALL_CAPPED
+    if me and (me["turns"] >= PREP_RUNS or float(me["est_usd"]) >= PREP_USD):
+        return PREP_CAPPED
+    return None
+
+
+async def prep_add(user_id: str, usd: float) -> None:
+    """Count one Prep Room run, finished or not, and its estimated cost."""
+    if not db.ready() or "usage_daily" in metrics.missing_tables:
+        return
+    day = today()
+    try:
+        for key in (_prep_key(user_id, day), PREP_ALL):
+            await db.execute(
+                """insert into usage_daily (day, who, turns, est_usd) values ($1, $2, 1, $3)
+                   on conflict (day, who) do update
+                     set turns = usage_daily.turns + 1, est_usd = usage_daily.est_usd + excluded.est_usd""",
+                day, key, usd)
+    except asyncpg.UndefinedTableError:
+        metrics.missing_tables.add("usage_daily")
+    except Exception:  # noqa: BLE001
+        logger.warning("Prep Room counter write failed", exc_info=True)
+
+
+# ---------------------------------------------------------------- transcription caps (Neon, decision 0028)
+def _tx_key(user_id: str, day: dt.date) -> str:
+    return who(f"tx:{user_id}", day)
+
+
+async def transcribe_check(user_id: str) -> str | None:
+    """None if this teacher may ask for a transcript now, else the fixed text to show. Fails open."""
+    if not db.ready() or "usage_daily" in metrics.missing_tables:
+        return None
+    day = today()
+    mine = _tx_key(user_id, day)
+    try:
+        rows = await db.fetch("select who, turns, est_usd from usage_daily where day = $1 and who = any($2)",
+                              day, [mine, TRANSCRIBE_ALL])
+    except Exception:  # noqa: BLE001
+        logger.warning("transcription cap check failed; allowing it", exc_info=True)
+        return None
+    seen = {r["who"]: r for r in rows}
+    if seen.get(TRANSCRIBE_ALL) and float(seen[TRANSCRIBE_ALL]["est_usd"]) >= TRANSCRIBE_ALL_USD:
+        return TRANSCRIBE_ALL_CAPPED
+    if seen.get(mine) and seen[mine]["turns"] >= TRANSCRIBE_RUNS:
+        return TRANSCRIBE_CAPPED
+    return None
+
+
+async def transcribe_add(user_id: str, usd: float) -> None:
+    if not db.ready() or "usage_daily" in metrics.missing_tables:
+        return
+    day = today()
+    try:
+        for key in (_tx_key(user_id, day), TRANSCRIBE_ALL):
+            await db.execute(
+                """insert into usage_daily (day, who, turns, est_usd) values ($1, $2, 1, $3)
+                   on conflict (day, who) do update
+                     set turns = usage_daily.turns + 1, est_usd = usage_daily.est_usd + excluded.est_usd""",
+                day, key, usd)
+    except Exception:  # noqa: BLE001
+        logger.warning("transcription counter write failed", exc_info=True)

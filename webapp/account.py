@@ -69,6 +69,30 @@ async def collect(user_id: uuid.UUID) -> dict:
             """select e.title, e.creator, st.source_format, st.acquisition, st.char_count, st.created_at
                from library_source_texts st join library_extractions e on e.id = st.extraction_id
                where st.user_id = $1 order by st.created_at"""),
+        # The Prep Room (decision 0026). An upload's or a link's text is the teacher's copy of someone
+        # else's work, kept encrypted; its name and size are listed, the text is not repeated.
+        "prep_units": await many(
+            """select u.title, u.course_key, u.grade_band, u.notes, u.objectives, u.created_at, u.updated_at,
+                      coalesce((select json_agg(json_build_object('kind', s.kind, 'label', s.label, 'ref', s.ref,
+                                                                  'words', s.words) order by s.position)
+                                  from prep_sources s where s.unit_id = u.id), '[]'::json) as sources
+               from prep_units u where u.user_id = $1 order by u.created_at"""),
+        "prep_resources": await many(
+            """select r.title, r.format_id, r.settings, u.title as unit, r.created_at,
+                      coalesce((select json_agg(json_build_object('n', v.n, 'origin', v.origin,
+                                                                  'instruction', v.instruction,
+                                                                  'document', v.document,
+                                                                  'created_at', v.created_at) order by v.n)
+                                  from prep_versions v where v.resource_id = r.id), '[]'::json) as versions
+               from prep_resources r left join prep_units u on u.id = r.unit_id
+               where r.user_id = $1 order by r.created_at"""),
+        "library_moments": await many(
+            """select e.title, x.episode_title, x.start_s, x.end_s, x.quote, x.note, x.created_at
+               from library_excerpts x join library_extractions e on e.id = x.extraction_id
+               where x.user_id = $1 order by x.created_at"""),
+        "courses_you_teach": await many(
+            """select tc.course_key, tc.source, tc.added_at from teacher_courses tc
+               join users x on lower(x.email) = tc.email where x.id = $1 order by tc.course_key"""),
     }
 
 
@@ -86,6 +110,7 @@ async def remove(user_id: uuid.UUID, email: str | None) -> dict:
             if email:
                 await conn.execute("update cover_overrides set updated_by = null where lower(updated_by) = lower($1)",
                                    email)
+                await conn.execute("delete from teacher_courses where email = lower($1)", email)
             status = await conn.execute("delete from users where id = $1", user_id)
     return {"files": files, "account": status.endswith(" 1")}
 

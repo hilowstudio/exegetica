@@ -1,0 +1,269 @@
+{
+ "key": "integrated-science-6",
+ "title": "Inspire Science: Integrated, Grade 6 (Write-In Student Edition, Units 1-4)",
+ "authors": [
+  "Alton Biggs",
+  "Page Keeley",
+  "Dinah Zike",
+  "Edward Paul Ortleb",
+  "Ralph M. Feather",
+  "Douglas Fisher",
+  "Michael Manga"
+ ],
+ "publisher": "McGraw Hill",
+ "edition": "2020 (copyright 2020 on the publisher page; ISBN records say 2019)",
+ "grade": "Grade 6",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.mheducation.com/unitas/school/explore/sites/inspire-science/scope-and-sequence-6-8-integrated.pdf",
+   "what": "publisher scope and sequence (units, modules, lessons)"
+  },
+  {
+   "url": "https://www.mheducation.com/prek-12/product/inspire-science-integrated-g7-write-student-edition-unit-1-mcgraw-hill/9780076874538.html",
+   "what": "publisher product page for the same series (confirms copyright and 5E structure)"
+  }
+ ],
+ "summary": "An NGSS-built integrated middle-school science course sold as four write-in unit books, each organised into modules and 5E lessons. Grade 6 covers cells and body systems, reproduction and heredity, thermal energy with weather and climate, and human impact on Earth's systems.",
+ "toc": [
+  {
+   "label": "Unit 1",
+   "title": "Life: Structure & Function",
+   "covers": "How living things are built from cells and how cells form tissues, organs, and organ systems that keep the body running.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Cells and Life",
+     "covers": "Characteristics of living things, cell theory, and the parts and jobs of cells.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Exploring Life",
+       "covers": "Traits all living things share, unicellular vs multicellular organisms, and how microscopes revealed cells.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Cell Structure and Function",
+       "covers": "Organelles such as the nucleus, membrane, mitochondria and chloroplasts, and plant vs animal cells.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Body Systems",
+     "covers": "How organ systems interact to support, fuel, transport, and control the body.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Levels of Organization",
+       "covers": "The hierarchy from cells to tissues, organs, organ systems, and organisms.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Structure and Support",
+       "covers": "Skeletal and muscular systems and the support structures of plants.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Obtaining Energy and Removing Waste",
+       "covers": "Digestive, respiratory, and excretory systems and how organisms take in nutrients and remove wastes.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Moving Materials",
+       "covers": "The circulatory system and plant vascular tissue that move water, nutrients, and gases.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Control and Information Processing",
+       "covers": "The nervous system and sense receptors that detect stimuli and send signals to the brain.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Unit 2",
+   "title": "Reproduction of Organisms",
+   "covers": "How organisms pass on traits and how reproduction and growth work in animals and plants.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Reproduction of Organisms",
+     "covers": "Heredity, sexual vs asexual reproduction, and factors that affect growth.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Inheritance",
+       "covers": "Genes, alleles, dominant and recessive traits, Punnett squares, and mutations.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Types of Reproduction",
+       "covers": "Asexual vs sexual reproduction and the genetic variation each produces.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Reproduction and Growth of Animals",
+       "covers": "Animal behaviours such as courtship and parental care, and genetic and environmental effects on growth.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Reproduction and Growth of Plants",
+       "covers": "Flower structures, pollination, seed dispersal, and conditions that affect plant growth.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Unit 3",
+   "title": "Energy in the Atmosphere",
+   "covers": "Particle motion and thermal energy transfer, then how the sun's energy drives the water cycle, weather, and climate.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Energy and Matter",
+     "covers": "The particle model of matter and how thermal energy moves.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Particles in Motion",
+       "covers": "Kinetic molecular model, temperature, and thermal energy.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "States of Matter",
+       "covers": "Solids, liquids, gases, and changes of state as energy is added or removed.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Thermal Energy Transfers",
+       "covers": "Conduction, convection, and radiation.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Thermal Energy Conductivity",
+       "covers": "Conductors and insulators and designing devices that slow or speed heat transfer.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "The Water Cycle",
+     "covers": "How sunlight and gravity move water through the atmosphere and across Earth's surface.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Water in the Atmosphere",
+       "covers": "Evaporation, condensation, humidity, clouds, and precipitation.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Water on Earth's Surface",
+       "covers": "Runoff, groundwater, glaciers, and oceans, and where Earth's water is stored.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Weather and Climate",
+     "covers": "Uneven solar heating, circulation of air and ocean, weather systems, and climate zones.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Solar Energy on Earth",
+       "covers": "Why the sun heats Earth unevenly by latitude and how the atmosphere absorbs and reflects energy.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Atmospheric and Oceanic Circulation",
+       "covers": "Global wind belts, the Coriolis effect, and ocean currents that move heat.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Weather Patterns",
+       "covers": "Air masses, fronts, pressure systems, and forecasting.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Climates of Earth",
+       "covers": "Factors that set climate and Earth's major climate zones.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Unit 4",
+   "title": "Human Impact on the Environment",
+   "covers": "How human activity changes land, water, air, and climate, and ways to reduce those effects.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Human Impact on the Environment",
+     "covers": "Human effects on Earth's systems and designing solutions to limit them.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Impact on Land",
+       "covers": "Deforestation, urban growth, mining, farming, and land conservation.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Impact on Water",
+       "covers": "Water pollution, runoff, overuse, and protecting water supplies.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Impact on the Atmosphere",
+       "covers": "Air pollution, smog, acid rain, and ozone depletion.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Impact on Climate",
+       "covers": "Greenhouse gases, rising global temperatures, and ways to reduce emissions.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Headings are from the publisher's scope and sequence, which lists units, modules, and lessons without numbers; module and lesson numbering in the printed book is not shown there. Modules are nested under units and lessons under modules (a third level of children). Unit 1 is ISBN 9780076873302 and Unit 2 is 9780076873333; the school list holds only those two ISBNs, so check whether Units 3-4 are on hand."
+}

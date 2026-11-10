@@ -1,7 +1,9 @@
-/* The Prep Room · Exegetica page (templates/generate.html). The rail, theme and Need help now? come from static/js/shell.js. */
+/* The Prep Room · Exegetica page (templates/generate.html, decision 0026). Units hold sources, objectives and
+   resources; the Make panel is the gallery of kinds; every draft, revision and edit is saved as a version.
+   The rail, theme and Need help now? come from static/js/shell.js. */
 "use strict";
 // ---- shared compact markdown renderer ----
-function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function inl(s){return esc(s).replace(/`([^`]+)`/g,(m,c)=>"<code>"+c+"</code>").replace(/_{3,}/g,m=>"<span class='blank' style='min-width:"+Math.min(26,Math.max(3,m.length*0.55)).toFixed(1)+"em'></span>").replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>").replace(/(^|[^*])\*([^*\n]+)\*/g,"$1<em>$2</em>").replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');}
 function md(src){const L=src.replace(/\r\n/g,"\n").split("\n");let h="",i=0;const sep=s=>/^\s*\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)+\|?\s*$/.test(s);const cells=s=>s.replace(/^\s*\|/,"").replace(/\|\s*$/,"").split("|").map(c=>c.trim());
   while(i<L.length){let l=L[i];
@@ -17,215 +19,456 @@ function md(src){const L=src.replace(/\r\n/g,"\n").split("\n");let h="",i=0;cons
     let b=[];while(i<L.length&&!/^\s*$/.test(L[i])&&!/^```/.test(L[i])&&!/^#{1,4}\s/.test(L[i])&&!/^\s*[-*]\s+/.test(L[i])&&!/^\s*>/.test(L[i])&&!/^\s*_{3,}\s*$/.test(L[i])&&!/^\s*(-{3,}|\*{3,})\s*$/.test(L[i])){b.push(L[i]);i++;}h+="<p>"+inl(b.join("\n")).replace(/\n/g,"<br>")+"</p>";}
   return h;}
 
+// ---- the student copy: the teacher-only sections out (mirrors prep_catalog.student_copy) ----
+const TEACHER_HEAD=/^(#{1,6})\s+(?:answer key|answers|teaching notes|teacher notes|notes for the teacher|for the teacher|teacher'?s? (?:guide|notes|key)|.*\((?:teacher|teacher only|for the teacher)\))\s*:?\s*$/i;
+const TEACHER_LINE=/^\s*(?:\*\*)?(?:standards|objectives? \(teacher\))(?:\*\*)?\s*:/i;
+function studentCopy(src){const out=[];let skip=0;
+  for(const line of src.split("\n")){const head=line.match(/^(#{1,6})\s/);
+    if(skip){if(head&&head[1].length<=skip)skip=0;else continue;}
+    const m=line.trim().match(TEACHER_HEAD);
+    if(m){skip=m[1].length;while(out.length&&/^\s*(---|\*\*\*|___)?\s*$/.test(out[out.length-1]))out.pop();continue;}
+    if(TEACHER_LINE.test(line))continue;out.push(line);}
+  while(out.length&&/^\s*(---|\*\*\*|___)?\s*$/.test(out[out.length-1]))out.pop();
+  return out.join("\n")+"\n";}
+function hasTeacherPart(src){return src.split("\n").some(l=>TEACHER_HEAD.test(l.trim()));}
+
 // ---- state ----
 const $=id=>document.getElementById(id);
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){if(typeof closeResults==="function")closeResults();}});
+const app=$("app");
+const S={units:[],quick:[],unit:null,res:null,gallery:null,courses:[],kind:null,busy:false,quickSources:[],viewing:null,savedDoc:"",settings:{}};
+let rawDoc="",audience="teacher",mode="view",docBand="";
+const ICON={
+  book:'<svg viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H12v15H5.5A1.5 1.5 0 0 0 4 20.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H12v15h6.5a1.5 1.5 0 0 1 1.5 1.5z"/></svg>',
+  outline:'<svg viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg>',
+  passage:'<svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4z"/></svg>',
+  library:'<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg>',
+  upload:'<svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>',
+  link:'<svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1"/><path d="M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1"/></svg>',
+  kebab:'<svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="18" r="1.5"/></svg>',
+  star:'<svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z"/></svg>'};
+const KIND_WORD={book:"Book",outline:"Outline",passage:"Passage",library:"Living Library",upload:"Upload",link:"Link"};
 
-// The account panel is static/js/settings.js. Bringing your own key is off for now, so the
-// Prep Room runs on the server's own model (policy.BYOK).
-let CFG={}, FORMATS=[], FMT={}, BANDS={}, TREE=null, RECS=[], busy=false, rawDoc="";
-let srcMode="book", pickedBook=null, _bkTimer=null;   // two source modes: a book (live text) or academic-spine standards
-function pcfg(id){return (CFG.providers||[]).find(p=>p.id===id)||{};}
-function curProvider(){return window.AppSettings?AppSettings.provider():"anthropic";}
-function curModel(){return window.AppSettings?AppSettings.model():"";}
-function curKey(){return window.AppSettings?AppSettings.key():"";}
-function needsKey(){return !(curProvider()==="anthropic"&&CFG.server_anthropic_key)&&!curKey();}
-window.addEventListener("appsettings:changed",function(){updateKeyBanner();});
+async function api(method,url,body){
+  const o={method,headers:{}};
+  if(body!==undefined){o.headers["Content-Type"]="application/json";o.body=JSON.stringify(body);}
+  const r=await fetch(url,o);let d={};try{d=await r.json();}catch(e){}
+  if(!r.ok)throw new Error(d.error||"That didn't work. Check your connection and try again.");
+  return d;}
+function ago(iso){if(!iso)return "";const s=(Date.now()-new Date(iso).getTime())/1000;
+  if(s<60)return "just now";if(s<3600)return Math.round(s/60)+" min ago";if(s<86400)return Math.round(s/3600)+" h ago";
+  return new Date(iso).toLocaleDateString(undefined,{month:"short",day:"numeric"});}
+function when(iso){return new Date(iso).toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});}
+function plural(n,w){return n+" "+w+(n===1?"":/(ch|sh|s|x)$/.test(w)?"es":"s");}
+function bandLabel(b){return b?b.charAt(0).toUpperCase()+b.slice(1):"";}
+function courseName(k){const c=S.courses.find(c=>c.key===k);return c?c.name:"";}
+function kindOf(id){for(const g of (S.gallery||{groups:[]}).groups)for(const k of g.kinds)if(k.id===id)return k;return null;}
 
-Promise.all([
-  fetch("/api/config").then(r=>r.json()),
-  fetch("/api/formats").then(r=>r.json()),
-  fetch("/api/standards/tree").then(r=>r.json()),
-]).then(([cfg,fmts,tree])=>{
-  CFG=cfg;FORMATS=fmts.formats;BANDS=fmts.grade_bands;TREE=tree;
-  FORMATS.forEach(f=>FMT[f.id]=f);
-  Object.keys(BANDS).forEach(b=>{const o=document.createElement("option");o.value=b;o.textContent=b[0].toUpperCase()+b.slice(1);$("sel-band").appendChild(o);});
-  $("sel-band").value="secondary";
-  FORMATS.forEach(f=>{const o=document.createElement("option");o.value=f.id;o.textContent=f.name;$("sel-format").appendChild(o);});
-  fmtChanged();
-  (TREE.subjects||[]).forEach(s=>{const o=document.createElement("option");o.value=s.id;o.textContent=s.name;$("sel-subject").appendChild(o);});
-  $("sel-subject").insertAdjacentHTML("afterbegin","<option value=''>Select…</option>");
-  $("sel-subject").value="";
-  // Opened from the standards page with ?standard=<sub-topic id>: start in standards mode at that sub-topic.
-  const deep=new URLSearchParams(location.search).get("standard"),p=(deep||"").split(".");
-  if(p.length>=4){srcMode="standard";applySrcMode();
-    gotoLocation({subject:p[0],sub_subject:p.slice(0,2).join("."),topic:p.slice(0,3).join("."),
-                  sub_topic:p.slice(0,4).join("."),objective:p.length>4?deep:null});}
-  updateKeyBanner();
-}).catch(()=>{console.error("backend unavailable");});
+// ---- addresses: /generate, /generate/new, /generate/unit/<id>[/r/<resource>], /generate/r/<resource> ----
+const UUID="[0-9a-f-]{36}";
+function route(){const p=location.pathname.replace(/\/+$/,"");let m;
+  if((m=p.match(new RegExp("^/generate/unit/("+UUID+")(?:/r/("+UUID+"))?$"))))return {view:"unit",unit:m[1],res:m[2]||null};
+  if((m=p.match(new RegExp("^/generate/r/("+UUID+")$"))))return {view:"unit",unit:null,res:m[1]};
+  if(p==="/generate/new")return {view:"unit",unit:null,res:null};
+  return {view:"home"};}
+function go(path){if(location.pathname!==path)history.pushState({},"",path);load();}
+function resPath(rid){return S.unit?"/generate/unit/"+S.unit.id+(rid?"/r/"+rid:""):(rid?"/generate/r/"+rid:"/generate/new");}
+window.addEventListener("popstate",load);
+document.addEventListener("click",e=>{const a=e.target.closest("a[data-nav]");if(!a||e.metaKey||e.ctrlKey||e.shiftKey||e.button)return;e.preventDefault();go(a.getAttribute("href"));});
 
-function updateKeyBanner(){const b=$("keybanner");if(needsKey()){b.style.display="block";b.textContent="Drafting isn't available right now.";}else b.style.display="none";refreshGen();}
-
-// ---- format recommendations ----
-function loadRecs(subSubjectId){if(!subSubjectId){$("recs").innerHTML="";RECS=[];return;}
-  fetch("/api/recommend?sub_subject="+encodeURIComponent(subSubjectId)).then(r=>r.json()).then(d=>{
-    RECS=d.recommended||[];const box=$("recs");box.innerHTML="";
-    RECS.slice(0,8).forEach(id=>{const b=document.createElement("button");b.className="rec";b.textContent=(FMT[id]||{}).name||id;
-      b.onclick=()=>{$("sel-format").value=id;fmtChanged();};box.appendChild(b);});
-    fmtChanged();
-  });}
-$("sel-format").addEventListener("change",fmtChanged);
-function fmtChanged(){const id=$("sel-format").value;$("fmtdef").textContent=(FMT[id]||{}).definition||"";
-  Array.prototype.forEach.call($("recs").children,b=>b.classList.toggle("on",((FMT[[...FORMATS].find(f=>f.name===b.textContent)?.id]||{}).id||"")===id||b.textContent===(FMT[id]||{}).name));
-  refreshGen();}
-
-function refreshGen(){
-  const srcOk = srcMode==="book" ? !!(pickedBook && $("sel-cover").value) : !!(curSubtopic && selectedObjectives().length);
-  $("gen").disabled = !(srcOk && $("sel-format").value && !needsKey() && !busy);
-  const n=$("gennote");
-  if(busy){n.textContent="Drafting…";n.className="note";}
-  else if(needsKey()){n.textContent="Drafting isn't available right now.";n.className="note warn";}
-  else if(!srcOk){n.textContent = srcMode==="book" ? "Pick a book, coverage, and a format." : "Pick a standard, an objective, and a format.";n.className="note";}
-  else if(srcMode==="book"){n.textContent="Ready. "+pickedBook.title+" · through ch "+$("sel-cover").value+" · "+((FMT[$("sel-format").value]||{}).name||"")+".";n.className="note";}
-  else{n.textContent="Ready. "+selectedObjectives().length+" objective(s) · "+((FMT[$("sel-format").value]||{}).name||"")+".";n.className="note";}
-  updateSummaries();
+async function load(){
+  const r=route();closeMenus();
+  if(!S.gallery)await loadGallery();
+  if(S.busy&&r.view==="home"){history.pushState({},"",resPath(S.res&&S.res.id));Shell.toast("Wait for the draft to finish, or stay here: it's saved when it's done.");return;}
+  app.dataset.view=r.view;
+  if(r.view==="home"){await loadHome();return;}
+  if(r.unit){
+    if(!S.unit||S.unit.id!==r.unit){
+      try{S.unit=(await api("GET","/api/prep/units/"+r.unit)).unit;}
+      catch(e){S.unit=null;app.dataset.view="home";await loadHome();Shell.toast(e.message);return;}
+    }
+  }else if(S.unit){S.unit=null;S.quickSources=[];}
+  renderUnit();
+  if(r.res){if(!S.res||S.res.id!==r.res)await openResource(r.res);}
+  else{S.res=null;clearDoc();}
+  document.title=(S.unit?S.unit.title:"Quick resource")+" · Prep Room · Exegetica";
 }
 
-// ---- builder accordion (single-open; content discloses instead of nesting scrolls) ----
-function openSec(name){document.querySelectorAll(".acc-sec").forEach(s=>s.classList.toggle("open",s.dataset.sec===name));}
-document.querySelectorAll(".acc-h").forEach(h=>h.addEventListener("click",()=>{
-  const sec=h.closest(".acc-sec"),willOpen=!sec.classList.contains("open");
-  document.querySelectorAll(".acc-sec").forEach(s=>s.classList.remove("open"));
-  if(willOpen)sec.classList.add("open");
-}));
-function bandLabel(){const s=$("sel-band"),o=s.options[s.selectedIndex];return o?o.textContent:"";}
-function updateSummaries(){
-  function set(id,txt,sec,done){const el=$(id);if(el)el.textContent=txt;const s=document.querySelector('.acc-sec[data-sec="'+sec+'"]');if(s)s.classList.toggle("done",!!done);}
-  set("sum-book", pickedBook ? (pickedBook.title + ($("sel-cover").value ? " · through ch "+$("sel-cover").value : "")) : "None",
-      "book", !!(pickedBook && $("sel-cover").value));
-  const path=[curSubject&&curSubject.name,curSub&&curSub.name,curTopic&&curTopic.name,curSubtopic&&curSubtopic.name].filter(Boolean);
-  const nobj=selectedObjectives().length;
-  set("sum-standard",path.length?path[path.length-1]:"Not chosen","standard",!!curSubtopic);
-  set("sum-objectives",nobj?nobj+" selected":"None","objectives",nobj>0);
-  set("sum-format",(FMT[$("sel-format").value]||{}).name||"None","format",!!$("sel-format").value);
-  set("sum-audience",bandLabel(),"audience",true);
+async function loadGallery(){
+  try{const d=await api("GET","/api/prep/gallery");S.gallery=d;S.courses=d.courses||[];renderKinds();fillBands();}
+  catch(e){$("kinds").innerHTML='<p class="knone">'+esc(e.message)+'</p>';}
 }
-$("sel-band").addEventListener("change",updateSummaries);
 
-// ---- standards navigation (academic-spine source mode) ----
-function opts(sel,items,label){sel.innerHTML="<option value=''>Select…</option>";items.forEach(it=>{const o=document.createElement("option");o.value=it.id;o.textContent=label(it);sel.appendChild(o);});sel.disabled=items.length===0;}
-let curSubject=null,curSub=null,curTopic=null,curSubtopic=null;
-function setCrumb(){const parts=[curSubject&&curSubject.name,curSub&&curSub.name,curTopic&&curTopic.name,curSubtopic&&curSubtopic.name].filter(Boolean);$("crumb").textContent=parts.join("  ›  ");updateSummaries();}
-$("sel-subject").addEventListener("change",()=>{curSubject=TREE.subjects.find(s=>s.id===$("sel-subject").value)||null;
-  opts($("sel-subsubject"),curSubject?curSubject.sub_subjects:[],x=>x.name);resetFrom("subsubject");
-  if(curSubject)loadRecs(null);setCrumb();});
-$("sel-subsubject").addEventListener("change",()=>{curSub=curSubject?curSubject.sub_subjects.find(x=>x.id===$("sel-subsubject").value):null;
-  opts($("sel-topic"),curSub?curSub.topics:[],x=>x.name);resetFrom("topic");
-  if(curSub)loadRecs(curSub.id);setCrumb();});
-$("sel-topic").addEventListener("change",()=>{curTopic=curSub?curSub.topics.find(x=>x.id===$("sel-topic").value):null;
-  opts($("sel-subtopic"),curTopic?curTopic.sub_topics:[],x=>x.name+" ("+x.objective_count+")");resetFrom("subtopic");setCrumb();});
-$("sel-subtopic").addEventListener("change",()=>{curSubtopic=curTopic?curTopic.sub_topics.find(x=>x.id===$("sel-subtopic").value):null;loadObjectives();setCrumb();});
-function resetFrom(level){const order=["subsubject","topic","subtopic"];const idx=order.indexOf(level);
-  if(idx<=0){$("sel-topic").innerHTML="";$("sel-topic").disabled=true;curTopic=null;}
-  if(idx<=1){$("sel-subtopic").innerHTML="";$("sel-subtopic").disabled=true;curSubtopic=null;}
-  $("objs").innerHTML="<div class='empty'>Select a sub-topic to load objectives.</div>";refreshGen();}
-
-// ---- fuzzy standards search ----
-let _preselect=null,_stTimer=null,_sActive=-1,_sHits=[];
-const stEl=$("stdsearch"),srEl=$("sresults");
-function closeResults(){srEl.classList.remove("open");srEl.innerHTML="";_sActive=-1;_sHits=[];}
-function fire(el){el.dispatchEvent(new Event("change"));}
-function gotoLocation(ids){
-  const sub=$("sel-subject");sub.value=ids.subject;if(sub.value!==ids.subject)return;fire(sub);
-  if(ids.sub_subject){const e=$("sel-subsubject");e.value=ids.sub_subject;fire(e);}
-  if(ids.topic){const e=$("sel-topic");e.value=ids.topic;fire(e);}
-  if(ids.sub_topic){_preselect=ids.objective||null;const e=$("sel-subtopic");e.value=ids.sub_topic;fire(e);}
+// ---- home: the units ----
+async function loadHome(){
+  document.title="Prep Room · Exegetica";
+  $("unitgrid").innerHTML='<p class="empty-line">Loading your units…</p>';
+  try{const d=await api("GET","/api/prep/units");S.units=d.units;S.quick=d.quick;}
+  catch(e){$("unitgrid").innerHTML='<div class="home-empty"><h2>Your units didn\'t load</h2><p>'+esc(e.message)+'</p><button type="button" class="btn-quiet" data-act="reload">Try again</button></div>';return;}
+  renderHome();
 }
-function chooseHit(i){const h=_sHits[i];if(!h)return;gotoLocation(h.ids);stEl.value=h.label;closeResults();}
-function renderResults(hits){
-  _sHits=hits;_sActive=-1;
-  if(!hits.length){srEl.innerHTML="<div class='snone'>No matches. Try fewer or simpler words.</div>";srEl.classList.add("open");return;}
-  srEl.innerHTML="";
-  hits.forEach((h,i)=>{
-    const it=document.createElement("button");it.type="button";it.className="sitem";
-    const lvl=h.level==="sub-topic"?"Sub-topic":h.level.charAt(0).toUpperCase()+h.level.slice(1);
-    const g=h.grade!=null?"<span class='si-g'>grade "+h.grade+"</span>":"";
-    const path=(h.path||[]).length?"<div class='si-path'>"+esc(h.path.join("  ›  "))+"</div>":"";
-    it.innerHTML="<div class='si-top'><span class='si-lvl "+h.level+"'>"+lvl+"</span><span class='si-lab'>"+esc(h.label)+"</span>"+g+"</div>"+path;
-    it.onclick=()=>chooseHit(i);
-    srEl.appendChild(it);
-  });
-  srEl.classList.add("open");
+function unitCounts(u){const parts=[plural(u.n_sources,"source"),plural(u.n_resources,"resource")];return parts.join(" · ")+" · edited "+ago(u.updated_at);}
+function renderHome(){
+  const g=$("unitgrid");
+  if(!S.units.length){
+    g.innerHTML='<div class="home-empty"><h2>Start your first unit</h2><p>Name it the way you plan, such as “John 7 and 8” or “Module 3: Percents”. Then add what you teach from, and make handouts, quizzes and guides from it. Everything you make is kept here.</p><button type="button" class="btn-primary" data-act="new-unit">New unit</button></div>';
+  }else{
+    g.innerHTML=S.units.map(u=>'<article class="ucard" data-id="'+u.id+'"><h3><a href="/generate/unit/'+u.id+'" data-nav>'+esc(u.title)+'</a></h3>'+
+      '<p class="u-course">'+esc([courseName(u.course_key),bandLabel(u.grade_band)].filter(Boolean).join(" · "))+'</p>'+
+      '<p class="u-counts">'+unitCounts(u)+'</p>'+
+      '<button type="button" class="icobtn kebab" data-umenu="'+u.id+'" aria-label="Options for '+esc(u.title)+'" aria-haspopup="true">'+ICON.kebab+'</button></article>').join("");
+  }
+  $("quick").hidden=!S.quick.length;
+  $("quicklist").innerHTML=S.quick.map(r=>resRow(r,"/generate/r/"+r.id)).join("");
 }
-function runSearch(q){fetch("/api/standards/search?q="+encodeURIComponent(q)).then(r=>r.json())
-  .then(d=>{if(stEl.value.trim()===q)renderResults(d.results||[]);}).catch(()=>{});}
-stEl.addEventListener("input",()=>{clearTimeout(_stTimer);const q=stEl.value.trim();
-  if(q.length<2){closeResults();return;}_stTimer=setTimeout(()=>runSearch(q),150);});
-stEl.addEventListener("keydown",e=>{
-  if(!srEl.classList.contains("open"))return;
-  const items=srEl.querySelectorAll(".sitem");if(!items.length)return;
-  if(e.key==="ArrowDown"){e.preventDefault();_sActive=Math.min(_sActive+1,items.length-1);}
-  else if(e.key==="ArrowUp"){e.preventDefault();_sActive=Math.max(_sActive-1,0);}
-  else if(e.key==="Enter"){e.preventDefault();if(_sActive>=0)chooseHit(_sActive);else if(items.length===1)chooseHit(0);return;}
-  else if(e.key==="Escape"){closeResults();return;}
-  else return;
-  items.forEach((it,i)=>it.classList.toggle("active",i===_sActive));
-  if(_sActive>=0)items[_sActive].scrollIntoView({block:"nearest"});
+document.addEventListener("click",e=>{
+  const act=e.target.closest("[data-act]");if(!act)return;
+  if(act.dataset.act==="new-unit")newUnit();
+  if(act.dataset.act==="reload")loadHome();
 });
-document.addEventListener("click",e=>{if(!e.target.closest(".searchbox"))closeResults();});
-
-function loadObjectives(){const box=$("objs");if(!curSubtopic){box.innerHTML="<div class='empty'>Select a sub-topic.</div>";return;}
-  box.innerHTML="<div class='empty'>Loading…</div>";
-  fetch("/api/standards/objectives?sub_topic="+encodeURIComponent(curSubtopic.id)).then(r=>r.json()).then(d=>{
-    const os=d.objectives||[];if(!os.length){box.innerHTML="<div class='empty'>No objectives.</div>";return;}
-    box.innerHTML="";os.forEach(o=>{const lab=document.createElement("label");lab.className="obj";
-      lab.innerHTML="<input type='checkbox' data-id='"+o.id+"'><span><span class='oid'>"+o.id+"</span> "+esc(o.t)+" <span class='og'>g"+o.g+"</span></span>";
-      lab.querySelector("input").addEventListener("change",refreshGen);
-      lab.__obj=o;box.appendChild(lab);});
-    if(_preselect){const cb=box.querySelector("input[data-id='"+_preselect+"']");
-      if(cb){cb.checked=true;const ob=cb.closest(".obj");if(ob)ob.scrollIntoView({block:"nearest"});}_preselect=null;}
-    refreshGen();openSec("objectives");
-  }).catch(()=>{box.innerHTML="<div class='empty'>Failed to load.</div>";});}
-function selectedObjectives(){return Array.prototype.map.call($("objs").querySelectorAll("input:checked"),i=>i.closest(".obj").__obj).map(o=>({id:o.id,t:o.t,g:o.g,c:o.c}));}
-
-// ---- source mode toggle: a book (live text) vs. academic-spine standards ----
-function setNums(map){for(const k in map){const s=document.querySelector('.acc-sec[data-sec="'+k+'"] .acc-n');if(s)s.textContent=map[k];}}
-function applySrcMode(){
-  const book = srcMode==="book";
-  $("stdsearchwrap").style.display = book ? "none" : "";
-  document.querySelector('.acc-sec[data-sec="book"]').style.display = book ? "" : "none";
-  document.querySelector('.acc-sec[data-sec="standard"]').style.display = book ? "none" : "";
-  document.querySelector('.acc-sec[data-sec="objectives"]').style.display = book ? "none" : "";
-  setNums(book ? {book:"1",format:"2",audience:"3"} : {standard:"1",objectives:"2",format:"3",audience:"4"});
-  document.querySelectorAll(".srcbtn").forEach(b=>b.classList.toggle("on",b.dataset.src===srcMode));
-  openSec(book ? "book" : "standard");
-  refreshGen();
+$("new-unit").addEventListener("click",newUnit);
+async function newUnit(){
+  const title=await Shell.ask({title:"New unit",body:"Name it the way you plan. You can add its course and grade band next.",ok:"Create unit",
+    input:{label:"Unit name",value:"",max:160},validate:t=>t?"":"Give the unit a name."});
+  if(!title)return;
+  try{const d=await api("POST","/api/prep/units",{title,grade_band:"secondary"});S.unit=d.unit;go("/generate/unit/"+d.unit.id);setTab("unit");}
+  catch(e){Shell.toast(e.message);}
 }
-document.querySelectorAll(".srcbtn").forEach(b=>b.addEventListener("click",()=>{if(srcMode===b.dataset.src)return;srcMode=b.dataset.src;applySrcMode();}));
-applySrcMode();   // set the initial mode (book) and its step layout
 
-// ---- book picker (generation reads the book's live text at request time) ----
-$("booksearch").addEventListener("input",()=>{clearTimeout(_bkTimer);const q=$("booksearch").value.trim();
-  if(q.length<2){$("bookresults").classList.remove("open");$("bookresults").innerHTML="";return;}
-  _bkTimer=setTimeout(()=>bookSearch(q),180);});
-function bookSearch(q){fetch("/api/books?q="+encodeURIComponent(q)+"&limit=12").then(r=>r.json()).then(d=>{
-  const box=$("bookresults");box.innerHTML="";
-  (d.items||[]).forEach(b=>{const it=document.createElement("button");it.type="button";it.className="sitem";
-    it.innerHTML="<div class='si-top'><span class='si-lab'>"+esc(b.title)+"</span></div>"
-      +"<div class='si-path'>"+esc(b.author||"")+" · "+b.chapter_count+" ch</div>";
-    it.onclick=()=>chooseBook(b);box.appendChild(it);});
-  box.classList.toggle("open",(d.items||[]).length>0);}).catch(()=>{});}
-function chooseBook(b){fetch("/api/books/"+encodeURIComponent(b.slug)).then(r=>r.json()).then(d=>{
-  pickedBook={slug:b.slug,title:b.title,author:b.author,toc:d.toc||[]};
-  $("booksearch").value=b.title;$("bookresults").classList.remove("open");$("bookresults").innerHTML="";
-  const sel=$("sel-cover");sel.innerHTML="";
-  (pickedBook.toc||[]).forEach(t=>{const o=document.createElement("option");o.value=t.section_number;
-    o.textContent="Ch "+t.section_number+(t.title?": "+t.title:"");sel.appendChild(o);});
-  if(pickedBook.toc.length)sel.value=pickedBook.toc[pickedBook.toc.length-1].section_number;  // default: whole book
-  $("coverwrap").style.display=pickedBook.toc.length?"":"none";
-  refreshGen();}).catch(()=>{});}
-$("sel-cover").addEventListener("change",refreshGen);
-document.addEventListener("click",e=>{if(!e.target.closest("#sum-book")&&!e.target.closest("#coverwrap")&&!e.target.closest(".searchbox"))$("bookresults").classList.remove("open");});
+// ---- menus (the kebab): click, Enter or Space opens; arrows move; Escape or a click outside closes ----
+let openMenuEl=null,menuOpener=null;
+function closeMenus(){if(openMenuEl){openMenuEl.remove();openMenuEl=null;if(menuOpener)menuOpener.setAttribute("aria-expanded","false");}
+  $("vmenu").hidden=true;$("versions").setAttribute("aria-expanded","false");}
+function openMenu(btn,items){
+  const was=openMenuEl&&menuOpener===btn;closeMenus();if(was)return;
+  const m=document.createElement("div");m.className="menu";m.setAttribute("role","menu");
+  items.forEach(it=>{const b=document.createElement("button");b.type="button";b.setAttribute("role","menuitem");b.textContent=it.label;if(it.danger)b.className="danger";
+    b.onclick=ev=>{ev.stopPropagation();closeMenus();btn.focus();it.act();};m.appendChild(b);});
+  btn.parentElement.appendChild(m);openMenuEl=m;menuOpener=btn;btn.setAttribute("aria-expanded","true");
+  m.addEventListener("keydown",ev=>{const bs=[...m.querySelectorAll("button")],i=bs.indexOf(document.activeElement);
+    if(ev.key==="ArrowDown"){ev.preventDefault();bs[(i+1)%bs.length].focus();}
+    if(ev.key==="ArrowUp"){ev.preventDefault();bs[(i-1+bs.length)%bs.length].focus();}
+    if(ev.key==="Escape"){ev.preventDefault();closeMenus();btn.focus();}});
+  m.querySelector("button").focus();
+}
+document.addEventListener("click",e=>{if(openMenuEl&&!e.target.closest(".menu")&&!e.target.closest(".kebab")&&!e.target.closest("[data-umenu]"))closeMenus();
+  if(!$("vmenu").hidden&&!e.target.closest("#vmenu")&&!e.target.closest("#versions"))closeMenus();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){if(!$("vmenu").hidden){closeMenus();$("versions").focus();}if(app.classList.contains("make-open")&&!$("dlg").open)closeMake();}});
 
-// ---- output: paper / teacher-student / view-edit / modify / pdf ----
+// A removal happens at once and can be taken back for a few seconds (rule F3); the server hears of it after.
+const pending=new Map();
+function removeLater(url,message,undo){
+  const key=url+Math.random();
+  const t=setTimeout(()=>{pending.delete(key);api("DELETE",url).catch(err=>{Shell.toast(err.message);undo();});},6500);
+  pending.set(key,{t,url});
+  Shell.toast(message,{undo:()=>{clearTimeout(t);pending.delete(key);undo();}});
+}
+window.addEventListener("pagehide",()=>{pending.forEach(p=>{clearTimeout(p.t);fetch(p.url,{method:"DELETE",keepalive:true});});pending.clear();saveEditNow(true);});
+
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-umenu]");if(!b)return;e.stopPropagation();
+  const u=S.units.find(x=>x.id===b.dataset.umenu);if(!u)return;
+  openMenu(b,[{label:"Rename",act:()=>renameUnit(u)},
+    {label:"Delete unit",danger:true,act:()=>{const i=S.units.indexOf(u);S.units.splice(i,1);renderHome();
+      removeLater("/api/prep/units/"+u.id,"Deleted “"+u.title+"” and its resources",()=>{S.units.splice(i,0,u);renderHome();});}}]);
+});
+async function renameUnit(u){
+  const t=await Shell.ask({title:"Rename unit",ok:"Rename",input:{label:"Unit name",value:u.title,max:160},validate:t=>t?"":"Give the unit a name."});
+  if(!t||t===u.title)return;
+  try{await api("PATCH","/api/prep/units/"+u.id,{title:t});u.title=t;if(S.unit&&S.unit.id===u.id){S.unit.title=t;renderUnit();}renderHome();}
+  catch(e){Shell.toast(e.message);}
+}
+
+// ---- the unit pane ----
+function sourceSub(s){
+  const r=s.ref||{};
+  if(s.kind==="book"){const c=r.coverage||{};const d=c.through?"Read through "+(r.through_title||"section "+c.through):"Whole book";return esc(d);}
+  if(s.kind==="outline")return '<span class="badge outline">Outline only</span> '+esc((r.parts||[]).length?r.parts.join("; "):"All parts");
+  if(s.kind==="passage")return esc(r.translation||"ESV");
+  if(s.kind==="upload")return "Your upload · "+(s.words||0).toLocaleString()+" words";
+  if(s.kind==="link"){let h="";try{h=new URL(r.url).hostname.replace(/^www\./,"");}catch(e){}return esc(h)+" · "+(s.words||0).toLocaleString()+" words";}
+  if(s.kind==="library")return "From your Living Library";
+  return "";}
+function renderUnit(){
+  const u=S.unit,quick=!u;
+  $("u-title").textContent=quick?"Quick resource":u.title;
+  $("u-meta").textContent=quick?"A one-off, kept with your quick resources. Its sources aren't kept.":[courseName(u.course_key)||"No course chosen",bandLabel(u.grade_band)].join(" · ");
+  $("u-edit").hidden=quick;
+  const sources=quick?S.quickSources:u.sources;
+  $("n-sources").textContent=sources.length||"";
+  $("srclist").innerHTML=sources.length?sources.map((s,i)=>'<li data-i="'+i+'"><span class="s-ic" aria-hidden="true">'+(ICON[s.kind]||ICON.upload)+'</span>'+
+    '<span class="s-txt"><span class="s-label">'+esc(s.label)+'</span><span class="s-sub">'+sourceSub(s)+'</span></span>'+
+    '<button type="button" class="icobtn kebab" data-smenu="'+i+'" aria-label="Options for '+esc(s.label)+'" aria-haspopup="true">'+ICON.kebab+'</button></li>').join(""):
+    '<li class="empty-line">No sources yet. A draft with none works from the objectives and the study tools alone.</li>';
+  $("add-source").closest(".u-sec").querySelector(".u-hint").hidden=!sources.length;
+  for(const id of ["h-objs","h-note","h-res"])$(id).closest(".u-sec").hidden=quick;
+  if(!quick){
+    $("n-objs").textContent=u.objectives.length||"";
+    $("objchips").innerHTML=u.objectives.map((o,i)=>'<span class="chip"><span><span class="oid">'+esc(o.id)+'</span>'+esc(o.t.length>110?o.t.slice(0,108)+"…":o.t)+'</span><button type="button" data-unobj="'+i+'" aria-label="Remove objective '+esc(o.id)+'">×</button></span>').join("")||'<span class="empty-line">None yet. Objectives keep drafts aimed at what you are teaching.</span>';
+    if(document.activeElement!==$("u-note"))$("u-note").value=u.notes||"";
+    $("n-res").textContent=u.resources.length||"";
+    $("reslist").innerHTML=u.resources.length?u.resources.map(r=>resRow(r,"/generate/unit/"+u.id+"/r/"+r.id)).join(""):'<li class="empty-line">Nothing made yet.</li>';
+  }
+  updateDraws();
+}
+function resRow(r,href){const k=kindOf(r.format_id);const on=S.res&&S.res.id===r.id?" on":"";
+  return '<li class="'+on+'"><a class="r-open" href="'+href+'" data-nav><span class="r-title">'+esc(r.title)+'</span><span class="r-sub">'+esc(k?k.name.split(/ \/ | \(/)[0]:r.format_id)+(r.latest?" · version "+r.latest:"")+" · "+ago(r.updated_at)+'</span></a>'+
+    '<button type="button" class="icobtn kebab" data-rmenu="'+r.id+'" aria-label="Options for '+esc(r.title)+'" aria-haspopup="true">'+ICON.kebab+'</button></li>';}
+$("u-edit").addEventListener("click",editUnit);
+document.addEventListener("click",e=>{
+  const sm=e.target.closest("[data-smenu]");
+  if(sm){e.stopPropagation();const i=+sm.dataset.smenu;const list=S.unit?S.unit.sources:S.quickSources;const s=list[i];if(!s)return;
+    const items=[];if(s.kind==="book")items.push({label:"Change how far the class has read",act:()=>coverDialog(s)});
+    if(s.kind==="outline")items.push({label:"Choose parts",act:()=>partsDialog(s)});
+    items.push({label:"Remove source",danger:true,act:()=>removeSource(s)});openMenu(sm,items);return;}
+  const rm=e.target.closest("[data-rmenu]");
+  if(rm){e.stopPropagation();const list=S.unit?S.unit.resources:S.quick;const r=list.find(x=>x.id===rm.dataset.rmenu);if(!r)return;
+    openMenu(rm,[{label:"Rename",act:()=>renameRes(r)},{label:"Delete resource",danger:true,act:()=>deleteRes(r,list)}]);return;}
+  const uo=e.target.closest("[data-unobj]");
+  if(uo){const i=+uo.dataset.unobj,old=S.unit.objectives.slice(),gone=old[i];S.unit.objectives.splice(i,1);saveObjectives();
+    Shell.toast("Removed "+gone.id,{undo:()=>{S.unit.objectives=old;saveObjectives();}});}
+});
+function removeSource(s){
+  if(!S.unit){const i=S.quickSources.indexOf(s);S.quickSources.splice(i,1);renderUnit();Shell.toast("Removed “"+s.label+"”",{undo:()=>{S.quickSources.splice(i,0,s);renderUnit();}});return;}
+  const i=S.unit.sources.indexOf(s);S.unit.sources.splice(i,1);renderUnit();
+  removeLater("/api/prep/sources/"+s.id,"Removed “"+s.label+"”",()=>{S.unit.sources.splice(i,0,s);renderUnit();});
+}
+async function saveObjectives(){renderUnit();
+  try{await api("PATCH","/api/prep/units/"+S.unit.id,{objectives:S.unit.objectives});}catch(e){Shell.toast(e.message);}}
+let noteTimer=null;
+$("u-note").addEventListener("input",()=>{clearTimeout(noteTimer);$("note-state").textContent="";noteTimer=setTimeout(saveNote,900);});
+$("u-note").addEventListener("blur",()=>{if(noteTimer){clearTimeout(noteTimer);saveNote();}});
+async function saveNote(){noteTimer=null;if(!S.unit)return;const v=$("u-note").value;if(v===(S.unit.notes||""))return;
+  try{await api("PATCH","/api/prep/units/"+S.unit.id,{notes:v});S.unit.notes=v;$("note-state").textContent="Saved";}
+  catch(e){$("note-state").textContent="Not saved";Shell.toast(e.message);}}
+async function renameRes(r){
+  const t=await Shell.ask({title:"Rename resource",ok:"Rename",input:{label:"Title",value:r.title,max:160},validate:t=>t?"":"Give it a title."});
+  if(!t||t===r.title)return;
+  try{await api("PATCH","/api/prep/resources/"+r.id,{title:t});r.title=t;if(S.res&&S.res.id===r.id){S.res.title=t;$("outtitle").textContent=t;}renderUnit();if(app.dataset.view==="home")renderHome();}
+  catch(e){Shell.toast(e.message);}
+}
+function deleteRes(r,list){
+  const i=list.indexOf(r);list.splice(i,1);const wasOpen=S.res&&S.res.id===r.id;
+  if(wasOpen){go(resPath(null));}else if(app.dataset.view==="home")renderHome();else renderUnit();
+  removeLater("/api/prep/resources/"+r.id,"Deleted “"+r.title+"”",()=>{list.splice(i,0,r);if(app.dataset.view==="home")renderHome();else renderUnit();});
+}
+async function refreshUnit(){if(!S.unit)return;try{S.unit=(await api("GET","/api/prep/units/"+S.unit.id)).unit;renderUnit();}catch(e){}}
+
+// ---- dialogs: one native <dialog>, its body drawn for each job ----
+const dlg=$("dlg");let dlgOpener=null;
+function openDlg(title,html){$("dlg-title").textContent=title;$("dlg-body").innerHTML=html;dlgOpener=document.activeElement;if(!dlg.open)dlg.showModal();
+  const f=$("dlg-body").querySelector("[autofocus],input,select,button");if(f)f.focus();}
+function closeDlg(){if(dlg.open)dlg.close();}
+dlg.addEventListener("close",()=>{if(dlgOpener&&dlgOpener.isConnected)dlgOpener.focus();});
+dlg.addEventListener("click",e=>{if(e.target===dlg||e.target.closest("[data-close]"))closeDlg();});
+function dlgError(msg){let p=$("dlg-body").querySelector(".derr");if(!p){p=document.createElement("p");p.className="derr";p.setAttribute("role","alert");$("dlg-body").appendChild(p);}p.textContent=msg;}
+
+async function editUnit(){
+  const u=S.unit,bands=Object.keys((S.gallery||{}).grade_bands||{});
+  openDlg("Edit unit",'<form id="f-unit"><div class="fld"><label class="flabel" for="eu-title">Unit name</label><input id="eu-title" maxlength="160" value="'+esc(u.title)+'"></div>'+
+    '<div class="fld"><label class="flabel" for="eu-course">Course</label><select id="eu-course"><option value="">No course</option>'+
+    S.courses.map(c=>'<option value="'+c.key+'"'+(c.key===u.course_key?" selected":"")+'>'+esc(c.name)+' ('+esc(c.grades)+')</option>').join("")+'</select></div>'+
+    '<div class="fld"><label class="flabel" for="eu-band">Grade band</label><select id="eu-band">'+bands.map(b=>'<option value="'+b+'"'+(b===u.grade_band?" selected":"")+'>'+bandLabel(b)+'</option>').join("")+'</select></div>'+
+    '<div class="dactions"><button type="button" class="btn-quiet" data-close>Cancel</button><button type="submit" class="btn-primary">Save</button></div></form>');
+  $("f-unit").onsubmit=async ev=>{ev.preventDefault();const title=$("eu-title").value.trim();if(!title)return dlgError("Give the unit a name.");
+    const body={title,course_key:$("eu-course").value,grade_band:$("eu-band").value};
+    try{await api("PATCH","/api/prep/units/"+u.id,body);Object.assign(u,body);closeDlg();renderUnit();fillBands();}catch(e){dlgError(e.message);}};
+}
+
+// Add a source: a book (full text or outline only), a passage, a Living Library item, an upload or a link.
+$("add-source").addEventListener("click",()=>addSource("book"));
+function addSource(tab){
+  const tabs=[["book","Book"],["passage","Passage"],["library","Living Library"]].concat(S.unit?[["upload","Upload"],["link","Link"]]:[]);
+  openDlg("Add a source",'<div class="dtabs" role="tablist">'+tabs.map(([k,l])=>'<button type="button" role="tab" data-stab="'+k+'" aria-selected="'+(k===tab)+'">'+l+'</button>').join("")+'</div><div id="stab" role="tabpanel"></div>');
+  $("dlg-body").querySelectorAll("[data-stab]").forEach(b=>b.onclick=()=>{$("dlg-body").querySelectorAll("[data-stab]").forEach(x=>x.setAttribute("aria-selected",String(x===b)));sourceTab(b.dataset.stab);});
+  sourceTab(tab);
+}
+async function addRef(kind,ref,label){
+  if(!S.unit){S.quickSources.push({kind,ref,label});closeDlg();renderUnit();Shell.toast("Added “"+label+"”");return;}
+  try{const d=await api("POST","/api/prep/units/"+S.unit.id+"/sources",{kind,ref,label});S.unit.sources.push(d.source);closeDlg();renderUnit();Shell.toast("Added “"+label+"”");}
+  catch(e){dlgError(e.message);}
+}
+function sourceTab(tab){
+  const box=$("stab");
+  if(tab==="book"){
+    box.innerHTML='<p class="dhelp">Reading Room books give drafts their full text. Works marked “Outline only” are school texts Exegetica doesn\'t have yet: drafts get their contents and what each part covers.</p>'+
+      '<label class="flabel" for="bk-q">Find a book</label><input id="bk-q" type="search" autocomplete="off" placeholder="Title, author, or course"><ul class="dres" id="bk-res"></ul>';
+    let t=null;$("bk-q").oninput=()=>{clearTimeout(t);t=setTimeout(()=>bookSearch($("bk-q").value.trim()),250);};$("bk-q").focus();
+  }else if(tab==="passage"){
+    box.innerHTML='<form id="f-pass"><div class="fld"><label class="flabel" for="ps-ref">Passage</label><input id="ps-ref" autocomplete="off" placeholder="John 7:14-24"></div>'+
+      '<div class="fld"><label class="flabel" for="ps-tr">Translation</label><select id="ps-tr"><option>ESV</option><option>KJV</option><option>BSB</option><option>WEB</option><option>ASV</option></select></div>'+
+      '<div class="dactions"><button type="submit" class="btn-primary">Add passage</button></div></form>';
+    $("ps-ref").focus();
+    $("f-pass").onsubmit=ev=>{ev.preventDefault();const ref=$("ps-ref").value.trim();if(!/\d/.test(ref))return dlgError("Give a book and chapter, such as John 7:14-24.");
+      addRef("passage",{ref,translation:$("ps-tr").value},ref+" ("+$("ps-tr").value+")");};
+  }else if(tab==="library"){
+    box.innerHTML='<p class="dhelp">Videos, podcasts and books on your Living Library shelf. A video or podcast brings its transcript and the excerpts you saved.</p><label class="flabel" for="lb-q">Filter your shelf</label><input id="lb-q" type="search" autocomplete="off"><ul class="dres" id="lb-res"><li class="empty-line">Loading your shelf…</li></ul>';
+    fetch("/api/library/shelf").then(r=>r.json()).then(d=>{const items=d.items||[];
+      const draw=q=>{const L=items.filter(it=>!q||(it.title+" "+it.sub).toLowerCase().includes(q.toLowerCase()));
+        $("lb-res").innerHTML=L.length?L.map(it=>'<li><button type="button" data-lib="'+it.id+'"><span class="d-t">'+esc(it.title)+'</span><span class="d-s">'+esc([it.type,it.sub].filter(Boolean).join(" · "))+'</span></button></li>').join(""):
+          '<li class="empty-line">'+(items.length?"Nothing on your shelf matches.":'Your shelf is empty. Add videos, podcasts and books in the <a href="/library">Living Library</a> first.')+'</li>';
+        $("lb-res").querySelectorAll("[data-lib]").forEach(b=>b.onclick=()=>{const it=items.find(x=>x.id===b.dataset.lib);addRef("library",{item_id:it.id},it.title);});};
+      draw("");$("lb-q").oninput=()=>draw($("lb-q").value.trim());
+    }).catch(()=>{$("lb-res").innerHTML='<li class="empty-line">Your shelf didn\'t load. Try again.</li>';});
+  }else if(tab==="upload"){
+    box.innerHTML='<form id="f-up"><p class="dhelp">Your own handouts, notes or a department PDF. Exegetica reads the text now and keeps it encrypted, for your drafts only.</p>'+
+      '<div class="fld"><label class="flabel" for="up-file">File (PDF, Word, EPUB or text, up to 15 MB)</label><input id="up-file" type="file" accept=".pdf,.docx,.txt,.md,.epub"></div>'+
+      '<div class="fld"><label class="flabel" for="up-label">Name (optional)</label><input id="up-label" maxlength="200" placeholder="The file\'s name"></div>'+
+      '<div class="dactions"><button type="submit" class="btn-primary" id="up-go">Upload</button></div></form>';
+    $("f-up").onsubmit=async ev=>{ev.preventDefault();const f=$("up-file").files[0];if(!f)return dlgError("Choose a file.");
+      const fd=new FormData();fd.append("file",f);fd.append("label",$("up-label").value.trim());$("up-go").disabled=true;$("up-go").textContent="Reading the file…";
+      try{const r=await fetch("/api/prep/units/"+S.unit.id+"/upload",{method:"POST",body:fd});const d=await r.json().catch(()=>({}));if(!r.ok)throw new Error(d.error||"That upload didn't work.");
+        S.unit.sources.push(d.source);closeDlg();renderUnit();Shell.toast("Added “"+d.source.label+"”");}
+      catch(e){dlgError(e.message);$("up-go").disabled=false;$("up-go").textContent="Upload";}};
+  }else if(tab==="link"){
+    box.innerHTML='<form id="f-link"><p class="dhelp">An article or an online PDF. Exegetica reads it now and keeps the text encrypted, for your drafts only. Videos and podcasts go in the Living Library, so their transcripts come with them.</p>'+
+      '<div class="fld"><label class="flabel" for="ln-url">Web address</label><input id="ln-url" type="url" autocomplete="off" placeholder="https://"></div>'+
+      '<div class="dactions"><button type="submit" class="btn-primary" id="ln-go">Add link</button></div></form>';
+    $("ln-url").focus();
+    $("f-link").onsubmit=async ev=>{ev.preventDefault();const url=$("ln-url").value.trim();if(!/^https?:\/\//.test(url))return dlgError("Give a full address, starting with https://");
+      $("ln-go").disabled=true;$("ln-go").textContent="Reading the page…";
+      try{const d=await api("POST","/api/prep/units/"+S.unit.id+"/link",{url});S.unit.sources.push(d.source);closeDlg();renderUnit();Shell.toast("Added “"+d.source.label+"”");}
+      catch(e){dlgError(e.message);$("ln-go").disabled=false;$("ln-go").textContent="Add link";}};
+  }
+}
+async function bookSearch(q){
+  const out=$("bk-res");if(!out)return;if(q.length<2){out.innerHTML="";return;}
+  out.innerHTML='<li class="empty-line">Searching…</li>';
+  try{
+    const [b,o]=await Promise.all([api("GET","/api/prep/books?q="+encodeURIComponent(q)),api("GET","/api/prep/outlines?q="+encodeURIComponent(q))]);
+    const books=(b.results||[]).map(x=>'<li><button type="button" data-book="'+esc(x.slug)+'" data-title="'+esc(x.title)+'"><span class="d-t">'+esc(x.title)+'</span><span class="d-s">'+esc([x.author,"full text, "+x.access].filter(Boolean).join(" · "))+'</span></button></li>');
+    const year=e=>{const m=String(e||"").match(/(19|20)\d\d(?:[/-](19|20)?\d\d)?/);return m?m[0]:"";};
+    const outs=(o.results||[]).map(x=>'<li><button type="button" data-outline="'+esc(x.key)+'"><span class="d-t">'+esc(x.title)+' <span class="badge outline">Outline only</span></span><span class="d-s">'+esc([year(x.edition),x.courses.join(", ")].filter(Boolean).join(" · "))+'</span></button></li>');
+    if($("bk-q").value.trim()!==q)return;
+    out.innerHTML=(outs.concat(books).join(""))||'<li class="empty-line">No book matches. The Reading Room holds the school\'s copies and public-domain books; other school texts appear here once they have an outline.</li>';
+    out.querySelectorAll("[data-book]").forEach(btn=>btn.onclick=()=>chooseCoverage({slug:btn.dataset.book,title:btn.dataset.title}));
+    out.querySelectorAll("[data-outline]").forEach(btn=>btn.onclick=()=>{const x=(o.results||[]).find(r=>r.key===btn.dataset.outline);choosePartsNew(x);});
+  }catch(e){out.innerHTML='<li class="empty-line">'+esc(e.message)+'</li>';}
+}
+async function bookToc(slug){const d=await fetch("/api/books/"+encodeURIComponent(slug)).then(r=>r.json());return (d.toc||[]).map(c=>({n:c.section_number,title:c.title}));}
+function coverageForm(toc,current){
+  return '<div class="fld"><label class="flabel" for="cv-sel">How far has the class read?</label><select id="cv-sel"><option value="">The whole book (no limit)</option>'+
+    toc.map(c=>'<option value="'+c.n+'"'+(current===c.n?" selected":"")+'>Through '+esc(c.title||("section "+c.n))+'</option>').join("")+'</select></div>'+
+    '<p class="dhelp">Drafts ask only about what the class has read, and keep later events out of what students see.</p>';}
+function coverRef(slug,toc,n){const c=toc.find(x=>x.n===n);return n?{slug,coverage:{through:n},through_title:c?c.title:""}:{slug,coverage:{}};}
+async function chooseCoverage(book){
+  openDlg("Add “"+book.title+"”",'<p class="empty-line">Loading its contents…</p>');
+  let toc=[];try{toc=await bookToc(book.slug);}catch(e){}
+  openDlg("Add “"+book.title+"”",'<form id="f-cov">'+coverageForm(toc,null)+'<div class="dactions"><button type="button" class="btn-quiet" data-back>Back</button><button type="submit" class="btn-primary">Add book</button></div></form>');
+  $("dlg-body").querySelector("[data-back]").onclick=()=>addSource("book");
+  $("f-cov").onsubmit=ev=>{ev.preventDefault();const n=parseInt($("cv-sel").value,10);addRef("book",coverRef(book.slug,toc,n),book.title);};
+}
+async function coverDialog(s){
+  openDlg("How far has the class read?",'<p class="empty-line">Loading its contents…</p>');
+  let toc=[];try{toc=await bookToc(s.ref.slug);}catch(e){}
+  openDlg("How far has the class read?",'<form id="f-cov"><p class="dhelp">'+esc(s.label)+'</p>'+coverageForm(toc,(s.ref.coverage||{}).through)+'<div class="dactions"><button type="button" class="btn-quiet" data-close>Cancel</button><button type="submit" class="btn-primary">Save</button></div></form>');
+  $("f-cov").onsubmit=async ev=>{ev.preventDefault();const n=parseInt($("cv-sel").value,10);const ref=coverRef(s.ref.slug,toc,n);
+    if(S.unit){try{await api("PATCH","/api/prep/sources/"+s.id,{kind:"book",ref});}catch(e){return dlgError(e.message);}}
+    s.ref=ref;closeDlg();renderUnit();};
+}
+function partsForm(parts,chosen){return '<p class="dhelp">Leave every box clear to give drafts the whole outline.</p><div class="dchecks">'+
+  parts.map((p,i)=>'<label><input type="checkbox" value="'+i+'"'+(chosen.includes(p)?" checked":"")+'> '+esc(p)+'</label>').join("")+'</div>';}
+function choosePartsNew(x){
+  openDlg("Add “"+x.title+"”",'<form id="f-parts">'+partsForm(x.parts,[])+'<div class="dactions"><button type="button" class="btn-quiet" data-back>Back</button><button type="submit" class="btn-primary">Add outline</button></div></form>');
+  $("dlg-body").querySelector("[data-back]").onclick=()=>addSource("book");
+  $("f-parts").onsubmit=ev=>{ev.preventDefault();const parts=[...$("f-parts").querySelectorAll("input:checked")].map(c=>x.parts[+c.value]);addRef("outline",{key:x.key,parts},x.title);};
+}
+async function partsDialog(s){
+  let x=null;try{const d=await api("GET","/api/prep/outlines?q="+encodeURIComponent(s.label));x=(d.results||[]).find(r=>r.key===s.ref.key);}catch(e){}
+  if(!x){Shell.toast("That outline didn't load. Try again.");return;}
+  openDlg("Choose parts",'<form id="f-parts"><p class="dhelp">'+esc(s.label)+'</p>'+partsForm(x.parts,s.ref.parts||[])+'<div class="dactions"><button type="button" class="btn-quiet" data-close>Cancel</button><button type="submit" class="btn-primary">Save</button></div></form>');
+  $("f-parts").onsubmit=async ev=>{ev.preventDefault();const ref={key:s.ref.key,parts:[...$("f-parts").querySelectorAll("input:checked")].map(c=>x.parts[+c.value])};
+    if(S.unit){try{await api("PATCH","/api/prep/sources/"+s.id,{kind:"outline",ref});}catch(e){return dlgError(e.message);}}
+    s.ref=ref;closeDlg();renderUnit();};
+}
+
+// Objectives: one search over the standards, each pick kept with its anchors.
+$("add-obj").addEventListener("click",()=>{
+  openDlg("Add an objective",'<p class="dhelp">Search the standards by subject, topic or the words of an objective. Pick a topic to see its objectives.</p><label class="flabel" for="ob-q">Search the standards</label><input id="ob-q" type="search" autocomplete="off" placeholder="For example: Feast of Tabernacles, percent change, theme"><ul class="dres" id="ob-res"></ul>');
+  let t=null;$("ob-q").oninput=()=>{clearTimeout(t);t=setTimeout(()=>objSearch($("ob-q").value.trim()),250);};
+});
+async function objSearch(q){const out=$("ob-res");if(q.length<3){out.innerHTML="";return;}
+  try{const d=await api("GET","/api/standards/search?q="+encodeURIComponent(q));if($("ob-q").value.trim()!==q)return;
+    const rs=(d.results||[]).filter(r=>r.level==="objective"||r.level==="sub-topic").slice(0,14);
+    out.innerHTML=rs.map((r,i)=>'<li><button type="button" data-ob="'+i+'"><span class="d-t">'+(r.level==="objective"?"":"Topic: ")+esc(r.label)+'</span><span class="d-s">'+esc(r.path.join(" › "))+(r.grade?" · grade "+r.grade:"")+'</span></button></li>').join("")||'<li class="empty-line">No standard matches. Try fewer or plainer words.</li>';
+    out.querySelectorAll("[data-ob]").forEach(b=>b.onclick=()=>{const r=rs[+b.dataset.ob];r.level==="objective"?pickObjective(r.ids.sub_topic,r.ids.objective,r.path):subtopicObjectives(r);});
+  }catch(e){out.innerHTML='<li class="empty-line">'+esc(e.message)+'</li>';}}
+async function subtopicObjectives(r){
+  const d=await api("GET","/api/standards/objectives?sub_topic="+encodeURIComponent(r.ids.sub_topic)).catch(()=>({objectives:[]}));
+  const os=d.objectives||[];
+  $("ob-res").innerHTML='<li><button type="button" data-obback><span class="d-t">‹ Back to the search</span></button></li>'+os.map((o,i)=>'<li><button type="button" data-oo="'+i+'"><span class="d-t">'+esc(o.t)+'</span><span class="d-s">'+esc(o.id)+(o.g!=null?" · grade "+o.g:"")+'</span></button></li>').join("");
+  $("ob-res").querySelector("[data-obback]").onclick=()=>objSearch($("ob-q").value.trim());
+  $("ob-res").querySelectorAll("[data-oo]").forEach(b=>b.onclick=()=>addObjective(os[+b.dataset.oo],r.path.concat(r.label)));
+}
+async function pickObjective(subtopic,id,path){
+  const d=await api("GET","/api/standards/objectives?sub_topic="+encodeURIComponent(subtopic)).catch(()=>({objectives:[]}));
+  const o=(d.objectives||[]).find(x=>x.id===id);if(!o)return dlgError("That objective didn't load. Try again.");addObjective(o,path);}
+function addObjective(o,path){
+  if(S.unit.objectives.some(x=>x.id===o.id)){closeDlg();return;}
+  S.unit.objectives.push({id:o.id,t:o.t||o.text,g:o.g,c:o.c,a:o.a||o.anchors||{},path:(path||[]).join(" › ")});
+  closeDlg();saveObjectives();Shell.toast("Added "+o.id);}
+
+// ---- the Make panel: the gallery of kinds, then the chosen kind's sheet ----
+let favs=[];try{favs=JSON.parse(localStorage.getItem("exeg-prep-favs")||"[]");}catch(e){}
+function renderKinds(){
+  const q=$("kindsearch").value.trim().toLowerCase(),box=$("kinds");if(!S.gallery)return;
+  const match=k=>!q||(k.name+" "+k.definition+" "+(k.aka||[]).join(" ")+" "+k.variants.map(v=>v.label).join(" ")).toLowerCase().includes(q);
+  const row=k=>'<div class="kind"><button type="button" class="k-open" data-kind="'+k.id+'"><span class="k-n">'+esc(k.name)+(k.for_teacher?'<span class="k-t">for you</span>':"")+'</span><span class="k-d">'+esc(k.definition)+'</span></button>'+
+    '<button type="button" class="fav" data-fav="'+k.id+'" aria-pressed="'+favs.includes(k.id)+'" aria-label="Favourite: '+esc(k.name)+'">'+ICON.star+'</button></div>';
+  let html="";
+  if(q){   // a search ranks the kinds named for it above those that only mention it
+    const score=k=>{const n=k.name.toLowerCase();return n.startsWith(q)?0:n.includes(q)?1:(k.aka||[]).join(" ").toLowerCase().includes(q)?2:k.variants.map(v=>v.label).join(" ").toLowerCase().includes(q)?3:4;};
+    const all=S.gallery.groups.flatMap(g=>g.kinds).filter(match).sort((a,b)=>score(a)-score(b));
+    if(all.length)html='<section class="kgroup"><h3>'+plural(all.length,"match")+'</h3>'+all.map(row).join("")+'</section>';
+  }else{
+    const fk=favs.map(kindOf).filter(Boolean);
+    if(fk.length)html+='<section class="kgroup"><h3>Your favourites</h3>'+fk.map(row).join("")+'</section>';
+    for(const g of S.gallery.groups)html+='<section class="kgroup"><h3>'+esc(g.label)+'</h3>'+g.kinds.map(row).join("")+'</section>';
+  }
+  box.innerHTML=html||'<p class="knone">No kind matches “'+esc(q)+'”. Try a plainer word, such as quiz, guide or chart.</p>';
+}
+$("kindsearch").addEventListener("input",renderKinds);
+$("kinds").addEventListener("click",e=>{
+  const f=e.target.closest("[data-fav]");
+  if(f){const id=f.dataset.fav;favs=favs.includes(id)?favs.filter(x=>x!==id):favs.concat(id);try{localStorage.setItem("exeg-prep-favs",JSON.stringify(favs));}catch(err){}renderKinds();
+    const again=$("kinds").querySelector('[data-fav="'+id+'"]');if(again)again.focus();return;}
+  const k=e.target.closest("[data-kind]");if(k)openKind(k.dataset.kind);
+});
+function fillBands(){const sel=$("k-band"),bands=Object.keys((S.gallery||{}).grade_bands||{});
+  sel.innerHTML=bands.map(b=>'<option value="'+b+'">'+bandLabel(b)+'</option>').join("");sel.value=(S.unit&&S.unit.grade_band)||"secondary";}
+function openKind(id){
+  const k=kindOf(id);if(!k)return;S.kind=k;S.settings={variant:null,item_types:[],length:"standard"};
+  $("gallery").hidden=true;$("sheet").hidden=false;
+  $("k-name").textContent=k.name;$("k-def").textContent=k.definition+(k.use_when?" "+k.use_when:"");
+  $("k-structure").innerHTML=k.structure.map(s=>"<li>"+esc(s)+"</li>").join("");
+  $("f-variant").hidden=!k.variants.length;
+  $("k-variants").innerHTML=k.variants.map(v=>'<button type="button" role="radio" aria-checked="false" data-var="'+esc(v.id)+'">'+esc(v.label)+'</button>').join("");
+  $("f-items").hidden=!k.item_types.length;
+  $("k-items").innerHTML=k.item_types.map(t=>'<button type="button" aria-pressed="false" data-item="'+t.id+'">'+esc(t.label)+'</button>').join("");
+  $("k-length").innerHTML=(S.gallery.lengths||[]).map(l=>'<button type="button" role="radio" aria-checked="'+(l.id==="standard")+'" class="'+(l.id==="standard"?"on":"")+'" data-len="'+l.id+'">'+esc(l.label)+'</button>').join("");
+  fillBands();updateDraws();$("sheet-back").focus();
+}
+$("sheet-back").addEventListener("click",()=>{$("sheet").hidden=true;$("gallery").hidden=false;const b=$("kinds").querySelector('[data-kind="'+(S.kind||{}).id+'"]');(b||$("kindsearch")).focus();});
+$("k-variants").addEventListener("click",e=>{const b=e.target.closest("[data-var]");if(!b)return;const on=b.getAttribute("aria-checked")!=="true";
+  $("k-variants").querySelectorAll("button").forEach(x=>x.setAttribute("aria-checked","false"));b.setAttribute("aria-checked",String(on));S.settings.variant=on?b.dataset.var:null;});
+$("k-items").addEventListener("click",e=>{const b=e.target.closest("[data-item]");if(!b)return;const on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",String(on));
+  S.settings.item_types=[...$("k-items").querySelectorAll('[aria-pressed="true"]')].map(x=>x.dataset.item);});
+$("k-length").addEventListener("click",e=>{const b=e.target.closest("[data-len]");if(!b)return;
+  $("k-length").querySelectorAll("button").forEach(x=>{const on=x===b;x.classList.toggle("on",on);x.setAttribute("aria-checked",String(on));});S.settings.length=b.dataset.len;});
+function updateDraws(){
+  const el=$("k-draws");if(!el)return;const srcs=S.unit?S.unit.sources:S.quickSources;const objs=S.unit?S.unit.objectives.length:0;
+  const names=srcs.map(s=>s.label);let t=names.length?"Draws on "+(names.length>3?names.slice(0,3).join(", ")+" and "+(names.length-3)+" more":names.join(", ")):"No sources yet: the draft uses the study tools"+(objs?" and the objectives":"")+".";
+  if(names.length&&objs)t+=", aimed at "+plural(objs,"objective");el.textContent=names.length?t+".":t;}
+$("open-make").addEventListener("click",openMake);$("ph-make").addEventListener("click",openMake);
+$("close-make").addEventListener("click",closeMake);
+function openMake(){if(window.matchMedia("(max-width:900px)").matches){setTab("make");}else{app.classList.add("make-open");}($("sheet").hidden?$("kindsearch"):$("sheet-back")).focus();}
+function closeMake(){if(!app.classList.contains("make-open"))return;app.classList.remove("make-open");$("open-make").focus();}
+function setTab(t){app.dataset.tab=t;$("tabbar").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.tab===t)));window.scrollTo(0,0);}
+$("tabbar").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(b)setTab(b.dataset.tab);});
+
+// ---- the document: paper / teacher-student / view-edit / versions / change it / pdf ----
 const paper=$("paper"),editor=$("editor"),placeholder=$("placeholder"),paperwrap=$("paperwrap"),modrow=$("modrow"),tools=$("tools");
-let audience="teacher",mode="view";
-function slug(){const t=srcMode==="book"?(pickedBook?pickedBook.title:"resource"):(curSubtopic?curSubtopic.name:"resource");const f=(FMT[$("sel-format").value]||{}).name||"";return (f+" - "+t).replace(/[^\w \-]/g,"").slice(0,60).trim().replace(/\s+/g,"_");}
-function splitKey(raw){const L=raw.split("\n");let idx=-1;for(let i=0;i<L.length;i++){if(/^#{1,3}\s*Answer Key\b/i.test(L[i].trim())){idx=i;}}
-  if(idx<0)return {body:raw,key:""};let cut=idx;while(cut>0&&(/^\s*-{3,}\s*$/.test(L[cut-1])||/^\s*$/.test(L[cut-1])))cut--;
-  return {body:L.slice(0,cut).join("\n").trimEnd(),key:L.slice(idx).join("\n")};}
-function hasKey(){return !!splitKey(rawDoc).key;}
-function shown(){return audience==="student"?splitKey(rawDoc).body:rawDoc;}
+function slug(){const t=$("outtitle").textContent||"resource";return t.replace(/[^\w \-]/g,"").slice(0,60).trim().replace(/\s+/g,"_");}
+function shown(){return audience==="student"?studentCopy(rawDoc):rawDoc;}
 // The credit line (Adam, 2026-11-08: an option at download). It ends the PDF and the .md file, shows at the
 // foot of the document while on, and the teacher's choice is kept in this browser.
 const CREDIT="Drafted with Exegetica from its library's sources and reviewed by the teacher.";
@@ -233,10 +476,9 @@ const creditBox=$("credit");
 try{const v=localStorage.getItem("exeg-credit");creditBox.checked=v===null?true:v==="1";}catch(e){creditBox.checked=true;}
 creditBox.addEventListener("change",()=>{try{localStorage.setItem("exeg-credit",creditBox.checked?"1":"0");}catch(e){}if(rawDoc)render();});
 function withCredit(text){return creditBox.checked?text.replace(/\s*$/,"")+"\n\n---\n\n*"+CREDIT+"*\n":text;}
-let docBand="";   // the grade band the document was drafted for: the print size follows it
 function render(){
   paper.innerHTML=md(shown());
-  paper.dataset.band=docBand||$("sel-band").value;
+  paper.dataset.band=docBand||"secondary";
   if(creditBox.checked){const p=document.createElement("p");p.className="credit";p.textContent=CREDIT;paper.appendChild(p);}
   printReady();
 }
@@ -262,22 +504,43 @@ function setPrintHead(){
 }
 window.addEventListener("beforeprint",setPrintHead);
 function setOutButtons(on){$("download").disabled=!on;$("copy").disabled=!on;$("pdf").disabled=!on;
-  $("aud").querySelector('[data-v=student]').disabled=!hasKey();}
-function segOn(seg,pred){Array.from($(seg).children).forEach(x=>x.classList.toggle("on",pred(x)));}
+  const student=$("aud").querySelector('[data-v=student]');student.disabled=!hasTeacherPart(rawDoc);
+  student.title=student.disabled?"This resource has no teacher-only part, so both copies are the same.":"";
+  $("versions").disabled=!(S.res&&S.res.versions&&S.res.versions.length);}
+function segOn(seg,pred){Array.from($(seg).children).forEach(x=>{const on=pred(x);x.classList.toggle("on",on);x.setAttribute("aria-pressed",String(on));});}
+function showDoc(){placeholder.hidden=true;paperwrap.hidden=mode==="edit";editor.hidden=mode!=="edit";modrow.hidden=!S.res||!!S.viewing;}
+function clearDoc(){rawDoc="";S.savedDoc="";S.viewing=null;mode="view";audience="teacher";segOn("aud",x=>x.dataset.v==="teacher");segOn("mode",x=>x.dataset.m==="view");
+  paperwrap.hidden=true;editor.hidden=true;modrow.hidden=true;$("oldver").hidden=true;tools.innerHTML="";$("report").hidden=true;
+  placeholder.hidden=false;$("outtitle").textContent=S.unit?S.unit.title:"Quick resource";setOutButtons(false);
+  const has=(S.unit?S.unit.resources.length:0);
+  $("ph-title").textContent=has?"Open a resource, or make another":"Make your first resource";
+  $("ph-body").textContent=has?"Your resources are listed in the unit. Pick a kind under Make for a new one: it draws on this unit's sources and objectives.":
+    "Pick a kind under Make. The draft draws on "+(S.unit?"this unit's":"the")+" sources"+(S.unit?" and objectives":"")+", and it's saved with every change you make.";
+  renderUnit();}
 $("aud").addEventListener("click",e=>{const b=e.target.closest("button");if(!b||b.disabled)return;
-  if(mode==="edit"){rawDoc=editor.value;mode="view";syncMode();}
+  if(mode==="edit"){leaveEdit();}
   audience=b.dataset.v;segOn("aud",x=>x===b);render();});
-function syncMode(){segOn("mode",x=>x.dataset.m===mode);
-  if(mode==="edit"){editor.value=rawDoc;editor.style.display="block";paperwrap.style.display="none";}
-  else{editor.style.display="none";paperwrap.style.display="flex";render();}}
-$("mode").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
-  if(b.dataset.m==="view"&&mode==="edit")rawDoc=editor.value;mode=b.dataset.m;syncMode();});
+function syncMode(){segOn("mode",x=>x.dataset.m===mode);showDoc();
+  if(mode==="edit"){editor.value=rawDoc;editor.focus();}else render();}
+$("mode").addEventListener("click",e=>{const b=e.target.closest("button");if(!b||S.busy)return;
+  if(b.dataset.m==="edit"&&S.viewing)return Shell.toast("Bring this version back first, or go back to the newest, to edit it.");
+  if(b.dataset.m==="view"&&mode==="edit"){leaveEdit();return;}mode=b.dataset.m;syncMode();});
 editor.addEventListener("input",()=>{rawDoc=editor.value;});
+function leaveEdit(){rawDoc=editor.value;mode="view";syncMode();saveEditNow(false);}
+// A hand edit is saved as a version when the teacher goes back to View (and on leaving the page).
+async function saveEditNow(leaving){
+  if(!S.res||S.viewing||rawDoc===S.savedDoc||!rawDoc.trim())return;
+  const doc=rawDoc;
+  if(leaving){fetch("/api/prep/resources/"+S.res.id+"/versions",{method:"POST",keepalive:true,headers:{"Content-Type":"application/json"},body:JSON.stringify({origin:"edit",document:doc})});return;}
+  try{const d=await api("POST","/api/prep/resources/"+S.res.id+"/versions",{origin:"edit",document:doc});S.savedDoc=doc;await reloadVersions();Shell.toast("Saved your edits as version "+d.n);}
+  catch(e){Shell.toast("Your edits weren't saved: "+e.message);}
+}
 
 // The source check sent after a finished document (webapp/citations.py). It reports what was found where,
 // and never holds up the download.
 function showReport(r){
   const el=$("report"),q=s=>"“"+esc(s)+"”";
+  if(!r){el.hidden=true;el.innerHTML="";return;}
   const lines=[];
   if(!r.references&&!r.quotations){lines.push("No Scripture references or quotations to check.");}
   else{
@@ -292,7 +555,9 @@ function showReport(r){
   if(r.quotations)lines.push("A quotation not found here may still be accurate, such as ESV wording, which Exegetica does not store.");
   el.innerHTML="<h3>Source check</h3>"+lines.map(l=>"<p>"+l+"</p>").join("");el.hidden=false;
 }
-async function streamInto(url,body){
+function note(text){const n=document.createElement("div");n.className="tool-chip";n.textContent=text;tools.appendChild(n);}
+function drewOn(list){if(list&&list.length)note("Drew on: "+list.join("; "));}
+async function streamInto(url,body,onEvent){
   tools.innerHTML="";const chips=Shell.chips(tools),status=Shell.status(tools);status.set("studying");
   paper.innerHTML="<span class='caret'></span>";setOutButtons(false);
   $("report").hidden=true;$("report").innerHTML="";
@@ -301,7 +566,7 @@ async function streamInto(url,body){
   let started=false;   // the document's first text fades in; later pauses for a lookup only show the line
   try{
     const resp=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-    if(!resp.ok||!resp.body)throw new Error("HTTP "+resp.status);
+    if(!resp.ok||!resp.body){let msg="";try{msg=(await resp.json()).error;}catch(e){}throw new Error(msg||("the server answered "+resp.status));}
     const rd=resp.body.getReader(),dec=new TextDecoder();let buf="";
     while(true){const {value,done}=await rd.read();if(done)break;buf+=dec.decode(value,{stream:true});
       const fr=buf.split("\n\n");buf=fr.pop();
@@ -310,60 +575,95 @@ async function streamInto(url,body){
         else if(ev.type==="status"){status.set(ev.stage,ev.words);}
         else if(ev.type==="tool_call"){chips.start(ev.name);}
         else if(ev.type==="tool_done"){chips.finish(ev.name,!!ev.error);}
-        else if(ev.type==="notice"){status.done();const n=document.createElement("div");n.className="tool-chip";n.textContent=ev.message;tools.appendChild(n);if(ev.incomplete)ok=false;}
+        else if(ev.type==="start"){drewOn(ev.drew_on);(ev.notices||[]).forEach(note);}
+        else if(ev.type==="notice"){status.done();note(ev.message);if(ev.incomplete){ok=false;S.lastNotice=ev.message;}}
         else if(ev.type==="error"){status.done();ok=false;rawDoc+="\n\n**Error:** "+ev.message;live();}
         else if(ev.type==="report"){showReport(ev);}
+        else if(onEvent)onEvent(ev);
       }}
-  }catch(e){ok=false;rawDoc+="\n\n**Connection error:** "+e.message;}
+  }catch(e){ok=false;rawDoc+="\n\n**That didn't finish:** "+e.message;}
   status.done();
   if(mode==="view")render();else editor.value=rawDoc;
   setOutButtons(!!rawDoc.trim());
   return ok;
 }
 
-$("gen").addEventListener("click",generate);
-async function generate(){
-  if($("gen").disabled)return;busy=true;refreshGen();
-  let body, title, url;
-  if(srcMode==="book"){
-    url="/api/generate/book";
-    body={format_id:$("sel-format").value,book_slug:pickedBook.slug,coverage:{through:parseInt($("sel-cover").value,10)},
-      grade_band:$("sel-band").value,brief:$("brief").value,provider:curProvider(),model:curModel(),api_key:curKey()};
-    title=(FMT[body.format_id]||{}).name+" · "+pickedBook.title;
-  } else {
-    url="/api/generate";
-    const context={subject_name:curSubject?curSubject.name:"",sub_subject_name:curSub?curSub.name:"",topic_name:curTopic?curTopic.name:"",sub_topic_name:curSubtopic?curSubtopic.name:""};
-    body={format_id:$("sel-format").value,objectives:selectedObjectives(),grade_band:$("sel-band").value,context,brief:$("brief").value,
-      provider:curProvider(),model:curModel(),api_key:curKey()};
-    title=(FMT[body.format_id]||{}).name+" · "+(curSubtopic?curSubtopic.name:"");
-  }
-  $("outtitle").textContent=title;docBand=$("sel-band").value;
+$("draft").addEventListener("click",draft);
+async function draft(){
+  if(S.busy||!S.kind)return;
+  const k=S.kind;S.busy=true;$("draft").disabled=true;$("draft").textContent="Drafting…";
+  const settings=Object.assign({},S.settings,{grade_band:$("k-band").value,brief:$("k-brief").value});
+  const body={unit_id:S.unit?S.unit.id:null,format_id:k.id,settings,sources:S.unit?undefined:S.quickSources};
+  S.res=null;S.viewing=null;$("oldver").hidden=true;docBand=settings.grade_band;
+  $("outtitle").textContent=k.name.split(/ \/ | \(/)[0]+" · drafting";
   audience="teacher";mode="view";segOn("aud",x=>x.dataset.v==="teacher");segOn("mode",x=>x.dataset.m==="view");
-  placeholder.style.display="none";paperwrap.style.display="flex";editor.style.display="none";modrow.style.display="flex";
-  rawDoc="";
-  await streamInto(url,body);
-  busy=false;refreshGen();
+  rawDoc="";S.lastNotice="";placeholder.hidden=true;paperwrap.hidden=false;editor.hidden=true;modrow.hidden=true;
+  closeMake();setTab("doc");
+  let saved=null;
+  await streamInto("/api/prep/draft",body,ev=>{if(ev.type==="saved")saved=ev;});
+  S.busy=false;$("draft").disabled=false;$("draft").textContent="Draft resource";
+  if(saved){S.savedDoc=rawDoc;history.replaceState({},"",resPath(saved.resource_id));
+    S.res={id:saved.resource_id,title:saved.title,format_id:k.id,settings,versions:[]};$("outtitle").textContent=saved.title;
+    await reloadVersions();modrow.hidden=false;await refreshUnit();Shell.toast("Saved as version 1 of “"+saved.title+"”");
+    if(!S.unit){S.quick.unshift({id:saved.resource_id,title:saved.title,format_id:k.id,latest:1,updated_at:new Date().toISOString()});}}
+  else if(!rawDoc.trim()&&S.lastNotice){   // a cap or a closed run: say so where the document would be
+    $("outtitle").textContent=k.name.split(/ \/ | \(/)[0];paperwrap.hidden=true;placeholder.hidden=false;
+    $("ph-title").textContent="Not drafted";$("ph-body").textContent=S.lastNotice;}
+  else $("outtitle").textContent=k.name.split(/ \/ | \(/)[0]+" (not saved)";
 }
 
-$("modbtn").addEventListener("click",applyMod);
-$("modin").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();applyMod();}});
-async function applyMod(){
-  const instr=$("modin").value.trim();if(!instr||busy||!rawDoc.trim())return;
-  if(needsKey()){updateKeyBanner();AppSettings.open();return;}
-  if(mode==="edit"){rawDoc=editor.value;mode="view";syncMode();}
-  busy=true;refreshGen();$("modbtn").textContent="Applying…";
-  const prev=rawDoc,prevReport=$("report").innerHTML;
-  const body={document:rawDoc,instruction:instr,provider:curProvider(),model:curModel(),api_key:curKey()};
-  rawDoc="";const ok=await streamInto("/api/revise",body);
+async function openResource(rid,n){
+  if(S.busy)return;
+  tools.innerHTML="";
+  try{const d=await api("GET","/api/prep/resources/"+rid+(n?"?n="+n:""));S.res=d.resource;}
+  catch(e){Shell.toast(e.message);go(resPath(null));return;}
+  const v=S.res.version;S.viewing=null;rawDoc=v?v.document:"";S.savedDoc=rawDoc;docBand=(S.res.settings||{}).grade_band||"secondary";
+  $("outtitle").textContent=S.res.title;audience="teacher";mode="view";segOn("aud",x=>x.dataset.v==="teacher");segOn("mode",x=>x.dataset.m==="view");
+  $("oldver").hidden=true;showDoc();render();showReport(v&&v.report);if(v)drewOn(v.drew_on);setOutButtons(!!rawDoc.trim());renderUnit();
+}
+async function reloadVersions(){if(!S.res)return;try{const d=await api("GET","/api/prep/resources/"+S.res.id);S.res.versions=d.resource.versions;setOutButtons(!!rawDoc.trim());}catch(e){}}
+function originWords(v){return v.origin==="draft"?"First draft":v.origin==="revise"?"Changed: “"+(v.instruction||"")+"”":v.origin==="restore"?(v.instruction||"Brought back"):"Your edits";}
+$("versions").addEventListener("click",e=>{e.stopPropagation();const m=$("vmenu");if(!m.hidden){closeMenus();return;}
+  const vs=S.res.versions||[],newest=vs.length?vs[0].n:0;
+  m.innerHTML=vs.map(v=>'<button type="button" data-v="'+v.n+'"><span class="v-n">v'+v.n+'</span><span class="v-what">'+esc(originWords(v))+'</span>'+(v.n===newest?'<span class="v-now">newest</span>':"")+'<span class="v-when">'+when(v.created_at)+'</span></button>').join("");
+  m.hidden=false;$("versions").setAttribute("aria-expanded","true");m.querySelector("button").focus();});
+$("vmenu").addEventListener("click",async e=>{const b=e.target.closest("[data-v]");if(!b)return;const n=+b.dataset.v;closeMenus();await viewVersion(n);});
+$("vmenu").addEventListener("keydown",e=>{const bs=[...$("vmenu").querySelectorAll("button")],i=bs.indexOf(document.activeElement);
+  if(e.key==="ArrowDown"){e.preventDefault();bs[(i+1)%bs.length].focus();}if(e.key==="ArrowUp"){e.preventDefault();bs[(i-1+bs.length)%bs.length].focus();}});
+async function viewVersion(n){
+  if(mode==="edit")leaveEdit();
+  const newest=S.res.versions[0].n;
+  if(n===newest){await openResource(S.res.id);return;}
+  let d;try{d=await api("GET","/api/prep/resources/"+S.res.id+"?n="+n);}catch(e){Shell.toast(e.message);return;}
+  const v=d.resource.version;S.viewing=n;rawDoc=v.document;render();showReport(v.report);showDoc();
+  const meta=S.res.versions.find(x=>x.n===n);
+  $("oldver").innerHTML='<p>You\'re looking at version '+n+' ('+esc(originWords(meta).toLowerCase())+'), from '+when(meta.created_at)+'. The newest is version '+newest+'.</p>'+
+    '<button type="button" class="btn-primary" id="restore">Bring back this version</button><button type="button" class="btn-quiet" id="to-newest">Back to the newest</button>';
+  $("oldver").hidden=false;$("restore").onclick=()=>restore(n);$("to-newest").onclick=()=>openResource(S.res.id);$("restore").focus();
+}
+async function restore(n){
+  try{const d=await api("POST","/api/prep/resources/"+S.res.id+"/versions",{origin:"restore",from_n:n});await openResource(S.res.id);
+    Shell.toast("Brought back version "+n+" as version "+d.n);refreshUnit();}
+  catch(e){Shell.toast(e.message);}
+}
+
+modrow.addEventListener("submit",async e=>{
+  e.preventDefault();const instr=$("modin").value.trim();if(!instr||S.busy||!S.res||!rawDoc.trim())return;
+  if(mode==="edit")leaveEdit();
+  if(rawDoc!==S.savedDoc){await saveEditNow(false);if(rawDoc!==S.savedDoc)return;}
+  S.busy=true;$("modbtn").disabled=true;$("modbtn").textContent="Changing…";
+  const prev=rawDoc,prevReport=$("report").innerHTML;let saved=null;
+  rawDoc="";const ok=await streamInto("/api/prep/revise",{resource_id:S.res.id,instruction:instr},ev=>{if(ev.type==="saved")saved=ev;});
   // Any failure or cut-off keeps the teacher's document exactly as it was, with its source check.
-  // A finished revision gets no source check, since its sources were the first run's.
-  if(!ok||!rawDoc.trim()){rawDoc=prev;render();setOutButtons(true);
+  if(!ok||!rawDoc.trim()||!saved){rawDoc=prev;render();setOutButtons(true);
     if(prevReport){$("report").innerHTML=prevReport;$("report").hidden=false;}
-    const n=document.createElement("div");n.className="tool-chip";n.textContent="The change didn't finish, so your document was left as it was.";tools.appendChild(n);}
-  else $("modin").value="";
-  $("modbtn").textContent="Apply";busy=false;refreshGen();
-}
+    note("The change didn't finish, so your resource was left as it was.");}
+  else{S.savedDoc=rawDoc;$("modin").value="";await reloadVersions();refreshUnit();Shell.toast("Saved the change as version "+saved.n);}
+  $("modbtn").textContent="Apply";$("modbtn").disabled=false;S.busy=false;
+});
 
-$("pdf").addEventListener("click",()=>{if(mode==="edit"){rawDoc=editor.value;mode="view";syncMode();}render();setPrintHead();printReady().then(()=>window.print());});
+$("pdf").addEventListener("click",()=>{if(mode==="edit")leaveEdit();render();setPrintHead();printReady().then(()=>window.print());});
 $("download").addEventListener("click",()=>{const blob=new Blob([withCredit(shown())],{type:"text/markdown"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=slug()+(audience==="student"?"_student":"")+".md";a.click();URL.revokeObjectURL(a.href);});
 $("copy").addEventListener("click",()=>{navigator.clipboard&&navigator.clipboard.writeText(shown());$("copy").textContent="Copied";setTimeout(()=>$("copy").textContent="Copy",1200);});
+
+load();

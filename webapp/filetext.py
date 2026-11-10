@@ -14,7 +14,7 @@ import tempfile
 
 logger = logging.getLogger("study-bible-web.filetext")
 
-SUPPORTED = ("epub", "pdf", "txt", "md")
+SUPPORTED = ("epub", "pdf", "txt", "md", "docx")
 
 
 def _from_txt(data: bytes) -> str:
@@ -78,6 +78,24 @@ def _from_pdf(data: bytes) -> str:
         return ""
 
 
+def _from_docx(data: bytes) -> str:
+    """A Word document's paragraphs, read straight from its XML (no extra dependency)."""
+    import html as _html
+    import zipfile
+    try:
+        with zipfile.ZipFile(io.BytesIO(data)) as z:
+            xml = z.read("word/document.xml").decode("utf-8", "replace")
+    except Exception:  # noqa: BLE001
+        logger.exception("docx parse failed")
+        return ""
+    paras = []
+    for p in re.findall(r"<w:p[ >].*?</w:p>", xml, re.S):
+        p = p.replace("<w:tab/>", "<w:t>\t</w:t>").replace("<w:br/>", "<w:t>\n</w:t>")
+        runs = re.findall(r"<w:t(?: [^>]*)?>(.*?)</w:t>", p, re.S)
+        paras.append(_html.unescape("".join(runs)))
+    return "\n\n".join(x for x in paras if x.strip())
+
+
 def extract_text(data: bytes, source_format: str) -> str:
     """Plain text from the file bytes; collapses runs of blank lines. "" on failure."""
     fmt = (source_format or "").lower().lstrip(".")
@@ -87,6 +105,8 @@ def extract_text(data: bytes, source_format: str) -> str:
         text = _from_epub(data)
     elif fmt == "pdf":
         text = _from_pdf(data)
+    elif fmt == "docx":
+        text = _from_docx(data)
     else:
         text = ""
     return re.sub(r"\n{3,}", "\n\n", (text or "").strip())

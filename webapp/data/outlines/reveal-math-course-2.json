@@ -1,0 +1,497 @@
+{
+ "key": "reveal-math-course-2",
+ "title": "Reveal Math, Course 2",
+ "authors": [
+  "McGraw-Hill Education"
+ ],
+ "publisher": "McGraw-Hill Education",
+ "edition": "2018/2020 national edition (Interactive Student Edition and Teacher Edition, 2 volumes each)",
+ "grade": "Grade 7",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.mheducation.com/unitas/school/catalogs/2020/2020-mathematics-catalog.pdf",
+   "what": "publisher catalog (2020): Course 2 module table of contents, the same ISBNs as the work list, and the Spanish student-edition cover listing Volume 1 / Volume 2 modules"
+  },
+  {
+   "url": "https://www.tn.gov/content/dam/tn/education/textbook/sect-b/McGraw%20Hill_Grades%206-12_final.pdf",
+   "what": "publisher public-review cover sheets: Course 2 student edition Volume 1 / Volume 2 contents"
+  },
+  {
+   "url": "https://www.mheducation.com/content/dam/mhe/prek12/documents/states/new-mexico/math/nm-reveal-math-6-8-connections-sampler.pdf",
+   "what": "publisher sampler: Course 2 scope and sequence with pacing, and Module 4 lesson goals"
+  },
+  {
+   "url": "https://www.wcsd.k12.ms.us/_files/ugd/5f27d8_ac55d59fbf9c4018b0dcc5afca1f9449.pdf",
+   "what": "district pacing guide (Walthall County, MS) naming every Course 2 lesson by module and number"
+  },
+  {
+   "url": "https://www.mheducation.com/unitas/school/explore/sites/oklahoma/overview-brochure-reveal-6-8.pdf",
+   "what": "publisher program overview (Oklahoma edition) with a lesson-level table of contents, used for full lesson titles"
+  }
+ ],
+ "summary": "McGraw Hill's grade 7 course in the Reveal Math middle-school series, in 11 modules and about 62 lessons. It covers proportional relationships and percent applications; integer and rational-number operations; linear expressions, two-step equations, and inequalities; angles, scale drawings, circles, area, surface area, and volume; probability; and sampling.",
+ "toc": [
+  {
+   "label": "Module 1",
+   "title": "Proportional Relationships",
+   "covers": "Unit rates with fractions and recognizing and representing proportional relationships in tables, graphs, and equations.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "1-1",
+     "title": "Unit Rates Involving Ratios of Fractions",
+     "covers": "Computing unit rates when both quantities are fractions.",
+     "basis": "general"
+    },
+    {
+     "label": "1-2",
+     "title": "Understand Proportional Relationships",
+     "covers": "Deciding whether two quantities are proportional by checking for equivalent ratios.",
+     "basis": "general"
+    },
+    {
+     "label": "1-3",
+     "title": "Tables of Proportional Relationships",
+     "covers": "Testing tables for a constant ratio and finding the constant of proportionality.",
+     "basis": "general"
+    },
+    {
+     "label": "1-4",
+     "title": "Graphs of Proportional Relationships",
+     "covers": "Recognizing proportional graphs as lines through the origin and interpreting the point (1, r).",
+     "basis": "general"
+    },
+    {
+     "label": "1-5",
+     "title": "Equations of Proportional Relationships",
+     "covers": "Writing and using equations of the form y = kx.",
+     "basis": "general"
+    },
+    {
+     "label": "1-6",
+     "title": "Solve Problems Involving Proportional Relationships",
+     "covers": "Solving multi-step ratio and proportion problems in context.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 2",
+   "title": "Solve Percent Problems",
+   "covers": "Percent change and everyday percent applications from tax to percent error.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "2-1",
+     "title": "Percent of Change",
+     "covers": "Finding percent increase and decrease.",
+     "basis": "general"
+    },
+    {
+     "label": "2-2",
+     "title": "Tax",
+     "covers": "Computing sales tax and total cost.",
+     "basis": "general"
+    },
+    {
+     "label": "2-3",
+     "title": "Tips and Markups",
+     "covers": "Computing tips and retail markups.",
+     "basis": "general"
+    },
+    {
+     "label": "2-4",
+     "title": "Discounts",
+     "covers": "Finding sale prices and percent discounts.",
+     "basis": "general"
+    },
+    {
+     "label": "2-5",
+     "title": "Interest",
+     "covers": "Computing simple interest with I = prt.",
+     "basis": "general"
+    },
+    {
+     "label": "2-6",
+     "title": "Commission and Fees",
+     "covers": "Computing commissions and percent-based fees.",
+     "basis": "general"
+    },
+    {
+     "label": "2-7",
+     "title": "Percent Error",
+     "covers": "Comparing an estimate to an actual value as a percent error.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 3",
+   "title": "Operations with Integers",
+   "covers": "Adding, subtracting, multiplying, and dividing integers and applying them in multi-step problems.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "3-1",
+     "title": "Add Integers",
+     "covers": "Adding integers with number lines, counters, and sign rules.",
+     "basis": "general"
+    },
+    {
+     "label": "3-2",
+     "title": "Subtract Integers",
+     "covers": "Subtracting integers by adding the additive inverse.",
+     "basis": "general"
+    },
+    {
+     "label": "3-3",
+     "title": "Multiply Integers",
+     "covers": "Multiplying integers and the sign rules for products.",
+     "basis": "general"
+    },
+    {
+     "label": "3-4",
+     "title": "Divide Integers",
+     "covers": "Dividing integers and the sign rules for quotients.",
+     "basis": "general"
+    },
+    {
+     "label": "3-5",
+     "title": "Apply Integer Operations",
+     "covers": "Evaluating expressions and solving problems that combine integer operations.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 4",
+   "title": "Operations with Rational Numbers",
+   "covers": "How operations with rational numbers extend the rules for integers, including converting fractions to decimals.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "4-1",
+     "title": "Rational Numbers",
+     "covers": "Identifying terminating and repeating decimals and converting rational numbers to decimals by long division.",
+     "basis": "page"
+    },
+    {
+     "label": "4-2",
+     "title": "Add Rational Numbers",
+     "covers": "Adding rational numbers, including using additive inverses.",
+     "basis": "page"
+    },
+    {
+     "label": "4-3",
+     "title": "Subtract Rational Numbers",
+     "covers": "Subtracting rational numbers as adding the additive inverse, in real-world problems.",
+     "basis": "page"
+    },
+    {
+     "label": "4-4",
+     "title": "Multiply Rational Numbers",
+     "covers": "Multiplying rational numbers and using the order of operations in real-world problems.",
+     "basis": "page"
+    },
+    {
+     "label": "4-5",
+     "title": "Divide Rational Numbers",
+     "covers": "Dividing rational numbers and using the order of operations in real-world problems.",
+     "basis": "page"
+    },
+    {
+     "label": "4-6",
+     "title": "Apply Rational Number Operations",
+     "covers": "Evaluating expressions that combine all four operations with rational numbers.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Module 5",
+   "title": "Simplify Algebraic Expressions",
+   "covers": "Simplifying, adding, subtracting, and factoring linear expressions with rational coefficients.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "5-1",
+     "title": "Simplify Algebraic Expressions",
+     "covers": "Combining like terms and using properties to simplify expressions.",
+     "basis": "general"
+    },
+    {
+     "label": "5-2",
+     "title": "Add Linear Expressions",
+     "covers": "Adding linear expressions by combining like terms.",
+     "basis": "general"
+    },
+    {
+     "label": "5-3",
+     "title": "Subtract Linear Expressions",
+     "covers": "Subtracting linear expressions by adding the opposite.",
+     "basis": "general"
+    },
+    {
+     "label": "5-4",
+     "title": "Factor Linear Expressions",
+     "covers": "Factoring linear expressions using the GCF and the Distributive Property.",
+     "basis": "general"
+    },
+    {
+     "label": "5-5",
+     "title": "Combine Operations with Linear Expressions",
+     "covers": "Simplifying expressions that mix distributing, adding, and subtracting.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 6",
+   "title": "Write and Solve Equations",
+   "covers": "One-step and two-step equations of the forms px + q = r and p(x + q) = r, written from context and solved.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "6-1",
+     "title": "Write and Solve One-Step Equations",
+     "covers": "Writing and solving one-step equations with rational numbers.",
+     "basis": "general"
+    },
+    {
+     "label": "6-2",
+     "title": "Solve Two-Step Equations: px + q = r",
+     "covers": "Solving px + q = r equations with bar diagrams and inverse operations.",
+     "basis": "general"
+    },
+    {
+     "label": "6-3",
+     "title": "Write and Solve Two-Step Equations: px + q = r",
+     "covers": "Writing px + q = r equations from word problems and solving them.",
+     "basis": "general"
+    },
+    {
+     "label": "6-4",
+     "title": "Solve Two-Step Equations: p(x + q) = r",
+     "covers": "Solving equations with parentheses of the form p(x + q) = r.",
+     "basis": "general"
+    },
+    {
+     "label": "6-5",
+     "title": "Write and Solve Two-Step Equations: p(x + q) = r",
+     "covers": "Writing p(x + q) = r equations from context and solving them.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 7",
+   "title": "Write and Solve Inequalities",
+   "covers": "One-step and two-step inequalities, including the sign flip for negative coefficients, written from context and graphed.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "7-1",
+     "title": "Solve One-Step Addition and Subtraction Inequalities",
+     "covers": "Solving and graphing x + p > q type inequalities.",
+     "basis": "general"
+    },
+    {
+     "label": "7-2",
+     "title": "Write and Solve One-Step Addition and Subtraction Inequalities",
+     "covers": "Writing addition and subtraction inequalities from word problems and solving them.",
+     "basis": "general"
+    },
+    {
+     "label": "7-3",
+     "title": "Solve One-Step Multiplication and Division Inequalities with Positive Coefficients",
+     "covers": "Solving px > q type inequalities when p is positive.",
+     "basis": "general"
+    },
+    {
+     "label": "7-4",
+     "title": "Solve One-Step Multiplication and Division Inequalities with Negative Coefficients",
+     "covers": "Reversing the inequality symbol when multiplying or dividing by a negative.",
+     "basis": "general"
+    },
+    {
+     "label": "7-5",
+     "title": "Write and Solve One-Step Multiplication and Division Inequalities",
+     "covers": "Writing multiplication and division inequalities from context and interpreting solutions.",
+     "basis": "general"
+    },
+    {
+     "label": "7-6",
+     "title": "Write and Solve Two-Step Inequalities",
+     "covers": "Writing and solving px + q > r inequalities and graphing the solution set.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 8",
+   "title": "Geometric Figures",
+   "covers": "Angle relationships, constructing triangles, scale drawings, and three-dimensional figures and their cross sections.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "8-1",
+     "title": "Vertical and Adjacent Angles",
+     "covers": "Using vertical and adjacent angle relationships to find unknown angles.",
+     "basis": "general"
+    },
+    {
+     "label": "8-2",
+     "title": "Complementary and Supplementary Angles",
+     "covers": "Writing and solving equations from complementary and supplementary angle facts.",
+     "basis": "general"
+    },
+    {
+     "label": "8-3",
+     "title": "Triangles",
+     "covers": "Classifying triangles and deciding when given sides or angles form a unique triangle.",
+     "basis": "general"
+    },
+    {
+     "label": "8-4",
+     "title": "Scale Drawings",
+     "covers": "Using a scale to find actual lengths and areas and to redraw at a different scale.",
+     "basis": "general"
+    },
+    {
+     "label": "8-5",
+     "title": "Three-Dimensional Figures",
+     "covers": "Identifying prisms and pyramids and describing cross sections made by slicing them.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 9",
+   "title": "Measure Figures",
+   "covers": "Circumference and area of circles, composite areas, and volume and surface area of prisms, pyramids, and composite solids.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "9-1",
+     "title": "Circumference of Circles",
+     "covers": "Finding circumference from radius or diameter.",
+     "basis": "general"
+    },
+    {
+     "label": "9-2",
+     "title": "Area of Circles",
+     "covers": "Finding the area of circles and semicircles.",
+     "basis": "general"
+    },
+    {
+     "label": "9-3",
+     "title": "Area of Composite Figures",
+     "covers": "Finding areas of figures made of polygons and circle parts.",
+     "basis": "general"
+    },
+    {
+     "label": "9-4",
+     "title": "Volume",
+     "covers": "Finding the volume of prisms and pyramids.",
+     "basis": "page"
+    },
+    {
+     "label": "9-5",
+     "title": "Surface Area",
+     "covers": "Finding the surface area of prisms and pyramids.",
+     "basis": "general"
+    },
+    {
+     "label": "9-6",
+     "title": "Volume and Surface Area of Composite Figures",
+     "covers": "Finding volume and surface area of solids built from simpler solids.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 10",
+   "title": "Probability",
+   "covers": "Likelihood, experimental and theoretical probability, compound events, and simulations.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "10-1",
+     "title": "Find Likelihoods",
+     "covers": "Describing how likely an event is on a scale from 0 to 1.",
+     "basis": "general"
+    },
+    {
+     "label": "10-2",
+     "title": "Relative Frequency of Simple Events",
+     "covers": "Finding experimental probability from the results of trials.",
+     "basis": "general"
+    },
+    {
+     "label": "10-3",
+     "title": "Theoretical Probability of Simple Events",
+     "covers": "Finding theoretical probability and predicting outcomes.",
+     "basis": "general"
+    },
+    {
+     "label": "10-4",
+     "title": "Compare Probabilities of Simple Events",
+     "covers": "Comparing experimental and theoretical probabilities and explaining differences.",
+     "basis": "general"
+    },
+    {
+     "label": "10-5",
+     "title": "Probability of Compound Events",
+     "covers": "Finding compound-event probabilities with organized lists, tables, and tree diagrams.",
+     "basis": "general"
+    },
+    {
+     "label": "10-6",
+     "title": "Simulate Chance Events",
+     "covers": "Designing and running simulations to estimate probabilities.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 11",
+   "title": "Sampling and Statistics",
+   "covers": "Random sampling, predictions from samples, sampling variability, and comparing two populations.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "11-1",
+     "title": "Biased and Unbiased Samples",
+     "covers": "Distinguishing biased from unbiased samples and why random sampling matters.",
+     "basis": "general"
+    },
+    {
+     "label": "11-2",
+     "title": "Make Predictions",
+     "covers": "Using sample data to make predictions about a population.",
+     "basis": "general"
+    },
+    {
+     "label": "11-3",
+     "title": "Generate Multiple Samples",
+     "covers": "Drawing repeated random samples to gauge how much estimates vary.",
+     "basis": "general"
+    },
+    {
+     "label": "11-4",
+     "title": "Compare Two Populations",
+     "covers": "Comparing two populations with measures of center and variability.",
+     "basis": "general"
+    },
+    {
+     "label": "11-5",
+     "title": "Assess Visual Overlap",
+     "covers": "Expressing the difference between two centers as a multiple of their variability.",
+     "basis": "general"
+    }
+   ]
+  }
+ ],
+ "notes": "Volume 1 holds Modules 1-4; Volume 2 holds Modules 5-11 (the English Tennessee student-edition cover and the Spanish national student-edition cover in the 2020 catalog agree). The work-list ISBNs match the 2020 catalog: Interactive Student Edition Vol. 1 978-0-07-667374-2, Vol. 2 978-0-07-899715-0; Teacher Edition Vol. 1 978-0-07-899723-5, Vol. 2 978-0-07-899176-9. Module titles come from the publisher; lesson sequence comes from a district pacing guide that abbreviates titles, so full lesson titles were taken from the publisher's Oklahoma overview and the New Mexico sampler where they agree. Lessons 3-1, 3-2, 4-5, and 10-5 appear only in the district guide and the sampler, because the Oklahoma edition moves or drops them; treat the exact wording of 3-1, 3-2, and 10-5 as unconfirmed. Lesson 9-4 covers prisms and pyramids per the district guide. Most lesson descriptions are from general knowledge of the topic."
+}

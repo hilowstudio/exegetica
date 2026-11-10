@@ -17,6 +17,15 @@
     <main class="scroll">
       <div class="wrap shell-col">
 
+        <section class="classes" id="classes" hidden aria-labelledby="classes-h">
+          <div class="cl-head">
+            <div><div class="cl-eyebrow">The school's texts</div><h2 id="classes-h">For your classes</h2></div>
+            <button type="button" class="cl-edit" id="classes-edit">Choose your classes</button>
+          </div>
+          <div class="cl-courses" id="cl-courses" role="group" aria-label="Show the texts for"></div>
+          <ul class="cl-works" id="cl-works"></ul>
+        </section>
+
         <div class="omni">
           <div class="o-eyebrow">Add a resource</div>
           <h2 id="omni-title">Bring a book into your library</h2>
@@ -144,5 +153,10 @@
   </div>
 </div>
 
+<!-- The classes a teacher teaches, and one school text's outline (static/js/library_classes.js) -->
+<dialog class="cl-dlg" id="cl-dlg" aria-labelledby="cl-dlg-title">
+  <div class="cl-dlg-head"><h2 id="cl-dlg-title"></h2><button type="button" class="cl-x" data-close aria-label="Close">×</button></div>
+  <div class="cl-dlg-body" id="cl-dlg-body"></div>
+</dialog>
 {% endblock %}
-{% block scripts %}<script src="/static/js/library.js"></script>{% endblock %}
+{% block scripts %}<script src="/static/js/library.js"></script><script src="/static/js/library_classes.js"></script><script src="/static/js/library_moments.js"></script>{% endblock %}

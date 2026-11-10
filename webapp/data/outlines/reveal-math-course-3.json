@@ -1,0 +1,467 @@
+{
+ "key": "reveal-math-course-3",
+ "title": "Reveal Math, Course 3",
+ "authors": [
+  "McGraw-Hill Education"
+ ],
+ "publisher": "McGraw-Hill Education",
+ "edition": "2018/2020 national edition (Interactive Student Edition and Teacher Edition, 2 volumes each)",
+ "grade": "Grade 8",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.mheducation.com/unitas/school/catalogs/2020/2020-mathematics-catalog.pdf",
+   "what": "publisher catalog (2020): Course 3 module table of contents and the same ISBNs as the work list"
+  },
+  {
+   "url": "https://www.tn.gov/content/dam/tn/education/textbook/sect-b/McGraw%20Hill_Grades%206-12_final.pdf",
+   "what": "publisher public-review cover sheets: Course 3 student edition Volume 1 / Volume 2 contents"
+  },
+  {
+   "url": "https://www.mheducation.com/content/dam/mhe/prek12/documents/states/new-mexico/math/nm-reveal-math-6-8-connections-sampler.pdf",
+   "what": "publisher sampler: Course 3 scope and sequence with pacing, and Module 4 lesson goals"
+  },
+  {
+   "url": "https://pengi.ai/textbooks/reveal-math-course-3-87d552c9-20ce-46f7-95aa-9f328cb17e23",
+   "what": "third-party study site listing all 11 modules and 57 lessons"
+  },
+  {
+   "url": "https://www.mheducation.com/unitas/school/explore/sites/oklahoma/overview-brochure-reveal-6-8.pdf",
+   "what": "publisher program overview (Oklahoma Pre-Algebra edition) used to cross-check lesson titles"
+  }
+ ],
+ "summary": "McGraw Hill's grade 8 course in the Reveal Math middle-school series, in 11 modules and 57 lessons. It covers exponents and scientific notation, real and irrational numbers, multi-step equations, slope and linear relationships, functions, systems of equations, angle relationships and the Pythagorean Theorem, transformations, congruence and similarity, volume of curved solids, and bivariate data.",
+ "toc": [
+  {
+   "label": "Module 1",
+   "title": "Exponents and Scientific Notation",
+   "covers": "Integer exponents, exponent properties, and computing with numbers in scientific notation.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "1-1",
+     "title": "Powers and Exponents",
+     "covers": "Writing and evaluating powers, including negative bases.",
+     "basis": "general"
+    },
+    {
+     "label": "1-2",
+     "title": "Multiply and Divide Monomials",
+     "covers": "Applying the product and quotient of powers properties.",
+     "basis": "general"
+    },
+    {
+     "label": "1-3",
+     "title": "Powers of Monomials",
+     "covers": "Applying the power of a power and power of a product properties.",
+     "basis": "general"
+    },
+    {
+     "label": "1-4",
+     "title": "Zero and Negative Exponents",
+     "covers": "Defining zero and negative exponents and simplifying with them.",
+     "basis": "general"
+    },
+    {
+     "label": "1-5",
+     "title": "Scientific Notation",
+     "covers": "Writing very large and very small numbers in scientific notation and comparing them.",
+     "basis": "general"
+    },
+    {
+     "label": "1-6",
+     "title": "Compute with Scientific Notation",
+     "covers": "Multiplying, dividing, adding, and subtracting numbers in scientific notation.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 2",
+   "title": "Real Numbers",
+   "covers": "Repeating decimals as fractions, square and cube roots, irrational numbers, and ordering real numbers.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "2-1",
+     "title": "Terminating and Repeating Decimals",
+     "covers": "Converting repeating decimals to fractions and classifying rational numbers.",
+     "basis": "general"
+    },
+    {
+     "label": "2-2",
+     "title": "Roots",
+     "covers": "Finding square and cube roots and solving x^2 = p and x^3 = p.",
+     "basis": "general"
+    },
+    {
+     "label": "2-3",
+     "title": "Real Numbers",
+     "covers": "Classifying numbers as rational or irrational within the real number system.",
+     "basis": "general"
+    },
+    {
+     "label": "2-4",
+     "title": "Estimate Irrational Numbers",
+     "covers": "Approximating irrational numbers between integers and as decimals.",
+     "basis": "general"
+    },
+    {
+     "label": "2-5",
+     "title": "Compare and Order Real Numbers",
+     "covers": "Comparing and ordering real numbers on a number line.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 3",
+   "title": "Solve Equations with Variables on Each Side",
+   "covers": "Linear equations with variables on both sides and multi-step equations, including how many solutions an equation has.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "3-1",
+     "title": "Solve Equations with Variables on Each Side",
+     "covers": "Collecting variable terms on one side to solve linear equations.",
+     "basis": "general"
+    },
+    {
+     "label": "3-2",
+     "title": "Write and Solve Equations with Variables on Each Side",
+     "covers": "Writing such equations from real-world situations and solving them.",
+     "basis": "general"
+    },
+    {
+     "label": "3-3",
+     "title": "Solve Multi-Step Equations",
+     "covers": "Solving equations that need distributing and combining like terms.",
+     "basis": "general"
+    },
+    {
+     "label": "3-4",
+     "title": "Write and Solve Multi-Step Equations",
+     "covers": "Writing multi-step equations from context and solving them.",
+     "basis": "general"
+    },
+    {
+     "label": "3-5",
+     "title": "Determine the Number of Solutions",
+     "covers": "Recognizing equations with one solution, no solution, or infinitely many solutions.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 4",
+   "title": "Linear Relationships and Slope",
+   "covers": "How linear relationships relate to proportional ones: slope, direct variation, and slope-intercept form.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "4-1",
+     "title": "Proportional Relationships and Slope",
+     "covers": "Graphing and comparing proportional relationships and reading the unit rate as slope.",
+     "basis": "page"
+    },
+    {
+     "label": "4-2",
+     "title": "Slope of a Line",
+     "covers": "Finding slope from a graph, a table, and the slope formula.",
+     "basis": "page"
+    },
+    {
+     "label": "4-3",
+     "title": "Similar Triangles and Slope",
+     "covers": "Using similar triangles to show slope is the same anywhere on a line.",
+     "basis": "page"
+    },
+    {
+     "label": "4-4",
+     "title": "Direct Variation",
+     "covers": "Deriving y = mx from graphs, tables, and verbal descriptions of proportional relationships.",
+     "basis": "page"
+    },
+    {
+     "label": "4-5",
+     "title": "Slope-Intercept Form",
+     "covers": "Writing linear equations in the form y = mx + b.",
+     "basis": "page"
+    },
+    {
+     "label": "4-6",
+     "title": "Graph Linear Equations",
+     "covers": "Graphing lines in slope-intercept form and graphing vertical and horizontal lines.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Module 5",
+   "title": "Functions",
+   "covers": "Defining functions, building and comparing linear functions, nonlinear functions, and qualitative graphs.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "5-1",
+     "title": "Identify Functions",
+     "covers": "Deciding whether a relation is a function from mappings, tables, and graphs.",
+     "basis": "general"
+    },
+    {
+     "label": "5-2",
+     "title": "Function Tables",
+     "covers": "Using function rules to complete input-output tables and graph them.",
+     "basis": "general"
+    },
+    {
+     "label": "5-3",
+     "title": "Construct Linear Functions",
+     "covers": "Writing linear functions from tables, graphs, and descriptions and interpreting rate of change and initial value.",
+     "basis": "general"
+    },
+    {
+     "label": "5-4",
+     "title": "Compare Functions",
+     "covers": "Comparing properties of two functions given in different representations.",
+     "basis": "general"
+    },
+    {
+     "label": "5-5",
+     "title": "Nonlinear Functions",
+     "covers": "Distinguishing linear from nonlinear functions.",
+     "basis": "general"
+    },
+    {
+     "label": "5-6",
+     "title": "Qualitative Graphs",
+     "covers": "Sketching and describing graphs that show where a function increases or decreases.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 6",
+   "title": "Systems of Linear Equations",
+   "covers": "Solving two-variable linear systems by graphing, substitution, and elimination, and counting solutions.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "6-1",
+     "title": "Solve Systems of Equations by Graphing",
+     "covers": "Finding the solution of a system as the intersection of two lines.",
+     "basis": "general"
+    },
+    {
+     "label": "6-2",
+     "title": "Determine Number of Solutions",
+     "covers": "Using slopes and intercepts to tell whether a system has one, no, or infinitely many solutions.",
+     "basis": "general"
+    },
+    {
+     "label": "6-3",
+     "title": "Solve Systems of Equations by Substitution",
+     "covers": "Solving systems by substituting one equation into the other.",
+     "basis": "general"
+    },
+    {
+     "label": "6-4",
+     "title": "Solve Systems of Equations by Elimination",
+     "covers": "Solving systems by adding or subtracting equations to eliminate a variable.",
+     "basis": "general"
+    },
+    {
+     "label": "6-5",
+     "title": "Write and Solve Systems of Equations",
+     "covers": "Writing systems from real-world problems and solving them.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 7",
+   "title": "Triangles and the Pythagorean Theorem",
+   "covers": "Parallel lines and transversals, triangle angle facts, and the Pythagorean Theorem and its converse.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "7-1",
+     "title": "Angle Relationships and Parallel Lines",
+     "covers": "Angle pairs formed when a transversal crosses parallel lines.",
+     "basis": "general"
+    },
+    {
+     "label": "7-2",
+     "title": "Angle Relationships and Triangles",
+     "covers": "The triangle angle sum and exterior angle relationships.",
+     "basis": "general"
+    },
+    {
+     "label": "7-3",
+     "title": "The Pythagorean Theorem",
+     "covers": "Using the Pythagorean Theorem to find missing side lengths of right triangles.",
+     "basis": "general"
+    },
+    {
+     "label": "7-4",
+     "title": "Converse of the Pythagorean Theorem",
+     "covers": "Using the converse to test whether a triangle is a right triangle.",
+     "basis": "general"
+    },
+    {
+     "label": "7-5",
+     "title": "Distance on the Coordinate Plane",
+     "covers": "Finding the distance between two points with the Pythagorean Theorem.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 8",
+   "title": "Transformations",
+   "covers": "Translations, reflections, rotations, and dilations on the coordinate plane.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "8-1",
+     "title": "Translations",
+     "covers": "Translating figures and describing translations with coordinate rules.",
+     "basis": "general"
+    },
+    {
+     "label": "8-2",
+     "title": "Reflections",
+     "covers": "Reflecting figures across the axes and describing the coordinate changes.",
+     "basis": "general"
+    },
+    {
+     "label": "8-3",
+     "title": "Rotations",
+     "covers": "Rotating figures 90, 180, and 270 degrees about the origin.",
+     "basis": "general"
+    },
+    {
+     "label": "8-4",
+     "title": "Dilations",
+     "covers": "Enlarging and reducing figures by a scale factor centered at the origin.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 9",
+   "title": "Congruence and Similarity",
+   "covers": "Congruence through rigid motions, similarity through dilations, and indirect measurement.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "9-1",
+     "title": "Congruence and Transformations",
+     "covers": "Showing figures are congruent with a sequence of rigid motions.",
+     "basis": "general"
+    },
+    {
+     "label": "9-2",
+     "title": "Congruence and Corresponding Parts",
+     "covers": "Using corresponding parts of congruent figures to find unknown measures.",
+     "basis": "general"
+    },
+    {
+     "label": "9-3",
+     "title": "Similarity and Transformations",
+     "covers": "Showing figures are similar with rigid motions plus a dilation.",
+     "basis": "general"
+    },
+    {
+     "label": "9-4",
+     "title": "Similarity and Corresponding Parts",
+     "covers": "Using proportional sides and equal angles of similar figures to find unknowns.",
+     "basis": "general"
+    },
+    {
+     "label": "9-5",
+     "title": "Indirect Measurement",
+     "covers": "Using similar triangles to find heights and distances that cannot be measured directly.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 10",
+   "title": "Volume",
+   "covers": "Volume of cylinders, cones, spheres, and composite solids, and finding missing dimensions.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "10-1",
+     "title": "Volume of Cylinders",
+     "covers": "Finding the volume of cylinders.",
+     "basis": "general"
+    },
+    {
+     "label": "10-2",
+     "title": "Volume of Cones",
+     "covers": "Finding the volume of cones.",
+     "basis": "general"
+    },
+    {
+     "label": "10-3",
+     "title": "Volume of Spheres",
+     "covers": "Finding the volume of spheres and hemispheres.",
+     "basis": "general"
+    },
+    {
+     "label": "10-4",
+     "title": "Find Missing Dimensions",
+     "covers": "Solving volume formulas for a missing radius or height.",
+     "basis": "general"
+    },
+    {
+     "label": "10-5",
+     "title": "Volume of Composite Solids",
+     "covers": "Finding the volume of solids made of cylinders, cones, spheres, and prisms.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 11",
+   "title": "Scatter Plots and Two-Way Tables",
+   "covers": "Bivariate data: scatter plots, lines of fit, and two-way tables for categorical data.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "11-1",
+     "title": "Scatter Plots",
+     "covers": "Making scatter plots and describing association, clusters, and outliers.",
+     "basis": "general"
+    },
+    {
+     "label": "11-2",
+     "title": "Draw Lines of Fit",
+     "covers": "Informally fitting a straight line to a scatter plot.",
+     "basis": "general"
+    },
+    {
+     "label": "11-3",
+     "title": "Equations for Lines of Fit",
+     "covers": "Writing equations for lines of fit and interpreting slope and intercept in context.",
+     "basis": "general"
+    },
+    {
+     "label": "11-4",
+     "title": "Two-Way Tables",
+     "covers": "Building two-way frequency tables for categorical data.",
+     "basis": "general"
+    },
+    {
+     "label": "11-5",
+     "title": "Associations in Two-Way Tables",
+     "covers": "Using relative frequencies to judge whether two categorical variables are associated.",
+     "basis": "general"
+    }
+   ]
+  }
+ ],
+ "notes": "Volume 1 holds Modules 1-6; Volume 2 holds Modules 7-11 (from the Tennessee student-edition cover; no national cover listing was found for Course 3, but module titles and order match the national catalog). The work-list ISBNs match the 2020 catalog: Interactive Student Edition Vol. 1 978-0-07-667375-9, Vol. 2 978-0-07-899718-1; Teacher Edition Vol. 1 978-0-07-899724-2, Vol. 2 978-0-07-899177-6. The publisher's Module 4 page titles it 'Linear Relationship and Slope'; the catalog and table of contents use 'Linear Relationships and Slope'. The Oklahoma edition replaces Course 3 with a reordered Pre-Algebra book, so do not use its module numbers. The New Mexico sampler paces Module 4 at 17 days of 45-minute periods. Most lesson descriptions are from general knowledge of the topic."
+}

@@ -171,7 +171,24 @@ async def studio_prices_fn(ctx) -> dict:
     return await ctx.step.run("read-prices", _studio_prices)
 
 
-functions = [extract_book_fn, extract_upload_fn, rederive_fn, build_comprehension_fn, studio_prices_fn]
+@client.create_function(
+    fn_id="transcribe-media",
+    trigger=TriggerEvent(event="library/transcribe.requested"),
+    singleton=Singleton(key="event.data.key", mode="skip"),
+    concurrency=[Concurrency(limit=2)],
+    retries=0,     # excerpts.run keeps a failure on its job row; a retry could pay for the same transcript twice
+)
+async def transcribe_fn(ctx) -> dict:
+    """Gemini writes a video's or episode's transcript for the Living Library (decision 0028)."""
+    from webapp import excerpts
+    data = dict(ctx.event.data or {})
+
+    async def transcribe() -> dict:
+        return await excerpts.run(**data)
+    return await ctx.step.run("transcribe", transcribe)
+
+
+functions = [extract_book_fn, extract_upload_fn, rederive_fn, build_comprehension_fn, studio_prices_fn, transcribe_fn]
 
 
 async def trigger_extract(title: str, author: str | None = None, extraction_id=None) -> list[str]:
@@ -216,6 +233,11 @@ async def trigger_comprehension(book_key: str) -> list[str]:
     return await client.send(
         Event(name="library/comprehension.build.requested", data={"book_key": book_key})
     )
+
+
+async def trigger_transcribe(payload: dict) -> list[str]:
+    """Ask for a transcript (from the Living Library's moments panel)."""
+    return await client.send(Event(name="library/transcribe.requested", data=payload))
 
 
 def build_serve_app():

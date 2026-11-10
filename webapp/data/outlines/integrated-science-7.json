@@ -1,0 +1,307 @@
+{
+ "key": "integrated-science-7",
+ "title": "Inspire Science: Integrated, Grade 7 (Write-In Student Edition, Units 1-4)",
+ "authors": [
+  "Alton Biggs",
+  "Page Keeley",
+  "Dinah Zike",
+  "Edward Paul Ortleb",
+  "Ralph M. Feather",
+  "Douglas Fisher",
+  "Michael Manga"
+ ],
+ "publisher": "McGraw Hill",
+ "edition": "2020 (copyright 2020 on the publisher page; ISBN records say 2019)",
+ "grade": "Grade 7",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.mheducation.com/unitas/school/explore/sites/inspire-science/scope-and-sequence-6-8-integrated.pdf",
+   "what": "publisher scope and sequence (units, modules, lessons)"
+  },
+  {
+   "url": "https://www.mheducation.com/prek-12/product/inspire-science-integrated-g7-write-student-edition-unit-1-mcgraw-hill/9780076874538.html",
+   "what": "publisher product page for Unit 1 (ISBN 9780076874538, copyright 2020)"
+  },
+  {
+   "url": "https://bookshare.org/browse/book/3502703",
+   "what": "Bookshare record confirming Unit 1 title 'Understanding Matter'"
+  }
+ ],
+ "summary": "An NGSS-built integrated middle-school science course in four write-in unit books organised into modules and 5E lessons. Grade 7 covers the particle nature of matter and chemical change, plate tectonics and natural hazards, Earth's resources and synthetic materials, and energy and matter in ecosystems.",
+ "toc": [
+  {
+   "label": "Unit 1",
+   "title": "Understanding Matter",
+   "covers": "The particle model of matter, states and changes of state, and physical and chemical changes.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Classification and States of Matter",
+     "covers": "How particles behave in each state and how temperature and pressure change them.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Energy and States of Matter",
+       "covers": "Particle motion in solids, liquids, and gases and the energy involved in melting, freezing, boiling, and condensing.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Changes in Temperature",
+       "covers": "How adding or removing thermal energy changes particle speed and temperature.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Changes in Pressure",
+       "covers": "How gas pressure, volume, and temperature relate.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Molecular Structure",
+       "covers": "Atoms, elements, molecules, and models of simple and extended structures.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Matter: Properties and Changes",
+     "covers": "Physical and chemical properties and what happens to matter and energy in chemical reactions.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Properties of Matter",
+       "covers": "Physical and chemical properties such as density, melting point, and reactivity used to identify substances.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Property Changes in Chemical Reactions",
+       "covers": "Evidence of chemical change, reactants and products, and conservation of mass.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Energy Changes in Chemical Reactions",
+       "covers": "Exothermic and endothermic reactions and devices that release or absorb thermal energy.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Unit 2",
+   "title": "The Changing Earth",
+   "covers": "Plate tectonics and the processes that build and wear down Earth's surface, plus earthquakes, volcanoes, and severe weather.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Dynamic Earth",
+     "covers": "Evidence for moving plates and how internal and surface processes reshape Earth.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Moving Continents",
+       "covers": "Wegener's continental drift and its fossil, rock, and climate evidence.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Development of a Theory",
+       "covers": "Seafloor spreading and how it led to the theory of plate tectonics.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Shaping Earth's Surface",
+       "covers": "Plate boundaries and the mountains, trenches, and rift valleys they form over geologic time.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Changing Earth's Surface",
+       "covers": "Weathering, erosion, and deposition by water, wind, and ice.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "The Cycling of Earth's Materials",
+       "covers": "The rock cycle driven by Earth's internal heat and the sun.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Natural Hazards",
+     "covers": "Causes, prediction, and reducing the impact of natural hazards.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Earthquakes",
+       "covers": "Faults, seismic waves, earthquake locations, and safety measures.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Volcanoes",
+       "covers": "How volcanoes form, eruption types, and monitoring.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Severe Weather",
+       "covers": "Thunderstorms, tornadoes, hurricanes, and forecasting and preparedness.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Unit 3",
+   "title": "Earth's Resources",
+   "covers": "Where natural resources come from, why they are unevenly distributed, and how people make and use synthetic materials.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Distribution of Earth's Resources",
+     "covers": "Renewable and nonrenewable resources, their geologic origins, and their depletion.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Natural Resources",
+       "covers": "Minerals, fossil fuels, soil, water, and renewable vs nonrenewable resources.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Distribution of Resources",
+       "covers": "How past geologic processes left resources unevenly spread across Earth.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Depletion of Resources",
+       "covers": "How population growth and consumption use up resources, and conservation.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Materials Science",
+     "covers": "Synthetic materials made from natural resources and their effects on society.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Synthetic Technology",
+       "covers": "How chemical processes turn natural resources into materials such as plastics, fuels, and medicines.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Impacts of Synthetic Materials",
+       "covers": "Benefits and environmental costs of synthetic materials.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Unit 4",
+   "title": "Interactions Within Ecosystems",
+   "covers": "How matter and energy move through ecosystems, how organisms interact, and why biodiversity matters.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Matter and Energy in Ecosystems",
+     "covers": "Photosynthesis, respiration, food webs, and the cycling of matter.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Photosynthesis and Cellular Respiration",
+       "covers": "How producers store light energy in sugar and how organisms release it.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Flow of Energy",
+       "covers": "Food chains, food webs, and energy pyramids.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Cycling of Matter",
+       "covers": "Carbon, nitrogen, and water cycles and the role of decomposers.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Dynamic Ecosystems",
+     "covers": "Resources, interactions among organisms, and how ecosystems change.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Resources in Ecosystems",
+       "covers": "Limiting factors and how resource availability affects populations.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Interactions Within Ecosystems",
+       "covers": "Competition, predation, and symbiotic relationships.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Changing Ecosystems",
+       "covers": "Disturbances and ecological succession.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Biodiversity in Ecosystems",
+     "covers": "The value of biodiversity and ways to protect it.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Benefits of Biodiversity",
+       "covers": "Ecosystem services and why varied ecosystems are healthier.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Maintaining Biodiversity",
+       "covers": "Threats to biodiversity and evaluating solutions to conserve it.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Headings are from the publisher's scope and sequence, which lists units, modules, and lessons without numbers. In that PDF the Grade 7 and Grade 8 columns are interleaved; units were assigned by column position in the layout text. Unit 1 is ISBN 9780076874538 (confirmed on the product page); 9780076874545 is presumably Unit 2. Modules nest under units and lessons under modules."
+}

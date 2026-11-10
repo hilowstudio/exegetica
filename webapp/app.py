@@ -34,7 +34,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_views, curriculum, db, generator, house_cover, library, library_store, memory, metrics, ops, policy, providers, r2, reader, reply_check, safety, shell, store, studio, tool_catalog, usage
+from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_views, curriculum, db, excerpts, generator, house_cover, library, library_store, memory, metrics, ops, policy, prep, prep_draft, providers, teacher_courses, r2, reader, reply_check, safety, shell, store, studio, tool_catalog, usage
 from webapp.bridge import CombinedTools, MCPBridge  # noqa: F401  (scripts/john_gen.py imports MCPBridge from here)
 
 logging.basicConfig(level=logging.INFO)
@@ -862,19 +862,41 @@ async def recommend_endpoint(request):
     return JSONResponse({"recommended": generator.recommend(ss)})
 
 
+_END_TASKS: set = set()   # Prep Room counters still being written after their stream closed
+
+
+def prep_counter(user) -> "callable":
+    """The `on_end` for a Prep Room run: count it against the teacher's daily cap (decision 0027)."""
+    uid = str((user or {}).get("id") or "")
+
+    async def end(stats: dict) -> None:
+        if uid:
+            await usage.prep_add(uid, float(stats.get("est_usd") or 0))
+    return end
+
+
+async def prep_capped(request, start: dict) -> StreamingResponse | None:
+    """A fixed-text reply, with no model call, when this teacher or the school is at today's Prep Room cap."""
+    uid = str((auth.current_user(request) or {}).get("id") or "")
+    message = await usage.prep_check(uid) if uid else None
+    return _notice_stream(start, message) if message else None
+
+
 def _generation(route: str, start: dict, provider: str, api_key, model: str, system_text: str, task: str,
-                mcp, limits) -> StreamingResponse:
+                mcp, limits, on_complete=None, on_end=None) -> StreamingResponse:
     """Stream one Generator or Revise run, and record its metrics row however it ends. A finished
     Generator document is followed by a source report (webapp/citations.py): references checked and
     quotations that neither this run's material and tool results nor the bundled Bible text hold.
     The report never blocks the document. Revise gets none, since it rewrites a document whose
-    sources were an earlier run's."""
+    sources were an earlier run's. `on_complete(document, report)`, when given, runs after a finished
+    run (the Prep Room saves the version there) and returns one more event for the page."""
     run_tools = citations.Recorder(mcp)
 
     async def gen():
         stats: dict = {}
         t0 = time.monotonic()
         document: list[str] = []
+        report = None
         yield _sse(start)
         try:
             async for ev in providers.run(provider, api_key, model, system_text,
@@ -892,12 +914,25 @@ def _generation(route: str, start: dict, provider: str, api_key, model: str, sys
             metrics.record(metrics.from_stats(route, "byok" if api_key else "server", stats,
                                               outcome=stats.get("outcome") or "cancelled",
                                               duration_ms=(time.monotonic() - t0) * 1000))
-        if route != "revise" and stats.get("outcome") == "complete" and "".join(document).strip():
+            if on_end:   # a task, so a reader who leaves mid-run still has the run counted
+                task_ = asyncio.create_task(on_end(dict(stats)))
+                _END_TASKS.add(task_)
+                task_.add_done_callback(_END_TASKS.discard)
+        finished = stats.get("outcome") == "complete" and "".join(document).strip()
+        if "revise" not in route and finished:
             try:
-                yield _sse(await asyncio.to_thread(citations.generator_report, "".join(document),
-                                                   [system_text, task, *run_tools.outputs], citations.bible()))
+                report = await asyncio.to_thread(citations.generator_report, "".join(document),
+                                                 [system_text, task, *run_tools.outputs], citations.bible())
+                yield _sse(report)
             except Exception:  # noqa: BLE001  (the report is a convenience; the document stands without it)
                 logger.exception("%s source report failed", route)
+        if on_complete and finished:
+            try:
+                yield _sse(await on_complete("".join(document), report))
+            except Exception:  # noqa: BLE001
+                logger.exception("%s save failed", route)
+                yield _sse({"type": "notice", "message": "This draft wasn't saved. Copy it before you leave "
+                                                         "the page."})
         yield _sse({"type": "done"})
 
     return StreamingResponse(gen(), media_type="text/event-stream", headers=_SSE_HEADERS)
@@ -951,6 +986,9 @@ async def generate_book_endpoint(request):
     book = await run_in_threadpool(reader._gen_book_sync, slug)
     if not book or not book.get("chapters"):
         return JSONResponse({"error": "book not found"}, status_code=404)
+    capped = await prep_capped(request, {"type": "start", "format": format_id, "provider": provider, "book": slug})
+    if capped:
+        return capped
 
     system_text = generator.build_system(format_id, grade_band)
     total = book.get("word_count") or sum(c.get("words", 0) for c in book["chapters"])
@@ -973,7 +1011,8 @@ async def generate_book_endpoint(request):
                                                    comp, covered_text, recap, retrieved)
     return _generation("generate:book", {"type": "start", "format": format_id, "provider": provider,
                                          "book": book["slug"]},
-                       provider, api_key, model, system_text, task, request.app.state.mcp, policy.GENERATE)
+                       provider, api_key, model, system_text, task, request.app.state.mcp, policy.GENERATE,
+                       on_end=prep_counter(auth.current_user(request)))
 
 
 async def generate_endpoint(request):
@@ -996,10 +1035,14 @@ async def generate_endpoint(request):
     brief = body.get("brief", "")
     provider, model, api_key = policy.byok(body)   # bring-your-own-key is off for now
 
+    capped = await prep_capped(request, {"type": "start", "format": format_id, "provider": provider})
+    if capped:
+        return capped
     system_text = generator.build_system(format_id, grade_band)
     task = generator.build_task(format_id, objectives, grade_band, context, brief)
     return _generation("generate", {"type": "start", "format": format_id, "provider": provider},
-                       provider, api_key, model, system_text, task, request.app.state.mcp, policy.GENERATE)
+                       provider, api_key, model, system_text, task, request.app.state.mcp, policy.GENERATE,
+                       on_end=prep_counter(auth.current_user(request)))
 
 
 async def revise_endpoint(request):
@@ -1013,9 +1056,13 @@ async def revise_endpoint(request):
     if not document or not instruction:
         return JSONResponse({"error": "document and instruction are required"}, status_code=400)
     provider, model, api_key = policy.byok(body)   # bring-your-own-key is off for now
+    capped = await prep_capped(request, {"type": "start", "provider": provider})
+    if capped:
+        return capped
     system_text, task = generator.build_revision(document, instruction)
     return _generation("revise", {"type": "start", "provider": provider},
-                       provider, api_key, model, system_text, task, request.app.state.mcp, policy.REVISE)
+                       provider, api_key, model, system_text, task, request.app.state.mcp, policy.REVISE,
+                       on_end=prep_counter(auth.current_user(request)))
 
 
 # SQLite DBs distributed via R2 → the Fly volume: (env var holding the local path, R2 object key).
@@ -1285,6 +1332,7 @@ app = Starlette(
     routes=[
         Route("/", index),
         Route("/generate", generate_page),
+        Route("/generate/{rest:path}", generate_page),   # a unit or a resource (static/js/generate.js routes it)
         Route("/library", library_page),
         Route("/corpus", corpus_page),
         Route("/position", about.position_page),
@@ -1354,6 +1402,14 @@ app = Starlette(
         Route("/api/library/extraction/{id}", library_store.extraction_detail, methods=["GET"]),
         Route("/api/library/upload/presign", library_store.upload_presign, methods=["POST"]),
         Route("/api/library/upload/complete", library_store.upload_complete, methods=["POST"]),
+        Route("/api/library/item/{id}/moments", excerpts.moments, methods=["GET"]),
+        Route("/api/library/item/{id}/episodes", excerpts.episode_list, methods=["GET"]),
+        Route("/api/library/item/{id}/transcript", excerpts.fetch_transcript, methods=["POST"]),
+        Route("/api/library/item/{id}/excerpts", excerpts.save_excerpt, methods=["POST"]),
+        Route("/api/library/excerpts/{id}", excerpts.delete_excerpt, methods=["DELETE"]),
+        Route("/api/library/courses", teacher_courses.get, methods=["GET"]),
+        Route("/api/library/courses", teacher_courses.change, methods=["POST"]),
+        Route("/api/library/outline/{key}", teacher_courses.outline, methods=["GET"]),
         Route("/api/library/reviews", library_store.reviews_list, methods=["GET"]),
         Route("/api/library/reviews/promote", library_store.review_promote, methods=["POST"]),
         Route("/api/library/reviews/reject", library_store.review_reject, methods=["POST"]),
@@ -1392,6 +1448,26 @@ app = Starlette(
         Route("/api/generate", generate_endpoint, methods=["POST"]),
         Route("/api/generate/book", generate_book_endpoint, methods=["POST"]),
         Route("/api/revise", revise_endpoint, methods=["POST"]),
+        # The Prep Room's saved work (decision 0026, webapp/prep.py)
+        Route("/api/prep/units", prep.units_list, methods=["GET"]),
+        Route("/api/prep/units", prep.unit_create, methods=["POST"]),
+        Route("/api/prep/units/{id}", prep.unit_get, methods=["GET"]),
+        Route("/api/prep/units/{id}", prep.unit_update, methods=["PATCH"]),
+        Route("/api/prep/units/{id}", prep.unit_delete, methods=["DELETE"]),
+        Route("/api/prep/units/{id}/sources", prep.source_add, methods=["POST"]),
+        Route("/api/prep/sources/{id}", prep.source_update, methods=["PATCH"]),
+        Route("/api/prep/sources/{id}", prep.source_remove, methods=["DELETE"]),
+        Route("/api/prep/resources/{id}", prep.resource_get, methods=["GET"]),
+        Route("/api/prep/resources/{id}", prep.resource_update, methods=["PATCH"]),
+        Route("/api/prep/resources/{id}", prep.resource_delete, methods=["DELETE"]),
+        Route("/api/prep/resources/{id}/versions", prep.resource_save, methods=["POST"]),
+        Route("/api/prep/units/{id}/upload", prep_draft.upload_source, methods=["POST"]),
+        Route("/api/prep/units/{id}/link", prep_draft.link_source, methods=["POST"]),
+        Route("/api/prep/gallery", prep_draft.gallery, methods=["GET"]),
+        Route("/api/prep/outlines", prep_draft.outlines, methods=["GET"]),
+        Route("/api/prep/books", prep_draft.books, methods=["GET"]),
+        Route("/api/prep/draft", prep_draft.draft, methods=["POST"]),
+        Route("/api/prep/revise", prep_draft.revise, methods=["POST"]),
         Mount("/static", app=StaticFiles(directory=str(STATIC_DIR)), name="static"),
     ],
 )

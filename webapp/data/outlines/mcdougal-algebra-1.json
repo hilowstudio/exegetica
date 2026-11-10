@@ -1,0 +1,612 @@
+{
+ "key": "mcdougal-algebra-1",
+ "title": "McDougal Littell Algebra 1",
+ "authors": [
+  "Ron Larson",
+  "Laurie Boswell",
+  "Timothy D. Kanold",
+  "Lee Stiff"
+ ],
+ "publisher": "McDougal Littell (Houghton Mifflin)",
+ "edition": "2007 (national edition; 2008 printings)",
+ "grade": "Algebra 1 (grades 8-9)",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "http://web.archive.org/web/20190309152508/http://www.classzone.com:80/cz/books/algebra_1_2007_na/book_home.htm",
+   "what": "publisher companion site (ClassZone, archived): the 13-chapter list for 'Algebra 1, 2007', with titles cut off at 30 characters"
+  },
+  {
+   "url": "http://web.archive.org/web/20190530105907/http://www.classzone.com:80/cz/books/algebra_1_2007_na/chapter_home.htm?cin=3",
+   "what": "publisher companion site (archived): full Chapter 3 title"
+  },
+  {
+   "url": "http://web.archive.org/web/20160417003407/http://www.classzone.com:80/cz/books/algebra_1_2007_na/chapter_home.htm?cin=9",
+   "what": "publisher companion site (archived): full Chapter 9 title"
+  },
+  {
+   "url": "http://web.archive.org/web/20161107031713/http://www.classzone.com:80/cz/books/algebra_1_2007_na/get_chapter_group.htm?cin=1&ci=1&rg=help_with_the_math&at=powerpoint_presentations&var=powerpoint_presentations",
+   "what": "publisher companion site (archived): full Chapter 1 title and its 7 lessons"
+  },
+  {
+   "url": "https://www.lumoslearning.com/llwp/resources/textbook-resources.html?id=450",
+   "what": "third-party resource page for ISBN 978-0618594023 listing all 13 chapter titles"
+  },
+  {
+   "url": "https://gizmos.explorelearning.com/find-gizmos/browse-by-core-curriculum-textbook-gizmos?bookId=550",
+   "what": "ExploreLearning correlation for 'McDougal Littell Algebra 1 (2007)': exact titles of the 52 lessons that have a matching simulation"
+  },
+  {
+   "url": "https://sites.google.com/email.medfield.net/8thgrademath/textbook-information/chapter-1",
+   "what": "school course site (Medfield, MA; chapter-1 through chapter-12 pages): teacher-written lesson lists with page numbers matching the 2007 book"
+  }
+ ],
+ "summary": "The 2007 Larson/Boswell/Kanold/Stiff Algebra 1, with 13 chapters and lessons titled as tasks ('Solve...', 'Graph...', 'Write...'). It runs from expressions, real numbers, and linear equations through graphing and writing linear equations, inequalities, systems, exponents, polynomials and factoring, and quadratics, then radicals, rational functions, and probability and data analysis.",
+ "toc": [
+  {
+   "label": "Chapter 1",
+   "title": "Expressions, Equations, and Functions",
+   "covers": "Evaluating and writing expressions, equations, and inequalities, a problem-solving plan, and functions as rules, tables, and graphs.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "1.1",
+     "title": "Evaluate Algebraic Expressions",
+     "covers": "Evaluating variable expressions and powers by substitution.",
+     "basis": "general"
+    },
+    {
+     "label": "1.2",
+     "title": "Apply Order of Operations",
+     "covers": "Using the order of operations, including grouping symbols and exponents.",
+     "basis": "general"
+    },
+    {
+     "label": "1.3",
+     "title": "Write Expressions",
+     "covers": "Translating verbal phrases into algebraic expressions, including rates and units.",
+     "basis": "general"
+    },
+    {
+     "label": "1.4",
+     "title": "Write Equations and Inequalities",
+     "covers": "Translating sentences into equations and inequalities and checking solutions.",
+     "basis": "general"
+    },
+    {
+     "label": "1.5",
+     "title": "Using a Problem Solving Plan",
+     "covers": "A read, plan, solve, check method for word problems.",
+     "basis": "general"
+    },
+    {
+     "label": "1.6",
+     "title": "Represent Functions as Rules and Tables",
+     "covers": "Domain, range, and function rules shown in input-output tables.",
+     "basis": "general"
+    },
+    {
+     "label": "1.7",
+     "title": "Represent Functions as Graphs",
+     "covers": "Graphing functions from tables and rules and reading graphs.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 2",
+   "title": "Properties of Real Numbers",
+   "covers": "Integers and rational numbers, the four operations on real numbers, the distributive property, and square roots.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "2.1",
+     "title": "Properties of Real Numbers",
+     "covers": "Classifying real numbers, opposites, and absolute value.",
+     "basis": "general"
+    },
+    {
+     "label": "2.2",
+     "title": "Add Real Numbers",
+     "covers": "Adding real numbers and the properties of addition.",
+     "basis": "general"
+    },
+    {
+     "label": "2.3",
+     "title": "Subtract Real Numbers",
+     "covers": "Subtracting real numbers by adding the opposite.",
+     "basis": "general"
+    },
+    {
+     "label": "2.4",
+     "title": "Multiply Real Numbers",
+     "covers": "Multiplying real numbers, sign rules, and properties of multiplication.",
+     "basis": "general"
+    },
+    {
+     "label": "2.5",
+     "title": "Apply the Distributive Property",
+     "covers": "Distributing and combining like terms to simplify expressions.",
+     "basis": "general"
+    },
+    {
+     "label": "2.6",
+     "title": "Divide Real Numbers",
+     "covers": "Dividing real numbers with reciprocals and the sign rules.",
+     "basis": "general"
+    },
+    {
+     "label": "2.7",
+     "title": "Find Square Roots and Compare Real Numbers",
+     "covers": "Square roots, irrational numbers, and ordering real numbers.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 3",
+   "title": "Solving Linear Equations",
+   "covers": "One-step through multi-step linear equations, ratios and proportions, percent problems, and literal equations.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "3.1",
+     "title": "Solve One-Step Equations",
+     "covers": "Solving equations with one inverse operation.",
+     "basis": "general"
+    },
+    {
+     "label": "3.2",
+     "title": "Solve Two-Step Equations",
+     "covers": "Solving equations that need two inverse operations.",
+     "basis": "general"
+    },
+    {
+     "label": "3.3",
+     "title": "Solve Multi-Step Equations",
+     "covers": "Solving equations that need distributing and combining like terms.",
+     "basis": "general"
+    },
+    {
+     "label": "3.4",
+     "title": "Solve Equations with Variables on Both Sides",
+     "covers": "Collecting variables on one side and spotting identities and no-solution equations.",
+     "basis": "general"
+    },
+    {
+     "label": "3.5",
+     "title": "Write Ratios and Proportions",
+     "covers": "Writing ratios and solving proportions with multiplication.",
+     "basis": "general"
+    },
+    {
+     "label": "3.6",
+     "title": "Write and Solve Ratios and Proportions",
+     "covers": "Solving proportions with cross products, including scale drawings.",
+     "basis": "general"
+    },
+    {
+     "label": "3.7",
+     "title": "Solve Percent Problems",
+     "covers": "Using the percent equation to find a part, a whole, or a percent.",
+     "basis": "general"
+    },
+    {
+     "label": "3.8",
+     "title": "Rewrite Equations and Formulas",
+     "covers": "Solving literal equations and formulas for a given variable.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 4",
+   "title": "Graphing Linear Equations and Functions",
+   "covers": "The coordinate plane, graphing lines from tables, intercepts, and slope-intercept form, slope and rate of change, direct variation, and function notation.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "4.1",
+     "title": "Plot Points in a Coordinate Plane",
+     "covers": "Plotting points and identifying quadrants.",
+     "basis": "general"
+    },
+    {
+     "label": "4.2",
+     "title": "Graph Linear Equations",
+     "covers": "Graphing linear equations from a table of values, including horizontal and vertical lines.",
+     "basis": "general"
+    },
+    {
+     "label": "4.3",
+     "title": "Graph Lines Using x and y Intercepts",
+     "covers": "Finding intercepts and using them to graph a line.",
+     "basis": "general"
+    },
+    {
+     "label": "4.4",
+     "title": "Slope and Rate of Change",
+     "covers": "Computing slope from two points and interpreting it as a rate of change.",
+     "basis": "general"
+    },
+    {
+     "label": "4.5",
+     "title": "Graph Using Slope-Intercept Form",
+     "covers": "Graphing y = mx + b and recognizing parallel lines.",
+     "basis": "general"
+    },
+    {
+     "label": "4.6",
+     "title": "Model Direct Variation",
+     "covers": "Writing and graphing direct variation equations y = ax.",
+     "basis": "general"
+    },
+    {
+     "label": "4.7",
+     "title": "Graph Linear Functions",
+     "covers": "Function notation f(x) and graphing linear functions and families of functions.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 5",
+   "title": "Writing Linear Equations",
+   "covers": "Writing equations of lines in slope-intercept, point-slope, and standard form, parallel and perpendicular lines, and linear models from data.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "5.1",
+     "title": "Write Linear Equations in Slope-Intercept Form",
+     "covers": "Writing y = mx + b from a slope and intercept or from a graph.",
+     "basis": "general"
+    },
+    {
+     "label": "5.2",
+     "title": "Use Equations in Slope-Intercept Form",
+     "covers": "Writing slope-intercept equations from a point and slope or from two points.",
+     "basis": "general"
+    },
+    {
+     "label": "5.3",
+     "title": "Write Linear Equations in Point-Slope Form",
+     "covers": "Writing and graphing equations in point-slope form.",
+     "basis": "general"
+    },
+    {
+     "label": "5.4",
+     "title": "Write Linear Equations in Standard Form",
+     "covers": "Writing and converting equations to Ax + By = C.",
+     "basis": "general"
+    },
+    {
+     "label": "5.5",
+     "title": "Write Equations of Parallel and Perpendicular Lines",
+     "covers": "Using equal and opposite-reciprocal slopes to write equations.",
+     "basis": "general"
+    },
+    {
+     "label": "5.6",
+     "title": "Fit a Line to Data",
+     "covers": "Scatter plots, correlation, and drawing a line of fit.",
+     "basis": "general"
+    },
+    {
+     "label": "5.7",
+     "title": "Predict with Linear Models",
+     "covers": "Using lines of fit for interpolation and extrapolation, including best-fit lines.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 6",
+   "title": "Solving and Graphing Linear Inequalities",
+   "covers": "One-step, multi-step, compound, and absolute value inequalities, absolute value equations, and inequalities in two variables.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "6.1",
+     "title": "Solve Inequalities Using Addition and Subtraction",
+     "covers": "Solving and graphing one-step inequalities with addition or subtraction.",
+     "basis": "general"
+    },
+    {
+     "label": "6.2",
+     "title": "Solve Inequalities Using Multiplication and Division",
+     "covers": "Solving inequalities and reversing the sign when multiplying or dividing by a negative.",
+     "basis": "general"
+    },
+    {
+     "label": "6.3",
+     "title": "Solve Multi-Step Inequalities",
+     "covers": "Solving inequalities that take several steps.",
+     "basis": "general"
+    },
+    {
+     "label": "6.4",
+     "title": "Solve Compound Inequalities",
+     "covers": "Solving and graphing 'and' and 'or' inequalities.",
+     "basis": "general"
+    },
+    {
+     "label": "6.5",
+     "title": "Solve Absolute Value Equations",
+     "covers": "Solving equations with absolute value by splitting into two cases.",
+     "basis": "general"
+    },
+    {
+     "label": "6.6",
+     "title": "Solve Absolute Value Inequalities",
+     "covers": "Rewriting absolute value inequalities as compound inequalities.",
+     "basis": "general"
+    },
+    {
+     "label": "6.7",
+     "title": "Graph Linear Inequalities in Two Variables",
+     "covers": "Graphing half-planes with boundary lines and test points.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 7",
+   "title": "Systems of Equations and Inequalities",
+   "covers": "Solving linear systems by graphing, substitution, and elimination, special systems, and systems of inequalities.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "7.1",
+     "title": "Solve Linear Systems by Graphing",
+     "covers": "Finding the intersection of two lines by graphing.",
+     "basis": "general"
+    },
+    {
+     "label": "7.2",
+     "title": "Solving Systems of Equations by Substitution",
+     "covers": "Solving a system by substituting one equation into the other.",
+     "basis": "general"
+    },
+    {
+     "label": "7.3",
+     "title": "Solve Linear Systems by Adding or Subtracting",
+     "covers": "Eliminating a variable by adding or subtracting the equations.",
+     "basis": "general"
+    },
+    {
+     "label": "7.4",
+     "title": "Solving Systems of Equations by Multiplying (Elimination)",
+     "covers": "Multiplying one or both equations before eliminating a variable.",
+     "basis": "general"
+    },
+    {
+     "label": "7.5",
+     "title": "Solve Special Types of Linear Systems",
+     "covers": "Recognizing systems with no solution or infinitely many solutions.",
+     "basis": "general"
+    },
+    {
+     "label": "7.6",
+     "title": "Solve Systems of Linear Inequalities",
+     "covers": "Graphing systems of inequalities and identifying the solution region.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 8",
+   "title": "Exponents and Exponential Functions",
+   "covers": "Exponent properties, zero and negative exponents, scientific notation, and exponential growth and decay.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "8.1",
+     "title": "Apply Exponent Properties Involving Products",
+     "covers": "Product of powers, power of a power, and power of a product.",
+     "basis": "general"
+    },
+    {
+     "label": "8.2",
+     "title": "Apply Exponent Properties Involving Quotients",
+     "covers": "Quotient of powers and power of a quotient.",
+     "basis": "general"
+    },
+    {
+     "label": "8.3",
+     "title": "Zero and Negative Exponents",
+     "covers": "Defining and simplifying with zero and negative exponents.",
+     "basis": "general"
+    },
+    {
+     "label": "8.4",
+     "title": "Scientific Notation",
+     "covers": "Writing and computing with numbers in scientific notation.",
+     "basis": "general"
+    },
+    {
+     "label": "8.5",
+     "title": "Write and Graph Exponential Growth Functions",
+     "covers": "Modeling growth with y = a(1 + r)^t and graphing it.",
+     "basis": "general"
+    },
+    {
+     "label": "8.6",
+     "title": "Write and Graph Exponential Decay Functions",
+     "covers": "Modeling decay with y = a(1 - r)^t and graphing it.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 9",
+   "title": "Polynomials and Factoring",
+   "covers": "Polynomial operations, special products, and factoring by GCF, trinomial patterns, special products, and grouping to solve equations.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "9.1",
+     "title": "Add and Subtract Polynomials",
+     "covers": "Classifying polynomials and adding and subtracting them.",
+     "basis": "general"
+    },
+    {
+     "label": "9.2",
+     "title": "Multiply Polynomials",
+     "covers": "Multiplying polynomials with distribution, tables, and FOIL.",
+     "basis": "general"
+    },
+    {
+     "label": "9.3",
+     "title": "Special Products",
+     "covers": "Square-of-a-binomial and sum-and-difference patterns.",
+     "basis": "general"
+    },
+    {
+     "label": "9.4",
+     "title": "Solve Polynomial Equations in Factored Form",
+     "covers": "Using the zero-product property and factoring out a GCF to solve equations.",
+     "basis": "general"
+    },
+    {
+     "label": "9.5",
+     "title": "Factor x^2 + bx + c",
+     "covers": "Factoring trinomials with leading coefficient 1 and solving the equations.",
+     "basis": "general"
+    },
+    {
+     "label": "9.6",
+     "title": "Factor ax^2 + bx + c",
+     "covers": "Factoring trinomials with leading coefficient other than 1.",
+     "basis": "general"
+    },
+    {
+     "label": "9.7",
+     "title": "Factor Special Products",
+     "covers": "Factoring differences of squares and perfect square trinomials.",
+     "basis": "general"
+    },
+    {
+     "label": "9.8",
+     "title": "Factor Polynomials Completely",
+     "covers": "Factoring by grouping and factoring completely.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 10",
+   "title": "Quadratic Equations and Functions",
+   "covers": "Graphing parabolas and solving quadratic equations by graphing, square roots, completing the square, and the quadratic formula.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "10.1",
+     "title": "Graph y = ax^2 + c",
+     "covers": "Graphing simple parabolas and describing stretches and shifts.",
+     "basis": "general"
+    },
+    {
+     "label": "10.2",
+     "title": "Graph y = ax^2 + bx + c",
+     "covers": "Finding the axis of symmetry and vertex and graphing general quadratics.",
+     "basis": "general"
+    },
+    {
+     "label": "10.3",
+     "title": "Solve Quadratic Equations by Graphing",
+     "covers": "Reading solutions as x-intercepts of a parabola.",
+     "basis": "general"
+    },
+    {
+     "label": "10.4",
+     "title": "Solve Quadratic Equations Using Square Roots",
+     "covers": "Solving ax^2 + c = 0 by taking square roots.",
+     "basis": "general"
+    },
+    {
+     "label": "10.5",
+     "title": "Solve Quadratic Equations by Completing the Square",
+     "covers": "Completing the square to solve quadratics.",
+     "basis": "general"
+    },
+    {
+     "label": "10.6",
+     "title": "Solve Quadratic Equations by the Quadratic Formula",
+     "covers": "Using the quadratic formula.",
+     "basis": "general"
+    },
+    {
+     "label": "10.7",
+     "title": "Interpret the Discriminant",
+     "covers": "Using the discriminant to count real solutions.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 11",
+   "title": "Radicals and Geometry Connections",
+   "covers": "Square-root functions, simplifying radicals, the Pythagorean Theorem, and the distance and midpoint formulas.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "11.1",
+     "title": "Graph Square Root Functions",
+     "covers": "Graphing y = a√x and its translations and finding domain and range.",
+     "basis": "general"
+    },
+    {
+     "label": "11.2",
+     "title": "Simplify Radical Expressions",
+     "covers": "Simplifying radicals, rationalizing denominators, and radical arithmetic.",
+     "basis": "general"
+    },
+    {
+     "label": "11.4",
+     "title": "Apply the Pythagorean Theorem and Its Converse",
+     "covers": "Finding right-triangle side lengths and testing for right triangles.",
+     "basis": "general"
+    },
+    {
+     "label": "11.5",
+     "title": "Apply the Distance and Midpoint Formulas",
+     "covers": "Finding distances and midpoints on the coordinate plane.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 12",
+   "title": "Rational Equations and Functions",
+   "covers": "Inverse variation, rational functions, and polynomial division; the later lessons on rational expressions and equations were not found.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "12.1",
+     "title": "Model Inverse Variation",
+     "covers": "Writing and graphing inverse variation equations y = a/x.",
+     "basis": "general"
+    },
+    {
+     "label": "12.2",
+     "title": "Graph Rational Functions",
+     "covers": "Graphing rational functions and their asymptotes.",
+     "basis": "general"
+    },
+    {
+     "label": "12.3",
+     "title": "Divide Polynomials",
+     "covers": "Dividing polynomials by monomials and binomials.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 13",
+   "title": "Probability and Data Analysis",
+   "covers": "Counting, probability, and data displays and statistics; no lesson list was found.",
+   "basis": "general"
+  }
+ ],
+ "notes": "Partial lesson coverage: no source fetched gave the whole table of contents. Chapter titles join the archived ClassZone chapter list, which cuts titles at 30 characters (full only for Chapters 1, 3, and 9), with the Lumos list, which prints all 13 but writes '&' for 'and' (Lumos says 'Systems of Linear Equations & Inequalities' for Chapter 7; ClassZone's 'Systems of Equations an...' was followed). Lesson titles from the ExploreLearning 2007 correlation are exact: 1.2-1.4, 1.6-1.7, 2.2, 2.7, 3.1-3.2, 3.5, 3.7-3.8, 4.1-4.2, 4.5-4.7, 5.1, 5.3-5.4, 5.6-5.7, 6.1-6.2, 6.4, 6.6-6.7, 7.1, 7.3, 7.5-7.6, 8.1-8.2, 8.5-8.6, 9.1, 9.4-9.7, 10.1-10.3, 10.6, 11.1-11.2, 11.4-11.5, and 12.1-12.3. All other lesson titles are in a Medfield teacher's own wording and may differ from the book. The likeliest mismatches: 2.1 (topic is integers and rational numbers, not properties), 3.6 (the teacher repeated 3.5's label), 4.3, 4.4, 7.2, and 7.4. Missing lessons: 11.3, 12.4 onward, all of Chapter 13, and any 8.7, 9.9, or 10.8. The Medfield page numbers (for example 7.1 on pp. 430-433) fit the 2007 national edition. Of the work-list ISBNs, Open Library lists 9780618595563 as the Teacher's Edition; 9780618887637 and 9780618887743 could not be resolved to a specific printing. Descriptions are from general knowledge of the topics."
+}

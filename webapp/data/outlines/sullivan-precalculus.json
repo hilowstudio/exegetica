@@ -1,0 +1,796 @@
+{
+ "key": "sullivan-precalculus",
+ "title": "Precalculus: Concepts Through Functions, A Unit Circle Approach to Trigonometry",
+ "authors": [
+  "Michael Sullivan",
+  "Michael Sullivan III"
+ ],
+ "publisher": "Pearson (Prentice Hall)",
+ "edition": "2nd edition, 2010",
+ "grade": "Precalculus (grades 11-12; also used in college)",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.ecampus.com/precalculus-concepts-through-functions/bk/9780321644879",
+   "what": "retailer listing for ISBN 9780321644879 that prints the full table of contents"
+  },
+  {
+   "url": "https://www.abebooks.com/9780321644879/Precalculus-Concepts-Functions-Unit-Circle-0321644875/plp",
+   "what": "retailer listing confirming title, 2nd edition, both authors, Pearson 2010"
+  }
+ ],
+ "summary": "A function-centered precalculus text that introduces a new family of functions in each chapter and teaches trigonometry from the unit circle before right triangles. It runs from a foundations chapter on graphs and lines through linear, quadratic, polynomial, rational, exponential, logarithmic, and trigonometric functions to polar coordinates, vectors, conics, systems and matrices, sequences, probability, and a closing preview of limits, derivatives, and integrals. Two appendices review algebra essentials and graphing-calculator use.",
+ "toc": [
+  {
+   "label": "Chapter F",
+   "title": "Foundations: A Prelude to Functions",
+   "covers": "Coordinate-plane groundwork: distance and midpoint, graphs of equations, lines, and circles.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "F.1",
+     "title": "The Distance and Midpoint Formulas",
+     "covers": "Finding the distance between two points and the midpoint of a segment.",
+     "basis": "general"
+    },
+    {
+     "label": "F.2",
+     "title": "Graphs of Equations in Two Variables; Intercepts; Symmetry",
+     "covers": "Graphing equations by plotting points and finding intercepts and symmetry.",
+     "basis": "general"
+    },
+    {
+     "label": "F.3",
+     "title": "Lines",
+     "covers": "Slope, point-slope, slope-intercept, and general forms, and parallel and perpendicular lines.",
+     "basis": "general"
+    },
+    {
+     "label": "F.4",
+     "title": "Circles",
+     "covers": "Standard and general equations of circles and graphing them.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 1",
+   "title": "Functions and Their Graphs",
+   "covers": "Function definition and notation, graphs and their properties, a library of basic functions, transformations, and modeling.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "1.1",
+     "title": "Functions",
+     "covers": "Function notation, domain, and operations on functions.",
+     "basis": "general"
+    },
+    {
+     "label": "1.2",
+     "title": "The Graph of a Function",
+     "covers": "Reading function values, intercepts, and domain from graphs; the vertical-line test.",
+     "basis": "general"
+    },
+    {
+     "label": "1.3",
+     "title": "Properties of Functions",
+     "covers": "Even and odd functions, increasing and decreasing intervals, local extrema, and average rate of change.",
+     "basis": "general"
+    },
+    {
+     "label": "1.4",
+     "title": "Library of Functions; Piecewise-defined Functions",
+     "covers": "Graphs of the basic parent functions and piecewise-defined functions.",
+     "basis": "general"
+    },
+    {
+     "label": "1.5",
+     "title": "Graphing Techniques: Transformations",
+     "covers": "Shifts, reflections, and compressions and stretches of graphs.",
+     "basis": "general"
+    },
+    {
+     "label": "1.6",
+     "title": "Mathematical Models: Constructing Functions",
+     "covers": "Building functions from verbal descriptions and geometric situations.",
+     "basis": "general"
+    },
+    {
+     "label": "1.7",
+     "title": "Building Mathematical Models Using Variation",
+     "covers": "Direct, inverse, joint, and combined variation models.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 2",
+   "title": "Linear and Quadratic Functions",
+   "covers": "Linear and quadratic functions, their zeros and properties, inequalities, data models, complex zeros, and absolute value.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "2.1",
+     "title": "Properties of Linear Functions and Linear Models",
+     "covers": "Slope as average rate of change and linear models in context.",
+     "basis": "general"
+    },
+    {
+     "label": "2.2",
+     "title": "Building Linear Models from Data",
+     "covers": "Scatter plots and lines of best fit.",
+     "basis": "general"
+    },
+    {
+     "label": "2.3",
+     "title": "Quadratic Functions and Their Zeros",
+     "covers": "Finding zeros by factoring, square roots, completing the square, and the quadratic formula.",
+     "basis": "general"
+    },
+    {
+     "label": "2.4",
+     "title": "Properties of Quadratic Functions",
+     "covers": "Vertex, axis of symmetry, intercepts, and maximum or minimum values of parabolas.",
+     "basis": "general"
+    },
+    {
+     "label": "2.5",
+     "title": "Inequalities Involving Quadratic Functions",
+     "covers": "Solving quadratic inequalities graphically and algebraically.",
+     "basis": "general"
+    },
+    {
+     "label": "2.6",
+     "title": "Building Quadratic Models from Verbal Descriptions and from Data",
+     "covers": "Writing quadratic models from context and fitting them to data.",
+     "basis": "general"
+    },
+    {
+     "label": "2.7",
+     "title": "Complex Zeros of a Quadratic Function",
+     "covers": "Finding complex zeros when the discriminant is negative.",
+     "basis": "general"
+    },
+    {
+     "label": "2.8",
+     "title": "Equations and Inequalities Involving the Absolute Value Function",
+     "covers": "Solving absolute value equations and inequalities.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 3",
+   "title": "Polynomial and Rational Functions",
+   "covers": "Graphs and zeros of polynomial functions, rational functions and their asymptotes, and polynomial and rational inequalities.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "3.1",
+     "title": "Polynomial Functions and Models",
+     "covers": "End behavior, zeros and multiplicity, turning points, and graphing polynomials.",
+     "basis": "general"
+    },
+    {
+     "label": "3.2",
+     "title": "Properties of Rational Functions",
+     "covers": "Domain and vertical, horizontal, and oblique asymptotes.",
+     "basis": "general"
+    },
+    {
+     "label": "3.3",
+     "title": "The Graph of a Rational Function",
+     "covers": "Sketching rational functions from intercepts, asymptotes, and holes.",
+     "basis": "general"
+    },
+    {
+     "label": "3.4",
+     "title": "Polynomial and Rational Inequalities",
+     "covers": "Solving inequalities with sign charts.",
+     "basis": "general"
+    },
+    {
+     "label": "3.5",
+     "title": "The Real Zeros of a Polynomial Function",
+     "covers": "Remainder and Factor Theorems, the Rational Zeros Theorem, and bounds on zeros.",
+     "basis": "general"
+    },
+    {
+     "label": "3.6",
+     "title": "Complex Zeros; Fundamental Theorem of Algebra",
+     "covers": "Conjugate pairs and factoring polynomials over the complex numbers.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 4",
+   "title": "Exponential and Logarithmic Functions",
+   "covers": "Composition and inverses, exponential and logarithmic functions and equations, finance, growth and decay, and data models.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "4.1",
+     "title": "Composite Functions",
+     "covers": "Forming and evaluating compositions and finding their domains.",
+     "basis": "general"
+    },
+    {
+     "label": "4.2",
+     "title": "One-to-One Functions; Inverse Functions",
+     "covers": "Testing for one-to-one functions and finding inverses algebraically and graphically.",
+     "basis": "general"
+    },
+    {
+     "label": "4.3",
+     "title": "Exponential Functions",
+     "covers": "Graphs and properties of exponential functions and the number e.",
+     "basis": "general"
+    },
+    {
+     "label": "4.4",
+     "title": "Logarithmic Functions",
+     "covers": "Logarithms as inverses of exponentials, their graphs, and domains.",
+     "basis": "general"
+    },
+    {
+     "label": "4.5",
+     "title": "Properties of Logarithms",
+     "covers": "Product, quotient, and power rules and change of base.",
+     "basis": "general"
+    },
+    {
+     "label": "4.6",
+     "title": "Logarithmic and Exponential Equations",
+     "covers": "Solving exponential and logarithmic equations.",
+     "basis": "general"
+    },
+    {
+     "label": "4.7",
+     "title": "Compound Interest",
+     "covers": "Compound and continuous interest, present value, and effective rate.",
+     "basis": "general"
+    },
+    {
+     "label": "4.8",
+     "title": "Exponential Growth and Decay; Newton's Law; Logistic Growth and Decay",
+     "covers": "Growth and decay models, Newton's Law of Cooling, and logistic models.",
+     "basis": "general"
+    },
+    {
+     "label": "4.9",
+     "title": "Building Exponential, Logarithmic, and Logistic Functions from Data",
+     "covers": "Fitting exponential, logarithmic, and logistic models to data.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 5",
+   "title": "Trigonometric Functions",
+   "covers": "Angles and radian measure, trigonometric functions defined on the unit circle, their properties and graphs, and sinusoidal modeling.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "5.1",
+     "title": "Angles and Their Measure",
+     "covers": "Degree and radian measure, arc length, and angular speed.",
+     "basis": "general"
+    },
+    {
+     "label": "5.2",
+     "title": "Trigonometric Functions: Unit Circle Approach",
+     "covers": "Defining the six trigonometric functions from points on the unit circle and exact values.",
+     "basis": "page"
+    },
+    {
+     "label": "5.3",
+     "title": "Properties of the Trigonometric Functions",
+     "covers": "Domain, range, period, signs by quadrant, and fundamental identities.",
+     "basis": "general"
+    },
+    {
+     "label": "5.4",
+     "title": "Graphs of the Sine and Cosine Functions",
+     "covers": "Graphing sinusoids with amplitude and period.",
+     "basis": "general"
+    },
+    {
+     "label": "5.5",
+     "title": "Graphs of the Tangent, Cotangent, Cosecant, and Secant Functions",
+     "covers": "Graphs and asymptotes of the other four trigonometric functions.",
+     "basis": "general"
+    },
+    {
+     "label": "5.6",
+     "title": "Phase Shift; Sinusoidal Curve Fitting",
+     "covers": "Phase shift and fitting sinusoidal models to data.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 6",
+   "title": "Analytic Trigonometry",
+   "covers": "Inverse trigonometric functions, identities, sum, difference, double- and half-angle formulas, and trigonometric equations.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "6.1",
+     "title": "The Inverse Sine, Cosine, and Tangent Functions",
+     "covers": "Restricted domains and exact values of arcsin, arccos, and arctan.",
+     "basis": "general"
+    },
+    {
+     "label": "6.2",
+     "title": "The Inverse Trigonometric Functions (Continued)",
+     "covers": "Inverse secant, cosecant, and cotangent and compositions with inverse functions.",
+     "basis": "general"
+    },
+    {
+     "label": "6.3",
+     "title": "Trigonometric Identities",
+     "covers": "Proving identities with algebra and fundamental identities.",
+     "basis": "general"
+    },
+    {
+     "label": "6.4",
+     "title": "Sum and Difference Formulas",
+     "covers": "Sum and difference formulas for sine, cosine, and tangent.",
+     "basis": "general"
+    },
+    {
+     "label": "6.5",
+     "title": "Double-angle and Half-angle Formulas",
+     "covers": "Double-angle and half-angle formulas and their uses.",
+     "basis": "general"
+    },
+    {
+     "label": "6.6",
+     "title": "Product-to-Sum and Sum-to-Product Formulas",
+     "covers": "Converting between products and sums of sines and cosines.",
+     "basis": "general"
+    },
+    {
+     "label": "6.7",
+     "title": "Trigonometric Equations",
+     "covers": "Solving trigonometric equations on an interval and in general.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 7",
+   "title": "Applications of Trigonometric Functions",
+   "covers": "Right-triangle trigonometry, the Laws of Sines and Cosines, triangle area, and harmonic motion.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "7.1",
+     "title": "Applications Involving Right Triangles",
+     "covers": "Solving right triangles, including angle-of-elevation problems.",
+     "basis": "general"
+    },
+    {
+     "label": "7.2",
+     "title": "The Law of Sines",
+     "covers": "Solving oblique triangles with the Law of Sines and the ambiguous case.",
+     "basis": "general"
+    },
+    {
+     "label": "7.3",
+     "title": "The Law of Cosines",
+     "covers": "Solving oblique triangles with the Law of Cosines.",
+     "basis": "general"
+    },
+    {
+     "label": "7.4",
+     "title": "Area of a Triangle",
+     "covers": "Triangle area from two sides and the included angle, and Heron's formula.",
+     "basis": "general"
+    },
+    {
+     "label": "7.5",
+     "title": "Simple Harmonic Motion; Damped Motion; Combining Waves",
+     "covers": "Modeling oscillation, damped motion, and sums of waves.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 8",
+   "title": "Polar Coordinates; Vectors",
+   "covers": "Polar coordinates and graphs, complex numbers in polar form, and vectors in the plane and in space.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "8.1",
+     "title": "Polar Coordinates",
+     "covers": "Plotting points in polar form and converting to and from rectangular coordinates.",
+     "basis": "general"
+    },
+    {
+     "label": "8.2",
+     "title": "Polar Equations and Graphs",
+     "covers": "Graphing polar equations such as roses, cardioids, and limaçons.",
+     "basis": "general"
+    },
+    {
+     "label": "8.3",
+     "title": "The Complex Plane; DeMoivre's Theorem",
+     "covers": "Polar form of complex numbers, products and quotients, powers, and roots.",
+     "basis": "general"
+    },
+    {
+     "label": "8.4",
+     "title": "Vectors",
+     "covers": "Vector operations, magnitude, unit vectors, and applications such as force.",
+     "basis": "general"
+    },
+    {
+     "label": "8.5",
+     "title": "The Dot Product",
+     "covers": "The dot product, angles between vectors, projections, and work.",
+     "basis": "general"
+    },
+    {
+     "label": "8.6",
+     "title": "Vectors in Space",
+     "covers": "Three-dimensional coordinates and vectors.",
+     "basis": "general"
+    },
+    {
+     "label": "8.7",
+     "title": "The Cross Product",
+     "covers": "Computing cross products and using them for orthogonal vectors and area.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 9",
+   "title": "Analytic Geometry",
+   "covers": "The conic sections, rotation of axes, polar equations of conics, and parametric equations.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "9.1",
+     "title": "Conics",
+     "covers": "Conics as slices of a double cone.",
+     "basis": "general"
+    },
+    {
+     "label": "9.2",
+     "title": "The Parabola",
+     "covers": "Equations and graphs of parabolas with focus and directrix.",
+     "basis": "general"
+    },
+    {
+     "label": "9.3",
+     "title": "The Ellipse",
+     "covers": "Equations and graphs of ellipses with foci and vertices.",
+     "basis": "general"
+    },
+    {
+     "label": "9.4",
+     "title": "The Hyperbola",
+     "covers": "Equations and graphs of hyperbolas with foci and asymptotes.",
+     "basis": "general"
+    },
+    {
+     "label": "9.5",
+     "title": "Rotation of Axes; General Form of a Conic",
+     "covers": "Removing the xy-term by rotating axes and identifying conics by the discriminant.",
+     "basis": "general"
+    },
+    {
+     "label": "9.6",
+     "title": "Polar Equations of Conics",
+     "covers": "Writing and graphing conics in polar form using eccentricity.",
+     "basis": "general"
+    },
+    {
+     "label": "9.7",
+     "title": "Plane Curves and Parametric Equations",
+     "covers": "Graphing parametric curves and converting to rectangular form.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 10",
+   "title": "Systems of Equations and Inequalities",
+   "covers": "Linear systems by substitution, elimination, matrices, and determinants; matrix algebra; partial fractions; nonlinear systems; inequalities; and linear programming.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "10.1",
+     "title": "Systems of Linear Equations: Substitution and Elimination",
+     "covers": "Solving two- and three-variable linear systems.",
+     "basis": "general"
+    },
+    {
+     "label": "10.2",
+     "title": "Systems of Linear Equations: Matrices",
+     "covers": "Solving systems by row reduction of augmented matrices.",
+     "basis": "general"
+    },
+    {
+     "label": "10.3",
+     "title": "Systems of Linear Equations: Determinants",
+     "covers": "Determinants and Cramer's Rule.",
+     "basis": "general"
+    },
+    {
+     "label": "10.4",
+     "title": "Matrix Algebra",
+     "covers": "Matrix operations, inverses, and solving systems with inverse matrices.",
+     "basis": "general"
+    },
+    {
+     "label": "10.5",
+     "title": "Partial Fraction Decomposition",
+     "covers": "Splitting rational expressions into partial fractions.",
+     "basis": "general"
+    },
+    {
+     "label": "10.6",
+     "title": "Systems of Nonlinear Equations",
+     "covers": "Solving nonlinear systems algebraically and graphically.",
+     "basis": "general"
+    },
+    {
+     "label": "10.7",
+     "title": "Systems of Inequalities",
+     "covers": "Graphing systems of inequalities in two variables.",
+     "basis": "general"
+    },
+    {
+     "label": "10.8",
+     "title": "Linear Programming",
+     "covers": "Optimizing a linear objective over a feasible region.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 11",
+   "title": "Sequences; Induction; the Binomial Theorem",
+   "covers": "Sequences and series, arithmetic and geometric patterns, proof by induction, and binomial expansion.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "11.1",
+     "title": "Sequences",
+     "covers": "Explicit and recursive sequences and summation notation.",
+     "basis": "general"
+    },
+    {
+     "label": "11.2",
+     "title": "Arithmetic Sequences",
+     "covers": "General terms and sums of arithmetic sequences.",
+     "basis": "general"
+    },
+    {
+     "label": "11.3",
+     "title": "Geometric Sequences; Geometric Series",
+     "covers": "General terms, finite sums, and infinite geometric series.",
+     "basis": "general"
+    },
+    {
+     "label": "11.4",
+     "title": "Mathematical Induction",
+     "covers": "Proving statements about natural numbers by induction.",
+     "basis": "general"
+    },
+    {
+     "label": "11.5",
+     "title": "The Binomial Theorem",
+     "covers": "Expanding binomials with binomial coefficients and Pascal's triangle.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 12",
+   "title": "Counting and Probability",
+   "covers": "Counting principles, permutations and combinations, and basic probability.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "12.1",
+     "title": "Counting",
+     "covers": "Sets, Venn diagrams, and the multiplication principle.",
+     "basis": "general"
+    },
+    {
+     "label": "12.2",
+     "title": "Permutations and Combinations",
+     "covers": "Counting arrangements and selections.",
+     "basis": "general"
+    },
+    {
+     "label": "12.3",
+     "title": "Probability",
+     "covers": "Probability models, complements, and the addition rule.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 13",
+   "title": "A Preview of Calculus: The Limit; Derivative, and Integral of a Function",
+   "covers": "Intuitive limits, continuity, the derivative as tangent slope, and the integral as area.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "13.1",
+     "title": "Finding Limits Using Tables and Graphs",
+     "covers": "Estimating limits numerically and graphically.",
+     "basis": "general"
+    },
+    {
+     "label": "13.2",
+     "title": "Algebra Techniques for Finding Limits",
+     "covers": "Limit properties and algebraic evaluation of limits.",
+     "basis": "general"
+    },
+    {
+     "label": "13.3",
+     "title": "One-sided Limits; Continuous Functions",
+     "covers": "One-sided limits and testing functions for continuity.",
+     "basis": "general"
+    },
+    {
+     "label": "13.4",
+     "title": "The Tangent Problem; The Derivative",
+     "covers": "Tangent-line slope as a limit and the derivative.",
+     "basis": "general"
+    },
+    {
+     "label": "13.5",
+     "title": "The Area Problem; The Integral",
+     "covers": "Approximating area under a curve and defining the integral.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Appendix A",
+   "title": "Review",
+   "covers": "Algebra and geometry essentials assumed by the course, from exponents and factoring to inequalities and complex numbers.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "A.1",
+     "title": "Algebra Essentials",
+     "covers": "Real numbers, the number line, exponents, and order of operations.",
+     "basis": "general"
+    },
+    {
+     "label": "A.2",
+     "title": "Geometry Essentials",
+     "covers": "Pythagorean Theorem, geometry formulas, and similar triangles.",
+     "basis": "general"
+    },
+    {
+     "label": "A.3",
+     "title": "Polynomials",
+     "covers": "Adding, subtracting, multiplying, and dividing polynomials.",
+     "basis": "general"
+    },
+    {
+     "label": "A.4",
+     "title": "Factoring Polynomials",
+     "covers": "Common factoring patterns and factoring trinomials.",
+     "basis": "general"
+    },
+    {
+     "label": "A.5",
+     "title": "Synthetic Division",
+     "covers": "Dividing a polynomial by x - c with synthetic division.",
+     "basis": "general"
+    },
+    {
+     "label": "A.6",
+     "title": "Rational Expressions",
+     "covers": "Simplifying and operating on rational expressions.",
+     "basis": "general"
+    },
+    {
+     "label": "A.7",
+     "title": "nth Roots; Rational Exponents",
+     "covers": "Simplifying radicals and rational exponents.",
+     "basis": "general"
+    },
+    {
+     "label": "A.8",
+     "title": "Solving Equations",
+     "covers": "Linear, quadratic, radical, and other equations.",
+     "basis": "general"
+    },
+    {
+     "label": "A.9",
+     "title": "Problem Solving: Interest, Mixture, Uniform Motion, Constant Rate Jobs",
+     "covers": "Setting up and solving classic applied word problems.",
+     "basis": "page"
+    },
+    {
+     "label": "A.10",
+     "title": "Interval Notation; Solving Inequalities",
+     "covers": "Interval notation and solving linear inequalities.",
+     "basis": "general"
+    },
+    {
+     "label": "A.11",
+     "title": "Complex Numbers",
+     "covers": "Arithmetic with complex numbers and quadratics with complex solutions.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Appendix B",
+   "title": "Graphing Utilities",
+   "covers": "Using a graphing calculator to graph, solve, and check work across the course.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "B.1",
+     "title": "The Viewing Rectangle",
+     "covers": "Setting window dimensions.",
+     "basis": "general"
+    },
+    {
+     "label": "B.2",
+     "title": "Using a Graphing Utility to Graph Equations",
+     "covers": "Entering and graphing equations.",
+     "basis": "general"
+    },
+    {
+     "label": "B.3",
+     "title": "Using a Graphing Utility to Locate Intercepts and Check for Symmetry",
+     "covers": "Finding intercepts and checking symmetry on a calculator.",
+     "basis": "general"
+    },
+    {
+     "label": "B.4",
+     "title": "Using a Graphing Utility to Solve Equations",
+     "covers": "Solving equations with zero and intersect features.",
+     "basis": "general"
+    },
+    {
+     "label": "B.5",
+     "title": "Square Screens",
+     "covers": "Setting a square window so graphs are not distorted.",
+     "basis": "general"
+    },
+    {
+     "label": "B.6",
+     "title": "Using a Graphing Utility to Graph Inequalities",
+     "covers": "Shading inequality regions.",
+     "basis": "general"
+    },
+    {
+     "label": "B.7",
+     "title": "Using a Graphing Utility to Solve Systems of Linear Equations",
+     "covers": "Solving systems by graph or matrix features.",
+     "basis": "general"
+    },
+    {
+     "label": "B.8",
+     "title": "Using a Graphing Utility to Graph a Polar Equation",
+     "covers": "Graphing in polar mode.",
+     "basis": "general"
+    },
+    {
+     "label": "B.9",
+     "title": "Using a Graphing Utility to Graph Parametric Equations",
+     "covers": "Graphing in parametric mode.",
+     "basis": "general"
+    }
+   ]
+  }
+ ],
+ "notes": "ISBN 9780321644879 is not Sullivan's standard 'Precalculus' (9th edition, 2012, ISBN 9780321716835); it is the 2nd edition of the 'Concepts Through Functions, A Unit Circle Approach to Trigonometry' book, co-authored by Michael Sullivan III. Its order differs from the classic Sullivan text: functions come first, and trigonometry is defined on the unit circle before right-triangle applications (Chapter 7). Every chapter after Chapter F ends with a Chapter Review, Chapter Test, and Chapter Projects, and Chapters 2-13 add a Cumulative Review. Section descriptions are mostly from general knowledge of the topics; the source lists titles only."
+}

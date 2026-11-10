@@ -636,14 +636,180 @@ def build_task(format_id: str, objectives: list[dict], grade_band: str,
     return "\n".join(lines)
 
 
+_VANTAGE = [
+    "  - Ask only about what is knowable from the covered sections.",
+    "  - Honor the reader's current understanding: an appearance is only an appearance, not a later "
+    "revelation (keep dramatic irony intact).",
+    "  - Reveal nothing from beyond the covered sections anywhere in student-facing content.",
+]
+
+
+def _objective_lines(objectives: list[dict]) -> list[str]:
+    """Each picked objective with its grade, complexity and anchors (the old standards path dropped
+    the anchors on the way from the page, so the model never saw them)."""
+    lines = ["Target learning objective(s): teach or assess exactly these, matching each verb and "
+             "cognitive level:"]
+    for o in objectives:
+        meta = f" (grade {o.get('g')}, complexity {o.get('c')})" if o.get("g") is not None else ""
+        where = f" [{o['path']}]" if o.get("path") else ""
+        lines.append(f"  - [{o.get('id')}] {o.get('t') or ''}{meta}{where}")
+        anc = o.get("a") or {}
+        parts = [f"{label} " + "; ".join(anc[k]) for k, label in
+                 (("scripture", "Scripture"), ("confessions", "Confession"), ("greek", "Original-language"),
+                  ("standards", "Aligned standard")) if anc.get(k)]
+        if parts:
+            lines.append(f"      · Ground in: {' | '.join(parts)}")
+    if any((o.get("a") or {}).get(k) for o in objectives for k in ("scripture", "confessions", "greek")):
+        lines.append("For each Scripture or confession anchor, quote it from the study-bible tools; never "
+                     "from memory.")
+    return lines
+
+
+def _book_material(m: dict) -> list[str]:
+    book, cov_desc = m["book"], m["cov_desc"]
+    head = f'"{book["title"]}"' + (f' by {book["author"]}' if book.get("author") else "")
+    lines = ["", f"=== BOOK: {head} ==="]
+    if m.get("positioned"):
+        lines += [f"The students have read {cov_desc} and not beyond. Calibrate every student-facing item "
+                  "to that vantage:", *_VANTAGE,
+                  "Use your understanding of the whole work to judge what is significant in the covered "
+                  "sections; the resource must land exactly where the students are."]
+    if m["mode"] == "whole":
+        lines.append("Full text follows; covered sections are marked »»» COVERED »»».")
+        for c in m["chapters"]:
+            mark = " »»» COVERED »»»" if c["n"] in m["covered"] else ""
+            lines.append(f"\n[{_ch_label(c, c['n'])}]{mark}\n{c['text']}")
+    else:
+        comp = m.get("comp") or {}
+        lines.append("This is a large work: a whole-work understanding, then the covered text.")
+        lines.append("Summary: " + (comp.get("summary") or ""))
+        arc = "; ".join(f'{a.get("title", "")} ({a.get("span", "")}): {a.get("what_happens", "")}'
+                        for a in comp.get("arc", []))
+        themes = "; ".join(f'{t.get("name", "")}: {t.get("arc", "")}' for t in comp.get("themes", []))
+        if arc:
+            lines.append("Arc: " + arc)
+        if themes:
+            lines.append("Themes: " + themes)
+        if m.get("recap"):
+            lines += ["The story so far (to the start of the covered range): " + m["recap"]]
+        kind = "selected relevant passages" if m.get("retrieved") else "full text"
+        lines.append(f"--- Covered text ({kind}; {cov_desc}) ---")
+        lines += [f'\n[{_ch_label({"title": t}, n)}]\n{txt}' for n, t, txt in m["covered_text"]]
+    return lines
+
+
+def _outline_material(m: dict) -> list[str]:
+    w = m["work"]
+    by = ", ".join(w.get("authors") or [])
+    lines = ["", f'=== OUTLINE ONLY: "{w["title"]}"' + (f" by {by}" if by else "")
+             + (f' ({w.get("publisher")}, {w.get("edition")})' if w.get("publisher") else "") + " ===",
+             "Exegetica does not have this book's text yet. Below are its table of contents and short "
+             "descriptions of what each part covers. Use them and your general knowledge of the subject. "
+             "Do not quote the book, cite its page numbers, or claim to know its exact wording, examples or "
+             "exercises; where the resource needs the book's own words, write [From the textbook: ...] for "
+             "the teacher to fill in."]
+    if w.get("summary"):
+        lines.append("About the work: " + w["summary"])
+
+    def walk(entries, depth):
+        for e in entries:
+            label = " ".join(x for x in (e.get("label"), e.get("title")) if x)
+            lines.append("  " * depth + f"- {label}" + (f": {e['covers']}" if e.get("covers") else ""))
+            walk(e.get("children") or [], depth + 1)
+    walk(m["entries"], 0)
+    return lines
+
+
+def _library_material(m: dict) -> list[str]:
+    it = m["item"]
+    head = f'{it.get("kind", "item").upper()}: "{it.get("title")}"' + (f' ({it["creator"]})' if it.get("creator") else "")
+    lines = ["", f"=== {head} ==="]
+    if it.get("url"):
+        lines.append(f"Link: {it['url']}")
+    if it.get("notes"):
+        lines.append(f"The teacher's notes on it: {it['notes']}")
+    if it.get("excerpts"):
+        lines.append("Excerpts the teacher saved (with their place):")
+        lines += [f'  - [{x["at"]}] {x["text"]}' for x in it["excerpts"]]
+    if it.get("transcript"):
+        lines += ["Transcript (timestamps in brackets):", it["transcript"]]
+    elif not it.get("excerpts"):
+        lines.append("Exegetica holds no text for this item yet: refer to it by title only, and do not "
+                     "describe what it says beyond the teacher's notes.")
+    return lines
+
+
+def build_unit_task(format_id: str, *, settings: dict, unit: dict | None, materials: list[dict]) -> str:
+    """The user turn for a Prep Room draft made in a unit: what to make, for which class and objectives,
+    and from which sources, in the order the teacher listed them."""
+    fmt = FORMATS[format_id]
+    from webapp import prep_catalog
+    unit = unit or {}
+    lines = [f'Generate the {fmt["name"]} now'
+             + (f' for the unit "{unit["title"]}"' if unit.get("title") else "") + "."]
+    vi = prep_catalog.variant_instruction(format_id, settings.get("variant"))
+    if vi:
+        lines.append(vi)
+    items = [t for t in (settings.get("item_types") or []) if t in (fmt.get("item_types") or [])]
+    if items:
+        lines.append("Use these item types: " + ", ".join(t.replace("_", " ") for t in items) + ".")
+    if prep_catalog.LENGTHS.get(settings.get("length") or ""):
+        lines.append(prep_catalog.LENGTHS[settings["length"]])
+    lines += ["", f"Grade band: {settings.get('grade_band') or unit.get('grade_band') or 'secondary'}."]
+    if unit.get("course_name"):
+        lines.append(f"Course: {unit['course_name']}.")
+    if (unit.get("notes") or "").strip():
+        lines.append(f"The teacher's note for this unit: {unit['notes'].strip()}")
+    if unit.get("objectives"):
+        lines += ["", *_objective_lines(unit["objectives"])]
+    if (settings.get("brief") or "").strip():
+        lines += ["", f"The teacher's instructions for this resource: {settings['brief'].strip()}"]
+
+    if materials:
+        lines += ["", "SOURCES. Draw on these, in this order of weight. Say in the metadata header which "
+                      "ones the resource uses."]
+        for m in materials:
+            t = m["type"]
+            if t == "book":
+                lines += _book_material(m)
+            elif t == "outline":
+                lines += _outline_material(m)
+            elif t == "passage":
+                lines += ["", f"=== PASSAGE: {m['ref']} ({m.get('translation') or 'ESV'}) ===",
+                          "Look it up with the study-bible tools before writing and quote it exactly."]
+            elif t == "library":
+                lines += _library_material(m)
+            elif t == "document":
+                where = f" ({m['url']})" if m.get("url") else ""
+                lines += ["", f"=== DOCUMENT the teacher provided: {m['label']}{where} ===", m["text"]]
+    else:
+        lines += ["", "No sources were given: write from the objectives, the teacher's instructions and the "
+                      "study-bible tools."]
+
+    ids = ", ".join(o.get("id") for o in unit.get("objectives") or [] if o.get("id"))
+    lines += [
+        "",
+        "Do any study-bible tool lookups you need BEFORE writing; emit no progress notes. Produce only the "
+        "finished resource in Markdown, beginning with the metadata header.",
+        "Teacher-only material goes in its own sections: answers in a final section after a `---` rule "
+        "headed EXACTLY `## Answer Key`, guidance in `## Teaching Notes`, and any other teacher-only "
+        "section gets a heading ending in `(Teacher)`. Everything else is what students see, so reveal no "
+        "answers before the key.",
+    ]
+    if ids:
+        lines.append(f"End the main resource with a line `Standards: {ids}`.")
+    return "\n".join(lines)
+
+
 def build_revision(document: str, instruction: str) -> tuple[str, str]:
     """System + task for editing an existing resource in place (no full regen)."""
     system = (
         "You revise existing classroom resources. Apply the requested change and "
         "return the COMPLETE updated resource in Markdown. Preserve the metadata "
-        "header, the overall structure and formatting, the `Standards:` line, and "
-        "the final `## Answer Key` section (keep answers consistent with any edited "
-        "items). Change only what the instruction asks; leave everything else "
+        "header, the overall structure and formatting, the `Standards:` line, the "
+        "teacher-only sections (`## Answer Key`, `## Teaching Notes`, and headings "
+        "ending in `(Teacher)`) as teacher-only sections, and keep answers consistent "
+        "with any edited items. Change only what the instruction asks; leave everything else "
         "untouched. Output the document only — no commentary. For any biblical, "
         "original-language, commentary, confessional, or church-father content, "
         "ground it in the Study Bible tools and never fabricate a reference."

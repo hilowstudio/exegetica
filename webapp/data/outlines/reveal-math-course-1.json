@@ -1,0 +1,471 @@
+{
+ "key": "reveal-math-course-1",
+ "title": "Reveal Math, Course 1",
+ "authors": [
+  "McGraw-Hill Education"
+ ],
+ "publisher": "McGraw-Hill Education",
+ "edition": "2018/2020 national edition (Interactive Student Edition and Teacher Edition, 2 volumes each)",
+ "grade": "Grade 6",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.mheducation.com/unitas/school/catalogs/2020/2020-mathematics-catalog.pdf",
+   "what": "publisher catalog (2020): Course 1 module table of contents, the same ISBNs as the work list, and the Spanish student-edition cover listing Volume 1 / Volume 2 modules"
+  },
+  {
+   "url": "https://www.tn.gov/content/dam/tn/education/textbook/sect-b/McGraw%20Hill_Grades%206-12_final.pdf",
+   "what": "publisher public-review cover sheets: Course 1 student edition Volume 1 / Volume 2 contents"
+  },
+  {
+   "url": "https://www.mheducation.com/content/dam/mhe/prek12/documents/states/new-mexico/math/nm-reveal-math-6-8-connections-sampler.pdf",
+   "what": "publisher sampler: Course 1 scope and sequence with pacing, and Module 2 lesson goals"
+  },
+  {
+   "url": "https://pengi.ai/textbooks/reveal-math-course-1-5e16ad17-9a48-4326-8141-9a01bef6aea8",
+   "what": "third-party study site listing all 10 modules and 59 lessons"
+  },
+  {
+   "url": "https://www.mheducation.com/unitas/school/explore/sites/oklahoma/overview-brochure-reveal-6-8.pdf",
+   "what": "publisher program overview (Oklahoma edition) with a lesson-level table of contents, used to cross-check lesson titles"
+  }
+ ],
+ "summary": "McGraw Hill's grade 6 course in the Reveal Math middle-school series, in 10 modules and 59 lessons. It covers ratios, rates, and percents; fraction division and multi-digit computation; integers, rational numbers, and the coordinate plane; expressions and one-step equations and inequalities; two-variable relationships; area, surface area, and volume; and statistics.",
+ "toc": [
+  {
+   "label": "Module 1",
+   "title": "Ratios and Rates",
+   "covers": "Ratio language, equivalent ratios in tables and graphs, comparing ratios, customary unit conversion, and unit rates.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "1-1",
+     "title": "Understand Ratios",
+     "covers": "Writing ratios that compare part to part or part to whole.",
+     "basis": "page"
+    },
+    {
+     "label": "1-2",
+     "title": "Tables of Equivalent Ratios",
+     "covers": "Building ratio tables to generate equivalent ratios and find missing values.",
+     "basis": "general"
+    },
+    {
+     "label": "1-3",
+     "title": "Graphs of Equivalent Ratios",
+     "covers": "Plotting equivalent ratio pairs on the coordinate plane and reading the resulting graph.",
+     "basis": "general"
+    },
+    {
+     "label": "1-4",
+     "title": "Compare Ratio Relationships",
+     "covers": "Comparing two ratio relationships with tables, graphs, and unit values.",
+     "basis": "general"
+    },
+    {
+     "label": "1-5",
+     "title": "Solve Ratio Problems",
+     "covers": "Solving real-world ratio problems with tape diagrams, double number lines, and ratio tables.",
+     "basis": "general"
+    },
+    {
+     "label": "1-6",
+     "title": "Convert Customary Measurement Units",
+     "covers": "Using ratio reasoning to convert customary units of length, weight, and capacity.",
+     "basis": "general"
+    },
+    {
+     "label": "1-7",
+     "title": "Understand Rates and Unit Rates",
+     "covers": "Defining rates and finding unit rates, including unit prices.",
+     "basis": "general"
+    },
+    {
+     "label": "1-8",
+     "title": "Solve Rate Problems",
+     "covers": "Solving unit-price, constant-speed, and other rate problems.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 2",
+   "title": "Fractions, Decimals, and Percents",
+   "covers": "How fractions, decimals, and percents relate, applied to finding a percent of a number and finding the whole.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "2-1",
+     "title": "Understand Percents",
+     "covers": "Modeling percents as rates per 100 with 10 x 10 grids and bar diagrams.",
+     "basis": "page"
+    },
+    {
+     "label": "2-2",
+     "title": "Percents Greater Than 100% and Less Than 1%",
+     "covers": "Modeling percents above 100% and below 1% on 10 x 10 grids.",
+     "basis": "page"
+    },
+    {
+     "label": "2-3",
+     "title": "Relate Fractions, Decimals, and Percents",
+     "covers": "Converting among fractions, decimals, and percents.",
+     "basis": "page"
+    },
+    {
+     "label": "2-4",
+     "title": "Find the Percent of a Number",
+     "covers": "Finding a percent of a quantity with bar diagrams, equivalent ratios, double number lines, and ratio tables.",
+     "basis": "page"
+    },
+    {
+     "label": "2-5",
+     "title": "Estimate the Percent of a Number",
+     "covers": "Estimating a percent of a number with benchmark percents and compatible numbers.",
+     "basis": "general"
+    },
+    {
+     "label": "2-6",
+     "title": "Find the Whole",
+     "covers": "Finding the whole when the part and the percent are known.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Module 3",
+   "title": "Compute with Multi-Digit Numbers and Fractions",
+   "covers": "Fluent long division and decimal computation, and dividing fractions and mixed numbers.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "3-1",
+     "title": "Divide Multi-Digit Whole Numbers",
+     "covers": "Dividing multi-digit whole numbers with the standard long-division algorithm.",
+     "basis": "general"
+    },
+    {
+     "label": "3-2",
+     "title": "Compute With Multi-Digit Decimals",
+     "covers": "Adding, subtracting, multiplying, and dividing multi-digit decimals with standard algorithms.",
+     "basis": "general"
+    },
+    {
+     "label": "3-3",
+     "title": "Divide Whole Numbers by Fractions",
+     "covers": "Dividing whole numbers by fractions with models and reciprocals.",
+     "basis": "general"
+    },
+    {
+     "label": "3-4",
+     "title": "Divide Fractions by Fractions",
+     "covers": "Dividing a fraction by a fraction with models and by multiplying by the reciprocal, and interpreting the quotient.",
+     "basis": "general"
+    },
+    {
+     "label": "3-5",
+     "title": "Divide with Whole and Mixed Numbers",
+     "covers": "Dividing with mixed numbers by rewriting them as fractions, in word problems.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 4",
+   "title": "Integers, Rational Numbers, and the Coordinate Plane",
+   "covers": "Negative numbers on the number line, opposites, absolute value, ordering rational numbers, and graphing in all four quadrants.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "4-1",
+     "title": "Represent Integers",
+     "covers": "Using positive and negative integers for real-world quantities and placing them on a number line.",
+     "basis": "general"
+    },
+    {
+     "label": "4-2",
+     "title": "Opposites and Absolute Value",
+     "covers": "Finding opposites and absolute value as distance from zero.",
+     "basis": "general"
+    },
+    {
+     "label": "4-3",
+     "title": "Compare and Order Integers",
+     "covers": "Comparing and ordering integers with a number line and inequality symbols.",
+     "basis": "general"
+    },
+    {
+     "label": "4-4",
+     "title": "Rational Numbers",
+     "covers": "Locating, comparing, and ordering positive and negative fractions and decimals.",
+     "basis": "general"
+    },
+    {
+     "label": "4-5",
+     "title": "The Coordinate Plane",
+     "covers": "Graphing ordered pairs in all four quadrants.",
+     "basis": "general"
+    },
+    {
+     "label": "4-6",
+     "title": "Graph Reflections of Points",
+     "covers": "Reflecting points across the axes and relating sign changes in coordinates to the reflection.",
+     "basis": "general"
+    },
+    {
+     "label": "4-7",
+     "title": "Absolute Value and Distance",
+     "covers": "Using absolute value to find the distance between points that share a coordinate.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 5",
+   "title": "Numerical and Algebraic Expressions",
+   "covers": "Exponents, order of operations, writing and evaluating algebraic expressions, GCF and LCM, and equivalent expressions.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "5-1",
+     "title": "Powers and Exponents",
+     "covers": "Writing and evaluating whole-number exponents.",
+     "basis": "general"
+    },
+    {
+     "label": "5-2",
+     "title": "Numerical Expressions",
+     "covers": "Evaluating numerical expressions with exponents using the order of operations.",
+     "basis": "general"
+    },
+    {
+     "label": "5-3",
+     "title": "Write Algebraic Expressions",
+     "covers": "Translating verbal phrases into algebraic expressions with variables.",
+     "basis": "general"
+    },
+    {
+     "label": "5-4",
+     "title": "Evaluate Algebraic Expressions",
+     "covers": "Substituting values for variables to evaluate expressions and formulas.",
+     "basis": "general"
+    },
+    {
+     "label": "5-5",
+     "title": "Factors and Multiples",
+     "covers": "Finding the greatest common factor and least common multiple of whole numbers.",
+     "basis": "general"
+    },
+    {
+     "label": "5-6",
+     "title": "Use the Distributive Property",
+     "covers": "Rewriting expressions with the Distributive Property, including factoring out a common factor.",
+     "basis": "general"
+    },
+    {
+     "label": "5-7",
+     "title": "Equivalent Algebraic Expressions",
+     "covers": "Combining like terms and using properties to identify equivalent expressions.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 6",
+   "title": "Equations and Inequalities",
+   "covers": "Solving one-step equations by substitution and inverse operations, and writing and graphing simple inequalities.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "6-1",
+     "title": "Use Substitution to Solve One-Step Equations",
+     "covers": "Testing values by substitution to find which make an equation true.",
+     "basis": "general"
+    },
+    {
+     "label": "6-2",
+     "title": "One-Step Addition Equations",
+     "covers": "Solving equations of the form x + p = q with bar models and subtraction.",
+     "basis": "general"
+    },
+    {
+     "label": "6-3",
+     "title": "One-Step Subtraction Equations",
+     "covers": "Solving equations of the form x - p = q with addition.",
+     "basis": "general"
+    },
+    {
+     "label": "6-4",
+     "title": "One-Step Multiplication Equations",
+     "covers": "Solving equations of the form px = q, including fraction and decimal coefficients.",
+     "basis": "general"
+    },
+    {
+     "label": "6-5",
+     "title": "One-Step Division Equations",
+     "covers": "Solving equations of the form x / p = q with multiplication.",
+     "basis": "general"
+    },
+    {
+     "label": "6-6",
+     "title": "Inequalities",
+     "covers": "Writing inequalities, testing solutions, and graphing solution sets on a number line.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 7",
+   "title": "Relationships Between Two Variables",
+   "covers": "Independent and dependent variables shown in tables, equations, and graphs.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "7-1",
+     "title": "Relationships Between Two Variables",
+     "covers": "Identifying independent and dependent variables in real-world relationships.",
+     "basis": "general"
+    },
+    {
+     "label": "7-2",
+     "title": "Write Equations to Represent Relationships Represented in Tables",
+     "covers": "Writing a two-variable equation from a table of values.",
+     "basis": "general"
+    },
+    {
+     "label": "7-3",
+     "title": "Graphs of Relationships",
+     "covers": "Graphing two-variable relationships and interpreting the graphs.",
+     "basis": "general"
+    },
+    {
+     "label": "7-4",
+     "title": "Multiple Representations",
+     "covers": "Connecting words, tables, equations, and graphs that show the same relationship.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 8",
+   "title": "Area",
+   "covers": "Area formulas for parallelograms, triangles, trapezoids, and regular polygons, and polygons on the coordinate plane.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "8-1",
+     "title": "Area of Parallelograms",
+     "covers": "Deriving and using the parallelogram area formula.",
+     "basis": "general"
+    },
+    {
+     "label": "8-2",
+     "title": "Area of Triangles",
+     "covers": "Finding triangle area as half of a parallelogram.",
+     "basis": "general"
+    },
+    {
+     "label": "8-3",
+     "title": "Area of Trapezoids",
+     "covers": "Finding trapezoid area by decomposing into triangles and parallelograms.",
+     "basis": "general"
+    },
+    {
+     "label": "8-4",
+     "title": "Area of Regular Polygons",
+     "covers": "Finding areas of regular polygons by decomposing them into triangles.",
+     "basis": "general"
+    },
+    {
+     "label": "8-5",
+     "title": "Polygons on the Coordinate Plane",
+     "covers": "Drawing polygons from vertex coordinates and finding side lengths, perimeter, and area.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 9",
+   "title": "Volume and Surface Area",
+   "covers": "Volume of rectangular prisms with fractional edges and surface area of prisms and pyramids from nets.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "9-1",
+     "title": "Volume of Rectangular Prisms",
+     "covers": "Finding volume of rectangular prisms, including fractional edge lengths, with V = lwh and V = Bh.",
+     "basis": "general"
+    },
+    {
+     "label": "9-2",
+     "title": "Surface Area of Rectangular Prisms",
+     "covers": "Using nets to find the surface area of rectangular prisms.",
+     "basis": "general"
+    },
+    {
+     "label": "9-3",
+     "title": "Surface Area of Triangular Prisms",
+     "covers": "Using nets to find the surface area of triangular prisms.",
+     "basis": "general"
+    },
+    {
+     "label": "9-4",
+     "title": "Surface Area of Pyramids",
+     "covers": "Using nets to find the surface area of square and triangular pyramids.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Module 10",
+   "title": "Statistical Measures and Displays",
+   "covers": "Statistical questions, data displays, measures of center and variability, outliers, and describing distributions.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "10-1",
+     "title": "Statistical Questions",
+     "covers": "Recognizing questions that anticipate variability in the data.",
+     "basis": "general"
+    },
+    {
+     "label": "10-2",
+     "title": "Dot Plots and Histograms",
+     "covers": "Displaying numerical data in dot plots and histograms.",
+     "basis": "general"
+    },
+    {
+     "label": "10-3",
+     "title": "Measures of Center",
+     "covers": "Finding and interpreting mean, median, and mode.",
+     "basis": "general"
+    },
+    {
+     "label": "10-4",
+     "title": "Interquartile Range and Box Plots",
+     "covers": "Finding quartiles and the interquartile range and drawing box plots.",
+     "basis": "general"
+    },
+    {
+     "label": "10-5",
+     "title": "Mean Absolute Deviation",
+     "covers": "Computing mean absolute deviation to describe spread.",
+     "basis": "general"
+    },
+    {
+     "label": "10-6",
+     "title": "Outliers",
+     "covers": "Identifying outliers and their effect on measures of center and spread.",
+     "basis": "general"
+    },
+    {
+     "label": "10-7",
+     "title": "Interpret Graphical Displays",
+     "covers": "Describing a distribution's center, spread, and shape and choosing suitable measures.",
+     "basis": "general"
+    }
+   ]
+  }
+ ],
+ "notes": "Volume 1 holds Modules 1-4; Volume 2 holds Modules 5-10 (the English Tennessee student-edition cover and the Spanish national student-edition cover in the 2020 catalog agree). The work-list ISBNs match the 2020 catalog: Interactive Student Edition Vol. 1 978-0-07-667372-8, Vol. 2 978-0-07-899714-3; Teacher Edition Vol. 1 978-0-07-899720-4, Vol. 2 978-0-07-899175-2. Lesson titles follow the Pengi listing, which matches the publisher's Oklahoma overview except Module 10. State editions differ: the Oklahoma edition drops lesson 10-4 (Interquartile Range and Box Plots) and adds Modules 11-12 (transformations, congruence and similarity) plus 13 state lessons. Each module also has a pretest, Put It All Together checkpoints, and a module review and assessment; the New Mexico sampler paces Module 2 at 15 days of 45-minute periods. Most lesson descriptions are from general knowledge of the topic, since the sources give titles only."
+}

@@ -28,3 +28,6 @@ Each file records one decision about how Exegetica behaves: what was decided, wh
 | [0022](0022-study-order-and-plain-teaching.md) | Exegetica studies a passage the way a theologian does, and says plainly what Scripture plainly teaches |
 | [0023](0023-history-withheld.md) | History chat is withheld from the site until a broader release |
 | [0024](0024-students-on-nemotron.md) | Chat replies come from Nemotron 3.5 Super on DeepInfra, and from GLM-5.3-Flash when Nemotron can't be reached |
+| [0026](0026-prep-room-units.md) | The Prep Room keeps a teacher's work in units, with every version |
+| [0027](0027-prep-room-caps.md) | The Prep Room has daily caps, per teacher and for all teachers together |
+| [0028](0028-gemini-transcripts.md) | Gemini writes transcripts for the Living Library when a teacher asks |

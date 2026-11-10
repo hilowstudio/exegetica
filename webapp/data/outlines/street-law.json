@@ -1,0 +1,358 @@
+{
+ "key": "street-law",
+ "title": "Street Law: A Course in Practical Law",
+ "authors": [
+  "Lee P. Arbetman",
+  "Edward L. O'Brien"
+ ],
+ "publisher": "McGraw Hill (Glencoe/McGraw-Hill for the 8th edition)",
+ "edition": "School ISBN is the 8th-edition (2009) student workbook; outline taken from the 2021 student edition's TOC",
+ "grade": "High school",
+ "match": "same series, other edition",
+ "sources": [
+  {
+   "url": "https://www.mheducation.com/unitas/school/explore/sites/networks/toc-street-law-2021.pdf",
+   "what": "publisher table of contents for the 2021 edition (units, chapters, and sections)"
+  },
+  {
+   "url": "https://www.bookshare.org/browse/book/136200",
+   "what": "Bookshare record for the 8th edition (Glencoe/McGraw-Hill, 2010, Arbetman and O'Brien)"
+  }
+ ],
+ "summary": "A practical-law course from Street Law, Inc. that teaches students how the legal system works and how law touches daily life, through case studies, mock trials, and 'You Be the Judge' problems. It covers the legal system, criminal and juvenile justice, torts, consumer law, family law, individual rights, and current legal issues.",
+ "toc": [
+  {
+   "label": "Unit 1",
+   "title": "Introduction to Law and the Legal System",
+   "covers": "What law is, how it is made and changed, how disputes are settled, and how courts and lawyers work.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Chapter 1",
+     "title": "What Is Law?",
+     "covers": "Law and values, human rights, the rule of law, balancing rights with responsibilities, kinds of laws, and the constitutional framework.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 2",
+     "title": "Lawmaking",
+     "covers": "How legislatures, agencies, and courts make law, and international lawmaking.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 3",
+     "title": "Advocacy",
+     "covers": "Advocating for change through lobbying, voting, and campaign finance rules.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 4",
+     "title": "Settling Disputes",
+     "covers": "Methods of resolving disputes outside court, such as negotiation, mediation, and arbitration.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 5",
+     "title": "The Court System",
+     "covers": "Trial and appeals courts, state and federal systems, tribal and military courts, the U.S. Supreme Court, and international courts.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 6",
+     "title": "Lawyers",
+     "covers": "When you need a lawyer, how to find one, and how people become lawyers.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 2",
+   "title": "Criminal Law and Juvenile Justice",
+   "covers": "Crime and its causes, criminal offences and defences, the criminal justice process from arrest to corrections, and the juvenile system.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Chapter 7",
+     "title": "Crime in America",
+     "covers": "The nature of crime, campus crime, gangs, guns and the law, substance abuse, victims, and crime prevention and reporting.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 8",
+     "title": "Introduction to Criminal Law",
+     "covers": "State and federal crimes, felonies and misdemeanours, parties to crimes, crimes of omission, and attempt, solicitation, and conspiracy.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 9",
+     "title": "Crimes Against the Person",
+     "covers": "Homicide, suicide, kidnapping, assault and battery, and rape and sexual assault.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 10",
+     "title": "Crimes Against Property",
+     "covers": "Arson, vandalism, larceny, embezzlement, robbery, extortion, burglary, forgery, receiving stolen property, vehicle misuse, and cybercrime.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 11",
+     "title": "Defenses",
+     "covers": "Defences claiming no crime occurred, mistaken identity, justification or excuse such as self-defence, and lack of criminal responsibility such as insanity.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 12",
+     "title": "Criminal Justice Process: The Investigative Phase",
+     "covers": "Arrest, search and seizure under the Fourth Amendment, and interrogations and confessions (Miranda).",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 13",
+     "title": "Criminal Justice Process: Proceedings Before Trial",
+     "covers": "Booking, bail, preliminary hearings, grand juries, arraignment and pleas, pretrial motions, and plea bargaining.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 14",
+     "title": "Criminal Justice Process: The Trial",
+     "covers": "Jury trial, speedy and public trial, confronting witnesses, self-incrimination, right to counsel, and appeals.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 15",
+     "title": "Criminal Justice Process: Sentencing and Corrections",
+     "covers": "Sentencing options, purposes of punishment, parole, capital punishment, and prisons and inmate rights.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 16",
+     "title": "Juvenile Justice",
+     "covers": "History of juvenile courts, status offences, how juvenile cases proceed today, and current challenges.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 3",
+   "title": "Torts",
+   "covers": "Civil wrongs and liability: intentional torts, negligence, strict liability, and tort reform.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Chapter 17",
+     "title": "Torts: A Civil Wrong",
+     "covers": "The idea of liability, types of torts, taking a case to court, and insurance.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 18",
+     "title": "Intentional Torts",
+     "covers": "Damages and torts that harm persons (such as battery and defamation) or property (such as trespass), and their defences.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 19",
+     "title": "Negligence",
+     "covers": "Duty, breach, causation, damages, and defences to negligence suits.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 20",
+     "title": "Strict Liability",
+     "covers": "Liability without fault for dangerous activities, animals, and defective products.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 21",
+     "title": "Torts and Public Policy",
+     "covers": "Debates over tort reform.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 4",
+   "title": "Consumer Law",
+   "covers": "Contracts, warranties, credit, deceptive sales, consumer protection, and major purchases such as cars, housing, and college.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Chapter 22",
+     "title": "Contracts",
+     "covers": "Elements of a contract, minors and contracts, written vs oral and illegal contracts, and breach.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 23",
+     "title": "Warranties",
+     "covers": "Express and implied warranties and disclaimers.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 24",
+     "title": "Credit and Other Financial Services",
+     "covers": "Bank accounts, how credit works and what it costs, credit applications and denials, and default and debt collection.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 25",
+     "title": "Deceptive Sales Practice",
+     "covers": "Telemarketing, door-to-door sales, advertising, bait and switch, online commerce, and repair estimates.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 26",
+     "title": "Becoming a Smart Consumer",
+     "covers": "Influences on consumers, consumer protection agencies and laws, and how to resolve complaints, including in court.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 27",
+     "title": "Major Purchases",
+     "covers": "Buying a car, renting a place to live, paying for college, and health care.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 5",
+   "title": "Family Law",
+   "covers": "Legal rules for families from marriage to divorce, parents and children, foster care and adoption, and government benefits.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Chapter 28",
+     "title": "Law and the American Family",
+     "covers": "How law affects people from birth to death and legal definitions of family.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 29",
+     "title": "Marriage",
+     "covers": "Getting married, legal and financial aspects of marriage, common-law marriage, intimate partner violence, unmarried couples, and the marriage equality cases.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 30",
+     "title": "Parents and Children",
+     "covers": "Parent-child responsibilities and child abuse and neglect.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 31",
+     "title": "Foster Care and Adoption",
+     "covers": "How foster care and adoption work.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 32",
+     "title": "Separation, Divorce, and Custody",
+     "covers": "Marriage problems, separation and divorce, child custody, alimony, property division, child support, and stepparents.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 33",
+     "title": "Government Support for Families and Individuals",
+     "covers": "Economic, health, and educational benefits programmes.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 6",
+   "title": "Individual Rights and Liberties",
+   "covers": "Constitutional rights: speech, press, religion, due process, privacy, and protection from discrimination.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Chapter 34",
+     "title": "Introduction to Constitutional Law",
+     "covers": "Constitutional amendments and basic principles of constitutional law.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 35",
+     "title": "Freedom of Speech",
+     "covers": "Why free speech matters and its limits: commercial speech, obscenity, defamation, fighting words, time-place-manner rules, symbolic speech, and vague laws.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 36",
+     "title": "Freedom of the Press",
+     "covers": "Prior restraint, press access to information, and compelled disclosure of sources.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 37",
+     "title": "Expression in Special Places",
+     "covers": "First Amendment rights in public schools, prisons, and the military.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 38",
+     "title": "Freedom of Religion",
+     "covers": "The Establishment Clause and the Free Exercise Clause.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 39",
+     "title": "Due Process",
+     "covers": "Procedural and substantive due process.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 40",
+     "title": "The Right to Privacy",
+     "covers": "Privacy at home and school, government and private information gathering, and reproductive rights.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 41",
+     "title": "Discrimination",
+     "covers": "Discrimination based on race, national origin and citizenship, sex, sexual orientation and gender identity, age, and disability, plus housing discrimination and state and local laws.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 7",
+   "title": "Contemporary Issues in Law",
+   "covers": "Immigration, intellectual property, terrorism, workplace rights, and environmental law.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Chapter 42",
+     "title": "Immigration Law",
+     "covers": "Citizenship, visitors and permanent residents, refugees and asylum, undocumented immigrants, detention and removal, and immigration policy.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 43",
+     "title": "Intellectual Property",
+     "covers": "Patents, copyrights, and trademarks.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 44",
+     "title": "Law and Terrorism",
+     "covers": "Surveillance and searches, international terrorism law, and torture and detainee issues.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 45",
+     "title": "Rights and Responsibilities in the Workplace",
+     "covers": "Job seeking, conditions on the job, and losing a job.",
+     "basis": "page"
+    },
+    {
+     "label": "Chapter 46",
+     "title": "Environmental Law",
+     "covers": "NEPA, the Clean Air and Clean Water Acts, the Endangered Species Act, land pollution, other federal laws, regulation at each level of government, and climate change.",
+     "basis": "page"
+    }
+   ]
+  }
+ ],
+ "notes": "The school's ISBN (9780078895180) is the 8th-edition student workbook (2009), which goes with the 8th-edition text (Glencoe/McGraw-Hill, 2010). No 8th-edition TOC could be fetched, so this outline uses the 2021 edition. Expect differences: the 8th edition reportedly had six units with a 'Consumer and Housing Law' unit and no separate 'Contemporary Issues' unit, and chapter numbers will not line up. Treat Units 1-3 as the most stable. The 2021 TOC also lists section headings, which are summarised in each chapter's description rather than listed separately. Unit 5 and Chapters 40-41 cover marriage, sexuality, and reproductive-rights law and may need a teacher's framing."
+}

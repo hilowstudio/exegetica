@@ -1,0 +1,511 @@
+{
+ "key": "ap-calculus-ab-workbook",
+ "title": "AP Calculus AB: Infinite Challenge (4th Edition, with Full Solutions)",
+ "authors": [
+  "Richard N. S. Seong"
+ ],
+ "publisher": "Infinite Challenge Publishing Ltd. (West Vancouver, BC)",
+ "edition": "4th edition (copyright 2012, 2013, 2015, 2019)",
+ "grade": "AP Calculus AB (grades 11-12)",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.infinitechallenge.ca/images/ap-calculcus/2.jpg",
+   "what": "publisher sample page: copyright page showing ISBN 978-0-9916987-7-6 and copyright years"
+  },
+  {
+   "url": "https://www.infinitechallenge.ca/images/ap-calculcus/3.jpg",
+   "what": "publisher sample page: table of contents, Chapters 1-3"
+  },
+  {
+   "url": "https://www.infinitechallenge.ca/images/ap-calculcus/4.jpg",
+   "what": "publisher sample page: table of contents, Chapters 3-5"
+  },
+  {
+   "url": "https://www.infinitechallenge.ca/images/ap-calculcus/5.jpg",
+   "what": "publisher sample page: table of contents, Chapter 6 and solutions"
+  },
+  {
+   "url": "https://www.abebooks.com/9780991698776/Calculus-Infinite-Challenge-4th-Edition-0991698770/plp",
+   "what": "retailer listing: title, edition, 2019 date, 505 pages, chapter list"
+  }
+ ],
+ "summary": "A Canadian AP Calculus AB workbook of about 505 pages in six chapters, from a precalculus review through limits, derivatives and their applications, integration, and applications of the definite integral, ending with slope fields and separable differential equations. Each topic gives a short concept summary and guided examples, then graded practice. The publisher cites more than 350 guided examples and full worked solutions at the back.",
+ "toc": [
+  {
+   "label": "Chapter 1",
+   "title": "Precalculus Review",
+   "covers": "Review of the algebra, function, trigonometry, exponential, and conic skills that calculus assumes.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "p. 7",
+     "title": "Geometry",
+     "covers": "Area, volume, and similar-figure facts used later in optimization and related rates.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 10",
+     "title": "Polynomials / Rational Expressions",
+     "covers": "Factoring, polynomial division, and simplifying rational expressions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 13",
+     "title": "Functions",
+     "covers": "Function notation, domain and range, composition, and inverses.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 16",
+     "title": "Graphs of Polynomial Functions",
+     "covers": "End behavior, zeros, and multiplicity in polynomial graphs.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 18",
+     "title": "Transformations / Rational Functions",
+     "covers": "Shifting, stretching, and reflecting graphs, and asymptotes of rational functions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 20",
+     "title": "Even and Odd Functions / Piecewise-Defined Functions",
+     "covers": "Symmetry tests and evaluating and graphing piecewise functions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 21",
+     "title": "Trigonometric Identities and Functions",
+     "covers": "Unit-circle values, core identities, and graphs of the trigonometric functions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 25",
+     "title": "Exponential and Logarithmic Functions",
+     "covers": "Exponent and logarithm laws, the natural base e, and solving exponential equations.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 27",
+     "title": "Circles and Parabolas",
+     "covers": "Equations and graphs of circles and parabolas.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 29",
+     "title": "Chapter Review Exercises",
+     "covers": "Mixed practice on the chapter's review topics.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 2",
+   "title": "Limits and Continuity",
+   "covers": "Evaluating limits numerically, graphically, and algebraically, limits at infinity, continuity, and the IVT.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "p. 37",
+     "title": "Limits",
+     "covers": "Evaluating limits from graphs, tables, and algebra, including one-sided limits.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 51",
+     "title": "Limits Involving Infinity",
+     "covers": "Infinite limits, limits at infinity, and horizontal and vertical asymptotes.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 60",
+     "title": "Continuity",
+     "covers": "The definition of continuity and classifying discontinuities.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 65",
+     "title": "Average Rate of Change and Instantaneous Rate of Change",
+     "covers": "Secant slopes leading to instantaneous rate as a limit.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 69",
+     "title": "Squeezing Theorem (Sandwich Theorem)",
+     "covers": "Finding limits by bounding a function between two others.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 71",
+     "title": "Limit of Trigonometric Functions",
+     "covers": "Special trigonometric limits such as sin x / x as x approaches 0.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 76",
+     "title": "Limit of Exponential and Logarithmic Functions",
+     "covers": "Limits involving exponential and logarithmic functions, including the limit that defines e.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 80",
+     "title": "Intermediate Value Theorem (I.V.T.)",
+     "covers": "Using the IVT to show a continuous function takes a given value.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 82",
+     "title": "Chapter Review Exercises",
+     "covers": "Mixed practice on limits and continuity.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 3",
+   "title": "Derivatives",
+   "covers": "The derivative's definition, differentiability, all the differentiation rules, and derivatives of trigonometric, inverse, exponential, and logarithmic functions.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "p. 88",
+     "title": "Definition of the Derivative",
+     "covers": "The derivative as the limit of a difference quotient.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 91",
+     "title": "Differentiability",
+     "covers": "Where a function fails to be differentiable and how differentiability relates to continuity.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 100",
+     "title": "Power Rule",
+     "covers": "Differentiating powers and polynomials.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 111",
+     "title": "Product Rule",
+     "covers": "Differentiating products of functions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 114",
+     "title": "Quotient Rule",
+     "covers": "Differentiating quotients of functions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 118",
+     "title": "Chain Rule",
+     "covers": "Differentiating composite functions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 128",
+     "title": "Implicit Differentiation",
+     "covers": "Finding dy/dx for equations not solved for y.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 133",
+     "title": "Higher Order Derivatives",
+     "covers": "Second and higher derivatives.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 137",
+     "title": "Derivatives of Trigonometric Functions",
+     "covers": "Derivatives of the six trigonometric functions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 144",
+     "title": "Inverse Trigonometric Functions",
+     "covers": "Definitions, domains, and values of the inverse trigonometric functions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 148",
+     "title": "Derivatives of Inverse Trigonometric Functions",
+     "covers": "Differentiating arcsin, arccos, arctan, and related functions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 152",
+     "title": "Derivatives of Exponential Functions",
+     "covers": "Differentiating e^x and a^x, with the chain rule.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 158",
+     "title": "Derivatives of Logarithmic Functions",
+     "covers": "Differentiating ln x and log base a, and logarithmic differentiation.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 166",
+     "title": "Derivatives of Inverse Functions",
+     "covers": "Finding the derivative of an inverse function at a point from the original function.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 169",
+     "title": "Chapter Review Exercises",
+     "covers": "Mixed practice on derivatives.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 4",
+   "title": "Applications of Derivatives",
+   "covers": "Using derivatives to analyze graphs, model motion, optimize, solve related rates, approximate, and evaluate indeterminate limits.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "p. 177",
+     "title": "Critical Points",
+     "covers": "Finding where f' is zero or undefined.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 179",
+     "title": "Extrema : Maximum & Minimum Value",
+     "covers": "Absolute and relative extrema, the Extreme Value Theorem, and the closed-interval method.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 186",
+     "title": "Concavity",
+     "covers": "Using the second derivative to find concavity and inflection points.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 194",
+     "title": "Curve Sketching",
+     "covers": "Combining first- and second-derivative information to sketch graphs.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 198",
+     "title": "Relation of f'(x), f''(x) to the Graph of f(x)",
+     "covers": "Reading the behavior of f from graphs of f' and f''.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 204",
+     "title": "Motion Along a Line (1-Dimension)",
+     "covers": "Position, velocity, acceleration, and speed for straight-line motion.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 211",
+     "title": "Modeling and Optimization",
+     "covers": "Setting up and solving applied maximum and minimum problems.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 221",
+     "title": "Related Rates",
+     "covers": "Relating rates of change of linked quantities through implicit differentiation in time.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 230",
+     "title": "Local Linear Approximation",
+     "covers": "Using the tangent line to estimate function values.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 234",
+     "title": "Mean Value Theorem (M.V.T.)",
+     "covers": "The Mean Value Theorem and Rolle's Theorem and their conditions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 238",
+     "title": "Approximating Derivatives Numerically",
+     "covers": "Estimating derivatives from tables with difference quotients.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 240",
+     "title": "L'Hôpital's Rule (The Basics)",
+     "covers": "Evaluating 0/0 and infinity/infinity limits with L'Hôpital's Rule.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 243",
+     "title": "Chapter Review Exercises",
+     "covers": "Mixed practice on applications of derivatives.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 5",
+   "title": "Integration",
+   "covers": "Antiderivatives, u-substitution, Riemann and trapezoidal sums, the definite integral, and both parts of the Fundamental Theorem of Calculus.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "p. 252",
+     "title": "Indefinite Integrals",
+     "covers": "Basic antiderivative rules for power, trigonometric, exponential, and reciprocal functions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 264",
+     "title": "Integration by Substitution (u-Substitution)",
+     "covers": "Reversing the chain rule with u-substitution.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 272",
+     "title": "Rectangular Approximation Method (RAM): Riemann Sums",
+     "covers": "Left, right, and midpoint Riemann sums for estimating area.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 274",
+     "title": "Trapezoidal Approximation",
+     "covers": "Estimating area with trapezoids.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 277",
+     "title": "Comparing Approximation Sums",
+     "covers": "Telling when each approximation over- or underestimates, using monotonicity and concavity.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 279",
+     "title": "Summation Technique",
+     "covers": "Sigma notation and summation formulas.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 280",
+     "title": "Definition of Area as a Limit: Limit of Riemann Sum",
+     "covers": "Defining the definite integral as the limit of Riemann sums.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 284",
+     "title": "Definite Integrals",
+     "covers": "Properties of definite integrals and evaluating them with geometry.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 287",
+     "title": "Fundamental Theorem of Calculus, Part I",
+     "covers": "Differentiating accumulation functions defined by integrals.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 292",
+     "title": "Substitution for Definite Integrals",
+     "covers": "Changing limits of integration under u-substitution.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 295",
+     "title": "Area between a Curve and the x-axis",
+     "covers": "Finding total area when a curve crosses the x-axis.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 302",
+     "title": "Even and Odd Functions",
+     "covers": "Using symmetry to simplify definite integrals.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 303",
+     "title": "Fundamental Theorem of Calculus, Part II",
+     "covers": "Evaluating definite integrals with antiderivatives.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 308",
+     "title": "Chapter Review Exercises",
+     "covers": "Mixed practice on integration.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Chapter 6",
+   "title": "Applications of Definite Integrals",
+   "covers": "Average value, area between curves, volumes by cross sections and revolution, net change and motion, slope fields, and separable differential equations.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "p. 316",
+     "title": "Average Value of a Function",
+     "covers": "Finding a function's average value on an interval.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 320",
+     "title": "Area Between Curves",
+     "covers": "Integrating with respect to x or y to find the area between curves.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 328",
+     "title": "Volume of Solids with Known Cross Sections",
+     "covers": "Finding volume by integrating cross-sectional area.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 332",
+     "title": "Volume of Solids of Revolution: Disks, Washers and Cylindrical Shells",
+     "covers": "Finding volumes of revolution with the disk, washer, and shell methods.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 350",
+     "title": "Definite Integral as Net Change",
+     "covers": "Interpreting the integral of a rate as accumulated net change.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 355",
+     "title": "Motion Along a Straight Line (1-Dimension)",
+     "covers": "Finding displacement and total distance from velocity.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 359",
+     "title": "Slope Fields",
+     "covers": "Drawing and reading slope fields for differential equations.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 364",
+     "title": "First Order Separable Differential Equations",
+     "covers": "Solving separable differential equations with initial conditions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 369",
+     "title": "Exponential Growth and Decay Modeling (First-Order Differential Equations)",
+     "covers": "Modeling with dy/dt = ky and its exponential solutions.",
+     "basis": "general"
+    },
+    {
+     "label": "p. 374",
+     "title": "Chapter Review Exercises",
+     "covers": "Mixed practice on applications of integration.",
+     "basis": "general"
+    }
+   ]
+  }
+ ],
+ "notes": "The copyright page in the publisher's sample (ISBN 978-0-9916987-7-6, the work-list ISBN) dates this as the 4th edition, copyright 2019; the work list's 2022 date is probably a later printing of the same edition. Sections are unnumbered, so labels give the starting page from the book's contents. Worked solutions start on p. 384 (Chapter 1) through p. 479 (Chapter 6). The book is a practice workbook with brief concept summaries, not a full textbook. It includes L'Hôpital's Rule, inverse-function derivatives, and cylindrical shells, which go slightly beyond the AP AB core. Section descriptions are from general knowledge of the topics."
+}

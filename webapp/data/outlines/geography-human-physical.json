@@ -1,0 +1,295 @@
+{
+ "key": "geography-human-physical",
+ "title": "Geography: The Human and Physical World (Student Edition)",
+ "authors": [
+  "Richard G. Boehm"
+ ],
+ "publisher": "McGraw Hill",
+ "edition": "2018",
+ "grade": "High school",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.mheducation.com/unitas/school/explore/sites/networks/toc-geography-human-physical-world.pdf",
+   "what": "publisher table of contents (2018 marketing code SS18; units and chapters)"
+  },
+  {
+   "url": "https://www.mheducation.com/prek-12/program/geography-human-physical-world-2018/MKTSP-HCF16M0.html",
+   "what": "publisher program page for the 2018 edition"
+  }
+ ],
+ "summary": "A high-school world geography text that opens with four chapters of physical and human geography, then surveys the world region by region in eight regional units. Regional chapters typically treat physical geography, history and government, and the people, culture, and economy of each country or subregion.",
+ "toc": [
+  {
+   "label": "Unit 1",
+   "title": "The World",
+   "covers": "Foundations of physical and human geography applied in every later unit.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Chapter 1",
+     "title": "How Geographers Look at the World",
+     "covers": "The five themes and essential elements of geography, maps, globes, projections, and geographic tools such as GIS.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 2",
+     "title": "The Physical World",
+     "covers": "Earth's structure, plate tectonics, landforms, weathering and erosion, and the water cycle.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 3",
+     "title": "Climates of the Earth",
+     "covers": "Earth-sun relationships, weather vs climate, climate regions, and natural vegetation.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 4",
+     "title": "The Human World",
+     "covers": "Population and migration, culture, political systems, economic systems, and resources.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 2",
+   "title": "The United States and Canada",
+   "covers": "Physical geography, history, and human patterns of the two North American countries.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Chapter 5",
+     "title": "The United States",
+     "covers": "U.S. landforms, climate, resources, settlement history, regions, economy, and culture.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 6",
+     "title": "Canada",
+     "covers": "Canada's physical regions, history, bilingual culture, and economy.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 3",
+   "title": "Latin America",
+   "covers": "Physical and human geography of Mexico, Central America, the Caribbean, and South America.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Chapter 7",
+     "title": "Mexico",
+     "covers": "Mexico's landforms, climates, history, culture, and economy.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 8",
+     "title": "Central America and the Caribbean",
+     "covers": "The isthmus and island nations, their colonial history, and economies.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 9",
+     "title": "South America",
+     "covers": "The Andes, the Amazon, the countries of South America, and their people and economies.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 4",
+   "title": "Europe",
+   "covers": "Physical geography, history, and present-day countries of Europe and Russia.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Chapter 10",
+     "title": "Northern Europe",
+     "covers": "The Nordic countries and their climates, resources, and societies.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 11",
+     "title": "Northwestern Europe",
+     "covers": "The British Isles, France, the Benelux countries, Germany, and the Alpine states.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 12",
+     "title": "Southern Europe",
+     "covers": "The Iberian, Italian, and Balkan Mediterranean countries.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 13",
+     "title": "Eastern Europe",
+     "covers": "The countries between Germany and Russia and their post-communist transitions.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 14",
+     "title": "The Russian Core",
+     "covers": "Russia's physical geography, history, government, and economy.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 5",
+   "title": "North Africa, Southwest Asia, and Central Asia",
+   "covers": "Arid lands, oil resources, religions, and conflicts across North Africa, the Middle East, and Central Asia.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Chapter 15",
+     "title": "North Africa",
+     "covers": "Egypt and the Maghreb, the Nile and Sahara, and their history and economies.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 16",
+     "title": "The Eastern Mediterranean",
+     "covers": "Turkey, Syria, Lebanon, Israel, Jordan, and the Palestinian territories.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 17",
+     "title": "The Northeast",
+     "covers": "Iran, Iraq, and neighbouring states of the region's northeast.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 18",
+     "title": "The Arabian Peninsula",
+     "covers": "Saudi Arabia, the Gulf states, Yemen, and Oman, and the role of oil.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 19",
+     "title": "Central Asia",
+     "covers": "The former Soviet Central Asian republics and Afghanistan.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 6",
+   "title": "Africa South of the Sahara",
+   "covers": "Physical regions, history, and development of sub-Saharan Africa.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Chapter 20",
+     "title": "The Transition Zone",
+     "covers": "The Sahel belt between North Africa and the rest of the continent, with its desertification and cultural crossroads.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 21",
+     "title": "East Africa",
+     "covers": "Countries of East Africa and the Horn, the Rift Valley, and their peoples and economies.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 22",
+     "title": "West Africa",
+     "covers": "Coastal and inland West African countries and their history and economies.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 23",
+     "title": "Equatorial Africa",
+     "covers": "The Congo Basin countries and their rain forest environment and resources.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 24",
+     "title": "Southern Africa",
+     "covers": "South Africa and its neighbours, including apartheid's legacy and mineral wealth.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 7",
+   "title": "South Asia",
+   "covers": "The Indian subcontinent's physical geography, monsoon climate, history, and countries.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Chapter 25",
+     "title": "India",
+     "covers": "India's landforms, monsoons, history, religions, government, and economy.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 26",
+     "title": "Pakistan and Bangladesh",
+     "covers": "The two nations formed from partition, their geography, and challenges.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 27",
+     "title": "Bhutan, Maldives, Nepal, and Sri Lanka",
+     "covers": "The smaller mountain and island states of South Asia.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 8",
+   "title": "East Asia",
+   "covers": "Physical and human geography of China, Mongolia, Japan, and the Koreas.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Chapter 28",
+     "title": "China and Mongolia",
+     "covers": "China's regions, history, government, and economy, and Mongolia's steppe society.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 29",
+     "title": "Japan",
+     "covers": "Japan's island geography, natural hazards, history, and economy.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 30",
+     "title": "North Korea and South Korea",
+     "covers": "The divided peninsula and its contrasting governments and economies.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 9",
+   "title": "Southeast Asia and the Pacific World",
+   "covers": "Mainland and island Southeast Asia, Australia, New Zealand, and the Pacific islands.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Chapter 31",
+     "title": "Southeast Asia",
+     "covers": "Mainland and island nations of Southeast Asia and their colonial past and growing economies.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 32",
+     "title": "Australia and New Zealand",
+     "covers": "Physical geography, Indigenous peoples, settlement, and economies of the two countries.",
+     "basis": "general"
+    },
+    {
+     "label": "Chapter 33",
+     "title": "Oceania",
+     "covers": "The Pacific islands of Melanesia, Micronesia, and Polynesia.",
+     "basis": "general"
+    }
+   ]
+  }
+ ],
+ "notes": "Unit and chapter titles are from the publisher's TOC; lesson titles were not found. The TOC carries a 2018 marketing code, matching this ISBN's 2018 edition. A 2013 edition (ISBN 9780076642885) also exists, with possibly different chapter splits."
+}

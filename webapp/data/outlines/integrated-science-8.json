@@ -1,0 +1,353 @@
+{
+ "key": "integrated-science-8",
+ "title": "Inspire Science: Integrated, Grade 8 (Write-In Student Edition, Units 1-4)",
+ "authors": [
+  "Alton Biggs",
+  "Page Keeley",
+  "Dinah Zike",
+  "Edward Paul Ortleb",
+  "Ralph M. Feather",
+  "Douglas Fisher",
+  "Michael Manga"
+ ],
+ "publisher": "McGraw Hill",
+ "edition": "2020 (copyright 2020 on publisher pages for the series; ISBN records say 2019)",
+ "grade": "Grade 8",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.mheducation.com/unitas/school/explore/sites/inspire-science/scope-and-sequence-6-8-integrated.pdf",
+   "what": "publisher scope and sequence (units, modules, lessons)"
+  }
+ ],
+ "summary": "An NGSS-built integrated middle-school science course in four write-in unit books organised into modules and 5E lessons. Grade 8 covers geologic time and evolution, forces, energy and electromagnetism, waves and light with information technology, and human activity plus the Earth-Moon-Sun system and the universe.",
+ "toc": [
+  {
+   "label": "Unit 1",
+   "title": "Change Over Time",
+   "covers": "Reading Earth's history in rocks and fossils and how populations change by natural selection.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Geologic Time",
+     "covers": "Dating rocks and fossils and organising Earth's history into a time scale.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Analyzing the Rock and Fossil Records",
+       "covers": "Superposition, relative and absolute dating, and what fossils show about past life.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Building a Time Line",
+       "covers": "The geologic time scale with its eons, eras, and major events such as mass extinctions.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Natural Selection and Adaptations",
+     "covers": "How variation and selection change traits in populations.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "How Traits Change",
+       "covers": "Genetic variation and mutations and how they affect traits.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "The Theory of Evolution by Natural Selection",
+       "covers": "Darwin's observations, overproduction, variation, and adaptation.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Artificial Selection",
+       "covers": "Selective breeding and genetic engineering by humans.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Evidence of Evolution",
+     "covers": "Fossil and biological evidence for common ancestry.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Fossil Evidence of Evolution",
+       "covers": "Patterns in the fossil record and transitional forms.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Biological Evidence of Evolution",
+       "covers": "Comparative anatomy, homologous structures, embryology, and molecular comparisons.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Unit 2",
+   "title": "Energy and Motion",
+   "covers": "Forces and motion, kinetic and potential energy, and electric and magnetic forces.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Forces and Motion",
+     "covers": "Describing motion and Newton's laws, including gravity.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Position and Motion",
+       "covers": "Reference points, speed, velocity, and distance-time graphs.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Force and Acceleration",
+       "covers": "Balanced and unbalanced forces and Newton's first and second laws.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Force Pairs",
+       "covers": "Newton's third law and action-reaction pairs in collisions.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Gravitational Force",
+       "covers": "How mass and distance set the strength of gravity.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Mechanical Energy",
+     "covers": "Kinetic and potential energy and the conservation of energy.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Kinetic Energy",
+       "covers": "How mass and speed determine kinetic energy.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Potential Energy",
+       "covers": "Gravitational, elastic, and other stored energy that depends on position.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Conservation of Energy",
+       "covers": "Energy transformations and transfers in a system.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Electromagnetic Forces",
+     "covers": "Magnetic and electric forces, circuits, and electromagnets.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Magnetic Forces",
+       "covers": "Magnets, magnetic fields, and factors that affect magnetic force.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Electric Forces",
+       "covers": "Electric charge, attraction and repulsion, and electric fields.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Simple Circuits",
+       "covers": "Current, voltage, resistance, and series and parallel circuits.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Electromagnetism",
+       "covers": "Electromagnets, motors, and generators.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Unit 3",
+   "title": "Understanding Waves",
+   "covers": "Wave properties, light and optics, and how signals carry information.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Introduction to Waves",
+     "covers": "Mechanical and electromagnetic waves and how they behave.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Wave Properties",
+       "covers": "Amplitude, wavelength, frequency, and the energy waves carry.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Mechanical Wave Interactions",
+       "covers": "Reflection, absorption, transmission, and interference of sound and water waves.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Light",
+     "covers": "How light travels and interacts with matter.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "How Light Travels",
+       "covers": "Light as an electromagnetic wave and the electromagnetic spectrum.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Light Reflection and Mirrors",
+       "covers": "The law of reflection and plane and curved mirrors.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Light Refraction and Lenses",
+       "covers": "Refraction, convex and concave lenses, and the eye.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Color of Light",
+       "covers": "Why objects appear coloured: absorption, reflection, and mixing of light.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Information Technologies",
+     "covers": "How waves are used to encode and send information.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Communicating with Signals",
+       "covers": "Analog signals and how waves carry information.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Modern Communication with Digital Signals",
+       "covers": "Digital and binary signals and why they are more reliable than analog.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Unit 4",
+   "title": "Humans and Their Place in the Universe",
+   "covers": "Human population and environmental impact, the Sun-Earth-Moon system, and gravity's role in the solar system and universe.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module",
+     "title": "Earth and Human Activity",
+     "covers": "Population growth, resource use, and reducing human impact.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Human Population Trends",
+       "covers": "Growth of the human population and per-capita resource consumption.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "People and the Environment",
+       "covers": "Monitoring and minimising human effects on Earth's systems.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "The Sun-Earth-Moon System",
+     "covers": "Earth's orbit and tilt, the Moon's phases, and eclipses.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Earth's Motion Around the Sun",
+       "covers": "Rotation, revolution, axial tilt, and the seasons.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Lunar Phases",
+       "covers": "Why the Moon's visible shape changes over a month.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "Eclipses",
+       "covers": "Solar and lunar eclipses and the alignments that cause them.",
+       "basis": "general"
+      }
+     ]
+    },
+    {
+     "label": "Module",
+     "title": "Exploring the Universe",
+     "covers": "Gravity's role in orbits and in forming the solar system and galaxies.",
+     "basis": "general",
+     "children": [
+      {
+       "label": "Lesson",
+       "title": "Gravity and the Universe",
+       "covers": "How gravity holds orbits and shaped stars, galaxies, and the solar system.",
+       "basis": "general"
+      },
+      {
+       "label": "Lesson",
+       "title": "The Solar System",
+       "covers": "The planets and other bodies and the scale of the solar system.",
+       "basis": "general"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Headings are from the publisher's scope and sequence, which lists units, modules, and lessons without numbers. In that PDF the Grade 7 and Grade 8 columns are interleaved; units were assigned by column position in the layout text. Which unit books ISBNs 9780076874897 and 9780076874903 are was not confirmed. Modules nest under units and lessons under modules."
+}

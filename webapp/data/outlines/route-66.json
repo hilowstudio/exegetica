@@ -1,0 +1,557 @@
+{
+ "key": "route-66",
+ "title": "Route 66: Travel Through the Bible",
+ "authors": [
+  "Mark Reed"
+ ],
+ "publisher": "Positive Action for Christ",
+ "edition": "3rd ed. 2007 (Student Manual ISBN 978-1-59557-109-0, 6th printing 2019); current Teacher's Manual ISBN 978-1-59557-157-1",
+ "grade": "Middle school",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.positiveaction.org/store/group/route-66",
+   "what": "publisher product page (70 lessons, ISBNs, new-edition notice)"
+  },
+  {
+   "url": "https://www.positiveaction.org/documents/621/Route_66_SM_Sample.pdf",
+   "what": "Student Manual sample PDF with contents page (unit and lesson headings used here)"
+  },
+  {
+   "url": "https://www.positiveaction.org/documents/545/R66_ScopeSequence_2020.pdf",
+   "what": "publisher scope and sequence (lesson number, Bible text, objectives, life application)"
+  },
+  {
+   "url": "https://www.positiveaction.org/documents/619/R66_TM_Sample.pdf",
+   "what": "Teacher's Manual sample PDF (course aims, Lesson 1)"
+  }
+ ],
+ "summary": "A one-year, 70-lesson survey of all 66 books of the Bible for middle school, taught two lessons a week. It moves through the Old Testament from Genesis to Malachi, then the Gospels, Acts, Paul's letters and the general letters to Revelation, giving each book's setting, key events and figures, main themes, and one life application. The stated aims are to grasp Scripture's overall story and to see how God uses imperfect people to show his grace.",
+ "toc": [
+  {
+   "label": "Unit 1",
+   "title": "How It All Began",
+   "covers": "Where the Bible came from and the Book of Genesis.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 1",
+     "title": "Where Did the Bible Come From?",
+     "covers": "Inspiration, reasons to trust the Bible's authority, and the Bible's divisions and book names.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 2",
+     "title": "Genesis: In the Beginning...",
+     "covers": "The six days of creation and God's purpose in creation.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 3",
+     "title": "Genesis: How It Fell Apart",
+     "covers": "The Fall, the Flood and Babel; the consequences of disobedience and the first signs of God's plan of salvation.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 4",
+     "title": "Genesis: Abraham",
+     "covers": "God's covenant promises to Abraham, faith and obedience, and Isaac compared with Christ.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 5",
+     "title": "Genesis: Who's Who?",
+     "covers": "Israel's family tree from Abraham to the twelve tribes and God's use of Joseph to keep his promises.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 2",
+   "title": "Deliverance",
+   "covers": "Exodus through Deuteronomy.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 6",
+     "title": "Exodus: Getting out of Egypt",
+     "covers": "Moses' life, the ten plagues, and the Passover.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 7",
+     "title": "Exodus: Getting Organized in the Desert",
+     "covers": "The Ten Commandments and the layout of the tabernacle.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 8",
+     "title": "Leviticus: How are we to worship God?",
+     "covers": "The five offerings, the feasts, and God's holiness.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 9",
+     "title": "Numbers: Manna again?",
+     "covers": "Why Israel wandered forty years, Israel's complaints and God's answers.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 10",
+     "title": "Deuteronomy: It's Time for a Review",
+     "covers": "What God expected Israel to do with his law, and obedience.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 3",
+   "title": "The Promised Land",
+   "covers": "Joshua, Judges and Ruth.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 11",
+     "title": "Joshua: Go Get 'Em!",
+     "covers": "Courage like Joshua's, the three memorials, and the tribal territories on a map.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 12",
+     "title": "Judges: Going in Cycles",
+     "covers": "The repeating cycle of sin and deliverance and at least six of the judges.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 13",
+     "title": "Ruth: The God with a Plan",
+     "covers": "Ruth's line leading to Jesus and her redemption as a picture of salvation in Christ.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 4",
+   "title": "The United Kingdom",
+   "covers": "Samuel, Saul, David and Solomon.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 14",
+     "title": "1 Samuel: The Boy Who Learned to Listen",
+     "covers": "Samuel's early life and learning to listen to God.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 15",
+     "title": "1 Samuel: The King Who Never Learned",
+     "covers": "How Israel got its first king and why God rejected Saul.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 16",
+     "title": "1-2 Samuel; 1 Chron.: The King God Loved",
+     "covers": "David's character, God's promises to David, repentance, and where Chronicles fits.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 17",
+     "title": "1 Kings; 2 Chron.: The King Who Had It All",
+     "covers": "Solomon's wisdom, kingdom, and downfall.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 5",
+   "title": "The Divided Kingdom",
+   "covers": "The divided monarchy, the prophets Elijah and Elisha, and the falls of Israel and Judah.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 18",
+     "title": "1-2 Kings; 2 Chron.: Kings and Kingdoms",
+     "covers": "How and why the kingdom divided and the kings of each kingdom.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 19",
+     "title": "1-2 Kings: God's Messengers",
+     "covers": "God's power through Elijah and Elisha, their miracles, and the prophets.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 20",
+     "title": "2 Kings; 2 Chron.: Hardest Lesson Learned",
+     "covers": "How idolatry led to the fall of the northern kingdom.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 21",
+     "title": "2 Kings: A Few Good Guys",
+     "covers": "Hezekiah's prayer and Josiah's revival; God's response to repentance.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 6",
+   "title": "The Remnant Kingdom",
+   "covers": "The return from exile: Ezra, Nehemiah and Esther.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 22",
+     "title": "Ezra: Going Home",
+     "covers": "The remnant promise and its fulfilment, and confession of sin.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 23",
+     "title": "Nehemiah: Rebuilding God's People",
+     "covers": "Nehemiah's qualities as a leader.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 24",
+     "title": "Esther: Saved by the Queen!",
+     "covers": "God working out his plan through ordinary events.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 7",
+   "title": "Poetry",
+   "covers": "Job through Song of Solomon.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 25",
+     "title": "Job: When Things Go Wrong",
+     "covers": "Job's two tests, his complaint and God's answer; trusting God in suffering.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 26",
+     "title": "Psalms: Sing It!",
+     "covers": "Six major themes of the Psalms, music and praise in worship, and Christ in the Psalms.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 27",
+     "title": "Proverbs: A Bit of Wisdom",
+     "covers": "The purposes of Proverbs and the benefits of wisdom.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 28",
+     "title": "Ecclesiastes: What's Life All About?",
+     "covers": "Knowing God as the key to life's meaning.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 29",
+     "title": "Song of Solomon: A Love Song",
+     "covers": "The beauty and strength of love and God's design for marriage.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 8",
+   "title": "Major Prophets",
+   "covers": "Isaiah, Jeremiah and Lamentations, Ezekiel, Daniel.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 30",
+     "title": "Isaiah: He's Coming",
+     "covers": "Isaiah's historical background and his prophecies fulfilled in Christ.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 31",
+     "title": "Jeremiah; Lamentations: Stand Up!",
+     "covers": "Jeremiah's setting and lonely stand for God, and the purpose of Lamentations.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 32",
+     "title": "Ezekiel: God's Actor",
+     "covers": "Ezekiel as watchman and his acted-out prophecies.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 33",
+     "title": "Daniel: Daring Daniel",
+     "covers": "Daniel's courage, God's faithfulness, and Nebuchadnezzar's dream of the statue.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 9",
+   "title": "Minor Prophets",
+   "covers": "Hosea through Malachi: each book's audience, period and theme.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 34",
+     "title": "Hosea: The God Who Is Always Faithful",
+     "covers": "Hosea's marriage as a picture of God's faithfulness to unfaithful Israel; backsliding.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 35",
+     "title": "Joel: God's Awesome Prophet",
+     "covers": "Joel's call to repentance, his promises, and the day of the Lord.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 36",
+     "title": "Amos: Prepare to Meet Your God",
+     "covers": "The kind of worship God accepts.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 37",
+     "title": "Jonah: The Biggest Fish Story",
+     "covers": "Jonah's selfishness and God's desire to draw all nations to himself.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 38",
+     "title": "Obadiah; Nahum: Payday for the Nations",
+     "covers": "The danger of pride and God's judgment on the nations.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 39",
+     "title": "Micah: God Is Not Asleep",
+     "covers": "Micah's outline compared with the gospel.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 40",
+     "title": "Habakkuk: That's Not Fair",
+     "covers": "Habakkuk's questions about injustice and what God taught him.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 41",
+     "title": "Zephaniah: The Day of the Lord Is Near!",
+     "covers": "The coming day of the Lord and God's judgment.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 42",
+     "title": "Haggai; Zechariah: Never Give Up!",
+     "covers": "Encouragement to finish God's work, and Zechariah's portrait of Christ.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 43",
+     "title": "Malachi: Keeping Promises",
+     "covers": "Israel's hollow religion and keeping commitments to God.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 10",
+   "title": "The Story of Jesus",
+   "covers": "The four Gospels.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 44",
+     "title": "Gospels: Great News",
+     "covers": "The purpose, audience and scope of each Gospel.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 45",
+     "title": "Gospels: The Messiah Has Come",
+     "covers": "Jesus' birth and early life, and Jesus as the Messiah.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 46",
+     "title": "Gospels: Jesus' Ministry of Teaching",
+     "covers": "Jesus' teaching and parables and the nature of salvation.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 47",
+     "title": "Gospels: Jesus' Ministry of Miracles",
+     "covers": "Jesus' miracles as the works of God.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 48",
+     "title": "Gospels: Jesus Dies, But....",
+     "covers": "Jesus' death and resurrection and the call to discipleship.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 11",
+   "title": "Building on Christ's Foundation",
+   "covers": "The Book of Acts.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 49",
+     "title": "Acts: The Birth of the Church",
+     "covers": "How the church began and how the early church worshiped.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 50",
+     "title": "Acts: The Church Grows and Grows",
+     "covers": "The growth of the first church and the faith and courage of its members.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 51",
+     "title": "Acts: Christian-Hater to Christian-Maker",
+     "covers": "Paul's life and six missionary principles from his journeys.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 12",
+   "title": "Paul's Letters",
+   "covers": "Romans through Philemon.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 52",
+     "title": "Romans: Hooray for the Gospel!",
+     "covers": "An outline of Paul's gospel and being conformed to Christ.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 53",
+     "title": "1 Corinthians: One Body",
+     "covers": "Unity in the church and the characteristics of love.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 54",
+     "title": "2 Corinthians: Joy in Ministry",
+     "covers": "Joy in serving Christ and giving to meet others' needs.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 55",
+     "title": "Galatians: Get It Right",
+     "covers": "Law versus Spirit and the fruit of the Spirit.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 56",
+     "title": "Ephesians: What a Church!",
+     "covers": "The church, walking in the light, spiritual warfare, and God's sovereignty and grace.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 57",
+     "title": "Philippians: Rejoice",
+     "covers": "Joy in Christ, Christ's humility, and overcoming worry.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 58",
+     "title": "Colossians: Get It Straight",
+     "covers": "Living with eternity in view and serving in freedom.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 59",
+     "title": "1-2 Thessalonians: Way to Go!",
+     "covers": "Living in light of Christ's return and the order of end-time events.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 60",
+     "title": "1-2 Timothy: Take the Lead",
+     "covers": "Church leadership roles and the qualities of a good leader.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 61",
+     "title": "Titus: Stand For the Truth",
+     "covers": "Christians standing firm for the truth.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 62",
+     "title": "Philemon: The Runaway",
+     "covers": "Forgiveness, through Paul's appeal for a runaway slave.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 13",
+   "title": "The Church Grows Up",
+   "covers": "Hebrews through Revelation, then a review of the whole Bible.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Lesson 63",
+     "title": "Hebrews: The Best",
+     "covers": "The new covenant's superiority to the old and becoming strong in faith.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 64",
+     "title": "James: Get a Grip",
+     "covers": "Faith shown in action, saving faith, and self-control.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 65",
+     "title": "1 Peter: Who are you?",
+     "covers": "Holy living in the middle of suffering.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 66",
+     "title": "2 Peter: It's the Truth",
+     "covers": "Telling true teaching from false.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 67",
+     "title": "1-3 John: Walking in the Light",
+     "covers": "The three themes of John's letters and walking in love.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 68",
+     "title": "Jude: Watch Out!",
+     "covers": "Jude's warning and obedience to God.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 69",
+     "title": "Revelation: A New Day",
+     "covers": "The purpose and scope of Revelation, its warning and its hope.",
+     "basis": "page"
+    },
+    {
+     "label": "Lesson 70",
+     "title": "Let's Review",
+     "covers": "Major events and themes of every Old and New Testament book; final exam.",
+     "basis": "page"
+    }
+   ]
+  }
+ ],
+ "notes": "The Student Manual's contents page prints lesson titles without numbers; lesson numbers come from the publisher's scope and sequence, which matches the same order. The course has 12 unit tests and 2 semester exams. The school's teacher ISBN (978-1-59557-060-4, 2007) is an earlier printing of the Teacher's Manual than the one sold now (978-1-59557-157-1); the student edition is the same. Positive Action announces a new edition for January 2027, so lesson titles may change if the school reorders. The Open Library record cited in the work list (https://openlibrary.org/isbn/9781595571090) has a table_of_contents field, but it lists the whole Positive Action series by grade, not this book's lessons, so it was not used for this outline."
+}

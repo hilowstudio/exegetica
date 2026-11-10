@@ -1,0 +1,223 @@
+{
+ "key": "inspire-physics",
+ "title": "Inspire Science: Physics (Inspire Physics), Student Edition",
+ "authors": [
+  "Paul W. Zitzewitz",
+  "David G. Haase",
+  "Kathleen A. Harper"
+ ],
+ "publisher": "McGraw Hill",
+ "edition": "2020",
+ "grade": "High school (grades 9-12)",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.mheducation.com/unitas/school/explore/sites/inspire-science/scope-and-sequence-9-12.pdf",
+   "what": "publisher scope and sequence (units and modules)"
+  },
+  {
+   "url": "https://www.millardk12.org/wp-content/uploads/2023/03/Inspire-Physics-Walkthrough-Flyer.pdf",
+   "what": "district-hosted publisher program walkthrough (module numbers, Unit 2 storyline, sample lesson)"
+  },
+  {
+   "url": "https://www.mheducation.com/prek-12/product/inspire-science-physics-g9-12-student-edition-mcgraw-hill/9780021353163.html",
+   "what": "publisher product page (ISBN, copyright 2020, program scope)"
+  }
+ ],
+ "summary": "An NGSS-aligned high-school physics course descended from Glencoe's Physics: Principles and Problems, organised as a toolkit module plus six units of modules, each with a launch, several 5E lessons, and a wrap-up. It runs from one- and two-dimensional mechanics through momentum and energy, waves and light, electricity and magnetism, to quantum, solid-state, and nuclear physics.",
+ "toc": [
+  {
+   "label": "Module 1",
+   "title": "A Physics Toolkit",
+   "covers": "Scientific methods, SI units and measurement, precision and accuracy, and graphing data to build models.",
+   "basis": "general"
+  },
+  {
+   "label": "Unit 1",
+   "title": "Mechanics in One Dimension",
+   "covers": "Describing straight-line motion and explaining it with forces and Newton's laws.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module 2",
+     "title": "Representing Motion",
+     "covers": "Motion diagrams, the particle model, coordinate systems, position-time graphs, and velocity.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 3",
+     "title": "Accelerated Motion",
+     "covers": "Acceleration, velocity-time graphs, the kinematic equations, and free fall.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 4",
+     "title": "Forces in One Dimension",
+     "covers": "Net force, Newton's three laws, weight, drag, tension, and interaction pairs.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 2",
+   "title": "Mechanics in Two Dimensions",
+   "covers": "How forces produce motion in a plane: vectors, projectiles, circular motion, gravitation, and rotation.",
+   "basis": "page",
+   "children": [
+    {
+     "label": "Module 5",
+     "title": "Displacement and Force in Two Dimensions",
+     "covers": "Adding force vectors in two dimensions, friction, and motion on inclined planes (Lesson 1 is 'Vectors').",
+     "basis": "page"
+    },
+    {
+     "label": "Module 6",
+     "title": "Motion in Two Dimensions",
+     "covers": "Projectile paths shaped by gravity and drag, and centripetal force in circular motion.",
+     "basis": "page"
+    },
+    {
+     "label": "Module 7",
+     "title": "Gravitation",
+     "covers": "The gravitational force that makes objects fall and holds planets and satellites in orbit.",
+     "basis": "page"
+    },
+    {
+     "label": "Module 8",
+     "title": "Rotational Motion",
+     "covers": "How forces produce changes in rotation.",
+     "basis": "page"
+    }
+   ]
+  },
+  {
+   "label": "Unit 3",
+   "title": "Momentum and Energy",
+   "covers": "Conservation laws for momentum and energy, thermal energy, and the behaviour of fluids and solids.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module 9",
+     "title": "Momentum and Its Conservation",
+     "covers": "Impulse, momentum, and conservation of momentum in collisions and explosions.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 10",
+     "title": "Energy and Its Conservation",
+     "covers": "Work, power, kinetic and potential energy, and conservation of energy in collisions.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 11",
+     "title": "Thermal Energy",
+     "covers": "Temperature, heat, specific heat, changes of state, and the laws of thermodynamics.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 12",
+     "title": "States of Matter",
+     "covers": "Fluids and pressure, Pascal's, Archimedes', and Bernoulli's principles, and properties of solids such as thermal expansion.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 4",
+   "title": "Waves and Light",
+   "covers": "Oscillations and mechanical waves, sound, and the behaviour of light.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module 13",
+     "title": "Vibrations and Waves",
+     "covers": "Periodic motion of springs and pendulums, wave properties, and wave behaviour at boundaries.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 14",
+     "title": "Sound",
+     "covers": "Sound waves, pitch and loudness, the Doppler effect, resonance, and musical sound.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 15",
+     "title": "Fundamentals of Light",
+     "covers": "Illumination, the speed of light, colour, polarisation, and the wave model of light.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 16",
+     "title": "Reflection and Refraction",
+     "covers": "Mirrors, Snell's law, total internal reflection, and lenses.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 17",
+     "title": "Interference and Diffraction",
+     "covers": "Double-slit and thin-film interference, diffraction gratings, and resolution.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 5",
+   "title": "Electricity and Magnetism",
+   "covers": "Electric charge and fields, circuits, magnetic fields, and electromagnetic induction.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module 18",
+     "title": "Electrostatics",
+     "covers": "Charge, conductors and insulators, Coulomb's law, electric fields, potential difference, and capacitance.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 19",
+     "title": "Electric Current and Circuits",
+     "covers": "Current, resistance, Ohm's law, electric power, and series and parallel circuits.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 20",
+     "title": "Magnetic Fields",
+     "covers": "Magnets, fields produced by currents, and forces on currents and moving charges.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 21",
+     "title": "Electromagnetism",
+     "covers": "Electromagnetic induction, generators, transformers, and electromagnetic waves.",
+     "basis": "general"
+    }
+   ]
+  },
+  {
+   "label": "Unit 6",
+   "title": "Subatomic Physics",
+   "covers": "Quantum behaviour of light and atoms, semiconductors, and the nucleus and elementary particles.",
+   "basis": "general",
+   "children": [
+    {
+     "label": "Module 22",
+     "title": "Quantum Theory and the Atom",
+     "covers": "The photoelectric effect, photons, atomic spectra, the Bohr model, and the quantum model of the atom.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 23",
+     "title": "Solid State Electronics",
+     "covers": "Conduction in solids, semiconductors, diodes, and transistors.",
+     "basis": "general"
+    },
+    {
+     "label": "Module 24",
+     "title": "Nuclear and Particle Physics",
+     "covers": "Nuclear structure, radioactive decay, fission and fusion, and the Standard Model of particles.",
+     "basis": "general"
+    }
+   ]
+  }
+ ],
+ "notes": "Module and unit titles are from the publisher's scope and sequence. Module numbers 5-8 are printed in the walkthrough; the others are numbered by position (Toolkit = 1) and should be checked against the book. Lesson titles were not found except Module 5, Lesson 1 'Vectors'. Each module has a launch, three or four lessons, and a wrap-up, and the walkthrough shows optional Earth and Space Science content linked to each unit."
+}

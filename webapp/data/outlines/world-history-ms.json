@@ -1,0 +1,145 @@
+{
+ "key": "world-history-ms",
+ "title": "World History: Voices and Perspectives (Student Edition, National Edition)",
+ "authors": [
+  "Jackson J. Spielvogel"
+ ],
+ "publisher": "McGraw Hill",
+ "edition": "2023",
+ "grade": "Grades 6-8 (middle school)",
+ "match": "exact edition",
+ "sources": [
+  {
+   "url": "https://www.mheducation.com/unitas/school/explore/sites/networks/social-studies/na-social-studies-6-8-world-history-voices-and-perspectives-toc.pdf",
+   "what": "publisher table of contents at-a-glance (its cover file carries MHID 0079020518, this ISBN)"
+  },
+  {
+   "url": "https://www.mheducation.com/prek-12/product/world-history-student-edition-mcgraw-hill/9780079020512.html",
+   "what": "publisher product page (title, grades 6-8, 2023)"
+  }
+ ],
+ "summary": "A middle-school world history survey from early humans to the modern world in 19 topics, weighted toward ancient and medieval civilisations. Each topic is built around compelling questions, primary and secondary sources, and multiple perspectives.",
+ "toc": [
+  {
+   "label": "Front matter",
+   "title": "Historian's Toolkit",
+   "covers": "How historians use time, sources, geography, and evidence to study the past.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 1",
+   "title": "Early Humans and the Agricultural Revolution",
+   "covers": "Paleolithic hunter-gatherers, the spread of early humans, and the Neolithic shift to farming and settled villages.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 2",
+   "title": "The Fertile Crescent",
+   "covers": "Mesopotamian city-states, Sumerian writing and law, and the empires of Akkad, Babylon (Hammurabi), Assyria, and Persia.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 3",
+   "title": "Ancient Egypt and Kush",
+   "covers": "The Nile valley, pharaohs and pyramids, Egyptian religion and culture, and the kingdom of Kush.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 4",
+   "title": "The Israelites",
+   "covers": "The history and beliefs of the ancient Israelites, the kingdoms of Israel and Judah, exile, and the development of Judaism.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 5",
+   "title": "Ancient Greece",
+   "covers": "Greek city-states, Athenian democracy and Sparta, the Persian and Peloponnesian Wars, Greek culture, and Alexander's empire.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 6",
+   "title": "Ancient South Asia",
+   "covers": "The Indus Valley civilisation, the Aryans and caste, Hinduism and Buddhism, and the Maurya and Gupta empires.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 7",
+   "title": "Early China, Korea, and Japan",
+   "covers": "Early Chinese dynasties through the Han, Confucianism and Daoism, the Silk Road, and the beginnings of Korea and Japan.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 8",
+   "title": "Ancient Rome",
+   "covers": "The Roman Republic and Empire, Roman law and culture, and the decline of the western empire.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 9",
+   "title": "The Rise of Christian Kingdoms",
+   "covers": "The origins and spread of Christianity, the early church, and the Byzantine Empire and Christian kingdoms that followed Rome.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 10",
+   "title": "The Americas",
+   "covers": "The Maya, Aztec, and Inca and the peoples of North America before European contact.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 11",
+   "title": "Medieval Europe",
+   "covers": "Feudalism, manors, the medieval church, the Crusades, towns and trade, and the Black Death.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 12",
+   "title": "The Rise of Islamic Empires",
+   "covers": "Muhammad and the origins of Islam, the caliphates, Islamic culture, and later Muslim empires.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 13",
+   "title": "China in the Middle Ages",
+   "covers": "The Sui, Tang, Song, Yuan (Mongol), and Ming dynasties and Chinese inventions and trade.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 14",
+   "title": "Korea and Japan in the Middle Ages",
+   "covers": "Medieval Korean kingdoms and feudal Japan with its shoguns and samurai.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 15",
+   "title": "African Civilizations",
+   "covers": "Trans-Saharan trade, Ghana, Mali, and Songhai, East African trading states, and African cultures.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 16",
+   "title": "New Ways of Thinking",
+   "covers": "The Renaissance, the Reformation, and the Scientific Revolution.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 17",
+   "title": "The Age of Exploration and Trade",
+   "covers": "European voyages of exploration, colonial empires, the Columbian Exchange, and the Atlantic slave trade.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 18",
+   "title": "Revolutions and Empires",
+   "covers": "The Enlightenment, political revolutions, the Industrial Revolution, and imperialism.",
+   "basis": "general"
+  },
+  {
+   "label": "Topic 19",
+   "title": "The Modern World",
+   "covers": "The world wars, the Cold War, independence movements, and globalisation in the 20th and 21st centuries.",
+   "basis": "general"
+  }
+ ],
+ "notes": "This is the middle-school Voices and Perspectives book (grades 6-8), not the high-school McGraw Hill World History. Topic titles are from the publisher's at-a-glance TOC; lesson titles were not found. An 'Early Ages' split of the same book also exists. Topic 4 (The Israelites) and Topic 9 (Rise of Christian Kingdoms) are the units closest to Bible courses."
+}

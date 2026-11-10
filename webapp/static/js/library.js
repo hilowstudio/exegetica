@@ -193,8 +193,9 @@ function openPlayer(id){
   if(!it)return;
   $("play-body").innerHTML='<div class="play-grid"><div class="deck-holder"><div class="deck"><div class="plinth"></div><div class="platter"></div><div class="disc spinning">'+discLabel(it)+'</div><div class="tonearm"><span class="arm"><span class="head"></span></span><span class="pivot"></span></div></div></div>'+
     '<div class="play-meta"><div class="r-eyebrow">Podcast</div><h2 class="r-title">'+esc(it.title)+'</h2><div class="r-author">'+esc(it.sub)+'</div>'+(it.meta?'<div class="r-facts">'+esc(it.meta)+'</div>':'')+
-    '<div class="r-note">Ready to ingest. Turning an episode into a study set comes in the next phase.</div>'+_rmBtn(it)+'</div></div>';
+    _rmBtn(it)+'</div></div><div class="moments" id="moments-play"></div>';
   $("play-bg").classList.add("open");
+  if(window.Moments&&AUTH.signed)Moments.mount(it,$("moments-play"));
 }
 $("records").addEventListener("click",function(e){var b=e.target.closest(".rec");if(b)openPlayer(b.dataset.id);});
 $("play-close").addEventListener("click",function(){$("play-bg").classList.remove("open");});
@@ -216,8 +217,9 @@ function openScreen(id){
   var projector='<div class="projector"><div class="p-reels"><span class="p-reel small spin"></span><span class="p-reel big spin"></span></div><div class="p-body"></div><div class="p-lens"></div></div>';
   $("screen-body").innerHTML='<div class="screening"><div class="scene-holder"><div class="proj-scene">'+projector+'<div class="beam"></div>'+screen+'</div></div>'+
     '<div class="play-meta"><div class="r-eyebrow">Video</div><h2 class="r-title">'+esc(it.title)+'</h2><div class="r-author">'+esc(it.sub)+'</div>'+(it.meta?'<div class="r-facts">'+esc(it.meta)+'</div>':'')+
-    '<div class="r-note">Ready to ingest. Turning a video into a lesson set comes in the next phase.</div>'+_rmBtn(it)+'</div></div>';
+    _rmBtn(it)+'</div></div><div class="moments" id="moments-screen"></div>';
   $("screen-bg").classList.add("open");
+  if(window.Moments&&AUTH.signed)Moments.mount(it,$("moments-screen"));
 }
 $("films").addEventListener("click",function(e){var b=e.target.closest(".film");if(b)openScreen(b.dataset.id);});
 $("screen-close").addEventListener("click",function(){$("screen-bg").classList.remove("open");});

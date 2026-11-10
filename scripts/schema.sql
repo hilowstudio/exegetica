@@ -378,3 +378,113 @@ create table if not exists usage_daily (
 -- QSF DAT-07: the Google profile photo is no longer stored. Nulling (instead of dropping the
 -- column) keeps sign-in working if this runs before the code that stops writing it is deployed.
 update users set picture = null where picture is not null;
+
+
+-- ===========================================================================
+-- The Prep Room (docs/decisions/0026-prep-room-units.md, webapp/prep.py). A teacher's units, the
+-- sources each draws on, and every resource made in one with its versions. Private to the teacher
+-- who made them; the maker can read them, as /privacy says. They go with the account.
+-- ===========================================================================
+create table if not exists prep_units (
+    id          uuid primary key default gen_random_uuid(),
+    user_id     uuid not null references users(id) on delete cascade,
+    title       text not null,
+    course_key  text,                                   -- a Yorkville course (webapp/data/yorkville.json)
+    grade_band  text not null default 'secondary',
+    notes       text not null default '',               -- what every draft in the unit should know
+    objectives  jsonb not null default '[]'::jsonb,     -- picked spine objectives, anchors included
+    created_at  timestamptz not null default now(),
+    updated_at  timestamptz not null default now()
+);
+create index if not exists prep_units_user_idx on prep_units(user_id, updated_at desc);
+
+-- What a unit draws on. `ref` holds only what its kind needs (webapp/prep.clean_ref). An upload's or
+-- a link's text is the teacher's own copy, kept encrypted (AES-GCM, LIBRARY_ENC_KEY).
+create table if not exists prep_sources (
+    id          uuid primary key default gen_random_uuid(),
+    unit_id     uuid not null references prep_units(id) on delete cascade,
+    kind        text not null check (kind in ('book','outline','passage','library','upload','link')),
+    ref         jsonb not null,
+    label       text not null,
+    words       integer,
+    position    integer not null default 0,
+    text_nonce  bytea,
+    text_ct     bytea,
+    added_at    timestamptz not null default now()
+);
+create index if not exists prep_sources_unit_idx on prep_sources(unit_id, position);
+
+-- A resource made in the Prep Room. unit_id is null for a quick resource made outside a unit.
+create table if not exists prep_resources (
+    id          uuid primary key default gen_random_uuid(),
+    user_id     uuid not null references users(id) on delete cascade,
+    unit_id     uuid references prep_units(id) on delete cascade,
+    format_id   text not null,
+    title       text not null,
+    settings    jsonb not null default '{}'::jsonb,     -- variant, item types, length, grade band, brief
+    created_at  timestamptz not null default now(),
+    updated_at  timestamptz not null default now()
+);
+create index if not exists prep_resources_user_idx on prep_resources(user_id, updated_at desc);
+create index if not exists prep_resources_unit_idx on prep_resources(unit_id);
+
+-- Every draft, revision, hand edit and restore, newest kept to 40 per resource.
+create table if not exists prep_versions (
+    resource_id uuid not null references prep_resources(id) on delete cascade,
+    n           integer not null,
+    origin      text not null check (origin in ('draft','revise','edit','restore')),
+    instruction text,
+    document    text not null,
+    drew_on     jsonb not null default '[]'::jsonb,     -- the sources this run was given
+    report      jsonb,                                  -- the source check (webapp/citations.py)
+    created_at  timestamptz not null default now(),
+    primary key (resource_id, n)
+);
+
+-- Which Yorkville courses a teacher teaches, so their Living Library opens on those courses' books.
+-- Keyed by the account's address (a teacher may not have signed in yet). 'school' rows come from the
+-- school's book list (scripts/seed_teacher_courses.py reads it on the maker's machine; no name is
+-- stored anywhere); 'teacher' rows are the teacher's own picks; 'removed' marks a school row the
+-- teacher took off, so a later seed doesn't put it back. Deleted with the account.
+create table if not exists teacher_courses (
+    email       text not null,
+    course_key  text not null,
+    source      text not null default 'school' check (source in ('school','teacher','removed')),
+    added_at    timestamptz not null default now(),
+    primary key (email, course_key)
+);
+
+-- Transcripts of public videos and podcast episodes (webapp/transcripts.py), shared by everyone who adds
+-- the item: published broadcast text only, never a private copy. key: 'yt:<video id>' or 'ep:<extraction id>:<guid>'.
+create table if not exists library_transcripts (
+    key         text primary key,
+    title       text,
+    segments    jsonb not null,               -- [{start, end, text, speaker}] in seconds
+    source      text not null,                -- 'application/json', 'text/vtt', 'youtube captions', ...
+    fetched_at  timestamptz not null default now()
+);
+
+-- A teacher's saved moments in a video or episode (decision 0026): a time range, the words spoken there when
+-- a transcript exists (or the teacher's own), and a note. Private to the teacher; deleted with the account.
+create table if not exists library_excerpts (
+    id            uuid primary key default gen_random_uuid(),
+    user_id       uuid not null references users(id) on delete cascade,
+    extraction_id uuid not null references library_extractions(id) on delete cascade,
+    episode_key   text,                       -- a podcast episode's guid; null for a video
+    episode_title text,
+    start_s       real not null,
+    end_s         real not null,
+    quote         text,
+    note          text,
+    created_at    timestamptz not null default now()
+);
+create index if not exists library_excerpts_user_idx on library_excerpts(user_id, extraction_id);
+
+-- A transcription Gemini is writing, or the reason the last one failed (decision 0028). One row per transcript
+-- key while it runs; removed when the transcript is stored. No account is kept here.
+create table if not exists library_transcribe_jobs (
+    key         text primary key,
+    status      text not null check (status in ('running','failed')),
+    error       text,
+    updated_at  timestamptz not null default now()
+);

@@ -1,0 +1,1230 @@
+{
+ "about": "Yorkville Christian School's 2026-27 class texts by course, from the school's book list (no names). state: text (in the Reading Room, slug), outline (webapp/data/outlines/<key>.json), none (the list gives no usable title).",
+ "courses": [
+  {
+   "key": "lit-9",
+   "name": "Freshman Literature and Composition",
+   "subject": "English",
+   "grades": "9"
+  },
+  {
+   "key": "lit-10",
+   "name": "Sophomore Literature and Composition",
+   "subject": "English",
+   "grades": "10"
+  },
+  {
+   "key": "lit-11",
+   "name": "Junior Literature and Composition",
+   "subject": "English",
+   "grades": "11"
+  },
+  {
+   "key": "lit-12",
+   "name": "Senior Literature and Composition",
+   "subject": "English",
+   "grades": "12"
+  },
+  {
+   "key": "ms-ela",
+   "name": "Middle School ELA",
+   "subject": "English",
+   "grades": "6-8"
+  },
+  {
+   "key": "algebra-1",
+   "name": "Algebra I",
+   "subject": "Mathematics",
+   "grades": "9-12"
+  },
+  {
+   "key": "algebra-2",
+   "name": "Algebra II",
+   "subject": "Mathematics",
+   "grades": "9-12"
+  },
+  {
+   "key": "geometry",
+   "name": "Geometry",
+   "subject": "Mathematics",
+   "grades": "9-12"
+  },
+  {
+   "key": "trigonometry",
+   "name": "Trigonometry",
+   "subject": "Mathematics",
+   "grades": "9-12"
+  },
+  {
+   "key": "precalculus",
+   "name": "Pre-Calculus",
+   "subject": "Mathematics",
+   "grades": "11-12"
+  },
+  {
+   "key": "ap-calculus-ab",
+   "name": "AP Calculus AB",
+   "subject": "Mathematics",
+   "grades": "11-12"
+  },
+  {
+   "key": "ms-math",
+   "name": "Middle School Math",
+   "subject": "Mathematics",
+   "grades": "6-8"
+  },
+  {
+   "key": "us-history",
+   "name": "U.S. History",
+   "subject": "Social Studies",
+   "grades": "8-12"
+  },
+  {
+   "key": "world-history",
+   "name": "World History",
+   "subject": "Social Studies",
+   "grades": "6-12"
+  },
+  {
+   "key": "geography",
+   "name": "Geography",
+   "subject": "Social Studies",
+   "grades": "9-12"
+  },
+  {
+   "key": "street-law",
+   "name": "Street Law",
+   "subject": "Social Studies",
+   "grades": "11-12"
+  },
+  {
+   "key": "psychology-sociology",
+   "name": "Psychology and Sociology",
+   "subject": "Social Studies",
+   "grades": "11-12"
+  },
+  {
+   "key": "us-government",
+   "name": "U.S. Government",
+   "subject": "Social Studies",
+   "grades": "12"
+  },
+  {
+   "key": "biology",
+   "name": "Biology",
+   "subject": "Science",
+   "grades": "9-10"
+  },
+  {
+   "key": "chemistry",
+   "name": "Chemistry",
+   "subject": "Science",
+   "grades": "10-12"
+  },
+  {
+   "key": "anatomy-physiology",
+   "name": "Anatomy and Physiology",
+   "subject": "Science",
+   "grades": "11-12"
+  },
+  {
+   "key": "physics",
+   "name": "Physics",
+   "subject": "Science",
+   "grades": "11-12"
+  },
+  {
+   "key": "health",
+   "name": "Health and Wellness",
+   "subject": "Health",
+   "grades": "9-12"
+  },
+  {
+   "key": "ms-science",
+   "name": "Middle School Science",
+   "subject": "Science",
+   "grades": "6-8"
+  },
+  {
+   "key": "spanish-1",
+   "name": "Spanish I",
+   "subject": "World Languages",
+   "grades": "9-12"
+  },
+  {
+   "key": "spanish-2",
+   "name": "Spanish II",
+   "subject": "World Languages",
+   "grades": "9-12"
+  },
+  {
+   "key": "spanish-readers",
+   "name": "Spanish readers",
+   "subject": "World Languages",
+   "grades": "9-12"
+  },
+  {
+   "key": "bible-1",
+   "name": "Bible I: Dynamic Christian Living",
+   "subject": "Bible",
+   "grades": "9"
+  },
+  {
+   "key": "bible-2",
+   "name": "Bible II",
+   "subject": "Bible",
+   "grades": "10"
+  },
+  {
+   "key": "bible-3",
+   "name": "Bible III: Behold Your God",
+   "subject": "Bible",
+   "grades": "11"
+  },
+  {
+   "key": "bible-4",
+   "name": "Bible IV: LEAD",
+   "subject": "Bible",
+   "grades": "12"
+  },
+  {
+   "key": "bible-electives",
+   "name": "Bible electives",
+   "subject": "Bible",
+   "grades": "9-12"
+  },
+  {
+   "key": "ms-bible-6",
+   "name": "Middle School Bible, grade 6",
+   "subject": "Bible",
+   "grades": "6"
+  },
+  {
+   "key": "ms-bible-7",
+   "name": "Middle School Bible, grade 7",
+   "subject": "Bible",
+   "grades": "7"
+  },
+  {
+   "key": "ms-bible-8",
+   "name": "Middle School Bible, grade 8",
+   "subject": "Bible",
+   "grades": "8"
+  },
+  {
+   "key": "ms-bible",
+   "name": "Middle School Bible",
+   "subject": "Bible",
+   "grades": "6-8"
+  },
+  {
+   "key": "agriculture",
+   "name": "Agriculture",
+   "subject": "Agriculture",
+   "grades": "9-12"
+  },
+  {
+   "key": "speech",
+   "name": "Speech",
+   "subject": "English",
+   "grades": "10-12"
+  },
+  {
+   "key": "mass-communications",
+   "name": "Mass Communications",
+   "subject": "English",
+   "grades": "10-12"
+  },
+  {
+   "key": "film-analysis",
+   "name": "Critical Film Analysis",
+   "subject": "English",
+   "grades": "11-12"
+  }
+ ],
+ "works": [
+  {
+   "key": "needs-illinois-ag-education-lessons",
+   "title": "Illinois Ag Education lessons",
+   "state": "none",
+   "note": "vary by lesson",
+   "isbns": [],
+   "courses": [
+    "agriculture"
+   ],
+   "aka": [
+    "Illinois Ag Education"
+   ]
+  },
+  {
+   "key": "mcdougal-algebra-1",
+   "title": "McDougal Littell Algebra 1",
+   "state": "outline",
+   "outline": "mcdougal-algebra-1",
+   "isbns": [
+    "9780618887637",
+    "9780618887743",
+    "9780618887767",
+    "9780618888153",
+    "9780618595563"
+   ],
+   "courses": [
+    "algebra-1"
+   ]
+  },
+  {
+   "key": "mcdougal-algebra-2",
+   "title": "Algebra 2",
+   "state": "text",
+   "slug": "tb-algebra-2",
+   "isbns": [
+    "9780618595419",
+    "9780618887651",
+    "9780618923649",
+    "9780618595594"
+   ],
+   "courses": [
+    "algebra-2"
+   ],
+   "author": "Ron Larson, Laurie Boswell, Timothy D. Kanold and Lee Stiff"
+  },
+  {
+   "key": "needs-anatomy-and-physiology",
+   "title": "Anatomy and Physiology",
+   "state": "none",
+   "note": "McGraw Hill online, no title",
+   "isbns": [],
+   "courses": [
+    "anatomy-physiology"
+   ],
+   "aka": [
+    "A & P"
+   ]
+  },
+  {
+   "key": "ap-calculus-ab-workbook",
+   "title": "AP Calculus AB workbook",
+   "state": "outline",
+   "outline": "ap-calculus-ab-workbook",
+   "isbns": [
+    "9780991698776"
+   ],
+   "courses": [
+    "ap-calculus-ab"
+   ]
+  },
+  {
+   "key": "dynamic-christian-leadership",
+   "title": "Dynamic Christian Leadership",
+   "state": "outline",
+   "outline": "dynamic-christian-leadership",
+   "isbns": [],
+   "courses": [
+    "bible-1"
+   ]
+  },
+  {
+   "key": "christian-adventure",
+   "title": "The Christian Adventure",
+   "state": "outline",
+   "outline": "christian-adventure",
+   "isbns": [
+    "9781595571052"
+   ],
+   "courses": [
+    "bible-2"
+   ]
+  },
+  {
+   "key": "behold-your-god",
+   "title": "Behold Your God",
+   "state": "outline",
+   "outline": "behold-your-god",
+   "isbns": [
+    "9781595572035"
+   ],
+   "courses": [
+    "bible-3"
+   ]
+  },
+  {
+   "key": "lead-leadership-evangelism-discipleship",
+   "title": "Leadership, Evangelism, and Discipleship",
+   "state": "outline",
+   "outline": "lead-leadership-evangelism-discipleship",
+   "isbns": [],
+   "courses": [
+    "bible-4"
+   ]
+  },
+  {
+   "key": "be-daring",
+   "title": "Be Daring",
+   "state": "text",
+   "slug": "warren-w-wiersbe_be-daring",
+   "isbns": [
+    "9781434767424"
+   ],
+   "courses": [
+    "bible-electives"
+   ],
+   "author": "Warren W. Wiersbe"
+  },
+  {
+   "key": "be-transformed",
+   "title": "Be Transformed",
+   "state": "text",
+   "slug": "warren-w-wiersbe_be-transformed",
+   "isbns": [
+    "9781434767387"
+   ],
+   "courses": [
+    "bible-electives"
+   ],
+   "author": "Warren W. Wiersbe"
+  },
+  {
+   "key": "crazy-love",
+   "title": "Crazy Love",
+   "state": "text",
+   "slug": "francis-chan_crazy-love",
+   "isbns": [],
+   "courses": [
+    "bible-electives"
+   ],
+   "author": "Francis Chan"
+  },
+  {
+   "key": "glencoe-biology",
+   "title": "Biology",
+   "state": "text",
+   "slug": "tb-biology",
+   "isbns": [
+    "9780078797330"
+   ],
+   "courses": [
+    "biology"
+   ],
+   "author": "Alton Biggs and others"
+  },
+  {
+   "key": "exploring-creation-biology",
+   "title": "Exploring Creation with Biology",
+   "state": "text",
+   "slug": "tb-exploring-creation",
+   "isbns": [
+    "9781932012545"
+   ],
+   "courses": [
+    "biology"
+   ],
+   "author": "Jay L. Wile and Marilyn F. Durnell"
+  },
+  {
+   "key": "needs-chemistry",
+   "title": "Chemistry",
+   "state": "none",
+   "note": "McGraw Hill online, no title",
+   "isbns": [],
+   "courses": [
+    "chemistry"
+   ]
+  },
+  {
+   "key": "geography-human-physical",
+   "title": "Geography: The Human and Physical World",
+   "state": "outline",
+   "outline": "geography-human-physical",
+   "isbns": [
+    "9780076680467"
+   ],
+   "courses": [
+    "geography"
+   ]
+  },
+  {
+   "key": "geometry-glencoe",
+   "title": "Geometry (Illinois Edition)",
+   "state": "text",
+   "slug": "tb-isbn-9780078905452",
+   "isbns": [
+    "9780078884849"
+   ],
+   "courses": [
+    "geometry"
+   ],
+   "author": "John A. Carter, Gilbert J. Cuevas, Roger Day, Carol Malloy and Jerry Cummins"
+  },
+  {
+   "key": "needs-health",
+   "title": "Health",
+   "state": "none",
+   "note": "no title on the list",
+   "isbns": [],
+   "courses": [
+    "health"
+   ]
+  },
+  {
+   "key": "fahrenheit-451",
+   "title": "Fahrenheit 451",
+   "state": "text",
+   "slug": "ray-bradbury_fahrenheit-451",
+   "isbns": [
+    "9781451673319"
+   ],
+   "courses": [
+    "lit-10"
+   ],
+   "author": "Ray Bradbury"
+  },
+  {
+   "key": "salt-to-the-sea",
+   "title": "Salt to the Sea",
+   "state": "text",
+   "slug": "ruta-sepetys_salt-to-the-sea",
+   "isbns": [
+    "9780142423622"
+   ],
+   "courses": [
+    "lit-10"
+   ],
+   "author": "Ruta Sepetys"
+  },
+  {
+   "key": "the-boys-in-the-boat",
+   "title": "The Boys in the Boat",
+   "state": "text",
+   "slug": "daniel-james-brown_the-boys-in-the-boat",
+   "isbns": [
+    "9780143125471"
+   ],
+   "courses": [
+    "lit-11"
+   ],
+   "author": "Daniel James Brown"
+  },
+  {
+   "key": "the-great-gatsby",
+   "title": "The Great Gatsby",
+   "state": "text",
+   "slug": "f-scott-fitzgerald_the-great-gatsby",
+   "isbns": [
+    "9788405801308"
+   ],
+   "courses": [
+    "lit-11"
+   ],
+   "author": "F. Scott Fitzgerald"
+  },
+  {
+   "key": "unbroken",
+   "title": "Unbroken",
+   "state": "text",
+   "slug": "laura-hillenbrand_unbroken",
+   "isbns": [
+    "9780812974492"
+   ],
+   "courses": [
+    "lit-11"
+   ],
+   "author": "Laura Hillenbrand"
+  },
+  {
+   "key": "unbroken-young-adult",
+   "title": "Unbroken (Young Adult Edition)",
+   "state": "text",
+   "slug": "laura-hillenbrand_unbroken-young-adult",
+   "isbns": [
+    "9780385742528"
+   ],
+   "courses": [
+    "lit-11"
+   ],
+   "author": "Laura Hillenbrand"
+  },
+  {
+   "key": "a-tale-of-two-cities",
+   "title": "A Tale of Two Cities",
+   "state": "text",
+   "slug": "charles-dickens_a-tale-of-two-cities",
+   "isbns": [
+    "9780486406510"
+   ],
+   "courses": [
+    "lit-12"
+   ],
+   "author": "Charles Dickens"
+  },
+  {
+   "key": "lord-of-the-flies",
+   "title": "Lord of the Flies",
+   "state": "text",
+   "slug": "william-golding_lord-of-the-flies",
+   "isbns": [
+    "9780399501487"
+   ],
+   "courses": [
+    "lit-12"
+   ],
+   "author": "William Golding"
+  },
+  {
+   "key": "the-importance-of-being-earnest",
+   "title": "The Importance of Being Earnest",
+   "state": "text",
+   "slug": "oscar-wilde_the-importance-of-being-earnest",
+   "isbns": [
+    "9780486264783"
+   ],
+   "courses": [
+    "lit-12"
+   ],
+   "author": "Oscar Wilde"
+  },
+  {
+   "key": "the-screwtape-letters",
+   "title": "The Screwtape Letters",
+   "state": "text",
+   "slug": "c-s-lewis_the-screwtape-letters",
+   "isbns": [
+    "9780060652937"
+   ],
+   "courses": [
+    "lit-12"
+   ],
+   "author": "C. S. Lewis"
+  },
+  {
+   "key": "jekyll-and-hyde",
+   "title": "The Strange Case of Dr. Jekyll and Mr. Hyde",
+   "state": "text",
+   "slug": "robert-louis-stevenson_the-strange-case-of-dr-jekyll-and-mr-hyde",
+   "isbns": [
+    "9788175993006"
+   ],
+   "courses": [
+    "lit-12"
+   ],
+   "author": "Robert Louis Stevenson"
+  },
+  {
+   "key": "romeo-and-juliet",
+   "title": "Romeo and Juliet",
+   "state": "text",
+   "slug": "william-shakespeare_romeo-and-juliet",
+   "isbns": [
+    "9781586638450"
+   ],
+   "courses": [
+    "lit-9"
+   ],
+   "author": "William Shakespeare"
+  },
+  {
+   "key": "the-odyssey-fagles",
+   "title": "The Odyssey (Fagles translation)",
+   "state": "text",
+   "slug": "homer_the-odyssey-fagles",
+   "isbns": [
+    "9780140268867"
+   ],
+   "courses": [
+    "lit-9"
+   ],
+   "author": "Homer"
+  },
+  {
+   "key": "to-kill-a-mockingbird",
+   "title": "To Kill a Mockingbird",
+   "state": "text",
+   "slug": "harper-lee_to-kill-a-mockingbird",
+   "isbns": [
+    "9780060955467"
+   ],
+   "courses": [
+    "lit-9"
+   ],
+   "author": "Harper Lee"
+  },
+  {
+   "key": "route-66",
+   "title": "Route 66: Travel Through the Bible",
+   "state": "outline",
+   "outline": "route-66",
+   "isbns": [
+    "9781595571090",
+    "9781595570604"
+   ],
+   "courses": [
+    "ms-bible"
+   ]
+  },
+  {
+   "key": "basics-biblical-worldview",
+   "title": "Basics for a Biblical Worldview",
+   "state": "outline",
+   "outline": "basics-biblical-worldview",
+   "isbns": [
+    "9781628566277",
+    "9781628566284"
+   ],
+   "courses": [
+    "ms-bible-6"
+   ]
+  },
+  {
+   "key": "case-for-a-creator-for-kids",
+   "title": "The Case for a Creator for Kids",
+   "state": "text",
+   "slug": "lee-strobel_the-case-for-a-creator-for-kids",
+   "isbns": [
+    "9780310719922"
+   ],
+   "courses": [
+    "ms-bible-6"
+   ],
+   "author": "Lee Strobel"
+  },
+  {
+   "key": "winning-the-race",
+   "title": "Winning the Race",
+   "state": "outline",
+   "outline": "winning-the-race",
+   "isbns": [
+    "9781595573414",
+    "9781595573438"
+   ],
+   "courses": [
+    "ms-bible-6"
+   ]
+  },
+  {
+   "key": "history-mission-of-god",
+   "title": "History: The Mission of God",
+   "state": "outline",
+   "outline": "history-mission-of-god",
+   "isbns": [
+    "9781950258147"
+   ],
+   "courses": [
+    "ms-bible-7"
+   ]
+  },
+  {
+   "key": "the-grave-robber",
+   "title": "The Grave Robber",
+   "state": "text",
+   "slug": "mark-batterson_the-grave-robber",
+   "isbns": [
+    "9780801015984"
+   ],
+   "courses": [
+    "ms-bible-8"
+   ],
+   "author": "Mark Batterson"
+  },
+  {
+   "key": "life-of-christ",
+   "title": "The Life of Christ from the Gospel of John",
+   "state": "text",
+   "slug": "life-of-christ",
+   "isbns": [
+    "9781595573810",
+    "9781595573834"
+   ],
+   "courses": [
+    "ms-bible-8"
+   ],
+   "author": "Frank Hamrick"
+  },
+  {
+   "key": "holes",
+   "title": "Holes",
+   "state": "text",
+   "slug": "louis-sachar_holes",
+   "isbns": [
+    "9780440414803"
+   ],
+   "courses": [
+    "ms-ela"
+   ],
+   "author": "Louis Sachar"
+  },
+  {
+   "key": "shiloh",
+   "title": "Shiloh",
+   "state": "text",
+   "slug": "phyllis-reynolds-naylor_shiloh",
+   "isbns": [
+    "9780689835827"
+   ],
+   "courses": [
+    "ms-ela"
+   ],
+   "author": "Phyllis Reynolds Naylor"
+  },
+  {
+   "key": "studysync-grade-6",
+   "title": "StudySync Grade 6",
+   "state": "outline",
+   "outline": "studysync-grade-6",
+   "isbns": [],
+   "courses": [
+    "ms-ela"
+   ]
+  },
+  {
+   "key": "studysync-grade-7",
+   "title": "StudySync Grade 7",
+   "state": "outline",
+   "outline": "studysync-grade-7",
+   "isbns": [
+    "9781944695798",
+    "9781944695804",
+    "9781944695811",
+    "9781944695828",
+    "9781944695835",
+    "9781944695842"
+   ],
+   "courses": [
+    "ms-ela"
+   ]
+  },
+  {
+   "key": "studysync-grade-8",
+   "title": "StudySync Grade 8",
+   "state": "outline",
+   "outline": "studysync-grade-8",
+   "isbns": [
+    "9781949739251",
+    "9781949739329",
+    "9781944695866",
+    "9781944695873",
+    "9781944695880",
+    "9781944695897",
+    "9781944695903"
+   ],
+   "courses": [
+    "ms-ela"
+   ]
+  },
+  {
+   "key": "the-giver",
+   "title": "The Giver",
+   "state": "text",
+   "slug": "lois-lowry_the-giver",
+   "isbns": [
+    "9780544340688"
+   ],
+   "courses": [
+    "ms-ela"
+   ],
+   "author": "Lois Lowry"
+  },
+  {
+   "key": "the-hiding-place",
+   "title": "The Hiding Place",
+   "state": "text",
+   "slug": "corrie-ten-boom_the-hiding-place",
+   "isbns": [
+    "9780800794057"
+   ],
+   "courses": [
+    "ms-ela"
+   ],
+   "author": "Corrie ten Boom"
+  },
+  {
+   "key": "the-outsiders",
+   "title": "The Outsiders",
+   "state": "text",
+   "slug": "s-e-hinton_the-outsiders",
+   "isbns": [
+    "9780142407332"
+   ],
+   "courses": [
+    "ms-ela"
+   ],
+   "author": "S. E. Hinton"
+  },
+  {
+   "key": "through-my-eyes",
+   "title": "Through My Eyes",
+   "state": "text",
+   "slug": "tim-tebow_through-my-eyes",
+   "isbns": [
+    "9780062007308"
+   ],
+   "courses": [
+    "ms-ela"
+   ],
+   "author": "Tim Tebow"
+  },
+  {
+   "key": "reveal-math-course-1",
+   "title": "Reveal Math Course 1",
+   "state": "outline",
+   "outline": "reveal-math-course-1",
+   "isbns": [
+    "9780076673728",
+    "9780078997204",
+    "9780078997143",
+    "9780078991752"
+   ],
+   "courses": [
+    "ms-math"
+   ]
+  },
+  {
+   "key": "reveal-math-course-2",
+   "title": "Reveal Math Course 2",
+   "state": "outline",
+   "outline": "reveal-math-course-2",
+   "isbns": [
+    "9780076673742",
+    "9780078997235",
+    "9780078997150",
+    "9780078991769"
+   ],
+   "courses": [
+    "ms-math"
+   ]
+  },
+  {
+   "key": "reveal-math-course-3",
+   "title": "Reveal Math Course 3",
+   "state": "outline",
+   "outline": "reveal-math-course-3",
+   "isbns": [
+    "9780076673759",
+    "9780078997242",
+    "9780078997181",
+    "9780078991776"
+   ],
+   "courses": [
+    "ms-math"
+   ]
+  },
+  {
+   "key": "integrated-science-6",
+   "title": "Grade 6 Integrated Science",
+   "state": "outline",
+   "outline": "integrated-science-6",
+   "isbns": [
+    "9780076873302",
+    "9780076873333",
+    "9780076873340",
+    "9780076873357"
+   ],
+   "courses": [
+    "ms-science"
+   ]
+  },
+  {
+   "key": "integrated-science-7",
+   "title": "Grade 7 Integrated Science",
+   "state": "outline",
+   "outline": "integrated-science-7",
+   "isbns": [
+    "9780076874538",
+    "9780076874545",
+    "9780076874576",
+    "9780076874583"
+   ],
+   "courses": [
+    "ms-science"
+   ]
+  },
+  {
+   "key": "integrated-science-8",
+   "title": "Grade 8 Integrated Science",
+   "state": "outline",
+   "outline": "integrated-science-8",
+   "isbns": [
+    "9780076874897",
+    "9780076874903",
+    "9780076874934",
+    "9780076875320"
+   ],
+   "courses": [
+    "ms-science"
+   ]
+  },
+  {
+   "key": "inspire-physics",
+   "title": "Inspire Physics",
+   "state": "outline",
+   "outline": "inspire-physics",
+   "isbns": [
+    "9780021353163"
+   ],
+   "courses": [
+    "physics"
+   ]
+  },
+  {
+   "key": "sullivan-precalculus",
+   "title": "Precalculus",
+   "state": "outline",
+   "outline": "sullivan-precalculus",
+   "isbns": [
+    "9780321644879"
+   ],
+   "courses": [
+    "precalculus"
+   ]
+  },
+  {
+   "key": "understanding-psychology",
+   "title": "Understanding Psychology",
+   "state": "outline",
+   "outline": "understanding-psychology",
+   "isbns": [
+    "9780076631940"
+   ],
+   "courses": [
+    "psychology-sociology"
+   ]
+  },
+  {
+   "key": "asi-se-dice-1",
+   "title": "¡Así se dice! Spanish 1",
+   "state": "outline",
+   "outline": "asi-se-dice-1",
+   "isbns": [
+    "9780021367474"
+   ],
+   "courses": [
+    "spanish-1"
+   ]
+  },
+  {
+   "key": "asi-se-dice-2",
+   "title": "¡Así se dice! Spanish 2",
+   "state": "outline",
+   "outline": "asi-se-dice-2",
+   "isbns": [
+    "9780021412648"
+   ],
+   "courses": [
+    "spanish-2"
+   ]
+  },
+  {
+   "key": "brandon-brown-quiere-un-perro",
+   "title": "Brandon Brown quiere un perro",
+   "state": "outline",
+   "outline": "brandon-brown-quiere-un-perro",
+   "isbns": [
+    "9781935575948"
+   ],
+   "courses": [
+    "spanish-readers"
+   ]
+  },
+  {
+   "key": "brandon-brown-versus-yucatan",
+   "title": "Brandon Brown versus Yucatán",
+   "state": "outline",
+   "outline": "brandon-brown-versus-yucatan",
+   "isbns": [
+    "9781940408002"
+   ],
+   "courses": [
+    "spanish-readers"
+   ]
+  },
+  {
+   "key": "daniel-el-detective",
+   "title": "Daniel el detective",
+   "state": "outline",
+   "outline": "daniel-el-detective",
+   "isbns": [
+    "9781603724869"
+   ],
+   "courses": [
+    "spanish-readers"
+   ]
+  },
+  {
+   "key": "entre-las-nubes-altas",
+   "title": "Entre las nubes altas",
+   "state": "outline",
+   "outline": "entre-las-nubes-altas",
+   "isbns": [
+    "9781603724166"
+   ],
+   "courses": [
+    "spanish-readers"
+   ]
+  },
+  {
+   "key": "esperanza-spanish-reader",
+   "title": "Esperanza",
+   "state": "outline",
+   "outline": "esperanza-spanish-reader",
+   "isbns": [
+    "9781935575290"
+   ],
+   "courses": [
+    "spanish-readers"
+   ]
+  },
+  {
+   "key": "pobre-ana",
+   "title": "Pobre Ana",
+   "state": "outline",
+   "outline": "pobre-ana",
+   "isbns": [
+    "9781603724241"
+   ],
+   "courses": [
+    "spanish-readers"
+   ]
+  },
+  {
+   "key": "street-law",
+   "title": "Street Law",
+   "state": "outline",
+   "outline": "street-law",
+   "isbns": [
+    "9780078895180"
+   ],
+   "courses": [
+    "street-law"
+   ]
+  },
+  {
+   "key": "trigonometry-mckeague",
+   "title": "Trigonometry",
+   "state": "text",
+   "slug": "tb-trigonometry",
+   "isbns": [
+    "9780495108351"
+   ],
+   "courses": [
+    "trigonometry"
+   ],
+   "author": "Charles P. McKeague and Mark D. Turner"
+  },
+  {
+   "key": "needs-government",
+   "title": "Government",
+   "state": "none",
+   "note": "online licenses, no title",
+   "isbns": [],
+   "courses": [
+    "us-government"
+   ]
+  },
+  {
+   "key": "discovering-our-past-us",
+   "title": "Discovering Our Past: A History of the United States",
+   "state": "outline",
+   "outline": "discovering-our-past-us",
+   "isbns": [
+    "9780076680504"
+   ],
+   "courses": [
+    "us-history"
+   ]
+  },
+  {
+   "key": "needs-grade-8-u-s-history",
+   "title": "Grade 8 U.S. History",
+   "state": "none",
+   "note": "no title or ISBN on the list",
+   "isbns": [],
+   "courses": [
+    "us-history"
+   ]
+  },
+  {
+   "key": "united-states-history",
+   "title": "United States History",
+   "state": "outline",
+   "outline": "united-states-history",
+   "isbns": [
+    "9780079022776",
+    "9780079022790"
+   ],
+   "courses": [
+    "us-history"
+   ]
+  },
+  {
+   "key": "world-history-mcgraw",
+   "title": "World History",
+   "state": "outline",
+   "outline": "world-history-mcgraw",
+   "isbns": [
+    "9780076605873"
+   ],
+   "courses": [
+    "world-history"
+   ]
+  },
+  {
+   "key": "world-history-ms",
+   "title": "World History",
+   "state": "outline",
+   "outline": "world-history-ms",
+   "isbns": [
+    "9780079020512",
+    "9780079020536"
+   ],
+   "courses": [
+    "world-history"
+   ]
+  },
+  {
+   "key": "how-to-design-and-deliver-speeches",
+   "title": "How to Design and Deliver Speeches",
+   "author": "Leon Fletcher",
+   "state": "none",
+   "note": "One teacher's copy; no outline yet.",
+   "isbns": [
+    "0205378013"
+   ],
+   "courses": [
+    "speech"
+   ]
+  },
+  {
+   "key": "broadcast-writing-reporting-producing",
+   "title": "Broadcast Writing, Reporting and Producing",
+   "state": "none",
+   "note": "One teacher's copy; the list gives it the same ISBN as Movies and Meaning, so its own ISBN is unknown. No outline yet.",
+   "isbns": [],
+   "courses": [
+    "mass-communications"
+   ]
+  },
+  {
+   "key": "screenplay-foundations-of-screenwriting",
+   "title": "Screenplay: The Foundations of Screenwriting",
+   "author": "Syd Field",
+   "state": "none",
+   "note": "One teacher's copy; no outline yet.",
+   "isbns": [
+    "9780385339032"
+   ],
+   "courses": [
+    "film-analysis"
+   ]
+  },
+  {
+   "key": "movies-and-meaning",
+   "title": "Movies and Meaning: An Introduction to Film",
+   "state": "none",
+   "note": "Sixth edition, one teacher's copy; no outline yet.",
+   "isbns": [
+    "9780240823713"
+   ],
+   "courses": [
+    "film-analysis"
+   ]
+  }
+ ]
+}

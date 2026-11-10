@@ -24,7 +24,8 @@ logger = logging.getLogger("study-bible-web.metrics")
 
 RETENTION_DAYS = 90
 
-ROUTES = {"chat:bible", "chat:history", "generate", "generate:book", "revise", "studio", "studio:video"}
+ROUTES = {"chat:bible", "chat:history", "generate", "generate:book", "revise", "prep:draft", "prep:revise",
+          "library:transcribe", "studio", "studio:video"}
 KEY_SOURCES = {"server", "byok"}
 OUTCOMES = {
     # how a model run ended (providers.OUTCOMES)

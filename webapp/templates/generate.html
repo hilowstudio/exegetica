@@ -3,94 +3,135 @@
 {% block fonts %}{{ super() }}<link rel="stylesheet" href="/static/fonts/doc.css">{% endblock %}
 {% block styles %}<link rel="stylesheet" href="/static/css/generate.css">{% endblock %}
 {% block content %}
-<div class="app">
+{# The Prep Room (decision 0026): units hold their sources, objectives and resources; the Make panel is the
+   gallery of kinds. Home lists the units. One page, addressed as /generate, /generate/unit/<id>,
+   /generate/unit/<id>/r/<resource> and /generate/r/<resource> for a quick resource. #}
+<div class="app" id="app" data-view="home" data-tab="doc">
   {# on a phone the panels stack, and the wordmark tops the stack #}
   {% with mast="narrow" %}{% include "partials/masthead.html" %}{% endwith %}
 
-  <aside class="builder">
-    <div class="builder-head"><span class="bh-title">Build a resource</span></div>
-    <div id="keybanner" class="banner" style="display:none"></div>
-    <div class="src-toggle" role="tablist" aria-label="Source">
-      <button class="srcbtn on" type="button" data-src="book" role="tab">From a book</button>
-      <button class="srcbtn" type="button" data-src="standard" role="tab">From standards</button>
-    </div>
-    <div class="bsearch" id="stdsearchwrap" style="display:none">
-      <label class="lbl" for="stdsearch">Find a standard</label>
-      <div class="searchbox">
-        <input id="stdsearch" type="text" autocomplete="off" spellcheck="false" placeholder="Search a subject, topic, or objective…">
-        <div class="sresults" id="sresults"></div>
-      </div>
-    </div>
-    <div class="acc" id="acc">
-      <section class="acc-sec open" data-sec="book">
-        <button class="acc-h" type="button"><span class="acc-n">1</span><span class="acc-t">Book</span><span class="acc-sum" id="sum-book">None</span><span class="chev">›</span></button>
-        <div class="acc-body">
-          <div class="fld"><label for="booksearch">Find a book</label>
-            <div class="searchbox"><input id="booksearch" type="text" autocomplete="off" spellcheck="false" placeholder="Search title or author…"><div class="sresults" id="bookresults"></div></div>
-          </div>
-          <div class="fld" id="coverwrap" style="display:none"><label for="sel-cover">Assign through (students have read up to and including)</label><select id="sel-cover"></select></div>
-        </div>
-      </section>
-      <section class="acc-sec" data-sec="standard" style="display:none">
-        <button class="acc-h" type="button"><span class="acc-n">1</span><span class="acc-t">Standard</span><span class="acc-sum" id="sum-standard">Not chosen</span><span class="chev">›</span></button>
-        <div class="acc-body">
-          <div class="crumb" id="crumb"></div>
-          <div class="fld"><label for="sel-subject">Subject</label><select id="sel-subject"></select></div>
-          <div class="fld"><label for="sel-subsubject">Sub-subject</label><select id="sel-subsubject" disabled></select></div>
-          <div class="fld"><label for="sel-topic">Topic</label><select id="sel-topic" disabled></select></div>
-          <div class="fld"><label for="sel-subtopic">Sub-topic</label><select id="sel-subtopic" disabled></select></div>
-        </div>
-      </section>
-      <section class="acc-sec" data-sec="objectives" style="display:none">
-        <button class="acc-h" type="button"><span class="acc-n">2</span><span class="acc-t">Objectives</span><span class="acc-sum" id="sum-objectives">None</span><span class="chev">›</span></button>
-        <div class="acc-body">
-          <div class="objs" id="objs"><div class="empty">Select a sub-topic to load objectives.</div></div>
-        </div>
-      </section>
-      <section class="acc-sec" data-sec="format">
-        <button class="acc-h" type="button"><span class="acc-n">2</span><span class="acc-t">Resource Kind</span><span class="acc-sum" id="sum-format">None</span><span class="chev">›</span></button>
-        <div class="acc-body">
-          <div class="recs" id="recs"></div>
-          <div class="fld"><select id="sel-format" aria-label="Resource kind"></select><span class="fmtdef" id="fmtdef"></span></div>
-        </div>
-      </section>
-      <section class="acc-sec" data-sec="audience">
-        <button class="acc-h" type="button"><span class="acc-n">3</span><span class="acc-t">Audience</span><span class="acc-sum" id="sum-audience">Secondary</span><span class="chev">›</span></button>
-        <div class="acc-body">
-          <div class="fld"><label for="sel-band">Grade band (who you're teaching)</label><select id="sel-band"></select></div>
-          <div class="fld"><label for="brief">Optional instructions</label><textarea id="brief" placeholder="e.g. 12 items, focus on the Greek, make it a one-pager"></textarea></div>
-        </div>
-      </section>
+  <nav class="tabbar" id="tabbar" aria-label="Unit panels">
+    <button type="button" data-tab="unit" aria-pressed="false">Unit</button>
+    <button type="button" data-tab="doc" aria-pressed="true">Resource</button>
+    <button type="button" data-tab="make" aria-pressed="false">Make</button>
+  </nav>
+
+  <aside class="unitpane" id="unitpane" aria-label="Unit">
+    <a class="crumb" href="/generate" data-nav>‹ All units</a>
+    <div class="u-head">
+      <h1 class="u-title" id="u-title">Unit</h1>
+      <p class="u-meta" id="u-meta"></p>
+      <button type="button" class="linkbtn" id="u-edit">Edit unit</button>
     </div>
 
-    <div class="builder-foot">
-      <div class="note" id="gennote">Pick a book, coverage, and a format.</div>
-      <button class="gen" id="gen" disabled>Draft resource</button>
-    </div>
+    <section class="u-sec" aria-labelledby="h-sources">
+      <div class="u-sec-head"><h2 id="h-sources">Sources</h2><span class="count" id="n-sources"></span></div>
+      <p class="u-hint" id="sources-hint">What drafts in this unit draw on, in this order.</p>
+      <ul class="srclist" id="srclist"></ul>
+      <button type="button" class="addbtn" id="add-source">Add source</button>
+    </section>
+
+    <section class="u-sec" aria-labelledby="h-objs">
+      <div class="u-sec-head"><h2 id="h-objs">Objectives</h2><span class="count" id="n-objs"></span></div>
+      <div class="chips" id="objchips"></div>
+      <button type="button" class="addbtn" id="add-obj">Add objective</button>
+    </section>
+
+    <section class="u-sec" aria-labelledby="h-note">
+      <div class="u-sec-head"><h2 id="h-note"><label for="u-note">Note for every draft</label></h2><span class="count" id="note-state" aria-live="polite"></span></div>
+      <textarea id="u-note" rows="3" maxlength="4000" placeholder="For example: period 3 reads aloud; two students need larger print."></textarea>
+    </section>
+
+    <section class="u-sec" aria-labelledby="h-res">
+      <div class="u-sec-head"><h2 id="h-res">Resources</h2><span class="count" id="n-res"></span></div>
+      <ul class="reslist" id="reslist"></ul>
+    </section>
   </aside>
 
-  <section class="output">
+  <section class="output" id="output">
     {% with mast="wide" %}{% include "partials/masthead.html" %}{% endwith %}
-    <div class="outhead shell-stick">
-      <h2 id="outtitle">Resource</h2>
-      <div class="seg" id="aud"><button data-v="teacher" class="on" type="button">Teacher</button><button data-v="student" type="button">Student</button></div>
-      <div class="seg" id="mode"><button data-m="view" class="on" type="button">View</button><button data-m="edit" type="button">Edit</button></div>
-      <span style="flex:1"></span>
-      <label class="credit-opt" title="Ends the PDF and the .md file with a line saying the document was drafted with Exegetica and reviewed by the teacher"><input type="checkbox" id="credit"> Credit line</label>
-      <button class="obtn" id="copy" disabled>Copy</button>
-      <button class="obtn" id="download" disabled>.md</button>
-      <button class="obtn primary" id="pdf" disabled>PDF</button>
+
+    <div class="home" id="home">
+      <div class="home-head">
+        <div>
+          <p class="eyebrow">Prep Room</p>
+          <h1>Your units</h1>
+          <p class="lede">A unit keeps what you teach from (books, passages, videos, your own handouts) and everything you make from it.</p>
+        </div>
+        <div class="home-actions">
+          <button type="button" class="btn-primary" id="new-unit">New unit</button>
+          <a class="btn-quiet" href="/generate/new" data-nav>Quick resource</a>
+        </div>
+      </div>
+      <div class="unitgrid" id="unitgrid"></div>
+      <section class="quick" id="quick" hidden>
+        <h2>Quick resources</h2>
+        <ul class="reslist wide" id="quicklist"></ul>
+      </section>
     </div>
-    <div class="modrow" id="modrow" style="display:none">
-      <input id="modin" aria-label="Change this document" placeholder="Modify without regenerating. For example: “add 3 harder items”, “make the reading shorter”, “change the theme to autumn”">
-      <button class="obtn" id="modbtn">Apply</button>
+
+    <div class="work" id="work">
+      <div class="outhead shell-stick">
+        <h2 id="outtitle">Resource</h2>
+        <div class="seg" id="aud" role="group" aria-label="Copy"><button data-v="teacher" class="on" type="button" aria-pressed="true">Teacher</button><button data-v="student" type="button" aria-pressed="false">Student</button></div>
+        <div class="seg" id="mode" role="group" aria-label="View or edit"><button data-m="view" class="on" type="button" aria-pressed="true">View</button><button data-m="edit" type="button" aria-pressed="false">Edit</button></div>
+        <button class="obtn" id="versions" type="button" aria-haspopup="true" aria-expanded="false" disabled>Versions</button>
+        <span class="spacer"></span>
+        <label class="credit-opt" title="Ends the PDF and the .md file with a line saying the document was drafted with Exegetica and reviewed by the teacher"><input type="checkbox" id="credit"> Credit line</label>
+        <button class="obtn" id="copy" type="button" disabled>Copy</button>
+        <button class="obtn" id="download" type="button" disabled>.md</button>
+        <button class="obtn" id="pdf" type="button" disabled>PDF</button>
+        <button class="obtn makebtn" id="open-make" type="button">Make</button>
+        <div class="vmenu" id="vmenu" hidden></div>
+      </div>
+      <div class="oldver" id="oldver" hidden></div>
+      <form class="modrow" id="modrow" hidden>
+        <label class="sr" for="modin">Change this resource</label>
+        <input id="modin" autocomplete="off" placeholder="Change it: “add three harder items”, “make the reading shorter”">
+        <button class="obtn" id="modbtn" type="submit">Apply</button>
+      </form>
+      <div class="tools" id="tools"></div>
+      <section class="report" id="report" aria-label="Source check" hidden></section>
+      <div class="paperwrap" id="paperwrap" hidden><div class="paper prose" id="paper"></div></div>
+      <label class="sr" for="editor">Edit the resource as Markdown</label>
+      <textarea class="editor" id="editor" hidden spellcheck="false"></textarea>
+      <div class="placeholder" id="placeholder">
+        <h2 id="ph-title">Make your first resource</h2>
+        <p id="ph-body">Pick a kind under Make. The draft draws on this unit's sources and objectives, and it is saved here with every change you make.</p>
+        <button type="button" class="btn-quiet" id="ph-make">Choose a kind</button>
+      </div>
     </div>
-    <div class="tools" id="tools"></div>
-    <section class="report" id="report" aria-label="Source check" hidden></section>
-    <div class="paperwrap" id="paperwrap" style="display:none"><div class="paper prose" id="paper"></div></div>
-    <textarea class="editor" id="editor" style="display:none" spellcheck="false"></textarea>
-    <div class="placeholder" id="placeholder"><h1>Prepare a resource</h1><p>Build from a book by picking the title and the chapters your class has read, and the document lands where your students are. Or build from an academic standard. Choose the source at left. Switch between Teacher and Student, edit it directly, or revise it with a plain instruction.</p></div>
   </section>
+
+  <aside class="makepane" id="makepane" aria-label="Make a resource">
+    <div class="mk-head">
+      <h2 id="mk-title">Make</h2>
+      <button type="button" class="icobtn" id="close-make" aria-label="Close Make">×</button>
+    </div>
+    <div id="gallery">
+      <label class="sr" for="kindsearch">Search the kinds of resource</label>
+      <input id="kindsearch" type="search" autocomplete="off" placeholder="Search the kinds: quiz, timeline, rubric…">
+      <div class="kinds" id="kinds"></div>
+    </div>
+    <div class="sheet" id="sheet" hidden>
+      <button type="button" class="linkbtn back" id="sheet-back">‹ All kinds</button>
+      <h3 id="k-name"></h3>
+      <p class="k-def" id="k-def"></p>
+      <details class="k-holds"><summary>What it holds</summary><ol id="k-structure"></ol></details>
+      <div class="fld" id="f-variant" hidden><span class="flabel" id="lab-variant">Shape</span><div class="choice" id="k-variants" role="radiogroup" aria-labelledby="lab-variant"></div></div>
+      <div class="fld" id="f-items" hidden><span class="flabel" id="lab-items">Item types</span><div class="choice" id="k-items" role="group" aria-labelledby="lab-items"></div></div>
+      <div class="fld"><span class="flabel" id="lab-length">Length</span><div class="seg" id="k-length" role="radiogroup" aria-labelledby="lab-length"></div></div>
+      <div class="fld"><label class="flabel" for="k-band">Grade band</label><select id="k-band"></select></div>
+      <div class="fld"><label class="flabel" for="k-brief">Instructions (optional)</label><textarea id="k-brief" rows="3" maxlength="4000" placeholder="For example: ten items, focus on verses 37 to 39."></textarea></div>
+      <p class="k-draws" id="k-draws"></p>
+      <button type="button" class="btn-primary wide" id="draft">Draft resource</button>
+    </div>
+  </aside>
 </div>
+
+<dialog class="pdlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="pdlg-head"><h2 id="dlg-title"></h2><button type="button" class="icobtn" data-close aria-label="Close">×</button></div>
+  <div class="pdlg-body" id="dlg-body"></div>
+</dialog>
 {% endblock %}
 {% block scripts %}<script src="/static/js/generate.js"></script>{% endblock %}
