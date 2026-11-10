@@ -1063,6 +1063,7 @@
         }
         chapter.innerHTML = front + c.html;
         if(window.Shell && Shell.tagLanguages){ Shell.tagLanguages(chapter); }   // Greek and Hebrew set before the pages are measured
+        if(window.Passage){ Passage.linkRefs(chapter); }   // a Scripture reference opens its chapter beside the book
         typesetMath(chapter, c.html).then(function(){ laidOut(landing); });
       });
     }
@@ -1138,6 +1139,15 @@
         pop.style.left = x + "px"; pop.style.top = y + "px";
       }
     });
+    // A keyboard reader tabbing through references and notes: the book turns to the page each is on. The browser
+    // would scroll the clipped page frame to show it instead, and leave the spread out of line.
+    chapter.addEventListener("focusin", function(e){
+      var el = e.target; if(!el || el === chapter || !stride){ return; }
+      var unscroll = function(){ pageport.scrollLeft = 0; pageport.scrollTop = 0; };
+      unscroll(); requestAnimationFrame(unscroll);
+      var p = Math.floor((el.getBoundingClientRect().left - chapter.getBoundingClientRect().left + 1) / stride);
+      if(p !== page && p >= 0 && p < pages){ goToPage(p, false); }
+    });
     document.addEventListener("click", function(e){ if(pop && !pop.contains(e.target)){ closePop(); } });
     document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closePop(); } });
     // ---- input: edge zones, keys, swipe ----
@@ -1145,6 +1155,9 @@
     $("pgPrev").addEventListener("click", prevPage);
     document.addEventListener("keydown", function(e){
       if(e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)){ return; }
+      // the passage panel and open dialogs keep their own keys: arrows scroll the passage, Space presses a button
+      if(e.target && e.target.closest && e.target.closest(".passage,dialog")){ return; }
+      if(e.key === " " && e.target && e.target.closest && e.target.closest("button")){ return; }
       if(e.key === "ArrowRight" || e.key === "PageDown" || e.key === " "){ e.preventDefault(); nextPage(); }
       else if(e.key === "ArrowLeft" || e.key === "PageUp"){ e.preventDefault(); prevPage(); }
       else if(e.key === "Home"){ goToPage(0, true); }

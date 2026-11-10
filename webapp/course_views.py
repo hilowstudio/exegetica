@@ -258,7 +258,7 @@ def day(m: dict, date_s: str, *, view: str, here: str) -> shell.Built | None:
                 blocks += (f'<div class="toolbar"><button class="btn" onclick="window.print()">'
                            f'Print / Save as PDF</button>'
                            f'<a class="btn" href="{_u("/course/doc/" + g["file"], view)}">Open full page</a></div>')
-                blocks += f'<article class="doc">{course.render_html(g["path"])}</article>'
+                blocks += f'<article class="doc" data-scripture>{course.render_html(g["path"])}</article>'
         else:
             blocks = '<p class="empty">The teacher lesson guide for this day hasn’t been generated yet.</p>'
     else:
@@ -320,7 +320,7 @@ def doc(m: dict, art: dict, *, view: str, here: str) -> shell.Built:
     toolbar = ('<div class="toolbar"><button class="btn btn--gold" onclick="window.print()">'
                'Print / Save as PDF</button></div>')
     body = (_crumbs(crumbs, view) + toolbar
-            + f'<article class="doc">{course.render_html(art["path"])}</article>')
+            + f'<article class="doc" data-scripture>{course.render_html(art["path"])}</article>')
     return _page(f"{art['title']} · Gospel of John", body, here=here, view=view)
 
 

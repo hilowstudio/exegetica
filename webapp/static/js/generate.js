@@ -80,7 +80,7 @@ async function load(){
   if(!S.gallery)await loadGallery();
   if(S.busy&&r.view==="home"){history.pushState({},"",resPath(S.res&&S.res.id));Shell.toast("Wait for the draft to finish, or stay here: it's saved when it's done.");return;}
   app.dataset.view=r.view;
-  if(r.view==="home"){await loadHome();return;}
+  if(r.view==="home"){tellPanel();await loadHome();return;}
   if(r.unit){
     if(!S.unit||S.unit.id!==r.unit){
       try{S.unit=(await api("GET","/api/prep/units/"+r.unit)).unit;}
@@ -152,7 +152,7 @@ function openMenu(btn,items){
 }
 document.addEventListener("click",e=>{if(openMenuEl&&!e.target.closest(".menu")&&!e.target.closest(".kebab")&&!e.target.closest("[data-umenu]"))closeMenus();
   if(!$("vmenu").hidden&&!e.target.closest("#vmenu")&&!e.target.closest("#versions"))closeMenus();});
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){if(!$("vmenu").hidden){closeMenus();$("versions").focus();}if(app.classList.contains("make-open")&&!$("dlg").open)closeMake();}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!e.defaultPrevented){if(!$("vmenu").hidden){closeMenus();$("versions").focus();}if(app.classList.contains("make-open")&&!$("dlg").open)closeMake();}});
 
 // A removal happens at once and can be taken back for a few seconds (rule F3); the server hears of it after.
 const pending=new Map();
@@ -186,17 +186,30 @@ function sourceSub(s){
   if(s.kind==="passage")return esc(r.translation||"ESV");
   if(s.kind==="upload")return "Your upload · "+(s.words||0).toLocaleString()+" words";
   if(s.kind==="link"){let h="";try{h=new URL(r.url).hostname.replace(/^www\./,"");}catch(e){}return esc(h)+" · "+(s.words||0).toLocaleString()+" words";}
-  if(s.kind==="library")return "From your Living Library";
+  if(s.kind==="library"){const n=(r.excerpts||[]).length;return "From your Living Library"+(n?" · "+n+" saved moment"+(n===1?"":"s"):"");}
   return "";}
+// The passage panel (static/js/passage.js) lists the open unit first under "Add to a unit".
+function tellPanel(){if(window.Passage)Passage.currentUnit=app.dataset.view!=="home"&&S.unit?{id:S.unit.id,title:S.unit.title}:null;}
+document.addEventListener("prep:sources-changed",e=>{if(S.unit&&e.detail&&e.detail.unit===S.unit.id)refreshUnit();});
+// A source opens where it lives: a passage in the panel, a book in the Reading Room at the class's place, a page
+// in a new tab. Outlines, uploads and Living Library items have nothing to open here.
+function sourceLabel(s){
+  const r=s.ref||{},t=esc(s.label);
+  if(s.kind==="passage"){const n=window.Passage&&(Passage.normalize(r.ref)||Passage.chapter(r.ref));
+    if(n)return '<a class="s-label s-open ref" href="/?passage='+encodeURIComponent(n)+'" data-ref="'+esc(n)+'">'+t+'</a>';}
+  if(s.kind==="book"&&r.slug){const at=(r.coverage||{}).through;
+    return '<a class="s-label s-open" href="/read/'+encodeURIComponent(r.slug)+(at?"#"+at:"")+'">'+t+'</a>';}
+  if(s.kind==="link"&&r.url)return '<a class="s-label s-open" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+t+'<span class="shell-sr"> (opens in a new tab)</span></a>';
+  return '<span class="s-label">'+t+'</span>';}
 function renderUnit(){
-  const u=S.unit,quick=!u;
+  const u=S.unit,quick=!u;tellPanel();
   $("u-title").textContent=quick?"Quick resource":u.title;
   $("u-meta").textContent=quick?"A one-off, kept with your quick resources. Its sources aren't kept.":[courseName(u.course_key)||"No course chosen",bandLabel(u.grade_band)].join(" · ");
   $("u-edit").hidden=quick;
   const sources=quick?S.quickSources:u.sources;
   $("n-sources").textContent=sources.length||"";
   $("srclist").innerHTML=sources.length?sources.map((s,i)=>'<li data-i="'+i+'"><span class="s-ic" aria-hidden="true">'+(ICON[s.kind]||ICON.upload)+'</span>'+
-    '<span class="s-txt"><span class="s-label">'+esc(s.label)+'</span><span class="s-sub">'+sourceSub(s)+'</span></span>'+
+    '<span class="s-txt">'+sourceLabel(s)+'<span class="s-sub">'+sourceSub(s)+'</span></span>'+
     '<button type="button" class="icobtn kebab" data-smenu="'+i+'" aria-label="Options for '+esc(s.label)+'" aria-haspopup="true">'+ICON.kebab+'</button></li>').join(""):
     '<li class="empty-line">No sources yet. A draft with none works from the objectives and the study tools alone.</li>';
   $("add-source").closest(".u-sec").querySelector(".u-hint").hidden=!sources.length;
@@ -478,6 +491,7 @@ creditBox.addEventListener("change",()=>{try{localStorage.setItem("exeg-credit",
 function withCredit(text){return creditBox.checked?text.replace(/\s*$/,"")+"\n\n---\n\n*"+CREDIT+"*\n":text;}
 function render(){
   paper.innerHTML=md(shown());
+  if(window.Passage)Passage.linkRefs(paper);   // a reference in the document opens the passage beside it
   paper.dataset.band=docBand||"secondary";
   if(creditBox.checked){const p=document.createElement("p");p.className="credit";p.textContent=CREDIT;paper.appendChild(p);}
   printReady();

@@ -153,7 +153,7 @@ function openBook(id){
     (AUTH.signed
       ? '<div class="ex-actions"><button type="button" class="lib-extract">'+(it.ready?'View':'Build')+' study materials</button><button type="button" class="lib-upload">⬆ Upload a copy</button></div>'
       : '<div class="r-note">Sign in to build study materials from this book.</div>')+
-    '<div id="extract-out" class="extract-out"></div>'+
+    _unitBtn(it)+'<div id="extract-out" class="extract-out"></div>'+
     _rmBtn(it)+'</div></div>';
   $("read-bg").classList.add("open");
   var ceb=$("cover-edit-btn"); if(ceb)ceb.onclick=function(){var f=$("cover-edit");f.hidden=!f.hidden;if(!f.hidden)$("cover-url").focus();};
@@ -193,7 +193,7 @@ function openPlayer(id){
   if(!it)return;
   $("play-body").innerHTML='<div class="play-grid"><div class="deck-holder"><div class="deck"><div class="plinth"></div><div class="platter"></div><div class="disc spinning">'+discLabel(it)+'</div><div class="tonearm"><span class="arm"><span class="head"></span></span><span class="pivot"></span></div></div></div>'+
     '<div class="play-meta"><div class="r-eyebrow">Podcast</div><h2 class="r-title">'+esc(it.title)+'</h2><div class="r-author">'+esc(it.sub)+'</div>'+(it.meta?'<div class="r-facts">'+esc(it.meta)+'</div>':'')+
-    _rmBtn(it)+'</div></div><div class="moments" id="moments-play"></div>';
+    _unitBtn(it)+_rmBtn(it)+'</div></div><div class="moments" id="moments-play"></div>';
   $("play-bg").classList.add("open");
   if(window.Moments&&AUTH.signed)Moments.mount(it,$("moments-play"));
 }
@@ -217,7 +217,7 @@ function openScreen(id){
   var projector='<div class="projector"><div class="p-reels"><span class="p-reel small spin"></span><span class="p-reel big spin"></span></div><div class="p-body"></div><div class="p-lens"></div></div>';
   $("screen-body").innerHTML='<div class="screening"><div class="scene-holder"><div class="proj-scene">'+projector+'<div class="beam"></div>'+screen+'</div></div>'+
     '<div class="play-meta"><div class="r-eyebrow">Video</div><h2 class="r-title">'+esc(it.title)+'</h2><div class="r-author">'+esc(it.sub)+'</div>'+(it.meta?'<div class="r-facts">'+esc(it.meta)+'</div>':'')+
-    _rmBtn(it)+'</div></div><div class="moments" id="moments-screen"></div>';
+    _unitBtn(it)+_rmBtn(it)+'</div></div><div class="moments" id="moments-screen"></div>';
   $("screen-bg").classList.add("open");
   if(window.Moments&&AUTH.signed)Moments.mount(it,$("moments-screen"));
 }
@@ -226,6 +226,11 @@ $("screen-close").addEventListener("click",function(){$("screen-bg").classList.r
 $("grid").addEventListener("click",function(e){var c=e.target.closest(".card");if(!c)return;var it=null,k;for(k=0;k<LIB.length;k++){if(LIB[k].id===c.dataset.id){it=LIB[k];break;}}if(!it)return;if(it.type==="book")openBook(it.id);else if(it.type==="podcast")openPlayer(it.id);else openScreen(it.id);});
 $("grid").addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" ")return;var c=e.target.closest(".card");if(!c||c!==e.target)return;e.preventDefault();c.click();});
 var _rz;window.addEventListener("resize",function(){clearTimeout(_rz);_rz=setTimeout(function(){if(curFilter==="book")render();},160);});
+// A saved item can go into a Prep Room unit from here (static/js/passage.js lists the teacher's units in place).
+function _unitBtn(it){return AUTH.signed&&window.Passage&&Passage.teacher?'<div class="lib-tools"><button type="button" class="shell-tool" data-unit-item="'+esc(it.id)+'" aria-haspopup="true" aria-expanded="false">'+Passage.icons.prep+'Add to a unit</button></div>':"";}
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-unit-item]");if(!b)return;
+  var it=LIB.filter(function(x){return x.id===b.getAttribute("data-unit-item");})[0];
+  if(it)Passage.addToUnit({kind:"library",ref:{item_id:it.id},label:it.title},b);});
 function _rmBtn(it){return '<button type="button" class="lib-remove" data-remove="'+it.id+'">Remove from library</button>';}
 function _place(it){ if(curFilter!=="all"&&curFilter!==it.type){curFilter="all";syncFilters();} }
 function addItem(it,cb){
@@ -549,7 +554,7 @@ $("sortseg").addEventListener("click",function(e){var b=e.target.closest("button
 // ---------- misc ----------
 function toast(msg, o){ Shell.toast(msg, o); }   // the shell's toast
 Array.prototype.forEach.call(document.querySelectorAll(".modal-bg"),function(bg){bg.addEventListener("click",function(e){if(e.target===bg)bg.classList.remove("open");});});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")Array.prototype.forEach.call(document.querySelectorAll(".modal-bg"),function(bg){bg.classList.remove("open");});});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!e.defaultPrevented)Array.prototype.forEach.call(document.querySelectorAll(".modal-bg"),function(bg){bg.classList.remove("open");});});
 
 syncType();syncFilters();syncWrap();syncSort();render();
 // Signed-in users get their persisted Neon shelf (replacing the demo seed);

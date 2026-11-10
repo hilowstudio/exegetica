@@ -50,6 +50,8 @@ Under the school's position statement, it is a reference work and a tool for tea
 
 **Parents.** They don't sign in yet. They read the public pages: privacy, the position statement, the Quiet Standards statement and the FAQ. Those pages must make sense to a parent who has never used the app.
 
+**Who is in scope (Adam, 2026-11-09).** The login is the boundary: Exegetica is built for Yorkville Christian School's accounts. Other private Christian schools are the next audience Adam means to pitch, so designs should not hard-wire Yorkville where a school's own name, courses or calendar would do. A homeschool family that registers its own "school" could one day get an experience adapted for the home, where the parent is both teacher and record-keeper. That is held for later and is out of scope now. Requests from outside the school are noted as signals, never built for.
+
 **Adam (the maker and admin).** He reads saved student studies as a mandated reporter (decisions 0009 and 0025). He runs `/ops`, the Media Studio and the covers tools. He probes the bot himself before any student prompt ships (decision 0014).
 
 **Devices and settings.** Chromebooks, tablets and smartphones, in class and at home. Every surface works on:

@@ -94,7 +94,8 @@ function draw(){
     var when=stamp(x.start)+"–"+stamp(x.end);
     return '<li><span class="m-when">'+(x.link?'<a href="'+e(x.link)+'" target="_blank" rel="noopener">'+when+'</a>':when)+'</span>'+
       (x.quote?'<span class="m-q">“'+e(x.quote.length>280?x.quote.slice(0,278)+"…":x.quote)+'”</span>':"")+(x.note?'<span class="m-note">'+e(x.note)+'</span>':"")+
-      '<button type="button" class="m-del" data-del="'+x.id+'" aria-label="Delete the moment at '+when+'">Delete</button></li>';}).join("")+'</ul>':'<p class="m-help">None yet.</p>');
+      '<span class="m-acts">'+(window.Passage&&Passage.teacher?'<button type="button" class="shell-tool sm m-unit" data-unit-moment="'+x.id+'" data-when="'+when+'" aria-haspopup="true" aria-expanded="false" aria-label="Add the moment at '+when+' to a unit">'+Passage.icons.prep+'Add to a unit</button>':"")+
+      '<button type="button" class="m-del" data-del="'+x.id+'" aria-label="Delete the moment at '+when+'">Delete</button></span></li>';}).join("")+'</ul>':'<p class="m-help">None yet.</p>');
   body.innerHTML=html;
   var make=body.querySelector(".m-make");if(make)make.onclick=function(){look(false,true);};
   var form=q("#m-form");if(form)form.onsubmit=save;
@@ -102,12 +103,15 @@ function draw(){
     if(!s.value||M.mark===2){s.value=b.textContent;en.value="";M.mark=1;}else{en.value=b.textContent;M.mark=2;}
     (M.mark===1?en:q("#m-n")).focus();};});
   body.querySelectorAll("[data-del]").forEach(function(b){b.onclick=function(){remove(b.getAttribute("data-del"));};});
+  body.querySelectorAll("[data-unit-moment]").forEach(function(b){b.onclick=function(){
+    Passage.addToUnit({kind:"library",ref:{item_id:M.item.id,excerpts:[b.getAttribute("data-unit-moment")]},label:M.item.title},b,
+      "the moment at "+b.getAttribute("data-when"));};});
 }
 function save(ev){
   ev.preventDefault();
-  var err=q("#m-form .m-err"),q=q("#m-q");
+  var err=q("#m-form .m-err"),said=q("#m-q");   // the words box, when there's no transcript
   api("POST","/api/library/item/"+encodeURIComponent(M.item.id)+"/excerpts",{start:q("#m-s").value,end:q("#m-e").value,
-      note:q("#m-n").value,quote:q?q.value:"",episode:M.episode||null,episode_title:M.episodeTitle||null})
+      note:q("#m-n").value,quote:said?said.value:"",episode:M.episode||null,episode_title:M.episodeTitle||null})
     .then(function(d){M.data.excerpts.push(d.excerpt);M.data.excerpts.sort(function(a,b){return a.start-b.start;});M.mark=0;draw();
       if(window.Shell)Shell.toast("Saved the moment at "+stamp(d.excerpt.start));})
     .catch(function(x){err.textContent=x.message;err.hidden=false;});

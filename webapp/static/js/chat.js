@@ -3,32 +3,14 @@
 // ---------- tiny markdown renderer (handles our tool output incl. tables) ----------
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 function inline(s){
-  return linkRefs(esc(s)
+  return Passage.linkHtml(esc(s)
     .replace(/`([^`]+)`/g,(m,c)=>"<code>"+c+"</code>")
     .replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>")
     .replace(/(^|[^*])\*([^*\n]+)\*/g,"$1<em>$2</em>")
     .replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>'));
 }
-// Every Scripture reference in a reply opens the passage beside the conversation (rule B1). Text only: never
-// inside a tag, a code span or a link.
-const BOOKS_RE="Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|1 Samuel|2 Samuel|1 Kings|2 Kings|1 Chronicles|"+
-  "2 Chronicles|Ezra|Nehemiah|Esther|Job|Psalms?|Proverbs|Ecclesiastes|Song of Solomon|Song of Songs|Isaiah|Jeremiah|Lamentations|"+
-  "Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|"+
-  "1 John|2 John|3 John|John|Acts|Romans|1 Corinthians|2 Corinthians|Galatians|Ephesians|Philippians|Colossians|1 Thessalonians|"+
-  "2 Thessalonians|1 Timothy|2 Timothy|Titus|Philemon|Hebrews|James|1 Peter|2 Peter|Jude|Revelation";
-const REF_RE=new RegExp("(^|[^\\w])(("+BOOKS_RE+") (\\d{1,3}):(\\d{1,3})(?:[-–](\\d{1,3})(?::(\\d{1,3}))?)?)(?![\\d:])","g");
-function linkRefs(html){
-  let depth=0;
-  return html.split(/(<[^>]+>)/).map(part=>{
-    if(part.charAt(0)==="<"){
-      if(/^<(code|a)[\s>]/.test(part))depth++;
-      else if(/^<\/(code|a)>/.test(part))depth=Math.max(0,depth-1);
-      return part;
-    }
-    if(depth)return part;
-    return part.replace(REF_RE,(m,pre,ref)=>pre+'<a class="ref" href="#" data-ref="'+ref+'">'+ref+'</a>');   // a link wraps inside a line
-  }).join("");
-}
+// Every Scripture reference in a reply opens the passage beside the conversation (rule B1). The references are
+// found and linked by the shared panel (static/js/passage.js): text only, never inside a tag, code or a link.
 function renderMarkdown(src){
   const lines=src.replace(/\r\n/g,"\n").split("\n");
   let html="",i=0;
@@ -345,7 +327,6 @@ function applyGate(){
 
 document.addEventListener("keydown",e=>{
   if(e.key!=="Escape"||e.defaultPrevented||srcBg.classList.contains("open"))return;
-  if(passageEl.classList.contains("open")){closePassage();return;}
   closeSide();
 });
 
@@ -490,118 +471,28 @@ async function initChats(){
   }
   renderChatList();
   applyGate();   // chat needs a signed-in school account
+  openFromAddress();
 }
 renderChatList(); // immediate paint from localStorage; initChats re-renders after auth resolves
 initChats();
 
 /* ---------- the passage beside the conversation (rule B1) ----------
-   A reference in a reply opens its chapter in the ESV with the verses marked.
-   From there: the verse in Greek or Hebrew from the library, the verse added to Scripture Memory, or a question
-   started about it. None of this calls a model. */
-const passageEl=document.getElementById("passage"),pgBody=document.getElementById("pg-body"),pgTitle=document.getElementById("pg-title"),
-      pgFoot=document.getElementById("pg-foot"),pgOrig=document.getElementById("pg-orig");
-const ESV_NOTICE="Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.";
-const OT_BOOKS=BOOKS_RE.split("|").slice(0,BOOKS_RE.split("|").indexOf("Matthew"));
-let pg={ref:null,book:null,ch:0,v1:0,v2:0,opener:null};
-function parseRef(r){const m=/^(.+?) (\d{1,3}):(\d{1,3})(?:[-–](\d{1,3})(?::(\d{1,3}))?)?$/.exec(r||"");if(!m)return null;
-  // a range into the next chapter ("John 7:53-8:11") marks to the end of the first
-  return {book:m[1],ch:+m[2],v1:+m[3],v2:m[5]?999:+(m[4]||m[3])};}
-function chapterName(book,ch){return (book==="Psalms"?"Psalm":book)+" "+ch;}
-function setPassageOpen(o){
-  passageEl.classList.toggle("open",o);
-  document.querySelector(".app > .col").inert=o&&!wide();   // on a phone the passage covers the page
+   The panel is shared by every page (static/js/passage.js). In chat, "Ask about it" puts the question in this
+   study's own box instead of opening a new page. The box is filled, never sent: the student decides what to ask.
+   None of this calls a model. */
+Passage.ask=function(r){
+  if(input.disabled){Shell.toast("This study is open for reading only. Start a new study to ask about "+r+".");return;}
+  input.value="Help me study "+r+".";auto();if(!wide())Passage.close();input.focus();
+};
+// Another page can open chat on a passage: /?passage=John%207:37 shows it, and /?ask=John%207:37 also readies the
+// question in a new study. The address is cleared after, so a reload doesn't repeat it.
+function openFromAddress(){
+  const q=new URLSearchParams(location.search),ref=Passage.normalize(q.get("ask")||q.get("passage")||"");
+  if(!ref)return;
+  window.history.replaceState(null,"",location.pathname);   // window.: chat keeps its messages in a variable named history
+  Passage.open(ref);
+  if(q.get("ask")&&AUTH.signed){            // after the panel opens, so the student lands in the box
+    if(input.disabled)document.getElementById("new-chat").click();
+    Passage.ask(ref);
+  }
 }
-function openPassage(ref,opener,mark){
-  const p=parseRef(ref);if(!p)return;
-  pg={ref:ref,book:p.book,ch:p.ch,v1:mark===false?0:p.v1,v2:mark===false?0:p.v2,opener:opener||pg.opener||document.activeElement};
-  pgTitle.textContent=chapterName(p.book,p.ch);pgOrig.hidden=true;pgOrig.innerHTML="";
-  pgBody.innerHTML="<p class='pg-note'>Fetching "+esc(chapterName(p.book,p.ch))+"…</p>";pgFoot.innerHTML="";
-  setPassageOpen(true);pgTitle.focus({preventScroll:true});
-  fetch("/api/memory/chapter?ref="+encodeURIComponent(p.book+" "+p.ch+":1"),{credentials:"same-origin"})
-    .then(r=>r.ok?r.json():Promise.reject(r.status)).then(d=>{
-      if(pg.book!==p.book||pg.ch!==p.ch)return;
-      if(!d.verses||!d.verses.length){pgBody.innerHTML="<p class='pg-note'>There's no "+esc(chapterName(p.book,p.ch))+".</p>";return;}
-      pgBody.innerHTML=d.verses.map(v=>{
-        const t="<sup>"+v.n+"</sup>"+esc(v.text.replace(/\s+/g," "))+" ";
-        return (v.n>=pg.v1&&v.n<=pg.v2)?"<mark>"+t+"</mark>":t;
-      }).join("")+"<p class='pg-credit'>"+esc(ESV_NOTICE)+"</p>";
-      Shell.tagLanguages(pgBody);
-      const hit=pgBody.querySelector("mark");pgBody.scrollTop=hit?Math.max(0,hit.offsetTop-pgBody.offsetTop-80):0;
-      passageFoot();
-    }).catch(()=>{
-      pgBody.innerHTML="<p class='pg-note' role='status'>The passage couldn't be loaded just now.</p><button type='button' class='pg-act' id='pg-retry'>Try again</button>";
-      document.getElementById("pg-retry").onclick=()=>openPassage(ref,null,mark);
-    });
-}
-function passageFoot(){
-  if(!pg.v1){pgFoot.innerHTML="";return;}
-  const r=pg.book+" "+pg.ch+":"+pg.v1+(pg.v2>pg.v1?"-"+pg.v2:"");
-  const lang=OT_BOOKS.indexOf(pg.book)>=0||pg.book==="Psalm"?"Hebrew":"Greek";
-  pgFoot.innerHTML="<p class='pg-sel'>"+esc(r)+"</p>"+
-    "<button type='button' class='pg-act' id='pg-orig-b' aria-expanded='false'>In "+lang+"</button>"+
-    "<button type='button' class='pg-act' id='pg-mem'>Add to Scripture Memory</button>"+
-    "<button type='button' class='pg-act' id='pg-ask'>Ask about it</button>";
-  document.getElementById("pg-orig-b").onclick=e=>toggleOriginal(r,lang,e.currentTarget);
-  document.getElementById("pg-mem").onclick=()=>addToMemory(r);
-  document.getElementById("pg-ask").onclick=()=>{
-    if(input.disabled){Shell.toast("This study is open for reading only. Start a new study to ask about "+r+".");return;}
-    input.value="Help me study "+r+".";auto();if(!wide())closePassage();input.focus();};
-}
-function toggleOriginal(r,lang,btn){
-  const on=pgOrig.hidden;pgOrig.hidden=!on;btn.setAttribute("aria-expanded",String(on));
-  if(!on)return;
-  pgOrig.innerHTML="<p class='pg-note'>Loading the library's "+lang+"…</p>";
-  fetch("/api/memory/original?ref="+encodeURIComponent(r),{credentials:"same-origin"}).then(res=>{
-    if(res.status===404)return false;
-    return res.ok?res.json():Promise.reject(res.status);
-  }).then(d=>{
-    if(d===false){pgOrig.innerHTML="<p class='pg-note'>The library has no "+lang+" text for "+esc(r)+".</p>";return;}
-    const bare=x=>String(x||"").replace(/[.,;:?!·;׃]+$/,"");
-    pgOrig.innerHTML="<div class='pg-words' dir='"+d.dir+"'>"+d.words.map((w,i)=>"<button type='button' data-ow='"+i+"' aria-pressed='false'>"+esc(w.word)+"</button>").join("")+
-      "</div><div class='pg-gloss' aria-live='polite'><p class='pg-note'>Choose a word to see what it means.</p></div>";
-    pgOrig.querySelectorAll("[data-ow]").forEach(b=>b.onclick=()=>{
-      pgOrig.querySelectorAll("[data-ow]").forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true");
-      const w=d.words[+b.dataset.ow];
-      pgOrig.querySelector(".pg-gloss").innerHTML="<span class='gw'>"+esc(bare(w.word))+"</span> <span class='gt'>"+esc(bare(w.translit))+"</span> "+
-        "<span class='gg'>"+esc(bare(w.gloss))+"</span><span class='gd'>"+esc(w.definition||"")+"</span>";
-    });
-  }).catch(()=>{pgOrig.innerHTML="<p class='pg-note' role='status'>The "+lang+" couldn't be loaded just now. Choose In "+lang+" again to retry.</p>";
-    pgOrig.hidden=true;btn.setAttribute("aria-expanded","false");Shell.toast("The "+lang+" couldn't be loaded just now.");});
-}
-function closePassage(){
-  setPassageOpen(false);
-  const o=pg.opener;pg.opener=null;if(o&&o.isConnected)o.focus({preventScroll:true});
-}
-document.getElementById("pg-close").onclick=closePassage;
-document.getElementById("pg-prev").onclick=()=>{if(pg.ch>1)openPassage(pg.book+" "+(pg.ch-1)+":1",null,false);};
-document.getElementById("pg-next").onclick=()=>openPassage(pg.book+" "+(pg.ch+1)+":1",null,false);
-document.addEventListener("click",e=>{
-  const b=e.target.closest&&e.target.closest(".ref[data-ref]");
-  if(b){e.preventDefault();openPassage(b.dataset.ref,b);}
-});
-
-// Adding a verse goes into the student's own Scripture Memory, the same store that page keeps. A first verse in an
-// empty account brings the course's verses with it, as a first visit there would.
-const MEM_SEED=["John 20:31","John 1:14","John 1:12","John 3:16","John 4:24","John 6:35","John 8:12","John 10:11","John 11:25",
-  "John 13:34-35","John 14:6","John 15:5","John 16:33","John 17:3","John 19:30","John 21:17"];
-function memVerse(ref){return {id:"v"+uid(),reference:ref,text:null,currentStep:0,masteredAt:null,lastPracticedAt:null,
-  lastRefreshedAt:null,folderId:null,createdAt:new Date().toISOString()};}
-async function memStore(db){
-  if(!AUTH.signed){try{localStorage.setItem("studybible.memory.v1",JSON.stringify(db));return true;}catch(e){return false;}}
-  try{const r=await fetch("/api/memory",{method:"PUT",credentials:"same-origin",headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({verses:db.verses,folders:db.folders})});return r.ok;}catch(e){return false;}
-}
-async function addToMemory(ref){
-  let db=null;
-  if(AUTH.signed){try{const r=await fetch("/api/memory",{credentials:"same-origin"});if(r.ok)db=await r.json();}catch(e){}
-    if(!db){Shell.toast("Scripture Memory couldn't be reached. Try again in a minute.");return;}}
-  else{try{db=JSON.parse(localStorage.getItem("studybible.memory.v1"));}catch(e){}}
-  db={verses:(db&&db.verses)||[],folders:(db&&db.folders)||[]};
-  const norm=x=>String(x||"").toLowerCase().replace(/–/g,"-").replace(/\s+/g," ").trim();
-  if(db.verses.some(v=>norm(v.reference)===norm(ref))){Shell.toast(ref+" is already in Scripture Memory.");return;}
-  if(!db.verses.length&&!db.folders.length)db.verses=MEM_SEED.filter(s=>norm(s)!==norm(ref)).map(memVerse);
-  const v=memVerse(ref);db.verses.push(v);
-  if(!(await memStore(db))){Shell.toast("It couldn't be saved just now. Try again in a minute.");return;}
-  Shell.toast("Added "+ref+" to Scripture Memory",{undo:async()=>{db.verses=db.verses.filter(x=>x.id!==v.id);await memStore(db);}});
-}
-

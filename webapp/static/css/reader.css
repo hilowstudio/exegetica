@@ -389,6 +389,10 @@ body.reading{overflow:hidden}
 /* footnotes: a small numeral in the text, the note in a popover, the notes gathered at the end */
 .chapter a.ex-ref{font-family:var(--display);font-size:.6em;font-weight:600;vertical-align:super;line-height:0;color:var(--ex-text);
   text-decoration:none;padding:0 .12em;font-variant-numeric:lining-nums;cursor:pointer}
+/* a Scripture reference in a book opens the passage beside it. Marked quietly, so the page still reads as a page
+   (rule B10): the text's own colour over a faint underline, the link colour on hover and focus. */
+.chapter a.ref{color:inherit;text-decoration-color:color-mix(in srgb,var(--iron) 50%,transparent)}
+.chapter a.ref:hover,.chapter a.ref:focus-visible{color:var(--iron)}
 .chapter .ex-notes{margin-top:2.2em;padding-top:1em;border-top:1px solid var(--rule);font-size:.8em;line-height:1.5}
 .chapter .ex-notes p.ex-note{text-indent:0;margin:0 0 .55em;text-align:left;hyphens:auto}
 .chapter .ex-note-n{font-family:var(--display);font-weight:600;color:var(--ex-text);margin-right:.35em;font-variant-numeric:lining-nums}

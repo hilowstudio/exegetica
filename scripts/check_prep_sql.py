@@ -62,11 +62,14 @@ async def main():
         for _ in range(2):                                   # twice: the second acquire follows a reset
             if await db.fetchval("select current_schema()") != schema:
                 raise SystemExit("the connection isn't pointed at the throwaway schema; stopping before any write")
+        async def holders():                                 # the schemas that hold a prep_units table
+            rows = await db.fetch("select n.nspname from pg_class c join pg_namespace n on n.oid = c.relnamespace "
+                                  "where c.relname = 'prep_units'")
+            return {r["nspname"] for r in rows}
+        before = await holders()                             # production's own (public) since the Prep Room shipped
         await db.execute(ddl)
-        where = await db.fetch("select n.nspname from pg_class c join pg_namespace n on n.oid = c.relnamespace "
-                               "where c.relname = 'prep_units'")
-        if [r["nspname"] for r in where] != [schema]:
-            raise SystemExit("the tables didn't land only in the throwaway schema; stopping before any write")
+        if schema in before or await holders() != before | {schema} or await db.fetchval("select current_schema()") != schema:
+            raise SystemExit("the tables didn't land in the throwaway schema alone; stopping before any write")
 
         me, other = uuid.uuid4(), uuid.uuid4()
         for uid, email in ((me, "t@school.test"), (other, "o@school.test")):
@@ -87,6 +90,20 @@ async def main():
         check(isinstance(s1, dict) and s2["words"] == 200, "add a passage and an encrypted upload")
         check(await prep.add_source(other, uid_, "passage", {"ref": "John 1"}, "John 1") is None,
               "another teacher can't add to it")
+        again = await prep.add_source(me, uid_, "passage", {"ref": "John 7:14-24", "translation": "ESV"}, "John 7:14-24")
+        check(again == "John 7:14-24 is already in this unit.", "the same passage twice is refused plainly")
+        item, m1, m2 = str(uuid.uuid4()), str(uuid.uuid4()), str(uuid.uuid4())
+        lib = await prep.add_source(me, uid_, "library", {"item_id": item, "excerpts": [m1]}, "Gospel of John, Part 1")
+        joined = await prep.add_source(me, uid_, "library", {"item_id": item, "excerpts": [m2]}, "Gospel of John, Part 1")
+        check(isinstance(joined, dict) and joined["merged"] and joined["id"] == lib["id"]
+              and joined["ref"]["excerpts"] == [m1, m2] and joined["before"]["excerpts"] == [m1],
+              "a second moment joins its item, and keeps the earlier ref for an undo")
+        check(await prep.add_source(me, uid_, "library", {"item_id": item, "excerpts": [m2]}, "x")
+              == "That moment is already in this unit.", "the same moment twice is refused")
+        check(await prep.remove_source(me, uuid.UUID(lib["id"])), "remove the joined item again")
+        held = await prep.holding(me, "passage", "John 7:14-24")
+        check(list(held) == [unit["id"]] and held[unit["id"]]["source"] == s1["id"], "the units holding a passage are found")
+        check(await prep.holding(other, "passage", "John 7:14-24") == {}, "another teacher's units aren't searched")
         objs = prep.clean_objectives([{"id": "B.1", "t": "x", "a": {"scripture": ["John 7:37"]}}])
         check(await prep.update_unit(me, uid_, {"objectives": objs, "notes": "Period 3"}), "update objectives")
         check(not await prep.update_unit(other, uid_, {"notes": "x"}), "another teacher can't update it")

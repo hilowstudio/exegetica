@@ -1,0 +1,14 @@
+{# The passage panel (static/js/passage.js): any Scripture reference on any page opens its chapter here, beside the
+   page on a wide screen and over it on a phone. A teacher also sees "Add to a unit". #}
+<aside class="passage" id="passage" aria-labelledby="pg-title"{% if teacher %} data-teacher{% endif %}>
+  <div class="pg-h">
+    <button class="pg-btn" id="pg-prev" type="button" aria-label="Previous chapter" title="Previous chapter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <h2 id="pg-title" tabindex="-1">Passage</h2>
+    <button class="pg-btn" id="pg-next" type="button" aria-label="Next chapter" title="Next chapter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    <span class="pg-sp"></span>
+    <button class="pg-btn" id="pg-close" type="button" aria-label="Close the passage" title="Close">&times;</button>
+  </div>
+  <div class="pg-body" id="pg-body" tabindex="0" role="region" aria-label="Passage text"></div>
+  <div class="pg-orig" id="pg-orig" hidden></div>
+  <div class="pg-foot" id="pg-foot"></div>
+</aside>

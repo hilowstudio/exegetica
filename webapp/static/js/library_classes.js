@@ -34,6 +34,7 @@ function card(w){
   var st=STATE[w.state]||STATE.none,act="";
   if(w.state==="text")act='<a class="cl-act" href="/read/'+encodeURIComponent(w.slug)+'">Read it</a>';
   else if(w.state==="outline")act='<button type="button" class="cl-act" data-outline="'+e(w.outline)+'" data-title="'+e(w.title)+'">See its outline</button>';
+  if(act&&window.Passage)act='<span class="cl-acts">'+act+'<button type="button" class="shell-tool sm cl-unit" data-unit-work="'+D.works.indexOf(w)+'" aria-haspopup="true" aria-expanded="false">'+Passage.icons.prep+'Add to a unit</button></span>';
   return '<li class="cl-work"><span class="cl-state '+st[1]+'">'+st[0]+'</span><span class="cl-t">'+e(w.title)+'</span>'+
     (w.author?'<span class="cl-a">'+e(w.author)+'</span>':"")+'<span class="cl-c">'+e(w.course_names.join(", "))+'</span>'+
     (w.note&&w.state==="none"?'<span class="cl-n">'+e(w.note)+'</span>':"")+act+'</li>';
@@ -62,6 +63,9 @@ el("classes-edit").addEventListener("click",function(){
 });
 
 el("cl-works").addEventListener("click",function(ev){
+  var u=ev.target.closest("[data-unit-work]");
+  if(u){var w=D.works[+u.getAttribute("data-unit-work")];if(!w)return;   // the whole book; the unit asks how far the class has read
+    Passage.addToUnit(w.state==="text"?{kind:"book",ref:{slug:w.slug,coverage:{}},label:w.title}:{kind:"outline",ref:{key:w.outline,parts:[]},label:w.title},u);return;}
   var b=ev.target.closest("[data-outline]");if(!b)return;
   openDlg(b.getAttribute("data-title"),'<p class="cl-help">Loading its contents…</p>');
   fetch("/api/library/outline/"+encodeURIComponent(b.getAttribute("data-outline")),{credentials:"same-origin"}).then(function(r){return r.json();}).then(function(d){

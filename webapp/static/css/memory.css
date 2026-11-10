@@ -150,7 +150,9 @@ button{font-family:inherit}
 .status .fl{width:18px;height:18px}
 .actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .actions .btn.primary{min-width:220px}
-.tools{display:flex;flex-wrap:wrap;gap:6px}
+.tools{display:flex;flex-wrap:wrap;gap:6px 20px}
+.tgroup{display:flex;flex-wrap:wrap;gap:6px}     /* a group moves to the next line whole; only a phone wraps inside one */
+.btn[aria-expanded="true"]{background:var(--surface-2)}
 .panel{max-width:720px;margin:16px auto 0;background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:18px 22px 20px}
 .panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
 .panel-head h2{font-family:var(--serif);font-size:16px;font-weight:600;margin:0}

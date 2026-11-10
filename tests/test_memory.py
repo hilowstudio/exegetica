@@ -89,7 +89,7 @@ def test_paper_waits_for_its_faces_and_credits_the_esv():
 
 
 def test_recite_together_is_offered_to_teachers():
-    assert "if(isTeacher()) tools.push('<button class=\"btn quiet\" id=\"t-recite\">'" in JS
+    assert "if(isTeacher()) go.push('<button class=\"btn quiet\" id=\"t-recite\">'" in JS     # in the take-it-elsewhere group
     assert 'role="dialog" aria-modal="true"' in (ROOT / "webapp" / "templates" / "memory.html").read_text(encoding="utf-8")
 
 

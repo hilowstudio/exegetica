@@ -22,8 +22,10 @@
 <body class="{% block body_class %}{% endblock %}">
 {% include "partials/rail.html" %}
 {% block content %}{% endblock %}
+{% include "partials/passage.html" %}
 {% include "partials/help.html" %}
 <script src="/static/js/shell.js"></script>
+<script src="/static/js/passage.js"></script>
 <script src="/static/js/settings.js"></script>
 {% block scripts %}{% endblock %}
 </body>

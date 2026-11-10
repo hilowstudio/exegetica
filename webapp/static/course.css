@@ -71,6 +71,10 @@ body {
 
 a { color: var(--navy-700); text-underline-offset: 2px; text-decoration-color: var(--line-strong); }
 a:hover { color: var(--accent-ink); }
+/* a reference opens the passage panel (static/js/passage.js); on these always-light pages it keeps the course's own
+   link colour, never the shell's, which follows a dark device */
+.doc a.ref { color: var(--navy-700); text-decoration-color: var(--line-strong); }
+.doc a.ref:hover { color: var(--accent-ink); text-decoration-color: currentColor; }
 
 h1, h2, h3, h4 { font-family: var(--c-serif); font-weight: 400; line-height: 1.15; color: var(--brand); text-wrap: balance; }
 h1 { font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.3rem); letter-spacing: -.02em; margin: 0 0 .3em; }

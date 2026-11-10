@@ -10,6 +10,9 @@ STATIC = ROOT / "webapp" / "static"
 JS = (STATIC / "js" / "chat.js").read_text(encoding="utf-8")
 CSS = (STATIC / "css" / "chat.css").read_text(encoding="utf-8")
 HTML = (ROOT / "webapp" / "templates" / "chat.html").read_text(encoding="utf-8")
+PASSAGE = (STATIC / "js" / "passage.js").read_text(encoding="utf-8")       # the panel every page shares
+PANEL = (ROOT / "webapp" / "templates" / "partials" / "passage.html").read_text(encoding="utf-8")
+SHELL_CSS = (STATIC / "css" / "shell.css").read_text(encoding="utf-8")
 
 
 def _tool_names():
@@ -27,25 +30,35 @@ def test_every_library_tool_has_plain_words():
 
 
 def test_references_in_replies_open_the_passage():
-    assert "return linkRefs(esc(s)" in JS and 'class="ref" href="#" data-ref="' in JS
-    assert "closest(\".ref[data-ref]\")" in JS and "openPassage(" in JS
-    assert 'id="passage"' in HTML and 'aria-labelledby="pg-title"' in HTML
-    assert ".passage.open ~ .col{padding-right:420px}" in CSS        # beside the conversation on a wide screen
+    assert "return Passage.linkHtml(esc(s)" in JS and 'class="ref" href="/?passage=' in PASSAGE
+    assert 'closest(".ref[data-ref]")' in PASSAGE and "open(a.getAttribute(\"data-ref\"), a)" in PASSAGE
+    assert 'id="passage"' in PANEL and 'aria-labelledby="pg-title"' in PANEL
+    base = (ROOT / "webapp" / "templates" / "base.html").read_text(encoding="utf-8")
+    assert '{% include "partials/passage.html" %}' in base and "/static/js/passage.js" in base   # on every page
+    assert "body.passage-open .app > .col{padding-right:420px}" in CSS        # beside the conversation on a wide screen
+    assert ".passage{position:fixed" in SHELL_CSS and "#passage" not in CSS
 
 
 def test_the_desk_calls_no_model():
     desk = JS[JS.index("/* ---------- the passage beside the conversation"):]
     assert "/api/chat" not in desk.replace("/api/chats", "")
-    assert "/api/memory/chapter" in desk and "/api/memory/original" in desk and '"/api/memory"' in desk
+    assert "/api/chat" not in PASSAGE.replace("/api/chats", "")
+    assert "/api/memory/chapter" in PASSAGE and "/api/memory/original" in PASSAGE and '"/api/memory"' in PASSAGE
+
+
+def test_ask_fills_the_box_and_never_sends():
+    ask = JS[JS.index("Passage.ask=function(r){"):JS.index("function openFromAddress(){")]
+    assert 'input.value="Help me study "+r+".";' in ask and "send(" not in ask and ".submit" not in ask
+    assert "window.history.replaceState(null,\"\",location.pathname);" in JS     # a reload doesn't ask again (chat has its own history)
 
 
 def test_a_verse_added_from_chat_matches_scripture_memory():
     mem = (STATIC / "js" / "memory.js").read_text(encoding="utf-8")
     seed = re.search(r"var SEED = \[(.*?)\];", mem, re.S).group(1)
-    chat_seed = re.search(r"const MEM_SEED=\[(.*?)\];", JS, re.S).group(1)
-    assert re.findall(r'"([^"]+)"', seed) == re.findall(r'"([^"]+)"', chat_seed)
-    assert '"studybible.memory.v1"' in JS and "async function addToMemory(ref)" in JS
-    assert "if(!db){Shell.toast(\"Scripture Memory couldn't be reached" in JS   # a failed read never overwrites the account
+    panel_seed = re.search(r"var MEM_SEED = \[(.*?)\];", PASSAGE, re.S).group(1)
+    assert re.findall(r'"([^"]+)"', seed) == re.findall(r'"([^"]+)"', panel_seed)
+    assert '"studybible.memory.v1"' in PASSAGE and "async function keep(ref)" in PASSAGE
+    assert "if (!db) { Shell.toast(\"Scripture Memory couldn't be reached" in PASSAGE   # a failed read never overwrites the account
 
 
 def test_a_streaming_reply_leaves_the_reader_where_they_are():

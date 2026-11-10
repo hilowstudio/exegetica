@@ -81,7 +81,9 @@ var ICON = {
   check:'<svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>',
   kebab:'<svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="12" cy="18" r="1.4"/></svg>',
   folder:'<svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
-  pen:'<svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>'
+  pen:'<svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
+  ask:'<svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-4 3.2V16.5H4z"/></svg>',                  // Chat's icon on the rail
+  unit:'<svg viewBox="0 0 24 24"><path d="M6.5 3.5h8l4 4v13h-12z"/><path d="M14 3.5v4.2h4.2"/><path d="M9 12.5h6M9 15.5h6"/></svg>'   // the Prep Room's
 };
 
 // ---------------------------------------------------------------- state
@@ -180,12 +182,24 @@ async function init(){
     var l = loadLocal();
     if(l){ db=l; } else { db=seedNew(); saveLocal(); }
   }
+  openFromAddress();
   render();
   fillTexts();
   fetch(API+"course").then(function(r){ return r.ok ? r.json() : null; }).then(function(c){ course=c; if(ui.view==="home") render(); }).catch(function(){});
 }
 window.addEventListener("pagehide", function(){ if(AUTH.signed) flushServer(true); });
 
+// Another page can open a verse here: /memory?verse=John%2015:5. A kept verse is selected; one not kept yet is
+// offered in the day strip, never added on its own. The address is cleared after, so a reload doesn't repeat it.
+function openFromAddress(){
+  var q=new URLSearchParams(location.search), raw=q.get("verse"); if(!raw) return;
+  history.replaceState(null, "", location.pathname);
+  if(phone && phone.matches) setDrawerOpen(false);   // on a phone the list would cover the verse that was asked for
+  var ref=(window.Passage && Passage.normalize(raw)) || null; if(!ref) return;
+  var have=db.verses.find(function(v){ return Passage.normalize(v.reference)===ref; });   // "Ps. 23:1" finds "Psalm 23:1"
+  if(have){ ui.tab=byHeart(have)?"heart":"learning"; ui.folderId=have.folderId||null; ui.selectedId=have.id; }
+  else ui.offer=ref;
+}
 function newVerse(ref, folderId){
   return { id:uid(), reference:ref, text:null, currentStep:0,
     masteredAt:null, lastPracticedAt:null, lastRefreshedAt:null, folderId:folderId||null,
@@ -445,6 +459,9 @@ function renderHome(){
 
 function dayStrip(){
   var parts=[], due=dueVerses();
+  if(ui.offer && !verseByRef(ui.offer)){
+    parts.push('<div class="part"><p><b>'+esc(ui.offer)+'</b> isn’t in your verses yet.</p><button class="btn" id="day-offer">Add it</button></div>');
+  }
   if(course && course.current){
     var have=verseByRef(course.current.reference);
     parts.push('<div class="part"><p>'+esc(course.course)+' this week: <b>'+esc(course.current.reference)+'</b>'+
@@ -483,25 +500,29 @@ function leafHtml(v){
   '</article>';
 }
 function footHtml(v){
-  var status, primary, p=parseRef(v.reference), tools=[];
+  // The tools come in two groups, kept whole when the line wraps: ways to take in the verse, then places to take it.
+  var status, primary, p=parseRef(v.reference), see=[], go=[];
   if(byHeart(v)){
     var r=reviewOf(v), due=isDue(v);
     status='<span class="fl">'+FLEURON+'</span><span><b>By heart</b> since '+esc(fmtDate(v.masteredAt))+'</span>'+
       '<span>'+(due?'Ready to say again today':'Comes back '+esc(fmtDay(r.next)))+'</span>';
-    primary='<button class="btn primary big" id="go-review">Say it again</button>';
-    tools.push('<button class="btn quiet" id="go-refresh">'+ICON.retry+' Practise again</button>');
+    primary='<button class="btn primary big" id="go-review">Say it again</button>'+
+      '<button class="btn quiet" id="go-refresh">'+ICON.retry+' Practise again</button>';
   } else {
     var at=v.currentStep||0;
     status=ladderHtml(at,"",at)+'<span><b>Step '+Math.min(at+1,8)+' of 8</b> · '+esc(STEPS[Math.min(at,7)].name)+'</span>';
     primary='<button class="btn primary big" id="go-practice" data-practice="'+v.id+'">'+(at>0?"Continue practice":"Start practice")+'</button>';
   }
-  tools.push('<button class="btn quiet" id="t-listen" aria-pressed="'+(ui.panel==="listen")+'">'+ICON.listen+' Listen</button>');
-  tools.push('<button class="btn quiet" id="t-orig" aria-pressed="'+(ui.panel==="original")+'">'+ICON.orig+' In '+(isHebrew(v.reference)?"Hebrew":"Greek")+'</button>');
-  if(p) tools.push('<button class="btn quiet" id="t-chap" aria-pressed="'+(ui.panel==="chapter")+'">'+ICON.book+' Read '+esc(chapterName(p))+'</button>');
-  tools.push('<button class="btn quiet" id="t-card">'+ICON.print+' Print card</button>');
-  if(isTeacher()) tools.push('<button class="btn quiet" id="t-recite">'+ICON.people+' Recite together</button>');
+  see.push('<button class="btn quiet" id="t-listen" aria-pressed="'+(ui.panel==="listen")+'">'+ICON.listen+' Listen</button>');
+  see.push('<button class="btn quiet" id="t-orig" aria-pressed="'+(ui.panel==="original")+'">'+ICON.orig+' In '+(isHebrew(v.reference)?"Hebrew":"Greek")+'</button>');
+  if(p) see.push('<button class="btn quiet" id="t-chap" aria-pressed="'+(ui.panel==="chapter")+'">'+ICON.book+' Read '+esc(chapterName(p))+'</button>');
+  if(window.Passage) go.push('<button class="btn quiet" id="t-ask">'+ICON.ask+' Ask about it</button>');
+  go.push('<button class="btn quiet" id="t-card">'+ICON.print+' Print card</button>');
+  if(isTeacher()) go.push('<button class="btn quiet" id="t-recite">'+ICON.people+' Recite together</button>');
+  if(isTeacher() && window.Passage) go.push('<button class="btn quiet" id="t-unit" aria-haspopup="true" aria-expanded="false">'+ICON.unit+' Add to a unit</button>');
   return '<div class="leaf-foot"><div class="status">'+status+'</div>'+
-    '<div class="actions">'+primary+'</div><div class="tools">'+tools.join("")+'</div></div>';
+    '<div class="actions">'+primary+'</div><div class="tools"><div class="tgroup" role="group" aria-label="The verse">'+see.join("")+
+    '</div><div class="tgroup" role="group" aria-label="Take it elsewhere">'+go.join("")+'</div></div></div>';
 }
 // The verses either side, faint, so a verse is learned in its place (rule B1).
 function hydrateLeaf(v){
@@ -543,6 +564,14 @@ function wireHome(v){
   if($("t-chap")) $("t-chap").onclick=function(){ togglePanel("chapter", v); };
   $("t-card").onclick=function(){ printCards([v]); };
   if($("t-recite")) $("t-recite").onclick=function(){ openRecite(v, $("t-recite")); };
+  if($("t-ask")) $("t-ask").onclick=function(){ Passage.ask(v.reference); };
+  if($("t-unit")) $("t-unit").onclick=function(){
+    Passage.addToUnit({kind:"passage", ref:{ref:v.reference, translation:"ESV"}, label:v.reference+" (ESV)"}, $("t-unit")); };
+  if($("day-offer")) $("day-offer").onclick=function(){
+    var ref=ui.offer, have=verseByRef(ref); ui.offer=null;
+    if(!have){ have=newVerse(ref); db.verses.push(have); save(); fillTexts(); toast("Added "+ref); }
+    ui.tab=byHeart(have)?"heart":"learning"; ui.folderId=have.folderId||null; ui.selectedId=have.id; ui.panel=null; render();
+  };
 }
 
 // ---------------------------------------------------------------- the panels under a verse: listen, the original, the chapter

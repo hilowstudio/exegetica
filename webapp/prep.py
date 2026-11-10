@@ -204,12 +204,50 @@ async def _touch(unit_id) -> None:
 
 
 # ---------------------------------------------------------------------------------------- sources
+# What makes two sources the same, now that a passage or a moment can be added to a unit from any page.
+SAME_SOURCE = {"book": "slug", "outline": "key", "passage": "ref", "library": "item_id", "link": "url"}
+
+
+def merged_excerpts(old: dict, new: dict) -> dict | None:
+    """A Living Library item already in the unit, with the new moments joined to it; None when nothing changes.
+    No excerpts means the whole item, which already holds every moment."""
+    before, adding = old.get("excerpts"), new.get("excerpts")
+    if not before:
+        return None
+    if not adding:
+        return {"item_id": old["item_id"]}
+    joined = list(dict.fromkeys(before + adding))[:40]
+    return None if joined == before else {"item_id": old["item_id"], "excerpts": joined}
+
+
+async def _merge_source(same, kind: str, ref: dict) -> dict | str:
+    """A second add of the same source: moments join the item already there; anything else is refused plainly.
+    The reply carries the earlier ref, so an undo can put it back."""
+    old = same["ref"] or {}
+    joined = merged_excerpts(old, ref) if kind == "library" else None
+    if joined is None:
+        if kind == "library" and ref.get("excerpts"):
+            return ("That moment is already in this unit." if old.get("excerpts")
+                    else f"All of {same['label']} is already in this unit, so its moments are too.")
+        return f"{same['label']} is already in this unit."
+    row = await db.fetchrow("""update prep_sources set ref = $2 where id = $1
+                               returning id, kind, ref, label, words, position, added_at""", same["id"], joined)
+    await _touch(same["unit_id"])
+    return {**_plain(row), "merged": True, "before": old}
+
+
 async def add_source(uid: uuid.UUID, unit_id: uuid.UUID, kind: str, ref: dict, label: str,
                      text: str | None = None) -> dict | None | str:
     """The new source, None when the unit isn't the teacher's, or a message when it can't be added."""
     owner = await db.fetchval("select user_id from prep_units where id = $1", unit_id)
     if owner != uid:
         return None
+    key = SAME_SOURCE.get(kind)
+    if key and ref.get(key):
+        same = await db.fetchrow("select id, unit_id, ref, label from prep_sources where unit_id = $1 and kind = $2 and ref->>$3 = $4",
+                                 unit_id, kind, key, str(ref[key]))
+        if same:
+            return await _merge_source(same, kind, ref)
     n = await db.fetchval("select count(*) from prep_sources where unit_id = $1", unit_id)
     if n >= MAX_SOURCES:
         return f"A unit holds up to {MAX_SOURCES} sources. Remove one to add another."
@@ -360,12 +398,30 @@ async def delete_resource(uid: uuid.UUID, resource_id: uuid.UUID) -> bool:
 
 
 # ------------------------------------------------------------------------------------------ routes
+async def holding(uid: uuid.UUID, kind: str, key: str) -> dict:
+    """{unit id: {"source": id, "ref": ref}} for this teacher's units that already hold a source, so "Add to a
+    unit" can check them, the way a "Save to" list checks the playlists that hold a video."""
+    field = SAME_SOURCE.get(kind)
+    if not field or not key:
+        return {}
+    rows = await db.fetch(
+        """select s.unit_id, s.id, s.ref from prep_sources s join prep_units u on u.id = s.unit_id
+            where u.user_id = $1 and s.kind = $2 and s.ref->>$3 = $4""", uid, kind, field, key)
+    return {str(r["unit_id"]): {"source": str(r["id"]), "ref": r["ref"]} for r in rows}
+
+
 async def units_list(request):
     uid, denied = _guard(request)
     if denied:
         return denied
-    return JSONResponse({"units": await list_units(uid),
-                         "quick": await list_resources(uid, quick=True)})
+    units = await list_units(uid)
+    q = request.query_params
+    if q.get("kind"):                       # ?kind=passage&key=John 7:15 marks the units that already hold it
+        held = await holding(uid, q["kind"], _clean(q.get("key"), 1000))
+        for u in units:
+            if u["id"] in held:
+                u["holds"] = held[u["id"]]
+    return JSONResponse({"units": units, "quick": await list_resources(uid, quick=True)})
 
 
 async def unit_create(request):
