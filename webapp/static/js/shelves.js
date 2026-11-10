@@ -63,7 +63,9 @@ function moreChip(a, c, host){
   b.setAttribute("aria-label", "Options for " + a.label + " on the " + c.name + " shelf");
   b.onclick = function(ev){
     ev.preventDefault(); ev.stopPropagation();
+    var url = a.book ? location.origin + "/read/" + encodeURIComponent(a.book.slug) : a.video ? a.video.url : location.origin + "/read/doc/" + a.id;
     Passage.menu(b, "Options for " + a.label, [
+      {label: "Share to Classroom…", act: function(){ Passage.classroom(url, a.label); }},
       {label: "Students see it", checked: a.audience === "students", act: function(){ setAudience(a, c, a.audience === "students" ? "teachers" : "students"); }},
       {label: "Take off the shelf", danger: true, act: function(){ takeOff(a, c); }}
     ]);
@@ -232,7 +234,8 @@ function drawDocs(){
 function saveDoc(d, anchor){
   Passage.addToUnit({kind: "shelf", ref: {item_id: d.id}, label: d.title}, anchor, null, {
     place: {kind: d.kind, ref: {item_id: d.id}, label: d.title},
-    hold: d.kind === "link" ? {kind: "link", key: d.url} : {kind: "upload", key: d.id}});
+    hold: d.kind === "link" ? {kind: "link", key: d.url} : {kind: "upload", key: d.id},
+    share: {shelf: true, title: d.title}});
 }
 function docMenu(d, anchor){
   Passage.menu(anchor, "Options for " + d.title, [

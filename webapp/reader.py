@@ -251,6 +251,7 @@ def _item(r) -> dict:
         "sections": json.loads(r["genres"] or "[]"), "source": r["source"],
         "chapters": r["chapter_count"], "words": r["word_count"] or 0,
         "cover": r["cover_url"], **({"school": True} if r["access"] == SCHOOL else {}),
+        **({"reference": True} if r["access"] == REFERENCE else {}),
     }
 
 

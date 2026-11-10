@@ -229,7 +229,8 @@
     document.getElementById("pg-mem").onclick = function () { keep(r); };
     document.getElementById("pg-ask").onclick = function () { Passage.ask(r); };
     var u = document.getElementById("pg-unit");
-    if (u) u.onclick = function () { addToUnit({kind: "passage", ref: {ref: r, translation: "ESV"}, label: r + " (ESV)"}, u); };
+    if (u) u.onclick = function () { addToUnit({kind: "passage", ref: {ref: r, translation: "ESV"}, label: r + " (ESV)"}, u, null,
+      {share: {url: location.origin + "/?passage=" + encodeURIComponent(r), title: r}}); };
   }
   function toggleOriginal(r, lang, btn) {
     var on = orig.hidden; orig.hidden = !on; btn.setAttribute("aria-expanded", String(on));
@@ -317,6 +318,16 @@
   var menu = null, menuOpener = null, place = null;
   var BOX = "<span class='sm-box' aria-hidden='true'><svg viewBox='0 0 24 24'><path d='M20 6L9 17l-5-5'/></svg></span>";
   var PLUS = "<span class='sm-plus' aria-hidden='true'><svg viewBox='0 0 24 24'><path d='M12 5v14M5 12h14'/></svg></span>";
+  var OUT = "<span class='sm-plus' aria-hidden='true'><svg viewBox='0 0 24 24'><path d='M14 4h6v6M20 4l-9 9'/><path d='M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5'/></svg></span>";
+  // Google Classroom by share link (decision 0030): Classroom's own posting window, given only the link and a title.
+  // No Google script loads on Exegetica's pages; the window opens inside the click, so a pop-up blocker lets it through.
+  function classroom(url, title, win) {
+    var to = "https://classroom.google.com/share?url=" + encodeURIComponent(url) + (title ? "&title=" + encodeURIComponent(title) : "");
+    var w = win || window.open("", "exegetica-classroom", "popup,width=720,height=720");
+    if (!w) { location.href = to; return; }             // no pop-ups: go there in this tab
+    try { w.opener = null; } catch (e) {}
+    w.location.href = to;
+  }
   function closeMenu() {
     if (!menu) return;
     menu.remove(); menu = null;
@@ -458,9 +469,23 @@
   // say: what the toasts call it, when that isn't the source's label ("the moment at 2:14–3:05").
   // opts.place: {kind: "book" or "video", ref, label}, the same item as a class shelf holds it. With it, the menu
   // also lists the classes the teacher teaches. opts.mine: {label, checked, act(on)}, the person's own shelf, listed
-  // first, so one "Save to" says everywhere a book lives for a teacher.
+  // first, so one "Save to" says everywhere a book lives for a teacher. opts.share: Google Classroom (decision 0030),
+  // {url, title} to share a link as it is, or {shelf: true, title} to share the class shelf's copy, putting it on the
+  // class's shelf first when it isn't there, so the Classroom post and the shelf are one thing.
+  // the menu's last band: a share as it is, or one share per class shelf (the post links that class's copy)
+  function shareGroup(share, classes) {
+    if (!share) return "";
+    var head = "<div class='shell-menu-sep'></div><div class='shell-menu-lab'>Google Classroom</div>";
+    if (!share.shelf) return head + "<button type='button' role='menuitem' data-share>" + OUT + "<span class='sm-t'>Share to Classroom…</span></button>";
+    if (!classes.length) return head + "<p class='shell-menu-note'>Choose the classes you teach, then share from a class shelf.</p>";
+    // the band's heading says the action; each row is the class whose shelf copy the post links
+    return "<div class='shell-menu-sep'></div><div class='shell-menu-lab'>Share to Google Classroom</div>" + classes.map(function (c) {
+      return "<button type='button' role='menuitem' data-share='" + esc(c.key) + "' aria-label='Share to Google Classroom from the " +
+        esc(c.name) + " shelf'>" + OUT + "<span class='sm-t'>" + esc(c.name) + "</span></button>";
+    }).join("");
+  }
   function addToUnit(source, anchor, say, opts) {
-    var pl = opts && opts.place, mine = opts && opts.mine;
+    var pl = opts && opts.place, mine = opts && opts.mine, share = opts && opts.share;
     var units = !(opts && opts.units === false);   // false: a Prep Room resource already lives in a unit
     var m = openMenu(anchor, pl ? "Save to" : "Add to a unit"); if (!m) return;
     m.innerHTML = "<div class='shell-menu-lab'>" + (units ? "Your units" : "Your shelves") + "</div><p class='shell-menu-note' role='status'>Loading…</p>";
@@ -485,7 +510,8 @@
             (list.length ? list.map(function (u) { return row(u, source, here); }).join("") : "") +
             "<button type='button' role='menuitem' data-new>" + PLUS + "<span class='sm-t'>New unit…</span></button>" : "") +
           (classes.length ? (units || mine ? "<div class='shell-menu-sep'></div>" : "") + "<div class='shell-menu-lab'>Class shelves</div>" + classes.map(classRow).join("") :
-            units ? "" : "<p class='shell-menu-note'>Choose the classes you teach in the Living Library, and their shelves show here.</p>");
+            units ? "" : "<p class='shell-menu-note'>Choose the classes you teach in the Living Library, and their shelves show here.</p>") +
+          shareGroup(share, classes);
         place();
         menu.querySelectorAll("[data-u]").forEach(function (b) {
           b.onclick = function () {
@@ -510,6 +536,17 @@
               .catch(function (err) { b.setAttribute("aria-checked", String(on)); Shell.toast(err.message); });
           };
         });
+        menu.querySelectorAll("[data-share]").forEach(function (b) {
+          b.onclick = function () {
+            if (!share.shelf) { closeMenu(); anchor.focus(); classroom(share.url, share.title || say || source.label); return; }
+            var c = classes.filter(function (x) { return x.key === b.dataset.share; })[0];
+            var w = window.open("", "exegetica-classroom", "popup,width=720,height=720");   // inside the click
+            var go = function () { classroom(location.origin + "/read/doc/" + c.holds.id, share.title || pl.label, w); };
+            closeMenu(); anchor.focus();
+            if (c.holds) { go(); return; }
+            shelve(c, pl, say).then(go).catch(function (err) { if (w) w.close(); Shell.toast(err.message); });
+          };
+        });
         if (units) menu.querySelector("[data-new]").onclick = async function () {
           closeMenu();
           var name = await Shell.ask({title: "New unit", body: "Name it the way you plan. " + capital(say || source.label) + " goes in it first.",
@@ -523,7 +560,7 @@
   }
 
   window.Passage = {open: open, close: close, linkRefs: linkRefs, linkHtml: linkHtml, normalize: normalize, parse: parse, chapter: chapter,
-    ask: ask, keep: keep, addToUnit: addToUnit, menu: smallMenu, teacher: teacher, currentUnit: null,
+    ask: ask, keep: keep, addToUnit: addToUnit, menu: smallMenu, teacher: teacher, currentUnit: null, classroom: classroom,
     icons: {memory: TO_MEMORY, chat: TO_CHAT, prep: TO_PREP, save: SAVE}};     // the rail's drawings, for the same actions elsewhere
 
   // Pages built on the server mark what holds Scripture with data-scripture; it's linked as the page loads.

@@ -740,7 +740,9 @@
       ub.setAttribute("aria-label", "Save " + book.title + " to a unit or a class shelf");
       ub.onclick = function(){ Passage.addToUnit({kind: "book", ref: {slug: book.slug, coverage: {}}, label: book.title}, ub, null,
         {place: {kind: "book", ref: {slug: book.slug}, label: book.title},
-         mine: {label: "Your books", checked: Covers.onShelf(book.slug), act: function(on){ return Covers.shelve(b, on); }}}); };
+         mine: {label: "Your books", checked: Covers.onShelf(book.slug), act: function(on){ return Covers.shelve(b, on); }},
+         // the book at the chapter that's open (the address keeps it); a teacher's copy never goes to students
+         share: b && b.reference ? null : {url: location.origin + location.pathname + location.hash, title: book.title}}); };
     }
   }
 

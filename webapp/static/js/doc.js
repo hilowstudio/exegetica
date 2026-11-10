@@ -27,7 +27,9 @@
       var id = b.dataset.id, origin = b.dataset.origin || id, kind = b.dataset.kind, title = b.dataset.title;
       Passage.addToUnit({kind: "shelf", ref: {item_id: id}, label: title}, b, null, {
         place: {kind: kind, ref: {item_id: id, origin: origin}, label: title},
-        hold: kind === "link" ? {kind: "link", key: b.dataset.url} : {kind: "upload", key: origin}
+        hold: kind === "link" ? {kind: "link", key: b.dataset.url} : {kind: "upload", key: origin},
+        // a class's copy shares itself; a teacher's own goes to the class shelf first (decision 0030)
+        share: b.dataset.classCopy ? {url: location.origin + location.pathname, title: title} : {shelf: true, title: title}
       });
     };
   }

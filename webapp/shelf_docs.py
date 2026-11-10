@@ -233,8 +233,12 @@ async def page(request):
     row = await readable_by(user, item) if (item and db.ready()) else None
     text = await text_of(item) if row else None
     if not row or text is None:
+        if user and item and db.ready():       # from a Classroom link, perhaps: offer the class (decision 0030)
+            offer = await _join_offer(request, user, item)
+            if offer:
+                return offer
         return shell.for_others(request, "Living Library", "That isn't on your shelves.") if user else \
-            shell.for_others(request, "Living Library", "Sign in with your school account to read it.")
+            shell.for_others(request, "Living Library", "It's on a class shelf in the Living Library.")
     ref = row["ref"] or {}
     teacher = bool(user) and (auth.is_teacher(user) or auth.is_admin(user))
     if row["kind"] == "resource":
@@ -247,6 +251,62 @@ async def page(request):
                            "origin": ref.get("origin") or str(row["id"]),   # the teacher's own copy a class copy came from
                            "class_copy": bool(row["course_key"])},
                       body_html=Markup(_paragraphs(text, row["label"])), can_place=teacher)
+
+
+async def _joinable(user, item: uuid.UUID):
+    """The class-shelf row this person could read once they choose its class, or None: a student only for what is
+    marked for students, in a course with student logins; a teacher for any course on the school's list."""
+    from webapp import shelves
+    row = await db.fetchrow("""select id, course_key, audience, label from shelf_items where id = $1 and course_key is not null
+                                and kind in ('upload','link','resource')""", item)
+    if not row:
+        return None
+    teacher = shelves.is_teacher(user)
+    if not teacher and row["audience"] != "students":
+        return None
+    course = next((c for c in shelves.courses_for(teacher) if c["key"] == row["course_key"]), None)
+    return (row, course) if course else None
+
+
+async def _join_offer(request, user, item: uuid.UUID):
+    """The page someone sees when a Classroom link leads to a shelf they haven't chosen: what it is, whose shelf, and
+    one button that adds the class and opens it. Classes stay each person's own choice (decision 0029)."""
+    got = await _joinable(user, item)
+    if not got:
+        return None
+    row, course = got
+    from webapp import shelves
+    name = html.escape(course["name"])
+    whose = "the classes you teach" if shelves.is_teacher(user) else "your classes"
+    body = (f'<main class="prose shell-col"><nav class="back"><a href="/library">Your shelves</a></nav>{shell.MASTHEAD}'
+            f'<h1>{html.escape(row["label"] or "On a class shelf")}</h1>'
+            f"<p>It's on the {name} shelf in the Living Library. Add {name} to {whose} to open it. "
+            f"You can change your classes any time on Your shelves.</p>"
+            f'<form method="post" action="/read/doc/{row["id"]}/join"><button type="submit" class="join-btn">'
+            f"Add {name} and open it</button></form></main>")
+    return shell.render(request, shell.Built(f"{course['name']} · Living Library · Exegetica", body,
+                                             css=("/static/css/prose.css",), noindex=True))
+
+
+async def join(request):
+    """Add the item's class to this person's classes, then open the item (POST from the offer above)."""
+    from starlette.responses import RedirectResponse
+    from webapp import shelves, teacher_courses
+    user = auth.current_user(request)
+    try:
+        item = uuid.UUID(request.path_params["id"])
+    except ValueError:
+        item = None
+    got = await _joinable(user, item) if (user and item and db.ready()) else None
+    if got:
+        key = got[0]["course_key"]
+        if shelves.is_teacher(user):
+            await teacher_courses.set_course(user.get("email"), key, True)
+        else:
+            mine = await shelves.student_courses(_uid(user))
+            if key not in mine and len(mine) < 12:
+                await shelves.set_student_courses(_uid(user), mine + [key])
+    return RedirectResponse(f"/read/doc/{item}" if item else "/library", status_code=303)
 
 
 async def _resource_page(request, user, row, text: str, teacher: bool):

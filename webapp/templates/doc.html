@@ -14,7 +14,7 @@
     {% if both %}<div class="tb-seg" id="docAud" role="group" aria-label="Copy"><button type="button" data-v="teacher" aria-pressed="true">Teacher</button><button type="button" data-v="student" aria-pressed="false">Student</button></div>{% endif %}
     {% if doc.owner_href %}<a class="tb-act" href="{{ doc.owner_href }}" aria-label="Open in the Prep Room"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span>Open in the Prep Room</span></a>{% endif %}
     {% if can_place %}<button class="tb-act" id="docSave" type="button" aria-haspopup="true" aria-expanded="false"
-      data-id="{{ doc.id }}" data-origin="{{ doc.origin }}" data-kind="{{ doc.kind }}" data-title="{{ doc.title }}"{% if doc.url %} data-url="{{ doc.url }}"{% endif %}
+      data-id="{{ doc.id }}" data-origin="{{ doc.origin }}" data-kind="{{ doc.kind }}"{% if doc.class_copy %} data-class-copy="1"{% endif %} data-title="{{ doc.title }}"{% if doc.url %} data-url="{{ doc.url }}"{% endif %}
       aria-label="Save {{ doc.title }} to a unit or a class shelf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h10v17l-5-4-5 4z"/><path d="M12 7.5v5M9.5 10h5"/></svg><span>Save to…</span></button>{% endif %}
   </div>
 </header>

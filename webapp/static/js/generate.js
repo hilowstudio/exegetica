@@ -696,6 +696,7 @@ $("saveto").addEventListener("click",()=>{
   if(!S.res||!window.Passage)return;const r=S.res,b=$("saveto");
   Passage.addToUnit({kind:"resource",ref:{resource_id:r.id},label:r.title},b,"“"+r.title+"”",{units:false,
     place:{kind:"resource",ref:{resource_id:r.id},label:r.title},
+    share:{shelf:true,title:r.title},   // Classroom links the class shelf's student copy, the newest version (decision 0030)
     mine:{label:"From the Prep Room",checked:!!r.on_my_shelf,act:on=>api(on?"PUT":"DELETE","/api/shelf/resources/"+r.id)
       .then(()=>{r.on_my_shelf=on;Shell.toast(on?"Put “"+r.title+"” on your shelf in the Living Library":"Took “"+r.title+"” off your shelf");})
       .catch(e=>Shell.toast(e.message))}});

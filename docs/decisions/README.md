@@ -31,4 +31,5 @@ Each file records one decision about how Exegetica behaves: what was decided, wh
 | [0026](0026-prep-room-units.md) | The Prep Room keeps a teacher's work in units, with every version |
 | [0027](0027-prep-room-caps.md) | The Prep Room has daily caps, per teacher and for all teachers together |
 | [0028](0028-gemini-transcripts.md) | Gemini writes transcripts for the Living Library when a teacher asks |
-| [0029](0029-one-living-library.md) | One Living Library for everyone, with the Reading Room inside it and a shelf for each class (phases 1 and 2 built) |
+| [0029](0029-one-living-library.md) | One Living Library for everyone, with the Reading Room inside it and a shelf for each class the Prep Room can send to |
+| [0030](0030-google-classroom.md) | Teachers share to Google Classroom by link, through Classroom's own window |

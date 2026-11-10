@@ -19,7 +19,9 @@ def _as(monkeypatch, role):
     monkeypatch.setattr(auth, "current_user", lambda request: user)
     monkeypatch.setattr(auth, "is_teacher", lambda u: bool(u) and u.get("role") == "teacher")
     monkeypatch.setattr(auth, "is_admin", lambda u: False)
-    monkeypatch.setattr(shelf_docs, "db", types.SimpleNamespace(ready=lambda: True))
+    async def nothing(*a):
+        return None                           # no row by that id (the Classroom join offer looks one up)
+    monkeypatch.setattr(shelf_docs, "db", types.SimpleNamespace(ready=lambda: True, fetchrow=nothing))
     return user
 
 

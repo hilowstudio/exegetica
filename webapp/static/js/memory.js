@@ -566,7 +566,8 @@ function wireHome(v){
   if($("t-recite")) $("t-recite").onclick=function(){ openRecite(v, $("t-recite")); };
   if($("t-ask")) $("t-ask").onclick=function(){ Passage.ask(v.reference); };
   if($("t-unit")) $("t-unit").onclick=function(){
-    Passage.addToUnit({kind:"passage", ref:{ref:v.reference, translation:"ESV"}, label:v.reference+" (ESV)"}, $("t-unit")); };
+    Passage.addToUnit({kind:"passage", ref:{ref:v.reference, translation:"ESV"}, label:v.reference+" (ESV)"}, $("t-unit"), null,
+      {share:{url:location.origin+"/?passage="+encodeURIComponent(v.reference), title:v.reference}}); };   // decision 0030
   if($("day-offer")) $("day-offer").onclick=function(){
     var ref=ui.offer, have=verseByRef(ref); ui.offer=null;
     if(!have){ have=newVerse(ref); db.verses.push(have); save(); fillTexts(); toast("Added "+ref); }

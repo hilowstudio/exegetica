@@ -1419,6 +1419,7 @@ app = Starlette(
         Route("/api/shelf/docs/{id}", shelf_docs.change, methods=["PATCH", "DELETE"]),
         Route("/api/shelf/docs/{id}/suggest", shelf_docs.suggest, methods=["POST"]),
         Route("/read/doc/{id}", shelf_docs.page),
+        Route("/read/doc/{id}/join", shelf_docs.join, methods=["POST"]),
         Route("/ops/suggestions/{id}", shelf_docs.decide, methods=["POST"]),
         Route("/ops/suggestions/{id}/text", shelf_docs.decide, methods=["GET"]),
         Route("/api/library/courses", teacher_courses.get, methods=["GET"]),
