@@ -1,26 +1,32 @@
-/* Select, then Save to (decision 0031): on the Living Library's front page a teacher picks any mix of things on their
-   own shelves and their class shelves, and one Save to sends them all to a class shelf or a unit. The pattern people
-   know from Google Photos and Finder (rule F6): a Select button, a check circle on every item, a bar that counts them,
-   one menu, and one message with Undo for the whole batch. The items stay where they were; a copy goes.
+/* Select, then Save to or Remove (decision 0031): on the Living Library's front page a teacher picks any mix of things
+   on their own shelves and their class shelves. One Save to sends them all to a class shelf or a unit, and the items
+   stay where they were (a copy goes). One Remove takes them all off the shelves they stand on. The pattern people know
+   from Google Photos and Finder (rule F6): a Select button, a check circle on every item, a bar that counts them, one
+   menu, and one message with Undo for the whole batch.
    Tiles say what they can do with data-sel (shelves.js and library.js set it):
-     {k: a unique key, label, unit: {kind, ref} for a unit, place: {kind, ref} for a class shelf, copy: a resource id} */
+     {k: the tile where it stands, same: the thing itself (one book can sit on a class shelf and on your own), label,
+      unit: {kind, ref} for a unit, place: {kind, ref} for a class shelf, copy: a resource id,
+      rm: {url, from: a class's name, back: the teacher it goes back to, del: "upload" or "link" for one deleted}} */
 (function(){
 "use strict";
 var main = document.querySelector(".lib-main");
 if(!main || !main.hasAttribute("data-teacher")) return;
 var e = function(s){ return String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); };
 var CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg>';
+var BIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 7h15M9.5 7V4.8h5V7M6.8 7l.9 12.2h8.6l.9-12.2M10.3 10.6v5.5M13.7 10.6v5.5"/></svg>';
 var on = false, picked = {};              // key -> descriptor
+var ASK = "Choose items to save or remove";
 var btn = document.getElementById("select-open");
 var bar = document.createElement("div");
 bar.className = "sel-bar"; bar.hidden = true; bar.setAttribute("data-toast-above", "");
 bar.setAttribute("role", "region"); bar.setAttribute("aria-label", "Selected items");
-bar.innerHTML = '<span class="sel-n" role="status" aria-live="polite">Choose the items to save</span>' +
+bar.innerHTML = '<span class="sel-n" role="status" aria-live="polite">' + ASK + '</span>' +
   '<span class="sel-sp"></span><button type="button" class="sel-clear">Clear</button>' +
+  '<button type="button" class="sel-rm" disabled>' + BIN + '<span class="sel-w">Remove</span></button>' +
   '<button type="button" class="sel-save" aria-haspopup="true" aria-expanded="false" disabled>' + Passage.icons.save + 'Save to…</button>' +
   '<button type="button" class="sel-done">Done</button>';
 document.body.appendChild(bar);
-var nEl = bar.querySelector(".sel-n"), save = bar.querySelector(".sel-save");
+var nEl = bar.querySelector(".sel-n"), save = bar.querySelector(".sel-save"), rm = bar.querySelector(".sel-rm");
 
 function api(method, url, body){
   return fetch(url, {method: method, credentials: "same-origin", headers: body ? {"Content-Type": "application/json"} : {},
@@ -32,8 +38,8 @@ function desc(el){ try { return JSON.parse(el.getAttribute("data-sel")); } catch
 function count(){ return Object.keys(picked).length; }
 function paint(){
   var n = count();
-  nEl.textContent = n ? n + " selected" : "Choose the items to save";
-  save.disabled = !n;
+  nEl.textContent = n ? n + " selected" : ASK;
+  save.disabled = rm.disabled = !n;
 }
 
 // each tile gets a check circle beside it, a real button a keyboard reaches; the tile itself goes quiet
@@ -139,8 +145,9 @@ function each(list, fn, width){
 }
 function names(list){ return list.length <= 2 ? list.join(" and ") : list.slice(0, 2).join(", ") + " and " + (list.length - 2) + " more"; }
 function run(to){
-  var items = Object.keys(picked).map(function(k){ return picked[k]; });
-  save.disabled = true; nEl.textContent = "Saving " + items.length + "…";
+  var seen = {}, items = Object.keys(picked).map(function(k){ return picked[k]; })
+    .filter(function(d){ var s = d.same || d.k; if(seen[s]) return false; seen[s] = 1; return true; });
+  save.disabled = rm.disabled = true; nEl.textContent = "Saving " + items.length + "…";
   each(items, function(d){
     if(to.cls){
       if(!d.place) return Promise.resolve({error: "can't go on a class shelf", label: d.label});
@@ -173,4 +180,65 @@ function run(to){
 }
 // why a thing didn't go, in the server's own words, set inside a sentence
 function plain(m){ m = String(m || "").split(". ")[0].replace(/\.$/, ""); return m.charAt(0).toLowerCase() + m.slice(1); }
+
+// ---- Remove: off the shelves at once, one Undo for the batch (rule F3) ----
+// The tiles go at once; the server hears once the Undo has had its moment, as a single take-off does (shelves.js), so
+// an Undo never has to rebuild a class copy or an upload. Until then shelves.js and library.js keep the tiles hidden
+// through any redraw ("shelf:gone"). Leaving the page sends what's waiting.
+var waiting = [];
+function hide(keys, on, dropped){ document.dispatchEvent(new CustomEvent("shelf:gone", {detail: {keys: keys, on: on, dropped: !!dropped}})); }
+function forget(b){ var i = waiting.indexOf(b); if(i >= 0) waiting.splice(i, 1); }
+// one line (rule F4): a lone item by its title, a batch by its counts
+function n(c, one, many){ return c + " " + (c === 1 ? one : many); }
+function removedSay(go){
+  var lone = go.length === 1, places = [], seen = {}, off = [], del = [], links = 0, back = 0, who = {};
+  go.forEach(function(d){
+    if(d.rm.del){ del.push(d); if(d.rm.del === "link") links++; return; }
+    var w = d.rm.from ? "the " + d.rm.from + " shelf" : "your shelves";
+    if(!seen[w]){ seen[w] = 1; places.push(w); }
+    off.push(d); if(d.rm.back){ back++; who[d.rm.back] = 1; }
+  });
+  var say = off.length ? "Took " + (lone ? "“" + off[0].label + "”" : n(off.length, "item", "items")) + " off " +
+    (places.length === 1 ? places[0] : places.length + " shelves") : "";
+  if(del.length) say += (say ? " and deleted " : "Deleted ") + (lone ? "“" + del[0].label + "”"
+    : !links ? n(del.length, "upload", "uploads") : links === del.length ? n(del.length, "link", "links") : del.length + " uploads and links");
+  if(back){ var t = Object.keys(who);   // another teacher's book or upload goes back to their own shelf (shelves.take_off)
+    say += ". " + (lone ? "It goes" : n(back, "goes", "go")) + " back to " + (t.length === 1 ? t[0] + "'s shelf" : "the teachers who added them"); }
+  return say;
+}
+// a tile with no rm is a book on the school's list for the class, which no teacher takes off
+function stayed(stay, alone){
+  if(!alone) return stay.length === 1 ? "1 book on the school's list stays" : stay.length + " books on the school's list stay";
+  return "The school's book list keeps " + (stay.length === 1 ? "“" + stay[0].label + "” on its shelf" : "these " + stay.length + " books on their shelves");
+}
+rm.addEventListener("click", function(){
+  var items = Object.keys(picked).map(function(k){ return picked[k]; });
+  if(!items.length) return;
+  var go = items.filter(function(d){ return d.rm; }), stay = items.filter(function(d){ return !d.rm; });
+  stop();
+  if(!go.length){ Shell.toast("Nothing was removed. " + stayed(stay, true)); return; }
+  var batch = {items: go, keys: go.map(function(d){ return d.k; })};
+  hide(batch.keys, true);
+  batch.t = setTimeout(function(){ send(batch); }, 6500);
+  waiting.push(batch);
+  Shell.toast(removedSay(go) + (stay.length ? ". " + stayed(stay) : ""), {undo: function(){
+    clearTimeout(batch.t); forget(batch); hide(batch.keys, false);
+  }});
+});
+function send(batch){
+  forget(batch);
+  each(batch.items, function(d){ return api("DELETE", d.rm.url); }, 3).then(function(out){
+    var ok = [], bad = [], why = [];
+    out.forEach(function(r, i){ var d = batch.items[i];
+      if(r && r.error){ bad.push(d.k); why.push("“" + d.label + "” (" + plain(r.error) + ")"); } else ok.push(d.k); });
+    if(ok.length) hide(ok, false, true);
+    if(bad.length){ hide(bad, false); Shell.toast("Couldn't remove " + names(why)); }
+    document.dispatchEvent(new CustomEvent("shelf:changed", {detail: {}}));
+  });
+}
+window.addEventListener("pagehide", function(){
+  waiting.forEach(function(b){ clearTimeout(b.t);
+    b.items.forEach(function(d){ fetch(d.rm.url, {method: "DELETE", credentials: "same-origin", keepalive: true}); }); });
+  waiting = [];
+});
 })();

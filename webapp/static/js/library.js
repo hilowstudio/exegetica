@@ -57,9 +57,10 @@ function sortValue(it){
 function sortBooks(items){
   return items.slice().sort(function(x,y){return sortValue(x).localeCompare(sortValue(y),undefined,{sensitivity:"base",numeric:true});});
 }
-// what Select and one Save to can do with an item (static/js/select.js, decision 0031)
+// what Select can do with an item (static/js/select.js, decision 0031): Save to, and Remove from your shelves
 function selAttr(it){
-  var d={k:"lib:"+it.id,label:it.title,unit:{kind:"library",ref:{item_id:it.id}}},pl=_placeOf(it);
+  var d={k:"lib:"+it.id,same:"lib:"+it.id,label:it.title,unit:{kind:"library",ref:{item_id:it.id}},
+    rm:{url:"/api/library/shelf/"+encodeURIComponent(it.id)}},pl=_placeOf(it);
   if(pl)d.place={kind:pl.kind,ref:pl.ref};
   return ' data-sel="'+esc(JSON.stringify(d)).replace(/"/g,"&quot;")+'"';
 }
@@ -80,16 +81,27 @@ function renderShelf(items){
   }
   host.innerHTML=html;
 }
+// Remove in Select hides items at once and tells the server after its Undo (select.js); once the server has them,
+// they leave LIB
+var gone={};
+document.addEventListener("shelf:gone",function(ev){
+  var d=ev.detail||{};
+  (d.keys||[]).forEach(function(k){
+    if(d.on)gone[k]=1;else delete gone[k];
+    if(d.dropped)LIB=LIB.filter(function(x){return "lib:"+x.id!==k;});
+  });
+  render();
+});
 // Each kind on its own shelf, shown once it holds something. The group's heading shows with the first.
 function render(){
   if(booting)return;
-  var by={video:[],podcast:[],book:[]};
-  LIB.forEach(function(it){if(by[it.type])by[it.type].push(it);});
+  var by={video:[],podcast:[],book:[]},n=0;
+  LIB.forEach(function(it){if(by[it.type]&&!gone["lib:"+it.id]){by[it.type].push(it);n++;}});
   if(by.video.length)renderFilms(by.video);
   if(by.podcast.length)renderRecords(by.podcast);
   if(by.book.length)renderShelf(sortBooks(by.book));
   $("sec-video").hidden=!by.video.length;$("sec-podcast").hidden=!by.podcast.length;$("sec-book").hidden=!by.book.length;
-  $("media").hidden=!LIB.length;
+  $("media").hidden=!n;
   LIB.forEach(function(it){it.fresh=false;});
 }
 function openBook(id){

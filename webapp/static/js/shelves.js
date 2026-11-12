@@ -28,21 +28,46 @@ function chapterCap(b){
   return (b.chapters > 1 && p.section) ? "Chapter " + p.section + " of " + b.chapters : "In progress";
 }
 
-// What Select and one Save to can do with a tile (static/js/select.js, decision 0031): a unit's source, a class shelf's
-// item, or a resource to copy. A teacher's tiles only: students don't send things anywhere.
+// What Select can do with a tile (static/js/select.js, decision 0031): a unit's source, a class shelf's item, or a
+// resource to copy for Save to, and how Remove takes it off the shelf it stands on. k names the tile where it stands,
+// same the thing itself, so a book picked on a class shelf and on your own goes once. A teacher's tiles only: students
+// don't send things anywhere.
 function sel(el, d){ if(teacher && d) el.setAttribute("data-sel", JSON.stringify(d)); return el; }
-function bookSel(slug, title){ return {k: "book:" + slug, label: title, unit: {kind: "book", ref: {slug: slug, coverage: {}}},
-  place: {kind: "book", ref: {slug: slug}}}; }
+function bookSel(slug, title, k, rm){ return {k: k || "book:" + slug, same: "book:" + slug, label: title,
+  unit: {kind: "book", ref: {slug: slug, coverage: {}}}, place: {kind: "book", ref: {slug: slug}}, rm: rm || null}; }
+// a class shelf's item comes off that shelf; another teacher's book or upload goes back to their own (take_off)
+function offClass(a, c){ return {url: "/api/shelf/items/" + a.id, from: c.name,
+  back: !a.yours && a.added_name && a.kind !== "resource" ? shortName(a.added_name) : ""}; }
+
+// Remove takes tiles off at once and the server hears after the Undo has had its moment (select.js); until then the
+// tiles it named stay hidden through any redraw, and once the server has them they leave the shelves' data
+var gone = {}, loaded = false;
+function shown(k){ return !gone[k]; }
+document.addEventListener("shelf:gone", function(ev){
+  var d = ev.detail || {};
+  (d.keys || []).forEach(function(k){
+    if(d.on) gone[k] = 1; else delete gone[k];
+    if(d.dropped){
+      H.books = H.books.filter(function(b){ return "book:" + b.slug !== k; });
+      H.docs = (H.docs || []).filter(function(x){ return "doc:" + x.id !== k; });
+      H.prep = (H.prep || []).filter(function(r){ return "res:" + r.id !== k; });
+      H.classes.forEach(function(c){ c.added = (c.added || []).filter(function(a){ return "cls:" + a.id !== k; }); });
+    }
+  });
+  if(loaded){ drawClasses(); drawMine(); if(teacher){ drawDocs(); drawPrep(); } }
+});
 
 // ---- the class shelves ----
 function classCell(w, course){
-  if(w.book) return {el: sel(Covers.cover(w.book, {wrap: Covers.wrap(), started: started(w.book.slug)}), bookSel(w.book.slug, w.book.title)), cap: chapterCap(w.book)};
+  if(w.book) return {el: sel(Covers.cover(w.book, {wrap: Covers.wrap(), started: started(w.book.slug)}),
+    bookSel(w.book.slug, w.book.title, "work:" + course.key + ":" + w.book.slug)), cap: chapterCap(w.book)};
   var bound = {title: w.title, author: w.author, sections: [SUBJECT[course.subject] || ""]};
   if(w.state === "outline"){
     var b = Covers.cover(bound, {button: true, sec: "Outline"});
     b.setAttribute("aria-label", w.title + ", its outline");
     b.addEventListener("click", function(){ openOutline(w, b); });
-    sel(b, {k: "outline:" + w.outline, label: w.title, unit: {kind: "outline", ref: {key: w.outline, parts: []}}});
+    sel(b, {k: "work:" + course.key + ":outline:" + w.outline, same: "outline:" + w.outline, label: w.title,
+      unit: {kind: "outline", ref: {key: w.outline, parts: []}}});
     return {el: b, cap: "Outline", phone: true};
   }
   var still = Covers.cover(bound, {href: false, sec: "In print"});
@@ -83,16 +108,18 @@ function moreChip(a, c, host){
 function addedDoc(a, c){
   var cell = document.createElement("div"); cell.className = "placed";
   var r = a.ref || {}, d = a.doc.type === "resource"
-    ? (a.yours && r.resource_id ? {k: "res:" + r.resource_id, label: a.label, place: {kind: "resource", ref: {resource_id: r.resource_id}}, copy: r.resource_id}
+    ? (a.yours && r.resource_id ? {k: "cls:" + a.id, same: "res:" + r.resource_id, label: a.label, place: {kind: "resource", ref: {resource_id: r.resource_id}}, copy: r.resource_id}
                                 : {k: "cls:" + a.id, label: a.label})          // another teacher's resource stays in their Prep Room
     : {k: "cls:" + a.id, label: a.label, unit: {kind: "shelf", ref: {item_id: a.id}}, place: {kind: a.kind, ref: {item_id: a.id}}};
+  d.rm = offClass(a, c);
   cell.appendChild(sel(docTile(a.doc, "/read/doc/" + a.id), d));
   moreChip(a, c, cell);
   return {el: cell, cap: addedCap(a)};
 }
 function addedBook(a, c){
   var cell = document.createElement("div"); cell.className = "placed";
-  cell.appendChild(sel(Covers.cover(a.book, {wrap: Covers.wrap(), started: started(a.book.slug)}), bookSel(a.book.slug, a.book.title)));
+  cell.appendChild(sel(Covers.cover(a.book, {wrap: Covers.wrap(), started: started(a.book.slug)}),
+    bookSel(a.book.slug, a.book.title, "cls:" + a.id, offClass(a, c))));
   moreChip(a, c, cell);
   return {el: cell, cap: addedCap(a) || chapterCap(a.book)};
 }
@@ -107,7 +134,7 @@ function videoTile(a, c){
     '<span class="vt-t">' + e(v.title) + '</span><span class="vt-s">' + e(v.note || v.sub || "") + '</span>';
   var r = a.ref || {};
   cell.appendChild(sel(t, {k: "cls:" + a.id, label: a.label, unit: {kind: "library", ref: {item_id: r.item_id}},
-    place: {kind: "video", ref: {item_id: r.item_id, start: r.start, end: r.end, quote: r.quote, note: r.note}}}));
+    place: {kind: "video", ref: {item_id: r.item_id, start: r.start, end: r.end, quote: r.quote, note: r.note}}, rm: offClass(a, c)}));
   moreChip(a, c, cell);
   return {el: cell, cap: addedCap(a)};
 }
@@ -123,7 +150,7 @@ function podTile(a, c){
     '<span class="vt-t">' + e(p.title) + '</span><span class="vt-s">' + e(p.note || p.show || "") + '</span>';
   var r = a.ref || {};
   cell.appendChild(sel(t, {k: "cls:" + a.id, label: a.label, unit: {kind: "library", ref: {item_id: r.item_id}},
-    place: {kind: "podcast", ref: {item_id: r.item_id, guid: r.guid, start: r.start, end: r.end, quote: r.quote, note: r.note}}}));
+    place: {kind: "podcast", ref: {item_id: r.item_id, guid: r.guid, start: r.start, end: r.end, quote: r.quote, note: r.note}}, rm: offClass(a, c)}));
   moreChip(a, c, cell);
   return {el: cell, cap: addedCap(a)};
 }
@@ -154,7 +181,7 @@ function setAudience(a, c, to){
 // rebuild a class copy. Another teacher's book or upload goes back to their shelf; a resource stays in their Prep Room.
 var pendingOff = {}, EDITING = {};
 function takeOff(a, c){
-  var i = c.added.indexOf(a); if(i < 0) return;
+  var i = (c.added || []).indexOf(a); if(i < 0) return;
   c.added.splice(i, 1); drawClasses();
   var back = !a.yours && a.added_name && a.kind !== "resource";
   pendingOff[a.id] = setTimeout(function(){
@@ -183,7 +210,7 @@ function drawClasses(){
   }
   H.classes.forEach(function(c, i){
     var note = [c.subject, c.grades ? (c.grades.indexOf("-") > 0 ? "grades " : "grade ") + c.grades : ""].filter(Boolean).join(" · ");
-    var added = c.added || [];
+    var added = (c.added || []).filter(function(a){ return shown("cls:" + a.id); });
     var books = c.works.map(function(w){ return classCell(w, c); })
       .concat(added.filter(function(a){ return a.book; }).map(function(a){ return addedBook(a, c); }))
       .concat(added.filter(function(a){ return a.doc; }).map(function(a){ return addedDoc(a, c); }));
@@ -237,7 +264,7 @@ window.addEventListener("pagehide", function(){
 });
 function drawDocs(){
   var sec = $("docs"); if(!sec) return;
-  var list = H.docs || []; sec.hidden = false;
+  var list = (H.docs || []).filter(function(d){ return shown("doc:" + d.id); }); sec.hidden = false;
   $("docs-edit").hidden = !list.length;
   var box = $("my-docs");
   if(!list.length){
@@ -249,7 +276,8 @@ function drawDocs(){
   list.forEach(function(d){
     var cell = document.createElement("div"); cell.className = "placed doc-cell";
     cell.appendChild(sel(docTile(d, "/read/doc/" + d.id), {k: "doc:" + d.id, label: d.title,
-      unit: {kind: "shelf", ref: {item_id: d.id}}, place: {kind: d.kind, ref: {item_id: d.id}}}));
+      unit: {kind: "shelf", ref: {item_id: d.id}}, place: {kind: d.kind, ref: {item_id: d.id}},
+      rm: {url: "/api/shelf/docs/" + d.id, del: d.kind === "link" ? "link" : "upload"}}));   // an upload lives only here: Remove deletes it
     var more = document.createElement("button");
     more.type = "button"; more.className = "cv-more"; more.innerHTML = MORE;
     more.setAttribute("aria-haspopup", "true"); more.setAttribute("aria-expanded", "false");
@@ -316,13 +344,14 @@ function deleteDoc(d){
 // Each opens where it lives, in its unit; taking it off the shelf leaves it there.
 function drawPrep(){
   var sec = $("prep"); if(!sec) return;
-  var list = H.prep || []; sec.hidden = !list.length;
+  var list = (H.prep || []).filter(function(r){ return shown("res:" + r.id); }); sec.hidden = !list.length;
   if(!list.length){ sec.classList.remove("editing"); return; }
   var grid = document.createElement("div"); grid.className = "shelf-grid";
-  list.forEach(function(r, i){
+  list.forEach(function(r){
     var cell = document.createElement("div"); cell.className = "placed";
     cell.appendChild(sel(docTile({type: "resource", kind_word: r.kind_word, title: r.title}, r.href),
-      {k: "res:" + r.id, label: r.title, place: {kind: "resource", ref: {resource_id: r.id}}, copy: r.id}));
+      {k: "res:" + r.id, same: "res:" + r.id, label: r.title, place: {kind: "resource", ref: {resource_id: r.id}}, copy: r.id,
+       rm: {url: "/api/shelf/resources/" + r.id}}));
     var more = document.createElement("button");
     more.type = "button"; more.className = "cv-more"; more.innerHTML = MORE;
     more.setAttribute("aria-haspopup", "true"); more.setAttribute("aria-expanded", "false");
@@ -331,7 +360,7 @@ function drawPrep(){
       Passage.menu(more, "Options for " + r.title, [
         {label: "Open in the Prep Room", act: function(){ location.href = r.href; }},
         {label: "Take off your shelf", act: function(){
-          H.prep.splice(i, 1); drawPrep();
+          var i = H.prep.indexOf(r); if(i >= 0) H.prep.splice(i, 1); drawPrep();
           api("DELETE", "/api/shelf/resources/" + r.id).then(function(){
             Shell.toast("Took “" + r.title + "” off your shelf. It's still in its unit.", {undo: function(){
               api("PUT", "/api/shelf/resources/" + r.id).then(load).catch(function(err){ Shell.toast(err.message); }); }});
@@ -357,15 +386,17 @@ if(docsEdit) docsEdit.onclick = function(){
 var OFF = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 function drawMine(){
   var box = $("my-books"); $("mine").hidden = false;
-  $("mine-edit").hidden = !H.books.length;
-  if(!H.books.length){ editing(false);
+  var books = H.books.filter(function(b){ return shown("book:" + b.slug); });
+  $("mine-edit").hidden = !books.length;
+  if(!books.length){ editing(false);
     box.innerHTML = '<p class="sg-note">Books you shelve in the Reading Room wait here. Open any book there and choose <b>Shelve</b>.</p>';
     return;
   }
   var grid = document.createElement("div"); grid.className = "shelf-grid";
-  H.books.forEach(function(b){
+  books.forEach(function(b){
     var cell = document.createElement("div"); cell.className = "mine-cell";
-    cell.appendChild(sel(Covers.cover(b, {wrap: Covers.wrap(), started: started(b.slug)}), bookSel(b.slug, b.title)));
+    cell.appendChild(sel(Covers.cover(b, {wrap: Covers.wrap(), started: started(b.slug)}),
+      bookSel(b.slug, b.title, null, {url: "/api/shelf/books/" + encodeURIComponent(b.slug)})));
     var off = document.createElement("button");
     off.type = "button"; off.className = "cv-off"; off.innerHTML = OFF;
     off.setAttribute("aria-label", "Take " + b.title + " off your shelf"); off.title = "Take off your shelf";
@@ -394,7 +425,7 @@ function unshelve(b){
 // ---- loading, and the states before there's anything to show ----
 function load(){
   api("GET", "/api/shelf/home").then(function(d){
-    H = d; drawClasses(); drawMine(); if(teacher){ drawDocs(); drawPrep(); }
+    H = d; loaded = true; drawClasses(); drawMine(); if(teacher){ drawDocs(); drawPrep(); }
   }).catch(function(err){
     $("class-shelves").innerHTML = '<div class="class-invite"><p>' + e(err.message) + '</p>' +
       '<button type="button" class="add-btn" id="shelves-retry">Try again</button></div>';

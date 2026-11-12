@@ -112,6 +112,32 @@ def test_select_is_a_teachers_and_saves_a_batch_with_one_undo():
     assert 'id="select-open"' in tpl and "/static/js/select.js" in tpl
 
 
+def test_remove_takes_a_batch_off_at_once_and_tells_the_server_after_its_undo():
+    sel = (JS / "select.js").read_text(encoding="utf-8")
+    assert 'class="sel-rm"' in sel
+    # nothing reaches the server until the Undo has had its moment, and Undo only shows the tiles again
+    assert "batch.t = setTimeout(function(){ send(batch); }, 6500);" in sel
+    assert "clearTimeout(batch.t); forget(batch); hide(batch.keys, false);" in sel
+    # leaving the page sends what was waiting; a refusal brings its tile back and says why
+    assert "fetch(d.rm.url, {method: \"DELETE\", credentials: \"same-origin\", keepalive: true})" in sel
+    assert 'hide(bad, false); Shell.toast("Couldn\'t remove "' in sel
+    # Save to sends a thing once, though it was picked on a class shelf and on your own
+    assert "var s = d.same || d.k; if(seen[s]) return false;" in sel
+
+
+def test_each_tile_says_where_remove_takes_it_from_and_the_schools_list_stays():
+    js = (JS / "shelves.js").read_text(encoding="utf-8")
+    for url in ('"/api/shelf/items/" + a.id', '"/api/shelf/books/" + encodeURIComponent(b.slug)',
+                '"/api/shelf/docs/" + d.id', '"/api/shelf/resources/" + r.id'):
+        assert "url: " + url in js, url
+    # the school's own book for a class has a place of its own and nothing to remove it with
+    assert 'bookSel(w.book.slug, w.book.title, "work:" + course.key + ":" + w.book.slug))' in js
+    # a removed tile stays hidden through any redraw until the server has it, then leaves the shelves' data
+    assert 'document.addEventListener("shelf:gone"' in js and "if(d.dropped){" in js
+    lib = (JS / "library.js").read_text(encoding="utf-8")
+    assert 'rm:{url:"/api/library/shelf/"' in lib and 'document.addEventListener("shelf:gone"' in lib
+
+
 def test_the_privacy_page_says_how_podcast_audio_travels():
     text = (ROOT / "docs" / "privacy.md").read_text(encoding="utf-8")
     assert "**Podcast audio.**" in text and "never the listener's device" in text
