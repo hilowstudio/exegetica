@@ -57,13 +57,19 @@ function sortValue(it){
 function sortBooks(items){
   return items.slice().sort(function(x,y){return sortValue(x).localeCompare(sortValue(y),undefined,{sensitivity:"base",numeric:true});});
 }
+// what Select and one Save to can do with an item (static/js/select.js, decision 0031)
+function selAttr(it){
+  var d={k:"lib:"+it.id,label:it.title,unit:{kind:"library",ref:{item_id:it.id}}},pl=_placeOf(it);
+  if(pl)d.place={kind:pl.kind,ref:pl.ref};
+  return ' data-sel="'+esc(JSON.stringify(d)).replace(/"/g,"&quot;")+'"';
+}
 function shelfBookHTML(it,i){
   var inner=(!wrap&&it.cover)
     ? '<img class="bk-cover" src="'+esc(it.cover)+'" alt="" loading="lazy">'
     : '<div class="bk-cover ph" style="--c:'+it.accent+'"><span class="sp"></span><div class="t">'+esc(it.title)+'</div><div class="a">'+esc(it.sub)+'</div></div>';
   var badge=it.ready?'<span class="bk-ready" title="Study materials ready">✓</span>':"";
   var tip=it.title+(it.ready?" · study materials ready":"");
-  return '<button class="book" style="--i:'+i+'" data-id="'+it.id+'" type="button" title="'+esc(tip)+'">'+badge+inner+'</button>';
+  return '<button class="book" style="--i:'+i+'" data-id="'+it.id+'" type="button" title="'+esc(tip)+'"'+selAttr(it)+'>'+badge+inner+'</button>';
 }
 function renderShelf(items){
   var host=$("shelf"),w=host.clientWidth||host.parentNode.clientWidth||900;
@@ -138,16 +144,29 @@ function discLabel(it){
   var inner=art?'<img src="'+esc(it.artwork)+'" alt="">':'<span>'+esc(initials(it.title))+'</span>';
   return '<span class="label'+(art?'':' ph')+'"'+(art?'':' style="--c:'+it.accent+'"')+'>'+inner+'</span><span class="hole"></span>';
 }
+// an episode's date as people read it: "Jan 12, 2023"
+function epDate(d){
+  if(!d||!/^\d{4}-\d{2}-\d{2}/.test(d))return d||"";
+  var t=new Date(d.slice(0,10)+"T12:00:00Z");
+  return isNaN(t)?d:t.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric",timeZone:"UTC"});
+}
+// a show is a record; a single episode is the same record, its caption saying it's one episode of a show
 function recordHTML(it,i){
-  return '<button class="rec" style="--i:'+i+'" data-id="'+it.id+'" type="button" title="'+esc(it.title)+'"><span class="disc">'+discLabel(it)+'</span><span class="rec-cap"><span class="rc-t">'+esc(it.title)+'</span><span class="rc-s">'+esc(it.sub)+'</span></span></button>';
+  var sub=it.episode?"Episode · "+(it.sub||it.episode.show||""):it.sub;
+  return '<button class="rec" style="--i:'+i+'" data-id="'+it.id+'" type="button" title="'+esc(it.title)+'"'+selAttr(it)+'><span class="disc">'+discLabel(it)+'</span><span class="rec-cap"><span class="rc-t">'+esc(it.title)+'</span><span class="rc-s">'+esc(sub)+'</span></span></button>';
 }
 function renderRecords(items){$("records").innerHTML=items.map(function(it,i){return recordHTML(it,i);}).join("");}
 function openPlayer(id){
   var it=null,k;for(k=0;k<LIB.length;k++){if(LIB[k].id===id){it=LIB[k];break;}}
   if(!it)return;
+  var ep=it.episode;
   $("play-body").innerHTML='<div class="play-grid"><div class="deck-holder"><div class="deck"><div class="plinth"></div><div class="platter"></div><div class="disc spinning">'+discLabel(it)+'</div><div class="tonearm"><span class="arm"><span class="head"></span></span><span class="pivot"></span></div></div></div>'+
-    '<div class="play-meta"><div class="r-eyebrow">Podcast</div><h2 class="r-title">'+esc(it.title)+'</h2><div class="r-author">'+esc(it.sub)+'</div>'+(it.meta?'<div class="r-facts">'+esc(it.meta)+'</div>':'')+
-    _unitBtn(it)+_rmBtn(it)+'</div></div><div class="moments" id="moments-play"></div>';
+    '<div class="play-meta"><div class="r-eyebrow">'+(ep?"Podcast episode":"Podcast")+'</div><h2 class="r-title">'+esc(it.title)+'</h2><div class="r-author">'+esc(it.sub)+'</div>'+(it.meta?'<div class="r-facts">'+esc(it.meta)+'</div>':'')+
+    (ep&&ep.description?'<p class="ep-desc">'+esc(ep.description)+'</p>':'')+
+    _unitBtn(it)+_rmBtn(it)+'</div></div>'+
+    (ep?'<div class="ep-listen" id="ep-listen" data-item="'+esc(it.id)+'"></div>':'')+   // the player has the dialog's full width
+    '<div class="moments" id="moments-play"></div>';
+  if(ep&&window.Listen)Listen.mount($("ep-listen"),{src:"/api/library/item/"+encodeURIComponent(it.id)+"/audio",title:it.title,key:"item:"+it.id,seconds:ep.seconds});
   $("play-bg").classList.add("open");
   if(window.Moments&&AUTH.signed)Moments.mount(it,$("moments-play"));
 }
@@ -160,7 +179,7 @@ function videoThumb(it){
   return '<span class="thumb'+(art?'':' ph')+'">'+(art?'<img src="'+esc(it.thumbnail)+'" alt="" loading="lazy">':'')+'<span class="play">▶</span></span>';
 }
 function filmFrameHTML(it,i){
-  return '<button class="film" style="--i:'+i+'" data-id="'+it.id+'" type="button" title="'+esc(it.title)+'"><span class="frame"><span class="perf"></span>'+videoThumb(it)+'<span class="perf"></span></span><span class="film-cap"><span class="ft">'+esc(it.title)+'</span><span class="fs">'+esc(it.sub)+'</span></span></button>';
+  return '<button class="film" style="--i:'+i+'" data-id="'+it.id+'" type="button" title="'+esc(it.title)+'"'+selAttr(it)+'><span class="frame"><span class="perf"></span>'+videoThumb(it)+'<span class="perf"></span></span><span class="film-cap"><span class="ft">'+esc(it.title)+'</span><span class="fs">'+esc(it.sub)+'</span></span></button>';
 }
 function renderFilms(items){$("films").innerHTML=items.map(function(it,i){return filmFrameHTML(it,i);}).join("");}
 function openScreen(id){
@@ -179,14 +198,19 @@ $("films").addEventListener("click",function(e){var b=e.target.closest(".film");
 $("screen-close").addEventListener("click",function(){$("screen-bg").classList.remove("open");});
 var _rz;window.addEventListener("resize",function(){clearTimeout(_rz);_rz=setTimeout(render,160);});   // the shelves refit
 // A saved item can go into a Prep Room unit from here (static/js/passage.js lists the teacher's units in place).
-// A video can also go on a class shelf, so it says "Save to…"; a podcast or a brought-in book goes to a unit.
-function _unitBtn(it){if(!(AUTH.signed&&window.Passage&&Passage.teacher))return "";var v=it.type==="video";
+// A video, or a single podcast episode (decision 0031), can also go on a class shelf, so it says "Save to…"; a
+// whole show or a brought-in book goes to a unit.
+function _placeOf(it){
+  if(it.type==="video")return {kind:"video",ref:{item_id:it.id},label:it.title};
+  if(it.type==="podcast"&&it.episode)return {kind:"podcast",ref:{item_id:it.id,guid:it.episode.guid},label:it.title};
+  return null;
+}
+function _unitBtn(it){if(!(AUTH.signed&&window.Passage&&Passage.teacher))return "";var v=!!_placeOf(it);
   return '<div class="lib-tools"><button type="button" class="shell-tool" data-unit-item="'+esc(it.id)+'" aria-haspopup="true" aria-expanded="false">'+
     (v?Passage.icons.save+'Save to…':Passage.icons.prep+'Add to a unit')+'</button></div>';}
 document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-unit-item]");if(!b)return;
-  var it=LIB.filter(function(x){return x.id===b.getAttribute("data-unit-item");})[0];
-  if(it)Passage.addToUnit({kind:"library",ref:{item_id:it.id},label:it.title},b,null,
-    it.type==="video"?{place:{kind:"video",ref:{item_id:it.id},label:it.title}}:null);});
+  var it=LIB.filter(function(x){return x.id===b.getAttribute("data-unit-item");})[0],pl=it&&_placeOf(it);
+  if(it)Passage.addToUnit({kind:"library",ref:{item_id:it.id},label:it.title},b,null,pl?{place:pl}:null);});
 function _rmBtn(it){return '<button type="button" class="lib-remove" data-remove="'+it.id+'">Remove from library</button>';}
 function addItem(it,cb){
   if(AUTH.signed){
@@ -357,6 +381,25 @@ $("upload-bg").addEventListener("click",function(e){if(e.target===$("upload-bg")
 
 // ---------- live search (books via OpenLibrary/Google Books, podcasts via iTunes) ----------
 var SEARCH_KIND="video", SR=[], CAT=[], stTimer=null, SEARCH_NOTE="No matches found.", searchOpener=null;
+// the Podcast tab finds single episodes by default, or whole shows (decision 0031); the choice lasts the visit
+var POD_MODE="episodes";
+$("pod-mode").addEventListener("click",function(e){
+  var b=e.target.closest("[data-pm]");if(!b||b.dataset.pm===POD_MODE)return;
+  POD_MODE=b.dataset.pm;podModeShow();
+  var q=$("search-q").value.trim();
+  if(q.length>=2){$("search-results").innerHTML='<div class="s-note">Searching…</div>';runSearch(q);}
+  else{SR=[];$("search-results").innerHTML='<div class="s-note">Type to search.</div>';}
+  $("search-q").focus();
+});
+function podModeShow(){
+  $("pod-mode").hidden=SEARCH_KIND!=="podcast";
+  Array.prototype.forEach.call($("pod-mode").children,function(b){b.setAttribute("aria-pressed",String(b.dataset.pm===POD_MODE));});
+  if(SEARCH_KIND==="podcast"){
+    $("search-sub").textContent=POD_MODE==="episodes"?"Search Apple Podcasts for single episodes. An episode you add is kept on its own.":"Search Apple Podcasts, then pick the show to add.";
+    $("search-label").textContent=POD_MODE==="episodes"?"Search episodes":"Search shows";
+    $("search-q").placeholder=POD_MODE==="episodes"?"e.g. the Gospel of John, or a speaker's name":"e.g. Renewing Your Mind";
+  }
+}
 $("types").addEventListener("click",function(e){var b=e.target.closest("[data-t]");if(b)openSearch(b.dataset.t,$("search-q").value.trim());});
 $("add-open").addEventListener("click",function(){openSearch(curType,"");});
 // One dialog adds anything: a video or podcast, or a book. A book is looked for in the Reading Room first, where
@@ -373,6 +416,7 @@ function openSearch(kind,prefill){
          podcast:["Search Apple Podcasts, then pick the show to add.","Search podcasts","e.g. Renewing Your Mind"],
          video:["Search YouTube, or paste a link, then pick the video to add.","Search videos","e.g. photosynthesis, or paste a YouTube link"]}[kind];
   $("search-sub").textContent=T[0];if(!form){$("search-label").textContent=T[1];$("search-q").placeholder=T[2];}
+  podModeShow();
   if(kind==="upload"&&prefill){$("up2-title").value=prefill;}
   Array.prototype.forEach.call($("types").children,function(b){b.setAttribute("aria-selected",String(b.dataset.t===kind));});
   $("search-q").value=prefill||"";
@@ -402,7 +446,7 @@ function runSearch(q){
     return;
   }
   var url,ytUrl=false;CAT=[];SEARCH_NOTE="No matches found.";
-  if(SEARCH_KIND==="podcast")url="/api/library/podcasts?q="+encodeURIComponent(q);
+  if(SEARCH_KIND==="podcast")url="/api/library/podcasts?q="+encodeURIComponent(q)+(POD_MODE==="episodes"?"&kind=episodes":"");
   else if(/youtube\.com\/watch|youtu\.be\//i.test(q)){url="/api/library/video?url="+encodeURIComponent(q);ytUrl=true;}
   else url="/api/library/youtube?q="+encodeURIComponent(q);
   fetch(url).then(function(r){return r.json();}).then(function(d){
@@ -438,6 +482,10 @@ function renderSearch(){
       return '<button class="result" type="button" data-i="'+i+'">'+vt+'<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+esc(x.author||"")+'</span></span>'+(x.duration?'<span class="r-y">'+esc(x.duration)+'</span>':'')+'</button>';
     }
     var art=x.artwork?'<img class="mini-img sq" src="'+esc(x.artwork)+'" alt="" loading="lazy">':'<span class="mini sq" style="--c:'+ACCENTS[i%ACCENTS.length]+'"></span>';
+    if(x.guid){   // a single episode: its show and date under the title, its length at the side
+      return '<button class="result" type="button" data-i="'+i+'">'+art+'<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+
+        esc([x.show,epDate(x.date)].filter(Boolean).join(" · "))+'</span></span><span class="r-y">'+esc(x.length||"")+'</span></button>';
+    }
     var eps=x.episodes?(x.episodes+" eps"):"";
     return '<button class="result" type="button" data-i="'+i+'">'+art+'<span><span class="r-t">'+esc(x.title)+'</span><br><span class="r-a">'+esc(x.author||"")+'</span></span><span class="r-y">'+esc(eps)+'</span></button>';
   }).join("");
@@ -456,6 +504,9 @@ $("search-results").addEventListener("click",function(e){
     addItem({type:"book",title:x.title,sub:x.author||"Unknown author",meta:x.year||"",accent:nextAccent(),cover:x.cover||null,isbn:x.isbn||null});
   }else if(SEARCH_KIND==="video"){
     addItem({type:"video",title:x.title,sub:x.author||"YouTube",meta:x.duration||"",accent:nextAccent(),thumbnail:x.thumbnail||null,url:x.url||null});
+  }else if(x.guid){   // one episode, kept on its own (decision 0031)
+    addItem({type:"podcast",title:x.title,sub:x.show||"",meta:[epDate(x.date),x.length].filter(Boolean).join(" · "),accent:nextAccent(),
+      artwork:x.artwork||null,feed:x.feed,episode:{guid:x.guid,show:x.show,date:x.date,length:x.length,seconds:x.seconds,audio:x.audio,description:x.description}});
   }else{
     addItem({type:"podcast",title:x.title,sub:x.author||"",meta:x.episodes?(x.episodes+" episodes"):"Podcast",accent:nextAccent(),artwork:x.artwork||null,feed:x.feed||null});
   }

@@ -74,7 +74,10 @@
   .vt-s{display:block;margin-top:2px;font-size:12.5px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .vtile:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
   @media (prefers-reduced-motion:reduce){ .vt-shot{transition:none} .vtile:hover .vt-shot{transform:none} }
-  @media (max-width:760px){ .fr-books.wide{grid-auto-columns:200px} .cls-sub{margin-top:-6px} }
+  /* a podcast episode (decision 0031): its show's square art, the same play mark, opening the player */
+  .fr-books.sq{grid-auto-columns:168px}
+  .vt-shot.sq{aspect-ratio:1/1}
+  @media (max-width:760px){ .fr-books.wide{grid-auto-columns:200px} .fr-books.sq{grid-auto-columns:148px} .cls-sub{margin-top:-6px} }
 
   /* a sheet: an article, a handout or a document, the size of a cover so it stands on the same shelf (phase 3).
      It reads as a printed page: a top margin, the title, set lines fading down the page, and its kind at the foot
@@ -485,3 +488,51 @@
   @media (max-width:640px){.m-list li{grid-template-columns:1fr}.m-when{grid-row:auto}.m-q,.m-note,.m-acts{grid-column:1}}
   @media (pointer:coarse){.m-t,.m-save,.m-make,.m-del,.m-in{min-height:44px}}
   .m-when a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+
+  /* Select, then one Save to (static/js/select.js, decision 0031): a check circle on each item's corner, a ring on
+     the ones chosen, and a paper bar at the foot that counts them. The Save to in the bar is the screen's one
+     filled action while selecting; Edit and the items' own menus step aside. */
+  #select-open[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+  .lib-main.selecting .sg-act,.lib-main.selecting .cls-edit,.lib-main.selecting .cv-more,.lib-main.selecting .cv-off{display:none !important}
+  .sel-host{position:relative}
+  .sel-box{position:absolute;z-index:4;width:30px;height:30px;padding:0;border-radius:50%;border:2px solid rgba(20,18,16,.62);cursor:pointer;
+    background:rgba(255,253,249,.9);display:grid;place-items:center;box-shadow:0 1px 4px rgba(0,0,0,.35)}
+  .sel-box::before{content:"";position:absolute;inset:-7px;border-radius:50%}
+  .sel-box svg{width:16px;height:16px;fill:none;stroke:#1e2026;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+  .sel-box:hover svg{opacity:.45}
+  .sel-box[aria-checked="true"]{background:var(--accent);border-color:#fff}
+  .sel-box[aria-checked="true"] svg{opacity:1;stroke:var(--on-accent)}
+  .sel-box:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .lib-main.selecting [data-sel]{cursor:pointer}
+  .lib-main .sel-on{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+  .sel-bar{position:fixed;z-index:60;left:calc(50% + var(--rail-w) / 2);transform:translateX(-50%);bottom:18px;
+    display:flex;align-items:center;gap:10px;width:min(620px,calc(100vw - var(--rail-w) - 32px));padding:10px 12px 10px 18px;
+    background:var(--surface);color:var(--ink);border:1px solid var(--rule-strong);border-radius:14px;
+    box-shadow:0 14px 34px -14px rgba(20,14,6,.5),0 1px 3px rgba(0,0,0,.12)}
+  .sel-bar[hidden]{display:none}
+  .sel-n{font-family:var(--sans);font-weight:600;font-size:14px;font-variant-numeric:tabular-nums}
+  .sel-sp{flex:1}
+  .sel-bar button{font-family:var(--sans);font-weight:600;font-size:14px;min-height:40px;border-radius:10px;cursor:pointer;padding:0 14px}
+  .sel-clear{background:none;border:0;color:var(--iron)}
+  .sel-clear:hover{text-decoration:underline;text-underline-offset:3px}
+  .sel-done{background:transparent;border:1px solid var(--rule-strong);color:var(--ink)}
+  .sel-done:hover{border-color:var(--ink-faint)}
+  .sel-save{display:inline-flex;align-items:center;gap:7px;background:var(--accent);border:1px solid var(--accent);color:var(--on-accent)}
+  .sel-save svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .sel-save:hover:not(:disabled){background:var(--accent-soft)}
+  .sel-save:disabled{opacity:.45;cursor:default}
+  .sel-bar button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  @media (max-width:640px){
+    .sel-bar{left:8px;right:8px;width:auto;transform:none;bottom:calc(var(--rail-bar) + 10px);padding:8px 8px 8px 14px;gap:6px}
+    .sel-clear{padding:0 6px}
+  }
+  @media (pointer:coarse){ .sel-bar button{min-height:44px} }
+
+  /* the Podcast tab's Shows | Episodes switch (decision 0031), the segmented control the Prep Room uses */
+  .seg{display:inline-flex;height:34px;margin:2px 0 14px;border:1px solid var(--rule-strong);border-radius:9px;overflow:hidden;background:var(--surface)}
+  .seg[hidden]{display:none}
+  .seg button{font-family:var(--sans);font-weight:600;font-size:12.5px;color:var(--ink-soft);background:none;border:0;padding:0 14px;cursor:pointer}
+  .seg button + button{border-left:1px solid var(--rule-strong)}
+  .seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+  .seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  @media (pointer:coarse){ .seg{height:44px} }

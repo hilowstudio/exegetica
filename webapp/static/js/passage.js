@@ -371,10 +371,15 @@
     // a click on an item of a menu that has just made way for another (File as…, Save to…) isn't a click outside
     if (menu && e.target.isConnected && !menu.contains(e.target) && e.target !== menuOpener && !(menuOpener && menuOpener.contains(e.target))) closeMenu();
   });
-  // A small menu of actions: entries [{label, checked (true or false makes it a checkbox), danger, act}].
+  // A small menu of actions: entries [{label, checked (true or false makes it a checkbox), danger, plus, act}], with
+  // {heading} for a band's label and {sep: true} between bands (the many-at-once Save to, decision 0031).
   function smallMenu(anchor, label, entries) {
     var m = openMenu(anchor, label); if (!m) return;
     m.innerHTML = entries.map(function (x, i) {
+      if (x.heading) return "<div class='shell-menu-lab'>" + esc(x.heading) + "</div>";
+      if (x.sep) return "<div class='shell-menu-sep'></div>";
+      if (x.note) return "<p class='shell-menu-note'>" + esc(x.note) + "</p>";
+      if (x.plus) return "<button type='button' role='menuitem' data-i='" + i + "'>" + PLUS + "<span class='sm-t'>" + esc(x.label) + "</span></button>";
       var box = typeof x.checked === "boolean";
       return "<button type='button' role='" + (box ? "menuitemcheckbox" : "menuitem") + "' data-i='" + i + "'" +
         (box ? " aria-checked='" + x.checked + "'" : "") + (x.danger ? " class='danger'" : "") + ">" +
@@ -494,7 +499,7 @@
     var hk = (opts && opts.hold) || {kind: source.kind, key: source.ref && source.ref[KEY[source.kind]]};   // opts.hold: how a unit holds it
     var key = hk.key;
     var heldUrl = pl ? "/api/shelf/held?kind=" + pl.kind + "&key=" + encodeURIComponent(pl.kind === "book" ? pl.ref.slug : (pl.ref.origin || pl.ref.item_id || pl.ref.resource_id)) +
-      (pl.ref.start != null ? "&start=" + pl.ref.start : "") : null;
+      (pl.ref.start != null ? "&start=" + pl.ref.start : "") + (pl.ref.guid ? "&guid=" + encodeURIComponent(pl.ref.guid) : "") : null;
     Promise.all([units ? api("GET", "/api/prep/units" + (key ? "?kind=" + encodeURIComponent(hk.kind) + "&key=" + encodeURIComponent(key) : "")) : Promise.resolve({units: []}),
                  heldUrl ? api("GET", heldUrl).catch(function () { return {classes: []}; }) : Promise.resolve({classes: []})])
       .then(function (res) {

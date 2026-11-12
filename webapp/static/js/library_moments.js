@@ -24,11 +24,14 @@ function q(sel){return M.box?M.box.querySelector(sel):null;}
 function mount(item,box){
   [].forEach.call(document.querySelectorAll(".moments"),function(other){if(other!==box)other.innerHTML="";});   // one panel at a time
   M.item=item;M.box=box;M.episode="";M.episodeTitle="";M.data=null;
-  box.innerHTML='<h3 class="m-h">Moments</h3><p class="m-help">Save the parts of this '+(item.type==="video"?"video":"show")+
+  var single=item.type==="podcast"&&item.episode;   // an episode kept on its own (decision 0031) needs no choosing
+  if(single){M.episode=item.episode.guid;M.episodeTitle=item.title;}
+  box.innerHTML='<h3 class="m-h">Moments</h3><p class="m-help">Save the parts of this '+(item.type==="video"?"video":single?"episode":"show")+
     ' you\'ll teach from. A unit in the Prep Room can draw on them.</p>'+
-    (item.type==="podcast"?'<label class="m-lab" for="m-ep">Episode</label><select id="m-ep" class="m-in"><option value="">Loading the episodes…</option></select>':"")+
+    (item.type==="podcast"&&!single?'<label class="m-lab" for="m-ep">Episode</label><select id="m-ep" class="m-in"><option value="">Loading the episodes…</option></select>':"")+
     '<div id="m-body"></div>';
-  if(item.type==="podcast"){
+  if(single){load(true);}
+  else if(item.type==="podcast"){
     api("GET","/api/library/item/"+encodeURIComponent(item.id)+"/episodes").then(function(d){
       var sel=q("#m-ep");if(!sel)return;
       sel.innerHTML='<option value="">Choose an episode</option>'+d.episodes.map(function(x){
@@ -94,7 +97,7 @@ function draw(){
     var when=stamp(x.start)+"–"+stamp(x.end);
     return '<li><span class="m-when">'+(x.link?'<a href="'+e(x.link)+'" target="_blank" rel="noopener">'+when+'</a>':when)+'</span>'+
       (x.quote?'<span class="m-q">“'+e(x.quote.length>280?x.quote.slice(0,278)+"…":x.quote)+'”</span>':"")+(x.note?'<span class="m-note">'+e(x.note)+'</span>':"")+
-      '<span class="m-acts">'+(window.Passage&&Passage.teacher?(M.item.type==="video"
+      '<span class="m-acts">'+(window.Passage&&Passage.teacher?((M.item.type==="video"||(M.item.type==="podcast"&&x.episode_key))
         ?'<button type="button" class="shell-tool sm m-unit" data-unit-moment="'+x.id+'" data-when="'+when+'" aria-haspopup="true" aria-expanded="false" aria-label="Save the moment at '+when+' to a unit or a class shelf">'+Passage.icons.save+'Save to…</button>'
         :'<button type="button" class="shell-tool sm m-unit" data-unit-moment="'+x.id+'" data-when="'+when+'" aria-haspopup="true" aria-expanded="false" aria-label="Add the moment at '+when+' to a unit">'+Passage.icons.prep+'Add to a unit</button>'):"")+
       '<button type="button" class="m-del" data-del="'+x.id+'" aria-label="Delete the moment at '+when+'">Delete</button></span></li>';}).join("")+'</ul>':'<p class="m-help">None yet.</p>');
@@ -108,10 +111,12 @@ function draw(){
   body.querySelectorAll("[data-unit-moment]").forEach(function(b){b.onclick=function(){
     var id=b.getAttribute("data-unit-moment"),x=(M.data.excerpts||[]).filter(function(e){return e.id===id;})[0]||{};
     var say="the moment at "+b.getAttribute("data-when");
-    // a video's moment can also go on a class shelf, carrying its words and note so it outlives the moment
-    Passage.addToUnit({kind:"library",ref:{item_id:M.item.id,excerpts:[id]},label:M.item.title},b,say,
-      M.item.type==="video"?{place:{kind:"video",ref:{item_id:M.item.id,start:x.start,end:x.end,quote:x.quote||undefined,note:x.note||undefined},
-        label:M.item.title+" from "+b.getAttribute("data-when").split("–")[0]}}:null);};});
+    // a video's moment, or an episode's (decision 0031), can also go on a class shelf, carrying its words and note
+    // so it outlives the moment
+    var from=b.getAttribute("data-when").split("–")[0], words={start:x.start,end:x.end,quote:x.quote||undefined,note:x.note||undefined};
+    var place=M.item.type==="video"?{kind:"video",ref:Object.assign({item_id:M.item.id},words),label:M.item.title+" from "+from}
+      :x.episode_key?{kind:"podcast",ref:Object.assign({item_id:M.item.id,guid:x.episode_key},words),label:(x.episode_title||M.item.title)+" from "+from}:null;
+    Passage.addToUnit({kind:"library",ref:{item_id:M.item.id,excerpts:[id]},label:M.item.title},b,say,place?{place:place}:null);};});
 }
 function save(ev){
   ev.preventDefault();

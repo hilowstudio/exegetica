@@ -296,3 +296,49 @@ async def search_podcasts(q: str, limit: int = 10) -> list[dict]:
         return out
     except Exception:
         return []
+
+
+def _minutes(ms) -> str:
+    """An episode's length as people say it: "38 min", "1 hr 12 min"."""
+    try:
+        m = round(int(ms) / 60000)
+    except (TypeError, ValueError):
+        return ""
+    if m <= 0:
+        return ""
+    return f"{m // 60} hr {m % 60} min" if m >= 60 else f"{m} min"
+
+
+async def search_episodes(q: str, limit: int = 15) -> list[dict]:
+    """Single podcast episodes (decision 0031), from the same keyless iTunes Search API as the shows. Each comes
+    with its show's feed and its guid, so it can be kept, transcribed and found in the feed again later."""
+    q = (q or "").strip()
+    if len(q) < 2:
+        return []
+    try:
+        async with httpx.AsyncClient(timeout=12.0) as client:
+            r = await client.get(_ITUNES, headers=_UA, params={
+                "media": "podcast", "entity": "podcastEpisode", "term": q, "limit": limit,
+            })
+        if r.status_code != 200:
+            return []
+        out = []
+        for res in (r.json().get("results") or []):
+            title, feed, guid = res.get("trackName") or "", res.get("feedUrl"), res.get("episodeGuid")
+            if not (title and feed and guid) or (res.get("episodeContentType") or "audio") != "audio":
+                continue
+            out.append({
+                "title": title,
+                "show": res.get("collectionName") or "",
+                "artwork": res.get("artworkUrl600") or res.get("artworkUrl160") or res.get("artworkUrl60"),
+                "feed": feed,
+                "guid": str(guid)[:300],
+                "date": (res.get("releaseDate") or "")[:10],
+                "length": _minutes(res.get("trackTimeMillis")),
+                "seconds": round(int(res.get("trackTimeMillis") or 0) / 1000) or None,
+                "audio": res.get("episodeUrl"),
+                "description": (res.get("description") or res.get("shortDescription") or "").strip()[:4000],
+            })
+        return out
+    except Exception:
+        return []

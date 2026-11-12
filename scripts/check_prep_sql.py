@@ -32,7 +32,7 @@ def _tables(sql: str) -> str:
     users = re.search(r"create table if not exists users \(.*?\);", sql, re.S).group(0)
     prep_part = sql[sql.index("-- The Prep Room ("):]
     stand_ins = ("create table library_extractions (id uuid primary key, kind text, title text, creator text,"
-                 " source_url text, cover_url text);\ncreate table library_items (user_id uuid, extraction_id uuid, notes text,"
+                 " source_url text, cover_url text, source_meta jsonb not null default '{}'::jsonb);\ncreate table library_items (user_id uuid, extraction_id uuid, notes text,"
                  " tags text[], added_at timestamptz, unique (user_id, extraction_id));")
     return users + "\n" + stand_ins + "\n" + prep_part
 

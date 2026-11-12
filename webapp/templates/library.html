@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Your shelves · Living Library · Exegetica{% endblock %}
 {% block fonts %}<link rel="stylesheet" href="/static/fonts/library.css"><link rel="stylesheet" href="/static/fonts/reader.css">{% endblock %}
-{% block styles %}<link rel="stylesheet" href="/static/css/covers.css"><link rel="stylesheet" href="/static/css/library.css">{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/covers.css"><link rel="stylesheet" href="/static/css/library.css"><link rel="stylesheet" href="/static/css/listen.css">{% endblock %}
 {% block content %}
 {# The Living Library's front room (decision 0029): a shelf for each class first, then the books this person shelved
    from the Reading Room. A teacher also keeps videos, podcasts and the books they brought in here. Drawn by
@@ -15,6 +15,8 @@
       {% if teacher %}
       <div class="room-acts">
         <button id="review-open" class="review-pill" type="button" hidden>Copy reviews <span class="rn" id="review-n">0</span></button>
+        {# Select, then one Save to for many things (static/js/select.js, decision 0031) #}
+        <button id="select-open" class="add-btn" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><path d="M8.3 12.3l2.6 2.6 4.9-5.4"/></svg>Select</button>
         <button id="add-open" class="add-btn" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add</button>
       </div>
       {% endif %}
@@ -87,6 +89,11 @@
       <button data-t="podcast" role="tab" type="button" aria-selected="false">Podcast</button>
     </div>
     <p class="muted" id="search-sub"></p>
+    {# the Podcast tab looks for whole shows or single episodes (decision 0031) #}
+    <div class="seg" id="pod-mode" role="group" aria-label="Search for" hidden>
+      <button type="button" data-pm="shows" aria-pressed="false">Shows</button>
+      <button type="button" data-pm="episodes" aria-pressed="true">Episodes</button>
+    </div>
     <div class="fld" id="search-fld"><label id="search-label" for="search-q">Search</label><input id="search-q" type="text" autocomplete="off" spellcheck="false" placeholder="Search…"></div>
     <div class="results" id="search-results"><div class="s-note">Type to search.</div></div>
     {# an upload or a link: read now, filed by kind, kept on your shelves (decision 0029, phase 3) #}
@@ -175,4 +182,4 @@
 </dialog>
 {% endif %}
 {% endblock %}
-{% block scripts %}{% if user %}<script src="/static/js/covers.js"></script><script src="/static/js/shelves.js"></script>{% endif %}{% if teacher %}<script src="/static/js/library.js"></script><script src="/static/js/library_moments.js"></script>{% endif %}{% endblock %}
+{% block scripts %}{% if user %}<script src="/static/js/covers.js"></script><script src="/static/js/shelves.js"></script>{% endif %}{% if teacher %}<script src="/static/js/listen.js"></script><script src="/static/js/library.js"></script><script src="/static/js/library_moments.js"></script><script src="/static/js/select.js"></script>{% endif %}{% endblock %}

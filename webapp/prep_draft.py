@@ -41,7 +41,7 @@ def _cap(text: str, words: int) -> str:
 # ------------------------------------------------------------------------------------ gathering
 async def _library_item(uid: uuid.UUID, item_id: str, excerpt_ids: list[str] | None) -> dict | None:
     row = await db.fetchrow(
-        """select e.id, e.kind, e.title, e.creator, e.source_url, e.full_text, li.notes
+        """select e.id, e.kind, e.title, e.creator, e.source_url, e.source_meta, e.full_text, li.notes
              from library_items li join library_extractions e on e.id = li.extraction_id
             where li.user_id = $1 and e.id = $2""", uid, uuid.UUID(item_id))
     if not row:
@@ -49,7 +49,8 @@ async def _library_item(uid: uuid.UUID, item_id: str, excerpt_ids: list[str] | N
     item = {"kind": row["kind"], "title": row["title"], "creator": row["creator"], "url": row["source_url"],
             "notes": row["notes"]}
     from webapp import excerpts
-    text = await excerpts.transcript_for_draft({"kind": row["kind"], "source_url": row["source_url"]})
+    text = await excerpts.transcript_for_draft({"kind": row["kind"], "source_url": row["source_url"],
+                                                "episode": (row["source_meta"] or {}).get("episode")})
     if text or (row["kind"] in ("video", "podcast") and row["full_text"]):
         item["transcript"] = _cap(text or row["full_text"], DOC_WORDS)
     saved = await excerpts.for_item(uid, uuid.UUID(item_id), excerpt_ids)

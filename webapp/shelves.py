@@ -108,6 +108,7 @@ def class_shelves(keys: list[str], items: dict[str, dict], teacher: bool, placed
             if teacher:                                   # who added it is for the class's teachers alone
                 entry["added_name"] = pl.get("added_name") or ("You" if pl.get("added_by") == me else None)
                 entry["yours"] = pl.get("added_by") == me
+                entry["ref"] = pl["ref"]                  # what one Save to sends on (decision 0031); no audio address
             if pl["kind"] == "book":
                 book = items.get(pl["ref"].get("slug") or "")
                 if not book:
@@ -121,6 +122,12 @@ def class_shelves(keys: list[str], items: dict[str, dict], teacher: bool, placed
                 r = pl["ref"]
                 entry["doc"] = {"type": r.get("type") or "document", "title": pl["label"], "author": r.get("author") or "",
                                 "site": r.get("site") or "", "url": r.get("url")}
+            elif pl["kind"] == "podcast":
+                r, ep = pl["ref"], pl["ref"].get("ep") or {}
+                entry["podcast"] = {"title": ep.get("title") or pl["label"], "show": ep.get("show") or "",
+                                    "artwork": ep.get("artwork"), "length": ep.get("length") or "",
+                                    "start": r.get("start"), "end": r.get("end"), "note": r.get("note"),
+                                    "quote": r.get("quote"), "url": f"/listen/{pl['id']}"}
             else:
                 v = (videos or {}).get(pl["ref"].get("item_id") or "")
                 if not v:
@@ -221,7 +228,7 @@ async def shelve(request):
 # one); students see what is marked for them. Taking an item off never destroys it: when it wasn't yours, the
 # original goes back to the shelf of the teacher who added it.
 
-PLACEABLE = ("book", "video", "upload", "link", "resource")
+PLACEABLE = ("book", "video", "podcast", "upload", "link", "resource")
 
 
 def _key_of(kind: str, ref: dict) -> str:
@@ -233,6 +240,8 @@ def _key_of(kind: str, ref: dict) -> str:
     if kind == "resource":
         return str(ref.get("resource_id") or "")             # one Prep Room resource, whatever its version
     start = ref.get("start")
+    if kind == "podcast":                                    # one episode of a show, or a moment in it
+        return f"{ref.get('item_id')}#{ref.get('guid') or ''}@{-1 if start is None else int(start)}"
     return f"{ref.get('item_id')}@{-1 if start is None else int(start)}"   # a moment at 0:00 is not the whole video
 
 
@@ -249,8 +258,48 @@ async def placements(course_keys: list[str], students_only: bool) -> list[dict]:
             where s.course_key = any($1::text[]) and ($2 = false or s.audience = 'students')
             order by s.added_at""", course_keys, students_only)
     return [{"id": str(r["id"]), "course": r["course_key"], "audience": r["audience"], "kind": r["kind"],
-             "ref": r["ref"], "label": r["label"], "added_by": str(r["added_by"]) if r["added_by"] else None,
-             "added_name": r["added_name"]} for r in rows]
+             "ref": _public_ref(r["kind"], r["ref"]), "label": r["label"],
+             "added_by": str(r["added_by"]) if r["added_by"] else None, "added_name": r["added_name"]} for r in rows]
+
+
+def _public_ref(kind: str, ref: dict) -> dict:
+    """A placement's ref as a browser may see it: a podcast's audio address stays on the server (decision 0031)."""
+    if kind != "podcast" or not isinstance(ref, dict):
+        return ref
+    ep = {k: v for k, v in (ref.get("ep") or {}).items() if k not in ("audio", "feed")}
+    return {**ref, "ep": ep}
+
+
+async def _episode_for(ref: dict) -> dict | str:
+    """The episode a podcast placement holds, from the teacher's Living Library: a single episode they kept, or one
+    episode of a show (its guid), looked up in the show's feed. A whole show never goes on a class shelf (0031)."""
+    from webapp import transcripts
+    try:
+        item_id = uuid.UUID(str(ref.get("item_id") or ""))
+    except ValueError:
+        return "That podcast isn't in the Living Library."
+    row = await db.fetchrow("""select id, title, creator, cover_url, source_url, source_meta from library_extractions
+                                where id = $1 and kind = 'podcast'""", item_id)
+    if not row:
+        return "That podcast isn't in the Living Library."
+    meta = (row["source_meta"] or {}).get("episode")
+    if meta:
+        return {"item_id": str(row["id"]), "guid": meta.get("guid"), "title": row["title"] or "", "show": meta.get("show") or row["creator"] or "",
+                "date": meta.get("date") or "", "length": meta.get("length") or "", "seconds": meta.get("seconds"),
+                "description": meta.get("description") or "", "artwork": row["cover_url"], "audio": meta.get("audio"),
+                "feed": row["source_url"]}
+    guid = str(ref.get("guid") or "")
+    if not guid:
+        return "A class shelf takes an episode, not a whole show. Choose an episode of it."
+    try:
+        ep = next((e for e in await transcripts.episodes(row["source_url"], limit=5000) if e["guid"] == guid), None)
+    except Exception:  # noqa: BLE001
+        ep = None
+    if not ep:
+        return "That episode isn't in the show's feed any more."
+    return {"item_id": str(row["id"]), "guid": guid, "title": ep["title"], "show": row["title"] or "",
+            "date": (ep.get("date") or "")[:16], "length": ep.get("duration") or "", "seconds": None, "description": "",
+            "artwork": row["cover_url"], "audio": ep.get("audio"), "feed": row["source_url"]}
 
 
 async def _videos(ids: list[str]) -> dict[str, dict]:
@@ -293,6 +342,19 @@ async def place(user, course_key: str, kind: str, ref: dict, audience: str, labe
         ref, label = snap["ref"], label or snap["title"]
         if ref["keys_only"]:
             audience = "teachers"                 # an answer key never reaches a student
+    elif kind == "podcast":                     # an episode, or a moment in one, that students hear in the player
+        ep = await _episode_for(ref)
+        if isinstance(ep, str):
+            return ep
+        clean = {"item_id": ep.pop("item_id"), "guid": ep["guid"], "ep": ep}
+        for f in ("start", "end"):
+            if isinstance(ref.get(f), (int, float)):
+                clean[f] = float(ref[f])
+        for f in ("quote", "note"):
+            if ref.get(f):
+                clean[f] = str(ref[f])[:600]
+        ref = clean
+        label = label or ep["title"]
     elif kind in ("upload", "link"):
         from webapp import shelf_docs
         try:
@@ -332,7 +394,8 @@ async def place(user, course_key: str, kind: str, ref: dict, audience: str, labe
     elif kind == "resource":
         from webapp import shelf_resources
         await shelf_resources.store_text(row["id"], snap["document"])
-    return {"id": str(row["id"]), "course": course_key, "audience": audience, "kind": kind, "ref": ref, "label": label}
+    return {"id": str(row["id"]), "course": course_key, "audience": audience, "kind": kind,
+            "ref": _public_ref(kind, ref), "label": label}
 
 
 async def take_off(user, item_id: uuid.UUID) -> dict | str | None:
@@ -456,5 +519,6 @@ async def class_holding_get(request):
     if kind in ("upload", "link", "resource"):
         return JSONResponse({"classes": await class_holding(user, kind, request.query_params.get("key") or "")})
     ref = {"slug": request.query_params.get("key")} if kind == "book" else {
-        "item_id": request.query_params.get("key"), "start": float(request.query_params["start"]) if request.query_params.get("start") else None}
+        "item_id": request.query_params.get("key"), "guid": request.query_params.get("guid") or None,
+        "start": float(request.query_params["start"]) if request.query_params.get("start") else None}
     return JSONResponse({"classes": await class_holding(user, kind, _key_of(kind, ref))})

@@ -128,8 +128,26 @@ def _dedup_key(kind: str, item: dict) -> str:
     if kind == "video":
         return _youtube_id(item.get("url")) or "t:" + _slug(item.get("title"), item.get("sub"))
     if kind == "podcast":
-        return (item.get("feed") or "").strip() or "t:" + _slug(item.get("title"), item.get("sub"))
+        ep = item.get("episode") if isinstance(item.get("episode"), dict) else None
+        feed = (item.get("feed") or "").strip()
+        if ep and ep.get("guid") and feed:      # one episode, kept apart from its show (decision 0031)
+            return f"{feed}#{str(ep['guid'])[:300]}"
+        return feed or "t:" + _slug(item.get("title"), item.get("sub"))
     return "t:" + _slug(item.get("title"), item.get("sub"))
+
+
+def episode_meta(ep: dict, show: str | None) -> dict:
+    """What an episode keeps (decision 0031): the audio address stays on the server, where the player's relay reads
+    it, and never goes back to a browser."""
+    audio = str(ep.get("audio") or "")
+    try:
+        seconds = int(ep.get("seconds")) if ep.get("seconds") is not None else None
+    except (TypeError, ValueError):
+        seconds = None
+    return {"guid": str(ep.get("guid"))[:300], "show": str(show or ep.get("show") or "")[:300],
+            "date": str(ep.get("date") or "")[:10], "length": str(ep.get("length") or "")[:20], "seconds": seconds,
+            "audio": audio[:2000] if audio.startswith(("https://", "http://")) else None,
+            "description": str(ep.get("description") or "")[:4000]}
 
 
 def _to_client(row) -> dict:
@@ -151,6 +169,9 @@ def _to_client(row) -> dict:
     elif kind == "podcast":
         it["artwork"] = row["cover_url"]
         it["feed"] = row["source_url"]
+        ep = meta.get("episode")
+        if ep:                                  # a single episode: its show, date, length and description
+            it["episode"] = {k: ep.get(k) for k in ("guid", "show", "date", "length", "seconds", "description")}
     else:  # video
         it["thumbnail"] = row["cover_url"]
         it["url"] = row["source_url"]
@@ -288,6 +309,9 @@ async def shelf_add(request):
     source_meta = {"meta": item.get("meta") or "", "accent": item.get("accent") or _DEFAULT_ACCENT}
     if item.get("isbn"):
         source_meta["isbn"] = item["isbn"]
+    ep = item.get("episode") if kind == "podcast" and isinstance(item.get("episode"), dict) else None
+    if ep and ep.get("guid") and item.get("feed"):
+        source_meta["episode"] = episode_meta(ep, item.get("sub"))
     uid = _uid(user)
 
     # Find-or-create the shared catalog row. On conflict we do NOT overwrite the

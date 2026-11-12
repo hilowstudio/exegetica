@@ -28,14 +28,21 @@ function chapterCap(b){
   return (b.chapters > 1 && p.section) ? "Chapter " + p.section + " of " + b.chapters : "In progress";
 }
 
+// What Select and one Save to can do with a tile (static/js/select.js, decision 0031): a unit's source, a class shelf's
+// item, or a resource to copy. A teacher's tiles only: students don't send things anywhere.
+function sel(el, d){ if(teacher && d) el.setAttribute("data-sel", JSON.stringify(d)); return el; }
+function bookSel(slug, title){ return {k: "book:" + slug, label: title, unit: {kind: "book", ref: {slug: slug, coverage: {}}},
+  place: {kind: "book", ref: {slug: slug}}}; }
+
 // ---- the class shelves ----
 function classCell(w, course){
-  if(w.book) return {el: Covers.cover(w.book, {wrap: Covers.wrap(), started: started(w.book.slug)}), cap: chapterCap(w.book)};
+  if(w.book) return {el: sel(Covers.cover(w.book, {wrap: Covers.wrap(), started: started(w.book.slug)}), bookSel(w.book.slug, w.book.title)), cap: chapterCap(w.book)};
   var bound = {title: w.title, author: w.author, sections: [SUBJECT[course.subject] || ""]};
   if(w.state === "outline"){
     var b = Covers.cover(bound, {button: true, sec: "Outline"});
     b.setAttribute("aria-label", w.title + ", its outline");
     b.addEventListener("click", function(){ openOutline(w, b); });
+    sel(b, {k: "outline:" + w.outline, label: w.title, unit: {kind: "outline", ref: {key: w.outline, parts: []}}});
     return {el: b, cap: "Outline", phone: true};
   }
   var still = Covers.cover(bound, {href: false, sec: "In print"});
@@ -63,7 +70,8 @@ function moreChip(a, c, host){
   b.setAttribute("aria-label", "Options for " + a.label + " on the " + c.name + " shelf");
   b.onclick = function(ev){
     ev.preventDefault(); ev.stopPropagation();
-    var url = a.book ? location.origin + "/read/" + encodeURIComponent(a.book.slug) : a.video ? a.video.url : location.origin + "/read/doc/" + a.id;
+    var url = a.book ? location.origin + "/read/" + encodeURIComponent(a.book.slug) : a.video ? a.video.url :
+      a.podcast ? location.origin + a.podcast.url : location.origin + "/read/doc/" + a.id;
     Passage.menu(b, "Options for " + a.label, [
       {label: "Share to Classroom…", act: function(){ Passage.classroom(url, a.label); }},
       {label: "Students see it", checked: a.audience === "students", act: function(){ setAudience(a, c, a.audience === "students" ? "teachers" : "students"); }},
@@ -74,13 +82,17 @@ function moreChip(a, c, host){
 }
 function addedDoc(a, c){
   var cell = document.createElement("div"); cell.className = "placed";
-  cell.appendChild(docTile(a.doc, "/read/doc/" + a.id));
+  var r = a.ref || {}, d = a.doc.type === "resource"
+    ? (a.yours && r.resource_id ? {k: "res:" + r.resource_id, label: a.label, place: {kind: "resource", ref: {resource_id: r.resource_id}}, copy: r.resource_id}
+                                : {k: "cls:" + a.id, label: a.label})          // another teacher's resource stays in their Prep Room
+    : {k: "cls:" + a.id, label: a.label, unit: {kind: "shelf", ref: {item_id: a.id}}, place: {kind: a.kind, ref: {item_id: a.id}}};
+  cell.appendChild(sel(docTile(a.doc, "/read/doc/" + a.id), d));
   moreChip(a, c, cell);
   return {el: cell, cap: addedCap(a)};
 }
 function addedBook(a, c){
   var cell = document.createElement("div"); cell.className = "placed";
-  cell.appendChild(Covers.cover(a.book, {wrap: Covers.wrap(), started: started(a.book.slug)}));
+  cell.appendChild(sel(Covers.cover(a.book, {wrap: Covers.wrap(), started: started(a.book.slug)}), bookSel(a.book.slug, a.book.title)));
   moreChip(a, c, cell);
   return {el: cell, cap: addedCap(a) || chapterCap(a.book)};
 }
@@ -93,15 +105,34 @@ function videoTile(a, c){
   t.innerHTML = '<span class="vt-shot">' + (v.thumbnail ? '<img src="' + e(v.thumbnail) + '" alt="" loading="lazy">' : "") +
     '<span class="vt-play">' + PLAY + '</span>' + (from ? '<span class="vt-from">' + e(from) + '</span>' : "") + '</span>' +
     '<span class="vt-t">' + e(v.title) + '</span><span class="vt-s">' + e(v.note || v.sub || "") + '</span>';
-  cell.appendChild(t);
+  var r = a.ref || {};
+  cell.appendChild(sel(t, {k: "cls:" + a.id, label: a.label, unit: {kind: "library", ref: {item_id: r.item_id}},
+    place: {kind: "video", ref: {item_id: r.item_id, start: r.start, end: r.end, quote: r.quote, note: r.note}}}));
   moreChip(a, c, cell);
   return {el: cell, cap: addedCap(a)};
 }
-function videoStrip(cells, c){
+// a podcast episode, or a moment in one (decision 0031): its show's art, opening Exegetica's own player
+function podTile(a, c){
+  var p = a.podcast, cell = document.createElement("div"); cell.className = "placed vcell";
+  var from = p.start != null ? "From " + stamp(p.start) : "";
+  var t = document.createElement("a");
+  t.className = "vtile ptile"; t.href = p.url;
+  t.setAttribute("aria-label", p.title + (from ? ", " + from.toLowerCase() : "") + ". Opens the player.");
+  t.innerHTML = '<span class="vt-shot sq">' + (p.artwork ? '<img src="' + e(p.artwork) + '" alt="" loading="lazy">' : "") +
+    '<span class="vt-play">' + PLAY + '</span>' + (from ? '<span class="vt-from">' + e(from) + '</span>' : (p.length ? '<span class="vt-from">' + e(p.length) + '</span>' : "")) + '</span>' +
+    '<span class="vt-t">' + e(p.title) + '</span><span class="vt-s">' + e(p.note || p.show || "") + '</span>';
+  var r = a.ref || {};
+  cell.appendChild(sel(t, {k: "cls:" + a.id, label: a.label, unit: {kind: "library", ref: {item_id: r.item_id}},
+    place: {kind: "podcast", ref: {item_id: r.item_id, guid: r.guid, start: r.start, end: r.end, quote: r.quote, note: r.note}}}));
+  moreChip(a, c, cell);
+  return {el: cell, cap: addedCap(a)};
+}
+function videoStrip(cells, c, word, sq){
+  word = word || "Videos";
   var box = document.createElement("div"); box.className = "cls-sub";
-  box.innerHTML = '<h3 class="cls-sub-h">Videos</h3>';
-  var strip = document.createElement("div"); strip.className = "fr-books wide"; strip.setAttribute("role", "list");
-  strip.setAttribute("aria-label", "Videos for " + c.name);
+  box.innerHTML = '<h3 class="cls-sub-h">' + e(word) + '</h3>';
+  var strip = document.createElement("div"); strip.className = "fr-books " + (sq ? "sq" : "wide"); strip.setAttribute("role", "list");
+  strip.setAttribute("aria-label", word + " for " + c.name);
   cells.forEach(function(x){
     var cell = document.createElement("div"); cell.className = "fr-cell"; cell.setAttribute("role", "listitem");
     cell.appendChild(x.el);
@@ -157,18 +188,20 @@ function drawClasses(){
       .concat(added.filter(function(a){ return a.book; }).map(function(a){ return addedBook(a, c); }))
       .concat(added.filter(function(a){ return a.doc; }).map(function(a){ return addedDoc(a, c); }));
     var vids = added.filter(function(a){ return a.video; }).map(function(a){ return videoTile(a, c); });
+    var pods = added.filter(function(a){ return a.podcast; }).map(function(a){ return podTile(a, c); });
     var block = document.createElement("div"); block.className = "cls"; block.id = "cls-block-" + i;
     if(books.length){
       block.appendChild(Covers.row("cls-" + i, c.name, note, books));
     } else {
       var head = document.createElement("section"); head.className = "fr-row";
       head.innerHTML = '<div class="fr-h"><h2 id="cls-' + i + '">' + e(c.name) + '</h2><span>' + e(note) + '</span></div>' +
-        (vids.length ? "" : '<p class="sg-note">' + (teacher
-          ? "The school's book list names no texts for this class. Save a book or a video to it, and the class sees it here."
+        (vids.length || pods.length ? "" : '<p class="sg-note">' + (teacher
+          ? "The school's book list names no texts for this class. Save a book, a video or a podcast episode to it, and the class sees it here."
           : "Nothing is on this shelf yet.") + '</p>');
       block.appendChild(head);
     }
     if(vids.length) block.appendChild(videoStrip(vids, c));
+    if(pods.length) block.appendChild(videoStrip(pods, c, "Podcasts", true));
     if(teacher && added.length){            // a class's own Edit, beside its name
       var ed = document.createElement("button");
       ed.type = "button"; ed.className = "sg-act cls-edit"; ed.textContent = "Edit"; ed.setAttribute("aria-pressed", "false");
@@ -215,7 +248,8 @@ function drawDocs(){
   var grid = document.createElement("div"); grid.className = "shelf-grid";
   list.forEach(function(d){
     var cell = document.createElement("div"); cell.className = "placed doc-cell";
-    cell.appendChild(docTile(d, "/read/doc/" + d.id));
+    cell.appendChild(sel(docTile(d, "/read/doc/" + d.id), {k: "doc:" + d.id, label: d.title,
+      unit: {kind: "shelf", ref: {item_id: d.id}}, place: {kind: d.kind, ref: {item_id: d.id}}}));
     var more = document.createElement("button");
     more.type = "button"; more.className = "cv-more"; more.innerHTML = MORE;
     more.setAttribute("aria-haspopup", "true"); more.setAttribute("aria-expanded", "false");
@@ -287,7 +321,8 @@ function drawPrep(){
   var grid = document.createElement("div"); grid.className = "shelf-grid";
   list.forEach(function(r, i){
     var cell = document.createElement("div"); cell.className = "placed";
-    cell.appendChild(docTile({type: "resource", kind_word: r.kind_word, title: r.title}, r.href));
+    cell.appendChild(sel(docTile({type: "resource", kind_word: r.kind_word, title: r.title}, r.href),
+      {k: "res:" + r.id, label: r.title, place: {kind: "resource", ref: {resource_id: r.id}}, copy: r.id}));
     var more = document.createElement("button");
     more.type = "button"; more.className = "cv-more"; more.innerHTML = MORE;
     more.setAttribute("aria-haspopup", "true"); more.setAttribute("aria-expanded", "false");
@@ -330,7 +365,7 @@ function drawMine(){
   var grid = document.createElement("div"); grid.className = "shelf-grid";
   H.books.forEach(function(b){
     var cell = document.createElement("div"); cell.className = "mine-cell";
-    cell.appendChild(Covers.cover(b, {wrap: Covers.wrap(), started: started(b.slug)}));
+    cell.appendChild(sel(Covers.cover(b, {wrap: Covers.wrap(), started: started(b.slug)}), bookSel(b.slug, b.title)));
     var off = document.createElement("button");
     off.type = "button"; off.className = "cv-off"; off.innerHTML = OFF;
     off.setAttribute("aria-label", "Take " + b.title + " off your shelf"); off.title = "Take off your shelf";

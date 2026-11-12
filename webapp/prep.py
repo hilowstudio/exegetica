@@ -591,20 +591,25 @@ async def resource_get(request):
     return JSONResponse({"resource": res})
 
 
-async def copy_resource(uid: uuid.UUID, resource_id: uuid.UUID) -> dict | None:
-    """Make a copy (decision 0029): the newest version, as version 1 of a new resource in the same unit, on no shelf."""
+async def copy_resource(uid: uuid.UUID, resource_id: uuid.UUID, unit_id: uuid.UUID | None = None) -> dict | None:
+    """Make a copy (decision 0029): the newest version, as version 1 of a new resource on no shelf. In the same unit
+    its title says it's a copy. Sent to another of the teacher's units (decision 0031), it keeps its title."""
     res = await get_resource(uid, resource_id)
     v = (res or {}).get("version")
     if not v:
         return None
-    title = (res["title"] + " (copy)")[:MAX_TITLE]
-    new = await create_resource(uid, _uuid(res["unit_id"]) if res.get("unit_id") else None, res["format_id"], title,
+    same = unit_id is None or str(unit_id) == str(res.get("unit_id"))
+    if not same and not await get_unit(uid, unit_id):
+        return None
+    title = (res["title"] + (" (copy)" if same else ""))[:MAX_TITLE]
+    target = (_uuid(res["unit_id"]) if res.get("unit_id") else None) if same else unit_id
+    new = await create_resource(uid, target, res["format_id"], title,
                                 {**(res.get("settings") or {}), "copy_of": str(resource_id)})
     if not new:
         return None
     await add_version(uid, _uuid(new), v["document"], "restore", instruction=f"Copied from “{res['title']}”, version {v['n']}",
                       drew_on=v.get("drew_on"), report=v.get("report"))
-    return {"id": str(new), "title": title, "unit_id": res.get("unit_id"), "format_id": res["format_id"]}
+    return {"id": str(new), "title": title, "unit_id": str(target) if target else None, "format_id": res["format_id"]}
 
 
 async def resource_copy(request):
@@ -612,7 +617,9 @@ async def resource_copy(request):
     if denied:
         return denied
     rid = _uuid(request.path_params["id"])
-    out = rid and await copy_resource(uid, rid)
+    b = await _body(request)
+    unit = _uuid(b.get("unit")) if isinstance(b, dict) and b.get("unit") else None   # another unit (decision 0031)
+    out = rid and await copy_resource(uid, rid, unit)
     return JSONResponse({"resource": out}, status_code=201) if out else _not_found("That resource")
 
 

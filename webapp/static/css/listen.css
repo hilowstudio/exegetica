@@ -1,0 +1,62 @@
+/* Exegetica's podcast player (static/js/listen.js, decision 0031): one card, the play button the one filled
+   action, a scrubber with the moment marked on it, and quiet controls beside. Used on the listening page
+   (templates/listen.html) and in a teacher's Living Library. */
+.lp{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 16px;padding:16px 18px;
+  background:var(--surface);border:1px solid var(--rule);border-radius:14px;margin:0 0 22px}
+.lp-play{width:52px;height:52px;border-radius:50%;border:0;background:var(--accent);color:var(--on-accent);cursor:pointer;
+  display:grid;place-items:center;flex:none}
+.lp-play svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.lp-play:hover{background:var(--accent-soft)}
+.lp-play:focus-visible,.lp-btn:focus-visible,.lp-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.lp-mid{min-width:0}
+.lp-track{position:relative;height:24px;display:flex;align-items:center}
+.lp-moment{position:absolute;top:50%;height:10px;margin-top:-5px;border-radius:5px;background:color-mix(in srgb,var(--brass) 38%,transparent);pointer-events:none}
+.lp-seek{-webkit-appearance:none;appearance:none;width:100%;height:24px;margin:0;background:transparent;cursor:pointer;position:relative}
+.lp-seek::-webkit-slider-runnable-track{height:4px;border-radius:2px;
+  background:linear-gradient(to right,var(--accent) 0 var(--p,0%),var(--rule-strong) var(--p,0%) 100%)}
+.lp-seek::-moz-range-track{height:4px;border-radius:2px;background:var(--rule-strong)}
+.lp-seek::-moz-range-progress{height:4px;border-radius:2px;background:var(--accent)}
+.lp-seek::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;margin-top:-6px;border-radius:50%;background:var(--accent);border:2px solid var(--surface)}
+.lp-seek::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--accent);border:2px solid var(--surface)}
+.lp-seek:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
+.lp-times{display:flex;justify-content:space-between;font-family:var(--sans);font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--ink-soft);margin-top:2px}
+.lp-side{display:flex;gap:6px}
+.lp-btn{min-width:44px;height:40px;padding:0 9px;border:1px solid var(--rule-strong);border-radius:10px;background:transparent;color:var(--ink-soft);
+  font-family:var(--sans);font-size:12.5px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:3px}
+.lp-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.lp-btn:hover{color:var(--ink);border-color:var(--ink-faint)}
+.lp-rate{min-width:52px;font-variant-numeric:tabular-nums}
+.lp-status{grid-column:1/-1;margin:0;font-family:var(--sans);font-size:13.5px;color:var(--ink-soft);min-height:0}
+.lp-status:empty{display:none}
+.lp-link{border:0;background:none;padding:0 2px;font:inherit;font-weight:600;color:var(--iron);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.lp-audio{display:none}
+@media (max-width:560px){
+  .lp{grid-template-columns:auto 1fr;padding:14px}
+  .lp-side{grid-column:1/-1;justify-content:flex-end}
+}
+@media (pointer:coarse){ .lp-btn{height:44px} }
+
+/* the listening page (templates/listen.html): the wordmark at the top of the column, then the episode's sheet, as an
+   upload is read (doc.css) */
+.ls-mast{max-width:760px;margin:0 auto}
+@media (max-width:760px){ .ls-mast{padding:0 16px} }
+.ls-art{width:84px;height:84px;border-radius:10px;object-fit:cover;float:right;margin:0 0 12px 18px;box-shadow:0 1px 2px rgba(30,26,20,.12)}
+.ls-moment{margin:0 0 22px;padding:14px 16px;border-left:3px solid var(--brass);background:color-mix(in srgb,var(--surface) 70%,transparent);border-radius:0 8px 8px 0}
+.ls-moment h2{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 6px}
+.ls-moment p{margin:0 0 6px;font-family:var(--serif);font-size:1rem;line-height:1.55}
+.ls-moment p:last-child{margin-bottom:0}
+.ls-desc{font-family:var(--book);font-size:var(--read-scale,1.06rem);line-height:1.6;white-space:pre-line;max-width:66ch;margin:0 0 26px}
+.ls-sec{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+  margin:30px 0 12px;padding-top:18px;border-top:1px solid var(--rule)}
+.ls-tx{list-style:none;margin:0;padding:0;font-family:var(--book);font-size:var(--read-scale,1.06rem);line-height:1.6}
+.ls-tx li{display:grid;grid-template-columns:3.6em 1fr;gap:10px;align-items:baseline;margin:0 0 .75em;max-width:72ch}
+.ls-t{justify-self:start;border:0;background:none;padding:2px 0;font-family:var(--sans);font-size:12.5px;font-weight:600;
+  font-variant-numeric:tabular-nums;color:var(--iron);cursor:pointer;min-height:24px}
+.ls-t:hover{text-decoration:underline;text-underline-offset:3px}
+.ls-t:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.ls-none{font-family:var(--sans);font-size:14px;color:var(--ink-soft)}
+
+/* the teacher's turntable: an episode's player and description beside the record */
+.ep-listen .lp{margin:18px 0 6px}
+.ep-desc{font-family:var(--serif);font-size:14.5px;line-height:1.55;color:var(--ink-soft);max-width:60ch;white-space:pre-line;
+  display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden;margin:0 0 12px}

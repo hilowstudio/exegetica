@@ -25,6 +25,7 @@ MAKE_NOTE = ("Gemini, Google's AI model, can write one in a minute or two. It is
              "this {kind}. Until then you can save moments by their times, with a note or the words you hear.")
 FAILED = "The transcript didn't finish. Try again later."
 STALE_MINUTES = 15       # a job running longer than this is taken to have died, and may be started again
+FEED_ALL = 5000          # looking an episode up by guid reads the whole feed, not only the newest
 
 
 def _youtube_id(url: str | None) -> str | None:
@@ -56,12 +57,16 @@ def _key(item: dict, episode: str | None) -> str | None:
 
 
 async def _item(uid: uuid.UUID, extraction_id: uuid.UUID) -> dict | None:
-    """A video or podcast on this teacher's shelf."""
+    """A video or podcast on this teacher's shelf. A single episode (decision 0031) carries its guid."""
     row = await db.fetchrow(
-        """select e.id, e.kind, e.title, e.source_url from library_items li
+        """select e.id, e.kind, e.title, e.source_url, e.source_meta from library_items li
              join library_extractions e on e.id = li.extraction_id
             where li.user_id = $1 and e.id = $2 and e.kind in ('video', 'podcast')""", uid, extraction_id)
-    return dict(row) if row else None
+    if not row:
+        return None
+    item = dict(row)
+    item["episode"] = ((row["source_meta"] or {}).get("episode") or None) if row["kind"] == "podcast" else None
+    return item
 
 
 async def _transcript(key: str | None) -> dict | None:
@@ -69,6 +74,24 @@ async def _transcript(key: str | None) -> dict | None:
         return None
     row = await db.fetchrow("select segments, source from library_transcripts where key = $1", key)
     return {"segments": row["segments"], "source": row["source"]} if row else None
+
+
+async def episode_transcript(feed: str | None, guid: str | None) -> dict | None:
+    """An episode's transcript, wherever a teacher had it made: on the show, or on the episode kept alone. Every
+    shelf item holding the same feed is checked, so one transcript serves them all (decisions 0028 and 0031)."""
+    if not feed or not guid:
+        return None
+    row = await db.fetchrow(
+        """select t.segments, t.source from library_transcripts t
+             join library_extractions e on t.key = 'ep:' || e.id::text || ':' || $2
+            where e.kind = 'podcast' and e.source_url = $1 order by t.fetched_at desc limit 1""", feed, guid)
+    return {"segments": row["segments"], "source": row["source"]} if row else None
+
+
+async def _transcript_of(item: dict, episode: str | None) -> dict | None:
+    if item["kind"] == "podcast":
+        return await _transcript(_key(item, episode)) or await episode_transcript(item.get("source_url"), episode)
+    return await _transcript(_key(item, episode))
 
 
 async def for_item(uid: uuid.UUID, extraction_id: uuid.UUID, ids: list[str] | None) -> list[dict]:
@@ -91,8 +114,14 @@ async def for_item(uid: uuid.UUID, extraction_id: uuid.UUID, ids: list[str] | No
 
 
 async def transcript_for_draft(item: dict) -> str | None:
-    """A video's whole transcript as stamped lines (a podcast's episodes come through their excerpts)."""
-    t = await _transcript(_key(item, None)) if item.get("kind") == "video" else None
+    """A video's or a single episode's whole transcript as stamped lines (a show's episodes come through their
+    excerpts)."""
+    if item.get("kind") == "video":
+        t = await _transcript(_key(item, None))
+    elif item.get("kind") == "podcast" and (item.get("episode") or {}).get("guid"):
+        t = await episode_transcript(item.get("source_url"), item["episode"]["guid"])
+    else:
+        t = None
     return transcripts.as_text(t["segments"]) if t else None
 
 
@@ -125,8 +154,8 @@ async def moments(request):
         item = None
     if not item:
         return JSONResponse({"error": "That isn't on your shelf."}, status_code=404)
-    episode = request.query_params.get("episode")
-    t = await _transcript(_key(item, episode))
+    episode = request.query_params.get("episode") or (item["episode"] or {}).get("guid")
+    t = await _transcript_of(item, episode)
     rows = await db.fetch("select * from library_excerpts where user_id = $1 and extraction_id = $2 "
                           "order by episode_title nulls first, start_s", uid, item["id"])
     job = None if t else await _job(_key(item, episode))
@@ -146,6 +175,11 @@ async def episode_list(request):
         item = None
     if not item or item["kind"] != "podcast" or not item["source_url"]:
         return JSONResponse({"error": "That isn't a podcast on your shelf."}, status_code=404)
+    if item["episode"]:
+        ep = item["episode"]
+        has = bool(await _transcript_of(item, ep.get("guid")))
+        return JSONResponse({"episodes": [{"guid": ep.get("guid"), "title": item["title"], "date": ep.get("date") or "",
+                                           "duration": ep.get("length") or "", "has_transcript": has}], "single": True})
     try:
         eps = await transcripts.episodes(item["source_url"])
     except Exception:  # noqa: BLE001
@@ -166,17 +200,22 @@ async def fetch_transcript(request):
         item, body = None, {}
     if not item:
         return JSONResponse({"error": "That isn't on your shelf."}, status_code=404)
-    episode = (body or {}).get("episode")
+    episode = (body or {}).get("episode") or (item["episode"] or {}).get("guid")
     key = _key(item, episode)
     if not key:
         return JSONResponse({"error": "Choose an episode first."}, status_code=400)
+    if item["kind"] == "podcast":
+        have = await _transcript_of(item, episode)
+        if have:
+            return JSONResponse({"transcript": have})
     found = None
     title = item["title"]
     if item["kind"] == "video":
         found = await transcripts.youtube(key[3:])
     else:
         try:   # the transcript links come from the feed itself, never from the request
-            ep = next((e for e in await transcripts.episodes(item["source_url"]) if e["guid"] == episode), None)
+            ep = next((e for e in await transcripts.episodes(item["source_url"], limit=FEED_ALL)
+                       if e["guid"] == episode), None)
         except Exception:  # noqa: BLE001
             ep = None
         if ep:
@@ -217,6 +256,8 @@ async def _start(uid: uuid.UUID, item: dict, key: str, episode: str | None) -> d
     payload = {"key": key, "kind": item["kind"], "user_id": str(uid), "title": item["title"],
                "video_id": key[3:] if item["kind"] == "video" else None,
                "feed_url": item["source_url"] if item["kind"] == "podcast" else None, "guid": episode}
+    if (item.get("episode") or {}).get("audio"):     # a kept episode knows its audio, if the feed has let it go
+        payload["audio"] = item["episode"]["audio"]
     try:
         from webapp import app as appmod
         if appmod._inngest_serve_app is None:
@@ -231,7 +272,7 @@ async def _start(uid: uuid.UUID, item: dict, key: str, episode: str | None) -> d
 
 
 async def run(key: str, kind: str, user_id: str, title: str | None = None, video_id: str | None = None,
-              feed_url: str | None = None, guid: str | None = None) -> dict:
+              feed_url: str | None = None, guid: str | None = None, audio: str | None = None) -> dict:
     """Write one transcript with Gemini and keep it; record its cost in /ops and against the daily caps. Never
     raises: a failure is kept on the job row as a plain sentence, so a retry can't charge twice."""
     t0, stats = time.monotonic(), {"model_req": transcripts.MODEL}
@@ -239,7 +280,9 @@ async def run(key: str, kind: str, user_id: str, title: str | None = None, video
         if kind == "video":
             segs, source, used = await transcripts.gemini_youtube(video_id)
         else:
-            ep = next((e for e in await transcripts.episodes(feed_url) if e["guid"] == guid), None)
+            ep = next((e for e in await transcripts.episodes(feed_url, limit=FEED_ALL) if e["guid"] == guid), None)
+            if (not ep or not ep["audio"]) and audio:
+                ep = {"title": title, "audio": audio, "duration": None}
             if not ep or not ep["audio"]:
                 raise transcripts.TranscribeError("That episode isn't in the show's feed any more.")
             title = ep["title"]
@@ -283,10 +326,10 @@ async def save_excerpt(request):
     start, end = transcripts.parse_stamp(str(b.get("start", ""))), transcripts.parse_stamp(str(b.get("end", "")))
     if start is None or end is None or end < start or end - start > 3600:
         return JSONResponse({"error": "Give a start and an end, such as 2:14 and 3:05."}, status_code=400)
-    episode = str(b.get("episode") or "")[:300] or None
+    episode = str(b.get("episode") or (item["episode"] or {}).get("guid") or "")[:300] or None
     if item["kind"] == "podcast" and not episode:
         return JSONResponse({"error": "Choose an episode first."}, status_code=400)
-    t = await _transcript(_key(item, episode))
+    t = await _transcript_of(item, episode)
     quote = transcripts.cut(t["segments"], start, end) if t else str(b.get("quote") or "").strip()[:2000]
     note = str(b.get("note") or "").strip()[:1000]
     n = await db.fetchval("select count(*) from library_excerpts where user_id = $1", uid)

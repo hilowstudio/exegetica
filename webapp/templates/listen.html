@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}{{ ep.title }} · Living Library · Exegetica{% endblock %}
+{% block meta %}<meta name="robots" content="noindex">{% endblock %}
+{% block fonts %}<link rel="stylesheet" href="/static/fonts/reader.css">{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/reader.css"><link rel="stylesheet" href="/static/css/doc.css"><link rel="stylesheet" href="/static/css/listen.css">{% endblock %}
+{% block content %}
+{# A podcast episode, or a moment in one, on a class shelf (decision 0031): one sheet on the garden, the player, what
+   the teacher noted, the show's description, and the transcript when a teacher has had one made. The audio comes
+   through Exegetica (webapp/listen.py), so the podcast's host never sees the listener's device. #}
+<header class="topbar shell-stick">
+  <a class="tb-back" href="/library">‹ Your shelves</a>
+  <div class="tb-title">{{ ep.title }}</div>
+  <div class="tb-ctrls"></div>
+</header>
+<main class="doc-page">
+  <div class="ls-mast">{% include "partials/masthead.html" %}</div>
+  <article class="doc-sheet ls-sheet">
+    <header class="doc-head">
+      {% if ep.artwork %}<img class="ls-art" src="{{ ep.artwork }}" alt="" width="84" height="84">{% endif %}
+      <div class="doc-kind">{% if ep.moment %}A moment in a podcast{% else %}Podcast episode{% endif %}{% if ep.course %} · {{ ep.course }}{% endif %}</div>
+      <h1>{{ ep.title }}</h1>
+      <p class="doc-by">{{ ep.show }}{% if ep.date %} · <span class="ls-date" data-date="{{ ep.date }}">{{ ep.date }}</span>{% endif %}{% if ep.length %} · {{ ep.length }}{% endif %}</p>
+    </header>
+    <div id="lp" data-src="/api/listen/{{ ep.id }}/audio" data-key="shelf:{{ ep.id }}" data-title="{{ ep.title }}"
+      {% if ep.seconds %}data-seconds="{{ ep.seconds }}"{% endif %}
+      {% if ep.moment %}data-start="{{ ep.start }}" data-end="{{ ep.end }}"{% endif %}>
+      <p class="ls-none">The player needs JavaScript to run.</p>
+    </div>
+    {% if ep.moment or ep.note or ep.quote %}
+    <section class="ls-moment" aria-labelledby="ls-m-h">
+      <h2 id="ls-m-h">{% if ep.moment %}From your teacher: {{ ep.moment }}{% else %}From your teacher{% endif %}</h2>
+      {% if ep.note %}<p>{{ ep.note }}</p>{% endif %}
+      {% if ep.quote %}<p>“{{ ep.quote }}”</p>{% endif %}
+    </section>
+    {% endif %}
+    {% if ep.description %}<p class="ls-desc">{{ ep.description }}</p>{% endif %}
+    {% if lines %}
+    <h2 class="ls-sec" id="ls-tx-h">Transcript</h2>
+    <ol class="ls-tx" aria-labelledby="ls-tx-h">
+      {% for l in lines %}<li><button type="button" class="ls-t" data-t="{{ l.t }}" aria-label="Play from {{ l.at }}">{{ l.at }}</button><span>{{ l.text }}</span></li>{% endfor %}
+    </ol>
+    {% endif %}
+  </article>
+</main>
+{% endblock %}
+{% block scripts %}<script src="/static/js/listen.js"></script>
+<script>
+(function(){
+  var box=document.getElementById("lp"),d=box.dataset,num=function(x){return x==null||x===""?null:+x;};
+  var p=Listen.mount(box,{src:d.src,key:d.key,title:d.title,seconds:num(d.seconds),start:num(d.start),end:num(d.end)});
+  document.querySelectorAll(".ls-t").forEach(function(b){b.onclick=function(){p.seek(+b.dataset.t);};});
+  document.querySelectorAll(".ls-date").forEach(function(s){var t=new Date(s.dataset.date.slice(0,10)+"T12:00:00Z");
+    if(/^\d{4}-\d{2}-\d{2}/.test(s.dataset.date)&&!isNaN(t))s.textContent=t.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric",timeZone:"UTC"});});
+})();
+</script>{% endblock %}

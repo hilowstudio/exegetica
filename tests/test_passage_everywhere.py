@@ -55,7 +55,10 @@ def test_the_living_library_sends_items_moments_and_class_texts_to_a_unit():
     assert "function _unitBtn(it)" in lib and lib.count("_unitBtn(it)+_rmBtn(it)") == 2 and "_unitBtn(it)+'<div id=\"extract-out\"" in lib
     assert 'e.key==="Escape"&&!e.defaultPrevented' in lib
     assert 'Passage.addToUnit({kind:"library",ref:{item_id:M.item.id,excerpts:[id]}' in moments
-    assert 'place:{kind:"video",ref:{item_id:M.item.id,start:x.start' in moments   # a video's moment can go on a class shelf
+    # a video's moment, or a podcast episode's (decision 0031), can go on a class shelf, with its times, words and note
+    assert 'words={start:x.start,end:x.end,quote:x.quote||undefined,note:x.note||undefined}' in moments
+    assert '{kind:"video",ref:Object.assign({item_id:M.item.id},words)' in moments
+    assert '{kind:"podcast",ref:Object.assign({item_id:M.item.id,guid:x.episode_key},words)' in moments
     # a class's book from its top bar, and a book known only by its outline from the outline (decision 0029)
     assert 'kind: "book", ref: {slug: book.slug, coverage: {}}' in reader
     assert 'kind: "outline", ref: {key: w.outline, parts: []}' in shelves

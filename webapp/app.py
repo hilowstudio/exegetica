@@ -34,7 +34,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_views, curriculum, db, excerpts, generator, house_cover, library, library_store, memory, metrics, ops, policy, prep, prep_draft, providers, teacher_courses, r2, reader, reply_check, safety, shell, shelf_docs, shelf_resources, shelves, store, studio, tool_catalog, usage
+from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_views, curriculum, db, excerpts, generator, house_cover, library, library_store, listen, memory, metrics, ops, policy, prep, prep_draft, providers, teacher_courses, r2, reader, reply_check, safety, shell, shelf_docs, shelf_resources, shelves, store, studio, tool_catalog, usage
 from webapp.bridge import CombinedTools, MCPBridge  # noqa: F401  (scripts/john_gen.py imports MCPBridge from here)
 
 logging.basicConfig(level=logging.INFO)
@@ -822,6 +822,8 @@ async def library_books(request):
 
 async def library_podcasts(request):
     q = request.query_params.get("q", "")
+    if request.query_params.get("kind") == "episodes":       # single episodes (decision 0031)
+        return JSONResponse({"results": await library.search_episodes(q, 15)})
     return JSONResponse({"results": await library.search_podcasts(q, 10)})
 
 
@@ -1406,6 +1408,7 @@ app = Starlette(
         Route("/api/library/item/{id}/episodes", excerpts.episode_list, methods=["GET"]),
         Route("/api/library/item/{id}/transcript", excerpts.fetch_transcript, methods=["POST"]),
         Route("/api/library/item/{id}/excerpts", excerpts.save_excerpt, methods=["POST"]),
+        Route("/api/library/item/{id}/audio", listen.item_audio, methods=["GET"]),   # decision 0031
         Route("/api/library/excerpts/{id}", excerpts.delete_excerpt, methods=["DELETE"]),
         Route("/api/shelf/home", shelves.home, methods=["GET"]),                  # decision 0029
         Route("/api/shelf/classes", shelves.choose_classes, methods=["POST"]),
@@ -1430,6 +1433,8 @@ app = Starlette(
         Route("/api/library/reviews/reject", library_store.review_reject, methods=["POST"]),
         Route("/read", reader.reader_page),
         Route("/read/{slug}", reader.reader_page),
+        Route("/listen/{id}", listen.page),                          # a class shelf's podcast (0031)
+        Route("/api/listen/{id}/audio", listen.audio, methods=["GET"]),
         Route("/api/books", reader.books_list),
         Route("/api/shelves", reader.shelves),
         Route("/api/catalog", reader.catalog),
