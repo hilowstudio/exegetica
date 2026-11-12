@@ -71,7 +71,7 @@ def test_a_student_from_classroom_is_offered_the_class(monkeypatch):
     saved = _setup(monkeypatch, "student", row, taken=["lit-11"])
     c = TestClient(appmod.app)
     page = c.get(f"/read/doc/{row['id']}").text
-    assert "Pop Quiz: John 7" in page and f'action="/read/doc/{row["id"]}/join"' in page and "Add Bible II and open it" in page
+    assert "Pop Quiz: John 7" in page and f'action="/read/doc/{row["id"]}/join"' in page and "Add Sophomore Bible: Gospel of John and open it" in page
     r = c.post(f"/read/doc/{row['id']}/join", follow_redirects=False)
     assert r.status_code == 303 and r.headers["location"] == f"/read/doc/{row['id']}"
     assert saved["keys"] == ["lit-11", "bible-2"]                   # added to the student's own choice, nothing removed

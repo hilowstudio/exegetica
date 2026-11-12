@@ -360,7 +360,7 @@ async def main():
               and isinstance(await shelves.set_audience(T[me], uuid.UUID(kp["id"]), "students"), str)
               and await shelf_docs.readable_by(P, uuid.UUID(kp["id"])) is None, "an answer key goes to the teachers and stays there")
         held = await shelf_resources.on_shelves([rid])
-        check([h["name"] for h in held[str(rid)]] == ["Bible II"] and held[str(rid)][0]["audience"] == "students",
+        check([h["name"] for h in held[str(rid)]] == ["Sophomore Bible: Gospel of John"] and held[str(rid)][0]["audience"] == "students",
               "a resource knows which class shelves hold it")
         cp = await prep.copy_resource(me, rid)
         cid = uuid.UUID(cp["id"])
@@ -371,13 +371,13 @@ async def main():
         check(await shelf_docs.text_of(item) == quiz2, "reworking the copy leaves the class's copy alone")
         swapped = await shelf_resources.replace(T[me], cid, rid)
         row = await db.fetchrow("select ref, label from shelf_items where id = $1", item)
-        check(swapped == ["Bible II"] and row["ref"]["resource_id"] == str(cid) and row["label"] == "Pop Quiz"
+        check(swapped == ["Sophomore Bible: Gospel of John"] and row["ref"]["resource_id"] == str(cid) and row["label"] == "Pop Quiz"
               and "Who was amazed" in await shelf_docs.text_of(item), "the copy takes the original's place, keeping its name")
         await prep.add_version(me, rid, quiz, "restore")
         check("Who was amazed" in await shelf_docs.text_of(item), "the original, off the shelf, no longer reaches the class")
         back = await shelf_resources.replace(T[me], rid, cid)
         row = await db.fetchrow("select ref from shelf_items where id = $1", item)
-        check(back == ["Bible II"] and row["ref"]["resource_id"] == str(rid) and await shelf_docs.text_of(item) == quiz,
+        check(back == ["Sophomore Bible: Gospel of John"] and row["ref"]["resource_id"] == str(rid) and await shelf_docs.text_of(item) == quiz,
               "Undo puts the original back")
         await prep.update_resource(me, rid, "Pop Quiz on John 7", None, False)
         await shelf_resources.rename(rid, "Pop Quiz on John 7")
