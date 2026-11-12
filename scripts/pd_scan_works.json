@@ -1,0 +1,3078 @@
+{
+  "westcott": {
+    "slug": "b-f-westcott_the-gospel-according-to-st-john-ia",
+    "cache": "b-f-westcott_the-gospel-according-to-st-john",
+    "pdf": "westcott.pdf",
+    "title": "The Gospel According to St. John",
+    "author": "B. F. Westcott",
+    "author_sort": "Westcott, B. F.",
+    "heads": [
+      "ST JOHN( [IVXL]+)?",
+      "INTRODUCTION( TO)?",
+      "THE GOSPEL( OF ST JOHN)?",
+      "CONTENTS"
+    ],
+    "scripture_larger": true,
+    "drop": [
+      [
+        1,
+        8
+      ],
+      [
+        413,
+        416
+      ]
+    ],
+    "chapters": [
+      {
+        "title": "The Authorship of the Gospel",
+        "page": 9,
+        "match": "(?i)authorship of the gospel"
+      },
+      {
+        "title": "The Composition of the Gospel",
+        "page": 36,
+        "match": "^II\\. THE C"
+      },
+      {
+        "title": "Characteristics of the Gospel",
+        "page": 70,
+        "match": "^III\\. Characteristics"
+      },
+      {
+        "title": "Relation to the Other Apostolic Writings",
+        "page": 81,
+        "match": "OTHER APOSTOLIC WRITINGS"
+      },
+      {
+        "title": "The History of the Gospel",
+        "page": 92,
+        "match": "^V\\. THE HISTORY"
+      },
+      {
+        "title": "John 1",
+        "page": 103,
+        "match": "^THE GOSPEL ACCORDING TO ST JOHN\\]"
+      },
+      {
+        "title": "John 2",
+        "page": 137,
+        "match": "^CHAPTER II\\.?$"
+      },
+      {
+        "title": "John 3",
+        "page": 149,
+        "match": "^CHAPTER III\\.?$"
+      },
+      {
+        "title": "John 4",
+        "page": 168,
+        "match": "^CHAPTER IV\\.?$"
+      },
+      {
+        "title": "John 5",
+        "page": 182,
+        "match": "^CHAPTER V\\.?$"
+      },
+      {
+        "title": "John 6",
+        "page": 196,
+        "match": "^CHAPTER VI\\.?$"
+      },
+      {
+        "title": "John 7",
+        "page": 217,
+        "match": "^CHAPTER VII\\.?$"
+      },
+      {
+        "title": "John 8",
+        "page": 228,
+        "match": "^CHAPTER VIII\\.?$"
+      },
+      {
+        "title": "John 9",
+        "page": 245,
+        "match": "^CHAPTER IX\\.?$"
+      },
+      {
+        "title": "John 10",
+        "page": 253,
+        "match": "^CHAPTER X\\.?$"
+      },
+      {
+        "title": "John 11",
+        "page": 265,
+        "match": "^CHAPTER XI\\.?$"
+      },
+      {
+        "title": "John 12",
+        "page": 278,
+        "match": "close of Christ's public ministry"
+      },
+      {
+        "title": "John 13",
+        "page": 290,
+        "match": "^CHAPTER XIII\\.?$"
+      },
+      {
+        "title": "John 14",
+        "page": 302,
+        "match": "^CHAPTER XIV\\.?$"
+      },
+      {
+        "title": "John 15",
+        "page": 318,
+        "match": "^CHAPTER XV\\.?$"
+      },
+      {
+        "title": "John 16",
+        "page": 327,
+        "match": "The world and the Paraclete"
+      },
+      {
+        "title": "John 17",
+        "page": 338,
+        "match": "^CHAPTER XVII\\.?$"
+      },
+      {
+        "title": "John 18",
+        "page": 351,
+        "match": "^CHAPTER XVIII\\.?$"
+      },
+      {
+        "title": "John 19",
+        "page": 369,
+        "match": "^CHAPTER XIX\\.?$"
+      },
+      {
+        "title": "John 20",
+        "page": 391,
+        "match": "^CHAP\\. XX\\. 1\\."
+      },
+      {
+        "title": "John 21",
+        "page": 401,
+        "match": "^CHAPTER XXI\\.?$"
+      }
+    ],
+    "lemma_heads": true,
+    "drop_lines": [
+      "\\*?New Test\\.?\\s*[—–-]+\\s*Vol\\.?\\s*I[I1l]\\.?\\*?.*",
+      "THE GOSPEL ACCORDING TO ST\\.? JOHN\\.?",
+      "[I1l] \\*?[A-Z][^\\]]*\\d+ \\*?[A-Z][^\\]]*",
+      "\\*?[I1l] \\*?[A-Z][^\\]]*\\d+ \\*?[A-Za-z][^\\]]*"
+    ],
+    "columns": 2,
+    "page_starts": {
+      "9": "(?i)^I\\. THE AUTH"
+    },
+    "ocr_patterns": [
+      [
+        "\\bvill\\b",
+        "viii"
+      ],
+      [
+        "\\bvili\\b",
+        "viii"
+      ],
+      [
+        "\\bVili\\b",
+        "viii"
+      ],
+      [
+        "\\bvil\\b",
+        "vii"
+      ],
+      [
+        "\\bVil\\b",
+        "vii"
+      ],
+      [
+        "\\bili\\b",
+        "iii"
+      ],
+      [
+        "\\biil\\b",
+        "iii"
+      ],
+      [
+        "\\bxvil\\b",
+        "xvii"
+      ],
+      [
+        "\\bxvill\\b",
+        "xviii"
+      ],
+      [
+        "\\bxviil\\b",
+        "xviii"
+      ],
+      [
+        "\\bxil\\b",
+        "xii"
+      ],
+      [
+        "\\bxill\\b",
+        "xiii"
+      ],
+      [
+        "\\bxiil\\b",
+        "xiii"
+      ],
+      [
+        "\\bwv\\.",
+        "vv."
+      ],
+      [
+        "\\bw\\.(?= ?\\d)",
+        "vv."
+      ],
+      [
+        "\\bZhe\\b",
+        "The"
+      ],
+      [
+        "\\bLhe\\b",
+        "The"
+      ],
+      [
+        "\\bZhese\\b",
+        "These"
+      ],
+      [
+        "\\bZhis\\b",
+        "This"
+      ],
+      [
+        "\\bInthe\\b",
+        "In the"
+      ],
+      [
+        "\\bJobn\\b",
+        "John"
+      ],
+      [
+        "\\bJolin\\b",
+        "John"
+      ],
+      [
+        "\\bFesus\\b",
+        "Jesus"
+      ],
+      [
+        "\\bFohn\\b",
+        "John"
+      ],
+      [
+        "\\bFokn\\b",
+        "John"
+      ],
+      [
+        "\\bFews\\b",
+        "Jews"
+      ],
+      [
+        "\\bFordan\\b",
+        "Jordan"
+      ],
+      [
+        "\\bSrom\\b",
+        "from"
+      ],
+      [
+        "\\bwasa\\b",
+        "was a"
+      ],
+      [
+        "\\bdeyond\\b",
+        "beyond"
+      ],
+      [
+        "\\bJudz?e?a\\b(?<!Judea)",
+        "Judæa"
+      ],
+      [
+        "\\bIrenz?e?us\\b",
+        "Irenæus"
+      ],
+      [
+        "\\bCesar\\b",
+        "Cæsar"
+      ],
+      [
+        "\\bPretorium\\b",
+        "Prætorium"
+      ],
+      [
+        "\\bGOSPEI\\b",
+        "GOSPEL"
+      ],
+      [
+        "\\bCuap\\b",
+        "Chap"
+      ],
+      [
+        "\\bComp,",
+        "Comp."
+      ],
+      [
+        "\\bSynafogue\\b",
+        "Synagogue"
+      ],
+      [
+        "(?<=\\w\\.\\.\\.)[)|](?= )",
+        "]"
+      ],
+      [
+        "(?<=[a-z])[|](?= )",
+        "]"
+      ],
+      [
+        "\\bZEnon\\b",
+        "Ænon"
+      ],
+      [
+        "\\bEnon\\b",
+        "Ænon"
+      ]
+    ],
+    "junk_pages": [
+      366
+    ],
+    "page_ends": {
+      "366": "St Luke alone singles out one man"
+    }
+  },
+  "godet": {
+    "slug": "frederic-godet_commentary-on-the-gospel-of-john-ia",
+    "cache": "frederic-godet_commentary-on-the-gospel-of-john",
+    "pdf": "godet.pdf",
+    "title": "Commentary on the Gospel of John",
+    "author": "Frédéric Godet",
+    "author_sort": "Godet, Frédéric",
+    "heads": [],
+    "drop": [
+      [
+        1,
+        10
+      ],
+      [
+        13,
+        16
+      ],
+      [
+        507,
+        590
+      ],
+      [
+        595,
+        596
+      ],
+      [
+        1053,
+        1152
+      ]
+    ],
+    "chapters": [
+      {
+        "title": "Preface",
+        "page": 11,
+        "match": "^PREFACE\\.?$"
+      },
+      {
+        "title": "Preliminaries",
+        "page": 17,
+        "match": "^CHAPTER FIRST"
+      },
+      {
+        "title": "The Apostle St. John",
+        "page": 43,
+        "match": "^BOOK FIRST"
+      },
+      {
+        "title": "Analysis and Characteristics of the Fourth Gospel",
+        "page": 68,
+        "match": "^BOOK SECOND"
+      },
+      {
+        "title": "The Origin of the Fourth Gospel",
+        "page": 153,
+        "match": "^BOOK THIRD"
+      },
+      {
+        "title": "The Plan of the Gospel",
+        "page": 235,
+        "match": "General Introduction contained"
+      },
+      {
+        "title": "The Preservation of the Text",
+        "page": 244,
+        "match": "THE PRESERVATION OF THE TEXT"
+      },
+      {
+        "title": "The Title of the Gospel",
+        "page": 252,
+        "match": "THE TITLE OF THE GOSPEL"
+      },
+      {
+        "title": "The Prologue (i. 1–18)",
+        "page": 254,
+        "match": "^PROLOGUE\\.?$"
+      },
+      {
+        "title": "General Considerations on the Prologue",
+        "page": 297,
+        "match": "GENERAL CONSIDERATIONS"
+      },
+      {
+        "title": "The Testimonies of John the Baptist (i. 19–37)",
+        "page": 313,
+        "match": "^FIRST PART"
+      },
+      {
+        "title": "Beginnings of the Work of Jesus (i. 38–52)",
+        "page": 339,
+        "match": "^SECOND SECTION"
+      },
+      {
+        "title": "The First Miracle (ii. 1–11)",
+        "page": 356,
+        "match": "^THIRD SECTION"
+      },
+      {
+        "title": "Jesus in Judea (ii. 12–iii. 36)",
+        "page": 369,
+        "match": "^SECOND CYCLE"
+      },
+      {
+        "title": "Jesus in Samaria (iv. 1–42)",
+        "page": 429,
+        "match": "^SECOND SECTION"
+      },
+      {
+        "title": "Jesus in Galilee (iv. 43–54)",
+        "page": 455,
+        "match": "^THIRD SECTION"
+      },
+      {
+        "title": "First Outbreak of Hatred in Judea (v. 1–47)",
+        "page": 462,
+        "match": "^SECOND PART",
+        "end_page": 506
+      },
+      {
+        "title": "Preface to the Commentary",
+        "page": 591,
+        "match": "^PREFACE TO THE COMMENTARY",
+        "move_before": "The Plan of the Gospel",
+        "end_page": 594
+      },
+      {
+        "title": "The Great Messianic Testimony and the Crisis of Faith in Galilee (vi. 1–71)",
+        "page": 597,
+        "match": "^SECOND PART CONTINUED"
+      },
+      {
+        "title": "The Strife at Its Height at Jerusalem (vii. 1–viii. 59)",
+        "page": 648,
+        "match": "^THIRD SECTION"
+      },
+      {
+        "title": "The Man Born Blind (ix. 1–41)",
+        "page": 721,
+        "match": "^SECOND CYCLE"
+      },
+      {
+        "title": "The First Discourse (x. 1–21)",
+        "page": 735,
+        "match": "^SECOND SECTION"
+      },
+      {
+        "title": "The Second Discourse (x. 22–42)",
+        "page": 751,
+        "match": "^THIRD SECTION"
+      },
+      {
+        "title": "The Resurrection of Lazarus (xi. 1–57)",
+        "page": 765,
+        "match": "^THIRD CYCLE"
+      },
+      {
+        "title": "The Last Days of the Ministry of Jesus (xii.)",
+        "page": 797,
+        "match": "^SECOND SECTION"
+      },
+      {
+        "title": "The Facts (xiii. 1–30)",
+        "page": 837,
+        "match": "^THIRD PART"
+      },
+      {
+        "title": "The Discourses (xiii. 31–xvi. 33)",
+        "page": 858,
+        "match": "^SECOND SECTION"
+      },
+      {
+        "title": "The Prayer (xvii.)",
+        "page": 919,
+        "match": "^THIRD SECTION"
+      },
+      {
+        "title": "The Arrest of Jesus (xviii. 1–11)",
+        "page": 944,
+        "match": "^FOURTH PART"
+      },
+      {
+        "title": "The Trial of Jesus (xviii. 12–xix. 16)",
+        "page": 950,
+        "match": "^SECOND SECTION"
+      },
+      {
+        "title": "The Execution of Jesus (xix. 16b–42)",
+        "page": 978,
+        "match": "^THIRD SECTION"
+      },
+      {
+        "title": "The Resurrection (xx. 1–29)",
+        "page": 1008,
+        "match": "^FIFTH PART"
+      },
+      {
+        "title": "The Conclusion (xx. 30, 31)",
+        "page": 1030,
+        "match": "THE CONCLUSION"
+      },
+      {
+        "title": "Appendix (xxi.)",
+        "page": 1033,
+        "match": "^APPENDIX"
+      }
+    ],
+    "running_heads": [
+      "PROLOGUE",
+      "INTRODUCTION",
+      "PRELIMINARIES",
+      "ANALYSIS",
+      "CHARACTERISTICS( THE DISCOURSES)?",
+      "BOOK I+ THE (GOSPEL|ORIGIN|APOSTLE)",
+      "(FIRST|SECOND|THIRD|FOURTH|FIFTH) PART( CONTINUED)?",
+      "APPENDIX",
+      "CHAP( [IVXL]+)?",
+      "GOSPEL OF JOHN",
+      "TABLE OF CONTENTS.*",
+      "ADDITIONAL NOTES BY THE AMERICAN EDITOR",
+      "PREFACE.*"
+    ],
+    "note_zone": true,
+    "drop_lines": [
+      "TO THE THIRD FRENCH EDITION\\.?"
+    ]
+  },
+  "ryle": {
+    "slug": "j-c-ryle_expository-thoughts-on-john-ia",
+    "cache": "j-c-ryle_expository-thoughts-on-john",
+    "pdf": "ryle.pdf",
+    "title": "Expository Thoughts on John",
+    "author": "J. C. Ryle",
+    "author_sort": "Ryle, J. C.",
+    "heads": [
+      "EXPOSITORY THOUGHTS",
+      "PREFACE",
+      "ST JOHN( CHAP)?( [IVXL]+)?"
+    ],
+    "drop": [
+      [
+        1,
+        8
+      ],
+      [
+        21,
+        24
+      ],
+      [
+        447,
+        462
+      ],
+      [
+        466,
+        470
+      ],
+      [
+        833,
+        850
+      ],
+      [
+        858,
+        862
+      ],
+      [
+        1336,
+        1356
+      ]
+    ],
+    "chapters": [
+      {
+        "title": "Preface",
+        "page": 9,
+        "match": "^I SEND forth the volume"
+      },
+      {
+        "title": "John 1",
+        "page": 25,
+        "match": "JOHN I\\. 1\\b"
+      },
+      {
+        "title": "John 2",
+        "page": 111,
+        "match": "JOHN II\\. 1\\b"
+      },
+      {
+        "title": "John 3",
+        "page": 142,
+        "match": "JOHN III\\. 1\\b"
+      },
+      {
+        "title": "John 4",
+        "page": 214,
+        "match": "JOHN IV\\. 1\\b"
+      },
+      {
+        "title": "John 5",
+        "page": 288,
+        "match": "JOHN V\\. 1\\b"
+      },
+      {
+        "title": "John 6",
+        "page": 347,
+        "match": "JOHN VI\\. 1\\b"
+      },
+      {
+        "title": "Preface to the Second Volume",
+        "page": 463,
+        "match": "^PREFACE TO SECOND VOLUME",
+        "move_before": "John 1"
+      },
+      {
+        "title": "John 7",
+        "page": 471,
+        "match": "JOHN VII\\. 1\\b"
+      },
+      {
+        "title": "John 8",
+        "page": 531,
+        "match": "JOHN VIII\\. 1\\b"
+      },
+      {
+        "title": "John 9",
+        "page": 604,
+        "match": "JOHN IX\\. 1\\b"
+      },
+      {
+        "title": "John 10",
+        "page": 624,
+        "match": "JOHN X\\. 1\\b"
+      },
+      {
+        "title": "John 11",
+        "page": 678,
+        "match": "chapter we have now begun is one of the most"
+      },
+      {
+        "title": "John 12",
+        "page": 755,
+        "match": "JOHN XII\\. 1\\b"
+      },
+      {
+        "title": "Preface to the Third Volume",
+        "page": 851,
+        "match": "^The volume now in the reader",
+        "move_before": "John 1"
+      },
+      {
+        "title": "John 13",
+        "page": 863,
+        "match": "JOHN XIII\\. 1\\b"
+      },
+      {
+        "title": "John 14",
+        "page": 911,
+        "match": "JOHN XIV\\. 1\\b"
+      },
+      {
+        "title": "John 15",
+        "page": 955,
+        "match": "JOHN XV\\. 1\\b"
+      },
+      {
+        "title": "John 16",
+        "page": 991,
+        "match": "JOHN XVI\\. 1\\b"
+      },
+      {
+        "title": "John 17",
+        "page": 1028,
+        "match": "JOHN XVII\\. 1\\b"
+      },
+      {
+        "title": "John 18",
+        "page": 1069,
+        "match": "JOHN XVIII\\. 1\\b"
+      },
+      {
+        "title": "John 19",
+        "page": 1126,
+        "match": "JOHN XIX\\. 1\\b"
+      },
+      {
+        "title": "John 20",
+        "page": 1208,
+        "match": "JOHN XX\\. 1\\b"
+      },
+      {
+        "title": "John 21",
+        "page": 1284,
+        "match": "JOHN XXI\\. 1\\b"
+      }
+    ],
+    "insert_after": {
+      "616": [
+        1357,
+        1358,
+        1359,
+        1360,
+        1361,
+        1362,
+        1363,
+        1364,
+        1365,
+        1366,
+        1367,
+        1368,
+        1369,
+        1370,
+        1371,
+        1372,
+        1373,
+        1374,
+        1375,
+        1376
+      ]
+    },
+    "drop_lines": [
+      "Digitized by Google.*",
+      "\\[illegible\\](\\s*\\[illegible\\])*",
+      "(EXPOSITORY THOUGHTS )?ON THE GOSPELS\\.?"
+    ],
+    "ocr_patterns": [
+      [
+        "(?<=\\s)ἃ(?=\\s)",
+        "a"
+      ],
+      [
+        "([“‘\\\"]+)\\s?[ὁἐἡὦῦὃἑ]\\s?(?=[A-Za-z‘“])",
+        "\\1"
+      ],
+      [
+        "(?<=\\s)[ὁἐἡὦῦὃἑἰἸ](?=\\s)",
+        ""
+      ],
+      [
+        "\\b(ΦΟΗΝ|JΟΗΝ|ΙΟΗΝ|JOuN)\\b",
+        "JOHN"
+      ],
+      [
+        "ΧΙΥ͂|ΧΙΥ",
+        "XIV"
+      ],
+      [
+        "ΧΥΠΙ",
+        "XVIII"
+      ],
+      [
+        "ΧΥΙ",
+        "XVI"
+      ],
+      [
+        "ΧΥ\\b",
+        "XV"
+      ],
+      [
+        "ΧΙΧ",
+        "XIX"
+      ],
+      [
+        "ΧΙΙ",
+        "XII"
+      ],
+      [
+        "ΧΙ\\b",
+        "XI"
+      ],
+      [
+        "ΧΧ",
+        "XX"
+      ],
+      [
+        "\\bTam\\b(?= [a-z])",
+        "I am"
+      ],
+      [
+        "\\bletus\\b",
+        "let us"
+      ],
+      [
+        "\\bLetus\\b",
+        "Let us"
+      ],
+      [
+        "\\bandam\\b",
+        "and am"
+      ],
+      [
+        "\\bshal!",
+        "shall"
+      ],
+      [
+        "\\ba8\\b",
+        "as"
+      ],
+      [
+        "\\bWesce\\b",
+        "We see"
+      ],
+      [
+        "\\bWwe\\b",
+        "we"
+      ],
+      [
+        "\\bctc\\.",
+        "etc."
+      ],
+      [
+        "\\bdouvt\\b",
+        "doubt"
+      ],
+      [
+        "\\blitile\\b",
+        "little"
+      ],
+      [
+        "\\bpelm\\b",
+        "palm"
+      ],
+      [
+        "\\becxviii\\b",
+        "cxviii"
+      ],
+      [
+        "\\bxuthority\\b",
+        "authority"
+      ],
+      [
+        "\\bineans\\b",
+        "means"
+      ],
+      [
+        "\\bteld\\b",
+        "told"
+      ],
+      [
+        "\\bsometiines\\b",
+        "sometimes"
+      ],
+      [
+        "\\bfloch\\b",
+        "flock"
+      ],
+      [
+        "\\bGifficult\\b",
+        "difficult"
+      ],
+      [
+        "\\bancicntly\\b",
+        "anciently"
+      ],
+      [
+        "\\berdinance\\b",
+        "ordinance"
+      ],
+      [
+        "\\bWawiour\\b",
+        "Saviour"
+      ],
+      [
+        "\\bunhanked\\b",
+        "unthanked"
+      ],
+      [
+        "\\bJight\\b",
+        "light"
+      ],
+      [
+        "\\bofdying\\b",
+        "of dying"
+      ],
+      [
+        "\\[ZLet\\b",
+        "[Let"
+      ],
+      [
+        "\\[dnd\\b",
+        "[And"
+      ]
+    ],
+    "split_heads": "^(Notes\\.|NOTES\\.)\\s*(JOHN [IVXL]+\\.\\s*[\\d—–\\-]+[\\d.]*\\.?)\\s*"
+  },
+  "carson": {
+    "slug": "d-a-carson_the-gospel-according-to-john",
+    "cache": "d-a-carson_the-gospel-according-to-john",
+    "pdf": "book-copies/gospelaccordingt0000cars_1.pdf",
+    "title": "The Gospel According to John",
+    "author": "D. A. Carson",
+    "author_sort": "Carson, D. A.",
+    "ocr_all": true,
+    "note_zone": true,
+    "autocorrect": false,
+    "access": "school",
+    "source": "school",
+    "rights": "© 1991 D. A. Carson, provided by Yorkville Christian School for its students and staff",
+    "heads": [],
+    "drop": [
+      [
+        1,
+        10
+      ],
+      [
+        138,
+        139
+      ],
+      [
+        342,
+        343
+      ],
+      [
+        458,
+        458
+      ],
+      [
+        691,
+        728
+      ]
+    ],
+    "chapters": [
+      {
+        "title": "Preface",
+        "page": 11,
+        "match": "."
+      },
+      {
+        "title": "Abbreviations",
+        "page": 13,
+        "match": "."
+      },
+      {
+        "title": "Some Distinctive Characteristics of the Gospel of John",
+        "page": 25,
+        "match": "SOME DISTINCTIVE"
+      },
+      {
+        "title": "How John’s Gospel Has Been Understood",
+        "page": 27,
+        "match": "HOW JOHN"
+      },
+      {
+        "title": "The Authenticity of the Fourth Gospel",
+        "page": 44,
+        "match": "AUTHENTICITY OF THE FOURTH"
+      },
+      {
+        "title": "The Authorship of the Fourth Gospel",
+        "page": 72,
+        "match": "AUTHORSHIP OF THE FOURTH"
+      },
+      {
+        "title": "The Date and Provenance of the Fourth Gospel",
+        "page": 86,
+        "match": "DATE AND PROVENANCE"
+      },
+      {
+        "title": "The Purpose of the Gospel of John",
+        "page": 91,
+        "match": "PURPOSE OF THE GOSPEL OF JOHN"
+      },
+      {
+        "title": "Some Theological Emphases in John",
+        "page": 98,
+        "match": "THEOLOGICAL EMPHASES"
+      },
+      {
+        "title": "Preaching from the Fourth Gospel",
+        "page": 104,
+        "match": "PREACHING FROM THE FOURTH"
+      },
+      {
+        "title": "The Structure of John’s Gospel",
+        "page": 107,
+        "match": "STRUCTURE OF JOHN"
+      },
+      {
+        "title": "Analysis",
+        "page": 109,
+        "match": "^ANALYSIS$"
+      },
+      {
+        "title": "The Prologue (1:1–18)",
+        "page": 115,
+        "match": "THE PROLOGUE \\(?1:1"
+      },
+      {
+        "title": "John 1:19–51",
+        "page": 147,
+        "match": "PRELUDE TO JESUS",
+        "keep_head": true
+      },
+      {
+        "title": "John 2",
+        "page": 170,
+        "match": "EARLY MINISTRY",
+        "keep_head": true
+      },
+      {
+        "title": "John 3",
+        "page": 189,
+        "match": "Nicodemus \\(3:1",
+        "keep_head": true
+      },
+      {
+        "title": "John 4",
+        "page": 218,
+        "match": "Samaritan woman \\(4:1",
+        "keep_head": true
+      },
+      {
+        "title": "John 5",
+        "page": 244,
+        "match": "RISING OPPOSITION",
+        "keep_head": true
+      },
+      {
+        "title": "John 6",
+        "page": 271,
+        "match": "five thousand \\(6:1",
+        "keep_head": true
+      },
+      {
+        "title": "John 7:1–52",
+        "page": 308,
+        "match": "Scepticism and uncertainty",
+        "keep_head": true
+      },
+      {
+        "title": "John 7:53–8:59",
+        "page": 335,
+        "match": "(?i)woman caught in adultery",
+        "keep_head": true
+      },
+      {
+        "title": "John 9",
+        "page": 363,
+        "match": "heals a man born blind",
+        "keep_head": true
+      },
+      {
+        "title": "John 10",
+        "page": 383,
+        "match": "shepherd of the sheep \\(10:1",
+        "keep_head": true
+      },
+      {
+        "title": "John 11",
+        "page": 407,
+        "match": "TRANSITION",
+        "keep_head": true
+      },
+      {
+        "title": "John 12",
+        "page": 429,
+        "match": "Mary anoints Jesus",
+        "keep_head": true
+      },
+      {
+        "title": "John 13",
+        "page": 459,
+        "match": "^IV\\.\\s+JESUS",
+        "keep_head": true
+      },
+      {
+        "title": "John 14",
+        "page": 491,
+        "match": "promise of a place",
+        "keep_head": true
+      },
+      {
+        "title": "John 15:1–16:4a",
+        "page": 514,
+        "match": "FAREWELL DISCOURSE: PART TWO",
+        "keep_head": true
+      },
+      {
+        "title": "John 16:4b–33",
+        "page": 536,
+        "match": "Holy Spirit \\(16:4b",
+        "keep_head": true
+      },
+      {
+        "title": "John 17",
+        "page": 554,
+        "match": "THE PRAYER OF JESUS",
+        "keep_head": true
+      },
+      {
+        "title": "John 18",
+        "page": 575,
+        "match": "TRIAL AND PASSION OF JESUS",
+        "keep_head": true
+      },
+      {
+        "title": "John 19",
+        "page": 600,
+        "match": "Jesus sentenced",
+        "keep_head": true
+      },
+      {
+        "title": "John 20",
+        "page": 635,
+        "match": "RESURRECTION OF JESUS \\(20",
+        "keep_head": true
+      },
+      {
+        "title": "John 21",
+        "page": 669,
+        "match": "EPILOGUE",
+        "keep_head": true
+      }
+    ],
+    "dedication": "This book is gratefully dedicated to Kenneth and Ruth Kantzer",
+    "isbn": "0-85111-749-X (Apollos); 0-8028-3683-4 (Eerdmans)",
+    "raised_marks": true,
+    "vision_marks": true,
+    "drop_lines": [
+      "INTRODUCTION",
+      "COMMENTARY"
+    ],
+    "top_heads": [
+      "^\\W{0,3}JOHN\\W{0,3}\\d",
+      "^JOHN\\W{0,3}$",
+      "^(INTRODUCTION|ANALYSIS|ABBREVIATIONS|PREFACE|COMMENTARY)\\b",
+      "^\\d{1,3}$"
+    ],
+    "ocr_patterns": [
+      [
+        "\\bnrv\\b",
+        "NIV"
+      ],
+      [
+        "\\bNv\\b",
+        "NIV"
+      ],
+      [
+        "\\brv\\b",
+        "RV"
+      ],
+      [
+        "\\bRor\\b",
+        "For"
+      ],
+      [
+        "\\bei mé\\b",
+        "ei mē"
+      ],
+      [
+        "\\beg eimi\\b",
+        "egō eimi"
+      ],
+      [
+        "\\bchitén\\b",
+        "chitōn"
+      ],
+      [
+        "\\bt6\\b",
+        "tō"
+      ],
+      [
+        "\\bkolp6\\b",
+        "kolpō"
+      ],
+      [
+        "\\bIésou\\b",
+        "Iēsou"
+      ],
+      [
+        "\\bIésous\\b",
+        "Iēsous"
+      ],
+      [
+        "\\bIésoun\\b",
+        "Iēsoun"
+      ],
+      [
+        "\\bmadeflesh\\b",
+        "made flesh"
+      ],
+      [
+        "\\bselfdisclosure\\b",
+        "self-disclosure"
+      ],
+      [
+        "\\bselfconscious\\b",
+        "self-conscious"
+      ],
+      [
+        "\\bLorp\\b",
+        "LORD"
+      ],
+      [
+        "\\bN[Ii][Vv]\\b",
+        "NIV"
+      ],
+      [
+        "\\bNrv\\b",
+        "NIV"
+      ],
+      [
+        "\\bwv\\.",
+        "vv."
+      ],
+      [
+        "\\bLxx\\b",
+        "LXX"
+      ],
+      [
+        "\\bAv (?=\\d)",
+        "AD "
+      ],
+      [
+        "\\bap (?=\\d)",
+        "AD "
+      ],
+      [
+        "\\bAv\\b",
+        "AV"
+      ],
+      [
+        "\\bRv\\b",
+        "RV"
+      ],
+      [
+        "\\bRsv\\b",
+        "RSV"
+      ],
+      [
+        "\\bNrsv\\b",
+        "NRSV"
+      ],
+      [
+        "\\bNeb\\b",
+        "NEB"
+      ],
+      [
+        "\\bNasb\\b",
+        "NASB"
+      ],
+      [
+        "\\bGnb\\b",
+        "GNB"
+      ],
+      [
+        "\\bBc\\b",
+        "BC"
+      ],
+      [
+        "\\bT[uü]bingen\\b|\\bTiibingen\\b|\\bTibingen\\b",
+        "Tübingen"
+      ],
+      [
+        "\\bG[uü]tersloh\\b|\\bGiitersloh\\b|\\bGiters- ?loh\\b|\\bGutersloh\\b",
+        "Gütersloh"
+      ],
+      [
+        "\\bM[uü]nchen\\b|\\bMiinchen\\b|\\bMinchen\\b",
+        "München"
+      ],
+      [
+        "\\bW[uü]rzburg\\b|\\bWiirzburg\\b|\\bWarzburg\\b|\\bWirzburg\\b",
+        "Würzburg"
+      ],
+      [
+        "\\bG[oö]ttingen\\b|\\bGéttingen\\b|\\bG6ttingen\\b",
+        "Göttingen"
+      ],
+      [
+        "\\bZ[uü]rich\\b|\\bZiirich\\b",
+        "Zürich"
+      ],
+      [
+        "\\bK[oö]sel\\b|\\bK6sel\\b|\\bKdsel\\b",
+        "Kösel"
+      ],
+      [
+        "\\bfiir\\b|\\bfir\\b(?= [A-Z][a-z]+)",
+        "für"
+      ],
+      [
+        "\\bAufs[aä]tze\\b|\\bAufsdtze\\b",
+        "Aufsätze"
+      ],
+      [
+        "\\bK[uü]mmel\\b|\\bKiimmel\\b|\\bKimmel\\b",
+        "Kümmel"
+      ],
+      [
+        "\\bK[aä]semann\\b|\\bKdsemann\\b",
+        "Käsemann"
+      ],
+      [
+        "\\bSch[uü]rer\\b|\\bSchiirer\\b|\\bSchtirer\\b",
+        "Schürer"
+      ],
+      [
+        "\\bB[uü]hner\\b|\\bBithner\\b|\\bBiihner\\b",
+        "Bühner"
+      ],
+      [
+        "\\bGr[uü]ner\\b|\\bGriiner\\b",
+        "Grüner"
+      ],
+      [
+        "\\bHengel\\b",
+        "Hengel"
+      ],
+      [
+        "\\bBornh[aä]user\\b",
+        "Bornhäuser"
+      ],
+      [
+        "\\bJ[uü]ngerkreis\\b",
+        "Jüngerkreis"
+      ],
+      [
+        "\\bEvangelien\\b",
+        "Evangelien"
+      ],
+      [
+        "\\b[UÜ]berlieferung\\b|\\bUberlieferung\\b",
+        "Überlieferung"
+      ],
+      [
+        "\\bQuebec\\b",
+        "Québec"
+      ],
+      [
+        "\\bgioria\\b",
+        "gloria"
+      ],
+      [
+        "\\bgua\\b",
+        "qua"
+      ],
+      [
+        "\\b[Aa][pvD](?= ?\\d)",
+        "AD"
+      ],
+      [
+        "\\bpre-a[DP]\\b",
+        "pre-AD"
+      ],
+      [
+        "\\bpost-a[pD]\\b",
+        "post-AD"
+      ],
+      [
+        "\\b[tL]xx\\b",
+        "LXX"
+      ],
+      [
+        "\\b[nN][tTIi][vV]\\b",
+        "NIV"
+      ],
+      [
+        "\\bIl\\b",
+        "II"
+      ],
+      [
+        "\\bIll\\.(?= [ivxlc])",
+        "III."
+      ],
+      [
+        "\\bCBOQMS\\b",
+        "CBQMS"
+      ],
+      [
+        "\\bChapmar\\b",
+        "Chapman"
+      ],
+      [
+        "\\bWT\\]",
+        "WTJ"
+      ],
+      [
+        "\\bIE\\]",
+        "IEJ"
+      ],
+      [
+        "\\bRied\\]",
+        "Riedl"
+      ],
+      [
+        "\\bN A26\\b",
+        "NA26"
+      ],
+      [
+        "\\bJogos\\b",
+        "logos"
+      ],
+      [
+        "(?<![\\w’'])gndsis(?![\\w])",
+        "gnōsis"
+      ],
+      [
+        "(?<![\\w’'])s6ma(?![\\w])",
+        "sōma"
+      ],
+      [
+        "(?<![\\w’'])aposynagogos(?![\\w])",
+        "aposynagōgos"
+      ],
+      [
+        "(?<![\\w’'])arché(?![\\w])",
+        "archē"
+      ],
+      [
+        "(?<![\\w’'])aléthinos(?![\\w])",
+        "alēthinos"
+      ],
+      [
+        "(?<![\\w’'])skéné(?![\\w])",
+        "skēnē"
+      ],
+      [
+        "(?<![\\w’'])aléthds(?![\\w])",
+        "alēthōs"
+      ],
+      [
+        "(?<![\\w’'])kataskénds6(?![\\w])",
+        "kataskēnōsō"
+      ],
+      [
+        "(?<![\\w’'])kataskénon(?![\\w])",
+        "kataskēnōn"
+      ],
+      [
+        "(?<![\\w’'])kataskéndsis(?![\\w])",
+        "kataskēnōsis"
+      ],
+      [
+        "(?<![\\w’'])ekdiégésetai(?![\\w])",
+        "ekdiēgēsetai"
+      ],
+      [
+        "(?<![\\w’'])exégésato(?![\\w])",
+        "exēgēsato"
+      ],
+      [
+        "(?<![\\w’'])edothé(?![\\w])",
+        "edothē"
+      ],
+      [
+        "(?<![\\w’'])apekrithésan(?![\\w])",
+        "apekrithēsan"
+      ],
+      [
+        "(?<![\\w’'])sémeion(?![\\w])",
+        "sēmeion"
+      ],
+      [
+        "(?<![\\w’'])anothen(?![\\w])",
+        "anōthen"
+      ],
+      [
+        "(?<![\\w’'])andthen(?![\\w])",
+        "anōthen"
+      ],
+      [
+        "(?<![\\w’'])aidn(?![\\w])",
+        "aiōn"
+      ],
+      [
+        "(?<![\\w’'])monogenés(?![\\w])",
+        "monogenēs"
+      ],
+      [
+        "(?<![\\w’'])agapé(?![\\w])",
+        "agapē"
+      ],
+      [
+        "(?<![\\w’'])krind(?![\\w])",
+        "krinō"
+      ],
+      [
+        "(?<![\\w’'])antléma(?![\\w])",
+        "antlēma"
+      ],
+      [
+        "(?<![\\w’'])phoné(?![\\w])",
+        "phōnē"
+      ],
+      [
+        "(?<![\\w’'])méti(?![\\w])",
+        "mēti"
+      ],
+      [
+        "(?<![\\w’'])édé(?![\\w])",
+        "ēdē"
+      ],
+      [
+        "(?<![\\w’'])kolymbéthra(?![\\w])",
+        "kolymbēthra"
+      ],
+      [
+        "(?<![\\w’'])apekrithé(?![\\w])",
+        "apekrithē"
+      ],
+      [
+        "(?<![\\w’'])kriné(?![\\w])",
+        "krinē"
+      ],
+      [
+        "(?<![\\w’'])phds(?![\\w])",
+        "phōs"
+      ],
+      [
+        "(?<![\\w’'])agalliathénai(?![\\w])",
+        "agalliathēnai"
+      ],
+      [
+        "(?<![\\w’'])sémeia(?![\\w])",
+        "sēmeia"
+      ],
+      [
+        "(?<![\\w’'])sdma(?![\\w])",
+        "sōma"
+      ],
+      [
+        "(?<![\\w’'])meno(?![\\w])",
+        "menō"
+      ],
+      [
+        "(?<![\\w’'])skléros(?![\\w])",
+        "sklēros"
+      ],
+      [
+        "(?<![\\w’'])h6ra(?![\\w])",
+        "hōra"
+      ],
+      [
+        "(?<![\\w’'])hdra(?![\\w])",
+        "hōra"
+      ],
+      [
+        "(?<![\\w’'])oupo(?![\\w])",
+        "oupō"
+      ],
+      [
+        "(?<![\\w’'])anabain6(?![\\w])",
+        "anabainō"
+      ],
+      [
+        "(?<![\\w’'])parrésia(?![\\w])",
+        "parrēsia"
+      ],
+      [
+        "(?<![\\w’'])aléthés(?![\\w])",
+        "alēthēs"
+      ],
+      [
+        "(?<![\\w’'])aléthiné(?![\\w])",
+        "alēthinē"
+      ],
+      [
+        "(?<![\\w’'])hypago(?![\\w])",
+        "hypagō"
+      ],
+      [
+        "(?<![\\w’'])ontds(?![\\w])",
+        "ontōs"
+      ],
+      [
+        "(?<![\\w’'])krin6(?![\\w])",
+        "krinō"
+      ],
+      [
+        "(?<![\\w’'])ephé(?![\\w])",
+        "ephē"
+      ],
+      [
+        "(?<![\\w’'])hagiazo(?![\\w])",
+        "hagiazō"
+      ],
+      [
+        "(?<![\\w’'])sdthésetai(?![\\w])",
+        "sōthēsetai"
+      ],
+      [
+        "(?<![\\w’'])dakry6(?![\\w])",
+        "dakryō"
+      ],
+      [
+        "(?<![\\w’'])klaid(?![\\w])",
+        "klaiō"
+      ],
+      [
+        "(?<![\\w’'])epoiésan(?![\\w])",
+        "epoiēsan"
+      ],
+      [
+        "(?<![\\w’'])bastazo(?![\\w])",
+        "bastazō"
+      ],
+      [
+        "(?<![\\w’'])kago(?![\\w])",
+        "kagō"
+      ],
+      [
+        "(?<![\\w’'])psomion(?![\\w])",
+        "psōmion"
+      ],
+      [
+        "(?<![\\w’'])pisteud(?![\\w])",
+        "pisteuō"
+      ],
+      [
+        "(?<![\\w’'])moné(?![\\w])",
+        "monē"
+      ],
+      [
+        "(?<![\\w’'])eiréné(?![\\w])",
+        "eirēnē"
+      ],
+      [
+        "(?<![\\w’'])gedrgos(?![\\w])",
+        "geōrgos"
+      ],
+      [
+        "(?<![\\w’'])kléma(?![\\w])",
+        "klēma"
+      ],
+      [
+        "(?<![\\w’'])rhémata(?![\\w])",
+        "rhēmata"
+      ],
+      [
+        "(?<![\\w’'])edoxasthé(?![\\w])",
+        "edoxasthē"
+      ],
+      [
+        "(?<![\\w’'])mené(?![\\w])",
+        "menē"
+      ],
+      [
+        "(?<![\\w’'])ebléthé(?![\\w])",
+        "eblēthē"
+      ],
+      [
+        "(?<![\\w’'])exéranthé(?![\\w])",
+        "exēranthē"
+      ],
+      [
+        "(?<![\\w’'])pheréte(?![\\w])",
+        "pherēte"
+      ],
+      [
+        "(?<![\\w’'])ethéka(?![\\w])",
+        "ethēka"
+      ],
+      [
+        "(?<![\\w’'])skandalisthéte(?![\\w])",
+        "skandalisthēte"
+      ],
+      [
+        "(?<![\\w’'])lypé(?![\\w])",
+        "lypē"
+      ],
+      [
+        "(?<![\\w’'])phanerothé(?![\\w])",
+        "phanerōthē"
+      ],
+      [
+        "(?<![\\w’'])dikaiosyné(?![\\w])",
+        "dikaiosynē"
+      ],
+      [
+        "(?<![\\w’'])anangelld(?![\\w])",
+        "anangellō"
+      ],
+      [
+        "(?<![\\w’'])egnd(?![\\w])",
+        "egnō"
+      ],
+      [
+        "(?<![\\w’'])klaio(?![\\w])",
+        "klaiō"
+      ],
+      [
+        "(?<![\\w’'])anthropos(?![\\w])",
+        "anthrōpos"
+      ],
+      [
+        "(?<![\\w’'])aléthos(?![\\w])",
+        "alēthōs"
+      ],
+      [
+        "(?<![\\w’'])emisésen(?![\\w])",
+        "emisēsen"
+      ],
+      [
+        "(?<![\\w’'])teteleiOmenoi(?![\\w])",
+        "teteleiōmenoi"
+      ],
+      [
+        "(?<![\\w’'])theld(?![\\w])",
+        "thelō"
+      ],
+      [
+        "(?<![\\w’'])ephanerdsa(?![\\w])",
+        "ephanerōsa"
+      ],
+      [
+        "(?<![\\w’'])képos(?![\\w])",
+        "kēpos"
+      ],
+      [
+        "(?<![\\w’'])gndstos(?![\\w])",
+        "gnōstos"
+      ],
+      [
+        "(?<![\\w’'])aulé(?![\\w])",
+        "aulē"
+      ],
+      [
+        "(?<![\\w’'])érnésato(?![\\w])",
+        "ērnēsato"
+      ],
+      [
+        "(?<![\\w’'])alétheia(?![\\w])",
+        "alētheia"
+      ],
+      [
+        "(?<![\\w’'])emastigdsen(?![\\w])",
+        "emastigōsen"
+      ],
+      [
+        "(?<![\\w’'])phragellosas(?![\\w])",
+        "phragellōsas"
+      ],
+      [
+        "(?<![\\w’'])paredoken(?![\\w])",
+        "paredōken"
+      ],
+      [
+        "(?<![\\w’'])béma(?![\\w])",
+        "bēma"
+      ],
+      [
+        "(?<![\\w’'])paraskeué(?![\\w])",
+        "paraskeuē"
+      ],
+      [
+        "(?<![\\w’'])bema(?![\\w])",
+        "bēma"
+      ],
+      [
+        "(?<![\\w’'])heauté(?![\\w])",
+        "heautē"
+      ],
+      [
+        "(?<![\\w’'])éstai(?![\\w])",
+        "estai"
+      ],
+      [
+        "(?<![\\w’'])hyssdpd(?![\\w])",
+        "hyssōpō"
+      ],
+      [
+        "(?<![\\w’'])teleidsas(?![\\w])",
+        "teleiōsas"
+      ],
+      [
+        "(?<![\\w’'])pareddken(?![\\w])",
+        "paredōken"
+      ],
+      [
+        "(?<![\\w’'])pisteuéte(?![\\w])",
+        "pisteuēte"
+      ],
+      [
+        "(?<![\\w’'])graphé(?![\\w])",
+        "graphē"
+      ],
+      [
+        "(?<![\\w’'])apélthon(?![\\w])",
+        "apēlthon"
+      ],
+      [
+        "(?<![\\w’'])képouros(?![\\w])",
+        "kēpouros"
+      ],
+      [
+        "(?<![\\w’'])anabebéka(?![\\w])",
+        "anabebēka"
+      ],
+      [
+        "(?<![\\w’'])anabaind(?![\\w])",
+        "anabainō"
+      ],
+      [
+        "(?<![\\w’'])anabainé(?![\\w])",
+        "anabaine"
+      ],
+      [
+        "(?<![\\w’'])pempo(?![\\w])",
+        "pempō"
+      ],
+      [
+        "(?<![\\w’'])enephysésen(?![\\w])",
+        "enephysēsen"
+      ],
+      [
+        "(?<![\\w’'])kekraténtai(?![\\w])",
+        "kekratēntai"
+      ],
+      [
+        "(?<![\\w’'])ex6(?![\\w])",
+        "exō"
+      ],
+      [
+        "(?<![\\w’'])aristésate(?![\\w])",
+        "aristēsate"
+      ],
+      [
+        "(?<![\\w’'])tout6n(?![\\w])",
+        "toutōn"
+      ],
+      [
+        "\\bEinf(?:ii|i|u)hrung\\b",
+        "Einführung"
+      ],
+      [
+        "\\br[o6]mischen\\b",
+        "römischen"
+      ],
+      [
+        "\\bPr[ia]zisierungss[a]tze\\b",
+        "Präzisierungssätze"
+      ],
+      [
+        "\\bexégése\\b",
+        "exégèse"
+      ],
+      [
+        "\\bMper\\.",
+        "Mgr."
+      ],
+      [
+        "\\b(?:ii|i)ber\\b(?= [a-zäöü])",
+        "über"
+      ],
+      [
+        "\\bErz[a]hlungs\\b",
+        "Erzählungs"
+      ],
+      [
+        "\\bIxiii-?Ixiv\\b|\\bIxiiiIxiv\\b",
+        "lxiii-lxiv"
+      ],
+      [
+        "\\bcxxiiicxxv\\b",
+        "cxxiii-cxxv"
+      ],
+      [
+        "antisupernaturalism\\(3\\)",
+        "antisupernaturalism"
+      ],
+      [
+        "(?<![\\w’'])pisteuséte(?![\\w])",
+        "pisteusēte"
+      ],
+      [
+        "(?<![\\w’'])klétos(?![\\w])",
+        "klētos"
+      ],
+      [
+        "(?<![\\w’'])photizei(?![\\w])",
+        "phōtizei"
+      ],
+      [
+        "(?<![\\w’'])plérés(?![\\w])",
+        "plērēs"
+      ],
+      [
+        "(?<![\\w’'])tropé(?![\\w])",
+        "topō"
+      ],
+      [
+        "(?<![\\w’'])katalambané(?![\\w])",
+        "katalambanō"
+      ],
+      [
+        "(?<![\\w’'])gindskd(?![\\w])",
+        "ginōskō"
+      ],
+      [
+        "(?<![\\w’'])chrid(?![\\w])",
+        "chriō"
+      ],
+      [
+        "(?<![\\w’'])aird(?![\\w])",
+        "airō"
+      ],
+      [
+        "(?<![\\w’'])anapher6(?![\\w])",
+        "anapherō"
+      ],
+      [
+        "(?<![\\w’'])airé(?![\\w])",
+        "airō"
+      ],
+      [
+        "(?<![\\w’'])anaphero(?![\\w])",
+        "anapherō"
+      ],
+      [
+        "(?<![\\w’'])methysko(?![\\w])",
+        "methyskō"
+      ],
+      [
+        "(?<![\\w’'])héra(?![\\w])",
+        "hōra"
+      ],
+      [
+        "(?<![\\w’'])metrétés(?![\\w])",
+        "metrētēs"
+      ],
+      [
+        "(?<![\\w’'])pisteué(?![\\w])",
+        "pisteuō"
+      ],
+      [
+        "(?<![\\w’'])oup6(?![\\w])",
+        "oupō"
+      ],
+      [
+        "(?<![\\w’'])oupé(?![\\w])",
+        "oupō"
+      ],
+      [
+        "(?<![\\w’'])anéthen(?![\\w])",
+        "anōthen"
+      ],
+      [
+        "(?<![\\w’'])anabebéken(?![\\w])",
+        "anabebēken"
+      ],
+      [
+        "(?<![\\w’'])hypsod(?![\\w])",
+        "hypsoō"
+      ],
+      [
+        "(?<![\\w’'])z6é(?![\\w])",
+        "zōē"
+      ],
+      [
+        "(?<![\\w’'])aidnios(?![\\w])",
+        "aiōnios"
+      ],
+      [
+        "(?<![\\w’'])houtés(?![\\w])",
+        "houtōs"
+      ],
+      [
+        "(?<![\\w’'])hdste(?![\\w])",
+        "hōste"
+      ],
+      [
+        "(?<![\\w’'])agapad(?![\\w])",
+        "agapaō"
+      ],
+      [
+        "(?<![\\w’'])prassén(?![\\w])",
+        "prassōn"
+      ],
+      [
+        "(?<![\\w’'])tén(?![\\w])",
+        "tēn"
+      ],
+      [
+        "(?<![\\w’'])alétheian(?![\\w])",
+        "alētheian"
+      ],
+      [
+        "(?<![\\w’'])pléroun(?![\\w])",
+        "plēroun"
+      ],
+      [
+        "(?<![\\w’'])agapaé(?![\\w])",
+        "agapaō"
+      ],
+      [
+        "(?<![\\w’'])philed(?![\\w])",
+        "phileō"
+      ],
+      [
+        "(?<![\\w’'])hypsoo(?![\\w])",
+        "hypsoō"
+      ],
+      [
+        "(?<![\\w’'])hypso0(?![\\w])",
+        "hypsoō"
+      ],
+      [
+        "(?<![\\w’'])pégé(?![\\w])",
+        "pēgē"
+      ],
+      [
+        "(?<![\\w’'])antled(?![\\w])",
+        "antleō"
+      ],
+      [
+        "(?<![\\w’'])eg6(?![\\w])",
+        "egō"
+      ],
+      [
+        "(?<![\\w’'])lalon(?![\\w])",
+        "lalōn"
+      ],
+      [
+        "(?<![\\w’'])probatiké(?![\\w])",
+        "probatikē"
+      ],
+      [
+        "(?<![\\w’'])anthropou(?![\\w])",
+        "anthrōpou"
+      ],
+      [
+        "(?<![\\w’'])méketi(?![\\w])",
+        "mēketi"
+      ],
+      [
+        "(?<![\\w’'])hds(?![\\w])",
+        "hōs"
+      ],
+      [
+        "(?<![\\w’'])meizo(?![\\w])",
+        "meizō"
+      ],
+      [
+        "(?<![\\w’'])peirazo(?![\\w])",
+        "peirazō"
+      ],
+      [
+        "(?<![\\w’'])anthropoi(?![\\w])",
+        "anthrōpoi"
+      ],
+      [
+        "(?<![\\w’'])eucharistésas(?![\\w])",
+        "eucharistēsas"
+      ],
+      [
+        "(?<![\\w’'])tés(?![\\w])",
+        "tēs"
+      ],
+      [
+        "(?<![\\w’'])thalassés(?![\\w])",
+        "thalassēs"
+      ],
+      [
+        "(?<![\\w’'])mystérion(?![\\w])",
+        "mystērion"
+      ],
+      [
+        "(?<![\\w’'])ekballé(?![\\w])",
+        "ekballō"
+      ],
+      [
+        "(?<![\\w’'])theéred(?![\\w])",
+        "theōreō"
+      ],
+      [
+        "(?<![\\w’'])trogo(?![\\w])",
+        "trōgō"
+      ],
+      [
+        "(?<![\\w’'])esthid(?![\\w])",
+        "esthiō"
+      ],
+      [
+        "(?<![\\w’'])trdg6(?![\\w])",
+        "trōgō"
+      ],
+      [
+        "(?<![\\w’'])paradoson(?![\\w])",
+        "paradōsōn"
+      ],
+      [
+        "(?<![\\w’'])meré(?![\\w])",
+        "merē"
+      ],
+      [
+        "(?<![\\w’'])zdés(?![\\w])",
+        "zōēs"
+      ],
+      [
+        "(?<![\\w’'])peinasé(?![\\w])",
+        "peinasē"
+      ],
+      [
+        "(?<![\\w’'])dipsései(?![\\w])",
+        "dipsēsei"
+      ],
+      [
+        "(?<![\\w’'])pépote(?![\\w])",
+        "pōpote"
+      ],
+      [
+        "(?<![\\w’'])popote(?![\\w])",
+        "pōpote"
+      ],
+      [
+        "(?<![\\w’'])cholad(?![\\w])",
+        "cholaō"
+      ],
+      [
+        "(?<![\\w’'])mépote(?![\\w])",
+        "mēpote"
+      ],
+      [
+        "(?<![\\w’'])ginoskei(?![\\w])",
+        "ginōskei"
+      ],
+      [
+        "(?<![\\w’'])krazé(?![\\w])",
+        "krazō"
+      ],
+      [
+        "(?<![\\w’'])anthrépos(?![\\w])",
+        "anthrōpos"
+      ],
+      [
+        "(?<![\\w’'])meso(?![\\w])",
+        "mesō"
+      ],
+      [
+        "(?<![\\w’'])egé(?![\\w])",
+        "egō"
+      ],
+      [
+        "(?<![\\w’'])egd(?![\\w])",
+        "egō"
+      ],
+      [
+        "(?<![\\w’'])archén(?![\\w])",
+        "archēn"
+      ],
+      [
+        "(?<![\\w’'])archés(?![\\w])",
+        "archēs"
+      ],
+      [
+        "(?<![\\w’'])pisteu6(?![\\w])",
+        "pisteuō"
+      ],
+      [
+        "(?<![\\w’'])aiona(?![\\w])",
+        "aiōna"
+      ],
+      [
+        "(?<![\\w’'])exélthon(?![\\w])",
+        "exēlthon"
+      ],
+      [
+        "(?<![\\w’'])héko(?![\\w])",
+        "hēkō"
+      ],
+      [
+        "(?<![\\w’'])chérei(?![\\w])",
+        "chōrei"
+      ],
+      [
+        "(?<![\\w’'])aposynagégos(?![\\w])",
+        "aposynagōgos"
+      ],
+      [
+        "(?<![\\w’'])proskyneé(?![\\w])",
+        "proskyneō"
+      ],
+      [
+        "(?<![\\w’'])kleptés(?![\\w])",
+        "kleptēs"
+      ],
+      [
+        "(?<![\\w’'])léstés(?![\\w])",
+        "lēstēs"
+      ],
+      [
+        "(?<![\\w’'])parabolé(?![\\w])",
+        "parabolē"
+      ],
+      [
+        "(?<![\\w’'])hémin(?![\\w])",
+        "hēmin"
+      ],
+      [
+        "(?<![\\w’'])phanénai(?![\\w])",
+        "phanēnai"
+      ],
+      [
+        "(?<![\\w’'])lyé(?![\\w])",
+        "lyō"
+      ],
+      [
+        "(?<![\\w’'])gnote(?![\\w])",
+        "gnōte"
+      ],
+      [
+        "(?<![\\w’'])gindskéte(?![\\w])",
+        "ginōskēte"
+      ],
+      [
+        "(?<![\\w’'])hés(?![\\w])",
+        "hōs"
+      ],
+      [
+        "(?<![\\w’'])koimésis(?![\\w])",
+        "koimēsis"
+      ],
+      [
+        "(?<![\\w’'])zén(?![\\w])",
+        "zōn"
+      ],
+      [
+        "(?<![\\w’'])pisteuén(?![\\w])",
+        "pisteuōn"
+      ],
+      [
+        "(?<![\\w’'])pistikés(?![\\w])",
+        "pistikēs"
+      ],
+      [
+        "(?<![\\w’'])pin6(?![\\w])",
+        "pinō"
+      ],
+      [
+        "(?<![\\w’'])doxasthésetai(?![\\w])",
+        "doxasthēsetai"
+      ],
+      [
+        "(?<![\\w’'])phéné(?![\\w])",
+        "phōnē"
+      ],
+      [
+        "(?<![\\w’'])louo(?![\\w])",
+        "louō"
+      ],
+      [
+        "(?<![\\w’'])nipto(?![\\w])",
+        "niptō"
+      ],
+      [
+        "(?<![\\w’'])nipté(?![\\w])",
+        "niptō"
+      ],
+      [
+        "(?<![\\w’'])loué(?![\\w])",
+        "louō"
+      ],
+      [
+        "(?<![\\w’'])gindské(?![\\w])",
+        "ginōskō"
+      ],
+      [
+        "(?<![\\w’'])apostellé(?![\\w])",
+        "apostellō"
+      ],
+      [
+        "(?<![\\w’'])phile6(?![\\w])",
+        "phileō"
+      ],
+      [
+        "(?<![\\w’'])psémion(?![\\w])",
+        "psōmion"
+      ],
+      [
+        "(?<![\\w’'])paraklétos(?![\\w])",
+        "paraklētos"
+      ],
+      [
+        "(?<![\\w’'])doxaz6(?![\\w])",
+        "doxazō"
+      ],
+      [
+        "(?<![\\w’'])pisteudn(?![\\w])",
+        "pisteuōn"
+      ],
+      [
+        "(?<![\\w’'])parakaled(?![\\w])",
+        "parakaleō"
+      ],
+      [
+        "(?<![\\w’'])parakléton(?![\\w])",
+        "paraklēton"
+      ],
+      [
+        "(?<![\\w’'])emphanizd(?![\\w])",
+        "emphanizō"
+      ],
+      [
+        "(?<![\\w’'])katégoros(?![\\w])",
+        "katēgoros"
+      ],
+      [
+        "(?<![\\w’'])genésthe(?![\\w])",
+        "genēsthe"
+      ],
+      [
+        "(?<![\\w’'])genésesthe(?![\\w])",
+        "genēsesthe"
+      ],
+      [
+        "(?<![\\w’'])égapésen(?![\\w])",
+        "ēgapēsen"
+      ],
+      [
+        "(?<![\\w’'])égapésa(?![\\w])",
+        "ēgapēsa"
+      ],
+      [
+        "(?<![\\w’'])egnésan(?![\\w])",
+        "egnōsan"
+      ],
+      [
+        "(?<![\\w’'])elencho(?![\\w])",
+        "elenchō"
+      ],
+      [
+        "(?<![\\w’'])elenchthé(?![\\w])",
+        "elenchthē"
+      ],
+      [
+        "(?<![\\w’'])thed(?![\\w])",
+        "theō"
+      ],
+      [
+        "(?<![\\w’'])elenché(?![\\w])",
+        "elenchō"
+      ],
+      [
+        "(?<![\\w’'])elenchd(?![\\w])",
+        "elenchō"
+      ],
+      [
+        "(?<![\\w’'])hodégeé(?![\\w])",
+        "hodēgeō"
+      ],
+      [
+        "(?<![\\w’'])apokalyptd(?![\\w])",
+        "apokalyptō"
+      ],
+      [
+        "(?<![\\w’'])thréned(?![\\w])",
+        "thrēneō"
+      ],
+      [
+        "(?<![\\w’'])charésetai(?![\\w])",
+        "charēsetai"
+      ],
+      [
+        "(?<![\\w’'])hymén(?![\\w])",
+        "hymōn"
+      ],
+      [
+        "(?<![\\w’'])erdtad(?![\\w])",
+        "erōtaō"
+      ],
+      [
+        "(?<![\\w’'])aited(?![\\w])",
+        "aiteō"
+      ],
+      [
+        "(?<![\\w’'])erétad(?![\\w])",
+        "erōtaō"
+      ],
+      [
+        "(?<![\\w’'])aiteo(?![\\w])",
+        "aiteō"
+      ],
+      [
+        "(?<![\\w’'])erdtao(?![\\w])",
+        "erōtaō"
+      ],
+      [
+        "(?<![\\w’'])nikad(?![\\w])",
+        "nikaō"
+      ],
+      [
+        "(?<![\\w’'])thedred(?![\\w])",
+        "theōreō"
+      ],
+      [
+        "(?<![\\w’'])horad(?![\\w])",
+        "horaō"
+      ],
+      [
+        "(?<![\\w’'])gyné(?![\\w])",
+        "gynē"
+      ],
+      [
+        "(?<![\\w’'])kathés(?![\\w])",
+        "kathōs"
+      ],
+      [
+        "(?<![\\w’'])pasés(?![\\w])",
+        "pasēs"
+      ],
+      [
+        "(?<![\\w’'])sarkés(?![\\w])",
+        "sarkes"
+      ],
+      [
+        "(?<![\\w’'])egnokan(?![\\w])",
+        "egnōkan"
+      ],
+      [
+        "(?<![\\w’'])egndsan(?![\\w])",
+        "egnōsan"
+      ],
+      [
+        "(?<![\\w’'])téréson(?![\\w])",
+        "tērēson"
+      ],
+      [
+        "(?<![\\w’'])apdleias(?![\\w])",
+        "apōleias"
+      ],
+      [
+        "(?<![\\w’'])apoleias(?![\\w])",
+        "apōleias"
+      ],
+      [
+        "(?<![\\w’'])apdleia(?![\\w])",
+        "apōleia"
+      ],
+      [
+        "(?<![\\w’'])ponérou(?![\\w])",
+        "ponērou"
+      ],
+      [
+        "(?<![\\w’'])hagiaz6(?![\\w])",
+        "hagiazō"
+      ],
+      [
+        "(?<![\\w’'])téred(?![\\w])",
+        "tēreō"
+      ],
+      [
+        "(?<![\\w’'])phylassé(?![\\w])",
+        "phylassō"
+      ],
+      [
+        "(?<![\\w’'])egnérisa(?![\\w])",
+        "egnōrisa"
+      ],
+      [
+        "(?<![\\w’'])matheton(?![\\w])",
+        "mathētōn"
+      ],
+      [
+        "(?<![\\w’'])praitorion(?![\\w])",
+        "praitōrion"
+      ],
+      [
+        "(?<![\\w’'])préi(?![\\w])",
+        "prōi"
+      ],
+      [
+        "(?<![\\w’'])hégemén(?![\\w])",
+        "hēgemōn"
+      ],
+      [
+        "(?<![\\w’'])lestés(?![\\w])",
+        "lēstēs"
+      ],
+      [
+        "(?<![\\w’'])phragelldsas(?![\\w])",
+        "phragellōsas"
+      ],
+      [
+        "(?<![\\w’'])phragellésas(?![\\w])",
+        "phragellōsas"
+      ],
+      [
+        "(?<![\\w’'])emastigosen(?![\\w])",
+        "emastigōsen"
+      ],
+      [
+        "(?<![\\w’'])lithostrétos(?![\\w])",
+        "lithostrōtos"
+      ],
+      [
+        "(?<![\\w’'])thelémati(?![\\w])",
+        "thelēmati"
+      ],
+      [
+        "(?<![\\w’'])kléron(?![\\w])",
+        "klēron"
+      ],
+      [
+        "(?<![\\w’'])chiton(?![\\w])",
+        "chitōn"
+      ],
+      [
+        "(?<![\\w’'])teleiéthé(?![\\w])",
+        "teleiōthē"
+      ],
+      [
+        "(?<![\\w’'])plérod(?![\\w])",
+        "plēroō"
+      ],
+      [
+        "(?<![\\w’'])teleioo(?![\\w])",
+        "teleioō"
+      ],
+      [
+        "(?<![\\w’'])hyssop6(?![\\w])",
+        "hyssōpō"
+      ],
+      [
+        "(?<![\\w’'])teleé(?![\\w])",
+        "teleō"
+      ],
+      [
+        "(?<![\\w’'])doke6(?![\\w])",
+        "dokeō"
+      ],
+      [
+        "(?<![\\w’'])sindon(?![\\w])",
+        "sindōn"
+      ],
+      [
+        "(?<![\\w’'])lachémen(?![\\w])",
+        "lachōmen"
+      ],
+      [
+        "(?<![\\w’'])stratidtai(?![\\w])",
+        "stratiōtai"
+      ],
+      [
+        "(?<![\\w’'])krated(?![\\w])",
+        "krateō"
+      ],
+      [
+        "(?<![\\w’'])emphysao(?![\\w])",
+        "emphysaō"
+      ],
+      [
+        "(?<![\\w’'])prosdpon(?![\\w])",
+        "prosōpon"
+      ],
+      [
+        "(?<![\\w’'])pnoén(?![\\w])",
+        "pnoēn"
+      ],
+      [
+        "(?<![\\w’'])z0és(?![\\w])",
+        "zōēs"
+      ],
+      [
+        "(?<![\\w’'])psychén(?![\\w])",
+        "psychēn"
+      ],
+      [
+        "(?<![\\w’'])emphysésanta(?![\\w])",
+        "emphysēsanta"
+      ],
+      [
+        "(?<![\\w’'])zotikon(?![\\w])",
+        "zōtikon"
+      ],
+      [
+        "(?<![\\w’'])pyrddeis(?![\\w])",
+        "pyrōdeis"
+      ],
+      [
+        "(?<![\\w’'])emphysén(?![\\w])",
+        "emphysōn"
+      ],
+      [
+        "(?<![\\w’'])emphysad(?![\\w])",
+        "emphysaō"
+      ],
+      [
+        "(?<![\\w’'])exetazd(?![\\w])",
+        "exetazō"
+      ],
+      [
+        "(?<![\\w’'])amén(?![\\w])",
+        "amēn"
+      ],
+      [
+        "(?<![\\w’'])ephanerdsen(?![\\w])",
+        "ephanerōsen"
+      ],
+      [
+        "(?<![\\w’'])ependytés(?![\\w])",
+        "ependytēs"
+      ],
+      [
+        "(?<![\\w’'])diezdsato(?![\\w])",
+        "diezōsato"
+      ],
+      [
+        "(?<![\\w’'])péchys(?![\\w])",
+        "pēchys"
+      ],
+      [
+        "(?<![\\w’'])ephaneréthé(?![\\w])",
+        "ephanerōthē"
+      ],
+      [
+        "(?<![\\w’'])ophthé(?![\\w])",
+        "ophthē"
+      ],
+      [
+        "(?<![\\w’'])egeiré(?![\\w])",
+        "egeirō"
+      ],
+      [
+        "(?<![\\w’'])anistémi(?![\\w])",
+        "anistēmi"
+      ],
+      [
+        "(?<![\\w’'])phileé(?![\\w])",
+        "phileō"
+      ],
+      [
+        "(?<![\\w’'])boskd(?![\\w])",
+        "boskō"
+      ],
+      [
+        "(?<![\\w’'])poimaino(?![\\w])",
+        "poimainō"
+      ],
+      [
+        "(?<![\\w’'])gindsko(?![\\w])",
+        "ginōskō"
+      ],
+      [
+        "(?<![\\w’'])neoteros(?![\\w])",
+        "neōteros"
+      ],
+      [
+        "(?<![\\w’'])proias(?![\\w])",
+        "prōias"
+      ],
+      [
+        "(?<![\\w’'])genomenés(?![\\w])",
+        "genomenēs"
+      ],
+      [
+        "(?<![\\w’'])phileo(?![\\w])",
+        "phileō"
+      ],
+      [
+        "(?<![\\w’'])archés(?![\\w])",
+        "archēs"
+      ],
+      [
+        "(?<![\\w’'])elenchO(?![\\w])",
+        "elenchō"
+      ],
+      [
+        "\\(¢\\.g\\.",
+        "(e.g."
+      ],
+      [
+        "\\bTrin\\]",
+        "TrinJ"
+      ],
+      [
+        "\\bYohn\\b",
+        "John"
+      ],
+      [
+        "\\bIQ(?=[SHpM])",
+        "1Q"
+      ],
+      [
+        "\\bcit_,",
+        "cit.,"
+      ],
+      [
+        "\\bou mé\\b",
+        "ou mē"
+      ],
+      [
+        "\\bN1v\\b",
+        "NIV"
+      ],
+      [
+        "\\bNasB\\b",
+        "NASB"
+      ],
+      [
+        "(?<![\\w’'])mé(?= [a-zā-ž])",
+        "mē"
+      ],
+      [
+        "(?<=\\()of\\.(?= )",
+        "cf."
+      ],
+      [
+        "(?<=[;,] )of\\.(?= [A-Z0-9])",
+        "cf."
+      ],
+      [
+        "(?<=\\()ef\\.(?= )",
+        "cf."
+      ],
+      [
+        "(?<= )ef\\.(?= [A-Z0-9])",
+        "cf."
+      ],
+      [
+        "¢f\\.",
+        "cf."
+      ],
+      [
+        "(?<=[(;] )cf(?= [A-Z0-9])|(?<=\\()cf(?= [a-z])",
+        "cf."
+      ],
+      [
+        ", 7(1[89]\\d\\d)\\)",
+        ", ²\\1)"
+      ],
+      [
+        ", 4(1[89]\\d\\d)\\)",
+        ", ⁴\\1)"
+      ],
+      [
+        "\\bhora\\b",
+        "hōra"
+      ],
+      [
+        "\\bego eimi\\b",
+        "egō eimi"
+      ],
+      [
+        "\\bThising\\b",
+        "Thüsing"
+      ],
+      [
+        "‘Lor[vpn]’",
+        "‘LORD’"
+      ]
+    ],
+    "ocr_lang": "eng",
+    "table_pages": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "table_split": 0.29,
+    "num_heads": true,
+    "outline_pages": [
+      109,
+      110,
+      111,
+      112,
+      113
+    ]
+  },
+  "morris": {
+    "slug": "leon-morris_the-gospel-according-to-john",
+    "cache": "leon-morris_the-gospel-according-to-john",
+    "pdf": "book-copies/gospelaccordingt00morr_4_1.pdf",
+    "title": "The Gospel According to John",
+    "author": "Leon Morris",
+    "author_sort": "Morris, Leon",
+    "ocr_all": true,
+    "note_zone": true,
+    "autocorrect": false,
+    "vision_marks": true,
+    "raised_marks": true,
+    "access": "school",
+    "source": "school",
+    "rights": "© 1995 Wm. B. Eerdmans Publishing Co., provided by Yorkville Christian School for its students and staff",
+    "isbn": "0-8028-2504-4",
+    "edition": "Revised edition (NICNT), 1995",
+    "heads": [],
+    "drop": [
+      [
+        1,
+        15
+      ],
+      [
+        813,
+        854
+      ]
+    ],
+    "chapters": [
+      {
+        "title": "Preface to the First Edition",
+        "page": 16,
+        "match": "PREFACE TO THE FIRST"
+      },
+      {
+        "title": "Preface to the Revised Edition",
+        "page": 18,
+        "match": "PREFACE TO THE REVISED"
+      },
+      {
+        "title": "Principal Abbreviations",
+        "page": 19,
+        "match": "PRINCIPAL ABBREVIATIONS"
+      },
+      {
+        "title": "Authorship",
+        "page": 30,
+        "match": "AUTHORSHIP"
+      },
+      {
+        "title": "Date",
+        "page": 50,
+        "match": "^I[Il1]\\.\\s+DATE|^DATE$"
+      },
+      {
+        "title": "Purpose",
+        "page": 56,
+        "match": "PURPOSE"
+      },
+      {
+        "title": "History and Theology",
+        "page": 61,
+        "match": "HISTORY AND THEOLOGY"
+      },
+      {
+        "title": "The Relationship of the Fourth Gospel to the Synoptics",
+        "page": 69,
+        "match": "RELATIONSHIP OF THE FOURTH"
+      },
+      {
+        "title": "Dislocations",
+        "page": 72,
+        "match": "DISLOCATIONS"
+      },
+      {
+        "title": "Sources",
+        "page": 74,
+        "match": "SOURCES"
+      },
+      {
+        "title": "Place of Composition",
+        "page": 80,
+        "match": "PLACE OF COMPOSITION"
+      },
+      {
+        "title": "Background",
+        "page": 81,
+        "match": "BACKGROUND"
+      },
+      {
+        "title": "The Prologue (1:1–18)",
+        "page": 89,
+        "match": "THE PROLOGUE \\(?1:1"
+      },
+      {
+        "title": "John 1:19–51",
+        "page": 140,
+        "match": "BEGINNING OF JESUS"
+      },
+      {
+        "title": "John 2",
+        "page": 179,
+        "match": "THE FIRST SIGN"
+      },
+      {
+        "title": "John 3",
+        "page": 210,
+        "match": "THE FIRST DISCOURSE"
+      },
+      {
+        "title": "John 4",
+        "page": 248,
+        "match": "THE SECOND DISCOURSE"
+      },
+      {
+        "title": "John 5",
+        "page": 288,
+        "match": "THE THIRD SIGN|HEALING THE LAME|LAME MAN"
+      },
+      {
+        "title": "John 6",
+        "page": 325,
+        "match": "THE FOURTH SIGN"
+      },
+      {
+        "title": "John 7",
+        "page": 372,
+        "match": "FIFTH DISCOURSE"
+      },
+      {
+        "title": "John 8",
+        "page": 410,
+        "match": "SIXTH DISCOURSE"
+      },
+      {
+        "title": "John 9",
+        "page": 446,
+        "match": "MAN BORN BLIND"
+      },
+      {
+        "title": "John 10",
+        "page": 467,
+        "match": "GOOD SHEPHERD \\(10"
+      },
+      {
+        "title": "John 11",
+        "page": 498,
+        "match": "LAZARUS \\(11|SEVENTH SIGN"
+      },
+      {
+        "title": "John 12",
+        "page": 533,
+        "match": "CLOSE OF JESUS"
+      },
+      {
+        "title": "John 13",
+        "page": 568,
+        "match": "THE FAREWELL DISCOURSES"
+      },
+      {
+        "title": "John 14",
+        "page": 591,
+        "match": "Christ, The Way"
+      },
+      {
+        "title": "John 15",
+        "page": 618,
+        "match": "THE TRUE VINE"
+      },
+      {
+        "title": "John 16",
+        "page": 640,
+        "match": "Warning of Coming Persecutions"
+      },
+      {
+        "title": "John 17",
+        "page": 660,
+        "match": "HIGH-PRIESTLY PRAYER"
+      },
+      {
+        "title": "John 18",
+        "page": 680,
+        "match": "THE CRUCIFIXION"
+      },
+      {
+        "title": "John 19",
+        "page": 724,
+        "match": "Behold, the Man"
+      },
+      {
+        "title": "John 20",
+        "page": 757,
+        "match": "THE RESURRECTION \\(20"
+      },
+      {
+        "title": "John 21",
+        "page": 783,
+        "match": "EPILOGUE"
+      },
+      {
+        "title": "Appendix: The Woman Taken in Adultery (7:53–8:11)",
+        "page": 804,
+        "match": "APPENDIX"
+      }
+    ],
+    "top_heads": [
+      "^[1Il]?[\\dIl]{0,2}:[\\dIl]{1,2}",
+      "^THE\\s+Gos\\w*\\s+ACCORDING\\s+TO\\s+JOHN",
+      "^[A-Z][A-Z ,’'—\\-]{2,60}$",
+      "^\\d{1,3}$"
+    ],
+    "drop_lines": [
+      "INTRODUCTION",
+      "TEXT, EXPOSITION AND NOTES"
+    ],
+    "ocr_patterns": [
+      [
+        "\\bLorp\\b",
+        "LORD"
+      ],
+      [
+        "\\bN[Ii][Vv]\\b",
+        "NIV"
+      ],
+      [
+        "\\bwv\\.",
+        "vv."
+      ],
+      [
+        "\\bLxx\\b",
+        "LXX"
+      ],
+      [
+        "\\bNrsv\\b",
+        "NRSV"
+      ],
+      [
+        "\\bRsv\\b",
+        "RSV"
+      ],
+      [
+        "\\bAv\\b",
+        "AV"
+      ],
+      [
+        "\\bReb\\b",
+        "REB"
+      ],
+      [
+        "\\bGnb\\b",
+        "GNB"
+      ]
+    ],
+    "numbered_notes": 34,
+    "num_heads": true,
+    "table_pages": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "table_split": 0.27
+  }
+}

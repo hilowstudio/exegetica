@@ -49,6 +49,36 @@ fill in stays a blank: write it as ________.
 - A blank page, or one with only a picture: output [Figure: ...] or nothing.
 Output only the transcription."""
 
+COMMENTARY = """You transcribe one scanned page of a nineteenth-century Bible commentary into Markdown, exactly as \
+printed, for a reading app.
+
+- Transcribe every word of the page's printed text in reading order. Where the page is set in two columns, \
+transcribe the whole left column, then the whole right column.
+- Leave out running heads (the book, chapter or section title and the verse range at the top edge), page numbers, \
+printer's signature marks at the foot, library stamps, bookplates, shelf marks and digitization notices.
+- The Bible text: when the page prints a passage of Scripture as text to be commented on (verse-numbered Bible \
+text, often in larger type or two columns at the top of the page or under a heading like "JOHN I. 1—5."), put that \
+passage between a line <scripture> and a line </scripture>, with its marginal references. Quotations of Scripture \
+inside the commentary are ordinary text, not a <scripture> block.
+- Greek and Hebrew: write them in Unicode exactly as printed, with every accent, breathing and vowel point. Latin, \
+French and German exactly as printed. Manuscript sigla as printed (ℵ, A, B*, D², Vulg., T. R.).
+- Italics as *italic*. Bold or spaced bold type as **bold**. Small capitals in ordinary capitalization.
+- Headings: ## for a chapter or major division title (e.g. "CHAPTER III.", "INTRODUCTION"), ### for a smaller \
+heading (a section title, a passage heading like "JOHN XVI. 8—15.", "NOTES", "ADDITIONAL NOTE"). Keep the book's \
+own numbering and wording.
+- Paragraphs: one blank line between paragraphs. Join words hyphenated at line ends (salva-tion becomes salvation) \
+but keep hyphens that belong to the word (mercy-seat). If the page's very last word is broken off by a hyphen, end \
+the transcription with it as printed, hyphen included.
+- Footnotes: write each footnote mark in the text as [^1], [^2], ... numbered in order on this page, whatever \
+symbol the book prints (*, †, ¹, a). Write the footnotes themselves at the end, each on its own line as \
+[^1]: note text. A footnote continued from the previous page, with no mark on this page, goes at the end as \
+[^cont]: note text.
+- Never add explanations or anything the page does not print. If a spot is unreadable, write [illegible].
+- A blank page, or one with only a picture or ornament: output nothing.
+Output only the transcription."""
+
+STYLES = {"textbook": SYSTEM, "commentary": COMMENTARY}
+
 DECLINED = re.compile(r"^(I can[’']t|I cannot|I'm not able|I am not able|Sorry)", re.I)
 
 
@@ -65,7 +95,12 @@ def main():
     ap.add_argument("slug"); ap.add_argument("--first", type=int, default=1); ap.add_argument("--last", type=int)
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--pdf", help="the PDF, when extract has not run yet")
+    ap.add_argument("--style", choices=sorted(STYLES), default="textbook",
+                    help="textbook (Markdown with TeX) or commentary (a 19th-century commentary: Greek, notes, "
+                         "<scripture> blocks)")
+    ap.add_argument("--pages", help="only these pages, e.g. 20,160,300 (a pilot)")
     a = ap.parse_args()
+    system = STYLES[a.style]
     import anthropic
     import pypdfium2 as pdfium
     _key()
@@ -76,7 +111,8 @@ def main():
     pdf_path = a.pdf or json.loads((d / "extract.json").read_text(encoding="utf-8"))["pdf"]
     n_pages = len(pdfium.PdfDocument(pdf_path))
     last = min(a.last or n_pages, n_pages)
-    todo = [n for n in range(a.first, last + 1)
+    wanted = [int(x) for x in a.pages.split(",")] if a.pages else range(a.first, last + 1)
+    todo = [n for n in wanted
             if not (out / f"p{n:04d}.md").exists() and not (out / f"p{n:04d}.blocked").exists()]
     print(f"{a.slug}: {len(todo)} pages to read ({a.first}-{last}), {MODEL}", flush=True)
     lock = threading.Lock()
@@ -97,7 +133,7 @@ def main():
         b64 = base64.standard_b64encode(buf.getvalue()).decode("ascii")
         try:
             r = client.messages.create(
-                model=MODEL, max_tokens=16000, system=SYSTEM, output_config={"effort": "low"},
+                model=MODEL, max_tokens=16000, system=system, output_config={"effort": "low"},
                 messages=[{"role": "user", "content": [
                     {"type": "image", "source": {"type": "base64", "media_type": "image/jpeg", "data": b64}},
                     {"type": "text", "text": "Transcribe this page."}]}])
