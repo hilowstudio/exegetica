@@ -28,7 +28,7 @@ Added the same day, at his request: **removing many things at once.**
 - **0028.** A transcript made for a teacher's episode can be shown to the class the episode is placed for.
 - **0002.** Nothing about what a student listened to is kept on the server or given to a model.
 
-**Enforced in.** Built and deployed 2026-11-12 (release v154). Remove, added the same day, is not yet deployed.
+**Enforced in.** Built and deployed 2026-11-12 (release v154). Remove, added the same day, was deployed in release v155.
 - **Episodes.** `library.search_episodes` (`/api/library/podcasts?kind=episodes`), and the Shows and Episodes switch in `templates/library.html` and `static/js/library.js`. `library_store._dedup_key` keys an episode as its feed and guid, and `episode_meta` keeps its audio address on the server alone.
 - **Moments, transcripts and units.** `excerpts._item`, `episode_transcript` (one transcript serves every shelf item holding the feed), `moments`, `episode_list`, `fetch_transcript` and `save_excerpt`. The Gemini job falls back to the kept audio. `transcript_for_draft` and `prep_draft._library_item` give a unit a single episode's transcript.
 - **Class shelves.** `shelves.place`, `_episode_for` (an episode, never a whole show), `_key_of`, `_public_ref` (no audio address to a browser) and `class_shelves`. The tile is in `static/js/shelves.js` (`podTile`).
