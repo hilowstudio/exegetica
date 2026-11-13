@@ -1,17 +1,19 @@
 """Transcripts for the Living Library's videos and podcast episodes (decisions 0026 and 0028): first from free,
 published sources (a feed's own <podcast:transcript> files, and YouTube's caption tracks when it hands them
-over), then, when a teacher asks, written by Gemini watching a public YouTube video or listening to an episode.
-The design follows Podcatch's (a ranked choice of timed formats, segments in seconds, [M:SS] stamps that
-become [H:MM:SS] past the hour), with two of its faults fixed: caption times are already seconds, and caption
-text is HTML-unescaped. Public broadcast transcripts may be stored and shared (docs/sources/living-library-plan.md).
+over), then, when a teacher asks, written by a service: Deepgram for a podcast episode, Gemini watching a public
+YouTube video. The design follows Podcatch's (a ranked choice of timed formats, segments in seconds, [M:SS]
+stamps that become [H:MM:SS] past the hour; Deepgram with its settings for audio), with two of its faults fixed:
+caption times are already seconds, and caption text is HTML-unescaped. Public broadcast transcripts may be stored
+and shared (docs/sources/living-library-plan.md).
 
 YouTube's caption links now need a token only its own player can make, so they come back empty for most
-videos; the maker chose Gemini for those (2026-11-09). Gemini is told to transcribe, never to summarize.
+videos; the maker chose Gemini for those (2026-11-09) and Gemini 3.8 Flash after a side-by-side test (2026-11-13).
+Gemini is told to transcribe, never to summarize. Podcasts always go to Deepgram (the maker, 2026-11-13): one pass of Gemini over
+an hour of audio came back empty, cut short, looping or with its clock misread.
 
 A segment is {"start": float seconds, "end": float seconds, "text": str, "speaker": int | None}."""
 from __future__ import annotations
 
-import asyncio
 import html
 import json
 import os
@@ -249,9 +251,18 @@ async def youtube(video_id: str) -> tuple[list[dict], str] | None:
     return (segs, kind) if len(segs) >= 5 else None
 
 
-# ------------------------------------------------------------------------------- Gemini (decision 0028)
-MODEL = os.environ.get("TRANSCRIBE_MODEL", "gemini-3.5-flash-lite")
-PRICES = {"gemini-3.5-flash-lite": (0.30, 2.50), "gemini-3.8-flash": (0.75, 3.75), "gemini-3.6-flash": (0.75, 3.75)}
+# ------------------------------------------------------------------------- Gemini, for YouTube (decision 0028)
+# Gemini 3.8 Flash (the maker, 2026-11-13). On a 43-minute video it and 3.1 Pro Preview both ran the full length
+# with times a second apart; Flash keeps the speaker's exact words at a fifth of Pro's price. 3.5 Flash-Lite broke
+# off unreadably on the long video, 2.5 Pro is closed to new users, and 3.5 Transcribe is audio-only and refuses a
+# YouTube link, the one thing Exegetica hands Gemini, since the video itself is never downloaded.
+MODEL = os.environ.get("TRANSCRIBE_MODEL", "gemini-3.8-flash")
+# Dollars per million tokens: (input, output, input past LONG_TOKENS, output past LONG_TOKENS), as reported
+# for each model's paid tier. An hour of video at low resolution is about 330,000 tokens. 3.8 Flash's rate is
+# reported as introductory through 2026-12-31, then $1.50 and $7.50.
+PRICES = {"gemini-3.8-flash": (0.75, 3.75, 0.75, 3.75), "gemini-3.1-pro-preview": (2.0, 12.0, 4.0, 18.0),
+          "gemini-3.5-flash-lite": (0.30, 2.50, 0.30, 2.50)}
+LONG_TOKENS = 200_000
 MAX_SECONDS = 2 * 3600           # the longest video or episode Exegetica will transcribe
 MAX_AUDIO_BYTES = 300 * 1024 * 1024
 PROMPT = (
@@ -289,7 +300,9 @@ def _segments_from_model(data) -> list[dict]:
 
 
 def cost(usage: dict, model: str = MODEL) -> float:
-    pin, pout = PRICES.get(model, (0.75, 3.75))
+    pin, pout, lin, lout = PRICES.get(model, PRICES["gemini-3.1-pro-preview"])   # an unknown model: the dearest
+    if usage.get("in", 0) > LONG_TOKENS:
+        pin, pout = lin, lout
     return usage.get("in", 0) * pin / 1e6 + usage.get("out", 0) * pout / 1e6
 
 
@@ -352,52 +365,84 @@ def _seconds(duration: str | None) -> int | None:
     return int(s) if s is not None else None
 
 
-async def gemini_audio(audio_url: str, duration: str | None, model: str = MODEL) -> tuple[list[dict], str, dict]:
-    """Gemini listens to a podcast episode: the audio is fetched to a temporary file, uploaded to Gemini's file
-    store for this one request, and deleted from both places after. (segments, source, usage)."""
+
+
+# ------------------------------------------------------------------------- Deepgram, for podcasts (decision 0028)
+# Podcatch's settings (podcatch/inngest/functions/process-episode.ts). Left in Deepgram's model-improvement
+# program, which may keep the audio to train on: it is always a public podcast, never a recording of a teacher or
+# a student (the maker, 2026-11-13).
+DEEPGRAM_URL = "https://api.deepgram.com/v1/listen"
+DEEPGRAM_MODEL = "nova-2"
+DEEPGRAM_PARAMS = {"model": DEEPGRAM_MODEL, "smart_format": "true", "punctuate": "true", "paragraphs": "true",
+                   "diarize": "true"}
+DEEPGRAM_USD_PER_MIN = 0.0043    # pay-as-you-go recorded audio, as reported; an estimate for /ops and the caps
+
+
+def deepgram_cost(seconds: float) -> float:
+    return max(0.0, seconds) / 60 * DEEPGRAM_USD_PER_MIN
+
+
+def _segments_from_deepgram(result: dict) -> list[dict]:
+    """Each sentence a segment, with Deepgram's own times and its paragraph's speaker."""
+    alts = ((((result or {}).get("results") or {}).get("channels") or [{}])[0].get("alternatives") or [{}])
+    out = []
+    for p in ((alts[0].get("paragraphs") or {}).get("paragraphs") or []):
+        for s in p.get("sentences") or []:
+            words = _clean(str(s.get("text") or ""))
+            if words and s.get("start") is not None:
+                out.append({"start": float(s["start"]), "end": float(s.get("end") or s["start"]), "text": words,
+                            "speaker": p.get("speaker") if isinstance(p.get("speaker"), int) else None})
+    return out
+
+
+def _refused(body: str) -> bool:
+    return any(k in body for k in ("403", "REMOTE_CONTENT_ERROR", "Forbidden"))
+
+
+async def deepgram_audio(audio_url: str, duration: str | None) -> tuple[list[dict], str, dict]:
+    """Deepgram transcribes a podcast episode from its audio link. When the show's host refuses Deepgram, the audio
+    is fetched here to a temporary file and sent from it, as Podcatch does. (segments, source, {"seconds"})."""
     secs = _seconds(duration)
     if secs and secs > MAX_SECONDS:
         raise TranscribeError("This episode is longer than two hours, the most Exegetica transcribes.")
-    from google import genai
-    from google.genai import types
-    fd, path = tempfile.mkstemp(suffix=".audio")
-    os.close(fd)
-    uploaded = None
-    client = genai.Client()
-    try:
-        mime = "audio/mpeg"
-        async with httpx.AsyncClient(timeout=httpx.Timeout(60.0, read=120.0), follow_redirects=True) as http:
-            async with http.stream("GET", audio_url, headers=_UA) as r:
-                if r.status_code != 200:
-                    raise TranscribeError("The episode's audio didn't download. Try again later.")
-                mime = (r.headers.get("content-type") or mime).split(";")[0].strip()
-                if not mime.startswith("audio/"):
-                    mime = "audio/mpeg"
-                size = 0
-                with open(path, "wb") as f:
-                    async for chunk in r.aiter_bytes():
-                        size += len(chunk)
-                        if size > MAX_AUDIO_BYTES:
-                            raise TranscribeError("This episode's audio is too large to transcribe.")
-                        f.write(chunk)
-        uploaded = await client.aio.files.upload(file=path, config=types.UploadFileConfig(mime_type=mime))
-        for _ in range(60):                          # the file store processes audio before it can be used
-            if str(uploaded.state).endswith("ACTIVE"):
-                break
-            if str(uploaded.state).endswith("FAILED"):
-                raise TranscribeError("Gemini couldn't read this episode's audio.")
-            await asyncio.sleep(3)
-            uploaded = await client.aio.files.get(name=uploaded.name)
-        parts = [types.Part(file_data=types.FileData(file_uri=uploaded.uri, mime_type=mime)), types.Part(text=PROMPT)]
-        segs, usage = await _generate(parts, model)
-        return segs, f"transcribed by Gemini ({model})", usage
-    finally:
-        try:
-            os.remove(path)
-        except OSError:
-            pass
-        if uploaded is not None:
+    key = os.environ.get("DEEPGRAM_API_KEY")
+    if not key:
+        raise TranscribeError("Transcripts can't be made on this server yet.")
+    head = {"Authorization": f"Token {key}"}
+    async with httpx.AsyncClient(timeout=httpx.Timeout(60.0, read=900.0), follow_redirects=True) as http:
+        r = await http.post(DEEPGRAM_URL, params=DEEPGRAM_PARAMS, headers=head, json={"url": audio_url})
+        if r.status_code != 200 and _refused(r.text[:2000]):
+            fd, path = tempfile.mkstemp(suffix=".audio")
+            os.close(fd)
             try:
-                await client.aio.files.delete(name=uploaded.name)
-            except Exception:  # noqa: BLE001  (Gemini deletes stored files after 48 hours regardless)
-                pass
+                mime, size = "audio/mpeg", 0
+                async with http.stream("GET", audio_url, headers=_UA) as a:
+                    if a.status_code != 200:
+                        raise TranscribeError("The episode's audio didn't download. Try again later.")
+                    mime = (a.headers.get("content-type") or mime).split(";")[0].strip()
+                    with open(path, "wb") as f:
+                        async for chunk in a.aiter_bytes():
+                            size += len(chunk)
+                            if size > MAX_AUDIO_BYTES:
+                                raise TranscribeError("This episode's audio is too large to transcribe.")
+                            f.write(chunk)
+
+                async def body():
+                    with open(path, "rb") as f:
+                        while chunk := f.read(1 << 20):
+                            yield chunk
+                r = await http.post(DEEPGRAM_URL, params=DEEPGRAM_PARAMS, content=body(),
+                                    headers={**head, "Content-Type": mime if mime.startswith("audio/") else "audio/mpeg"})
+            finally:
+                try:
+                    os.remove(path)
+                except OSError:
+                    pass
+    if r.status_code != 200:
+        raise RuntimeError(f"Deepgram {r.status_code}: {r.text[:300]}")
+    data = r.json()
+    segs = _segments_from_deepgram(data)
+    if len(segs) < 2:
+        raise TranscribeError("Deepgram returned no usable transcript for this episode.")
+    seconds = float(((data.get("metadata") or {}).get("duration")) or segs[-1]["end"])
+    return segs, f"transcribed by Deepgram ({DEEPGRAM_MODEL})", {"seconds": seconds}

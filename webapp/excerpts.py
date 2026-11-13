@@ -21,8 +21,9 @@ NO_TRANSCRIPT = {
     "video": "This video has no transcript yet.",
     "podcast": "This show publishes no transcript for this episode.",
 }
-MAKE_NOTE = ("Gemini, Google's AI model, can write one in a minute or two. It is kept for every teacher who adds "
+MAKE_NOTE = ("{who} can write one in a minute or two. It is kept for every teacher who adds "
              "this {kind}. Until then you can save moments by their times, with a note or the words you hear.")
+MAKER = {"video": "Gemini, Google's AI model,", "podcast": "Deepgram, a speech-to-text service,"}   # decision 0028
 FAILED = "The transcript didn't finish. Try again later."
 STALE_MINUTES = 15       # a job running longer than this is taken to have died, and may be started again
 FEED_ALL = 5000          # looking an episode up by guid reads the whole feed, not only the newest
@@ -162,7 +163,8 @@ async def moments(request):
     return JSONResponse({"kind": item["kind"], "transcript": t, "excerpts": [
         _plain(r) | {"link": link_at(item, r["start_s"])} for r in rows],
         "missing": None if t else NO_TRANSCRIPT[item["kind"]], "job": job,
-        "make": None if t else MAKE_NOTE.format(kind="video" if item["kind"] == "video" else "episode")})
+        "make": None if t else MAKE_NOTE.format(who=MAKER["video" if item["kind"] == "video" else "podcast"],
+                                                kind="video" if item["kind"] == "video" else "episode")})
 
 
 async def episode_list(request):
@@ -232,7 +234,7 @@ async def fetch_transcript(request):
     return JSONResponse({"transcript": {"segments": segs, "source": source}})
 
 
-# ------------------------------------------------------------------------- Gemini transcription jobs (0028)
+# ------------------------------------------------------------------- transcription jobs: Gemini, Deepgram (0028)
 async def _job(key: str | None) -> dict | None:
     if not key:
         return None
@@ -244,7 +246,7 @@ async def _job(key: str | None) -> dict | None:
 
 
 async def _start(uid: uuid.UUID, item: dict, key: str, episode: str | None) -> dict:
-    """Start Gemini on a transcript, unless one is already being made or the teacher is at today's limit."""
+    """Start a transcript, unless one is already being made or the teacher is at today's limit."""
     job = await _job(key)
     if job and job["status"] == "running":
         return {"transcript": None, "job": job}
@@ -273,12 +275,16 @@ async def _start(uid: uuid.UUID, item: dict, key: str, episode: str | None) -> d
 
 async def run(key: str, kind: str, user_id: str, title: str | None = None, video_id: str | None = None,
               feed_url: str | None = None, guid: str | None = None, audio: str | None = None) -> dict:
-    """Write one transcript with Gemini and keep it; record its cost in /ops and against the daily caps. Never
-    raises: a failure is kept on the job row as a plain sentence, so a retry can't charge twice."""
-    t0, stats = time.monotonic(), {"model_req": transcripts.MODEL}
+    """Write one transcript and keep it: Gemini for a video, Deepgram for a podcast episode (decision 0028). Record
+    its cost in /ops and against the daily caps. Never raises: a failure is kept on the job row as a plain
+    sentence, so a retry can't charge twice."""
+    t0 = time.monotonic()
+    stats = {"model_req": transcripts.MODEL if kind == "video" else f"deepgram-{transcripts.DEEPGRAM_MODEL}"}
     try:
         if kind == "video":
             segs, source, used = await transcripts.gemini_youtube(video_id)
+            usd = transcripts.cost(used)
+            stats.update(input=used["in"], output=used["out"])
         else:
             ep = next((e for e in await transcripts.episodes(feed_url, limit=FEED_ALL) if e["guid"] == guid), None)
             if (not ep or not ep["audio"]) and audio:
@@ -286,9 +292,9 @@ async def run(key: str, kind: str, user_id: str, title: str | None = None, video
             if not ep or not ep["audio"]:
                 raise transcripts.TranscribeError("That episode isn't in the show's feed any more.")
             title = ep["title"]
-            segs, source, used = await transcripts.gemini_audio(ep["audio"], ep["duration"])
-        usd = transcripts.cost(used)
-        stats.update(outcome="complete", input=used["in"], output=used["out"], est_usd=usd)
+            segs, source, used = await transcripts.deepgram_audio(ep["audio"], ep["duration"])
+            usd = transcripts.deepgram_cost(used["seconds"])
+        stats.update(outcome="complete", est_usd=usd)
         await db.execute("""insert into library_transcripts (key, title, segments, source) values ($1, $2, $3, $4)
                             on conflict (key) do update set segments = excluded.segments, source = excluded.source,
                                                             fetched_at = now()""", key, title, segs, source)

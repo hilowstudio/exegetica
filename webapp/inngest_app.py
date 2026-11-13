@@ -179,7 +179,7 @@ async def studio_prices_fn(ctx) -> dict:
     retries=0,     # excerpts.run keeps a failure on its job row; a retry could pay for the same transcript twice
 )
 async def transcribe_fn(ctx) -> dict:
-    """Gemini writes a video's or episode's transcript for the Living Library (decision 0028)."""
+    """A video's transcript (Gemini) or an episode's (Deepgram) for the Living Library (decision 0028)."""
     from webapp import excerpts
     data = dict(ctx.event.data or {})
 

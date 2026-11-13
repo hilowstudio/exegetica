@@ -183,3 +183,93 @@ def test_a_capped_teacher_or_a_running_job_starts_nothing(monkeypatch):
 def test_the_transcription_job_is_registered_without_retries():
     from webapp import inngest_app
     assert inngest_app.transcribe_fn in inngest_app.functions
+
+
+# ------------------------------------------------------------------ Deepgram for episodes; Gemini Pro for videos (0028, 2026-11-13)
+def test_gemini_3_8_flash_watches_videos_and_a_pro_models_long_inputs_cost_more():
+    assert transcripts.MODEL == "gemini-3.8-flash"
+    assert transcripts.cost({"in": 330_000, "out": 20_000}) == pytest.approx(0.2475 + 0.075)   # about an hour of video
+    pro = "gemini-3.1-pro-preview"
+    assert transcripts.cost({"in": 100_000, "out": 10_000}, pro) == pytest.approx(0.20 + 0.12)
+    assert transcripts.cost({"in": 330_000, "out": 20_000}, pro) == pytest.approx(1.32 + 0.36)
+
+
+DG = {"metadata": {"duration": 125.5}, "results": {"channels": [{"alternatives": [{"transcript": "…", "paragraphs": {"paragraphs": [
+    {"speaker": 0, "sentences": [{"text": "In the beginning was the Word.", "start": 0.4, "end": 2.9},
+                                 {"text": "  ", "start": 3.0, "end": 3.1}]},
+    {"speaker": 1, "sentences": [{"text": "And the Word was with God.", "start": 3.2, "end": 5.0}]}]}}]}]}}
+
+
+def test_deepgram_sentences_become_timed_segments_with_speakers():
+    assert transcripts._segments_from_deepgram(DG) == [
+        {"start": 0.4, "end": 2.9, "text": "In the beginning was the Word.", "speaker": 0},
+        {"start": 3.2, "end": 5.0, "text": "And the Word was with God.", "speaker": 1}]
+    assert transcripts._segments_from_deepgram({}) == []
+    assert transcripts.deepgram_cost(600) == pytest.approx(10 * transcripts.DEEPGRAM_USD_PER_MIN)
+
+
+def test_deepgram_is_sent_the_link_and_the_audio_when_the_host_refuses(monkeypatch):
+    import httpx
+    seen = []
+
+    def handler(req: httpx.Request):
+        seen.append((req.method, req.url.host, dict(req.url.params), req.headers.get("content-type")))
+        if req.url.host == "api.deepgram.com" and req.headers.get("content-type") == "application/json":
+            return httpx.Response(400, text='{"err_code":"REMOTE_CONTENT_ERROR","err_msg":"403 Forbidden"}')
+        if req.url.host == "api.deepgram.com":
+            assert req.read() == b"ID3audio"
+            return httpx.Response(200, json=DG)
+        return httpx.Response(200, content=b"ID3audio", headers={"content-type": "audio/mpeg"})
+    real = httpx.AsyncClient
+    monkeypatch.setattr(httpx, "AsyncClient", lambda **kw: real(transport=httpx.MockTransport(handler), **kw))
+    monkeypatch.setenv("DEEPGRAM_API_KEY", "test-key")
+    segs, source, used = asyncio.run(transcripts.deepgram_audio("https://cdn.show.test/ep1.mp3", "10:00"))
+    assert [s["text"] for s in segs][0] == "In the beginning was the Word." and used == {"seconds": 125.5}
+    assert source == "transcribed by Deepgram (nova-2)"
+    assert [h for _, h, _, _ in seen] == ["api.deepgram.com", "cdn.show.test", "api.deepgram.com"]
+    for _, host, params, _ in seen:
+        if host == "api.deepgram.com":
+            assert "mip_opt_out" not in params and params["model"] == "nova-2" and params["diarize"] == "true"
+    with pytest.raises(transcripts.TranscribeError, match="two hours"):
+        asyncio.run(transcripts.deepgram_audio("https://cdn.show.test/ep1.mp3", "2:30:00"))
+
+
+def test_an_episode_goes_to_deepgram_and_never_to_gemini(monkeypatch):
+    fake = _DB()
+    rows, counted = [], []
+    monkeypatch.setattr(excerpts.db, "execute", fake.execute)
+    monkeypatch.setattr(metrics, "record", lambda r: rows.append(r))
+
+    async def add(uid, usd):
+        counted.append(usd)
+    monkeypatch.setattr(usage, "transcribe_add", add)
+
+    async def episodes(feed, limit=60):
+        return [{"guid": "g1", "title": "Episode 1", "audio": "https://cdn.show.test/ep1.mp3", "duration": "41:20"}]
+
+    async def deepgram(audio, duration):
+        assert audio.endswith("ep1.mp3") and duration == "41:20"
+        return [{"start": 0, "end": 3, "text": "a", "speaker": 0}, {"start": 3, "end": 6, "text": "b", "speaker": 0}], \
+            "transcribed by Deepgram (nova-2)", {"seconds": 2480}
+
+    async def no_gemini(*a, **k):
+        raise AssertionError("an episode never goes to Gemini")
+    monkeypatch.setattr(transcripts, "episodes", episodes)
+    monkeypatch.setattr(transcripts, "deepgram_audio", deepgram)
+    monkeypatch.setattr(transcripts, "gemini_youtube", no_gemini)
+    out = asyncio.run(excerpts.run(key="ep:x:g1", kind="podcast", user_id="u1", feed_url="https://feed.test", guid="g1"))
+    assert out["status"] == "done" and fake.sql[0][1][1] == "Episode 1"
+    assert rows[0]["outcome"] == "complete" and counted == [pytest.approx(transcripts.deepgram_cost(2480))]
+    assert not hasattr(transcripts, "gemini_audio")
+
+
+def test_the_daily_transcript_limits_are_off_while_building_and_work_when_turned_back_on(monkeypatch):
+    """The maker, 2026-11-13: no ceiling while the courses are built; the switch turns it back on."""
+    async def over(sql, *a):
+        return [{"who": usage.TRANSCRIBE_ALL, "turns": 99, "est_usd": 50.0}]
+    monkeypatch.setattr(usage.db, "ready", lambda: True)
+    monkeypatch.setattr(usage.db, "fetch", over)
+    assert usage.TRANSCRIBE_CAPS_ON is False
+    assert asyncio.run(usage.transcribe_check("u1")) is None
+    monkeypatch.setattr(usage, "TRANSCRIBE_CAPS_ON", True)
+    assert asyncio.run(usage.transcribe_check("u1")) == usage.TRANSCRIBE_ALL_CAPPED

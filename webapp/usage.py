@@ -48,7 +48,10 @@ PREP_CAPPED = "You've reached today's Prep Room limit. It opens again tomorrow, 
 PREP_ALL_CAPPED = ("The Prep Room has reached today's limit for the school. It opens again tomorrow, and everything "
                    "you've made is saved.")
 PREP_ALL = "prep"
-# Transcripts Gemini writes for the Living Library (decision 0028), per teacher and for everyone, per school day.
+# Transcripts made for the Living Library (decision 0028: Gemini for videos, Deepgram for episodes), per teacher
+# and for everyone, per school day. OFF while the courses are being built (the maker, 2026-11-13: "Remove the
+# ceiling while we are building. We will turn it back on later."); spending is still counted and shown on /ops.
+TRANSCRIBE_CAPS_ON = False
 TRANSCRIBE_RUNS = 10
 TRANSCRIBE_ALL_USD = 5.00
 TRANSCRIBE_CAPPED = "You've made today's limit of transcripts. You can make more tomorrow."
@@ -201,7 +204,7 @@ def _tx_key(user_id: str, day: dt.date) -> str:
 
 async def transcribe_check(user_id: str) -> str | None:
     """None if this teacher may ask for a transcript now, else the fixed text to show. Fails open."""
-    if not db.ready() or "usage_daily" in metrics.missing_tables:
+    if not TRANSCRIBE_CAPS_ON or not db.ready() or "usage_daily" in metrics.missing_tables:
         return None
     day = today()
     mine = _tx_key(user_id, day)

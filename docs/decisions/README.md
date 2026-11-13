@@ -30,7 +30,7 @@ Each file records one decision about how Exegetica behaves: what was decided, wh
 | [0024](0024-students-on-nemotron.md) | Chat replies come from Nemotron 3.5 Super on DeepInfra, and from GLM-5.3-Flash when Nemotron can't be reached |
 | [0026](0026-prep-room-units.md) | The Prep Room keeps a teacher's work in units, with every version |
 | [0027](0027-prep-room-caps.md) | The Prep Room has daily caps, per teacher and for all teachers together |
-| [0028](0028-gemini-transcripts.md) | Gemini writes transcripts for the Living Library when a teacher asks |
+| [0028](0028-gemini-transcripts.md) | Transcripts for the Living Library when a teacher asks: Deepgram for podcast episodes, Gemini for videos |
 | [0029](0029-one-living-library.md) | One Living Library for everyone, with the Reading Room inside it and a shelf for each class the Prep Room can send to |
 | [0030](0030-google-classroom.md) | Teachers share to Google Classroom by link, through Classroom's own window |
 | [0031](0031-podcast-episodes-and-bulk-save.md) | Podcast episodes are found and kept on their own, students listen inside Exegetica, and teachers save many things at once |

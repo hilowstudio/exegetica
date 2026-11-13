@@ -48,8 +48,9 @@ function load(lookUp){
     if(!d.transcript&&!d.job&&lookUp&&(M.item.type==="video"||M.episode))return look(true);
     draw();watch();}).catch(function(err){q("#m-body").innerHTML='<p class="m-help">'+e(err.message)+'</p>';});
 }
-// First a free check for a published transcript; "Make a transcript" asks Gemini (decision 0028), and while it
-// works the panel asks again every few seconds until the transcript is there or the job says why not.
+// First a free check for a published transcript; "Make a transcript" asks Deepgram for an episode or Gemini for a
+// video (decision 0028), and while it works the panel asks again every few seconds until the transcript is there
+// or the job says why not.
 function look(quiet,make){
   var body=q("#m-body"),btn=body&&body.querySelector(".m-make");if(make&&btn){btn.disabled=true;btn.textContent="Starting…";}
   api("POST","/api/library/item/"+encodeURIComponent(M.item.id)+"/transcript",{episode:M.episode||null,make:!!make}).then(function(d){
@@ -81,7 +82,7 @@ function draw(){
       html+='<p class="m-help">Transcript ('+e(d.transcript.source)+'). Pick a line\'s time to set where a moment starts, then another to set where it ends.</p>'+
         '<ol class="m-tx">'+lines(d.transcript.segments).map(function(l){return '<li><button type="button" class="m-t" data-t="'+l.t+'">'+stamp(l.t)+'</button> '+e(l.text)+'</li>';}).join("")+'</ol>';
     }else if(d.job&&d.job.status==="running"){
-      html+='<p class="m-help m-status" role="status">Gemini is writing the transcript. It takes a minute or two, and you can close this and come back.</p>';
+      html+='<p class="m-help m-status" role="status">'+(M.item.type==="video"?"Gemini":"Deepgram")+' is writing the transcript. It takes a minute or two, and you can close this and come back.</p>';
     }else{
       var failed=d.job&&d.job.status==="failed";
       html+='<p class="m-help">'+e(failed?d.job.error:(d.missing||""))+(d.make&&!failed?" "+e(d.make):"")+'</p>'+
