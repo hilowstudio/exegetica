@@ -34,7 +34,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_views, curriculum, db, excerpts, generator, house_cover, library, library_store, listen, memory, metrics, ops, policy, prep, prep_draft, providers, teacher_courses, r2, reader, reply_check, safety, shell, shelf_docs, shelf_resources, shelves, store, studio, tool_catalog, usage
+from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_routes, course_views, curriculum, db, excerpts, generator, house_cover, library, library_store, listen, memory, metrics, ops, policy, prep, prep_draft, providers, teacher_courses, r2, reader, reply_check, safety, shell, shelf_docs, shelf_resources, shelves, store, studio, tool_catalog, usage
 from webapp.bridge import CombinedTools, MCPBridge  # noqa: F401  (scripts/john_gen.py imports MCPBridge from here)
 
 logging.basicConfig(level=logging.INFO)
@@ -1346,6 +1346,16 @@ app = Starlette(
         Route("/favicon.ico", root_icon),
         Route("/apple-touch-icon.png", root_icon),
         Route("/ops", ops.page),
+        # The maker's Gospel of John course, his login only for now (webapp/course_routes.py, decision 0032)
+        Route("/john", course_routes.page),
+        Route("/api/john", course_routes.course_get),
+        Route("/api/john/nodes", course_routes.node_create, methods=["POST"]),
+        Route("/api/john/nodes/{id}", course_routes.node_update, methods=["PATCH"]),
+        Route("/api/john/nodes/{id}", course_routes.node_delete, methods=["DELETE"]),
+        Route("/api/john/nodes/{id}/move", course_routes.node_move, methods=["POST"]),
+        Route("/api/john/nodes/{id}/taught", course_routes.node_taught, methods=["POST"]),
+        Route("/api/john/nodes/{id}/hide", course_routes.node_hide, methods=["POST"]),
+        Route("/api/john/nodes/{id}/sources", course_routes.node_sources),
         # Media Studio: the maker's login only for now (webapp/studio.py, docs/decisions/0017)
         Route("/studio", studio.page),
         Route("/api/studio/config", studio.config),

@@ -102,11 +102,12 @@ _TEACHER_HEAD = re.compile(
     r"|teacher'?s? (?:guide|notes|key)|.*\((?:teacher|teacher only|for the teacher)\))\s*:?\s*$", re.I)
 _HEAD = re.compile(r"^(#{1,6})\s")
 _TEACHER_LINE = re.compile(r"^\s*(?:\*\*)?(?:standards|objectives? \(teacher\))(?:\*\*)?\s*:", re.I)
+_BAND_LINE = re.compile(r"^\s*(?:>\s*)?(?:\*\*)?grade[ -]band(?:\*\*)?\s*:", re.I)   # never shown to students
 
 
 def student_copy(md: str) -> str:
-    """The document without its teacher-only sections, the `Standards:` line, or a rule left dangling
-    before a removed section. Mirrored by studentCopy() in static/js/prep.js."""
+    """The document without its teacher-only sections, the `Standards:` and Grade Band lines, or a rule left
+    dangling before a removed section. Mirrored by studentCopy() in static/js/prep.js."""
     out: list[str] = []
     skip_level = 0
     for line in (md or "").splitlines():
@@ -122,7 +123,7 @@ def student_copy(md: str) -> str:
             while out and out[-1].strip() in ("", "---", "***", "___"):
                 out.pop()
             continue
-        if _TEACHER_LINE.match(line):
+        if _TEACHER_LINE.match(line) or _BAND_LINE.match(line):
             continue
         out.append(line)
     while out and out[-1].strip() in ("", "---", "***", "___"):

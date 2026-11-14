@@ -22,12 +22,13 @@ function md(src){const L=src.replace(/\r\n/g,"\n").split("\n");let h="",i=0;cons
 // ---- the student copy: the teacher-only sections out (mirrors prep_catalog.student_copy) ----
 const TEACHER_HEAD=/^(#{1,6})\s+(?:answer key|answers|teaching notes|teacher notes|notes for the teacher|for the teacher|teacher'?s? (?:guide|notes|key)|.*\((?:teacher|teacher only|for the teacher)\))\s*:?\s*$/i;
 const TEACHER_LINE=/^\s*(?:\*\*)?(?:standards|objectives? \(teacher\))(?:\*\*)?\s*:/i;
+const BAND_LINE=/^\s*(?:>\s*)?(?:\*\*)?grade[ -]band(?:\*\*)?\s*:/i;
 function studentCopy(src){const out=[];let skip=0;
   for(const line of src.split("\n")){const head=line.match(/^(#{1,6})\s/);
     if(skip){if(head&&head[1].length<=skip)skip=0;else continue;}
     const m=line.trim().match(TEACHER_HEAD);
     if(m){skip=m[1].length;while(out.length&&/^\s*(---|\*\*\*|___)?\s*$/.test(out[out.length-1]))out.pop();continue;}
-    if(TEACHER_LINE.test(line))continue;out.push(line);}
+    if(TEACHER_LINE.test(line)||BAND_LINE.test(line))continue;out.push(line);}
   while(out.length&&/^\s*(---|\*\*\*|___)?\s*$/.test(out[out.length-1]))out.pop();
   return out.join("\n")+"\n";}
 function hasTeacherPart(src){return src.split("\n").some(l=>TEACHER_HEAD.test(l.trim()));}

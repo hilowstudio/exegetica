@@ -398,6 +398,20 @@ create table if not exists prep_units (
 );
 create index if not exists prep_units_user_idx on prep_units(user_id, updated_at desc);
 
+-- A teacher's course (decision 0032) is a tree of these rows: the course, its units, their lessons.
+-- A Prep Room unit made outside a course keeps kind 'unit' with no parent, exactly as before.
+alter table prep_units add column if not exists parent_id uuid references prep_units(id) on delete cascade;
+alter table prep_units add column if not exists kind      text not null default 'unit';   -- course | unit | lesson | group
+alter table prep_units add column if not exists position  integer not null default 0;     -- order among siblings
+alter table prep_units add column if not exists passage   text;                           -- 'John 6:25-29'
+alter table prep_units add column if not exists calendar  text;                           -- a course's school calendar
+alter table prep_units add column if not exists meetings  integer;                        -- a unit's class meetings
+alter table prep_units add column if not exists day_type  text;                           -- a lesson's: regular | thursday | half_day
+alter table prep_units add column if not exists plan      jsonb not null default '{}'::jsonb;  -- a lesson's moves, questions, materials
+alter table prep_units add column if not exists taught_on date;                           -- the day a lesson was marked taught
+alter table prep_units add column if not exists hidden    jsonb not null default '[]'::jsonb;  -- shelf items removed from here
+create index if not exists prep_units_parent_idx on prep_units(parent_id, position);
+
 -- What a unit draws on. `ref` holds only what its kind needs (webapp/prep.clean_ref). An upload's or
 -- a link's text is the teacher's own copy, kept encrypted (AES-GCM, LIBRARY_ENC_KEY).
 create table if not exists prep_sources (

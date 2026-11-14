@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} · Exegetica{% endblock %}
+{% block meta %}<meta name="robots" content="noindex">{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/course-app.css">{% endblock %}
+{% block content %}
+<main class="cx shell-col" id="cx">
+  {% include "partials/masthead.html" %}
+  <header class="cx-head">
+    <h1 id="cx-title">{{ title }}</h1>
+    <div class="cx-views" role="tablist" aria-label="Views">
+      <button type="button" role="tab" id="tab-today" aria-controls="v-today" aria-selected="true">Today</button>
+      <button type="button" role="tab" id="tab-plan" aria-controls="v-plan" aria-selected="false" tabindex="-1">Plan</button>
+      <button type="button" role="tab" id="tab-year" aria-controls="v-year" aria-selected="false" tabindex="-1">Year</button>
+    </div>
+  </header>
+  <p class="cx-msg" id="cx-msg" role="status" aria-live="polite"></p>
+  <section class="cx-view" id="v-today" role="tabpanel" aria-labelledby="tab-today"></section>
+  <section class="cx-view" id="v-plan" role="tabpanel" aria-labelledby="tab-plan" hidden></section>
+  <section class="cx-view" id="v-year" role="tabpanel" aria-labelledby="tab-year" hidden></section>
+</main>
+{% endblock %}
+{% block scripts %}<script src="/static/js/course-app.js" defer></script>{% endblock %}

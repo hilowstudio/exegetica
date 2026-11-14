@@ -153,12 +153,13 @@ async def list_units(uid: uuid.UUID) -> list[dict]:
         """select u.id, u.title, u.course_key, u.grade_band, u.updated_at, u.created_at,
                   (select count(*) from prep_sources s where s.unit_id = u.id) as n_sources,
                   (select count(*) from prep_resources r where r.unit_id = u.id) as n_resources
-             from prep_units u where u.user_id = $1 order by u.updated_at desc""", uid)
+             from prep_units u where u.user_id = $1 and u.parent_id is null and u.kind = 'unit'
+            order by u.updated_at desc""", uid)   # a course's containers live on its own page (0032)
     return [_plain(r) for r in rows]
 
 
 async def create_unit(uid: uuid.UUID, title: str, course_key: str | None, grade_band: str) -> dict | None:
-    n = await db.fetchval("select count(*) from prep_units where user_id = $1", uid)
+    n = await db.fetchval("select count(*) from prep_units where user_id = $1 and parent_id is null and kind = 'unit'", uid)
     if n >= MAX_UNITS:
         return None
     row = await db.fetchrow(
@@ -288,7 +289,15 @@ async def update_source(uid: uuid.UUID, source_id: uuid.UUID, ref: dict, label: 
 
 
 async def sources_for_draft(uid: uuid.UUID, unit_id: uuid.UUID) -> list[dict]:
-    """The unit's sources with any stored text decrypted, for building one draft."""
+    """What one draft draws on. A container in a course takes its own sources, its ancestors' and the shelf
+    items on its passage (course_routes.draft_sources, decision 0032); a plain unit takes its own."""
+    from webapp import course_routes
+    course = await course_routes.draft_sources(uid, unit_id)
+    return course if course is not None else await own_sources(uid, unit_id)
+
+
+async def own_sources(uid: uuid.UUID, unit_id: uuid.UUID) -> list[dict]:
+    """The unit's own sources with any stored text decrypted."""
     rows = await db.fetch(
         """select s.id, s.kind, s.ref, s.label, s.words, s.text_nonce, s.text_ct from prep_sources s
              join prep_units u on u.id = s.unit_id
@@ -464,6 +473,10 @@ async def unit_get(request):
     unit = unit_id and await get_unit(uid, unit_id)
     if unit:
         await _mark_shelves(unit["resources"])
+        from webapp import course_routes          # a course container also draws on what's above and its passage
+        feed = await course_routes.draft_sources(uid, unit_id, labels_only=True)
+        if feed is not None:
+            unit["course_draws"] = [s["label"] for s in feed]
     return JSONResponse({"unit": unit}) if unit else _not_found("That unit")
 
 

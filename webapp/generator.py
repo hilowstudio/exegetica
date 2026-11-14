@@ -385,8 +385,67 @@ def _build_faith_integration_system(fmt: dict, grade_band: str) -> str:
     return "\n".join(lines)
 
 
-def build_system(format_id: str, grade_band: str) -> str:
-    """The generator system prompt: conventions + the chosen format's schema."""
+# Reading supports (decision 0033). Courses whose students get them in everything the Prep Room makes for the class.
+# Described only by what a page does for its reader: no level is named here, in a prompt, or in a document.
+# Server-side only; nothing about it reaches a browser.
+SUPPORTED_COURSES = frozenset({"bible-2"})
+
+READING_SUPPORTS = """## Supports for this class's readers
+Every part of this resource that students read is built for readers who need support. Keep the full content, the depth
+of thought and a respectful, grown-up tone; change only how it is written:
+- Short sentences, one idea each. Plain, everyday words.
+- When the text needs a word students may not know (a Bible word like covenant, glory, Messiah, or any hard word),
+  keep it and say what it means in plain words where it first appears, or in a short "Words to know" box.
+- Short chunks, each under a heading that says what it is about. No paragraph longer than three short sentences.
+- One task per numbered step. Say exactly what to do and where to write it. Show a worked example for the first item.
+- Give a sentence starter or a short word bank for any written answer.
+- Ask what the text says before asking what it means, and give the full reference (book, chapter, verse) for every
+  passage students must find.
+These supports replace the grade band's guidance on vocabulary and text length.
+Never state, label or hint at a reading level, a grade level or grade band, or that anything was simplified, adapted
+or leveled, anywhere in the resource, teacher sections included. Do not print a Grade Band line."""
+
+REVISION_SUPPORTS = ("Keep the resource's supports for its readers (short sentences, plain words, hard words defined, "
+                     "one task per step, examples and sentence starters). Never state, label or hint at a reading "
+                     "level, a grade level or grade band, or that anything was simplified, adapted or leveled.")
+
+# A header field naming a band or level, and any sentence that talks about one (decision 0033).
+_LEVEL_FIELD = re.compile(r"^\s*(?:>\s*)?(?:[-*]\s*)?(?:\*\*)?(?:grade[ -]band|grade[ -]level|reading[ -]level|lexile)\b", re.I)
+_LEVEL_TALK = re.compile(
+    r"\b(?:reading|grade)[ -]levels?\b|\blexile\b|\bgrade[ -]bands?\b|\b(?:simplified|leveled|levelled|adapted)\s+(?:for|to)\b"
+    r"|\b(?:struggling|weak|low|reluctant|below[ -]grade)[ -]readers?\b"
+    r"|\b(?:\d{1,2}(?:st|nd|rd|th)|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth)"
+    r"[ -]grade\b", re.I)
+
+
+def supports_for(course_key: str | None) -> bool:
+    return (course_key or "") in SUPPORTED_COURSES
+
+
+def scrub_levels(md: str) -> str:
+    """The document without any line that names a band or level and without any sentence that talks about one.
+    Run on every saved version made for a supported course (decision 0033)."""
+    out: list[str] = []
+    for line in (md or "").splitlines():
+        if _LEVEL_FIELD.match(line):
+            continue
+        if _LEVEL_TALK.search(line):
+            kept = [s for s in re.split(r"(?<=[.!?])\s+", line) if not _LEVEL_TALK.search(s)]
+            line = " ".join(kept)
+            if not line.strip() or re.fullmatch(r"\s*(?:[>*-]|\d+\.)?\s*", line):
+                continue
+        out.append(line)
+    return "\n".join(out) + ("\n" if (md or "").endswith("\n") else "")
+
+
+def build_system(format_id: str, grade_band: str, supports: bool = False) -> str:
+    """The generator system prompt: conventions + the chosen format's schema, and the reading supports for a
+    supported course (decision 0033)."""
+    system = _build_system(format_id, grade_band)
+    return system + "\n\n" + READING_SUPPORTS if supports else system
+
+
+def _build_system(format_id: str, grade_band: str) -> str:
     fmt = FORMATS[format_id]
     if format_id == "faith_integration":
         return _with_voice(_build_faith_integration_system(fmt, grade_band))
@@ -739,14 +798,49 @@ def _library_material(m: dict) -> list[str]:
     return lines
 
 
+_CONTAINER = {"course": "Course", "unit": "Unit", "group": "Section", "lesson": "Lesson"}
+TEACHER_SOURCE_RULE = (
+    "A TEACHER'S SOURCE is a sermon or teaching transcript the teacher prepares from. Students never read it "
+    "and are not told it exists. Draw freely on its teaching, outline, questions and illustrations, in your own "
+    "words. Never name it, its speaker or its title, quote it, or say a sermon or a pastor is behind the "
+    "resource, anywhere students see, including the metadata header. List it only in a final section headed "
+    "EXACTLY `## Sources (Teacher)`.")
+
+
+def _course_lines(ctx: dict) -> list[str]:
+    """Where a course draft sits: course, unit and lesson with their notes, then the container's plan."""
+    lines = ["", "WHERE THIS SITS. The resource serves this course, unit and lesson; make it do what the lesson "
+                 "plan below asks, at its place in the lesson."]
+    for n in ctx.get("chain") or []:
+        head = f'{_CONTAINER.get(n.get("kind"), "Part")}: {n.get("title")}'
+        if n.get("passage") and n["passage"] != n.get("title"):
+            head += f' ({n["passage"]})'
+        lines.append(head)
+        if n.get("notes"):
+            lines.append(f"  The teacher's note: {n['notes']}")
+    plan = ctx.get("plan") or {}
+    if plan:
+        lines += ["", "THE LESSON PLAN."]
+        if plan.get("topic"):
+            lines.append(f"Topic: {plan['topic']}")
+        for key, head in (("aim", "Aims"), ("application", "Application"), ("assignment", "Assignment")):
+            if plan.get(key):
+                lines.append(f"{head}:")
+                lines += [f"  - {x}" for x in plan[key]]
+        if plan.get("strategy"):
+            lines.append(f"How the lesson runs (the teacher's plan, not student text): {plan['strategy']}")
+    return lines
+
+
 def build_unit_task(format_id: str, *, settings: dict, unit: dict | None, materials: list[dict]) -> str:
     """The user turn for a Prep Room draft made in a unit: what to make, for which class and objectives,
     and from which sources, in the order the teacher listed them."""
     fmt = FORMATS[format_id]
     from webapp import prep_catalog
     unit = unit or {}
+    here = ((unit.get("course_context") or {}).get("chain") or [{}])[-1].get("kind") or "unit"
     lines = [f'Generate the {fmt["name"]} now'
-             + (f' for the unit "{unit["title"]}"' if unit.get("title") else "") + "."]
+             + (f' for the {_CONTAINER.get(here, "Unit").lower()} "{unit["title"]}"' if unit.get("title") else "") + "."]
     vi = prep_catalog.variant_instruction(format_id, settings.get("variant"))
     if vi:
         lines.append(vi)
@@ -758,7 +852,10 @@ def build_unit_task(format_id: str, *, settings: dict, unit: dict | None, materi
     lines += ["", f"Grade band: {settings.get('grade_band') or unit.get('grade_band') or 'secondary'}."]
     if unit.get("course_name"):
         lines.append(f"Course: {unit['course_name']}.")
-    if (unit.get("notes") or "").strip():
+    ctx = unit.get("course_context")
+    if ctx:
+        lines += _course_lines(ctx)
+    elif (unit.get("notes") or "").strip():
         lines.append(f"The teacher's note for this unit: {unit['notes'].strip()}")
     if unit.get("objectives"):
         lines += ["", *_objective_lines(unit["objectives"])]
@@ -766,8 +863,11 @@ def build_unit_task(format_id: str, *, settings: dict, unit: dict | None, materi
         lines += ["", f"The teacher's instructions for this resource: {settings['brief'].strip()}"]
 
     if materials:
+        private = any(m.get("teacher_only") for m in materials)
         lines += ["", "SOURCES. Draw on these, in this order of weight. Say in the metadata header which "
-                      "ones the resource uses."]
+                      "ones the resource uses" + (", naming no TEACHER'S SOURCE there." if private else ".")]
+        if private:
+            lines.append(TEACHER_SOURCE_RULE)
         for m in materials:
             t = m["type"]
             if t == "book":
@@ -779,6 +879,8 @@ def build_unit_task(format_id: str, *, settings: dict, unit: dict | None, materi
                           "Look it up with the study-bible tools before writing and quote it exactly."]
             elif t == "library":
                 lines += _library_material(m)
+            elif t == "document" and m.get("teacher_only"):
+                lines += ["", f"=== TEACHER'S SOURCE (never named to students): {m['label']} ===", m["text"]]
             elif t == "document":
                 where = f" ({m['url']})" if m.get("url") else ""
                 lines += ["", f"=== DOCUMENT the teacher provided: {m['label']}{where} ===", m["text"]]
@@ -801,8 +903,9 @@ def build_unit_task(format_id: str, *, settings: dict, unit: dict | None, materi
     return "\n".join(lines)
 
 
-def build_revision(document: str, instruction: str) -> tuple[str, str]:
-    """System + task for editing an existing resource in place (no full regen)."""
+def build_revision(document: str, instruction: str, supports: bool = False) -> tuple[str, str]:
+    """System + task for editing an existing resource in place (no full regen). A resource made for a supported
+    course keeps its reading supports (decision 0033)."""
     system = (
         "You revise existing classroom resources. Apply the requested change and "
         "return the COMPLETE updated resource in Markdown. Preserve the metadata "
@@ -814,6 +917,8 @@ def build_revision(document: str, instruction: str) -> tuple[str, str]:
         "original-language, commentary, confessional, or church-father content, "
         "ground it in the Study Bible tools and never fabricate a reference."
     )
+    if supports:
+        system += " " + REVISION_SUPPORTS
     system = _with_voice(system)
     task = (
         "Here is the current resource:\n\n" + document.strip() +

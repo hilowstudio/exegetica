@@ -61,9 +61,15 @@ async function load(){
   }else if(S.unit){S.unit=null;S.quickSources=[];}
   renderUnit();
   if(r.res){if(!S.res||S.res.id!==r.res)await openResource(r.res);}
-  else{S.res=null;clearDoc();}
+  else{S.res=null;clearDoc();makeFromLink();}
   document.title=(S.unit?S.unit.title:"Quick resource")+" · Prep Room · Exegetica";
 }
+// A course lesson's planned material arrives as ?make=<kind>&brief=<its line>: the kind is picked and the line
+// fills the instructions, for the teacher to read and change before making. The address is cleaned at once,
+// so going back or reloading doesn't fill it again.
+function makeFromLink(){const q=new URLSearchParams(location.search),id=q.get("make"),brief=q.get("brief");
+  if(!S.unit||(!id&&!brief))return;history.replaceState({},"",location.pathname);
+  openMake();if(id&&kindOf(id))openKind(id);if(brief)$("k-brief").value=brief.slice(0,4000);}
 
 async function loadGallery(){
   try{const d=await api("GET","/api/prep/gallery");S.gallery=d;S.courses=d.courses||[];renderKinds();fillBands();}
@@ -183,7 +189,9 @@ function renderUnit(){
   $("srclist").innerHTML=sources.length?sources.map((s,i)=>'<li data-i="'+i+'"><span class="s-ic" aria-hidden="true">'+(ICON[s.kind]||ICON.upload)+'</span>'+
     '<span class="s-txt">'+sourceLabel(s)+'<span class="s-sub">'+sourceSub(s)+'</span></span>'+
     '<button type="button" class="icobtn kebab" data-smenu="'+i+'" aria-label="Options for '+esc(s.label)+'" aria-haspopup="true">'+ICON.kebab+'</button></li>').join(""):
-    '<li class="empty-line">No sources yet. A draft with none works from the objectives and the study tools alone.</li>';
+    (u&&u.course_draws&&u.course_draws.length
+      ? '<li class="empty-line"><span>None pinned here. Drafts also use what the course and unit pin and the class shelf on this passage ('+plural(u.course_draws.length,"source")+'), listed under Make. <a class="course-link" href="/john">Open the course</a></span></li>'
+      : '<li class="empty-line">No sources yet. A draft with none works from the objectives and the study tools alone.</li>');
   $("add-source").closest(".u-sec").querySelector(".u-hint").hidden=!sources.length;
   for(const id of ["h-objs","h-note","h-res"])$(id).closest(".u-sec").hidden=quick;
   if(!quick){
@@ -443,7 +451,7 @@ $("k-length").addEventListener("click",e=>{const b=e.target.closest("[data-len]"
   $("k-length").querySelectorAll("button").forEach(x=>{const on=x===b;x.classList.toggle("on",on);x.setAttribute("aria-checked",String(on));});S.settings.length=b.dataset.len;});
 function updateDraws(){
   const el=$("k-draws");if(!el)return;const srcs=S.unit?S.unit.sources:S.quickSources;const objs=S.unit?S.unit.objectives.length:0;
-  const names=srcs.map(s=>s.label);let t=names.length?"Draws on "+(names.length>3?names.slice(0,3).join(", ")+" and "+(names.length-3)+" more":names.join(", ")):"No sources yet: the draft uses the study tools"+(objs?" and the objectives":"")+".";
+  const names=S.unit&&S.unit.course_draws?S.unit.course_draws:srcs.map(s=>s.label);let t=names.length?"Draws on "+(names.length>3?names.slice(0,3).join(", ")+" and "+(names.length-3)+" more":names.join(", ")):"No sources yet: the draft uses the study tools"+(objs?" and the objectives":"")+".";
   if(names.length&&objs)t+=", aimed at "+plural(objs,"objective");el.textContent=names.length?t+".":t;}
 $("open-make").addEventListener("click",openMake);$("ph-make").addEventListener("click",openMake);
 $("close-make").addEventListener("click",closeMake);

@@ -1,0 +1,21 @@
+# 0032: A teacher's course is a tree of containers laid onto the school calendar, and the Prep Room makes material for any container from what feeds it
+
+**Draft, 2026-11-12. Not yet decided.** Written from A. James Vega's description of the Gospel of John course he wants built in Exegetica. He chose the page's design (Today, Plan, Year) and answered each open point on 2026-11-12.
+
+**Decision.**
+- A **course** belongs to the teacher who teaches it. It is a tree of **containers**: the course, its units, and their lessons. A container may hold other containers at any depth, so a teacher can group lessons however the material asks.
+- Every container can have a title, a Bible passage, objectives, a note every draft should know, and **sources**. A lesson also has the teaching it plans: its moves, its timing and what students do.
+- **Sources attach at any container.** Works that serve the whole course, such as the commentaries on John, attach to the course. Sermons, Piper, Ferguson and Sproul attach to the unit or lesson they serve.
+- **A source that carries a Bible passage attaches itself** to every container whose passage it overlaps, such as a sermon or a Piper item on the class shelf, without being filed by hand. The teacher can still pin any source to a container or remove one from it. Chapters come from the passages, as a view, so nobody has to keep them up to date.
+- **Making material for a container draws on that container's own sources and on every container above it, never on anything below it.** A lesson draws on its own sources, its unit's and the course's. A unit draws on its own and the course's, not on its lessons'.
+- **Units hold their dates on the school calendar.** A course's lessons are laid onto the calendar's class meetings, each with its day type (a regular 50-minute period, a 36-minute Thursday, a 26-minute half day), skipping days without class and finals. The teacher marks each lesson taught. When a class falls behind, the rest of the unit is compressed, by shortening or merging lessons, so the unit still ends on its date. Sections that share a course, such as periods 2 and 5, follow one plan. Next year's calendar takes the same course by laying its units out again.
+- The course page has **three views.** *Today* opens on a school day with that day's lesson: its timed plan, passage, questions and materials, each material ready to open or to show full screen on the classroom TV, and a button to mark the lesson taught. *Plan* holds the outline, each container's sources (its own and those it inherits) and the Prep Room for that container. *Year* shows the units across the year's class meetings with what has been taught.
+- The teacher **edits the course on its own page**, and Claude can build it in chat and save it on the teacher's word.
+- The course is the teacher's private work, as a unit is under 0026: the maker can read it, it is in the teacher's data download, and it goes with the account. Text from uploads and private copies stays encrypted and is decrypted only to draft from it. It holds nothing about any student (0002).
+- **For now, only the maker sees it,** at `/john`, for his Gospel of John course, planned as a whole year on the 2026-27 Yorkville calendar. A "My Courses" page for every teacher, with the Prep Room moved inside it, needs this record amended. Showing any part of a course to students needs its own decision.
+
+**Why.** Teachers plan by course and unit, and the September build of the John course lived in files the app could show but not change. Exegetica's tools had no outer loop to line up behind (the cohesion review of 2026-11-09). A course gives the Prep Room the context a teacher would give a colleague: what the whole course rests on, what this unit is for, what this lesson must do.
+
+**Enforced in.** Not built yet. The plan is to extend the Prep Room's own tables (`prep_units` gains a course, a parent, a position, a kind and a day type), so every container keeps the sources, resources and numbered versions 0026 already gives a unit. Teacher-only routes (0007); caps (0027) apply to anything made for a container.
+
+**Reverse when.** A teacher's saved course is never dropped without notice. Opening courses to other teachers or to students needs this record amended first.

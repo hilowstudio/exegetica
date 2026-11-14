@@ -38,7 +38,7 @@ ROOT = Path(__file__).resolve().parent.parent
 AXE = ROOT / "scripts" / "vendor" / "axe-core" / "axe.min.js"
 ROLE_HEADER = "x-design-check-role"
 PAGES = ["/", "/memory", "/read", "/library", "/generate", "/prep-room/formats", "/prep-room/standards", "/course",
-         "/calendar", "/corpus", "/studio", "/ops", "/read/admin/covers", "/privacy", "/position", "/quiet-standards"]
+         "/calendar", "/corpus", "/studio", "/john", "/ops", "/read/admin/covers", "/privacy", "/position", "/quiet-standards"]
 ROLES = ["student", "teacher", "admin"]
 SIZES = {"phone": (390, 844), "tablet": (820, 1180), "laptop": (1366, 768)}
 THEMES = ["light", "dark"]

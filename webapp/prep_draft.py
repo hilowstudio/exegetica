@@ -39,19 +39,28 @@ def _cap(text: str, words: int) -> str:
 
 
 # ------------------------------------------------------------------------------------ gathering
-async def _library_item(uid: uuid.UUID, item_id: str, excerpt_ids: list[str] | None) -> dict | None:
+async def _library_item(uid: uuid.UUID, item_id: str, excerpt_ids: list[str] | None,
+                        shelved: bool = False, episode: dict | None = None) -> dict | None:
+    """An item from the teacher's Living Library. `shelved` also takes an item the teacher's course found on
+    its class shelf (decision 0029), which needn't be in the teacher's own library. `episode` is a shelved
+    podcast episode (decision 0031): the draft gets its title and its transcript, never the whole show's."""
     row = await db.fetchrow(
         """select e.id, e.kind, e.title, e.creator, e.source_url, e.source_meta, e.full_text, li.notes
-             from library_items li join library_extractions e on e.id = li.extraction_id
-            where li.user_id = $1 and e.id = $2""", uid, uuid.UUID(item_id))
+             from library_extractions e left join library_items li on li.extraction_id = e.id and li.user_id = $1
+            where e.id = $2 and (li.id is not null or $3)""", uid, uuid.UUID(item_id), shelved)
     if not row:
         return None
-    item = {"kind": row["kind"], "title": row["title"], "creator": row["creator"], "url": row["source_url"],
-            "notes": row["notes"]}
-    from webapp import excerpts
-    text = await excerpts.transcript_for_draft({"kind": row["kind"], "source_url": row["source_url"],
-                                                "episode": (row["source_meta"] or {}).get("episode")})
-    if text or (row["kind"] in ("video", "podcast") and row["full_text"]):
+    ep = episode if episode and episode.get("guid") else None
+    item = {"kind": row["kind"], "title": (ep or {}).get("title") or row["title"],
+            "creator": (ep or {}).get("show") or row["creator"], "url": row["source_url"], "notes": row["notes"]}
+    from webapp import excerpts, transcripts
+    if ep:
+        t = await excerpts.episode_transcript(ep.get("feed") or row["source_url"], ep["guid"])
+        text = transcripts.as_text(t["segments"]) if t else None
+    else:
+        text = await excerpts.transcript_for_draft({"kind": row["kind"], "source_url": row["source_url"],
+                                                    "episode": (row["source_meta"] or {}).get("episode")})
+    if text or (not ep and row["kind"] in ("video", "podcast") and row["full_text"]):
         item["transcript"] = _cap(text or row["full_text"], DOC_WORDS)
     saved = await excerpts.for_item(uid, uuid.UUID(item_id), excerpt_ids)
     if saved:
@@ -72,9 +81,12 @@ def _book_share(book: dict, ref: dict, share: int, query: str) -> tuple[dict, st
     return {**base, "mode": "pending", "last": last, "query": query}, None
 
 
-async def gather(uid: uuid.UUID | None, sources: list[dict], query: str) -> tuple[list, list, list]:
+async def gather(uid: uuid.UUID | None, sources: list[dict], query: str,
+                 read_whole: bool = True) -> tuple[list, list, list]:
     """(materials, drew_on labels, notices) for a draft. `sources` come from prep.sources_for_draft
-    (with decrypted text) or, for a quick resource, from the request after prep.clean_ref."""
+    (with decrypted text) or, for a quick resource, from the request after prep.clean_ref.
+    `read_whole` False keeps a large book to the chapters chosen for it, without starting the paid
+    whole-book reading (a course pins each commentary with its unit's chapters)."""
     budget = generator._GEN_WORD_BUDGET
     materials: list[dict | None] = [None] * len(sources)
     drew_on, notices, books = [], [], []
@@ -83,7 +95,8 @@ async def gather(uid: uuid.UUID | None, sources: list[dict], query: str) -> tupl
         if kind in ("upload", "link"):
             text = _cap(s.get("text") or "", DOC_WORDS)
             if text.strip():
-                materials[i] = {"type": "document", "label": s["label"], "text": text, "url": ref.get("url")}
+                materials[i] = {"type": "document", "label": s["label"], "text": text, "url": ref.get("url"),
+                                **({"teacher_only": True} if s.get("teacher_only") else {})}
                 budget -= len(text.split())
         elif kind == "outline":
             m = yorkville.outline_material(ref.get("key", ""), ref.get("parts"))
@@ -95,7 +108,8 @@ async def gather(uid: uuid.UUID | None, sources: list[dict], query: str) -> tupl
         elif kind == "passage":
             materials[i] = {"type": "passage", "ref": ref["ref"], "translation": ref.get("translation")}
         elif kind == "library" and uid:
-            item = await _library_item(uid, ref["item_id"], ref.get("excerpts"))
+            item = await _library_item(uid, ref["item_id"], ref.get("excerpts"), shelved=bool(s.get("shelved")),
+                                       episode=s.get("episode"))
             if item:
                 materials[i] = {"type": "library", "item": item}
                 budget -= len((item.get("transcript") or "").split())
@@ -112,7 +126,7 @@ async def gather(uid: uuid.UUID | None, sources: list[dict], query: str) -> tupl
             continue
         m, note = await run_in_threadpool(_book_share, book, s["ref"], share, query)
         if m["mode"] == "pending":
-            m, note = await _large_book(m, share)
+            m, note = await _large_book(m, share, read_whole)
         if note:
             notices.append(note)
         materials[i] = m
@@ -122,11 +136,11 @@ async def gather(uid: uuid.UUID | None, sources: list[dict], query: str) -> tupl
     return [m for m in materials if m], drew_on, notices
 
 
-async def _large_book(m: dict, share: int) -> tuple[dict, str | None]:
+async def _large_book(m: dict, share: int, read_whole: bool = True) -> tuple[dict, str | None]:
     book = m["book"]
     state, comp = await comprehension.status(book)
     note = None
-    if state == "missing" and db.ready():
+    if state == "missing" and db.ready() and read_whole:
         # Queue the whole-book reading without waiting on it: the draft goes ahead from the chosen
         # chapters, and an unreachable queue never holds the teacher up.
         from webapp import app as appmod                 # the Inngest trigger lives with the app
@@ -230,6 +244,8 @@ async def draft(request):
         if not unit:
             return prep._not_found("That unit")
         unit["course_name"] = yorkville.course_name(unit.get("course_key"))
+        from webapp import course_routes
+        unit["course_context"] = await course_routes.draft_context(uid, unit_id)
         sources = await prep.sources_for_draft(uid, unit_id)
     else:
         sources = []
@@ -242,16 +258,21 @@ async def draft(request):
     grade_band = settings["grade_band"] or (unit or {}).get("grade_band") or "secondary"
     settings["grade_band"] = grade_band
     query = f'{generator.FORMATS[format_id]["name"]}. {settings["brief"]} {(unit or {}).get("title", "")}'.strip()
-    materials, drew_on, notices = await gather(uid if db.ready() else None, sources, query)
+    materials, drew_on, notices = await gather(uid if db.ready() else None, sources, query,
+                                               read_whole=not (unit or {}).get("course_context"))
     provider, model, api_key = policy.byok(b)
-    system_text = generator.build_system(format_id, grade_band)
+    supports = generator.supports_for((unit or {}).get("course_key"))     # decision 0033
+    system_text = generator.build_system(format_id, grade_band, supports=supports)
     task = generator.build_unit_task(format_id, settings=settings, unit=unit, materials=materials)
-    title = prep._clean(b.get("title"), prep.MAX_TITLE) or (
-        f'{_short_name(format_id)} · {drew_on[0] if drew_on else (unit or {}).get("title") or "Quick"}')[:prep.MAX_TITLE]
+    # A course draft is named for its container: its first source may be a transcript students never see named.
+    first = (unit or {}).get("title") if (unit or {}).get("course_context") or not drew_on else drew_on[0]
+    title = prep._clean(b.get("title"), prep.MAX_TITLE) or f'{_short_name(format_id)} · {first or "Quick"}'[:prep.MAX_TITLE]
 
     async def save(document, report):
         if not (db.ready() and uid):
             return {"type": "notice", "message": NOT_SAVED}
+        if supports:
+            document = generator.scrub_levels(document)
         rid = await prep.create_resource(uid, unit_id, format_id, title, settings)
         n = rid and await prep.add_version(uid, uuid.UUID(rid), document, "draft", drew_on=drew_on, report=report)
         if not n:
@@ -284,9 +305,13 @@ async def revise(request):
     if not document:
         return prep._not_found("That resource")
     provider, model, api_key = policy.byok(b)
-    system_text, task = generator.build_revision(document, instruction)
+    unit = await prep.get_unit(uid, prep._uuid(res["unit_id"])) if res.get("unit_id") else None
+    supports = generator.supports_for((unit or {}).get("course_key"))     # decision 0033
+    system_text, task = generator.build_revision(document, instruction, supports=supports)
 
     async def save(new_doc, _report):
+        if supports:
+            new_doc = generator.scrub_levels(new_doc)
         n = await prep.add_version(uid, rid, new_doc, "revise", instruction=instruction)
         return {"type": "saved", "resource_id": str(rid), "n": n} if n else {"type": "notice", "message": NOT_SAVED}
 

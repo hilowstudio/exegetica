@@ -56,6 +56,7 @@ a.s-open:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border
 .reslist li .r-open{all:unset;flex:1;min-width:0;cursor:pointer}
 .reslist li .r-open:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
 .empty-line{font-size:12.5px;color:var(--ink-faint);margin:2px 0 8px}
+.empty-line .course-link{color:var(--iron);text-underline-offset:3px;white-space:nowrap}
 
 /* menus (the kebab), shaped like Scripture Memory's */
 .menu{position:absolute;top:34px;right:4px;background:var(--surface);border:1px solid var(--rule-strong);border-radius:10px;box-shadow:0 8px 26px rgba(0,0,0,.14);padding:5px;z-index:15;min-width:180px}
