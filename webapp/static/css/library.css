@@ -98,10 +98,12 @@
     background:repeating-linear-gradient(180deg,color-mix(in srgb,var(--ink) 12%,transparent) 0 2px,transparent 2px 9px);
     -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent);mask-image:linear-gradient(180deg,#000 30%,transparent)}
   .pp-kind{flex:none;font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .pp-k-short{display:none}   /* "Sermon Transcript" on a wide tile, "Sermon" on a phone's narrow one */
   #docs.editing .cv-more,#prep.editing .cv-more{display:grid}
   @media (prefers-reduced-motion:reduce){ .leaf{transition:none} .leaf:hover{transform:none} }
   @media (max-width:760px){ .leaf{padding:26px 10px 9px}
     .pp-title{font-size:.8rem;-webkit-line-clamp:4} .pp-kind{font-size:8px} .pp-by{font-size:.68rem}
+    .pp-k-long{display:none} .pp-k-short{display:inline}
     .pp-lines{margin:9px 0 7px;background-size:100% 7px;
       background-image:repeating-linear-gradient(180deg,color-mix(in srgb,var(--ink) 12%,transparent) 0 2px,transparent 2px 7px)} }
 

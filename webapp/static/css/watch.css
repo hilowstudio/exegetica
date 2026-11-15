@@ -1,0 +1,20 @@
+/* Exegetica's video page (templates/watch.html, decision 0034): the video sits on the sheet as a 16:9 screen, with
+   the listening page's moment note and the owner's credit under it (listen.css carries the sheet's shared parts). */
+.wv{position:relative;margin:0 0 18px}
+.wv-video,.wv-frame{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:12px;background:var(--screen)}
+.wv-status{margin:10px 0 0;font-family:var(--sans);font-size:13.5px;color:var(--ink-soft)}
+.wv-status:empty{display:none}
+/* a video Exegetica can't host: a quiet screen with one play button, until someone presses it */
+.wv-yt{aspect-ratio:16/9;border-radius:12px;background:var(--screen);display:grid;place-items:center;align-content:center;gap:14px;
+  padding:18px;text-align:center}
+.wv-yt.is-on{display:block;padding:0;aspect-ratio:auto;background:none}
+.wv-go{display:inline-flex;align-items:center;gap:12px;border:0;border-radius:999px;padding:12px 22px 12px 14px;cursor:pointer;
+  background:var(--accent);color:var(--on-accent);font-family:var(--sans);font-size:15px;font-weight:600;text-decoration:none}
+.wv-go:hover{background:var(--accent-soft)}
+.wv-go:focus-visible{outline:2px solid var(--on-screen);outline-offset:3px}
+.wv-go-i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
+.wv-go-i svg{width:16px;height:16px;fill:currentColor}
+.wv-yt-note{margin:0;max-width:44ch;font-family:var(--sans);font-size:12.5px;line-height:1.45;color:var(--on-screen)}
+.wv-credit{margin:-6px 0 20px;font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
+.wv-missing{margin:0 0 20px;padding:14px 16px;border:1px solid var(--rule);border-radius:12px;font-family:var(--sans);font-size:14px;color:var(--ink-soft)}
+@media (max-width:560px){ .wv-video,.wv-frame,.wv-yt{border-radius:8px} }

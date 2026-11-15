@@ -31,7 +31,7 @@ def test_an_upload_is_filed_as_the_kind_of_thing_it_is():
     assert shelf_docs.guess_type(400, "John 7 study guide.docx", False) == "handout"
     assert shelf_docs.guess_type(400, "Feast notes.txt", False) == "handout"
     assert shelf_docs.guess_type(400, "letter.pdf", False) == "document"
-    assert set(shelf_docs.TYPES) == {"book", "article", "handout", "document"}
+    assert set(shelf_docs.TYPES) == {"book", "article", "handout", "document", "sermon"}   # sermon: a talk written down
 
 
 def test_students_never_upload(monkeypatch):

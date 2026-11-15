@@ -57,7 +57,8 @@ def test_a_class_shelf_names_who_added_an_item_to_teachers_alone():
     s, = shelves.class_shelves(["bible-2"], items, False, placed, videos, "me")
     assert t["added"][0]["yours"] and t["added"][1]["added_name"] == "Sam Rivera"
     assert all("added_name" not in a and "yours" not in a for a in s["added"])        # a student sees no names
-    assert s["added"][1]["video"]["url"].endswith("&t=36s")                            # a moment opens at its second
+    v = s["added"][1]["video"]                                                       # a moment opens the watch page (0034),
+    assert v["url"] == "/watch/2" and v["start"] == 36                                    # which starts it at its second
 
 
 def test_a_moment_at_the_start_is_not_the_whole_video():

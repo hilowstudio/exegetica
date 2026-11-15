@@ -35,3 +35,4 @@ Each file records one decision about how Exegetica behaves: what was decided, wh
 | [0030](0030-google-classroom.md) | Teachers share to Google Classroom by link, through Classroom's own window |
 | [0031](0031-podcast-episodes-and-bulk-save.md) | Podcast episodes are found and kept on their own, students listen inside Exegetica, and teachers save many things at once |
 | [0033](0033-reading-supports.md) | A course can give its students reading supports, and no level is ever named |
+| [0034](0034-class-videos.md) | Class videos play inside Exegetica, from its own copy where the owner allows and in YouTube's privacy-enhanced player where not |

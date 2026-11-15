@@ -44,6 +44,11 @@ Exegetica keeps no profile of a student. A new study starts with no knowledge of
 - **Open Library** and **Apple** receive a teacher's library searches, and Open Library serves the cover images the library shows.
 - **Web pages, YouTube and podcast feeds.** When a teacher adds a link to a unit, or looks for a video's captions or a podcast episode's transcript, Exegetica's server fetches that page or file. The site sees only a request from Exegetica's server, with nothing that names the teacher.
 - **Podcast audio.** When a student or teacher plays a podcast episode in Exegetica, Exegetica's server fetches the audio from the podcast's host and passes it on. The host, and any service that counts the show's listens, sees a request from Exegetica's server, never the listener's device or anything that names them.
+- **Class videos.** A video on a class shelf plays on a page inside Exegetica.
+  - When its owner allows it, the video is Exegetica's own copy, stored with **Cloudflare**. The viewer's device fetches it from Cloudflare through a link that works for a few hours. Cloudflare sees that device, but not who is watching.
+  - A video Exegetica may not copy, such as a BibleProject video, plays in YouTube's privacy-enhanced player. That player loads only when someone presses play. From then on, YouTube sees the viewer's device, as it does for any video it plays.
+  - The pictures on a shelf's YouTube video tiles come from YouTube.
+  - Exegetica keeps nothing about who watched what.
 
 ## Counts kept to run the service
 

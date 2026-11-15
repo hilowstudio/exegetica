@@ -18,8 +18,9 @@ from starlette.responses import JSONResponse, PlainTextResponse, RedirectRespons
 
 from webapp import auth, db, extraction, filetext, prep_draft, shell
 
-TYPES = ("book", "article", "handout", "document")
-TYPE_WORD = {"book": "Book", "article": "Article", "handout": "Handout", "document": "Document"}
+TYPES = ("book", "article", "handout", "document", "sermon")
+TYPE_WORD = {"book": "Book", "article": "Article", "handout": "Handout", "document": "Document",
+             "sermon": "Sermon Transcript"}   # a talk written down: a sermon, message or teaching lesson (Adam, 2026-11-14)
 MAX_WORDS = 300_000          # a whole book; a unit's copy is trimmed to the Prep Room's own limit
 MAX_DOCS = 200               # per teacher
 UNAVAILABLE = "Your shelves can't be reached right now. Try again in a minute."

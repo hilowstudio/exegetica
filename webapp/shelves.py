@@ -133,7 +133,7 @@ def class_shelves(keys: list[str], items: dict[str, dict], teacher: bool, placed
                 if not v:
                     continue
                 start = pl["ref"].get("start")
-                entry["video"] = {**v, "url": _youtube_at(v["url"], start), "start": start, "end": pl["ref"].get("end"),
+                entry["video"] = {**v, "url": f"/watch/{pl['id']}", "start": start, "end": pl["ref"].get("end"),   # plays in Exegetica (0034)
                                   "note": pl["ref"].get("note"), "quote": pl["ref"].get("quote")}
             added.append(entry)
         out.append({"key": k, "name": c["name"], "subject": c.get("subject"), "grades": c.get("grades"), "works": shelf,
@@ -312,11 +312,6 @@ async def _videos(ids: list[str]) -> dict[str, dict]:
                            "url": r["source_url"]} for r in rows}
 
 
-def _youtube_at(url: str | None, start) -> str | None:
-    from webapp import excerpts
-    if start is None:
-        return url
-    return excerpts.link_at({"source_url": url}, float(start)) or url
 
 
 async def place(user, course_key: str, kind: str, ref: dict, audience: str, label: str) -> dict | str:

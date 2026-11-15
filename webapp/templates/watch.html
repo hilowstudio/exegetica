@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}{{ v.title }} · Living Library · Exegetica{% endblock %}
+{% block meta %}<meta name="robots" content="noindex">{% endblock %}
+{% block fonts %}<link rel="stylesheet" href="/static/fonts/reader.css">{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/reader.css"><link rel="stylesheet" href="/static/css/doc.css"><link rel="stylesheet" href="/static/css/listen.css"><link rel="stylesheet" href="/static/css/watch.css">{% endblock %}
+{% block content %}
+{# A video, or a clip of one, on a class shelf (decision 0034): one sheet on the garden, the player, what the teacher
+   noted, and the owner's credit. Exegetica's own copy plays from its storage (webapp/watch.py); a video Exegetica
+   can't host plays in YouTube's privacy-enhanced player, which loads only when someone presses play. #}
+<header class="topbar shell-stick">
+  <a class="tb-back" href="/library">‹ Your shelves</a>
+  <div class="tb-title">{{ v.title }}</div>
+  <div class="tb-ctrls"></div>
+</header>
+<main class="doc-page">
+  <div class="ls-mast">{% include "partials/masthead.html" %}</div>
+  <article class="doc-sheet ls-sheet">
+    <header class="doc-head">
+      <div class="doc-kind">{% if v.clip %}A clip from a video{% else %}Video{% endif %}{% if v.course %} · {{ v.course }}{% endif %}</div>
+      <h1>{{ v.title }}</h1>
+      <p class="doc-by">{{ v.maker }}{% if v.length %}{% if v.maker %} · {% endif %}{{ v.length }}{% endif %}</p>
+    </header>
+    {% if v.hosted %}
+    <div class="wv" id="wv" data-start="{{ v.start if v.start is not none else '' }}" data-end="{{ v.end if v.end is not none else '' }}">
+      <video class="wv-video" controls preload="metadata" playsinline{% if v.poster %} poster="{{ v.poster }}"{% endif %}>
+        <source src="{{ v.src }}" type="video/mp4">
+        {% if v.captions %}<track kind="captions" src="{{ v.captions }}" srclang="en" label="English">{% endif %}
+        <p class="ls-none">This browser can't play the video.</p>
+      </video>
+      <p class="wv-status" role="status"></p>
+    </div>
+    {% elif v.embed %}
+    <div class="wv wv-yt" id="wv" data-embed="{{ v.embed }}" data-title="{{ v.title }}">
+      <button type="button" class="wv-go"><span class="wv-go-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 5.8v12.4L18.5 12z"/></svg></span><span class="wv-go-t">Play{% if v.clip %} the clip{% endif %}</span></button>
+      <p class="wv-yt-note">Plays in YouTube's privacy-enhanced player. Nothing goes to YouTube until you press play.</p>
+    </div>
+    {% elif v.site %}
+    <div class="wv wv-yt wv-out">
+      <a class="wv-go" href="{{ v.source_url }}" target="_blank" rel="noopener noreferrer"><span class="wv-go-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 5.8v12.4L18.5 12z"/></svg></span><span class="wv-go-t">Watch on {{ v.site }}</span></a>
+      <p class="wv-yt-note">This video plays on its owner's site, in a new tab.</p>
+    </div>
+    {% else %}
+    <p class="wv-missing">This video can't be played here right now. Ask your teacher.</p>
+    {% endif %}
+    {% if v.credit %}<p class="wv-credit">{{ v.credit }}</p>{% endif %}
+    {% if v.clip or v.note or v.quote %}
+    <section class="ls-moment" aria-labelledby="wv-m-h">
+      <h2 id="wv-m-h">{% if v.clip %}From your teacher: {{ v.clip }}{% else %}From your teacher{% endif %}</h2>
+      {% if v.note %}<p>{{ v.note }}</p>{% endif %}
+      {% if v.quote %}<p>“{{ v.quote }}”</p>{% endif %}
+    </section>
+    {% endif %}
+  </article>
+</main>
+{% endblock %}
+{% block scripts %}<script src="/static/js/watch.js"></script>{% endblock %}

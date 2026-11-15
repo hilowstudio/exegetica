@@ -8,6 +8,7 @@
     --iron:#2e5a71; --iron-soft:#3c5967; --brass:#896b2b;
     --ok:#2b603d; --warn:#774c00; --err:#923a00;
     --user-bg:#ece3d4; --code-bg:#efe7d8;
+    --screen:#0d0e12; --on-screen:#c9c6bd;   /* a video's screen stays dark in both themes (watch.css) */
     --garden:url("/static/garden-light.webp");
     --serif:"Spectral","Exegetica Greek","Exegetica Hebrew",Georgia,serif;
     --sans:"Public Sans","Exegetica Greek","Exegetica Hebrew",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;

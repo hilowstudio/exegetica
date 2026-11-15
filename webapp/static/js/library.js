@@ -525,7 +525,7 @@ $("search-results").addEventListener("click",function(e){
   closeSearch();
 });
 // an upload or a link: sent, read, filed; the toast says what it was filed as, and the shelf redraws
-var TYPE_WORD={book:"a book",article:"an article",handout:"a handout",document:"a document"};
+var TYPE_WORD={book:"a book",article:"an article",handout:"a handout",document:"a document",sermon:"a sermon transcript"};
 function addErr(form,msg){var p=form.querySelector(".add-err");p.textContent=msg;p.hidden=false;}
 $("up-form").addEventListener("submit",function(e){
   e.preventDefault();var f=$("up2-file").files[0],form=$("up-form");if(!f){addErr(form,"Choose a file.");return;}

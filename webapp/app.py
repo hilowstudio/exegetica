@@ -34,7 +34,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_routes, course_views, curriculum, db, excerpts, generator, house_cover, library, library_store, listen, memory, metrics, ops, policy, prep, prep_draft, providers, teacher_courses, r2, reader, reply_check, safety, shell, shelf_docs, shelf_resources, shelves, store, studio, tool_catalog, usage
+from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_routes, course_views, curriculum, db, excerpts, generator, house_cover, library, library_store, listen, memory, metrics, ops, policy, prep, prep_draft, providers, teacher_courses, r2, reader, reply_check, safety, shell, shelf_docs, shelf_resources, shelves, store, studio, tool_catalog, usage, watch
 from webapp.bridge import CombinedTools, MCPBridge  # noqa: F401  (scripts/john_gen.py imports MCPBridge from here)
 
 logging.basicConfig(level=logging.INFO)
@@ -1445,6 +1445,9 @@ app = Starlette(
         Route("/read/{slug}", reader.reader_page),
         Route("/listen/{id}", listen.page),                          # a class shelf's podcast (0031)
         Route("/api/listen/{id}/audio", listen.audio, methods=["GET"]),
+        Route("/watch/{id}", watch.page),                            # a class shelf's video (0034)
+        Route("/api/watch/{id}/video", watch.video, methods=["GET"]),
+        Route("/api/watch/{id}/captions", watch.captions, methods=["GET"]),
         Route("/api/books", reader.books_list),
         Route("/api/shelves", reader.shelves),
         Route("/api/catalog", reader.catalog),

@@ -127,8 +127,8 @@ function videoTile(a, c){
   var v = a.video, cell = document.createElement("div"); cell.className = "placed vcell";
   var from = v.start != null ? "From " + stamp(v.start) : "";
   var t = document.createElement("a");
-  t.className = "vtile"; t.href = v.url || "#"; t.target = "_blank"; t.rel = "noopener noreferrer";
-  t.setAttribute("aria-label", v.title + (from ? ", " + from.toLowerCase() : "") + ". Opens YouTube in a new tab.");
+  t.className = "vtile"; t.href = v.url || "#";   // the watch page, inside Exegetica (decision 0034)
+  t.setAttribute("aria-label", v.title + (from ? ", " + from.toLowerCase() : "") + ". Opens the video.");
   t.innerHTML = '<span class="vt-shot">' + (v.thumbnail ? '<img src="' + e(v.thumbnail) + '" alt="" loading="lazy">' : "") +
     '<span class="vt-play">' + PLAY + '</span>' + (from ? '<span class="vt-from">' + e(from) + '</span>' : "") + '</span>' +
     '<span class="vt-t">' + e(v.title) + '</span><span class="vt-s">' + e(v.note || v.sub || "") + '</span>';
@@ -247,14 +247,17 @@ function drawClasses(){
 
 // ---- a teacher's uploads and links (decision 0029, phase 3) ----
 // A book is bound in cloth; an article, a handout or a document is a sheet. Both open in the reading view.
-var KIND_WORD = {book: "Book", article: "Article", handout: "Handout", document: "Document"};
+var KIND_WORD = {book: "Book", article: "Article", handout: "Handout", document: "Document", sermon: "Sermon Transcript"};
+var KIND_SHORT = {sermon: "Sermon"};
 function docTile(d, href){
   if(d.type === "book") return Covers.cover({title: d.title, author: d.author, sections: ["Literary & Classics"]}, {href: href, sec: "Your copy"});
   var a = document.createElement("a"); a.className = "leaf"; a.href = href;
   var word = d.type === "resource" ? (d.kind_word || "Resource") : (KIND_WORD[d.type] || "Document");   // a resource: Quiz, Study Guide…
+  var short = d.type !== "resource" && KIND_SHORT[d.type];   // a phone's narrow tile can't hold "Sermon Transcript" on one line
   a.innerHTML = '<span class="pp-title">' + e(d.title) + '</span>' +
     ((d.author || d.site) ? '<span class="pp-by">' + e(d.author || d.site) + '</span>' : "") +
-    '<span class="pp-lines" aria-hidden="true"></span><span class="pp-kind">' + e(word) + '</span>';
+    '<span class="pp-lines" aria-hidden="true"></span><span class="pp-kind">' +
+    (short ? '<span class="pp-k-long">' + e(word) + '</span><span class="pp-k-short">' + e(short) + '</span>' : e(word)) + '</span>';
   return a;
 }
 var pendingDel = {};
@@ -305,7 +308,7 @@ function docMenu(d, anchor){
     {label: "Save to…", act: function(){ saveDoc(d, anchor); }},
     {label: "Rename", act: function(){ renameDoc(d); }},
     {label: "File as…", act: function(){
-      Passage.menu(anchor, "File " + d.title + " as", ["book", "article", "handout", "document"].map(function(k){
+      Passage.menu(anchor, "File " + d.title + " as", ["book", "article", "handout", "document", "sermon"].map(function(k){
         return {label: KIND_WORD[k], checked: d.type === k, act: function(){ patchDoc(d, {type: k}, "Filed “" + d.title + "” as " + (k === "article" ? "an " : "a ") + KIND_WORD[k].toLowerCase()); }};
       }));
     }},
