@@ -31,7 +31,7 @@ try:
 except Exception:  # noqa: BLE001
     pass
 
-from build_forms_quiz import MC_POINTS, WRITTEN_POINTS, parse_quiz  # noqa: E402
+from build_forms_quiz import parse_quiz  # noqa: E402
 from course_pdf import _FONT_CSS  # noqa: E402  (self-hosted fonts, base64-embedded)
 
 LETTERS = "ABCD"
@@ -79,6 +79,11 @@ h2.part { font: 700 8.3pt "Inter", sans-serif; letter-spacing: .1em; text-transf
 .opts li { display: grid; grid-template-columns: 15pt 1fr; column-gap: 5pt; margin: 2pt 0; }
 .bub { width: 12.5pt; height: 12.5pt; border: .75pt solid #000; border-radius: 50%;
   font: 600 7.8pt/12.5pt "Inter", sans-serif; text-align: center; margin-top: .5pt; }
+.choices { display: flex; flex-wrap: wrap; gap: 3pt 14pt; margin: 3pt 0 5pt 14pt; padding: 4pt 7pt;
+  border: .6pt solid #000; font: 9.4pt "Inter", sans-serif; }
+.pairs { list-style: none; margin: 0; padding: 0 0 0 14pt; }
+.pairs li { display: grid; grid-template-columns: 1.15in 1fr; column-gap: 7pt; margin: 5pt 0; align-items: end; }
+.blank { border-bottom: .75pt solid #000; height: 1.1em; }
 .lines div { height: .34in; border-bottom: .6pt solid #000; }
 .lines { margin-top: 2pt; }
 /* teacher key */
@@ -130,12 +135,36 @@ def student_html(q: dict, course: str, instructions: str, lines: dict[int, int])
                            for i, o in enumerate(it["options"]))
             out.append(f'<section class="q"><p class="stem"><span class="num">{num}.</span>'
                        f'{smart(text)}</p><ol class="opts">{opts}</ol></section>')
+        elif it["kind"] == "match":
+            choices = "".join(f"<span>{smart(c)}</span>" for c in it["choices"])
+            pairs = "".join(f'<li><span class="blank"></span><span><b>{p["letter"]}.</b> {smart(p["text"])}</span></li>'
+                            for p in it["pairs"])
+            out.append(f'<section class="q"><p class="stem"><span class="num">{num}.</span>{smart(text)}</p>'
+                       f'<div class="choices">{choices}</div><ol class="pairs">{pairs}</ol></section>')
+        elif it["kind"] == "blank":
+            out.append(f'<section class="q"><p class="stem"><span class="num">{num}.</span>{smart(text)}</p></section>')
         else:
             n = lines.get(it["num"], DEFAULT_LINES)
             out.append(f'<section class="q"><p class="stem"><span class="num">{num}.</span>'
-                       f'{smart(text)} <span class="pts">({WRITTEN_POINTS} points)</span></p>'
+                       f'{smart(text)} <span class="pts">({it["points"]} points)</span></p>'
                        f'<div class="lines">{"<div></div>" * n}</div></section>')
     return "".join(out)
+
+
+def _points_note(q: dict) -> str:
+    """'Multiple choice is 3 points each (75), matching 3 each (12), ... 100 total.'"""
+    words = {"mc": "multiple choice", "match": "matching", "blank": "fill in the blank", "written": "the written answers"}
+    parts = []
+    for kind, word in words.items():
+        qs = [it for it in q["items"] if it["kind"] == kind]
+        if not qs:
+            continue
+        rows = [it["points"] for it in qs for _ in (it["pairs"] if kind == "match" else [0])]
+        each = sorted(set(rows))
+        each_txt = f"{each[0]} each" if len(each) == 1 else f"{each[0]} each and one {each[-1]}"
+        parts.append(f"{word} {each_txt} ({sum(rows)})")
+    text = ", ".join(parts)
+    return text[0].upper() + text[1:] + f", {q['total']} total."
 
 
 def key_html(q: dict, course: str) -> str:
@@ -146,19 +175,29 @@ def key_html(q: dict, course: str) -> str:
         rows.append(f'<div class="krow"><span class="n">{it["num"]}</span>'   # one line;
                     f'<span class="l">{letter}</span>'                         # CSS clips the text
                     f'<span class="t">{smart(it["correct"])}</span></div>')
-    half = (len(rows) + 1) // 2
-    grid = (f'<div class="keygrid"><div>{"".join(rows[:half])}</div>'
-            f'<div>{"".join(rows[half:])}</div></div>')
-    mc_pts = len(mcs) * MC_POINTS
+    def grid(rows):
+        half = (len(rows) + 1) // 2
+        return (f'<div class="keygrid"><div>{"".join(rows[:half])}</div>'
+                f'<div>{"".join(rows[half:])}</div></div>')
+
     wr = [it for it in q["items"] if it["kind"] == "written"]
     out = [f'<div class="course">{smart(course)}</div>',
            f"<h1>Answer key: {smart(q['title'].split(':')[0])} (paper copy)</h1>",
            f'<p class="note">These letters match the printed copy. The online form shuffles the '
-           f'choices, so use this key for paper only. Multiple choice is {MC_POINTS} points each '
-           f'({mc_pts}), the written answers are {WRITTEN_POINTS} each '
-           f'({len(wr) * WRITTEN_POINTS}), {q["total"]} total.</p>',
-           '<h2 class="part">Multiple choice</h2>', grid,
-           '<h2 class="part">Written answers</h2>']
+           f'choices, so use this key for paper only. {_points_note(q)}</p>',
+           '<h2 class="part">Multiple choice</h2>', grid(rows)]
+    match = [(it, p) for it in q["items"] if it["kind"] == "match" for p in it["pairs"]]
+    if match:
+        out += ['<h2 class="part">Matching</h2>',
+                grid([f'<div class="krow"><span class="n">{it["num"]}{p["letter"]}</span><span class="l"></span>'
+                      f'<span class="t">{smart(p["answer"])}</span></div>' for it, p in match])]
+    blanks = [it for it in q["items"] if it["kind"] == "blank"]
+    if blanks:
+        out += ['<h2 class="part">Fill in the blank</h2>',
+                grid([f'<div class="krow"><span class="n">{it["num"]}</span><span class="l"></span>'
+                      f'<span class="t">{smart(" / ".join(it["answers"]))}</span></div>' for it in blanks])]
+    if wr:
+        out.append('<h2 class="part">Written answers</h2>')
     for it in wr:
         out.append(f'<div class="wkey"><p class="stem"><span class="num">{it["num"]}.</span>'
                    f'{smart(it["title"].split(". ", 1)[1])}</p>{_notes_html(it["notes"])}</div>')

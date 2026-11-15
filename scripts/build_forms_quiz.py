@@ -62,6 +62,8 @@ SCOPES = ["https://www.googleapis.com/auth/forms.body"]
 
 MC_POINTS = 2
 WRITTEN_POINTS = 4
+POINTS = {"mc": MC_POINTS, "written": WRITTEN_POINTS, "match": 2, "blank": 2}   # unless the quiz says otherwise
+_POINT_WORDS = {"mc": "multiple choice", "written": "written", "match": "matching", "blank": "fill in the blank"}
 
 
 # ------------------------------------------------------------------ parse
@@ -70,10 +72,30 @@ def _plain(s: str) -> str:
     return re.sub(r"\*\*|\*", "", s).strip()
 
 
+def _points(md: str) -> dict:
+    """Points per kind from a header line such as
+    '> **Points:** multiple choice 3, matching 3 each, fill in the blank 3 each'."""
+    pts = dict(POINTS)
+    m = re.search(r"\*\*Points:\*\*\s*(.+)", md)
+    if m:
+        for kind, word in _POINT_WORDS.items():
+            n = re.search(rf"{word}\s+(\d+)", m.group(1), re.I)
+            if n:
+                pts[kind] = int(n.group(1))
+    return pts
+
+
 def parse_quiz(path: Path) -> dict:
     """Quiz Markdown -> {title, description, items[], total}. Each item is
-    {kind: header|mc|written, title, options?, correct?, feedback?}."""
-    lines = path.read_text(encoding="utf-8").split("\n")
+    {kind: header|mc|written|match|blank, title, points, options?, correct?, feedback?}.
+      multiple choice:  "- A. option" lines, the correct one ending in " ✓"
+      matching:         "Choices: one; two; three" then "- a. item → answer" lines (each item is its own question)
+      fill in a blank:  "Answer: word | other accepted word"
+      written:          none of those
+    A stem ending in "(N points)" overrides its kind's points."""
+    text = path.read_text(encoding="utf-8")
+    lines = text.split("\n")
+    pts = _points(text)
     title, description, items = "", "", []
     section = None            # which ## section we're in
     cur = None                # the question being built
@@ -81,7 +103,10 @@ def parse_quiz(path: Path) -> dict:
     def flush():
         nonlocal cur
         if cur:
-            cur["kind"] = "mc" if cur["options"] else "written"
+            cur["kind"] = ("match" if cur["pairs"] else "blank" if cur["answers"]
+                           else "mc" if cur["options"] else "written")
+            own = re.search(r"\((\d+) points?\)\s*$", cur["title"])
+            cur["points"] = int(own.group(1)) if own else pts[cur["kind"]]
             items.append(cur)
             cur = None
 
@@ -109,9 +134,22 @@ def parse_quiz(path: Path) -> dict:
         if m:
             flush()
             cur = {"num": int(m.group(1)), "title": f"{m.group(1)}. {_plain(m.group(2))}",
-                   "options": [], "correct": None, "feedback": "", "notes": []}
+                   "options": [], "correct": None, "feedback": "", "notes": [],
+                   "choices": [], "pairs": [], "answers": []}
             continue
         if cur is None:
+            continue
+        m = re.match(r"^Choices:\s*(.+)$", s)
+        if m:
+            cur["choices"] = [_plain(c) for c in m.group(1).split(";") if c.strip()]
+            continue
+        m = re.match(r"^-\s+([a-z])\.\s+(.+?)\s+→\s+(.+)$", s)
+        if m:
+            cur["pairs"].append({"letter": m.group(1), "text": _plain(m.group(2)), "answer": _plain(m.group(3))})
+            continue
+        m = re.match(r"^Answer:\s*(.+)$", s)
+        if m:
+            cur["answers"] = [_plain(a) for a in m.group(1).split("|") if a.strip()]
             continue
         m = re.match(r"^-\s+[A-D]\.\s+(.*)$", s)
         if m:
@@ -129,9 +167,19 @@ def parse_quiz(path: Path) -> dict:
             cur["notes"].append(s)
     flush()
 
-    total = sum(MC_POINTS if it["kind"] == "mc" else WRITTEN_POINTS
+    total = sum(it["points"] * (len(it["pairs"]) if it["kind"] == "match" else 1)
                 for it in items if it["kind"] != "header")
     return {"title": title, "description": description, "items": items, "total": total}
+
+
+def _accepted(answers: list[str]) -> list[str]:
+    """A blank's accepted answers in the cases a student might type them."""
+    out = []
+    for a in answers:
+        for v in (a, a.lower(), a[:1].upper() + a[1:], a.title()):
+            if v not in out:
+                out.append(v)
+    return out
 
 
 def validate(q: dict) -> list[str]:
@@ -151,7 +199,13 @@ def validate(q: dict) -> list[str]:
                 problems.append(f"Q{it['num']}: no option marked ✓")
             if len(set(it["options"])) != len(it["options"]):
                 problems.append(f"Q{it['num']}: duplicate option text")
-        if it["kind"] in ("mc", "written") and not it["feedback"]:
+        if it["kind"] == "match":
+            if len(it["choices"]) < len(it["pairs"]):
+                problems.append(f"Q{it['num']}: fewer choices than items to match")
+            for p in it["pairs"]:
+                if p["answer"] not in it["choices"]:
+                    problems.append(f"Q{it['num']}{p['letter']}: answer '{p['answer']}' isn't one of the choices")
+        if it["kind"] != "header" and not it["feedback"]:
             problems.append(f"Q{it['num']}: no *Feedback:* line")
     return problems
 
@@ -166,26 +220,47 @@ def form_requests(q: dict) -> list[dict]:
                                          "emailCollectionType": "VERIFIED"},
                             "updateMask": "quizSettings.isQuiz,emailCollectionType"}},
     ]
-    for i, it in enumerate(q["items"]):
+    made = []
+    for it in q["items"]:
+        fb = {"text": it.get("feedback", "")}
         if it["kind"] == "header":
-            item = {"title": it["title"], "textItem": {}}
+            made.append({"title": it["title"], "textItem": {}})
         elif it["kind"] == "mc":
-            fb = {"text": it["feedback"]}
-            item = {"title": it["title"], "questionItem": {"question": {
+            made.append({"title": it["title"], "questionItem": {"question": {
                 "required": True,
-                "grading": {"pointValue": MC_POINTS,
+                "grading": {"pointValue": it["points"],
                             "correctAnswers": {"answers": [{"value": it["correct"]}]},
                             "whenRight": fb, "whenWrong": fb},
                 "choiceQuestion": {"type": "RADIO", "shuffle": True,
                                    "options": [{"value": o} for o in it["options"]]},
-            }}}
-        else:
-            item = {"title": it["title"], "questionItem": {"question": {
+            }}})
+        elif it["kind"] == "match":
+            # the instructions, then each item as its own drop-down over the same choices
+            made.append({"title": it["title"], "description": "Choices: " + "; ".join(it["choices"]), "textItem": {}})
+            for p in it["pairs"]:
+                made.append({"title": f"{it['num']}{p['letter']}. {p['text']}", "questionItem": {"question": {
+                    "required": True,
+                    "grading": {"pointValue": it["points"],
+                                "correctAnswers": {"answers": [{"value": p["answer"]}]},
+                                "whenRight": fb, "whenWrong": fb},
+                    "choiceQuestion": {"type": "DROP_DOWN",
+                                       "options": [{"value": c} for c in it["choices"]]},
+                }}})
+        elif it["kind"] == "blank":
+            made.append({"title": it["title"], "questionItem": {"question": {
                 "required": True,
-                "grading": {"pointValue": WRITTEN_POINTS,
-                            "generalFeedback": {"text": it["feedback"]}},
+                "grading": {"pointValue": it["points"],
+                            "correctAnswers": {"answers": [{"value": a} for a in _accepted(it["answers"])]},
+                            "generalFeedback": fb},
+                "textQuestion": {"paragraph": False},
+            }}})
+        else:
+            made.append({"title": it["title"], "questionItem": {"question": {
+                "required": True,
+                "grading": {"pointValue": it["points"], "generalFeedback": fb},
                 "textQuestion": {"paragraph": True},
-            }}}
+            }}})
+    for i, item in enumerate(made):
         reqs.append({"createItem": {"item": item, "location": {"index": i}}})
     return reqs
 
@@ -309,11 +384,15 @@ def main() -> None:
     q = parse_quiz(path)
     problems = validate(q)
 
-    mc = sum(1 for it in q["items"] if it["kind"] == "mc")
-    wr = sum(1 for it in q["items"] if it["kind"] == "written")
     hd = sum(1 for it in q["items"] if it["kind"] == "header")
-    print(f"{q['title']}\n  {mc} multiple choice x {MC_POINTS} + {wr} written x {WRITTEN_POINTS}"
-          f" = {q['total']} points, {hd} section headers")
+    parts = []
+    for kind, word in _POINT_WORDS.items():
+        qs = [it for it in q["items"] if it["kind"] == kind]
+        if qs:
+            n = sum(len(it["pairs"]) if kind == "match" else 1 for it in qs)
+            each = sorted({it["points"] for it in qs})
+            parts.append(f"{n} {word} x {'/'.join(map(str, each))}")
+    print(f"{q['title']}\n  {' + '.join(parts)} = {q['total']} points, {hd} section headers")
     if problems:
         print("Problems:\n  - " + "\n  - ".join(problems))
         raise SystemExit(1)
@@ -322,7 +401,9 @@ def main() -> None:
             if it["kind"] == "header":
                 print(f"\n  [{it['title']}]")
             else:
-                tag = f"MC ({len(it['options'])} options)" if it["kind"] == "mc" else "written"
+                tag = {"mc": f"MC ({len(it['options'])} options)", "written": "written",
+                       "match": f"matching ({len(it['pairs'])} items, {len(it['choices'])} choices)",
+                       "blank": f"blank ({', '.join(it['answers'])})"}[it["kind"]]
                 print(f"    {it['title'][:70]:70}  {tag}")
         print("\nValid. Re-run without --dry-run to build the form.")
         return
