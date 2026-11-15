@@ -254,11 +254,13 @@ function showImage(img){
   } else if (img.status === "failed") {
     body = `<div class="waiting failed"><h2>This ${thing} was not made</h2><p>${esc(img.error || "The service gave no reason.")}</p></div>`;
   } else if (img.kind === "video") {
-    body = `<video src="${esc(img.url)}" controls playsinline preload="metadata" width="${img.width || ""}" height="${img.height || ""}"></video>`;
+    body = `<div class="player" id="player"></div>
+      <div class="playback"><div class="seg" id="playback" role="group" aria-label="Playback"></div><p class="hint" id="playback-note" aria-live="polite"></p></div>`;
   } else {
     body = `<img src="${esc(img.url)}" alt="${esc(img.prompt)}" width="${img.width || ""}" height="${img.height || ""}">`;
   }
   const done = img.status === "ready", still = done && img.kind !== "video";
+  Bounce.stop();
   $("stage").innerHTML = `${body}
      <div class="meta"><p class="used">${esc(img.prompt_used)}</p>${words}<div>${what}</div></div>
      <div class="actions">
@@ -268,6 +270,7 @@ function showImage(img){
        ${done && img.kind === "video" && extender(img) ? `<button class="btn" type="button" id="extend-this">Extend this</button>` : ""}
        <button class="btn" type="button" id="delete-this">Delete</button>
      </div>`;
+  if (done && img.kind === "video") Bounce.mount($("player"), img, $("playback"), $("playback-note"));
   if (done && img.kind === "video" && extender(img)) $("extend-this").onclick = () => extendClip(img);
   if (still) {
     $("edit-this").onclick = () => useAsSource(img, "edit");
