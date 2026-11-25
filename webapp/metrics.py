@@ -153,7 +153,7 @@ async def daily_counts(days: int = 14) -> list[dict] | None:
     try:
         rows = await db.fetch(
             """select day, name, value from ops_daily
-               where name = any($1) and day > (now() at time zone 'UTC')::date - $2
+               where name = any($1) and day > (now() at time zone 'UTC')::date - $2::int
                order by day desc""", list(COUNTERS), days)
     except asyncpg.UndefinedTableError:
         missing_tables.add("ops_daily")
