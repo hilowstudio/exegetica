@@ -85,7 +85,7 @@ Exegetica is a study tool. It isn't a counselor, a pastor, or a friend, and it i
 
 **Why can't I sign in with my personal Gmail?**
 
-Exegetica is currently built for use at Yorkville Christian School, so chat accepts only school Google accounts, the ones ending in @yorkvillechristian.com. If you sign in with a personal account, you'll see "That Google account isn't a school account." Choose **Sign in with Google** again and pick your school account in Google's window. On a school Chromebook, that's usually the account you're already using.
+Exegetica is currently built for use at Yorkville Christian School, so chat accepts school Google accounts, the ones ending in @yorkvillechristian.com. If you sign in with a personal account, you'll see "That Google account isn't a school account." Choose **Sign in with Google** again and pick your school account in Google's window. On a school Chromebook, that's usually the account you're already using.
 
 Scripture Memory and the Reading Room work without signing in. Signing in saves your verses and your place in each book to your account, so they follow you to another computer.
 
@@ -202,7 +202,7 @@ Yes. The school provides Chromebook control and monitoring software that limits 
 
 Exegetica was built for students first, with these protections:
 
-- Only students and teachers signed in with a Yorkville Christian school account can use chat.
+- Only Yorkville Christian students and teachers, and a few guests Mr. Vega adds himself, can use chat. A guest never sees anyone else's studies, the class shelves, or the books the school provides.
 - Exegetica is a study tool and never acts as a friend. It does not speak as a person, claim feelings, or express affection, and it checks every sentence before your child sees it.
 - It answers from its own library of Bible study resources, cites its sources, and brings students back to study when a conversation drifts.
 - It will not write a student's graded work, prayers, or devotions.
@@ -243,7 +243,7 @@ Ask a general chatbot about John 3, and it answers from what it remembers. Ask E
    - Every quotation is checked against the sources the study pulled. A note marks any quotation it can't find, and any reply that used no library source at all.
    - Changes are tested before they ship. An automated test suite runs on every release, the maker tests every change to the student instructions or model by hand, and candidate models and instructions are compared in blind reviews of dozens of real study questions.
 7. **Governance: built for a school.**
-   - Only school accounts can use chat, and no one can change the model or its instructions from the browser.
+   - Only school accounts and the guests Mr. Vega adds can use chat, and no one can change the model or its instructions from the browser.
    - Daily limits keep use in proportion.
    - Exegetica won't write a student's graded work, prayers, or devotions, and it keeps no profile of a student.
    - Three separate checks watch for a student in danger and open the **Need help now?** window.

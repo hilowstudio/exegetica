@@ -203,7 +203,7 @@ async def readable_by(user, item: uuid.UUID):
         from webapp import shelves
         if await shelves._teaches(user, row["course_key"]):
             return row
-        if row["audience"] == "students" and row["course_key"] in await shelves.student_courses(_uid(user)):
+        if row["audience"] == "students" and row["course_key"] in await shelves.classes_of(user):
             return row
     return None
 
@@ -265,7 +265,7 @@ async def _joinable(user, item: uuid.UUID):
     teacher = shelves.is_teacher(user)
     if not teacher and row["audience"] != "students":
         return None
-    course = next((c for c in shelves.courses_for(teacher) if c["key"] == row["course_key"]), None)
+    course = next((c for c in shelves.courses_open_to(user) if c["key"] == row["course_key"]), None)
     return (row, course) if course else None
 
 

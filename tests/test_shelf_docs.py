@@ -15,7 +15,7 @@ OTHER = "00000000-0000-0000-0000-00000000000b"
 
 
 def _as(monkeypatch, role):
-    user = {"id": ME, "role": role, "name": "Pat Teacher", "email": "pat@example.org"}
+    user = {"id": ME, "role": role, "name": "Pat Teacher", "email": "pat@yorkvillechristian.com"}
     monkeypatch.setattr(auth, "current_user", lambda request: user)
     monkeypatch.setattr(auth, "is_teacher", lambda u: bool(u) and u.get("role") == "teacher")
     monkeypatch.setattr(auth, "is_admin", lambda u: False)
@@ -81,7 +81,7 @@ def test_who_may_read_an_upload(monkeypatch):
         return list(takes)
     monkeypatch.setattr(shelves, "_teaches", _teaches)
     monkeypatch.setattr(shelves, "student_courses", _takes)
-    me = {"id": ME}
+    me = {"id": ME, "email": "pat@yorkvillechristian.com"}
     own = _row(user_id=uuid.UUID(ME))
     others = _row(user_id=uuid.UUID(OTHER))
     for_students = _row(course_key="bible-2", audience="students")

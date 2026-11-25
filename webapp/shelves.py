@@ -15,6 +15,7 @@ from starlette.responses import JSONResponse
 from webapp import auth, db, reader, teacher_courses, yorkville
 
 UNAVAILABLE = "Your shelves can't be reached right now. Try again in a minute."
+GUEST_CLASSES = "Class shelves are for Yorkville Christian School accounts."
 
 
 def _uid(user) -> uuid.UUID:
@@ -43,6 +44,11 @@ def courses_for(teacher: bool) -> list[dict]:
     return sorted(allowed, key=_subject_rank)   # stable: the school's own order within a subject
 
 
+def courses_open_to(user) -> list[dict]:
+    """The courses this person may pick. A guest from outside the school picks none (decision 0005)."""
+    return [] if auth.is_guest(user) else courses_for(is_teacher(user))
+
+
 async def student_courses(uid: uuid.UUID) -> list[str]:
     rows = await db.fetch("select course_key from student_courses where user_id = $1 order by added_at, course_key", uid)
     return [r["course_key"] for r in rows]
@@ -66,6 +72,8 @@ async def unshelve_book(uid: uuid.UUID, slug: str) -> None:
 
 
 async def classes_of(user) -> list[str]:
+    if auth.is_guest(user):
+        return []
     if is_teacher(user):
         return await teacher_courses.mine(user.get("email"))
     return await student_courses(_uid(user))
@@ -163,7 +171,7 @@ async def home(request):
     prep_work = await shelf_resources.mine(uid) if teacher else []
     rows = await db.fetch("select book_slug, section_number, pages from reading_state where user_id = $1", uid)
     return JSONResponse({
-        "teacher": teacher, "courses": courses_for(teacher), "mine": keys,
+        "teacher": teacher, "guest": auth.is_guest(user), "courses": courses_open_to(user), "mine": keys,
         "classes": class_shelves(keys, items, teacher, placed, videos, str(uid)), "books": books, "docs": docs, "prep": prep_work,
         "progress": {r["book_slug"]: {"section": r["section_number"], "pages": r["pages"]} for r in rows if r["book_slug"] in items},
     })
@@ -174,6 +182,8 @@ async def choose_classes(request):
     user = auth.current_user(request)
     if not user:
         return JSONResponse({"error": "Sign in with your school account first."}, status_code=401)
+    if auth.is_guest(user):
+        return JSONResponse({"error": GUEST_CLASSES}, status_code=403)
     if not db.ready():
         return JSONResponse({"error": UNAVAILABLE}, status_code=503)
     try:
@@ -181,7 +191,7 @@ async def choose_classes(request):
     except Exception:  # noqa: BLE001
         b = {}
     keys = b.get("courses") if isinstance(b, dict) else None
-    known = {c["key"] for c in courses_for(is_teacher(user))}
+    known = {c["key"] for c in courses_open_to(user)}
     if not isinstance(keys, list) or not set(keys) <= known or len(keys) > 12:
         return JSONResponse({"error": "Pick classes from the school's list."}, status_code=400)
     if is_teacher(user):

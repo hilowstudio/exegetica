@@ -200,6 +200,11 @@ window.addEventListener("pagehide", function(){
 function drawClasses(){
   var box = $("class-shelves"); box.innerHTML = "";
   $("classes-edit").hidden = !H.mine.length;
+  if(H.guest){              // an account from outside the school takes no classes (decision 0005)
+    box.innerHTML = '<div class="class-invite"><p>Class shelves are for Yorkville Christian School accounts. ' +
+      'Books you keep from the Reading Room go on your own shelf.</p></div>';
+    return;
+  }
   if(!H.mine.length){
     box.innerHTML = '<div class="class-invite"><p>' + (teacher
       ? "Choose the classes you teach, and the school's books for them come to the top of your shelves."

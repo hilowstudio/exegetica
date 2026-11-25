@@ -1,7 +1,8 @@
 """
 Google OAuth sign-in. Chat needs a signed-in school account; most of the rest of the app
 works signed out. Only accounts in the school's Google Workspace may sign in, plus the
-teacher and admin allowlists (docs/decisions/0005-sign-in-required.md).
+teacher and admin allowlists and the few guests the maker adds by hand
+(docs/decisions/0005-sign-in-required.md).
 
 Identity is Google SSO for everyone (no passwords). On callback we upsert the user
 into Neon and keep a small profile in the signed session cookie. Role
@@ -69,6 +70,12 @@ def _admin_emails() -> set[str]:
     return _emails_env("LIBRARY_ADMIN_EMAILS")
 
 
+def _guest_emails() -> set[str]:
+    """Accounts from outside the school that the maker lets in one by one (GUEST_EMAILS, decision 0005). A guest has
+    the student role and rules, and no classes and no school copies (is_guest)."""
+    return _emails_env("GUEST_EMAILS")
+
+
 def is_admin(user) -> bool:
     """A library admin may edit canonical shared-catalog data (e.g. cover art for everyone)."""
     return bool(user) and (user.get("email") or "").lower() in _admin_emails()
@@ -83,16 +90,41 @@ def is_teacher(user) -> bool:
 SCHOOL_DOMAIN = (os.environ.get("SCHOOL_DOMAIN") or "yorkvillechristian.com").strip().lower()
 
 
+def _school_email(email: str | None) -> bool:
+    return (email or "").lower().endswith("@" + SCHOOL_DOMAIN)
+
+
+def is_guest(user) -> bool:
+    """Signed in, but neither a school account, a teacher nor an admin: someone the maker let in from outside. A guest
+    takes no classes, so class shelves, class videos and class podcasts stay closed (webapp/shelves.py), and never
+    reads school copies (reader.may_read_school)."""
+    return bool(user) and not (_school_email(user.get("email")) or is_teacher(user) or is_admin(user))
+
+
 def _may_sign_in(userinfo: dict) -> bool:
     email = (userinfo.get("email") or "").lower()
     if email in _teacher_emails() or email in _admin_emails():
         return True
-    return bool(userinfo.get("email_verified")) and email.endswith("@" + SCHOOL_DOMAIN)
+    if not userinfo.get("email_verified"):
+        return False
+    return _school_email(email) or email in _guest_emails()
+
+
+def _still_allowed(email: str | None) -> bool:
+    """Whether a signed-in account may still use its session: any school account, or an outside account while it is
+    still on one of the allowlists."""
+    email = (email or "").lower()
+    return bool(email) and (_school_email(email) or email in _teacher_emails() or email in _admin_emails()
+                            or email in _guest_emails())
 
 
 def current_user(request):
-    """The signed-in user's profile dict, or None."""
-    return request.session.get("user")
+    """The signed-in user's profile dict, or None. An outside account counts only while it is still on an allowlist,
+    so taking a guest or teacher off a list ends their access on their next request."""
+    user = request.session.get("user")
+    if user and not _still_allowed(user.get("email")):
+        return None
+    return user
 
 
 def _safe_next(request) -> str:

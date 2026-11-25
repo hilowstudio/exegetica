@@ -38,7 +38,7 @@ def test_each_place_offers_the_share_its_own_way():
 
 
 def _setup(monkeypatch, role, row, taken=None):
-    user = {"id": ME, "role": role, "email": "pat@example.org", "name": "Pat"}
+    user = {"id": ME, "role": role, "email": "pat@yorkvillechristian.com", "name": "Pat"}
     monkeypatch.setattr(auth, "current_user", lambda request: user if role else None)
     monkeypatch.setattr(auth, "is_teacher", lambda u: bool(u) and u.get("role") == "teacher")
     monkeypatch.setattr(auth, "is_admin", lambda u: False)

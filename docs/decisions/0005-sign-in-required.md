@@ -15,3 +15,12 @@ Decided by A. James Vega, 2026-11-02.
 - Rotate `SESSION_SECRET` in production when this ships, to end sessions created before the domain rule.
 
 **Reverse when.** By the maker's decision; anonymous chat would also need the shared daily pool from the proposal (Layer 6).
+
+**Amended 2026-11-25: guests.** The maker may let an account from outside the school sign in by adding it to `GUEST_EMAILS`, a server secret (never in git). The account must be verified by Google.
+- A guest has the student role, rules and caps: chat, Scripture Memory and the public Reading Room.
+- A guest takes no classes. Class shelves, class videos, class podcasts and Classroom join links stay closed.
+- A guest never reads school copies or reference copies. `reader.may_read_school` admits only the school domain, teachers and admins.
+- A guest's studies are kept and readable like a student's (0009, 0013).
+- An account from outside the school counts only while it is on an allowlist. `current_user` checks the lists on every request, so taking an address off ends that session on its next request. This applies to outside teachers and admins too.
+
+*Why:* the maker wanted one outside account to use Exegetica without opening what the school licensed for its own accounts. *Enforced in:* `_may_sign_in`, `is_guest` and `current_user` in `webapp/auth.py`; `courses_open_to`, `classes_of` and `choose_classes` in `webapp/shelves.py`; `_joinable` and `readable_by` in `webapp/shelf_docs.py`; the Library's class shelves in `webapp/static/js/shelves.js`; `tests/test_sign_in.py`.
