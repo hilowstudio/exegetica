@@ -94,6 +94,17 @@ def _school_email(email: str | None) -> bool:
     return (email or "").lower().endswith("@" + SCHOOL_DOMAIN)
 
 
+def guest_emails() -> set[str]:
+    return _guest_emails()
+
+
+def is_guest_email(email: str | None) -> bool:
+    """An address on the guest list that isn't a school account, a teacher or an admin: the only addresses a sign-in
+    link can sign in (webapp/guest_link.py)."""
+    e = (email or "").lower()
+    return bool(e) and e in _guest_emails() and not (_school_email(e) or e in _teacher_emails() or e in _admin_emails())
+
+
 def is_guest(user) -> bool:
     """Signed in, but neither a school account, a teacher nor an admin: someone the maker let in from outside. A guest
     takes no classes, so class shelves, class videos and class podcasts stay closed (webapp/shelves.py), and never

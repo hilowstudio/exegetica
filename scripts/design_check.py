@@ -59,7 +59,8 @@ def serve(port: int) -> None:
     from webapp import auth
 
     people = {
-        "student": {"email": "student@local.test", "name": "Local Student", "role": "student"},
+        # a school address, so the check sees a student's pages and not a guest's (decision 0005)
+        "student": {"email": "student@yorkvillechristian.com", "name": "Local Student", "role": "student"},
         "teacher": {"email": "teacher@local.test", "name": "Local Teacher", "role": "teacher"},
         "admin": {"email": "admin@local.test", "name": "Local Admin", "role": "teacher"},
     }

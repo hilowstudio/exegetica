@@ -34,7 +34,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
-from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_routes, course_views, curriculum, db, excerpts, generator, house_cover, library, library_store, listen, memory, metrics, ops, policy, prep, prep_draft, providers, teacher_courses, r2, reader, reply_check, safety, shell, shelf_docs, shelf_resources, shelves, store, studio, tool_catalog, usage, watch
+from webapp import about, account, auth, calendar_views, citations, comprehension, course, course_routes, course_views, curriculum, db, excerpts, generator, guest_link, house_cover, library, library_store, listen, memory, metrics, ops, policy, prep, prep_draft, providers, teacher_courses, r2, reader, reply_check, safety, shell, shelf_docs, shelf_resources, shelves, store, studio, tool_catalog, usage, watch
 from webapp.bridge import CombinedTools, MCPBridge  # noqa: F401  (scripts/john_gen.py imports MCPBridge from here)
 
 logging.basicConfig(level=logging.INFO)
@@ -1471,6 +1471,9 @@ app = Starlette(
         Route("/auth/login", auth.login, name="auth_login"),
         Route("/auth/google/callback", auth.auth_callback, name="auth_callback"),
         Route("/auth/logout", auth.logout, name="auth_logout"),
+        Route("/auth/link", guest_link.page, methods=["GET"]),                    # decision 0005, guests
+        Route("/auth/link", guest_link.redeem, methods=["POST"]),
+        Route("/ops/guest-link", guest_link.make, methods=["POST"]),
         Route("/api/me", auth.me),
         Route("/api/chat", chat, methods=["POST"]),
         Route("/api/standards/tree", standards_tree),

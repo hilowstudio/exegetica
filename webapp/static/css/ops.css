@@ -9,3 +9,7 @@ td.acts{white-space:nowrap}
 td.acts form{display:inline;margin-left:10px}
 td.acts button{font:600 13px var(--sans);min-height:28px;padding:3px 10px;border:1px solid var(--rule-strong);border-radius:7px;background:var(--surface);color:var(--ink);cursor:pointer}
 td.acts button:hover{background:var(--surface-2)}
+/* a guest sign-in link (webapp/guest_link.py): the link to copy, then the button */
+.link-label{display:block;font:600 14px var(--sans);margin:1em 0 .3em}
+.link-box{display:block;width:100%;box-sizing:border-box;font:14px var(--mono);padding:10px 12px;border:1px solid var(--rule-strong);border-radius:8px;background:var(--surface);color:var(--ink);margin:0 0 .9em}
+.link-box:focus-visible{outline:2px solid var(--accent);outline-offset:2px}

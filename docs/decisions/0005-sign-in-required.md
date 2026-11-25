@@ -23,4 +23,14 @@ Decided by A. James Vega, 2026-11-02.
 - A guest's studies are kept and readable like a student's (0009, 0013).
 - An account from outside the school counts only while it is on an allowlist. `current_user` checks the lists on every request, so taking an address off ends that session on its next request. This applies to outside teachers and admins too.
 
-*Why:* the maker wanted one outside account to use Exegetica without opening what the school licensed for its own accounts. *Enforced in:* `_may_sign_in`, `is_guest` and `current_user` in `webapp/auth.py`; `courses_open_to`, `classes_of` and `choose_classes` in `webapp/shelves.py`; `_joinable` and `readable_by` in `webapp/shelf_docs.py`; the Library's class shelves in `webapp/static/js/shelves.js`; `tests/test_sign_in.py`.
+*Why:* the maker wanted one outside account to use Exegetica without opening what the school licensed for its own accounts.
+
+**Amended 2026-11-25: sign-in links for guests.** The school's Google app is Internal to its organization, so Google itself turns away any outside account before Exegetica sees it. The school's console now requires two-step verification that only its admin can turn on, so the app can't be switched to External for now. So a guest signs in with a link the maker makes on `/ops`.
+- Opening the link shows one button. Pressing it signs the guest in. Opening alone signs no one in, because link previews in messages and email open links by themselves.
+- A link names one address on the guest list and works only while the address is still there.
+- A link works once: it is refused once its account has signed in since the link was made.
+- A link lasts 7 days and is signed with `SESSION_SECRET`. Nothing about it is stored.
+- A link guest's account row has `google_sub = 'link:' + email`. If the same address later signs in with Google, it becomes a second account.
+- The guest stays signed in on that device the way everyone does. A new device needs a new link.
+
+*Enforced in:* `webapp/guest_link.py`, `auth.is_guest_email`, the `/auth/link` and `/ops/guest-link` routes in `webapp/app.py`, `tests/test_guest_link.py`. The privacy page says how a guest signs in and what is kept. *Enforced in:* `_may_sign_in`, `is_guest` and `current_user` in `webapp/auth.py`; `courses_open_to`, `classes_of` and `choose_classes` in `webapp/shelves.py`; `_joinable` and `readable_by` in `webapp/shelf_docs.py`; the Library's class shelves in `webapp/static/js/shelves.js`; `tests/test_sign_in.py`.

@@ -23,7 +23,7 @@ import os
 import asyncpg
 from starlette.responses import PlainTextResponse
 
-from webapp import about, auth, db, metrics, retention, shell, usage
+from webapp import about, auth, db, guest_link, metrics, retention, shell, usage
 
 logger = logging.getLogger("study-bible-web.ops")
 
@@ -146,7 +146,8 @@ async def page(request):
         "with its text, outside the app.</p><div class=wide tabindex=0 role=region aria-label=\"Reading Room suggestions\"><table>"
         "<tr><th>Title</th><th>Author</th><th>Why everyone may read it</th><th>Words</th><th>Status</th><th>Act</th></tr>"
         + sugg_rows + "</table></div>"
-        "<h2>Records</h2><div class=wide tabindex=0 role=region aria-label=\"Records\"><table>"
+        + guest_link.ops_section()
+        + "<h2>Records</h2><div class=wide tabindex=0 role=region aria-label=\"Records\"><table>"
         + "".join(f"<tr><th>{t}</th><td>{html.escape(s)}</td></tr>" for t, s in tables.items())
         + f"<tr><th>Last metrics row</th><td>{last or 'none'}</td></tr>"
         f"<tr><th>Failed metric writes since start</th><td>{metrics.failed_writes}</td></tr>"
